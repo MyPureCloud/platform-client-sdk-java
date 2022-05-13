@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmAgentScheduleUpdateTopicUserReference;
@@ -51,7 +52,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
     this.user = user;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification startDate(Date startDate) {
@@ -68,7 +69,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification endDate(Date endDate) {
@@ -85,7 +86,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification shifts(List<WfmAgentScheduleUpdateTopicWfmScheduleShift> shifts) {
@@ -102,7 +103,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
     this.shifts = shifts;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification fullDayTimeOffMarkers(List<WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker> fullDayTimeOffMarkers) {
@@ -119,7 +120,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification updates(List<WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate> updates) {
@@ -136,7 +137,6 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
     this.updates = updates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +147,13 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification  impl
       return false;
     }
     WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification = (WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification) o;
+
     return Objects.equals(this.user, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.user) &&
-        Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.startDate) &&
-        Objects.equals(this.endDate, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.endDate) &&
-        Objects.equals(this.shifts, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.fullDayTimeOffMarkers) &&
-        Objects.equals(this.updates, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.updates);
+            Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.startDate) &&
+            Objects.equals(this.endDate, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.endDate) &&
+            Objects.equals(this.shifts, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.shifts) &&
+            Objects.equals(this.fullDayTimeOffMarkers, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.fullDayTimeOffMarkers) &&
+            Objects.equals(this.updates, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification.updates);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -191,7 +192,7 @@ public class GroupCreate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The group name.
    **/
@@ -209,7 +210,7 @@ public class GroupCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public GroupCreate description(String description) {
@@ -226,35 +227,35 @@ public class GroupCreate  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of members.")
   @JsonProperty("memberCount")
   public Long getMemberCount() {
     return memberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active, inactive, or deleted state.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current version for this resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   /**
    * Type of group.
    **/
@@ -272,7 +273,7 @@ public class GroupCreate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public GroupCreate images(List<UserImage> images) {
@@ -289,7 +290,7 @@ public class GroupCreate  implements Serializable {
     this.images = images;
   }
 
-  
+
   /**
    **/
   public GroupCreate addresses(List<GroupContact> addresses) {
@@ -306,7 +307,7 @@ public class GroupCreate  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    * Are membership rules visible to the person requesting to view the group
    **/
@@ -324,7 +325,7 @@ public class GroupCreate  implements Serializable {
     this.rulesVisible = rulesVisible;
   }
 
-  
+
   /**
    * Who can view this group
    **/
@@ -342,7 +343,7 @@ public class GroupCreate  implements Serializable {
     this.visibility = visibility;
   }
 
-  
+
   /**
    * Owners of the group
    **/
@@ -360,14 +361,13 @@ public class GroupCreate  implements Serializable {
     this.ownerIds = ownerIds;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -378,20 +378,21 @@ public class GroupCreate  implements Serializable {
       return false;
     }
     GroupCreate groupCreate = (GroupCreate) o;
+
     return Objects.equals(this.id, groupCreate.id) &&
-        Objects.equals(this.name, groupCreate.name) &&
-        Objects.equals(this.description, groupCreate.description) &&
-        Objects.equals(this.dateModified, groupCreate.dateModified) &&
-        Objects.equals(this.memberCount, groupCreate.memberCount) &&
-        Objects.equals(this.state, groupCreate.state) &&
-        Objects.equals(this.version, groupCreate.version) &&
-        Objects.equals(this.type, groupCreate.type) &&
-        Objects.equals(this.images, groupCreate.images) &&
-        Objects.equals(this.addresses, groupCreate.addresses) &&
-        Objects.equals(this.rulesVisible, groupCreate.rulesVisible) &&
-        Objects.equals(this.visibility, groupCreate.visibility) &&
-        Objects.equals(this.ownerIds, groupCreate.ownerIds) &&
-        Objects.equals(this.selfUri, groupCreate.selfUri);
+            Objects.equals(this.name, groupCreate.name) &&
+            Objects.equals(this.description, groupCreate.description) &&
+            Objects.equals(this.dateModified, groupCreate.dateModified) &&
+            Objects.equals(this.memberCount, groupCreate.memberCount) &&
+            Objects.equals(this.state, groupCreate.state) &&
+            Objects.equals(this.version, groupCreate.version) &&
+            Objects.equals(this.type, groupCreate.type) &&
+            Objects.equals(this.images, groupCreate.images) &&
+            Objects.equals(this.addresses, groupCreate.addresses) &&
+            Objects.equals(this.rulesVisible, groupCreate.rulesVisible) &&
+            Objects.equals(this.visibility, groupCreate.visibility) &&
+            Objects.equals(this.ownerIds, groupCreate.ownerIds) &&
+            Objects.equals(this.selfUri, groupCreate.selfUri);
   }
 
   @Override

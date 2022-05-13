@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,7 +152,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Limit key to be overridden (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
    **/
@@ -169,7 +170,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    * Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits)
    **/
@@ -187,7 +188,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     this.namespace = namespace;
   }
 
-  
+
   /**
    * Requested limit value for a given key
    **/
@@ -205,7 +206,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     this.requestedValue = requestedValue;
   }
 
-  
+
   /**
    * Description of the need for the limit change request
    **/
@@ -223,7 +224,7 @@ public class LimitChangeRequestDetails  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The support case url created by Care
    **/
@@ -241,70 +242,69 @@ public class LimitChangeRequestDetails  implements Serializable {
     this.supportCaseUrl = supportCaseUrl;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who created the change request")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current status of the limit change request")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current limit value for a given key")
   @JsonProperty("currentValue")
   public Double getCurrentValue() {
     return currentValue;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date of the limit change request creation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of statuses that a limit change request has gone through")
   @JsonProperty("statusHistory")
   public List<StatusChange> getStatusHistory() {
     return statusHistory;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date of the limit change request completion (ChangeImplemented, Rejected, or RollbackImplemented. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who last updated the status of the limit change request")
   @JsonProperty("lastChangedBy")
   public String getLastChangedBy() {
     return lastChangedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The reason for rejecting the limit override request")
   @JsonProperty("rejectReason")
   public RejectReasonEnum getRejectReason() {
     return rejectReason;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -315,21 +315,22 @@ public class LimitChangeRequestDetails  implements Serializable {
       return false;
     }
     LimitChangeRequestDetails limitChangeRequestDetails = (LimitChangeRequestDetails) o;
+
     return Objects.equals(this.id, limitChangeRequestDetails.id) &&
-        Objects.equals(this.key, limitChangeRequestDetails.key) &&
-        Objects.equals(this.namespace, limitChangeRequestDetails.namespace) &&
-        Objects.equals(this.requestedValue, limitChangeRequestDetails.requestedValue) &&
-        Objects.equals(this.description, limitChangeRequestDetails.description) &&
-        Objects.equals(this.supportCaseUrl, limitChangeRequestDetails.supportCaseUrl) &&
-        Objects.equals(this.createdBy, limitChangeRequestDetails.createdBy) &&
-        Objects.equals(this.status, limitChangeRequestDetails.status) &&
-        Objects.equals(this.currentValue, limitChangeRequestDetails.currentValue) &&
-        Objects.equals(this.dateCreated, limitChangeRequestDetails.dateCreated) &&
-        Objects.equals(this.statusHistory, limitChangeRequestDetails.statusHistory) &&
-        Objects.equals(this.dateCompleted, limitChangeRequestDetails.dateCompleted) &&
-        Objects.equals(this.lastChangedBy, limitChangeRequestDetails.lastChangedBy) &&
-        Objects.equals(this.rejectReason, limitChangeRequestDetails.rejectReason) &&
-        Objects.equals(this.selfUri, limitChangeRequestDetails.selfUri);
+            Objects.equals(this.key, limitChangeRequestDetails.key) &&
+            Objects.equals(this.namespace, limitChangeRequestDetails.namespace) &&
+            Objects.equals(this.requestedValue, limitChangeRequestDetails.requestedValue) &&
+            Objects.equals(this.description, limitChangeRequestDetails.description) &&
+            Objects.equals(this.supportCaseUrl, limitChangeRequestDetails.supportCaseUrl) &&
+            Objects.equals(this.createdBy, limitChangeRequestDetails.createdBy) &&
+            Objects.equals(this.status, limitChangeRequestDetails.status) &&
+            Objects.equals(this.currentValue, limitChangeRequestDetails.currentValue) &&
+            Objects.equals(this.dateCreated, limitChangeRequestDetails.dateCreated) &&
+            Objects.equals(this.statusHistory, limitChangeRequestDetails.statusHistory) &&
+            Objects.equals(this.dateCompleted, limitChangeRequestDetails.dateCompleted) &&
+            Objects.equals(this.lastChangedBy, limitChangeRequestDetails.lastChangedBy) &&
+            Objects.equals(this.rejectReason, limitChangeRequestDetails.rejectReason) &&
+            Objects.equals(this.selfUri, limitChangeRequestDetails.selfUri);
   }
 
   @Override

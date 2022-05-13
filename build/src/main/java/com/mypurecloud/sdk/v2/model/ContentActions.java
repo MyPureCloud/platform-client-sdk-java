@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class ContentActions  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The target window in which to open the URL. If empty will open a blank page or tab.
    **/
@@ -61,7 +62,7 @@ public class ContentActions  implements Serializable {
     this.urlTarget = urlTarget;
   }
 
-  
+
   /**
    * Text to be returned as the payload from a ButtonResponse when a button is clicked. The textback and title are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
    **/
@@ -79,7 +80,6 @@ public class ContentActions  implements Serializable {
     this.textback = textback;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class ContentActions  implements Serializable {
       return false;
     }
     ContentActions contentActions = (ContentActions) o;
+
     return Objects.equals(this.url, contentActions.url) &&
-        Objects.equals(this.urlTarget, contentActions.urlTarget) &&
-        Objects.equals(this.textback, contentActions.textback);
+            Objects.equals(this.urlTarget, contentActions.urlTarget) &&
+            Objects.equals(this.textback, contentActions.textback);
   }
 
   @Override

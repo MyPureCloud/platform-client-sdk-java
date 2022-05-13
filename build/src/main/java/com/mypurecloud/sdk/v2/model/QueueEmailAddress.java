@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -42,7 +43,7 @@ public class QueueEmailAddress  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public QueueEmailAddress route(InboundRoute route) {
@@ -59,7 +60,6 @@ public class QueueEmailAddress  implements Serializable {
     this.route = route;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class QueueEmailAddress  implements Serializable {
       return false;
     }
     QueueEmailAddress queueEmailAddress = (QueueEmailAddress) o;
+
     return Objects.equals(this.domain, queueEmailAddress.domain) &&
-        Objects.equals(this.route, queueEmailAddress.route);
+            Objects.equals(this.route, queueEmailAddress.route);
   }
 
   @Override

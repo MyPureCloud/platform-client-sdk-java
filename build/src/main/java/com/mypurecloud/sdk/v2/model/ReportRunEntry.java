@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class ReportRunEntry  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry name(String name) {
@@ -110,7 +111,7 @@ public class ReportRunEntry  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry reportId(String reportId) {
@@ -127,7 +128,7 @@ public class ReportRunEntry  implements Serializable {
     this.reportId = reportId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -145,7 +146,7 @@ public class ReportRunEntry  implements Serializable {
     this.runTime = runTime;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry runStatus(RunStatusEnum runStatus) {
@@ -162,7 +163,7 @@ public class ReportRunEntry  implements Serializable {
     this.runStatus = runStatus;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry errorMessage(String errorMessage) {
@@ -179,7 +180,7 @@ public class ReportRunEntry  implements Serializable {
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry runDurationMsec(Long runDurationMsec) {
@@ -196,7 +197,7 @@ public class ReportRunEntry  implements Serializable {
     this.runDurationMsec = runDurationMsec;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry reportUrl(String reportUrl) {
@@ -213,7 +214,7 @@ public class ReportRunEntry  implements Serializable {
     this.reportUrl = reportUrl;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry reportFormat(String reportFormat) {
@@ -230,7 +231,7 @@ public class ReportRunEntry  implements Serializable {
     this.reportFormat = reportFormat;
   }
 
-  
+
   /**
    **/
   public ReportRunEntry scheduleUri(String scheduleUri) {
@@ -247,14 +248,13 @@ public class ReportRunEntry  implements Serializable {
     this.scheduleUri = scheduleUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,17 +265,18 @@ public class ReportRunEntry  implements Serializable {
       return false;
     }
     ReportRunEntry reportRunEntry = (ReportRunEntry) o;
+
     return Objects.equals(this.id, reportRunEntry.id) &&
-        Objects.equals(this.name, reportRunEntry.name) &&
-        Objects.equals(this.reportId, reportRunEntry.reportId) &&
-        Objects.equals(this.runTime, reportRunEntry.runTime) &&
-        Objects.equals(this.runStatus, reportRunEntry.runStatus) &&
-        Objects.equals(this.errorMessage, reportRunEntry.errorMessage) &&
-        Objects.equals(this.runDurationMsec, reportRunEntry.runDurationMsec) &&
-        Objects.equals(this.reportUrl, reportRunEntry.reportUrl) &&
-        Objects.equals(this.reportFormat, reportRunEntry.reportFormat) &&
-        Objects.equals(this.scheduleUri, reportRunEntry.scheduleUri) &&
-        Objects.equals(this.selfUri, reportRunEntry.selfUri);
+            Objects.equals(this.name, reportRunEntry.name) &&
+            Objects.equals(this.reportId, reportRunEntry.reportId) &&
+            Objects.equals(this.runTime, reportRunEntry.runTime) &&
+            Objects.equals(this.runStatus, reportRunEntry.runStatus) &&
+            Objects.equals(this.errorMessage, reportRunEntry.errorMessage) &&
+            Objects.equals(this.runDurationMsec, reportRunEntry.runDurationMsec) &&
+            Objects.equals(this.reportUrl, reportRunEntry.reportUrl) &&
+            Objects.equals(this.reportFormat, reportRunEntry.reportFormat) &&
+            Objects.equals(this.scheduleUri, reportRunEntry.scheduleUri) &&
+            Objects.equals(this.selfUri, reportRunEntry.selfUri);
   }
 
   @Override

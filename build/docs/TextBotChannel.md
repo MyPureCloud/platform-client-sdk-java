@@ -21,10 +21,10 @@ title: TextBotChannel
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CHAT | &quot;Chat&quot; |
-| CALL | &quot;Call&quot; |
-| MESSAGING | &quot;Messaging&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CHAT | &quot;Chat&quot; | 
+| CALL | &quot;Call&quot; | 
+| MESSAGING | &quot;Messaging&quot; | 
 {: class="table table-striped"}
 
 

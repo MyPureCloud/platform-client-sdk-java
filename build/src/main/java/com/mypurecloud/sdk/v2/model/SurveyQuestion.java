@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class SurveyQuestion  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public SurveyQuestion text(String text) {
@@ -118,7 +119,7 @@ public class SurveyQuestion  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    **/
   public SurveyQuestion helpText(String helpText) {
@@ -135,7 +136,7 @@ public class SurveyQuestion  implements Serializable {
     this.helpText = helpText;
   }
 
-  
+
   /**
    **/
   public SurveyQuestion type(TypeEnum type) {
@@ -152,7 +153,7 @@ public class SurveyQuestion  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public SurveyQuestion naEnabled(Boolean naEnabled) {
@@ -169,7 +170,7 @@ public class SurveyQuestion  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-  
+
   /**
    **/
   public SurveyQuestion visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -186,7 +187,7 @@ public class SurveyQuestion  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-  
+
   /**
    * Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
    **/
@@ -204,7 +205,7 @@ public class SurveyQuestion  implements Serializable {
     this.answerOptions = answerOptions;
   }
 
-  
+
   /**
    * How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.
    **/
@@ -222,7 +223,7 @@ public class SurveyQuestion  implements Serializable {
     this.maxResponseCharacters = maxResponseCharacters;
   }
 
-  
+
   /**
    * Prompt for details explaining the chosen NPS score. Used by NPS questions.
    **/
@@ -240,7 +241,6 @@ public class SurveyQuestion  implements Serializable {
     this.explanationPrompt = explanationPrompt;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -251,15 +251,16 @@ public class SurveyQuestion  implements Serializable {
       return false;
     }
     SurveyQuestion surveyQuestion = (SurveyQuestion) o;
+
     return Objects.equals(this.id, surveyQuestion.id) &&
-        Objects.equals(this.text, surveyQuestion.text) &&
-        Objects.equals(this.helpText, surveyQuestion.helpText) &&
-        Objects.equals(this.type, surveyQuestion.type) &&
-        Objects.equals(this.naEnabled, surveyQuestion.naEnabled) &&
-        Objects.equals(this.visibilityCondition, surveyQuestion.visibilityCondition) &&
-        Objects.equals(this.answerOptions, surveyQuestion.answerOptions) &&
-        Objects.equals(this.maxResponseCharacters, surveyQuestion.maxResponseCharacters) &&
-        Objects.equals(this.explanationPrompt, surveyQuestion.explanationPrompt);
+            Objects.equals(this.text, surveyQuestion.text) &&
+            Objects.equals(this.helpText, surveyQuestion.helpText) &&
+            Objects.equals(this.type, surveyQuestion.type) &&
+            Objects.equals(this.naEnabled, surveyQuestion.naEnabled) &&
+            Objects.equals(this.visibilityCondition, surveyQuestion.visibilityCondition) &&
+            Objects.equals(this.answerOptions, surveyQuestion.answerOptions) &&
+            Objects.equals(this.maxResponseCharacters, surveyQuestion.maxResponseCharacters) &&
+            Objects.equals(this.explanationPrompt, surveyQuestion.explanationPrompt);
   }
 
   @Override

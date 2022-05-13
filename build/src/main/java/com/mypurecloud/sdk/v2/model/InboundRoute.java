@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -47,7 +48,7 @@ public class InboundRoute  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public InboundRoute name(String name) {
@@ -64,7 +65,7 @@ public class InboundRoute  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The search pattern that the mailbox name should match.
    **/
@@ -82,7 +83,7 @@ public class InboundRoute  implements Serializable {
     this.pattern = pattern;
   }
 
-  
+
   /**
    * The queue to route the emails to.
    **/
@@ -100,7 +101,7 @@ public class InboundRoute  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The priority to use for routing.
    **/
@@ -118,7 +119,7 @@ public class InboundRoute  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * The skills to use for routing.
    **/
@@ -136,7 +137,7 @@ public class InboundRoute  implements Serializable {
     this.skills = skills;
   }
 
-  
+
   /**
    * The language to use for routing.
    **/
@@ -154,7 +155,7 @@ public class InboundRoute  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * The sender name to use for outgoing replies.
    **/
@@ -172,7 +173,7 @@ public class InboundRoute  implements Serializable {
     this.fromName = fromName;
   }
 
-  
+
   /**
    * The sender email to use for outgoing replies.
    **/
@@ -190,7 +191,7 @@ public class InboundRoute  implements Serializable {
     this.fromEmail = fromEmail;
   }
 
-  
+
   /**
    * The flow to use for processing the email.
    **/
@@ -208,7 +209,7 @@ public class InboundRoute  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * The route to use for email replies.
    **/
@@ -226,7 +227,7 @@ public class InboundRoute  implements Serializable {
     this.replyEmailAddress = replyEmailAddress;
   }
 
-  
+
   /**
    * The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
    **/
@@ -244,7 +245,7 @@ public class InboundRoute  implements Serializable {
     this.autoBcc = autoBcc;
   }
 
-  
+
   /**
    * The flow to use for processing inbound emails that have been marked as spam.
    **/
@@ -262,14 +263,13 @@ public class InboundRoute  implements Serializable {
     this.spamFlow = spamFlow;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -280,20 +280,21 @@ public class InboundRoute  implements Serializable {
       return false;
     }
     InboundRoute inboundRoute = (InboundRoute) o;
+
     return Objects.equals(this.id, inboundRoute.id) &&
-        Objects.equals(this.name, inboundRoute.name) &&
-        Objects.equals(this.pattern, inboundRoute.pattern) &&
-        Objects.equals(this.queue, inboundRoute.queue) &&
-        Objects.equals(this.priority, inboundRoute.priority) &&
-        Objects.equals(this.skills, inboundRoute.skills) &&
-        Objects.equals(this.language, inboundRoute.language) &&
-        Objects.equals(this.fromName, inboundRoute.fromName) &&
-        Objects.equals(this.fromEmail, inboundRoute.fromEmail) &&
-        Objects.equals(this.flow, inboundRoute.flow) &&
-        Objects.equals(this.replyEmailAddress, inboundRoute.replyEmailAddress) &&
-        Objects.equals(this.autoBcc, inboundRoute.autoBcc) &&
-        Objects.equals(this.spamFlow, inboundRoute.spamFlow) &&
-        Objects.equals(this.selfUri, inboundRoute.selfUri);
+            Objects.equals(this.name, inboundRoute.name) &&
+            Objects.equals(this.pattern, inboundRoute.pattern) &&
+            Objects.equals(this.queue, inboundRoute.queue) &&
+            Objects.equals(this.priority, inboundRoute.priority) &&
+            Objects.equals(this.skills, inboundRoute.skills) &&
+            Objects.equals(this.language, inboundRoute.language) &&
+            Objects.equals(this.fromName, inboundRoute.fromName) &&
+            Objects.equals(this.fromEmail, inboundRoute.fromEmail) &&
+            Objects.equals(this.flow, inboundRoute.flow) &&
+            Objects.equals(this.replyEmailAddress, inboundRoute.replyEmailAddress) &&
+            Objects.equals(this.autoBcc, inboundRoute.autoBcc) &&
+            Objects.equals(this.spamFlow, inboundRoute.spamFlow) &&
+            Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override

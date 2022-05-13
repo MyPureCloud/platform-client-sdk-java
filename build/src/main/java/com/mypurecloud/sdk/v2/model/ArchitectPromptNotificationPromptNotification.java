@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationArchitectOperation;
@@ -44,7 +45,7 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
     this.id = id;
   }
 
-  
+
   /**
    * The prompt name
    **/
@@ -62,7 +63,7 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
     this.name = name;
   }
 
-  
+
   /**
    * The prompt description
    **/
@@ -80,7 +81,7 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
     this.description = description;
   }
 
-  
+
   /**
    **/
   public ArchitectPromptNotificationPromptNotification currentOperation(ArchitectPromptNotificationArchitectOperation currentOperation) {
@@ -97,7 +98,6 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
     this.currentOperation = currentOperation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
       return false;
     }
     ArchitectPromptNotificationPromptNotification architectPromptNotificationPromptNotification = (ArchitectPromptNotificationPromptNotification) o;
+
     return Objects.equals(this.id, architectPromptNotificationPromptNotification.id) &&
-        Objects.equals(this.name, architectPromptNotificationPromptNotification.name) &&
-        Objects.equals(this.description, architectPromptNotificationPromptNotification.description) &&
-        Objects.equals(this.currentOperation, architectPromptNotificationPromptNotification.currentOperation);
+            Objects.equals(this.name, architectPromptNotificationPromptNotification.name) &&
+            Objects.equals(this.description, architectPromptNotificationPromptNotification.description) &&
+            Objects.equals(this.currentOperation, architectPromptNotificationPromptNotification.currentOperation);
   }
 
   @Override

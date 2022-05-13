@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions urlTarget(String urlTarget) {
@@ -58,7 +59,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.urlTarget = urlTarget;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions textback(String textback) {
@@ -75,7 +76,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.textback = textback;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions v2ConversationMessageTypingEventForWorkflowTopicConversationContentActions = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions) o;
+
     return Objects.equals(this.url, v2ConversationMessageTypingEventForWorkflowTopicConversationContentActions.url) &&
-        Objects.equals(this.urlTarget, v2ConversationMessageTypingEventForWorkflowTopicConversationContentActions.urlTarget) &&
-        Objects.equals(this.textback, v2ConversationMessageTypingEventForWorkflowTopicConversationContentActions.textback);
+            Objects.equals(this.urlTarget, v2ConversationMessageTypingEventForWorkflowTopicConversationContentActions.urlTarget) &&
+            Objects.equals(this.textback, v2ConversationMessageTypingEventForWorkflowTopicConversationContentActions.textback);
   }
 
   @Override

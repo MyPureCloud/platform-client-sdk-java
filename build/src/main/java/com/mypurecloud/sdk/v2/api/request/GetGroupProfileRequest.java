@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetGroupProfileRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -49,7 +48,7 @@ public class GetGroupProfileRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private String fields;
 	public String getFields() {
 		return this.fields;
@@ -63,7 +62,7 @@ public class GetGroupProfileRequest {
 	    this.setFields(fields);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -94,9 +93,10 @@ public class GetGroupProfileRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/groups/{groupId}/profile")
                 .withPathParameter("groupId", groupId)
         
+
                 .withQueryParameters("fields", "", fields)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -107,12 +107,12 @@ public class GetGroupProfileRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGroupProfileRequest request;
@@ -121,25 +121,25 @@ public class GetGroupProfileRequest {
 			request = new GetGroupProfileRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withFields(String fields) {
 			request.setFields(fields);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGroupProfileRequest build() {
             

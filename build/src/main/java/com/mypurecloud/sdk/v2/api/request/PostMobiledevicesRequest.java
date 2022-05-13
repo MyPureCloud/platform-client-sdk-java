@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserDevice;
-import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 
 public class PostMobiledevicesRequest {
-    
+
 	private UserDevice body;
 	public UserDevice getBody() {
 		return this.body;
@@ -39,7 +39,7 @@ public class PostMobiledevicesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,8 +69,8 @@ public class PostMobiledevicesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/mobiledevices")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class PostMobiledevicesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(UserDevice body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostMobiledevicesRequest request;
@@ -95,20 +95,20 @@ public class PostMobiledevicesRequest {
 			request = new PostMobiledevicesRequest();
 		}
 
-		
+
 		public Builder withBody(UserDevice body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(UserDevice body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostMobiledevicesRequest build() {
             

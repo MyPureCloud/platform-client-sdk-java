@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
@@ -44,7 +45,7 @@ public class AssessmentJobListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public AssessmentJobListing entities(List<BenefitAssessmentJob> entities) {
@@ -61,7 +62,7 @@ public class AssessmentJobListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public AssessmentJobListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class AssessmentJobListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class AssessmentJobListing  implements Serializable {
       return false;
     }
     AssessmentJobListing assessmentJobListing = (AssessmentJobListing) o;
+
     return Objects.equals(this.total, assessmentJobListing.total) &&
-        Objects.equals(this.entities, assessmentJobListing.entities) &&
-        Objects.equals(this.selfUri, assessmentJobListing.selfUri);
+            Objects.equals(this.entities, assessmentJobListing.entities) &&
+            Objects.equals(this.selfUri, assessmentJobListing.selfUri);
   }
 
   @Override

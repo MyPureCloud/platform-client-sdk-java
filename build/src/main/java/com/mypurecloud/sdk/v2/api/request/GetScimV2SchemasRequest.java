@@ -20,23 +20,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ScimError;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimError;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
+import com.mypurecloud.sdk.v2.model.ScimV2Group;
+import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
-import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
-import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
-import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 public class GetScimV2SchemasRequest {
-    
+
 	private String filter;
 	public String getFilter() {
 		return this.filter;
@@ -50,7 +49,7 @@ public class GetScimV2SchemasRequest {
 	    this.setFilter(filter);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,10 +73,11 @@ public class GetScimV2SchemasRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/scim/v2/schemas")
+
                 .withQueryParameters("filter", "", filter)
         
-                .withCustomHeaders(customHeaders)
-                .withContentTypes("application/scim+json", "application/json")
+		.withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
                 .withAccepts("application/scim+json", "application/json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
@@ -87,7 +87,7 @@ public class GetScimV2SchemasRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetScimV2SchemasRequest request;
@@ -96,14 +96,14 @@ public class GetScimV2SchemasRequest {
 			request = new GetScimV2SchemasRequest();
 		}
 
-		
+
 		public Builder withFilter(String filter) {
 			request.setFilter(filter);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetScimV2SchemasRequest build() {
             

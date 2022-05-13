@@ -26,9 +26,9 @@ title: WhatsAppIntegrationUpdateRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVATE | &quot;Activate&quot; |
-| CONFIRM | &quot;Confirm&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVATE | &quot;Activate&quot; | 
+| CONFIRM | &quot;Confirm&quot; | 
 {: class="table table-striped"}
 
 
@@ -38,9 +38,9 @@ title: WhatsAppIntegrationUpdateRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SMS | &quot;Sms&quot; |
-| VOICE | &quot;Voice&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SMS | &quot;Sms&quot; | 
+| VOICE | &quot;Voice&quot; | 
 {: class="table table-striped"}
 
 

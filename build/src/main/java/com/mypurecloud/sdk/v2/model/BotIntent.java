@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BotSlot;
@@ -46,7 +47,7 @@ public class BotIntent  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Optional returned data values associated with this intent, limit of 50.
    **/
@@ -64,7 +65,6 @@ public class BotIntent  implements Serializable {
     this.slots = slots;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -75,8 +75,9 @@ public class BotIntent  implements Serializable {
       return false;
     }
     BotIntent botIntent = (BotIntent) o;
+
     return Objects.equals(this.name, botIntent.name) &&
-        Objects.equals(this.slots, botIntent.slots);
+            Objects.equals(this.slots, botIntent.slots);
   }
 
   @Override

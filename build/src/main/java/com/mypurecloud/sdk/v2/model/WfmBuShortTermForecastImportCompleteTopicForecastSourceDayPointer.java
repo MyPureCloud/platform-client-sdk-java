@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     this.dayOfWeek = dayOfWeek;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer weight(Integer weight) {
@@ -114,7 +115,7 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     this.weight = weight;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer date(String date) {
@@ -131,7 +132,7 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     this.date = date;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer fileName(String fileName) {
@@ -148,7 +149,7 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     this.fileName = fileName;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer dataKey(String dataKey) {
@@ -165,7 +166,6 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
     this.dataKey = dataKey;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,11 +176,12 @@ public class WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer  
       return false;
     }
     WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer = (WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer) o;
+
     return Objects.equals(this.dayOfWeek, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.dayOfWeek) &&
-        Objects.equals(this.weight, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.weight) &&
-        Objects.equals(this.date, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.date) &&
-        Objects.equals(this.fileName, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.fileName) &&
-        Objects.equals(this.dataKey, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.dataKey);
+            Objects.equals(this.weight, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.weight) &&
+            Objects.equals(this.date, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.date) &&
+            Objects.equals(this.fileName, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.fileName) &&
+            Objects.equals(this.dataKey, wfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer.dataKey);
   }
 
   @Override

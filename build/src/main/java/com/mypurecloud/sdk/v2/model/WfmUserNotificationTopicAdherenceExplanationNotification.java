@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -146,7 +147,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification agent(WfmUserNotificationTopicUserReference agent) {
@@ -163,7 +164,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification managementUnit(WfmUserNotificationTopicManagementUnit managementUnit) {
@@ -180,7 +181,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification businessUnit(WfmUserNotificationTopicBusinessUnit businessUnit) {
@@ -197,7 +198,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.businessUnit = businessUnit;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification startDate(Date startDate) {
@@ -214,7 +215,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification lengthMinutes(Integer lengthMinutes) {
@@ -231,7 +232,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification status(StatusEnum status) {
@@ -248,7 +249,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification type(TypeEnum type) {
@@ -265,7 +266,7 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.type = type;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicAdherenceExplanationNotification notes(String notes) {
@@ -282,7 +283,6 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
     this.notes = notes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -293,15 +293,16 @@ public class WfmUserNotificationTopicAdherenceExplanationNotification  implement
       return false;
     }
     WfmUserNotificationTopicAdherenceExplanationNotification wfmUserNotificationTopicAdherenceExplanationNotification = (WfmUserNotificationTopicAdherenceExplanationNotification) o;
+
     return Objects.equals(this.id, wfmUserNotificationTopicAdherenceExplanationNotification.id) &&
-        Objects.equals(this.agent, wfmUserNotificationTopicAdherenceExplanationNotification.agent) &&
-        Objects.equals(this.managementUnit, wfmUserNotificationTopicAdherenceExplanationNotification.managementUnit) &&
-        Objects.equals(this.businessUnit, wfmUserNotificationTopicAdherenceExplanationNotification.businessUnit) &&
-        Objects.equals(this.startDate, wfmUserNotificationTopicAdherenceExplanationNotification.startDate) &&
-        Objects.equals(this.lengthMinutes, wfmUserNotificationTopicAdherenceExplanationNotification.lengthMinutes) &&
-        Objects.equals(this.status, wfmUserNotificationTopicAdherenceExplanationNotification.status) &&
-        Objects.equals(this.type, wfmUserNotificationTopicAdherenceExplanationNotification.type) &&
-        Objects.equals(this.notes, wfmUserNotificationTopicAdherenceExplanationNotification.notes);
+            Objects.equals(this.agent, wfmUserNotificationTopicAdherenceExplanationNotification.agent) &&
+            Objects.equals(this.managementUnit, wfmUserNotificationTopicAdherenceExplanationNotification.managementUnit) &&
+            Objects.equals(this.businessUnit, wfmUserNotificationTopicAdherenceExplanationNotification.businessUnit) &&
+            Objects.equals(this.startDate, wfmUserNotificationTopicAdherenceExplanationNotification.startDate) &&
+            Objects.equals(this.lengthMinutes, wfmUserNotificationTopicAdherenceExplanationNotification.lengthMinutes) &&
+            Objects.equals(this.status, wfmUserNotificationTopicAdherenceExplanationNotification.status) &&
+            Objects.equals(this.type, wfmUserNotificationTopicAdherenceExplanationNotification.type) &&
+            Objects.equals(this.notes, wfmUserNotificationTopicAdherenceExplanationNotification.notes);
   }
 
   @Override

@@ -9,6 +9,7 @@ title: WfmBuScheduleTopicBuScheduleMetadata
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **weekDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **weekCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **description** | <!----><!---->**String**<!----> |  |  [optional] |
 | **published** | <!----><!---->**Boolean**<!----> |  |  [optional] |

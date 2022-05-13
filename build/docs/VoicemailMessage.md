@@ -11,8 +11,8 @@ title: VoicemailMessage
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **conversation** | <!----><!---->[**Conversation**](Conversation.html)<!----> | The conversation that the voicemail message is associated with |  [optional] |
 | **read** | <!----><!---->**Boolean**<!----> | Whether the voicemail message is marked as read |  [optional] |
-| **audioRecordingDurationSeconds** | <!----><!---->**Integer**<!----> | The voicemail message&#39;s audio recording duration in seconds |  [optional] |
-| **audioRecordingSizeBytes** | <!----><!---->**Long**<!----> | The voicemail message&#39;s audio recording size in bytes |  [optional] |
+| **audioRecordingDurationSeconds** | <!----><!---->**Integer**<!----> | The voicemail message's audio recording duration in seconds |  [optional] |
+| **audioRecordingSizeBytes** | <!----><!---->**Long**<!----> | The voicemail message's audio recording size in bytes |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **deletedDate** | <!----><!---->[**Date**](Date.html)<!----> | The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

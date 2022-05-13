@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -96,7 +96,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The set of activity code IDs to associate with this time off plan.
    **/
@@ -114,7 +114,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     this.activityCodeIds = activityCodeIds;
   }
 
-  
+
   /**
    * The set of time off limit IDs to associate with this time off plan.
    **/
@@ -132,7 +132,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     this.timeOffLimitIds = timeOffLimitIds;
   }
 
-  
+
   /**
    * Auto approval rule for the time off plan.
    **/
@@ -150,7 +150,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     this.autoApprovalRule = autoApprovalRule;
   }
 
-  
+
   /**
    * The number of days before the time off request start date for when the request will be expired from the waitlist.
    **/
@@ -168,7 +168,7 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     this.daysBeforeStartToExpireFromWaitlist = daysBeforeStartToExpireFromWaitlist;
   }
 
-  
+
   /**
    * Whether this time off plan should be used by agents.
    **/
@@ -186,7 +186,6 @@ public class CreateTimeOffPlanRequest  implements Serializable {
     this.active = active;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -197,12 +196,13 @@ public class CreateTimeOffPlanRequest  implements Serializable {
       return false;
     }
     CreateTimeOffPlanRequest createTimeOffPlanRequest = (CreateTimeOffPlanRequest) o;
+
     return Objects.equals(this.name, createTimeOffPlanRequest.name) &&
-        Objects.equals(this.activityCodeIds, createTimeOffPlanRequest.activityCodeIds) &&
-        Objects.equals(this.timeOffLimitIds, createTimeOffPlanRequest.timeOffLimitIds) &&
-        Objects.equals(this.autoApprovalRule, createTimeOffPlanRequest.autoApprovalRule) &&
-        Objects.equals(this.daysBeforeStartToExpireFromWaitlist, createTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
-        Objects.equals(this.active, createTimeOffPlanRequest.active);
+            Objects.equals(this.activityCodeIds, createTimeOffPlanRequest.activityCodeIds) &&
+            Objects.equals(this.timeOffLimitIds, createTimeOffPlanRequest.timeOffLimitIds) &&
+            Objects.equals(this.autoApprovalRule, createTimeOffPlanRequest.autoApprovalRule) &&
+            Objects.equals(this.daysBeforeStartToExpireFromWaitlist, createTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
+            Objects.equals(this.active, createTimeOffPlanRequest.active);
   }
 
   @Override

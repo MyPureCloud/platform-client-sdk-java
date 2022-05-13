@@ -25,8 +25,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a user recording.
 
-
-
 Wraps DELETE /api/v2/userrecordings/{recordingId}  
 
 Requires NO permissions: 
@@ -86,8 +84,6 @@ null (empty response body)
 
 Get a user recording.
 
-
-
 Wraps GET /api/v2/userrecordings/{recordingId}  
 
 Requires NO permissions: 
@@ -116,7 +112,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UserRecordingsApi apiInstance = new UserRecordingsApi();
 String recordingId = "recordingId_example"; // String | User Recording ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     UserRecording result = apiInstance.getUserrecording(recordingId, expand);
     System.out.println(result);
@@ -149,8 +145,6 @@ try {
 > [DownloadResponse](DownloadResponse.html) getUserrecordingMedia(recordingId, formatId)
 
 Download a user recording.
-
-
 
 Wraps GET /api/v2/userrecordings/{recordingId}/media  
 
@@ -214,8 +208,6 @@ try {
 
 Get a list of user recordings.
 
-
-
 Wraps GET /api/v2/userrecordings  
 
 Requires NO permissions: 
@@ -245,7 +237,7 @@ Configuration.setDefaultApiClient(apiClient);
 UserRecordingsApi apiInstance = new UserRecordingsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     UserRecordingEntityListing result = apiInstance.getUserrecordings(pageSize, pageNumber, expand);
     System.out.println(result);
@@ -279,8 +271,6 @@ try {
 > [FaxSummary](FaxSummary.html) getUserrecordingsSummary()
 
 Get user recording summary
-
-
 
 Wraps GET /api/v2/userrecordings/summary  
 
@@ -338,8 +328,6 @@ This endpoint does not require any parameters.
 
 Update a user recording.
 
-
-
 Wraps PUT /api/v2/userrecordings/{recordingId}  
 
 Requires NO permissions: 
@@ -369,7 +357,7 @@ Configuration.setDefaultApiClient(apiClient);
 UserRecordingsApi apiInstance = new UserRecordingsApi();
 String recordingId = "recordingId_example"; // String | User Recording ID
 UserRecording body = new UserRecording(); // UserRecording | UserRecording
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     UserRecording result = apiInstance.putUserrecording(recordingId, body, expand);
     System.out.println(result);

@@ -22,8 +22,8 @@ title: CreateOutboundMessagingConversationRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SMS | &quot;sms&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SMS | &quot;sms&quot; | 
 {: class="table table-striped"}
 
 

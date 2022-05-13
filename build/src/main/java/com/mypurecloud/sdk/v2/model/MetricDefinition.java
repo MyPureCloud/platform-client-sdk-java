@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class MetricDefinition  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public MetricDefinition name(String name) {
@@ -110,7 +111,7 @@ public class MetricDefinition  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of associated metric unit
    **/
@@ -128,7 +129,7 @@ public class MetricDefinition  implements Serializable {
     this.unitType = unitType;
   }
 
-  
+
   /**
    * An alternate name for this metric definition, often abbreviation
    **/
@@ -146,7 +147,7 @@ public class MetricDefinition  implements Serializable {
     this.shortName = shortName;
   }
 
-  
+
   /**
    * Metric names used as dividend
    **/
@@ -164,7 +165,7 @@ public class MetricDefinition  implements Serializable {
     this.dividendMetrics = dividendMetrics;
   }
 
-  
+
   /**
    * Metric names used as divisor
    **/
@@ -182,7 +183,7 @@ public class MetricDefinition  implements Serializable {
     this.divisorMetrics = divisorMetrics;
   }
 
-  
+
   /**
    * A predefined default objective for this metric
    **/
@@ -200,7 +201,7 @@ public class MetricDefinition  implements Serializable {
     this.defaultObjective = defaultObjective;
   }
 
-  
+
   /**
    * An optional field to specify if this metric definition is locked to certain template. e.g. punctuality
    **/
@@ -218,14 +219,13 @@ public class MetricDefinition  implements Serializable {
     this.lockTemplateId = lockTemplateId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,15 +236,16 @@ public class MetricDefinition  implements Serializable {
       return false;
     }
     MetricDefinition metricDefinition = (MetricDefinition) o;
+
     return Objects.equals(this.id, metricDefinition.id) &&
-        Objects.equals(this.name, metricDefinition.name) &&
-        Objects.equals(this.unitType, metricDefinition.unitType) &&
-        Objects.equals(this.shortName, metricDefinition.shortName) &&
-        Objects.equals(this.dividendMetrics, metricDefinition.dividendMetrics) &&
-        Objects.equals(this.divisorMetrics, metricDefinition.divisorMetrics) &&
-        Objects.equals(this.defaultObjective, metricDefinition.defaultObjective) &&
-        Objects.equals(this.lockTemplateId, metricDefinition.lockTemplateId) &&
-        Objects.equals(this.selfUri, metricDefinition.selfUri);
+            Objects.equals(this.name, metricDefinition.name) &&
+            Objects.equals(this.unitType, metricDefinition.unitType) &&
+            Objects.equals(this.shortName, metricDefinition.shortName) &&
+            Objects.equals(this.dividendMetrics, metricDefinition.dividendMetrics) &&
+            Objects.equals(this.divisorMetrics, metricDefinition.divisorMetrics) &&
+            Objects.equals(this.defaultObjective, metricDefinition.defaultObjective) &&
+            Objects.equals(this.lockTemplateId, metricDefinition.lockTemplateId) &&
+            Objects.equals(this.selfUri, metricDefinition.selfUri);
   }
 
   @Override

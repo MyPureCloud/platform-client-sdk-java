@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.GDPRRequestEntityListing;
 import com.mypurecloud.sdk.v2.model.GDPRSubjectEntityListing;
 
 public class PostGdprRequestsRequest {
-    
+
 	private GDPRRequest body;
 	public GDPRRequest getBody() {
 		return this.body;
@@ -40,7 +40,7 @@ public class PostGdprRequestsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private Boolean deleteConfirmed;
 	public Boolean getDeleteConfirmed() {
 		return this.deleteConfirmed;
@@ -54,7 +54,7 @@ public class PostGdprRequestsRequest {
 	    this.setDeleteConfirmed(deleteConfirmed);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -83,11 +83,12 @@ public class PostGdprRequestsRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/gdpr/requests")
+
                 .withQueryParameters("deleteConfirmed", "", deleteConfirmed)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -98,12 +99,12 @@ public class PostGdprRequestsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(GDPRRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostGdprRequestsRequest request;
@@ -112,25 +113,25 @@ public class PostGdprRequestsRequest {
 			request = new PostGdprRequestsRequest();
 		}
 
-		
+
 		public Builder withBody(GDPRRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withDeleteConfirmed(Boolean deleteConfirmed) {
 			request.setDeleteConfirmed(deleteConfirmed);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(GDPRRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostGdprRequestsRequest build() {
             

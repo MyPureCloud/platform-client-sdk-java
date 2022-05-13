@@ -16,7 +16,6 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
-import com.mypurecloud.sdk.v2.model.Empty;
 
 
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
@@ -32,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class UploadsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -44,7 +42,6 @@ public class UploadsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Creates a presigned URL for uploading a knowledge import file with a set of documents
    * 
@@ -120,7 +117,6 @@ public class UploadsApiAsync {
     }
   }
 
-  
   /**
    * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
    * 
@@ -162,7 +158,7 @@ public class UploadsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UploadUrlResponse>> postLanguageunderstandingMinerUploadsAsync(ApiRequest<Empty> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
+  public Future<ApiResponse<UploadUrlResponse>> postLanguageunderstandingMinerUploadsAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -196,7 +192,6 @@ public class UploadsApiAsync {
     }
   }
 
-  
   /**
    * Creates presigned url for uploading a public asset image
    * 
@@ -272,7 +267,6 @@ public class UploadsApiAsync {
     }
   }
 
-  
   /**
    * Creates presigned url for uploading a recording file
    * 
@@ -348,7 +342,6 @@ public class UploadsApiAsync {
     }
   }
 
-  
   /**
    * Creates presigned url for uploading WFM historical data file. Requires data in csv format.
    * 
@@ -424,7 +417,6 @@ public class UploadsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

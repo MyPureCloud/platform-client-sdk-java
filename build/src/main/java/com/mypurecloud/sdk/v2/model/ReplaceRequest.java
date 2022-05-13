@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ReplaceRequest  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    **/
   public ReplaceRequest name(String name) {
@@ -58,7 +59,7 @@ public class ReplaceRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ReplaceRequest authToken(String authToken) {
@@ -75,7 +76,6 @@ public class ReplaceRequest  implements Serializable {
     this.authToken = authToken;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class ReplaceRequest  implements Serializable {
       return false;
     }
     ReplaceRequest replaceRequest = (ReplaceRequest) o;
+
     return Objects.equals(this.changeNumber, replaceRequest.changeNumber) &&
-        Objects.equals(this.name, replaceRequest.name) &&
-        Objects.equals(this.authToken, replaceRequest.authToken);
+            Objects.equals(this.name, replaceRequest.name) &&
+            Objects.equals(this.authToken, replaceRequest.authToken);
   }
 
   @Override

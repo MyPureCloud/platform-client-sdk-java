@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class TwitterIntegrationEntityListing  implements Serializable, PagedReso
       return false;
     }
     TwitterIntegrationEntityListing twitterIntegrationEntityListing = (TwitterIntegrationEntityListing) o;
+
     return Objects.equals(this.entities, twitterIntegrationEntityListing.entities) &&
-        Objects.equals(this.pageSize, twitterIntegrationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, twitterIntegrationEntityListing.pageNumber) &&
-        Objects.equals(this.total, twitterIntegrationEntityListing.total) &&
-        Objects.equals(this.lastUri, twitterIntegrationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, twitterIntegrationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, twitterIntegrationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, twitterIntegrationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, twitterIntegrationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, twitterIntegrationEntityListing.pageCount);
+            Objects.equals(this.pageSize, twitterIntegrationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, twitterIntegrationEntityListing.pageNumber) &&
+            Objects.equals(this.total, twitterIntegrationEntityListing.total) &&
+            Objects.equals(this.lastUri, twitterIntegrationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, twitterIntegrationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, twitterIntegrationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, twitterIntegrationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, twitterIntegrationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, twitterIntegrationEntityListing.pageCount);
   }
 
   @Override

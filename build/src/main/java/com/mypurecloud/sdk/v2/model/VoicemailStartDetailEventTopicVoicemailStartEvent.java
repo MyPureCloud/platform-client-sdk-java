@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -153,7 +154,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent conversationId(String conversationId) {
@@ -170,7 +171,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent participantId(String participantId) {
@@ -187,7 +188,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent sessionId(String sessionId) {
@@ -204,7 +205,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent mediaType(MediaTypeEnum mediaType) {
@@ -221,7 +222,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent provider(String provider) {
@@ -238,7 +239,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent direction(DirectionEnum direction) {
@@ -255,7 +256,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent ani(String ani) {
@@ -272,7 +273,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent dnis(String dnis) {
@@ -289,7 +290,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent userId(String userId) {
@@ -306,7 +307,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent queueId(String queueId) {
@@ -323,7 +324,7 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public VoicemailStartDetailEventTopicVoicemailStartEvent divisionId(String divisionId) {
@@ -340,7 +341,6 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
     this.divisionId = divisionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -351,18 +351,19 @@ public class VoicemailStartDetailEventTopicVoicemailStartEvent  implements Seria
       return false;
     }
     VoicemailStartDetailEventTopicVoicemailStartEvent voicemailStartDetailEventTopicVoicemailStartEvent = (VoicemailStartDetailEventTopicVoicemailStartEvent) o;
+
     return Objects.equals(this.eventTime, voicemailStartDetailEventTopicVoicemailStartEvent.eventTime) &&
-        Objects.equals(this.conversationId, voicemailStartDetailEventTopicVoicemailStartEvent.conversationId) &&
-        Objects.equals(this.participantId, voicemailStartDetailEventTopicVoicemailStartEvent.participantId) &&
-        Objects.equals(this.sessionId, voicemailStartDetailEventTopicVoicemailStartEvent.sessionId) &&
-        Objects.equals(this.mediaType, voicemailStartDetailEventTopicVoicemailStartEvent.mediaType) &&
-        Objects.equals(this.provider, voicemailStartDetailEventTopicVoicemailStartEvent.provider) &&
-        Objects.equals(this.direction, voicemailStartDetailEventTopicVoicemailStartEvent.direction) &&
-        Objects.equals(this.ani, voicemailStartDetailEventTopicVoicemailStartEvent.ani) &&
-        Objects.equals(this.dnis, voicemailStartDetailEventTopicVoicemailStartEvent.dnis) &&
-        Objects.equals(this.userId, voicemailStartDetailEventTopicVoicemailStartEvent.userId) &&
-        Objects.equals(this.queueId, voicemailStartDetailEventTopicVoicemailStartEvent.queueId) &&
-        Objects.equals(this.divisionId, voicemailStartDetailEventTopicVoicemailStartEvent.divisionId);
+            Objects.equals(this.conversationId, voicemailStartDetailEventTopicVoicemailStartEvent.conversationId) &&
+            Objects.equals(this.participantId, voicemailStartDetailEventTopicVoicemailStartEvent.participantId) &&
+            Objects.equals(this.sessionId, voicemailStartDetailEventTopicVoicemailStartEvent.sessionId) &&
+            Objects.equals(this.mediaType, voicemailStartDetailEventTopicVoicemailStartEvent.mediaType) &&
+            Objects.equals(this.provider, voicemailStartDetailEventTopicVoicemailStartEvent.provider) &&
+            Objects.equals(this.direction, voicemailStartDetailEventTopicVoicemailStartEvent.direction) &&
+            Objects.equals(this.ani, voicemailStartDetailEventTopicVoicemailStartEvent.ani) &&
+            Objects.equals(this.dnis, voicemailStartDetailEventTopicVoicemailStartEvent.dnis) &&
+            Objects.equals(this.userId, voicemailStartDetailEventTopicVoicemailStartEvent.userId) &&
+            Objects.equals(this.queueId, voicemailStartDetailEventTopicVoicemailStartEvent.queueId) &&
+            Objects.equals(this.divisionId, voicemailStartDetailEventTopicVoicemailStartEvent.divisionId);
   }
 
   @Override

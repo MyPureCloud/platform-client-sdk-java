@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TextBotModeOutputPrompts;
@@ -43,7 +44,7 @@ public class TextBotOutputPrompts  implements Serializable {
     this.outputLanguage = outputLanguage;
   }
 
-  
+
   /**
    * Text output prompts, if any.
    **/
@@ -61,7 +62,6 @@ public class TextBotOutputPrompts  implements Serializable {
     this.textPrompts = textPrompts;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class TextBotOutputPrompts  implements Serializable {
       return false;
     }
     TextBotOutputPrompts textBotOutputPrompts = (TextBotOutputPrompts) o;
+
     return Objects.equals(this.outputLanguage, textBotOutputPrompts.outputLanguage) &&
-        Objects.equals(this.textPrompts, textBotOutputPrompts.textPrompts);
+            Objects.equals(this.textPrompts, textBotOutputPrompts.textPrompts);
   }
 
   @Override

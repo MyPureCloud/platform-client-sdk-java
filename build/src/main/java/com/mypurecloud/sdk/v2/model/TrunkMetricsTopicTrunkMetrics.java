@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsTopicTrunkMetricsCalls;
@@ -15,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.TrunkMetricsTopicTrunkMetricsQoS;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsTopicUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -24,6 +26,7 @@ import java.io.Serializable;
 public class TrunkMetricsTopicTrunkMetrics  implements Serializable {
   
   private TrunkMetricsTopicTrunkMetricsCalls calls = null;
+  private Date eventTime = null;
   private TrunkMetricsTopicTrunkMetricsQoS qos = null;
   private TrunkMetricsTopicUriReference trunk = null;
 
@@ -44,7 +47,24 @@ public class TrunkMetricsTopicTrunkMetrics  implements Serializable {
     this.calls = calls;
   }
 
+
+  /**
+   **/
+  public TrunkMetricsTopicTrunkMetrics eventTime(Date eventTime) {
+    this.eventTime = eventTime;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("eventTime")
+  public Date getEventTime() {
+    return eventTime;
+  }
+  public void setEventTime(Date eventTime) {
+    this.eventTime = eventTime;
+  }
+
+
   /**
    **/
   public TrunkMetricsTopicTrunkMetrics qos(TrunkMetricsTopicTrunkMetricsQoS qos) {
@@ -61,7 +81,7 @@ public class TrunkMetricsTopicTrunkMetrics  implements Serializable {
     this.qos = qos;
   }
 
-  
+
   /**
    **/
   public TrunkMetricsTopicTrunkMetrics trunk(TrunkMetricsTopicUriReference trunk) {
@@ -78,7 +98,6 @@ public class TrunkMetricsTopicTrunkMetrics  implements Serializable {
     this.trunk = trunk;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,14 +108,16 @@ public class TrunkMetricsTopicTrunkMetrics  implements Serializable {
       return false;
     }
     TrunkMetricsTopicTrunkMetrics trunkMetricsTopicTrunkMetrics = (TrunkMetricsTopicTrunkMetrics) o;
+
     return Objects.equals(this.calls, trunkMetricsTopicTrunkMetrics.calls) &&
-        Objects.equals(this.qos, trunkMetricsTopicTrunkMetrics.qos) &&
-        Objects.equals(this.trunk, trunkMetricsTopicTrunkMetrics.trunk);
+            Objects.equals(this.eventTime, trunkMetricsTopicTrunkMetrics.eventTime) &&
+            Objects.equals(this.qos, trunkMetricsTopicTrunkMetrics.qos) &&
+            Objects.equals(this.trunk, trunkMetricsTopicTrunkMetrics.trunk);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(calls, qos, trunk);
+    return Objects.hash(calls, eventTime, qos, trunk);
   }
 
   @Override
@@ -105,6 +126,7 @@ public class TrunkMetricsTopicTrunkMetrics  implements Serializable {
     sb.append("class TrunkMetricsTopicTrunkMetrics {\n");
     
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
+    sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    qos: ").append(toIndentedString(qos)).append("\n");
     sb.append("    trunk: ").append(toIndentedString(trunk)).append("\n");
     sb.append("}");

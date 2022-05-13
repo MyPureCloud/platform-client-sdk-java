@@ -24,7 +24,7 @@ import com.mypurecloud.sdk.v2.model.ChatSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PutChatSettingsRequest {
-    
+
 	private ChatSettings body;
 	public ChatSettings getBody() {
 		return this.body;
@@ -38,7 +38,7 @@ public class PutChatSettingsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -68,8 +68,8 @@ public class PutChatSettingsRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/chat/settings")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -80,12 +80,12 @@ public class PutChatSettingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(ChatSettings body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutChatSettingsRequest request;
@@ -94,20 +94,20 @@ public class PutChatSettingsRequest {
 			request = new PutChatSettingsRequest();
 		}
 
-		
+
 		public Builder withBody(ChatSettings body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(ChatSettings body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PutChatSettingsRequest build() {
             

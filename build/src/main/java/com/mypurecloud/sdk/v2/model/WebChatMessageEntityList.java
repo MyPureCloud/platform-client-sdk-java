@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
@@ -46,7 +47,7 @@ public class WebChatMessageEntityList  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public WebChatMessageEntityList entities(List<WebChatMessage> entities) {
@@ -63,7 +64,7 @@ public class WebChatMessageEntityList  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public WebChatMessageEntityList previousPage(String previousPage) {
@@ -80,7 +81,7 @@ public class WebChatMessageEntityList  implements Serializable {
     this.previousPage = previousPage;
   }
 
-  
+
   /**
    **/
   public WebChatMessageEntityList next(String next) {
@@ -97,7 +98,7 @@ public class WebChatMessageEntityList  implements Serializable {
     this.next = next;
   }
 
-  
+
   /**
    **/
   public WebChatMessageEntityList selfUri(String selfUri) {
@@ -114,7 +115,6 @@ public class WebChatMessageEntityList  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class WebChatMessageEntityList  implements Serializable {
       return false;
     }
     WebChatMessageEntityList webChatMessageEntityList = (WebChatMessageEntityList) o;
+
     return Objects.equals(this.pageSize, webChatMessageEntityList.pageSize) &&
-        Objects.equals(this.entities, webChatMessageEntityList.entities) &&
-        Objects.equals(this.previousPage, webChatMessageEntityList.previousPage) &&
-        Objects.equals(this.next, webChatMessageEntityList.next) &&
-        Objects.equals(this.selfUri, webChatMessageEntityList.selfUri);
+            Objects.equals(this.entities, webChatMessageEntityList.entities) &&
+            Objects.equals(this.previousPage, webChatMessageEntityList.previousPage) &&
+            Objects.equals(this.next, webChatMessageEntityList.next) &&
+            Objects.equals(this.selfUri, webChatMessageEntityList.selfUri);
   }
 
   @Override

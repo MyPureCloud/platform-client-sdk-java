@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class SurveyDetailQueryFilter  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Boolean 'and/or' logic with up to two-levels of nesting
    **/
@@ -112,7 +113,7 @@ public class SurveyDetailQueryFilter  implements Serializable {
     this.clauses = clauses;
   }
 
-  
+
   /**
    * Like a three-word sentence: (attribute-name) (operator) (target-value).
    **/
@@ -130,7 +131,6 @@ public class SurveyDetailQueryFilter  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class SurveyDetailQueryFilter  implements Serializable {
       return false;
     }
     SurveyDetailQueryFilter surveyDetailQueryFilter = (SurveyDetailQueryFilter) o;
+
     return Objects.equals(this.type, surveyDetailQueryFilter.type) &&
-        Objects.equals(this.clauses, surveyDetailQueryFilter.clauses) &&
-        Objects.equals(this.predicates, surveyDetailQueryFilter.predicates);
+            Objects.equals(this.clauses, surveyDetailQueryFilter.clauses) &&
+            Objects.equals(this.predicates, surveyDetailQueryFilter.predicates);
   }
 
   @Override

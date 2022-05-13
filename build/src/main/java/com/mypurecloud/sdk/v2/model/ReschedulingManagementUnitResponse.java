@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
@@ -42,7 +43,7 @@ public class ReschedulingManagementUnitResponse  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    * Whether the rescheduling run is applied for the given management unit
    **/
@@ -60,7 +61,6 @@ public class ReschedulingManagementUnitResponse  implements Serializable {
     this.applied = applied;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ReschedulingManagementUnitResponse  implements Serializable {
       return false;
     }
     ReschedulingManagementUnitResponse reschedulingManagementUnitResponse = (ReschedulingManagementUnitResponse) o;
+
     return Objects.equals(this.managementUnit, reschedulingManagementUnitResponse.managementUnit) &&
-        Objects.equals(this.applied, reschedulingManagementUnitResponse.applied);
+            Objects.equals(this.applied, reschedulingManagementUnitResponse.applied);
   }
 
   @Override

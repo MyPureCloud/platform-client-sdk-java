@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class PermissionDetails  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * List of required permissions
    **/
@@ -114,7 +115,7 @@ public class PermissionDetails  implements Serializable {
     this.permissions = permissions;
   }
 
-  
+
   /**
    * Whether the current user can subscribe, when division permissions are otherwise required
    **/
@@ -132,7 +133,7 @@ public class PermissionDetails  implements Serializable {
     this.allowsCurrentUser = allowsCurrentUser;
   }
 
-  
+
   /**
    * Whether or not this permission requirement is enforced
    **/
@@ -150,7 +151,6 @@ public class PermissionDetails  implements Serializable {
     this.enforced = enforced;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,10 +161,11 @@ public class PermissionDetails  implements Serializable {
       return false;
     }
     PermissionDetails permissionDetails = (PermissionDetails) o;
+
     return Objects.equals(this.type, permissionDetails.type) &&
-        Objects.equals(this.permissions, permissionDetails.permissions) &&
-        Objects.equals(this.allowsCurrentUser, permissionDetails.allowsCurrentUser) &&
-        Objects.equals(this.enforced, permissionDetails.enforced);
+            Objects.equals(this.permissions, permissionDetails.permissions) &&
+            Objects.equals(this.allowsCurrentUser, permissionDetails.allowsCurrentUser) &&
+            Objects.equals(this.enforced, permissionDetails.enforced);
   }
 
   @Override

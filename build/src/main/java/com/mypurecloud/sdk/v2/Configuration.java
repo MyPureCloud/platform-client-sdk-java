@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import org.ini4j.Ini;
 import java.util.Map;
 
-
 public class Configuration {
   private static ApiClient defaultApiClient = null;
   private static String configFilePath = null;

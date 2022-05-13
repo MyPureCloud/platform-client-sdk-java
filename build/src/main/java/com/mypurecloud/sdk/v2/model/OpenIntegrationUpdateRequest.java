@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
@@ -41,7 +42,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Open messaging integration.
    **/
@@ -59,7 +60,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -77,7 +78,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public OpenIntegrationUpdateRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -94,7 +95,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The outbound notification webhook URL for the Open messaging integration.
    **/
@@ -112,7 +113,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     this.outboundNotificationWebhookUrl = outboundNotificationWebhookUrl;
   }
 
-  
+
   /**
    * The outbound notification webhook signature secret token.
    **/
@@ -130,7 +131,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     this.outboundNotificationWebhookSignatureSecretToken = outboundNotificationWebhookSignatureSecretToken;
   }
 
-  
+
   /**
    * The user specified headers for the Open messaging integration.
    **/
@@ -148,14 +149,13 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     this.webhookHeaders = webhookHeaders;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -166,14 +166,15 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
       return false;
     }
     OpenIntegrationUpdateRequest openIntegrationUpdateRequest = (OpenIntegrationUpdateRequest) o;
+
     return Objects.equals(this.id, openIntegrationUpdateRequest.id) &&
-        Objects.equals(this.name, openIntegrationUpdateRequest.name) &&
-        Objects.equals(this.supportedContent, openIntegrationUpdateRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, openIntegrationUpdateRequest.messagingSetting) &&
-        Objects.equals(this.outboundNotificationWebhookUrl, openIntegrationUpdateRequest.outboundNotificationWebhookUrl) &&
-        Objects.equals(this.outboundNotificationWebhookSignatureSecretToken, openIntegrationUpdateRequest.outboundNotificationWebhookSignatureSecretToken) &&
-        Objects.equals(this.webhookHeaders, openIntegrationUpdateRequest.webhookHeaders) &&
-        Objects.equals(this.selfUri, openIntegrationUpdateRequest.selfUri);
+            Objects.equals(this.name, openIntegrationUpdateRequest.name) &&
+            Objects.equals(this.supportedContent, openIntegrationUpdateRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, openIntegrationUpdateRequest.messagingSetting) &&
+            Objects.equals(this.outboundNotificationWebhookUrl, openIntegrationUpdateRequest.outboundNotificationWebhookUrl) &&
+            Objects.equals(this.outboundNotificationWebhookSignatureSecretToken, openIntegrationUpdateRequest.outboundNotificationWebhookSignatureSecretToken) &&
+            Objects.equals(this.webhookHeaders, openIntegrationUpdateRequest.webhookHeaders) &&
+            Objects.equals(this.selfUri, openIntegrationUpdateRequest.selfUri);
   }
 
   @Override

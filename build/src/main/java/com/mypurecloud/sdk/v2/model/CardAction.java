@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class CardAction  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The response text from the button click.
    **/
@@ -111,7 +112,7 @@ public class CardAction  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Content of the textback payload after clicking a button.
    **/
@@ -129,7 +130,7 @@ public class CardAction  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * The location of the image file associated with action.
    **/
@@ -147,7 +148,7 @@ public class CardAction  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Indicates if the card option is selected by end customer.
    **/
@@ -165,7 +166,6 @@ public class CardAction  implements Serializable {
     this.isSelected = isSelected;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,11 +176,12 @@ public class CardAction  implements Serializable {
       return false;
     }
     CardAction cardAction = (CardAction) o;
+
     return Objects.equals(this.type, cardAction.type) &&
-        Objects.equals(this.text, cardAction.text) &&
-        Objects.equals(this.payload, cardAction.payload) &&
-        Objects.equals(this.url, cardAction.url) &&
-        Objects.equals(this.isSelected, cardAction.isSelected);
+            Objects.equals(this.text, cardAction.text) &&
+            Objects.equals(this.payload, cardAction.payload) &&
+            Objects.equals(this.url, cardAction.url) &&
+            Objects.equals(this.isSelected, cardAction.isSelected);
   }
 
   @Override

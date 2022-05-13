@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class GetVoicemailSearchRequest {
-    
+
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -47,7 +47,7 @@ public class GetVoicemailSearchRequest {
 	    this.setQ64(q64);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -61,7 +61,7 @@ public class GetVoicemailSearchRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,11 +90,13 @@ public class GetVoicemailSearchRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/search")
+
                 .withQueryParameters("q64", "", q64)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +107,12 @@ public class GetVoicemailSearchRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String q64) {
 	    return new Builder()
 	            .withRequiredParams(q64);
 	}
-	
+
 
 	public static class Builder {
 		private final GetVoicemailSearchRequest request;
@@ -119,25 +121,25 @@ public class GetVoicemailSearchRequest {
 			request = new GetVoicemailSearchRequest();
 		}
 
-		
+
 		public Builder withQ64(String q64) {
 			request.setQ64(q64);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String q64) {
 			request.setQ64(q64);
-			
+
 			return this;
 		}
-		
+
 
 		public GetVoicemailSearchRequest build() {
             

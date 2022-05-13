@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuditsQueryTransactionIdRequest {
-    
+
 	private String transactionId;
 	public String getTransactionId() {
 		return this.transactionId;
@@ -43,7 +43,7 @@ public class GetAuditsQueryTransactionIdRequest {
 	    this.setTransactionId(transactionId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +74,7 @@ public class GetAuditsQueryTransactionIdRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/audits/query/{transactionId}")
                 .withPathParameter("transactionId", transactionId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -85,12 +85,12 @@ public class GetAuditsQueryTransactionIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String transactionId) {
 	    return new Builder()
 	            .withRequiredParams(transactionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAuditsQueryTransactionIdRequest request;
@@ -99,20 +99,20 @@ public class GetAuditsQueryTransactionIdRequest {
 			request = new GetAuditsQueryTransactionIdRequest();
 		}
 
-		
+
 		public Builder withTransactionId(String transactionId) {
 			request.setTransactionId(transactionId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String transactionId) {
 			request.setTransactionId(transactionId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAuditsQueryTransactionIdRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NotificationTemplateBody;
@@ -48,7 +49,7 @@ public class ContentNotificationTemplate  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Template language.
    **/
@@ -66,7 +67,7 @@ public class ContentNotificationTemplate  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * The template header.
    **/
@@ -84,7 +85,7 @@ public class ContentNotificationTemplate  implements Serializable {
     this.header = header;
   }
 
-  
+
   /**
    * The template body.
    **/
@@ -102,7 +103,7 @@ public class ContentNotificationTemplate  implements Serializable {
     this.body = body;
   }
 
-  
+
   /**
    * The template footer.
    **/
@@ -120,7 +121,6 @@ public class ContentNotificationTemplate  implements Serializable {
     this.footer = footer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class ContentNotificationTemplate  implements Serializable {
       return false;
     }
     ContentNotificationTemplate contentNotificationTemplate = (ContentNotificationTemplate) o;
+
     return Objects.equals(this.id, contentNotificationTemplate.id) &&
-        Objects.equals(this.language, contentNotificationTemplate.language) &&
-        Objects.equals(this.header, contentNotificationTemplate.header) &&
-        Objects.equals(this.body, contentNotificationTemplate.body) &&
-        Objects.equals(this.footer, contentNotificationTemplate.footer);
+            Objects.equals(this.language, contentNotificationTemplate.language) &&
+            Objects.equals(this.header, contentNotificationTemplate.header) &&
+            Objects.equals(this.body, contentNotificationTemplate.body) &&
+            Objects.equals(this.footer, contentNotificationTemplate.footer);
   }
 
   @Override

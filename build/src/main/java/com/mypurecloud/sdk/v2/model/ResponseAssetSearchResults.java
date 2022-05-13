@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
@@ -47,7 +48,7 @@ public class ResponseAssetSearchResults  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The total number of pages
    **/
@@ -65,7 +66,7 @@ public class ResponseAssetSearchResults  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    * The current page size
    **/
@@ -83,7 +84,7 @@ public class ResponseAssetSearchResults  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The current page number
    **/
@@ -101,7 +102,7 @@ public class ResponseAssetSearchResults  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Search results
    **/
@@ -119,7 +120,6 @@ public class ResponseAssetSearchResults  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class ResponseAssetSearchResults  implements Serializable {
       return false;
     }
     ResponseAssetSearchResults responseAssetSearchResults = (ResponseAssetSearchResults) o;
+
     return Objects.equals(this.total, responseAssetSearchResults.total) &&
-        Objects.equals(this.pageCount, responseAssetSearchResults.pageCount) &&
-        Objects.equals(this.pageSize, responseAssetSearchResults.pageSize) &&
-        Objects.equals(this.pageNumber, responseAssetSearchResults.pageNumber) &&
-        Objects.equals(this.results, responseAssetSearchResults.results);
+            Objects.equals(this.pageCount, responseAssetSearchResults.pageCount) &&
+            Objects.equals(this.pageSize, responseAssetSearchResults.pageSize) &&
+            Objects.equals(this.pageNumber, responseAssetSearchResults.pageNumber) &&
+            Objects.equals(this.results, responseAssetSearchResults.results);
   }
 
   @Override

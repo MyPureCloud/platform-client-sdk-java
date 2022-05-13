@@ -13,36 +13,36 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CommandStatus;
+import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
+import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
 import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
+import com.mypurecloud.sdk.v2.model.DocumentUpdate;
+import com.mypurecloud.sdk.v2.model.DocumentUpload;
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.QueryRequest;
 import com.mypurecloud.sdk.v2.model.QueryResults;
+import com.mypurecloud.sdk.v2.model.ReplaceRequest;
+import com.mypurecloud.sdk.v2.model.ReplaceResponse;
 import com.mypurecloud.sdk.v2.model.SecurityProfile;
 import com.mypurecloud.sdk.v2.model.SecurityProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.Share;
-import com.mypurecloud.sdk.v2.model.SharedResponse;
 import com.mypurecloud.sdk.v2.model.ShareEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatus;
-import com.mypurecloud.sdk.v2.model.Usage;
-import com.mypurecloud.sdk.v2.model.Workspace;
-import com.mypurecloud.sdk.v2.model.WorkspaceMember;
-import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SharedResponse;
+import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.TagValue;
 import com.mypurecloud.sdk.v2.model.TagValueEntityListing;
-import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
-import com.mypurecloud.sdk.v2.model.DocumentUpdate;
-import com.mypurecloud.sdk.v2.model.ReplaceRequest;
-import com.mypurecloud.sdk.v2.model.ReplaceResponse;
-import com.mypurecloud.sdk.v2.model.DocumentUpload;
-import com.mypurecloud.sdk.v2.model.QueryRequest;
-import com.mypurecloud.sdk.v2.model.CreateShareResponse;
-import com.mypurecloud.sdk.v2.model.CreateShareRequest;
-import com.mypurecloud.sdk.v2.model.TagQueryRequest;
+import com.mypurecloud.sdk.v2.model.Usage;
+import com.mypurecloud.sdk.v2.model.Workspace;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
+import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkspaceMember;
+import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementDocumentRequest;
@@ -91,7 +91,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ContentManagementApiAsync {
   private final ApiClient pcapiClient;
 
@@ -103,7 +102,6 @@ public class ContentManagementApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a document.
    * 
@@ -179,7 +177,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Deletes an existing share.
    * This revokes sharing rights specified in the share record
@@ -255,7 +252,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Cancel the command for this status
    * 
@@ -331,7 +327,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a workspace
    * 
@@ -407,7 +402,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a member from a workspace
    * 
@@ -483,7 +477,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete workspace tag
    * Delete a tag from a workspace. Will remove this tag from all documents.
@@ -559,7 +552,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a document.
    * 
@@ -635,7 +627,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of audits for a document.
    * 
@@ -711,7 +702,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Download a document.
    * 
@@ -787,7 +777,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of documents.
    * 
@@ -863,7 +852,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Query content
    * 
@@ -939,7 +927,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a Security Profile
    * 
@@ -1015,7 +1002,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a List of Security Profiles
    * 
@@ -1091,7 +1077,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Retrieve details about an existing share.
    * 
@@ -1167,7 +1152,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get shared documents. Securely download a shared document.
    * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
@@ -1243,7 +1227,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a list of shares.  You must specify at least one filter (e.g. entityId).
    * Failing to specify a filter will return 400.
@@ -1319,7 +1302,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of statuses for pending operations
    * 
@@ -1395,7 +1377,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a status.
    * 
@@ -1471,7 +1452,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get usage details.
    * 
@@ -1547,7 +1527,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a workspace.
    * 
@@ -1623,7 +1602,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of documents.
    * 
@@ -1699,7 +1677,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a workspace member
    * 
@@ -1775,7 +1752,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list workspace members
    * 
@@ -1851,7 +1827,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a workspace tag
    * 
@@ -1927,7 +1902,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of workspace tags
    * 
@@ -2003,10 +1977,9 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of workspaces.
-   * Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
+   * Specifying 'content' access will return all workspaces the user has document access to, while 'admin' access will return all group workspaces the user has administrative rights to.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2040,7 +2013,7 @@ public class ContentManagementApiAsync {
 
   /**
    * Get a list of workspaces.
-   * Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
+   * Specifying 'content' access will return all workspaces the user has document access to, while 'admin' access will return all group workspaces the user has administrative rights to.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2079,7 +2052,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Query audits
    * 
@@ -2155,7 +2127,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a document.
    * 
@@ -2231,7 +2202,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Replace the contents of a document.
    * 
@@ -2307,7 +2277,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Add a document.
    * 
@@ -2383,7 +2352,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Query content
    * 
@@ -2459,7 +2427,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates a new share or updates an existing share if the entity has already been shared
    * 
@@ -2535,7 +2502,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a workspace tag
    * 
@@ -2611,7 +2577,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Perform a prefix query on tags in the workspace
    * 
@@ -2687,7 +2652,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a group workspace
    * 
@@ -2763,7 +2727,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a workspace
    * 
@@ -2839,7 +2802,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Add a member to a workspace
    * 
@@ -2915,7 +2877,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a workspace tag. Will update all documents with the new tag value.
    * 
@@ -2991,7 +2952,6 @@ public class ContentManagementApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

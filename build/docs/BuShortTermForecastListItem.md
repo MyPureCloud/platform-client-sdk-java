@@ -26,11 +26,11 @@ title: BuShortTermForecastListItem
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| IMPORT | &quot;Import&quot; |
-| IMPORTEDHISTORICALWEIGHTEDAVERAGE | &quot;ImportedHistoricalWeightedAverage&quot; |
-| HISTORICALWEIGHTEDAVERAGE | &quot;HistoricalWeightedAverage&quot; |
-| ADVANCED | &quot;Advanced&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| IMPORT | &quot;Import&quot; | 
+| IMPORTEDHISTORICALWEIGHTEDAVERAGE | &quot;ImportedHistoricalWeightedAverage&quot; | 
+| HISTORICALWEIGHTEDAVERAGE | &quot;HistoricalWeightedAverage&quot; | 
+| ADVANCED | &quot;Advanced&quot; | 
 {: class="table table-striped"}
 
 

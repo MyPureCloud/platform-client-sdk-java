@@ -13,24 +13,24 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
@@ -81,7 +81,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class AuthorizationApiAsync {
   private final ApiClient pcapiClient;
 
@@ -93,7 +92,6 @@ public class AuthorizationApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a division.
    * 
@@ -169,7 +167,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete an organization role.
    * 
@@ -245,7 +242,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete a grant of a role in a division
    * 
@@ -321,7 +317,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns an authorization division.
    * 
@@ -397,7 +392,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Gets all grants for a given division.
    * Returns all grants assigned to a given division. Maximum page size is 500.
@@ -473,10 +467,9 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -510,7 +503,7 @@ public class AuthorizationApiAsync {
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -549,7 +542,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Retrieve the home division for the organization.
    * Will not include object counts.
@@ -625,7 +617,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns the maximum allowed number of divisions.
    * 
@@ -701,7 +692,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns which divisions the current user has the given permission in.
    * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -777,7 +767,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns which divisions the current user has the given permission in.
    * 
@@ -853,7 +842,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns which divisions the specified user has the given permission in.
    * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -929,7 +917,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
@@ -1005,7 +992,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
@@ -1081,7 +1067,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
@@ -1157,7 +1142,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
@@ -1233,9 +1217,8 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
-   * Get the subjects&#39; granted divisions in the specified role.
+   * Get the subjects' granted divisions in the specified role.
    * Includes the divisions for which the subject has a grant.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1269,7 +1252,7 @@ public class AuthorizationApiAsync {
   }
 
   /**
-   * Get the subjects&#39; granted divisions in the specified role.
+   * Get the subjects' granted divisions in the specified role.
    * Includes the divisions for which the subject has a grant.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1309,7 +1292,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get a list of the users in a specified role.
    * Get an array of the UUIDs of the users in the specified role.
@@ -1385,7 +1367,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of all roles defined for the organization
    * 
@@ -1461,7 +1442,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1537,7 +1517,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
@@ -1613,7 +1592,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get the count of roles granted to a list of subjects
    * 
@@ -1689,7 +1667,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1765,7 +1742,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Patch Organization Role for needsUpdate Field
    * Patch Organization Role for needsUpdate Field
@@ -1841,10 +1817,9 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1878,7 +1853,7 @@ public class AuthorizationApiAsync {
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1917,7 +1892,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Recreate a previously deleted division.
    * 
@@ -1993,7 +1967,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Create a division.
    * 
@@ -2069,7 +2042,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Bulk-grant subjects and divisions with an organization role.
    * 
@@ -2145,7 +2117,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get an unsaved org role to default role comparison
    * Allows users to compare their existing roles in an unsaved state to its default role
@@ -2221,7 +2192,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Create an organization role.
    * 
@@ -2297,7 +2267,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Restores all default roles
    * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
@@ -2373,7 +2342,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Bulk-grant roles and divisions to a subject.
    * 
@@ -2449,7 +2417,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Bulk-remove grants from a subject.
    * 
@@ -2525,9 +2492,8 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2561,7 +2527,7 @@ public class AuthorizationApiAsync {
   }
 
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2601,7 +2567,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Make a grant of a role in a division
    * 
@@ -2677,7 +2642,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Update a division.
    * 
@@ -2753,7 +2717,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Update an organization role.
    * Update
@@ -2829,7 +2792,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Sets the users for the role
    * 
@@ -2905,7 +2867,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Removes the users from the role
    * 
@@ -2981,7 +2942,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Restore specified default roles
    * 
@@ -3057,9 +3017,8 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3093,7 +3052,7 @@ public class AuthorizationApiAsync {
   }
 
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3133,7 +3092,6 @@ public class AuthorizationApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

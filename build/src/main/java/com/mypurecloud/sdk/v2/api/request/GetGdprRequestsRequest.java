@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.GDPRRequestEntityListing;
 import com.mypurecloud.sdk.v2.model.GDPRSubjectEntityListing;
 
 public class GetGdprRequestsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -40,7 +40,7 @@ public class GetGdprRequestsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -54,7 +54,7 @@ public class GetGdprRequestsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -78,11 +78,13 @@ public class GetGdprRequestsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/gdpr/requests")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -93,7 +95,7 @@ public class GetGdprRequestsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetGdprRequestsRequest request;
@@ -102,19 +104,19 @@ public class GetGdprRequestsRequest {
 			request = new GetGdprRequestsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetGdprRequestsRequest build() {
             

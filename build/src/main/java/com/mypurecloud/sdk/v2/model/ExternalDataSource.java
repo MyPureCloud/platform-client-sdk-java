@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class ExternalDataSource  implements Serializable {
     this.platform = platform;
   }
 
-  
+
   /**
    * An URL that links to the source record that contributed data to the associated entity.
    **/
@@ -107,7 +108,6 @@ public class ExternalDataSource  implements Serializable {
     this.url = url;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class ExternalDataSource  implements Serializable {
       return false;
     }
     ExternalDataSource externalDataSource = (ExternalDataSource) o;
+
     return Objects.equals(this.platform, externalDataSource.platform) &&
-        Objects.equals(this.url, externalDataSource.url);
+            Objects.equals(this.url, externalDataSource.url);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -136,7 +137,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WebChatGuestMediaRequest name(String name) {
@@ -153,7 +154,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The types of media being requested.
    **/
@@ -171,7 +172,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED.
    **/
@@ -189,7 +190,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The ID of the new media communication, if applicable.
    **/
@@ -207,7 +208,7 @@ public class WebChatGuestMediaRequest  implements Serializable {
     this.communicationId = communicationId;
   }
 
-  
+
   /**
    * The security information related to a media request.
    **/
@@ -225,14 +226,13 @@ public class WebChatGuestMediaRequest  implements Serializable {
     this.securityKey = securityKey;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -243,13 +243,14 @@ public class WebChatGuestMediaRequest  implements Serializable {
       return false;
     }
     WebChatGuestMediaRequest webChatGuestMediaRequest = (WebChatGuestMediaRequest) o;
+
     return Objects.equals(this.id, webChatGuestMediaRequest.id) &&
-        Objects.equals(this.name, webChatGuestMediaRequest.name) &&
-        Objects.equals(this.types, webChatGuestMediaRequest.types) &&
-        Objects.equals(this.state, webChatGuestMediaRequest.state) &&
-        Objects.equals(this.communicationId, webChatGuestMediaRequest.communicationId) &&
-        Objects.equals(this.securityKey, webChatGuestMediaRequest.securityKey) &&
-        Objects.equals(this.selfUri, webChatGuestMediaRequest.selfUri);
+            Objects.equals(this.name, webChatGuestMediaRequest.name) &&
+            Objects.equals(this.types, webChatGuestMediaRequest.types) &&
+            Objects.equals(this.state, webChatGuestMediaRequest.state) &&
+            Objects.equals(this.communicationId, webChatGuestMediaRequest.communicationId) &&
+            Objects.equals(this.securityKey, webChatGuestMediaRequest.securityKey) &&
+            Objects.equals(this.selfUri, webChatGuestMediaRequest.selfUri);
   }
 
   @Override

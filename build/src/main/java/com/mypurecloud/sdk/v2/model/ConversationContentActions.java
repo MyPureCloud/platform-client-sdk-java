@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class ConversationContentActions  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The target window in which to open the URL. If empty will open a blank page or tab.
    **/
@@ -61,7 +62,7 @@ public class ConversationContentActions  implements Serializable {
     this.urlTarget = urlTarget;
   }
 
-  
+
   /**
    * Text to be sent back in reply when the item is selected.
    **/
@@ -79,7 +80,6 @@ public class ConversationContentActions  implements Serializable {
     this.textback = textback;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class ConversationContentActions  implements Serializable {
       return false;
     }
     ConversationContentActions conversationContentActions = (ConversationContentActions) o;
+
     return Objects.equals(this.url, conversationContentActions.url) &&
-        Objects.equals(this.urlTarget, conversationContentActions.urlTarget) &&
-        Objects.equals(this.textback, conversationContentActions.textback);
+            Objects.equals(this.urlTarget, conversationContentActions.urlTarget) &&
+            Objects.equals(this.textback, conversationContentActions.textback);
   }
 
   @Override

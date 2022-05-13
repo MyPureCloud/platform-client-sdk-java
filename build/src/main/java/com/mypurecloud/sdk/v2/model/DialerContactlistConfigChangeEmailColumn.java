@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
     this.columnName = columnName;
   }
 
-  
+
   /**
    * The type of the email address column, for example, 'work' or 'home'
    **/
@@ -59,7 +60,6 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class DialerContactlistConfigChangeEmailColumn  implements Serializable {
       return false;
     }
     DialerContactlistConfigChangeEmailColumn dialerContactlistConfigChangeEmailColumn = (DialerContactlistConfigChangeEmailColumn) o;
+
     return Objects.equals(this.columnName, dialerContactlistConfigChangeEmailColumn.columnName) &&
-        Objects.equals(this.type, dialerContactlistConfigChangeEmailColumn.type);
+            Objects.equals(this.type, dialerContactlistConfigChangeEmailColumn.type);
   }
 
   @Override

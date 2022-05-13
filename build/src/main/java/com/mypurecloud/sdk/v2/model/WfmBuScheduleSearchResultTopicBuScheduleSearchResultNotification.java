@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification  i
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification businessUnitId(String businessUnitId) {
@@ -58,7 +59,7 @@ public class WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification  i
     this.businessUnitId = businessUnitId;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification downloadUrl(String downloadUrl) {
@@ -75,7 +76,6 @@ public class WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification  i
     this.downloadUrl = downloadUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification  i
       return false;
     }
     WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification wfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification = (WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification) o;
+
     return Objects.equals(this.operationId, wfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification.operationId) &&
-        Objects.equals(this.businessUnitId, wfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification.businessUnitId) &&
-        Objects.equals(this.downloadUrl, wfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification.downloadUrl);
+            Objects.equals(this.businessUnitId, wfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification.businessUnitId) &&
+            Objects.equals(this.downloadUrl, wfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification.downloadUrl);
   }
 
   @Override

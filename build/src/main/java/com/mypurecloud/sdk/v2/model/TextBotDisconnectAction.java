@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class TextBotDisconnectAction  implements Serializable {
     this.reason = reason;
   }
 
-  
+
   /**
    * Extended information related to the reason, if available.
    **/
@@ -117,7 +118,7 @@ public class TextBotDisconnectAction  implements Serializable {
     this.reasonExtendedInfo = reasonExtendedInfo;
   }
 
-  
+
   /**
    * Describes where in the Bot Flow the user was when the disconnect occurred.
    **/
@@ -135,7 +136,7 @@ public class TextBotDisconnectAction  implements Serializable {
     this.flowLocation = flowLocation;
   }
 
-  
+
   /**
    * The list of Flow Outcomes for the bot flow and their details.
    **/
@@ -153,7 +154,6 @@ public class TextBotDisconnectAction  implements Serializable {
     this.flowOutcomes = flowOutcomes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,10 +164,11 @@ public class TextBotDisconnectAction  implements Serializable {
       return false;
     }
     TextBotDisconnectAction textBotDisconnectAction = (TextBotDisconnectAction) o;
+
     return Objects.equals(this.reason, textBotDisconnectAction.reason) &&
-        Objects.equals(this.reasonExtendedInfo, textBotDisconnectAction.reasonExtendedInfo) &&
-        Objects.equals(this.flowLocation, textBotDisconnectAction.flowLocation) &&
-        Objects.equals(this.flowOutcomes, textBotDisconnectAction.flowOutcomes);
+            Objects.equals(this.reasonExtendedInfo, textBotDisconnectAction.reasonExtendedInfo) &&
+            Objects.equals(this.flowLocation, textBotDisconnectAction.flowLocation) &&
+            Objects.equals(this.flowOutcomes, textBotDisconnectAction.flowOutcomes);
   }
 
   @Override

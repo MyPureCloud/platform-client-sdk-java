@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -79,14 +80,13 @@ public class ModelingProcessingError  implements Serializable {
     return internalErrorCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A text description of the error")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -97,8 +97,9 @@ public class ModelingProcessingError  implements Serializable {
       return false;
     }
     ModelingProcessingError modelingProcessingError = (ModelingProcessingError) o;
+
     return Objects.equals(this.internalErrorCode, modelingProcessingError.internalErrorCode) &&
-        Objects.equals(this.description, modelingProcessingError.description);
+            Objects.equals(this.description, modelingProcessingError.description);
   }
 
   @Override

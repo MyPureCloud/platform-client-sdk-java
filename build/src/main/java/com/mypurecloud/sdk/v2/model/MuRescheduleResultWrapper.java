@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleRescheduleResponse;
@@ -43,7 +44,6 @@ public class MuRescheduleResultWrapper  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,6 +54,7 @@ public class MuRescheduleResultWrapper  implements Serializable {
       return false;
     }
     MuRescheduleResultWrapper muRescheduleResultWrapper = (MuRescheduleResultWrapper) o;
+
     return Objects.equals(this.agentSchedules, muRescheduleResultWrapper.agentSchedules);
   }
 

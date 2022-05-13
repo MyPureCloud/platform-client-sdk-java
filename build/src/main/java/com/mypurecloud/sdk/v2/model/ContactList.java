@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
@@ -50,7 +51,7 @@ public class ContactList  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ContactList name(String name) {
@@ -67,21 +68,21 @@ public class ContactList  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -99,7 +100,7 @@ public class ContactList  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The division this entity belongs to.
    **/
@@ -117,7 +118,7 @@ public class ContactList  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The names of the contact data columns.
    **/
@@ -135,7 +136,7 @@ public class ContactList  implements Serializable {
     this.columnNames = columnNames;
   }
 
-  
+
   /**
    * Indicates which columns are phone numbers.
    **/
@@ -153,14 +154,14 @@ public class ContactList  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the import process.")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
   }
 
-  
+
   /**
    * A column to check if a contact should always be dialed in preview mode.
    **/
@@ -178,7 +179,7 @@ public class ContactList  implements Serializable {
     this.previewModeColumnName = previewModeColumnName;
   }
 
-  
+
   /**
    * The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.
    **/
@@ -196,14 +197,14 @@ public class ContactList  implements Serializable {
     this.previewModeAcceptedValues = previewModeAcceptedValues;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of contacts in the ContactList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;
   }
 
-  
+
   /**
    * AttemptLimits for this ContactList.
    **/
@@ -221,7 +222,7 @@ public class ContactList  implements Serializable {
     this.attemptLimits = attemptLimits;
   }
 
-  
+
   /**
    * Indicates if automatic time zone mapping is to be used for this ContactList.
    **/
@@ -239,7 +240,7 @@ public class ContactList  implements Serializable {
     this.automaticTimeZoneMapping = automaticTimeZoneMapping;
   }
 
-  
+
   /**
    * The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true.
    **/
@@ -257,14 +258,13 @@ public class ContactList  implements Serializable {
     this.zipCodeColumnName = zipCodeColumnName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -275,22 +275,23 @@ public class ContactList  implements Serializable {
       return false;
     }
     ContactList contactList = (ContactList) o;
+
     return Objects.equals(this.id, contactList.id) &&
-        Objects.equals(this.name, contactList.name) &&
-        Objects.equals(this.dateCreated, contactList.dateCreated) &&
-        Objects.equals(this.dateModified, contactList.dateModified) &&
-        Objects.equals(this.version, contactList.version) &&
-        Objects.equals(this.division, contactList.division) &&
-        Objects.equals(this.columnNames, contactList.columnNames) &&
-        Objects.equals(this.phoneColumns, contactList.phoneColumns) &&
-        Objects.equals(this.importStatus, contactList.importStatus) &&
-        Objects.equals(this.previewModeColumnName, contactList.previewModeColumnName) &&
-        Objects.equals(this.previewModeAcceptedValues, contactList.previewModeAcceptedValues) &&
-        Objects.equals(this.size, contactList.size) &&
-        Objects.equals(this.attemptLimits, contactList.attemptLimits) &&
-        Objects.equals(this.automaticTimeZoneMapping, contactList.automaticTimeZoneMapping) &&
-        Objects.equals(this.zipCodeColumnName, contactList.zipCodeColumnName) &&
-        Objects.equals(this.selfUri, contactList.selfUri);
+            Objects.equals(this.name, contactList.name) &&
+            Objects.equals(this.dateCreated, contactList.dateCreated) &&
+            Objects.equals(this.dateModified, contactList.dateModified) &&
+            Objects.equals(this.version, contactList.version) &&
+            Objects.equals(this.division, contactList.division) &&
+            Objects.equals(this.columnNames, contactList.columnNames) &&
+            Objects.equals(this.phoneColumns, contactList.phoneColumns) &&
+            Objects.equals(this.importStatus, contactList.importStatus) &&
+            Objects.equals(this.previewModeColumnName, contactList.previewModeColumnName) &&
+            Objects.equals(this.previewModeAcceptedValues, contactList.previewModeAcceptedValues) &&
+            Objects.equals(this.size, contactList.size) &&
+            Objects.equals(this.attemptLimits, contactList.attemptLimits) &&
+            Objects.equals(this.automaticTimeZoneMapping, contactList.automaticTimeZoneMapping) &&
+            Objects.equals(this.zipCodeColumnName, contactList.zipCodeColumnName) &&
+            Objects.equals(this.selfUri, contactList.selfUri);
   }
 
   @Override

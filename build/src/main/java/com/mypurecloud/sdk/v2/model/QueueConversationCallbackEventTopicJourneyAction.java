@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicJourneyActionMap;
@@ -43,7 +44,7 @@ public class QueueConversationCallbackEventTopicJourneyAction  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallbackEventTopicJourneyAction actionMap(QueueConversationCallbackEventTopicJourneyActionMap actionMap) {
@@ -60,7 +61,6 @@ public class QueueConversationCallbackEventTopicJourneyAction  implements Serial
     this.actionMap = actionMap;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class QueueConversationCallbackEventTopicJourneyAction  implements Serial
       return false;
     }
     QueueConversationCallbackEventTopicJourneyAction queueConversationCallbackEventTopicJourneyAction = (QueueConversationCallbackEventTopicJourneyAction) o;
+
     return Objects.equals(this.id, queueConversationCallbackEventTopicJourneyAction.id) &&
-        Objects.equals(this.actionMap, queueConversationCallbackEventTopicJourneyAction.actionMap);
+            Objects.equals(this.actionMap, queueConversationCallbackEventTopicJourneyAction.actionMap);
   }
 
   @Override

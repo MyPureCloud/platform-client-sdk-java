@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectDependencyTrackingBuildNotificationClient;
@@ -46,7 +47,7 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification user(ArchitectDependencyTrackingBuildNotificationUser user) {
@@ -63,7 +64,7 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification client(ArchitectDependencyTrackingBuildNotificationClient client) {
@@ -80,7 +81,7 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     this.client = client;
   }
 
-  
+
   /**
    * The time the last build started, in ISO 8601 format
    **/
@@ -98,7 +99,6 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     this.startTime = startTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
       return false;
     }
     ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification = (ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification) o;
+
     return Objects.equals(this.status, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.status) &&
-        Objects.equals(this.user, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.user) &&
-        Objects.equals(this.client, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.client) &&
-        Objects.equals(this.startTime, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.startTime);
+            Objects.equals(this.user, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.user) &&
+            Objects.equals(this.client, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.client) &&
+            Objects.equals(this.startTime, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.startTime);
   }
 
   @Override

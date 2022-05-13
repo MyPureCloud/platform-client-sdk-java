@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PresenceEventOrganizationPresence;
@@ -45,7 +46,7 @@ public class PresenceEventUserPresence  implements Serializable {
     this.source = source;
   }
 
-  
+
   /**
    **/
   public PresenceEventUserPresence presenceDefinition(PresenceEventOrganizationPresence presenceDefinition) {
@@ -62,7 +63,7 @@ public class PresenceEventUserPresence  implements Serializable {
     this.presenceDefinition = presenceDefinition;
   }
 
-  
+
   /**
    **/
   public PresenceEventUserPresence primary(Boolean primary) {
@@ -79,7 +80,7 @@ public class PresenceEventUserPresence  implements Serializable {
     this.primary = primary;
   }
 
-  
+
   /**
    **/
   public PresenceEventUserPresence message(String message) {
@@ -96,7 +97,7 @@ public class PresenceEventUserPresence  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public PresenceEventUserPresence modifiedDate(Date modifiedDate) {
@@ -113,7 +114,6 @@ public class PresenceEventUserPresence  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,11 +124,12 @@ public class PresenceEventUserPresence  implements Serializable {
       return false;
     }
     PresenceEventUserPresence presenceEventUserPresence = (PresenceEventUserPresence) o;
+
     return Objects.equals(this.source, presenceEventUserPresence.source) &&
-        Objects.equals(this.presenceDefinition, presenceEventUserPresence.presenceDefinition) &&
-        Objects.equals(this.primary, presenceEventUserPresence.primary) &&
-        Objects.equals(this.message, presenceEventUserPresence.message) &&
-        Objects.equals(this.modifiedDate, presenceEventUserPresence.modifiedDate);
+            Objects.equals(this.presenceDefinition, presenceEventUserPresence.presenceDefinition) &&
+            Objects.equals(this.primary, presenceEventUserPresence.primary) &&
+            Objects.equals(this.message, presenceEventUserPresence.message) &&
+            Objects.equals(this.modifiedDate, presenceEventUserPresence.modifiedDate);
   }
 
   @Override

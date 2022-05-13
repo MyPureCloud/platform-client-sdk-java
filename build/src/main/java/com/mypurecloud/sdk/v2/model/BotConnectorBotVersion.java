@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BotIntent;
@@ -46,7 +47,7 @@ public class BotConnectorBotVersion  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The supported languages for this bot. EG 'en-us' or 'es', etc; These language codes are W3C language identification tags (ISO 639-1 for the language name and ISO 3166 for the country code)
    **/
@@ -64,7 +65,7 @@ public class BotConnectorBotVersion  implements Serializable {
     this.supportedLanguages = supportedLanguages;
   }
 
-  
+
   /**
    * A list of potential intents this bot will return, limit of 50
    **/
@@ -82,7 +83,6 @@ public class BotConnectorBotVersion  implements Serializable {
     this.intents = intents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class BotConnectorBotVersion  implements Serializable {
       return false;
     }
     BotConnectorBotVersion botConnectorBotVersion = (BotConnectorBotVersion) o;
+
     return Objects.equals(this.version, botConnectorBotVersion.version) &&
-        Objects.equals(this.supportedLanguages, botConnectorBotVersion.supportedLanguages) &&
-        Objects.equals(this.intents, botConnectorBotVersion.intents);
+            Objects.equals(this.supportedLanguages, botConnectorBotVersion.supportedLanguages) &&
+            Objects.equals(this.intents, botConnectorBotVersion.intents);
   }
 
   @Override

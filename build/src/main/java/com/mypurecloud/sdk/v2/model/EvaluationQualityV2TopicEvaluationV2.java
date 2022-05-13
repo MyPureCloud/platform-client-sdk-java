@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -115,7 +116,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 conversationId(String conversationId) {
@@ -132,7 +133,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 agent(EvaluationQualityV2TopicUser agent) {
@@ -149,7 +150,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 evaluator(EvaluationQualityV2TopicUser evaluator) {
@@ -166,7 +167,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.evaluator = evaluator;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 eventTime(Date eventTime) {
@@ -183,7 +184,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 evaluationFormId(String evaluationFormId) {
@@ -200,7 +201,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.evaluationFormId = evaluationFormId;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 formName(String formName) {
@@ -217,7 +218,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.formName = formName;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 scoringSet(EvaluationQualityV2TopicEvaluationScoringSet scoringSet) {
@@ -234,7 +235,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.scoringSet = scoringSet;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 contextId(String contextId) {
@@ -251,7 +252,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 status(StatusEnum status) {
@@ -268,7 +269,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 agentHasRead(Boolean agentHasRead) {
@@ -285,7 +286,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.agentHasRead = agentHasRead;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 releaseDate(Date releaseDate) {
@@ -302,7 +303,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.releaseDate = releaseDate;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 assignedDate(Date assignedDate) {
@@ -319,7 +320,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.assignedDate = assignedDate;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 changedDate(Date changedDate) {
@@ -336,7 +337,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.changedDate = changedDate;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 eventType(String eventType) {
@@ -353,7 +354,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.eventType = eventType;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 resourceId(String resourceId) {
@@ -370,7 +371,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.resourceId = resourceId;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 resourceType(String resourceType) {
@@ -387,7 +388,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.resourceType = resourceType;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 divisionIds(List<String> divisionIds) {
@@ -404,7 +405,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.divisionIds = divisionIds;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 rescore(Boolean rescore) {
@@ -421,7 +422,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.rescore = rescore;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 conversationDate(Date conversationDate) {
@@ -438,7 +439,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.conversationDate = conversationDate;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 mediaType(List<String> mediaType) {
@@ -455,7 +456,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationV2 calibration(EvaluationQualityV2TopicCalibration calibration) {
@@ -472,7 +473,6 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     this.calibration = calibration;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -483,28 +483,29 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
       return false;
     }
     EvaluationQualityV2TopicEvaluationV2 evaluationQualityV2TopicEvaluationV2 = (EvaluationQualityV2TopicEvaluationV2) o;
+
     return Objects.equals(this.id, evaluationQualityV2TopicEvaluationV2.id) &&
-        Objects.equals(this.conversationId, evaluationQualityV2TopicEvaluationV2.conversationId) &&
-        Objects.equals(this.agent, evaluationQualityV2TopicEvaluationV2.agent) &&
-        Objects.equals(this.evaluator, evaluationQualityV2TopicEvaluationV2.evaluator) &&
-        Objects.equals(this.eventTime, evaluationQualityV2TopicEvaluationV2.eventTime) &&
-        Objects.equals(this.evaluationFormId, evaluationQualityV2TopicEvaluationV2.evaluationFormId) &&
-        Objects.equals(this.formName, evaluationQualityV2TopicEvaluationV2.formName) &&
-        Objects.equals(this.scoringSet, evaluationQualityV2TopicEvaluationV2.scoringSet) &&
-        Objects.equals(this.contextId, evaluationQualityV2TopicEvaluationV2.contextId) &&
-        Objects.equals(this.status, evaluationQualityV2TopicEvaluationV2.status) &&
-        Objects.equals(this.agentHasRead, evaluationQualityV2TopicEvaluationV2.agentHasRead) &&
-        Objects.equals(this.releaseDate, evaluationQualityV2TopicEvaluationV2.releaseDate) &&
-        Objects.equals(this.assignedDate, evaluationQualityV2TopicEvaluationV2.assignedDate) &&
-        Objects.equals(this.changedDate, evaluationQualityV2TopicEvaluationV2.changedDate) &&
-        Objects.equals(this.eventType, evaluationQualityV2TopicEvaluationV2.eventType) &&
-        Objects.equals(this.resourceId, evaluationQualityV2TopicEvaluationV2.resourceId) &&
-        Objects.equals(this.resourceType, evaluationQualityV2TopicEvaluationV2.resourceType) &&
-        Objects.equals(this.divisionIds, evaluationQualityV2TopicEvaluationV2.divisionIds) &&
-        Objects.equals(this.rescore, evaluationQualityV2TopicEvaluationV2.rescore) &&
-        Objects.equals(this.conversationDate, evaluationQualityV2TopicEvaluationV2.conversationDate) &&
-        Objects.equals(this.mediaType, evaluationQualityV2TopicEvaluationV2.mediaType) &&
-        Objects.equals(this.calibration, evaluationQualityV2TopicEvaluationV2.calibration);
+            Objects.equals(this.conversationId, evaluationQualityV2TopicEvaluationV2.conversationId) &&
+            Objects.equals(this.agent, evaluationQualityV2TopicEvaluationV2.agent) &&
+            Objects.equals(this.evaluator, evaluationQualityV2TopicEvaluationV2.evaluator) &&
+            Objects.equals(this.eventTime, evaluationQualityV2TopicEvaluationV2.eventTime) &&
+            Objects.equals(this.evaluationFormId, evaluationQualityV2TopicEvaluationV2.evaluationFormId) &&
+            Objects.equals(this.formName, evaluationQualityV2TopicEvaluationV2.formName) &&
+            Objects.equals(this.scoringSet, evaluationQualityV2TopicEvaluationV2.scoringSet) &&
+            Objects.equals(this.contextId, evaluationQualityV2TopicEvaluationV2.contextId) &&
+            Objects.equals(this.status, evaluationQualityV2TopicEvaluationV2.status) &&
+            Objects.equals(this.agentHasRead, evaluationQualityV2TopicEvaluationV2.agentHasRead) &&
+            Objects.equals(this.releaseDate, evaluationQualityV2TopicEvaluationV2.releaseDate) &&
+            Objects.equals(this.assignedDate, evaluationQualityV2TopicEvaluationV2.assignedDate) &&
+            Objects.equals(this.changedDate, evaluationQualityV2TopicEvaluationV2.changedDate) &&
+            Objects.equals(this.eventType, evaluationQualityV2TopicEvaluationV2.eventType) &&
+            Objects.equals(this.resourceId, evaluationQualityV2TopicEvaluationV2.resourceId) &&
+            Objects.equals(this.resourceType, evaluationQualityV2TopicEvaluationV2.resourceType) &&
+            Objects.equals(this.divisionIds, evaluationQualityV2TopicEvaluationV2.divisionIds) &&
+            Objects.equals(this.rescore, evaluationQualityV2TopicEvaluationV2.rescore) &&
+            Objects.equals(this.conversationDate, evaluationQualityV2TopicEvaluationV2.conversationDate) &&
+            Objects.equals(this.mediaType, evaluationQualityV2TopicEvaluationV2.mediaType) &&
+            Objects.equals(this.calibration, evaluationQualityV2TopicEvaluationV2.calibration);
   }
 
   @Override

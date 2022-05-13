@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainPermissionPolicy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -43,7 +43,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the role
    **/
@@ -61,7 +61,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate description(String description) {
@@ -78,7 +78,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate defaultRoleId(String defaultRoleId) {
@@ -95,7 +95,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.defaultRoleId = defaultRoleId;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate permissions(List<String> permissions) {
@@ -112,14 +112,14 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.permissions = permissions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A collection of the permissions the role is not using")
   @JsonProperty("unusedPermissions")
   public List<String> getUnusedPermissions() {
     return unusedPermissions;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate permissionPolicies(List<DomainPermissionPolicy> permissionPolicies) {
@@ -136,7 +136,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.permissionPolicies = permissionPolicies;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate userCount(Integer userCount) {
@@ -153,7 +153,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.userCount = userCount;
   }
 
-  
+
   /**
    * Optional unless patch operation.
    **/
@@ -171,7 +171,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.roleNeedsUpdate = roleNeedsUpdate;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate base(Boolean base) {
@@ -188,7 +188,7 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this.base = base;
   }
 
-  
+
   /**
    **/
   public DomainOrganizationRoleUpdate _default(Boolean _default) {
@@ -205,14 +205,13 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
     this._default = _default;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -223,18 +222,19 @@ public class DomainOrganizationRoleUpdate  implements Serializable {
       return false;
     }
     DomainOrganizationRoleUpdate domainOrganizationRoleUpdate = (DomainOrganizationRoleUpdate) o;
+
     return Objects.equals(this.id, domainOrganizationRoleUpdate.id) &&
-        Objects.equals(this.name, domainOrganizationRoleUpdate.name) &&
-        Objects.equals(this.description, domainOrganizationRoleUpdate.description) &&
-        Objects.equals(this.defaultRoleId, domainOrganizationRoleUpdate.defaultRoleId) &&
-        Objects.equals(this.permissions, domainOrganizationRoleUpdate.permissions) &&
-        Objects.equals(this.unusedPermissions, domainOrganizationRoleUpdate.unusedPermissions) &&
-        Objects.equals(this.permissionPolicies, domainOrganizationRoleUpdate.permissionPolicies) &&
-        Objects.equals(this.userCount, domainOrganizationRoleUpdate.userCount) &&
-        Objects.equals(this.roleNeedsUpdate, domainOrganizationRoleUpdate.roleNeedsUpdate) &&
-        Objects.equals(this.base, domainOrganizationRoleUpdate.base) &&
-        Objects.equals(this._default, domainOrganizationRoleUpdate._default) &&
-        Objects.equals(this.selfUri, domainOrganizationRoleUpdate.selfUri);
+            Objects.equals(this.name, domainOrganizationRoleUpdate.name) &&
+            Objects.equals(this.description, domainOrganizationRoleUpdate.description) &&
+            Objects.equals(this.defaultRoleId, domainOrganizationRoleUpdate.defaultRoleId) &&
+            Objects.equals(this.permissions, domainOrganizationRoleUpdate.permissions) &&
+            Objects.equals(this.unusedPermissions, domainOrganizationRoleUpdate.unusedPermissions) &&
+            Objects.equals(this.permissionPolicies, domainOrganizationRoleUpdate.permissionPolicies) &&
+            Objects.equals(this.userCount, domainOrganizationRoleUpdate.userCount) &&
+            Objects.equals(this.roleNeedsUpdate, domainOrganizationRoleUpdate.roleNeedsUpdate) &&
+            Objects.equals(this.base, domainOrganizationRoleUpdate.base) &&
+            Objects.equals(this._default, domainOrganizationRoleUpdate._default) &&
+            Objects.equals(this.selfUri, domainOrganizationRoleUpdate.selfUri);
   }
 
   @Override

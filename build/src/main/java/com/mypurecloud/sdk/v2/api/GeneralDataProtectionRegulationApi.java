@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class GeneralDataProtectionRegulationApi {
   private final ApiClient pcapiClient;
 
@@ -39,7 +38,6 @@ public class GeneralDataProtectionRegulationApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get an existing GDPR request
    * 
@@ -66,7 +64,7 @@ public class GeneralDataProtectionRegulationApi {
   private GetGdprRequestRequest createGetGdprRequestRequest(String requestId) {
     return GetGdprRequestRequest.builder()
             .withRequestId(requestId)
-    
+
             .build();
   }
 
@@ -118,7 +116,6 @@ public class GeneralDataProtectionRegulationApi {
     }
   }
 
-  
   /**
    * Get all GDPR requests
    * 
@@ -147,9 +144,9 @@ public class GeneralDataProtectionRegulationApi {
   private GetGdprRequestsRequest createGetGdprRequestsRequest(Integer pageSize, Integer pageNumber) {
     return GetGdprRequestsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -201,7 +198,6 @@ public class GeneralDataProtectionRegulationApi {
     }
   }
 
-  
   /**
    * Get GDPR subjects
    * 
@@ -230,9 +226,9 @@ public class GeneralDataProtectionRegulationApi {
   private GetGdprSubjectsRequest createGetGdprSubjectsRequest(String searchType, String searchValue) {
     return GetGdprSubjectsRequest.builder()
             .withSearchType(searchType)
-    
+
             .withSearchValue(searchValue)
-    
+
             .build();
   }
 
@@ -284,7 +280,6 @@ public class GeneralDataProtectionRegulationApi {
     }
   }
 
-  
   /**
    * Submit a new GDPR request
    * 
@@ -313,9 +308,9 @@ public class GeneralDataProtectionRegulationApi {
   private PostGdprRequestsRequest createPostGdprRequestsRequest(GDPRRequest body, Boolean deleteConfirmed) {
     return PostGdprRequestsRequest.builder()
             .withBody(body)
-    
+
             .withDeleteConfirmed(deleteConfirmed)
-    
+
             .build();
   }
 
@@ -367,5 +362,4 @@ public class GeneralDataProtectionRegulationApi {
     }
   }
 
-  
 }

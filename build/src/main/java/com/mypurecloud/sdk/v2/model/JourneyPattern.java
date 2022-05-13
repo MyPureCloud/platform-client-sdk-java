@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class JourneyPattern  implements Serializable {
     this.criteria = criteria;
   }
 
-  
+
   /**
    * The number of times the pattern must match.
    **/
@@ -114,7 +115,7 @@ public class JourneyPattern  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    * The stream type for which this pattern can be matched on.
    **/
@@ -132,7 +133,7 @@ public class JourneyPattern  implements Serializable {
     this.streamType = streamType;
   }
 
-  
+
   /**
    * The session type for which this pattern can be matched on.
    **/
@@ -150,7 +151,7 @@ public class JourneyPattern  implements Serializable {
     this.sessionType = sessionType;
   }
 
-  
+
   /**
    * The name of the event for which this pattern can be matched on.
    **/
@@ -168,7 +169,6 @@ public class JourneyPattern  implements Serializable {
     this.eventName = eventName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,11 +179,12 @@ public class JourneyPattern  implements Serializable {
       return false;
     }
     JourneyPattern journeyPattern = (JourneyPattern) o;
+
     return Objects.equals(this.criteria, journeyPattern.criteria) &&
-        Objects.equals(this.count, journeyPattern.count) &&
-        Objects.equals(this.streamType, journeyPattern.streamType) &&
-        Objects.equals(this.sessionType, journeyPattern.sessionType) &&
-        Objects.equals(this.eventName, journeyPattern.eventName);
+            Objects.equals(this.count, journeyPattern.count) &&
+            Objects.equals(this.streamType, journeyPattern.streamType) &&
+            Objects.equals(this.sessionType, journeyPattern.sessionType) &&
+            Objects.equals(this.eventName, journeyPattern.eventName);
   }
 
   @Override

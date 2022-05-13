@@ -10,19 +10,18 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
@@ -48,7 +47,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class OrganizationApi {
   private final ApiClient pcapiClient;
 
@@ -60,7 +58,6 @@ public class OrganizationApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Fetch field config for an entity type
    * 
@@ -87,7 +84,7 @@ public class OrganizationApi {
   private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
     return GetFieldconfigRequest.builder()
             .withType(type)
-    
+
             .build();
   }
 
@@ -139,7 +136,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get the list of domains that will be allowed to embed PureCloud applications
    * 
@@ -214,7 +210,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get organization IP address whitelist settings
    * 
@@ -289,7 +284,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get a limit change request
    * 
@@ -316,7 +310,7 @@ public class OrganizationApi {
   private GetOrganizationsLimitsChangerequestRequest createGetOrganizationsLimitsChangerequestRequest(String requestId) {
     return GetOrganizationsLimitsChangerequestRequest.builder()
             .withRequestId(requestId)
-    
+
             .build();
   }
 
@@ -368,7 +362,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get the available limit change requests
    * Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
@@ -403,15 +396,15 @@ public class OrganizationApi {
   private GetOrganizationsLimitsChangerequestsRequest createGetOrganizationsLimitsChangerequestsRequest(Long after, Long before, String status, Integer pageSize, List<String> expand) {
     return GetOrganizationsLimitsChangerequestsRequest.builder()
             .withAfter(after)
-    
+
             .withBefore(before)
-    
+
             .withStatus(status)
-    
+
             .withPageSize(pageSize)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -463,7 +456,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get a link to the limit documentation
    * 
@@ -538,7 +530,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get the effective limits in a namespace for an organization
    * 
@@ -565,7 +556,7 @@ public class OrganizationApi {
   private GetOrganizationsLimitsNamespaceRequest createGetOrganizationsLimitsNamespaceRequest(String namespaceName) {
     return GetOrganizationsLimitsNamespaceRequest.builder()
             .withNamespaceName(namespaceName)
-    
+
             .build();
   }
 
@@ -617,7 +608,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get the default limits in a namespace for an organization
    * 
@@ -644,7 +634,7 @@ public class OrganizationApi {
   private GetOrganizationsLimitsNamespaceDefaultsRequest createGetOrganizationsLimitsNamespaceDefaultsRequest(String namespaceName) {
     return GetOrganizationsLimitsNamespaceDefaultsRequest.builder()
             .withNamespaceName(namespaceName)
-    
+
             .build();
   }
 
@@ -696,17 +686,16 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Get the available limit namespaces
    * 
    * @param pageSize Page size (optional, default to 100)
    * @param pageNumber Page number (optional, default to 1)
-   * @return PagedNamespaceListing
+   * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PagedNamespaceListing getOrganizationsLimitsNamespaces(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+  public Object getOrganizationsLimitsNamespaces(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  getOrganizationsLimitsNamespaces(createGetOrganizationsLimitsNamespacesRequest(pageSize, pageNumber));
   }
 
@@ -715,19 +704,19 @@ public class OrganizationApi {
    * 
    * @param pageSize Page size (optional, default to 100)
    * @param pageNumber Page number (optional, default to 1)
-   * @return PagedNamespaceListing
+   * @return Object
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PagedNamespaceListing> getOrganizationsLimitsNamespacesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+  public ApiResponse<Object> getOrganizationsLimitsNamespacesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
     return getOrganizationsLimitsNamespaces(createGetOrganizationsLimitsNamespacesRequest(pageSize, pageNumber).withHttpInfo());
   }
 
   private GetOrganizationsLimitsNamespacesRequest createGetOrganizationsLimitsNamespacesRequest(Integer pageSize, Integer pageNumber) {
     return GetOrganizationsLimitsNamespacesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -735,13 +724,13 @@ public class OrganizationApi {
    * Get the available limit namespaces
    * 
    * @param request The request object
-   * @return PagedNamespaceListing
+   * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PagedNamespaceListing getOrganizationsLimitsNamespaces(GetOrganizationsLimitsNamespacesRequest request) throws IOException, ApiException {
+  public Object getOrganizationsLimitsNamespaces(GetOrganizationsLimitsNamespacesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<PagedNamespaceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PagedNamespaceListing>() {});
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -757,13 +746,13 @@ public class OrganizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PagedNamespaceListing> getOrganizationsLimitsNamespaces(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Object> getOrganizationsLimitsNamespaces(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<PagedNamespaceListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)exception;
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -774,12 +763,11 @@ public class OrganizationApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
 
-  
   /**
    * Get organization.
    * 
@@ -854,7 +842,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
@@ -929,7 +916,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Update organization
    * 
@@ -958,9 +944,9 @@ public class OrganizationApi {
   private PatchOrganizationsFeatureRequest createPatchOrganizationsFeatureRequest(String featureName, FeatureState enabled) {
     return PatchOrganizationsFeatureRequest.builder()
             .withFeatureName(featureName)
-    
+
             .withEnabled(enabled)
-    
+
             .build();
   }
 
@@ -1012,7 +998,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
    * 
@@ -1039,7 +1024,7 @@ public class OrganizationApi {
   private PutOrganizationsEmbeddedintegrationRequest createPutOrganizationsEmbeddedintegrationRequest(EmbeddedIntegration body) {
     return PutOrganizationsEmbeddedintegrationRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1091,7 +1076,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Update organization IP address whitelist settings
    * 
@@ -1118,7 +1102,7 @@ public class OrganizationApi {
   private PutOrganizationsIpaddressauthenticationRequest createPutOrganizationsIpaddressauthenticationRequest(IpAddressAuthentication body) {
     return PutOrganizationsIpaddressauthenticationRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1170,7 +1154,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Update organization.
    * 
@@ -1197,7 +1180,7 @@ public class OrganizationApi {
   private PutOrganizationsMeRequest createPutOrganizationsMeRequest(Organization body) {
     return PutOrganizationsMeRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1249,7 +1232,6 @@ public class OrganizationApi {
     }
   }
 
-  
   /**
    * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
@@ -1276,7 +1258,7 @@ public class OrganizationApi {
   private PutOrganizationsWhitelistRequest createPutOrganizationsWhitelistRequest(OrgWhitelistSettings body) {
     return PutOrganizationsWhitelistRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1328,5 +1310,4 @@ public class OrganizationApi {
     }
   }
 
-  
 }

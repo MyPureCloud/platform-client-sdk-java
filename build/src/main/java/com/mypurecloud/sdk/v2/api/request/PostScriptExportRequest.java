@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class PostScriptExportRequest {
-    
+
 	private String scriptId;
 	public String getScriptId() {
 		return this.scriptId;
@@ -43,7 +43,7 @@ public class PostScriptExportRequest {
 	    this.setScriptId(scriptId);
 	    return this;
 	} 
-	
+
 	private ExportScriptRequest body;
 	public ExportScriptRequest getBody() {
 		return this.body;
@@ -57,7 +57,7 @@ public class PostScriptExportRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -89,8 +89,8 @@ public class PostScriptExportRequest {
                 .withPathParameter("scriptId", scriptId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -101,12 +101,12 @@ public class PostScriptExportRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String scriptId) {
 	    return new Builder()
 	            .withRequiredParams(scriptId);
 	}
-	
+
 
 	public static class Builder {
 		private final PostScriptExportRequest request;
@@ -115,25 +115,25 @@ public class PostScriptExportRequest {
 			request = new PostScriptExportRequest();
 		}
 
-		
+
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
 			return this;
 		}
-		
+
 		public Builder withBody(ExportScriptRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String scriptId) {
 			request.setScriptId(scriptId);
-			
+
 			return this;
 		}
-		
+
 
 		public PostScriptExportRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
@@ -51,7 +52,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The total number of pages
    **/
@@ -69,7 +70,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    * The current page size
    **/
@@ -87,7 +88,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The current page number
    **/
@@ -105,7 +106,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Q64 value for the previous page of results
    **/
@@ -123,7 +124,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.previousPage = previousPage;
   }
 
-  
+
   /**
    * Q64 value for the current page of results
    **/
@@ -141,7 +142,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.currentPage = currentPage;
   }
 
-  
+
   /**
    * Q64 value for the next page of results
    **/
@@ -159,7 +160,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.nextPage = nextPage;
   }
 
-  
+
   /**
    * Resource types the search was performed against
    **/
@@ -177,7 +178,7 @@ public class LocationsSearchResponse  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * Search results
    **/
@@ -195,7 +196,6 @@ public class LocationsSearchResponse  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,15 +206,16 @@ public class LocationsSearchResponse  implements Serializable {
       return false;
     }
     LocationsSearchResponse locationsSearchResponse = (LocationsSearchResponse) o;
+
     return Objects.equals(this.total, locationsSearchResponse.total) &&
-        Objects.equals(this.pageCount, locationsSearchResponse.pageCount) &&
-        Objects.equals(this.pageSize, locationsSearchResponse.pageSize) &&
-        Objects.equals(this.pageNumber, locationsSearchResponse.pageNumber) &&
-        Objects.equals(this.previousPage, locationsSearchResponse.previousPage) &&
-        Objects.equals(this.currentPage, locationsSearchResponse.currentPage) &&
-        Objects.equals(this.nextPage, locationsSearchResponse.nextPage) &&
-        Objects.equals(this.types, locationsSearchResponse.types) &&
-        Objects.equals(this.results, locationsSearchResponse.results);
+            Objects.equals(this.pageCount, locationsSearchResponse.pageCount) &&
+            Objects.equals(this.pageSize, locationsSearchResponse.pageSize) &&
+            Objects.equals(this.pageNumber, locationsSearchResponse.pageNumber) &&
+            Objects.equals(this.previousPage, locationsSearchResponse.previousPage) &&
+            Objects.equals(this.currentPage, locationsSearchResponse.currentPage) &&
+            Objects.equals(this.nextPage, locationsSearchResponse.nextPage) &&
+            Objects.equals(this.types, locationsSearchResponse.types) &&
+            Objects.equals(this.results, locationsSearchResponse.results);
   }
 
   @Override

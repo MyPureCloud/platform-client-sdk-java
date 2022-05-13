@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,7 +151,7 @@ public class EntityTypeCriteria  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    * The criteria values.
    **/
@@ -168,7 +169,7 @@ public class EntityTypeCriteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * Should criteria be case insensitive.
    **/
@@ -186,7 +187,7 @@ public class EntityTypeCriteria  implements Serializable {
     this.shouldIgnoreCase = shouldIgnoreCase;
   }
 
-  
+
   /**
    * The comparison operator.
    **/
@@ -204,7 +205,7 @@ public class EntityTypeCriteria  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * The entity to match the pattern against.
    **/
@@ -222,7 +223,6 @@ public class EntityTypeCriteria  implements Serializable {
     this.entityType = entityType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,11 +233,12 @@ public class EntityTypeCriteria  implements Serializable {
       return false;
     }
     EntityTypeCriteria entityTypeCriteria = (EntityTypeCriteria) o;
+
     return Objects.equals(this.key, entityTypeCriteria.key) &&
-        Objects.equals(this.values, entityTypeCriteria.values) &&
-        Objects.equals(this.shouldIgnoreCase, entityTypeCriteria.shouldIgnoreCase) &&
-        Objects.equals(this.operator, entityTypeCriteria.operator) &&
-        Objects.equals(this.entityType, entityTypeCriteria.entityType);
+            Objects.equals(this.values, entityTypeCriteria.values) &&
+            Objects.equals(this.shouldIgnoreCase, entityTypeCriteria.shouldIgnoreCase) &&
+            Objects.equals(this.operator, entityTypeCriteria.operator) &&
+            Objects.equals(this.entityType, entityTypeCriteria.entityType);
   }
 
   @Override

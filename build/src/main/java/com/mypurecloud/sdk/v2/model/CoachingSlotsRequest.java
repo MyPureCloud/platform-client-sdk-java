@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -46,7 +46,7 @@ public class CoachingSlotsRequest  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * The duration of coaching appointment to schedule in 15 minutes granularity up to maximum of 60 minutes
    **/
@@ -64,7 +64,7 @@ public class CoachingSlotsRequest  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * List of attendees to determine coaching appointment slots
    **/
@@ -82,7 +82,7 @@ public class CoachingSlotsRequest  implements Serializable {
     this.attendeeIds = attendeeIds;
   }
 
-  
+
   /**
    * List of facilitators to determine coaching appointment slots
    **/
@@ -100,7 +100,7 @@ public class CoachingSlotsRequest  implements Serializable {
     this.facilitatorIds = facilitatorIds;
   }
 
-  
+
   /**
    * List of appointment ids to exclude from consideration when determining blocked slots
    **/
@@ -118,7 +118,6 @@ public class CoachingSlotsRequest  implements Serializable {
     this.interruptibleAppointmentIds = interruptibleAppointmentIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,11 +128,12 @@ public class CoachingSlotsRequest  implements Serializable {
       return false;
     }
     CoachingSlotsRequest coachingSlotsRequest = (CoachingSlotsRequest) o;
+
     return Objects.equals(this.interval, coachingSlotsRequest.interval) &&
-        Objects.equals(this.lengthInMinutes, coachingSlotsRequest.lengthInMinutes) &&
-        Objects.equals(this.attendeeIds, coachingSlotsRequest.attendeeIds) &&
-        Objects.equals(this.facilitatorIds, coachingSlotsRequest.facilitatorIds) &&
-        Objects.equals(this.interruptibleAppointmentIds, coachingSlotsRequest.interruptibleAppointmentIds);
+            Objects.equals(this.lengthInMinutes, coachingSlotsRequest.lengthInMinutes) &&
+            Objects.equals(this.attendeeIds, coachingSlotsRequest.attendeeIds) &&
+            Objects.equals(this.facilitatorIds, coachingSlotsRequest.facilitatorIds) &&
+            Objects.equals(this.interruptibleAppointmentIds, coachingSlotsRequest.interruptibleAppointmentIds);
   }
 
   @Override

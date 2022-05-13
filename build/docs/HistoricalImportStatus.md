@@ -26,15 +26,15 @@ title: HistoricalImportStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INITIATED | &quot;Initiated&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| PENDING | &quot;Pending&quot; |
-| SUCCESS | &quot;Success&quot; |
-| FAILED | &quot;Failed&quot; |
-| CANCELLED | &quot;Cancelled&quot; |
-| PURGED | &quot;Purged&quot; |
-| PURGEPENDING | &quot;PurgePending&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INITIATED | &quot;Initiated&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| SUCCESS | &quot;Success&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| CANCELLED | &quot;Cancelled&quot; | 
+| PURGED | &quot;Purged&quot; | 
+| PURGEPENDING | &quot;PurgePending&quot; | 
 {: class="table table-striped"}
 
 
@@ -44,9 +44,9 @@ title: HistoricalImportStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CSV | &quot;Csv&quot; |
-| JSON | &quot;Json&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CSV | &quot;Csv&quot; | 
+| JSON | &quot;Json&quot; | 
 {: class="table table-striped"}
 
 

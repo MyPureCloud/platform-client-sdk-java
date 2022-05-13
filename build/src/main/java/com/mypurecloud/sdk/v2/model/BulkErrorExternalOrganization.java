@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorDetail;
@@ -48,7 +49,7 @@ public class BulkErrorExternalOrganization  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalOrganization message(String message) {
@@ -65,7 +66,7 @@ public class BulkErrorExternalOrganization  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalOrganization status(Integer status) {
@@ -82,7 +83,7 @@ public class BulkErrorExternalOrganization  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalOrganization retryable(Boolean retryable) {
@@ -99,7 +100,7 @@ public class BulkErrorExternalOrganization  implements Serializable {
     this.retryable = retryable;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalOrganization entity(ExternalOrganization entity) {
@@ -116,7 +117,7 @@ public class BulkErrorExternalOrganization  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalOrganization details(List<BulkErrorDetail> details) {
@@ -133,7 +134,6 @@ public class BulkErrorExternalOrganization  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class BulkErrorExternalOrganization  implements Serializable {
       return false;
     }
     BulkErrorExternalOrganization bulkErrorExternalOrganization = (BulkErrorExternalOrganization) o;
+
     return Objects.equals(this.code, bulkErrorExternalOrganization.code) &&
-        Objects.equals(this.message, bulkErrorExternalOrganization.message) &&
-        Objects.equals(this.status, bulkErrorExternalOrganization.status) &&
-        Objects.equals(this.retryable, bulkErrorExternalOrganization.retryable) &&
-        Objects.equals(this.entity, bulkErrorExternalOrganization.entity) &&
-        Objects.equals(this.details, bulkErrorExternalOrganization.details);
+            Objects.equals(this.message, bulkErrorExternalOrganization.message) &&
+            Objects.equals(this.status, bulkErrorExternalOrganization.status) &&
+            Objects.equals(this.retryable, bulkErrorExternalOrganization.retryable) &&
+            Objects.equals(this.entity, bulkErrorExternalOrganization.entity) &&
+            Objects.equals(this.details, bulkErrorExternalOrganization.details);
   }
 
   @Override

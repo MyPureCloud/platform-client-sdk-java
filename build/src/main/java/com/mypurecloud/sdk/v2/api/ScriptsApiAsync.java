@@ -13,13 +13,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
@@ -43,7 +43,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ScriptsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -55,7 +54,6 @@ public class ScriptsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get a script
    * 
@@ -131,7 +129,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get a page
    * 
@@ -207,7 +204,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the list of pages
    * 
@@ -283,7 +279,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the list of scripts
    * 
@@ -359,7 +354,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the metadata for a list of scripts
    * 
@@ -435,7 +429,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the published scripts.
    * 
@@ -511,7 +504,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the published scripts metadata.
    * 
@@ -587,7 +579,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the published script.
    * 
@@ -663,7 +654,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the published page.
    * 
@@ -739,7 +729,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the list of published pages
    * 
@@ -815,7 +804,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the published variables
    * 
@@ -891,7 +879,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Get the upload status of an imported script
    * 
@@ -967,7 +954,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
   /**
    * Export a script via download service.
    * 
@@ -1043,7 +1029,6 @@ public class ScriptsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

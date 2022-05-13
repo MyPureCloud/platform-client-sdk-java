@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -35,7 +36,7 @@ public class AssessmentQuestionScore  implements Serializable {
     return failedKillQuestion;
   }
 
-  
+
   /**
    * Comments provided for the answer
    **/
@@ -53,7 +54,7 @@ public class AssessmentQuestionScore  implements Serializable {
     this.comments = comments;
   }
 
-  
+
   /**
    * The ID of the question
    **/
@@ -71,7 +72,7 @@ public class AssessmentQuestionScore  implements Serializable {
     this.questionId = questionId;
   }
 
-  
+
   /**
    * The ID of the selected answer
    **/
@@ -89,14 +90,14 @@ public class AssessmentQuestionScore  implements Serializable {
     this.answerId = answerId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The score received for this question")
   @JsonProperty("score")
   public Integer getScore() {
     return score;
   }
 
-  
+
   /**
    * True if this question was marked as NA
    **/
@@ -114,7 +115,7 @@ public class AssessmentQuestionScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-  
+
   /**
    * Answer for free text answer type
    **/
@@ -132,7 +133,6 @@ public class AssessmentQuestionScore  implements Serializable {
     this.freeTextAnswer = freeTextAnswer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,13 +143,14 @@ public class AssessmentQuestionScore  implements Serializable {
       return false;
     }
     AssessmentQuestionScore assessmentQuestionScore = (AssessmentQuestionScore) o;
+
     return Objects.equals(this.failedKillQuestion, assessmentQuestionScore.failedKillQuestion) &&
-        Objects.equals(this.comments, assessmentQuestionScore.comments) &&
-        Objects.equals(this.questionId, assessmentQuestionScore.questionId) &&
-        Objects.equals(this.answerId, assessmentQuestionScore.answerId) &&
-        Objects.equals(this.score, assessmentQuestionScore.score) &&
-        Objects.equals(this.markedNA, assessmentQuestionScore.markedNA) &&
-        Objects.equals(this.freeTextAnswer, assessmentQuestionScore.freeTextAnswer);
+            Objects.equals(this.comments, assessmentQuestionScore.comments) &&
+            Objects.equals(this.questionId, assessmentQuestionScore.questionId) &&
+            Objects.equals(this.answerId, assessmentQuestionScore.answerId) &&
+            Objects.equals(this.score, assessmentQuestionScore.score) &&
+            Objects.equals(this.markedNA, assessmentQuestionScore.markedNA) &&
+            Objects.equals(this.freeTextAnswer, assessmentQuestionScore.freeTextAnswer);
   }
 
   @Override

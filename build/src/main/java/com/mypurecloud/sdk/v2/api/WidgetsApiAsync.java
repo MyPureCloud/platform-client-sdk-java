@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class WidgetsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -43,7 +42,6 @@ public class WidgetsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a Widget deployment
    * 
@@ -119,7 +117,6 @@ public class WidgetsApiAsync {
     }
   }
 
-  
   /**
    * Get a Widget deployment
    * 
@@ -195,7 +192,6 @@ public class WidgetsApiAsync {
     }
   }
 
-  
   /**
    * List Widget deployments
    * 
@@ -271,7 +267,6 @@ public class WidgetsApiAsync {
     }
   }
 
-  
   /**
    * Create Widget deployment
    * 
@@ -347,7 +342,6 @@ public class WidgetsApiAsync {
     }
   }
 
-  
   /**
    * Update a Widget deployment
    * 
@@ -423,7 +417,6 @@ public class WidgetsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

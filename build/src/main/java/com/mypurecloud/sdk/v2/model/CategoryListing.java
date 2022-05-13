@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
@@ -45,7 +46,7 @@ public class CategoryListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CategoryListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class CategoryListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CategoryListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class CategoryListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CategoryListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class CategoryListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class CategoryListing  implements Serializable {
       return false;
     }
     CategoryListing categoryListing = (CategoryListing) o;
+
     return Objects.equals(this.entities, categoryListing.entities) &&
-        Objects.equals(this.nextUri, categoryListing.nextUri) &&
-        Objects.equals(this.selfUri, categoryListing.selfUri) &&
-        Objects.equals(this.previousUri, categoryListing.previousUri);
+            Objects.equals(this.nextUri, categoryListing.nextUri) &&
+            Objects.equals(this.selfUri, categoryListing.selfUri) &&
+            Objects.equals(this.previousUri, categoryListing.previousUri);
   }
 
   @Override

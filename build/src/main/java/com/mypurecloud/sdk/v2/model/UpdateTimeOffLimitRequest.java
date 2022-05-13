@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -43,7 +44,7 @@ public class UpdateTimeOffLimitRequest  implements Serializable {
     this.defaultLimitMinutes = defaultLimitMinutes;
   }
 
-  
+
   /**
    * Version metadata for the time off limit
    **/
@@ -61,7 +62,6 @@ public class UpdateTimeOffLimitRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class UpdateTimeOffLimitRequest  implements Serializable {
       return false;
     }
     UpdateTimeOffLimitRequest updateTimeOffLimitRequest = (UpdateTimeOffLimitRequest) o;
+
     return Objects.equals(this.defaultLimitMinutes, updateTimeOffLimitRequest.defaultLimitMinutes) &&
-        Objects.equals(this.metadata, updateTimeOffLimitRequest.metadata);
+            Objects.equals(this.metadata, updateTimeOffLimitRequest.metadata);
   }
 
   @Override

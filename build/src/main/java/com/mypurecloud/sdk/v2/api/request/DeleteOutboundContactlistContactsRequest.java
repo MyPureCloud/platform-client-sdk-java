@@ -20,69 +20,68 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Campaign;
-import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
-import com.mypurecloud.sdk.v2.model.ResponseSet;
-import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
+import com.mypurecloud.sdk.v2.model.Campaign;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
-import com.mypurecloud.sdk.v2.model.CampaignInteractions;
-import com.mypurecloud.sdk.v2.model.CampaignProgress;
-import com.mypurecloud.sdk.v2.model.CampaignStats;
-import com.mypurecloud.sdk.v2.model.CampaignRule;
-import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
-import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.ContactList;
-import com.mypurecloud.sdk.v2.model.DialerContact;
-import com.mypurecloud.sdk.v2.model.ExportUri;
-import com.mypurecloud.sdk.v2.model.ImportStatus;
-import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
-import com.mypurecloud.sdk.v2.model.ContactListFilter;
-import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.DncList;
-import com.mypurecloud.sdk.v2.model.DncListEntityListing;
-import com.mypurecloud.sdk.v2.model.DncListDivisionView;
-import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.EventLog;
-import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.RuleSet;
-import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignInteractions;
+import com.mypurecloud.sdk.v2.model.CampaignProgress;
+import com.mypurecloud.sdk.v2.model.CampaignRule;
+import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
-import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.CampaignSequence;
 import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundSettings;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
-import com.mypurecloud.sdk.v2.model.AuditSearchResult;
-import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
-import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.CampaignStats;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
-import com.mypurecloud.sdk.v2.model.WritableDialerContact;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ContactList;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
+import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
+import com.mypurecloud.sdk.v2.model.DialerContact;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
-import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.DncListDivisionView;
+import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.ExportUri;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.ResponseSet;
+import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
+import com.mypurecloud.sdk.v2.model.RuleSet;
+import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.SequenceSchedule;
+import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
+import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
 public class DeleteOutboundContactlistContactsRequest {
-    
+
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -96,7 +95,7 @@ public class DeleteOutboundContactlistContactsRequest {
 	    this.setContactListId(contactListId);
 	    return this;
 	} 
-	
+
 	private List<String> contactIds;
 	public List<String> getContactIds() {
 		return this.contactIds;
@@ -110,7 +109,7 @@ public class DeleteOutboundContactlistContactsRequest {
 	    this.setContactIds(contactIds);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -146,9 +145,10 @@ public class DeleteOutboundContactlistContactsRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/contactlists/{contactListId}/contacts")
                 .withPathParameter("contactListId", contactListId)
         
+
                 .withQueryParameters("contactIds", "multi", contactIds)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -159,12 +159,12 @@ public class DeleteOutboundContactlistContactsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String contactListId, List<String> contactIds) {
 	    return new Builder()
 	            .withRequiredParams(contactListId, contactIds);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteOutboundContactlistContactsRequest request;
@@ -173,26 +173,26 @@ public class DeleteOutboundContactlistContactsRequest {
 			request = new DeleteOutboundContactlistContactsRequest();
 		}
 
-		
+
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
 			return this;
 		}
-		
+
 		public Builder withContactIds(List<String> contactIds) {
 			request.setContactIds(contactIds);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String contactListId, List<String> contactIds) {
 			request.setContactListId(contactListId);
-						request.setContactIds(contactIds);
-			
+			request.setContactIds(contactIds);
+
 			return this;
 		}
-		
+
 
 		public DeleteOutboundContactlistContactsRequest build() {
             

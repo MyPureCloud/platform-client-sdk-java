@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSettings;
@@ -35,7 +36,7 @@ public class BusinessUnit  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public BusinessUnit name(String name) {
@@ -52,7 +53,7 @@ public class BusinessUnit  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Settings for this business unit
    **/
@@ -70,7 +71,7 @@ public class BusinessUnit  implements Serializable {
     this.settings = settings;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -88,14 +89,13 @@ public class BusinessUnit  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,11 +106,12 @@ public class BusinessUnit  implements Serializable {
       return false;
     }
     BusinessUnit businessUnit = (BusinessUnit) o;
+
     return Objects.equals(this.id, businessUnit.id) &&
-        Objects.equals(this.name, businessUnit.name) &&
-        Objects.equals(this.settings, businessUnit.settings) &&
-        Objects.equals(this.division, businessUnit.division) &&
-        Objects.equals(this.selfUri, businessUnit.selfUri);
+            Objects.equals(this.name, businessUnit.name) &&
+            Objects.equals(this.settings, businessUnit.settings) &&
+            Objects.equals(this.division, businessUnit.division) &&
+            Objects.equals(this.selfUri, businessUnit.selfUri);
   }
 
   @Override

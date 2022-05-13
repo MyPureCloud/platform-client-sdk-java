@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -48,7 +49,7 @@ public class ProgramMappings  implements Serializable {
     this.program = program;
   }
 
-  
+
   /**
    **/
   public ProgramMappings queues(List<AddressableEntityRef> queues) {
@@ -65,7 +66,7 @@ public class ProgramMappings  implements Serializable {
     this.queues = queues;
   }
 
-  
+
   /**
    **/
   public ProgramMappings flows(List<AddressableEntityRef> flows) {
@@ -82,7 +83,7 @@ public class ProgramMappings  implements Serializable {
     this.flows = flows;
   }
 
-  
+
   /**
    **/
   public ProgramMappings modifiedBy(AddressableEntityRef modifiedBy) {
@@ -99,7 +100,7 @@ public class ProgramMappings  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -117,7 +118,6 @@ public class ProgramMappings  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class ProgramMappings  implements Serializable {
       return false;
     }
     ProgramMappings programMappings = (ProgramMappings) o;
+
     return Objects.equals(this.program, programMappings.program) &&
-        Objects.equals(this.queues, programMappings.queues) &&
-        Objects.equals(this.flows, programMappings.flows) &&
-        Objects.equals(this.modifiedBy, programMappings.modifiedBy) &&
-        Objects.equals(this.dateModified, programMappings.dateModified);
+            Objects.equals(this.queues, programMappings.queues) &&
+            Objects.equals(this.flows, programMappings.flows) &&
+            Objects.equals(this.modifiedBy, programMappings.modifiedBy) &&
+            Objects.equals(this.dateModified, programMappings.dateModified);
   }
 
   @Override

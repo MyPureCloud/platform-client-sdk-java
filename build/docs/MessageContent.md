@@ -31,20 +31,20 @@ title: MessageContent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ATTACHMENT | &quot;Attachment&quot; |
-| LOCATION | &quot;Location&quot; |
-| QUICKREPLY | &quot;QuickReply&quot; |
-| NOTIFICATION | &quot;Notification&quot; |
-| GENERICTEMPLATE | &quot;GenericTemplate&quot; |
-| LISTTEMPLATE | &quot;ListTemplate&quot; |
-| POSTBACK | &quot;Postback&quot; |
-| REACTIONS | &quot;Reactions&quot; |
-| MENTION | &quot;Mention&quot; |
-| BUTTONRESPONSE | &quot;ButtonResponse&quot; |
-| STORY | &quot;Story&quot; |
-| CARD | &quot;Card&quot; |
-| CAROUSEL | &quot;Carousel&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ATTACHMENT | &quot;Attachment&quot; | 
+| LOCATION | &quot;Location&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
+| NOTIFICATION | &quot;Notification&quot; | 
+| GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
+| LISTTEMPLATE | &quot;ListTemplate&quot; | 
+| POSTBACK | &quot;Postback&quot; | 
+| REACTIONS | &quot;Reactions&quot; | 
+| MENTION | &quot;Mention&quot; | 
+| BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
+| STORY | &quot;Story&quot; | 
+| CARD | &quot;Card&quot; | 
+| CAROUSEL | &quot;Carousel&quot; | 
 {: class="table table-striped"}
 
 

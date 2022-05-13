@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -267,7 +268,7 @@ public class Condition  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * If true, inverts the result of evaluating this Condition. Default is false.
    **/
@@ -285,7 +286,7 @@ public class Condition  implements Serializable {
     this.inverted = inverted;
   }
 
-  
+
   /**
    * An attribute name associated with this Condition. Required for a contactAttributeCondition.
    **/
@@ -303,7 +304,7 @@ public class Condition  implements Serializable {
     this.attributeName = attributeName;
   }
 
-  
+
   /**
    * A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.
    **/
@@ -321,7 +322,7 @@ public class Condition  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The type of the value associated with this Condition. Not used for a DataActionCondition.
    **/
@@ -339,7 +340,7 @@ public class Condition  implements Serializable {
     this.valueType = valueType;
   }
 
-  
+
   /**
    * An operation with which to evaluate the Condition. Not used for a DataActionCondition.
    **/
@@ -357,7 +358,7 @@ public class Condition  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * List of wrap-up code identifiers. Required for a wrapupCondition.
    **/
@@ -375,7 +376,7 @@ public class Condition  implements Serializable {
     this.codes = codes;
   }
 
-  
+
   /**
    * A value associated with the property type of this Condition. Required for a contactPropertyCondition.
    **/
@@ -393,7 +394,7 @@ public class Condition  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * The type of the property associated with this Condition. Required for a contactPropertyCondition.
    **/
@@ -411,7 +412,7 @@ public class Condition  implements Serializable {
     this.propertyType = propertyType;
   }
 
-  
+
   /**
    * The Data Action to use for this condition. Required for a dataActionCondition.
    **/
@@ -429,7 +430,7 @@ public class Condition  implements Serializable {
     this.dataAction = dataAction;
   }
 
-  
+
   /**
    * The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
    **/
@@ -447,7 +448,7 @@ public class Condition  implements Serializable {
     this.dataNotFoundResolution = dataNotFoundResolution;
   }
 
-  
+
   /**
    * The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
    **/
@@ -465,7 +466,7 @@ public class Condition  implements Serializable {
     this.contactIdField = contactIdField;
   }
 
-  
+
   /**
    * The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
    **/
@@ -483,7 +484,7 @@ public class Condition  implements Serializable {
     this.callAnalysisResultField = callAnalysisResultField;
   }
 
-  
+
   /**
    * The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
    **/
@@ -501,7 +502,7 @@ public class Condition  implements Serializable {
     this.agentWrapupField = agentWrapupField;
   }
 
-  
+
   /**
    * A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
    **/
@@ -519,7 +520,7 @@ public class Condition  implements Serializable {
     this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
   }
 
-  
+
   /**
    * A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
    **/
@@ -537,7 +538,6 @@ public class Condition  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -548,22 +548,23 @@ public class Condition  implements Serializable {
       return false;
     }
     Condition condition = (Condition) o;
+
     return Objects.equals(this.type, condition.type) &&
-        Objects.equals(this.inverted, condition.inverted) &&
-        Objects.equals(this.attributeName, condition.attributeName) &&
-        Objects.equals(this.value, condition.value) &&
-        Objects.equals(this.valueType, condition.valueType) &&
-        Objects.equals(this.operator, condition.operator) &&
-        Objects.equals(this.codes, condition.codes) &&
-        Objects.equals(this.property, condition.property) &&
-        Objects.equals(this.propertyType, condition.propertyType) &&
-        Objects.equals(this.dataAction, condition.dataAction) &&
-        Objects.equals(this.dataNotFoundResolution, condition.dataNotFoundResolution) &&
-        Objects.equals(this.contactIdField, condition.contactIdField) &&
-        Objects.equals(this.callAnalysisResultField, condition.callAnalysisResultField) &&
-        Objects.equals(this.agentWrapupField, condition.agentWrapupField) &&
-        Objects.equals(this.contactColumnToDataActionFieldMappings, condition.contactColumnToDataActionFieldMappings) &&
-        Objects.equals(this.predicates, condition.predicates);
+            Objects.equals(this.inverted, condition.inverted) &&
+            Objects.equals(this.attributeName, condition.attributeName) &&
+            Objects.equals(this.value, condition.value) &&
+            Objects.equals(this.valueType, condition.valueType) &&
+            Objects.equals(this.operator, condition.operator) &&
+            Objects.equals(this.codes, condition.codes) &&
+            Objects.equals(this.property, condition.property) &&
+            Objects.equals(this.propertyType, condition.propertyType) &&
+            Objects.equals(this.dataAction, condition.dataAction) &&
+            Objects.equals(this.dataNotFoundResolution, condition.dataNotFoundResolution) &&
+            Objects.equals(this.contactIdField, condition.contactIdField) &&
+            Objects.equals(this.callAnalysisResultField, condition.callAnalysisResultField) &&
+            Objects.equals(this.agentWrapupField, condition.agentWrapupField) &&
+            Objects.equals(this.contactColumnToDataActionFieldMappings, condition.contactColumnToDataActionFieldMappings) &&
+            Objects.equals(this.predicates, condition.predicates);
   }
 
   @Override

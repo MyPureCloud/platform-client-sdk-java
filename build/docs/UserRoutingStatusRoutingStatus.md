@@ -19,12 +19,12 @@ title: UserRoutingStatusRoutingStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OFF_QUEUE | &quot;OFF_QUEUE&quot; |
-| IDLE | &quot;IDLE&quot; |
-| INTERACTING | &quot;INTERACTING&quot; |
-| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
-| COMMUNICATING | &quot;COMMUNICATING&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OFF_QUEUE | &quot;OFF_QUEUE&quot; | 
+| IDLE | &quot;IDLE&quot; | 
+| INTERACTING | &quot;INTERACTING&quot; | 
+| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
+| COMMUNICATING | &quot;COMMUNICATING&quot; | 
 {: class="table table-striped"}
 
 

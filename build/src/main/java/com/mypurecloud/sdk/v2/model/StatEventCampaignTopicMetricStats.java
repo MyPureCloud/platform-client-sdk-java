@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class StatEventCampaignTopicMetricStats  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public StatEventCampaignTopicMetricStats qualifier(String qualifier) {
@@ -62,7 +63,7 @@ public class StatEventCampaignTopicMetricStats  implements Serializable {
     this.qualifier = qualifier;
   }
 
-  
+
   /**
    **/
   public StatEventCampaignTopicMetricStats stats(Map<String, BigDecimal> stats) {
@@ -79,7 +80,6 @@ public class StatEventCampaignTopicMetricStats  implements Serializable {
     this.stats = stats;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class StatEventCampaignTopicMetricStats  implements Serializable {
       return false;
     }
     StatEventCampaignTopicMetricStats statEventCampaignTopicMetricStats = (StatEventCampaignTopicMetricStats) o;
+
     return Objects.equals(this.metric, statEventCampaignTopicMetricStats.metric) &&
-        Objects.equals(this.qualifier, statEventCampaignTopicMetricStats.qualifier) &&
-        Objects.equals(this.stats, statEventCampaignTopicMetricStats.stats);
+            Objects.equals(this.qualifier, statEventCampaignTopicMetricStats.qualifier) &&
+            Objects.equals(this.stats, statEventCampaignTopicMetricStats.stats);
   }
 
   @Override

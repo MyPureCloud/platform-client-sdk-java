@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebChatConversation;
@@ -46,7 +47,7 @@ public class WebChatTyping  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The identifier of the conversation
    **/
@@ -64,7 +65,7 @@ public class WebChatTyping  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * The member who sent the message
    **/
@@ -82,7 +83,7 @@ public class WebChatTyping  implements Serializable {
     this.sender = sender;
   }
 
-  
+
   /**
    * The timestamp of the message, in ISO-8601 format
    **/
@@ -100,7 +101,6 @@ public class WebChatTyping  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class WebChatTyping  implements Serializable {
       return false;
     }
     WebChatTyping webChatTyping = (WebChatTyping) o;
+
     return Objects.equals(this.id, webChatTyping.id) &&
-        Objects.equals(this.conversation, webChatTyping.conversation) &&
-        Objects.equals(this.sender, webChatTyping.sender) &&
-        Objects.equals(this.timestamp, webChatTyping.timestamp);
+            Objects.equals(this.conversation, webChatTyping.conversation) &&
+            Objects.equals(this.sender, webChatTyping.sender) &&
+            Objects.equals(this.timestamp, webChatTyping.timestamp);
   }
 
   @Override

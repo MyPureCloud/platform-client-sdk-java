@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TrunkBaseEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class TrunkBaseEntityListing  implements Serializable, PagedResource<Trun
       return false;
     }
     TrunkBaseEntityListing trunkBaseEntityListing = (TrunkBaseEntityListing) o;
+
     return Objects.equals(this.entities, trunkBaseEntityListing.entities) &&
-        Objects.equals(this.pageSize, trunkBaseEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, trunkBaseEntityListing.pageNumber) &&
-        Objects.equals(this.total, trunkBaseEntityListing.total) &&
-        Objects.equals(this.lastUri, trunkBaseEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, trunkBaseEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, trunkBaseEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, trunkBaseEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, trunkBaseEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, trunkBaseEntityListing.pageCount);
+            Objects.equals(this.pageSize, trunkBaseEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, trunkBaseEntityListing.pageNumber) &&
+            Objects.equals(this.total, trunkBaseEntityListing.total) &&
+            Objects.equals(this.lastUri, trunkBaseEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, trunkBaseEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, trunkBaseEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, trunkBaseEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, trunkBaseEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, trunkBaseEntityListing.pageCount);
   }
 
   @Override

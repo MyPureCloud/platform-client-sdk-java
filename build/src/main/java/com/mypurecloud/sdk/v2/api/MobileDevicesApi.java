@@ -10,9 +10,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserDevice;
-import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteMobiledeviceRequest;
@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class MobileDevicesApi {
   private final ApiClient pcapiClient;
 
@@ -39,7 +38,6 @@ public class MobileDevicesApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete device
    * 
@@ -64,7 +62,7 @@ public class MobileDevicesApi {
   private DeleteMobiledeviceRequest createDeleteMobiledeviceRequest(String deviceId) {
     return DeleteMobiledeviceRequest.builder()
             .withDeviceId(deviceId)
-    
+
             .build();
   }
 
@@ -115,7 +113,6 @@ public class MobileDevicesApi {
     }
   }
 
-  
   /**
    * Get device
    * 
@@ -142,7 +139,7 @@ public class MobileDevicesApi {
   private GetMobiledeviceRequest createGetMobiledeviceRequest(String deviceId) {
     return GetMobiledeviceRequest.builder()
             .withDeviceId(deviceId)
-    
+
             .build();
   }
 
@@ -194,7 +191,6 @@ public class MobileDevicesApi {
     }
   }
 
-  
   /**
    * Get a list of all devices.
    * 
@@ -225,11 +221,11 @@ public class MobileDevicesApi {
   private GetMobiledevicesRequest createGetMobiledevicesRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetMobiledevicesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -281,7 +277,6 @@ public class MobileDevicesApi {
     }
   }
 
-  
   /**
    * Create User device
    * 
@@ -308,7 +303,7 @@ public class MobileDevicesApi {
   private PostMobiledevicesRequest createPostMobiledevicesRequest(UserDevice body) {
     return PostMobiledevicesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -360,7 +355,6 @@ public class MobileDevicesApi {
     }
   }
 
-  
   /**
    * Update device
    * 
@@ -389,9 +383,9 @@ public class MobileDevicesApi {
   private PutMobiledeviceRequest createPutMobiledeviceRequest(String deviceId, UserDevice body) {
     return PutMobiledeviceRequest.builder()
             .withDeviceId(deviceId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -443,5 +437,4 @@ public class MobileDevicesApi {
     }
   }
 
-  
 }

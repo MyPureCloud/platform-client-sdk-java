@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -152,7 +152,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * Whether the user does not have the appropriate license to be scheduled
    **/
@@ -170,7 +170,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.userNotLicensed = userNotLicensed;
   }
 
-  
+
   /**
    * Whether the number of scheduled days exceeded the maximum days to schedule defined in the agent work plan
    **/
@@ -188,7 +188,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.unableToMeetMaxDays = unableToMeetMaxDays;
   }
 
-  
+
   /**
    * Days indicated as required to work in agent work plan where no viable shift was found to schedule
    **/
@@ -206,7 +206,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.unableToScheduleRequiredDays = unableToScheduleRequiredDays;
   }
 
-  
+
   /**
    * Whether the schedule did not meet the minimum paid time for the week defined in the agent work plan
    **/
@@ -224,7 +224,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.unableToMeetMinPaidForTheWeek = unableToMeetMinPaidForTheWeek;
   }
 
-  
+
   /**
    * Whether the schedule exceeded the maximum paid time for the week defined in the agent work plan
    **/
@@ -242,7 +242,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.unableToMeetMaxPaidForTheWeek = unableToMeetMaxPaidForTheWeek;
   }
 
-  
+
   /**
    * Days agent was scheduled but there was no need to meet. The scheduled days have no effect on service levels
    **/
@@ -260,7 +260,7 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.noNeedDays = noNeedDays;
   }
 
-  
+
   /**
    * Whether the schedule did not meet the minimum time between shifts defined in the agent work plan
    **/
@@ -278,7 +278,6 @@ public class ScheduleGenerationWarning  implements Serializable {
     this.shiftsTooCloseTogether = shiftsTooCloseTogether;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -289,14 +288,15 @@ public class ScheduleGenerationWarning  implements Serializable {
       return false;
     }
     ScheduleGenerationWarning scheduleGenerationWarning = (ScheduleGenerationWarning) o;
+
     return Objects.equals(this.userId, scheduleGenerationWarning.userId) &&
-        Objects.equals(this.userNotLicensed, scheduleGenerationWarning.userNotLicensed) &&
-        Objects.equals(this.unableToMeetMaxDays, scheduleGenerationWarning.unableToMeetMaxDays) &&
-        Objects.equals(this.unableToScheduleRequiredDays, scheduleGenerationWarning.unableToScheduleRequiredDays) &&
-        Objects.equals(this.unableToMeetMinPaidForTheWeek, scheduleGenerationWarning.unableToMeetMinPaidForTheWeek) &&
-        Objects.equals(this.unableToMeetMaxPaidForTheWeek, scheduleGenerationWarning.unableToMeetMaxPaidForTheWeek) &&
-        Objects.equals(this.noNeedDays, scheduleGenerationWarning.noNeedDays) &&
-        Objects.equals(this.shiftsTooCloseTogether, scheduleGenerationWarning.shiftsTooCloseTogether);
+            Objects.equals(this.userNotLicensed, scheduleGenerationWarning.userNotLicensed) &&
+            Objects.equals(this.unableToMeetMaxDays, scheduleGenerationWarning.unableToMeetMaxDays) &&
+            Objects.equals(this.unableToScheduleRequiredDays, scheduleGenerationWarning.unableToScheduleRequiredDays) &&
+            Objects.equals(this.unableToMeetMinPaidForTheWeek, scheduleGenerationWarning.unableToMeetMinPaidForTheWeek) &&
+            Objects.equals(this.unableToMeetMaxPaidForTheWeek, scheduleGenerationWarning.unableToMeetMaxPaidForTheWeek) &&
+            Objects.equals(this.noNeedDays, scheduleGenerationWarning.noNeedDays) &&
+            Objects.equals(this.shiftsTooCloseTogether, scheduleGenerationWarning.shiftsTooCloseTogether);
   }
 
   @Override

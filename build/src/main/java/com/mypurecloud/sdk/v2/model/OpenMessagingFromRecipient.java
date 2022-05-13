@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class OpenMessagingFromRecipient  implements Serializable {
     this.nickname = nickname;
   }
 
-  
+
   /**
    * The recipient ID specific to the provider.
    **/
@@ -114,7 +115,7 @@ public class OpenMessagingFromRecipient  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The recipient ID type. This is used to indicate the format used for the ID.
    **/
@@ -132,7 +133,7 @@ public class OpenMessagingFromRecipient  implements Serializable {
     this.idType = idType;
   }
 
-  
+
   /**
    * First name of the recipient.
    **/
@@ -150,7 +151,7 @@ public class OpenMessagingFromRecipient  implements Serializable {
     this.firstName = firstName;
   }
 
-  
+
   /**
    * Last name of the recipient.
    **/
@@ -168,14 +169,14 @@ public class OpenMessagingFromRecipient  implements Serializable {
     this.lastName = lastName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URL of an image that represents the recipient.")
   @JsonProperty("image")
   public String getImage() {
     return image;
   }
 
-  
+
   /**
    * E-mail address of the recipient.
    **/
@@ -193,7 +194,6 @@ public class OpenMessagingFromRecipient  implements Serializable {
     this.email = email;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -204,13 +204,14 @@ public class OpenMessagingFromRecipient  implements Serializable {
       return false;
     }
     OpenMessagingFromRecipient openMessagingFromRecipient = (OpenMessagingFromRecipient) o;
+
     return Objects.equals(this.nickname, openMessagingFromRecipient.nickname) &&
-        Objects.equals(this.id, openMessagingFromRecipient.id) &&
-        Objects.equals(this.idType, openMessagingFromRecipient.idType) &&
-        Objects.equals(this.firstName, openMessagingFromRecipient.firstName) &&
-        Objects.equals(this.lastName, openMessagingFromRecipient.lastName) &&
-        Objects.equals(this.image, openMessagingFromRecipient.image) &&
-        Objects.equals(this.email, openMessagingFromRecipient.email);
+            Objects.equals(this.id, openMessagingFromRecipient.id) &&
+            Objects.equals(this.idType, openMessagingFromRecipient.idType) &&
+            Objects.equals(this.firstName, openMessagingFromRecipient.firstName) &&
+            Objects.equals(this.lastName, openMessagingFromRecipient.lastName) &&
+            Objects.equals(this.image, openMessagingFromRecipient.image) &&
+            Objects.equals(this.email, openMessagingFromRecipient.email);
   }
 
   @Override

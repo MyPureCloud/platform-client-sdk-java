@@ -21,10 +21,10 @@ title: TranscriptAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; |
-| OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; |
-| OSENTIMENTSCORE | &quot;oSentimentScore&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; | 
+| OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; | 
+| OSENTIMENTSCORE | &quot;oSentimentScore&quot; | 
 {: class="table table-striped"}
 
 
@@ -34,8 +34,8 @@ title: TranscriptAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANGEBOUND | &quot;rangeBound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANGEBOUND | &quot;rangeBound&quot; | 
 {: class="table table-striped"}
 
 

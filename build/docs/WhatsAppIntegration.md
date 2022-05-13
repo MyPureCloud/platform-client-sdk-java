@@ -35,14 +35,14 @@ title: WhatsAppIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;Active&quot; |
-| INACTIVE | &quot;Inactive&quot; |
-| ERROR | &quot;Error&quot; |
-| STARTING | &quot;Starting&quot; |
-| INCOMPLETE | &quot;Incomplete&quot; |
-| DELETING | &quot;Deleting&quot; |
-| DELETIONFAILED | &quot;DeletionFailed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;Active&quot; | 
+| INACTIVE | &quot;Inactive&quot; | 
+| ERROR | &quot;Error&quot; | 
+| STARTING | &quot;Starting&quot; | 
+| INCOMPLETE | &quot;Incomplete&quot; | 
+| DELETING | &quot;Deleting&quot; | 
+| DELETIONFAILED | &quot;DeletionFailed&quot; | 
 {: class="table table-striped"}
 
 
@@ -52,13 +52,13 @@ title: WhatsAppIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CODESENT | &quot;CodeSent&quot; |
-| WAITREQUIRED | &quot;WaitRequired&quot; |
-| ACTIVATIONFAILED | &quot;ActivationFailed&quot; |
-| CODECONFIRMED | &quot;CodeConfirmed&quot; |
-| CONFIRMATIONFAILED | &quot;ConfirmationFailed&quot; |
-| RESENDCODE | &quot;ResendCode&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CODESENT | &quot;CodeSent&quot; | 
+| WAITREQUIRED | &quot;WaitRequired&quot; | 
+| ACTIVATIONFAILED | &quot;ActivationFailed&quot; | 
+| CODECONFIRMED | &quot;CodeConfirmed&quot; | 
+| CONFIRMATIONFAILED | &quot;ConfirmationFailed&quot; | 
+| RESENDCODE | &quot;ResendCode&quot; | 
 {: class="table table-striped"}
 
 
@@ -68,10 +68,10 @@ title: WhatsAppIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INITIATED | &quot;Initiated&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INITIATED | &quot;Initiated&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

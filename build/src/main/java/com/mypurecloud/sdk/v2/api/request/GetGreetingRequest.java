@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetGreetingRequest {
-    
+
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -42,7 +42,7 @@ public class GetGreetingRequest {
 	    this.setGreetingId(greetingId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +73,7 @@ public class GetGreetingRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/greetings/{greetingId}")
                 .withPathParameter("greetingId", greetingId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class GetGreetingRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String greetingId) {
 	    return new Builder()
 	            .withRequiredParams(greetingId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGreetingRequest request;
@@ -98,20 +98,20 @@ public class GetGreetingRequest {
 			request = new GetGreetingRequest();
 		}
 
-		
+
 		public Builder withGreetingId(String greetingId) {
 			request.setGreetingId(greetingId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String greetingId) {
 			request.setGreetingId(greetingId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGreetingRequest build() {
             

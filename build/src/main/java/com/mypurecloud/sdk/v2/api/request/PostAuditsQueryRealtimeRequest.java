@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PostAuditsQueryRealtimeRequest {
-    
+
 	private AuditRealtimeQueryRequest body;
 	public AuditRealtimeQueryRequest getBody() {
 		return this.body;
@@ -43,7 +43,7 @@ public class PostAuditsQueryRealtimeRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -86,7 +86,7 @@ public class PostAuditsQueryRealtimeRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -115,11 +115,12 @@ public class PostAuditsQueryRealtimeRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/audits/query/realtime")
+
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -130,12 +131,12 @@ public class PostAuditsQueryRealtimeRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(AuditRealtimeQueryRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAuditsQueryRealtimeRequest request;
@@ -144,16 +145,18 @@ public class PostAuditsQueryRealtimeRequest {
 			request = new PostAuditsQueryRealtimeRequest();
 		}
 
-		
+
 		public Builder withBody(AuditRealtimeQueryRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -163,15 +166,15 @@ public class PostAuditsQueryRealtimeRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(AuditRealtimeQueryRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostAuditsQueryRealtimeRequest build() {
             

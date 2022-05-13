@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.total = total;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public PromptAssetEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
       return false;
     }
     PromptAssetEntityListing promptAssetEntityListing = (PromptAssetEntityListing) o;
+
     return Objects.equals(this.entities, promptAssetEntityListing.entities) &&
-        Objects.equals(this.pageSize, promptAssetEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, promptAssetEntityListing.pageNumber) &&
-        Objects.equals(this.total, promptAssetEntityListing.total) &&
-        Objects.equals(this.lastUri, promptAssetEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, promptAssetEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, promptAssetEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, promptAssetEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, promptAssetEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, promptAssetEntityListing.pageCount);
+            Objects.equals(this.pageSize, promptAssetEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, promptAssetEntityListing.pageNumber) &&
+            Objects.equals(this.total, promptAssetEntityListing.total) &&
+            Objects.equals(this.lastUri, promptAssetEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, promptAssetEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, promptAssetEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, promptAssetEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, promptAssetEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, promptAssetEntityListing.pageCount);
   }
 
   @Override

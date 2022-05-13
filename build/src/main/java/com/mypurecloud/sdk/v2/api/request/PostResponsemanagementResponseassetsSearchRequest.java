@@ -20,23 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 public class PostResponsemanagementResponseassetsSearchRequest {
-    
+
 	private ResponseAssetSearchRequest body;
 	public ResponseAssetSearchRequest getBody() {
 		return this.body;
@@ -50,7 +50,7 @@ public class PostResponsemanagementResponseassetsSearchRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -66,7 +66,7 @@ public class PostResponsemanagementResponseassetsSearchRequest {
 	} 
 
 	public enum expandValues { 
-		USER("user"), 
+		USER("user"),
 		DIVISION("division");
 
 		private String value;
@@ -94,7 +94,7 @@ public class PostResponsemanagementResponseassetsSearchRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -123,11 +123,12 @@ public class PostResponsemanagementResponseassetsSearchRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/responsemanagement/responseassets/search")
+
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -138,12 +139,12 @@ public class PostResponsemanagementResponseassetsSearchRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(ResponseAssetSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostResponsemanagementResponseassetsSearchRequest request;
@@ -152,16 +153,18 @@ public class PostResponsemanagementResponseassetsSearchRequest {
 			request = new PostResponsemanagementResponseassetsSearchRequest();
 		}
 
-		
+
 		public Builder withBody(ResponseAssetSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -171,15 +174,15 @@ public class PostResponsemanagementResponseassetsSearchRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(ResponseAssetSearchRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostResponsemanagementResponseassetsSearchRequest build() {
             

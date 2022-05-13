@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
@@ -41,49 +42,48 @@ public class TrustRequest  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User who created this request.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date request was created. There is a 48 hour expiration on all requests. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "Trustee organization who generated this request.")
   @JsonProperty("trustee")
   public Organization getTrustee() {
     return trustee;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of trustee users that are requesting access.")
   @JsonProperty("users")
   public List<OrgUser> getUsers() {
     return users;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of trustee groups that are requesting access.")
   @JsonProperty("groups")
   public List<TrustGroup> getGroups() {
     return groups;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,13 +94,14 @@ public class TrustRequest  implements Serializable {
       return false;
     }
     TrustRequest trustRequest = (TrustRequest) o;
+
     return Objects.equals(this.id, trustRequest.id) &&
-        Objects.equals(this.createdBy, trustRequest.createdBy) &&
-        Objects.equals(this.dateCreated, trustRequest.dateCreated) &&
-        Objects.equals(this.trustee, trustRequest.trustee) &&
-        Objects.equals(this.users, trustRequest.users) &&
-        Objects.equals(this.groups, trustRequest.groups) &&
-        Objects.equals(this.selfUri, trustRequest.selfUri);
+            Objects.equals(this.createdBy, trustRequest.createdBy) &&
+            Objects.equals(this.dateCreated, trustRequest.dateCreated) &&
+            Objects.equals(this.trustee, trustRequest.trustee) &&
+            Objects.equals(this.users, trustRequest.users) &&
+            Objects.equals(this.groups, trustRequest.groups) &&
+            Objects.equals(this.selfUri, trustRequest.selfUri);
   }
 
   @Override

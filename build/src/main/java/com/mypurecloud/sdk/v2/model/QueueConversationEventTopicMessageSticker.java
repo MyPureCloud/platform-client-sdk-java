@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class QueueConversationEventTopicMessageSticker  implements Serializable 
     this.url = url;
   }
 
-  
+
   /**
    * The unique id of the the sticker object.
    **/
@@ -59,7 +60,6 @@ public class QueueConversationEventTopicMessageSticker  implements Serializable 
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class QueueConversationEventTopicMessageSticker  implements Serializable 
       return false;
     }
     QueueConversationEventTopicMessageSticker queueConversationEventTopicMessageSticker = (QueueConversationEventTopicMessageSticker) o;
+
     return Objects.equals(this.url, queueConversationEventTopicMessageSticker.url) &&
-        Objects.equals(this.id, queueConversationEventTopicMessageSticker.id);
+            Objects.equals(this.id, queueConversationEventTopicMessageSticker.id);
   }
 
   @Override

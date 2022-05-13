@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class ReportingInterval  implements Serializable {
     this.intervalType = intervalType;
   }
 
-  
+
   /**
    * The value of the reporting interval period for a given interval type
    **/
@@ -108,7 +109,6 @@ public class ReportingInterval  implements Serializable {
     this.intervalValue = intervalValue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class ReportingInterval  implements Serializable {
       return false;
     }
     ReportingInterval reportingInterval = (ReportingInterval) o;
+
     return Objects.equals(this.intervalType, reportingInterval.intervalType) &&
-        Objects.equals(this.intervalValue, reportingInterval.intervalValue);
+            Objects.equals(this.intervalValue, reportingInterval.intervalValue);
   }
 
   @Override

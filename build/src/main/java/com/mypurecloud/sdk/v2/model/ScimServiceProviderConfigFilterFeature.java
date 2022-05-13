@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,14 +32,13 @@ public class ScimServiceProviderConfigFilterFeature  implements Serializable {
     return supported;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The maximum number of results returned from a filtered query.")
   @JsonProperty("maxResults")
   public Integer getMaxResults() {
     return maxResults;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -49,8 +49,9 @@ public class ScimServiceProviderConfigFilterFeature  implements Serializable {
       return false;
     }
     ScimServiceProviderConfigFilterFeature scimServiceProviderConfigFilterFeature = (ScimServiceProviderConfigFilterFeature) o;
+
     return Objects.equals(this.supported, scimServiceProviderConfigFilterFeature.supported) &&
-        Objects.equals(this.maxResults, scimServiceProviderConfigFilterFeature.maxResults);
+            Objects.equals(this.maxResults, scimServiceProviderConfigFilterFeature.maxResults);
   }
 
   @Override

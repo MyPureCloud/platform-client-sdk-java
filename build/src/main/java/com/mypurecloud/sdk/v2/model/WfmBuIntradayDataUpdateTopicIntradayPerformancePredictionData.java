@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData  impl
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData averageSpeedOfAnswerSeconds(BigDecimal averageSpeedOfAnswerSeconds) {
@@ -59,7 +60,7 @@ public class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData  impl
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData occupancyPercent(BigDecimal occupancyPercent) {
@@ -76,7 +77,6 @@ public class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData  impl
     this.occupancyPercent = occupancyPercent;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData  impl
       return false;
     }
     WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData wfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData = (WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData) o;
+
     return Objects.equals(this.serviceLevelPercent, wfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData.serviceLevelPercent) &&
-        Objects.equals(this.averageSpeedOfAnswerSeconds, wfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData.averageSpeedOfAnswerSeconds) &&
-        Objects.equals(this.occupancyPercent, wfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData.occupancyPercent);
+            Objects.equals(this.averageSpeedOfAnswerSeconds, wfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData.averageSpeedOfAnswerSeconds) &&
+            Objects.equals(this.occupancyPercent, wfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData.occupancyPercent);
   }
 
   @Override

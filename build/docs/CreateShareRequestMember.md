@@ -19,10 +19,10 @@ title: CreateShareRequestMember
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USER | &quot;USER&quot; |
-| GROUP | &quot;GROUP&quot; |
-| PUBLIC | &quot;PUBLIC&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USER | &quot;USER&quot; | 
+| GROUP | &quot;GROUP&quot; | 
+| PUBLIC | &quot;PUBLIC&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -182,7 +183,7 @@ public class ConversationAggregationView  implements Serializable {
     this.target = target;
   }
 
-  
+
   /**
    * A unique name for this view. Must be distinct from other views and built-in metric names.
    **/
@@ -200,7 +201,7 @@ public class ConversationAggregationView  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Type of view you wish to create
    **/
@@ -218,7 +219,7 @@ public class ConversationAggregationView  implements Serializable {
     this.function = function;
   }
 
-  
+
   /**
    * Range of numbers for slicing up data
    **/
@@ -236,7 +237,6 @@ public class ConversationAggregationView  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -247,10 +247,11 @@ public class ConversationAggregationView  implements Serializable {
       return false;
     }
     ConversationAggregationView conversationAggregationView = (ConversationAggregationView) o;
+
     return Objects.equals(this.target, conversationAggregationView.target) &&
-        Objects.equals(this.name, conversationAggregationView.name) &&
-        Objects.equals(this.function, conversationAggregationView.function) &&
-        Objects.equals(this.range, conversationAggregationView.range);
+            Objects.equals(this.name, conversationAggregationView.name) &&
+            Objects.equals(this.function, conversationAggregationView.function) &&
+            Objects.equals(this.range, conversationAggregationView.range);
   }
 
   @Override

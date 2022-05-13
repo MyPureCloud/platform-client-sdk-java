@@ -8,7 +8,7 @@ title: FaxStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **direction** | <!----><!---->**String**<!----> | The fax direction, either \&quot;send\&quot; or \&quot;receive\&quot;. |  [optional] |
+| **direction** | <!----><!---->**String**<!----> | The fax direction, either \"send\" or \"receive\". |  [optional] |
 | **expectedPages** | <!----><!---->**Long**<!----> | Total number of expected pages, if known. |  [optional] |
 | **activePage** | <!----><!---->**Long**<!----> | Active page of the transmission. |  [optional] |
 | **linesTransmitted** | <!----><!---->**Long**<!----> | Number of lines that have completed transmission. |  [optional] |

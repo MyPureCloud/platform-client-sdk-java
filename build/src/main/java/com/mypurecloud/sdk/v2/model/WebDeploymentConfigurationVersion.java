@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -110,7 +111,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The configuration version name
    **/
@@ -128,14 +129,14 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "DRAFT, 1, 2", value = "The version of the configuration")
   @JsonProperty("version")
   public String getVersion() {
     return version;
   }
 
-  
+
   /**
    * The description of the configuration
    **/
@@ -153,7 +154,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * A list of languages supported on the configuration required if the messenger is enabled
    **/
@@ -171,7 +172,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    * The default language to use for the configuration required if the messenger is enabled
    **/
@@ -189,7 +190,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.defaultLanguage = defaultLanguage;
   }
 
-  
+
   /**
    * The settings for messenger
    **/
@@ -207,7 +208,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.messenger = messenger;
   }
 
-  
+
   /**
    * The settings for position
    **/
@@ -225,7 +226,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.position = position;
   }
 
-  
+
   /**
    * The settings for support center
    **/
@@ -243,7 +244,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.supportCenter = supportCenter;
   }
 
-  
+
   /**
    * The settings for cobrowse
    **/
@@ -261,7 +262,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.cobrowse = cobrowse;
   }
 
-  
+
   /**
    * The settings for journey events
    **/
@@ -279,7 +280,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.journeyEvents = journeyEvents;
   }
 
-  
+
   /**
    * The settings for authenticated deployments
    **/
@@ -297,49 +298,49 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.authenticationSettings = authenticationSettings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the configuration version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the configuration version was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the configuration version was most recently published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("datePublished")
   public Date getDatePublished() {
     return datePublished;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A reference to the user who most recently modified the configuration version")
   @JsonProperty("lastModifiedUser")
   public AddressableEntityRef getLastModifiedUser() {
     return lastModifiedUser;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A reference to the user who created the configuration version")
   @JsonProperty("createdUser")
   public AddressableEntityRef getCreatedUser() {
     return createdUser;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A reference to the user who published the configuration version")
   @JsonProperty("publishedUser")
   public AddressableEntityRef getPublishedUser() {
     return publishedUser;
   }
 
-  
+
   /**
    * The current status of the configuration version
    **/
@@ -357,14 +358,13 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -375,26 +375,27 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
       return false;
     }
     WebDeploymentConfigurationVersion webDeploymentConfigurationVersion = (WebDeploymentConfigurationVersion) o;
+
     return Objects.equals(this.id, webDeploymentConfigurationVersion.id) &&
-        Objects.equals(this.name, webDeploymentConfigurationVersion.name) &&
-        Objects.equals(this.version, webDeploymentConfigurationVersion.version) &&
-        Objects.equals(this.description, webDeploymentConfigurationVersion.description) &&
-        Objects.equals(this.languages, webDeploymentConfigurationVersion.languages) &&
-        Objects.equals(this.defaultLanguage, webDeploymentConfigurationVersion.defaultLanguage) &&
-        Objects.equals(this.messenger, webDeploymentConfigurationVersion.messenger) &&
-        Objects.equals(this.position, webDeploymentConfigurationVersion.position) &&
-        Objects.equals(this.supportCenter, webDeploymentConfigurationVersion.supportCenter) &&
-        Objects.equals(this.cobrowse, webDeploymentConfigurationVersion.cobrowse) &&
-        Objects.equals(this.journeyEvents, webDeploymentConfigurationVersion.journeyEvents) &&
-        Objects.equals(this.authenticationSettings, webDeploymentConfigurationVersion.authenticationSettings) &&
-        Objects.equals(this.dateCreated, webDeploymentConfigurationVersion.dateCreated) &&
-        Objects.equals(this.dateModified, webDeploymentConfigurationVersion.dateModified) &&
-        Objects.equals(this.datePublished, webDeploymentConfigurationVersion.datePublished) &&
-        Objects.equals(this.lastModifiedUser, webDeploymentConfigurationVersion.lastModifiedUser) &&
-        Objects.equals(this.createdUser, webDeploymentConfigurationVersion.createdUser) &&
-        Objects.equals(this.publishedUser, webDeploymentConfigurationVersion.publishedUser) &&
-        Objects.equals(this.status, webDeploymentConfigurationVersion.status) &&
-        Objects.equals(this.selfUri, webDeploymentConfigurationVersion.selfUri);
+            Objects.equals(this.name, webDeploymentConfigurationVersion.name) &&
+            Objects.equals(this.version, webDeploymentConfigurationVersion.version) &&
+            Objects.equals(this.description, webDeploymentConfigurationVersion.description) &&
+            Objects.equals(this.languages, webDeploymentConfigurationVersion.languages) &&
+            Objects.equals(this.defaultLanguage, webDeploymentConfigurationVersion.defaultLanguage) &&
+            Objects.equals(this.messenger, webDeploymentConfigurationVersion.messenger) &&
+            Objects.equals(this.position, webDeploymentConfigurationVersion.position) &&
+            Objects.equals(this.supportCenter, webDeploymentConfigurationVersion.supportCenter) &&
+            Objects.equals(this.cobrowse, webDeploymentConfigurationVersion.cobrowse) &&
+            Objects.equals(this.journeyEvents, webDeploymentConfigurationVersion.journeyEvents) &&
+            Objects.equals(this.authenticationSettings, webDeploymentConfigurationVersion.authenticationSettings) &&
+            Objects.equals(this.dateCreated, webDeploymentConfigurationVersion.dateCreated) &&
+            Objects.equals(this.dateModified, webDeploymentConfigurationVersion.dateModified) &&
+            Objects.equals(this.datePublished, webDeploymentConfigurationVersion.datePublished) &&
+            Objects.equals(this.lastModifiedUser, webDeploymentConfigurationVersion.lastModifiedUser) &&
+            Objects.equals(this.createdUser, webDeploymentConfigurationVersion.createdUser) &&
+            Objects.equals(this.publishedUser, webDeploymentConfigurationVersion.publishedUser) &&
+            Objects.equals(this.status, webDeploymentConfigurationVersion.status) &&
+            Objects.equals(this.selfUri, webDeploymentConfigurationVersion.selfUri);
   }
 
   @Override

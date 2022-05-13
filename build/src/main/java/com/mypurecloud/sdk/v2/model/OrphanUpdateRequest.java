@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.archiveDate = archiveDate;
   }
 
-  
+
   /**
    * The orphan recording's delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -63,7 +64,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.deleteDate = deleteDate;
   }
 
-  
+
   /**
    * The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -81,7 +82,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.exportDate = exportDate;
   }
 
-  
+
   /**
    * IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.
    **/
@@ -99,7 +100,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
+
   /**
    * A conversation Id that this orphan's recording is to be attached to. If not present, the conversationId will be deduced from the recording media.
    **/
@@ -117,7 +118,6 @@ public class OrphanUpdateRequest  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class OrphanUpdateRequest  implements Serializable {
       return false;
     }
     OrphanUpdateRequest orphanUpdateRequest = (OrphanUpdateRequest) o;
+
     return Objects.equals(this.archiveDate, orphanUpdateRequest.archiveDate) &&
-        Objects.equals(this.deleteDate, orphanUpdateRequest.deleteDate) &&
-        Objects.equals(this.exportDate, orphanUpdateRequest.exportDate) &&
-        Objects.equals(this.integrationId, orphanUpdateRequest.integrationId) &&
-        Objects.equals(this.conversationId, orphanUpdateRequest.conversationId);
+            Objects.equals(this.deleteDate, orphanUpdateRequest.deleteDate) &&
+            Objects.equals(this.exportDate, orphanUpdateRequest.exportDate) &&
+            Objects.equals(this.integrationId, orphanUpdateRequest.integrationId) &&
+            Objects.equals(this.conversationId, orphanUpdateRequest.conversationId);
   }
 
   @Override

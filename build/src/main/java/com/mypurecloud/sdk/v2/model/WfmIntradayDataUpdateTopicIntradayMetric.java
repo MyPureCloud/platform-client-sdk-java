@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WfmIntradayDataUpdateTopicIntradayMetric  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayMetric version(String version) {
@@ -109,7 +110,6 @@ public class WfmIntradayDataUpdateTopicIntradayMetric  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,8 +120,9 @@ public class WfmIntradayDataUpdateTopicIntradayMetric  implements Serializable {
       return false;
     }
     WfmIntradayDataUpdateTopicIntradayMetric wfmIntradayDataUpdateTopicIntradayMetric = (WfmIntradayDataUpdateTopicIntradayMetric) o;
+
     return Objects.equals(this.category, wfmIntradayDataUpdateTopicIntradayMetric.category) &&
-        Objects.equals(this.version, wfmIntradayDataUpdateTopicIntradayMetric.version);
+            Objects.equals(this.version, wfmIntradayDataUpdateTopicIntradayMetric.version);
   }
 
   @Override

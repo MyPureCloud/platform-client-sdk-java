@@ -22,10 +22,10 @@ title: MessageMediaAttachment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| IMAGE_PNG | &quot;image/png&quot; |
-| IMAGE_JPEG | &quot;image/jpeg&quot; |
-| IMAGE_GIF | &quot;image/gif&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| IMAGE_PNG | &quot;image/png&quot; | 
+| IMAGE_JPEG | &quot;image/jpeg&quot; | 
+| IMAGE_GIF | &quot;image/gif&quot; | 
 {: class="table table-striped"}
 
 

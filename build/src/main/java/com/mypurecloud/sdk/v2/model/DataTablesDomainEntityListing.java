@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DataTablesDomainEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DataTablesDomainEntityListing  implements Serializable, PagedResour
       return false;
     }
     DataTablesDomainEntityListing dataTablesDomainEntityListing = (DataTablesDomainEntityListing) o;
+
     return Objects.equals(this.entities, dataTablesDomainEntityListing.entities) &&
-        Objects.equals(this.pageSize, dataTablesDomainEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, dataTablesDomainEntityListing.pageNumber) &&
-        Objects.equals(this.total, dataTablesDomainEntityListing.total) &&
-        Objects.equals(this.lastUri, dataTablesDomainEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, dataTablesDomainEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, dataTablesDomainEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, dataTablesDomainEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, dataTablesDomainEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, dataTablesDomainEntityListing.pageCount);
+            Objects.equals(this.pageSize, dataTablesDomainEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, dataTablesDomainEntityListing.pageNumber) &&
+            Objects.equals(this.total, dataTablesDomainEntityListing.total) &&
+            Objects.equals(this.lastUri, dataTablesDomainEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, dataTablesDomainEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, dataTablesDomainEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, dataTablesDomainEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, dataTablesDomainEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, dataTablesDomainEntityListing.pageCount);
   }
 
   @Override

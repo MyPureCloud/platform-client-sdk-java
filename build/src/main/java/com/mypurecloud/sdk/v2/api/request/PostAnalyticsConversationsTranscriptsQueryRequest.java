@@ -20,31 +20,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
-import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
-import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
+import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class PostAnalyticsConversationsTranscriptsQueryRequest {
-    
+
 	private TranscriptConversationDetailSearchRequest body;
 	public TranscriptConversationDetailSearchRequest getBody() {
 		return this.body;
@@ -58,7 +58,7 @@ public class PostAnalyticsConversationsTranscriptsQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,8 +88,8 @@ public class PostAnalyticsConversationsTranscriptsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/conversations/transcripts/query")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -100,12 +100,12 @@ public class PostAnalyticsConversationsTranscriptsQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(TranscriptConversationDetailSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAnalyticsConversationsTranscriptsQueryRequest request;
@@ -114,20 +114,20 @@ public class PostAnalyticsConversationsTranscriptsQueryRequest {
 			request = new PostAnalyticsConversationsTranscriptsQueryRequest();
 		}
 
-		
+
 		public Builder withBody(TranscriptConversationDetailSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(TranscriptConversationDetailSearchRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostAnalyticsConversationsTranscriptsQueryRequest build() {
             

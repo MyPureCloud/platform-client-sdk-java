@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeBinding;
@@ -47,7 +48,7 @@ public class IntentDefinition  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities
    **/
@@ -65,14 +66,14 @@ public class IntentDefinition  implements Serializable {
     this.entityTypeBindings = entityTypeBindings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings")
   @JsonProperty("entityNameReferences")
   public List<String> getEntityNameReferences() {
     return entityNameReferences;
   }
 
-  
+
   /**
    * The utterances that act as training phrases for the intent.
    **/
@@ -90,7 +91,6 @@ public class IntentDefinition  implements Serializable {
     this.utterances = utterances;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,10 +101,11 @@ public class IntentDefinition  implements Serializable {
       return false;
     }
     IntentDefinition intentDefinition = (IntentDefinition) o;
+
     return Objects.equals(this.name, intentDefinition.name) &&
-        Objects.equals(this.entityTypeBindings, intentDefinition.entityTypeBindings) &&
-        Objects.equals(this.entityNameReferences, intentDefinition.entityNameReferences) &&
-        Objects.equals(this.utterances, intentDefinition.utterances);
+            Objects.equals(this.entityTypeBindings, intentDefinition.entityTypeBindings) &&
+            Objects.equals(this.entityNameReferences, intentDefinition.entityNameReferences) &&
+            Objects.equals(this.utterances, intentDefinition.utterances);
   }
 
   @Override

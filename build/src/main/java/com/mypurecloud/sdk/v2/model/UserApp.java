@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
@@ -36,21 +37,21 @@ public class UserApp  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of the userApp, used to distinguish this userApp from others of the same type.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Integration Type for the userApp")
   @JsonProperty("integrationType")
   public IntegrationType getIntegrationType() {
     return integrationType;
   }
 
-  
+
   /**
    **/
   public UserApp config(UserAppConfigurationInfo config) {
@@ -67,14 +68,13 @@ public class UserApp  implements Serializable {
     this.config = config;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -85,11 +85,12 @@ public class UserApp  implements Serializable {
       return false;
     }
     UserApp userApp = (UserApp) o;
+
     return Objects.equals(this.id, userApp.id) &&
-        Objects.equals(this.name, userApp.name) &&
-        Objects.equals(this.integrationType, userApp.integrationType) &&
-        Objects.equals(this.config, userApp.config) &&
-        Objects.equals(this.selfUri, userApp.selfUri);
+            Objects.equals(this.name, userApp.name) &&
+            Objects.equals(this.integrationType, userApp.integrationType) &&
+            Objects.equals(this.config, userApp.config) &&
+            Objects.equals(this.selfUri, userApp.selfUri);
   }
 
   @Override

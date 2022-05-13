@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class RecordingEventMediaResult  implements Serializable {
     this.channelId = channelId;
   }
 
-  
+
   /**
    **/
   public RecordingEventMediaResult waveUri(String waveUri) {
@@ -62,7 +63,7 @@ public class RecordingEventMediaResult  implements Serializable {
     this.waveUri = waveUri;
   }
 
-  
+
   /**
    **/
   public RecordingEventMediaResult mediaUri(String mediaUri) {
@@ -79,7 +80,7 @@ public class RecordingEventMediaResult  implements Serializable {
     this.mediaUri = mediaUri;
   }
 
-  
+
   /**
    **/
   public RecordingEventMediaResult waveformData(List<BigDecimal> waveformData) {
@@ -96,7 +97,6 @@ public class RecordingEventMediaResult  implements Serializable {
     this.waveformData = waveformData;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class RecordingEventMediaResult  implements Serializable {
       return false;
     }
     RecordingEventMediaResult recordingEventMediaResult = (RecordingEventMediaResult) o;
+
     return Objects.equals(this.channelId, recordingEventMediaResult.channelId) &&
-        Objects.equals(this.waveUri, recordingEventMediaResult.waveUri) &&
-        Objects.equals(this.mediaUri, recordingEventMediaResult.mediaUri) &&
-        Objects.equals(this.waveformData, recordingEventMediaResult.waveformData);
+            Objects.equals(this.waveUri, recordingEventMediaResult.waveUri) &&
+            Objects.equals(this.mediaUri, recordingEventMediaResult.mediaUri) &&
+            Objects.equals(this.waveformData, recordingEventMediaResult.waveformData);
   }
 
   @Override

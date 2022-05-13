@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -35,42 +36,41 @@ public class VoicemailMailboxInfo  implements Serializable {
     return usageSizeBytes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of voicemail messages")
   @JsonProperty("totalCount")
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of voicemail messages marked as unread")
   @JsonProperty("unreadCount")
   public Integer getUnreadCount() {
     return unreadCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of voicemail messages marked as deleted")
   @JsonProperty("deletedCount")
   public Integer getDeletedCount() {
     return deletedCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +81,13 @@ public class VoicemailMailboxInfo  implements Serializable {
       return false;
     }
     VoicemailMailboxInfo voicemailMailboxInfo = (VoicemailMailboxInfo) o;
+
     return Objects.equals(this.usageSizeBytes, voicemailMailboxInfo.usageSizeBytes) &&
-        Objects.equals(this.totalCount, voicemailMailboxInfo.totalCount) &&
-        Objects.equals(this.unreadCount, voicemailMailboxInfo.unreadCount) &&
-        Objects.equals(this.deletedCount, voicemailMailboxInfo.deletedCount) &&
-        Objects.equals(this.createdDate, voicemailMailboxInfo.createdDate) &&
-        Objects.equals(this.modifiedDate, voicemailMailboxInfo.modifiedDate);
+            Objects.equals(this.totalCount, voicemailMailboxInfo.totalCount) &&
+            Objects.equals(this.unreadCount, voicemailMailboxInfo.unreadCount) &&
+            Objects.equals(this.deletedCount, voicemailMailboxInfo.deletedCount) &&
+            Objects.equals(this.createdDate, voicemailMailboxInfo.createdDate) &&
+            Objects.equals(this.modifiedDate, voicemailMailboxInfo.modifiedDate);
   }
 
   @Override

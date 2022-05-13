@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class SearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -121,7 +122,7 @@ public class SearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -139,7 +140,7 @@ public class SearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -157,7 +158,7 @@ public class SearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -175,7 +176,7 @@ public class SearchRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    * A List of strings.  Possible values are any field in the resource you are searching on.  The other option is to use ALL_FIELDS, when this is provided all fields in the resource will be returned in the search results.
    **/
@@ -193,7 +194,7 @@ public class SearchRequest  implements Serializable {
     this.returnFields = returnFields;
   }
 
-  
+
   /**
    * Provides more details about a specified resource
    **/
@@ -211,7 +212,7 @@ public class SearchRequest  implements Serializable {
     this.expand = expand;
   }
 
-  
+
   /**
    * Resource domain type to search
    **/
@@ -229,7 +230,7 @@ public class SearchRequest  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * The search criteria
    **/
@@ -247,7 +248,7 @@ public class SearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
+
   /**
    * Aggregation criteria
    **/
@@ -265,7 +266,6 @@ public class SearchRequest  implements Serializable {
     this.aggregations = aggregations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -276,16 +276,17 @@ public class SearchRequest  implements Serializable {
       return false;
     }
     SearchRequest searchRequest = (SearchRequest) o;
+
     return Objects.equals(this.sortOrder, searchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, searchRequest.sortBy) &&
-        Objects.equals(this.pageSize, searchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, searchRequest.pageNumber) &&
-        Objects.equals(this.sort, searchRequest.sort) &&
-        Objects.equals(this.returnFields, searchRequest.returnFields) &&
-        Objects.equals(this.expand, searchRequest.expand) &&
-        Objects.equals(this.types, searchRequest.types) &&
-        Objects.equals(this.query, searchRequest.query) &&
-        Objects.equals(this.aggregations, searchRequest.aggregations);
+            Objects.equals(this.sortBy, searchRequest.sortBy) &&
+            Objects.equals(this.pageSize, searchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, searchRequest.pageNumber) &&
+            Objects.equals(this.sort, searchRequest.sort) &&
+            Objects.equals(this.returnFields, searchRequest.returnFields) &&
+            Objects.equals(this.expand, searchRequest.expand) &&
+            Objects.equals(this.types, searchRequest.types) &&
+            Objects.equals(this.query, searchRequest.query) &&
+            Objects.equals(this.aggregations, searchRequest.aggregations);
   }
 
   @Override

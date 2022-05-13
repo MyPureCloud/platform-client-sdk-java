@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LineUserId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -45,7 +45,7 @@ public class LineId  implements Serializable {
     this.ids = ids;
   }
 
-  
+
   /**
    * The displayName of this person's account in Line
    **/
@@ -63,7 +63,6 @@ public class LineId  implements Serializable {
     this.displayName = displayName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +73,9 @@ public class LineId  implements Serializable {
       return false;
     }
     LineId lineId = (LineId) o;
+
     return Objects.equals(this.ids, lineId.ids) &&
-        Objects.equals(this.displayName, lineId.displayName);
+            Objects.equals(this.displayName, lineId.displayName);
   }
 
   @Override

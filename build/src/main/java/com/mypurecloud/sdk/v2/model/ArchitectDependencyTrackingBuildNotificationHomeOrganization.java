@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ArchitectDependencyTrackingBuildNotificationHomeOrganization  imple
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ArchitectDependencyTrackingBuildNotificationHomeOrganization name(String name) {
@@ -58,7 +59,7 @@ public class ArchitectDependencyTrackingBuildNotificationHomeOrganization  imple
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ArchitectDependencyTrackingBuildNotificationHomeOrganization thirdPartyOrgName(String thirdPartyOrgName) {
@@ -75,7 +76,6 @@ public class ArchitectDependencyTrackingBuildNotificationHomeOrganization  imple
     this.thirdPartyOrgName = thirdPartyOrgName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class ArchitectDependencyTrackingBuildNotificationHomeOrganization  imple
       return false;
     }
     ArchitectDependencyTrackingBuildNotificationHomeOrganization architectDependencyTrackingBuildNotificationHomeOrganization = (ArchitectDependencyTrackingBuildNotificationHomeOrganization) o;
+
     return Objects.equals(this.id, architectDependencyTrackingBuildNotificationHomeOrganization.id) &&
-        Objects.equals(this.name, architectDependencyTrackingBuildNotificationHomeOrganization.name) &&
-        Objects.equals(this.thirdPartyOrgName, architectDependencyTrackingBuildNotificationHomeOrganization.thirdPartyOrgName);
+            Objects.equals(this.name, architectDependencyTrackingBuildNotificationHomeOrganization.name) &&
+            Objects.equals(this.thirdPartyOrgName, architectDependencyTrackingBuildNotificationHomeOrganization.thirdPartyOrgName);
   }
 
   @Override

@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLicenseUser**](LicenseApi.html#getLicenseUser) | Get licenses for specified user. |
 | [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | Get a page of users and their licenses |
 | [**postLicenseInfer**](LicenseApi.html#postLicenseInfer) | Get a list of licenses inferred based on a list of roleIds |
-| [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization&#39;s license assignments in a batch. |
+| [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization's license assignments in a batch. |
 | [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Switch PureCloud license feature toggle value. |
 | [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | Fetch user licenses in a batch. |
 {: class="table-striped"}
@@ -27,8 +27,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > [LicenseDefinition](LicenseDefinition.html) getLicenseDefinition(licenseId)
 
 Get PureCloud license definition.
-
-
 
 Wraps GET /api/v2/license/definitions/{licenseId}  
 
@@ -91,8 +89,6 @@ try {
 
 Get all PureCloud license definitions available for the organization.
 
-
-
 Wraps GET /api/v2/license/definitions  
 
 Requires ANY permissions: 
@@ -149,8 +145,6 @@ This endpoint does not require any parameters.
 > [LicenseOrgToggle](LicenseOrgToggle.html) getLicenseToggle(featureName)
 
 Get PureCloud license feature toggle value.
-
-
 
 Wraps GET /api/v2/license/toggles/{featureName}  
 
@@ -212,8 +206,6 @@ try {
 > [LicenseUser](LicenseUser.html) getLicenseUser(userId)
 
 Get licenses for specified user.
-
-
 
 Wraps GET /api/v2/license/users/{userId}  
 
@@ -340,8 +332,6 @@ try {
 
 Get a list of licenses inferred based on a list of roleIds
 
-
-
 Wraps POST /api/v2/license/infer  
 
 Requires NO permissions: 
@@ -369,7 +359,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LicenseApi apiInstance = new LicenseApi();
-List<String> body = Arrays.asList(new List<String>()); // List<String> | The roleIds to use while inferring licenses
+List<String> body = Arrays.asList(null); // List<String> | The roleIds to use while inferring licenses
 try {
     List<String> result = apiInstance.postLicenseInfer(body);
     System.out.println(result);
@@ -384,7 +374,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **List&lt;String&gt;**| The roleIds to use while inferring licenses | [optional] 
+| **body** | [**List&lt;String&gt;**](String.html)| The roleIds to use while inferring licenses | [optional] 
 {: class="table-striped"}
 
 
@@ -400,9 +390,7 @@ try {
 
 > [List&lt;LicenseUpdateStatus&gt;](LicenseUpdateStatus.html) postLicenseOrganization(body)
 
-Update the organization&#39;s license assignments in a batch.
-
-
+Update the organization's license assignments in a batch.
 
 Wraps POST /api/v2/license/organization  
 
@@ -465,8 +453,6 @@ try {
 
 Switch PureCloud license feature toggle value.
 
-
-
 Wraps POST /api/v2/license/toggles/{featureName}  
 
 Requires ANY permissions: 
@@ -524,11 +510,9 @@ try {
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) postLicenseUsers(body)
+> Map&lt;String, Object&gt; postLicenseUsers(body)
 
 Fetch user licenses in a batch.
-
-
 
 Wraps POST /api/v2/license/users  
 
@@ -558,7 +542,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LicenseApi apiInstance = new LicenseApi();
-List<String> body = Arrays.asList(new List<String>()); // List<String> | The user IDs to fetch.
+List<String> body = Arrays.asList(null); // List<String> | The user IDs to fetch.
 try {
     Map<String, Object> result = apiInstance.postLicenseUsers(body);
     System.out.println(result);
@@ -573,11 +557,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **List&lt;String&gt;**| The user IDs to fetch. | [optional] 
+| **body** | [**List&lt;String&gt;**](String.html)| The user IDs to fetch. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -178,7 +179,7 @@ public class Video  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -196,7 +197,7 @@ public class Video  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -214,7 +215,7 @@ public class Video  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * Indicates whether this participant has muted their outgoing audio.
    **/
@@ -232,7 +233,7 @@ public class Video  implements Serializable {
     this.audioMuted = audioMuted;
   }
 
-  
+
   /**
    * Indicates whether this participant has muted/paused their outgoing video.
    **/
@@ -250,7 +251,7 @@ public class Video  implements Serializable {
     this.videoMuted = videoMuted;
   }
 
-  
+
   /**
    * Indicates whether this participant is sharing their screen to the session.
    **/
@@ -268,7 +269,7 @@ public class Video  implements Serializable {
     this.sharingScreen = sharingScreen;
   }
 
-  
+
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
@@ -286,7 +287,7 @@ public class Video  implements Serializable {
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -304,7 +305,7 @@ public class Video  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -322,7 +323,7 @@ public class Video  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -340,7 +341,7 @@ public class Video  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -358,7 +359,7 @@ public class Video  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The source provider for the video.
    **/
@@ -376,7 +377,7 @@ public class Video  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -394,7 +395,7 @@ public class Video  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * List of media stream ids
    **/
@@ -412,7 +413,7 @@ public class Video  implements Serializable {
     this.msids = msids;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -430,7 +431,7 @@ public class Video  implements Serializable {
     this.self = self;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -448,7 +449,7 @@ public class Video  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -466,7 +467,7 @@ public class Video  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -484,7 +485,6 @@ public class Video  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -495,24 +495,25 @@ public class Video  implements Serializable {
       return false;
     }
     Video video = (Video) o;
+
     return Objects.equals(this.state, video.state) &&
-        Objects.equals(this.id, video.id) &&
-        Objects.equals(this.context, video.context) &&
-        Objects.equals(this.audioMuted, video.audioMuted) &&
-        Objects.equals(this.videoMuted, video.videoMuted) &&
-        Objects.equals(this.sharingScreen, video.sharingScreen) &&
-        Objects.equals(this.peerCount, video.peerCount) &&
-        Objects.equals(this.disconnectType, video.disconnectType) &&
-        Objects.equals(this.startAlertingTime, video.startAlertingTime) &&
-        Objects.equals(this.connectedTime, video.connectedTime) &&
-        Objects.equals(this.disconnectedTime, video.disconnectedTime) &&
-        Objects.equals(this.provider, video.provider) &&
-        Objects.equals(this.peerId, video.peerId) &&
-        Objects.equals(this.msids, video.msids) &&
-        Objects.equals(this.self, video.self) &&
-        Objects.equals(this.wrapup, video.wrapup) &&
-        Objects.equals(this.afterCallWork, video.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, video.afterCallWorkRequired);
+            Objects.equals(this.id, video.id) &&
+            Objects.equals(this.context, video.context) &&
+            Objects.equals(this.audioMuted, video.audioMuted) &&
+            Objects.equals(this.videoMuted, video.videoMuted) &&
+            Objects.equals(this.sharingScreen, video.sharingScreen) &&
+            Objects.equals(this.peerCount, video.peerCount) &&
+            Objects.equals(this.disconnectType, video.disconnectType) &&
+            Objects.equals(this.startAlertingTime, video.startAlertingTime) &&
+            Objects.equals(this.connectedTime, video.connectedTime) &&
+            Objects.equals(this.disconnectedTime, video.disconnectedTime) &&
+            Objects.equals(this.provider, video.provider) &&
+            Objects.equals(this.peerId, video.peerId) &&
+            Objects.equals(this.msids, video.msids) &&
+            Objects.equals(this.self, video.self) &&
+            Objects.equals(this.wrapup, video.wrapup) &&
+            Objects.equals(this.afterCallWork, video.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, video.afterCallWorkRequired);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitReference;
@@ -46,7 +47,7 @@ public class WaitlistPosition  implements Serializable {
     this.timeOffRequest = timeOffRequest;
   }
 
-  
+
   /**
    * The time off limit for which time off request is waitlisted
    **/
@@ -64,7 +65,7 @@ public class WaitlistPosition  implements Serializable {
     this.timeOffLimit = timeOffLimit;
   }
 
-  
+
   /**
    * The date to which this wait list position applies, as defined by the time zone of the business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -82,7 +83,7 @@ public class WaitlistPosition  implements Serializable {
     this.date = date;
   }
 
-  
+
   /**
    * The time off request's position in the waitlist on the date. 1 means time off is the first in the waitlist
    **/
@@ -100,7 +101,6 @@ public class WaitlistPosition  implements Serializable {
     this.waitlistPosition = waitlistPosition;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class WaitlistPosition  implements Serializable {
       return false;
     }
     WaitlistPosition waitlistPosition = (WaitlistPosition) o;
+
     return Objects.equals(this.timeOffRequest, waitlistPosition.timeOffRequest) &&
-        Objects.equals(this.timeOffLimit, waitlistPosition.timeOffLimit) &&
-        Objects.equals(this.date, waitlistPosition.date) &&
-        Objects.equals(this.waitlistPosition, waitlistPosition.waitlistPosition);
+            Objects.equals(this.timeOffLimit, waitlistPosition.timeOffLimit) &&
+            Objects.equals(this.date, waitlistPosition.date) &&
+            Objects.equals(this.waitlistPosition, waitlistPosition.waitlistPosition);
   }
 
   @Override

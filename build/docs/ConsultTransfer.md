@@ -19,10 +19,10 @@ title: ConsultTransfer
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DESTINATION | &quot;DESTINATION&quot; |
-| OBJECT | &quot;OBJECT&quot; |
-| BOTH | &quot;BOTH&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DESTINATION | &quot;DESTINATION&quot; | 
+| OBJECT | &quot;OBJECT&quot; | 
+| BOTH | &quot;BOTH&quot; | 
 {: class="table table-striped"}
 
 

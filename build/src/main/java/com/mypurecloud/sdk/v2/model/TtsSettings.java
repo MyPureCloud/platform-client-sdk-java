@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LanguageOverride;
@@ -44,7 +45,7 @@ public class TtsSettings  implements Serializable {
     this.defaultEngine = defaultEngine;
   }
 
-  
+
   /**
    * The list of default overrides for specific languages
    **/
@@ -62,7 +63,6 @@ public class TtsSettings  implements Serializable {
     this.languageOverrides = languageOverrides;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class TtsSettings  implements Serializable {
       return false;
     }
     TtsSettings ttsSettings = (TtsSettings) o;
+
     return Objects.equals(this.defaultEngine, ttsSettings.defaultEngine) &&
-        Objects.equals(this.languageOverrides, ttsSettings.languageOverrides);
+            Objects.equals(this.languageOverrides, ttsSettings.languageOverrides);
   }
 
   @Override

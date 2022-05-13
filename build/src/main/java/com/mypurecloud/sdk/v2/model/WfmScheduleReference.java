@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBusinessUnitReference;
@@ -45,7 +46,7 @@ public class WfmScheduleReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * A reference to a Workforce Management Business Unit
    **/
@@ -63,7 +64,7 @@ public class WfmScheduleReference  implements Serializable {
     this.businessUnit = businessUnit;
   }
 
-  
+
   /**
    * The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -81,14 +82,13 @@ public class WfmScheduleReference  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,10 +99,11 @@ public class WfmScheduleReference  implements Serializable {
       return false;
     }
     WfmScheduleReference wfmScheduleReference = (WfmScheduleReference) o;
+
     return Objects.equals(this.id, wfmScheduleReference.id) &&
-        Objects.equals(this.businessUnit, wfmScheduleReference.businessUnit) &&
-        Objects.equals(this.weekDate, wfmScheduleReference.weekDate) &&
-        Objects.equals(this.selfUri, wfmScheduleReference.selfUri);
+            Objects.equals(this.businessUnit, wfmScheduleReference.businessUnit) &&
+            Objects.equals(this.weekDate, wfmScheduleReference.weekDate) &&
+            Objects.equals(this.selfUri, wfmScheduleReference.selfUri);
   }
 
   @Override

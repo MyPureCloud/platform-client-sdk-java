@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class QueueConversationSocialExpressionEventTopicDisconnectReason  implem
     this.type = type;
   }
 
-  
+
   /**
    * Protocol specific reason code. See the Q.850 and SIP specs.
    **/
@@ -108,7 +109,7 @@ public class QueueConversationSocialExpressionEventTopicDisconnectReason  implem
     this.code = code;
   }
 
-  
+
   /**
    * Human readable English description of the disconnect reason.
    **/
@@ -126,7 +127,6 @@ public class QueueConversationSocialExpressionEventTopicDisconnectReason  implem
     this.phrase = phrase;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class QueueConversationSocialExpressionEventTopicDisconnectReason  implem
       return false;
     }
     QueueConversationSocialExpressionEventTopicDisconnectReason queueConversationSocialExpressionEventTopicDisconnectReason = (QueueConversationSocialExpressionEventTopicDisconnectReason) o;
+
     return Objects.equals(this.type, queueConversationSocialExpressionEventTopicDisconnectReason.type) &&
-        Objects.equals(this.code, queueConversationSocialExpressionEventTopicDisconnectReason.code) &&
-        Objects.equals(this.phrase, queueConversationSocialExpressionEventTopicDisconnectReason.phrase);
+            Objects.equals(this.code, queueConversationSocialExpressionEventTopicDisconnectReason.code) &&
+            Objects.equals(this.phrase, queueConversationSocialExpressionEventTopicDisconnectReason.phrase);
   }
 
   @Override

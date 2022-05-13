@@ -51,8 +51,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete Org Trust
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}  
 
 Requires ANY permissions: 
@@ -112,8 +110,6 @@ null (empty response body)
 > Void deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
 
 Deletes cloned user
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}  
 
@@ -177,8 +173,6 @@ null (empty response body)
 
 Delete Trustee User
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}  
 
 Requires ANY permissions: 
@@ -240,8 +234,6 @@ null (empty response body)
 > Void deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 Delete Trustee User Roles
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles  
 
@@ -305,8 +297,6 @@ null (empty response body)
 
 Delete Org Trust
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}  
 
 Requires ANY permissions: 
@@ -366,8 +356,6 @@ null (empty response body)
 > Void deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 
 Delete Cloned User
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
 
@@ -431,8 +419,6 @@ null (empty response body)
 
 Delete Trustee User
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}  
 
 Requires ANY permissions: 
@@ -495,8 +481,6 @@ null (empty response body)
 
 Get Pairing Info
 
-
-
 Wraps GET /api/v2/orgauthorization/pairings/{pairingId}  
 
 Requires ANY permissions: 
@@ -558,8 +542,6 @@ try {
 > [Trustee](Trustee.html) getOrgauthorizationTrustee(trusteeOrgId)
 
 Get Org Trust
-
-
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}  
 
@@ -685,8 +667,6 @@ try {
 
 Get Trustee User
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}  
 
 Requires ANY permissions: 
@@ -750,8 +730,6 @@ try {
 
 Get Trustee User Roles
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles  
 
 Requires ANY permissions: 
@@ -814,8 +792,6 @@ try {
 > [TrustUserEntityListing](TrustUserEntityListing.html) getOrgauthorizationTrusteeUsers(trusteeOrgId, pageSize, pageNumber)
 
 The list of trustee users for this organization (i.e. users granted access to this organization).
-
-
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users  
 
@@ -882,8 +858,6 @@ try {
 
 The list of trustees for this organization (i.e. organizations granted access to this organization).
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees  
 
 Requires ANY permissions: 
@@ -947,8 +921,6 @@ try {
 
 Get organization authorization trust with Customer Care, if one exists.
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/default  
 
 Requires ANY permissions: 
@@ -1006,8 +978,6 @@ This endpoint does not require any parameters.
 > [Trustor](Trustor.html) getOrgauthorizationTrustor(trustorOrgId)
 
 Get Org Trust
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}  
 
@@ -1069,8 +1039,6 @@ try {
 > [ClonedUser](ClonedUser.html) getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 
 Get Cloned User
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
 
@@ -1135,8 +1103,6 @@ try {
 
 The list of cloned users in the trustor organization (i.e. users with a native user record).
 
-
-
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers  
 
 Requires ANY permissions: 
@@ -1197,8 +1163,6 @@ try {
 > [TrustUser](TrustUser.html) getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 Get Trustee User
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}  
 
@@ -1262,8 +1226,6 @@ try {
 > [TrustUserEntityListing](TrustUserEntityListing.html) getOrgauthorizationTrustorUsers(trustorOrgId, pageSize, pageNumber)
 
 The list of users in the trustor organization (i.e. users granted access).
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users  
 
@@ -1330,8 +1292,6 @@ try {
 
 The list of organizations that have authorized/trusted your organization.
 
-
-
 Wraps GET /api/v2/orgauthorization/trustors  
 
 Requires ANY permissions: 
@@ -1395,8 +1355,6 @@ try {
 
 A pairing id is created by the trustee and given to the trustor to create a trust.
 
-
-
 Wraps POST /api/v2/orgauthorization/pairings  
 
 Requires ANY permissions: 
@@ -1457,8 +1415,6 @@ try {
 > [TrustUser](TrustUser.html) postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 
 Add a user to the trust.
-
-
 
 Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users  
 
@@ -1523,8 +1479,6 @@ try {
 
 Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 
-
-
 Wraps POST /api/v2/orgauthorization/trustees  
 
 Requires ALL permissions: 
@@ -1583,11 +1537,9 @@ try {
 
 
 
-> [AuditQueryResponse](AuditQueryResponse.html) postOrgauthorizationTrusteesAudits(body, pageSize, pageNumber, sortBy, sortOrder)
+> Object postOrgauthorizationTrusteesAudits(body, pageSize, pageNumber, sortBy, sortOrder)
 
 Get Org Trustee Audits
-
-
 
 Wraps POST /api/v2/orgauthorization/trustees/audits  
 
@@ -1623,7 +1575,7 @@ Integer pageNumber = 1; // Integer | Page number
 String sortBy = "timestamp"; // String | Sort by
 String sortOrder = "descending"; // String | Sort order
 try {
-    AuditQueryResponse result = apiInstance.postOrgauthorizationTrusteesAudits(body, pageSize, pageNumber, sortBy, sortOrder);
+    Object result = apiInstance.postOrgauthorizationTrusteesAudits(body, pageSize, pageNumber, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationAuthorizationApi#postOrgauthorizationTrusteesAudits");
@@ -1646,7 +1598,7 @@ try {
 
 ### Return type
 
-[**AuditQueryResponse**](AuditQueryResponse.html)
+**Object**
 
 <a name="postOrgauthorizationTrusteesDefault"></a>
 
@@ -1657,8 +1609,6 @@ try {
 > [Trustee](Trustee.html) postOrgauthorizationTrusteesDefault(assignDefaultRole, autoExpire)
 
 Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
-
-
 
 Wraps POST /api/v2/orgauthorization/trustees/default  
 
@@ -1720,11 +1670,9 @@ try {
 
 
 
-> [AuditQueryResponse](AuditQueryResponse.html) postOrgauthorizationTrustorAudits(body, pageSize, pageNumber, sortBy, sortOrder)
+> Object postOrgauthorizationTrustorAudits(body, pageSize, pageNumber, sortBy, sortOrder)
 
 Get Org Trustor Audits
-
-
 
 Wraps POST /api/v2/orgauthorization/trustor/audits  
 
@@ -1760,7 +1708,7 @@ Integer pageNumber = 1; // Integer | Page number
 String sortBy = "timestamp"; // String | Sort by
 String sortOrder = "descending"; // String | Sort order
 try {
-    AuditQueryResponse result = apiInstance.postOrgauthorizationTrustorAudits(body, pageSize, pageNumber, sortBy, sortOrder);
+    Object result = apiInstance.postOrgauthorizationTrustorAudits(body, pageSize, pageNumber, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationAuthorizationApi#postOrgauthorizationTrustorAudits");
@@ -1783,7 +1731,7 @@ try {
 
 ### Return type
 
-[**AuditQueryResponse**](AuditQueryResponse.html)
+**Object**
 
 <a name="putOrgauthorizationTrustee"></a>
 
@@ -1794,8 +1742,6 @@ try {
 > [Trustee](Trustee.html) putOrgauthorizationTrustee(trusteeOrgId, body)
 
 Update Org Trust
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}  
 
@@ -1859,8 +1805,6 @@ try {
 > [UserAuthorization](UserAuthorization.html) putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)
 
 Update Trustee User Roles
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions  
 
@@ -1927,8 +1871,6 @@ try {
 
 Update Trustee User Roles
 
-
-
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles  
 
 Requires ANY permissions: 
@@ -1959,7 +1901,7 @@ Configuration.setDefaultApiClient(apiClient);
 OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
 String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 String trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
-List<String> body = Arrays.asList(new List<String>()); // List<String> | List of roles
+List<String> body = Arrays.asList(null); // List<String> | List of roles
 try {
     UserAuthorization result = apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body);
     System.out.println(result);
@@ -1976,7 +1918,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **trusteeOrgId** | **String**| Trustee Organization Id | 
 | **trusteeUserId** | **String**| Trustee User Id | 
-| **body** | **List&lt;String&gt;**| List of roles | 
+| **body** | [**List&lt;String&gt;**](String.html)| List of roles | 
 {: class="table-striped"}
 
 
@@ -1993,8 +1935,6 @@ try {
 > [ClonedUser](ClonedUser.html) putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 
 Creates a clone of the trustee user in the trustor org.
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
 
@@ -2058,8 +1998,6 @@ try {
 > [TrustUser](TrustUser.html) putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 Add a Trustee user to the trust.
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}  
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class MessagingCampaign  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public MessagingCampaign name(String name) {
@@ -120,21 +121,21 @@ public class MessagingCampaign  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -152,7 +153,7 @@ public class MessagingCampaign  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The division this entity belongs to.
    **/
@@ -170,7 +171,7 @@ public class MessagingCampaign  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The current status of the messaging campaign. A messaging campaign may be turned 'on' or 'off'.
    **/
@@ -188,7 +189,7 @@ public class MessagingCampaign  implements Serializable {
     this.campaignStatus = campaignStatus;
   }
 
-  
+
   /**
    * The callable time set for this messaging campaign.
    **/
@@ -206,7 +207,7 @@ public class MessagingCampaign  implements Serializable {
     this.callableTimeSet = callableTimeSet;
   }
 
-  
+
   /**
    * The contact list that this messaging campaign will send messages for.
    **/
@@ -224,7 +225,7 @@ public class MessagingCampaign  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * The dnc lists to check before sending a message for this messaging campaign.
    **/
@@ -242,7 +243,7 @@ public class MessagingCampaign  implements Serializable {
     this.dncLists = dncLists;
   }
 
-  
+
   /**
    * Whether this messaging campaign is always running
    **/
@@ -260,7 +261,7 @@ public class MessagingCampaign  implements Serializable {
     this.alwaysRunning = alwaysRunning;
   }
 
-  
+
   /**
    * The order in which to sort contacts for dialing, based on up to four columns.
    **/
@@ -278,7 +279,7 @@ public class MessagingCampaign  implements Serializable {
     this.contactSorts = contactSorts;
   }
 
-  
+
   /**
    * How many messages this messaging campaign will send per minute.
    **/
@@ -296,7 +297,7 @@ public class MessagingCampaign  implements Serializable {
     this.messagesPerMinute = messagesPerMinute;
   }
 
-  
+
   /**
    * The contact list filter to check before sending a message for this messaging campaign.
    **/
@@ -314,7 +315,7 @@ public class MessagingCampaign  implements Serializable {
     this.contactListFilters = contactListFilters;
   }
 
-  
+
   /**
    * A list of current error conditions associated with this messaging campaign.
    **/
@@ -332,7 +333,7 @@ public class MessagingCampaign  implements Serializable {
     this.errors = errors;
   }
 
-  
+
   /**
    * Configuration for this messaging campaign to send SMS messages.
    **/
@@ -350,14 +351,13 @@ public class MessagingCampaign  implements Serializable {
     this.smsConfig = smsConfig;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -368,23 +368,24 @@ public class MessagingCampaign  implements Serializable {
       return false;
     }
     MessagingCampaign messagingCampaign = (MessagingCampaign) o;
+
     return Objects.equals(this.id, messagingCampaign.id) &&
-        Objects.equals(this.name, messagingCampaign.name) &&
-        Objects.equals(this.dateCreated, messagingCampaign.dateCreated) &&
-        Objects.equals(this.dateModified, messagingCampaign.dateModified) &&
-        Objects.equals(this.version, messagingCampaign.version) &&
-        Objects.equals(this.division, messagingCampaign.division) &&
-        Objects.equals(this.campaignStatus, messagingCampaign.campaignStatus) &&
-        Objects.equals(this.callableTimeSet, messagingCampaign.callableTimeSet) &&
-        Objects.equals(this.contactList, messagingCampaign.contactList) &&
-        Objects.equals(this.dncLists, messagingCampaign.dncLists) &&
-        Objects.equals(this.alwaysRunning, messagingCampaign.alwaysRunning) &&
-        Objects.equals(this.contactSorts, messagingCampaign.contactSorts) &&
-        Objects.equals(this.messagesPerMinute, messagingCampaign.messagesPerMinute) &&
-        Objects.equals(this.contactListFilters, messagingCampaign.contactListFilters) &&
-        Objects.equals(this.errors, messagingCampaign.errors) &&
-        Objects.equals(this.smsConfig, messagingCampaign.smsConfig) &&
-        Objects.equals(this.selfUri, messagingCampaign.selfUri);
+            Objects.equals(this.name, messagingCampaign.name) &&
+            Objects.equals(this.dateCreated, messagingCampaign.dateCreated) &&
+            Objects.equals(this.dateModified, messagingCampaign.dateModified) &&
+            Objects.equals(this.version, messagingCampaign.version) &&
+            Objects.equals(this.division, messagingCampaign.division) &&
+            Objects.equals(this.campaignStatus, messagingCampaign.campaignStatus) &&
+            Objects.equals(this.callableTimeSet, messagingCampaign.callableTimeSet) &&
+            Objects.equals(this.contactList, messagingCampaign.contactList) &&
+            Objects.equals(this.dncLists, messagingCampaign.dncLists) &&
+            Objects.equals(this.alwaysRunning, messagingCampaign.alwaysRunning) &&
+            Objects.equals(this.contactSorts, messagingCampaign.contactSorts) &&
+            Objects.equals(this.messagesPerMinute, messagingCampaign.messagesPerMinute) &&
+            Objects.equals(this.contactListFilters, messagingCampaign.contactListFilters) &&
+            Objects.equals(this.errors, messagingCampaign.errors) &&
+            Objects.equals(this.smsConfig, messagingCampaign.smsConfig) &&
+            Objects.equals(this.selfUri, messagingCampaign.selfUri);
   }
 
   @Override

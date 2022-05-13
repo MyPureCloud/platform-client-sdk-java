@@ -10,108 +10,107 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
+import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.Conversation;
-import com.mypurecloud.sdk.v2.model.SecureSession;
-import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.AssignedWrapupCode;
-import com.mypurecloud.sdk.v2.model.WrapupCode;
-import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.BulkCallbackDisconnectRequest;
+import com.mypurecloud.sdk.v2.model.BulkCallbackPatchRequest;
+import com.mypurecloud.sdk.v2.model.BulkCallbackPatchResponse;
+import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.CallConversation;
-import com.mypurecloud.sdk.v2.model.CallbackConversation;
-import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
-import com.mypurecloud.sdk.v2.model.MaxParticipants;
+import com.mypurecloud.sdk.v2.model.CallbackConversation;
+import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
-import com.mypurecloud.sdk.v2.model.WebChatMessage;
-import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ConsultTransfer;
+import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
+import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
+import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
+import com.mypurecloud.sdk.v2.model.ConversationUser;
+import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
+import com.mypurecloud.sdk.v2.model.CreateCallRequest;
+import com.mypurecloud.sdk.v2.model.CreateCallResponse;
+import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
+import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
+import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
+import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
+import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateSecureSession;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
+import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.EmailConversation;
+import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailsSettings;
-import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
-import com.mypurecloud.sdk.v2.model.MessageConversation;
-import com.mypurecloud.sdk.v2.model.MessageMediaData;
-import com.mypurecloud.sdk.v2.model.MessageData;
-import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
-import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
-import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.FaxSendRequest;
+import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.LineIntegration;
-import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.OpenIntegration;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.TwitterIntegration;
-import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
-import com.mypurecloud.sdk.v2.model.SupportedContent;
-import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
+import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
+import com.mypurecloud.sdk.v2.model.MessageConversation;
+import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessageData;
+import com.mypurecloud.sdk.v2.model.MessageMediaData;
+import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenIntegration;
+import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
-import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
-import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
-import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
-import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ConversationQuery;
-import com.mypurecloud.sdk.v2.model.ConversationUser;
-import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
-import com.mypurecloud.sdk.v2.model.Digits;
-import com.mypurecloud.sdk.v2.model.TransferRequest;
-import com.mypurecloud.sdk.v2.model.CreateSecureSession;
-import com.mypurecloud.sdk.v2.model.CallCommand;
-import com.mypurecloud.sdk.v2.model.ConsultTransfer;
-import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
-import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
-import com.mypurecloud.sdk.v2.model.BulkCallbackDisconnectRequest;
-import com.mypurecloud.sdk.v2.model.BulkCallbackPatchResponse;
-import com.mypurecloud.sdk.v2.model.BulkCallbackPatchRequest;
-import com.mypurecloud.sdk.v2.model.CreateCallRequest;
-import com.mypurecloud.sdk.v2.model.CreateCallResponse;
-import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
-import com.mypurecloud.sdk.v2.model.WebChatTyping;
-import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
-import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
-import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
-import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
-import com.mypurecloud.sdk.v2.model.FaxSendResponse;
-import com.mypurecloud.sdk.v2.model.FaxSendRequest;
-import com.mypurecloud.sdk.v2.model.AdditionalMessage;
-import com.mypurecloud.sdk.v2.model.TextMessageListing;
-import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.SecureSession;
+import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
-import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
-import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
+import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
+import com.mypurecloud.sdk.v2.model.TextMessageListing;
+import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegration;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.WebChatMessage;
+import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
+import com.mypurecloud.sdk.v2.model.WebChatTyping;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.WrapupCode;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
@@ -280,7 +279,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ConversationsApi {
   private final ApiClient pcapiClient;
 
@@ -292,7 +290,6 @@ public class ConversationsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete/cancel an async request
    * 
@@ -317,7 +314,7 @@ public class ConversationsApi {
   private DeleteAnalyticsConversationsDetailsJobRequest createDeleteAnalyticsConversationsDetailsJobRequest(String jobId) {
     return DeleteAnalyticsConversationsDetailsJobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
@@ -368,7 +365,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete a code used to add a communication to this participant
    * 
@@ -397,11 +393,11 @@ public class ConversationsApi {
   private DeleteConversationParticipantCodeRequest createDeleteConversationParticipantCodeRequest(String conversationId, String participantId, String addCommunicationCode) {
     return DeleteConversationParticipantCodeRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withAddCommunicationCode(addCommunicationCode)
-    
+
             .build();
   }
 
@@ -452,7 +448,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Remove flagged reason from conversation participant.
    * 
@@ -479,9 +474,9 @@ public class ConversationsApi {
   private DeleteConversationParticipantFlaggedreasonRequest createDeleteConversationParticipantFlaggedreasonRequest(String conversationId, String participantId) {
     return DeleteConversationParticipantFlaggedreasonRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -532,7 +527,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Cancel the transfer
    * 
@@ -559,9 +553,9 @@ public class ConversationsApi {
   private DeleteConversationsCallParticipantConsultRequest createDeleteConversationsCallParticipantConsultRequest(String conversationId, String participantId) {
     return DeleteConversationsCallParticipantConsultRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -612,7 +606,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete attachment from draft
    * 
@@ -639,9 +632,9 @@ public class ConversationsApi {
   private DeleteConversationsEmailMessagesDraftAttachmentRequest createDeleteConversationsEmailMessagesDraftAttachmentRequest(String conversationId, String attachmentId) {
     return DeleteConversationsEmailMessagesDraftAttachmentRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withAttachmentId(attachmentId)
-    
+
             .build();
   }
 
@@ -692,7 +685,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete a Facebook messaging integration
    * 
@@ -717,7 +709,7 @@ public class ConversationsApi {
   private DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest createDeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId) {
     return DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -768,7 +760,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete a LINE messenger integration
    * 
@@ -793,7 +784,7 @@ public class ConversationsApi {
   private DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId) {
     return DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -844,7 +835,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
@@ -869,7 +859,7 @@ public class ConversationsApi {
   private DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest createDeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest(String integrationId) {
     return DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -920,7 +910,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete a Twitter messaging integration
    * 
@@ -945,7 +934,7 @@ public class ConversationsApi {
   private DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId) {
     return DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -996,7 +985,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete a WhatsApp messaging integration
    * 
@@ -1023,7 +1011,7 @@ public class ConversationsApi {
   private DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createDeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId) {
     return DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -1075,7 +1063,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Delete a supported content profile
    * 
@@ -1100,7 +1087,7 @@ public class ConversationsApi {
   private DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest createDeleteConversationsMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId) {
     return DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest.builder()
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -1151,7 +1138,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a conversation by id
    * 
@@ -1178,7 +1164,7 @@ public class ConversationsApi {
   private GetAnalyticsConversationDetailsRequest createGetAnalyticsConversationDetailsRequest(String conversationId) {
     return GetAnalyticsConversationDetailsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -1230,7 +1216,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Gets multiple conversations by id
    * 
@@ -1257,7 +1242,7 @@ public class ConversationsApi {
   private GetAnalyticsConversationsDetailsRequest createGetAnalyticsConversationsDetailsRequest(List<String> id) {
     return GetAnalyticsConversationsDetailsRequest.builder()
             .withId(id)
-    
+
             .build();
   }
 
@@ -1309,7 +1294,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get status for async query for conversation details
    * 
@@ -1336,7 +1320,7 @@ public class ConversationsApi {
   private GetAnalyticsConversationsDetailsJobRequest createGetAnalyticsConversationsDetailsJobRequest(String jobId) {
     return GetAnalyticsConversationsDetailsJobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
@@ -1388,7 +1372,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Fetch a page of results for an async query
    * 
@@ -1419,11 +1402,11 @@ public class ConversationsApi {
   private GetAnalyticsConversationsDetailsJobResultsRequest createGetAnalyticsConversationsDetailsJobResultsRequest(String jobId, String cursor, Integer pageSize) {
     return GetAnalyticsConversationsDetailsJobResultsRequest.builder()
             .withJobId(jobId)
-    
+
             .withCursor(cursor)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1475,7 +1458,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Lookup the datalake availability date and time
    * 
@@ -1550,7 +1532,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get conversation
    * 
@@ -1577,7 +1558,7 @@ public class ConversationsApi {
   private GetConversationRequest createGetConversationRequest(String conversationId) {
     return GetConversationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -1629,7 +1610,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Fetch info on a secure session
    * 
@@ -1660,11 +1640,11 @@ public class ConversationsApi {
   private GetConversationParticipantSecureivrsessionRequest createGetConversationParticipantSecureivrsessionRequest(String conversationId, String participantId, String secureSessionId) {
     return GetConversationParticipantSecureivrsessionRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withSecureSessionId(secureSessionId)
-    
+
             .build();
   }
 
@@ -1716,7 +1696,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of secure sessions for this participant.
    * 
@@ -1745,9 +1724,9 @@ public class ConversationsApi {
   private GetConversationParticipantSecureivrsessionsRequest createGetConversationParticipantSecureivrsessionsRequest(String conversationId, String participantId) {
     return GetConversationParticipantSecureivrsessionsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -1799,7 +1778,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -1830,11 +1808,11 @@ public class ConversationsApi {
   private GetConversationParticipantWrapupRequest createGetConversationParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -1886,7 +1864,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -1915,9 +1892,9 @@ public class ConversationsApi {
   private GetConversationParticipantWrapupcodesRequest createGetConversationParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -1969,7 +1946,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active conversations for the logged in user
    * 
@@ -1996,7 +1972,7 @@ public class ConversationsApi {
   private GetConversationsRequest createGetConversationsRequest(String communicationType) {
     return GetConversationsRequest.builder()
             .withCommunicationType(communicationType)
-    
+
             .build();
   }
 
@@ -2048,7 +2024,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get call conversation
    * 
@@ -2075,7 +2050,7 @@ public class ConversationsApi {
   private GetConversationsCallRequest createGetConversationsCallRequest(String conversationId) {
     return GetConversationsCallRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -2127,7 +2102,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -2158,11 +2132,11 @@ public class ConversationsApi {
   private GetConversationsCallParticipantWrapupRequest createGetConversationsCallParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsCallParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -2214,7 +2188,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -2243,9 +2216,9 @@ public class ConversationsApi {
   private GetConversationsCallParticipantWrapupcodesRequest createGetConversationsCallParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsCallParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -2297,7 +2270,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get callback conversation
    * 
@@ -2324,7 +2296,7 @@ public class ConversationsApi {
   private GetConversationsCallbackRequest createGetConversationsCallbackRequest(String conversationId) {
     return GetConversationsCallbackRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -2376,7 +2348,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -2407,11 +2378,11 @@ public class ConversationsApi {
   private GetConversationsCallbackParticipantWrapupRequest createGetConversationsCallbackParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsCallbackParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -2463,7 +2434,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -2492,9 +2462,9 @@ public class ConversationsApi {
   private GetConversationsCallbackParticipantWrapupcodesRequest createGetConversationsCallbackParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsCallbackParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -2546,7 +2516,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active callback conversations for the logged in user
    * 
@@ -2621,7 +2590,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active call conversations for the logged in user
    * 
@@ -2696,13 +2664,12 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get call history
    * 
    * @param pageSize Page size, maximum 50 (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash '/' (optional)
    * @param expand Which fields, if any, to expand. (optional)
    * @return CallHistoryConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -2717,7 +2684,7 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size, maximum 50 (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash '/' (optional)
    * @param expand Which fields, if any, to expand. (optional)
    * @return CallHistoryConversationEntityListing
    * @throws IOException if the request fails to be processed
@@ -2729,13 +2696,13 @@ public class ConversationsApi {
   private GetConversationsCallsHistoryRequest createGetConversationsCallsHistoryRequest(Integer pageSize, Integer pageNumber, String interval, List<String> expand) {
     return GetConversationsCallsHistoryRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withInterval(interval)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -2787,7 +2754,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the maximum number of participants that this user can have on a conference
    * 
@@ -2862,7 +2828,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get chat conversation
    * 
@@ -2889,7 +2854,7 @@ public class ConversationsApi {
   private GetConversationsChatRequest createGetConversationsChatRequest(String conversationId) {
     return GetConversationsChatRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -2941,7 +2906,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a web chat conversation message
    * The current user must be involved with the conversation to get its messages.
@@ -2970,9 +2934,9 @@ public class ConversationsApi {
   private GetConversationsChatMessageRequest createGetConversationsChatMessageRequest(String conversationId, String messageId) {
     return GetConversationsChatMessageRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withMessageId(messageId)
-    
+
             .build();
   }
 
@@ -3024,7 +2988,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the messages of a chat conversation.
    * The current user must be involved with the conversation to get its messages.
@@ -3059,15 +3022,15 @@ public class ConversationsApi {
   private GetConversationsChatMessagesRequest createGetConversationsChatMessagesRequest(String conversationId, String after, String before, String sortOrder, Integer maxResults) {
     return GetConversationsChatMessagesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withAfter(after)
-    
+
             .withBefore(before)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withMaxResults(maxResults)
-    
+
             .build();
   }
 
@@ -3119,7 +3082,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -3150,11 +3112,11 @@ public class ConversationsApi {
   private GetConversationsChatParticipantWrapupRequest createGetConversationsChatParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsChatParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -3206,7 +3168,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -3235,9 +3196,9 @@ public class ConversationsApi {
   private GetConversationsChatParticipantWrapupcodesRequest createGetConversationsChatParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsChatParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -3289,7 +3250,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active chat conversations for the logged in user
    * 
@@ -3364,7 +3324,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get cobrowse conversation
    * 
@@ -3391,7 +3350,7 @@ public class ConversationsApi {
   private GetConversationsCobrowsesessionRequest createGetConversationsCobrowsesessionRequest(String conversationId) {
     return GetConversationsCobrowsesessionRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -3443,7 +3402,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -3474,11 +3432,11 @@ public class ConversationsApi {
   private GetConversationsCobrowsesessionParticipantWrapupRequest createGetConversationsCobrowsesessionParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsCobrowsesessionParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -3530,7 +3488,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -3559,9 +3516,9 @@ public class ConversationsApi {
   private GetConversationsCobrowsesessionParticipantWrapupcodesRequest createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsCobrowsesessionParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -3613,7 +3570,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active cobrowse conversations for the logged in user
    * 
@@ -3688,7 +3644,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get email conversation
    * 
@@ -3715,7 +3670,7 @@ public class ConversationsApi {
   private GetConversationsEmailRequest createGetConversationsEmailRequest(String conversationId) {
     return GetConversationsEmailRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -3767,7 +3722,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get conversation message
    * 
@@ -3796,9 +3750,9 @@ public class ConversationsApi {
   private GetConversationsEmailMessageRequest createGetConversationsEmailMessageRequest(String conversationId, String messageId) {
     return GetConversationsEmailMessageRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withMessageId(messageId)
-    
+
             .build();
   }
 
@@ -3850,7 +3804,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get conversation messages
    * 
@@ -3877,7 +3830,7 @@ public class ConversationsApi {
   private GetConversationsEmailMessagesRequest createGetConversationsEmailMessagesRequest(String conversationId) {
     return GetConversationsEmailMessagesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -3929,7 +3882,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get conversation draft reply
    * 
@@ -3956,7 +3908,7 @@ public class ConversationsApi {
   private GetConversationsEmailMessagesDraftRequest createGetConversationsEmailMessagesDraftRequest(String conversationId) {
     return GetConversationsEmailMessagesDraftRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -4008,7 +3960,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -4039,11 +3990,11 @@ public class ConversationsApi {
   private GetConversationsEmailParticipantWrapupRequest createGetConversationsEmailParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsEmailParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -4095,7 +4046,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -4124,9 +4074,9 @@ public class ConversationsApi {
   private GetConversationsEmailParticipantWrapupcodesRequest createGetConversationsEmailParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsEmailParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -4178,7 +4128,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get emails settings for a given conversation
    * 
@@ -4205,7 +4154,7 @@ public class ConversationsApi {
   private GetConversationsEmailSettingsRequest createGetConversationsEmailSettingsRequest(String conversationId) {
     return GetConversationsEmailSettingsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -4257,7 +4206,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active email conversations for the logged in user
    * 
@@ -4332,7 +4280,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get message conversation
    * 
@@ -4359,7 +4306,7 @@ public class ConversationsApi {
   private GetConversationsMessageRequest createGetConversationsMessageRequest(String conversationId) {
     return GetConversationsMessageRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -4411,7 +4358,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get media
    * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
@@ -4442,11 +4388,11 @@ public class ConversationsApi {
   private GetConversationsMessageCommunicationMessagesMediaMediaIdRequest createGetConversationsMessageCommunicationMessagesMediaMediaIdRequest(String conversationId, String communicationId, String mediaId) {
     return GetConversationsMessageCommunicationMessagesMediaMediaIdRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withMediaId(mediaId)
-    
+
             .build();
   }
 
@@ -4498,7 +4444,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get message
    * 
@@ -4525,7 +4470,7 @@ public class ConversationsApi {
   private GetConversationsMessageDetailsRequest createGetConversationsMessageDetailsRequest(String messageId) {
     return GetConversationsMessageDetailsRequest.builder()
             .withMessageId(messageId)
-    
+
             .build();
   }
 
@@ -4577,7 +4522,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get conversation message
    * 
@@ -4606,9 +4550,9 @@ public class ConversationsApi {
   private GetConversationsMessageMessageRequest createGetConversationsMessageMessageRequest(String conversationId, String messageId) {
     return GetConversationsMessageMessageRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withMessageId(messageId)
-    
+
             .build();
   }
 
@@ -4660,7 +4604,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -4691,11 +4634,11 @@ public class ConversationsApi {
   private GetConversationsMessageParticipantWrapupRequest createGetConversationsMessageParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsMessageParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withProvisional(provisional)
-    
+
             .build();
   }
 
@@ -4747,7 +4690,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -4776,9 +4718,9 @@ public class ConversationsApi {
   private GetConversationsMessageParticipantWrapupcodesRequest createGetConversationsMessageParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsMessageParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -4830,7 +4772,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get active message conversations for the logged in user
    * 
@@ -4905,7 +4846,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get Genesys Facebook App Id
    * 
@@ -4980,7 +4920,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of Integrations
    * 
@@ -5013,13 +4952,13 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsRequest createGetConversationsMessagingIntegrationsRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -5071,7 +5010,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of Facebook Integrations
    * 
@@ -5104,13 +5042,13 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsFacebookRequest createGetConversationsMessagingIntegrationsFacebookRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsFacebookRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -5162,7 +5100,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a Facebook messaging integration
    * 
@@ -5191,9 +5128,9 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5245,7 +5182,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of LINE messenger Integrations
    * 
@@ -5278,13 +5214,13 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsLineRequest createGetConversationsMessagingIntegrationsLineRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsLineRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -5336,7 +5272,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a LINE messenger integration
    * 
@@ -5365,9 +5300,9 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsLineIntegrationIdRequest createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5419,7 +5354,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of Open messaging integrations
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
@@ -5452,13 +5386,13 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsOpenRequest createGetConversationsMessagingIntegrationsOpenRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsOpenRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -5510,7 +5444,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
@@ -5539,9 +5472,9 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsOpenIntegrationIdRequest createGetConversationsMessagingIntegrationsOpenIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsOpenIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5593,7 +5526,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of Twitter Integrations
    * 
@@ -5626,13 +5558,13 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsTwitterRequest createGetConversationsMessagingIntegrationsTwitterRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsTwitterRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -5684,7 +5616,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a Twitter messaging integration
    * 
@@ -5713,9 +5644,9 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5767,7 +5698,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of WhatsApp Integrations
    * 
@@ -5800,13 +5730,13 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsWhatsappRequest createGetConversationsMessagingIntegrationsWhatsappRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsWhatsappRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -5858,7 +5788,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a WhatsApp messaging integration
    * 
@@ -5887,9 +5816,9 @@ public class ConversationsApi {
   private GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5941,7 +5870,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of Messaging Stickers
    * 
@@ -5972,11 +5900,11 @@ public class ConversationsApi {
   private GetConversationsMessagingStickerRequest createGetConversationsMessagingStickerRequest(String messengerType, Integer pageSize, Integer pageNumber) {
     return GetConversationsMessagingStickerRequest.builder()
             .withMessengerType(messengerType)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -6028,7 +5956,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a list of Supported Content profiles
    * 
@@ -6057,9 +5984,9 @@ public class ConversationsApi {
   private GetConversationsMessagingSupportedcontentRequest createGetConversationsMessagingSupportedcontentRequest(Integer pageSize, Integer pageNumber) {
     return GetConversationsMessagingSupportedcontentRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -6111,9 +6038,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * Get the organization's default supported content profile that will be used as the default when creating an integration.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @return SupportedContent
    * @throws ApiException if the request fails on the server
@@ -6124,7 +6050,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * Get the organization's default supported content profile that will be used as the default when creating an integration.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @return SupportedContent
    * @throws IOException if the request fails to be processed
@@ -6139,7 +6065,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * Get the organization's default supported content profile that will be used as the default when creating an integration.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @param request The request object
    * @return SupportedContent
@@ -6158,7 +6084,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * Get the organization's default supported content profile that will be used as the default when creating an integration.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @param request The request object
    * @return the response
@@ -6186,7 +6112,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get a supported content profile
    * 
@@ -6213,7 +6138,7 @@ public class ConversationsApi {
   private GetConversationsMessagingSupportedcontentSupportedContentIdRequest createGetConversationsMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId) {
     return GetConversationsMessagingSupportedcontentSupportedContentIdRequest.builder()
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -6265,7 +6190,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get conversation threading window timeline for each messaging type
    * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
@@ -6340,7 +6264,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a participant.
    * Update conversation participant.
@@ -6369,11 +6292,11 @@ public class ConversationsApi {
   private PatchConversationParticipantRequest createPatchConversationParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6424,7 +6347,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -6453,11 +6375,11 @@ public class ConversationsApi {
   private PatchConversationParticipantAttributesRequest createPatchConversationParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6508,7 +6430,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
@@ -6537,9 +6458,9 @@ public class ConversationsApi {
   private PatchConversationsCallRequest createPatchConversationsCallRequest(String conversationId, Conversation body) {
     return PatchConversationsCallRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6591,7 +6512,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation participant
    * 
@@ -6620,11 +6540,11 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantRequest createPatchConversationsCallParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsCallParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6675,7 +6595,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -6704,11 +6623,11 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantAttributesRequest createPatchConversationsCallParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsCallParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6759,9 +6678,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -6776,7 +6694,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -6792,18 +6710,18 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantCommunicationRequest createPatchConversationsCallParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsCallParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return Empty
@@ -6822,7 +6740,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return the response
@@ -6850,7 +6768,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Change who can speak
    * 
@@ -6881,11 +6798,11 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantConsultRequest createPatchConversationsCallParticipantConsultRequest(String conversationId, String participantId, ConsultTransferUpdate body) {
     return PatchConversationsCallParticipantConsultRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6937,7 +6854,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -6966,9 +6882,9 @@ public class ConversationsApi {
   private PatchConversationsCallbackRequest createPatchConversationsCallbackRequest(String conversationId, Conversation body) {
     return PatchConversationsCallbackRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7020,7 +6936,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation participant
    * 
@@ -7049,11 +6964,11 @@ public class ConversationsApi {
   private PatchConversationsCallbackParticipantRequest createPatchConversationsCallbackParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsCallbackParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7104,7 +7019,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -7133,11 +7047,11 @@ public class ConversationsApi {
   private PatchConversationsCallbackParticipantAttributesRequest createPatchConversationsCallbackParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsCallbackParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7188,9 +7102,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -7205,7 +7118,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -7221,18 +7134,18 @@ public class ConversationsApi {
   private PatchConversationsCallbackParticipantCommunicationRequest createPatchConversationsCallbackParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsCallbackParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return Empty
@@ -7251,7 +7164,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return the response
@@ -7279,7 +7192,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a scheduled callback
    * 
@@ -7306,7 +7218,7 @@ public class ConversationsApi {
   private PatchConversationsCallbacksRequest createPatchConversationsCallbacksRequest(PatchCallbackRequest body) {
     return PatchConversationsCallbacksRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7358,7 +7270,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -7387,9 +7298,9 @@ public class ConversationsApi {
   private PatchConversationsChatRequest createPatchConversationsChatRequest(String conversationId, Conversation body) {
     return PatchConversationsChatRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7441,7 +7352,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation participant
    * 
@@ -7470,11 +7380,11 @@ public class ConversationsApi {
   private PatchConversationsChatParticipantRequest createPatchConversationsChatParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsChatParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7525,7 +7435,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -7554,11 +7463,11 @@ public class ConversationsApi {
   private PatchConversationsChatParticipantAttributesRequest createPatchConversationsChatParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsChatParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7609,9 +7518,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -7626,7 +7534,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -7642,18 +7550,18 @@ public class ConversationsApi {
   private PatchConversationsChatParticipantCommunicationRequest createPatchConversationsChatParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsChatParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return Empty
@@ -7672,7 +7580,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return the response
@@ -7700,7 +7608,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -7729,9 +7636,9 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionRequest createPatchConversationsCobrowsesessionRequest(String conversationId, Conversation body) {
     return PatchConversationsCobrowsesessionRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7783,7 +7690,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation participant
    * 
@@ -7812,11 +7718,11 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionParticipantRequest createPatchConversationsCobrowsesessionParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsCobrowsesessionParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7867,7 +7773,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -7896,11 +7801,11 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionParticipantAttributesRequest createPatchConversationsCobrowsesessionParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsCobrowsesessionParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7951,9 +7856,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -7968,7 +7872,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -7984,18 +7888,18 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionParticipantCommunicationRequest createPatchConversationsCobrowsesessionParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsCobrowsesessionParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return Empty
@@ -8014,7 +7918,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return the response
@@ -8042,7 +7946,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -8071,9 +7974,9 @@ public class ConversationsApi {
   private PatchConversationsEmailRequest createPatchConversationsEmailRequest(String conversationId, Conversation body) {
     return PatchConversationsEmailRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8125,7 +8028,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation participant
    * 
@@ -8154,11 +8056,11 @@ public class ConversationsApi {
   private PatchConversationsEmailParticipantRequest createPatchConversationsEmailParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsEmailParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8209,7 +8111,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -8238,11 +8139,11 @@ public class ConversationsApi {
   private PatchConversationsEmailParticipantAttributesRequest createPatchConversationsEmailParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsEmailParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8293,9 +8194,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -8310,7 +8210,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
@@ -8326,18 +8226,18 @@ public class ConversationsApi {
   private PatchConversationsEmailParticipantCommunicationRequest createPatchConversationsEmailParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsEmailParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return Empty
@@ -8356,7 +8256,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return the response
@@ -8384,7 +8284,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -8413,9 +8312,9 @@ public class ConversationsApi {
   private PatchConversationsMessageRequest createPatchConversationsMessageRequest(String conversationId, Conversation body) {
     return PatchConversationsMessageRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8467,7 +8366,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation participant
    * 
@@ -8496,11 +8394,11 @@ public class ConversationsApi {
   private PatchConversationsMessageParticipantRequest createPatchConversationsMessageParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsMessageParticipantRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8551,7 +8449,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -8580,11 +8477,11 @@ public class ConversationsApi {
   private PatchConversationsMessageParticipantAttributesRequest createPatchConversationsMessageParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsMessageParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8635,9 +8532,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId  conversationId (required)
    * @param participantId participantId (required)
@@ -8652,7 +8548,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param conversationId  conversationId (required)
    * @param participantId participantId (required)
@@ -8668,18 +8564,18 @@ public class ConversationsApi {
   private PatchConversationsMessageParticipantCommunicationRequest createPatchConversationsMessageParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsMessageParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return Empty
@@ -8698,7 +8594,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update conversation participant&#39;s communication by disconnecting it.
+   * Update conversation participant's communication by disconnecting it.
    * 
    * @param request The request object
    * @return the response
@@ -8726,7 +8622,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update Facebook messaging integration
    * 
@@ -8755,9 +8650,9 @@ public class ConversationsApi {
   private PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest createPatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId, FacebookIntegrationUpdateRequest body) {
     return PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8809,7 +8704,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
@@ -8838,9 +8732,9 @@ public class ConversationsApi {
   private PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest createPatchConversationsMessagingIntegrationsOpenIntegrationIdRequest(String integrationId, OpenIntegrationUpdateRequest body) {
     return PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8892,7 +8786,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update Twitter messaging integration
    * 
@@ -8921,9 +8814,9 @@ public class ConversationsApi {
   private PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, TwitterIntegrationRequest body) {
     return PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8975,7 +8868,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update or activate a WhatsApp messaging integration
    * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
@@ -9004,9 +8896,9 @@ public class ConversationsApi {
   private PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createPatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId, WhatsAppIntegrationUpdateRequest body) {
     return PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9058,7 +8950,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a supported content profile
    * 
@@ -9087,9 +8978,9 @@ public class ConversationsApi {
   private PatchConversationsMessagingSupportedcontentSupportedContentIdRequest createPatchConversationsMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId, SupportedContent body) {
     return PatchConversationsMessagingSupportedcontentSupportedContentIdRequest.builder()
             .withSupportedContentId(supportedContentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9141,7 +9032,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Index conversation properties
    * 
@@ -9170,9 +9060,9 @@ public class ConversationsApi {
   private PostAnalyticsConversationDetailsPropertiesRequest createPostAnalyticsConversationDetailsPropertiesRequest(String conversationId, PropertyIndexRequest body) {
     return PostAnalyticsConversationDetailsPropertiesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9224,7 +9114,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Query for conversation aggregates
    * 
@@ -9251,7 +9140,7 @@ public class ConversationsApi {
   private PostAnalyticsConversationsAggregatesQueryRequest createPostAnalyticsConversationsAggregatesQueryRequest(ConversationAggregationQuery body) {
     return PostAnalyticsConversationsAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9303,7 +9192,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Query for conversation details asynchronously
    * 
@@ -9330,7 +9218,7 @@ public class ConversationsApi {
   private PostAnalyticsConversationsDetailsJobsRequest createPostAnalyticsConversationsDetailsJobsRequest(AsyncConversationQuery body) {
     return PostAnalyticsConversationsDetailsJobsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9382,7 +9270,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Query for conversation details
    * 
@@ -9409,7 +9296,7 @@ public class ConversationsApi {
   private PostAnalyticsConversationsDetailsQueryRequest createPostAnalyticsConversationsDetailsQueryRequest(ConversationQuery body) {
     return PostAnalyticsConversationsDetailsQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9461,7 +9348,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
@@ -9490,9 +9376,9 @@ public class ConversationsApi {
   private PostConversationAssignRequest createPostConversationAssignRequest(String conversationId, ConversationUser body) {
     return PostConversationAssignRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9544,7 +9430,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
    * 
@@ -9571,7 +9456,7 @@ public class ConversationsApi {
   private PostConversationDisconnectRequest createPostConversationDisconnectRequest(String conversationId) {
     return PostConversationDisconnectRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -9623,7 +9508,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a new callback for the specified participant on the conversation.
    * 
@@ -9652,11 +9536,11 @@ public class ConversationsApi {
   private PostConversationParticipantCallbacksRequest createPostConversationParticipantCallbacksRequest(String conversationId, String participantId, CreateCallbackOnConversationCommand body) {
     return PostConversationParticipantCallbacksRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9707,7 +9591,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Sends DTMF to the participant
    * 
@@ -9736,11 +9619,11 @@ public class ConversationsApi {
   private PostConversationParticipantDigitsRequest createPostConversationParticipantDigitsRequest(String conversationId, String participantId, Digits body) {
     return PostConversationParticipantDigitsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9791,7 +9674,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -9820,11 +9702,11 @@ public class ConversationsApi {
   private PostConversationParticipantReplaceRequest createPostConversationParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9875,7 +9757,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
    * 
@@ -9906,11 +9787,11 @@ public class ConversationsApi {
   private PostConversationParticipantSecureivrsessionsRequest createPostConversationParticipantSecureivrsessionsRequest(String conversationId, String participantId, CreateSecureSession body) {
     return PostConversationParticipantSecureivrsessionsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9962,7 +9843,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Place a new call as part of a callback conversation.
    * 
@@ -9991,9 +9871,9 @@ public class ConversationsApi {
   private PostConversationsCallRequest createPostConversationsCallRequest(String conversationId, CallCommand body) {
     return PostConversationsCallRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10045,7 +9925,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
    * 
@@ -10072,9 +9951,9 @@ public class ConversationsApi {
   private PostConversationsCallParticipantCoachRequest createPostConversationsCallParticipantCoachRequest(String conversationId, String participantId) {
     return PostConversationsCallParticipantCoachRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -10125,13 +10004,12 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Initiate and update consult transfer
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param body Destination address &amp; initial speak to (required)
+   * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -10145,7 +10023,7 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @param body Destination address &amp; initial speak to (required)
+   * @param body Destination address & initial speak to (required)
    * @return ConsultTransferResponse
    * @throws IOException if the request fails to be processed
    */
@@ -10156,11 +10034,11 @@ public class ConversationsApi {
   private PostConversationsCallParticipantConsultRequest createPostConversationsCallParticipantConsultRequest(String conversationId, String participantId, ConsultTransfer body) {
     return PostConversationsCallParticipantConsultRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10212,7 +10090,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
@@ -10239,9 +10116,9 @@ public class ConversationsApi {
   private PostConversationsCallParticipantMonitorRequest createPostConversationsCallParticipantMonitorRequest(String conversationId, String participantId) {
     return PostConversationsCallParticipantMonitorRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -10292,7 +10169,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -10321,11 +10197,11 @@ public class ConversationsApi {
   private PostConversationsCallParticipantReplaceRequest createPostConversationsCallParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsCallParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10376,7 +10252,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Add participants to a conversation
    * 
@@ -10405,9 +10280,9 @@ public class ConversationsApi {
   private PostConversationsCallParticipantsRequest createPostConversationsCallParticipantsRequest(String conversationId, Conversation body) {
     return PostConversationsCallParticipantsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10459,7 +10334,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -10488,11 +10362,11 @@ public class ConversationsApi {
   private PostConversationsCallbackParticipantReplaceRequest createPostConversationsCallbackParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsCallbackParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10543,7 +10417,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a Callback
    * 
@@ -10570,7 +10443,7 @@ public class ConversationsApi {
   private PostConversationsCallbacksRequest createPostConversationsCallbacksRequest(CreateCallbackCommand body) {
     return PostConversationsCallbacksRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10622,7 +10495,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Disconnect multiple scheduled callbacks
    * 
@@ -10647,7 +10519,7 @@ public class ConversationsApi {
   private PostConversationsCallbacksBulkDisconnectRequest createPostConversationsCallbacksBulkDisconnectRequest(BulkCallbackDisconnectRequest body) {
     return PostConversationsCallbacksBulkDisconnectRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10698,7 +10570,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update multiple scheduled callbacks
    * 
@@ -10725,7 +10596,7 @@ public class ConversationsApi {
   private PostConversationsCallbacksBulkUpdateRequest createPostConversationsCallbacksBulkUpdateRequest(BulkCallbackPatchRequest body) {
     return PostConversationsCallbacksBulkUpdateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10777,7 +10648,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a call conversation
    * 
@@ -10804,7 +10674,7 @@ public class ConversationsApi {
   private PostConversationsCallsRequest createPostConversationsCallsRequest(CreateCallRequest body) {
     return PostConversationsCallsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10856,7 +10726,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send a message on behalf of a communication in a chat conversation.
    * 
@@ -10887,11 +10756,11 @@ public class ConversationsApi {
   private PostConversationsChatCommunicationMessagesRequest createPostConversationsChatCommunicationMessagesRequest(String conversationId, String communicationId, CreateWebChatMessageRequest body) {
     return PostConversationsChatCommunicationMessagesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10943,7 +10812,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send a typing-indicator on behalf of a communication in a chat conversation.
    * 
@@ -10972,9 +10840,9 @@ public class ConversationsApi {
   private PostConversationsChatCommunicationTypingRequest createPostConversationsChatCommunicationTypingRequest(String conversationId, String communicationId) {
     return PostConversationsChatCommunicationTypingRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .build();
   }
 
@@ -11026,7 +10894,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -11055,11 +10922,11 @@ public class ConversationsApi {
   private PostConversationsChatParticipantReplaceRequest createPostConversationsChatParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsChatParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11110,7 +10977,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a web chat conversation
    * 
@@ -11137,7 +11003,7 @@ public class ConversationsApi {
   private PostConversationsChatsRequest createPostConversationsChatsRequest(CreateWebChatRequest body) {
     return PostConversationsChatsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11189,7 +11055,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -11218,11 +11083,11 @@ public class ConversationsApi {
   private PostConversationsCobrowsesessionParticipantReplaceRequest createPostConversationsCobrowsesessionParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsCobrowsesessionParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11273,7 +11138,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
@@ -11302,9 +11166,9 @@ public class ConversationsApi {
   private PostConversationsEmailInboundmessagesRequest createPostConversationsEmailInboundmessagesRequest(String conversationId, InboundMessageRequest body) {
     return PostConversationsEmailInboundmessagesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11356,7 +11220,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send an email reply
    * 
@@ -11385,9 +11248,9 @@ public class ConversationsApi {
   private PostConversationsEmailMessagesRequest createPostConversationsEmailMessagesRequest(String conversationId, EmailMessage body) {
     return PostConversationsEmailMessagesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11439,7 +11302,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Copy attachments from an email message to the current draft.
    * 
@@ -11468,9 +11330,9 @@ public class ConversationsApi {
   private PostConversationsEmailMessagesDraftAttachmentsCopyRequest createPostConversationsEmailMessagesDraftAttachmentsCopyRequest(String conversationId, CopyAttachmentsRequest body) {
     return PostConversationsEmailMessagesDraftAttachmentsCopyRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11522,7 +11384,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -11551,11 +11412,11 @@ public class ConversationsApi {
   private PostConversationsEmailParticipantReplaceRequest createPostConversationsEmailParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsEmailParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11606,7 +11467,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create an email conversation
    * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
@@ -11633,7 +11493,7 @@ public class ConversationsApi {
   private PostConversationsEmailsRequest createPostConversationsEmailsRequest(CreateEmailRequest body) {
     return PostConversationsEmailsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11685,7 +11545,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create Fax Conversation
    * 
@@ -11712,7 +11571,7 @@ public class ConversationsApi {
   private PostConversationsFaxesRequest createPostConversationsFaxesRequest(FaxSendRequest body) {
     return PostConversationsFaxesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11764,7 +11623,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send message
    * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
@@ -11795,11 +11653,11 @@ public class ConversationsApi {
   private PostConversationsMessageCommunicationMessagesRequest createPostConversationsMessageCommunicationMessagesRequest(String conversationId, String communicationId, AdditionalMessage body) {
     return PostConversationsMessageCommunicationMessagesRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11851,7 +11709,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create media
    * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
@@ -11880,9 +11737,9 @@ public class ConversationsApi {
   private PostConversationsMessageCommunicationMessagesMediaRequest createPostConversationsMessageCommunicationMessagesMediaRequest(String conversationId, String communicationId) {
     return PostConversationsMessageCommunicationMessagesMediaRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .build();
   }
 
@@ -11934,10 +11791,9 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
    * @param conversationId  (required)
    * @param body messageIds (optional)
    * @return TextMessageListing
@@ -11950,7 +11806,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
    * @param conversationId  (required)
    * @param body messageIds (optional)
    * @return TextMessageListing
@@ -11963,15 +11819,15 @@ public class ConversationsApi {
   private PostConversationsMessageMessagesBulkRequest createPostConversationsMessageMessagesBulkRequest(String conversationId, List<String> body) {
     return PostConversationsMessageMessagesBulkRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
    * @param request The request object
    * @return TextMessageListing
    * @throws ApiException if the request fails on the server
@@ -11990,7 +11846,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12017,7 +11873,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -12046,11 +11901,11 @@ public class ConversationsApi {
   private PostConversationsMessageParticipantReplaceRequest createPostConversationsMessageParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsMessageParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12101,7 +11956,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create an outbound messaging conversation.
    * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
@@ -12128,7 +11982,7 @@ public class ConversationsApi {
   private PostConversationsMessagesRequest createPostConversationsMessagesRequest(CreateOutboundMessagingConversationRequest body) {
     return PostConversationsMessagesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12180,7 +12034,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send an agentless outbound message
    * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
@@ -12207,7 +12060,7 @@ public class ConversationsApi {
   private PostConversationsMessagesAgentlessRequest createPostConversationsMessagesAgentlessRequest(SendAgentlessOutboundMessageRequest body) {
     return PostConversationsMessagesAgentlessRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12259,7 +12112,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Send an inbound Open Message
    * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
@@ -12286,7 +12138,7 @@ public class ConversationsApi {
   private PostConversationsMessagesInboundOpenRequest createPostConversationsMessagesInboundOpenRequest(OpenNormalizedMessage body) {
     return PostConversationsMessagesInboundOpenRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12338,7 +12190,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a Facebook Integration
    * 
@@ -12365,7 +12216,7 @@ public class ConversationsApi {
   private PostConversationsMessagingIntegrationsFacebookRequest createPostConversationsMessagingIntegrationsFacebookRequest(FacebookIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsFacebookRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12417,7 +12268,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a LINE messenger Integration
    * 
@@ -12444,7 +12294,7 @@ public class ConversationsApi {
   private PostConversationsMessagingIntegrationsLineRequest createPostConversationsMessagingIntegrationsLineRequest(LineIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsLineRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12496,7 +12346,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
@@ -12523,7 +12372,7 @@ public class ConversationsApi {
   private PostConversationsMessagingIntegrationsOpenRequest createPostConversationsMessagingIntegrationsOpenRequest(OpenIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsOpenRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12575,7 +12424,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a Twitter Integration
    * 
@@ -12602,7 +12450,7 @@ public class ConversationsApi {
   private PostConversationsMessagingIntegrationsTwitterRequest createPostConversationsMessagingIntegrationsTwitterRequest(TwitterIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsTwitterRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12654,7 +12502,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a WhatsApp Integration
    * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
@@ -12681,7 +12528,7 @@ public class ConversationsApi {
   private PostConversationsMessagingIntegrationsWhatsappRequest createPostConversationsMessagingIntegrationsWhatsappRequest(WhatsAppIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsWhatsappRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12733,7 +12580,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Create a Supported Content profile
    * 
@@ -12760,7 +12606,7 @@ public class ConversationsApi {
   private PostConversationsMessagingSupportedcontentRequest createPostConversationsMessagingSupportedcontentRequest(SupportedContent body) {
     return PostConversationsMessagingSupportedcontentRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12812,7 +12658,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Set flagged reason on conversation participant to indicate bad conversation quality.
    * 
@@ -12839,9 +12684,9 @@ public class ConversationsApi {
   private PutConversationParticipantFlaggedreasonRequest createPutConversationParticipantFlaggedreasonRequest(String conversationId, String participantId) {
     return PutConversationParticipantFlaggedreasonRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .build();
   }
 
@@ -12892,7 +12737,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update the tags on a conversation.
    * 
@@ -12921,9 +12765,9 @@ public class ConversationsApi {
   private PutConversationTagsRequest createPutConversationTagsRequest(String conversationId, ConversationTagsUpdate body) {
     return PutConversationTagsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -12975,7 +12819,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Set uuiData to be sent on future commands.
    * 
@@ -13008,13 +12851,13 @@ public class ConversationsApi {
   private PutConversationsCallParticipantCommunicationUuidataRequest createPutConversationsCallParticipantCommunicationUuidataRequest(String conversationId, String participantId, String communicationId, SetUuiDataRequest body) {
     return PutConversationsCallParticipantCommunicationUuidataRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withParticipantId(participantId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -13066,7 +12909,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation draft reply
    * 
@@ -13095,9 +12937,9 @@ public class ConversationsApi {
   private PutConversationsEmailMessagesDraftRequest createPutConversationsEmailMessagesDraftRequest(String conversationId, EmailMessage body) {
     return PutConversationsEmailMessagesDraftRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -13149,7 +12991,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update a LINE messenger integration
    * 
@@ -13178,9 +13019,9 @@ public class ConversationsApi {
   private PutConversationsMessagingIntegrationsLineIntegrationIdRequest createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId, LineIntegrationRequest body) {
     return PutConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -13232,9 +13073,8 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
-   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * Set the organization's default supported content profile that may be assigned to an integration when it is created.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @param body SupportedContent (required)
    * @return SupportedContent
@@ -13246,7 +13086,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * Set the organization's default supported content profile that may be assigned to an integration when it is created.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @param body SupportedContent (required)
    * @return SupportedContent
@@ -13259,12 +13099,12 @@ public class ConversationsApi {
   private PutConversationsMessagingSupportedcontentDefaultRequest createPutConversationsMessagingSupportedcontentDefaultRequest(SupportedContentReference body) {
     return PutConversationsMessagingSupportedcontentDefaultRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * Set the organization's default supported content profile that may be assigned to an integration when it is created.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @param request The request object
    * @return SupportedContent
@@ -13283,7 +13123,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * Set the organization's default supported content profile that may be assigned to an integration when it is created.
    * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
    * @param request The request object
    * @return the response
@@ -13311,7 +13151,6 @@ public class ConversationsApi {
     }
   }
 
-  
   /**
    * Update conversation threading window timeline for each messaging type
    * PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
@@ -13338,7 +13177,7 @@ public class ConversationsApi {
   private PutConversationsMessagingThreadingtimelineRequest createPutConversationsMessagingThreadingtimelineRequest(ConversationThreadingWindow body) {
     return PutConversationsMessagingThreadingtimelineRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -13390,5 +13229,4 @@ public class ConversationsApi {
     }
   }
 
-  
 }

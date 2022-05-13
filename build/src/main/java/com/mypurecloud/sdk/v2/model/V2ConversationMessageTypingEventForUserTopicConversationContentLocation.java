@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentLoca
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentLocation address(String address) {
@@ -61,7 +62,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentLoca
     this.address = address;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentLocation text(String text) {
@@ -78,7 +79,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentLoca
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentLocation latitude(BigDecimal latitude) {
@@ -95,7 +96,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentLoca
     this.latitude = latitude;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentLocation longitude(BigDecimal longitude) {
@@ -112,7 +113,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentLoca
     this.longitude = longitude;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,11 +123,12 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentLoca
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentLocation v2ConversationMessageTypingEventForUserTopicConversationContentLocation = (V2ConversationMessageTypingEventForUserTopicConversationContentLocation) o;
+
     return Objects.equals(this.url, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.url) &&
-        Objects.equals(this.address, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.address) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.text) &&
-        Objects.equals(this.latitude, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.latitude) &&
-        Objects.equals(this.longitude, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.longitude);
+            Objects.equals(this.address, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.address) &&
+            Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.text) &&
+            Objects.equals(this.latitude, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.latitude) &&
+            Objects.equals(this.longitude, v2ConversationMessageTypingEventForUserTopicConversationContentLocation.longitude);
   }
 
   @Override

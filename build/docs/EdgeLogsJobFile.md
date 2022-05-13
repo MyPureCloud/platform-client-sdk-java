@@ -11,7 +11,7 @@ title: EdgeLogsJobFile
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The name of the entity. |  |
 | **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The resource&#39;s description. |  [optional] |
+| **description** | <!----><!---->**String**<!----> | The resource's description. |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | The current version of the resource. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -36,10 +36,10 @@ title: EdgeLogsJobFile
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -49,11 +49,11 @@ title: EdgeLogsJobFile
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UPLOADING | &quot;UPLOADING&quot; |
-| NOT_UPLOADED | &quot;NOT_UPLOADED&quot; |
-| UPLOADED | &quot;UPLOADED&quot; |
-| ERROR_ON_UPLOAD | &quot;ERROR_ON_UPLOAD&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UPLOADING | &quot;UPLOADING&quot; | 
+| NOT_UPLOADED | &quot;NOT_UPLOADED&quot; | 
+| UPLOADED | &quot;UPLOADED&quot; | 
+| ERROR_ON_UPLOAD | &quot;ERROR_ON_UPLOAD&quot; | 
 {: class="table table-striped"}
 
 

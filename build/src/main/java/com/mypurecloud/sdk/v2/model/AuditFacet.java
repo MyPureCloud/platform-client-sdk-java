@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class AuditFacet  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of the facet, DATE or STRING.
    **/
@@ -59,7 +60,6 @@ public class AuditFacet  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class AuditFacet  implements Serializable {
       return false;
     }
     AuditFacet auditFacet = (AuditFacet) o;
+
     return Objects.equals(this.name, auditFacet.name) &&
-        Objects.equals(this.type, auditFacet.type);
+            Objects.equals(this.type, auditFacet.type);
   }
 
   @Override

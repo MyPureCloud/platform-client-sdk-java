@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The reference to a previous turn, if applicable.
    **/
@@ -120,7 +121,7 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.previousTurn = previousTurn;
   }
 
-  
+
   /**
    * The output prompts for this turn.
    **/
@@ -138,7 +139,7 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.prompts = prompts;
   }
 
-  
+
   /**
    * Indicates the suggested next action. If appropriate, the matching output event object includes additional information.
    **/
@@ -156,7 +157,7 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.nextActionType = nextActionType;
   }
 
-  
+
   /**
    * The next action directive for this turn if it is a Disconnect type.
    **/
@@ -174,7 +175,7 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.nextActionDisconnect = nextActionDisconnect;
   }
 
-  
+
   /**
    * The next action directive for this turn if it is a WaitForInput type.
    **/
@@ -192,7 +193,7 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.nextActionWaitForInput = nextActionWaitForInput;
   }
 
-  
+
   /**
    * The next action directive for this turn if it is an Exit type.
    **/
@@ -210,7 +211,6 @@ public class TextBotFlowTurnResponse  implements Serializable {
     this.nextActionExit = nextActionExit;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -221,13 +221,14 @@ public class TextBotFlowTurnResponse  implements Serializable {
       return false;
     }
     TextBotFlowTurnResponse textBotFlowTurnResponse = (TextBotFlowTurnResponse) o;
+
     return Objects.equals(this.id, textBotFlowTurnResponse.id) &&
-        Objects.equals(this.previousTurn, textBotFlowTurnResponse.previousTurn) &&
-        Objects.equals(this.prompts, textBotFlowTurnResponse.prompts) &&
-        Objects.equals(this.nextActionType, textBotFlowTurnResponse.nextActionType) &&
-        Objects.equals(this.nextActionDisconnect, textBotFlowTurnResponse.nextActionDisconnect) &&
-        Objects.equals(this.nextActionWaitForInput, textBotFlowTurnResponse.nextActionWaitForInput) &&
-        Objects.equals(this.nextActionExit, textBotFlowTurnResponse.nextActionExit);
+            Objects.equals(this.previousTurn, textBotFlowTurnResponse.previousTurn) &&
+            Objects.equals(this.prompts, textBotFlowTurnResponse.prompts) &&
+            Objects.equals(this.nextActionType, textBotFlowTurnResponse.nextActionType) &&
+            Objects.equals(this.nextActionDisconnect, textBotFlowTurnResponse.nextActionDisconnect) &&
+            Objects.equals(this.nextActionWaitForInput, textBotFlowTurnResponse.nextActionWaitForInput) &&
+            Objects.equals(this.nextActionExit, textBotFlowTurnResponse.nextActionExit);
   }
 
   @Override

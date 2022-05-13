@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -195,7 +196,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * The value for comparison. Required for a CampaignRuleCondition.
    **/
@@ -213,7 +214,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The priority to set a campaign to. Required for the 'setCampaignPriority' action.
    **/
@@ -231,7 +232,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
    **/
@@ -249,7 +250,6 @@ public class CampaignRuleParameters  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,10 +260,11 @@ public class CampaignRuleParameters  implements Serializable {
       return false;
     }
     CampaignRuleParameters campaignRuleParameters = (CampaignRuleParameters) o;
+
     return Objects.equals(this.operator, campaignRuleParameters.operator) &&
-        Objects.equals(this.value, campaignRuleParameters.value) &&
-        Objects.equals(this.priority, campaignRuleParameters.priority) &&
-        Objects.equals(this.dialingMode, campaignRuleParameters.dialingMode);
+            Objects.equals(this.value, campaignRuleParameters.value) &&
+            Objects.equals(this.priority, campaignRuleParameters.priority) &&
+            Objects.equals(this.dialingMode, campaignRuleParameters.dialingMode);
   }
 
   @Override

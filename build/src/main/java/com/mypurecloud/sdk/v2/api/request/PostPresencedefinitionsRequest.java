@@ -27,7 +27,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class PostPresencedefinitionsRequest {
-    
+
 	private OrganizationPresence body;
 	public OrganizationPresence getBody() {
 		return this.body;
@@ -41,7 +41,7 @@ public class PostPresencedefinitionsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,8 +71,8 @@ public class PostPresencedefinitionsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/presencedefinitions")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class PostPresencedefinitionsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(OrganizationPresence body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostPresencedefinitionsRequest request;
@@ -97,20 +97,20 @@ public class PostPresencedefinitionsRequest {
 			request = new PostPresencedefinitionsRequest();
 		}
 
-		
+
 		public Builder withBody(OrganizationPresence body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(OrganizationPresence body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostPresencedefinitionsRequest build() {
             

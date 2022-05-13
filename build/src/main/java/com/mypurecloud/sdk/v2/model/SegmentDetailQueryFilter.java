@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class SegmentDetailQueryFilter  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Boolean 'and/or' logic with up to two-levels of nesting
    **/
@@ -112,7 +113,7 @@ public class SegmentDetailQueryFilter  implements Serializable {
     this.clauses = clauses;
   }
 
-  
+
   /**
    * Like a three-word sentence: (attribute-name) (operator) (target-value).
    **/
@@ -130,7 +131,6 @@ public class SegmentDetailQueryFilter  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class SegmentDetailQueryFilter  implements Serializable {
       return false;
     }
     SegmentDetailQueryFilter segmentDetailQueryFilter = (SegmentDetailQueryFilter) o;
+
     return Objects.equals(this.type, segmentDetailQueryFilter.type) &&
-        Objects.equals(this.clauses, segmentDetailQueryFilter.clauses) &&
-        Objects.equals(this.predicates, segmentDetailQueryFilter.predicates);
+            Objects.equals(this.clauses, segmentDetailQueryFilter.clauses) &&
+            Objects.equals(this.predicates, segmentDetailQueryFilter.predicates);
   }
 
   @Override

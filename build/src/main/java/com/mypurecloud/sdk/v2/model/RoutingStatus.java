@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class RoutingStatus  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * Indicates the Routing State of the agent.  A value of OFF_QUEUE will be returned if the specified user does not exist.
    **/
@@ -112,7 +113,7 @@ public class RoutingStatus  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The timestamp when the agent went into this state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -130,7 +131,6 @@ public class RoutingStatus  implements Serializable {
     this.startTime = startTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class RoutingStatus  implements Serializable {
       return false;
     }
     RoutingStatus routingStatus = (RoutingStatus) o;
+
     return Objects.equals(this.userId, routingStatus.userId) &&
-        Objects.equals(this.status, routingStatus.status) &&
-        Objects.equals(this.startTime, routingStatus.startTime);
+            Objects.equals(this.status, routingStatus.status) &&
+            Objects.equals(this.startTime, routingStatus.startTime);
   }
 
   @Override

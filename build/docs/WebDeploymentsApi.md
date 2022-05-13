@@ -32,8 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete all versions of a configuration
 
-
-
 Wraps DELETE /api/v2/webdeployments/configurations/{configurationId}  
 
 Requires ALL permissions: 
@@ -94,8 +92,6 @@ null (empty response body)
 
 Delete a deployment
 
-
-
 Wraps DELETE /api/v2/webdeployments/deployments/{deploymentId}  
 
 Requires ALL permissions: 
@@ -155,8 +151,6 @@ null (empty response body)
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion.html) getWebdeploymentsConfigurationVersion(configurationId, versionId)
 
 Get a configuration version
-
-
 
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}  
 
@@ -284,8 +278,6 @@ try {
 
 Get the configuration draft
 
-
-
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft  
 
 Requires ALL permissions: 
@@ -346,8 +338,6 @@ try {
 > [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing.html) getWebdeploymentsConfigurations(showOnlyPublished)
 
 View configuration drafts
-
-
 
 Wraps GET /api/v2/webdeployments/configurations  
 
@@ -410,8 +400,6 @@ try {
 
 Get a deployment
 
-
-
 Wraps GET /api/v2/webdeployments/deployments/{deploymentId}  
 
 Requires ALL permissions: 
@@ -473,8 +461,6 @@ try {
 
 Get deployments
 
-
-
 Wraps GET /api/v2/webdeployments/deployments  
 
 Requires ALL permissions: 
@@ -531,8 +517,6 @@ This endpoint does not require any parameters.
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion.html) postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
 
 Publish the configuration draft and create a new version
-
-
 
 Wraps POST /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish  
 
@@ -596,8 +580,6 @@ try {
 
 Create a configuration draft
 
-
-
 Wraps POST /api/v2/webdeployments/configurations  
 
 Requires ALL permissions: 
@@ -659,8 +641,6 @@ try {
 
 Create a deployment
 
-
-
 Wraps POST /api/v2/webdeployments/deployments  
 
 Requires ALL permissions: 
@@ -721,8 +701,6 @@ try {
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion.html) putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion)
 
 Update the configuration draft
-
-
 
 Wraps PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft  
 
@@ -786,8 +764,6 @@ try {
 > [WebDeployment](WebDeployment.html) putWebdeploymentsDeployment(deploymentId, deployment)
 
 Update a deployment
-
-
 
 Wraps PUT /api/v2/webdeployments/deployments/{deploymentId}  
 

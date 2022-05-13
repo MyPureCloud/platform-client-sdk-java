@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -43,7 +44,7 @@ public class BuAgentScheduleHistoryChangeMetadata  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The user that made the schedule change
    **/
@@ -61,7 +62,6 @@ public class BuAgentScheduleHistoryChangeMetadata  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class BuAgentScheduleHistoryChangeMetadata  implements Serializable {
       return false;
     }
     BuAgentScheduleHistoryChangeMetadata buAgentScheduleHistoryChangeMetadata = (BuAgentScheduleHistoryChangeMetadata) o;
+
     return Objects.equals(this.dateModified, buAgentScheduleHistoryChangeMetadata.dateModified) &&
-        Objects.equals(this.modifiedBy, buAgentScheduleHistoryChangeMetadata.modifiedBy);
+            Objects.equals(this.modifiedBy, buAgentScheduleHistoryChangeMetadata.modifiedBy);
   }
 
   @Override

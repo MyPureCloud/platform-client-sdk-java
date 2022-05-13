@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationErrorDetail;
-import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -142,7 +142,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
   private ActionStatusEnum actionStatus = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private ArchitectPromptNotificationErrorMessageParams errorMessageParams = null;
+  private Object errorMessageParams = null;
   private List<ArchitectPromptNotificationErrorDetail> errorDetails = new ArrayList<ArchitectPromptNotificationErrorDetail>();
 
   
@@ -163,7 +163,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.id = id;
   }
 
-  
+
   /**
    * Indicates if the operation is complete
    **/
@@ -181,7 +181,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.complete = complete;
   }
 
-  
+
   /**
    **/
   public ArchitectPromptNotificationArchitectOperation user(ArchitectPromptNotificationUser user) {
@@ -198,7 +198,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ArchitectPromptNotificationArchitectOperation client(ArchitectPromptNotificationClient client) {
@@ -215,7 +215,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.client = client;
   }
 
-  
+
   /**
    * The action being performed
    **/
@@ -233,7 +233,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.actionName = actionName;
   }
 
-  
+
   /**
    * The action status
    **/
@@ -251,7 +251,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.actionStatus = actionStatus;
   }
 
-  
+
   /**
    * The error message, if the action failed
    **/
@@ -269,7 +269,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    * The error code, if the action failed
    **/
@@ -287,24 +287,25 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.errorCode = errorCode;
   }
 
-  
+
   /**
+   * The error message params, if the action failed
    **/
-  public ArchitectPromptNotificationArchitectOperation errorMessageParams(ArchitectPromptNotificationErrorMessageParams errorMessageParams) {
+  public ArchitectPromptNotificationArchitectOperation errorMessageParams(Object errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The error message params, if the action failed")
   @JsonProperty("errorMessageParams")
-  public ArchitectPromptNotificationErrorMessageParams getErrorMessageParams() {
+  public Object getErrorMessageParams() {
     return errorMessageParams;
   }
-  public void setErrorMessageParams(ArchitectPromptNotificationErrorMessageParams errorMessageParams) {
+  public void setErrorMessageParams(Object errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
   }
 
-  
+
   /**
    * The error details, if the action failed
    **/
@@ -322,7 +323,6 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     this.errorDetails = errorDetails;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -333,16 +333,17 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
       return false;
     }
     ArchitectPromptNotificationArchitectOperation architectPromptNotificationArchitectOperation = (ArchitectPromptNotificationArchitectOperation) o;
+
     return Objects.equals(this.id, architectPromptNotificationArchitectOperation.id) &&
-        Objects.equals(this.complete, architectPromptNotificationArchitectOperation.complete) &&
-        Objects.equals(this.user, architectPromptNotificationArchitectOperation.user) &&
-        Objects.equals(this.client, architectPromptNotificationArchitectOperation.client) &&
-        Objects.equals(this.actionName, architectPromptNotificationArchitectOperation.actionName) &&
-        Objects.equals(this.actionStatus, architectPromptNotificationArchitectOperation.actionStatus) &&
-        Objects.equals(this.errorMessage, architectPromptNotificationArchitectOperation.errorMessage) &&
-        Objects.equals(this.errorCode, architectPromptNotificationArchitectOperation.errorCode) &&
-        Objects.equals(this.errorMessageParams, architectPromptNotificationArchitectOperation.errorMessageParams) &&
-        Objects.equals(this.errorDetails, architectPromptNotificationArchitectOperation.errorDetails);
+            Objects.equals(this.complete, architectPromptNotificationArchitectOperation.complete) &&
+            Objects.equals(this.user, architectPromptNotificationArchitectOperation.user) &&
+            Objects.equals(this.client, architectPromptNotificationArchitectOperation.client) &&
+            Objects.equals(this.actionName, architectPromptNotificationArchitectOperation.actionName) &&
+            Objects.equals(this.actionStatus, architectPromptNotificationArchitectOperation.actionStatus) &&
+            Objects.equals(this.errorMessage, architectPromptNotificationArchitectOperation.errorMessage) &&
+            Objects.equals(this.errorCode, architectPromptNotificationArchitectOperation.errorCode) &&
+            Objects.equals(this.errorMessageParams, architectPromptNotificationArchitectOperation.errorMessageParams) &&
+            Objects.equals(this.errorDetails, architectPromptNotificationArchitectOperation.errorDetails);
   }
 
   @Override

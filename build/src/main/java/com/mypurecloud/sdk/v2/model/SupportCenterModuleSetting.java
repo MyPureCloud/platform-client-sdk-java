@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class SupportCenterModuleSetting  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Whether or not support center screen module is enabled
    **/
@@ -111,7 +112,6 @@ public class SupportCenterModuleSetting  implements Serializable {
     this.enabled = enabled;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,8 +122,9 @@ public class SupportCenterModuleSetting  implements Serializable {
       return false;
     }
     SupportCenterModuleSetting supportCenterModuleSetting = (SupportCenterModuleSetting) o;
+
     return Objects.equals(this.type, supportCenterModuleSetting.type) &&
-        Objects.equals(this.enabled, supportCenterModuleSetting.enabled);
+            Objects.equals(this.enabled, supportCenterModuleSetting.enabled);
   }
 
   @Override

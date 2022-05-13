@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserConversationsEventMediaSummaryDetail;
@@ -41,7 +42,7 @@ public class UserConversationsEventMediaSummary  implements Serializable {
     this.contactCenter = contactCenter;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventMediaSummary enterprise(UserConversationsEventMediaSummaryDetail enterprise) {
@@ -58,7 +59,6 @@ public class UserConversationsEventMediaSummary  implements Serializable {
     this.enterprise = enterprise;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class UserConversationsEventMediaSummary  implements Serializable {
       return false;
     }
     UserConversationsEventMediaSummary userConversationsEventMediaSummary = (UserConversationsEventMediaSummary) o;
+
     return Objects.equals(this.contactCenter, userConversationsEventMediaSummary.contactCenter) &&
-        Objects.equals(this.enterprise, userConversationsEventMediaSummary.enterprise);
+            Objects.equals(this.enterprise, userConversationsEventMediaSummary.enterprise);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Conversation;
@@ -57,14 +58,14 @@ public class VoicemailMessage  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The conversation that the voicemail message is associated with")
   @JsonProperty("conversation")
   public Conversation getConversation() {
     return conversation;
   }
 
-  
+
   /**
    * Whether the voicemail message is marked as read
    **/
@@ -82,63 +83,63 @@ public class VoicemailMessage  implements Serializable {
     this.read = read;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The voicemail message's audio recording duration in seconds")
   @JsonProperty("audioRecordingDurationSeconds")
   public Integer getAudioRecordingDurationSeconds() {
     return audioRecordingDurationSeconds;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The voicemail message's audio recording size in bytes")
   @JsonProperty("audioRecordingSizeBytes")
   public Long getAudioRecordingSizeBytes() {
     return audioRecordingSizeBytes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("deletedDate")
   public Date getDeletedDate() {
     return deletedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The caller address")
   @JsonProperty("callerAddress")
   public String getCallerAddress() {
     return callerAddress;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Optionally the name of the caller that left the voicemail message if the caller was a known user")
   @JsonProperty("callerName")
   public String getCallerName() {
     return callerName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Optionally the user that left the voicemail message if the caller was a known user")
   @JsonProperty("callerUser")
   public User getCallerUser() {
     return callerUser;
   }
 
-  
+
   /**
    * Whether the voicemail message has been marked as deleted
    **/
@@ -156,7 +157,7 @@ public class VoicemailMessage  implements Serializable {
     this.deleted = deleted;
   }
 
-  
+
   /**
    * An optional note
    **/
@@ -174,42 +175,42 @@ public class VoicemailMessage  implements Serializable {
     this.note = note;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue")
   @JsonProperty("user")
   public User getUser() {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group")
   @JsonProperty("queue")
   public Queue getQueue() {
     return queue;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Represents where this voicemail message was copied from")
   @JsonProperty("copiedFrom")
   public VoicemailCopyRecord getCopiedFrom() {
     return copiedFrom;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Represents where this voicemail has been copied to")
   @JsonProperty("copiedTo")
   public List<VoicemailCopyRecord> getCopiedTo() {
     return copiedTo;
   }
 
-  
+
   /**
    * The retention policy for this voicemail when deleted is set to true
    **/
@@ -227,14 +228,13 @@ public class VoicemailMessage  implements Serializable {
     this.deleteRetentionPolicy = deleteRetentionPolicy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -245,26 +245,27 @@ public class VoicemailMessage  implements Serializable {
       return false;
     }
     VoicemailMessage voicemailMessage = (VoicemailMessage) o;
+
     return Objects.equals(this.id, voicemailMessage.id) &&
-        Objects.equals(this.conversation, voicemailMessage.conversation) &&
-        Objects.equals(this.read, voicemailMessage.read) &&
-        Objects.equals(this.audioRecordingDurationSeconds, voicemailMessage.audioRecordingDurationSeconds) &&
-        Objects.equals(this.audioRecordingSizeBytes, voicemailMessage.audioRecordingSizeBytes) &&
-        Objects.equals(this.createdDate, voicemailMessage.createdDate) &&
-        Objects.equals(this.modifiedDate, voicemailMessage.modifiedDate) &&
-        Objects.equals(this.deletedDate, voicemailMessage.deletedDate) &&
-        Objects.equals(this.callerAddress, voicemailMessage.callerAddress) &&
-        Objects.equals(this.callerName, voicemailMessage.callerName) &&
-        Objects.equals(this.callerUser, voicemailMessage.callerUser) &&
-        Objects.equals(this.deleted, voicemailMessage.deleted) &&
-        Objects.equals(this.note, voicemailMessage.note) &&
-        Objects.equals(this.user, voicemailMessage.user) &&
-        Objects.equals(this.group, voicemailMessage.group) &&
-        Objects.equals(this.queue, voicemailMessage.queue) &&
-        Objects.equals(this.copiedFrom, voicemailMessage.copiedFrom) &&
-        Objects.equals(this.copiedTo, voicemailMessage.copiedTo) &&
-        Objects.equals(this.deleteRetentionPolicy, voicemailMessage.deleteRetentionPolicy) &&
-        Objects.equals(this.selfUri, voicemailMessage.selfUri);
+            Objects.equals(this.conversation, voicemailMessage.conversation) &&
+            Objects.equals(this.read, voicemailMessage.read) &&
+            Objects.equals(this.audioRecordingDurationSeconds, voicemailMessage.audioRecordingDurationSeconds) &&
+            Objects.equals(this.audioRecordingSizeBytes, voicemailMessage.audioRecordingSizeBytes) &&
+            Objects.equals(this.createdDate, voicemailMessage.createdDate) &&
+            Objects.equals(this.modifiedDate, voicemailMessage.modifiedDate) &&
+            Objects.equals(this.deletedDate, voicemailMessage.deletedDate) &&
+            Objects.equals(this.callerAddress, voicemailMessage.callerAddress) &&
+            Objects.equals(this.callerName, voicemailMessage.callerName) &&
+            Objects.equals(this.callerUser, voicemailMessage.callerUser) &&
+            Objects.equals(this.deleted, voicemailMessage.deleted) &&
+            Objects.equals(this.note, voicemailMessage.note) &&
+            Objects.equals(this.user, voicemailMessage.user) &&
+            Objects.equals(this.group, voicemailMessage.group) &&
+            Objects.equals(this.queue, voicemailMessage.queue) &&
+            Objects.equals(this.copiedFrom, voicemailMessage.copiedFrom) &&
+            Objects.equals(this.copiedTo, voicemailMessage.copiedTo) &&
+            Objects.equals(this.deleteRetentionPolicy, voicemailMessage.deleteRetentionPolicy) &&
+            Objects.equals(this.selfUri, voicemailMessage.selfUri);
   }
 
   @Override

@@ -32,9 +32,9 @@ title: Station
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AVAILABLE | &quot;AVAILABLE&quot; |
-| ASSOCIATED | &quot;ASSOCIATED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AVAILABLE | &quot;AVAILABLE&quot; | 
+| ASSOCIATED | &quot;ASSOCIATED&quot; | 
 {: class="table table-striped"}
 
 

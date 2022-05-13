@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.total = total;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public BotConnectorBotSummaryEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class BotConnectorBotSummaryEntityListing  implements Serializable, Paged
       return false;
     }
     BotConnectorBotSummaryEntityListing botConnectorBotSummaryEntityListing = (BotConnectorBotSummaryEntityListing) o;
+
     return Objects.equals(this.entities, botConnectorBotSummaryEntityListing.entities) &&
-        Objects.equals(this.pageSize, botConnectorBotSummaryEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, botConnectorBotSummaryEntityListing.pageNumber) &&
-        Objects.equals(this.total, botConnectorBotSummaryEntityListing.total) &&
-        Objects.equals(this.lastUri, botConnectorBotSummaryEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, botConnectorBotSummaryEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, botConnectorBotSummaryEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, botConnectorBotSummaryEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, botConnectorBotSummaryEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, botConnectorBotSummaryEntityListing.pageCount);
+            Objects.equals(this.pageSize, botConnectorBotSummaryEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, botConnectorBotSummaryEntityListing.pageNumber) &&
+            Objects.equals(this.total, botConnectorBotSummaryEntityListing.total) &&
+            Objects.equals(this.lastUri, botConnectorBotSummaryEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, botConnectorBotSummaryEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, botConnectorBotSummaryEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, botConnectorBotSummaryEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, botConnectorBotSummaryEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, botConnectorBotSummaryEntityListing.pageCount);
   }
 
   @Override

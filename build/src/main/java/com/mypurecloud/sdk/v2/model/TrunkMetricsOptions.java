@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkErrorInfo;
@@ -45,7 +46,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.proxyAddress = proxyAddress;
   }
 
-  
+
   /**
    **/
   public TrunkMetricsOptions optionState(Boolean optionState) {
@@ -62,7 +63,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.optionState = optionState;
   }
 
-  
+
   /**
    * ISO 8601 format UTC absolute date & time of the last change of the option state.
    **/
@@ -80,7 +81,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.optionStateTime = optionStateTime;
   }
 
-  
+
   /**
    **/
   public TrunkMetricsOptions errorInfo(TrunkErrorInfo errorInfo) {
@@ -97,7 +98,6 @@ public class TrunkMetricsOptions  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class TrunkMetricsOptions  implements Serializable {
       return false;
     }
     TrunkMetricsOptions trunkMetricsOptions = (TrunkMetricsOptions) o;
+
     return Objects.equals(this.proxyAddress, trunkMetricsOptions.proxyAddress) &&
-        Objects.equals(this.optionState, trunkMetricsOptions.optionState) &&
-        Objects.equals(this.optionStateTime, trunkMetricsOptions.optionStateTime) &&
-        Objects.equals(this.errorInfo, trunkMetricsOptions.errorInfo);
+            Objects.equals(this.optionState, trunkMetricsOptions.optionState) &&
+            Objects.equals(this.optionStateTime, trunkMetricsOptions.optionStateTime) &&
+            Objects.equals(this.errorInfo, trunkMetricsOptions.errorInfo);
   }
 
   @Override

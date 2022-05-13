@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -49,7 +49,7 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    * The number of agents from this management unit that are in the schedule
    **/
@@ -67,7 +67,7 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
     this.agentCount = agentCount;
   }
 
-  
+
   /**
    * The start of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -85,7 +85,7 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The end of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -103,7 +103,7 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed
    **/
@@ -121,7 +121,6 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
     this.agents = agents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -132,11 +131,12 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
       return false;
     }
     BuManagementUnitScheduleSummary buManagementUnitScheduleSummary = (BuManagementUnitScheduleSummary) o;
+
     return Objects.equals(this.managementUnit, buManagementUnitScheduleSummary.managementUnit) &&
-        Objects.equals(this.agentCount, buManagementUnitScheduleSummary.agentCount) &&
-        Objects.equals(this.startDate, buManagementUnitScheduleSummary.startDate) &&
-        Objects.equals(this.endDate, buManagementUnitScheduleSummary.endDate) &&
-        Objects.equals(this.agents, buManagementUnitScheduleSummary.agents);
+            Objects.equals(this.agentCount, buManagementUnitScheduleSummary.agentCount) &&
+            Objects.equals(this.startDate, buManagementUnitScheduleSummary.startDate) &&
+            Objects.equals(this.endDate, buManagementUnitScheduleSummary.endDate) &&
+            Objects.equals(this.agents, buManagementUnitScheduleSummary.agents);
   }
 
   @Override

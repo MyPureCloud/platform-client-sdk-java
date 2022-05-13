@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData  i
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData averageSpeedOfAnswerSeconds(BigDecimal averageSpeedOfAnswerSeconds) {
@@ -59,7 +60,7 @@ public class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData  i
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData numberOfInteractions(BigDecimal numberOfInteractions) {
@@ -76,7 +77,6 @@ public class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData  i
     this.numberOfInteractions = numberOfInteractions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData  i
       return false;
     }
     WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData wfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData = (WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData) o;
+
     return Objects.equals(this.serviceLevelPercent, wfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData.serviceLevelPercent) &&
-        Objects.equals(this.averageSpeedOfAnswerSeconds, wfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData.averageSpeedOfAnswerSeconds) &&
-        Objects.equals(this.numberOfInteractions, wfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData.numberOfInteractions);
+            Objects.equals(this.averageSpeedOfAnswerSeconds, wfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData.averageSpeedOfAnswerSeconds) &&
+            Objects.equals(this.numberOfInteractions, wfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData.numberOfInteractions);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     this.filterType = filterType;
   }
 
-  
+
   /**
    * The list of predicates in that clause
    **/
@@ -110,7 +111,6 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
       return false;
     }
     DialerContactlistfilterConfigChangeFilterClause dialerContactlistfilterConfigChangeFilterClause = (DialerContactlistfilterConfigChangeFilterClause) o;
+
     return Objects.equals(this.filterType, dialerContactlistfilterConfigChangeFilterClause.filterType) &&
-        Objects.equals(this.predicates, dialerContactlistfilterConfigChangeFilterClause.predicates);
+            Objects.equals(this.predicates, dialerContactlistfilterConfigChangeFilterClause.predicates);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Ring;
@@ -43,7 +44,6 @@ public class Bullseye  implements Serializable {
     this.rings = rings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,6 +54,7 @@ public class Bullseye  implements Serializable {
       return false;
     }
     Bullseye bullseye = (Bullseye) o;
+
     return Objects.equals(this.rings, bullseye.rings);
   }
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList total(Long total) {
@@ -103,7 +104,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentResponseList pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CoachingAppointmentResponseList  implements Serializable, PagedReso
       return false;
     }
     CoachingAppointmentResponseList coachingAppointmentResponseList = (CoachingAppointmentResponseList) o;
+
     return Objects.equals(this.entities, coachingAppointmentResponseList.entities) &&
-        Objects.equals(this.pageSize, coachingAppointmentResponseList.pageSize) &&
-        Objects.equals(this.pageNumber, coachingAppointmentResponseList.pageNumber) &&
-        Objects.equals(this.total, coachingAppointmentResponseList.total) &&
-        Objects.equals(this.lastUri, coachingAppointmentResponseList.lastUri) &&
-        Objects.equals(this.firstUri, coachingAppointmentResponseList.firstUri) &&
-        Objects.equals(this.selfUri, coachingAppointmentResponseList.selfUri) &&
-        Objects.equals(this.previousUri, coachingAppointmentResponseList.previousUri) &&
-        Objects.equals(this.nextUri, coachingAppointmentResponseList.nextUri) &&
-        Objects.equals(this.pageCount, coachingAppointmentResponseList.pageCount);
+            Objects.equals(this.pageSize, coachingAppointmentResponseList.pageSize) &&
+            Objects.equals(this.pageNumber, coachingAppointmentResponseList.pageNumber) &&
+            Objects.equals(this.total, coachingAppointmentResponseList.total) &&
+            Objects.equals(this.lastUri, coachingAppointmentResponseList.lastUri) &&
+            Objects.equals(this.firstUri, coachingAppointmentResponseList.firstUri) &&
+            Objects.equals(this.selfUri, coachingAppointmentResponseList.selfUri) &&
+            Objects.equals(this.previousUri, coachingAppointmentResponseList.previousUri) &&
+            Objects.equals(this.nextUri, coachingAppointmentResponseList.nextUri) &&
+            Objects.equals(this.pageCount, coachingAppointmentResponseList.pageCount);
   }
 
   @Override

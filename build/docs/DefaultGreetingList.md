@@ -27,10 +27,10 @@ title: DefaultGreetingList
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USER | &quot;USER&quot; |
-| ORGANIZATION | &quot;ORGANIZATION&quot; |
-| GROUP | &quot;GROUP&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USER | &quot;USER&quot; | 
+| ORGANIZATION | &quot;ORGANIZATION&quot; | 
+| GROUP | &quot;GROUP&quot; | 
 {: class="table table-striped"}
 
 

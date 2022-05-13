@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,7 +86,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SmsPhoneNumberProvision name(String name) {
@@ -102,7 +103,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A phone number to be used for SMS communications. E.g. +13175555555 or +34234234234
    **/
@@ -120,7 +121,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * Type of the phone number provisioned.
    **/
@@ -138,7 +139,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     this.phoneNumberType = phoneNumberType;
   }
 
-  
+
   /**
    * The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
    **/
@@ -156,7 +157,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
+
   /**
    * The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here
    **/
@@ -174,14 +175,13 @@ public class SmsPhoneNumberProvision  implements Serializable {
     this.addressId = addressId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,13 +192,14 @@ public class SmsPhoneNumberProvision  implements Serializable {
       return false;
     }
     SmsPhoneNumberProvision smsPhoneNumberProvision = (SmsPhoneNumberProvision) o;
+
     return Objects.equals(this.id, smsPhoneNumberProvision.id) &&
-        Objects.equals(this.name, smsPhoneNumberProvision.name) &&
-        Objects.equals(this.phoneNumber, smsPhoneNumberProvision.phoneNumber) &&
-        Objects.equals(this.phoneNumberType, smsPhoneNumberProvision.phoneNumberType) &&
-        Objects.equals(this.countryCode, smsPhoneNumberProvision.countryCode) &&
-        Objects.equals(this.addressId, smsPhoneNumberProvision.addressId) &&
-        Objects.equals(this.selfUri, smsPhoneNumberProvision.selfUri);
+            Objects.equals(this.name, smsPhoneNumberProvision.name) &&
+            Objects.equals(this.phoneNumber, smsPhoneNumberProvision.phoneNumber) &&
+            Objects.equals(this.phoneNumberType, smsPhoneNumberProvision.phoneNumberType) &&
+            Objects.equals(this.countryCode, smsPhoneNumberProvision.countryCode) &&
+            Objects.equals(this.addressId, smsPhoneNumberProvision.addressId) &&
+            Objects.equals(this.selfUri, smsPhoneNumberProvision.selfUri);
   }
 
   @Override

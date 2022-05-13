@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentButt
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse text(String text) {
@@ -106,7 +107,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentButt
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse payload(String payload) {
@@ -123,7 +124,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentButt
     this.payload = payload;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,9 +134,10 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentButt
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse v2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse = (V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse.type) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse.text) &&
-        Objects.equals(this.payload, v2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse.payload);
+            Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse.text) &&
+            Objects.equals(this.payload, v2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse.payload);
   }
 
   @Override

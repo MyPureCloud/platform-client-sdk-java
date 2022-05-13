@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class QueueConversationScreenShareEventTopicJourneyActionMap  implements 
     this.id = id;
   }
 
-  
+
   /**
    * The version number of the actionMap in the Journey System at the time this action was triggered
    **/
@@ -60,7 +61,6 @@ public class QueueConversationScreenShareEventTopicJourneyActionMap  implements 
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class QueueConversationScreenShareEventTopicJourneyActionMap  implements 
       return false;
     }
     QueueConversationScreenShareEventTopicJourneyActionMap queueConversationScreenShareEventTopicJourneyActionMap = (QueueConversationScreenShareEventTopicJourneyActionMap) o;
+
     return Objects.equals(this.id, queueConversationScreenShareEventTopicJourneyActionMap.id) &&
-        Objects.equals(this.version, queueConversationScreenShareEventTopicJourneyActionMap.version);
+            Objects.equals(this.version, queueConversationScreenShareEventTopicJourneyActionMap.version);
   }
 
   @Override

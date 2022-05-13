@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class TwitterId  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * twitter user.name
    **/
@@ -63,7 +64,7 @@ public class TwitterId  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * twitter user.screen_name
    **/
@@ -81,21 +82,20 @@ public class TwitterId  implements Serializable {
     this.screenName = screenName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "whether this data has been verified using the twitter API")
   @JsonProperty("verified")
   public Boolean getVerified() {
     return verified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "url of user's twitter profile")
   @JsonProperty("profileUrl")
   public String getProfileUrl() {
     return profileUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,11 +106,12 @@ public class TwitterId  implements Serializable {
       return false;
     }
     TwitterId twitterId = (TwitterId) o;
+
     return Objects.equals(this.id, twitterId.id) &&
-        Objects.equals(this.name, twitterId.name) &&
-        Objects.equals(this.screenName, twitterId.screenName) &&
-        Objects.equals(this.verified, twitterId.verified) &&
-        Objects.equals(this.profileUrl, twitterId.profileUrl);
+            Objects.equals(this.name, twitterId.name) &&
+            Objects.equals(this.screenName, twitterId.screenName) &&
+            Objects.equals(this.verified, twitterId.verified) &&
+            Objects.equals(this.profileUrl, twitterId.profileUrl);
   }
 
   @Override

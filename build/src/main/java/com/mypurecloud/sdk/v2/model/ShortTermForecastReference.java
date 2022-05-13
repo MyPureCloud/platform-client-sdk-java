@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -33,14 +34,14 @@ public class ShortTermForecastReference  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * The weekDate of the short term forecast in yyyy-MM-dd format
    **/
@@ -58,7 +59,7 @@ public class ShortTermForecastReference  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The description of the short term forecast
    **/
@@ -76,7 +77,6 @@ public class ShortTermForecastReference  implements Serializable {
     this.description = description;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,10 +87,11 @@ public class ShortTermForecastReference  implements Serializable {
       return false;
     }
     ShortTermForecastReference shortTermForecastReference = (ShortTermForecastReference) o;
+
     return Objects.equals(this.id, shortTermForecastReference.id) &&
-        Objects.equals(this.selfUri, shortTermForecastReference.selfUri) &&
-        Objects.equals(this.weekDate, shortTermForecastReference.weekDate) &&
-        Objects.equals(this.description, shortTermForecastReference.description);
+            Objects.equals(this.selfUri, shortTermForecastReference.selfUri) &&
+            Objects.equals(this.weekDate, shortTermForecastReference.weekDate) &&
+            Objects.equals(this.description, shortTermForecastReference.description);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup forecastDataSummary(WfmBuIntradayDataUpdateTopicBuIntradayForecastData forecastDataSummary) {
@@ -118,7 +119,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.forecastDataSummary = forecastDataSummary;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup forecastDataPerInterval(List<WfmBuIntradayDataUpdateTopicBuIntradayForecastData> forecastDataPerInterval) {
@@ -135,7 +136,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.forecastDataPerInterval = forecastDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup scheduleDataSummary(WfmBuIntradayDataUpdateTopicBuIntradayScheduleData scheduleDataSummary) {
@@ -152,7 +153,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.scheduleDataSummary = scheduleDataSummary;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup scheduleDataPerInterval(List<WfmBuIntradayDataUpdateTopicBuIntradayScheduleData> scheduleDataPerInterval) {
@@ -169,7 +170,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.scheduleDataPerInterval = scheduleDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup performancePredictionDataSummary(WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData performancePredictionDataSummary) {
@@ -186,7 +187,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.performancePredictionDataSummary = performancePredictionDataSummary;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayDataGroup performancePredictionDataPerInterval(List<WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData> performancePredictionDataPerInterval) {
@@ -203,7 +204,6 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
     this.performancePredictionDataPerInterval = performancePredictionDataPerInterval;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -214,13 +214,14 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayDataGroup  implements Seriali
       return false;
     }
     WfmBuIntradayDataUpdateTopicBuIntradayDataGroup wfmBuIntradayDataUpdateTopicBuIntradayDataGroup = (WfmBuIntradayDataUpdateTopicBuIntradayDataGroup) o;
+
     return Objects.equals(this.mediaType, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.mediaType) &&
-        Objects.equals(this.forecastDataSummary, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.forecastDataSummary) &&
-        Objects.equals(this.forecastDataPerInterval, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.forecastDataPerInterval) &&
-        Objects.equals(this.scheduleDataSummary, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.scheduleDataSummary) &&
-        Objects.equals(this.scheduleDataPerInterval, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.scheduleDataPerInterval) &&
-        Objects.equals(this.performancePredictionDataSummary, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.performancePredictionDataSummary) &&
-        Objects.equals(this.performancePredictionDataPerInterval, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.performancePredictionDataPerInterval);
+            Objects.equals(this.forecastDataSummary, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.forecastDataSummary) &&
+            Objects.equals(this.forecastDataPerInterval, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.forecastDataPerInterval) &&
+            Objects.equals(this.scheduleDataSummary, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.scheduleDataSummary) &&
+            Objects.equals(this.scheduleDataPerInterval, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.scheduleDataPerInterval) &&
+            Objects.equals(this.performancePredictionDataSummary, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.performancePredictionDataSummary) &&
+            Objects.equals(this.performancePredictionDataPerInterval, wfmBuIntradayDataUpdateTopicBuIntradayDataGroup.performancePredictionDataPerInterval);
   }
 
   @Override

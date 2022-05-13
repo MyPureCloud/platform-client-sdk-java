@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -44,7 +45,7 @@ public class FilterPreviewResponse  implements Serializable {
     this.filteredContacts = filteredContacts;
   }
 
-  
+
   /**
    **/
   public FilterPreviewResponse totalContacts(Long totalContacts) {
@@ -61,7 +62,7 @@ public class FilterPreviewResponse  implements Serializable {
     this.totalContacts = totalContacts;
   }
 
-  
+
   /**
    **/
   public FilterPreviewResponse preview(List<DialerContact> preview) {
@@ -78,7 +79,6 @@ public class FilterPreviewResponse  implements Serializable {
     this.preview = preview;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class FilterPreviewResponse  implements Serializable {
       return false;
     }
     FilterPreviewResponse filterPreviewResponse = (FilterPreviewResponse) o;
+
     return Objects.equals(this.filteredContacts, filterPreviewResponse.filteredContacts) &&
-        Objects.equals(this.totalContacts, filterPreviewResponse.totalContacts) &&
-        Objects.equals(this.preview, filterPreviewResponse.preview);
+            Objects.equals(this.totalContacts, filterPreviewResponse.totalContacts) &&
+            Objects.equals(this.preview, filterPreviewResponse.preview);
   }
 
   @Override

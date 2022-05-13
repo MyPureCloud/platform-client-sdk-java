@@ -20,28 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.TrustRequest;
-import com.mypurecloud.sdk.v2.model.Trustee;
-import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustUser;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustEntityListing;
-import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
-import com.mypurecloud.sdk.v2.model.TrustCreate;
-import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
-import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.TrustCreate;
+import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
+import com.mypurecloud.sdk.v2.model.TrustRequest;
+import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.TrustUser;
+import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
+import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 public class GetOrgauthorizationTrusteesDefaultRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -65,7 +64,7 @@ public class GetOrgauthorizationTrusteesDefaultRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/orgauthorization/trustees/default")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -76,7 +75,7 @@ public class GetOrgauthorizationTrusteesDefaultRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetOrgauthorizationTrusteesDefaultRequest request;
@@ -85,9 +84,9 @@ public class GetOrgauthorizationTrusteesDefaultRequest {
 			request = new GetOrgauthorizationTrusteesDefaultRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetOrgauthorizationTrusteesDefaultRequest build() {
             

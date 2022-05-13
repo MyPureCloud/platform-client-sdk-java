@@ -20,62 +20,61 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
-import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
-import com.mypurecloud.sdk.v2.model.UserProfile;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingStatus;
-import com.mypurecloud.sdk.v2.model.UserState;
-import com.mypurecloud.sdk.v2.model.UserStations;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
-import com.mypurecloud.sdk.v2.model.UserMe;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.UpdateUser;
-import com.mypurecloud.sdk.v2.model.UserQueue;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
+import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
-import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserProfile;
+import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
+import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.CreateUser;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
-import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.UserState;
+import com.mypurecloud.sdk.v2.model.UserStations;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.Utilization;
 
 public class GetAuthorizationDivisionspermittedMeRequest {
-    
+
 	private String permission;
 	public String getPermission() {
 		return this.permission;
@@ -89,7 +88,7 @@ public class GetAuthorizationDivisionspermittedMeRequest {
 	    this.setPermission(permission);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -103,7 +102,7 @@ public class GetAuthorizationDivisionspermittedMeRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -132,11 +131,13 @@ public class GetAuthorizationDivisionspermittedMeRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/divisionspermitted/me")
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("permission", "", permission)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -147,12 +148,12 @@ public class GetAuthorizationDivisionspermittedMeRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String permission) {
 	    return new Builder()
 	            .withRequiredParams(permission);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationDivisionspermittedMeRequest request;
@@ -161,25 +162,25 @@ public class GetAuthorizationDivisionspermittedMeRequest {
 			request = new GetAuthorizationDivisionspermittedMeRequest();
 		}
 
-		
+
 		public Builder withPermission(String permission) {
 			request.setPermission(permission);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String permission) {
 			request.setPermission(permission);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAuthorizationDivisionspermittedMeRequest build() {
             

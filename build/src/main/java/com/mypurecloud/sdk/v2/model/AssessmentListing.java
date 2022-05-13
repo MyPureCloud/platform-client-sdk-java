@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BenefitAssessment;
@@ -45,7 +46,7 @@ public class AssessmentListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public AssessmentListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class AssessmentListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public AssessmentListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class AssessmentListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public AssessmentListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class AssessmentListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class AssessmentListing  implements Serializable {
       return false;
     }
     AssessmentListing assessmentListing = (AssessmentListing) o;
+
     return Objects.equals(this.entities, assessmentListing.entities) &&
-        Objects.equals(this.nextUri, assessmentListing.nextUri) &&
-        Objects.equals(this.selfUri, assessmentListing.selfUri) &&
-        Objects.equals(this.previousUri, assessmentListing.previousUri);
+            Objects.equals(this.nextUri, assessmentListing.nextUri) &&
+            Objects.equals(this.selfUri, assessmentListing.selfUri) &&
+            Objects.equals(this.previousUri, assessmentListing.previousUri);
   }
 
   @Override

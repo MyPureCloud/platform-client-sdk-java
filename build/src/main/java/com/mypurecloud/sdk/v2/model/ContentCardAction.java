@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class ContentCardAction  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The response text from the button click.
    **/
@@ -110,7 +111,7 @@ public class ContentCardAction  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
    **/
@@ -128,7 +129,7 @@ public class ContentCardAction  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * A URL of a web page to direct the user to.
    **/
@@ -146,7 +147,6 @@ public class ContentCardAction  implements Serializable {
     this.url = url;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,10 +157,11 @@ public class ContentCardAction  implements Serializable {
       return false;
     }
     ContentCardAction contentCardAction = (ContentCardAction) o;
+
     return Objects.equals(this.type, contentCardAction.type) &&
-        Objects.equals(this.text, contentCardAction.text) &&
-        Objects.equals(this.payload, contentCardAction.payload) &&
-        Objects.equals(this.url, contentCardAction.url);
+            Objects.equals(this.text, contentCardAction.text) &&
+            Objects.equals(this.payload, contentCardAction.payload) &&
+            Objects.equals(this.url, contentCardAction.url);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SupportCenterGlobalStyle;
@@ -43,7 +44,7 @@ public class SupportCenterStyleSetting  implements Serializable {
     this.heroStyle = heroStyle;
   }
 
-  
+
   /**
    * Support center global customizations
    **/
@@ -61,7 +62,6 @@ public class SupportCenterStyleSetting  implements Serializable {
     this.globalStyle = globalStyle;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class SupportCenterStyleSetting  implements Serializable {
       return false;
     }
     SupportCenterStyleSetting supportCenterStyleSetting = (SupportCenterStyleSetting) o;
+
     return Objects.equals(this.heroStyle, supportCenterStyleSetting.heroStyle) &&
-        Objects.equals(this.globalStyle, supportCenterStyleSetting.globalStyle);
+            Objects.equals(this.globalStyle, supportCenterStyleSetting.globalStyle);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.utteranceId = utteranceId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult isFinal(Boolean isFinal) {
@@ -118,7 +119,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.isFinal = isFinal;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult channel(ChannelEnum channel) {
@@ -135,7 +136,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.channel = channel;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult alternatives(List<TranscriptionTopicTranscriptAlternative> alternatives) {
@@ -152,7 +153,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.alternatives = alternatives;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult agentAssistantId(String agentAssistantId) {
@@ -169,7 +170,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult engineId(String engineId) {
@@ -186,7 +187,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.engineId = engineId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult dialect(String dialect) {
@@ -203,7 +204,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.dialect = dialect;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult speechTextAnalyticsProgramId(String speechTextAnalyticsProgramId) {
@@ -220,7 +221,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.speechTextAnalyticsProgramId = speechTextAnalyticsProgramId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult agentAssistEnabled(Boolean agentAssistEnabled) {
@@ -237,7 +238,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.agentAssistEnabled = agentAssistEnabled;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptResult voiceTranscriptionEnabled(Boolean voiceTranscriptionEnabled) {
@@ -254,7 +255,6 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     this.voiceTranscriptionEnabled = voiceTranscriptionEnabled;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,16 +265,17 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
       return false;
     }
     TranscriptionTopicTranscriptResult transcriptionTopicTranscriptResult = (TranscriptionTopicTranscriptResult) o;
+
     return Objects.equals(this.utteranceId, transcriptionTopicTranscriptResult.utteranceId) &&
-        Objects.equals(this.isFinal, transcriptionTopicTranscriptResult.isFinal) &&
-        Objects.equals(this.channel, transcriptionTopicTranscriptResult.channel) &&
-        Objects.equals(this.alternatives, transcriptionTopicTranscriptResult.alternatives) &&
-        Objects.equals(this.agentAssistantId, transcriptionTopicTranscriptResult.agentAssistantId) &&
-        Objects.equals(this.engineId, transcriptionTopicTranscriptResult.engineId) &&
-        Objects.equals(this.dialect, transcriptionTopicTranscriptResult.dialect) &&
-        Objects.equals(this.speechTextAnalyticsProgramId, transcriptionTopicTranscriptResult.speechTextAnalyticsProgramId) &&
-        Objects.equals(this.agentAssistEnabled, transcriptionTopicTranscriptResult.agentAssistEnabled) &&
-        Objects.equals(this.voiceTranscriptionEnabled, transcriptionTopicTranscriptResult.voiceTranscriptionEnabled);
+            Objects.equals(this.isFinal, transcriptionTopicTranscriptResult.isFinal) &&
+            Objects.equals(this.channel, transcriptionTopicTranscriptResult.channel) &&
+            Objects.equals(this.alternatives, transcriptionTopicTranscriptResult.alternatives) &&
+            Objects.equals(this.agentAssistantId, transcriptionTopicTranscriptResult.agentAssistantId) &&
+            Objects.equals(this.engineId, transcriptionTopicTranscriptResult.engineId) &&
+            Objects.equals(this.dialect, transcriptionTopicTranscriptResult.dialect) &&
+            Objects.equals(this.speechTextAnalyticsProgramId, transcriptionTopicTranscriptResult.speechTextAnalyticsProgramId) &&
+            Objects.equals(this.agentAssistEnabled, transcriptionTopicTranscriptResult.agentAssistEnabled) &&
+            Objects.equals(this.voiceTranscriptionEnabled, transcriptionTopicTranscriptResult.voiceTranscriptionEnabled);
   }
 
   @Override

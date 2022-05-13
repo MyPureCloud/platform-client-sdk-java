@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class TimeOffRequestNotification  implements Serializable {
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
+
   /**
    * The user associated with this time off request
    **/
@@ -117,7 +118,7 @@ public class TimeOffRequestNotification  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Whether this is a full day request (false means partial day)
    **/
@@ -135,7 +136,7 @@ public class TimeOffRequestNotification  implements Serializable {
     this.isFullDayRequest = isFullDayRequest;
   }
 
-  
+
   /**
    * The status of this time off request
    **/
@@ -153,7 +154,7 @@ public class TimeOffRequestNotification  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
    **/
@@ -171,7 +172,7 @@ public class TimeOffRequestNotification  implements Serializable {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-  
+
   /**
    * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true
    **/
@@ -189,7 +190,6 @@ public class TimeOffRequestNotification  implements Serializable {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -200,12 +200,13 @@ public class TimeOffRequestNotification  implements Serializable {
       return false;
     }
     TimeOffRequestNotification timeOffRequestNotification = (TimeOffRequestNotification) o;
+
     return Objects.equals(this.timeOffRequestId, timeOffRequestNotification.timeOffRequestId) &&
-        Objects.equals(this.user, timeOffRequestNotification.user) &&
-        Objects.equals(this.isFullDayRequest, timeOffRequestNotification.isFullDayRequest) &&
-        Objects.equals(this.status, timeOffRequestNotification.status) &&
-        Objects.equals(this.partialDayStartDateTimes, timeOffRequestNotification.partialDayStartDateTimes) &&
-        Objects.equals(this.fullDayManagementUnitDates, timeOffRequestNotification.fullDayManagementUnitDates);
+            Objects.equals(this.user, timeOffRequestNotification.user) &&
+            Objects.equals(this.isFullDayRequest, timeOffRequestNotification.isFullDayRequest) &&
+            Objects.equals(this.status, timeOffRequestNotification.status) &&
+            Objects.equals(this.partialDayStartDateTimes, timeOffRequestNotification.partialDayStartDateTimes) &&
+            Objects.equals(this.fullDayManagementUnitDates, timeOffRequestNotification.fullDayManagementUnitDates);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MaxLength;
@@ -34,7 +35,7 @@ public class ItemValidationLimits  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A structure denoting the system-imposed minimum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.")
+  @ApiModelProperty(example = "&quot;minLength: {min: 0, max: 100}&quot;", required = true, value = "A structure denoting the system-imposed minimum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.")
   @JsonProperty("minLength")
   public MinLength getMinLength() {
     return minLength;
@@ -43,7 +44,7 @@ public class ItemValidationLimits  implements Serializable {
     this.minLength = minLength;
   }
 
-  
+
   /**
    * A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.
    **/
@@ -52,7 +53,7 @@ public class ItemValidationLimits  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.")
+  @ApiModelProperty(example = "&quot;validationLimits: {\nminLength: {min: 0, max: 100},\nmaxLength: {min: 1, max: 100}\n}&quot;", required = true, value = "A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.")
   @JsonProperty("maxLength")
   public MaxLength getMaxLength() {
     return maxLength;
@@ -61,7 +62,6 @@ public class ItemValidationLimits  implements Serializable {
     this.maxLength = maxLength;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class ItemValidationLimits  implements Serializable {
       return false;
     }
     ItemValidationLimits itemValidationLimits = (ItemValidationLimits) o;
+
     return Objects.equals(this.minLength, itemValidationLimits.minLength) &&
-        Objects.equals(this.maxLength, itemValidationLimits.maxLength);
+            Objects.equals(this.maxLength, itemValidationLimits.maxLength);
   }
 
   @Override

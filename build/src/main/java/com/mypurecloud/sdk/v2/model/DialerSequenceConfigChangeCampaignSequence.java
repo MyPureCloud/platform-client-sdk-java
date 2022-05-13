@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.campaigns = campaigns;
   }
 
-  
+
   /**
    * the zero-based index of the current campaign in the campaigns list
    **/
@@ -120,7 +121,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.currentCampaign = currentCampaign;
   }
 
-  
+
   /**
    **/
   public DialerSequenceConfigChangeCampaignSequence status(StatusEnum status) {
@@ -137,7 +138,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.status = status;
   }
 
-  
+
   /**
    * if a sequence has unexpectedly stopped, this message provides the reason
    **/
@@ -155,7 +156,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.stopMessage = stopMessage;
   }
 
-  
+
   /**
    * indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
    **/
@@ -173,7 +174,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.repeat = repeat;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -191,7 +192,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -209,7 +210,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -227,7 +228,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -245,7 +246,7 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -263,7 +264,6 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -274,16 +274,17 @@ public class DialerSequenceConfigChangeCampaignSequence  implements Serializable
       return false;
     }
     DialerSequenceConfigChangeCampaignSequence dialerSequenceConfigChangeCampaignSequence = (DialerSequenceConfigChangeCampaignSequence) o;
+
     return Objects.equals(this.campaigns, dialerSequenceConfigChangeCampaignSequence.campaigns) &&
-        Objects.equals(this.currentCampaign, dialerSequenceConfigChangeCampaignSequence.currentCampaign) &&
-        Objects.equals(this.status, dialerSequenceConfigChangeCampaignSequence.status) &&
-        Objects.equals(this.stopMessage, dialerSequenceConfigChangeCampaignSequence.stopMessage) &&
-        Objects.equals(this.repeat, dialerSequenceConfigChangeCampaignSequence.repeat) &&
-        Objects.equals(this.id, dialerSequenceConfigChangeCampaignSequence.id) &&
-        Objects.equals(this.name, dialerSequenceConfigChangeCampaignSequence.name) &&
-        Objects.equals(this.dateCreated, dialerSequenceConfigChangeCampaignSequence.dateCreated) &&
-        Objects.equals(this.dateModified, dialerSequenceConfigChangeCampaignSequence.dateModified) &&
-        Objects.equals(this.version, dialerSequenceConfigChangeCampaignSequence.version);
+            Objects.equals(this.currentCampaign, dialerSequenceConfigChangeCampaignSequence.currentCampaign) &&
+            Objects.equals(this.status, dialerSequenceConfigChangeCampaignSequence.status) &&
+            Objects.equals(this.stopMessage, dialerSequenceConfigChangeCampaignSequence.stopMessage) &&
+            Objects.equals(this.repeat, dialerSequenceConfigChangeCampaignSequence.repeat) &&
+            Objects.equals(this.id, dialerSequenceConfigChangeCampaignSequence.id) &&
+            Objects.equals(this.name, dialerSequenceConfigChangeCampaignSequence.name) &&
+            Objects.equals(this.dateCreated, dialerSequenceConfigChangeCampaignSequence.dateCreated) &&
+            Objects.equals(this.dateModified, dialerSequenceConfigChangeCampaignSequence.dateModified) &&
+            Objects.equals(this.version, dialerSequenceConfigChangeCampaignSequence.version);
   }
 
   @Override

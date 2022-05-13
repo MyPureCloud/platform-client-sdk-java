@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class PostLanguageunderstandingDomainFeedbackRequest {
-    
+
 	private String domainId;
 	public String getDomainId() {
 		return this.domainId;
@@ -57,7 +57,7 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
 	    this.setDomainId(domainId);
 	    return this;
 	} 
-	
+
 	private NluFeedbackRequest body;
 	public NluFeedbackRequest getBody() {
 		return this.body;
@@ -71,7 +71,7 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,8 +108,8 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
                 .withPathParameter("domainId", domainId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -120,12 +120,12 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String domainId, NluFeedbackRequest body) {
 	    return new Builder()
 	            .withRequiredParams(domainId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostLanguageunderstandingDomainFeedbackRequest request;
@@ -134,26 +134,26 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
 			request = new PostLanguageunderstandingDomainFeedbackRequest();
 		}
 
-		
+
 		public Builder withDomainId(String domainId) {
 			request.setDomainId(domainId);
 			return this;
 		}
-		
+
 		public Builder withBody(NluFeedbackRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String domainId, NluFeedbackRequest body) {
 			request.setDomainId(domainId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostLanguageunderstandingDomainFeedbackRequest build() {
             

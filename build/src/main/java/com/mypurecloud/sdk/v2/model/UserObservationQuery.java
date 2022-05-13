@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserObservationQueryFilter;
@@ -137,7 +138,7 @@ public class UserObservationQuery  implements Serializable {
     this.filter = filter;
   }
 
-  
+
   /**
    * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
@@ -155,7 +156,7 @@ public class UserObservationQuery  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * Metrics for which to include additional detailed observations
    **/
@@ -173,7 +174,6 @@ public class UserObservationQuery  implements Serializable {
     this.detailMetrics = detailMetrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -184,9 +184,10 @@ public class UserObservationQuery  implements Serializable {
       return false;
     }
     UserObservationQuery userObservationQuery = (UserObservationQuery) o;
+
     return Objects.equals(this.filter, userObservationQuery.filter) &&
-        Objects.equals(this.metrics, userObservationQuery.metrics) &&
-        Objects.equals(this.detailMetrics, userObservationQuery.detailMetrics);
+            Objects.equals(this.metrics, userObservationQuery.metrics) &&
+            Objects.equals(this.detailMetrics, userObservationQuery.detailMetrics);
   }
 
   @Override

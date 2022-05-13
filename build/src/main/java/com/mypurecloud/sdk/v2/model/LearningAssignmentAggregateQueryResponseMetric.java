@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class LearningAssignmentAggregateQueryResponseMetric  implements Serializ
     this.metric = metric;
   }
 
-  
+
   /**
    * The aggregated values for this metric
    **/
@@ -115,7 +116,6 @@ public class LearningAssignmentAggregateQueryResponseMetric  implements Serializ
     this.stats = stats;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,8 +126,9 @@ public class LearningAssignmentAggregateQueryResponseMetric  implements Serializ
       return false;
     }
     LearningAssignmentAggregateQueryResponseMetric learningAssignmentAggregateQueryResponseMetric = (LearningAssignmentAggregateQueryResponseMetric) o;
+
     return Objects.equals(this.metric, learningAssignmentAggregateQueryResponseMetric.metric) &&
-        Objects.equals(this.stats, learningAssignmentAggregateQueryResponseMetric.stats);
+            Objects.equals(this.stats, learningAssignmentAggregateQueryResponseMetric.stats);
   }
 
   @Override

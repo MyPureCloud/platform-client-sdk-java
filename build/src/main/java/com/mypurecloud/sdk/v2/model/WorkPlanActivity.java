@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -56,7 +57,7 @@ public class WorkPlanActivity  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Description of the activity
    **/
@@ -74,7 +75,7 @@ public class WorkPlanActivity  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Length of the activity in minutes
    **/
@@ -92,7 +93,7 @@ public class WorkPlanActivity  implements Serializable {
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    * Whether the start time of the activity is relative to the start time of the shift it belongs to
    **/
@@ -110,7 +111,7 @@ public class WorkPlanActivity  implements Serializable {
     this.startTimeIsRelativeToShiftStart = startTimeIsRelativeToShiftStart;
   }
 
-  
+
   /**
    * Whether the start time of the activity is flexible
    **/
@@ -128,7 +129,7 @@ public class WorkPlanActivity  implements Serializable {
     this.flexibleStartTime = flexibleStartTime;
   }
 
-  
+
   /**
    * Earliest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart == true else its based on midnight. Used if flexibleStartTime == true
    **/
@@ -146,7 +147,7 @@ public class WorkPlanActivity  implements Serializable {
     this.earliestStartTimeMinutes = earliestStartTimeMinutes;
   }
 
-  
+
   /**
    * Latest activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart == true else its based on midnight. Used if flexibleStartTime == true
    **/
@@ -164,7 +165,7 @@ public class WorkPlanActivity  implements Serializable {
     this.latestStartTimeMinutes = latestStartTimeMinutes;
   }
 
-  
+
   /**
    * Exact activity start in offset minutes relative to shift start time if startTimeIsRelativeToShiftStart == true else its based on midnight. Used if flexibleStartTime == false
    **/
@@ -182,7 +183,7 @@ public class WorkPlanActivity  implements Serializable {
     this.exactStartTimeMinutes = exactStartTimeMinutes;
   }
 
-  
+
   /**
    * Increment in offset minutes that would contribute to different possible start times for the activity
    **/
@@ -200,7 +201,7 @@ public class WorkPlanActivity  implements Serializable {
     this.startTimeIncrementMinutes = startTimeIncrementMinutes;
   }
 
-  
+
   /**
    * Whether the activity is paid
    **/
@@ -218,7 +219,7 @@ public class WorkPlanActivity  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-  
+
   /**
    * Whether the activity duration is counted towards contiguous work time
    **/
@@ -236,7 +237,7 @@ public class WorkPlanActivity  implements Serializable {
     this.countsAsContiguousWorkTime = countsAsContiguousWorkTime;
   }
 
-  
+
   /**
    * The minimum duration between shift start and shift item (e.g., break or meal) start in minutes
    **/
@@ -254,7 +255,7 @@ public class WorkPlanActivity  implements Serializable {
     this.minimumLengthFromShiftStartMinutes = minimumLengthFromShiftStartMinutes;
   }
 
-  
+
   /**
    * The minimum duration between shift item (e.g., break or meal) end and shift end in minutes
    **/
@@ -272,7 +273,7 @@ public class WorkPlanActivity  implements Serializable {
     this.minimumLengthFromShiftEndMinutes = minimumLengthFromShiftEndMinutes;
   }
 
-  
+
   /**
    * ID of the activity. This is required only for the case of updating an existing activity
    **/
@@ -290,7 +291,7 @@ public class WorkPlanActivity  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * If marked true for updating an existing activity, the activity will be permanently deleted
    **/
@@ -308,7 +309,7 @@ public class WorkPlanActivity  implements Serializable {
     this.delete = delete;
   }
 
-  
+
   /**
    * ID of the activity in the context of work plan validation
    **/
@@ -326,7 +327,6 @@ public class WorkPlanActivity  implements Serializable {
     this.validationId = validationId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -337,22 +337,23 @@ public class WorkPlanActivity  implements Serializable {
       return false;
     }
     WorkPlanActivity workPlanActivity = (WorkPlanActivity) o;
+
     return Objects.equals(this.activityCodeId, workPlanActivity.activityCodeId) &&
-        Objects.equals(this.description, workPlanActivity.description) &&
-        Objects.equals(this.lengthMinutes, workPlanActivity.lengthMinutes) &&
-        Objects.equals(this.startTimeIsRelativeToShiftStart, workPlanActivity.startTimeIsRelativeToShiftStart) &&
-        Objects.equals(this.flexibleStartTime, workPlanActivity.flexibleStartTime) &&
-        Objects.equals(this.earliestStartTimeMinutes, workPlanActivity.earliestStartTimeMinutes) &&
-        Objects.equals(this.latestStartTimeMinutes, workPlanActivity.latestStartTimeMinutes) &&
-        Objects.equals(this.exactStartTimeMinutes, workPlanActivity.exactStartTimeMinutes) &&
-        Objects.equals(this.startTimeIncrementMinutes, workPlanActivity.startTimeIncrementMinutes) &&
-        Objects.equals(this.countsAsPaidTime, workPlanActivity.countsAsPaidTime) &&
-        Objects.equals(this.countsAsContiguousWorkTime, workPlanActivity.countsAsContiguousWorkTime) &&
-        Objects.equals(this.minimumLengthFromShiftStartMinutes, workPlanActivity.minimumLengthFromShiftStartMinutes) &&
-        Objects.equals(this.minimumLengthFromShiftEndMinutes, workPlanActivity.minimumLengthFromShiftEndMinutes) &&
-        Objects.equals(this.id, workPlanActivity.id) &&
-        Objects.equals(this.delete, workPlanActivity.delete) &&
-        Objects.equals(this.validationId, workPlanActivity.validationId);
+            Objects.equals(this.description, workPlanActivity.description) &&
+            Objects.equals(this.lengthMinutes, workPlanActivity.lengthMinutes) &&
+            Objects.equals(this.startTimeIsRelativeToShiftStart, workPlanActivity.startTimeIsRelativeToShiftStart) &&
+            Objects.equals(this.flexibleStartTime, workPlanActivity.flexibleStartTime) &&
+            Objects.equals(this.earliestStartTimeMinutes, workPlanActivity.earliestStartTimeMinutes) &&
+            Objects.equals(this.latestStartTimeMinutes, workPlanActivity.latestStartTimeMinutes) &&
+            Objects.equals(this.exactStartTimeMinutes, workPlanActivity.exactStartTimeMinutes) &&
+            Objects.equals(this.startTimeIncrementMinutes, workPlanActivity.startTimeIncrementMinutes) &&
+            Objects.equals(this.countsAsPaidTime, workPlanActivity.countsAsPaidTime) &&
+            Objects.equals(this.countsAsContiguousWorkTime, workPlanActivity.countsAsContiguousWorkTime) &&
+            Objects.equals(this.minimumLengthFromShiftStartMinutes, workPlanActivity.minimumLengthFromShiftStartMinutes) &&
+            Objects.equals(this.minimumLengthFromShiftEndMinutes, workPlanActivity.minimumLengthFromShiftEndMinutes) &&
+            Objects.equals(this.id, workPlanActivity.id) &&
+            Objects.equals(this.delete, workPlanActivity.delete) &&
+            Objects.equals(this.validationId, workPlanActivity.validationId);
   }
 
   @Override

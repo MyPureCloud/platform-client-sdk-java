@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class LearningAssignmentRuleRunTopicLearningModuleReference  implements S
     this.id = id;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentRuleRunTopicLearningModuleReference name(String name) {
@@ -57,7 +58,6 @@ public class LearningAssignmentRuleRunTopicLearningModuleReference  implements S
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class LearningAssignmentRuleRunTopicLearningModuleReference  implements S
       return false;
     }
     LearningAssignmentRuleRunTopicLearningModuleReference learningAssignmentRuleRunTopicLearningModuleReference = (LearningAssignmentRuleRunTopicLearningModuleReference) o;
+
     return Objects.equals(this.id, learningAssignmentRuleRunTopicLearningModuleReference.id) &&
-        Objects.equals(this.name, learningAssignmentRuleRunTopicLearningModuleReference.name);
+            Objects.equals(this.name, learningAssignmentRuleRunTopicLearningModuleReference.name);
   }
 
   @Override

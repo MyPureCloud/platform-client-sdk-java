@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
@@ -40,7 +41,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Facebook Integration
    **/
@@ -58,7 +59,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -76,7 +77,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -93,7 +94,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
    **/
@@ -111,7 +112,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.pageAccessToken = pageAccessToken;
   }
 
-  
+
   /**
    * The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.
    **/
@@ -129,7 +130,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.userAccessToken = userAccessToken;
   }
 
-  
+
   /**
    * The page Id of Facebook page. The pageId is required when userAccessToken is provided.
    **/
@@ -147,7 +148,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.pageId = pageId;
   }
 
-  
+
   /**
    * The app Id of Facebook app. The appId is required when a customer wants to use their own approved Facebook app.
    **/
@@ -165,7 +166,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.appId = appId;
   }
 
-  
+
   /**
    * The app Secret of Facebook app. The appSecret is required when appId is provided.
    **/
@@ -183,14 +184,13 @@ public class FacebookIntegrationRequest  implements Serializable {
     this.appSecret = appSecret;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -201,16 +201,17 @@ public class FacebookIntegrationRequest  implements Serializable {
       return false;
     }
     FacebookIntegrationRequest facebookIntegrationRequest = (FacebookIntegrationRequest) o;
+
     return Objects.equals(this.id, facebookIntegrationRequest.id) &&
-        Objects.equals(this.name, facebookIntegrationRequest.name) &&
-        Objects.equals(this.supportedContent, facebookIntegrationRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, facebookIntegrationRequest.messagingSetting) &&
-        Objects.equals(this.pageAccessToken, facebookIntegrationRequest.pageAccessToken) &&
-        Objects.equals(this.userAccessToken, facebookIntegrationRequest.userAccessToken) &&
-        Objects.equals(this.pageId, facebookIntegrationRequest.pageId) &&
-        Objects.equals(this.appId, facebookIntegrationRequest.appId) &&
-        Objects.equals(this.appSecret, facebookIntegrationRequest.appSecret) &&
-        Objects.equals(this.selfUri, facebookIntegrationRequest.selfUri);
+            Objects.equals(this.name, facebookIntegrationRequest.name) &&
+            Objects.equals(this.supportedContent, facebookIntegrationRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, facebookIntegrationRequest.messagingSetting) &&
+            Objects.equals(this.pageAccessToken, facebookIntegrationRequest.pageAccessToken) &&
+            Objects.equals(this.userAccessToken, facebookIntegrationRequest.userAccessToken) &&
+            Objects.equals(this.pageId, facebookIntegrationRequest.pageId) &&
+            Objects.equals(this.appId, facebookIntegrationRequest.appId) &&
+            Objects.equals(this.appSecret, facebookIntegrationRequest.appSecret) &&
+            Objects.equals(this.selfUri, facebookIntegrationRequest.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignScheduleConfigChangeScheduleInterval;
@@ -52,7 +53,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.intervals = intervals;
   }
 
-  
+
   /**
    * time zone identifier to be applied to the intervals; for example Africa/Abidjan
    **/
@@ -70,7 +71,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    **/
   public DialerCampaignScheduleConfigChangeCampaignSchedule campaign(DialerCampaignScheduleConfigChangeUriReference campaign) {
@@ -87,7 +88,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.campaign = campaign;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -105,7 +106,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -123,7 +124,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -141,7 +142,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -159,7 +160,7 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -177,7 +178,6 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -188,14 +188,15 @@ public class DialerCampaignScheduleConfigChangeCampaignSchedule  implements Seri
       return false;
     }
     DialerCampaignScheduleConfigChangeCampaignSchedule dialerCampaignScheduleConfigChangeCampaignSchedule = (DialerCampaignScheduleConfigChangeCampaignSchedule) o;
+
     return Objects.equals(this.intervals, dialerCampaignScheduleConfigChangeCampaignSchedule.intervals) &&
-        Objects.equals(this.timeZone, dialerCampaignScheduleConfigChangeCampaignSchedule.timeZone) &&
-        Objects.equals(this.campaign, dialerCampaignScheduleConfigChangeCampaignSchedule.campaign) &&
-        Objects.equals(this.id, dialerCampaignScheduleConfigChangeCampaignSchedule.id) &&
-        Objects.equals(this.name, dialerCampaignScheduleConfigChangeCampaignSchedule.name) &&
-        Objects.equals(this.dateCreated, dialerCampaignScheduleConfigChangeCampaignSchedule.dateCreated) &&
-        Objects.equals(this.dateModified, dialerCampaignScheduleConfigChangeCampaignSchedule.dateModified) &&
-        Objects.equals(this.version, dialerCampaignScheduleConfigChangeCampaignSchedule.version);
+            Objects.equals(this.timeZone, dialerCampaignScheduleConfigChangeCampaignSchedule.timeZone) &&
+            Objects.equals(this.campaign, dialerCampaignScheduleConfigChangeCampaignSchedule.campaign) &&
+            Objects.equals(this.id, dialerCampaignScheduleConfigChangeCampaignSchedule.id) &&
+            Objects.equals(this.name, dialerCampaignScheduleConfigChangeCampaignSchedule.name) &&
+            Objects.equals(this.dateCreated, dialerCampaignScheduleConfigChangeCampaignSchedule.dateCreated) &&
+            Objects.equals(this.dateModified, dialerCampaignScheduleConfigChangeCampaignSchedule.dateModified) &&
+            Objects.equals(this.version, dialerCampaignScheduleConfigChangeCampaignSchedule.version);
   }
 
   @Override

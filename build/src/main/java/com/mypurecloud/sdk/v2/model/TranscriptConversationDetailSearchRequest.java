@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -117,7 +118,7 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -135,7 +136,7 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -153,7 +154,7 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -171,7 +172,7 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.sort = sort;
   }
 
-  
+
   /**
    * Resource domain type to search
    **/
@@ -189,7 +190,7 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.types = types;
   }
 
-  
+
   /**
    * The search criteria
    **/
@@ -207,7 +208,6 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,13 +218,14 @@ public class TranscriptConversationDetailSearchRequest  implements Serializable 
       return false;
     }
     TranscriptConversationDetailSearchRequest transcriptConversationDetailSearchRequest = (TranscriptConversationDetailSearchRequest) o;
+
     return Objects.equals(this.sortOrder, transcriptConversationDetailSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, transcriptConversationDetailSearchRequest.sortBy) &&
-        Objects.equals(this.pageSize, transcriptConversationDetailSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, transcriptConversationDetailSearchRequest.pageNumber) &&
-        Objects.equals(this.sort, transcriptConversationDetailSearchRequest.sort) &&
-        Objects.equals(this.types, transcriptConversationDetailSearchRequest.types) &&
-        Objects.equals(this.query, transcriptConversationDetailSearchRequest.query);
+            Objects.equals(this.sortBy, transcriptConversationDetailSearchRequest.sortBy) &&
+            Objects.equals(this.pageSize, transcriptConversationDetailSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, transcriptConversationDetailSearchRequest.pageNumber) &&
+            Objects.equals(this.sort, transcriptConversationDetailSearchRequest.sort) &&
+            Objects.equals(this.types, transcriptConversationDetailSearchRequest.types) &&
+            Objects.equals(this.query, transcriptConversationDetailSearchRequest.query);
   }
 
   @Override

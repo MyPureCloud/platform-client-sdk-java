@@ -10,12 +10,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.Certificate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
-import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
-import com.mypurecloud.sdk.v2.model.Certificate;
+import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
@@ -29,7 +29,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class UtilitiesApi {
   private final ApiClient pcapiClient;
 
@@ -41,7 +40,6 @@ public class UtilitiesApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get the current system date/time
    * 
@@ -116,7 +114,6 @@ public class UtilitiesApi {
     }
   }
 
-  
   /**
    * Get public ip address ranges for Genesys Cloud
    * 
@@ -191,7 +188,6 @@ public class UtilitiesApi {
     }
   }
 
-  
   /**
    * Get time zones list
    * 
@@ -220,9 +216,9 @@ public class UtilitiesApi {
   private GetTimezonesRequest createGetTimezonesRequest(Integer pageSize, Integer pageNumber) {
     return GetTimezonesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -274,7 +270,6 @@ public class UtilitiesApi {
     }
   }
 
-  
   /**
    * Returns the information about an X509 PEM encoded certificate or certificate chain.
    * 
@@ -301,7 +296,7 @@ public class UtilitiesApi {
   private PostCertificateDetailsRequest createPostCertificateDetailsRequest(Certificate body) {
     return PostCertificateDetailsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -353,5 +348,4 @@ public class UtilitiesApi {
     }
   }
 
-  
 }

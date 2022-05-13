@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -140,7 +141,7 @@ public class Greeting  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Greeting name(String name) {
@@ -157,7 +158,7 @@ public class Greeting  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Greeting type
    **/
@@ -175,7 +176,7 @@ public class Greeting  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Greeting owner type
    **/
@@ -193,7 +194,7 @@ public class Greeting  implements Serializable {
     this.ownerType = ownerType;
   }
 
-  
+
   /**
    * Greeting owner
    **/
@@ -211,7 +212,7 @@ public class Greeting  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    **/
   public Greeting audioFile(GreetingAudioFile audioFile) {
@@ -228,7 +229,7 @@ public class Greeting  implements Serializable {
     this.audioFile = audioFile;
   }
 
-  
+
   /**
    **/
   public Greeting audioTTS(String audioTTS) {
@@ -245,7 +246,7 @@ public class Greeting  implements Serializable {
     this.audioTTS = audioTTS;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -263,7 +264,7 @@ public class Greeting  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public Greeting createdBy(String createdBy) {
@@ -280,7 +281,7 @@ public class Greeting  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -298,7 +299,7 @@ public class Greeting  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    **/
   public Greeting modifiedBy(String modifiedBy) {
@@ -315,14 +316,13 @@ public class Greeting  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -333,18 +333,19 @@ public class Greeting  implements Serializable {
       return false;
     }
     Greeting greeting = (Greeting) o;
+
     return Objects.equals(this.id, greeting.id) &&
-        Objects.equals(this.name, greeting.name) &&
-        Objects.equals(this.type, greeting.type) &&
-        Objects.equals(this.ownerType, greeting.ownerType) &&
-        Objects.equals(this.owner, greeting.owner) &&
-        Objects.equals(this.audioFile, greeting.audioFile) &&
-        Objects.equals(this.audioTTS, greeting.audioTTS) &&
-        Objects.equals(this.createdDate, greeting.createdDate) &&
-        Objects.equals(this.createdBy, greeting.createdBy) &&
-        Objects.equals(this.modifiedDate, greeting.modifiedDate) &&
-        Objects.equals(this.modifiedBy, greeting.modifiedBy) &&
-        Objects.equals(this.selfUri, greeting.selfUri);
+            Objects.equals(this.name, greeting.name) &&
+            Objects.equals(this.type, greeting.type) &&
+            Objects.equals(this.ownerType, greeting.ownerType) &&
+            Objects.equals(this.owner, greeting.owner) &&
+            Objects.equals(this.audioFile, greeting.audioFile) &&
+            Objects.equals(this.audioTTS, greeting.audioTTS) &&
+            Objects.equals(this.createdDate, greeting.createdDate) &&
+            Objects.equals(this.createdBy, greeting.createdBy) &&
+            Objects.equals(this.modifiedDate, greeting.modifiedDate) &&
+            Objects.equals(this.modifiedBy, greeting.modifiedBy) &&
+            Objects.equals(this.selfUri, greeting.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.StatEventCampaignTopicIntervalMetrics;
@@ -45,7 +46,7 @@ public class StatEventCampaignTopicStatsNotification  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    **/
   public StatEventCampaignTopicStatsNotification data(List<StatEventCampaignTopicIntervalMetrics> data) {
@@ -62,7 +63,6 @@ public class StatEventCampaignTopicStatsNotification  implements Serializable {
     this.data = data;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class StatEventCampaignTopicStatsNotification  implements Serializable {
       return false;
     }
     StatEventCampaignTopicStatsNotification statEventCampaignTopicStatsNotification = (StatEventCampaignTopicStatsNotification) o;
+
     return Objects.equals(this.group, statEventCampaignTopicStatsNotification.group) &&
-        Objects.equals(this.data, statEventCampaignTopicStatsNotification.data);
+            Objects.equals(this.data, statEventCampaignTopicStatsNotification.data);
   }
 
   @Override

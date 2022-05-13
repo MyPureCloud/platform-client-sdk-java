@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -215,7 +216,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent conversationId(String conversationId) {
@@ -232,7 +233,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent participantId(String participantId) {
@@ -249,7 +250,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent sessionId(String sessionId) {
@@ -266,7 +267,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent mediaType(MediaTypeEnum mediaType) {
@@ -283,7 +284,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent externalOrganizationId(String externalOrganizationId) {
@@ -300,7 +301,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent externalContactId(String externalContactId) {
@@ -317,7 +318,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent provider(String provider) {
@@ -334,7 +335,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent direction(DirectionEnum direction) {
@@ -351,7 +352,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent ani(String ani) {
@@ -368,7 +369,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent dnis(String dnis) {
@@ -385,7 +386,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent addressTo(String addressTo) {
@@ -402,7 +403,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent addressFrom(String addressFrom) {
@@ -419,7 +420,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent callbackUserName(String callbackUserName) {
@@ -436,7 +437,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent callbackNumbers(List<String> callbackNumbers) {
@@ -453,7 +454,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -470,7 +471,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent subject(String subject) {
@@ -487,7 +488,7 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public ContactDetailEventTopicContactUpdateEvent messageType(MessageTypeEnum messageType) {
@@ -504,7 +505,6 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
     this.messageType = messageType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -515,24 +515,25 @@ public class ContactDetailEventTopicContactUpdateEvent  implements Serializable 
       return false;
     }
     ContactDetailEventTopicContactUpdateEvent contactDetailEventTopicContactUpdateEvent = (ContactDetailEventTopicContactUpdateEvent) o;
+
     return Objects.equals(this.eventTime, contactDetailEventTopicContactUpdateEvent.eventTime) &&
-        Objects.equals(this.conversationId, contactDetailEventTopicContactUpdateEvent.conversationId) &&
-        Objects.equals(this.participantId, contactDetailEventTopicContactUpdateEvent.participantId) &&
-        Objects.equals(this.sessionId, contactDetailEventTopicContactUpdateEvent.sessionId) &&
-        Objects.equals(this.mediaType, contactDetailEventTopicContactUpdateEvent.mediaType) &&
-        Objects.equals(this.externalOrganizationId, contactDetailEventTopicContactUpdateEvent.externalOrganizationId) &&
-        Objects.equals(this.externalContactId, contactDetailEventTopicContactUpdateEvent.externalContactId) &&
-        Objects.equals(this.provider, contactDetailEventTopicContactUpdateEvent.provider) &&
-        Objects.equals(this.direction, contactDetailEventTopicContactUpdateEvent.direction) &&
-        Objects.equals(this.ani, contactDetailEventTopicContactUpdateEvent.ani) &&
-        Objects.equals(this.dnis, contactDetailEventTopicContactUpdateEvent.dnis) &&
-        Objects.equals(this.addressTo, contactDetailEventTopicContactUpdateEvent.addressTo) &&
-        Objects.equals(this.addressFrom, contactDetailEventTopicContactUpdateEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, contactDetailEventTopicContactUpdateEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, contactDetailEventTopicContactUpdateEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, contactDetailEventTopicContactUpdateEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, contactDetailEventTopicContactUpdateEvent.subject) &&
-        Objects.equals(this.messageType, contactDetailEventTopicContactUpdateEvent.messageType);
+            Objects.equals(this.conversationId, contactDetailEventTopicContactUpdateEvent.conversationId) &&
+            Objects.equals(this.participantId, contactDetailEventTopicContactUpdateEvent.participantId) &&
+            Objects.equals(this.sessionId, contactDetailEventTopicContactUpdateEvent.sessionId) &&
+            Objects.equals(this.mediaType, contactDetailEventTopicContactUpdateEvent.mediaType) &&
+            Objects.equals(this.externalOrganizationId, contactDetailEventTopicContactUpdateEvent.externalOrganizationId) &&
+            Objects.equals(this.externalContactId, contactDetailEventTopicContactUpdateEvent.externalContactId) &&
+            Objects.equals(this.provider, contactDetailEventTopicContactUpdateEvent.provider) &&
+            Objects.equals(this.direction, contactDetailEventTopicContactUpdateEvent.direction) &&
+            Objects.equals(this.ani, contactDetailEventTopicContactUpdateEvent.ani) &&
+            Objects.equals(this.dnis, contactDetailEventTopicContactUpdateEvent.dnis) &&
+            Objects.equals(this.addressTo, contactDetailEventTopicContactUpdateEvent.addressTo) &&
+            Objects.equals(this.addressFrom, contactDetailEventTopicContactUpdateEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, contactDetailEventTopicContactUpdateEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, contactDetailEventTopicContactUpdateEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, contactDetailEventTopicContactUpdateEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, contactDetailEventTopicContactUpdateEvent.subject) &&
+            Objects.equals(this.messageType, contactDetailEventTopicContactUpdateEvent.messageType);
   }
 
   @Override

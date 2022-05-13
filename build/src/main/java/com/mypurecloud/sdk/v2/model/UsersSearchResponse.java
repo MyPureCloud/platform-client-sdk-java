@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -51,7 +52,7 @@ public class UsersSearchResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The total number of pages
    **/
@@ -69,7 +70,7 @@ public class UsersSearchResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    * The current page size
    **/
@@ -87,7 +88,7 @@ public class UsersSearchResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The current page number
    **/
@@ -105,7 +106,7 @@ public class UsersSearchResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Q64 value for the previous page of results
    **/
@@ -123,7 +124,7 @@ public class UsersSearchResponse  implements Serializable {
     this.previousPage = previousPage;
   }
 
-  
+
   /**
    * Q64 value for the current page of results
    **/
@@ -141,7 +142,7 @@ public class UsersSearchResponse  implements Serializable {
     this.currentPage = currentPage;
   }
 
-  
+
   /**
    * Q64 value for the next page of results
    **/
@@ -159,7 +160,7 @@ public class UsersSearchResponse  implements Serializable {
     this.nextPage = nextPage;
   }
 
-  
+
   /**
    * Resource types the search was performed against
    **/
@@ -177,7 +178,7 @@ public class UsersSearchResponse  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * Search results
    **/
@@ -195,7 +196,6 @@ public class UsersSearchResponse  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,15 +206,16 @@ public class UsersSearchResponse  implements Serializable {
       return false;
     }
     UsersSearchResponse usersSearchResponse = (UsersSearchResponse) o;
+
     return Objects.equals(this.total, usersSearchResponse.total) &&
-        Objects.equals(this.pageCount, usersSearchResponse.pageCount) &&
-        Objects.equals(this.pageSize, usersSearchResponse.pageSize) &&
-        Objects.equals(this.pageNumber, usersSearchResponse.pageNumber) &&
-        Objects.equals(this.previousPage, usersSearchResponse.previousPage) &&
-        Objects.equals(this.currentPage, usersSearchResponse.currentPage) &&
-        Objects.equals(this.nextPage, usersSearchResponse.nextPage) &&
-        Objects.equals(this.types, usersSearchResponse.types) &&
-        Objects.equals(this.results, usersSearchResponse.results);
+            Objects.equals(this.pageCount, usersSearchResponse.pageCount) &&
+            Objects.equals(this.pageSize, usersSearchResponse.pageSize) &&
+            Objects.equals(this.pageNumber, usersSearchResponse.pageNumber) &&
+            Objects.equals(this.previousPage, usersSearchResponse.previousPage) &&
+            Objects.equals(this.currentPage, usersSearchResponse.currentPage) &&
+            Objects.equals(this.nextPage, usersSearchResponse.nextPage) &&
+            Objects.equals(this.types, usersSearchResponse.types) &&
+            Objects.equals(this.results, usersSearchResponse.results);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -295,7 +296,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -313,7 +314,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Left hand side for metric predicates
    **/
@@ -331,7 +332,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -349,7 +350,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension or metric predicates
    **/
@@ -367,7 +368,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension or metric predicates
    **/
@@ -385,7 +386,6 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -396,12 +396,13 @@ public class ConversationDetailQueryPredicate  implements Serializable {
       return false;
     }
     ConversationDetailQueryPredicate conversationDetailQueryPredicate = (ConversationDetailQueryPredicate) o;
+
     return Objects.equals(this.type, conversationDetailQueryPredicate.type) &&
-        Objects.equals(this.dimension, conversationDetailQueryPredicate.dimension) &&
-        Objects.equals(this.metric, conversationDetailQueryPredicate.metric) &&
-        Objects.equals(this.operator, conversationDetailQueryPredicate.operator) &&
-        Objects.equals(this.value, conversationDetailQueryPredicate.value) &&
-        Objects.equals(this.range, conversationDetailQueryPredicate.range);
+            Objects.equals(this.dimension, conversationDetailQueryPredicate.dimension) &&
+            Objects.equals(this.metric, conversationDetailQueryPredicate.metric) &&
+            Objects.equals(this.operator, conversationDetailQueryPredicate.operator) &&
+            Objects.equals(this.value, conversationDetailQueryPredicate.value) &&
+            Objects.equals(this.range, conversationDetailQueryPredicate.range);
   }
 
   @Override

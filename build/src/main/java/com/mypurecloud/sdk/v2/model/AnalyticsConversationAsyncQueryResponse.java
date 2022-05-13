@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
@@ -46,7 +47,7 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     this.cursor = cursor;
   }
 
-  
+
   /**
    * Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -64,7 +65,7 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     this.dataAvailabilityDate = dataAvailabilityDate;
   }
 
-  
+
   /**
    **/
   public AnalyticsConversationAsyncQueryResponse conversations(List<AnalyticsConversation> conversations) {
@@ -81,7 +82,6 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     this.conversations = conversations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
       return false;
     }
     AnalyticsConversationAsyncQueryResponse analyticsConversationAsyncQueryResponse = (AnalyticsConversationAsyncQueryResponse) o;
+
     return Objects.equals(this.cursor, analyticsConversationAsyncQueryResponse.cursor) &&
-        Objects.equals(this.dataAvailabilityDate, analyticsConversationAsyncQueryResponse.dataAvailabilityDate) &&
-        Objects.equals(this.conversations, analyticsConversationAsyncQueryResponse.conversations);
+            Objects.equals(this.dataAvailabilityDate, analyticsConversationAsyncQueryResponse.dataAvailabilityDate) &&
+            Objects.equals(this.conversations, analyticsConversationAsyncQueryResponse.conversations);
   }
 
   @Override

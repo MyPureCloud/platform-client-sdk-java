@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class EmbeddedIntegration  implements Serializable {
     this.enableWhitelist = enableWhitelist;
   }
 
-  
+
   /**
    **/
   public EmbeddedIntegration domainWhitelist(List<String> domainWhitelist) {
@@ -59,7 +60,6 @@ public class EmbeddedIntegration  implements Serializable {
     this.domainWhitelist = domainWhitelist;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class EmbeddedIntegration  implements Serializable {
       return false;
     }
     EmbeddedIntegration embeddedIntegration = (EmbeddedIntegration) o;
+
     return Objects.equals(this.enableWhitelist, embeddedIntegration.enableWhitelist) &&
-        Objects.equals(this.domainWhitelist, embeddedIntegration.domainWhitelist);
+            Objects.equals(this.domainWhitelist, embeddedIntegration.domainWhitelist);
   }
 
   @Override

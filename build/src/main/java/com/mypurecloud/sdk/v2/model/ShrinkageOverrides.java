@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShrinkageOverride;
@@ -44,7 +45,7 @@ public class ShrinkageOverrides  implements Serializable {
     this.clear = clear;
   }
 
-  
+
   /**
    * List of interval shrinkage overrides
    **/
@@ -62,7 +63,6 @@ public class ShrinkageOverrides  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class ShrinkageOverrides  implements Serializable {
       return false;
     }
     ShrinkageOverrides shrinkageOverrides = (ShrinkageOverrides) o;
+
     return Objects.equals(this.clear, shrinkageOverrides.clear) &&
-        Objects.equals(this.values, shrinkageOverrides.values);
+            Objects.equals(this.values, shrinkageOverrides.values);
   }
 
   @Override

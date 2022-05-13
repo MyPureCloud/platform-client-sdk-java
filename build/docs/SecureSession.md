@@ -24,10 +24,10 @@ title: SecureSession
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| COMPLETED | &quot;COMPLETED&quot; |
-| FAILED | &quot;FAILED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| COMPLETED | &quot;COMPLETED&quot; | 
+| FAILED | &quot;FAILED&quot; | 
 {: class="table table-striped"}
 
 

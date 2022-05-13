@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class PostOauthClientUsageQueryRequest {
-    
+
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -47,7 +47,7 @@ public class PostOauthClientUsageQueryRequest {
 	    this.setClientId(clientId);
 	    return this;
 	} 
-	
+
 	private ApiUsageQuery body;
 	public ApiUsageQuery getBody() {
 		return this.body;
@@ -61,7 +61,7 @@ public class PostOauthClientUsageQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,8 +98,8 @@ public class PostOauthClientUsageQueryRequest {
                 .withPathParameter("clientId", clientId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -110,12 +110,12 @@ public class PostOauthClientUsageQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String clientId, ApiUsageQuery body) {
 	    return new Builder()
 	            .withRequiredParams(clientId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostOauthClientUsageQueryRequest request;
@@ -124,26 +124,26 @@ public class PostOauthClientUsageQueryRequest {
 			request = new PostOauthClientUsageQueryRequest();
 		}
 
-		
+
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
-		
+
 		public Builder withBody(ApiUsageQuery body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String clientId, ApiUsageQuery body) {
 			request.setClientId(clientId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostOauthClientUsageQueryRequest build() {
             

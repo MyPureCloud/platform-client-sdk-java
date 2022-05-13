@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -147,7 +148,7 @@ public class EdgeLogsJobFile  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -165,7 +166,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -183,7 +184,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -201,7 +202,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -219,7 +220,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -237,7 +238,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -255,7 +256,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -273,7 +274,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -291,14 +292,14 @@ public class EdgeLogsJobFile  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -316,7 +317,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -334,7 +335,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -352,7 +353,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.timeCreated = timeCreated;
   }
 
-  
+
   /**
    * The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -370,7 +371,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.timeModified = timeModified;
   }
 
-  
+
   /**
    * The size of this file in bytes.
    **/
@@ -388,7 +389,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.sizeBytes = sizeBytes;
   }
 
-  
+
   /**
    * The status of the upload of this file from the Edge to the cloud.  Use /upload to start an upload.
    **/
@@ -406,7 +407,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-  
+
   /**
    * The path of this file on the Edge.
    **/
@@ -424,7 +425,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.edgePath = edgePath;
   }
 
-  
+
   /**
    * The download ID to use with the downloads API.
    **/
@@ -442,14 +443,13 @@ public class EdgeLogsJobFile  implements Serializable {
     this.downloadId = downloadId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -460,25 +460,26 @@ public class EdgeLogsJobFile  implements Serializable {
       return false;
     }
     EdgeLogsJobFile edgeLogsJobFile = (EdgeLogsJobFile) o;
+
     return Objects.equals(this.id, edgeLogsJobFile.id) &&
-        Objects.equals(this.name, edgeLogsJobFile.name) &&
-        Objects.equals(this.division, edgeLogsJobFile.division) &&
-        Objects.equals(this.description, edgeLogsJobFile.description) &&
-        Objects.equals(this.version, edgeLogsJobFile.version) &&
-        Objects.equals(this.dateCreated, edgeLogsJobFile.dateCreated) &&
-        Objects.equals(this.dateModified, edgeLogsJobFile.dateModified) &&
-        Objects.equals(this.modifiedBy, edgeLogsJobFile.modifiedBy) &&
-        Objects.equals(this.createdBy, edgeLogsJobFile.createdBy) &&
-        Objects.equals(this.state, edgeLogsJobFile.state) &&
-        Objects.equals(this.modifiedByApp, edgeLogsJobFile.modifiedByApp) &&
-        Objects.equals(this.createdByApp, edgeLogsJobFile.createdByApp) &&
-        Objects.equals(this.timeCreated, edgeLogsJobFile.timeCreated) &&
-        Objects.equals(this.timeModified, edgeLogsJobFile.timeModified) &&
-        Objects.equals(this.sizeBytes, edgeLogsJobFile.sizeBytes) &&
-        Objects.equals(this.uploadStatus, edgeLogsJobFile.uploadStatus) &&
-        Objects.equals(this.edgePath, edgeLogsJobFile.edgePath) &&
-        Objects.equals(this.downloadId, edgeLogsJobFile.downloadId) &&
-        Objects.equals(this.selfUri, edgeLogsJobFile.selfUri);
+            Objects.equals(this.name, edgeLogsJobFile.name) &&
+            Objects.equals(this.division, edgeLogsJobFile.division) &&
+            Objects.equals(this.description, edgeLogsJobFile.description) &&
+            Objects.equals(this.version, edgeLogsJobFile.version) &&
+            Objects.equals(this.dateCreated, edgeLogsJobFile.dateCreated) &&
+            Objects.equals(this.dateModified, edgeLogsJobFile.dateModified) &&
+            Objects.equals(this.modifiedBy, edgeLogsJobFile.modifiedBy) &&
+            Objects.equals(this.createdBy, edgeLogsJobFile.createdBy) &&
+            Objects.equals(this.state, edgeLogsJobFile.state) &&
+            Objects.equals(this.modifiedByApp, edgeLogsJobFile.modifiedByApp) &&
+            Objects.equals(this.createdByApp, edgeLogsJobFile.createdByApp) &&
+            Objects.equals(this.timeCreated, edgeLogsJobFile.timeCreated) &&
+            Objects.equals(this.timeModified, edgeLogsJobFile.timeModified) &&
+            Objects.equals(this.sizeBytes, edgeLogsJobFile.sizeBytes) &&
+            Objects.equals(this.uploadStatus, edgeLogsJobFile.uploadStatus) &&
+            Objects.equals(this.edgePath, edgeLogsJobFile.edgePath) &&
+            Objects.equals(this.downloadId, edgeLogsJobFile.downloadId) &&
+            Objects.equals(this.selfUri, edgeLogsJobFile.selfUri);
   }
 
   @Override

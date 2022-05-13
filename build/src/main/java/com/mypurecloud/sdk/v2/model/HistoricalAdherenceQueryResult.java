@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -104,7 +105,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * Beginning of the date range that was queried, in ISO-8601 format
    **/
@@ -122,7 +123,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * End of the date range that was queried, in ISO-8601 format. If it was not set, end date will be set to the queried time
    **/
@@ -140,7 +141,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * Adherence percentage for this user, in the scale of 0 - 100
    **/
@@ -158,7 +159,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.adherencePercentage = adherencePercentage;
   }
 
-  
+
   /**
    * Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
    **/
@@ -176,7 +177,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.conformancePercentage = conformancePercentage;
   }
 
-  
+
   /**
    * The impact of the current adherence state for this user
    **/
@@ -194,7 +195,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.impact = impact;
   }
 
-  
+
   /**
    * List of adherence exceptions for this user
    **/
@@ -212,7 +213,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.exceptionInfo = exceptionInfo;
   }
 
-  
+
   /**
    * Adherence and conformance metrics for days in query range
    **/
@@ -230,7 +231,7 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.dayMetrics = dayMetrics;
   }
 
-  
+
   /**
    * List of actual activity with offset for this user
    **/
@@ -248,7 +249,6 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
     this.actuals = actuals;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,15 +259,16 @@ public class HistoricalAdherenceQueryResult  implements Serializable {
       return false;
     }
     HistoricalAdherenceQueryResult historicalAdherenceQueryResult = (HistoricalAdherenceQueryResult) o;
+
     return Objects.equals(this.userId, historicalAdherenceQueryResult.userId) &&
-        Objects.equals(this.startDate, historicalAdherenceQueryResult.startDate) &&
-        Objects.equals(this.endDate, historicalAdherenceQueryResult.endDate) &&
-        Objects.equals(this.adherencePercentage, historicalAdherenceQueryResult.adherencePercentage) &&
-        Objects.equals(this.conformancePercentage, historicalAdherenceQueryResult.conformancePercentage) &&
-        Objects.equals(this.impact, historicalAdherenceQueryResult.impact) &&
-        Objects.equals(this.exceptionInfo, historicalAdherenceQueryResult.exceptionInfo) &&
-        Objects.equals(this.dayMetrics, historicalAdherenceQueryResult.dayMetrics) &&
-        Objects.equals(this.actuals, historicalAdherenceQueryResult.actuals);
+            Objects.equals(this.startDate, historicalAdherenceQueryResult.startDate) &&
+            Objects.equals(this.endDate, historicalAdherenceQueryResult.endDate) &&
+            Objects.equals(this.adherencePercentage, historicalAdherenceQueryResult.adherencePercentage) &&
+            Objects.equals(this.conformancePercentage, historicalAdherenceQueryResult.conformancePercentage) &&
+            Objects.equals(this.impact, historicalAdherenceQueryResult.impact) &&
+            Objects.equals(this.exceptionInfo, historicalAdherenceQueryResult.exceptionInfo) &&
+            Objects.equals(this.dayMetrics, historicalAdherenceQueryResult.dayMetrics) &&
+            Objects.equals(this.actuals, historicalAdherenceQueryResult.actuals);
   }
 
   @Override

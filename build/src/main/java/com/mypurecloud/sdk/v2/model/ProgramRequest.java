@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class ProgramRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The program description
    **/
@@ -63,7 +64,7 @@ public class ProgramRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The ids of topics associated to the program
    **/
@@ -81,7 +82,7 @@ public class ProgramRequest  implements Serializable {
     this.topicIds = topicIds;
   }
 
-  
+
   /**
    * The program tags
    **/
@@ -99,7 +100,6 @@ public class ProgramRequest  implements Serializable {
     this.tags = tags;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class ProgramRequest  implements Serializable {
       return false;
     }
     ProgramRequest programRequest = (ProgramRequest) o;
+
     return Objects.equals(this.name, programRequest.name) &&
-        Objects.equals(this.description, programRequest.description) &&
-        Objects.equals(this.topicIds, programRequest.topicIds) &&
-        Objects.equals(this.tags, programRequest.tags);
+            Objects.equals(this.description, programRequest.description) &&
+            Objects.equals(this.topicIds, programRequest.topicIds) &&
+            Objects.equals(this.tags, programRequest.tags);
   }
 
   @Override

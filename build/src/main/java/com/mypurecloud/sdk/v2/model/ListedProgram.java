@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -41,7 +42,7 @@ public class ListedProgram  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ListedProgram name(String name) {
@@ -58,7 +59,7 @@ public class ListedProgram  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ListedProgram description(String description) {
@@ -75,7 +76,7 @@ public class ListedProgram  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public ListedProgram published(Boolean published) {
@@ -92,7 +93,7 @@ public class ListedProgram  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    **/
   public ListedProgram topicsCount(Integer topicsCount) {
@@ -109,7 +110,7 @@ public class ListedProgram  implements Serializable {
     this.topicsCount = topicsCount;
   }
 
-  
+
   /**
    **/
   public ListedProgram tags(List<String> tags) {
@@ -126,7 +127,7 @@ public class ListedProgram  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public ListedProgram modifiedBy(AddressableEntityRef modifiedBy) {
@@ -143,7 +144,7 @@ public class ListedProgram  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -161,14 +162,13 @@ public class ListedProgram  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,15 +179,16 @@ public class ListedProgram  implements Serializable {
       return false;
     }
     ListedProgram listedProgram = (ListedProgram) o;
+
     return Objects.equals(this.id, listedProgram.id) &&
-        Objects.equals(this.name, listedProgram.name) &&
-        Objects.equals(this.description, listedProgram.description) &&
-        Objects.equals(this.published, listedProgram.published) &&
-        Objects.equals(this.topicsCount, listedProgram.topicsCount) &&
-        Objects.equals(this.tags, listedProgram.tags) &&
-        Objects.equals(this.modifiedBy, listedProgram.modifiedBy) &&
-        Objects.equals(this.dateModified, listedProgram.dateModified) &&
-        Objects.equals(this.selfUri, listedProgram.selfUri);
+            Objects.equals(this.name, listedProgram.name) &&
+            Objects.equals(this.description, listedProgram.description) &&
+            Objects.equals(this.published, listedProgram.published) &&
+            Objects.equals(this.topicsCount, listedProgram.topicsCount) &&
+            Objects.equals(this.tags, listedProgram.tags) &&
+            Objects.equals(this.modifiedBy, listedProgram.modifiedBy) &&
+            Objects.equals(this.dateModified, listedProgram.dateModified) &&
+            Objects.equals(this.selfUri, listedProgram.selfUri);
   }
 
   @Override

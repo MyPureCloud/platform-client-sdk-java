@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TextBotChannel;
@@ -48,7 +49,7 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * The ID of the external session that is associated with the bot flow.
    **/
@@ -66,7 +67,7 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     this.externalSessionId = externalSessionId;
   }
 
-  
+
   /**
    * A conversation ID to associate with the bot flow, if available.
    **/
@@ -84,7 +85,7 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Input values to the flow. Valid values are defined by the flow's input JSON schema.
    **/
@@ -102,7 +103,7 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     this.inputData = inputData;
   }
 
-  
+
   /**
    * Channel information relevant to the bot flow.
    **/
@@ -120,7 +121,6 @@ public class TextBotFlowLaunchRequest  implements Serializable {
     this.channel = channel;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class TextBotFlowLaunchRequest  implements Serializable {
       return false;
     }
     TextBotFlowLaunchRequest textBotFlowLaunchRequest = (TextBotFlowLaunchRequest) o;
+
     return Objects.equals(this.flow, textBotFlowLaunchRequest.flow) &&
-        Objects.equals(this.externalSessionId, textBotFlowLaunchRequest.externalSessionId) &&
-        Objects.equals(this.conversationId, textBotFlowLaunchRequest.conversationId) &&
-        Objects.equals(this.inputData, textBotFlowLaunchRequest.inputData) &&
-        Objects.equals(this.channel, textBotFlowLaunchRequest.channel);
+            Objects.equals(this.externalSessionId, textBotFlowLaunchRequest.externalSessionId) &&
+            Objects.equals(this.conversationId, textBotFlowLaunchRequest.conversationId) &&
+            Objects.equals(this.inputData, textBotFlowLaunchRequest.inputData) &&
+            Objects.equals(this.channel, textBotFlowLaunchRequest.channel);
   }
 
   @Override

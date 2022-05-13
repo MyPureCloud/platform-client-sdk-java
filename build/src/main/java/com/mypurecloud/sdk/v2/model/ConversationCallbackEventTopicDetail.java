@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ConversationCallbackEventTopicDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public ConversationCallbackEventTopicDetail fieldName(String fieldName) {
@@ -59,7 +60,7 @@ public class ConversationCallbackEventTopicDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public ConversationCallbackEventTopicDetail entityId(String entityId) {
@@ -76,7 +77,7 @@ public class ConversationCallbackEventTopicDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationCallbackEventTopicDetail entityName(String entityName) {
@@ -93,7 +94,6 @@ public class ConversationCallbackEventTopicDetail  implements Serializable {
     this.entityName = entityName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class ConversationCallbackEventTopicDetail  implements Serializable {
       return false;
     }
     ConversationCallbackEventTopicDetail conversationCallbackEventTopicDetail = (ConversationCallbackEventTopicDetail) o;
+
     return Objects.equals(this.errorCode, conversationCallbackEventTopicDetail.errorCode) &&
-        Objects.equals(this.fieldName, conversationCallbackEventTopicDetail.fieldName) &&
-        Objects.equals(this.entityId, conversationCallbackEventTopicDetail.entityId) &&
-        Objects.equals(this.entityName, conversationCallbackEventTopicDetail.entityName);
+            Objects.equals(this.fieldName, conversationCallbackEventTopicDetail.fieldName) &&
+            Objects.equals(this.entityId, conversationCallbackEventTopicDetail.entityId) &&
+            Objects.equals(this.entityName, conversationCallbackEventTopicDetail.entityName);
   }
 
   @Override

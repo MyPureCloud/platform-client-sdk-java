@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.KnowledgeBase;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeImport;
-import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
-import com.mypurecloud.sdk.v2.model.TrainingListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
+import com.mypurecloud.sdk.v2.model.TrainingListing;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
-    
+
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -55,7 +55,7 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 	    this.setDocumentId(documentId);
 	    return this;
 	} 
-	
+
 	private String knowledgeBaseId;
 	public String getKnowledgeBaseId() {
 		return this.knowledgeBaseId;
@@ -69,7 +69,7 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 	    this.setKnowledgeBaseId(knowledgeBaseId);
 	    return this;
 	} 
-	
+
 	private String languageCode;
 	public String getLanguageCode() {
 		return this.languageCode;
@@ -85,15 +85,15 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 	} 
 
 	public enum languageCodeValues { 
-		EN_US("en-US"), 
-		EN_UK("en-UK"), 
-		EN_AU("en-AU"), 
-		DE_DE("de-DE"), 
-		ES_US("es-US"), 
-		ES_ES("es-ES"), 
-		FR_FR("fr-FR"), 
-		PT_BR("pt-BR"), 
-		NL_NL("nl-NL"), 
+		EN_US("en-US"),
+		EN_UK("en-UK"),
+		EN_AU("en-AU"),
+		DE_DE("de-DE"),
+		ES_US("es-US"),
+		ES_ES("es-ES"),
+		FR_FR("fr-FR"),
+		PT_BR("pt-BR"),
+		NL_NL("nl-NL"),
 		IT_IT("it-IT");
 
 		private String value;
@@ -121,7 +121,7 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -166,7 +166,7 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
         
                 .withPathParameter("languageCode", languageCode)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -177,12 +177,12 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String documentId, String knowledgeBaseId, String languageCode) {
 	    return new Builder()
 	            .withRequiredParams(documentId, knowledgeBaseId, languageCode);
 	}
-	
+
 
 	public static class Builder {
 		private final GetKnowledgeKnowledgebaseLanguageDocumentRequest request;
@@ -191,37 +191,41 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 			request = new GetKnowledgeKnowledgebaseLanguageDocumentRequest();
 		}
 
-		
+
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
-		
+
 		public Builder withKnowledgeBaseId(String knowledgeBaseId) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			return this;
 		}
-		
+
 		public Builder withLanguageCode(String languageCode) {
 			request.setLanguageCode(languageCode);
 			return this;
 		}
 
-		public Builder withLanguageCode(languageCodeValues languageCode) {
-		    request.setLanguageCode(languageCode.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withLanguageCode(languageCodeValues languageCode) {
+		    request.setLanguageCode(languageCode.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String documentId, String knowledgeBaseId, String languageCode) {
 			request.setDocumentId(documentId);
-						request.setKnowledgeBaseId(knowledgeBaseId);
-						request.setLanguageCode(languageCode);
-			
+			request.setKnowledgeBaseId(knowledgeBaseId);
+			request.setLanguageCode(languageCode);
+
 			return this;
 		}
-		
+
 
 		public GetKnowledgeKnowledgebaseLanguageDocumentRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WidgetDeployment;
@@ -44,7 +45,7 @@ public class WidgetDeploymentEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public WidgetDeploymentEntityListing entities(List<WidgetDeployment> entities) {
@@ -61,7 +62,7 @@ public class WidgetDeploymentEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public WidgetDeploymentEntityListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class WidgetDeploymentEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class WidgetDeploymentEntityListing  implements Serializable {
       return false;
     }
     WidgetDeploymentEntityListing widgetDeploymentEntityListing = (WidgetDeploymentEntityListing) o;
+
     return Objects.equals(this.total, widgetDeploymentEntityListing.total) &&
-        Objects.equals(this.entities, widgetDeploymentEntityListing.entities) &&
-        Objects.equals(this.selfUri, widgetDeploymentEntityListing.selfUri);
+            Objects.equals(this.entities, widgetDeploymentEntityListing.entities) &&
+            Objects.equals(this.selfUri, widgetDeploymentEntityListing.selfUri);
   }
 
   @Override

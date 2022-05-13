@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ItemValidationLimits;
@@ -45,7 +46,7 @@ public class Coretype  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Coretype name(String name) {
@@ -62,7 +63,7 @@ public class Coretype  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A positive integer denoting the core type's version
    **/
@@ -80,7 +81,7 @@ public class Coretype  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the core type was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -98,7 +99,7 @@ public class Coretype  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The core type's built-in schema
    **/
@@ -116,7 +117,7 @@ public class Coretype  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    * A boolean indicating if the core type's version is the current one in use by the system
    **/
@@ -134,7 +135,7 @@ public class Coretype  implements Serializable {
     this.current = current;
   }
 
-  
+
   /**
    * An array of strings naming the fields of the core type subject to validation.  Validation constraints are specified by a schema author using the core type.
    **/
@@ -152,7 +153,7 @@ public class Coretype  implements Serializable {
     this.validationFields = validationFields;
   }
 
-  
+
   /**
    * A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.
    **/
@@ -161,7 +162,7 @@ public class Coretype  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.")
+  @ApiModelProperty(example = "&quot;validationLimits: {\nminLength: {min: 0, max: 100},\nmaxLength: {min: 1, max: 100}\n}&quot;", value = "A structure denoting the system-imposed minimum and maximum string length (for text-based core types) or numeric values (for number-based) core types.  For example, the validationLimits for a text-based core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schemaauthor on a text field.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field.")
   @JsonProperty("validationLimits")
   public ValidationLimits getValidationLimits() {
     return validationLimits;
@@ -170,7 +171,7 @@ public class Coretype  implements Serializable {
     this.validationLimits = validationLimits;
   }
 
-  
+
   /**
    * Specific to the \"tag\" core type, this is an array of strings naming the tag item fields of the core type subject to validation
    **/
@@ -188,7 +189,7 @@ public class Coretype  implements Serializable {
     this.itemValidationFields = itemValidationFields;
   }
 
-  
+
   /**
    * A structure denoting the system-imposed minimum and maximum string length for string-array based core types such as \"tag\" and \"enum\".  Forexample, the validationLimits for a schema field using a tag core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schema author on individual tags.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field's tags.
    **/
@@ -197,7 +198,7 @@ public class Coretype  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A structure denoting the system-imposed minimum and maximum string length for string-array based core types such as \"tag\" and \"enum\".  Forexample, the validationLimits for a schema field using a tag core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schema author on individual tags.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field's tags.")
+  @ApiModelProperty(example = "&quot;validationLimits: {\n     minLength: {min: 1, max: 100},\n     maxLength: {min: 1, max: 100}\n}&quot;", value = "A structure denoting the system-imposed minimum and maximum string length for string-array based core types such as \"tag\" and \"enum\".  Forexample, the validationLimits for a schema field using a tag core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schema author on individual tags.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field's tags.")
   @JsonProperty("itemValidationLimits")
   public ItemValidationLimits getItemValidationLimits() {
     return itemValidationLimits;
@@ -206,14 +207,13 @@ public class Coretype  implements Serializable {
     this.itemValidationLimits = itemValidationLimits;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,17 +224,18 @@ public class Coretype  implements Serializable {
       return false;
     }
     Coretype coretype = (Coretype) o;
+
     return Objects.equals(this.id, coretype.id) &&
-        Objects.equals(this.name, coretype.name) &&
-        Objects.equals(this.version, coretype.version) &&
-        Objects.equals(this.dateCreated, coretype.dateCreated) &&
-        Objects.equals(this.schema, coretype.schema) &&
-        Objects.equals(this.current, coretype.current) &&
-        Objects.equals(this.validationFields, coretype.validationFields) &&
-        Objects.equals(this.validationLimits, coretype.validationLimits) &&
-        Objects.equals(this.itemValidationFields, coretype.itemValidationFields) &&
-        Objects.equals(this.itemValidationLimits, coretype.itemValidationLimits) &&
-        Objects.equals(this.selfUri, coretype.selfUri);
+            Objects.equals(this.name, coretype.name) &&
+            Objects.equals(this.version, coretype.version) &&
+            Objects.equals(this.dateCreated, coretype.dateCreated) &&
+            Objects.equals(this.schema, coretype.schema) &&
+            Objects.equals(this.current, coretype.current) &&
+            Objects.equals(this.validationFields, coretype.validationFields) &&
+            Objects.equals(this.validationLimits, coretype.validationLimits) &&
+            Objects.equals(this.itemValidationFields, coretype.itemValidationFields) &&
+            Objects.equals(this.itemValidationLimits, coretype.itemValidationLimits) &&
+            Objects.equals(this.selfUri, coretype.selfUri);
   }
 
   @Override

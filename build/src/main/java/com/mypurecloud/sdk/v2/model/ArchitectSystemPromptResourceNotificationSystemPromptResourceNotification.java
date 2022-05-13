@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
     this.promptId = promptId;
   }
 
-  
+
   /**
    * Id of the prompt resource that this notification is for.
    **/
@@ -64,7 +65,7 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
     this.id = id;
   }
 
-  
+
   /**
    * Language resource that this notification is for.
    **/
@@ -82,7 +83,7 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
     this.language = language;
   }
 
-  
+
   /**
    * Uri to the file for this system prompt resource.
    **/
@@ -100,7 +101,7 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
     this.mediaUri = mediaUri;
   }
 
-  
+
   /**
    * Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).
    **/
@@ -118,7 +119,7 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
     this.uploadStatus = uploadStatus;
   }
 
-  
+
   /**
    * Duration (in seconds) for the transcoded audio file.
    **/
@@ -136,7 +137,6 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
     this.durationSeconds = durationSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +147,13 @@ public class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotifi
       return false;
     }
     ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification architectSystemPromptResourceNotificationSystemPromptResourceNotification = (ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification) o;
+
     return Objects.equals(this.promptId, architectSystemPromptResourceNotificationSystemPromptResourceNotification.promptId) &&
-        Objects.equals(this.id, architectSystemPromptResourceNotificationSystemPromptResourceNotification.id) &&
-        Objects.equals(this.language, architectSystemPromptResourceNotificationSystemPromptResourceNotification.language) &&
-        Objects.equals(this.mediaUri, architectSystemPromptResourceNotificationSystemPromptResourceNotification.mediaUri) &&
-        Objects.equals(this.uploadStatus, architectSystemPromptResourceNotificationSystemPromptResourceNotification.uploadStatus) &&
-        Objects.equals(this.durationSeconds, architectSystemPromptResourceNotificationSystemPromptResourceNotification.durationSeconds);
+            Objects.equals(this.id, architectSystemPromptResourceNotificationSystemPromptResourceNotification.id) &&
+            Objects.equals(this.language, architectSystemPromptResourceNotificationSystemPromptResourceNotification.language) &&
+            Objects.equals(this.mediaUri, architectSystemPromptResourceNotificationSystemPromptResourceNotification.mediaUri) &&
+            Objects.equals(this.uploadStatus, architectSystemPromptResourceNotificationSystemPromptResourceNotification.uploadStatus) &&
+            Objects.equals(this.durationSeconds, architectSystemPromptResourceNotificationSystemPromptResourceNotification.durationSeconds);
   }
 
   @Override

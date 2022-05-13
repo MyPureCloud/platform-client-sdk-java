@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class ScorableSurvey  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ScorableSurvey name(String name) {
@@ -106,7 +107,7 @@ public class ScorableSurvey  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Survey form used for this survey.
    **/
@@ -124,7 +125,7 @@ public class ScorableSurvey  implements Serializable {
     this.surveyForm = surveyForm;
   }
 
-  
+
   /**
    **/
   public ScorableSurvey status(StatusEnum status) {
@@ -141,7 +142,7 @@ public class ScorableSurvey  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ScorableSurvey answers(SurveyScoringSet answers) {
@@ -158,14 +159,13 @@ public class ScorableSurvey  implements Serializable {
     this.answers = answers;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,12 +176,13 @@ public class ScorableSurvey  implements Serializable {
       return false;
     }
     ScorableSurvey scorableSurvey = (ScorableSurvey) o;
+
     return Objects.equals(this.id, scorableSurvey.id) &&
-        Objects.equals(this.name, scorableSurvey.name) &&
-        Objects.equals(this.surveyForm, scorableSurvey.surveyForm) &&
-        Objects.equals(this.status, scorableSurvey.status) &&
-        Objects.equals(this.answers, scorableSurvey.answers) &&
-        Objects.equals(this.selfUri, scorableSurvey.selfUri);
+            Objects.equals(this.name, scorableSurvey.name) &&
+            Objects.equals(this.surveyForm, scorableSurvey.surveyForm) &&
+            Objects.equals(this.status, scorableSurvey.status) &&
+            Objects.equals(this.answers, scorableSurvey.answers) &&
+            Objects.equals(this.selfUri, scorableSurvey.selfUri);
   }
 
   @Override

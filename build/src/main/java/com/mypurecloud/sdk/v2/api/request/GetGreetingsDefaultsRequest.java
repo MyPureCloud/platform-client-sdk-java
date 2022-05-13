@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetGreetingsDefaultsRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -52,7 +52,7 @@ public class GetGreetingsDefaultsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/greetings/defaults")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -63,7 +63,7 @@ public class GetGreetingsDefaultsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetGreetingsDefaultsRequest request;
@@ -72,9 +72,9 @@ public class GetGreetingsDefaultsRequest {
 			request = new GetGreetingsDefaultsRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetGreetingsDefaultsRequest build() {
             

@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a Widget deployment
 
-
-
 Wraps DELETE /api/v2/widgets/deployments/{deploymentId}  
 
 Requires ANY permissions: 
@@ -86,8 +84,6 @@ null (empty response body)
 > [WidgetDeployment](WidgetDeployment.html) getWidgetsDeployment(deploymentId)
 
 Get a Widget deployment
-
-
 
 Wraps GET /api/v2/widgets/deployments/{deploymentId}  
 
@@ -151,8 +147,6 @@ try {
 
 List Widget deployments
 
-
-
 Wraps GET /api/v2/widgets/deployments  
 
 Requires ANY permissions: 
@@ -210,8 +204,6 @@ This endpoint does not require any parameters.
 > [WidgetDeployment](WidgetDeployment.html) postWidgetsDeployments(body)
 
 Create Widget deployment
-
-
 
 Wraps POST /api/v2/widgets/deployments  
 
@@ -274,8 +266,6 @@ try {
 > [WidgetDeployment](WidgetDeployment.html) putWidgetsDeployment(deploymentId, body)
 
 Update a Widget deployment
-
-
 
 Wraps PUT /api/v2/widgets/deployments/{deploymentId}  
 

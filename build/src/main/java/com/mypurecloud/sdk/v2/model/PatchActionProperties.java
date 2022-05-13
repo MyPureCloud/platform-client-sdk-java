@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchActionSurvey;
@@ -45,7 +46,7 @@ public class PatchActionProperties  implements Serializable {
     this.webchatPrompt = webchatPrompt;
   }
 
-  
+
   /**
    * Title shown to the user, used for webchat type action.
    **/
@@ -63,7 +64,7 @@ public class PatchActionProperties  implements Serializable {
     this.webchatTitleText = webchatTitleText;
   }
 
-  
+
   /**
    * Accept button text shown to user, used for webchat type action.
    **/
@@ -81,7 +82,7 @@ public class PatchActionProperties  implements Serializable {
     this.webchatAcceptText = webchatAcceptText;
   }
 
-  
+
   /**
    * Decline button text shown to user, used for webchat type action.
    **/
@@ -99,7 +100,7 @@ public class PatchActionProperties  implements Serializable {
     this.webchatDeclineText = webchatDeclineText;
   }
 
-  
+
   /**
    * Survey provided to the user, used for webchat type action.
    **/
@@ -117,7 +118,6 @@ public class PatchActionProperties  implements Serializable {
     this.webchatSurvey = webchatSurvey;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class PatchActionProperties  implements Serializable {
       return false;
     }
     PatchActionProperties patchActionProperties = (PatchActionProperties) o;
+
     return Objects.equals(this.webchatPrompt, patchActionProperties.webchatPrompt) &&
-        Objects.equals(this.webchatTitleText, patchActionProperties.webchatTitleText) &&
-        Objects.equals(this.webchatAcceptText, patchActionProperties.webchatAcceptText) &&
-        Objects.equals(this.webchatDeclineText, patchActionProperties.webchatDeclineText) &&
-        Objects.equals(this.webchatSurvey, patchActionProperties.webchatSurvey);
+            Objects.equals(this.webchatTitleText, patchActionProperties.webchatTitleText) &&
+            Objects.equals(this.webchatAcceptText, patchActionProperties.webchatAcceptText) &&
+            Objects.equals(this.webchatDeclineText, patchActionProperties.webchatDeclineText) &&
+            Objects.equals(this.webchatSurvey, patchActionProperties.webchatSurvey);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
@@ -46,7 +47,7 @@ public class AdditionalMessage  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    **/
@@ -64,7 +65,7 @@ public class AdditionalMessage  implements Serializable {
     this.mediaIds = mediaIds;
   }
 
-  
+
   /**
    * The sticker ids associated with the text message.
    **/
@@ -82,7 +83,7 @@ public class AdditionalMessage  implements Serializable {
     this.stickerIds = stickerIds;
   }
 
-  
+
   /**
    * The messaging template use to send a predefined canned response with the message
    **/
@@ -100,7 +101,6 @@ public class AdditionalMessage  implements Serializable {
     this.messagingTemplate = messagingTemplate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class AdditionalMessage  implements Serializable {
       return false;
     }
     AdditionalMessage additionalMessage = (AdditionalMessage) o;
+
     return Objects.equals(this.textBody, additionalMessage.textBody) &&
-        Objects.equals(this.mediaIds, additionalMessage.mediaIds) &&
-        Objects.equals(this.stickerIds, additionalMessage.stickerIds) &&
-        Objects.equals(this.messagingTemplate, additionalMessage.messagingTemplate);
+            Objects.equals(this.mediaIds, additionalMessage.mediaIds) &&
+            Objects.equals(this.stickerIds, additionalMessage.stickerIds) &&
+            Objects.equals(this.messagingTemplate, additionalMessage.messagingTemplate);
   }
 
   @Override

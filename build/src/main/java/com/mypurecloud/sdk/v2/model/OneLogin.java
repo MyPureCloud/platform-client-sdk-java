@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class OneLogin  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public OneLogin name(String name) {
@@ -58,7 +59,7 @@ public class OneLogin  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public OneLogin disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class OneLogin  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public OneLogin issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class OneLogin  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public OneLogin ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class OneLogin  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public OneLogin sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class OneLogin  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public OneLogin sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class OneLogin  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public OneLogin relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class OneLogin  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public OneLogin certificate(String certificate) {
@@ -177,7 +178,7 @@ public class OneLogin  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public OneLogin certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class OneLogin  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class OneLogin  implements Serializable {
       return false;
     }
     OneLogin oneLogin = (OneLogin) o;
+
     return Objects.equals(this.id, oneLogin.id) &&
-        Objects.equals(this.name, oneLogin.name) &&
-        Objects.equals(this.disabled, oneLogin.disabled) &&
-        Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, oneLogin.ssoTargetURI) &&
-        Objects.equals(this.sloURI, oneLogin.sloURI) &&
-        Objects.equals(this.sloBinding, oneLogin.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, oneLogin.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, oneLogin.certificate) &&
-        Objects.equals(this.certificates, oneLogin.certificates) &&
-        Objects.equals(this.selfUri, oneLogin.selfUri);
+            Objects.equals(this.name, oneLogin.name) &&
+            Objects.equals(this.disabled, oneLogin.disabled) &&
+            Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, oneLogin.ssoTargetURI) &&
+            Objects.equals(this.sloURI, oneLogin.sloURI) &&
+            Objects.equals(this.sloBinding, oneLogin.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, oneLogin.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, oneLogin.certificate) &&
+            Objects.equals(this.certificates, oneLogin.certificates) &&
+            Objects.equals(this.selfUri, oneLogin.selfUri);
   }
 
   @Override

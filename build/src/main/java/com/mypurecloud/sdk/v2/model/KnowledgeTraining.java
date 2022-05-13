@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -139,70 +140,69 @@ public class KnowledgeTraining  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateTriggered")
   public Date getDateTriggered() {
     return dateTriggered;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Training status.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Language of the documents that are trained.")
   @JsonProperty("languageCode")
   public String getLanguageCode() {
     return languageCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge Base that the training belongs to.")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Any error message during the Training or Promote action.")
   @JsonProperty("errorMessage")
   public String getErrorMessage() {
     return errorMessage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.")
   @JsonProperty("knowledgeDocumentsState")
   public KnowledgeDocumentsStateEnum getKnowledgeDocumentsState() {
     return knowledgeDocumentsState;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("datePromoted")
   public Date getDatePromoted() {
     return datePromoted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,16 +213,17 @@ public class KnowledgeTraining  implements Serializable {
       return false;
     }
     KnowledgeTraining knowledgeTraining = (KnowledgeTraining) o;
+
     return Objects.equals(this.id, knowledgeTraining.id) &&
-        Objects.equals(this.dateTriggered, knowledgeTraining.dateTriggered) &&
-        Objects.equals(this.dateCompleted, knowledgeTraining.dateCompleted) &&
-        Objects.equals(this.status, knowledgeTraining.status) &&
-        Objects.equals(this.languageCode, knowledgeTraining.languageCode) &&
-        Objects.equals(this.knowledgeBase, knowledgeTraining.knowledgeBase) &&
-        Objects.equals(this.errorMessage, knowledgeTraining.errorMessage) &&
-        Objects.equals(this.knowledgeDocumentsState, knowledgeTraining.knowledgeDocumentsState) &&
-        Objects.equals(this.datePromoted, knowledgeTraining.datePromoted) &&
-        Objects.equals(this.selfUri, knowledgeTraining.selfUri);
+            Objects.equals(this.dateTriggered, knowledgeTraining.dateTriggered) &&
+            Objects.equals(this.dateCompleted, knowledgeTraining.dateCompleted) &&
+            Objects.equals(this.status, knowledgeTraining.status) &&
+            Objects.equals(this.languageCode, knowledgeTraining.languageCode) &&
+            Objects.equals(this.knowledgeBase, knowledgeTraining.knowledgeBase) &&
+            Objects.equals(this.errorMessage, knowledgeTraining.errorMessage) &&
+            Objects.equals(this.knowledgeDocumentsState, knowledgeTraining.knowledgeDocumentsState) &&
+            Objects.equals(this.datePromoted, knowledgeTraining.datePromoted) &&
+            Objects.equals(this.selfUri, knowledgeTraining.selfUri);
   }
 
   @Override

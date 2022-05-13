@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class DomainPermission  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public DomainPermission entityType(String entityType) {
@@ -61,7 +62,7 @@ public class DomainPermission  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    **/
   public DomainPermission action(String action) {
@@ -78,7 +79,7 @@ public class DomainPermission  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    **/
   public DomainPermission label(String label) {
@@ -95,7 +96,7 @@ public class DomainPermission  implements Serializable {
     this.label = label;
   }
 
-  
+
   /**
    **/
   public DomainPermission allowsConditions(Boolean allowsConditions) {
@@ -112,7 +113,7 @@ public class DomainPermission  implements Serializable {
     this.allowsConditions = allowsConditions;
   }
 
-  
+
   /**
    **/
   public DomainPermission divisionAware(Boolean divisionAware) {
@@ -129,7 +130,6 @@ public class DomainPermission  implements Serializable {
     this.divisionAware = divisionAware;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +140,13 @@ public class DomainPermission  implements Serializable {
       return false;
     }
     DomainPermission domainPermission = (DomainPermission) o;
+
     return Objects.equals(this.domain, domainPermission.domain) &&
-        Objects.equals(this.entityType, domainPermission.entityType) &&
-        Objects.equals(this.action, domainPermission.action) &&
-        Objects.equals(this.label, domainPermission.label) &&
-        Objects.equals(this.allowsConditions, domainPermission.allowsConditions) &&
-        Objects.equals(this.divisionAware, domainPermission.divisionAware);
+            Objects.equals(this.entityType, domainPermission.entityType) &&
+            Objects.equals(this.action, domainPermission.action) &&
+            Objects.equals(this.label, domainPermission.label) &&
+            Objects.equals(this.allowsConditions, domainPermission.allowsConditions) &&
+            Objects.equals(this.divisionAware, domainPermission.divisionAware);
   }
 
   @Override

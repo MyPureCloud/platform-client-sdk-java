@@ -23,10 +23,10 @@ title: MemberGroup
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEAM | &quot;TEAM&quot; |
-| GROUP | &quot;GROUP&quot; |
-| SKILLGROUP | &quot;SKILLGROUP&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEAM | &quot;TEAM&quot; | 
+| GROUP | &quot;GROUP&quot; | 
+| SKILLGROUP | &quot;SKILLGROUP&quot; | 
 {: class="table table-striped"}
 
 

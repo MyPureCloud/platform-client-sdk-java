@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class KnowledgeDocumentRequest  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * External Url to the document
    **/
@@ -115,7 +116,7 @@ public class KnowledgeDocumentRequest  implements Serializable {
     this.externalUrl = externalUrl;
   }
 
-  
+
   /**
    * Faq document details
    **/
@@ -133,7 +134,7 @@ public class KnowledgeDocumentRequest  implements Serializable {
     this.faq = faq;
   }
 
-  
+
   /**
    * Document categories
    **/
@@ -151,7 +152,7 @@ public class KnowledgeDocumentRequest  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   /**
    * Article details
    **/
@@ -169,7 +170,6 @@ public class KnowledgeDocumentRequest  implements Serializable {
     this.article = article;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,11 +180,12 @@ public class KnowledgeDocumentRequest  implements Serializable {
       return false;
     }
     KnowledgeDocumentRequest knowledgeDocumentRequest = (KnowledgeDocumentRequest) o;
+
     return Objects.equals(this.type, knowledgeDocumentRequest.type) &&
-        Objects.equals(this.externalUrl, knowledgeDocumentRequest.externalUrl) &&
-        Objects.equals(this.faq, knowledgeDocumentRequest.faq) &&
-        Objects.equals(this.categories, knowledgeDocumentRequest.categories) &&
-        Objects.equals(this.article, knowledgeDocumentRequest.article);
+            Objects.equals(this.externalUrl, knowledgeDocumentRequest.externalUrl) &&
+            Objects.equals(this.faq, knowledgeDocumentRequest.faq) &&
+            Objects.equals(this.categories, knowledgeDocumentRequest.categories) &&
+            Objects.equals(this.article, knowledgeDocumentRequest.article);
   }
 
   @Override

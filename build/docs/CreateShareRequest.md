@@ -22,8 +22,8 @@ title: CreateShareRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DOCUMENT | &quot;DOCUMENT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DOCUMENT | &quot;DOCUMENT&quot; | 
 {: class="table table-striped"}
 
 
@@ -33,10 +33,10 @@ title: CreateShareRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USER | &quot;USER&quot; |
-| GROUP | &quot;GROUP&quot; |
-| PUBLIC | &quot;PUBLIC&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USER | &quot;USER&quot; | 
+| GROUP | &quot;GROUP&quot; | 
+| PUBLIC | &quot;PUBLIC&quot; | 
 {: class="table table-striped"}
 
 

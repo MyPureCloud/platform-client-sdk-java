@@ -10,140 +10,140 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
-import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
+import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
+import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
+import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
+import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
+import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
+import com.mypurecloud.sdk.v2.model.BuScheduleListing;
+import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
+import com.mypurecloud.sdk.v2.model.BuScheduleRun;
+import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
+import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
+import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
+import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnit;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
-import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
-import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
-import com.mypurecloud.sdk.v2.model.PlanningGroup;
-import com.mypurecloud.sdk.v2.model.PlanningGroupList;
-import com.mypurecloud.sdk.v2.model.BuScheduleRun;
-import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
-import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
-import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
-import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
-import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
-import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
-import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
-import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
-import com.mypurecloud.sdk.v2.model.BuScheduleListing;
-import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
-import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
-import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
-import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
-import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
-import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
+import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
+import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
+import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
+import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
+import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
+import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
+import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
+import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
+import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
-import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
-import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
-import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
+import com.mypurecloud.sdk.v2.model.NotificationsResponse;
+import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
+import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.PlanningGroup;
+import com.mypurecloud.sdk.v2.model.PlanningGroupList;
+import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
+import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
+import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
+import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
+import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
+import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
-import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffLimit;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffPlan;
 import com.mypurecloud.sdk.v2.model.TimeOffPlanListing;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
-import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
-import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
-import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
-import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.WorkPlan;
-import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
-import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
-import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
-import com.mypurecloud.sdk.v2.model.NotificationsResponse;
-import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
-import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
-import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
-import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
-import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
-import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
+import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
+import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
+import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
-import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
-import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
-import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
-import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
-import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
-import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
-import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
-import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
-import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
-import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
-import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
-import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
-import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
-import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
-import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
-import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
-import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
-import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
-import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
-import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
-import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
-import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
-import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
-import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
-import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
-import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
-import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
-import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
-import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
-import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
-import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
-import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
-import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
-import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
-import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
-import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
-import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
-import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
-import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
-import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
-import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
-import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
-import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
-import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
-import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
-import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
+import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
+import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
+import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
+import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
+import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
+import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
+import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
+import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
+import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
+import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkPlan;
+import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
-import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
-import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
-import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
-import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
-import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
-import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
-import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
-import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
@@ -291,7 +291,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class WorkforceManagementApi {
   private final ApiClient pcapiClient;
 
@@ -303,11 +302,10 @@ public class WorkforceManagementApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete business unit
    * A business unit cannot be deleted if it contains one or more management units
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -318,7 +316,7 @@ public class WorkforceManagementApi {
   /**
    * Delete business unit
    * A business unit cannot be deleted if it contains one or more management units
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId) throws IOException {
@@ -328,7 +326,7 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitRequest createDeleteWorkforcemanagementBusinessunitRequest(String businessUnitId) {
     return DeleteWorkforcemanagementBusinessunitRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .build();
   }
 
@@ -379,11 +377,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Deletes an activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to delete (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -395,7 +392,7 @@ public class WorkforceManagementApi {
   /**
    * Deletes an activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to delete (required)
    * @throws IOException if the request fails to be processed
    */
@@ -406,9 +403,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitActivitycodeRequest createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(String businessUnitId, String activityCodeId) {
     return DeleteWorkforcemanagementBusinessunitActivitycodeRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withActivityCodeId(activityCodeId)
-    
+
             .build();
   }
 
@@ -459,7 +456,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Deletes the planning group
    * 
@@ -486,9 +482,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitPlanninggroupRequest createDeleteWorkforcemanagementBusinessunitPlanninggroupRequest(String businessUnitId, String planningGroupId) {
     return DeleteWorkforcemanagementBusinessunitPlanninggroupRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withPlanningGroupId(planningGroupId)
-    
+
             .build();
   }
 
@@ -539,7 +535,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Cancel a scheduling run
    * 
@@ -566,9 +561,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitSchedulingRunRequest createDeleteWorkforcemanagementBusinessunitSchedulingRunRequest(String businessUnitId, String runId) {
     return DeleteWorkforcemanagementBusinessunitSchedulingRunRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withRunId(runId)
-    
+
             .build();
   }
 
@@ -619,7 +614,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete a service goal template
    * 
@@ -646,9 +640,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest createDeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId) {
     return DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withServiceGoalTemplateId(serviceGoalTemplateId)
-    
+
             .build();
   }
 
@@ -699,7 +693,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete a schedule
    * 
@@ -730,11 +723,11 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitWeekScheduleRequest createDeleteWorkforcemanagementBusinessunitWeekScheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId) {
     return DeleteWorkforcemanagementBusinessunitWeekScheduleRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .build();
   }
 
@@ -786,7 +779,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete a short term forecast
    * Must not be tied to any schedules
@@ -815,11 +807,11 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest createDeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
     return DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .build();
   }
 
@@ -870,7 +862,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Disable generated calendar link for the current user
    * 
@@ -942,11 +933,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -957,7 +947,7 @@ public class WorkforceManagementApi {
   /**
    * Delete management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId) throws IOException {
@@ -967,7 +957,7 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementManagementunitRequest createDeleteWorkforcemanagementManagementunitRequest(String managementUnitId) {
     return DeleteWorkforcemanagementManagementunitRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -1018,7 +1008,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Deletes a time off limit object
    * 
@@ -1045,9 +1034,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementManagementunitTimeofflimitRequest createDeleteWorkforcemanagementManagementunitTimeofflimitRequest(String managementUnitId, String timeOffLimitId) {
     return DeleteWorkforcemanagementManagementunitTimeofflimitRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffLimitId(timeOffLimitId)
-    
+
             .build();
   }
 
@@ -1098,7 +1087,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Deletes a time off plan
    * 
@@ -1125,9 +1113,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementManagementunitTimeoffplanRequest createDeleteWorkforcemanagementManagementunitTimeoffplanRequest(String managementUnitId, String timeOffPlanId) {
     return DeleteWorkforcemanagementManagementunitTimeoffplanRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffPlanId(timeOffPlanId)
-    
+
             .build();
   }
 
@@ -1178,11 +1166,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete a work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to delete (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1194,7 +1181,7 @@ public class WorkforceManagementApi {
   /**
    * Delete a work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to delete (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1205,9 +1192,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementManagementunitWorkplanRequest createDeleteWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId) {
     return DeleteWorkforcemanagementManagementunitWorkplanRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanId(workPlanId)
-    
+
             .build();
   }
 
@@ -1258,11 +1245,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete a work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to be deleted (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1274,7 +1260,7 @@ public class WorkforceManagementApi {
   /**
    * Delete a work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to be deleted (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1285,9 +1271,9 @@ public class WorkforceManagementApi {
   private DeleteWorkforcemanagementManagementunitWorkplanrotationRequest createDeleteWorkforcemanagementManagementunitWorkplanrotationRequest(String managementUnitId, String workPlanRotationId) {
     return DeleteWorkforcemanagementManagementunitWorkplanrotationRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanRotationId(workPlanRotationId)
-    
+
             .build();
   }
 
@@ -1338,7 +1324,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a list of UserScheduleAdherence records for the requested users
    * 
@@ -1365,7 +1350,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementAdherenceRequest createGetWorkforcemanagementAdherenceRequest(List<String> userId) {
     return GetWorkforcemanagementAdherenceRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
@@ -1417,7 +1402,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get status of the modeling job
    * 
@@ -1444,7 +1428,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementAdhocmodelingjobRequest createGetWorkforcemanagementAdhocmodelingjobRequest(String jobId) {
     return GetWorkforcemanagementAdhocmodelingjobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
@@ -1496,7 +1480,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the management unit to which the agent belongs
    * 
@@ -1523,7 +1506,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementAgentManagementunitRequest createGetWorkforcemanagementAgentManagementunitRequest(String agentId) {
     return GetWorkforcemanagementAgentManagementunitRequest.builder()
             .withAgentId(agentId)
-    
+
             .build();
   }
 
@@ -1575,7 +1558,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the management unit to which the currently logged in agent belongs
    * 
@@ -1650,11 +1632,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get business unit
-   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return BusinessUnit
    * @throws ApiException if the request fails on the server
@@ -1666,8 +1647,8 @@ public class WorkforceManagementApi {
 
   /**
    * Get business unit
-   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return BusinessUnit
    * @throws IOException if the request fails to be processed
@@ -1679,15 +1660,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitRequest createGetWorkforcemanagementBusinessunitRequest(String businessUnitId, List<String> expand) {
     return GetWorkforcemanagementBusinessunitRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
   /**
    * Get business unit
-   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param request The request object
    * @return BusinessUnit
    * @throws ApiException if the request fails on the server
@@ -1706,7 +1687,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get business unit
-   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1733,11 +1714,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get an activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to fetch (required)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
@@ -1750,7 +1730,7 @@ public class WorkforceManagementApi {
   /**
    * Get an activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to fetch (required)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
@@ -1762,9 +1742,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitActivitycodeRequest createGetWorkforcemanagementBusinessunitActivitycodeRequest(String businessUnitId, String activityCodeId) {
     return GetWorkforcemanagementBusinessunitActivitycodeRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withActivityCodeId(activityCodeId)
-    
+
             .build();
   }
 
@@ -1816,11 +1796,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get activity codes
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @return BusinessUnitActivityCodeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1832,7 +1811,7 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @return BusinessUnitActivityCodeListing
    * @throws IOException if the request fails to be processed
    */
@@ -1843,7 +1822,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitActivitycodesRequest createGetWorkforcemanagementBusinessunitActivitycodesRequest(String businessUnitId) {
     return GetWorkforcemanagementBusinessunitActivitycodesRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .build();
   }
 
@@ -1895,7 +1874,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get intraday planning groups for the given date
    * 
@@ -1924,9 +1902,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest createGetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest(String businessUnitId, LocalDate date) {
     return GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withDate(date)
-    
+
             .build();
   }
 
@@ -1978,11 +1956,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get all authorized management units in the business unit
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param feature  (optional)
    * @param divisionId  (optional)
    * @return ManagementUnitListing
@@ -1996,7 +1973,7 @@ public class WorkforceManagementApi {
   /**
    * Get all authorized management units in the business unit
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param feature  (optional)
    * @param divisionId  (optional)
    * @return ManagementUnitListing
@@ -2009,11 +1986,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitManagementunitsRequest createGetWorkforcemanagementBusinessunitManagementunitsRequest(String businessUnitId, String feature, String divisionId) {
     return GetWorkforcemanagementBusinessunitManagementunitsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withFeature(feature)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -2065,7 +2042,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a planning group
    * 
@@ -2094,9 +2070,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitPlanninggroupRequest createGetWorkforcemanagementBusinessunitPlanninggroupRequest(String businessUnitId, String planningGroupId) {
     return GetWorkforcemanagementBusinessunitPlanninggroupRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withPlanningGroupId(planningGroupId)
-    
+
             .build();
   }
 
@@ -2148,7 +2124,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets list of planning groups
    * 
@@ -2175,7 +2150,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitPlanninggroupsRequest createGetWorkforcemanagementBusinessunitPlanninggroupsRequest(String businessUnitId) {
     return GetWorkforcemanagementBusinessunitPlanninggroupsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .build();
   }
 
@@ -2227,7 +2202,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a scheduling run
    * 
@@ -2256,9 +2230,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitSchedulingRunRequest createGetWorkforcemanagementBusinessunitSchedulingRunRequest(String businessUnitId, String runId) {
     return GetWorkforcemanagementBusinessunitSchedulingRunRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withRunId(runId)
-    
+
             .build();
   }
 
@@ -2310,7 +2284,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the result of a rescheduling operation
    * 
@@ -2343,13 +2316,13 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitSchedulingRunResultRequest createGetWorkforcemanagementBusinessunitSchedulingRunResultRequest(String businessUnitId, String runId, List<String> managementUnitIds, List<String> expand) {
     return GetWorkforcemanagementBusinessunitSchedulingRunResultRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withRunId(runId)
-    
+
             .withManagementUnitIds(managementUnitIds)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -2401,7 +2374,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the list of scheduling runs
    * 
@@ -2428,7 +2400,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitSchedulingRunsRequest createGetWorkforcemanagementBusinessunitSchedulingRunsRequest(String businessUnitId) {
     return GetWorkforcemanagementBusinessunitSchedulingRunsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .build();
   }
 
@@ -2480,7 +2452,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a service goal template
    * 
@@ -2509,9 +2480,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitServicegoaltemplateRequest createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId) {
     return GetWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withServiceGoalTemplateId(serviceGoalTemplateId)
-    
+
             .build();
   }
 
@@ -2563,7 +2534,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets list of service goal templates
    * 
@@ -2590,7 +2560,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(String businessUnitId) {
     return GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .build();
   }
 
@@ -2642,7 +2612,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
    * 
@@ -2675,13 +2644,13 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekScheduleRequest createGetWorkforcemanagementBusinessunitWeekScheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId, String expand) {
     return GetWorkforcemanagementBusinessunitWeekScheduleRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -2733,7 +2702,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the generation results for a generated schedule
    * 
@@ -2764,11 +2732,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest createGetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest(String businessUnitId, LocalDate weekId, String scheduleId) {
     return GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .build();
   }
 
@@ -2820,7 +2788,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the headcount forecast by planning group for the schedule
    * 
@@ -2853,13 +2820,13 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest createGetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest(String businessUnitId, LocalDate weekId, String scheduleId, Boolean forceDownload) {
     return GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withForceDownload(forceDownload)
-    
+
             .build();
   }
 
@@ -2911,9 +2878,8 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
-   * Loads agent&#39;s schedule history.
+   * Loads agent's schedule history.
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -2928,7 +2894,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Loads agent&#39;s schedule history.
+   * Loads agent's schedule history.
    * 
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -2944,18 +2910,18 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest createGetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest(String businessUnitId, LocalDate weekId, String scheduleId, String agentId) {
     return GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withAgentId(agentId)
-    
+
             .build();
   }
 
   /**
-   * Loads agent&#39;s schedule history.
+   * Loads agent's schedule history.
    * 
    * @param request The request object
    * @return BuAgentScheduleHistoryResponse
@@ -2974,7 +2940,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Loads agent&#39;s schedule history.
+   * Loads agent's schedule history.
    * 
    * @param request The request object
    * @return the response
@@ -3002,12 +2968,11 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
-   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
    * @param includeOnlyPublished includeOnlyPublished (optional)
    * @param expand expand (optional)
    * @return BuScheduleListing
@@ -3020,9 +2985,9 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
-   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
    * @param includeOnlyPublished includeOnlyPublished (optional)
    * @param expand expand (optional)
    * @return BuScheduleListing
@@ -3035,19 +3000,19 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekSchedulesRequest createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) {
     return GetWorkforcemanagementBusinessunitWeekSchedulesRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withIncludeOnlyPublished(includeOnlyPublished)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request The request object
    * @return BuScheduleListing
    * @throws ApiException if the request fails on the server
@@ -3066,7 +3031,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3093,7 +3058,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a short term forecast
    * 
@@ -3126,13 +3090,13 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> expand) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -3184,7 +3148,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the result of a short term forecast calculation
    * Includes modifications unless you pass the doNotApplyModifications query parameter
@@ -3219,15 +3182,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest(String businessUnitId, LocalDate weekDateId, String forecastId, Integer weekNumber, Boolean forceDownloadService) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .withWeekNumber(weekNumber)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
             .build();
   }
 
@@ -3279,7 +3242,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets the forecast generation results
    * 
@@ -3310,11 +3272,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .build();
   }
 
@@ -3366,7 +3328,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the result of a long term forecast calculation
    * Includes modifications unless you pass the doNotApplyModifications query parameter
@@ -3399,13 +3360,13 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest(String businessUnitId, LocalDate weekDateId, String forecastId, Boolean forceDownloadService) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
             .build();
   }
 
@@ -3457,7 +3418,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets the forecast planning group snapshot
    * 
@@ -3488,11 +3448,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .build();
   }
 
@@ -3544,12 +3504,11 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
-   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts (required)
    * @return BuShortTermForecastListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3560,9 +3519,9 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param businessUnitId The ID of the business unit to which the forecast belongs (required)
-   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts (required)
    * @return BuShortTermForecastListing
    * @throws IOException if the request fails to be processed
    */
@@ -3573,15 +3532,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest(String businessUnitId, String weekDateId) {
     return GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .build();
   }
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request The request object
    * @return BuShortTermForecastListing
    * @throws ApiException if the request fails on the server
@@ -3600,7 +3559,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3627,7 +3586,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get business units
    * 
@@ -3656,9 +3614,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitsRequest createGetWorkforcemanagementBusinessunitsRequest(String feature, String divisionId) {
     return GetWorkforcemanagementBusinessunitsRequest.builder()
             .withFeature(feature)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -3710,7 +3668,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get business units across divisions
    * 
@@ -3737,7 +3694,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementBusinessunitsDivisionviewsRequest createGetWorkforcemanagementBusinessunitsDivisionviewsRequest(List<String> divisionId) {
     return GetWorkforcemanagementBusinessunitsDivisionviewsRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -3789,7 +3746,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get ics formatted calendar based on shareable link
    * 
@@ -3816,7 +3772,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementCalendarDataIcsRequest createGetWorkforcemanagementCalendarDataIcsRequest(String calendarId) {
     return GetWorkforcemanagementCalendarDataIcsRequest.builder()
             .withCalendarId(calendarId)
-    
+
             .build();
   }
 
@@ -3868,7 +3824,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get existing calendar link for the current user
    * 
@@ -3943,7 +3898,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Retrieves delete job status for historical data imports of the organization
    * 
@@ -4018,7 +3972,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Retrieves status of the historical data imports of the organization
    * 
@@ -4093,11 +4046,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get management unit
    * settings.shortTermForecasting is deprecated and now lives on the business unit
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
@@ -4110,7 +4062,7 @@ public class WorkforceManagementApi {
   /**
    * Get management unit
    * settings.shortTermForecasting is deprecated and now lives on the business unit
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
@@ -4122,9 +4074,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitRequest createGetWorkforcemanagementManagementunitRequest(String managementUnitId, List<String> expand) {
     return GetWorkforcemanagementManagementunitRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -4176,11 +4128,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get activity codes
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4192,7 +4143,7 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws IOException if the request fails to be processed
    */
@@ -4203,7 +4154,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitActivitycodesRequest createGetWorkforcemanagementManagementunitActivitycodesRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitActivitycodesRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -4255,7 +4206,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a list of user schedule adherence records for the requested management unit
    * 
@@ -4284,9 +4234,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitAdherenceRequest createGetWorkforcemanagementManagementunitAdherenceRequest(String managementUnitId, Boolean forceDownloadService) {
     return GetWorkforcemanagementManagementunitAdherenceRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
             .build();
   }
 
@@ -4338,11 +4288,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get data for agent in the management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @param excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills (optional)
    * @return WfmAgent
@@ -4356,7 +4305,7 @@ public class WorkforceManagementApi {
   /**
    * Get data for agent in the management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @param excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills (optional)
    * @return WfmAgent
@@ -4369,11 +4318,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitAgentRequest createGetWorkforcemanagementManagementunitAgentRequest(String managementUnitId, String agentId, Boolean excludeCapabilities) {
     return GetWorkforcemanagementManagementunitAgentRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withAgentId(agentId)
-    
+
             .withExcludeCapabilities(excludeCapabilities)
-    
+
             .build();
   }
 
@@ -4425,11 +4374,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets all the shift trades for a given agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @return ShiftTradeListResponse
    * @throws ApiException if the request fails on the server
@@ -4442,7 +4390,7 @@ public class WorkforceManagementApi {
   /**
    * Gets all the shift trades for a given agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @return ShiftTradeListResponse
    * @throws IOException if the request fails to be processed
@@ -4454,9 +4402,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitAgentShifttradesRequest createGetWorkforcemanagementManagementunitAgentShifttradesRequest(String managementUnitId, String agentId) {
     return GetWorkforcemanagementManagementunitAgentShifttradesRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withAgentId(agentId)
-    
+
             .build();
   }
 
@@ -4508,11 +4456,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets a summary of all shift trades in the matched state
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ShiftTradeMatchesSummaryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4524,7 +4471,7 @@ public class WorkforceManagementApi {
   /**
    * Gets a summary of all shift trades in the matched state
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return ShiftTradeMatchesSummaryResponse
    * @throws IOException if the request fails to be processed
    */
@@ -4535,7 +4482,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitShifttradesMatchedRequest createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitShifttradesMatchedRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -4587,11 +4534,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets list of users available for whom you can send direct shift trade requests
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4603,7 +4549,7 @@ public class WorkforceManagementApi {
   /**
    * Gets list of users available for whom you can send direct shift trade requests
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -4614,7 +4560,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitShifttradesUsersRequest createGetWorkforcemanagementManagementunitShifttradesUsersRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitShifttradesUsersRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -4666,7 +4612,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets a time off limit object
    * Returns properties of time off limit object, but not daily values.
@@ -4695,9 +4640,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitTimeofflimitRequest createGetWorkforcemanagementManagementunitTimeofflimitRequest(String managementUnitId, String timeOffLimitId) {
     return GetWorkforcemanagementManagementunitTimeofflimitRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffLimitId(timeOffLimitId)
-    
+
             .build();
   }
 
@@ -4749,7 +4694,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets a list of time off limit objects under management unit.
    * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
@@ -4776,7 +4720,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitTimeofflimitsRequest createGetWorkforcemanagementManagementunitTimeofflimitsRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitTimeofflimitsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -4828,7 +4772,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets a time off plan
    * 
@@ -4857,9 +4800,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitTimeoffplanRequest createGetWorkforcemanagementManagementunitTimeoffplanRequest(String managementUnitId, String timeOffPlanId) {
     return GetWorkforcemanagementManagementunitTimeoffplanRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffPlanId(timeOffPlanId)
-    
+
             .build();
   }
 
@@ -4911,7 +4854,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets a list of time off plans
    * 
@@ -4938,7 +4880,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitTimeoffplansRequest createGetWorkforcemanagementManagementunitTimeoffplansRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitTimeoffplansRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -4990,11 +4932,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a time off request
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequestResponse
@@ -5008,7 +4949,7 @@ public class WorkforceManagementApi {
   /**
    * Get a time off request
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequestResponse
@@ -5021,11 +4962,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUserTimeoffrequestRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(String managementUnitId, String userId, String timeOffRequestId) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withUserId(userId)
-    
+
             .withTimeOffRequestId(timeOffRequestId)
-    
+
             .build();
   }
 
@@ -5077,7 +5018,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Retrieves time off limit, allocated and waitlisted values according to specific time off request
    * 
@@ -5108,11 +5048,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest(String managementUnitId, String userId, String timeOffRequestId) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withUserId(userId)
-    
+
             .withTimeOffRequestId(timeOffRequestId)
-    
+
             .build();
   }
 
@@ -5164,11 +5104,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a list of time off requests for a given user
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
@@ -5182,7 +5121,7 @@ public class WorkforceManagementApi {
   /**
    * Get a list of time off requests for a given user
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
@@ -5195,11 +5134,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String managementUnitId, String userId, Boolean recentlyReviewed) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withUserId(userId)
-    
+
             .withRecentlyReviewed(recentlyReviewed)
-    
+
             .build();
   }
 
@@ -5251,11 +5190,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get users in the management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5267,7 +5205,7 @@ public class WorkforceManagementApi {
   /**
    * Get users in the management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -5278,7 +5216,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUsersRequest createGetWorkforcemanagementManagementunitUsersRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitUsersRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .build();
   }
 
@@ -5330,11 +5268,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
    * @param scheduleId The ID of the schedule to fetch (required)
    * @param expand Which fields, if any, to expand (optional)
@@ -5350,7 +5287,7 @@ public class WorkforceManagementApi {
   /**
    * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
    * @param scheduleId The ID of the schedule to fetch (required)
    * @param expand Which fields, if any, to expand (optional)
@@ -5365,15 +5302,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWeekScheduleRequest createGetWorkforcemanagementManagementunitWeekScheduleRequest(String managementUnitId, String weekId, String scheduleId, String expand, Boolean forceDownloadService) {
     return GetWorkforcemanagementManagementunitWeekScheduleRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withExpand(expand)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
             .build();
   }
 
@@ -5425,11 +5362,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
    * @param includeOnlyPublished Return only published schedules (optional)
    * @param earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format (optional)
@@ -5445,7 +5381,7 @@ public class WorkforceManagementApi {
   /**
    * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
    * @param includeOnlyPublished Return only published schedules (optional)
    * @param earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format (optional)
@@ -5460,15 +5396,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWeekSchedulesRequest createGetWorkforcemanagementManagementunitWeekSchedulesRequest(String managementUnitId, String weekId, Boolean includeOnlyPublished, String earliestWeekDate, String latestWeekDate) {
     return GetWorkforcemanagementManagementunitWeekSchedulesRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withIncludeOnlyPublished(includeOnlyPublished)
-    
+
             .withEarliestWeekDate(earliestWeekDate)
-    
+
             .withLatestWeekDate(latestWeekDate)
-    
+
             .build();
   }
 
@@ -5520,11 +5456,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets all the shift trades for a given week
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
    * @return WeekShiftTradeListResponse
@@ -5538,7 +5473,7 @@ public class WorkforceManagementApi {
   /**
    * Gets all the shift trades for a given week
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
    * @return WeekShiftTradeListResponse
@@ -5551,11 +5486,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) {
     return GetWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withEvaluateMatches(evaluateMatches)
-    
+
             .build();
   }
 
@@ -5607,11 +5542,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to fetch (required)
    * @param includeOnly limit response to the specified fields (optional)
    * @return WorkPlan
@@ -5625,7 +5559,7 @@ public class WorkforceManagementApi {
   /**
    * Get a work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to fetch (required)
    * @param includeOnly limit response to the specified fields (optional)
    * @return WorkPlan
@@ -5638,11 +5572,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWorkplanRequest createGetWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, List<String> includeOnly) {
     return GetWorkforcemanagementManagementunitWorkplanRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanId(workPlanId)
-    
+
             .withIncludeOnly(includeOnly)
-    
+
             .build();
   }
 
@@ -5694,11 +5628,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to fetch (required)
    * @return WorkPlanRotationResponse
    * @throws ApiException if the request fails on the server
@@ -5711,7 +5644,7 @@ public class WorkforceManagementApi {
   /**
    * Get a work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to fetch (required)
    * @return WorkPlanRotationResponse
    * @throws IOException if the request fails to be processed
@@ -5723,9 +5656,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWorkplanrotationRequest createGetWorkforcemanagementManagementunitWorkplanrotationRequest(String managementUnitId, String workPlanRotationId) {
     return GetWorkforcemanagementManagementunitWorkplanrotationRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanRotationId(workPlanRotationId)
-    
+
             .build();
   }
 
@@ -5777,11 +5710,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get work plan rotations
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return WorkPlanRotationListResponse
    * @throws ApiException if the request fails on the server
@@ -5794,7 +5726,7 @@ public class WorkforceManagementApi {
   /**
    * Get work plan rotations
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return WorkPlanRotationListResponse
    * @throws IOException if the request fails to be processed
@@ -5806,9 +5738,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWorkplanrotationsRequest createGetWorkforcemanagementManagementunitWorkplanrotationsRequest(String managementUnitId, List<String> expand) {
     return GetWorkforcemanagementManagementunitWorkplanrotationsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5860,11 +5792,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get work plans
-   * \&quot;expand=details\&quot; is deprecated
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * \"expand=details\" is deprecated
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return WorkPlanListResponse
    * @throws ApiException if the request fails on the server
@@ -5876,8 +5807,8 @@ public class WorkforceManagementApi {
 
   /**
    * Get work plans
-   * \&quot;expand=details\&quot; is deprecated
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * \"expand=details\" is deprecated
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return WorkPlanListResponse
    * @throws IOException if the request fails to be processed
@@ -5889,15 +5820,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, List<String> expand) {
     return GetWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
   /**
    * Get work plans
-   * \&quot;expand=details\&quot; is deprecated
+   * \"expand=details\" is deprecated
    * @param request The request object
    * @return WorkPlanListResponse
    * @throws ApiException if the request fails on the server
@@ -5916,7 +5847,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get work plans
-   * \&quot;expand=details\&quot; is deprecated
+   * \"expand=details\" is deprecated
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5943,7 +5874,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get management units
    * 
@@ -5978,15 +5908,15 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(Integer pageSize, Integer pageNumber, String expand, String feature, String divisionId) {
     return GetWorkforcemanagementManagementunitsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withFeature(feature)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -6038,7 +5968,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get management units across divisions
    * 
@@ -6065,7 +5994,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitsDivisionviewsRequest createGetWorkforcemanagementManagementunitsDivisionviewsRequest(List<String> divisionId) {
     return GetWorkforcemanagementManagementunitsDivisionviewsRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -6117,7 +6046,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a list of notifications for the current user
    * Notifications are only initially sent if you have the relevant Notify and Edit permissions
@@ -6192,7 +6120,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get status of the scheduling job
    * 
@@ -6219,7 +6146,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementSchedulingjobRequest createGetWorkforcemanagementSchedulingjobRequest(String jobId) {
     return GetWorkforcemanagementSchedulingjobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
@@ -6271,7 +6198,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Gets all of my shift trades
    * 
@@ -6346,7 +6272,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a time off request for the current user
    * 
@@ -6373,7 +6298,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementTimeoffrequestRequest createGetWorkforcemanagementTimeoffrequestRequest(String timeOffRequestId) {
     return GetWorkforcemanagementTimeoffrequestRequest.builder()
             .withTimeOffRequestId(timeOffRequestId)
-    
+
             .build();
   }
 
@@ -6425,7 +6350,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get the daily waitlist positions of a time off request for the current user
    * 
@@ -6452,7 +6376,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest createGetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest(String timeOffRequestId) {
     return GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest.builder()
             .withTimeOffRequestId(timeOffRequestId)
-    
+
             .build();
   }
 
@@ -6504,7 +6428,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get a list of time off requests for the current user
    * 
@@ -6531,7 +6454,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementTimeoffrequestsRequest createGetWorkforcemanagementTimeoffrequestsRequest(Boolean recentlyReviewed) {
     return GetWorkforcemanagementTimeoffrequestsRequest.builder()
             .withRecentlyReviewed(recentlyReviewed)
-    
+
             .build();
   }
 
@@ -6583,11 +6506,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update business unit
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (optional)
    * @return BusinessUnit
    * @throws ApiException if the request fails on the server
@@ -6600,7 +6522,7 @@ public class WorkforceManagementApi {
   /**
    * Update business unit
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (optional)
    * @return BusinessUnit
    * @throws IOException if the request fails to be processed
@@ -6612,9 +6534,9 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementBusinessunitRequest createPatchWorkforcemanagementBusinessunitRequest(String businessUnitId, UpdateBusinessUnitRequest body) {
     return PatchWorkforcemanagementBusinessunitRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6666,11 +6588,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update an activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to update (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
@@ -6684,7 +6605,7 @@ public class WorkforceManagementApi {
   /**
    * Update an activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param activityCodeId The ID of the activity code to update (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
@@ -6697,11 +6618,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementBusinessunitActivitycodeRequest createPatchWorkforcemanagementBusinessunitActivitycodeRequest(String businessUnitId, String activityCodeId, UpdateActivityCodeRequest body) {
     return PatchWorkforcemanagementBusinessunitActivitycodeRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withActivityCodeId(activityCodeId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6753,7 +6674,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Updates the planning group
    * 
@@ -6784,11 +6704,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementBusinessunitPlanninggroupRequest createPatchWorkforcemanagementBusinessunitPlanninggroupRequest(String businessUnitId, String planningGroupId, UpdatePlanningGroupRequest body) {
     return PatchWorkforcemanagementBusinessunitPlanninggroupRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withPlanningGroupId(planningGroupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6840,7 +6760,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Mark a schedule run as applied
    * 
@@ -6869,11 +6788,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementBusinessunitSchedulingRunRequest createPatchWorkforcemanagementBusinessunitSchedulingRunRequest(String businessUnitId, String runId, PatchBuScheduleRunRequest body) {
     return PatchWorkforcemanagementBusinessunitSchedulingRunRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withRunId(runId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6924,7 +6843,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Updates a service goal template
    * 
@@ -6955,11 +6873,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest createPatchWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId, UpdateServiceGoalTemplate body) {
     return PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withServiceGoalTemplateId(serviceGoalTemplateId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7011,11 +6929,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update the requested management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
@@ -7028,7 +6945,7 @@ public class WorkforceManagementApi {
   /**
    * Update the requested management unit
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
@@ -7040,9 +6957,9 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementManagementunitRequest createPatchWorkforcemanagementManagementunitRequest(String managementUnitId, UpdateManagementUnitRequest body) {
     return PatchWorkforcemanagementManagementunitRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7094,7 +7011,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values.
@@ -7125,11 +7041,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementManagementunitTimeofflimitRequest createPatchWorkforcemanagementManagementunitTimeofflimitRequest(String managementUnitId, String timeOffLimitId, UpdateTimeOffLimitRequest body) {
     return PatchWorkforcemanagementManagementunitTimeofflimitRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffLimitId(timeOffLimitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7181,7 +7097,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Updates a time off plan
    * 
@@ -7212,11 +7127,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementManagementunitTimeoffplanRequest createPatchWorkforcemanagementManagementunitTimeoffplanRequest(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) {
     return PatchWorkforcemanagementManagementunitTimeoffplanRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffPlanId(timeOffPlanId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7268,11 +7183,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update a time off request
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The id of the user the requested time off request belongs to (required)
    * @param timeOffRequestId The id of the time off request to update (required)
    * @param body body (optional)
@@ -7287,7 +7201,7 @@ public class WorkforceManagementApi {
   /**
    * Update a time off request
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param userId The id of the user the requested time off request belongs to (required)
    * @param timeOffRequestId The id of the time off request to update (required)
    * @param body body (optional)
@@ -7301,13 +7215,13 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(String managementUnitId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) {
     return PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withUserId(userId)
-    
+
             .withTimeOffRequestId(timeOffRequestId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7359,46 +7273,45 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body body (required)
    * @param tradeId The ID of the shift trade to update (required)
+   * @param body body (required)
    * @return ShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(String managementUnitId, LocalDate weekDateId, PatchShiftTradeRequest body, String tradeId) throws IOException, ApiException {
-    return  patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, body, tradeId));
+  public ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(String managementUnitId, LocalDate weekDateId, String tradeId, PatchShiftTradeRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, tradeId, body));
   }
 
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body body (required)
    * @param tradeId The ID of the shift trade to update (required)
+   * @param body body (required)
    * @return ShiftTradeResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttradeWithHttpInfo(String managementUnitId, LocalDate weekDateId, PatchShiftTradeRequest body, String tradeId) throws IOException {
-    return patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, body, tradeId).withHttpInfo());
+  public ApiResponse<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttradeWithHttpInfo(String managementUnitId, LocalDate weekDateId, String tradeId, PatchShiftTradeRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, tradeId, body).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitWeekShifttradeRequest createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(String managementUnitId, LocalDate weekDateId, PatchShiftTradeRequest body, String tradeId) {
+  private PatchWorkforcemanagementManagementunitWeekShifttradeRequest createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(String managementUnitId, LocalDate weekDateId, String tradeId, PatchShiftTradeRequest body) {
     return PatchWorkforcemanagementManagementunitWeekShifttradeRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
-            .withBody(body)
-    
+
             .withTradeId(tradeId)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -7450,46 +7363,45 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update a work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to update (required)
-   * @param body body (optional)
    * @param validationMode Allows to update work plan even if validation result is invalid (optional)
+   * @param body body (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan patchWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) throws IOException, ApiException {
-    return  patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body, validationMode));
+  public WorkPlan patchWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, String validationMode, WorkPlan body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, validationMode, body));
   }
 
   /**
    * Update a work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to update (required)
-   * @param body body (optional)
    * @param validationMode Allows to update work plan even if validation result is invalid (optional)
+   * @param body body (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> patchWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) throws IOException {
-    return patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body, validationMode).withHttpInfo());
+  public ApiResponse<WorkPlan> patchWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, String validationMode, WorkPlan body) throws IOException {
+    return patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, validationMode, body).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitWorkplanRequest createPatchWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) {
+  private PatchWorkforcemanagementManagementunitWorkplanRequest createPatchWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, String validationMode, WorkPlan body) {
     return PatchWorkforcemanagementManagementunitWorkplanRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanId(workPlanId)
-    
-            .withBody(body)
-    
+
             .withValidationMode(validationMode)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -7541,11 +7453,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update a work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to update (required)
    * @param body body (optional)
    * @return WorkPlanRotationResponse
@@ -7559,7 +7470,7 @@ public class WorkforceManagementApi {
   /**
    * Update a work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to update (required)
    * @param body body (optional)
    * @return WorkPlanRotationResponse
@@ -7572,11 +7483,11 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementManagementunitWorkplanrotationRequest createPatchWorkforcemanagementManagementunitWorkplanrotationRequest(String managementUnitId, String workPlanRotationId, UpdateWorkPlanRotationRequest body) {
     return PatchWorkforcemanagementManagementunitWorkplanrotationRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanRotationId(workPlanRotationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7628,7 +7539,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Update a time off request for the current user
    * 
@@ -7657,9 +7567,9 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementTimeoffrequestRequest createPatchWorkforcemanagementTimeoffrequestRequest(String timeOffRequestId, AgentTimeOffRequestPatch body) {
     return PatchWorkforcemanagementTimeoffrequestRequest.builder()
             .withTimeOffRequestId(timeOffRequestId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7711,7 +7621,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Request a historical adherence report for users across management units
    * 
@@ -7738,7 +7647,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementAdherenceHistoricalRequest createPostWorkforcemanagementAdherenceHistoricalRequest(WfmHistoricalAdherenceQueryForUsers body) {
     return PostWorkforcemanagementAdherenceHistoricalRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7790,7 +7699,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get published schedule for the current user
    * 
@@ -7817,7 +7725,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementAgentschedulesMineRequest createPostWorkforcemanagementAgentschedulesMineRequest(BuGetCurrentAgentScheduleRequest body) {
     return PostWorkforcemanagementAgentschedulesMineRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7869,11 +7777,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a new activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
@@ -7886,7 +7793,7 @@ public class WorkforceManagementApi {
   /**
    * Create a new activity code
    * 
-   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
@@ -7898,9 +7805,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitActivitycodesRequest createPostWorkforcemanagementBusinessunitActivitycodesRequest(String businessUnitId, CreateActivityCodeRequest body) {
     return PostWorkforcemanagementBusinessunitActivitycodesRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7952,46 +7859,45 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Search published schedules
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
-    return  postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(String businessUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, forceAsync, forceDownloadService, body));
   }
 
   /**
    * Search published schedules
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param body body (optional)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementBusinessunitAgentschedulesSearchWithHttpInfo(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
-    return postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementBusinessunitAgentschedulesSearchWithHttpInfo(String businessUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, forceAsync, forceDownloadService, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+  private PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(String businessUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) {
     return PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
-            .withBody(body)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -8043,7 +7949,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get intraday data for the given date for the requested planningGroupIds
    * 
@@ -8074,11 +7979,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitIntradayRequest createPostWorkforcemanagementBusinessunitIntradayRequest(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) {
     return PostWorkforcemanagementBusinessunitIntradayRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8130,7 +8035,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Adds a new planning group
    * 
@@ -8159,9 +8063,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitPlanninggroupsRequest createPostWorkforcemanagementBusinessunitPlanninggroupsRequest(String businessUnitId, CreatePlanningGroupRequest body) {
     return PostWorkforcemanagementBusinessunitPlanninggroupsRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8213,7 +8117,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Adds a new service goal template
    * 
@@ -8242,9 +8145,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest createPostWorkforcemanagementBusinessunitServicegoaltemplatesRequest(String businessUnitId, CreateServiceGoalTemplate body) {
     return PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8296,7 +8199,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Loads agent schedule data from the schedule. Used in combination with the metadata route
    * 
@@ -8333,17 +8235,17 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest createPostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest(String businessUnitId, LocalDate weekId, String scheduleId, BuQueryAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
     return PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withBody(body)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
             .build();
   }
 
@@ -8395,7 +8297,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Copy a schedule
    * 
@@ -8428,13 +8329,13 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest createPostWorkforcemanagementBusinessunitWeekScheduleCopyRequest(String businessUnitId, LocalDate weekId, String scheduleId, BuCopyScheduleRequest body) {
     return PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8486,7 +8387,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Start a rescheduling run
    * 
@@ -8519,13 +8419,13 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest createPostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId, BuRescheduleRequest body) {
     return PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8577,7 +8477,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Starts processing a schedule update
    * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
@@ -8610,13 +8509,13 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest createPostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest(String businessUnitId, LocalDate weekId, String scheduleId, ProcessScheduleUpdateUploadRequest body) {
     return PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8668,7 +8567,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Creates a signed upload URL for updating a schedule
    * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
@@ -8701,13 +8599,13 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest createPostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest(String businessUnitId, LocalDate weekId, String scheduleId, UploadUrlRequestBody body) {
     return PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withScheduleId(scheduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8759,7 +8657,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a blank schedule
    * 
@@ -8790,11 +8687,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekSchedulesRequest createPostWorkforcemanagementBusinessunitWeekSchedulesRequest(String businessUnitId, LocalDate weekId, BuCreateBlankScheduleRequest body) {
     return PostWorkforcemanagementBusinessunitWeekSchedulesRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8846,7 +8743,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Generate a schedule
    * 
@@ -8877,11 +8773,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest createPostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest(String businessUnitId, LocalDate weekId, BuGenerateScheduleRequest body) {
     return PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8933,7 +8829,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Starts processing a schedule import
    * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
@@ -8964,11 +8859,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest createPostWorkforcemanagementBusinessunitWeekSchedulesImportRequest(String businessUnitId, LocalDate weekId, WfmProcessUploadRequest body) {
     return PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9020,7 +8915,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Creates a signed upload URL for importing a schedule
    * Once the upload is complete, call the /import route to start the schedule import process
@@ -9051,11 +8945,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest createPostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest(String businessUnitId, LocalDate weekId, UploadUrlRequestBody body) {
     return PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekId(weekId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9107,7 +9001,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Copy a short term forecast
    * 
@@ -9142,15 +9035,15 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest(String businessUnitId, LocalDate weekDateId, String forecastId, CopyBuForecastRequest body, Boolean forceAsync) {
     return PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withForecastId(forecastId)
-    
+
             .withBody(body)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .build();
   }
 
@@ -9202,7 +9095,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Generate a short term forecast
    * 
@@ -9235,13 +9127,13 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest(String businessUnitId, LocalDate weekDateId, GenerateBuForecastRequest body, Boolean forceAsync) {
     return PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withBody(body)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .build();
   }
 
@@ -9293,7 +9185,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Starts importing the uploaded short term forecast
    * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
@@ -9324,11 +9215,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest(String businessUnitId, LocalDate weekDateId, WfmProcessUploadRequest body) {
     return PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9380,7 +9271,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Creates a signed upload URL for importing a short term forecast
    * Once the upload is complete, call the /import route to start the short term forecast import process
@@ -9411,11 +9301,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest(String businessUnitId, LocalDate weekDateId, UploadUrlRequestBody body) {
     return PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest.builder()
             .withBusinessUnitId(businessUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9467,7 +9357,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
@@ -9494,7 +9383,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementBusinessunitsRequest createPostWorkforcemanagementBusinessunitsRequest(CreateBusinessUnitRequest body) {
     return PostWorkforcemanagementBusinessunitsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9546,11 +9435,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
    * 
-   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (optional, default to en-US)
+   * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar (optional, default to "en-US")
    * @return CalendarUrlResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -9562,7 +9450,7 @@ public class WorkforceManagementApi {
   /**
    * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
    * 
-   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (optional, default to en-US)
+   * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar (optional, default to "en-US")
    * @return CalendarUrlResponse
    * @throws IOException if the request fails to be processed
    */
@@ -9573,7 +9461,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementCalendarUrlIcsRequest createPostWorkforcemanagementCalendarUrlIcsRequest(String language) {
     return PostWorkforcemanagementCalendarUrlIcsRequest.builder()
             .withLanguage(language)
-    
+
             .build();
   }
 
@@ -9625,7 +9513,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Delete the entries of the historical data imports in the organization
    * 
@@ -9700,7 +9587,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Trigger validation process for historical import
    * 
@@ -9725,7 +9611,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementHistoricaldataValidateRequest createPostWorkforcemanagementHistoricaldataValidateRequest(ValidationServiceRequest body) {
     return PostWorkforcemanagementHistoricaldataValidateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9776,46 +9662,45 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, body, forceAsync, forceDownloadService));
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String managementUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, forceAsync, forceDownloadService, body));
   }
 
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
-    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String managementUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, forceAsync, forceDownloadService, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String managementUnitId, Boolean forceAsync, Boolean forceDownloadService, BuSearchAgentSchedulesRequest body) {
     return PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
-            .withBody(body)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .withForceDownloadService(forceDownloadService)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -9867,7 +9752,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Request a historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
@@ -9896,9 +9780,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(String managementUnitId, WfmHistoricalAdherenceQuery body) {
     return PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9950,11 +9834,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return MoveManagementUnitResponse
    * @throws ApiException if the request fails on the server
@@ -9967,7 +9850,7 @@ public class WorkforceManagementApi {
   /**
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return MoveManagementUnitResponse
    * @throws IOException if the request fails to be processed
@@ -9979,9 +9862,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitMoveRequest createPostWorkforcemanagementManagementunitMoveRequest(String managementUnitId, MoveManagementUnitRequest body) {
     return PostWorkforcemanagementManagementunitMoveRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10033,11 +9916,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
@@ -10050,7 +9932,7 @@ public class WorkforceManagementApi {
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed
@@ -10062,9 +9944,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitSchedulesSearchRequest createPostWorkforcemanagementManagementunitSchedulesSearchRequest(String managementUnitId, UserListScheduleRequestBody body) {
     return PostWorkforcemanagementManagementunitSchedulesSearchRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10116,7 +9998,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Creates a new time off limit object under management unit.
    * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
@@ -10145,9 +10026,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitTimeofflimitsRequest createPostWorkforcemanagementManagementunitTimeofflimitsRequest(String managementUnitId, CreateTimeOffLimitRequest body) {
     return PostWorkforcemanagementManagementunitTimeofflimitsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10199,7 +10080,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Retrieves time off limit related values based on a given set of filters.
    * 
@@ -10228,9 +10108,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest createPostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest(String managementUnitId, QueryTimeOffLimitValuesRequest body) {
     return PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10282,7 +10162,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Creates a new time off plan
    * 
@@ -10311,9 +10190,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitTimeoffplansRequest createPostWorkforcemanagementManagementunitTimeoffplansRequest(String managementUnitId, CreateTimeOffPlanRequest body) {
     return PostWorkforcemanagementManagementunitTimeoffplansRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10365,11 +10244,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a new time off request
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestList
    * @throws ApiException if the request fails on the server
@@ -10382,7 +10260,7 @@ public class WorkforceManagementApi {
   /**
    * Create a new time off request
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestList
    * @throws IOException if the request fails to be processed
@@ -10394,9 +10272,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitTimeoffrequestsRequest createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(String managementUnitId, CreateAdminTimeOffRequest body) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10448,11 +10326,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws ApiException if the request fails on the server
@@ -10465,7 +10342,7 @@ public class WorkforceManagementApi {
   /**
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws IOException if the request fails to be processed
@@ -10477,9 +10354,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String managementUnitId, TimeOffRequestQueryBody body) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10531,7 +10408,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Retrieves daily waitlist position for a list of time off requests
    * 
@@ -10560,9 +10436,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest(String managementUnitId, QueryWaitlistPositionsRequest body) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10614,46 +10490,45 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body body (required)
    * @param tradeId The ID of the shift trade to update (required)
+   * @param body body (required)
    * @return MatchShiftTradeResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, body, tradeId));
+  public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(String managementUnitId, LocalDate weekDateId, String tradeId, MatchShiftTradeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, tradeId, body));
   }
 
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param body body (required)
    * @param tradeId The ID of the shift trade to update (required)
+   * @param body body (required)
    * @return MatchShiftTradeResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatchWithHttpInfo(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) throws IOException {
-    return postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, body, tradeId).withHttpInfo());
+  public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatchWithHttpInfo(String managementUnitId, LocalDate weekDateId, String tradeId, MatchShiftTradeRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, tradeId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) {
+  private PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(String managementUnitId, LocalDate weekDateId, String tradeId, MatchShiftTradeRequest body) {
     return PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
-            .withBody(body)
-    
+
             .withTradeId(tradeId)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -10705,11 +10580,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Adds a shift trade
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return ShiftTradeResponse
@@ -10723,7 +10597,7 @@ public class WorkforceManagementApi {
   /**
    * Adds a shift trade
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return ShiftTradeResponse
@@ -10736,11 +10610,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitWeekShifttradesRequest createPostWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) {
     return PostWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10792,11 +10666,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Searches for potential shift trade matches for the current agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return SearchShiftTradesResponse
@@ -10810,7 +10683,7 @@ public class WorkforceManagementApi {
   /**
    * Searches for potential shift trade matches for the current agent
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return SearchShiftTradesResponse
@@ -10823,11 +10696,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) {
     return PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10879,11 +10752,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \&quot;mine\&quot;.
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * Admin functionality is not supported with \"mine\".
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
@@ -10897,8 +10769,8 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \&quot;mine\&quot;.
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * Admin functionality is not supported with \"mine\".
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
@@ -10912,19 +10784,19 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest createPostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest(String managementUnitId, LocalDate weekDateId, BulkShiftTradeStateUpdateRequest body, Boolean forceAsync) {
     return PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWeekDateId(weekDateId)
-    
+
             .withBody(body)
-    
+
             .withForceAsync(forceAsync)
-    
+
             .build();
   }
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * Admin functionality is not supported with \"mine\".
    * @param request The request object
    * @return BulkUpdateShiftTradeStateResponse
    * @throws ApiException if the request fails on the server
@@ -10943,7 +10815,7 @@ public class WorkforceManagementApi {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * Admin functionality is not supported with \"mine\".
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10970,11 +10842,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a copy of work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to create a copy (required)
    * @param body body (optional)
    * @return WorkPlan
@@ -10988,7 +10859,7 @@ public class WorkforceManagementApi {
   /**
    * Create a copy of work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to create a copy (required)
    * @param body body (optional)
    * @return WorkPlan
@@ -11001,11 +10872,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitWorkplanCopyRequest createPostWorkforcemanagementManagementunitWorkplanCopyRequest(String managementUnitId, String workPlanId, CopyWorkPlan body) {
     return PostWorkforcemanagementManagementunitWorkplanCopyRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanId(workPlanId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11057,46 +10928,45 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Validate Work Plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @param workPlanId The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. (required)
-   * @param body body (optional)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
    * @param expand  (optional)
+   * @param body body (optional)
    * @return ValidateWorkPlanResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, body, expand));
+  public ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(String managementUnitId, String workPlanId, List<String> expand, WorkPlanValidationRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, expand, body));
   }
 
   /**
    * Validate Work Plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @param workPlanId The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. (required)
-   * @param body body (optional)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
    * @param expand  (optional)
+   * @param body body (optional)
    * @return ValidateWorkPlanResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidateWithHttpInfo(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) throws IOException {
-    return postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, body, expand).withHttpInfo());
+  public ApiResponse<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidateWithHttpInfo(String managementUnitId, String workPlanId, List<String> expand, WorkPlanValidationRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, expand, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWorkplanValidateRequest createPostWorkforcemanagementManagementunitWorkplanValidateRequest(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) {
+  private PostWorkforcemanagementManagementunitWorkplanValidateRequest createPostWorkforcemanagementManagementunitWorkplanValidateRequest(String managementUnitId, String workPlanId, List<String> expand, WorkPlanValidationRequest body) {
     return PostWorkforcemanagementManagementunitWorkplanValidateRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanId(workPlanId)
-    
-            .withBody(body)
-    
+
             .withExpand(expand)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -11148,11 +11018,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a copy of work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to create a copy (required)
    * @param body body (optional)
    * @return WorkPlanRotationResponse
@@ -11166,7 +11035,7 @@ public class WorkforceManagementApi {
   /**
    * Create a copy of work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param workPlanRotationId The ID of the work plan rotation to create a copy (required)
    * @param body body (optional)
    * @return WorkPlanRotationResponse
@@ -11179,11 +11048,11 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest createPostWorkforcemanagementManagementunitWorkplanrotationCopyRequest(String managementUnitId, String workPlanRotationId, CopyWorkPlanRotationRequest body) {
     return PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withWorkPlanRotationId(workPlanRotationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11235,11 +11104,10 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a new work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return WorkPlanRotationResponse
    * @throws ApiException if the request fails on the server
@@ -11252,7 +11120,7 @@ public class WorkforceManagementApi {
   /**
    * Create a new work plan rotation
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return WorkPlanRotationResponse
    * @throws IOException if the request fails to be processed
@@ -11264,9 +11132,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitWorkplanrotationsRequest createPostWorkforcemanagementManagementunitWorkplanrotationsRequest(String managementUnitId, AddWorkPlanRotationRequest body) {
     return PostWorkforcemanagementManagementunitWorkplanrotationsRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11318,42 +11186,41 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a new work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param validationMode Allows to create work plan even if the validation result is invalid (optional)
+   * @param body body (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan postWorkforcemanagementManagementunitWorkplans(String managementUnitId, CreateWorkPlan body, String validationMode) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body, validationMode));
+  public WorkPlan postWorkforcemanagementManagementunitWorkplans(String managementUnitId, String validationMode, CreateWorkPlan body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, validationMode, body));
   }
 
   /**
    * Create a new work plan
    * 
-   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @param body body (optional)
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param validationMode Allows to create work plan even if the validation result is invalid (optional)
+   * @param body body (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> postWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, CreateWorkPlan body, String validationMode) throws IOException {
-    return postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body, validationMode).withHttpInfo());
+  public ApiResponse<WorkPlan> postWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, String validationMode, CreateWorkPlan body) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, validationMode, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWorkplansRequest createPostWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, CreateWorkPlan body, String validationMode) {
+  private PostWorkforcemanagementManagementunitWorkplansRequest createPostWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, String validationMode, CreateWorkPlan body) {
     return PostWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
-            .withBody(body)
-    
+
             .withValidationMode(validationMode)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -11405,7 +11272,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Add a management unit
    * It may take a minute or two for a new management unit to be available for api operations
@@ -11432,7 +11298,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitsRequest createPostWorkforcemanagementManagementunitsRequest(CreateManagementUnitApiRequest body) {
     return PostWorkforcemanagementManagementunitsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11484,7 +11350,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Mark a list of notifications as read or unread
    * 
@@ -11511,7 +11376,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementNotificationsUpdateRequest createPostWorkforcemanagementNotificationsUpdateRequest(UpdateNotificationsRequest body) {
     return PostWorkforcemanagementNotificationsUpdateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11563,7 +11428,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Get published schedule for the current user
    * 
@@ -11590,7 +11454,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementSchedulesRequest createPostWorkforcemanagementSchedulesRequest(CurrentUserScheduleRequestBody body) {
     return PostWorkforcemanagementSchedulesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11642,7 +11506,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Queries available time off for the current user
    * 
@@ -11669,7 +11532,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementTimeofflimitsAvailableQueryRequest createPostWorkforcemanagementTimeofflimitsAvailableQueryRequest(AvailableTimeOffRequest body) {
     return PostWorkforcemanagementTimeofflimitsAvailableQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11721,7 +11584,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Create a time off request for the current user
    * 
@@ -11748,7 +11610,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementTimeoffrequestsRequest createPostWorkforcemanagementTimeoffrequestsRequest(CreateAgentTimeOffRequest body) {
     return PostWorkforcemanagementTimeoffrequestsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11800,7 +11662,6 @@ public class WorkforceManagementApi {
     }
   }
 
-  
   /**
    * Sets daily values for a date range of time off limit object
    * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
@@ -11831,11 +11692,11 @@ public class WorkforceManagementApi {
   private PutWorkforcemanagementManagementunitTimeofflimitValuesRequest createPutWorkforcemanagementManagementunitTimeofflimitValuesRequest(String managementUnitId, String timeOffLimitId, SetTimeOffLimitValuesRequest body) {
     return PutWorkforcemanagementManagementunitTimeofflimitValuesRequest.builder()
             .withManagementUnitId(managementUnitId)
-    
+
             .withTimeOffLimitId(timeOffLimitId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -11887,5 +11748,4 @@ public class WorkforceManagementApi {
     }
   }
 
-  
 }

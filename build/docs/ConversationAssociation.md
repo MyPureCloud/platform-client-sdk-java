@@ -21,16 +21,16 @@ title: ConversationAssociation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CALL | &quot;CALL&quot; |
-| CALLBACK | &quot;CALLBACK&quot; |
-| CHAT | &quot;CHAT&quot; |
-| COBROWSE | &quot;COBROWSE&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| MESSAGE | &quot;MESSAGE&quot; |
-| SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; |
-| VIDEO | &quot;VIDEO&quot; |
-| SCREENSHARE | &quot;SCREENSHARE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CALL | &quot;CALL&quot; | 
+| CALLBACK | &quot;CALLBACK&quot; | 
+| CHAT | &quot;CHAT&quot; | 
+| COBROWSE | &quot;COBROWSE&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| MESSAGE | &quot;MESSAGE&quot; | 
+| SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; | 
+| VIDEO | &quot;VIDEO&quot; | 
+| SCREENSHARE | &quot;SCREENSHARE&quot; | 
 {: class="table table-striped"}
 
 

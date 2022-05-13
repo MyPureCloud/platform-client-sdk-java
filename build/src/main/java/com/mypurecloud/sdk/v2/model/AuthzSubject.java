@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthzGrant;
@@ -36,7 +37,7 @@ public class AuthzSubject  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public AuthzSubject name(String name) {
@@ -53,7 +54,7 @@ public class AuthzSubject  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public AuthzSubject grants(List<AuthzGrant> grants) {
@@ -70,7 +71,7 @@ public class AuthzSubject  implements Serializable {
     this.grants = grants;
   }
 
-  
+
   /**
    **/
   public AuthzSubject version(Integer version) {
@@ -87,14 +88,13 @@ public class AuthzSubject  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,11 +105,12 @@ public class AuthzSubject  implements Serializable {
       return false;
     }
     AuthzSubject authzSubject = (AuthzSubject) o;
+
     return Objects.equals(this.id, authzSubject.id) &&
-        Objects.equals(this.name, authzSubject.name) &&
-        Objects.equals(this.grants, authzSubject.grants) &&
-        Objects.equals(this.version, authzSubject.version) &&
-        Objects.equals(this.selfUri, authzSubject.selfUri);
+            Objects.equals(this.name, authzSubject.name) &&
+            Objects.equals(this.grants, authzSubject.grants) &&
+            Objects.equals(this.version, authzSubject.version) &&
+            Objects.equals(this.selfUri, authzSubject.selfUri);
   }
 
   @Override

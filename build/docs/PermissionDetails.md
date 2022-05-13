@@ -21,12 +21,12 @@ title: PermissionDetails
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| REQUIRESCURRENTUSER | &quot;requiresCurrentUser&quot; |
-| REQUIRESPERMISSIONS | &quot;requiresPermissions&quot; |
-| REQUIRESDIVISIONPERMISSIONS | &quot;requiresDivisionPermissions&quot; |
-| REQUIRESANYDIVISIONPERMISSIONS | &quot;requiresAnyDivisionPermissions&quot; |
-| REQUIRESUSERBECONVERSATIONPARTICIPANT | &quot;requiresUserBeConversationParticipant&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REQUIRESCURRENTUSER | &quot;requiresCurrentUser&quot; | 
+| REQUIRESPERMISSIONS | &quot;requiresPermissions&quot; | 
+| REQUIRESDIVISIONPERMISSIONS | &quot;requiresDivisionPermissions&quot; | 
+| REQUIRESANYDIVISIONPERMISSIONS | &quot;requiresAnyDivisionPermissions&quot; | 
+| REQUIRESUSERBECONVERSATIONPARTICIPANT | &quot;requiresUserBeConversationParticipant&quot; | 
 {: class="table table-striped"}
 
 

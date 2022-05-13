@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocalDateRange;
@@ -44,7 +45,7 @@ public class AvailableTimeOffRequest  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * A list of date ranges of available time off minutes.
    **/
@@ -62,7 +63,6 @@ public class AvailableTimeOffRequest  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class AvailableTimeOffRequest  implements Serializable {
       return false;
     }
     AvailableTimeOffRequest availableTimeOffRequest = (AvailableTimeOffRequest) o;
+
     return Objects.equals(this.activityCodeId, availableTimeOffRequest.activityCodeId) &&
-        Objects.equals(this.dateRanges, availableTimeOffRequest.dateRanges);
+            Objects.equals(this.dateRanges, availableTimeOffRequest.dateRanges);
   }
 
   @Override

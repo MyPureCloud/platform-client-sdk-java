@@ -21,9 +21,9 @@ title: ButtonResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BUTTON | &quot;Button&quot; |
-| QUICKREPLY | &quot;QuickReply&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BUTTON | &quot;Button&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
 {: class="table table-striped"}
 
 
@@ -33,10 +33,10 @@ title: ButtonResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUICKREPLY | &quot;QuickReply&quot; |
-| CARD | &quot;Card&quot; |
-| CAROUSEL | &quot;Carousel&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
+| CARD | &quot;Card&quot; | 
+| CAROUSEL | &quot;Carousel&quot; | 
 {: class="table table-striped"}
 
 

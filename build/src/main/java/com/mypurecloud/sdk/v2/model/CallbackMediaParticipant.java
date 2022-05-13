@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -302,7 +303,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display friendly name of the participant.
    **/
@@ -320,7 +321,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The participant address.
    **/
@@ -338,7 +339,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -356,7 +357,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -374,7 +375,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -392,7 +393,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -410,7 +411,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -428,7 +429,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -446,7 +447,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -464,7 +465,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -482,7 +483,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Value is true when the participant is on hold.
    **/
@@ -500,7 +501,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -518,7 +519,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -536,7 +537,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * The PureCloud user for this participant.
    **/
@@ -554,7 +555,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The PureCloud queue for this participant.
    **/
@@ -572,7 +573,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The PureCloud team for this participant.
    **/
@@ -590,7 +591,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.team = team;
   }
 
-  
+
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -608,7 +609,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -626,7 +627,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -644,7 +645,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -662,7 +663,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -680,7 +681,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -698,7 +699,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -716,7 +717,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -734,7 +735,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -752,7 +753,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -770,7 +771,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -788,7 +789,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -806,7 +807,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
    **/
@@ -824,7 +825,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Information on how a communication should be routed to an agent.
    **/
@@ -842,7 +843,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -860,7 +861,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -878,7 +879,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    * The outbound preview associated with this callback.
    **/
@@ -896,7 +897,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.outboundPreview = outboundPreview;
   }
 
-  
+
   /**
    * The voicemail associated with this callback.
    **/
@@ -914,7 +915,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.voicemail = voicemail;
   }
 
-  
+
   /**
    * The list of phone number to use for this callback.
    **/
@@ -932,7 +933,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    * The name of the callback target.
    **/
@@ -950,7 +951,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    * True if the call for the callback uses external dialing.
    **/
@@ -968,7 +969,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.externalCampaign = externalCampaign;
   }
 
-  
+
   /**
    * If true, the callback can be skipped.
    **/
@@ -986,7 +987,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-  
+
   /**
    * Duration in seconds before the callback will be auto-dialed.
    **/
@@ -1004,7 +1005,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-  
+
   /**
    * The id of the config for automatically placing the callback (and handling the disposition). If absent, the callback will not be placed automatically but routed to an agent as per normal.
    **/
@@ -1022,7 +1023,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -1040,7 +1041,6 @@ public class CallbackMediaParticipant  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1051,48 +1051,49 @@ public class CallbackMediaParticipant  implements Serializable {
       return false;
     }
     CallbackMediaParticipant callbackMediaParticipant = (CallbackMediaParticipant) o;
+
     return Objects.equals(this.id, callbackMediaParticipant.id) &&
-        Objects.equals(this.name, callbackMediaParticipant.name) &&
-        Objects.equals(this.address, callbackMediaParticipant.address) &&
-        Objects.equals(this.startTime, callbackMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, callbackMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, callbackMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, callbackMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, callbackMediaParticipant.purpose) &&
-        Objects.equals(this.state, callbackMediaParticipant.state) &&
-        Objects.equals(this.direction, callbackMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, callbackMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, callbackMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, callbackMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, callbackMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, callbackMediaParticipant.user) &&
-        Objects.equals(this.queue, callbackMediaParticipant.queue) &&
-        Objects.equals(this.team, callbackMediaParticipant.team) &&
-        Objects.equals(this.attributes, callbackMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, callbackMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, callbackMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, callbackMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, callbackMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, callbackMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, callbackMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, callbackMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, callbackMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, callbackMediaParticipant.wrapup) &&
-        Objects.equals(this.peer, callbackMediaParticipant.peer) &&
-        Objects.equals(this.flaggedReason, callbackMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, callbackMediaParticipant.journeyContext) &&
-        Objects.equals(this.conversationRoutingData, callbackMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.startAcwTime, callbackMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, callbackMediaParticipant.endAcwTime) &&
-        Objects.equals(this.outboundPreview, callbackMediaParticipant.outboundPreview) &&
-        Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
-        Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
-        Objects.equals(this.callbackUserName, callbackMediaParticipant.callbackUserName) &&
-        Objects.equals(this.externalCampaign, callbackMediaParticipant.externalCampaign) &&
-        Objects.equals(this.skipEnabled, callbackMediaParticipant.skipEnabled) &&
-        Objects.equals(this.timeoutSeconds, callbackMediaParticipant.timeoutSeconds) &&
-        Objects.equals(this.automatedCallbackConfigId, callbackMediaParticipant.automatedCallbackConfigId) &&
-        Objects.equals(this.callbackScheduledTime, callbackMediaParticipant.callbackScheduledTime);
+            Objects.equals(this.name, callbackMediaParticipant.name) &&
+            Objects.equals(this.address, callbackMediaParticipant.address) &&
+            Objects.equals(this.startTime, callbackMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, callbackMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, callbackMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, callbackMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, callbackMediaParticipant.purpose) &&
+            Objects.equals(this.state, callbackMediaParticipant.state) &&
+            Objects.equals(this.direction, callbackMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, callbackMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, callbackMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, callbackMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, callbackMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, callbackMediaParticipant.user) &&
+            Objects.equals(this.queue, callbackMediaParticipant.queue) &&
+            Objects.equals(this.team, callbackMediaParticipant.team) &&
+            Objects.equals(this.attributes, callbackMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, callbackMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, callbackMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, callbackMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, callbackMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, callbackMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, callbackMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, callbackMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, callbackMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, callbackMediaParticipant.wrapup) &&
+            Objects.equals(this.peer, callbackMediaParticipant.peer) &&
+            Objects.equals(this.flaggedReason, callbackMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, callbackMediaParticipant.journeyContext) &&
+            Objects.equals(this.conversationRoutingData, callbackMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.startAcwTime, callbackMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, callbackMediaParticipant.endAcwTime) &&
+            Objects.equals(this.outboundPreview, callbackMediaParticipant.outboundPreview) &&
+            Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
+            Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
+            Objects.equals(this.callbackUserName, callbackMediaParticipant.callbackUserName) &&
+            Objects.equals(this.externalCampaign, callbackMediaParticipant.externalCampaign) &&
+            Objects.equals(this.skipEnabled, callbackMediaParticipant.skipEnabled) &&
+            Objects.equals(this.timeoutSeconds, callbackMediaParticipant.timeoutSeconds) &&
+            Objects.equals(this.automatedCallbackConfigId, callbackMediaParticipant.automatedCallbackConfigId) &&
+            Objects.equals(this.callbackScheduledTime, callbackMediaParticipant.callbackScheduledTime);
   }
 
   @Override

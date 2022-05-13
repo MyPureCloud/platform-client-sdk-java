@@ -20,37 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 public class GetQualityEvaluationsQueryRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -64,7 +64,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -78,7 +78,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -92,7 +92,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -106,7 +106,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -120,7 +120,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setNextPage(nextPage);
 	    return this;
 	} 
-	
+
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -134,7 +134,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setPreviousPage(previousPage);
 	    return this;
 	} 
-	
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -148,7 +148,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private String agentUserId;
 	public String getAgentUserId() {
 		return this.agentUserId;
@@ -162,7 +162,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setAgentUserId(agentUserId);
 	    return this;
 	} 
-	
+
 	private String evaluatorUserId;
 	public String getEvaluatorUserId() {
 		return this.evaluatorUserId;
@@ -176,7 +176,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setEvaluatorUserId(evaluatorUserId);
 	    return this;
 	} 
-	
+
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -190,7 +190,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setQueueId(queueId);
 	    return this;
 	} 
-	
+
 	private String startTime;
 	public String getStartTime() {
 		return this.startTime;
@@ -204,7 +204,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setStartTime(startTime);
 	    return this;
 	} 
-	
+
 	private String endTime;
 	public String getEndTime() {
 		return this.endTime;
@@ -218,7 +218,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setEndTime(endTime);
 	    return this;
 	} 
-	
+
 	private List<String> evaluationState;
 	public List<String> getEvaluationState() {
 		return this.evaluationState;
@@ -232,7 +232,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setEvaluationState(evaluationState);
 	    return this;
 	} 
-	
+
 	private Boolean isReleased;
 	public Boolean getIsReleased() {
 		return this.isReleased;
@@ -246,7 +246,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setIsReleased(isReleased);
 	    return this;
 	} 
-	
+
 	private Boolean agentHasRead;
 	public Boolean getAgentHasRead() {
 		return this.agentHasRead;
@@ -260,7 +260,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setAgentHasRead(agentHasRead);
 	    return this;
 	} 
-	
+
 	private Boolean expandAnswerTotalScores;
 	public Boolean getExpandAnswerTotalScores() {
 		return this.expandAnswerTotalScores;
@@ -274,7 +274,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setExpandAnswerTotalScores(expandAnswerTotalScores);
 	    return this;
 	} 
-	
+
 	private Integer maximum;
 	public Integer getMaximum() {
 		return this.maximum;
@@ -288,7 +288,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setMaximum(maximum);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -302,7 +302,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    this.setSortOrder(sortOrder);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -326,43 +326,61 @@ public class GetQualityEvaluationsQueryRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/quality/evaluations/query")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("nextPage", "", nextPage)
         
+
                 .withQueryParameters("previousPage", "", previousPage)
         
+
                 .withQueryParameters("conversationId", "", conversationId)
         
+
                 .withQueryParameters("agentUserId", "", agentUserId)
         
+
                 .withQueryParameters("evaluatorUserId", "", evaluatorUserId)
         
+
                 .withQueryParameters("queueId", "", queueId)
         
+
                 .withQueryParameters("startTime", "", startTime)
         
+
                 .withQueryParameters("endTime", "", endTime)
         
+
                 .withQueryParameters("evaluationState", "multi", evaluationState)
         
+
                 .withQueryParameters("isReleased", "", isReleased)
         
+
                 .withQueryParameters("agentHasRead", "", agentHasRead)
         
+
                 .withQueryParameters("expandAnswerTotalScores", "", expandAnswerTotalScores)
         
+
                 .withQueryParameters("maximum", "", maximum)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -373,7 +391,7 @@ public class GetQualityEvaluationsQueryRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetQualityEvaluationsQueryRequest request;
@@ -382,99 +400,99 @@ public class GetQualityEvaluationsQueryRequest {
 			request = new GetQualityEvaluationsQueryRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
+
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
-		
+
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
+
 		public Builder withAgentUserId(String agentUserId) {
 			request.setAgentUserId(agentUserId);
 			return this;
 		}
-		
+
 		public Builder withEvaluatorUserId(String evaluatorUserId) {
 			request.setEvaluatorUserId(evaluatorUserId);
 			return this;
 		}
-		
+
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
-		
+
 		public Builder withStartTime(String startTime) {
 			request.setStartTime(startTime);
 			return this;
 		}
-		
+
 		public Builder withEndTime(String endTime) {
 			request.setEndTime(endTime);
 			return this;
 		}
-		
+
 		public Builder withEvaluationState(List<String> evaluationState) {
 			request.setEvaluationState(evaluationState);
 			return this;
 		}
-		
+
 		public Builder withIsReleased(Boolean isReleased) {
 			request.setIsReleased(isReleased);
 			return this;
 		}
-		
+
 		public Builder withAgentHasRead(Boolean agentHasRead) {
 			request.setAgentHasRead(agentHasRead);
 			return this;
 		}
-		
+
 		public Builder withExpandAnswerTotalScores(Boolean expandAnswerTotalScores) {
 			request.setExpandAnswerTotalScores(expandAnswerTotalScores);
 			return this;
 		}
-		
+
 		public Builder withMaximum(Integer maximum) {
 			request.setMaximum(maximum);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetQualityEvaluationsQueryRequest build() {
             

@@ -24,7 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ChatApi {
   private final ApiClient pcapiClient;
 
@@ -36,7 +35,6 @@ public class ChatApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get Chat Settings.
    * 
@@ -111,7 +109,6 @@ public class ChatApi {
     }
   }
 
-  
   /**
    * Patch Chat Settings.
    * 
@@ -138,7 +135,7 @@ public class ChatApi {
   private PatchChatSettingsRequest createPatchChatSettingsRequest(ChatSettings body) {
     return PatchChatSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -190,7 +187,6 @@ public class ChatApi {
     }
   }
 
-  
   /**
    * Update Chat Settings.
    * 
@@ -217,7 +213,7 @@ public class ChatApi {
   private PutChatSettingsRequest createPutChatSettingsRequest(ChatSettings body) {
     return PutChatSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -269,5 +265,4 @@ public class ChatApi {
     }
   }
 
-  
 }

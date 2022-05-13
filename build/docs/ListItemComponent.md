@@ -24,9 +24,9 @@ title: ListItemComponent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LISTITEM | &quot;ListItem&quot; |
-| LISTITEMBIG | &quot;ListItemBig&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LISTITEM | &quot;ListItem&quot; | 
+| LISTITEMBIG | &quot;ListItemBig&quot; | 
 {: class="table table-striped"}
 
 

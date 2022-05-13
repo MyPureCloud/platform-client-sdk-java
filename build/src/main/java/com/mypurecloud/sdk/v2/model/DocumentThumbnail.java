@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class DocumentThumbnail  implements Serializable {
     this.resolution = resolution;
   }
 
-  
+
   /**
    **/
   public DocumentThumbnail imageUri(String imageUri) {
@@ -59,7 +60,7 @@ public class DocumentThumbnail  implements Serializable {
     this.imageUri = imageUri;
   }
 
-  
+
   /**
    **/
   public DocumentThumbnail height(Integer height) {
@@ -76,7 +77,7 @@ public class DocumentThumbnail  implements Serializable {
     this.height = height;
   }
 
-  
+
   /**
    **/
   public DocumentThumbnail width(Integer width) {
@@ -93,7 +94,6 @@ public class DocumentThumbnail  implements Serializable {
     this.width = width;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class DocumentThumbnail  implements Serializable {
       return false;
     }
     DocumentThumbnail documentThumbnail = (DocumentThumbnail) o;
+
     return Objects.equals(this.resolution, documentThumbnail.resolution) &&
-        Objects.equals(this.imageUri, documentThumbnail.imageUri) &&
-        Objects.equals(this.height, documentThumbnail.height) &&
-        Objects.equals(this.width, documentThumbnail.width);
+            Objects.equals(this.imageUri, documentThumbnail.imageUri) &&
+            Objects.equals(this.height, documentThumbnail.height) &&
+            Objects.equals(this.width, documentThumbnail.width);
   }
 
   @Override

@@ -20,12 +20,12 @@ title: AfterCallWork
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| NOTAPPLICABLE | &quot;notApplicable&quot; |
-| SKIPPED | &quot;skipped&quot; |
-| PENDING | &quot;pending&quot; |
-| COMPLETE | &quot;complete&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| NOTAPPLICABLE | &quot;notApplicable&quot; | 
+| SKIPPED | &quot;skipped&quot; | 
+| PENDING | &quot;pending&quot; | 
+| COMPLETE | &quot;complete&quot; | 
 {: class="table table-striped"}
 
 

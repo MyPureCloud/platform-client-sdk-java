@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class MediaSummaryDetail  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    **/
   public MediaSummaryDetail acw(Integer acw) {
@@ -57,7 +58,6 @@ public class MediaSummaryDetail  implements Serializable {
     this.acw = acw;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class MediaSummaryDetail  implements Serializable {
       return false;
     }
     MediaSummaryDetail mediaSummaryDetail = (MediaSummaryDetail) o;
+
     return Objects.equals(this.active, mediaSummaryDetail.active) &&
-        Objects.equals(this.acw, mediaSummaryDetail.acw);
+            Objects.equals(this.acw, mediaSummaryDetail.acw);
   }
 
   @Override

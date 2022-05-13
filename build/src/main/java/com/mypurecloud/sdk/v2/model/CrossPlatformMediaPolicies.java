@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CrossPlatformCallMediaPolicy;
@@ -47,7 +48,7 @@ public class CrossPlatformMediaPolicies  implements Serializable {
     this.callPolicy = callPolicy;
   }
 
-  
+
   /**
    * Conditions and actions for chats
    **/
@@ -65,7 +66,7 @@ public class CrossPlatformMediaPolicies  implements Serializable {
     this.chatPolicy = chatPolicy;
   }
 
-  
+
   /**
    * Conditions and actions for emails
    **/
@@ -83,7 +84,7 @@ public class CrossPlatformMediaPolicies  implements Serializable {
     this.emailPolicy = emailPolicy;
   }
 
-  
+
   /**
    * Conditions and actions for messages
    **/
@@ -101,7 +102,6 @@ public class CrossPlatformMediaPolicies  implements Serializable {
     this.messagePolicy = messagePolicy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class CrossPlatformMediaPolicies  implements Serializable {
       return false;
     }
     CrossPlatformMediaPolicies crossPlatformMediaPolicies = (CrossPlatformMediaPolicies) o;
+
     return Objects.equals(this.callPolicy, crossPlatformMediaPolicies.callPolicy) &&
-        Objects.equals(this.chatPolicy, crossPlatformMediaPolicies.chatPolicy) &&
-        Objects.equals(this.emailPolicy, crossPlatformMediaPolicies.emailPolicy) &&
-        Objects.equals(this.messagePolicy, crossPlatformMediaPolicies.messagePolicy);
+            Objects.equals(this.chatPolicy, crossPlatformMediaPolicies.chatPolicy) &&
+            Objects.equals(this.emailPolicy, crossPlatformMediaPolicies.emailPolicy) &&
+            Objects.equals(this.messagePolicy, crossPlatformMediaPolicies.messagePolicy);
   }
 
   @Override

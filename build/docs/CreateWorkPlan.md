@@ -45,9 +45,9 @@ title: CreateWorkPlan
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SHIFTSTART | &quot;ShiftStart&quot; |
-| SHIFTSTARTANDPAIDDURATION | &quot;ShiftStartAndPaidDuration&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SHIFTSTART | &quot;ShiftStart&quot; | 
+| SHIFTSTARTANDPAIDDURATION | &quot;ShiftStartAndPaidDuration&quot; | 
 {: class="table table-striped"}
 
 

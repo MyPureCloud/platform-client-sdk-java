@@ -23,14 +23,14 @@ title: SearchAggregation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COUNT | &quot;COUNT&quot; |
-| SUM | &quot;SUM&quot; |
-| AVERAGE | &quot;AVERAGE&quot; |
-| TERM | &quot;TERM&quot; |
-| CONTAINS | &quot;CONTAINS&quot; |
-| STARTS_WITH | &quot;STARTS_WITH&quot; |
-| ENDS_WITH | &quot;ENDS_WITH&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| COUNT | &quot;COUNT&quot; | 
+| SUM | &quot;SUM&quot; | 
+| AVERAGE | &quot;AVERAGE&quot; | 
+| TERM | &quot;TERM&quot; | 
+| CONTAINS | &quot;CONTAINS&quot; | 
+| STARTS_WITH | &quot;STARTS_WITH&quot; | 
+| ENDS_WITH | &quot;ENDS_WITH&quot; | 
 {: class="table table-striped"}
 
 

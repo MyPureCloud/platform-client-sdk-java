@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class ConversationMessagingToRecipient  implements Serializable {
     return nickname;
   }
 
-  
+
   /**
    * The recipient ID specific to the provider.
    **/
@@ -107,49 +108,48 @@ public class ConversationMessagingToRecipient  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient ID type. This is used to indicate the format used for the ID.")
   @JsonProperty("idType")
   public IdTypeEnum getIdType() {
     return idType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URL of an image that represents the recipient.")
   @JsonProperty("image")
   public String getImage() {
     return image;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "First name of the recipient.")
   @JsonProperty("firstName")
   public String getFirstName() {
     return firstName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last name of the recipient.")
   @JsonProperty("lastName")
   public String getLastName() {
     return lastName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "E-mail address of the recipient.")
   @JsonProperty("email")
   public String getEmail() {
     return email;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of recipient additional identifiers")
   @JsonProperty("additionalIds")
   public List<ConversationRecipientAdditionalIdentifier> getAdditionalIds() {
     return additionalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -160,14 +160,15 @@ public class ConversationMessagingToRecipient  implements Serializable {
       return false;
     }
     ConversationMessagingToRecipient conversationMessagingToRecipient = (ConversationMessagingToRecipient) o;
+
     return Objects.equals(this.nickname, conversationMessagingToRecipient.nickname) &&
-        Objects.equals(this.id, conversationMessagingToRecipient.id) &&
-        Objects.equals(this.idType, conversationMessagingToRecipient.idType) &&
-        Objects.equals(this.image, conversationMessagingToRecipient.image) &&
-        Objects.equals(this.firstName, conversationMessagingToRecipient.firstName) &&
-        Objects.equals(this.lastName, conversationMessagingToRecipient.lastName) &&
-        Objects.equals(this.email, conversationMessagingToRecipient.email) &&
-        Objects.equals(this.additionalIds, conversationMessagingToRecipient.additionalIds);
+            Objects.equals(this.id, conversationMessagingToRecipient.id) &&
+            Objects.equals(this.idType, conversationMessagingToRecipient.idType) &&
+            Objects.equals(this.image, conversationMessagingToRecipient.image) &&
+            Objects.equals(this.firstName, conversationMessagingToRecipient.firstName) &&
+            Objects.equals(this.lastName, conversationMessagingToRecipient.lastName) &&
+            Objects.equals(this.email, conversationMessagingToRecipient.email) &&
+            Objects.equals(this.additionalIds, conversationMessagingToRecipient.additionalIds);
   }
 
   @Override

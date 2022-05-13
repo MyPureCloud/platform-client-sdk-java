@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -46,7 +47,7 @@ public class SurveyAssignment  implements Serializable {
     this.surveyForm = surveyForm;
   }
 
-  
+
   /**
    * The URI reference to the flow associated with this survey.
    **/
@@ -64,7 +65,7 @@ public class SurveyAssignment  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * An ISO 8601 repeated interval consisting of the number of repetitions, the start datetime, and the interval (e.g. R2/2018-03-01T13:00:00Z/P1M10DT2H30M). Total duration must not exceed 90 days.
    **/
@@ -82,7 +83,7 @@ public class SurveyAssignment  implements Serializable {
     this.inviteTimeInterval = inviteTimeInterval;
   }
 
-  
+
   /**
    * User together with sendingDomain used to send email, null to use no-reply
    **/
@@ -100,7 +101,7 @@ public class SurveyAssignment  implements Serializable {
     this.sendingUser = sendingUser;
   }
 
-  
+
   /**
    * Validated email domain, required
    **/
@@ -118,7 +119,6 @@ public class SurveyAssignment  implements Serializable {
     this.sendingDomain = sendingDomain;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,11 +129,12 @@ public class SurveyAssignment  implements Serializable {
       return false;
     }
     SurveyAssignment surveyAssignment = (SurveyAssignment) o;
+
     return Objects.equals(this.surveyForm, surveyAssignment.surveyForm) &&
-        Objects.equals(this.flow, surveyAssignment.flow) &&
-        Objects.equals(this.inviteTimeInterval, surveyAssignment.inviteTimeInterval) &&
-        Objects.equals(this.sendingUser, surveyAssignment.sendingUser) &&
-        Objects.equals(this.sendingDomain, surveyAssignment.sendingDomain);
+            Objects.equals(this.flow, surveyAssignment.flow) &&
+            Objects.equals(this.inviteTimeInterval, surveyAssignment.inviteTimeInterval) &&
+            Objects.equals(this.sendingUser, surveyAssignment.sendingUser) &&
+            Objects.equals(this.sendingDomain, surveyAssignment.sendingDomain);
   }
 
   @Override

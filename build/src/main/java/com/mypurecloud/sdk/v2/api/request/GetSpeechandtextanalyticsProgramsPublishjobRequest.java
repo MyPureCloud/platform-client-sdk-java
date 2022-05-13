@@ -20,36 +20,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class GetSpeechandtextanalyticsProgramsPublishjobRequest {
-    
+
 	private String jobId;
 	public String getJobId() {
 		return this.jobId;
@@ -63,7 +63,7 @@ public class GetSpeechandtextanalyticsProgramsPublishjobRequest {
 	    this.setJobId(jobId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -94,7 +94,7 @@ public class GetSpeechandtextanalyticsProgramsPublishjobRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}")
                 .withPathParameter("jobId", jobId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class GetSpeechandtextanalyticsProgramsPublishjobRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String jobId) {
 	    return new Builder()
 	            .withRequiredParams(jobId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetSpeechandtextanalyticsProgramsPublishjobRequest request;
@@ -119,20 +119,20 @@ public class GetSpeechandtextanalyticsProgramsPublishjobRequest {
 			request = new GetSpeechandtextanalyticsProgramsPublishjobRequest();
 		}
 
-		
+
 		public Builder withJobId(String jobId) {
 			request.setJobId(jobId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String jobId) {
 			request.setJobId(jobId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetSpeechandtextanalyticsProgramsPublishjobRequest build() {
             

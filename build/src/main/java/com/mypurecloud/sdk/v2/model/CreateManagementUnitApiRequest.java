@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The default time zone to use for this management unit.  Moving to Business Unit
    **/
@@ -118,7 +119,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
    **/
@@ -136,7 +137,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     this.startDayOfWeek = startDayOfWeek;
   }
 
-  
+
   /**
    * The configuration for the management unit.  If omitted, reasonable defaults will be assigned
    **/
@@ -154,7 +155,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     this.settings = settings;
   }
 
-  
+
   /**
    * The id of the division to which this management unit belongs.  Defaults to home division ID
    **/
@@ -172,7 +173,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    * The id of the business unit to which this management unit belongs
    **/
@@ -190,7 +191,6 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     this.businessUnitId = businessUnitId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -201,12 +201,13 @@ public class CreateManagementUnitApiRequest  implements Serializable {
       return false;
     }
     CreateManagementUnitApiRequest createManagementUnitApiRequest = (CreateManagementUnitApiRequest) o;
+
     return Objects.equals(this.name, createManagementUnitApiRequest.name) &&
-        Objects.equals(this.timeZone, createManagementUnitApiRequest.timeZone) &&
-        Objects.equals(this.startDayOfWeek, createManagementUnitApiRequest.startDayOfWeek) &&
-        Objects.equals(this.settings, createManagementUnitApiRequest.settings) &&
-        Objects.equals(this.divisionId, createManagementUnitApiRequest.divisionId) &&
-        Objects.equals(this.businessUnitId, createManagementUnitApiRequest.businessUnitId);
+            Objects.equals(this.timeZone, createManagementUnitApiRequest.timeZone) &&
+            Objects.equals(this.startDayOfWeek, createManagementUnitApiRequest.startDayOfWeek) &&
+            Objects.equals(this.settings, createManagementUnitApiRequest.settings) &&
+            Objects.equals(this.divisionId, createManagementUnitApiRequest.divisionId) &&
+            Objects.equals(this.businessUnitId, createManagementUnitApiRequest.businessUnitId);
   }
 
   @Override

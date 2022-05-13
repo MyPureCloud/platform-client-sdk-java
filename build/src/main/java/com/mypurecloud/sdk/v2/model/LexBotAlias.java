@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -137,7 +138,7 @@ public class LexBotAlias  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public LexBotAlias name(String name) {
@@ -154,7 +155,7 @@ public class LexBotAlias  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The Lex bot this is an alias for
    **/
@@ -172,7 +173,7 @@ public class LexBotAlias  implements Serializable {
     this.bot = bot;
   }
 
-  
+
   /**
    * The version of the Lex bot this alias points at
    **/
@@ -190,7 +191,7 @@ public class LexBotAlias  implements Serializable {
     this.botVersion = botVersion;
   }
 
-  
+
   /**
    * The status of the Lex bot alias
    **/
@@ -208,7 +209,7 @@ public class LexBotAlias  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * If the status is FAILED, Amazon Lex explains why it failed to build the bot
    **/
@@ -226,7 +227,7 @@ public class LexBotAlias  implements Serializable {
     this.failureReason = failureReason;
   }
 
-  
+
   /**
    * The target language of the Lex bot
    **/
@@ -244,7 +245,7 @@ public class LexBotAlias  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * An array of Intents associated with this bot alias
    **/
@@ -262,14 +263,13 @@ public class LexBotAlias  implements Serializable {
     this.intents = intents;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -280,15 +280,16 @@ public class LexBotAlias  implements Serializable {
       return false;
     }
     LexBotAlias lexBotAlias = (LexBotAlias) o;
+
     return Objects.equals(this.id, lexBotAlias.id) &&
-        Objects.equals(this.name, lexBotAlias.name) &&
-        Objects.equals(this.bot, lexBotAlias.bot) &&
-        Objects.equals(this.botVersion, lexBotAlias.botVersion) &&
-        Objects.equals(this.status, lexBotAlias.status) &&
-        Objects.equals(this.failureReason, lexBotAlias.failureReason) &&
-        Objects.equals(this.language, lexBotAlias.language) &&
-        Objects.equals(this.intents, lexBotAlias.intents) &&
-        Objects.equals(this.selfUri, lexBotAlias.selfUri);
+            Objects.equals(this.name, lexBotAlias.name) &&
+            Objects.equals(this.bot, lexBotAlias.bot) &&
+            Objects.equals(this.botVersion, lexBotAlias.botVersion) &&
+            Objects.equals(this.status, lexBotAlias.status) &&
+            Objects.equals(this.failureReason, lexBotAlias.failureReason) &&
+            Objects.equals(this.language, lexBotAlias.language) &&
+            Objects.equals(this.intents, lexBotAlias.intents) &&
+            Objects.equals(this.selfUri, lexBotAlias.selfUri);
   }
 
   @Override

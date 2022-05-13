@@ -35,10 +35,10 @@ title: FacebookIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INITIATED | &quot;Initiated&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INITIATED | &quot;Initiated&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

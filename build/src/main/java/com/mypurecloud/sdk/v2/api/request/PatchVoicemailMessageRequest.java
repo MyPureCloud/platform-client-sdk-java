@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class PatchVoicemailMessageRequest {
-    
+
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -47,7 +47,7 @@ public class PatchVoicemailMessageRequest {
 	    this.setMessageId(messageId);
 	    return this;
 	} 
-	
+
 	private VoicemailMessage body;
 	public VoicemailMessage getBody() {
 		return this.body;
@@ -61,7 +61,7 @@ public class PatchVoicemailMessageRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,8 +98,8 @@ public class PatchVoicemailMessageRequest {
                 .withPathParameter("messageId", messageId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -110,12 +110,12 @@ public class PatchVoicemailMessageRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String messageId, VoicemailMessage body) {
 	    return new Builder()
 	            .withRequiredParams(messageId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchVoicemailMessageRequest request;
@@ -124,26 +124,26 @@ public class PatchVoicemailMessageRequest {
 			request = new PatchVoicemailMessageRequest();
 		}
 
-		
+
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
-		
+
 		public Builder withBody(VoicemailMessage body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String messageId, VoicemailMessage body) {
 			request.setMessageId(messageId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PatchVoicemailMessageRequest build() {
             

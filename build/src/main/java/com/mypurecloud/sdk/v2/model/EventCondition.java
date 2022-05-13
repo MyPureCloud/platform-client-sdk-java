@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -153,7 +154,7 @@ public class EventCondition  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    * The event values.
    **/
@@ -171,7 +172,7 @@ public class EventCondition  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The comparison operator.
    **/
@@ -189,7 +190,7 @@ public class EventCondition  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * The stream type for which this condition can be satisfied.
    **/
@@ -207,7 +208,7 @@ public class EventCondition  implements Serializable {
     this.streamType = streamType;
   }
 
-  
+
   /**
    * The session type for which this condition can be satisfied.
    **/
@@ -225,7 +226,7 @@ public class EventCondition  implements Serializable {
     this.sessionType = sessionType;
   }
 
-  
+
   /**
    * The name of the event for which this condition can be satisfied.
    **/
@@ -243,7 +244,6 @@ public class EventCondition  implements Serializable {
     this.eventName = eventName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -254,12 +254,13 @@ public class EventCondition  implements Serializable {
       return false;
     }
     EventCondition eventCondition = (EventCondition) o;
+
     return Objects.equals(this.key, eventCondition.key) &&
-        Objects.equals(this.values, eventCondition.values) &&
-        Objects.equals(this.operator, eventCondition.operator) &&
-        Objects.equals(this.streamType, eventCondition.streamType) &&
-        Objects.equals(this.sessionType, eventCondition.sessionType) &&
-        Objects.equals(this.eventName, eventCondition.eventName);
+            Objects.equals(this.values, eventCondition.values) &&
+            Objects.equals(this.operator, eventCondition.operator) &&
+            Objects.equals(this.streamType, eventCondition.streamType) &&
+            Objects.equals(this.sessionType, eventCondition.sessionType) &&
+            Objects.equals(this.eventName, eventCondition.eventName);
   }
 
   @Override

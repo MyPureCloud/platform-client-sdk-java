@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class AgentActivityChangedTopicOrganizationPresence  implements Serializa
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicOrganizationPresence systemPresence(String systemPresence) {
@@ -57,7 +58,6 @@ public class AgentActivityChangedTopicOrganizationPresence  implements Serializa
     this.systemPresence = systemPresence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class AgentActivityChangedTopicOrganizationPresence  implements Serializa
       return false;
     }
     AgentActivityChangedTopicOrganizationPresence agentActivityChangedTopicOrganizationPresence = (AgentActivityChangedTopicOrganizationPresence) o;
+
     return Objects.equals(this.id, agentActivityChangedTopicOrganizationPresence.id) &&
-        Objects.equals(this.systemPresence, agentActivityChangedTopicOrganizationPresence.systemPresence);
+            Objects.equals(this.systemPresence, agentActivityChangedTopicOrganizationPresence.systemPresence);
   }
 
   @Override

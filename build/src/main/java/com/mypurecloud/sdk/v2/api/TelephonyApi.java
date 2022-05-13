@@ -10,12 +10,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.SipSearchResult;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
-import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
+import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
+import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetTelephonySiptracesRequest;
@@ -28,7 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class TelephonyApi {
   private final ApiClient pcapiClient;
 
@@ -40,7 +39,6 @@ public class TelephonyApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Fetch SIP metadata
    * Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
@@ -77,17 +75,17 @@ public class TelephonyApi {
   private GetTelephonySiptracesRequest createGetTelephonySiptracesRequest(Date dateStart, Date dateEnd, String callId, String toUser, String fromUser, String conversationId) {
     return GetTelephonySiptracesRequest.builder()
             .withDateStart(dateStart)
-    
+
             .withDateEnd(dateEnd)
-    
+
             .withCallId(callId)
-    
+
             .withToUser(toUser)
-    
+
             .withFromUser(fromUser)
-    
+
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -139,7 +137,6 @@ public class TelephonyApi {
     }
   }
 
-  
   /**
    * Get signed S3 URL for a pcap download
    * 
@@ -166,7 +163,7 @@ public class TelephonyApi {
   private GetTelephonySiptracesDownloadDownloadIdRequest createGetTelephonySiptracesDownloadDownloadIdRequest(String downloadId) {
     return GetTelephonySiptracesDownloadDownloadIdRequest.builder()
             .withDownloadId(downloadId)
-    
+
             .build();
   }
 
@@ -218,7 +215,6 @@ public class TelephonyApi {
     }
   }
 
-  
   /**
    * Request a download of a pcap file to S3
    * 
@@ -245,7 +241,7 @@ public class TelephonyApi {
   private PostTelephonySiptracesDownloadRequest createPostTelephonySiptracesDownloadRequest(SIPSearchPublicRequest sIPSearchPublicRequest) {
     return PostTelephonySiptracesDownloadRequest.builder()
             .withSIPSearchPublicRequest(sIPSearchPublicRequest)
-    
+
             .build();
   }
 
@@ -297,5 +293,4 @@ public class TelephonyApi {
     }
   }
 
-  
 }

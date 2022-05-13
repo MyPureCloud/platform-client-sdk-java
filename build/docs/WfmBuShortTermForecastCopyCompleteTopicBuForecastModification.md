@@ -28,15 +28,15 @@ title: WfmBuShortTermForecastCopyCompleteTopicBuForecastModification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MINIMUMPERINTERVAL | &quot;MinimumPerInterval&quot; |
-| MAXIMUMPERINTERVAL | &quot;MaximumPerInterval&quot; |
-| SETVALUEPERINTERVAL | &quot;SetValuePerInterval&quot; |
-| CHANGEVALUEPERINTERVAL | &quot;ChangeValuePerInterval&quot; |
-| CHANGEPERCENTPERINTERVAL | &quot;ChangePercentPerInterval&quot; |
-| SETVALUEOVERRANGE | &quot;SetValueOverRange&quot; |
-| CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; |
-| SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MINIMUMPERINTERVAL | &quot;MinimumPerInterval&quot; | 
+| MAXIMUMPERINTERVAL | &quot;MaximumPerInterval&quot; | 
+| SETVALUEPERINTERVAL | &quot;SetValuePerInterval&quot; | 
+| CHANGEVALUEPERINTERVAL | &quot;ChangeValuePerInterval&quot; | 
+| CHANGEPERCENTPERINTERVAL | &quot;ChangePercentPerInterval&quot; | 
+| SETVALUEOVERRANGE | &quot;SetValueOverRange&quot; | 
+| CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; | 
+| SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; | 
 {: class="table table-striped"}
 
 
@@ -46,9 +46,9 @@ title: WfmBuShortTermForecastCopyCompleteTopicBuForecastModification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OFFERED | &quot;Offered&quot; |
-| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OFFERED | &quot;Offered&quot; | 
+| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
 {: class="table table-striped"}
 
 
@@ -58,11 +58,11 @@ title: WfmBuShortTermForecastCopyCompleteTopicBuForecastModification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AVERAGEAFTERCALLWORKTIMESECONDS | &quot;AverageAfterCallWorkTimeSeconds&quot; |
-| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; |
-| AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; |
-| OFFERED | &quot;Offered&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AVERAGEAFTERCALLWORKTIMESECONDS | &quot;AverageAfterCallWorkTimeSeconds&quot; | 
+| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
+| AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; | 
+| OFFERED | &quot;Offered&quot; | 
 {: class="table table-striped"}
 
 

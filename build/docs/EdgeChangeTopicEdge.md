@@ -19,9 +19,9 @@ title: EdgeChangeTopicEdge
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ONLINE | &quot;ONLINE&quot; |
-| OFFLINE | &quot;OFFLINE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONLINE | &quot;ONLINE&quot; | 
+| OFFLINE | &quot;OFFLINE&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationOutcome;
@@ -46,7 +47,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
     this.outcome = outcome;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAttributionMessage outcomeTouchpoints(List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> outcomeTouchpoints) {
@@ -63,7 +64,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
     this.outcomeTouchpoints = outcomeTouchpoints;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAttributionMessage segmentAssignments(List<JourneyOutcomeEventsNotificationSegment> segmentAssignments) {
@@ -80,7 +81,6 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
     this.segmentAssignments = segmentAssignments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
       return false;
     }
     JourneyOutcomeEventsNotificationOutcomeAttributionMessage journeyOutcomeEventsNotificationOutcomeAttributionMessage = (JourneyOutcomeEventsNotificationOutcomeAttributionMessage) o;
+
     return Objects.equals(this.outcome, journeyOutcomeEventsNotificationOutcomeAttributionMessage.outcome) &&
-        Objects.equals(this.outcomeTouchpoints, journeyOutcomeEventsNotificationOutcomeAttributionMessage.outcomeTouchpoints) &&
-        Objects.equals(this.segmentAssignments, journeyOutcomeEventsNotificationOutcomeAttributionMessage.segmentAssignments);
+            Objects.equals(this.outcomeTouchpoints, journeyOutcomeEventsNotificationOutcomeAttributionMessage.outcomeTouchpoints) &&
+            Objects.equals(this.segmentAssignments, journeyOutcomeEventsNotificationOutcomeAttributionMessage.segmentAssignments);
   }
 
   @Override

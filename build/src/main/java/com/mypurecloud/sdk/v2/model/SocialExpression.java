@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -180,7 +181,7 @@ public class SocialExpression  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -198,7 +199,7 @@ public class SocialExpression  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * A globally unique identifier for the social media.
    **/
@@ -216,7 +217,7 @@ public class SocialExpression  implements Serializable {
     this.socialMediaId = socialMediaId;
   }
 
-  
+
   /**
    * The social network of the communication
    **/
@@ -234,7 +235,7 @@ public class SocialExpression  implements Serializable {
     this.socialMediaHub = socialMediaHub;
   }
 
-  
+
   /**
    * The user name for the communication.
    **/
@@ -252,7 +253,7 @@ public class SocialExpression  implements Serializable {
     this.socialUserName = socialUserName;
   }
 
-  
+
   /**
    * The text preview of the communication contents
    **/
@@ -270,7 +271,7 @@ public class SocialExpression  implements Serializable {
     this.previewText = previewText;
   }
 
-  
+
   /**
    * A globally unique identifier for the recording associated with this chat.
    **/
@@ -288,7 +289,7 @@ public class SocialExpression  implements Serializable {
     this.recordingId = recordingId;
   }
 
-  
+
   /**
    * The time line of the participant's chat, divided into activity segments.
    **/
@@ -306,7 +307,7 @@ public class SocialExpression  implements Serializable {
     this.segments = segments;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -324,7 +325,7 @@ public class SocialExpression  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -342,7 +343,7 @@ public class SocialExpression  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -360,7 +361,7 @@ public class SocialExpression  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -378,7 +379,7 @@ public class SocialExpression  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -396,7 +397,7 @@ public class SocialExpression  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -414,7 +415,7 @@ public class SocialExpression  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The source provider for the social expression.
    **/
@@ -432,7 +433,7 @@ public class SocialExpression  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -450,7 +451,7 @@ public class SocialExpression  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -468,7 +469,7 @@ public class SocialExpression  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -486,7 +487,7 @@ public class SocialExpression  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -504,7 +505,7 @@ public class SocialExpression  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -522,7 +523,6 @@ public class SocialExpression  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -533,26 +533,27 @@ public class SocialExpression  implements Serializable {
       return false;
     }
     SocialExpression socialExpression = (SocialExpression) o;
+
     return Objects.equals(this.state, socialExpression.state) &&
-        Objects.equals(this.id, socialExpression.id) &&
-        Objects.equals(this.socialMediaId, socialExpression.socialMediaId) &&
-        Objects.equals(this.socialMediaHub, socialExpression.socialMediaHub) &&
-        Objects.equals(this.socialUserName, socialExpression.socialUserName) &&
-        Objects.equals(this.previewText, socialExpression.previewText) &&
-        Objects.equals(this.recordingId, socialExpression.recordingId) &&
-        Objects.equals(this.segments, socialExpression.segments) &&
-        Objects.equals(this.held, socialExpression.held) &&
-        Objects.equals(this.disconnectType, socialExpression.disconnectType) &&
-        Objects.equals(this.startHoldTime, socialExpression.startHoldTime) &&
-        Objects.equals(this.startAlertingTime, socialExpression.startAlertingTime) &&
-        Objects.equals(this.connectedTime, socialExpression.connectedTime) &&
-        Objects.equals(this.disconnectedTime, socialExpression.disconnectedTime) &&
-        Objects.equals(this.provider, socialExpression.provider) &&
-        Objects.equals(this.scriptId, socialExpression.scriptId) &&
-        Objects.equals(this.peerId, socialExpression.peerId) &&
-        Objects.equals(this.wrapup, socialExpression.wrapup) &&
-        Objects.equals(this.afterCallWork, socialExpression.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, socialExpression.afterCallWorkRequired);
+            Objects.equals(this.id, socialExpression.id) &&
+            Objects.equals(this.socialMediaId, socialExpression.socialMediaId) &&
+            Objects.equals(this.socialMediaHub, socialExpression.socialMediaHub) &&
+            Objects.equals(this.socialUserName, socialExpression.socialUserName) &&
+            Objects.equals(this.previewText, socialExpression.previewText) &&
+            Objects.equals(this.recordingId, socialExpression.recordingId) &&
+            Objects.equals(this.segments, socialExpression.segments) &&
+            Objects.equals(this.held, socialExpression.held) &&
+            Objects.equals(this.disconnectType, socialExpression.disconnectType) &&
+            Objects.equals(this.startHoldTime, socialExpression.startHoldTime) &&
+            Objects.equals(this.startAlertingTime, socialExpression.startAlertingTime) &&
+            Objects.equals(this.connectedTime, socialExpression.connectedTime) &&
+            Objects.equals(this.disconnectedTime, socialExpression.disconnectedTime) &&
+            Objects.equals(this.provider, socialExpression.provider) &&
+            Objects.equals(this.scriptId, socialExpression.scriptId) &&
+            Objects.equals(this.peerId, socialExpression.peerId) &&
+            Objects.equals(this.wrapup, socialExpression.wrapup) &&
+            Objects.equals(this.afterCallWork, socialExpression.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, socialExpression.afterCallWorkRequired);
   }
 
   @Override

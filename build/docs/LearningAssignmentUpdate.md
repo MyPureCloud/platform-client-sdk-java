@@ -19,12 +19,12 @@ title: LearningAssignmentUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASSIGNED | &quot;Assigned&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| DELETED | &quot;Deleted&quot; |
-| NOTCOMPLETED | &quot;NotCompleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASSIGNED | &quot;Assigned&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| DELETED | &quot;Deleted&quot; | 
+| NOTCOMPLETED | &quot;NotCompleted&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -37,7 +38,7 @@ public class SmsAddressProvision  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Name associated with this address
    **/
@@ -55,7 +56,7 @@ public class SmsAddressProvision  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The number and street address where this address is located.
    **/
@@ -73,7 +74,7 @@ public class SmsAddressProvision  implements Serializable {
     this.street = street;
   }
 
-  
+
   /**
    * The city in which this address is in
    **/
@@ -91,7 +92,7 @@ public class SmsAddressProvision  implements Serializable {
     this.city = city;
   }
 
-  
+
   /**
    * The state or region this address is in
    **/
@@ -109,7 +110,7 @@ public class SmsAddressProvision  implements Serializable {
     this.region = region;
   }
 
-  
+
   /**
    * The postal code this address is in
    **/
@@ -127,7 +128,7 @@ public class SmsAddressProvision  implements Serializable {
     this.postalCode = postalCode;
   }
 
-  
+
   /**
    * The ISO country code of this address
    **/
@@ -145,7 +146,7 @@ public class SmsAddressProvision  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
+
   /**
    * This is used when the address is created. If the value is not set or true, then the system will, if necessary, auto-correct the address you provide. Set this value to false if the system should not auto-correct the address.
    **/
@@ -163,14 +164,13 @@ public class SmsAddressProvision  implements Serializable {
     this.autoCorrectAddress = autoCorrectAddress;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,15 +181,16 @@ public class SmsAddressProvision  implements Serializable {
       return false;
     }
     SmsAddressProvision smsAddressProvision = (SmsAddressProvision) o;
+
     return Objects.equals(this.id, smsAddressProvision.id) &&
-        Objects.equals(this.name, smsAddressProvision.name) &&
-        Objects.equals(this.street, smsAddressProvision.street) &&
-        Objects.equals(this.city, smsAddressProvision.city) &&
-        Objects.equals(this.region, smsAddressProvision.region) &&
-        Objects.equals(this.postalCode, smsAddressProvision.postalCode) &&
-        Objects.equals(this.countryCode, smsAddressProvision.countryCode) &&
-        Objects.equals(this.autoCorrectAddress, smsAddressProvision.autoCorrectAddress) &&
-        Objects.equals(this.selfUri, smsAddressProvision.selfUri);
+            Objects.equals(this.name, smsAddressProvision.name) &&
+            Objects.equals(this.street, smsAddressProvision.street) &&
+            Objects.equals(this.city, smsAddressProvision.city) &&
+            Objects.equals(this.region, smsAddressProvision.region) &&
+            Objects.equals(this.postalCode, smsAddressProvision.postalCode) &&
+            Objects.equals(this.countryCode, smsAddressProvision.countryCode) &&
+            Objects.equals(this.autoCorrectAddress, smsAddressProvision.autoCorrectAddress) &&
+            Objects.equals(this.selfUri, smsAddressProvision.selfUri);
   }
 
   @Override

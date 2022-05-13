@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -51,7 +52,7 @@ public class OrganizationFeatures  implements Serializable {
     this.realtimeCIC = realtimeCIC;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures purecloud(Boolean purecloud) {
@@ -68,7 +69,7 @@ public class OrganizationFeatures  implements Serializable {
     this.purecloud = purecloud;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures hipaa(Boolean hipaa) {
@@ -85,7 +86,7 @@ public class OrganizationFeatures  implements Serializable {
     this.hipaa = hipaa;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures ucEnabled(Boolean ucEnabled) {
@@ -102,7 +103,7 @@ public class OrganizationFeatures  implements Serializable {
     this.ucEnabled = ucEnabled;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures pci(Boolean pci) {
@@ -119,7 +120,7 @@ public class OrganizationFeatures  implements Serializable {
     this.pci = pci;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures purecloudVoice(Boolean purecloudVoice) {
@@ -136,7 +137,7 @@ public class OrganizationFeatures  implements Serializable {
     this.purecloudVoice = purecloudVoice;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures xmppFederation(Boolean xmppFederation) {
@@ -153,7 +154,7 @@ public class OrganizationFeatures  implements Serializable {
     this.xmppFederation = xmppFederation;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures chat(Boolean chat) {
@@ -170,7 +171,7 @@ public class OrganizationFeatures  implements Serializable {
     this.chat = chat;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures informalPhotos(Boolean informalPhotos) {
@@ -187,7 +188,7 @@ public class OrganizationFeatures  implements Serializable {
     this.informalPhotos = informalPhotos;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures directory(Boolean directory) {
@@ -204,7 +205,7 @@ public class OrganizationFeatures  implements Serializable {
     this.directory = directory;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures contactCenter(Boolean contactCenter) {
@@ -221,7 +222,7 @@ public class OrganizationFeatures  implements Serializable {
     this.contactCenter = contactCenter;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures unifiedCommunications(Boolean unifiedCommunications) {
@@ -238,7 +239,7 @@ public class OrganizationFeatures  implements Serializable {
     this.unifiedCommunications = unifiedCommunications;
   }
 
-  
+
   /**
    **/
   public OrganizationFeatures custserv(Boolean custserv) {
@@ -255,7 +256,6 @@ public class OrganizationFeatures  implements Serializable {
     this.custserv = custserv;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -266,19 +266,20 @@ public class OrganizationFeatures  implements Serializable {
       return false;
     }
     OrganizationFeatures organizationFeatures = (OrganizationFeatures) o;
+
     return Objects.equals(this.realtimeCIC, organizationFeatures.realtimeCIC) &&
-        Objects.equals(this.purecloud, organizationFeatures.purecloud) &&
-        Objects.equals(this.hipaa, organizationFeatures.hipaa) &&
-        Objects.equals(this.ucEnabled, organizationFeatures.ucEnabled) &&
-        Objects.equals(this.pci, organizationFeatures.pci) &&
-        Objects.equals(this.purecloudVoice, organizationFeatures.purecloudVoice) &&
-        Objects.equals(this.xmppFederation, organizationFeatures.xmppFederation) &&
-        Objects.equals(this.chat, organizationFeatures.chat) &&
-        Objects.equals(this.informalPhotos, organizationFeatures.informalPhotos) &&
-        Objects.equals(this.directory, organizationFeatures.directory) &&
-        Objects.equals(this.contactCenter, organizationFeatures.contactCenter) &&
-        Objects.equals(this.unifiedCommunications, organizationFeatures.unifiedCommunications) &&
-        Objects.equals(this.custserv, organizationFeatures.custserv);
+            Objects.equals(this.purecloud, organizationFeatures.purecloud) &&
+            Objects.equals(this.hipaa, organizationFeatures.hipaa) &&
+            Objects.equals(this.ucEnabled, organizationFeatures.ucEnabled) &&
+            Objects.equals(this.pci, organizationFeatures.pci) &&
+            Objects.equals(this.purecloudVoice, organizationFeatures.purecloudVoice) &&
+            Objects.equals(this.xmppFederation, organizationFeatures.xmppFederation) &&
+            Objects.equals(this.chat, organizationFeatures.chat) &&
+            Objects.equals(this.informalPhotos, organizationFeatures.informalPhotos) &&
+            Objects.equals(this.directory, organizationFeatures.directory) &&
+            Objects.equals(this.contactCenter, organizationFeatures.contactCenter) &&
+            Objects.equals(this.unifiedCommunications, organizationFeatures.unifiedCommunications) &&
+            Objects.equals(this.custserv, organizationFeatures.custserv);
   }
 
   @Override

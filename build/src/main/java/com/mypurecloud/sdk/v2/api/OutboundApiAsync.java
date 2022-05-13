@@ -13,66 +13,65 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Campaign;
-import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
-import com.mypurecloud.sdk.v2.model.ResponseSet;
-import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
+import com.mypurecloud.sdk.v2.model.Campaign;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
-import com.mypurecloud.sdk.v2.model.CampaignInteractions;
-import com.mypurecloud.sdk.v2.model.CampaignProgress;
-import com.mypurecloud.sdk.v2.model.CampaignStats;
-import com.mypurecloud.sdk.v2.model.CampaignRule;
-import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
-import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.ContactList;
-import com.mypurecloud.sdk.v2.model.DialerContact;
-import com.mypurecloud.sdk.v2.model.ExportUri;
-import com.mypurecloud.sdk.v2.model.ImportStatus;
-import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
-import com.mypurecloud.sdk.v2.model.ContactListFilter;
-import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.DncList;
-import com.mypurecloud.sdk.v2.model.DncListEntityListing;
-import com.mypurecloud.sdk.v2.model.DncListDivisionView;
-import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.EventLog;
-import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.RuleSet;
-import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignInteractions;
+import com.mypurecloud.sdk.v2.model.CampaignProgress;
+import com.mypurecloud.sdk.v2.model.CampaignRule;
+import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
-import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.CampaignSequence;
 import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundSettings;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
-import com.mypurecloud.sdk.v2.model.AuditSearchResult;
-import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
-import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.CampaignStats;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
-import com.mypurecloud.sdk.v2.model.WritableDialerContact;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ContactList;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
+import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
+import com.mypurecloud.sdk.v2.model.DialerContact;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
-import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.DncListDivisionView;
+import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.ExportUri;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.ResponseSet;
+import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
+import com.mypurecloud.sdk.v2.model.RuleSet;
+import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.SequenceSchedule;
+import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
+import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundAttemptlimitRequest;
@@ -202,7 +201,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class OutboundApiAsync {
   private final ApiClient pcapiClient;
 
@@ -214,7 +212,6 @@ public class OutboundApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete attempt limits
    * 
@@ -290,7 +287,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete callable time set
    * 
@@ -366,7 +362,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a dialer call analysis response set.
    * 
@@ -442,7 +437,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a campaign.
    * 
@@ -518,7 +512,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Reset campaign progress and recycle the campaign
    * 
@@ -594,7 +587,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete Campaign Rule
    * 
@@ -670,7 +662,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a contact list.
    * 
@@ -746,7 +737,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a contact.
    * 
@@ -822,7 +812,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete contacts from a contact list.
    * 
@@ -898,7 +887,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete Contact List Filter
    * 
@@ -974,7 +962,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete multiple contact lists.
    * 
@@ -1050,7 +1037,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete dialer DNC list
    * 
@@ -1126,7 +1112,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete an Outbound Messaging Campaign
    * 
@@ -1202,7 +1187,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Reset messaging campaign progress and recycle the messaging campaign
    * 
@@ -1278,7 +1262,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a Rule Set.
    * 
@@ -1354,7 +1337,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a dialer campaign schedule.
    * 
@@ -1430,7 +1412,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete an email campaign schedule.
    * 
@@ -1506,7 +1487,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a messaging campaign schedule.
    * 
@@ -1582,7 +1562,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a dialer sequence schedule.
    * 
@@ -1658,7 +1637,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Delete a dialer campaign sequence.
    * 
@@ -1734,7 +1712,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get attempt limits
    * 
@@ -1810,7 +1787,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query attempt limits list
    * 
@@ -1886,7 +1862,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get callable time set
    * 
@@ -1962,7 +1937,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query callable time set list
    * 
@@ -2038,7 +2012,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a dialer call analysis response set.
    * 
@@ -2114,7 +2087,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of dialer call analysis response sets.
    * 
@@ -2190,7 +2162,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get dialer campaign.
    * 
@@ -2266,9 +2237,8 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
-   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Get a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2302,7 +2272,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Get a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2342,7 +2312,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get campaign diagnostics
    * 
@@ -2418,7 +2387,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get dialer campaign interactions.
    * 
@@ -2494,7 +2462,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get campaign progress
    * 
@@ -2570,7 +2537,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get statistics about a Dialer Campaign
    * 
@@ -2646,7 +2612,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get Campaign Rule
    * 
@@ -2722,7 +2687,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query Campaign Rule list
    * 
@@ -2798,7 +2762,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of dialer campaigns.
    * 
@@ -2874,7 +2837,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query across all types of campaigns by division
    * 
@@ -2950,7 +2912,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query across all types of campaigns
    * 
@@ -3026,7 +2987,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a basic Campaign information object
    * This returns a simplified version of a Campaign, consisting of name and division.
@@ -3102,7 +3062,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of basic Campaign information objects
    * This returns a simplified version of a Campaign, consisting of name and division.
@@ -3178,7 +3137,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a dialer contact list.
    * 
@@ -3254,7 +3212,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a contact.
    * 
@@ -3330,7 +3287,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get the URI of a contact list export.
    * 
@@ -3406,7 +3362,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get dialer contactList import status.
    * 
@@ -3482,7 +3437,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Preview the result of applying Automatic Time Zone Mapping to a contact list
    * 
@@ -3558,7 +3512,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get Contact list filter
    * 
@@ -3634,7 +3587,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query Contact list filters
    * 
@@ -3710,7 +3662,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of contact lists.
    * 
@@ -3786,7 +3737,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a basic ContactList information object
    * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
@@ -3862,7 +3812,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of simplified contact list objects.
    * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
@@ -3938,7 +3887,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get dialer DNC list
    * 
@@ -4014,7 +3962,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get the URI of a DNC list export.
    * 
@@ -4090,7 +4037,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get dialer dncList import status.
    * 
@@ -4166,7 +4112,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query dialer DNC lists
    * 
@@ -4242,7 +4187,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a basic DncList information object
    * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
@@ -4318,7 +4262,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of simplified dnc list objects.
    * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
@@ -4394,7 +4337,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get Dialer Event
    * 
@@ -4470,7 +4412,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query Event Logs
    * 
@@ -4546,7 +4487,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get an Outbound Messaging Campaign
    * 
@@ -4622,9 +4562,8 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
-   * Get messaging campaign&#39;s progress
+   * Get messaging campaign's progress
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4658,7 +4597,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Get messaging campaign&#39;s progress
+   * Get messaging campaign's progress
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4698,7 +4637,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of Messaging Campaigns
    * 
@@ -4774,7 +4712,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a basic Messaging Campaign information object
    * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
@@ -4850,7 +4787,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of basic Messaging Campaign information objects
    * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
@@ -4926,7 +4862,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a Rule Set by ID.
    * 
@@ -5002,7 +4937,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of Rule Sets.
    * 
@@ -5078,7 +5012,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a dialer campaign schedule.
    * 
@@ -5154,7 +5087,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query for a list of dialer campaign schedules.
    * 
@@ -5230,7 +5162,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get an email campaign schedule.
    * 
@@ -5306,7 +5237,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query for a list of email campaign schedules.
    * 
@@ -5382,7 +5312,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a messaging campaign schedule.
    * 
@@ -5458,7 +5387,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query for a list of messaging campaign schedules.
    * 
@@ -5534,7 +5462,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a dialer sequence schedule.
    * 
@@ -5610,7 +5537,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query for a list of dialer sequence schedules.
    * 
@@ -5686,7 +5612,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a dialer campaign sequence.
    * 
@@ -5762,7 +5687,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Query a list of dialer campaign sequences.
    * 
@@ -5838,7 +5762,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get the outbound settings for this organization
    * 
@@ -5914,7 +5837,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get the Dialer wrap up code mapping.
    * 
@@ -5990,7 +5912,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update the outbound settings for this organization
    * 
@@ -6066,7 +5987,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create attempt limits
    * 
@@ -6142,7 +6062,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Retrieves audits for dialer.
    * 
@@ -6218,7 +6137,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create callable time set
    * 
@@ -6294,7 +6212,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create a dialer call analysis response set.
    * 
@@ -6370,9 +6287,8 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
-   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6406,7 +6322,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6446,10 +6362,9 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
-   * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+   * This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6483,7 +6398,7 @@ public class OutboundApiAsync {
 
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
-   * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+   * This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6522,7 +6437,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create Campaign Rule
    * 
@@ -6598,7 +6512,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create a campaign.
    * 
@@ -6674,7 +6587,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get progress for a list of campaigns
    * 
@@ -6750,7 +6662,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
    * 
@@ -6826,7 +6737,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Add contacts to a contact list.
    * 
@@ -6902,7 +6812,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get contacts from a contact list.
    * 
@@ -6978,7 +6887,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
@@ -7054,7 +6962,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create Contact List Filter
    * 
@@ -7130,7 +7037,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get a preview of the output of a contact list filter
    * 
@@ -7206,7 +7112,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create a contact List.
    * 
@@ -7282,7 +7187,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Add phone numbers to a Dialer DNC list.
    * 
@@ -7358,7 +7262,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
@@ -7434,7 +7337,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Add phone numbers to a DNC list.
    * Only Internal DNC lists may be appended to
@@ -7510,7 +7412,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create dialer DNC list
    * 
@@ -7586,7 +7487,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create a Messaging Campaign
    * 
@@ -7662,7 +7562,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Get progress for a list of messaging campaigns
    * 
@@ -7738,7 +7637,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create a Rule Set.
    * 
@@ -7814,7 +7712,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Create a new campaign sequence.
    * 
@@ -7890,7 +7787,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update attempt limits
    * 
@@ -7966,7 +7862,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update callable time set
    * 
@@ -8042,7 +7937,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a dialer call analysis response set.
    * 
@@ -8118,7 +8012,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a campaign.
    * 
@@ -8194,9 +8087,8 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
-   * Send notification that an agent&#39;s state changed 
+   * Send notification that an agent's state changed 
    * New agent state.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8230,7 +8122,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Send notification that an agent&#39;s state changed 
+   * Send notification that an agent's state changed 
    * New agent state.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8270,7 +8162,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update Campaign Rule
    * 
@@ -8346,7 +8237,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a contact list.
    * 
@@ -8422,7 +8312,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a contact.
    * 
@@ -8498,7 +8387,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update Contact List Filter
    * 
@@ -8574,7 +8462,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update dialer DNC list
    * 
@@ -8650,7 +8537,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update an Outbound Messaging Campaign
    * 
@@ -8726,7 +8612,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a Rule Set.
    * 
@@ -8802,7 +8687,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a new campaign schedule.
    * 
@@ -8878,7 +8762,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update an email campaign schedule.
    * 
@@ -8954,7 +8837,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a new messaging campaign schedule.
    * 
@@ -9030,7 +8912,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a new sequence schedule.
    * 
@@ -9106,7 +8987,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update a new campaign sequence.
    * 
@@ -9182,7 +9062,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
   /**
    * Update the Dialer wrap up code mapping.
    * 
@@ -9258,7 +9137,6 @@ public class OutboundApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

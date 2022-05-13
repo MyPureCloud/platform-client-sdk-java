@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Actions;
@@ -45,7 +46,7 @@ public class Ring  implements Serializable {
     this.expansionCriteria = expansionCriteria;
   }
 
-  
+
   /**
    * The actions that will be performed just before moving conversations to the next bullseye ring.
    **/
@@ -63,7 +64,6 @@ public class Ring  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class Ring  implements Serializable {
       return false;
     }
     Ring ring = (Ring) o;
+
     return Objects.equals(this.expansionCriteria, ring.expansionCriteria) &&
-        Objects.equals(this.actions, ring.actions);
+            Objects.equals(this.actions, ring.actions);
   }
 
   @Override

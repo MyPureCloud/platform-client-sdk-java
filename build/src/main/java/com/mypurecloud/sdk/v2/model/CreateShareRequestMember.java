@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class CreateShareRequestMember  implements Serializable {
     this.memberType = memberType;
   }
 
-  
+
   /**
    **/
   public CreateShareRequestMember member(MemberEntity member) {
@@ -107,7 +108,6 @@ public class CreateShareRequestMember  implements Serializable {
     this.member = member;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class CreateShareRequestMember  implements Serializable {
       return false;
     }
     CreateShareRequestMember createShareRequestMember = (CreateShareRequestMember) o;
+
     return Objects.equals(this.memberType, createShareRequestMember.memberType) &&
-        Objects.equals(this.member, createShareRequestMember.member);
+            Objects.equals(this.member, createShareRequestMember.member);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -175,7 +176,7 @@ public class Screenshare  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -193,7 +194,7 @@ public class Screenshare  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -211,7 +212,7 @@ public class Screenshare  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * Indicates whether this participant is sharing their screen.
    **/
@@ -229,7 +230,7 @@ public class Screenshare  implements Serializable {
     this.sharing = sharing;
   }
 
-  
+
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
@@ -247,7 +248,7 @@ public class Screenshare  implements Serializable {
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -265,7 +266,7 @@ public class Screenshare  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -283,7 +284,7 @@ public class Screenshare  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -301,7 +302,7 @@ public class Screenshare  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -319,7 +320,7 @@ public class Screenshare  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The source provider for the screen share.
    **/
@@ -337,7 +338,7 @@ public class Screenshare  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -355,7 +356,7 @@ public class Screenshare  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The time line of the participant's call, divided into activity segments.
    **/
@@ -373,7 +374,7 @@ public class Screenshare  implements Serializable {
     this.segments = segments;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -391,7 +392,7 @@ public class Screenshare  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -409,7 +410,7 @@ public class Screenshare  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -427,7 +428,6 @@ public class Screenshare  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -438,21 +438,22 @@ public class Screenshare  implements Serializable {
       return false;
     }
     Screenshare screenshare = (Screenshare) o;
+
     return Objects.equals(this.state, screenshare.state) &&
-        Objects.equals(this.id, screenshare.id) &&
-        Objects.equals(this.context, screenshare.context) &&
-        Objects.equals(this.sharing, screenshare.sharing) &&
-        Objects.equals(this.peerCount, screenshare.peerCount) &&
-        Objects.equals(this.disconnectType, screenshare.disconnectType) &&
-        Objects.equals(this.startAlertingTime, screenshare.startAlertingTime) &&
-        Objects.equals(this.connectedTime, screenshare.connectedTime) &&
-        Objects.equals(this.disconnectedTime, screenshare.disconnectedTime) &&
-        Objects.equals(this.provider, screenshare.provider) &&
-        Objects.equals(this.peerId, screenshare.peerId) &&
-        Objects.equals(this.segments, screenshare.segments) &&
-        Objects.equals(this.wrapup, screenshare.wrapup) &&
-        Objects.equals(this.afterCallWork, screenshare.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, screenshare.afterCallWorkRequired);
+            Objects.equals(this.id, screenshare.id) &&
+            Objects.equals(this.context, screenshare.context) &&
+            Objects.equals(this.sharing, screenshare.sharing) &&
+            Objects.equals(this.peerCount, screenshare.peerCount) &&
+            Objects.equals(this.disconnectType, screenshare.disconnectType) &&
+            Objects.equals(this.startAlertingTime, screenshare.startAlertingTime) &&
+            Objects.equals(this.connectedTime, screenshare.connectedTime) &&
+            Objects.equals(this.disconnectedTime, screenshare.disconnectedTime) &&
+            Objects.equals(this.provider, screenshare.provider) &&
+            Objects.equals(this.peerId, screenshare.peerId) &&
+            Objects.equals(this.segments, screenshare.segments) &&
+            Objects.equals(this.wrapup, screenshare.wrapup) &&
+            Objects.equals(this.afterCallWork, screenshare.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, screenshare.afterCallWorkRequired);
   }
 
   @Override

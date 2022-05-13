@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -132,7 +133,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Name of the service to query audits for.
    **/
@@ -150,7 +151,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    * Additional filters for the query.
    **/
@@ -168,7 +169,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    * Sort parameter for the query.
    **/
@@ -186,7 +187,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    * Page number
    **/
@@ -204,7 +205,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Page size
    **/
@@ -222,7 +223,6 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,12 +233,13 @@ public class AuditRealtimeQueryRequest  implements Serializable {
       return false;
     }
     AuditRealtimeQueryRequest auditRealtimeQueryRequest = (AuditRealtimeQueryRequest) o;
+
     return Objects.equals(this.interval, auditRealtimeQueryRequest.interval) &&
-        Objects.equals(this.serviceName, auditRealtimeQueryRequest.serviceName) &&
-        Objects.equals(this.filters, auditRealtimeQueryRequest.filters) &&
-        Objects.equals(this.sort, auditRealtimeQueryRequest.sort) &&
-        Objects.equals(this.pageNumber, auditRealtimeQueryRequest.pageNumber) &&
-        Objects.equals(this.pageSize, auditRealtimeQueryRequest.pageSize);
+            Objects.equals(this.serviceName, auditRealtimeQueryRequest.serviceName) &&
+            Objects.equals(this.filters, auditRealtimeQueryRequest.filters) &&
+            Objects.equals(this.sort, auditRealtimeQueryRequest.sort) &&
+            Objects.equals(this.pageNumber, auditRealtimeQueryRequest.pageNumber) &&
+            Objects.equals(this.pageSize, auditRealtimeQueryRequest.pageSize);
   }
 
   @Override

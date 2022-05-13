@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class IdentityNow  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public IdentityNow name(String name) {
@@ -58,7 +59,7 @@ public class IdentityNow  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public IdentityNow disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class IdentityNow  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public IdentityNow issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class IdentityNow  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public IdentityNow ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class IdentityNow  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public IdentityNow sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class IdentityNow  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public IdentityNow sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class IdentityNow  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public IdentityNow relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class IdentityNow  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public IdentityNow certificate(String certificate) {
@@ -177,7 +178,7 @@ public class IdentityNow  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public IdentityNow certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class IdentityNow  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class IdentityNow  implements Serializable {
       return false;
     }
     IdentityNow identityNow = (IdentityNow) o;
+
     return Objects.equals(this.id, identityNow.id) &&
-        Objects.equals(this.name, identityNow.name) &&
-        Objects.equals(this.disabled, identityNow.disabled) &&
-        Objects.equals(this.issuerURI, identityNow.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, identityNow.ssoTargetURI) &&
-        Objects.equals(this.sloURI, identityNow.sloURI) &&
-        Objects.equals(this.sloBinding, identityNow.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, identityNow.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, identityNow.certificate) &&
-        Objects.equals(this.certificates, identityNow.certificates) &&
-        Objects.equals(this.selfUri, identityNow.selfUri);
+            Objects.equals(this.name, identityNow.name) &&
+            Objects.equals(this.disabled, identityNow.disabled) &&
+            Objects.equals(this.issuerURI, identityNow.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, identityNow.ssoTargetURI) &&
+            Objects.equals(this.sloURI, identityNow.sloURI) &&
+            Objects.equals(this.sloBinding, identityNow.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, identityNow.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, identityNow.certificate) &&
+            Objects.equals(this.certificates, identityNow.certificates) &&
+            Objects.equals(this.selfUri, identityNow.selfUri);
   }
 
   @Override

@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.SipSearchResult;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
-import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
+import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
+import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 public class PostTelephonySiptracesDownloadRequest {
-    
+
 	private SIPSearchPublicRequest sIPSearchPublicRequest;
 	public SIPSearchPublicRequest getSIPSearchPublicRequest() {
 		return this.sIPSearchPublicRequest;
@@ -42,7 +42,7 @@ public class PostTelephonySiptracesDownloadRequest {
 	    this.setSIPSearchPublicRequest(sIPSearchPublicRequest);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,8 +72,8 @@ public class PostTelephonySiptracesDownloadRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/siptraces/download")
                 .withBody(sIPSearchPublicRequest)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class PostTelephonySiptracesDownloadRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(SIPSearchPublicRequest sIPSearchPublicRequest) {
 	    return new Builder()
 	            .withRequiredParams(sIPSearchPublicRequest);
 	}
-	
+
 
 	public static class Builder {
 		private final PostTelephonySiptracesDownloadRequest request;
@@ -98,20 +98,20 @@ public class PostTelephonySiptracesDownloadRequest {
 			request = new PostTelephonySiptracesDownloadRequest();
 		}
 
-		
+
 		public Builder withSIPSearchPublicRequest(SIPSearchPublicRequest sIPSearchPublicRequest) {
 			request.setSIPSearchPublicRequest(sIPSearchPublicRequest);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(SIPSearchPublicRequest sIPSearchPublicRequest) {
 			request.setSIPSearchPublicRequest(sIPSearchPublicRequest);
-			
+
 			return this;
 		}
-		
+
 
 		public PostTelephonySiptracesDownloadRequest build() {
             

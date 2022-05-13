@@ -26,9 +26,9 @@ title: Note
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CONTACT | &quot;contact&quot; |
-| ORGANIZATION | &quot;organization&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CONTACT | &quot;contact&quot; | 
+| ORGANIZATION | &quot;organization&quot; | 
 {: class="table table-striped"}
 
 

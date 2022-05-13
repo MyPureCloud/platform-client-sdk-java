@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -208,7 +209,7 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * The forecasting method that was used for this metric
    **/
@@ -226,7 +227,7 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     this.forecastingMethod = forecastingMethod;
   }
 
-  
+
   /**
    * The forecasting type in this forecast result
    **/
@@ -244,7 +245,6 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     this.forecastType = forecastType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -255,9 +255,10 @@ public class BuForecastTimeSeriesResult  implements Serializable {
       return false;
     }
     BuForecastTimeSeriesResult buForecastTimeSeriesResult = (BuForecastTimeSeriesResult) o;
+
     return Objects.equals(this.metric, buForecastTimeSeriesResult.metric) &&
-        Objects.equals(this.forecastingMethod, buForecastTimeSeriesResult.forecastingMethod) &&
-        Objects.equals(this.forecastType, buForecastTimeSeriesResult.forecastType);
+            Objects.equals(this.forecastingMethod, buForecastTimeSeriesResult.forecastingMethod) &&
+            Objects.equals(this.forecastType, buForecastTimeSeriesResult.forecastType);
   }
 
   @Override

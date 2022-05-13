@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class CampaignSequence  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CampaignSequence name(String name) {
@@ -109,21 +110,21 @@ public class CampaignSequence  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -141,7 +142,7 @@ public class CampaignSequence  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The ordered list of Campaigns that this CampaignSequence will run.
    **/
@@ -159,14 +160,14 @@ public class CampaignSequence  implements Serializable {
     this.campaigns = campaigns;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "A zero-based index indicating which Campaign this CampaignSequence is currently on.")
   @JsonProperty("currentCampaign")
   public Integer getCurrentCampaign() {
     return currentCampaign;
   }
 
-  
+
   /**
    * The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
    **/
@@ -184,14 +185,14 @@ public class CampaignSequence  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A message indicating if and why a CampaignSequence has stopped unexpectedly.")
   @JsonProperty("stopMessage")
   public String getStopMessage() {
     return stopMessage;
   }
 
-  
+
   /**
    * Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.
    **/
@@ -209,14 +210,13 @@ public class CampaignSequence  implements Serializable {
     this.repeat = repeat;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,17 +227,18 @@ public class CampaignSequence  implements Serializable {
       return false;
     }
     CampaignSequence campaignSequence = (CampaignSequence) o;
+
     return Objects.equals(this.id, campaignSequence.id) &&
-        Objects.equals(this.name, campaignSequence.name) &&
-        Objects.equals(this.dateCreated, campaignSequence.dateCreated) &&
-        Objects.equals(this.dateModified, campaignSequence.dateModified) &&
-        Objects.equals(this.version, campaignSequence.version) &&
-        Objects.equals(this.campaigns, campaignSequence.campaigns) &&
-        Objects.equals(this.currentCampaign, campaignSequence.currentCampaign) &&
-        Objects.equals(this.status, campaignSequence.status) &&
-        Objects.equals(this.stopMessage, campaignSequence.stopMessage) &&
-        Objects.equals(this.repeat, campaignSequence.repeat) &&
-        Objects.equals(this.selfUri, campaignSequence.selfUri);
+            Objects.equals(this.name, campaignSequence.name) &&
+            Objects.equals(this.dateCreated, campaignSequence.dateCreated) &&
+            Objects.equals(this.dateModified, campaignSequence.dateModified) &&
+            Objects.equals(this.version, campaignSequence.version) &&
+            Objects.equals(this.campaigns, campaignSequence.campaigns) &&
+            Objects.equals(this.currentCampaign, campaignSequence.currentCampaign) &&
+            Objects.equals(this.status, campaignSequence.status) &&
+            Objects.equals(this.stopMessage, campaignSequence.stopMessage) &&
+            Objects.equals(this.repeat, campaignSequence.repeat) &&
+            Objects.equals(this.selfUri, campaignSequence.selfUri);
   }
 
   @Override

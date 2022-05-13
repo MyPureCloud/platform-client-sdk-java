@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
 
-
-
 Wraps POST /api/v2/knowledge/documentuploads  
 
 Requires ALL permissions: 
@@ -87,8 +85,6 @@ try {
 
 Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
 
-
-
 Wraps POST /api/v2/languageunderstanding/miners/{minerId}/uploads  
 
 Requires ALL permissions: 
@@ -118,7 +114,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UploadsApi apiInstance = new UploadsApi();
 String minerId = "minerId_example"; // String | Miner ID
-Empty body = new Empty(); // Empty | query
+Object body = null; // Object | query
 try {
     UploadUrlResponse result = apiInstance.postLanguageunderstandingMinerUploads(minerId, body);
     System.out.println(result);
@@ -134,7 +130,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **minerId** | **String**| Miner ID | 
-| **body** | [**Empty**](Empty.html)| query | 
+| **body** | **Object**| query | 
 {: class="table-striped"}
 
 
@@ -151,8 +147,6 @@ try {
 > [UploadUrlResponse](UploadUrlResponse.html) postUploadsPublicassetsImages(body)
 
 Creates presigned url for uploading a public asset image
-
-
 
 Wraps POST /api/v2/uploads/publicassets/images  
 
@@ -215,8 +209,6 @@ try {
 
 Creates presigned url for uploading a recording file
 
-
-
 Wraps POST /api/v2/uploads/recordings  
 
 Requires ALL permissions: 
@@ -277,8 +269,6 @@ try {
 > [UploadUrlResponse](UploadUrlResponse.html) postUploadsWorkforcemanagementHistoricaldataCsv(body)
 
 Creates presigned url for uploading WFM historical data file. Requires data in csv format.
-
-
 
 Wraps POST /api/v2/uploads/workforcemanagement/historicaldata/csv  
 

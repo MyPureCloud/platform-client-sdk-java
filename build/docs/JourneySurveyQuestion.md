@@ -22,12 +22,12 @@ title: JourneySurveyQuestion
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXT | &quot;text&quot; |
-| HIDDEN | &quot;hidden&quot; |
-| SELECT | &quot;select&quot; |
-| CHECKBOX | &quot;checkbox&quot; |
-| TEXTAREA | &quot;textarea&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXT | &quot;text&quot; | 
+| HIDDEN | &quot;hidden&quot; | 
+| SELECT | &quot;select&quot; | 
+| CHECKBOX | &quot;checkbox&quot; | 
+| TEXTAREA | &quot;textarea&quot; | 
 {: class="table table-striped"}
 
 
@@ -37,13 +37,13 @@ title: JourneySurveyQuestion
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GIVENNAME | &quot;givenName&quot; |
-| FAMILYNAME | &quot;familyName&quot; |
-| EMAIL | &quot;email&quot; |
-| PHONE | &quot;phone&quot; |
-| GENDER | &quot;gender&quot; |
-| COMPANYNAME | &quot;companyName&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GIVENNAME | &quot;givenName&quot; | 
+| FAMILYNAME | &quot;familyName&quot; | 
+| EMAIL | &quot;email&quot; | 
+| PHONE | &quot;phone&quot; | 
+| GENDER | &quot;gender&quot; | 
+| COMPANYNAME | &quot;companyName&quot; | 
 {: class="table table-striped"}
 
 

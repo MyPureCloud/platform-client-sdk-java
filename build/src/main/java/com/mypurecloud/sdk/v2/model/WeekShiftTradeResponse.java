@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchReviewResponse;
@@ -43,7 +44,7 @@ public class WeekShiftTradeResponse  implements Serializable {
     this.trade = trade;
   }
 
-  
+
   /**
    * A preview of what the schedule would look like if the shift trade is approved plus any violations
    **/
@@ -61,7 +62,6 @@ public class WeekShiftTradeResponse  implements Serializable {
     this.matchReview = matchReview;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class WeekShiftTradeResponse  implements Serializable {
       return false;
     }
     WeekShiftTradeResponse weekShiftTradeResponse = (WeekShiftTradeResponse) o;
+
     return Objects.equals(this.trade, weekShiftTradeResponse.trade) &&
-        Objects.equals(this.matchReview, weekShiftTradeResponse.matchReview);
+            Objects.equals(this.matchReview, weekShiftTradeResponse.matchReview);
   }
 
   @Override

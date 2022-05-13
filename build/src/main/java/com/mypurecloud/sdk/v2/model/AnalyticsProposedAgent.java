@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class AnalyticsProposedAgent  implements Serializable {
     this.agentRank = agentRank;
   }
 
-  
+
   /**
    * Unique identifier for the agent that was proposed by predictive routing
    **/
@@ -59,7 +60,6 @@ public class AnalyticsProposedAgent  implements Serializable {
     this.proposedAgentId = proposedAgentId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class AnalyticsProposedAgent  implements Serializable {
       return false;
     }
     AnalyticsProposedAgent analyticsProposedAgent = (AnalyticsProposedAgent) o;
+
     return Objects.equals(this.agentRank, analyticsProposedAgent.agentRank) &&
-        Objects.equals(this.proposedAgentId, analyticsProposedAgent.proposedAgentId);
+            Objects.equals(this.proposedAgentId, analyticsProposedAgent.proposedAgentId);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CampaignRuleEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
       return false;
     }
     CampaignRuleEntityListing campaignRuleEntityListing = (CampaignRuleEntityListing) o;
+
     return Objects.equals(this.entities, campaignRuleEntityListing.entities) &&
-        Objects.equals(this.pageSize, campaignRuleEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, campaignRuleEntityListing.pageNumber) &&
-        Objects.equals(this.total, campaignRuleEntityListing.total) &&
-        Objects.equals(this.lastUri, campaignRuleEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, campaignRuleEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, campaignRuleEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, campaignRuleEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, campaignRuleEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, campaignRuleEntityListing.pageCount);
+            Objects.equals(this.pageSize, campaignRuleEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, campaignRuleEntityListing.pageNumber) &&
+            Objects.equals(this.total, campaignRuleEntityListing.total) &&
+            Objects.equals(this.lastUri, campaignRuleEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, campaignRuleEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, campaignRuleEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, campaignRuleEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, campaignRuleEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, campaignRuleEntityListing.pageCount);
   }
 
   @Override

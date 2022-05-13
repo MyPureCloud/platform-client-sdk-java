@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
     this.cpuId = cpuId;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricProcessor idleTimePct(Integer idleTimePct) {
@@ -60,7 +61,7 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
     this.idleTimePct = idleTimePct;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricProcessor activeTimePct(Integer activeTimePct) {
@@ -77,7 +78,7 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
     this.activeTimePct = activeTimePct;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricProcessor privilegedTimePct(Integer privilegedTimePct) {
@@ -94,7 +95,7 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
     this.privilegedTimePct = privilegedTimePct;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricProcessor userTimePct(Integer userTimePct) {
@@ -111,7 +112,6 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
     this.userTimePct = userTimePct;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,11 +122,12 @@ public class EdgeMetricsTopicEdgeMetricProcessor  implements Serializable {
       return false;
     }
     EdgeMetricsTopicEdgeMetricProcessor edgeMetricsTopicEdgeMetricProcessor = (EdgeMetricsTopicEdgeMetricProcessor) o;
+
     return Objects.equals(this.cpuId, edgeMetricsTopicEdgeMetricProcessor.cpuId) &&
-        Objects.equals(this.idleTimePct, edgeMetricsTopicEdgeMetricProcessor.idleTimePct) &&
-        Objects.equals(this.activeTimePct, edgeMetricsTopicEdgeMetricProcessor.activeTimePct) &&
-        Objects.equals(this.privilegedTimePct, edgeMetricsTopicEdgeMetricProcessor.privilegedTimePct) &&
-        Objects.equals(this.userTimePct, edgeMetricsTopicEdgeMetricProcessor.userTimePct);
+            Objects.equals(this.idleTimePct, edgeMetricsTopicEdgeMetricProcessor.idleTimePct) &&
+            Objects.equals(this.activeTimePct, edgeMetricsTopicEdgeMetricProcessor.activeTimePct) &&
+            Objects.equals(this.privilegedTimePct, edgeMetricsTopicEdgeMetricProcessor.privilegedTimePct) &&
+            Objects.equals(this.userTimePct, edgeMetricsTopicEdgeMetricProcessor.userTimePct);
   }
 
   @Override

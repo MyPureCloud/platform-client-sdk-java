@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     this.attachmentId = attachmentId;
   }
 
-  
+
   /**
    * The name of the attachment.
    **/
@@ -62,7 +63,7 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     this.name = name;
   }
 
-  
+
   /**
    * The content uri of the attachment. If set, this is commonly a public api download location.
    **/
@@ -80,7 +81,7 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     this.contentUri = contentUri;
   }
 
-  
+
   /**
    * The type of file the attachment is.
    **/
@@ -98,7 +99,7 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     this.contentType = contentType;
   }
 
-  
+
   /**
    * The length of the attachment file.
    **/
@@ -116,7 +117,6 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
     this.contentLength = contentLength;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class QueueConversationEmailEventTopicAttachment  implements Serializable
       return false;
     }
     QueueConversationEmailEventTopicAttachment queueConversationEmailEventTopicAttachment = (QueueConversationEmailEventTopicAttachment) o;
+
     return Objects.equals(this.attachmentId, queueConversationEmailEventTopicAttachment.attachmentId) &&
-        Objects.equals(this.name, queueConversationEmailEventTopicAttachment.name) &&
-        Objects.equals(this.contentUri, queueConversationEmailEventTopicAttachment.contentUri) &&
-        Objects.equals(this.contentType, queueConversationEmailEventTopicAttachment.contentType) &&
-        Objects.equals(this.contentLength, queueConversationEmailEventTopicAttachment.contentLength);
+            Objects.equals(this.name, queueConversationEmailEventTopicAttachment.name) &&
+            Objects.equals(this.contentUri, queueConversationEmailEventTopicAttachment.contentUri) &&
+            Objects.equals(this.contentType, queueConversationEmailEventTopicAttachment.contentType) &&
+            Objects.equals(this.contentLength, queueConversationEmailEventTopicAttachment.contentLength);
   }
 
   @Override

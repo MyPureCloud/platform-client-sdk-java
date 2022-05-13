@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -349,70 +349,70 @@ public class InteractionStatsAlert  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "Name of the rule that generated the alert")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The dimension of concern.")
   @JsonProperty("dimension")
   public DimensionEnum getDimension() {
     return dimension;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The value of the dimension.")
   @JsonProperty("dimensionValue")
   public String getDimensionValue() {
     return dimensionValue;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The metric to be assessed.")
   @JsonProperty("metric")
   public MetricEnum getMetric() {
     return metric;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The media type.")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The comparison descriptor used against the metric's value.")
   @JsonProperty("numericRange")
   public NumericRangeEnum getNumericRange() {
     return numericRange;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The statistic of concern for the metric.")
   @JsonProperty("statistic")
   public StatisticEnum getStatistic() {
     return statistic;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The threshold value.")
   @JsonProperty("value")
   public Double getValue() {
     return value;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The id of the rule.")
   @JsonProperty("ruleId")
   public String getRuleId() {
     return ruleId;
   }
 
-  
+
   /**
    * Indicates if the alert has been read.
    **/
@@ -430,35 +430,35 @@ public class InteractionStatsAlert  implements Serializable {
     this.unread = unread;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The ids of users who were notified of alarm state change.")
   @JsonProperty("notificationUsers")
   public List<User> getNotificationUsers() {
     return notificationUsers;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "A collection of notification methods.")
   @JsonProperty("alertTypes")
   public List<AlertTypesEnum> getAlertTypes() {
     return alertTypes;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlert ruleUri(String ruleUri) {
@@ -475,14 +475,13 @@ public class InteractionStatsAlert  implements Serializable {
     this.ruleUri = ruleUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -493,23 +492,24 @@ public class InteractionStatsAlert  implements Serializable {
       return false;
     }
     InteractionStatsAlert interactionStatsAlert = (InteractionStatsAlert) o;
+
     return Objects.equals(this.id, interactionStatsAlert.id) &&
-        Objects.equals(this.name, interactionStatsAlert.name) &&
-        Objects.equals(this.dimension, interactionStatsAlert.dimension) &&
-        Objects.equals(this.dimensionValue, interactionStatsAlert.dimensionValue) &&
-        Objects.equals(this.metric, interactionStatsAlert.metric) &&
-        Objects.equals(this.mediaType, interactionStatsAlert.mediaType) &&
-        Objects.equals(this.numericRange, interactionStatsAlert.numericRange) &&
-        Objects.equals(this.statistic, interactionStatsAlert.statistic) &&
-        Objects.equals(this.value, interactionStatsAlert.value) &&
-        Objects.equals(this.ruleId, interactionStatsAlert.ruleId) &&
-        Objects.equals(this.unread, interactionStatsAlert.unread) &&
-        Objects.equals(this.startDate, interactionStatsAlert.startDate) &&
-        Objects.equals(this.endDate, interactionStatsAlert.endDate) &&
-        Objects.equals(this.notificationUsers, interactionStatsAlert.notificationUsers) &&
-        Objects.equals(this.alertTypes, interactionStatsAlert.alertTypes) &&
-        Objects.equals(this.ruleUri, interactionStatsAlert.ruleUri) &&
-        Objects.equals(this.selfUri, interactionStatsAlert.selfUri);
+            Objects.equals(this.name, interactionStatsAlert.name) &&
+            Objects.equals(this.dimension, interactionStatsAlert.dimension) &&
+            Objects.equals(this.dimensionValue, interactionStatsAlert.dimensionValue) &&
+            Objects.equals(this.metric, interactionStatsAlert.metric) &&
+            Objects.equals(this.mediaType, interactionStatsAlert.mediaType) &&
+            Objects.equals(this.numericRange, interactionStatsAlert.numericRange) &&
+            Objects.equals(this.statistic, interactionStatsAlert.statistic) &&
+            Objects.equals(this.value, interactionStatsAlert.value) &&
+            Objects.equals(this.ruleId, interactionStatsAlert.ruleId) &&
+            Objects.equals(this.unread, interactionStatsAlert.unread) &&
+            Objects.equals(this.startDate, interactionStatsAlert.startDate) &&
+            Objects.equals(this.endDate, interactionStatsAlert.endDate) &&
+            Objects.equals(this.notificationUsers, interactionStatsAlert.notificationUsers) &&
+            Objects.equals(this.alertTypes, interactionStatsAlert.alertTypes) &&
+            Objects.equals(this.ruleUri, interactionStatsAlert.ruleUri) &&
+            Objects.equals(this.selfUri, interactionStatsAlert.selfUri);
   }
 
   @Override

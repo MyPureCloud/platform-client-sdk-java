@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ImportScriptStatusResponse  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    **/
   public ImportScriptStatusResponse succeeded(Boolean succeeded) {
@@ -58,7 +59,7 @@ public class ImportScriptStatusResponse  implements Serializable {
     this.succeeded = succeeded;
   }
 
-  
+
   /**
    **/
   public ImportScriptStatusResponse message(String message) {
@@ -75,7 +76,6 @@ public class ImportScriptStatusResponse  implements Serializable {
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class ImportScriptStatusResponse  implements Serializable {
       return false;
     }
     ImportScriptStatusResponse importScriptStatusResponse = (ImportScriptStatusResponse) o;
+
     return Objects.equals(this.url, importScriptStatusResponse.url) &&
-        Objects.equals(this.succeeded, importScriptStatusResponse.succeeded) &&
-        Objects.equals(this.message, importScriptStatusResponse.message);
+            Objects.equals(this.succeeded, importScriptStatusResponse.succeeded) &&
+            Objects.equals(this.message, importScriptStatusResponse.message);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -138,7 +139,7 @@ public class DurationCondition  implements Serializable {
     this.durationTarget = durationTarget;
   }
 
-  
+
   /**
    **/
   public DurationCondition durationOperator(String durationOperator) {
@@ -155,7 +156,7 @@ public class DurationCondition  implements Serializable {
     this.durationOperator = durationOperator;
   }
 
-  
+
   /**
    **/
   public DurationCondition durationRange(String durationRange) {
@@ -172,7 +173,7 @@ public class DurationCondition  implements Serializable {
     this.durationRange = durationRange;
   }
 
-  
+
   /**
    **/
   public DurationCondition durationMode(DurationModeEnum durationMode) {
@@ -189,7 +190,6 @@ public class DurationCondition  implements Serializable {
     this.durationMode = durationMode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -200,10 +200,11 @@ public class DurationCondition  implements Serializable {
       return false;
     }
     DurationCondition durationCondition = (DurationCondition) o;
+
     return Objects.equals(this.durationTarget, durationCondition.durationTarget) &&
-        Objects.equals(this.durationOperator, durationCondition.durationOperator) &&
-        Objects.equals(this.durationRange, durationCondition.durationRange) &&
-        Objects.equals(this.durationMode, durationCondition.durationMode);
+            Objects.equals(this.durationOperator, durationCondition.durationOperator) &&
+            Objects.equals(this.durationRange, durationCondition.durationRange) &&
+            Objects.equals(this.durationMode, durationCondition.durationMode);
   }
 
   @Override

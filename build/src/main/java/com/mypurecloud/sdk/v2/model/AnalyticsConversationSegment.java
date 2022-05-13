@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -195,7 +196,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.audioMuted = audioMuted;
   }
 
-  
+
   /**
    * Indicates whether the segment was a conference
    **/
@@ -213,7 +214,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.conference = conference;
   }
 
-  
+
   /**
    * The unique identifier of a new conversation when a conversation is ended for a conference
    **/
@@ -231,7 +232,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.destinationConversationId = destinationConversationId;
   }
 
-  
+
   /**
    * The unique identifier of a new session when a session is ended for a conference
    **/
@@ -249,7 +250,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.destinationSessionId = destinationSessionId;
   }
 
-  
+
   /**
    * The session disconnect type
    **/
@@ -267,7 +268,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * A code corresponding to the error that occurred
    **/
@@ -285,7 +286,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    * Unique identifier for a PureCloud group
    **/
@@ -303,7 +304,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.groupId = groupId;
   }
 
-  
+
   /**
    * Q.850 response code(s)
    **/
@@ -321,7 +322,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.q850ResponseCodes = q850ResponseCodes;
   }
 
-  
+
   /**
    * Queue identifier
    **/
@@ -339,7 +340,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * Unique identifier for the language requested for an interaction
    **/
@@ -357,7 +358,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.requestedLanguageId = requestedLanguageId;
   }
 
-  
+
   /**
    * Unique identifier(s) for skill(s) requested for an interaction
    **/
@@ -375,7 +376,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.requestedRoutingSkillIds = requestedRoutingSkillIds;
   }
 
-  
+
   /**
    * Unique identifier(s) for agent(s) requested for an interaction
    **/
@@ -393,7 +394,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.requestedRoutingUserIds = requestedRoutingUserIds;
   }
 
-  
+
   /**
    * The end time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -411,7 +412,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.segmentEnd = segmentEnd;
   }
 
-  
+
   /**
    * The start time of a segment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -429,7 +430,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.segmentStart = segmentStart;
   }
 
-  
+
   /**
    * The activity that takes place in the segment, such as hold or interact
    **/
@@ -447,7 +448,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.segmentType = segmentType;
   }
 
-  
+
   /**
    * SIP response code(s)
    **/
@@ -465,7 +466,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.sipResponseCodes = sipResponseCodes;
   }
 
-  
+
   /**
    * The unique identifier of the previous conversation when a new conversation is created for a conference
    **/
@@ -483,7 +484,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.sourceConversationId = sourceConversationId;
   }
 
-  
+
   /**
    * The unique identifier of the previous session when a new session is created for a conference
    **/
@@ -501,7 +502,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.sourceSessionId = sourceSessionId;
   }
 
-  
+
   /**
    * The subject for the initial email that started this conversation
    **/
@@ -519,7 +520,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    * Flag indicating if video is muted/paused or not (true/false)
    **/
@@ -537,7 +538,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.videoMuted = videoMuted;
   }
 
-  
+
   /**
    * Wrap up code
    **/
@@ -555,7 +556,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.wrapUpCode = wrapUpCode;
   }
 
-  
+
   /**
    * Note entered by an agent during after-call work
    **/
@@ -573,7 +574,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.wrapUpNote = wrapUpNote;
   }
 
-  
+
   /**
    * Tag(s) assigned during after-call work
    **/
@@ -591,7 +592,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.wrapUpTags = wrapUpTags;
   }
 
-  
+
   /**
    * Scored agents
    **/
@@ -609,7 +610,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.scoredAgents = scoredAgents;
   }
 
-  
+
   /**
    * Additional segment properties
    **/
@@ -627,7 +628,6 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.properties = properties;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -638,31 +638,32 @@ public class AnalyticsConversationSegment  implements Serializable {
       return false;
     }
     AnalyticsConversationSegment analyticsConversationSegment = (AnalyticsConversationSegment) o;
+
     return Objects.equals(this.audioMuted, analyticsConversationSegment.audioMuted) &&
-        Objects.equals(this.conference, analyticsConversationSegment.conference) &&
-        Objects.equals(this.destinationConversationId, analyticsConversationSegment.destinationConversationId) &&
-        Objects.equals(this.destinationSessionId, analyticsConversationSegment.destinationSessionId) &&
-        Objects.equals(this.disconnectType, analyticsConversationSegment.disconnectType) &&
-        Objects.equals(this.errorCode, analyticsConversationSegment.errorCode) &&
-        Objects.equals(this.groupId, analyticsConversationSegment.groupId) &&
-        Objects.equals(this.q850ResponseCodes, analyticsConversationSegment.q850ResponseCodes) &&
-        Objects.equals(this.queueId, analyticsConversationSegment.queueId) &&
-        Objects.equals(this.requestedLanguageId, analyticsConversationSegment.requestedLanguageId) &&
-        Objects.equals(this.requestedRoutingSkillIds, analyticsConversationSegment.requestedRoutingSkillIds) &&
-        Objects.equals(this.requestedRoutingUserIds, analyticsConversationSegment.requestedRoutingUserIds) &&
-        Objects.equals(this.segmentEnd, analyticsConversationSegment.segmentEnd) &&
-        Objects.equals(this.segmentStart, analyticsConversationSegment.segmentStart) &&
-        Objects.equals(this.segmentType, analyticsConversationSegment.segmentType) &&
-        Objects.equals(this.sipResponseCodes, analyticsConversationSegment.sipResponseCodes) &&
-        Objects.equals(this.sourceConversationId, analyticsConversationSegment.sourceConversationId) &&
-        Objects.equals(this.sourceSessionId, analyticsConversationSegment.sourceSessionId) &&
-        Objects.equals(this.subject, analyticsConversationSegment.subject) &&
-        Objects.equals(this.videoMuted, analyticsConversationSegment.videoMuted) &&
-        Objects.equals(this.wrapUpCode, analyticsConversationSegment.wrapUpCode) &&
-        Objects.equals(this.wrapUpNote, analyticsConversationSegment.wrapUpNote) &&
-        Objects.equals(this.wrapUpTags, analyticsConversationSegment.wrapUpTags) &&
-        Objects.equals(this.scoredAgents, analyticsConversationSegment.scoredAgents) &&
-        Objects.equals(this.properties, analyticsConversationSegment.properties);
+            Objects.equals(this.conference, analyticsConversationSegment.conference) &&
+            Objects.equals(this.destinationConversationId, analyticsConversationSegment.destinationConversationId) &&
+            Objects.equals(this.destinationSessionId, analyticsConversationSegment.destinationSessionId) &&
+            Objects.equals(this.disconnectType, analyticsConversationSegment.disconnectType) &&
+            Objects.equals(this.errorCode, analyticsConversationSegment.errorCode) &&
+            Objects.equals(this.groupId, analyticsConversationSegment.groupId) &&
+            Objects.equals(this.q850ResponseCodes, analyticsConversationSegment.q850ResponseCodes) &&
+            Objects.equals(this.queueId, analyticsConversationSegment.queueId) &&
+            Objects.equals(this.requestedLanguageId, analyticsConversationSegment.requestedLanguageId) &&
+            Objects.equals(this.requestedRoutingSkillIds, analyticsConversationSegment.requestedRoutingSkillIds) &&
+            Objects.equals(this.requestedRoutingUserIds, analyticsConversationSegment.requestedRoutingUserIds) &&
+            Objects.equals(this.segmentEnd, analyticsConversationSegment.segmentEnd) &&
+            Objects.equals(this.segmentStart, analyticsConversationSegment.segmentStart) &&
+            Objects.equals(this.segmentType, analyticsConversationSegment.segmentType) &&
+            Objects.equals(this.sipResponseCodes, analyticsConversationSegment.sipResponseCodes) &&
+            Objects.equals(this.sourceConversationId, analyticsConversationSegment.sourceConversationId) &&
+            Objects.equals(this.sourceSessionId, analyticsConversationSegment.sourceSessionId) &&
+            Objects.equals(this.subject, analyticsConversationSegment.subject) &&
+            Objects.equals(this.videoMuted, analyticsConversationSegment.videoMuted) &&
+            Objects.equals(this.wrapUpCode, analyticsConversationSegment.wrapUpCode) &&
+            Objects.equals(this.wrapUpNote, analyticsConversationSegment.wrapUpNote) &&
+            Objects.equals(this.wrapUpTags, analyticsConversationSegment.wrapUpTags) &&
+            Objects.equals(this.scoredAgents, analyticsConversationSegment.scoredAgents) &&
+            Objects.equals(this.properties, analyticsConversationSegment.properties);
   }
 
   @Override

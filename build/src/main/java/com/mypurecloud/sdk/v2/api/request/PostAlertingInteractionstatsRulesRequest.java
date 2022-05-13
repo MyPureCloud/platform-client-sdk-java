@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PostAlertingInteractionstatsRulesRequest {
-    
+
 	private InteractionStatsRule body;
 	public InteractionStatsRule getBody() {
 		return this.body;
@@ -44,7 +44,7 @@ public class PostAlertingInteractionstatsRulesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -87,7 +87,7 @@ public class PostAlertingInteractionstatsRulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -116,11 +116,12 @@ public class PostAlertingInteractionstatsRulesRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/alerting/interactionstats/rules")
+
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -131,12 +132,12 @@ public class PostAlertingInteractionstatsRulesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(InteractionStatsRule body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAlertingInteractionstatsRulesRequest request;
@@ -145,16 +146,18 @@ public class PostAlertingInteractionstatsRulesRequest {
 			request = new PostAlertingInteractionstatsRulesRequest();
 		}
 
-		
+
 		public Builder withBody(InteractionStatsRule body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -164,15 +167,15 @@ public class PostAlertingInteractionstatsRulesRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(InteractionStatsRule body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostAlertingInteractionstatsRulesRequest build() {
             

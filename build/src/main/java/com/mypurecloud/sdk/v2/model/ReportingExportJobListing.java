@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing total(Long total) {
@@ -103,7 +104,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ReportingExportJobListing  implements Serializable, PagedResource<R
       return false;
     }
     ReportingExportJobListing reportingExportJobListing = (ReportingExportJobListing) o;
+
     return Objects.equals(this.entities, reportingExportJobListing.entities) &&
-        Objects.equals(this.pageSize, reportingExportJobListing.pageSize) &&
-        Objects.equals(this.pageNumber, reportingExportJobListing.pageNumber) &&
-        Objects.equals(this.total, reportingExportJobListing.total) &&
-        Objects.equals(this.lastUri, reportingExportJobListing.lastUri) &&
-        Objects.equals(this.firstUri, reportingExportJobListing.firstUri) &&
-        Objects.equals(this.selfUri, reportingExportJobListing.selfUri) &&
-        Objects.equals(this.previousUri, reportingExportJobListing.previousUri) &&
-        Objects.equals(this.nextUri, reportingExportJobListing.nextUri) &&
-        Objects.equals(this.pageCount, reportingExportJobListing.pageCount);
+            Objects.equals(this.pageSize, reportingExportJobListing.pageSize) &&
+            Objects.equals(this.pageNumber, reportingExportJobListing.pageNumber) &&
+            Objects.equals(this.total, reportingExportJobListing.total) &&
+            Objects.equals(this.lastUri, reportingExportJobListing.lastUri) &&
+            Objects.equals(this.firstUri, reportingExportJobListing.firstUri) &&
+            Objects.equals(this.selfUri, reportingExportJobListing.selfUri) &&
+            Objects.equals(this.previousUri, reportingExportJobListing.previousUri) &&
+            Objects.equals(this.nextUri, reportingExportJobListing.nextUri) &&
+            Objects.equals(this.pageCount, reportingExportJobListing.pageCount);
   }
 
   @Override

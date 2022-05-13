@@ -8,10 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -21,6 +23,7 @@ import java.io.Serializable;
 public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
   
   private String id = null;
+  private Date weekDate = null;
 
   
   /**
@@ -39,7 +42,23 @@ public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
     this.id = id;
   }
 
+
+  /**
+   **/
+  public WfmBuScheduleRunTopicBuScheduleReference weekDate(Date weekDate) {
+    this.weekDate = weekDate;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("weekDate")
+  public Date getWeekDate() {
+    return weekDate;
+  }
+  public void setWeekDate(Date weekDate) {
+    this.weekDate = weekDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -50,12 +69,14 @@ public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
       return false;
     }
     WfmBuScheduleRunTopicBuScheduleReference wfmBuScheduleRunTopicBuScheduleReference = (WfmBuScheduleRunTopicBuScheduleReference) o;
-    return Objects.equals(this.id, wfmBuScheduleRunTopicBuScheduleReference.id);
+
+    return Objects.equals(this.id, wfmBuScheduleRunTopicBuScheduleReference.id) &&
+            Objects.equals(this.weekDate, wfmBuScheduleRunTopicBuScheduleReference.weekDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(id, weekDate);
   }
 
   @Override
@@ -64,6 +85,7 @@ public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
     sb.append("class WfmBuScheduleRunTopicBuScheduleReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

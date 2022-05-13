@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -205,7 +206,7 @@ public class MessageData  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public MessageData name(String name) {
@@ -222,7 +223,7 @@ public class MessageData  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The unique identifier of the message from provider
    **/
@@ -240,7 +241,7 @@ public class MessageData  implements Serializable {
     this.providerMessageId = providerMessageId;
   }
 
-  
+
   /**
    * The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -258,7 +259,7 @@ public class MessageData  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   /**
    * The sender of the text message.
    **/
@@ -276,7 +277,7 @@ public class MessageData  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The recipient of the text message.
    **/
@@ -294,7 +295,7 @@ public class MessageData  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * The direction of the message.
    **/
@@ -312,7 +313,7 @@ public class MessageData  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Type of text messenger.
    **/
@@ -330,7 +331,7 @@ public class MessageData  implements Serializable {
     this.messengerType = messengerType;
   }
 
-  
+
   /**
    * The body of the text message.
    **/
@@ -348,7 +349,7 @@ public class MessageData  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The status of the message.
    **/
@@ -366,7 +367,7 @@ public class MessageData  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The media details associated to a message.
    **/
@@ -384,7 +385,7 @@ public class MessageData  implements Serializable {
     this.media = media;
   }
 
-  
+
   /**
    * The sticker details associated to a message.
    **/
@@ -402,21 +403,21 @@ public class MessageData  implements Serializable {
     this.stickers = stickers;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The message into normalized format")
   @JsonProperty("normalizedMessage")
   public ConversationNormalizedMessage getNormalizedMessage() {
     return normalizedMessage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The delivery event associated with this message in normalized format, if the message direction was outbound")
   @JsonProperty("normalizedReceipts")
   public List<ConversationNormalizedMessage> getNormalizedReceipts() {
     return normalizedReceipts;
   }
 
-  
+
   /**
    * User who sent this message.
    **/
@@ -434,7 +435,7 @@ public class MessageData  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * The id of the conversation of this message.
    **/
@@ -452,14 +453,13 @@ public class MessageData  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -470,23 +470,24 @@ public class MessageData  implements Serializable {
       return false;
     }
     MessageData messageData = (MessageData) o;
+
     return Objects.equals(this.id, messageData.id) &&
-        Objects.equals(this.name, messageData.name) &&
-        Objects.equals(this.providerMessageId, messageData.providerMessageId) &&
-        Objects.equals(this.timestamp, messageData.timestamp) &&
-        Objects.equals(this.fromAddress, messageData.fromAddress) &&
-        Objects.equals(this.toAddress, messageData.toAddress) &&
-        Objects.equals(this.direction, messageData.direction) &&
-        Objects.equals(this.messengerType, messageData.messengerType) &&
-        Objects.equals(this.textBody, messageData.textBody) &&
-        Objects.equals(this.status, messageData.status) &&
-        Objects.equals(this.media, messageData.media) &&
-        Objects.equals(this.stickers, messageData.stickers) &&
-        Objects.equals(this.normalizedMessage, messageData.normalizedMessage) &&
-        Objects.equals(this.normalizedReceipts, messageData.normalizedReceipts) &&
-        Objects.equals(this.createdBy, messageData.createdBy) &&
-        Objects.equals(this.conversationId, messageData.conversationId) &&
-        Objects.equals(this.selfUri, messageData.selfUri);
+            Objects.equals(this.name, messageData.name) &&
+            Objects.equals(this.providerMessageId, messageData.providerMessageId) &&
+            Objects.equals(this.timestamp, messageData.timestamp) &&
+            Objects.equals(this.fromAddress, messageData.fromAddress) &&
+            Objects.equals(this.toAddress, messageData.toAddress) &&
+            Objects.equals(this.direction, messageData.direction) &&
+            Objects.equals(this.messengerType, messageData.messengerType) &&
+            Objects.equals(this.textBody, messageData.textBody) &&
+            Objects.equals(this.status, messageData.status) &&
+            Objects.equals(this.media, messageData.media) &&
+            Objects.equals(this.stickers, messageData.stickers) &&
+            Objects.equals(this.normalizedMessage, messageData.normalizedMessage) &&
+            Objects.equals(this.normalizedReceipts, messageData.normalizedReceipts) &&
+            Objects.equals(this.createdBy, messageData.createdBy) &&
+            Objects.equals(this.conversationId, messageData.conversationId) &&
+            Objects.equals(this.selfUri, messageData.selfUri);
   }
 
   @Override

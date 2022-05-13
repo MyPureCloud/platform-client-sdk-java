@@ -22,13 +22,13 @@ title: ConversationMetrics
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NOTCALCULATED | &quot;NotCalculated&quot; |
-| DECLINING | &quot;Declining&quot; |
-| SLIGHTLYDECLINING | &quot;SlightlyDeclining&quot; |
-| NOCHANGE | &quot;NoChange&quot; |
-| SLIGHTLYIMPROVING | &quot;SlightlyImproving&quot; |
-| IMPROVING | &quot;Improving&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NOTCALCULATED | &quot;NotCalculated&quot; | 
+| DECLINING | &quot;Declining&quot; | 
+| SLIGHTLYDECLINING | &quot;SlightlyDeclining&quot; | 
+| NOCHANGE | &quot;NoChange&quot; | 
+| SLIGHTLYIMPROVING | &quot;SlightlyImproving&quot; | 
+| IMPROVING | &quot;Improving&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -196,7 +197,7 @@ public class Flow  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The flow name
    **/
@@ -214,7 +215,7 @@ public class Flow  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -232,7 +233,7 @@ public class Flow  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public Flow description(String description) {
@@ -249,7 +250,7 @@ public class Flow  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public Flow type(TypeEnum type) {
@@ -266,7 +267,7 @@ public class Flow  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * User that has the flow locked.
    **/
@@ -284,7 +285,7 @@ public class Flow  implements Serializable {
     this.lockedUser = lockedUser;
   }
 
-  
+
   /**
    * OAuth client that has the flow locked.
    **/
@@ -302,7 +303,7 @@ public class Flow  implements Serializable {
     this.lockedClient = lockedClient;
   }
 
-  
+
   /**
    **/
   public Flow active(Boolean active) {
@@ -319,7 +320,7 @@ public class Flow  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    **/
   public Flow system(Boolean system) {
@@ -336,7 +337,7 @@ public class Flow  implements Serializable {
     this.system = system;
   }
 
-  
+
   /**
    **/
   public Flow deleted(Boolean deleted) {
@@ -353,7 +354,7 @@ public class Flow  implements Serializable {
     this.deleted = deleted;
   }
 
-  
+
   /**
    **/
   public Flow publishedVersion(FlowVersion publishedVersion) {
@@ -370,7 +371,7 @@ public class Flow  implements Serializable {
     this.publishedVersion = publishedVersion;
   }
 
-  
+
   /**
    **/
   public Flow savedVersion(FlowVersion savedVersion) {
@@ -387,7 +388,7 @@ public class Flow  implements Serializable {
     this.savedVersion = savedVersion;
   }
 
-  
+
   /**
    * json schema describing the inputs for the flow
    **/
@@ -405,7 +406,7 @@ public class Flow  implements Serializable {
     this.inputSchema = inputSchema;
   }
 
-  
+
   /**
    * json schema describing the outputs for the flow
    **/
@@ -423,7 +424,7 @@ public class Flow  implements Serializable {
     this.outputSchema = outputSchema;
   }
 
-  
+
   /**
    **/
   public Flow checkedInVersion(FlowVersion checkedInVersion) {
@@ -440,7 +441,7 @@ public class Flow  implements Serializable {
     this.checkedInVersion = checkedInVersion;
   }
 
-  
+
   /**
    **/
   public Flow debugVersion(FlowVersion debugVersion) {
@@ -457,7 +458,7 @@ public class Flow  implements Serializable {
     this.debugVersion = debugVersion;
   }
 
-  
+
   /**
    **/
   public Flow publishedBy(User publishedBy) {
@@ -474,7 +475,7 @@ public class Flow  implements Serializable {
     this.publishedBy = publishedBy;
   }
 
-  
+
   /**
    **/
   public Flow currentOperation(Operation currentOperation) {
@@ -491,35 +492,34 @@ public class Flow  implements Serializable {
     this.currentOperation = currentOperation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information about the natural language understanding configuration for the published version of the flow")
   @JsonProperty("nluInfo")
   public NluInfo getNluInfo() {
     return nluInfo;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of supported languages for the published version of the flow.")
   @JsonProperty("supportedLanguages")
   public List<SupportedLanguage> getSupportedLanguages() {
     return supportedLanguages;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.")
   @JsonProperty("compatibleFlowTypes")
   public List<CompatibleFlowTypesEnum> getCompatibleFlowTypes() {
     return compatibleFlowTypes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -530,28 +530,29 @@ public class Flow  implements Serializable {
       return false;
     }
     Flow flow = (Flow) o;
+
     return Objects.equals(this.id, flow.id) &&
-        Objects.equals(this.name, flow.name) &&
-        Objects.equals(this.division, flow.division) &&
-        Objects.equals(this.description, flow.description) &&
-        Objects.equals(this.type, flow.type) &&
-        Objects.equals(this.lockedUser, flow.lockedUser) &&
-        Objects.equals(this.lockedClient, flow.lockedClient) &&
-        Objects.equals(this.active, flow.active) &&
-        Objects.equals(this.system, flow.system) &&
-        Objects.equals(this.deleted, flow.deleted) &&
-        Objects.equals(this.publishedVersion, flow.publishedVersion) &&
-        Objects.equals(this.savedVersion, flow.savedVersion) &&
-        Objects.equals(this.inputSchema, flow.inputSchema) &&
-        Objects.equals(this.outputSchema, flow.outputSchema) &&
-        Objects.equals(this.checkedInVersion, flow.checkedInVersion) &&
-        Objects.equals(this.debugVersion, flow.debugVersion) &&
-        Objects.equals(this.publishedBy, flow.publishedBy) &&
-        Objects.equals(this.currentOperation, flow.currentOperation) &&
-        Objects.equals(this.nluInfo, flow.nluInfo) &&
-        Objects.equals(this.supportedLanguages, flow.supportedLanguages) &&
-        Objects.equals(this.compatibleFlowTypes, flow.compatibleFlowTypes) &&
-        Objects.equals(this.selfUri, flow.selfUri);
+            Objects.equals(this.name, flow.name) &&
+            Objects.equals(this.division, flow.division) &&
+            Objects.equals(this.description, flow.description) &&
+            Objects.equals(this.type, flow.type) &&
+            Objects.equals(this.lockedUser, flow.lockedUser) &&
+            Objects.equals(this.lockedClient, flow.lockedClient) &&
+            Objects.equals(this.active, flow.active) &&
+            Objects.equals(this.system, flow.system) &&
+            Objects.equals(this.deleted, flow.deleted) &&
+            Objects.equals(this.publishedVersion, flow.publishedVersion) &&
+            Objects.equals(this.savedVersion, flow.savedVersion) &&
+            Objects.equals(this.inputSchema, flow.inputSchema) &&
+            Objects.equals(this.outputSchema, flow.outputSchema) &&
+            Objects.equals(this.checkedInVersion, flow.checkedInVersion) &&
+            Objects.equals(this.debugVersion, flow.debugVersion) &&
+            Objects.equals(this.publishedBy, flow.publishedBy) &&
+            Objects.equals(this.currentOperation, flow.currentOperation) &&
+            Objects.equals(this.nluInfo, flow.nluInfo) &&
+            Objects.equals(this.supportedLanguages, flow.supportedLanguages) &&
+            Objects.equals(this.compatibleFlowTypes, flow.compatibleFlowTypes) &&
+            Objects.equals(this.selfUri, flow.selfUri);
   }
 
   @Override

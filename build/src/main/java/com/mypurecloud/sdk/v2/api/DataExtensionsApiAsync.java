@@ -13,9 +13,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 
 
@@ -30,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class DataExtensionsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -42,7 +41,6 @@ public class DataExtensionsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get a specific named core type.
    * 
@@ -118,7 +116,6 @@ public class DataExtensionsApiAsync {
     }
   }
 
-  
   /**
    * Get the core types from which all schemas are built.
    * 
@@ -194,7 +191,6 @@ public class DataExtensionsApiAsync {
     }
   }
 
-  
   /**
    * Get quantitative limits on schemas
    * 
@@ -270,7 +266,6 @@ public class DataExtensionsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

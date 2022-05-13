@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -82,35 +83,34 @@ public class KpiResult  implements Serializable {
     return kpiTotalOn;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)")
   @JsonProperty("kpiTotalOff")
   public Long getKpiTotalOff() {
     return kpiTotalOff;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total interactions handled by predictive routing (GPR was on)")
   @JsonProperty("interactionCountOn")
   public Long getInteractionCountOn() {
     return interactionCountOn;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total interactions not routed by predictive routing (GPR was off)")
   @JsonProperty("interactionCountOff")
   public Long getInteractionCountOff() {
     return interactionCountOff;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Media type used for the KPI")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,11 +121,12 @@ public class KpiResult  implements Serializable {
       return false;
     }
     KpiResult kpiResult = (KpiResult) o;
+
     return Objects.equals(this.kpiTotalOn, kpiResult.kpiTotalOn) &&
-        Objects.equals(this.kpiTotalOff, kpiResult.kpiTotalOff) &&
-        Objects.equals(this.interactionCountOn, kpiResult.interactionCountOn) &&
-        Objects.equals(this.interactionCountOff, kpiResult.interactionCountOff) &&
-        Objects.equals(this.mediaType, kpiResult.mediaType);
+            Objects.equals(this.kpiTotalOff, kpiResult.kpiTotalOff) &&
+            Objects.equals(this.interactionCountOn, kpiResult.interactionCountOn) &&
+            Objects.equals(this.interactionCountOff, kpiResult.interactionCountOff) &&
+            Objects.equals(this.mediaType, kpiResult.mediaType);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ColumnStatus;
@@ -45,7 +46,7 @@ public class ContactableStatus  implements Serializable {
     this.contactable = contactable;
   }
 
-  
+
   /**
    * A map of individual contact method columns to whether the individual column is contactable for the associated media type.
    **/
@@ -63,7 +64,6 @@ public class ContactableStatus  implements Serializable {
     this.columnStatus = columnStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class ContactableStatus  implements Serializable {
       return false;
     }
     ContactableStatus contactableStatus = (ContactableStatus) o;
+
     return Objects.equals(this.contactable, contactableStatus.contactable) &&
-        Objects.equals(this.columnStatus, contactableStatus.columnStatus);
+            Objects.equals(this.columnStatus, contactableStatus.columnStatus);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class BuShortTermForecastReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The weekDate of the short term forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -63,21 +64,20 @@ public class BuShortTermForecastReference  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The description of the short term forecast")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,10 +88,11 @@ public class BuShortTermForecastReference  implements Serializable {
       return false;
     }
     BuShortTermForecastReference buShortTermForecastReference = (BuShortTermForecastReference) o;
+
     return Objects.equals(this.id, buShortTermForecastReference.id) &&
-        Objects.equals(this.weekDate, buShortTermForecastReference.weekDate) &&
-        Objects.equals(this.description, buShortTermForecastReference.description) &&
-        Objects.equals(this.selfUri, buShortTermForecastReference.selfUri);
+            Objects.equals(this.weekDate, buShortTermForecastReference.weekDate) &&
+            Objects.equals(this.description, buShortTermForecastReference.description) &&
+            Objects.equals(this.selfUri, buShortTermForecastReference.selfUri);
   }
 
   @Override

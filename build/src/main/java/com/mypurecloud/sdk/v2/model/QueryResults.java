@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingQueryResult;
@@ -42,7 +43,7 @@ public class QueryResults  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    **/
   public QueryResults facetInfo(QueryFacetInfo facetInfo) {
@@ -59,7 +60,6 @@ public class QueryResults  implements Serializable {
     this.facetInfo = facetInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class QueryResults  implements Serializable {
       return false;
     }
     QueryResults queryResults = (QueryResults) o;
+
     return Objects.equals(this.results, queryResults.results) &&
-        Objects.equals(this.facetInfo, queryResults.facetInfo);
+            Objects.equals(this.facetInfo, queryResults.facetInfo);
   }
 
   @Override

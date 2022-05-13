@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
@@ -39,21 +40,21 @@ public class ScimV2Group  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The display name of the group.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
   }
 
-  
+
   /**
    * The external ID of the group. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
    **/
@@ -71,7 +72,7 @@ public class ScimV2Group  implements Serializable {
     this.externalId = externalId;
   }
 
-  
+
   /**
    * The list of members in the group.
    **/
@@ -89,14 +90,13 @@ public class ScimV2Group  implements Serializable {
     this.members = members;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +107,13 @@ public class ScimV2Group  implements Serializable {
       return false;
     }
     ScimV2Group scimV2Group = (ScimV2Group) o;
+
     return Objects.equals(this.id, scimV2Group.id) &&
-        Objects.equals(this.schemas, scimV2Group.schemas) &&
-        Objects.equals(this.displayName, scimV2Group.displayName) &&
-        Objects.equals(this.externalId, scimV2Group.externalId) &&
-        Objects.equals(this.members, scimV2Group.members) &&
-        Objects.equals(this.meta, scimV2Group.meta);
+            Objects.equals(this.schemas, scimV2Group.schemas) &&
+            Objects.equals(this.displayName, scimV2Group.displayName) &&
+            Objects.equals(this.externalId, scimV2Group.externalId) &&
+            Objects.equals(this.members, scimV2Group.members) &&
+            Objects.equals(this.meta, scimV2Group.meta);
   }
 
   @Override

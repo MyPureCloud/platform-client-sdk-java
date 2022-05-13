@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditFacet;
@@ -47,7 +48,7 @@ public class DialerAuditRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-  
+
   /**
    * The fields in which to search for the queryPhrase.
    **/
@@ -65,7 +66,7 @@ public class DialerAuditRequest  implements Serializable {
     this.queryFields = queryFields;
   }
 
-  
+
   /**
    * The fields to facet on.
    **/
@@ -83,7 +84,7 @@ public class DialerAuditRequest  implements Serializable {
     this.facets = facets;
   }
 
-  
+
   /**
    * The fields to filter on.
    **/
@@ -101,7 +102,6 @@ public class DialerAuditRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class DialerAuditRequest  implements Serializable {
       return false;
     }
     DialerAuditRequest dialerAuditRequest = (DialerAuditRequest) o;
+
     return Objects.equals(this.queryPhrase, dialerAuditRequest.queryPhrase) &&
-        Objects.equals(this.queryFields, dialerAuditRequest.queryFields) &&
-        Objects.equals(this.facets, dialerAuditRequest.facets) &&
-        Objects.equals(this.filters, dialerAuditRequest.filters);
+            Objects.equals(this.queryFields, dialerAuditRequest.queryFields) &&
+            Objects.equals(this.facets, dialerAuditRequest.facets) &&
+            Objects.equals(this.filters, dialerAuditRequest.filters);
   }
 
   @Override

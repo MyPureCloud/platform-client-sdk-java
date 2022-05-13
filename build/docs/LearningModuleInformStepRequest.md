@@ -23,10 +23,10 @@ title: LearningModuleInformStepRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| URL | &quot;Url&quot; |
-| CONTENT | &quot;Content&quot; |
-| RICHTEXT | &quot;RichText&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| URL | &quot;Url&quot; | 
+| CONTENT | &quot;Content&quot; | 
+| RICHTEXT | &quot;RichText&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,22 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 public class GetOrganizationsLimitsChangerequestRequest {
-    
+
 	private String requestId;
 	public String getRequestId() {
 		return this.requestId;
@@ -49,7 +48,7 @@ public class GetOrganizationsLimitsChangerequestRequest {
 	    this.setRequestId(requestId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -80,7 +79,7 @@ public class GetOrganizationsLimitsChangerequestRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/organizations/limits/changerequests/{requestId}")
                 .withPathParameter("requestId", requestId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -91,12 +90,12 @@ public class GetOrganizationsLimitsChangerequestRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String requestId) {
 	    return new Builder()
 	            .withRequiredParams(requestId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOrganizationsLimitsChangerequestRequest request;
@@ -105,20 +104,20 @@ public class GetOrganizationsLimitsChangerequestRequest {
 			request = new GetOrganizationsLimitsChangerequestRequest();
 		}
 
-		
+
 		public Builder withRequestId(String requestId) {
 			request.setRequestId(requestId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String requestId) {
 			request.setRequestId(requestId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetOrganizationsLimitsChangerequestRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SubscriberResponse;
@@ -42,7 +43,7 @@ public class ValidateAddressResponse  implements Serializable {
     this.valid = valid;
   }
 
-  
+
   /**
    * Subscriber schema
    **/
@@ -60,7 +61,6 @@ public class ValidateAddressResponse  implements Serializable {
     this.response = response;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ValidateAddressResponse  implements Serializable {
       return false;
     }
     ValidateAddressResponse validateAddressResponse = (ValidateAddressResponse) o;
+
     return Objects.equals(this.valid, validateAddressResponse.valid) &&
-        Objects.equals(this.response, validateAddressResponse.response);
+            Objects.equals(this.response, validateAddressResponse.response);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class FaxStatus  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Total number of expected pages, if known.
    **/
@@ -65,7 +66,7 @@ public class FaxStatus  implements Serializable {
     this.expectedPages = expectedPages;
   }
 
-  
+
   /**
    * Active page of the transmission.
    **/
@@ -83,7 +84,7 @@ public class FaxStatus  implements Serializable {
     this.activePage = activePage;
   }
 
-  
+
   /**
    * Number of lines that have completed transmission.
    **/
@@ -101,7 +102,7 @@ public class FaxStatus  implements Serializable {
     this.linesTransmitted = linesTransmitted;
   }
 
-  
+
   /**
    * Number of bytes that have competed transmission.
    **/
@@ -119,7 +120,7 @@ public class FaxStatus  implements Serializable {
     this.bytesTransmitted = bytesTransmitted;
   }
 
-  
+
   /**
    * Current signaling rate of transmission, baud rate.
    **/
@@ -137,7 +138,7 @@ public class FaxStatus  implements Serializable {
     this.baudRate = baudRate;
   }
 
-  
+
   /**
    * Number of page errors.
    **/
@@ -155,7 +156,7 @@ public class FaxStatus  implements Serializable {
     this.pageErrors = pageErrors;
   }
 
-  
+
   /**
    * Number of line errors.
    **/
@@ -173,7 +174,6 @@ public class FaxStatus  implements Serializable {
     this.lineErrors = lineErrors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -184,14 +184,15 @@ public class FaxStatus  implements Serializable {
       return false;
     }
     FaxStatus faxStatus = (FaxStatus) o;
+
     return Objects.equals(this.direction, faxStatus.direction) &&
-        Objects.equals(this.expectedPages, faxStatus.expectedPages) &&
-        Objects.equals(this.activePage, faxStatus.activePage) &&
-        Objects.equals(this.linesTransmitted, faxStatus.linesTransmitted) &&
-        Objects.equals(this.bytesTransmitted, faxStatus.bytesTransmitted) &&
-        Objects.equals(this.baudRate, faxStatus.baudRate) &&
-        Objects.equals(this.pageErrors, faxStatus.pageErrors) &&
-        Objects.equals(this.lineErrors, faxStatus.lineErrors);
+            Objects.equals(this.expectedPages, faxStatus.expectedPages) &&
+            Objects.equals(this.activePage, faxStatus.activePage) &&
+            Objects.equals(this.linesTransmitted, faxStatus.linesTransmitted) &&
+            Objects.equals(this.bytesTransmitted, faxStatus.bytesTransmitted) &&
+            Objects.equals(this.baudRate, faxStatus.baudRate) &&
+            Objects.equals(this.pageErrors, faxStatus.pageErrors) &&
+            Objects.equals(this.lineErrors, faxStatus.lineErrors);
   }
 
   @Override

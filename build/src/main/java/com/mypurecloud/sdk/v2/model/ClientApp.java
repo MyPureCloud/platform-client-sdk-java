@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,28 +94,28 @@ public class ClientApp  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of the integration, used to distinguish this integration from others of the same type.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Type of the integration")
   @JsonProperty("integrationType")
   public IntegrationType getIntegrationType() {
     return integrationType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Notes about the integration.")
   @JsonProperty("notes")
   public String getNotes() {
     return notes;
   }
 
-  
+
   /**
    * Configured state of the integration.
    **/
@@ -132,35 +133,34 @@ public class ClientApp  implements Serializable {
     this.intendedState = intendedState;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Configuration information for the integration.")
   @JsonProperty("config")
   public ClientAppConfigurationInfo getConfig() {
     return config;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last reported status of the integration.")
   @JsonProperty("reportedState")
   public IntegrationStatusInfo getReportedState() {
     return reportedState;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Read-only attributes for the integration.")
   @JsonProperty("attributes")
   public Map<String, String> getAttributes() {
     return attributes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -171,15 +171,16 @@ public class ClientApp  implements Serializable {
       return false;
     }
     ClientApp clientApp = (ClientApp) o;
+
     return Objects.equals(this.id, clientApp.id) &&
-        Objects.equals(this.name, clientApp.name) &&
-        Objects.equals(this.integrationType, clientApp.integrationType) &&
-        Objects.equals(this.notes, clientApp.notes) &&
-        Objects.equals(this.intendedState, clientApp.intendedState) &&
-        Objects.equals(this.config, clientApp.config) &&
-        Objects.equals(this.reportedState, clientApp.reportedState) &&
-        Objects.equals(this.attributes, clientApp.attributes) &&
-        Objects.equals(this.selfUri, clientApp.selfUri);
+            Objects.equals(this.name, clientApp.name) &&
+            Objects.equals(this.integrationType, clientApp.integrationType) &&
+            Objects.equals(this.notes, clientApp.notes) &&
+            Objects.equals(this.intendedState, clientApp.intendedState) &&
+            Objects.equals(this.config, clientApp.config) &&
+            Objects.equals(this.reportedState, clientApp.reportedState) &&
+            Objects.equals(this.attributes, clientApp.attributes) &&
+            Objects.equals(this.selfUri, clientApp.selfUri);
   }
 
   @Override

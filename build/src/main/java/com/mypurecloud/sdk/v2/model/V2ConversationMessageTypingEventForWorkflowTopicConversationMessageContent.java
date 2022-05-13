@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -106,7 +107,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent location(V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation location) {
@@ -123,7 +124,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.location = location;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent story(V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory story) {
@@ -140,7 +141,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.story = story;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent attachment(V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment attachment) {
@@ -157,7 +158,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.attachment = attachment;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent quickReply(V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply quickReply) {
@@ -174,7 +175,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.quickReply = quickReply;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent template(V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate template) {
@@ -191,7 +192,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.template = template;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent buttonResponse(V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse buttonResponse) {
@@ -208,7 +209,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.buttonResponse = buttonResponse;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent generic(V2ConversationMessageTypingEventForWorkflowTopicConversationContentGeneric generic) {
@@ -225,7 +226,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.generic = generic;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,14 +236,15 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent = (V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent) o;
+
     return Objects.equals(this.contentType, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.contentType) &&
-        Objects.equals(this.location, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.location) &&
-        Objects.equals(this.story, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.story) &&
-        Objects.equals(this.attachment, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.attachment) &&
-        Objects.equals(this.quickReply, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.quickReply) &&
-        Objects.equals(this.template, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.template) &&
-        Objects.equals(this.buttonResponse, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.buttonResponse) &&
-        Objects.equals(this.generic, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.generic);
+            Objects.equals(this.location, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.location) &&
+            Objects.equals(this.story, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.story) &&
+            Objects.equals(this.attachment, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.attachment) &&
+            Objects.equals(this.quickReply, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.quickReply) &&
+            Objects.equals(this.template, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.template) &&
+            Objects.equals(this.buttonResponse, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.buttonResponse) &&
+            Objects.equals(this.generic, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent.generic);
   }
 
   @Override

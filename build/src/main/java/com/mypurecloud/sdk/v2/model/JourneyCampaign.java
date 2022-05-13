@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class JourneyCampaign  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * Identify a medium such as email or cost-per-click (e.g. CPC).
    **/
@@ -64,7 +65,7 @@ public class JourneyCampaign  implements Serializable {
     this.medium = medium;
   }
 
-  
+
   /**
    * Identify a specific product promotion or strategic campaign (e.g. 320banner).
    **/
@@ -82,7 +83,7 @@ public class JourneyCampaign  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Identify a search engine, newsletter name, or other source (e.g. Google).
    **/
@@ -100,7 +101,7 @@ public class JourneyCampaign  implements Serializable {
     this.source = source;
   }
 
-  
+
   /**
    * Note the keywords for this ad (e.g. running+shoes).
    **/
@@ -118,7 +119,7 @@ public class JourneyCampaign  implements Serializable {
     this.term = term;
   }
 
-  
+
   /**
    * The click ID (unique number that is generated when a potential customer clicks on an affiliate link).
    **/
@@ -136,7 +137,7 @@ public class JourneyCampaign  implements Serializable {
     this.clickId = clickId;
   }
 
-  
+
   /**
    * The ad network to which the click ID belongs.
    **/
@@ -154,7 +155,6 @@ public class JourneyCampaign  implements Serializable {
     this.network = network;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,13 +165,14 @@ public class JourneyCampaign  implements Serializable {
       return false;
     }
     JourneyCampaign journeyCampaign = (JourneyCampaign) o;
+
     return Objects.equals(this.content, journeyCampaign.content) &&
-        Objects.equals(this.medium, journeyCampaign.medium) &&
-        Objects.equals(this.name, journeyCampaign.name) &&
-        Objects.equals(this.source, journeyCampaign.source) &&
-        Objects.equals(this.term, journeyCampaign.term) &&
-        Objects.equals(this.clickId, journeyCampaign.clickId) &&
-        Objects.equals(this.network, journeyCampaign.network);
+            Objects.equals(this.medium, journeyCampaign.medium) &&
+            Objects.equals(this.name, journeyCampaign.name) &&
+            Objects.equals(this.source, journeyCampaign.source) &&
+            Objects.equals(this.term, journeyCampaign.term) &&
+            Objects.equals(this.clickId, journeyCampaign.clickId) &&
+            Objects.equals(this.network, journeyCampaign.network);
   }
 
   @Override

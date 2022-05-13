@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,14 +99,14 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The group associated with the policy")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
   }
 
-  
+
   /**
    * Whether voicemail is enabled for the group
    **/
@@ -123,7 +124,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Whether email notifications are sent to group members when a new voicemail is received
    **/
@@ -141,7 +142,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.sendEmailNotifications = sendEmailNotifications;
   }
 
-  
+
   /**
    * Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization.
    **/
@@ -159,7 +160,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.disableEmailPii = disableEmailPii;
   }
 
-  
+
   /**
    * How many seconds to ring before rotating to the next member in the group
    **/
@@ -177,7 +178,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.rotateCallsSecs = rotateCallsSecs;
   }
 
-  
+
   /**
    * How many rotations to go through
    **/
@@ -195,7 +196,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.stopRingingAfterRotations = stopRingingAfterRotations;
   }
 
-  
+
   /**
    * A fallback group to contact when all of the members in this group did not answer the call.
    **/
@@ -213,7 +214,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.overflowGroupId = overflowGroupId;
   }
 
-  
+
   /**
    * Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
    **/
@@ -231,7 +232,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.groupAlertType = groupAlertType;
   }
 
-  
+
   /**
    * The prompt to use when connecting a user to a Group Ring call
    **/
@@ -249,7 +250,6 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.interactiveResponsePromptId = interactiveResponsePromptId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,16 +260,17 @@ public class VoicemailGroupPolicy  implements Serializable {
       return false;
     }
     VoicemailGroupPolicy voicemailGroupPolicy = (VoicemailGroupPolicy) o;
+
     return Objects.equals(this.name, voicemailGroupPolicy.name) &&
-        Objects.equals(this.group, voicemailGroupPolicy.group) &&
-        Objects.equals(this.enabled, voicemailGroupPolicy.enabled) &&
-        Objects.equals(this.sendEmailNotifications, voicemailGroupPolicy.sendEmailNotifications) &&
-        Objects.equals(this.disableEmailPii, voicemailGroupPolicy.disableEmailPii) &&
-        Objects.equals(this.rotateCallsSecs, voicemailGroupPolicy.rotateCallsSecs) &&
-        Objects.equals(this.stopRingingAfterRotations, voicemailGroupPolicy.stopRingingAfterRotations) &&
-        Objects.equals(this.overflowGroupId, voicemailGroupPolicy.overflowGroupId) &&
-        Objects.equals(this.groupAlertType, voicemailGroupPolicy.groupAlertType) &&
-        Objects.equals(this.interactiveResponsePromptId, voicemailGroupPolicy.interactiveResponsePromptId);
+            Objects.equals(this.group, voicemailGroupPolicy.group) &&
+            Objects.equals(this.enabled, voicemailGroupPolicy.enabled) &&
+            Objects.equals(this.sendEmailNotifications, voicemailGroupPolicy.sendEmailNotifications) &&
+            Objects.equals(this.disableEmailPii, voicemailGroupPolicy.disableEmailPii) &&
+            Objects.equals(this.rotateCallsSecs, voicemailGroupPolicy.rotateCallsSecs) &&
+            Objects.equals(this.stopRingingAfterRotations, voicemailGroupPolicy.stopRingingAfterRotations) &&
+            Objects.equals(this.overflowGroupId, voicemailGroupPolicy.overflowGroupId) &&
+            Objects.equals(this.groupAlertType, voicemailGroupPolicy.groupAlertType) &&
+            Objects.equals(this.interactiveResponsePromptId, voicemailGroupPolicy.interactiveResponsePromptId);
   }
 
   @Override

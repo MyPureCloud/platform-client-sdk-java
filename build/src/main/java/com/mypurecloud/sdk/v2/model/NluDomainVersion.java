@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,14 +151,14 @@ public class NluDomainVersion  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The NLU domain of the version.")
   @JsonProperty("domain")
   public NluDomain getDomain() {
     return domain;
   }
 
-  
+
   /**
    * The description of the NLU domain version.
    **/
@@ -175,7 +176,7 @@ public class NluDomainVersion  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The language that the NLU domain version supports.
    **/
@@ -193,56 +194,56 @@ public class NluDomainVersion  implements Serializable {
     this.language = language;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether this NLU domain version has been published.")
   @JsonProperty("published")
   public Boolean getPublished() {
     return published;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the NLU domain version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the NLU domain version was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the NLU domain version was trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateTrained")
   public Date getDateTrained() {
     return dateTrained;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the NLU domain version was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("datePublished")
   public Date getDatePublished() {
     return datePublished;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The training status of the NLU domain version.")
   @JsonProperty("trainingStatus")
   public TrainingStatusEnum getTrainingStatus() {
     return trainingStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The evaluation status of the NLU domain version.")
   @JsonProperty("evaluationStatus")
   public EvaluationStatusEnum getEvaluationStatus() {
     return evaluationStatus;
   }
 
-  
+
   /**
    * The intents defined for this NLU domain version.
    **/
@@ -260,7 +261,7 @@ public class NluDomainVersion  implements Serializable {
     this.intents = intents;
   }
 
-  
+
   /**
    * The entity types defined for this NLU domain version.
    **/
@@ -278,7 +279,7 @@ public class NluDomainVersion  implements Serializable {
     this.entityTypes = entityTypes;
   }
 
-  
+
   /**
    * The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings
    **/
@@ -296,14 +297,13 @@ public class NluDomainVersion  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -314,21 +314,22 @@ public class NluDomainVersion  implements Serializable {
       return false;
     }
     NluDomainVersion nluDomainVersion = (NluDomainVersion) o;
+
     return Objects.equals(this.id, nluDomainVersion.id) &&
-        Objects.equals(this.domain, nluDomainVersion.domain) &&
-        Objects.equals(this.description, nluDomainVersion.description) &&
-        Objects.equals(this.language, nluDomainVersion.language) &&
-        Objects.equals(this.published, nluDomainVersion.published) &&
-        Objects.equals(this.dateCreated, nluDomainVersion.dateCreated) &&
-        Objects.equals(this.dateModified, nluDomainVersion.dateModified) &&
-        Objects.equals(this.dateTrained, nluDomainVersion.dateTrained) &&
-        Objects.equals(this.datePublished, nluDomainVersion.datePublished) &&
-        Objects.equals(this.trainingStatus, nluDomainVersion.trainingStatus) &&
-        Objects.equals(this.evaluationStatus, nluDomainVersion.evaluationStatus) &&
-        Objects.equals(this.intents, nluDomainVersion.intents) &&
-        Objects.equals(this.entityTypes, nluDomainVersion.entityTypes) &&
-        Objects.equals(this.entities, nluDomainVersion.entities) &&
-        Objects.equals(this.selfUri, nluDomainVersion.selfUri);
+            Objects.equals(this.domain, nluDomainVersion.domain) &&
+            Objects.equals(this.description, nluDomainVersion.description) &&
+            Objects.equals(this.language, nluDomainVersion.language) &&
+            Objects.equals(this.published, nluDomainVersion.published) &&
+            Objects.equals(this.dateCreated, nluDomainVersion.dateCreated) &&
+            Objects.equals(this.dateModified, nluDomainVersion.dateModified) &&
+            Objects.equals(this.dateTrained, nluDomainVersion.dateTrained) &&
+            Objects.equals(this.datePublished, nluDomainVersion.datePublished) &&
+            Objects.equals(this.trainingStatus, nluDomainVersion.trainingStatus) &&
+            Objects.equals(this.evaluationStatus, nluDomainVersion.evaluationStatus) &&
+            Objects.equals(this.intents, nluDomainVersion.intents) &&
+            Objects.equals(this.entityTypes, nluDomainVersion.entityTypes) &&
+            Objects.equals(this.entities, nluDomainVersion.entities) &&
+            Objects.equals(this.selfUri, nluDomainVersion.selfUri);
   }
 
   @Override

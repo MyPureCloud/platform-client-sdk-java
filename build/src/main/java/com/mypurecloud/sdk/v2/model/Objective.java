@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class Objective  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The id of this objective's base template
    **/
@@ -161,7 +162,7 @@ public class Objective  implements Serializable {
     this.templateId = templateId;
   }
 
-  
+
   /**
    * Objective zone specifies min,max points and values for the associated metric
    **/
@@ -179,7 +180,7 @@ public class Objective  implements Serializable {
     this.zones = zones;
   }
 
-  
+
   /**
    * A flag for whether this objective is enabled for the related metric
    **/
@@ -197,7 +198,7 @@ public class Objective  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * A list of media types for the metric
    **/
@@ -215,7 +216,7 @@ public class Objective  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
-  
+
   /**
    * A list of queues for the metric
    **/
@@ -233,7 +234,7 @@ public class Objective  implements Serializable {
     this.queues = queues;
   }
 
-  
+
   /**
    * A list of topic ids for detected topic metrics
    **/
@@ -251,7 +252,7 @@ public class Objective  implements Serializable {
     this.topics = topics;
   }
 
-  
+
   /**
    * A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
    **/
@@ -269,7 +270,7 @@ public class Objective  implements Serializable {
     this.topicIdsFilterType = topicIdsFilterType;
   }
 
-  
+
   /**
    * start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -287,7 +288,6 @@ public class Objective  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -298,15 +298,16 @@ public class Objective  implements Serializable {
       return false;
     }
     Objective objective = (Objective) o;
+
     return Objects.equals(this.id, objective.id) &&
-        Objects.equals(this.templateId, objective.templateId) &&
-        Objects.equals(this.zones, objective.zones) &&
-        Objects.equals(this.enabled, objective.enabled) &&
-        Objects.equals(this.mediaTypes, objective.mediaTypes) &&
-        Objects.equals(this.queues, objective.queues) &&
-        Objects.equals(this.topics, objective.topics) &&
-        Objects.equals(this.topicIdsFilterType, objective.topicIdsFilterType) &&
-        Objects.equals(this.dateStart, objective.dateStart);
+            Objects.equals(this.templateId, objective.templateId) &&
+            Objects.equals(this.zones, objective.zones) &&
+            Objects.equals(this.enabled, objective.enabled) &&
+            Objects.equals(this.mediaTypes, objective.mediaTypes) &&
+            Objects.equals(this.queues, objective.queues) &&
+            Objects.equals(this.topics, objective.topics) &&
+            Objects.equals(this.topicIdsFilterType, objective.topicIdsFilterType) &&
+            Objects.equals(this.dateStart, objective.dateStart);
   }
 
   @Override

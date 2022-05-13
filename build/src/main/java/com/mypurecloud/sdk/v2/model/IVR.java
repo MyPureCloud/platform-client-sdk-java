@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class IVR  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -119,7 +120,7 @@ public class IVR  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -137,7 +138,7 @@ public class IVR  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -155,7 +156,7 @@ public class IVR  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -173,7 +174,7 @@ public class IVR  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -191,7 +192,7 @@ public class IVR  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -209,7 +210,7 @@ public class IVR  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -227,7 +228,7 @@ public class IVR  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -245,14 +246,14 @@ public class IVR  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -270,7 +271,7 @@ public class IVR  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -288,7 +289,7 @@ public class IVR  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The phone number(s) to contact the IVR by.  Each phone number must be unique and not in use by another resource.  For example, a user and an iVR cannot have the same phone number.
    **/
@@ -306,7 +307,7 @@ public class IVR  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * The Architect flow to execute during the hours an organization is open.
    **/
@@ -324,7 +325,7 @@ public class IVR  implements Serializable {
     this.openHoursFlow = openHoursFlow;
   }
 
-  
+
   /**
    * The Architect flow to execute during the hours an organization is closed.
    **/
@@ -342,7 +343,7 @@ public class IVR  implements Serializable {
     this.closedHoursFlow = closedHoursFlow;
   }
 
-  
+
   /**
    * The Architect flow to execute during an organization's holiday hours.
    **/
@@ -360,7 +361,7 @@ public class IVR  implements Serializable {
     this.holidayHoursFlow = holidayHoursFlow;
   }
 
-  
+
   /**
    * The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.
    **/
@@ -378,14 +379,13 @@ public class IVR  implements Serializable {
     this.scheduleGroup = scheduleGroup;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -396,24 +396,25 @@ public class IVR  implements Serializable {
       return false;
     }
     IVR IVR = (IVR) o;
+
     return Objects.equals(this.id, IVR.id) &&
-        Objects.equals(this.name, IVR.name) &&
-        Objects.equals(this.division, IVR.division) &&
-        Objects.equals(this.description, IVR.description) &&
-        Objects.equals(this.version, IVR.version) &&
-        Objects.equals(this.dateCreated, IVR.dateCreated) &&
-        Objects.equals(this.dateModified, IVR.dateModified) &&
-        Objects.equals(this.modifiedBy, IVR.modifiedBy) &&
-        Objects.equals(this.createdBy, IVR.createdBy) &&
-        Objects.equals(this.state, IVR.state) &&
-        Objects.equals(this.modifiedByApp, IVR.modifiedByApp) &&
-        Objects.equals(this.createdByApp, IVR.createdByApp) &&
-        Objects.equals(this.dnis, IVR.dnis) &&
-        Objects.equals(this.openHoursFlow, IVR.openHoursFlow) &&
-        Objects.equals(this.closedHoursFlow, IVR.closedHoursFlow) &&
-        Objects.equals(this.holidayHoursFlow, IVR.holidayHoursFlow) &&
-        Objects.equals(this.scheduleGroup, IVR.scheduleGroup) &&
-        Objects.equals(this.selfUri, IVR.selfUri);
+            Objects.equals(this.name, IVR.name) &&
+            Objects.equals(this.division, IVR.division) &&
+            Objects.equals(this.description, IVR.description) &&
+            Objects.equals(this.version, IVR.version) &&
+            Objects.equals(this.dateCreated, IVR.dateCreated) &&
+            Objects.equals(this.dateModified, IVR.dateModified) &&
+            Objects.equals(this.modifiedBy, IVR.modifiedBy) &&
+            Objects.equals(this.createdBy, IVR.createdBy) &&
+            Objects.equals(this.state, IVR.state) &&
+            Objects.equals(this.modifiedByApp, IVR.modifiedByApp) &&
+            Objects.equals(this.createdByApp, IVR.createdByApp) &&
+            Objects.equals(this.dnis, IVR.dnis) &&
+            Objects.equals(this.openHoursFlow, IVR.openHoursFlow) &&
+            Objects.equals(this.closedHoursFlow, IVR.closedHoursFlow) &&
+            Objects.equals(this.holidayHoursFlow, IVR.holidayHoursFlow) &&
+            Objects.equals(this.scheduleGroup, IVR.scheduleGroup) &&
+            Objects.equals(this.selfUri, IVR.selfUri);
   }
 
   @Override

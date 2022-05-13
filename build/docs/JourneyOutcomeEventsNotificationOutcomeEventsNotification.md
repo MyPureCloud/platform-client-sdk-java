@@ -27,9 +27,9 @@ title: JourneyOutcomeEventsNotificationOutcomeEventsNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; |
-| OUTCOMEATTRIBUTIONEVENT | &quot;OutcomeAttributionEvent&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
+| OUTCOMEATTRIBUTIONEVENT | &quot;OutcomeAttributionEvent&quot; | 
 {: class="table table-striped"}
 
 

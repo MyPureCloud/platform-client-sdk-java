@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class BuIntradayDataGroup  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Forecast data summary for this date range
    **/
@@ -120,7 +121,7 @@ public class BuIntradayDataGroup  implements Serializable {
     this.forecastDataSummary = forecastDataSummary;
   }
 
-  
+
   /**
    * Forecast data per interval for this date range
    **/
@@ -138,7 +139,7 @@ public class BuIntradayDataGroup  implements Serializable {
     this.forecastDataPerInterval = forecastDataPerInterval;
   }
 
-  
+
   /**
    * Schedule data summary for this date range
    **/
@@ -156,7 +157,7 @@ public class BuIntradayDataGroup  implements Serializable {
     this.scheduleDataSummary = scheduleDataSummary;
   }
 
-  
+
   /**
    * Schedule data per interval for this date range
    **/
@@ -174,7 +175,7 @@ public class BuIntradayDataGroup  implements Serializable {
     this.scheduleDataPerInterval = scheduleDataPerInterval;
   }
 
-  
+
   /**
    * Performance prediction data summary for this date range
    **/
@@ -192,7 +193,7 @@ public class BuIntradayDataGroup  implements Serializable {
     this.performancePredictionDataSummary = performancePredictionDataSummary;
   }
 
-  
+
   /**
    * Performance prediction data per interval for this date range
    **/
@@ -210,7 +211,6 @@ public class BuIntradayDataGroup  implements Serializable {
     this.performancePredictionDataPerInterval = performancePredictionDataPerInterval;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -221,13 +221,14 @@ public class BuIntradayDataGroup  implements Serializable {
       return false;
     }
     BuIntradayDataGroup buIntradayDataGroup = (BuIntradayDataGroup) o;
+
     return Objects.equals(this.mediaType, buIntradayDataGroup.mediaType) &&
-        Objects.equals(this.forecastDataSummary, buIntradayDataGroup.forecastDataSummary) &&
-        Objects.equals(this.forecastDataPerInterval, buIntradayDataGroup.forecastDataPerInterval) &&
-        Objects.equals(this.scheduleDataSummary, buIntradayDataGroup.scheduleDataSummary) &&
-        Objects.equals(this.scheduleDataPerInterval, buIntradayDataGroup.scheduleDataPerInterval) &&
-        Objects.equals(this.performancePredictionDataSummary, buIntradayDataGroup.performancePredictionDataSummary) &&
-        Objects.equals(this.performancePredictionDataPerInterval, buIntradayDataGroup.performancePredictionDataPerInterval);
+            Objects.equals(this.forecastDataSummary, buIntradayDataGroup.forecastDataSummary) &&
+            Objects.equals(this.forecastDataPerInterval, buIntradayDataGroup.forecastDataPerInterval) &&
+            Objects.equals(this.scheduleDataSummary, buIntradayDataGroup.scheduleDataSummary) &&
+            Objects.equals(this.scheduleDataPerInterval, buIntradayDataGroup.scheduleDataPerInterval) &&
+            Objects.equals(this.performancePredictionDataSummary, buIntradayDataGroup.performancePredictionDataSummary) &&
+            Objects.equals(this.performancePredictionDataPerInterval, buIntradayDataGroup.performancePredictionDataPerInterval);
   }
 
   @Override

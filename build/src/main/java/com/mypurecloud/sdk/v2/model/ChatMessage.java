@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -105,7 +106,7 @@ public class ChatMessage  implements Serializable {
     this.body = body;
   }
 
-  
+
   /**
    **/
   public ChatMessage id(String id) {
@@ -122,7 +123,7 @@ public class ChatMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The message recipient
    **/
@@ -140,7 +141,7 @@ public class ChatMessage  implements Serializable {
     this.to = to;
   }
 
-  
+
   /**
    * The message sender
    **/
@@ -158,7 +159,7 @@ public class ChatMessage  implements Serializable {
     this.from = from;
   }
 
-  
+
   /**
    **/
   public ChatMessage utc(String utc) {
@@ -175,7 +176,7 @@ public class ChatMessage  implements Serializable {
     this.utc = utc;
   }
 
-  
+
   /**
    * The interaction id (if available)
    **/
@@ -193,7 +194,7 @@ public class ChatMessage  implements Serializable {
     this.chat = chat;
   }
 
-  
+
   /**
    * The message id
    **/
@@ -211,7 +212,7 @@ public class ChatMessage  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ChatMessage type(String type) {
@@ -228,7 +229,7 @@ public class ChatMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Type of the message body (v2 chats only)
    **/
@@ -246,7 +247,7 @@ public class ChatMessage  implements Serializable {
     this.bodyType = bodyType;
   }
 
-  
+
   /**
    * Communication of sender (v2 chats only)
    **/
@@ -264,7 +265,7 @@ public class ChatMessage  implements Serializable {
     this.senderCommunicationId = senderCommunicationId;
   }
 
-  
+
   /**
    * Participant purpose of sender (v2 chats only)
    **/
@@ -282,7 +283,7 @@ public class ChatMessage  implements Serializable {
     this.participantPurpose = participantPurpose;
   }
 
-  
+
   /**
    * The user information for the sender (if available)
    **/
@@ -300,7 +301,6 @@ public class ChatMessage  implements Serializable {
     this.user = user;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -311,18 +311,19 @@ public class ChatMessage  implements Serializable {
       return false;
     }
     ChatMessage chatMessage = (ChatMessage) o;
+
     return Objects.equals(this.body, chatMessage.body) &&
-        Objects.equals(this.id, chatMessage.id) &&
-        Objects.equals(this.to, chatMessage.to) &&
-        Objects.equals(this.from, chatMessage.from) &&
-        Objects.equals(this.utc, chatMessage.utc) &&
-        Objects.equals(this.chat, chatMessage.chat) &&
-        Objects.equals(this.message, chatMessage.message) &&
-        Objects.equals(this.type, chatMessage.type) &&
-        Objects.equals(this.bodyType, chatMessage.bodyType) &&
-        Objects.equals(this.senderCommunicationId, chatMessage.senderCommunicationId) &&
-        Objects.equals(this.participantPurpose, chatMessage.participantPurpose) &&
-        Objects.equals(this.user, chatMessage.user);
+            Objects.equals(this.id, chatMessage.id) &&
+            Objects.equals(this.to, chatMessage.to) &&
+            Objects.equals(this.from, chatMessage.from) &&
+            Objects.equals(this.utc, chatMessage.utc) &&
+            Objects.equals(this.chat, chatMessage.chat) &&
+            Objects.equals(this.message, chatMessage.message) &&
+            Objects.equals(this.type, chatMessage.type) &&
+            Objects.equals(this.bodyType, chatMessage.bodyType) &&
+            Objects.equals(this.senderCommunicationId, chatMessage.senderCommunicationId) &&
+            Objects.equals(this.participantPurpose, chatMessage.participantPurpose) &&
+            Objects.equals(this.user, chatMessage.user);
   }
 
   @Override

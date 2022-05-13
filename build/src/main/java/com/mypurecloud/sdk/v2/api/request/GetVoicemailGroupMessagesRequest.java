@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class GetVoicemailGroupMessagesRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -47,7 +47,7 @@ public class GetVoicemailGroupMessagesRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -61,7 +61,7 @@ public class GetVoicemailGroupMessagesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -75,7 +75,7 @@ public class GetVoicemailGroupMessagesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -106,11 +106,13 @@ public class GetVoicemailGroupMessagesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/groups/{groupId}/messages")
                 .withPathParameter("groupId", groupId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -121,12 +123,12 @@ public class GetVoicemailGroupMessagesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetVoicemailGroupMessagesRequest request;
@@ -135,30 +137,30 @@ public class GetVoicemailGroupMessagesRequest {
 			request = new GetVoicemailGroupMessagesRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetVoicemailGroupMessagesRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConnectRate;
@@ -35,42 +36,41 @@ public class CampaignStats  implements Serializable {
     return contactRate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of available agents not currently being utilized")
   @JsonProperty("idleAgents")
   public Integer getIdleAgents() {
     return idleAgents;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of effective available agents not currently being utilized")
   @JsonProperty("effectiveIdleAgents")
   public Double getEffectiveIdleAgents() {
     return effectiveIdleAgents;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Calls per agent adjusted by pace")
   @JsonProperty("adjustedCallsPerAgent")
   public Double getAdjustedCallsPerAgent() {
     return adjustedCallsPerAgent;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of campaign calls currently ongoing")
   @JsonProperty("outstandingCalls")
   public Integer getOutstandingCalls() {
     return outstandingCalls;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of campaign calls currently scheduled")
   @JsonProperty("scheduledCalls")
   public Integer getScheduledCalls() {
     return scheduledCalls;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +81,13 @@ public class CampaignStats  implements Serializable {
       return false;
     }
     CampaignStats campaignStats = (CampaignStats) o;
+
     return Objects.equals(this.contactRate, campaignStats.contactRate) &&
-        Objects.equals(this.idleAgents, campaignStats.idleAgents) &&
-        Objects.equals(this.effectiveIdleAgents, campaignStats.effectiveIdleAgents) &&
-        Objects.equals(this.adjustedCallsPerAgent, campaignStats.adjustedCallsPerAgent) &&
-        Objects.equals(this.outstandingCalls, campaignStats.outstandingCalls) &&
-        Objects.equals(this.scheduledCalls, campaignStats.scheduledCalls);
+            Objects.equals(this.idleAgents, campaignStats.idleAgents) &&
+            Objects.equals(this.effectiveIdleAgents, campaignStats.effectiveIdleAgents) &&
+            Objects.equals(this.adjustedCallsPerAgent, campaignStats.adjustedCallsPerAgent) &&
+            Objects.equals(this.outstandingCalls, campaignStats.outstandingCalls) &&
+            Objects.equals(this.scheduledCalls, campaignStats.scheduledCalls);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class MediaTranscription  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    **/
   public MediaTranscription transcriptionProvider(TranscriptionProviderEnum transcriptionProvider) {
@@ -106,7 +107,7 @@ public class MediaTranscription  implements Serializable {
     this.transcriptionProvider = transcriptionProvider;
   }
 
-  
+
   /**
    **/
   public MediaTranscription integrationId(String integrationId) {
@@ -123,7 +124,6 @@ public class MediaTranscription  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,9 +134,10 @@ public class MediaTranscription  implements Serializable {
       return false;
     }
     MediaTranscription mediaTranscription = (MediaTranscription) o;
+
     return Objects.equals(this.displayName, mediaTranscription.displayName) &&
-        Objects.equals(this.transcriptionProvider, mediaTranscription.transcriptionProvider) &&
-        Objects.equals(this.integrationId, mediaTranscription.integrationId);
+            Objects.equals(this.transcriptionProvider, mediaTranscription.transcriptionProvider) &&
+            Objects.equals(this.integrationId, mediaTranscription.integrationId);
   }
 
   @Override

@@ -38,8 +38,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Search gkn documentation using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/documentation/gkn/search  
 
 Requires NO permissions: 
@@ -86,8 +84,6 @@ try {
 > [DocumentationSearchResponse](DocumentationSearchResponse.html) getDocumentationSearch(q64)
 
 Search documentation using the q64 value returned from a previous search
-
-
 
 Wraps GET /api/v2/documentation/search  
 
@@ -136,8 +132,6 @@ try {
 
 Search groups using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/groups/search  
 
 Requires NO permissions: 
@@ -166,7 +160,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+List<String> expand = Arrays.asList(null); // List<String> | expand
 try {
     GroupsSearchResponse result = apiInstance.getGroupsSearch(q64, expand);
     System.out.println(result);
@@ -200,8 +194,6 @@ try {
 
 Search locations using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/locations/search  
 
 Requires NO permissions: 
@@ -230,7 +222,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Provides more details about a specified resource
+List<String> expand = Arrays.asList(null); // List<String> | Provides more details about a specified resource
 try {
     LocationsSearchResponse result = apiInstance.getLocationsSearch(q64, expand);
     System.out.println(result);
@@ -264,8 +256,6 @@ try {
 
 Search using the q64 value returned from a previous search.
 
-
-
 Wraps GET /api/v2/search  
 
 Requires ANY permissions: 
@@ -295,7 +285,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 Boolean profile = true; // Boolean | profile
 try {
     JsonNodeSearchResponse result = apiInstance.getSearch(q64, expand, profile);
@@ -331,8 +321,6 @@ try {
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
-
-
 Wraps GET /api/v2/search/suggest  
 
 Requires ANY permissions: 
@@ -362,7 +350,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 Boolean profile = true; // Boolean | profile
 try {
     JsonNodeSearchResponse result = apiInstance.getSearchSuggest(q64, expand, profile);
@@ -398,8 +386,6 @@ try {
 
 Search users using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/users/search  
 
 Requires ANY permissions: 
@@ -429,7 +415,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+List<String> expand = Arrays.asList(null); // List<String> | expand
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | integrationPresenceSource
 try {
     UsersSearchResponse result = apiInstance.getUsersSearch(q64, expand, integrationPresenceSource);
@@ -465,8 +451,6 @@ try {
 
 Search voicemails using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/voicemail/search  
 
 Requires NO permissions: 
@@ -495,7 +479,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+List<String> expand = Arrays.asList(null); // List<String> | expand
 try {
     VoicemailsSearchResponse result = apiInstance.getVoicemailSearch(q64, expand);
     System.out.println(result);
@@ -528,8 +512,6 @@ try {
 > [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse.html) postAnalyticsConversationsTranscriptsQuery(body)
 
 Search resources.
-
-
 
 Wraps POST /api/v2/analytics/conversations/transcripts/query  
 
@@ -592,8 +574,6 @@ try {
 
 Search gkn documentation
 
-
-
 Wraps POST /api/v2/documentation/gkn/search  
 
 Requires NO permissions: 
@@ -641,8 +621,6 @@ try {
 
 Search documentation
 
-
-
 Wraps POST /api/v2/documentation/search  
 
 Requires NO permissions: 
@@ -689,8 +667,6 @@ try {
 > [GroupsSearchResponse](GroupsSearchResponse.html) postGroupsSearch(body)
 
 Search groups
-
-
 
 Wraps POST /api/v2/groups/search  
 
@@ -751,8 +727,6 @@ try {
 > [KnowledgeSearchResponse](KnowledgeSearchResponse.html) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
 
 Search Documents
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search  
 
@@ -817,8 +791,6 @@ try {
 
 Search locations
 
-
-
 Wraps POST /api/v2/locations/search  
 
 Requires NO permissions: 
@@ -878,8 +850,6 @@ try {
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearch(body, profile)
 
 Search resources.
-
-
 
 Wraps POST /api/v2/search  
 
@@ -944,8 +914,6 @@ try {
 
 Suggest resources.
 
-
-
 Wraps POST /api/v2/search/suggest  
 
 Requires ANY permissions: 
@@ -1009,8 +977,6 @@ try {
 
 Search resources.
 
-
-
 Wraps POST /api/v2/speechandtextanalytics/transcripts/search  
 
 Requires ANY permissions: 
@@ -1073,8 +1039,6 @@ try {
 
 Search users
 
-
-
 Wraps POST /api/v2/users/search  
 
 Requires ANY permissions: 
@@ -1135,8 +1099,6 @@ try {
 > [VoicemailsSearchResponse](VoicemailsSearchResponse.html) postVoicemailSearch(body)
 
 Search voicemails
-
-
 
 Wraps POST /api/v2/voicemail/search  
 

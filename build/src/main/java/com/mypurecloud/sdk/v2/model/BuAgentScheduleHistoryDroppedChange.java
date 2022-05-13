@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryChangeMetadata;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryDeletedChange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -48,7 +48,7 @@ public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * The IDs of deleted shifts
    **/
@@ -66,7 +66,7 @@ public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
     this.shiftIds = shiftIds;
   }
 
-  
+
   /**
    * The dates of any deleted full day time off markers
    **/
@@ -84,7 +84,7 @@ public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
     this.fullDayTimeOffMarkerDates = fullDayTimeOffMarkerDates;
   }
 
-  
+
   /**
    * The deleted shifts, full day time off markers, or the entire agent schedule
    **/
@@ -102,7 +102,6 @@ public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
     this.deletes = deletes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +112,11 @@ public class BuAgentScheduleHistoryDroppedChange  implements Serializable {
       return false;
     }
     BuAgentScheduleHistoryDroppedChange buAgentScheduleHistoryDroppedChange = (BuAgentScheduleHistoryDroppedChange) o;
+
     return Objects.equals(this.metadata, buAgentScheduleHistoryDroppedChange.metadata) &&
-        Objects.equals(this.shiftIds, buAgentScheduleHistoryDroppedChange.shiftIds) &&
-        Objects.equals(this.fullDayTimeOffMarkerDates, buAgentScheduleHistoryDroppedChange.fullDayTimeOffMarkerDates) &&
-        Objects.equals(this.deletes, buAgentScheduleHistoryDroppedChange.deletes);
+            Objects.equals(this.shiftIds, buAgentScheduleHistoryDroppedChange.shiftIds) &&
+            Objects.equals(this.fullDayTimeOffMarkerDates, buAgentScheduleHistoryDroppedChange.fullDayTimeOffMarkerDates) &&
+            Objects.equals(this.deletes, buAgentScheduleHistoryDroppedChange.deletes);
   }
 
   @Override

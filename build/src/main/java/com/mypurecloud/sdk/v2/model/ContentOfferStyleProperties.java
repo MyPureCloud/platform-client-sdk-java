@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ContentOfferStyleProperties  implements Serializable {
     this.padding = padding;
   }
 
-  
+
   /**
    * Text color of the offer. (eg. #FF0000)
    **/
@@ -60,7 +61,7 @@ public class ContentOfferStyleProperties  implements Serializable {
     this.color = color;
   }
 
-  
+
   /**
    * Background color of the offer. (eg. #000000)
    **/
@@ -78,7 +79,6 @@ public class ContentOfferStyleProperties  implements Serializable {
     this.backgroundColor = backgroundColor;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ContentOfferStyleProperties  implements Serializable {
       return false;
     }
     ContentOfferStyleProperties contentOfferStyleProperties = (ContentOfferStyleProperties) o;
+
     return Objects.equals(this.padding, contentOfferStyleProperties.padding) &&
-        Objects.equals(this.color, contentOfferStyleProperties.color) &&
-        Objects.equals(this.backgroundColor, contentOfferStyleProperties.backgroundColor);
+            Objects.equals(this.color, contentOfferStyleProperties.color) &&
+            Objects.equals(this.backgroundColor, contentOfferStyleProperties.backgroundColor);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -332,7 +333,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent conversationId(String conversationId) {
@@ -349,7 +350,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent participantId(String participantId) {
@@ -366,7 +367,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent sessionId(String sessionId) {
@@ -383,7 +384,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent disconnectType(DisconnectTypeEnum disconnectType) {
@@ -400,7 +401,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent mediaType(MediaTypeEnum mediaType) {
@@ -417,7 +418,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent provider(String provider) {
@@ -434,7 +435,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent direction(DirectionEnum direction) {
@@ -451,7 +452,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent ani(String ani) {
@@ -468,7 +469,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent dnis(String dnis) {
@@ -485,7 +486,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent addressTo(String addressTo) {
@@ -502,7 +503,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent addressFrom(String addressFrom) {
@@ -519,7 +520,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent subject(String subject) {
@@ -536,7 +537,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent messageType(MessageTypeEnum messageType) {
@@ -553,7 +554,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent flowType(FlowTypeEnum flowType) {
@@ -570,7 +571,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.flowType = flowType;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent flowId(String flowId) {
@@ -587,7 +588,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent divisionId(String divisionId) {
@@ -604,7 +605,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent flowVersion(String flowVersion) {
@@ -621,7 +622,7 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
+
   /**
    **/
   public FlowEndDetailEventTopicFlowEndEvent connectedDurationMs(Integer connectedDurationMs) {
@@ -638,7 +639,6 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     this.connectedDurationMs = connectedDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -649,25 +649,26 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
       return false;
     }
     FlowEndDetailEventTopicFlowEndEvent flowEndDetailEventTopicFlowEndEvent = (FlowEndDetailEventTopicFlowEndEvent) o;
+
     return Objects.equals(this.eventTime, flowEndDetailEventTopicFlowEndEvent.eventTime) &&
-        Objects.equals(this.conversationId, flowEndDetailEventTopicFlowEndEvent.conversationId) &&
-        Objects.equals(this.participantId, flowEndDetailEventTopicFlowEndEvent.participantId) &&
-        Objects.equals(this.sessionId, flowEndDetailEventTopicFlowEndEvent.sessionId) &&
-        Objects.equals(this.disconnectType, flowEndDetailEventTopicFlowEndEvent.disconnectType) &&
-        Objects.equals(this.mediaType, flowEndDetailEventTopicFlowEndEvent.mediaType) &&
-        Objects.equals(this.provider, flowEndDetailEventTopicFlowEndEvent.provider) &&
-        Objects.equals(this.direction, flowEndDetailEventTopicFlowEndEvent.direction) &&
-        Objects.equals(this.ani, flowEndDetailEventTopicFlowEndEvent.ani) &&
-        Objects.equals(this.dnis, flowEndDetailEventTopicFlowEndEvent.dnis) &&
-        Objects.equals(this.addressTo, flowEndDetailEventTopicFlowEndEvent.addressTo) &&
-        Objects.equals(this.addressFrom, flowEndDetailEventTopicFlowEndEvent.addressFrom) &&
-        Objects.equals(this.subject, flowEndDetailEventTopicFlowEndEvent.subject) &&
-        Objects.equals(this.messageType, flowEndDetailEventTopicFlowEndEvent.messageType) &&
-        Objects.equals(this.flowType, flowEndDetailEventTopicFlowEndEvent.flowType) &&
-        Objects.equals(this.flowId, flowEndDetailEventTopicFlowEndEvent.flowId) &&
-        Objects.equals(this.divisionId, flowEndDetailEventTopicFlowEndEvent.divisionId) &&
-        Objects.equals(this.flowVersion, flowEndDetailEventTopicFlowEndEvent.flowVersion) &&
-        Objects.equals(this.connectedDurationMs, flowEndDetailEventTopicFlowEndEvent.connectedDurationMs);
+            Objects.equals(this.conversationId, flowEndDetailEventTopicFlowEndEvent.conversationId) &&
+            Objects.equals(this.participantId, flowEndDetailEventTopicFlowEndEvent.participantId) &&
+            Objects.equals(this.sessionId, flowEndDetailEventTopicFlowEndEvent.sessionId) &&
+            Objects.equals(this.disconnectType, flowEndDetailEventTopicFlowEndEvent.disconnectType) &&
+            Objects.equals(this.mediaType, flowEndDetailEventTopicFlowEndEvent.mediaType) &&
+            Objects.equals(this.provider, flowEndDetailEventTopicFlowEndEvent.provider) &&
+            Objects.equals(this.direction, flowEndDetailEventTopicFlowEndEvent.direction) &&
+            Objects.equals(this.ani, flowEndDetailEventTopicFlowEndEvent.ani) &&
+            Objects.equals(this.dnis, flowEndDetailEventTopicFlowEndEvent.dnis) &&
+            Objects.equals(this.addressTo, flowEndDetailEventTopicFlowEndEvent.addressTo) &&
+            Objects.equals(this.addressFrom, flowEndDetailEventTopicFlowEndEvent.addressFrom) &&
+            Objects.equals(this.subject, flowEndDetailEventTopicFlowEndEvent.subject) &&
+            Objects.equals(this.messageType, flowEndDetailEventTopicFlowEndEvent.messageType) &&
+            Objects.equals(this.flowType, flowEndDetailEventTopicFlowEndEvent.flowType) &&
+            Objects.equals(this.flowId, flowEndDetailEventTopicFlowEndEvent.flowId) &&
+            Objects.equals(this.divisionId, flowEndDetailEventTopicFlowEndEvent.divisionId) &&
+            Objects.equals(this.flowVersion, flowEndDetailEventTopicFlowEndEvent.flowVersion) &&
+            Objects.equals(this.connectedDurationMs, flowEndDetailEventTopicFlowEndEvent.connectedDurationMs);
   }
 
   @Override

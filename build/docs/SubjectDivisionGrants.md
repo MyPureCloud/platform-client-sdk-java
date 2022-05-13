@@ -22,13 +22,13 @@ title: SubjectDivisionGrants
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PC_USER | &quot;PC_USER&quot; |
-| PC_GROUP | &quot;PC_GROUP&quot; |
-| PC_OAUTH_CLIENT | &quot;PC_OAUTH_CLIENT&quot; |
-| PC_TRUSTEE_USER | &quot;PC_TRUSTEE_USER&quot; |
-| PC_TRUSTEE_GROUP | &quot;PC_TRUSTEE_GROUP&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PC_USER | &quot;PC_USER&quot; | 
+| PC_GROUP | &quot;PC_GROUP&quot; | 
+| PC_OAUTH_CLIENT | &quot;PC_OAUTH_CLIENT&quot; | 
+| PC_TRUSTEE_USER | &quot;PC_TRUSTEE_USER&quot; | 
+| PC_TRUSTEE_GROUP | &quot;PC_TRUSTEE_GROUP&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.Certificate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
-import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
-import com.mypurecloud.sdk.v2.model.Certificate;
+import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 
 public class GetDateRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -52,7 +52,7 @@ public class GetDateRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/date")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -63,7 +63,7 @@ public class GetDateRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetDateRequest request;
@@ -72,9 +72,9 @@ public class GetDateRequest {
 			request = new GetDateRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetDateRequest build() {
             

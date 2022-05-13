@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class TextBotTranscript  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * The confidence factor, expressed as a decimal between 0.0 and 1.0, of the transcript item.
    **/
@@ -60,7 +61,6 @@ public class TextBotTranscript  implements Serializable {
     this.confidence = confidence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class TextBotTranscript  implements Serializable {
       return false;
     }
     TextBotTranscript textBotTranscript = (TextBotTranscript) o;
+
     return Objects.equals(this.text, textBotTranscript.text) &&
-        Objects.equals(this.confidence, textBotTranscript.confidence);
+            Objects.equals(this.confidence, textBotTranscript.confidence);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class VisibilityCondition  implements Serializable {
     this.combiningOperation = combiningOperation;
   }
 
-  
+
   /**
    * A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \"/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\" or, to assume the current question group, \"../question/{questionIndex}/answer/{answerIndex}\". Note: Indexes are zero-based
    **/
@@ -108,7 +109,6 @@ public class VisibilityCondition  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class VisibilityCondition  implements Serializable {
       return false;
     }
     VisibilityCondition visibilityCondition = (VisibilityCondition) o;
+
     return Objects.equals(this.combiningOperation, visibilityCondition.combiningOperation) &&
-        Objects.equals(this.predicates, visibilityCondition.predicates);
+            Objects.equals(this.predicates, visibilityCondition.predicates);
   }
 
   @Override

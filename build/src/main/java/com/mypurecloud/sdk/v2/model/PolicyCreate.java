@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaPolicies;
@@ -45,7 +46,7 @@ public class PolicyCreate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The policy name.
    **/
@@ -63,7 +64,7 @@ public class PolicyCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -81,7 +82,7 @@ public class PolicyCreate  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -99,7 +100,7 @@ public class PolicyCreate  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public PolicyCreate order(Integer order) {
@@ -116,7 +117,7 @@ public class PolicyCreate  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    **/
   public PolicyCreate description(String description) {
@@ -133,7 +134,7 @@ public class PolicyCreate  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public PolicyCreate enabled(Boolean enabled) {
@@ -150,7 +151,7 @@ public class PolicyCreate  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Conditions and actions per media type
    **/
@@ -168,7 +169,7 @@ public class PolicyCreate  implements Serializable {
     this.mediaPolicies = mediaPolicies;
   }
 
-  
+
   /**
    * Conditions
    **/
@@ -186,7 +187,7 @@ public class PolicyCreate  implements Serializable {
     this.conditions = conditions;
   }
 
-  
+
   /**
    * Actions
    **/
@@ -204,7 +205,7 @@ public class PolicyCreate  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    **/
   public PolicyCreate policyErrors(PolicyErrors policyErrors) {
@@ -221,14 +222,13 @@ public class PolicyCreate  implements Serializable {
     this.policyErrors = policyErrors;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -239,18 +239,19 @@ public class PolicyCreate  implements Serializable {
       return false;
     }
     PolicyCreate policyCreate = (PolicyCreate) o;
+
     return Objects.equals(this.id, policyCreate.id) &&
-        Objects.equals(this.name, policyCreate.name) &&
-        Objects.equals(this.modifiedDate, policyCreate.modifiedDate) &&
-        Objects.equals(this.createdDate, policyCreate.createdDate) &&
-        Objects.equals(this.order, policyCreate.order) &&
-        Objects.equals(this.description, policyCreate.description) &&
-        Objects.equals(this.enabled, policyCreate.enabled) &&
-        Objects.equals(this.mediaPolicies, policyCreate.mediaPolicies) &&
-        Objects.equals(this.conditions, policyCreate.conditions) &&
-        Objects.equals(this.actions, policyCreate.actions) &&
-        Objects.equals(this.policyErrors, policyCreate.policyErrors) &&
-        Objects.equals(this.selfUri, policyCreate.selfUri);
+            Objects.equals(this.name, policyCreate.name) &&
+            Objects.equals(this.modifiedDate, policyCreate.modifiedDate) &&
+            Objects.equals(this.createdDate, policyCreate.createdDate) &&
+            Objects.equals(this.order, policyCreate.order) &&
+            Objects.equals(this.description, policyCreate.description) &&
+            Objects.equals(this.enabled, policyCreate.enabled) &&
+            Objects.equals(this.mediaPolicies, policyCreate.mediaPolicies) &&
+            Objects.equals(this.conditions, policyCreate.conditions) &&
+            Objects.equals(this.actions, policyCreate.actions) &&
+            Objects.equals(this.policyErrors, policyCreate.policyErrors) &&
+            Objects.equals(this.selfUri, policyCreate.selfUri);
   }
 
   @Override

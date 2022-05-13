@@ -16,7 +16,7 @@ title: SystemMessageSystemMessage
 | **oauthClientId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **reason** | [**ReasonEnum**](#ReasonEnum)<!----> |  |  [optional] |
 | **message** | <!----><!---->**String**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**Map&lt;String, SystemMessageObject&gt;**](SystemMessageObject.html)<!----> |  |  [optional] |
+| **data** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -26,10 +26,10 @@ title: SystemMessageSystemMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NO_LONGER_SUBSCRIBED | &quot;no_longer_subscribed&quot; |
-| SUBSCRIPTION_CHANGED | &quot;subscription_changed&quot; |
-| TOKEN_REVOKED | &quot;token_revoked&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NO_LONGER_SUBSCRIBED | &quot;no_longer_subscribed&quot; | 
+| SUBSCRIPTION_CHANGED | &quot;subscription_changed&quot; | 
+| TOKEN_REVOKED | &quot;token_revoked&quot; | 
 {: class="table table-striped"}
 
 
@@ -39,9 +39,9 @@ title: SystemMessageSystemMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ANOTHER_CHANNEL_SUBSCRIBED | &quot;another_channel_subscribed&quot; |
-| USER_TOKENS_REVOKED | &quot;user_tokens_revoked&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ANOTHER_CHANNEL_SUBSCRIBED | &quot;another_channel_subscribed&quot; | 
+| USER_TOKENS_REVOKED | &quot;user_tokens_revoked&quot; | 
 {: class="table table-striped"}
 
 

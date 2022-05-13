@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.customAttributes = customAttributes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -53,6 +53,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata v2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata = (V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata) o;
+
     return Objects.equals(this.customAttributes, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata.customAttributes);
   }
 

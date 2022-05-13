@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -253,7 +254,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage channel(V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel channel) {
@@ -270,7 +271,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.channel = channel;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage type(TypeEnum type) {
@@ -287,7 +288,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage text(String text) {
@@ -304,7 +305,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage content(List<V2ConversationMessageTypingEventForUserTopicConversationMessageContent> content) {
@@ -321,7 +322,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.content = content;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage events(List<V2ConversationMessageTypingEventForUserTopicConversationMessageEvent> events) {
@@ -338,7 +339,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.events = events;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage status(StatusEnum status) {
@@ -355,7 +356,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.status = status;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage reasons(List<V2ConversationMessageTypingEventForUserTopicConversationReason> reasons) {
@@ -372,7 +373,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.reasons = reasons;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage originatingEntity(OriginatingEntityEnum originatingEntity) {
@@ -389,7 +390,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.originatingEntity = originatingEntity;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage isFinalReceipt(Boolean isFinalReceipt) {
@@ -406,7 +407,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.isFinalReceipt = isFinalReceipt;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage direction(DirectionEnum direction) {
@@ -423,7 +424,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage metadata(Map<String, String> metadata) {
@@ -440,7 +441,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -451,18 +451,19 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage = (V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.id) &&
-        Objects.equals(this.channel, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.channel) &&
-        Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.type) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.text) &&
-        Objects.equals(this.content, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.content) &&
-        Objects.equals(this.events, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.events) &&
-        Objects.equals(this.status, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.status) &&
-        Objects.equals(this.reasons, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.reasons) &&
-        Objects.equals(this.originatingEntity, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.originatingEntity) &&
-        Objects.equals(this.isFinalReceipt, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.isFinalReceipt) &&
-        Objects.equals(this.direction, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.direction) &&
-        Objects.equals(this.metadata, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.metadata);
+            Objects.equals(this.channel, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.channel) &&
+            Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.type) &&
+            Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.text) &&
+            Objects.equals(this.content, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.content) &&
+            Objects.equals(this.events, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.events) &&
+            Objects.equals(this.status, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.status) &&
+            Objects.equals(this.reasons, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.reasons) &&
+            Objects.equals(this.originatingEntity, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.originatingEntity) &&
+            Objects.equals(this.isFinalReceipt, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.isFinalReceipt) &&
+            Objects.equals(this.direction, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.direction) &&
+            Objects.equals(this.metadata, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.metadata);
   }
 
   @Override

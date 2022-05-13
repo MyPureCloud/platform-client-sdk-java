@@ -23,10 +23,10 @@ title: SentimentFeedback
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NEUTRAL | &quot;Neutral&quot; |
-| POSITIVE | &quot;Positive&quot; |
-| NEGATIVE | &quot;Negative&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEUTRAL | &quot;Neutral&quot; | 
+| POSITIVE | &quot;Positive&quot; | 
+| NEGATIVE | &quot;Negative&quot; | 
 {: class="table table-striped"}
 
 

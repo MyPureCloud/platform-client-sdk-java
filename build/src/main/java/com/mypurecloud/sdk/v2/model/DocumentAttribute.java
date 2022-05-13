@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Attribute;
@@ -43,7 +44,7 @@ public class DocumentAttribute  implements Serializable {
     this.attribute = attribute;
   }
 
-  
+
   /**
    **/
   public DocumentAttribute values(List<String> values) {
@@ -60,7 +61,6 @@ public class DocumentAttribute  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class DocumentAttribute  implements Serializable {
       return false;
     }
     DocumentAttribute documentAttribute = (DocumentAttribute) o;
+
     return Objects.equals(this.attribute, documentAttribute.attribute) &&
-        Objects.equals(this.values, documentAttribute.values);
+            Objects.equals(this.values, documentAttribute.values);
   }
 
   @Override

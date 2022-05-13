@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -31,14 +32,13 @@ public class RecordingJobFailedRecording  implements Serializable {
     return conversation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Recording")
   @JsonProperty("recording")
   public AddressableEntityRef getRecording() {
     return recording;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -49,8 +49,9 @@ public class RecordingJobFailedRecording  implements Serializable {
       return false;
     }
     RecordingJobFailedRecording recordingJobFailedRecording = (RecordingJobFailedRecording) o;
+
     return Objects.equals(this.conversation, recordingJobFailedRecording.conversation) &&
-        Objects.equals(this.recording, recordingJobFailedRecording.recording);
+            Objects.equals(this.recording, recordingJobFailedRecording.recording);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DetectedNamedEntity;
@@ -34,21 +35,20 @@ public class DetectedIntent  implements Serializable {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The probability of the detected intent.")
   @JsonProperty("probability")
   public Double getProbability() {
     return probability;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The collection of named entities detected.")
   @JsonProperty("entities")
   public List<DetectedNamedEntity> getEntities() {
     return entities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,9 +59,10 @@ public class DetectedIntent  implements Serializable {
       return false;
     }
     DetectedIntent detectedIntent = (DetectedIntent) o;
+
     return Objects.equals(this.name, detectedIntent.name) &&
-        Objects.equals(this.probability, detectedIntent.probability) &&
-        Objects.equals(this.entities, detectedIntent.entities);
+            Objects.equals(this.probability, detectedIntent.probability) &&
+            Objects.equals(this.entities, detectedIntent.entities);
   }
 
   @Override

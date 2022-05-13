@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
@@ -48,35 +49,34 @@ public class ScimGroupListResponse  implements Serializable {
     this.schemas = schemas;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of results.")
   @JsonProperty("totalResults")
   public Long getTotalResults() {
     return totalResults;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results.")
   @JsonProperty("startIndex")
   public Long getStartIndex() {
     return startIndex;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of resources returned per page.")
   @JsonProperty("itemsPerPage")
   public Long getItemsPerPage() {
     return itemsPerPage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of requested resources. If \"count\" is 0, then the list will be empty.")
   @JsonProperty("Resources")
   public List<ScimV2Group> getResources() {
     return resources;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,11 +87,12 @@ public class ScimGroupListResponse  implements Serializable {
       return false;
     }
     ScimGroupListResponse scimGroupListResponse = (ScimGroupListResponse) o;
+
     return Objects.equals(this.schemas, scimGroupListResponse.schemas) &&
-        Objects.equals(this.totalResults, scimGroupListResponse.totalResults) &&
-        Objects.equals(this.startIndex, scimGroupListResponse.startIndex) &&
-        Objects.equals(this.itemsPerPage, scimGroupListResponse.itemsPerPage) &&
-        Objects.equals(this.resources, scimGroupListResponse.resources);
+            Objects.equals(this.totalResults, scimGroupListResponse.totalResults) &&
+            Objects.equals(this.startIndex, scimGroupListResponse.startIndex) &&
+            Objects.equals(this.itemsPerPage, scimGroupListResponse.itemsPerPage) &&
+            Objects.equals(this.resources, scimGroupListResponse.resources);
   }
 
   @Override

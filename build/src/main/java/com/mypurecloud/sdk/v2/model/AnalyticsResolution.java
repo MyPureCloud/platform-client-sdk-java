@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class AnalyticsResolution  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    * The ID of the last queue on which the conversation was handled.
    **/
@@ -62,7 +63,7 @@ public class AnalyticsResolution  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The ID of the last user who handled the conversation.
    **/
@@ -80,7 +81,7 @@ public class AnalyticsResolution  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public AnalyticsResolution nNextContactAvoided(Long nNextContactAvoided) {
@@ -97,7 +98,6 @@ public class AnalyticsResolution  implements Serializable {
     this.nNextContactAvoided = nNextContactAvoided;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class AnalyticsResolution  implements Serializable {
       return false;
     }
     AnalyticsResolution analyticsResolution = (AnalyticsResolution) o;
+
     return Objects.equals(this.eventTime, analyticsResolution.eventTime) &&
-        Objects.equals(this.queueId, analyticsResolution.queueId) &&
-        Objects.equals(this.userId, analyticsResolution.userId) &&
-        Objects.equals(this.nNextContactAvoided, analyticsResolution.nNextContactAvoided);
+            Objects.equals(this.queueId, analyticsResolution.queueId) &&
+            Objects.equals(this.userId, analyticsResolution.userId) &&
+            Objects.equals(this.nNextContactAvoided, analyticsResolution.nNextContactAvoided);
   }
 
   @Override

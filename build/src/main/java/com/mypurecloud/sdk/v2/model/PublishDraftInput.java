@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,7 +33,7 @@ public class PublishDraftInput  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "If the current draft version is 2 and the current published version of Action is 33, then you would send 2 here. (Your draft will become published version 34)", required = true, value = "The current draft version.")
+  @ApiModelProperty(example = "null", required = true, value = "The current draft version.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -41,7 +42,6 @@ public class PublishDraftInput  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -52,6 +52,7 @@ public class PublishDraftInput  implements Serializable {
       return false;
     }
     PublishDraftInput publishDraftInput = (PublishDraftInput) o;
+
     return Objects.equals(this.version, publishDraftInput.version);
   }
 

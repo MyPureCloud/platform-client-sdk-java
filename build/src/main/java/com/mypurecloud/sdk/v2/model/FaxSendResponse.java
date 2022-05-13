@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -81,7 +82,7 @@ public class FaxSendResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public FaxSendResponse name(String name) {
@@ -98,7 +99,7 @@ public class FaxSendResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public FaxSendResponse uploadDestinationUri(String uploadDestinationUri) {
@@ -115,7 +116,7 @@ public class FaxSendResponse  implements Serializable {
     this.uploadDestinationUri = uploadDestinationUri;
   }
 
-  
+
   /**
    **/
   public FaxSendResponse uploadMethodType(UploadMethodTypeEnum uploadMethodType) {
@@ -132,14 +133,13 @@ public class FaxSendResponse  implements Serializable {
     this.uploadMethodType = uploadMethodType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,11 +150,12 @@ public class FaxSendResponse  implements Serializable {
       return false;
     }
     FaxSendResponse faxSendResponse = (FaxSendResponse) o;
+
     return Objects.equals(this.id, faxSendResponse.id) &&
-        Objects.equals(this.name, faxSendResponse.name) &&
-        Objects.equals(this.uploadDestinationUri, faxSendResponse.uploadDestinationUri) &&
-        Objects.equals(this.uploadMethodType, faxSendResponse.uploadMethodType) &&
-        Objects.equals(this.selfUri, faxSendResponse.selfUri);
+            Objects.equals(this.name, faxSendResponse.name) &&
+            Objects.equals(this.uploadDestinationUri, faxSendResponse.uploadDestinationUri) &&
+            Objects.equals(this.uploadMethodType, faxSendResponse.uploadMethodType) &&
+            Objects.equals(this.selfUri, faxSendResponse.selfUri);
   }
 
   @Override

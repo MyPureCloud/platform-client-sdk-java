@@ -30,10 +30,10 @@ title: ShiftTradeSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALLOW | &quot;Allow&quot; |
-| DISALLOW | &quot;Disallow&quot; |
-| ADMINREVIEW | &quot;AdminReview&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
 {: class="table table-striped"}
 
 
@@ -43,10 +43,10 @@ title: ShiftTradeSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALLOW | &quot;Allow&quot; |
-| DISALLOW | &quot;Disallow&quot; |
-| ADMINREVIEW | &quot;AdminReview&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
 {: class="table table-striped"}
 
 
@@ -56,10 +56,10 @@ title: ShiftTradeSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALLOW | &quot;Allow&quot; |
-| DISALLOW | &quot;Disallow&quot; |
-| ADMINREVIEW | &quot;AdminReview&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
 {: class="table table-striped"}
 
 
@@ -69,10 +69,10 @@ title: ShiftTradeSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALLOW | &quot;Allow&quot; |
-| DISALLOW | &quot;Disallow&quot; |
-| ADMINREVIEW | &quot;AdminReview&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALLOW | &quot;Allow&quot; | 
+| DISALLOW | &quot;Disallow&quot; | 
+| ADMINREVIEW | &quot;AdminReview&quot; | 
 {: class="table table-striped"}
 
 

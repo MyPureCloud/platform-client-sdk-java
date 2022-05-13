@@ -20,10 +20,10 @@ title: TranscriptionSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DISABLED | &quot;Disabled&quot; |
-| ENABLEDGLOBALLY | &quot;EnabledGlobally&quot; |
-| ENABLEDQUEUEFLOW | &quot;EnabledQueueFlow&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DISABLED | &quot;Disabled&quot; | 
+| ENABLEDGLOBALLY | &quot;EnabledGlobally&quot; | 
+| ENABLEDQUEUEFLOW | &quot;EnabledQueueFlow&quot; | 
 {: class="table table-striped"}
 
 

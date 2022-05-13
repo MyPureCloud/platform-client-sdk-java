@@ -19,9 +19,9 @@ title: PredictorSchedule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HOURONHOUROFF | &quot;HourOnHourOff&quot; |
-| ONGOINGVALUEMONITORING | &quot;OngoingValueMonitoring&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HOURONHOUROFF | &quot;HourOnHourOff&quot; | 
+| ONGOINGVALUEMONITORING | &quot;OngoingValueMonitoring&quot; | 
 {: class="table table-striped"}
 
 

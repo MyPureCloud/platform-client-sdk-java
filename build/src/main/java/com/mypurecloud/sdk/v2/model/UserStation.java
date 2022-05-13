@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -41,7 +42,7 @@ public class UserStation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserStation name(String name) {
@@ -58,7 +59,7 @@ public class UserStation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public UserStation type(String type) {
@@ -75,7 +76,7 @@ public class UserStation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public UserStation associatedUser(User associatedUser) {
@@ -92,7 +93,7 @@ public class UserStation  implements Serializable {
     this.associatedUser = associatedUser;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -110,7 +111,7 @@ public class UserStation  implements Serializable {
     this.associatedDate = associatedDate;
   }
 
-  
+
   /**
    **/
   public UserStation defaultUser(User defaultUser) {
@@ -127,7 +128,7 @@ public class UserStation  implements Serializable {
     this.defaultUser = defaultUser;
   }
 
-  
+
   /**
    * Provider-specific info for this station, e.g. { \"edgeGroupId\": \"ffe7b15c-a9cc-4f4c-88f5-781327819a49\" }
    **/
@@ -145,14 +146,13 @@ public class UserStation  implements Serializable {
     this.providerInfo = providerInfo;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of call appearances on the station.")
   @JsonProperty("webRtcCallAppearances")
   public Integer getWebRtcCallAppearances() {
     return webRtcCallAppearances;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,14 +163,15 @@ public class UserStation  implements Serializable {
       return false;
     }
     UserStation userStation = (UserStation) o;
+
     return Objects.equals(this.id, userStation.id) &&
-        Objects.equals(this.name, userStation.name) &&
-        Objects.equals(this.type, userStation.type) &&
-        Objects.equals(this.associatedUser, userStation.associatedUser) &&
-        Objects.equals(this.associatedDate, userStation.associatedDate) &&
-        Objects.equals(this.defaultUser, userStation.defaultUser) &&
-        Objects.equals(this.providerInfo, userStation.providerInfo) &&
-        Objects.equals(this.webRtcCallAppearances, userStation.webRtcCallAppearances);
+            Objects.equals(this.name, userStation.name) &&
+            Objects.equals(this.type, userStation.type) &&
+            Objects.equals(this.associatedUser, userStation.associatedUser) &&
+            Objects.equals(this.associatedDate, userStation.associatedDate) &&
+            Objects.equals(this.defaultUser, userStation.defaultUser) &&
+            Objects.equals(this.providerInfo, userStation.providerInfo) &&
+            Objects.equals(this.webRtcCallAppearances, userStation.webRtcCallAppearances);
   }
 
   @Override

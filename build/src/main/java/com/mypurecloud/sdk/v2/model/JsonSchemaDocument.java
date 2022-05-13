@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -51,7 +52,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument schema(String schema) {
@@ -68,7 +69,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument title(String title) {
@@ -85,7 +86,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument description(String description) {
@@ -102,7 +103,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument type(String type) {
@@ -119,7 +120,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument required(List<String> required) {
@@ -136,7 +137,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.required = required;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument properties(Map<String, Object> properties) {
@@ -153,7 +154,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    **/
   public JsonSchemaDocument additionalProperties(Object additionalProperties) {
@@ -170,7 +171,6 @@ public class JsonSchemaDocument  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,14 +181,15 @@ public class JsonSchemaDocument  implements Serializable {
       return false;
     }
     JsonSchemaDocument jsonSchemaDocument = (JsonSchemaDocument) o;
+
     return Objects.equals(this.id, jsonSchemaDocument.id) &&
-        Objects.equals(this.schema, jsonSchemaDocument.schema) &&
-        Objects.equals(this.title, jsonSchemaDocument.title) &&
-        Objects.equals(this.description, jsonSchemaDocument.description) &&
-        Objects.equals(this.type, jsonSchemaDocument.type) &&
-        Objects.equals(this.required, jsonSchemaDocument.required) &&
-        Objects.equals(this.properties, jsonSchemaDocument.properties) &&
-        Objects.equals(this.additionalProperties, jsonSchemaDocument.additionalProperties);
+            Objects.equals(this.schema, jsonSchemaDocument.schema) &&
+            Objects.equals(this.title, jsonSchemaDocument.title) &&
+            Objects.equals(this.description, jsonSchemaDocument.description) &&
+            Objects.equals(this.type, jsonSchemaDocument.type) &&
+            Objects.equals(this.required, jsonSchemaDocument.required) &&
+            Objects.equals(this.properties, jsonSchemaDocument.properties) &&
+            Objects.equals(this.additionalProperties, jsonSchemaDocument.additionalProperties);
   }
 
   @Override

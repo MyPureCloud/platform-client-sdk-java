@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
@@ -42,7 +43,7 @@ public class SurveyFormAndScoringSet  implements Serializable {
     this.surveyForm = surveyForm;
   }
 
-  
+
   /**
    **/
   public SurveyFormAndScoringSet answers(SurveyScoringSet answers) {
@@ -59,7 +60,6 @@ public class SurveyFormAndScoringSet  implements Serializable {
     this.answers = answers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class SurveyFormAndScoringSet  implements Serializable {
       return false;
     }
     SurveyFormAndScoringSet surveyFormAndScoringSet = (SurveyFormAndScoringSet) o;
+
     return Objects.equals(this.surveyForm, surveyFormAndScoringSet.surveyForm) &&
-        Objects.equals(this.answers, surveyFormAndScoringSet.answers);
+            Objects.equals(this.answers, surveyFormAndScoringSet.answers);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public RelationshipListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public RelationshipListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public RelationshipListing total(Long total) {
@@ -103,7 +104,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.total = total;
   }
 
-  
+
   /**
    **/
   public RelationshipListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public RelationshipListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public RelationshipListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public RelationshipListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public RelationshipListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public RelationshipListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
       return false;
     }
     RelationshipListing relationshipListing = (RelationshipListing) o;
+
     return Objects.equals(this.entities, relationshipListing.entities) &&
-        Objects.equals(this.pageSize, relationshipListing.pageSize) &&
-        Objects.equals(this.pageNumber, relationshipListing.pageNumber) &&
-        Objects.equals(this.total, relationshipListing.total) &&
-        Objects.equals(this.lastUri, relationshipListing.lastUri) &&
-        Objects.equals(this.firstUri, relationshipListing.firstUri) &&
-        Objects.equals(this.selfUri, relationshipListing.selfUri) &&
-        Objects.equals(this.previousUri, relationshipListing.previousUri) &&
-        Objects.equals(this.nextUri, relationshipListing.nextUri) &&
-        Objects.equals(this.pageCount, relationshipListing.pageCount);
+            Objects.equals(this.pageSize, relationshipListing.pageSize) &&
+            Objects.equals(this.pageNumber, relationshipListing.pageNumber) &&
+            Objects.equals(this.total, relationshipListing.total) &&
+            Objects.equals(this.lastUri, relationshipListing.lastUri) &&
+            Objects.equals(this.firstUri, relationshipListing.firstUri) &&
+            Objects.equals(this.selfUri, relationshipListing.selfUri) &&
+            Objects.equals(this.previousUri, relationshipListing.previousUri) &&
+            Objects.equals(this.nextUri, relationshipListing.nextUri) &&
+            Objects.equals(this.pageCount, relationshipListing.pageCount);
   }
 
   @Override

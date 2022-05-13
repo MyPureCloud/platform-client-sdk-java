@@ -21,9 +21,9 @@ title: DurationCondition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DURATION | &quot;DURATION&quot; |
-| DURATION_RANGE | &quot;DURATION_RANGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DURATION | &quot;DURATION&quot; | 
+| DURATION_RANGE | &quot;DURATION_RANGE&quot; | 
 {: class="table table-striped"}
 
 
@@ -33,10 +33,10 @@ title: DurationCondition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BETWEEN | &quot;Between&quot; |
-| OVER | &quot;Over&quot; |
-| UNDER | &quot;Under&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BETWEEN | &quot;Between&quot; | 
+| OVER | &quot;Over&quot; | 
+| UNDER | &quot;Under&quot; | 
 {: class="table table-striped"}
 
 

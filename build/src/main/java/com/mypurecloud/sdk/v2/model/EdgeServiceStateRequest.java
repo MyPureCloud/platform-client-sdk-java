@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class EdgeServiceStateRequest  implements Serializable {
     this.inService = inService;
   }
 
-  
+
   /**
    * The number of seconds to wait for call draining to complete before initiating the reboot. A value of 0 will prevent call draining and all calls will disconnect immediately.
    **/
@@ -59,7 +60,6 @@ public class EdgeServiceStateRequest  implements Serializable {
     this.callDrainingWaitTimeSeconds = callDrainingWaitTimeSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class EdgeServiceStateRequest  implements Serializable {
       return false;
     }
     EdgeServiceStateRequest edgeServiceStateRequest = (EdgeServiceStateRequest) o;
+
     return Objects.equals(this.inService, edgeServiceStateRequest.inService) &&
-        Objects.equals(this.callDrainingWaitTimeSeconds, edgeServiceStateRequest.callDrainingWaitTimeSeconds);
+            Objects.equals(this.callDrainingWaitTimeSeconds, edgeServiceStateRequest.callDrainingWaitTimeSeconds);
   }
 
   @Override

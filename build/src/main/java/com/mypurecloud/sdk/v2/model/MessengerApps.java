@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationAppSettings;
@@ -44,7 +45,7 @@ public class MessengerApps  implements Serializable {
     this.conversations = conversations;
   }
 
-  
+
   /**
    * The knowledge base config for messenger
    **/
@@ -62,7 +63,6 @@ public class MessengerApps  implements Serializable {
     this.knowledge = knowledge;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class MessengerApps  implements Serializable {
       return false;
     }
     MessengerApps messengerApps = (MessengerApps) o;
+
     return Objects.equals(this.conversations, messengerApps.conversations) &&
-        Objects.equals(this.knowledge, messengerApps.knowledge);
+            Objects.equals(this.knowledge, messengerApps.knowledge);
   }
 
   @Override

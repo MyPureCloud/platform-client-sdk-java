@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCallanalysisresponseset**](OutboundApi.html#getOutboundCallanalysisresponseset) | Get a dialer call analysis response set. |
 | [**getOutboundCallanalysisresponsesets**](OutboundApi.html#getOutboundCallanalysisresponsesets) | Query a list of dialer call analysis response sets. |
 | [**getOutboundCampaign**](OutboundApi.html#getOutboundCampaign) | Get dialer campaign. |
-| [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | Get a preview of how agents will be mapped to this campaign&#39;s contact list. |
+| [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | Get a preview of how agents will be mapped to this campaign's contact list. |
 | [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | Get campaign diagnostics |
 | [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | Get dialer campaign interactions. |
 | [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | Get campaign progress |
@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
 | [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
 | [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | Get an Outbound Messaging Campaign |
-| [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | Get messaging campaign&#39;s progress |
+| [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | Get messaging campaign's progress |
 | [**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | Query a list of Messaging Campaigns |
 | [**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | Get a basic Messaging Campaign information object |
 | [**getOutboundMessagingcampaignsDivisionviews**](OutboundApi.html#getOutboundMessagingcampaignsDivisionviews) | Query a list of basic Messaging Campaign information objects |
@@ -88,7 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | Retrieves audits for dialer. |
 | [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | Create callable time set |
 | [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | Create a dialer call analysis response set. |
-| [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list. |
+| [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign's contact list. |
 | [**postOutboundCampaignCallbackSchedule**](OutboundApi.html#postOutboundCampaignCallbackSchedule) | Schedule a Callback for a Dialer Campaign (Deprecated) |
 | [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | Create Campaign Rule |
 | [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | Create a campaign. |
@@ -112,7 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundCallabletimeset**](OutboundApi.html#putOutboundCallabletimeset) | Update callable time set |
 | [**putOutboundCallanalysisresponseset**](OutboundApi.html#putOutboundCallanalysisresponseset) | Update a dialer call analysis response set. |
 | [**putOutboundCampaign**](OutboundApi.html#putOutboundCampaign) | Update a campaign. |
-| [**putOutboundCampaignAgent**](OutboundApi.html#putOutboundCampaignAgent) | Send notification that an agent&#39;s state changed  |
+| [**putOutboundCampaignAgent**](OutboundApi.html#putOutboundCampaignAgent) | Send notification that an agent's state changed  |
 | [**putOutboundCampaignrule**](OutboundApi.html#putOutboundCampaignrule) | Update Campaign Rule |
 | [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | Update a contact list. |
 | [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | Update a contact. |
@@ -137,8 +137,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteOutboundAttemptlimit(attemptLimitsId)
 
 Delete attempt limits
-
-
 
 Wraps DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}  
 
@@ -200,8 +198,6 @@ null (empty response body)
 
 Delete callable time set
 
-
-
 Wraps DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}  
 
 Requires ANY permissions: 
@@ -262,8 +258,6 @@ null (empty response body)
 
 Delete a dialer call analysis response set.
 
-
-
 Wraps DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}  
 
 Requires ANY permissions: 
@@ -323,8 +317,6 @@ null (empty response body)
 > [Campaign](Campaign.html) deleteOutboundCampaign(campaignId)
 
 Delete a campaign.
-
-
 
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId}  
 
@@ -387,8 +379,6 @@ try {
 
 Reset campaign progress and recycle the campaign
 
-
-
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId}/progress  
 
 Requires ANY permissions: 
@@ -448,8 +438,6 @@ null (empty response body)
 > Void deleteOutboundCampaignrule(campaignRuleId)
 
 Delete Campaign Rule
-
-
 
 Wraps DELETE /api/v2/outbound/campaignrules/{campaignRuleId}  
 
@@ -511,8 +499,6 @@ null (empty response body)
 
 Delete a contact list.
 
-
-
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}  
 
 Requires ANY permissions: 
@@ -572,8 +558,6 @@ null (empty response body)
 > Void deleteOutboundContactlistContact(contactListId, contactId)
 
 Delete a contact.
-
-
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}  
 
@@ -637,8 +621,6 @@ null (empty response body)
 
 Delete contacts from a contact list.
 
-
-
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts  
 
 Requires ANY permissions: 
@@ -668,7 +650,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
-List<String> contactIds = Arrays.asList("contactIds_example"); // List<String> | ContactIds to delete.
+List<String> contactIds = Arrays.asList(null); // List<String> | ContactIds to delete.
 try {
     apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds);
 } catch (ApiException e) {
@@ -700,8 +682,6 @@ null (empty response body)
 > Void deleteOutboundContactlistfilter(contactListFilterId)
 
 Delete Contact List Filter
-
-
 
 Wraps DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}  
 
@@ -763,8 +743,6 @@ null (empty response body)
 
 Delete multiple contact lists.
 
-
-
 Wraps DELETE /api/v2/outbound/contactlists  
 
 Requires ANY permissions: 
@@ -793,7 +771,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
-List<String> id = Arrays.asList("id_example"); // List<String> | contact list id(s) to delete
+List<String> id = Arrays.asList(null); // List<String> | contact list id(s) to delete
 try {
     apiInstance.deleteOutboundContactlists(id);
 } catch (ApiException e) {
@@ -824,8 +802,6 @@ null (empty response body)
 > Void deleteOutboundDnclist(dncListId)
 
 Delete dialer DNC list
-
-
 
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId}  
 
@@ -886,8 +862,6 @@ null (empty response body)
 > [MessagingCampaign](MessagingCampaign.html) deleteOutboundMessagingcampaign(messagingCampaignId)
 
 Delete an Outbound Messaging Campaign
-
-
 
 Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}  
 
@@ -951,8 +925,6 @@ try {
 
 Reset messaging campaign progress and recycle the messaging campaign
 
-
-
 Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress  
 
 Requires ANY permissions: 
@@ -1014,8 +986,6 @@ null (empty response body)
 
 Delete a Rule Set.
 
-
-
 Wraps DELETE /api/v2/outbound/rulesets/{ruleSetId}  
 
 Requires ANY permissions: 
@@ -1075,8 +1045,6 @@ null (empty response body)
 > Void deleteOutboundSchedulesCampaign(campaignId)
 
 Delete a dialer campaign schedule.
-
-
 
 Wraps DELETE /api/v2/outbound/schedules/campaigns/{campaignId}  
 
@@ -1138,8 +1106,6 @@ null (empty response body)
 
 Delete an email campaign schedule.
 
-
-
 Wraps DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}  
 
 Requires ANY permissions: 
@@ -1199,8 +1165,6 @@ null (empty response body)
 > Void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
 
 Delete a messaging campaign schedule.
-
-
 
 Wraps DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}  
 
@@ -1262,8 +1226,6 @@ null (empty response body)
 
 Delete a dialer sequence schedule.
 
-
-
 Wraps DELETE /api/v2/outbound/schedules/sequences/{sequenceId}  
 
 Requires ANY permissions: 
@@ -1323,8 +1285,6 @@ null (empty response body)
 > Void deleteOutboundSequence(sequenceId)
 
 Delete a dialer campaign sequence.
-
-
 
 Wraps DELETE /api/v2/outbound/sequences/{sequenceId}  
 
@@ -1386,8 +1346,6 @@ null (empty response body)
 
 Get attempt limits
 
-
-
 Wraps GET /api/v2/outbound/attemptlimits/{attemptLimitsId}  
 
 Requires ANY permissions: 
@@ -1448,8 +1406,6 @@ try {
 > [AttemptLimitsEntityListing](AttemptLimitsEntityListing.html) getOutboundAttemptlimits(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query attempt limits list
-
-
 
 Wraps GET /api/v2/outbound/attemptlimits  
 
@@ -1524,8 +1480,6 @@ try {
 
 Get callable time set
 
-
-
 Wraps GET /api/v2/outbound/callabletimesets/{callableTimeSetId}  
 
 Requires ANY permissions: 
@@ -1586,8 +1540,6 @@ try {
 > [CallableTimeSetEntityListing](CallableTimeSetEntityListing.html) getOutboundCallabletimesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query callable time set list
-
-
 
 Wraps GET /api/v2/outbound/callabletimesets  
 
@@ -1662,8 +1614,6 @@ try {
 
 Get a dialer call analysis response set.
 
-
-
 Wraps GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}  
 
 Requires ANY permissions: 
@@ -1724,8 +1674,6 @@ try {
 > [ResponseSetEntityListing](ResponseSetEntityListing.html) getOutboundCallanalysisresponsesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer call analysis response sets.
-
-
 
 Wraps GET /api/v2/outbound/callanalysisresponsesets  
 
@@ -1800,8 +1748,6 @@ try {
 
 Get dialer campaign.
 
-
-
 Wraps GET /api/v2/outbound/campaigns/{campaignId}  
 
 Requires ANY permissions: 
@@ -1861,9 +1807,7 @@ try {
 
 > [AgentOwnedMappingPreviewListing](AgentOwnedMappingPreviewListing.html) getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 
-Get a preview of how agents will be mapped to this campaign&#39;s contact list.
-
-
+Get a preview of how agents will be mapped to this campaign's contact list.
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results  
 
@@ -1928,8 +1872,6 @@ try {
 
 Get campaign diagnostics
 
-
-
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/diagnostics  
 
 Requires ANY permissions: 
@@ -1990,8 +1932,6 @@ try {
 > [CampaignInteractions](CampaignInteractions.html) getOutboundCampaignInteractions(campaignId)
 
 Get dialer campaign interactions.
-
-
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/interactions  
 
@@ -2054,8 +1994,6 @@ try {
 
 Get campaign progress
 
-
-
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/progress  
 
 Requires ANY permissions: 
@@ -2116,8 +2054,6 @@ try {
 > [CampaignStats](CampaignStats.html) getOutboundCampaignStats(campaignId)
 
 Get statistics about a Dialer Campaign
-
-
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/stats  
 
@@ -2180,8 +2116,6 @@ try {
 
 Get Campaign Rule
 
-
-
 Wraps GET /api/v2/outbound/campaignrules/{campaignRuleId}  
 
 Requires ANY permissions: 
@@ -2242,8 +2176,6 @@ try {
 > [CampaignRuleEntityListing](CampaignRuleEntityListing.html) getOutboundCampaignrules(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query Campaign Rule list
-
-
 
 Wraps GET /api/v2/outbound/campaignrules  
 
@@ -2318,8 +2250,6 @@ try {
 
 Query a list of dialer campaigns.
 
-
-
 Wraps GET /api/v2/outbound/campaigns  
 
 Requires ANY permissions: 
@@ -2352,13 +2282,13 @@ Integer pageSize = 25; // Integer | Page size. The max that will be returned is 
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String contactListId = "contactListId_example"; // String | Contact List ID
 String dncListIds = "dncListIds_example"; // String | DNC list ID
 String distributionQueueId = "distributionQueueId_example"; // String | Distribution queue ID
 String edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 String callAnalysisResponseSetId = "callAnalysisResponseSetId_example"; // String | Call analysis response set ID
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
@@ -2405,8 +2335,6 @@ try {
 
 Query across all types of campaigns by division
 
-
-
 Wraps GET /api/v2/outbound/campaigns/all  
 
 Requires ANY permissions: 
@@ -2439,10 +2367,10 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | Campaign ID(s)
+List<String> id = Arrays.asList(null); // List<String> | Campaign ID(s)
 String name = "name_example"; // String | Campaign name(s)
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
-List<String> mediaType = Arrays.asList("mediaType_example"); // List<String> | Media type(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
+List<String> mediaType = Arrays.asList(null); // List<String> | Media type(s)
 String sortOrder = "a"; // String | Sort order
 try {
     CommonCampaignEntityListing result = apiInstance.getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder);
@@ -2482,8 +2410,6 @@ try {
 
 Query across all types of campaigns
 
-
-
 Wraps GET /api/v2/outbound/campaigns/all/divisionviews  
 
 Requires ANY permissions: 
@@ -2516,10 +2442,10 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | Campaign ID(s)
+List<String> id = Arrays.asList(null); // List<String> | Campaign ID(s)
 String name = "name_example"; // String | Campaign name(s)
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
-List<String> mediaType = Arrays.asList("mediaType_example"); // List<String> | Media type(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
+List<String> mediaType = Arrays.asList(null); // List<String> | Media type(s)
 String sortOrder = "a"; // String | Sort order
 try {
     CommonCampaignDivisionViewEntityListing result = apiInstance.getOutboundCampaignsAllDivisionviews(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder);
@@ -2656,7 +2582,7 @@ Integer pageSize = 25; // Integer | Page size. The max that will be returned is 
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
@@ -2696,8 +2622,6 @@ try {
 > [ContactList](ContactList.html) getOutboundContactlist(contactListId, includeImportStatus, includeSize)
 
 Get a dialer contact list.
-
-
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}  
 
@@ -2764,8 +2688,6 @@ try {
 
 Get a contact.
 
-
-
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}  
 
 Requires ANY permissions: 
@@ -2828,8 +2750,6 @@ try {
 > [ExportUri](ExportUri.html) getOutboundContactlistExport(contactListId, download)
 
 Get the URI of a contact list export.
-
-
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/export  
 
@@ -2895,8 +2815,6 @@ try {
 
 Get dialer contactList import status.
 
-
-
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/importstatus  
 
 Requires ANY permissions: 
@@ -2957,8 +2875,6 @@ try {
 > [TimeZoneMappingPreview](TimeZoneMappingPreview.html) getOutboundContactlistTimezonemappingpreview(contactListId)
 
 Preview the result of applying Automatic Time Zone Mapping to a contact list
-
-
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview  
 
@@ -3021,8 +2937,6 @@ try {
 
 Get Contact list filter
 
-
-
 Wraps GET /api/v2/outbound/contactlistfilters/{contactListFilterId}  
 
 Requires ANY permissions: 
@@ -3083,8 +2997,6 @@ try {
 > [ContactListFilterEntityListing](ContactListFilterEntityListing.html) getOutboundContactlistfilters(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)
 
 Query Contact list filters
-
-
 
 Wraps GET /api/v2/outbound/contactlistfilters  
 
@@ -3161,8 +3073,6 @@ try {
 
 Query a list of contact lists.
 
-
-
 Wraps GET /api/v2/outbound/contactlists  
 
 Requires ANY permissions: 
@@ -3198,8 +3108,8 @@ Integer pageNumber = 1; // Integer | Page number
 Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | id
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> id = Arrays.asList(null); // List<String> | id
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
@@ -3347,7 +3257,7 @@ Integer pageSize = 25; // Integer | Page size. The max that will be returned is 
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
@@ -3389,8 +3299,6 @@ try {
 > [DncList](DncList.html) getOutboundDnclist(dncListId, includeImportStatus, includeSize)
 
 Get dialer DNC list
-
-
 
 Wraps GET /api/v2/outbound/dnclists/{dncListId}  
 
@@ -3457,8 +3365,6 @@ try {
 
 Get the URI of a DNC list export.
 
-
-
 Wraps GET /api/v2/outbound/dnclists/{dncListId}/export  
 
 Requires ALL permissions: 
@@ -3523,8 +3429,6 @@ try {
 
 Get dialer dncList import status.
 
-
-
 Wraps GET /api/v2/outbound/dnclists/{dncListId}/importstatus  
 
 Requires ANY permissions: 
@@ -3586,8 +3490,6 @@ try {
 
 Query dialer DNC lists
 
-
-
 Wraps GET /api/v2/outbound/dnclists  
 
 Requires ANY permissions: 
@@ -3624,7 +3526,7 @@ Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page w
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String dncSourceType = "dncSourceType_example"; // String | DncSourceType
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "sortOrder_example"; // String | Sort order
 try {
@@ -3773,7 +3675,7 @@ Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String dncSourceType = "dncSourceType_example"; // String | DncSourceType
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
@@ -3816,8 +3718,6 @@ try {
 > [EventLog](EventLog.html) getOutboundEvent(eventId)
 
 Get Dialer Event
-
-
 
 Wraps GET /api/v2/outbound/events/{eventId}  
 
@@ -3879,8 +3779,6 @@ try {
 > [DialerEventEntityListing](DialerEventEntityListing.html) getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)
 
 Query Event Logs
-
-
 
 Wraps GET /api/v2/outbound/events  
 
@@ -3955,8 +3853,6 @@ try {
 
 Get an Outbound Messaging Campaign
 
-
-
 Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}  
 
 Requires ANY permissions: 
@@ -4017,9 +3913,7 @@ try {
 
 > [CampaignProgress](CampaignProgress.html) getOutboundMessagingcampaignProgress(messagingCampaignId)
 
-Get messaging campaign&#39;s progress
-
-
+Get messaging campaign's progress
 
 Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress  
 
@@ -4083,8 +3977,6 @@ try {
 
 Query a list of Messaging Campaigns
 
-
-
 Wraps GET /api/v2/outbound/messagingcampaigns  
 
 Requires ANY permissions: 
@@ -4120,10 +4012,10 @@ String sortBy = "name"; // String | The field to sort by
 String sortOrder = "ascending"; // String | The direction to sort
 String name = "name_example"; // String | Name
 String contactListId = "contactListId_example"; // String | Contact List ID
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 String type = "type_example"; // String | Campaign Type
 String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
-List<String> id = Arrays.asList("id_example"); // List<String> | A list of messaging campaign ids to bulk fetch
+List<String> id = Arrays.asList(null); // List<String> | A list of messaging campaign ids to bulk fetch
 try {
     MessagingCampaignEntityListing result = apiInstance.getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id);
     System.out.println(result);
@@ -4265,7 +4157,7 @@ Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "a"; // String | The direction to sort
 String name = "name_example"; // String | Name
 String type = "type_example"; // String | Campaign Type
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
 try {
     MessagingCampaignDivisionViewEntityListing result = apiInstance.getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber);
@@ -4304,8 +4196,6 @@ try {
 > [RuleSet](RuleSet.html) getOutboundRuleset(ruleSetId)
 
 Get a Rule Set by ID.
-
-
 
 Wraps GET /api/v2/outbound/rulesets/{ruleSetId}  
 
@@ -4367,8 +4257,6 @@ try {
 > [RuleSetEntityListing](RuleSetEntityListing.html) getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of Rule Sets.
-
-
 
 Wraps GET /api/v2/outbound/rulesets  
 
@@ -4443,8 +4331,6 @@ try {
 
 Get a dialer campaign schedule.
 
-
-
 Wraps GET /api/v2/outbound/schedules/campaigns/{campaignId}  
 
 Requires ANY permissions: 
@@ -4506,8 +4392,6 @@ try {
 
 Query for a list of dialer campaign schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/campaigns  
 
 Requires ANY permissions: 
@@ -4564,8 +4448,6 @@ This endpoint does not require any parameters.
 > [EmailCampaignSchedule](EmailCampaignSchedule.html) getOutboundSchedulesEmailcampaign(emailCampaignId)
 
 Get an email campaign schedule.
-
-
 
 Wraps GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}  
 
@@ -4628,8 +4510,6 @@ try {
 
 Query for a list of email campaign schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/emailcampaigns  
 
 Requires ANY permissions: 
@@ -4686,8 +4566,6 @@ This endpoint does not require any parameters.
 > [MessagingCampaignSchedule](MessagingCampaignSchedule.html) getOutboundSchedulesMessagingcampaign(messagingCampaignId)
 
 Get a messaging campaign schedule.
-
-
 
 Wraps GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}  
 
@@ -4750,8 +4628,6 @@ try {
 
 Query for a list of messaging campaign schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/messagingcampaigns  
 
 Requires ANY permissions: 
@@ -4808,8 +4684,6 @@ This endpoint does not require any parameters.
 > [SequenceSchedule](SequenceSchedule.html) getOutboundSchedulesSequence(sequenceId)
 
 Get a dialer sequence schedule.
-
-
 
 Wraps GET /api/v2/outbound/schedules/sequences/{sequenceId}  
 
@@ -4872,8 +4746,6 @@ try {
 
 Query for a list of dialer sequence schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/sequences  
 
 Requires ANY permissions: 
@@ -4930,8 +4802,6 @@ This endpoint does not require any parameters.
 > [CampaignSequence](CampaignSequence.html) getOutboundSequence(sequenceId)
 
 Get a dialer campaign sequence.
-
-
 
 Wraps GET /api/v2/outbound/sequences/{sequenceId}  
 
@@ -4993,8 +4863,6 @@ try {
 > [CampaignSequenceEntityListing](CampaignSequenceEntityListing.html) getOutboundSequences(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer campaign sequences.
-
-
 
 Wraps GET /api/v2/outbound/sequences  
 
@@ -5069,8 +4937,6 @@ try {
 
 Get the outbound settings for this organization
 
-
-
 Wraps GET /api/v2/outbound/settings  
 
 Requires ANY permissions: 
@@ -5128,8 +4994,6 @@ This endpoint does not require any parameters.
 
 Get the Dialer wrap up code mapping.
 
-
-
 Wraps GET /api/v2/outbound/wrapupcodemappings  
 
 Requires ANY permissions: 
@@ -5186,8 +5050,6 @@ This endpoint does not require any parameters.
 > Void patchOutboundSettings(body)
 
 Update the outbound settings for this organization
-
-
 
 Wraps PATCH /api/v2/outbound/settings  
 
@@ -5249,8 +5111,6 @@ null (empty response body)
 
 Create attempt limits
 
-
-
 Wraps POST /api/v2/outbound/attemptlimits  
 
 Requires ANY permissions: 
@@ -5311,8 +5171,6 @@ try {
 > [AuditSearchResult](AuditSearchResult.html) postOutboundAudits(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly)
 
 Retrieves audits for dialer.
-
-
 
 Wraps POST /api/v2/outbound/audits  
 
@@ -5385,8 +5243,6 @@ try {
 
 Create callable time set
 
-
-
 Wraps POST /api/v2/outbound/callabletimesets  
 
 Requires ANY permissions: 
@@ -5448,8 +5304,6 @@ try {
 
 Create a dialer call analysis response set.
 
-
-
 Wraps POST /api/v2/outbound/callanalysisresponsesets  
 
 Requires ANY permissions: 
@@ -5507,11 +5361,9 @@ try {
 
 
 
-> [Empty](Empty.html) postOutboundCampaignAgentownedmappingpreview(campaignId)
+> Empty postOutboundCampaignAgentownedmappingpreview(campaignId)
 
-Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
-
-
+Initiate request for a preview of how agents will be mapped to this campaign's contact list.
 
 Wraps POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview  
 
@@ -5564,7 +5416,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="postOutboundCampaignCallbackSchedule"></a>
 
@@ -5576,7 +5428,7 @@ try {
 
 Schedule a Callback for a Dialer Campaign (Deprecated)
 
-This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
 
 Wraps POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule  
 
@@ -5640,8 +5492,6 @@ try {
 
 Create Campaign Rule
 
-
-
 Wraps POST /api/v2/outbound/campaignrules  
 
 Requires ANY permissions: 
@@ -5702,8 +5552,6 @@ try {
 > [Campaign](Campaign.html) postOutboundCampaigns(body)
 
 Create a campaign.
-
-
 
 Wraps POST /api/v2/outbound/campaigns  
 
@@ -5766,8 +5614,6 @@ try {
 
 Get progress for a list of campaigns
 
-
-
 Wraps POST /api/v2/outbound/campaigns/progress  
 
 Requires ANY permissions: 
@@ -5796,7 +5642,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
-List<String> body = Arrays.asList(new List<String>()); // List<String> | Campaign IDs
+List<String> body = Arrays.asList(null); // List<String> | Campaign IDs
 try {
     List<CampaignProgress> result = apiInstance.postOutboundCampaignsProgress(body);
     System.out.println(result);
@@ -5811,7 +5657,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **List&lt;String&gt;**| Campaign IDs | 
+| **body** | [**List&lt;String&gt;**](String.html)| Campaign IDs | 
 {: class="table-striped"}
 
 
@@ -5828,8 +5674,6 @@ try {
 > Void postOutboundContactlistClear(contactListId)
 
 Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-
-
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/clear  
 
@@ -5890,8 +5734,6 @@ null (empty response body)
 > [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue)
 
 Add contacts to a contact list.
-
-
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts  
 
@@ -5962,8 +5804,6 @@ try {
 
 Get contacts from a contact list.
 
-
-
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk  
 
 Requires ANY permissions: 
@@ -5993,7 +5833,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | ContactIds to get.
+List<String> body = Arrays.asList(null); // List<String> | ContactIds to get.
 try {
     List<DialerContact> result = apiInstance.postOutboundContactlistContactsBulk(contactListId, body);
     System.out.println(result);
@@ -6009,7 +5849,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **body** | **List&lt;String&gt;**| ContactIds to get. | 
+| **body** | [**List&lt;String&gt;**](String.html)| ContactIds to get. | 
 {: class="table-striped"}
 
 
@@ -6091,8 +5931,6 @@ try {
 
 Create Contact List Filter
 
-
-
 Wraps POST /api/v2/outbound/contactlistfilters  
 
 Requires ANY permissions: 
@@ -6153,8 +5991,6 @@ try {
 > [FilterPreviewResponse](FilterPreviewResponse.html) postOutboundContactlistfiltersPreview(body)
 
 Get a preview of the output of a contact list filter
-
-
 
 Wraps POST /api/v2/outbound/contactlistfilters/preview  
 
@@ -6217,8 +6053,6 @@ try {
 
 Create a contact List.
 
-
-
 Wraps POST /api/v2/outbound/contactlists  
 
 Requires ANY permissions: 
@@ -6279,8 +6113,6 @@ try {
 > Void postOutboundConversationDnc(conversationId)
 
 Add phone numbers to a Dialer DNC list.
-
-
 
 Wraps POST /api/v2/outbound/conversations/{conversationId}/dnc  
 
@@ -6437,7 +6269,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | DNC Phone Numbers
+List<String> body = Arrays.asList(null); // List<String> | DNC Phone Numbers
 String expirationDateTime = "expirationDateTime_example"; // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
 try {
     apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, expirationDateTime);
@@ -6453,7 +6285,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | **List&lt;String&gt;**| DNC Phone Numbers | 
+| **body** | [**List&lt;String&gt;**](String.html)| DNC Phone Numbers | 
 | **expirationDateTime** | **String**| Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional] 
 {: class="table-striped"}
 
@@ -6471,8 +6303,6 @@ null (empty response body)
 > [DncList](DncList.html) postOutboundDnclists(body)
 
 Create dialer DNC list
-
-
 
 Wraps POST /api/v2/outbound/dnclists  
 
@@ -6534,8 +6364,6 @@ try {
 > [MessagingCampaign](MessagingCampaign.html) postOutboundMessagingcampaigns(body)
 
 Create a Messaging Campaign
-
-
 
 Wraps POST /api/v2/outbound/messagingcampaigns  
 
@@ -6599,8 +6427,6 @@ try {
 
 Get progress for a list of messaging campaigns
 
-
-
 Wraps POST /api/v2/outbound/messagingcampaigns/progress  
 
 Requires ANY permissions: 
@@ -6630,7 +6456,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
-List<String> body = Arrays.asList(new List<String>()); // List<String> | Messaging Campaign IDs
+List<String> body = Arrays.asList(null); // List<String> | Messaging Campaign IDs
 try {
     List<CampaignProgress> result = apiInstance.postOutboundMessagingcampaignsProgress(body);
     System.out.println(result);
@@ -6645,7 +6471,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **List&lt;String&gt;**| Messaging Campaign IDs | 
+| **body** | [**List&lt;String&gt;**](String.html)| Messaging Campaign IDs | 
 {: class="table-striped"}
 
 
@@ -6662,8 +6488,6 @@ try {
 > [RuleSet](RuleSet.html) postOutboundRulesets(body)
 
 Create a Rule Set.
-
-
 
 Wraps POST /api/v2/outbound/rulesets  
 
@@ -6726,8 +6550,6 @@ try {
 
 Create a new campaign sequence.
 
-
-
 Wraps POST /api/v2/outbound/sequences  
 
 Requires ANY permissions: 
@@ -6788,8 +6610,6 @@ try {
 > [AttemptLimits](AttemptLimits.html) putOutboundAttemptlimit(attemptLimitsId, body)
 
 Update attempt limits
-
-
 
 Wraps PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}  
 
@@ -6854,8 +6674,6 @@ try {
 
 Update callable time set
 
-
-
 Wraps PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}  
 
 Requires ANY permissions: 
@@ -6918,8 +6736,6 @@ try {
 > [ResponseSet](ResponseSet.html) putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 Update a dialer call analysis response set.
-
-
 
 Wraps PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}  
 
@@ -6984,8 +6800,6 @@ try {
 
 Update a campaign.
 
-
-
 Wraps PUT /api/v2/outbound/campaigns/{campaignId}  
 
 Requires ANY permissions: 
@@ -7047,7 +6861,7 @@ try {
 
 > String putOutboundCampaignAgent(campaignId, userId, body)
 
-Send notification that an agent&#39;s state changed 
+Send notification that an agent's state changed 
 
 New agent state.
 
@@ -7115,8 +6929,6 @@ try {
 
 Update Campaign Rule
 
-
-
 Wraps PUT /api/v2/outbound/campaignrules/{campaignRuleId}  
 
 Requires ANY permissions: 
@@ -7180,8 +6992,6 @@ try {
 
 Update a contact list.
 
-
-
 Wraps PUT /api/v2/outbound/contactlists/{contactListId}  
 
 Requires ANY permissions: 
@@ -7244,8 +7054,6 @@ try {
 > [DialerContact](DialerContact.html) putOutboundContactlistContact(contactListId, contactId, body)
 
 Update a contact.
-
-
 
 Wraps PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}  
 
@@ -7312,8 +7120,6 @@ try {
 
 Update Contact List Filter
 
-
-
 Wraps PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}  
 
 Requires ANY permissions: 
@@ -7377,8 +7183,6 @@ try {
 
 Update dialer DNC list
 
-
-
 Wraps PUT /api/v2/outbound/dnclists/{dncListId}  
 
 Requires ANY permissions: 
@@ -7441,8 +7245,6 @@ try {
 > [MessagingCampaign](MessagingCampaign.html) putOutboundMessagingcampaign(messagingCampaignId, body)
 
 Update an Outbound Messaging Campaign
-
-
 
 Wraps PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}  
 
@@ -7508,8 +7310,6 @@ try {
 
 Update a Rule Set.
 
-
-
 Wraps PUT /api/v2/outbound/rulesets/{ruleSetId}  
 
 Requires ANY permissions: 
@@ -7572,8 +7372,6 @@ try {
 > [CampaignSchedule](CampaignSchedule.html) putOutboundSchedulesCampaign(campaignId, body)
 
 Update a new campaign schedule.
-
-
 
 Wraps PUT /api/v2/outbound/schedules/campaigns/{campaignId}  
 
@@ -7638,8 +7436,6 @@ try {
 
 Update an email campaign schedule.
 
-
-
 Wraps PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}  
 
 Requires ANY permissions: 
@@ -7702,8 +7498,6 @@ try {
 > [MessagingCampaignSchedule](MessagingCampaignSchedule.html) putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
 
 Update a new messaging campaign schedule.
-
-
 
 Wraps PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}  
 
@@ -7768,8 +7562,6 @@ try {
 
 Update a new sequence schedule.
 
-
-
 Wraps PUT /api/v2/outbound/schedules/sequences/{sequenceId}  
 
 Requires ANY permissions: 
@@ -7833,8 +7625,6 @@ try {
 
 Update a new campaign sequence.
 
-
-
 Wraps PUT /api/v2/outbound/sequences/{sequenceId}  
 
 Requires ANY permissions: 
@@ -7897,8 +7687,6 @@ try {
 > [WrapUpCodeMapping](WrapUpCodeMapping.html) putOutboundWrapupcodemappings(body)
 
 Update the Dialer wrap up code mapping.
-
-
 
 Wraps PUT /api/v2/outbound/wrapupcodemappings  
 

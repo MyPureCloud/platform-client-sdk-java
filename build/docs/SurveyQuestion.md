@@ -26,11 +26,11 @@ title: SurveyQuestion
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MULTIPLECHOICEQUESTION | &quot;multipleChoiceQuestion&quot; |
-| FREETEXTQUESTION | &quot;freeTextQuestion&quot; |
-| NPSQUESTION | &quot;npsQuestion&quot; |
-| READONLYTEXTBLOCKQUESTION | &quot;readOnlyTextBlockQuestion&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MULTIPLECHOICEQUESTION | &quot;multipleChoiceQuestion&quot; | 
+| FREETEXTQUESTION | &quot;freeTextQuestion&quot; | 
+| NPSQUESTION | &quot;npsQuestion&quot; | 
+| READONLYTEXTBLOCKQUESTION | &quot;readOnlyTextBlockQuestion&quot; | 
 {: class="table table-striped"}
 
 

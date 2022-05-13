@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class GetWebdeploymentsConfigurationsRequest {
-    
+
 	private Boolean showOnlyPublished;
 	public Boolean getShowOnlyPublished() {
 		return this.showOnlyPublished;
@@ -41,7 +41,7 @@ public class GetWebdeploymentsConfigurationsRequest {
 	    this.setShowOnlyPublished(showOnlyPublished);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -65,9 +65,10 @@ public class GetWebdeploymentsConfigurationsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/webdeployments/configurations")
+
                 .withQueryParameters("showOnlyPublished", "", showOnlyPublished)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -78,7 +79,7 @@ public class GetWebdeploymentsConfigurationsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetWebdeploymentsConfigurationsRequest request;
@@ -87,14 +88,14 @@ public class GetWebdeploymentsConfigurationsRequest {
 			request = new GetWebdeploymentsConfigurationsRequest();
 		}
 
-		
+
 		public Builder withShowOnlyPublished(Boolean showOnlyPublished) {
 			request.setShowOnlyPublished(showOnlyPublished);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetWebdeploymentsConfigurationsRequest build() {
             

@@ -22,10 +22,10 @@ title: WfmHistoricalAdherenceResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PROCESSING | &quot;Processing&quot; |
-| COMPLETE | &quot;Complete&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PROCESSING | &quot;Processing&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

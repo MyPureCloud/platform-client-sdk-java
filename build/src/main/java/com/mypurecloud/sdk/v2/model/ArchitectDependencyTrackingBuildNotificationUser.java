@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectDependencyTrackingBuildNotificationHomeOrganization;
@@ -44,7 +45,7 @@ public class ArchitectDependencyTrackingBuildNotificationUser  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    * The name of the user, if available.
    **/
@@ -62,7 +63,7 @@ public class ArchitectDependencyTrackingBuildNotificationUser  implements Serial
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ArchitectDependencyTrackingBuildNotificationUser homeOrg(ArchitectDependencyTrackingBuildNotificationHomeOrganization homeOrg) {
@@ -79,7 +80,6 @@ public class ArchitectDependencyTrackingBuildNotificationUser  implements Serial
     this.homeOrg = homeOrg;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class ArchitectDependencyTrackingBuildNotificationUser  implements Serial
       return false;
     }
     ArchitectDependencyTrackingBuildNotificationUser architectDependencyTrackingBuildNotificationUser = (ArchitectDependencyTrackingBuildNotificationUser) o;
+
     return Objects.equals(this.id, architectDependencyTrackingBuildNotificationUser.id) &&
-        Objects.equals(this.name, architectDependencyTrackingBuildNotificationUser.name) &&
-        Objects.equals(this.homeOrg, architectDependencyTrackingBuildNotificationUser.homeOrg);
+            Objects.equals(this.name, architectDependencyTrackingBuildNotificationUser.name) &&
+            Objects.equals(this.homeOrg, architectDependencyTrackingBuildNotificationUser.homeOrg);
   }
 
   @Override

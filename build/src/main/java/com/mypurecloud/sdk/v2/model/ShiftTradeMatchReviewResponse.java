@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchReviewUserResponse;
@@ -47,7 +48,7 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     this.initiatingUser = initiatingUser;
   }
 
-  
+
   /**
    * Details for the receivingUser side of the shift trade
    **/
@@ -65,7 +66,7 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     this.receivingUser = receivingUser;
   }
 
-  
+
   /**
    * Constraint violations introduced after being matched that would normally disallow a trade, but which can still be overridden by the shift trade administrator
    **/
@@ -83,7 +84,7 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     this.violations = violations;
   }
 
-  
+
   /**
    * Constraint violations associated with this shift trade which require shift trade administrator review
    **/
@@ -101,7 +102,6 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
     this.adminReviewViolations = adminReviewViolations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class ShiftTradeMatchReviewResponse  implements Serializable {
       return false;
     }
     ShiftTradeMatchReviewResponse shiftTradeMatchReviewResponse = (ShiftTradeMatchReviewResponse) o;
+
     return Objects.equals(this.initiatingUser, shiftTradeMatchReviewResponse.initiatingUser) &&
-        Objects.equals(this.receivingUser, shiftTradeMatchReviewResponse.receivingUser) &&
-        Objects.equals(this.violations, shiftTradeMatchReviewResponse.violations) &&
-        Objects.equals(this.adminReviewViolations, shiftTradeMatchReviewResponse.adminReviewViolations);
+            Objects.equals(this.receivingUser, shiftTradeMatchReviewResponse.receivingUser) &&
+            Objects.equals(this.violations, shiftTradeMatchReviewResponse.violations) &&
+            Objects.equals(this.adminReviewViolations, shiftTradeMatchReviewResponse.adminReviewViolations);
   }
 
   @Override

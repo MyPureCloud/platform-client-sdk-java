@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 
 public class GetDataextensionsCoretypeRequest {
-    
+
 	private String coretypeName;
 	public String getCoretypeName() {
 		return this.coretypeName;
@@ -42,16 +42,16 @@ public class GetDataextensionsCoretypeRequest {
 	} 
 
 	public enum coretypeNameValues { 
-		TEXT("text"), 
-		LONGTEXT("longtext"), 
-		URL("url"), 
-		IDENTIFIER("identifier"), 
-		ENUM("enum"), 
-		DATE("date"), 
-		DATETIME("datetime"), 
-		INTEGER("integer"), 
-		NUMBER("number"), 
-		CHECKBOX("checkbox"), 
+		TEXT("text"),
+		LONGTEXT("longtext"),
+		URL("url"),
+		IDENTIFIER("identifier"),
+		ENUM("enum"),
+		DATE("date"),
+		DATETIME("datetime"),
+		INTEGER("integer"),
+		NUMBER("number"),
+		CHECKBOX("checkbox"),
 		TAG("tag");
 
 		private String value;
@@ -79,7 +79,7 @@ public class GetDataextensionsCoretypeRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -110,7 +110,7 @@ public class GetDataextensionsCoretypeRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/dataextensions/coretypes/{coretypeName}")
                 .withPathParameter("coretypeName", coretypeName)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -121,12 +121,12 @@ public class GetDataextensionsCoretypeRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String coretypeName) {
 	    return new Builder()
 	            .withRequiredParams(coretypeName);
 	}
-	
+
 
 	public static class Builder {
 		private final GetDataextensionsCoretypeRequest request;
@@ -135,25 +135,29 @@ public class GetDataextensionsCoretypeRequest {
 			request = new GetDataextensionsCoretypeRequest();
 		}
 
-		
+
 		public Builder withCoretypeName(String coretypeName) {
 			request.setCoretypeName(coretypeName);
 			return this;
 		}
 
-		public Builder withCoretypeName(coretypeNameValues coretypeName) {
-		    request.setCoretypeName(coretypeName.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withCoretypeName(coretypeNameValues coretypeName) {
+		    request.setCoretypeName(coretypeName.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String coretypeName) {
 			request.setCoretypeName(coretypeName);
-			
+
 			return this;
 		}
-		
+
 
 		public GetDataextensionsCoretypeRequest build() {
             

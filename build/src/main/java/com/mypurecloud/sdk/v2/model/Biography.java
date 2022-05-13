@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Education;
@@ -47,7 +48,7 @@ public class Biography  implements Serializable {
     this.biography = biography;
   }
 
-  
+
   /**
    **/
   public Biography interests(List<String> interests) {
@@ -64,7 +65,7 @@ public class Biography  implements Serializable {
     this.interests = interests;
   }
 
-  
+
   /**
    **/
   public Biography hobbies(List<String> hobbies) {
@@ -81,7 +82,7 @@ public class Biography  implements Serializable {
     this.hobbies = hobbies;
   }
 
-  
+
   /**
    **/
   public Biography spouse(String spouse) {
@@ -98,7 +99,7 @@ public class Biography  implements Serializable {
     this.spouse = spouse;
   }
 
-  
+
   /**
    * User education details
    **/
@@ -116,7 +117,6 @@ public class Biography  implements Serializable {
     this.education = education;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class Biography  implements Serializable {
       return false;
     }
     Biography biography = (Biography) o;
+
     return Objects.equals(this.biography, biography.biography) &&
-        Objects.equals(this.interests, biography.interests) &&
-        Objects.equals(this.hobbies, biography.hobbies) &&
-        Objects.equals(this.spouse, biography.spouse) &&
-        Objects.equals(this.education, biography.education);
+            Objects.equals(this.interests, biography.interests) &&
+            Objects.equals(this.hobbies, biography.hobbies) &&
+            Objects.equals(this.spouse, biography.spouse) &&
+            Objects.equals(this.education, biography.education);
   }
 
   @Override

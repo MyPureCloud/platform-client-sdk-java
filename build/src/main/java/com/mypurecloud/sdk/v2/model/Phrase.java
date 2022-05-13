@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class Phrase  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * The phrase strictness, default value is null
    **/
@@ -161,7 +162,7 @@ public class Phrase  implements Serializable {
     this.strictness = strictness;
   }
 
-  
+
   /**
    * The phrase sentiment, default value is Unspecified
    **/
@@ -179,7 +180,6 @@ public class Phrase  implements Serializable {
     this.sentiment = sentiment;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -190,9 +190,10 @@ public class Phrase  implements Serializable {
       return false;
     }
     Phrase phrase = (Phrase) o;
+
     return Objects.equals(this.text, phrase.text) &&
-        Objects.equals(this.strictness, phrase.strictness) &&
-        Objects.equals(this.sentiment, phrase.sentiment);
+            Objects.equals(this.strictness, phrase.strictness) &&
+            Objects.equals(this.sentiment, phrase.sentiment);
   }
 
   @Override

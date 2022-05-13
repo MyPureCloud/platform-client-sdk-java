@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
-    
+
 	private String domainId;
 	public String getDomainId() {
 		return this.domainId;
@@ -57,7 +57,7 @@ public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 	    this.setDomainId(domainId);
 	    return this;
 	} 
-	
+
 	private String feedbackId;
 	public String getFeedbackId() {
 		return this.feedbackId;
@@ -71,7 +71,7 @@ public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 	    this.setFeedbackId(feedbackId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,7 +109,7 @@ public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
         
                 .withPathParameter("feedbackId", feedbackId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -120,12 +120,12 @@ public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String domainId, String feedbackId) {
 	    return new Builder()
 	            .withRequiredParams(domainId, feedbackId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest request;
@@ -134,26 +134,26 @@ public class DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 			request = new DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest();
 		}
 
-		
+
 		public Builder withDomainId(String domainId) {
 			request.setDomainId(domainId);
 			return this;
 		}
-		
+
 		public Builder withFeedbackId(String feedbackId) {
 			request.setFeedbackId(feedbackId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String domainId, String feedbackId) {
 			request.setDomainId(domainId);
-						request.setFeedbackId(feedbackId);
-			
+			request.setFeedbackId(feedbackId);
+
 			return this;
 		}
-		
+
 
 		public DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest build() {
             

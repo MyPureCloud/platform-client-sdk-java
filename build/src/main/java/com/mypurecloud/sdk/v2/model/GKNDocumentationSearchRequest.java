@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -116,7 +117,7 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -134,7 +135,7 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -152,7 +153,7 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -170,7 +171,7 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    **/
   public GKNDocumentationSearchRequest query(List<GKNDocumentationSearchCriteria> query) {
@@ -187,7 +188,6 @@ public class GKNDocumentationSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,12 +198,13 @@ public class GKNDocumentationSearchRequest  implements Serializable {
       return false;
     }
     GKNDocumentationSearchRequest gKNDocumentationSearchRequest = (GKNDocumentationSearchRequest) o;
+
     return Objects.equals(this.sortOrder, gKNDocumentationSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, gKNDocumentationSearchRequest.sortBy) &&
-        Objects.equals(this.pageSize, gKNDocumentationSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, gKNDocumentationSearchRequest.pageNumber) &&
-        Objects.equals(this.sort, gKNDocumentationSearchRequest.sort) &&
-        Objects.equals(this.query, gKNDocumentationSearchRequest.query);
+            Objects.equals(this.sortBy, gKNDocumentationSearchRequest.sortBy) &&
+            Objects.equals(this.pageSize, gKNDocumentationSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, gKNDocumentationSearchRequest.pageNumber) &&
+            Objects.equals(this.sort, gKNDocumentationSearchRequest.sort) &&
+            Objects.equals(this.query, gKNDocumentationSearchRequest.query);
   }
 
   @Override

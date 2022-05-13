@@ -20,9 +20,9 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COBROWSE | &quot;CoBrowse&quot; |
-| TYPING | &quot;Typing&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| COBROWSE | &quot;CoBrowse&quot; | 
+| TYPING | &quot;Typing&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class EvaluationQualityV2TopicEvaluationScoringSet  implements Serializab
     this.totalScore = totalScore;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicEvaluationScoringSet totalCriticalScore(Integer totalCriticalScore) {
@@ -57,7 +58,6 @@ public class EvaluationQualityV2TopicEvaluationScoringSet  implements Serializab
     this.totalCriticalScore = totalCriticalScore;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class EvaluationQualityV2TopicEvaluationScoringSet  implements Serializab
       return false;
     }
     EvaluationQualityV2TopicEvaluationScoringSet evaluationQualityV2TopicEvaluationScoringSet = (EvaluationQualityV2TopicEvaluationScoringSet) o;
+
     return Objects.equals(this.totalScore, evaluationQualityV2TopicEvaluationScoringSet.totalScore) &&
-        Objects.equals(this.totalCriticalScore, evaluationQualityV2TopicEvaluationScoringSet.totalCriticalScore);
+            Objects.equals(this.totalCriticalScore, evaluationQualityV2TopicEvaluationScoringSet.totalCriticalScore);
   }
 
   @Override

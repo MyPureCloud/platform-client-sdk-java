@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class OpenMessageContent  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * Attachment content.
    **/
@@ -108,7 +109,6 @@ public class OpenMessageContent  implements Serializable {
     this.attachment = attachment;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class OpenMessageContent  implements Serializable {
       return false;
     }
     OpenMessageContent openMessageContent = (OpenMessageContent) o;
+
     return Objects.equals(this.contentType, openMessageContent.contentType) &&
-        Objects.equals(this.attachment, openMessageContent.attachment);
+            Objects.equals(this.attachment, openMessageContent.attachment);
   }
 
   @Override

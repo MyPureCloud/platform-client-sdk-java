@@ -25,11 +25,11 @@ title: JourneyWebActionEventsNotificationDevice
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DESKTOP | &quot;desktop&quot; |
-| MOBILE | &quot;mobile&quot; |
-| TABLET | &quot;tablet&quot; |
-| OTHER | &quot;other&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DESKTOP | &quot;desktop&quot; | 
+| MOBILE | &quot;mobile&quot; | 
+| TABLET | &quot;tablet&quot; | 
+| OTHER | &quot;other&quot; | 
 {: class="table table-striped"}
 
 

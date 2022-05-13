@@ -20,39 +20,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CommandStatus;
+import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
+import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
 import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
+import com.mypurecloud.sdk.v2.model.DocumentUpdate;
+import com.mypurecloud.sdk.v2.model.DocumentUpload;
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.QueryRequest;
 import com.mypurecloud.sdk.v2.model.QueryResults;
+import com.mypurecloud.sdk.v2.model.ReplaceRequest;
+import com.mypurecloud.sdk.v2.model.ReplaceResponse;
 import com.mypurecloud.sdk.v2.model.SecurityProfile;
 import com.mypurecloud.sdk.v2.model.SecurityProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.Share;
-import com.mypurecloud.sdk.v2.model.SharedResponse;
 import com.mypurecloud.sdk.v2.model.ShareEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatus;
-import com.mypurecloud.sdk.v2.model.Usage;
-import com.mypurecloud.sdk.v2.model.Workspace;
-import com.mypurecloud.sdk.v2.model.WorkspaceMember;
-import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SharedResponse;
+import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.TagValue;
 import com.mypurecloud.sdk.v2.model.TagValueEntityListing;
-import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
-import com.mypurecloud.sdk.v2.model.DocumentUpdate;
-import com.mypurecloud.sdk.v2.model.ReplaceRequest;
-import com.mypurecloud.sdk.v2.model.ReplaceResponse;
-import com.mypurecloud.sdk.v2.model.DocumentUpload;
-import com.mypurecloud.sdk.v2.model.QueryRequest;
-import com.mypurecloud.sdk.v2.model.CreateShareResponse;
-import com.mypurecloud.sdk.v2.model.CreateShareRequest;
-import com.mypurecloud.sdk.v2.model.TagQueryRequest;
+import com.mypurecloud.sdk.v2.model.Usage;
+import com.mypurecloud.sdk.v2.model.Workspace;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
+import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkspaceMember;
+import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
 
 public class DeleteContentmanagementWorkspaceRequest {
-    
+
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -66,7 +66,7 @@ public class DeleteContentmanagementWorkspaceRequest {
 	    this.setWorkspaceId(workspaceId);
 	    return this;
 	} 
-	
+
 	private String moveChildrenToWorkspaceId;
 	public String getMoveChildrenToWorkspaceId() {
 		return this.moveChildrenToWorkspaceId;
@@ -80,7 +80,7 @@ public class DeleteContentmanagementWorkspaceRequest {
 	    this.setMoveChildrenToWorkspaceId(moveChildrenToWorkspaceId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -111,9 +111,10 @@ public class DeleteContentmanagementWorkspaceRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/contentmanagement/workspaces/{workspaceId}")
                 .withPathParameter("workspaceId", workspaceId)
         
+
                 .withQueryParameters("moveChildrenToWorkspaceId", "", moveChildrenToWorkspaceId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -124,12 +125,12 @@ public class DeleteContentmanagementWorkspaceRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String workspaceId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteContentmanagementWorkspaceRequest request;
@@ -138,25 +139,25 @@ public class DeleteContentmanagementWorkspaceRequest {
 			request = new DeleteContentmanagementWorkspaceRequest();
 		}
 
-		
+
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
-		
+
 		public Builder withMoveChildrenToWorkspaceId(String moveChildrenToWorkspaceId) {
 			request.setMoveChildrenToWorkspaceId(moveChildrenToWorkspaceId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteContentmanagementWorkspaceRequest build() {
             

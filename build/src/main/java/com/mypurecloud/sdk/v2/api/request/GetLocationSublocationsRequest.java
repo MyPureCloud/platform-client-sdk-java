@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 public class GetLocationSublocationsRequest {
-    
+
 	private String locationId;
 	public String getLocationId() {
 		return this.locationId;
@@ -43,7 +43,7 @@ public class GetLocationSublocationsRequest {
 	    this.setLocationId(locationId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +74,7 @@ public class GetLocationSublocationsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/locations/{locationId}/sublocations")
                 .withPathParameter("locationId", locationId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -85,12 +85,12 @@ public class GetLocationSublocationsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String locationId) {
 	    return new Builder()
 	            .withRequiredParams(locationId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLocationSublocationsRequest request;
@@ -99,20 +99,20 @@ public class GetLocationSublocationsRequest {
 			request = new GetLocationSublocationsRequest();
 		}
 
-		
+
 		public Builder withLocationId(String locationId) {
 			request.setLocationId(locationId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String locationId) {
 			request.setLocationId(locationId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLocationSublocationsRequest build() {
             

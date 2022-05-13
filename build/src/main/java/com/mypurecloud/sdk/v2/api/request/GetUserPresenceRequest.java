@@ -27,7 +27,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class GetUserPresenceRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -41,7 +41,7 @@ public class GetUserPresenceRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private String sourceId;
 	public String getSourceId() {
 		return this.sourceId;
@@ -55,7 +55,7 @@ public class GetUserPresenceRequest {
 	    this.setSourceId(sourceId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +93,7 @@ public class GetUserPresenceRequest {
         
                 .withPathParameter("sourceId", sourceId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -104,12 +104,12 @@ public class GetUserPresenceRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId, String sourceId) {
 	    return new Builder()
 	            .withRequiredParams(userId, sourceId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetUserPresenceRequest request;
@@ -118,26 +118,26 @@ public class GetUserPresenceRequest {
 			request = new GetUserPresenceRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
+
 		public Builder withSourceId(String sourceId) {
 			request.setSourceId(sourceId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId, String sourceId) {
 			request.setUserId(userId);
-						request.setSourceId(sourceId);
-			
+			request.setSourceId(sourceId);
+
 			return this;
 		}
-		
+
 
 		public GetUserPresenceRequest build() {
             

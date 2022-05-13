@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.maxCallsPerAgent = maxCallsPerAgent;
   }
 
-  
+
   /**
    * The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]
    **/
@@ -118,7 +119,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.maxLineUtilization = maxLineUtilization;
   }
 
-  
+
   /**
    * The number of seconds used to determine if a call is abandoned
    **/
@@ -136,7 +137,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.abandonSeconds = abandonSeconds;
   }
 
-  
+
   /**
    * The denominator to be used in determining the compliance abandon rate
    **/
@@ -154,7 +155,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.complianceAbandonRateDenominator = complianceAbandonRateDenominator;
   }
 
-  
+
   /**
    **/
   public DialerOutboundSettingsConfigChangeOutboundSettings automaticTimeZoneMapping(DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings automaticTimeZoneMapping) {
@@ -171,7 +172,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.automaticTimeZoneMapping = automaticTimeZoneMapping;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -189,7 +190,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -207,7 +208,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -225,7 +226,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -243,7 +244,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -261,7 +262,6 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -272,16 +272,17 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
       return false;
     }
     DialerOutboundSettingsConfigChangeOutboundSettings dialerOutboundSettingsConfigChangeOutboundSettings = (DialerOutboundSettingsConfigChangeOutboundSettings) o;
+
     return Objects.equals(this.maxCallsPerAgent, dialerOutboundSettingsConfigChangeOutboundSettings.maxCallsPerAgent) &&
-        Objects.equals(this.maxLineUtilization, dialerOutboundSettingsConfigChangeOutboundSettings.maxLineUtilization) &&
-        Objects.equals(this.abandonSeconds, dialerOutboundSettingsConfigChangeOutboundSettings.abandonSeconds) &&
-        Objects.equals(this.complianceAbandonRateDenominator, dialerOutboundSettingsConfigChangeOutboundSettings.complianceAbandonRateDenominator) &&
-        Objects.equals(this.automaticTimeZoneMapping, dialerOutboundSettingsConfigChangeOutboundSettings.automaticTimeZoneMapping) &&
-        Objects.equals(this.id, dialerOutboundSettingsConfigChangeOutboundSettings.id) &&
-        Objects.equals(this.name, dialerOutboundSettingsConfigChangeOutboundSettings.name) &&
-        Objects.equals(this.dateCreated, dialerOutboundSettingsConfigChangeOutboundSettings.dateCreated) &&
-        Objects.equals(this.dateModified, dialerOutboundSettingsConfigChangeOutboundSettings.dateModified) &&
-        Objects.equals(this.version, dialerOutboundSettingsConfigChangeOutboundSettings.version);
+            Objects.equals(this.maxLineUtilization, dialerOutboundSettingsConfigChangeOutboundSettings.maxLineUtilization) &&
+            Objects.equals(this.abandonSeconds, dialerOutboundSettingsConfigChangeOutboundSettings.abandonSeconds) &&
+            Objects.equals(this.complianceAbandonRateDenominator, dialerOutboundSettingsConfigChangeOutboundSettings.complianceAbandonRateDenominator) &&
+            Objects.equals(this.automaticTimeZoneMapping, dialerOutboundSettingsConfigChangeOutboundSettings.automaticTimeZoneMapping) &&
+            Objects.equals(this.id, dialerOutboundSettingsConfigChangeOutboundSettings.id) &&
+            Objects.equals(this.name, dialerOutboundSettingsConfigChangeOutboundSettings.name) &&
+            Objects.equals(this.dateCreated, dialerOutboundSettingsConfigChangeOutboundSettings.dateCreated) &&
+            Objects.equals(this.dateModified, dialerOutboundSettingsConfigChangeOutboundSettings.dateModified) &&
+            Objects.equals(this.version, dialerOutboundSettingsConfigChangeOutboundSettings.version);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,21 +86,20 @@ public class KeyPerformanceIndicatorAssessment  implements Serializable {
     return kpi;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The overall result of the assessment for a key performance indicator.")
   @JsonProperty("assessmentResult")
   public AssessmentResultEnum getAssessmentResult() {
     return assessmentResult;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Set of checks executed as part of an assessment.")
   @JsonProperty("checks")
   public List<Check> getChecks() {
     return checks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,9 +110,10 @@ public class KeyPerformanceIndicatorAssessment  implements Serializable {
       return false;
     }
     KeyPerformanceIndicatorAssessment keyPerformanceIndicatorAssessment = (KeyPerformanceIndicatorAssessment) o;
+
     return Objects.equals(this.kpi, keyPerformanceIndicatorAssessment.kpi) &&
-        Objects.equals(this.assessmentResult, keyPerformanceIndicatorAssessment.assessmentResult) &&
-        Objects.equals(this.checks, keyPerformanceIndicatorAssessment.checks);
+            Objects.equals(this.assessmentResult, keyPerformanceIndicatorAssessment.assessmentResult) &&
+            Objects.equals(this.checks, keyPerformanceIndicatorAssessment.checks);
   }
 
   @Override

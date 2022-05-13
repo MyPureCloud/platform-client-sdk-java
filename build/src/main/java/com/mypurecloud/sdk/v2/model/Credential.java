@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialType;
@@ -37,7 +38,7 @@ public class Credential  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Credential name(String name) {
@@ -54,7 +55,7 @@ public class Credential  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of credential.
    **/
@@ -72,7 +73,7 @@ public class Credential  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public Credential credentialFields(Map<String, String> credentialFields) {
@@ -89,14 +90,13 @@ public class Credential  implements Serializable {
     this.credentialFields = credentialFields;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,11 +107,12 @@ public class Credential  implements Serializable {
       return false;
     }
     Credential credential = (Credential) o;
+
     return Objects.equals(this.id, credential.id) &&
-        Objects.equals(this.name, credential.name) &&
-        Objects.equals(this.type, credential.type) &&
-        Objects.equals(this.credentialFields, credential.credentialFields) &&
-        Objects.equals(this.selfUri, credential.selfUri);
+            Objects.equals(this.name, credential.name) &&
+            Objects.equals(this.type, credential.type) &&
+            Objects.equals(this.credentialFields, credential.credentialFields) &&
+            Objects.equals(this.selfUri, credential.selfUri);
   }
 
   @Override

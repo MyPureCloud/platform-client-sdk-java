@@ -39,10 +39,10 @@ title: EvaluationQualityV2TopicEvaluationV2
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;Pending&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| FINISHED | &quot;Finished&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| FINISHED | &quot;Finished&quot; | 
 {: class="table table-striped"}
 
 

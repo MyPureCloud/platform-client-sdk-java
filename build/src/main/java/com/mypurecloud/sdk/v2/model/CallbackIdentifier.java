@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class CallbackIdentifier  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The identifier of the callback
    **/
@@ -107,7 +108,6 @@ public class CallbackIdentifier  implements Serializable {
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class CallbackIdentifier  implements Serializable {
       return false;
     }
     CallbackIdentifier callbackIdentifier = (CallbackIdentifier) o;
+
     return Objects.equals(this.type, callbackIdentifier.type) &&
-        Objects.equals(this.id, callbackIdentifier.id);
+            Objects.equals(this.id, callbackIdentifier.id);
   }
 
   @Override

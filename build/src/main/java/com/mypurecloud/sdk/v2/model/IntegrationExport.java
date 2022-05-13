@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -42,7 +43,7 @@ public class IntegrationExport  implements Serializable {
     this.integration = integration;
   }
 
-  
+
   /**
    * True if the policy should export screen recordings in addition to the other conversation media. Default = true
    **/
@@ -60,7 +61,6 @@ public class IntegrationExport  implements Serializable {
     this.shouldExportScreenRecordings = shouldExportScreenRecordings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class IntegrationExport  implements Serializable {
       return false;
     }
     IntegrationExport integrationExport = (IntegrationExport) o;
+
     return Objects.equals(this.integration, integrationExport.integration) &&
-        Objects.equals(this.shouldExportScreenRecordings, integrationExport.shouldExportScreenRecordings);
+            Objects.equals(this.shouldExportScreenRecordings, integrationExport.shouldExportScreenRecordings);
   }
 
   @Override

@@ -10,26 +10,26 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingNotification;
-import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
-import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
-import com.mypurecloud.sdk.v2.model.AddConversationResponse;
 import com.mypurecloud.sdk.v2.model.AddConversationRequest;
-import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingNotification;
+import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
+import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCoachingAppointmentRequest;
@@ -58,7 +58,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class CoachingApi {
   private final ApiClient pcapiClient;
 
@@ -70,7 +69,6 @@ public class CoachingApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an existing appointment
    * Permission not required if you are the creator of the appointment
@@ -97,7 +95,7 @@ public class CoachingApi {
   private DeleteCoachingAppointmentRequest createDeleteCoachingAppointmentRequest(String appointmentId) {
     return DeleteCoachingAppointmentRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .build();
   }
 
@@ -149,7 +147,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Delete an existing annotation
    * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
@@ -176,9 +173,9 @@ public class CoachingApi {
   private DeleteCoachingAppointmentAnnotationRequest createDeleteCoachingAppointmentAnnotationRequest(String appointmentId, String annotationId) {
     return DeleteCoachingAppointmentAnnotationRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withAnnotationId(annotationId)
-    
+
             .build();
   }
 
@@ -229,7 +226,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Retrieve an appointment
    * Permission not required if you are the attendee, creator or facilitator of the appointment
@@ -256,7 +252,7 @@ public class CoachingApi {
   private GetCoachingAppointmentRequest createGetCoachingAppointmentRequest(String appointmentId) {
     return GetCoachingAppointmentRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .build();
   }
 
@@ -308,7 +304,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Retrieve an annotation.
    * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
@@ -337,9 +332,9 @@ public class CoachingApi {
   private GetCoachingAppointmentAnnotationRequest createGetCoachingAppointmentAnnotationRequest(String appointmentId, String annotationId) {
     return GetCoachingAppointmentAnnotationRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withAnnotationId(annotationId)
-    
+
             .build();
   }
 
@@ -391,7 +386,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Get a list of annotations.
    * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
@@ -422,11 +416,11 @@ public class CoachingApi {
   private GetCoachingAppointmentAnnotationsRequest createGetCoachingAppointmentAnnotationsRequest(String appointmentId, Integer pageNumber, Integer pageSize) {
     return GetCoachingAppointmentAnnotationsRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -478,7 +472,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Get the list of status changes for a coaching appointment.
    * Permission not required if you are an attendee, creator or facilitator of the appointment
@@ -509,11 +502,11 @@ public class CoachingApi {
   private GetCoachingAppointmentStatusesRequest createGetCoachingAppointmentStatusesRequest(String appointmentId, Integer pageNumber, Integer pageSize) {
     return GetCoachingAppointmentStatusesRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -565,7 +558,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Get appointments for users and optional date range
    * 
@@ -612,27 +604,27 @@ public class CoachingApi {
   private GetCoachingAppointmentsRequest createGetCoachingAppointmentsRequest(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) {
     return GetCoachingAppointmentsRequest.builder()
             .withUserIds(userIds)
-    
+
             .withInterval(interval)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withStatuses(statuses)
-    
+
             .withFacilitatorIds(facilitatorIds)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withRelationships(relationships)
-    
+
             .withCompletionInterval(completionInterval)
-    
+
             .withOverdue(overdue)
-    
+
             .withIntervalCondition(intervalCondition)
-    
+
             .build();
   }
 
@@ -684,7 +676,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Get my appointments for a given date range
    * 
@@ -729,25 +720,25 @@ public class CoachingApi {
   private GetCoachingAppointmentsMeRequest createGetCoachingAppointmentsMeRequest(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) {
     return GetCoachingAppointmentsMeRequest.builder()
             .withInterval(interval)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withStatuses(statuses)
-    
+
             .withFacilitatorIds(facilitatorIds)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withRelationships(relationships)
-    
+
             .withCompletionInterval(completionInterval)
-    
+
             .withOverdue(overdue)
-    
+
             .withIntervalCondition(intervalCondition)
-    
+
             .build();
   }
 
@@ -799,7 +790,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Get an existing notification
    * Permission not required if you are the owner of the notification.
@@ -828,9 +818,9 @@ public class CoachingApi {
   private GetCoachingNotificationRequest createGetCoachingNotificationRequest(String notificationId, List<String> expand) {
     return GetCoachingNotificationRequest.builder()
             .withNotificationId(notificationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -882,7 +872,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Retrieve the list of your notifications.
    * 
@@ -913,11 +902,11 @@ public class CoachingApi {
   private GetCoachingNotificationsRequest createGetCoachingNotificationsRequest(Integer pageNumber, Integer pageSize, List<String> expand) {
     return GetCoachingNotificationsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -969,7 +958,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Update an existing appointment
    * Permission not required if you are the creator or facilitator of the appointment
@@ -998,9 +986,9 @@ public class CoachingApi {
   private PatchCoachingAppointmentRequest createPatchCoachingAppointmentRequest(String appointmentId, UpdateCoachingAppointmentRequest body) {
     return PatchCoachingAppointmentRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1052,7 +1040,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Update an existing annotation.
    * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
@@ -1083,11 +1070,11 @@ public class CoachingApi {
   private PatchCoachingAppointmentAnnotationRequest createPatchCoachingAppointmentAnnotationRequest(String appointmentId, String annotationId, CoachingAnnotation body) {
     return PatchCoachingAppointmentAnnotationRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withAnnotationId(annotationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1139,7 +1126,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Update the status of a coaching appointment
    * Permission not required if you are an attendee, creator or facilitator of the appointment
@@ -1168,9 +1154,9 @@ public class CoachingApi {
   private PatchCoachingAppointmentStatusRequest createPatchCoachingAppointmentStatusRequest(String appointmentId, CoachingAppointmentStatusRequest body) {
     return PatchCoachingAppointmentStatusRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1222,7 +1208,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Update an existing notification.
    * Can only update your own notifications.
@@ -1251,9 +1236,9 @@ public class CoachingApi {
   private PatchCoachingNotificationRequest createPatchCoachingNotificationRequest(String notificationId, CoachingNotification body) {
     return PatchCoachingNotificationRequest.builder()
             .withNotificationId(notificationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1305,7 +1290,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Create a new annotation.
    * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
@@ -1334,9 +1318,9 @@ public class CoachingApi {
   private PostCoachingAppointmentAnnotationsRequest createPostCoachingAppointmentAnnotationsRequest(String appointmentId, CoachingAnnotationCreateRequest body) {
     return PostCoachingAppointmentAnnotationsRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1388,7 +1372,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Add a conversation to an appointment
    * Permission not required if you are the creator or facilitator of the appointment
@@ -1417,9 +1400,9 @@ public class CoachingApi {
   private PostCoachingAppointmentConversationsRequest createPostCoachingAppointmentConversationsRequest(String appointmentId, AddConversationRequest body) {
     return PostCoachingAppointmentConversationsRequest.builder()
             .withAppointmentId(appointmentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1471,7 +1454,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Create a new appointment
    * 
@@ -1498,7 +1480,7 @@ public class CoachingApi {
   private PostCoachingAppointmentsRequest createPostCoachingAppointmentsRequest(CreateCoachingAppointmentRequest body) {
     return PostCoachingAppointmentsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1550,7 +1532,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Retrieve aggregated appointment data
    * 
@@ -1577,7 +1558,7 @@ public class CoachingApi {
   private PostCoachingAppointmentsAggregatesQueryRequest createPostCoachingAppointmentsAggregatesQueryRequest(CoachingAppointmentAggregateRequest body) {
     return PostCoachingAppointmentsAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1629,7 +1610,6 @@ public class CoachingApi {
     }
   }
 
-  
   /**
    * Get list of possible slots where a coaching appointment can be scheduled.
    * 
@@ -1656,7 +1636,7 @@ public class CoachingApi {
   private PostCoachingScheduleslotsQueryRequest createPostCoachingScheduleslotsQueryRequest(CoachingSlotsRequest body) {
     return PostCoachingScheduleslotsQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1708,5 +1688,4 @@ public class CoachingApi {
     }
   }
 
-  
 }

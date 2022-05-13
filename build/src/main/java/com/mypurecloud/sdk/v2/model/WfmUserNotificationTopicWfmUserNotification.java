@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification mutableGroupId(String mutableGroupId) {
@@ -120,7 +121,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.mutableGroupId = mutableGroupId;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification timestamp(Date timestamp) {
@@ -137,7 +138,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.timestamp = timestamp;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification type(TypeEnum type) {
@@ -154,7 +155,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.type = type;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification shiftTrade(WfmUserNotificationTopicShiftTradeNotification shiftTrade) {
@@ -171,7 +172,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.shiftTrade = shiftTrade;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification timeOffRequest(WfmUserNotificationTopicTimeOffRequestNotification timeOffRequest) {
@@ -188,7 +189,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.timeOffRequest = timeOffRequest;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification adherenceExplanation(WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation) {
@@ -205,7 +206,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.adherenceExplanation = adherenceExplanation;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification agentNotification(Boolean agentNotification) {
@@ -222,7 +223,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.agentNotification = agentNotification;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification otherNotificationIdsInGroup(List<String> otherNotificationIdsInGroup) {
@@ -239,7 +240,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.otherNotificationIdsInGroup = otherNotificationIdsInGroup;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicWfmUserNotification markedAsRead(Boolean markedAsRead) {
@@ -256,7 +257,6 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     this.markedAsRead = markedAsRead;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -267,16 +267,17 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
       return false;
     }
     WfmUserNotificationTopicWfmUserNotification wfmUserNotificationTopicWfmUserNotification = (WfmUserNotificationTopicWfmUserNotification) o;
+
     return Objects.equals(this.id, wfmUserNotificationTopicWfmUserNotification.id) &&
-        Objects.equals(this.mutableGroupId, wfmUserNotificationTopicWfmUserNotification.mutableGroupId) &&
-        Objects.equals(this.timestamp, wfmUserNotificationTopicWfmUserNotification.timestamp) &&
-        Objects.equals(this.type, wfmUserNotificationTopicWfmUserNotification.type) &&
-        Objects.equals(this.shiftTrade, wfmUserNotificationTopicWfmUserNotification.shiftTrade) &&
-        Objects.equals(this.timeOffRequest, wfmUserNotificationTopicWfmUserNotification.timeOffRequest) &&
-        Objects.equals(this.adherenceExplanation, wfmUserNotificationTopicWfmUserNotification.adherenceExplanation) &&
-        Objects.equals(this.agentNotification, wfmUserNotificationTopicWfmUserNotification.agentNotification) &&
-        Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotificationTopicWfmUserNotification.otherNotificationIdsInGroup) &&
-        Objects.equals(this.markedAsRead, wfmUserNotificationTopicWfmUserNotification.markedAsRead);
+            Objects.equals(this.mutableGroupId, wfmUserNotificationTopicWfmUserNotification.mutableGroupId) &&
+            Objects.equals(this.timestamp, wfmUserNotificationTopicWfmUserNotification.timestamp) &&
+            Objects.equals(this.type, wfmUserNotificationTopicWfmUserNotification.type) &&
+            Objects.equals(this.shiftTrade, wfmUserNotificationTopicWfmUserNotification.shiftTrade) &&
+            Objects.equals(this.timeOffRequest, wfmUserNotificationTopicWfmUserNotification.timeOffRequest) &&
+            Objects.equals(this.adherenceExplanation, wfmUserNotificationTopicWfmUserNotification.adherenceExplanation) &&
+            Objects.equals(this.agentNotification, wfmUserNotificationTopicWfmUserNotification.agentNotification) &&
+            Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotificationTopicWfmUserNotification.otherNotificationIdsInGroup) &&
+            Objects.equals(this.markedAsRead, wfmUserNotificationTopicWfmUserNotification.markedAsRead);
   }
 
   @Override

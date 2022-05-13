@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 public class GetLocationsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -43,7 +43,7 @@ public class GetLocationsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,7 +57,7 @@ public class GetLocationsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -71,7 +71,7 @@ public class GetLocationsRequest {
 	    this.setId(id);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -87,7 +87,7 @@ public class GetLocationsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASC("asc"), 
+		ASC("asc"),
 		DESC("desc");
 
 		private String value;
@@ -115,7 +115,7 @@ public class GetLocationsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,15 +139,19 @@ public class GetLocationsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/locations")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("id", "multi", id)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -158,7 +162,7 @@ public class GetLocationsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLocationsRequest request;
@@ -167,34 +171,38 @@ public class GetLocationsRequest {
 			request = new GetLocationsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
-		public Builder withSortOrder(sortOrderValues sortOrder) {
-		    request.setSortOrder(sortOrder.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetLocationsRequest build() {
             

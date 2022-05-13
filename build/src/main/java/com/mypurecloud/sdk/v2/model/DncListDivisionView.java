@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -134,7 +135,7 @@ public class DncListDivisionView  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DncListDivisionView name(String name) {
@@ -151,7 +152,7 @@ public class DncListDivisionView  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -169,28 +170,28 @@ public class DncListDivisionView  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the import process.")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of contacts in the DncList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of the DncList.")
   @JsonProperty("dncSourceType")
   public DncSourceTypeEnum getDncSourceType() {
     return dncSourceType;
   }
 
-  
+
   /**
    * The contact method. Required if dncSourceType is rds.
    **/
@@ -208,14 +209,13 @@ public class DncListDivisionView  implements Serializable {
     this.contactMethod = contactMethod;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -226,14 +226,15 @@ public class DncListDivisionView  implements Serializable {
       return false;
     }
     DncListDivisionView dncListDivisionView = (DncListDivisionView) o;
+
     return Objects.equals(this.id, dncListDivisionView.id) &&
-        Objects.equals(this.name, dncListDivisionView.name) &&
-        Objects.equals(this.division, dncListDivisionView.division) &&
-        Objects.equals(this.importStatus, dncListDivisionView.importStatus) &&
-        Objects.equals(this.size, dncListDivisionView.size) &&
-        Objects.equals(this.dncSourceType, dncListDivisionView.dncSourceType) &&
-        Objects.equals(this.contactMethod, dncListDivisionView.contactMethod) &&
-        Objects.equals(this.selfUri, dncListDivisionView.selfUri);
+            Objects.equals(this.name, dncListDivisionView.name) &&
+            Objects.equals(this.division, dncListDivisionView.division) &&
+            Objects.equals(this.importStatus, dncListDivisionView.importStatus) &&
+            Objects.equals(this.size, dncListDivisionView.size) &&
+            Objects.equals(this.dncSourceType, dncListDivisionView.dncSourceType) &&
+            Objects.equals(this.contactMethod, dncListDivisionView.contactMethod) &&
+            Objects.equals(this.selfUri, dncListDivisionView.selfUri);
   }
 
   @Override

@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class PostAuthorizationRoleRequest {
-    
+
 	private String roleId;
 	public String getRoleId() {
 		return this.roleId;
@@ -54,7 +54,7 @@ public class PostAuthorizationRoleRequest {
 	    this.setRoleId(roleId);
 	    return this;
 	} 
-	
+
 	private SubjectDivisions body;
 	public SubjectDivisions getBody() {
 		return this.body;
@@ -68,7 +68,7 @@ public class PostAuthorizationRoleRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private String subjectType;
 	public String getSubjectType() {
 		return this.subjectType;
@@ -82,7 +82,7 @@ public class PostAuthorizationRoleRequest {
 	    this.setSubjectType(subjectType);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,11 +118,12 @@ public class PostAuthorizationRoleRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/authorization/roles/{roleId}")
                 .withPathParameter("roleId", roleId)
         
+
                 .withQueryParameters("subjectType", "", subjectType)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -133,12 +134,12 @@ public class PostAuthorizationRoleRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String roleId, SubjectDivisions body) {
 	    return new Builder()
 	            .withRequiredParams(roleId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAuthorizationRoleRequest request;
@@ -147,31 +148,31 @@ public class PostAuthorizationRoleRequest {
 			request = new PostAuthorizationRoleRequest();
 		}
 
-		
+
 		public Builder withRoleId(String roleId) {
 			request.setRoleId(roleId);
 			return this;
 		}
-		
+
 		public Builder withBody(SubjectDivisions body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withSubjectType(String subjectType) {
 			request.setSubjectType(subjectType);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String roleId, SubjectDivisions body) {
 			request.setRoleId(roleId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostAuthorizationRoleRequest build() {
             

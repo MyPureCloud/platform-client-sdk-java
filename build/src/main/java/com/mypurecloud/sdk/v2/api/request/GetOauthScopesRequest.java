@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetOauthScopesRequest {
-    
+
 	private String acceptLanguage;
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
@@ -47,7 +47,7 @@ public class GetOauthScopesRequest {
 	    this.setAcceptLanguage(acceptLanguage);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +73,7 @@ public class GetOauthScopesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/oauth/scopes")
                 .withHeaderParameter("Accept-Language", acceptLanguage)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,7 +84,7 @@ public class GetOauthScopesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetOauthScopesRequest request;
@@ -93,14 +93,14 @@ public class GetOauthScopesRequest {
 			request = new GetOauthScopesRequest();
 		}
 
-		
+
 		public Builder withAcceptLanguage(String acceptLanguage) {
 			request.setAcceptLanguage(acceptLanguage);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetOauthScopesRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssessmentFormQuestionGroup;
@@ -39,35 +40,35 @@ public class AssessmentForm  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified date of the assessment form. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The unique Id for all versions of this assessment form")
   @JsonProperty("contextId")
   public String getContextId() {
     return contextId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If true, assessment form is published")
   @JsonProperty("published")
   public Boolean getPublished() {
     return published;
   }
 
-  
+
   /**
    * The pass percent for the assessment form
    **/
@@ -85,7 +86,7 @@ public class AssessmentForm  implements Serializable {
     this.passPercent = passPercent;
   }
 
-  
+
   /**
    * A list of question groups
    **/
@@ -103,7 +104,6 @@ public class AssessmentForm  implements Serializable {
     this.questionGroups = questionGroups;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -114,13 +114,14 @@ public class AssessmentForm  implements Serializable {
       return false;
     }
     AssessmentForm assessmentForm = (AssessmentForm) o;
+
     return Objects.equals(this.id, assessmentForm.id) &&
-        Objects.equals(this.dateModified, assessmentForm.dateModified) &&
-        Objects.equals(this.contextId, assessmentForm.contextId) &&
-        Objects.equals(this.selfUri, assessmentForm.selfUri) &&
-        Objects.equals(this.published, assessmentForm.published) &&
-        Objects.equals(this.passPercent, assessmentForm.passPercent) &&
-        Objects.equals(this.questionGroups, assessmentForm.questionGroups);
+            Objects.equals(this.dateModified, assessmentForm.dateModified) &&
+            Objects.equals(this.contextId, assessmentForm.contextId) &&
+            Objects.equals(this.selfUri, assessmentForm.selfUri) &&
+            Objects.equals(this.published, assessmentForm.published) &&
+            Objects.equals(this.passPercent, assessmentForm.passPercent) &&
+            Objects.equals(this.questionGroups, assessmentForm.questionGroups);
   }
 
   @Override

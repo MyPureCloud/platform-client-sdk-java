@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class TimeSlot  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * stop time in xx:xx:xx.xxx format
    **/
@@ -60,7 +61,7 @@ public class TimeSlot  implements Serializable {
     this.stopTime = stopTime;
   }
 
-  
+
   /**
    * Day for this time slot, Monday = 1 ... Sunday = 7
    **/
@@ -78,7 +79,6 @@ public class TimeSlot  implements Serializable {
     this.day = day;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class TimeSlot  implements Serializable {
       return false;
     }
     TimeSlot timeSlot = (TimeSlot) o;
+
     return Objects.equals(this.startTime, timeSlot.startTime) &&
-        Objects.equals(this.stopTime, timeSlot.stopTime) &&
-        Objects.equals(this.day, timeSlot.day);
+            Objects.equals(this.stopTime, timeSlot.stopTime) &&
+            Objects.equals(this.day, timeSlot.day);
   }
 
   @Override

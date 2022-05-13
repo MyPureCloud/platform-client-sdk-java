@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -107,7 +108,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast weekDate(String weekDate) {
@@ -124,7 +125,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast creationMethod(CreationMethodEnum creationMethod) {
@@ -141,7 +142,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.creationMethod = creationMethod;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast description(String description) {
@@ -158,7 +159,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.description = description;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast legacy(Boolean legacy) {
@@ -175,7 +176,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.legacy = legacy;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast referenceStartDate(Date referenceStartDate) {
@@ -192,7 +193,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.referenceStartDate = referenceStartDate;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast sourceDays(List<WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer> sourceDays) {
@@ -209,7 +210,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.sourceDays = sourceDays;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast modifications(List<WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification> modifications) {
@@ -226,7 +227,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.modifications = modifications;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast timeZone(String timeZone) {
@@ -243,7 +244,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast planningGroupsVersion(Integer planningGroupsVersion) {
@@ -260,7 +261,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.planningGroupsVersion = planningGroupsVersion;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast weekCount(Integer weekCount) {
@@ -277,7 +278,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast metadata(WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata metadata) {
@@ -294,7 +295,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.metadata = metadata;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast canUseForScheduling(Boolean canUseForScheduling) {
@@ -311,7 +312,6 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
     this.canUseForScheduling = canUseForScheduling;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -322,19 +322,20 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast  imple
       return false;
     }
     WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast = (WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast) o;
+
     return Objects.equals(this.id, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.id) &&
-        Objects.equals(this.weekDate, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.weekDate) &&
-        Objects.equals(this.creationMethod, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.creationMethod) &&
-        Objects.equals(this.description, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.description) &&
-        Objects.equals(this.legacy, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.legacy) &&
-        Objects.equals(this.referenceStartDate, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.referenceStartDate) &&
-        Objects.equals(this.sourceDays, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.sourceDays) &&
-        Objects.equals(this.modifications, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.modifications) &&
-        Objects.equals(this.timeZone, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.timeZone) &&
-        Objects.equals(this.planningGroupsVersion, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.planningGroupsVersion) &&
-        Objects.equals(this.weekCount, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.weekCount) &&
-        Objects.equals(this.metadata, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.metadata) &&
-        Objects.equals(this.canUseForScheduling, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.canUseForScheduling);
+            Objects.equals(this.weekDate, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.weekDate) &&
+            Objects.equals(this.creationMethod, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.creationMethod) &&
+            Objects.equals(this.description, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.description) &&
+            Objects.equals(this.legacy, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.legacy) &&
+            Objects.equals(this.referenceStartDate, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.referenceStartDate) &&
+            Objects.equals(this.sourceDays, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.sourceDays) &&
+            Objects.equals(this.modifications, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.modifications) &&
+            Objects.equals(this.timeZone, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.timeZone) &&
+            Objects.equals(this.planningGroupsVersion, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.planningGroupsVersion) &&
+            Objects.equals(this.weekCount, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.weekCount) &&
+            Objects.equals(this.metadata, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.metadata) &&
+            Objects.equals(this.canUseForScheduling, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.canUseForScheduling);
   }
 
   @Override

@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAfterCallWork;
-import com.mypurecloud.sdk.v2.model.ConversationEventTopicObject;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -87,7 +87,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
-  private ConversationEventTopicObject peerCount = null;
+  private Object peerCount = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
     public DisconnectTypeEnumDeserializer() {
@@ -174,7 +174,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -192,7 +192,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.self = self;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -210,7 +210,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -228,7 +228,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * Indicates whether this participant is sharing their screen to the session.
    **/
@@ -246,7 +246,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.sharing = sharing;
   }
 
-  
+
   /**
    * The source provider of the screen share.
    **/
@@ -264,7 +264,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -282,7 +282,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -300,24 +300,25 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
+   * The number of peer participants from the perspective of the participant in the conference.
    **/
-  public ConversationEventTopicScreenshare peerCount(ConversationEventTopicObject peerCount) {
+  public ConversationEventTopicScreenshare peerCount(Object peerCount) {
     this.peerCount = peerCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
   @JsonProperty("peerCount")
-  public ConversationEventTopicObject getPeerCount() {
+  public Object getPeerCount() {
     return peerCount;
   }
-  public void setPeerCount(ConversationEventTopicObject peerCount) {
+  public void setPeerCount(Object peerCount) {
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -335,7 +336,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -353,7 +354,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -371,7 +372,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -389,7 +390,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -407,7 +408,7 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -425,7 +426,6 @@ public class ConversationEventTopicScreenshare  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -436,21 +436,22 @@ public class ConversationEventTopicScreenshare  implements Serializable {
       return false;
     }
     ConversationEventTopicScreenshare conversationEventTopicScreenshare = (ConversationEventTopicScreenshare) o;
+
     return Objects.equals(this.state, conversationEventTopicScreenshare.state) &&
-        Objects.equals(this.self, conversationEventTopicScreenshare.self) &&
-        Objects.equals(this.id, conversationEventTopicScreenshare.id) &&
-        Objects.equals(this.context, conversationEventTopicScreenshare.context) &&
-        Objects.equals(this.sharing, conversationEventTopicScreenshare.sharing) &&
-        Objects.equals(this.provider, conversationEventTopicScreenshare.provider) &&
-        Objects.equals(this.scriptId, conversationEventTopicScreenshare.scriptId) &&
-        Objects.equals(this.peerId, conversationEventTopicScreenshare.peerId) &&
-        Objects.equals(this.peerCount, conversationEventTopicScreenshare.peerCount) &&
-        Objects.equals(this.disconnectType, conversationEventTopicScreenshare.disconnectType) &&
-        Objects.equals(this.connectedTime, conversationEventTopicScreenshare.connectedTime) &&
-        Objects.equals(this.disconnectedTime, conversationEventTopicScreenshare.disconnectedTime) &&
-        Objects.equals(this.wrapup, conversationEventTopicScreenshare.wrapup) &&
-        Objects.equals(this.afterCallWork, conversationEventTopicScreenshare.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, conversationEventTopicScreenshare.afterCallWorkRequired);
+            Objects.equals(this.self, conversationEventTopicScreenshare.self) &&
+            Objects.equals(this.id, conversationEventTopicScreenshare.id) &&
+            Objects.equals(this.context, conversationEventTopicScreenshare.context) &&
+            Objects.equals(this.sharing, conversationEventTopicScreenshare.sharing) &&
+            Objects.equals(this.provider, conversationEventTopicScreenshare.provider) &&
+            Objects.equals(this.scriptId, conversationEventTopicScreenshare.scriptId) &&
+            Objects.equals(this.peerId, conversationEventTopicScreenshare.peerId) &&
+            Objects.equals(this.peerCount, conversationEventTopicScreenshare.peerCount) &&
+            Objects.equals(this.disconnectType, conversationEventTopicScreenshare.disconnectType) &&
+            Objects.equals(this.connectedTime, conversationEventTopicScreenshare.connectedTime) &&
+            Objects.equals(this.disconnectedTime, conversationEventTopicScreenshare.disconnectedTime) &&
+            Objects.equals(this.wrapup, conversationEventTopicScreenshare.wrapup) &&
+            Objects.equals(this.afterCallWork, conversationEventTopicScreenshare.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, conversationEventTopicScreenshare.afterCallWorkRequired);
   }
 
   @Override

@@ -20,72 +20,72 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.BenefitAssessment;
-import com.mypurecloud.sdk.v2.model.AssessmentListing;
-import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
-import com.mypurecloud.sdk.v2.model.InboundDomain;
-import com.mypurecloud.sdk.v2.model.InboundRoute;
-import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
-import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.EmailSetup;
-import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.Recipient;
-import com.mypurecloud.sdk.v2.model.RecipientListing;
-import com.mypurecloud.sdk.v2.model.Predictor;
-import com.mypurecloud.sdk.v2.model.PredictorListing;
-import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
-import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.BenefitAssessment;
+import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
+import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
+import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.EmailSetup;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.InboundRoute;
+import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
+import com.mypurecloud.sdk.v2.model.Predictor;
+import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.QueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
-import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
-import com.mypurecloud.sdk.v2.model.QueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.RoutingSettings;
-import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
-import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
-import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.Utilization;
-import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
+import com.mypurecloud.sdk.v2.model.TestMessage;
+import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
-import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
-import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
-import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
-import com.mypurecloud.sdk.v2.model.TestMessage;
-import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
-import com.mypurecloud.sdk.v2.model.WritableEntity;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
-import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
-import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
-import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
+import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingSmsPhonenumbersRequest {
-    
+
 	private String phoneNumber;
 	public String getPhoneNumber() {
 		return this.phoneNumber;
@@ -99,7 +99,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    this.setPhoneNumber(phoneNumber);
 	    return this;
 	} 
-	
+
 	private List<String> phoneNumberType;
 	public List<String> getPhoneNumberType() {
 		return this.phoneNumberType;
@@ -115,9 +115,9 @@ public class GetRoutingSmsPhonenumbersRequest {
 	} 
 
 	public enum phoneNumberTypeValues { 
-		LOCAL("local"), 
-		MOBILE("mobile"), 
-		TOLLFREE("tollfree"), 
+		LOCAL("local"),
+		MOBILE("mobile"),
+		TOLLFREE("tollfree"),
 		SHORTCODE("shortcode");
 
 		private String value;
@@ -145,7 +145,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> phoneNumberStatus;
 	public List<String> getPhoneNumberStatus() {
 		return this.phoneNumberStatus;
@@ -161,11 +161,11 @@ public class GetRoutingSmsPhonenumbersRequest {
 	} 
 
 	public enum phoneNumberStatusValues { 
-		ACTIVE("active"), 
-		INVALID("invalid"), 
-		INITIATED("initiated"), 
-		PORTING("porting"), 
-		PENDING("pending"), 
+		ACTIVE("active"),
+		INVALID("invalid"),
+		INITIATED("initiated"),
+		PORTING("porting"),
+		PENDING("pending"),
 		PENDING_CANCELLATION("pending-cancellation");
 
 		private String value;
@@ -193,7 +193,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> countryCode;
 	public List<String> getCountryCode() {
 		return this.countryCode;
@@ -207,7 +207,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    this.setCountryCode(countryCode);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -221,7 +221,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -235,7 +235,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -251,14 +251,14 @@ public class GetRoutingSmsPhonenumbersRequest {
 	} 
 
 	public enum sortByValues { 
-		PHONENUMBER("phoneNumber"), 
-		COUNTRYCODE("countryCode"), 
-		COUNTRY("country"), 
-		PHONENUMBERSTATUS("phoneNumberStatus"), 
-		PHONENUMBERTYPE("phoneNumberType"), 
-		PURCHASEDATE("purchaseDate"), 
-		SUPPORTSMMS("supportsMms"), 
-		SUPPORTSSMS("supportsSms"), 
+		PHONENUMBER("phoneNumber"),
+		COUNTRYCODE("countryCode"),
+		COUNTRY("country"),
+		PHONENUMBERSTATUS("phoneNumberStatus"),
+		PHONENUMBERTYPE("phoneNumberType"),
+		PURCHASEDATE("purchaseDate"),
+		SUPPORTSMMS("supportsMms"),
+		SUPPORTSSMS("supportsSms"),
 		SUPPORTSVOICE("supportsVoice");
 
 		private String value;
@@ -286,7 +286,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -302,7 +302,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -330,7 +330,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String language;
 	public String getLanguage() {
 		return this.language;
@@ -344,7 +344,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    this.setLanguage(language);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -368,25 +368,34 @@ public class GetRoutingSmsPhonenumbersRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/sms/phonenumbers")
+
                 .withQueryParameters("phoneNumber", "", phoneNumber)
         
+
                 .withQueryParameters("phoneNumberType", "multi", phoneNumberType)
         
+
                 .withQueryParameters("phoneNumberStatus", "multi", phoneNumberStatus)
         
+
                 .withQueryParameters("countryCode", "multi", countryCode)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("language", "", language)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -397,7 +406,7 @@ public class GetRoutingSmsPhonenumbersRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetRoutingSmsPhonenumbersRequest request;
@@ -406,16 +415,18 @@ public class GetRoutingSmsPhonenumbersRequest {
 			request = new GetRoutingSmsPhonenumbersRequest();
 		}
 
-		
+
 		public Builder withPhoneNumber(String phoneNumber) {
 			request.setPhoneNumber(phoneNumber);
 			return this;
 		}
-		
+
 		public Builder withPhoneNumberType(List<String> phoneNumberType) {
 			request.setPhoneNumberType(phoneNumberType);
 			return this;
 		}
+
+
 
 		public Builder withPhoneNumberTypeEnumValues(List<phoneNumberTypeValues> phoneNumberType) {
 		    List<String> stringList = new ArrayList<>();
@@ -425,11 +436,13 @@ public class GetRoutingSmsPhonenumbersRequest {
 	      request.setPhoneNumberType(stringList);
 		    return this;
 		}
-		
+
 		public Builder withPhoneNumberStatus(List<String> phoneNumberStatus) {
 			request.setPhoneNumberStatus(phoneNumberStatus);
 			return this;
 		}
+
+
 
 		public Builder withPhoneNumberStatusEnumValues(List<phoneNumberStatusValues> phoneNumberStatus) {
 		    List<String> stringList = new ArrayList<>();
@@ -439,49 +452,57 @@ public class GetRoutingSmsPhonenumbersRequest {
 	      request.setPhoneNumberStatus(stringList);
 		    return this;
 		}
-		
+
 		public Builder withCountryCode(List<String> countryCode) {
 			request.setCountryCode(countryCode);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortBy(sortByValues sortBy) {
 		    request.setSortBy(sortBy.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withLanguage(String language) {
 			request.setLanguage(language);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetRoutingSmsPhonenumbersRequest build() {
             

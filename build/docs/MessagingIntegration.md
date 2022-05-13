@@ -30,14 +30,14 @@ title: MessagingIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;Active&quot; |
-| INACTIVE | &quot;Inactive&quot; |
-| ERROR | &quot;Error&quot; |
-| STARTING | &quot;Starting&quot; |
-| INCOMPLETE | &quot;Incomplete&quot; |
-| DELETING | &quot;Deleting&quot; |
-| DELETIONFAILED | &quot;DeletionFailed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;Active&quot; | 
+| INACTIVE | &quot;Inactive&quot; | 
+| ERROR | &quot;Error&quot; | 
+| STARTING | &quot;Starting&quot; | 
+| INCOMPLETE | &quot;Incomplete&quot; | 
+| DELETING | &quot;Deleting&quot; | 
+| DELETIONFAILED | &quot;DeletionFailed&quot; | 
 {: class="table table-striped"}
 
 
@@ -47,15 +47,15 @@ title: MessagingIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SMS | &quot;sms&quot; |
-| FACEBOOK | &quot;facebook&quot; |
-| TWITTER | &quot;twitter&quot; |
-| LINE | &quot;line&quot; |
-| WHATSAPP | &quot;whatsapp&quot; |
-| WEBMESSAGING | &quot;webmessaging&quot; |
-| INSTAGRAM | &quot;instagram&quot; |
-| OPEN | &quot;open&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SMS | &quot;sms&quot; | 
+| FACEBOOK | &quot;facebook&quot; | 
+| TWITTER | &quot;twitter&quot; | 
+| LINE | &quot;line&quot; | 
+| WHATSAPP | &quot;whatsapp&quot; | 
+| WEBMESSAGING | &quot;webmessaging&quot; | 
+| INSTAGRAM | &quot;instagram&quot; | 
+| OPEN | &quot;open&quot; | 
 {: class="table table-striped"}
 
 

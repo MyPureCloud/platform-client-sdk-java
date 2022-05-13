@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -188,7 +189,7 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for metric predicates
    **/
@@ -206,7 +207,7 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -224,7 +225,7 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for metric predicates
    **/
@@ -242,7 +243,7 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for metric predicates
    **/
@@ -260,7 +261,6 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -271,11 +271,12 @@ public class ResolutionDetailQueryPredicate  implements Serializable {
       return false;
     }
     ResolutionDetailQueryPredicate resolutionDetailQueryPredicate = (ResolutionDetailQueryPredicate) o;
+
     return Objects.equals(this.type, resolutionDetailQueryPredicate.type) &&
-        Objects.equals(this.metric, resolutionDetailQueryPredicate.metric) &&
-        Objects.equals(this.operator, resolutionDetailQueryPredicate.operator) &&
-        Objects.equals(this.value, resolutionDetailQueryPredicate.value) &&
-        Objects.equals(this.range, resolutionDetailQueryPredicate.range);
+            Objects.equals(this.metric, resolutionDetailQueryPredicate.metric) &&
+            Objects.equals(this.operator, resolutionDetailQueryPredicate.operator) &&
+            Objects.equals(this.value, resolutionDetailQueryPredicate.value) &&
+            Objects.equals(this.range, resolutionDetailQueryPredicate.range);
   }
 
   @Override

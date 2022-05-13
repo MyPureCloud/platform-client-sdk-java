@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class ContentReaction  implements Serializable {
     this.reactionType = reactionType;
   }
 
-  
+
   /**
    * Number of users that reacted this way to the message.
    **/
@@ -115,7 +116,6 @@ public class ContentReaction  implements Serializable {
     this.count = count;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,8 +126,9 @@ public class ContentReaction  implements Serializable {
       return false;
     }
     ContentReaction contentReaction = (ContentReaction) o;
+
     return Objects.equals(this.reactionType, contentReaction.reactionType) &&
-        Objects.equals(this.count, contentReaction.count);
+            Objects.equals(this.count, contentReaction.count);
   }
 
   @Override

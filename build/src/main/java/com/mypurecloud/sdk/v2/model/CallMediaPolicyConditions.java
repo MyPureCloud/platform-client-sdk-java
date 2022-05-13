@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
@@ -100,7 +101,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -117,7 +118,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -134,7 +135,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -151,7 +152,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions languages(List<Language> languages) {
@@ -168,7 +169,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -185,7 +186,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions directions(List<DirectionsEnum> directions) {
@@ -202,7 +203,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.directions = directions;
   }
 
-  
+
   /**
    **/
   public CallMediaPolicyConditions duration(DurationCondition duration) {
@@ -219,7 +220,6 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.duration = duration;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -230,14 +230,15 @@ public class CallMediaPolicyConditions  implements Serializable {
       return false;
     }
     CallMediaPolicyConditions callMediaPolicyConditions = (CallMediaPolicyConditions) o;
+
     return Objects.equals(this.forUsers, callMediaPolicyConditions.forUsers) &&
-        Objects.equals(this.dateRanges, callMediaPolicyConditions.dateRanges) &&
-        Objects.equals(this.forQueues, callMediaPolicyConditions.forQueues) &&
-        Objects.equals(this.wrapupCodes, callMediaPolicyConditions.wrapupCodes) &&
-        Objects.equals(this.languages, callMediaPolicyConditions.languages) &&
-        Objects.equals(this.timeAllowed, callMediaPolicyConditions.timeAllowed) &&
-        Objects.equals(this.directions, callMediaPolicyConditions.directions) &&
-        Objects.equals(this.duration, callMediaPolicyConditions.duration);
+            Objects.equals(this.dateRanges, callMediaPolicyConditions.dateRanges) &&
+            Objects.equals(this.forQueues, callMediaPolicyConditions.forQueues) &&
+            Objects.equals(this.wrapupCodes, callMediaPolicyConditions.wrapupCodes) &&
+            Objects.equals(this.languages, callMediaPolicyConditions.languages) &&
+            Objects.equals(this.timeAllowed, callMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.directions, callMediaPolicyConditions.directions) &&
+            Objects.equals(this.duration, callMediaPolicyConditions.duration);
   }
 
   @Override

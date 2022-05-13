@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkPlanConstraintConflictMessage;
@@ -45,7 +46,7 @@ public class ConstraintConflictMessage  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    * Messages for the set of conflicted work plan constraints. Each element indicates the message of a work plan constraint that is conflicted in the set
    **/
@@ -63,7 +64,6 @@ public class ConstraintConflictMessage  implements Serializable {
     this.conflictedConstraintMessages = conflictedConstraintMessages;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class ConstraintConflictMessage  implements Serializable {
       return false;
     }
     ConstraintConflictMessage constraintConflictMessage = (ConstraintConflictMessage) o;
+
     return Objects.equals(this.message, constraintConflictMessage.message) &&
-        Objects.equals(this.conflictedConstraintMessages, constraintConflictMessage.conflictedConstraintMessages);
+            Objects.equals(this.conflictedConstraintMessages, constraintConflictMessage.conflictedConstraintMessages);
   }
 
   @Override

@@ -22,13 +22,13 @@ title: ActionMapAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WEBCHAT | &quot;webchat&quot; |
-| WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; |
-| CONTENTOFFER | &quot;contentOffer&quot; |
-| INTEGRATIONACTION | &quot;integrationAction&quot; |
-| ARCHITECTFLOW | &quot;architectFlow&quot; |
-| OPENACTION | &quot;openAction&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEBCHAT | &quot;webchat&quot; | 
+| WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; | 
+| CONTENTOFFER | &quot;contentOffer&quot; | 
+| INTEGRATIONACTION | &quot;integrationAction&quot; | 
+| ARCHITECTFLOW | &quot;architectFlow&quot; | 
+| OPENACTION | &quot;openAction&quot; | 
 {: class="table table-striped"}
 
 

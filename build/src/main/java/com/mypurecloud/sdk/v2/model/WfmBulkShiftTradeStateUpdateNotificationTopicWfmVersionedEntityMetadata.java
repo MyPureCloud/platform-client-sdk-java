@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBulkShiftTradeStateUpdateNotificationTopicUserReference;
@@ -43,7 +44,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMeta
     this.version = version;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata modifiedBy(WfmBulkShiftTradeStateUpdateNotificationTopicUserReference modifiedBy) {
@@ -60,7 +61,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMeta
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata dateModified(Date dateModified) {
@@ -77,7 +78,6 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMeta
     this.dateModified = dateModified;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMeta
       return false;
     }
     WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata wfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata = (WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata) o;
+
     return Objects.equals(this.version, wfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.version) &&
-        Objects.equals(this.modifiedBy, wfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.modifiedBy) &&
-        Objects.equals(this.dateModified, wfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.dateModified);
+            Objects.equals(this.modifiedBy, wfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.modifiedBy) &&
+            Objects.equals(this.dateModified, wfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.dateModified);
   }
 
   @Override

@@ -19,10 +19,10 @@ title: FreeSeatingConfiguration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;ON&quot; |
-| OFF | &quot;OFF&quot; |
-| PARTIAL | &quot;PARTIAL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;ON&quot; | 
+| OFF | &quot;OFF&quot; | 
+| PARTIAL | &quot;PARTIAL&quot; | 
 {: class="table table-striped"}
 
 

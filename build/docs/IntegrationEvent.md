@@ -28,11 +28,11 @@ title: IntegrationEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INFO | &quot;INFO&quot; |
-| WARN | &quot;WARN&quot; |
-| ERROR | &quot;ERROR&quot; |
-| CRITICAL | &quot;CRITICAL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INFO | &quot;INFO&quot; | 
+| WARN | &quot;WARN&quot; | 
+| ERROR | &quot;ERROR&quot; | 
+| CRITICAL | &quot;CRITICAL&quot; | 
 {: class="table table-striped"}
 
 

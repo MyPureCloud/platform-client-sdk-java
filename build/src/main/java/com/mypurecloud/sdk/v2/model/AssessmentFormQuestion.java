@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestion type(TypeEnum type) {
@@ -120,7 +121,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The question text
    **/
@@ -138,7 +139,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestion helpText(String helpText) {
@@ -155,7 +156,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.helpText = helpText;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestion naEnabled(Boolean naEnabled) {
@@ -172,7 +173,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestion commentsRequired(Boolean commentsRequired) {
@@ -189,7 +190,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.commentsRequired = commentsRequired;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestion visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -206,7 +207,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-  
+
   /**
    * Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
    **/
@@ -224,7 +225,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.answerOptions = answerOptions;
   }
 
-  
+
   /**
    * How many characters are allowed in the text response to this question. Used by Free Text question types.
    **/
@@ -242,7 +243,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.maxResponseCharacters = maxResponseCharacters;
   }
 
-  
+
   /**
    * Does an incorrect answer to this question mark the form as having a failed kill question. Only used by Multiple Choice type questions.
    **/
@@ -260,7 +261,7 @@ public class AssessmentFormQuestion  implements Serializable {
     this.isKill = isKill;
   }
 
-  
+
   /**
    * Does this question contribute to the critical score. Only used by Multiple Choice type questions.
    **/
@@ -278,7 +279,6 @@ public class AssessmentFormQuestion  implements Serializable {
     this.isCritical = isCritical;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -289,17 +289,18 @@ public class AssessmentFormQuestion  implements Serializable {
       return false;
     }
     AssessmentFormQuestion assessmentFormQuestion = (AssessmentFormQuestion) o;
+
     return Objects.equals(this.id, assessmentFormQuestion.id) &&
-        Objects.equals(this.type, assessmentFormQuestion.type) &&
-        Objects.equals(this.text, assessmentFormQuestion.text) &&
-        Objects.equals(this.helpText, assessmentFormQuestion.helpText) &&
-        Objects.equals(this.naEnabled, assessmentFormQuestion.naEnabled) &&
-        Objects.equals(this.commentsRequired, assessmentFormQuestion.commentsRequired) &&
-        Objects.equals(this.visibilityCondition, assessmentFormQuestion.visibilityCondition) &&
-        Objects.equals(this.answerOptions, assessmentFormQuestion.answerOptions) &&
-        Objects.equals(this.maxResponseCharacters, assessmentFormQuestion.maxResponseCharacters) &&
-        Objects.equals(this.isKill, assessmentFormQuestion.isKill) &&
-        Objects.equals(this.isCritical, assessmentFormQuestion.isCritical);
+            Objects.equals(this.type, assessmentFormQuestion.type) &&
+            Objects.equals(this.text, assessmentFormQuestion.text) &&
+            Objects.equals(this.helpText, assessmentFormQuestion.helpText) &&
+            Objects.equals(this.naEnabled, assessmentFormQuestion.naEnabled) &&
+            Objects.equals(this.commentsRequired, assessmentFormQuestion.commentsRequired) &&
+            Objects.equals(this.visibilityCondition, assessmentFormQuestion.visibilityCondition) &&
+            Objects.equals(this.answerOptions, assessmentFormQuestion.answerOptions) &&
+            Objects.equals(this.maxResponseCharacters, assessmentFormQuestion.maxResponseCharacters) &&
+            Objects.equals(this.isKill, assessmentFormQuestion.isKill) &&
+            Objects.equals(this.isCritical, assessmentFormQuestion.isCritical);
   }
 
   @Override

@@ -20,9 +20,9 @@ title: LocationEmergencyNumber
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DEFAULT | &quot;default&quot; |
-| ELIN | &quot;elin&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DEFAULT | &quot;default&quot; | 
+| ELIN | &quot;elin&quot; | 
 {: class="table table-striped"}
 
 

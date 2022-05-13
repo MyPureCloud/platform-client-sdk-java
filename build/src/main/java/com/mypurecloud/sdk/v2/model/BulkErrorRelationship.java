@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorDetail;
@@ -48,7 +49,7 @@ public class BulkErrorRelationship  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public BulkErrorRelationship message(String message) {
@@ -65,7 +66,7 @@ public class BulkErrorRelationship  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public BulkErrorRelationship status(Integer status) {
@@ -82,7 +83,7 @@ public class BulkErrorRelationship  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public BulkErrorRelationship retryable(Boolean retryable) {
@@ -99,7 +100,7 @@ public class BulkErrorRelationship  implements Serializable {
     this.retryable = retryable;
   }
 
-  
+
   /**
    **/
   public BulkErrorRelationship entity(Relationship entity) {
@@ -116,7 +117,7 @@ public class BulkErrorRelationship  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkErrorRelationship details(List<BulkErrorDetail> details) {
@@ -133,7 +134,6 @@ public class BulkErrorRelationship  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class BulkErrorRelationship  implements Serializable {
       return false;
     }
     BulkErrorRelationship bulkErrorRelationship = (BulkErrorRelationship) o;
+
     return Objects.equals(this.code, bulkErrorRelationship.code) &&
-        Objects.equals(this.message, bulkErrorRelationship.message) &&
-        Objects.equals(this.status, bulkErrorRelationship.status) &&
-        Objects.equals(this.retryable, bulkErrorRelationship.retryable) &&
-        Objects.equals(this.entity, bulkErrorRelationship.entity) &&
-        Objects.equals(this.details, bulkErrorRelationship.details);
+            Objects.equals(this.message, bulkErrorRelationship.message) &&
+            Objects.equals(this.status, bulkErrorRelationship.status) &&
+            Objects.equals(this.retryable, bulkErrorRelationship.retryable) &&
+            Objects.equals(this.entity, bulkErrorRelationship.entity) &&
+            Objects.equals(this.details, bulkErrorRelationship.details);
   }
 
   @Override

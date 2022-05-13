@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -148,7 +149,7 @@ public class SearchAggregation  implements Serializable {
     this.field = field;
   }
 
-  
+
   /**
    * The name of the aggregation. The response aggregation uses this name.
    **/
@@ -166,7 +167,7 @@ public class SearchAggregation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of aggregation to perform
    **/
@@ -184,7 +185,7 @@ public class SearchAggregation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * A value to use for aggregation
    **/
@@ -202,7 +203,7 @@ public class SearchAggregation  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The number aggregations results to return out of the entire result set
    **/
@@ -220,7 +221,7 @@ public class SearchAggregation  implements Serializable {
     this.size = size;
   }
 
-  
+
   /**
    * The order in which aggregation results are sorted
    **/
@@ -238,7 +239,6 @@ public class SearchAggregation  implements Serializable {
     this.order = order;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -249,12 +249,13 @@ public class SearchAggregation  implements Serializable {
       return false;
     }
     SearchAggregation searchAggregation = (SearchAggregation) o;
+
     return Objects.equals(this.field, searchAggregation.field) &&
-        Objects.equals(this.name, searchAggregation.name) &&
-        Objects.equals(this.type, searchAggregation.type) &&
-        Objects.equals(this.value, searchAggregation.value) &&
-        Objects.equals(this.size, searchAggregation.size) &&
-        Objects.equals(this.order, searchAggregation.order);
+            Objects.equals(this.name, searchAggregation.name) &&
+            Objects.equals(this.type, searchAggregation.type) &&
+            Objects.equals(this.value, searchAggregation.value) &&
+            Objects.equals(this.size, searchAggregation.size) &&
+            Objects.equals(this.order, searchAggregation.order);
   }
 
   @Override

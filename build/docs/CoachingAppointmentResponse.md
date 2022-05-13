@@ -36,11 +36,11 @@ title: CoachingAppointmentResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SCHEDULED | &quot;Scheduled&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SCHEDULED | &quot;Scheduled&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
 {: class="table table-striped"}
 
 

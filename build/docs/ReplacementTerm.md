@@ -20,12 +20,12 @@ title: ReplacementTerm
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NAME | &quot;NAME&quot; |
-| ADDRESS | &quot;ADDRESS&quot; |
-| PHONE | &quot;PHONE&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| TWITTER | &quot;TWITTER&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NAME | &quot;NAME&quot; | 
+| ADDRESS | &quot;ADDRESS&quot; | 
+| PHONE | &quot;PHONE&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| TWITTER | &quot;TWITTER&quot; | 
 {: class="table table-striped"}
 
 

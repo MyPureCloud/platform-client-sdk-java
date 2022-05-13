@@ -23,11 +23,11 @@ title: ArchitectJobStateResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| REGISTERED | &quot;Registered&quot; |
-| STARTED | &quot;Started&quot; |
-| SUCCESS | &quot;Success&quot; |
-| FAILURE | &quot;Failure&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REGISTERED | &quot;Registered&quot; | 
+| STARTED | &quot;Started&quot; | 
+| SUCCESS | &quot;Success&quot; | 
+| FAILURE | &quot;Failure&quot; | 
 {: class="table table-striped"}
 
 
@@ -37,10 +37,10 @@ title: ArchitectJobStateResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PUBLISH | &quot;Publish&quot; |
-| CREATE | &quot;Create&quot; |
-| UPDATE | &quot;Update&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLISH | &quot;Publish&quot; | 
+| CREATE | &quot;Create&quot; | 
+| UPDATE | &quot;Update&quot; | 
 {: class="table table-striped"}
 
 

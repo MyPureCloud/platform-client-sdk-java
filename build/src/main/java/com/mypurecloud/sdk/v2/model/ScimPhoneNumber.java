@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class ScimPhoneNumber  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The type of phone number.
    **/
@@ -117,7 +118,7 @@ public class ScimPhoneNumber  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates whether the phone number is the primary phone number.
    **/
@@ -135,7 +136,6 @@ public class ScimPhoneNumber  implements Serializable {
     this.primary = primary;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,9 +146,10 @@ public class ScimPhoneNumber  implements Serializable {
       return false;
     }
     ScimPhoneNumber scimPhoneNumber = (ScimPhoneNumber) o;
+
     return Objects.equals(this.value, scimPhoneNumber.value) &&
-        Objects.equals(this.type, scimPhoneNumber.type) &&
-        Objects.equals(this.primary, scimPhoneNumber.primary);
+            Objects.equals(this.type, scimPhoneNumber.type) &&
+            Objects.equals(this.primary, scimPhoneNumber.primary);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class TtsVoiceEntityListing  implements Serializable, PagedResource<TtsVo
       return false;
     }
     TtsVoiceEntityListing ttsVoiceEntityListing = (TtsVoiceEntityListing) o;
+
     return Objects.equals(this.entities, ttsVoiceEntityListing.entities) &&
-        Objects.equals(this.pageSize, ttsVoiceEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, ttsVoiceEntityListing.pageNumber) &&
-        Objects.equals(this.total, ttsVoiceEntityListing.total) &&
-        Objects.equals(this.lastUri, ttsVoiceEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, ttsVoiceEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, ttsVoiceEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, ttsVoiceEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, ttsVoiceEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, ttsVoiceEntityListing.pageCount);
+            Objects.equals(this.pageSize, ttsVoiceEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, ttsVoiceEntityListing.pageNumber) &&
+            Objects.equals(this.total, ttsVoiceEntityListing.total) &&
+            Objects.equals(this.lastUri, ttsVoiceEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, ttsVoiceEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, ttsVoiceEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, ttsVoiceEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, ttsVoiceEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, ttsVoiceEntityListing.pageCount);
   }
 
   @Override

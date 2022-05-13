@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class GamificationStatus  implements Serializable {
     this.isActive = isActive;
   }
 
-  
+
   /**
    * Gamification start date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -62,7 +63,7 @@ public class GamificationStatus  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * Automatic assignment of users to the default profile
    **/
@@ -80,7 +81,7 @@ public class GamificationStatus  implements Serializable {
     this.automaticUserAssignment = automaticUserAssignment;
   }
 
-  
+
   /**
    * Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -98,7 +99,6 @@ public class GamificationStatus  implements Serializable {
     this.dateStartPersonalBest = dateStartPersonalBest;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class GamificationStatus  implements Serializable {
       return false;
     }
     GamificationStatus gamificationStatus = (GamificationStatus) o;
+
     return Objects.equals(this.isActive, gamificationStatus.isActive) &&
-        Objects.equals(this.dateStart, gamificationStatus.dateStart) &&
-        Objects.equals(this.automaticUserAssignment, gamificationStatus.automaticUserAssignment) &&
-        Objects.equals(this.dateStartPersonalBest, gamificationStatus.dateStartPersonalBest);
+            Objects.equals(this.dateStart, gamificationStatus.dateStart) &&
+            Objects.equals(this.automaticUserAssignment, gamificationStatus.automaticUserAssignment) &&
+            Objects.equals(this.dateStartPersonalBest, gamificationStatus.dateStartPersonalBest);
   }
 
   @Override

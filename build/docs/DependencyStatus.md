@@ -27,12 +27,12 @@ title: DependencyStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BUILDINITIALIZING | &quot;BUILDINITIALIZING&quot; |
-| BUILDINPROGRESS | &quot;BUILDINPROGRESS&quot; |
-| NOTBUILT | &quot;NOTBUILT&quot; |
-| OPERATIONAL | &quot;OPERATIONAL&quot; |
-| OPERATIONALNEEDSREBUILD | &quot;OPERATIONALNEEDSREBUILD&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BUILDINITIALIZING | &quot;BUILDINITIALIZING&quot; | 
+| BUILDINPROGRESS | &quot;BUILDINPROGRESS&quot; | 
+| NOTBUILT | &quot;NOTBUILT&quot; | 
+| OPERATIONAL | &quot;OPERATIONAL&quot; | 
+| OPERATIONALNEEDSREBUILD | &quot;OPERATIONALNEEDSREBUILD&quot; | 
 {: class="table table-striped"}
 
 

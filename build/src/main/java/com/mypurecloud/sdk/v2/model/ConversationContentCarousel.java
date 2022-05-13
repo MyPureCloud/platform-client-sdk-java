@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationContentCard;
@@ -43,7 +44,6 @@ public class ConversationContentCarousel  implements Serializable {
     this.cards = cards;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,6 +54,7 @@ public class ConversationContentCarousel  implements Serializable {
       return false;
     }
     ConversationContentCarousel conversationContentCarousel = (ConversationContentCarousel) o;
+
     return Objects.equals(this.cards, conversationContentCarousel.cards);
   }
 

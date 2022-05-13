@@ -28,9 +28,9 @@ title: AttemptLimits
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NEVER | &quot;NEVER&quot; |
-| TODAY | &quot;TODAY&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVER | &quot;NEVER&quot; | 
+| TODAY | &quot;TODAY&quot; | 
 {: class="table table-striped"}
 
 

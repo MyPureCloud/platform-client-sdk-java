@@ -19,9 +19,9 @@ title: SupportCenterCustomMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WELCOME | &quot;Welcome&quot; |
-| FALLBACK | &quot;Fallback&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WELCOME | &quot;Welcome&quot; | 
+| FALLBACK | &quot;Fallback&quot; | 
 {: class="table table-striped"}
 
 

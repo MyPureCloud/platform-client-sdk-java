@@ -25,7 +25,7 @@ import com.mypurecloud.sdk.v2.model.WidgetDeployment;
 import com.mypurecloud.sdk.v2.model.WidgetDeploymentEntityListing;
 
 public class PostWidgetsDeploymentsRequest {
-    
+
 	private WidgetDeployment body;
 	public WidgetDeployment getBody() {
 		return this.body;
@@ -39,7 +39,7 @@ public class PostWidgetsDeploymentsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,8 +69,8 @@ public class PostWidgetsDeploymentsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/widgets/deployments")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class PostWidgetsDeploymentsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(WidgetDeployment body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostWidgetsDeploymentsRequest request;
@@ -95,20 +95,20 @@ public class PostWidgetsDeploymentsRequest {
 			request = new PostWidgetsDeploymentsRequest();
 		}
 
-		
+
 		public Builder withBody(WidgetDeployment body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(WidgetDeployment body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostWidgetsDeploymentsRequest build() {
             

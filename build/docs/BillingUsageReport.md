@@ -24,9 +24,9 @@ title: BillingUsageReport
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| COMPLETE | &quot;Complete&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
 {: class="table table-striped"}
 
 

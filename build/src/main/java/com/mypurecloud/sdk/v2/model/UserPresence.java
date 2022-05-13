@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PresenceDefinition;
@@ -38,7 +39,7 @@ public class UserPresence  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserPresence name(String name) {
@@ -55,7 +56,7 @@ public class UserPresence  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc.
    **/
@@ -73,7 +74,7 @@ public class UserPresence  implements Serializable {
     this.source = source;
   }
 
-  
+
   /**
    * A boolean used to tell whether or not to set this presence source as the primary on a PATCH
    **/
@@ -91,7 +92,7 @@ public class UserPresence  implements Serializable {
     this.primary = primary;
   }
 
-  
+
   /**
    **/
   public UserPresence presenceDefinition(PresenceDefinition presenceDefinition) {
@@ -108,7 +109,7 @@ public class UserPresence  implements Serializable {
     this.presenceDefinition = presenceDefinition;
   }
 
-  
+
   /**
    **/
   public UserPresence message(String message) {
@@ -125,7 +126,7 @@ public class UserPresence  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -143,14 +144,13 @@ public class UserPresence  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,14 +161,15 @@ public class UserPresence  implements Serializable {
       return false;
     }
     UserPresence userPresence = (UserPresence) o;
+
     return Objects.equals(this.id, userPresence.id) &&
-        Objects.equals(this.name, userPresence.name) &&
-        Objects.equals(this.source, userPresence.source) &&
-        Objects.equals(this.primary, userPresence.primary) &&
-        Objects.equals(this.presenceDefinition, userPresence.presenceDefinition) &&
-        Objects.equals(this.message, userPresence.message) &&
-        Objects.equals(this.modifiedDate, userPresence.modifiedDate) &&
-        Objects.equals(this.selfUri, userPresence.selfUri);
+            Objects.equals(this.name, userPresence.name) &&
+            Objects.equals(this.source, userPresence.source) &&
+            Objects.equals(this.primary, userPresence.primary) &&
+            Objects.equals(this.presenceDefinition, userPresence.presenceDefinition) &&
+            Objects.equals(this.message, userPresence.message) &&
+            Objects.equals(this.modifiedDate, userPresence.modifiedDate) &&
+            Objects.equals(this.selfUri, userPresence.selfUri);
   }
 
   @Override

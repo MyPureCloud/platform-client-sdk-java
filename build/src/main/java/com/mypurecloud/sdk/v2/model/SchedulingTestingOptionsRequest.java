@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     this.fastScheduling = fastScheduling;
   }
 
-  
+
   /**
    * Whether to force delayed scheduling
    **/
@@ -62,7 +63,7 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     this.delayScheduling = delayScheduling;
   }
 
-  
+
   /**
    * Whether to force scheduling to fail
    **/
@@ -80,7 +81,7 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     this.failScheduling = failScheduling;
   }
 
-  
+
   /**
    * Whether to populate warnings in the generated schedule
    **/
@@ -98,7 +99,7 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     this.populateWarnings = populateWarnings;
   }
 
-  
+
   /**
    * Whether to populate deprecated warnings in the generated schedule
    **/
@@ -116,7 +117,6 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     this.populateDeprecatedWarnings = populateDeprecatedWarnings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
       return false;
     }
     SchedulingTestingOptionsRequest schedulingTestingOptionsRequest = (SchedulingTestingOptionsRequest) o;
+
     return Objects.equals(this.fastScheduling, schedulingTestingOptionsRequest.fastScheduling) &&
-        Objects.equals(this.delayScheduling, schedulingTestingOptionsRequest.delayScheduling) &&
-        Objects.equals(this.failScheduling, schedulingTestingOptionsRequest.failScheduling) &&
-        Objects.equals(this.populateWarnings, schedulingTestingOptionsRequest.populateWarnings) &&
-        Objects.equals(this.populateDeprecatedWarnings, schedulingTestingOptionsRequest.populateDeprecatedWarnings);
+            Objects.equals(this.delayScheduling, schedulingTestingOptionsRequest.delayScheduling) &&
+            Objects.equals(this.failScheduling, schedulingTestingOptionsRequest.failScheduling) &&
+            Objects.equals(this.populateWarnings, schedulingTestingOptionsRequest.populateWarnings) &&
+            Objects.equals(this.populateDeprecatedWarnings, schedulingTestingOptionsRequest.populateDeprecatedWarnings);
   }
 
   @Override

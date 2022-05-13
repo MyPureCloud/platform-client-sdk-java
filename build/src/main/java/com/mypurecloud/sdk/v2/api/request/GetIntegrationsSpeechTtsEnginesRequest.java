@@ -20,51 +20,51 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Integration;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
-import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.Action;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
-import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
-import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
+import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotList;
-import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEvent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.DraftValidationResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Integration;
+import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
+import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsSettings;
-import com.mypurecloud.sdk.v2.model.IntegrationType;
-import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UpdateActionInput;
-import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
-import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
-import com.mypurecloud.sdk.v2.model.PostActionInput;
-import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsSettings;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
+import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UpdateActionInput;
+import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
 import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 public class GetIntegrationsSpeechTtsEnginesRequest {
-    
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -78,7 +78,7 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -92,7 +92,7 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Boolean includeVoices;
 	public Boolean getIncludeVoices() {
 		return this.includeVoices;
@@ -106,7 +106,7 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 	    this.setIncludeVoices(includeVoices);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -120,7 +120,7 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private String language;
 	public String getLanguage() {
 		return this.language;
@@ -134,7 +134,7 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 	    this.setLanguage(language);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -158,17 +158,22 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/integrations/speech/tts/engines")
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("includeVoices", "", includeVoices)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("language", "", language)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -179,7 +184,7 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetIntegrationsSpeechTtsEnginesRequest request;
@@ -188,34 +193,34 @@ public class GetIntegrationsSpeechTtsEnginesRequest {
 			request = new GetIntegrationsSpeechTtsEnginesRequest();
 		}
 
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withIncludeVoices(Boolean includeVoices) {
 			request.setIncludeVoices(includeVoices);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withLanguage(String language) {
 			request.setLanguage(language);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetIntegrationsSpeechTtsEnginesRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -153,7 +154,7 @@ public class JourneyWebEventsNotificationEventAction  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationEventAction createdDate(Date createdDate) {
@@ -170,7 +171,7 @@ public class JourneyWebEventsNotificationEventAction  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationEventAction state(StateEnum state) {
@@ -187,7 +188,7 @@ public class JourneyWebEventsNotificationEventAction  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationEventAction mediaType(MediaTypeEnum mediaType) {
@@ -204,7 +205,7 @@ public class JourneyWebEventsNotificationEventAction  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationEventAction prompt(String prompt) {
@@ -221,7 +222,6 @@ public class JourneyWebEventsNotificationEventAction  implements Serializable {
     this.prompt = prompt;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -232,11 +232,12 @@ public class JourneyWebEventsNotificationEventAction  implements Serializable {
       return false;
     }
     JourneyWebEventsNotificationEventAction journeyWebEventsNotificationEventAction = (JourneyWebEventsNotificationEventAction) o;
+
     return Objects.equals(this.id, journeyWebEventsNotificationEventAction.id) &&
-        Objects.equals(this.createdDate, journeyWebEventsNotificationEventAction.createdDate) &&
-        Objects.equals(this.state, journeyWebEventsNotificationEventAction.state) &&
-        Objects.equals(this.mediaType, journeyWebEventsNotificationEventAction.mediaType) &&
-        Objects.equals(this.prompt, journeyWebEventsNotificationEventAction.prompt);
+            Objects.equals(this.createdDate, journeyWebEventsNotificationEventAction.createdDate) &&
+            Objects.equals(this.state, journeyWebEventsNotificationEventAction.state) &&
+            Objects.equals(this.mediaType, journeyWebEventsNotificationEventAction.mediaType) &&
+            Objects.equals(this.prompt, journeyWebEventsNotificationEventAction.prompt);
   }
 
   @Override

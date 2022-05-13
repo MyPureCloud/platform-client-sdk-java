@@ -12,7 +12,7 @@ title: EvaluationAggregationQueryMe
 | **timeZone** | <!----><!---->**String**<!----> | Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  [optional] |
 | **groupBy** | <!---->[**List&lt;GroupByEnum&gt;**](#GroupByEnum)<!----> | Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group. |  [optional] |
 | **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Only named metrics will be retrieved. |  |
-| **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum)<!----> | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event. |  [optional] |
+| **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum)<!----> | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> | Evaluation context Id |  [optional] |
 {: class="table table-striped"}
 
@@ -61,11 +61,11 @@ title: EvaluationAggregationQueryMe
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CONVERSATIONSTART | &quot;conversationStart&quot; |
-| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
-| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; |
-| EVENTTIME | &quot;eventTime&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CONVERSATIONSTART | &quot;conversationStart&quot; | 
+| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; | 
+| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; | 
+| EVENTTIME | &quot;eventTime&quot; | 
 {: class="table table-striped"}
 
 

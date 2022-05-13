@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchOperation;
@@ -45,7 +46,7 @@ public class ScimV2PatchRequest  implements Serializable {
     this.schemas = schemas;
   }
 
-  
+
   /**
    * The list of operations to perform for the PATCH request.
    **/
@@ -63,7 +64,6 @@ public class ScimV2PatchRequest  implements Serializable {
     this.operations = operations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class ScimV2PatchRequest  implements Serializable {
       return false;
     }
     ScimV2PatchRequest scimV2PatchRequest = (ScimV2PatchRequest) o;
+
     return Objects.equals(this.schemas, scimV2PatchRequest.schemas) &&
-        Objects.equals(this.operations, scimV2PatchRequest.operations);
+            Objects.equals(this.operations, scimV2PatchRequest.operations);
   }
 
   @Override

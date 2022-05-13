@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class BotSearchResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The name of the bot
    **/
@@ -115,7 +116,7 @@ public class BotSearchResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The provider of the bot
    **/
@@ -133,7 +134,7 @@ public class BotSearchResponse  implements Serializable {
     this.botType = botType;
   }
 
-  
+
   /**
    * The description of the bot
    **/
@@ -151,14 +152,13 @@ public class BotSearchResponse  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,11 +169,12 @@ public class BotSearchResponse  implements Serializable {
       return false;
     }
     BotSearchResponse botSearchResponse = (BotSearchResponse) o;
+
     return Objects.equals(this.id, botSearchResponse.id) &&
-        Objects.equals(this.name, botSearchResponse.name) &&
-        Objects.equals(this.botType, botSearchResponse.botType) &&
-        Objects.equals(this.description, botSearchResponse.description) &&
-        Objects.equals(this.selfUri, botSearchResponse.selfUri);
+            Objects.equals(this.name, botSearchResponse.name) &&
+            Objects.equals(this.botType, botSearchResponse.botType) &&
+            Objects.equals(this.description, botSearchResponse.description) &&
+            Objects.equals(this.selfUri, botSearchResponse.selfUri);
   }
 
   @Override

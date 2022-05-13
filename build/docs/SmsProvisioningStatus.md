@@ -21,11 +21,11 @@ title: SmsProvisioningStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| CREATE | &quot;Create&quot; |
-| UPDATE | &quot;Update&quot; |
-| DELETE | &quot;Delete&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| CREATE | &quot;Create&quot; | 
+| UPDATE | &quot;Update&quot; | 
+| DELETE | &quot;Delete&quot; | 
 {: class="table table-striped"}
 
 
@@ -35,10 +35,10 @@ title: SmsProvisioningStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RUNNING | &quot;Running&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RUNNING | &quot;Running&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 

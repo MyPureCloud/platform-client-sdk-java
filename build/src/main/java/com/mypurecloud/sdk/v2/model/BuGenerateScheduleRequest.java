@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
@@ -45,7 +46,7 @@ public class BuGenerateScheduleRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule's start week + week count
    **/
@@ -63,7 +64,7 @@ public class BuGenerateScheduleRequest  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * The number of weeks in the schedule. One extra day is added at the end
    **/
@@ -81,7 +82,7 @@ public class BuGenerateScheduleRequest  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * Additional scheduling options
    **/
@@ -99,7 +100,6 @@ public class BuGenerateScheduleRequest  implements Serializable {
     this.options = options;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class BuGenerateScheduleRequest  implements Serializable {
       return false;
     }
     BuGenerateScheduleRequest buGenerateScheduleRequest = (BuGenerateScheduleRequest) o;
+
     return Objects.equals(this.description, buGenerateScheduleRequest.description) &&
-        Objects.equals(this.shortTermForecast, buGenerateScheduleRequest.shortTermForecast) &&
-        Objects.equals(this.weekCount, buGenerateScheduleRequest.weekCount) &&
-        Objects.equals(this.options, buGenerateScheduleRequest.options);
+            Objects.equals(this.shortTermForecast, buGenerateScheduleRequest.shortTermForecast) &&
+            Objects.equals(this.weekCount, buGenerateScheduleRequest.weekCount) &&
+            Objects.equals(this.options, buGenerateScheduleRequest.options);
   }
 
   @Override

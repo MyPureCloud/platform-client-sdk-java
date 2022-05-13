@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class GetLanguageunderstandingMinerRequest {
-    
+
 	private String minerId;
 	public String getMinerId() {
 		return this.minerId;
@@ -57,7 +57,7 @@ public class GetLanguageunderstandingMinerRequest {
 	    this.setMinerId(minerId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,7 +88,7 @@ public class GetLanguageunderstandingMinerRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/languageunderstanding/miners/{minerId}")
                 .withPathParameter("minerId", minerId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -99,12 +99,12 @@ public class GetLanguageunderstandingMinerRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String minerId) {
 	    return new Builder()
 	            .withRequiredParams(minerId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguageunderstandingMinerRequest request;
@@ -113,20 +113,20 @@ public class GetLanguageunderstandingMinerRequest {
 			request = new GetLanguageunderstandingMinerRequest();
 		}
 
-		
+
 		public Builder withMinerId(String minerId) {
 			request.setMinerId(minerId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String minerId) {
 			request.setMinerId(minerId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLanguageunderstandingMinerRequest build() {
             

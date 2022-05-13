@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -41,7 +42,7 @@ public class Annotation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Annotation name(String name) {
@@ -58,7 +59,7 @@ public class Annotation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Annotation type(String type) {
@@ -75,7 +76,7 @@ public class Annotation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Offset of annotation in milliseconds.
    **/
@@ -93,7 +94,7 @@ public class Annotation  implements Serializable {
     this.location = location;
   }
 
-  
+
   /**
    * Duration of annotation in milliseconds.
    **/
@@ -111,7 +112,7 @@ public class Annotation  implements Serializable {
     this.durationMs = durationMs;
   }
 
-  
+
   /**
    * Offset of annotation (milliseconds) from start of recording.
    **/
@@ -129,7 +130,7 @@ public class Annotation  implements Serializable {
     this.absoluteLocation = absoluteLocation;
   }
 
-  
+
   /**
    * Duration of annotation (milliseconds).
    **/
@@ -147,7 +148,7 @@ public class Annotation  implements Serializable {
     this.absoluteDurationMs = absoluteDurationMs;
   }
 
-  
+
   /**
    * Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts
    **/
@@ -165,7 +166,7 @@ public class Annotation  implements Serializable {
     this.recordingLocation = recordingLocation;
   }
 
-  
+
   /**
    * Duration of annotation (milliseconds), adjusted for any recording cuts.
    **/
@@ -183,7 +184,7 @@ public class Annotation  implements Serializable {
     this.recordingDurationMs = recordingDurationMs;
   }
 
-  
+
   /**
    * User that created this annotation (if any).
    **/
@@ -201,7 +202,7 @@ public class Annotation  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Text of annotation. Maximum character limit is 500.
    **/
@@ -219,14 +220,13 @@ public class Annotation  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -237,18 +237,19 @@ public class Annotation  implements Serializable {
       return false;
     }
     Annotation annotation = (Annotation) o;
+
     return Objects.equals(this.id, annotation.id) &&
-        Objects.equals(this.name, annotation.name) &&
-        Objects.equals(this.type, annotation.type) &&
-        Objects.equals(this.location, annotation.location) &&
-        Objects.equals(this.durationMs, annotation.durationMs) &&
-        Objects.equals(this.absoluteLocation, annotation.absoluteLocation) &&
-        Objects.equals(this.absoluteDurationMs, annotation.absoluteDurationMs) &&
-        Objects.equals(this.recordingLocation, annotation.recordingLocation) &&
-        Objects.equals(this.recordingDurationMs, annotation.recordingDurationMs) &&
-        Objects.equals(this.user, annotation.user) &&
-        Objects.equals(this.description, annotation.description) &&
-        Objects.equals(this.selfUri, annotation.selfUri);
+            Objects.equals(this.name, annotation.name) &&
+            Objects.equals(this.type, annotation.type) &&
+            Objects.equals(this.location, annotation.location) &&
+            Objects.equals(this.durationMs, annotation.durationMs) &&
+            Objects.equals(this.absoluteLocation, annotation.absoluteLocation) &&
+            Objects.equals(this.absoluteDurationMs, annotation.absoluteDurationMs) &&
+            Objects.equals(this.recordingLocation, annotation.recordingLocation) &&
+            Objects.equals(this.recordingDurationMs, annotation.recordingDurationMs) &&
+            Objects.equals(this.user, annotation.user) &&
+            Objects.equals(this.description, annotation.description) &&
+            Objects.equals(this.selfUri, annotation.selfUri);
   }
 
   @Override

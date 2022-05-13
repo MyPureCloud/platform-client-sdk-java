@@ -27,7 +27,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class GetSystempresencesRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -51,7 +51,7 @@ public class GetSystempresencesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/systempresences")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -62,7 +62,7 @@ public class GetSystempresencesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetSystempresencesRequest request;
@@ -71,9 +71,9 @@ public class GetSystempresencesRequest {
 			request = new GetSystempresencesRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetSystempresencesRequest build() {
             

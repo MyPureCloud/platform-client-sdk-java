@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.dayStartOffsetSecs = dayStartOffsetSecs;
   }
 
-  
+
   /**
    * Duration of schedule in seconds included for adherence percentage calculation
    **/
@@ -68,7 +69,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.adherenceScheduleSecs = adherenceScheduleSecs;
   }
 
-  
+
   /**
    * Total scheduled duration in seconds for OnQueue activities
    **/
@@ -86,7 +87,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.conformanceScheduleSecs = conformanceScheduleSecs;
   }
 
-  
+
   /**
    * Total actually worked duration in seconds for OnQueue activities
    **/
@@ -104,7 +105,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.conformanceActualSecs = conformanceActualSecs;
   }
 
-  
+
   /**
    * Total number of adherence exceptions for this user
    **/
@@ -122,7 +123,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.exceptionCount = exceptionCount;
   }
 
-  
+
   /**
    * Total duration in seconds of adherence exceptions for this user
    **/
@@ -140,7 +141,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.exceptionDurationSecs = exceptionDurationSecs;
   }
 
-  
+
   /**
    * The impact duration in seconds of current adherence state for this user
    **/
@@ -158,7 +159,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.impactSeconds = impactSeconds;
   }
 
-  
+
   /**
    * Total duration in seconds for all scheduled activities
    **/
@@ -176,7 +177,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.scheduleLengthSecs = scheduleLengthSecs;
   }
 
-  
+
   /**
    * Total duration in seconds for all actually worked activities
    **/
@@ -194,7 +195,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.actualLengthSecs = actualLengthSecs;
   }
 
-  
+
   /**
    * Total adherence percentage for this user, in the scale of 0 - 100
    **/
@@ -212,7 +213,7 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.adherencePercentage = adherencePercentage;
   }
 
-  
+
   /**
    * Total conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
    **/
@@ -230,7 +231,6 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
     this.conformancePercentage = conformancePercentage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -241,17 +241,18 @@ public class HistoricalAdherenceDayMetrics  implements Serializable {
       return false;
     }
     HistoricalAdherenceDayMetrics historicalAdherenceDayMetrics = (HistoricalAdherenceDayMetrics) o;
+
     return Objects.equals(this.dayStartOffsetSecs, historicalAdherenceDayMetrics.dayStartOffsetSecs) &&
-        Objects.equals(this.adherenceScheduleSecs, historicalAdherenceDayMetrics.adherenceScheduleSecs) &&
-        Objects.equals(this.conformanceScheduleSecs, historicalAdherenceDayMetrics.conformanceScheduleSecs) &&
-        Objects.equals(this.conformanceActualSecs, historicalAdherenceDayMetrics.conformanceActualSecs) &&
-        Objects.equals(this.exceptionCount, historicalAdherenceDayMetrics.exceptionCount) &&
-        Objects.equals(this.exceptionDurationSecs, historicalAdherenceDayMetrics.exceptionDurationSecs) &&
-        Objects.equals(this.impactSeconds, historicalAdherenceDayMetrics.impactSeconds) &&
-        Objects.equals(this.scheduleLengthSecs, historicalAdherenceDayMetrics.scheduleLengthSecs) &&
-        Objects.equals(this.actualLengthSecs, historicalAdherenceDayMetrics.actualLengthSecs) &&
-        Objects.equals(this.adherencePercentage, historicalAdherenceDayMetrics.adherencePercentage) &&
-        Objects.equals(this.conformancePercentage, historicalAdherenceDayMetrics.conformancePercentage);
+            Objects.equals(this.adherenceScheduleSecs, historicalAdherenceDayMetrics.adherenceScheduleSecs) &&
+            Objects.equals(this.conformanceScheduleSecs, historicalAdherenceDayMetrics.conformanceScheduleSecs) &&
+            Objects.equals(this.conformanceActualSecs, historicalAdherenceDayMetrics.conformanceActualSecs) &&
+            Objects.equals(this.exceptionCount, historicalAdherenceDayMetrics.exceptionCount) &&
+            Objects.equals(this.exceptionDurationSecs, historicalAdherenceDayMetrics.exceptionDurationSecs) &&
+            Objects.equals(this.impactSeconds, historicalAdherenceDayMetrics.impactSeconds) &&
+            Objects.equals(this.scheduleLengthSecs, historicalAdherenceDayMetrics.scheduleLengthSecs) &&
+            Objects.equals(this.actualLengthSecs, historicalAdherenceDayMetrics.actualLengthSecs) &&
+            Objects.equals(this.adherencePercentage, historicalAdherenceDayMetrics.adherencePercentage) &&
+            Objects.equals(this.conformancePercentage, historicalAdherenceDayMetrics.conformancePercentage);
   }
 
   @Override

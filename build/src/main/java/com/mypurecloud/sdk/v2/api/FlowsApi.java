@@ -10,8 +10,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
@@ -26,7 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class FlowsApi {
   private final ApiClient pcapiClient;
 
@@ -38,7 +37,6 @@ public class FlowsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Query for flow aggregates
    * 
@@ -65,7 +63,7 @@ public class FlowsApi {
   private PostAnalyticsFlowsAggregatesQueryRequest createPostAnalyticsFlowsAggregatesQueryRequest(FlowAggregationQuery body) {
     return PostAnalyticsFlowsAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -117,7 +115,6 @@ public class FlowsApi {
     }
   }
 
-  
   /**
    * Query for flow observations
    * 
@@ -144,7 +141,7 @@ public class FlowsApi {
   private PostAnalyticsFlowsObservationsQueryRequest createPostAnalyticsFlowsObservationsQueryRequest(FlowObservationQuery body) {
     return PostAnalyticsFlowsObservationsQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -196,5 +193,4 @@ public class FlowsApi {
     }
   }
 
-  
 }

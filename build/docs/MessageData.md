@@ -34,9 +34,9 @@ title: MessageData
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -46,15 +46,15 @@ title: MessageData
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SMS | &quot;sms&quot; |
-| FACEBOOK | &quot;facebook&quot; |
-| TWITTER | &quot;twitter&quot; |
-| LINE | &quot;line&quot; |
-| WHATSAPP | &quot;whatsapp&quot; |
-| WEBMESSAGING | &quot;webmessaging&quot; |
-| INSTAGRAM | &quot;instagram&quot; |
-| OPEN | &quot;open&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SMS | &quot;sms&quot; | 
+| FACEBOOK | &quot;facebook&quot; | 
+| TWITTER | &quot;twitter&quot; | 
+| LINE | &quot;line&quot; | 
+| WHATSAPP | &quot;whatsapp&quot; | 
+| WEBMESSAGING | &quot;webmessaging&quot; | 
+| INSTAGRAM | &quot;instagram&quot; | 
+| OPEN | &quot;open&quot; | 
 {: class="table table-striped"}
 
 
@@ -64,14 +64,14 @@ title: MessageData
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;queued&quot; |
-| SENT | &quot;sent&quot; |
-| FAILED | &quot;failed&quot; |
-| RECEIVED | &quot;received&quot; |
-| DELIVERY_SUCCESS | &quot;delivery-success&quot; |
-| DELIVERY_FAILED | &quot;delivery-failed&quot; |
-| READ | &quot;read&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUEUED | &quot;queued&quot; | 
+| SENT | &quot;sent&quot; | 
+| FAILED | &quot;failed&quot; | 
+| RECEIVED | &quot;received&quot; | 
+| DELIVERY_SUCCESS | &quot;delivery-success&quot; | 
+| DELIVERY_FAILED | &quot;delivery-failed&quot; | 
+| READ | &quot;read&quot; | 
 {: class="table table-striped"}
 
 

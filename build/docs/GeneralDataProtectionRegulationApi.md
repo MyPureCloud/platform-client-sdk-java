@@ -23,8 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get an existing GDPR request
 
-
-
 Wraps GET /api/v2/gdpr/requests/{requestId}  
 
 Requires ANY permissions: 
@@ -85,8 +83,6 @@ try {
 > [GDPRRequestEntityListing](GDPRRequestEntityListing.html) getGdprRequests(pageSize, pageNumber)
 
 Get all GDPR requests
-
-
 
 Wraps GET /api/v2/gdpr/requests  
 
@@ -151,8 +147,6 @@ try {
 
 Get GDPR subjects
 
-
-
 Wraps GET /api/v2/gdpr/subjects  
 
 Requires ANY permissions: 
@@ -215,8 +209,6 @@ try {
 > [GDPRRequest](GDPRRequest.html) postGdprRequests(body, deleteConfirmed)
 
 Submit a new GDPR request
-
-
 
 Wraps POST /api/v2/gdpr/requests  
 

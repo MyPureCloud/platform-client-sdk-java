@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -259,7 +260,7 @@ public class Trunk  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -277,7 +278,7 @@ public class Trunk  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -295,7 +296,7 @@ public class Trunk  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -313,7 +314,7 @@ public class Trunk  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -331,7 +332,7 @@ public class Trunk  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -349,7 +350,7 @@ public class Trunk  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -367,7 +368,7 @@ public class Trunk  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -385,7 +386,7 @@ public class Trunk  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -403,14 +404,14 @@ public class Trunk  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -428,7 +429,7 @@ public class Trunk  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -446,7 +447,7 @@ public class Trunk  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The type of this trunk.
    **/
@@ -464,7 +465,7 @@ public class Trunk  implements Serializable {
     this.trunkType = trunkType;
   }
 
-  
+
   /**
    * The Edge using this trunk.
    **/
@@ -482,7 +483,7 @@ public class Trunk  implements Serializable {
     this.edge = edge;
   }
 
-  
+
   /**
    * The trunk base configuration used on this trunk.
    **/
@@ -500,7 +501,7 @@ public class Trunk  implements Serializable {
     this.trunkBase = trunkBase;
   }
 
-  
+
   /**
    * The metabase used to create this trunk.
    **/
@@ -518,7 +519,7 @@ public class Trunk  implements Serializable {
     this.trunkMetabase = trunkMetabase;
   }
 
-  
+
   /**
    * The edge group associated with this trunk.
    **/
@@ -536,14 +537,14 @@ public class Trunk  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base.")
   @JsonProperty("inService")
   public Boolean getInService() {
     return inService;
   }
 
-  
+
   /**
    * True if the Edge used by this trunk is in-service
    **/
@@ -561,77 +562,76 @@ public class Trunk  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The Logical Interface on the Edge to which the trunk is assigned.")
   @JsonProperty("logicalInterface")
   public DomainEntityRef getLogicalInterface() {
     return logicalInterface;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The connected status of the trunk")
   @JsonProperty("connectedStatus")
   public TrunkConnectedStatus getConnectedStatus() {
     return connectedStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The trunk optionsStatus")
   @JsonProperty("optionsStatus")
   public List<TrunkMetricsOptions> getOptionsStatus() {
     return optionsStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The trunk registersStatus")
   @JsonProperty("registersStatus")
   public List<TrunkMetricsRegisters> getRegistersStatus() {
     return registersStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The trunk ipStatus")
   @JsonProperty("ipStatus")
   public TrunkMetricsNetworkTypeIp getIpStatus() {
     return ipStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.")
   @JsonProperty("optionsEnabledStatus")
   public OptionsEnabledStatusEnum getOptionsEnabledStatus() {
     return optionsEnabledStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.")
   @JsonProperty("registersEnabledStatus")
   public RegistersEnabledStatusEnum getRegistersEnabledStatus() {
     return registersEnabledStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The IP Network Family of the trunk")
   @JsonProperty("family")
   public Integer getFamily() {
     return family;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of proxy addresses (ports if provided) for the trunk")
   @JsonProperty("proxyAddressList")
   public List<String> getProxyAddressList() {
     return proxyAddressList;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -642,35 +642,36 @@ public class Trunk  implements Serializable {
       return false;
     }
     Trunk trunk = (Trunk) o;
+
     return Objects.equals(this.id, trunk.id) &&
-        Objects.equals(this.name, trunk.name) &&
-        Objects.equals(this.division, trunk.division) &&
-        Objects.equals(this.description, trunk.description) &&
-        Objects.equals(this.version, trunk.version) &&
-        Objects.equals(this.dateCreated, trunk.dateCreated) &&
-        Objects.equals(this.dateModified, trunk.dateModified) &&
-        Objects.equals(this.modifiedBy, trunk.modifiedBy) &&
-        Objects.equals(this.createdBy, trunk.createdBy) &&
-        Objects.equals(this.state, trunk.state) &&
-        Objects.equals(this.modifiedByApp, trunk.modifiedByApp) &&
-        Objects.equals(this.createdByApp, trunk.createdByApp) &&
-        Objects.equals(this.trunkType, trunk.trunkType) &&
-        Objects.equals(this.edge, trunk.edge) &&
-        Objects.equals(this.trunkBase, trunk.trunkBase) &&
-        Objects.equals(this.trunkMetabase, trunk.trunkMetabase) &&
-        Objects.equals(this.edgeGroup, trunk.edgeGroup) &&
-        Objects.equals(this.inService, trunk.inService) &&
-        Objects.equals(this.enabled, trunk.enabled) &&
-        Objects.equals(this.logicalInterface, trunk.logicalInterface) &&
-        Objects.equals(this.connectedStatus, trunk.connectedStatus) &&
-        Objects.equals(this.optionsStatus, trunk.optionsStatus) &&
-        Objects.equals(this.registersStatus, trunk.registersStatus) &&
-        Objects.equals(this.ipStatus, trunk.ipStatus) &&
-        Objects.equals(this.optionsEnabledStatus, trunk.optionsEnabledStatus) &&
-        Objects.equals(this.registersEnabledStatus, trunk.registersEnabledStatus) &&
-        Objects.equals(this.family, trunk.family) &&
-        Objects.equals(this.proxyAddressList, trunk.proxyAddressList) &&
-        Objects.equals(this.selfUri, trunk.selfUri);
+            Objects.equals(this.name, trunk.name) &&
+            Objects.equals(this.division, trunk.division) &&
+            Objects.equals(this.description, trunk.description) &&
+            Objects.equals(this.version, trunk.version) &&
+            Objects.equals(this.dateCreated, trunk.dateCreated) &&
+            Objects.equals(this.dateModified, trunk.dateModified) &&
+            Objects.equals(this.modifiedBy, trunk.modifiedBy) &&
+            Objects.equals(this.createdBy, trunk.createdBy) &&
+            Objects.equals(this.state, trunk.state) &&
+            Objects.equals(this.modifiedByApp, trunk.modifiedByApp) &&
+            Objects.equals(this.createdByApp, trunk.createdByApp) &&
+            Objects.equals(this.trunkType, trunk.trunkType) &&
+            Objects.equals(this.edge, trunk.edge) &&
+            Objects.equals(this.trunkBase, trunk.trunkBase) &&
+            Objects.equals(this.trunkMetabase, trunk.trunkMetabase) &&
+            Objects.equals(this.edgeGroup, trunk.edgeGroup) &&
+            Objects.equals(this.inService, trunk.inService) &&
+            Objects.equals(this.enabled, trunk.enabled) &&
+            Objects.equals(this.logicalInterface, trunk.logicalInterface) &&
+            Objects.equals(this.connectedStatus, trunk.connectedStatus) &&
+            Objects.equals(this.optionsStatus, trunk.optionsStatus) &&
+            Objects.equals(this.registersStatus, trunk.registersStatus) &&
+            Objects.equals(this.ipStatus, trunk.ipStatus) &&
+            Objects.equals(this.optionsEnabledStatus, trunk.optionsEnabledStatus) &&
+            Objects.equals(this.registersEnabledStatus, trunk.registersEnabledStatus) &&
+            Objects.equals(this.family, trunk.family) &&
+            Objects.equals(this.proxyAddressList, trunk.proxyAddressList) &&
+            Objects.equals(this.selfUri, trunk.selfUri);
   }
 
   @Override

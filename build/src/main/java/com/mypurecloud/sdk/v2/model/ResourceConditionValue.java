@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class ResourceConditionValue  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public ResourceConditionValue value(String value) {
@@ -107,7 +108,6 @@ public class ResourceConditionValue  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class ResourceConditionValue  implements Serializable {
       return false;
     }
     ResourceConditionValue resourceConditionValue = (ResourceConditionValue) o;
+
     return Objects.equals(this.type, resourceConditionValue.type) &&
-        Objects.equals(this.value, resourceConditionValue.value);
+            Objects.equals(this.value, resourceConditionValue.value);
   }
 
   @Override

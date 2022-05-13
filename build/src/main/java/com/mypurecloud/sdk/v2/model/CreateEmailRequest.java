@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -107,7 +108,7 @@ public class CreateEmailRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
    **/
@@ -125,7 +126,7 @@ public class CreateEmailRequest  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    * The name of the provider that is sourcing the emails. The Provider \"PureCloud Email\" is reserved for native emails.
    **/
@@ -143,7 +144,7 @@ public class CreateEmailRequest  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The list of skill ID's to use for routing.
    **/
@@ -161,7 +162,7 @@ public class CreateEmailRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * The ID of the language to use for routing.
    **/
@@ -179,7 +180,7 @@ public class CreateEmailRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    * The priority to assign to the conversation for routing.
    **/
@@ -197,7 +198,7 @@ public class CreateEmailRequest  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * The list of attributes to associate with the customer participant.
    **/
@@ -215,7 +216,7 @@ public class CreateEmailRequest  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * The email address of the recipient of the email.
    **/
@@ -233,7 +234,7 @@ public class CreateEmailRequest  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * The name of the recipient of the email.
    **/
@@ -251,7 +252,7 @@ public class CreateEmailRequest  implements Serializable {
     this.toName = toName;
   }
 
-  
+
   /**
    * The email address of the sender of the email.
    **/
@@ -269,7 +270,7 @@ public class CreateEmailRequest  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The name of the sender of the email.
    **/
@@ -287,7 +288,7 @@ public class CreateEmailRequest  implements Serializable {
     this.fromName = fromName;
   }
 
-  
+
   /**
    * The subject of the email
    **/
@@ -305,7 +306,7 @@ public class CreateEmailRequest  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    * Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
    **/
@@ -323,7 +324,7 @@ public class CreateEmailRequest  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * An HTML body content of the email.
    **/
@@ -341,7 +342,7 @@ public class CreateEmailRequest  implements Serializable {
     this.htmlBody = htmlBody;
   }
 
-  
+
   /**
    * A text body content of the email.
    **/
@@ -359,7 +360,7 @@ public class CreateEmailRequest  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
    **/
@@ -377,7 +378,6 @@ public class CreateEmailRequest  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -388,22 +388,23 @@ public class CreateEmailRequest  implements Serializable {
       return false;
     }
     CreateEmailRequest createEmailRequest = (CreateEmailRequest) o;
+
     return Objects.equals(this.queueId, createEmailRequest.queueId) &&
-        Objects.equals(this.flowId, createEmailRequest.flowId) &&
-        Objects.equals(this.provider, createEmailRequest.provider) &&
-        Objects.equals(this.skillIds, createEmailRequest.skillIds) &&
-        Objects.equals(this.languageId, createEmailRequest.languageId) &&
-        Objects.equals(this.priority, createEmailRequest.priority) &&
-        Objects.equals(this.attributes, createEmailRequest.attributes) &&
-        Objects.equals(this.toAddress, createEmailRequest.toAddress) &&
-        Objects.equals(this.toName, createEmailRequest.toName) &&
-        Objects.equals(this.fromAddress, createEmailRequest.fromAddress) &&
-        Objects.equals(this.fromName, createEmailRequest.fromName) &&
-        Objects.equals(this.subject, createEmailRequest.subject) &&
-        Objects.equals(this.direction, createEmailRequest.direction) &&
-        Objects.equals(this.htmlBody, createEmailRequest.htmlBody) &&
-        Objects.equals(this.textBody, createEmailRequest.textBody) &&
-        Objects.equals(this.externalContactId, createEmailRequest.externalContactId);
+            Objects.equals(this.flowId, createEmailRequest.flowId) &&
+            Objects.equals(this.provider, createEmailRequest.provider) &&
+            Objects.equals(this.skillIds, createEmailRequest.skillIds) &&
+            Objects.equals(this.languageId, createEmailRequest.languageId) &&
+            Objects.equals(this.priority, createEmailRequest.priority) &&
+            Objects.equals(this.attributes, createEmailRequest.attributes) &&
+            Objects.equals(this.toAddress, createEmailRequest.toAddress) &&
+            Objects.equals(this.toName, createEmailRequest.toName) &&
+            Objects.equals(this.fromAddress, createEmailRequest.fromAddress) &&
+            Objects.equals(this.fromName, createEmailRequest.fromName) &&
+            Objects.equals(this.subject, createEmailRequest.subject) &&
+            Objects.equals(this.direction, createEmailRequest.direction) &&
+            Objects.equals(this.htmlBody, createEmailRequest.htmlBody) &&
+            Objects.equals(this.textBody, createEmailRequest.textBody) &&
+            Objects.equals(this.externalContactId, createEmailRequest.externalContactId);
   }
 
   @Override

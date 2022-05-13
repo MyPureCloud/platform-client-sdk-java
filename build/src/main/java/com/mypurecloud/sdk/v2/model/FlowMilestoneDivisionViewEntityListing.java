@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneDivisionViewEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FlowMilestoneDivisionViewEntityListing  implements Serializable, Pa
       return false;
     }
     FlowMilestoneDivisionViewEntityListing flowMilestoneDivisionViewEntityListing = (FlowMilestoneDivisionViewEntityListing) o;
+
     return Objects.equals(this.entities, flowMilestoneDivisionViewEntityListing.entities) &&
-        Objects.equals(this.pageSize, flowMilestoneDivisionViewEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, flowMilestoneDivisionViewEntityListing.pageNumber) &&
-        Objects.equals(this.total, flowMilestoneDivisionViewEntityListing.total) &&
-        Objects.equals(this.lastUri, flowMilestoneDivisionViewEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, flowMilestoneDivisionViewEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, flowMilestoneDivisionViewEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, flowMilestoneDivisionViewEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, flowMilestoneDivisionViewEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, flowMilestoneDivisionViewEntityListing.pageCount);
+            Objects.equals(this.pageSize, flowMilestoneDivisionViewEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, flowMilestoneDivisionViewEntityListing.pageNumber) &&
+            Objects.equals(this.total, flowMilestoneDivisionViewEntityListing.total) &&
+            Objects.equals(this.lastUri, flowMilestoneDivisionViewEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, flowMilestoneDivisionViewEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, flowMilestoneDivisionViewEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, flowMilestoneDivisionViewEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, flowMilestoneDivisionViewEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, flowMilestoneDivisionViewEntityListing.pageCount);
   }
 
   @Override

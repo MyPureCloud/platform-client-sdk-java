@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ConversationEmailEventTopicDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicDetail fieldName(String fieldName) {
@@ -59,7 +60,7 @@ public class ConversationEmailEventTopicDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicDetail entityId(String entityId) {
@@ -76,7 +77,7 @@ public class ConversationEmailEventTopicDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicDetail entityName(String entityName) {
@@ -93,7 +94,6 @@ public class ConversationEmailEventTopicDetail  implements Serializable {
     this.entityName = entityName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class ConversationEmailEventTopicDetail  implements Serializable {
       return false;
     }
     ConversationEmailEventTopicDetail conversationEmailEventTopicDetail = (ConversationEmailEventTopicDetail) o;
+
     return Objects.equals(this.errorCode, conversationEmailEventTopicDetail.errorCode) &&
-        Objects.equals(this.fieldName, conversationEmailEventTopicDetail.fieldName) &&
-        Objects.equals(this.entityId, conversationEmailEventTopicDetail.entityId) &&
-        Objects.equals(this.entityName, conversationEmailEventTopicDetail.entityName);
+            Objects.equals(this.fieldName, conversationEmailEventTopicDetail.fieldName) &&
+            Objects.equals(this.entityId, conversationEmailEventTopicDetail.entityId) &&
+            Objects.equals(this.entityName, conversationEmailEventTopicDetail.entityName);
   }
 
   @Override

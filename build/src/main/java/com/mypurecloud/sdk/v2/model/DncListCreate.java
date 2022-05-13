@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -143,7 +143,7 @@ public class DncListCreate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the DncList.
    **/
@@ -161,21 +161,21 @@ public class DncListCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -193,21 +193,21 @@ public class DncListCreate  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the import process")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of phone numbers in the DncList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;
   }
 
-  
+
   /**
    * The type of the DncList.
    **/
@@ -225,7 +225,7 @@ public class DncListCreate  implements Serializable {
     this.dncSourceType = dncSourceType;
   }
 
-  
+
   /**
    * The contact method. Required if dncSourceType is rds.
    **/
@@ -243,7 +243,7 @@ public class DncListCreate  implements Serializable {
     this.contactMethod = contactMethod;
   }
 
-  
+
   /**
    * A dnc.com loginId. Required if the dncSourceType is dnc.com.
    **/
@@ -261,7 +261,7 @@ public class DncListCreate  implements Serializable {
     this.loginId = loginId;
   }
 
-  
+
   /**
    * The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
    **/
@@ -279,7 +279,7 @@ public class DncListCreate  implements Serializable {
     this.dncCodes = dncCodes;
   }
 
-  
+
   /**
    * A gryphon license number. Required if the dncSourceType is gryphon.
    **/
@@ -297,7 +297,7 @@ public class DncListCreate  implements Serializable {
     this.licenseId = licenseId;
   }
 
-  
+
   /**
    * The division this DncList belongs to.
    **/
@@ -315,14 +315,13 @@ public class DncListCreate  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -333,20 +332,21 @@ public class DncListCreate  implements Serializable {
       return false;
     }
     DncListCreate dncListCreate = (DncListCreate) o;
+
     return Objects.equals(this.id, dncListCreate.id) &&
-        Objects.equals(this.name, dncListCreate.name) &&
-        Objects.equals(this.dateCreated, dncListCreate.dateCreated) &&
-        Objects.equals(this.dateModified, dncListCreate.dateModified) &&
-        Objects.equals(this.version, dncListCreate.version) &&
-        Objects.equals(this.importStatus, dncListCreate.importStatus) &&
-        Objects.equals(this.size, dncListCreate.size) &&
-        Objects.equals(this.dncSourceType, dncListCreate.dncSourceType) &&
-        Objects.equals(this.contactMethod, dncListCreate.contactMethod) &&
-        Objects.equals(this.loginId, dncListCreate.loginId) &&
-        Objects.equals(this.dncCodes, dncListCreate.dncCodes) &&
-        Objects.equals(this.licenseId, dncListCreate.licenseId) &&
-        Objects.equals(this.division, dncListCreate.division) &&
-        Objects.equals(this.selfUri, dncListCreate.selfUri);
+            Objects.equals(this.name, dncListCreate.name) &&
+            Objects.equals(this.dateCreated, dncListCreate.dateCreated) &&
+            Objects.equals(this.dateModified, dncListCreate.dateModified) &&
+            Objects.equals(this.version, dncListCreate.version) &&
+            Objects.equals(this.importStatus, dncListCreate.importStatus) &&
+            Objects.equals(this.size, dncListCreate.size) &&
+            Objects.equals(this.dncSourceType, dncListCreate.dncSourceType) &&
+            Objects.equals(this.contactMethod, dncListCreate.contactMethod) &&
+            Objects.equals(this.loginId, dncListCreate.loginId) &&
+            Objects.equals(this.dncCodes, dncListCreate.dncCodes) &&
+            Objects.equals(this.licenseId, dncListCreate.licenseId) &&
+            Objects.equals(this.division, dncListCreate.division) &&
+            Objects.equals(this.selfUri, dncListCreate.selfUri);
   }
 
   @Override

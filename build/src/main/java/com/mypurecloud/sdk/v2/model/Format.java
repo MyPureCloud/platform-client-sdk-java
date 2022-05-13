@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -119,7 +119,6 @@ public class Format  implements Serializable {
     this.flags = flags;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,6 +129,7 @@ public class Format  implements Serializable {
       return false;
     }
     Format format = (Format) o;
+
     return Objects.equals(this.flags, format.flags);
   }
 

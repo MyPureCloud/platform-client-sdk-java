@@ -19,9 +19,9 @@ title: CallbackIdentifier
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACD | &quot;ACD&quot; |
-| EXTERNAL | &quot;EXTERNAL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACD | &quot;ACD&quot; | 
+| EXTERNAL | &quot;EXTERNAL&quot; | 
 {: class="table table-striped"}
 
 

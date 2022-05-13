@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdhocRecordingTopicUserData;
@@ -43,7 +44,7 @@ public class AdhocRecordingTopicLockData  implements Serializable {
     this.lockedBy = lockedBy;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicLockData dateCreated(Date dateCreated) {
@@ -60,7 +61,7 @@ public class AdhocRecordingTopicLockData  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicLockData dateExpires(Date dateExpires) {
@@ -77,7 +78,6 @@ public class AdhocRecordingTopicLockData  implements Serializable {
     this.dateExpires = dateExpires;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class AdhocRecordingTopicLockData  implements Serializable {
       return false;
     }
     AdhocRecordingTopicLockData adhocRecordingTopicLockData = (AdhocRecordingTopicLockData) o;
+
     return Objects.equals(this.lockedBy, adhocRecordingTopicLockData.lockedBy) &&
-        Objects.equals(this.dateCreated, adhocRecordingTopicLockData.dateCreated) &&
-        Objects.equals(this.dateExpires, adhocRecordingTopicLockData.dateExpires);
+            Objects.equals(this.dateCreated, adhocRecordingTopicLockData.dateCreated) &&
+            Objects.equals(this.dateExpires, adhocRecordingTopicLockData.dateExpires);
   }
 
   @Override

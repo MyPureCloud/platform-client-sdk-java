@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserGreetingEventGreetingAudioFile;
@@ -47,7 +48,7 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public UserGreetingEventGreeting name(String name) {
@@ -64,7 +65,7 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public UserGreetingEventGreeting type(String type) {
@@ -81,7 +82,7 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public UserGreetingEventGreeting ownerType(String ownerType) {
@@ -98,7 +99,7 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.ownerType = ownerType;
   }
 
-  
+
   /**
    **/
   public UserGreetingEventGreeting owner(UserGreetingEventGreetingOwner owner) {
@@ -115,7 +116,7 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    **/
   public UserGreetingEventGreeting greetingAudioFile(UserGreetingEventGreetingAudioFile greetingAudioFile) {
@@ -132,7 +133,7 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.greetingAudioFile = greetingAudioFile;
   }
 
-  
+
   /**
    **/
   public UserGreetingEventGreeting audioTTS(String audioTTS) {
@@ -149,7 +150,6 @@ public class UserGreetingEventGreeting  implements Serializable {
     this.audioTTS = audioTTS;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -160,13 +160,14 @@ public class UserGreetingEventGreeting  implements Serializable {
       return false;
     }
     UserGreetingEventGreeting userGreetingEventGreeting = (UserGreetingEventGreeting) o;
+
     return Objects.equals(this.id, userGreetingEventGreeting.id) &&
-        Objects.equals(this.name, userGreetingEventGreeting.name) &&
-        Objects.equals(this.type, userGreetingEventGreeting.type) &&
-        Objects.equals(this.ownerType, userGreetingEventGreeting.ownerType) &&
-        Objects.equals(this.owner, userGreetingEventGreeting.owner) &&
-        Objects.equals(this.greetingAudioFile, userGreetingEventGreeting.greetingAudioFile) &&
-        Objects.equals(this.audioTTS, userGreetingEventGreeting.audioTTS);
+            Objects.equals(this.name, userGreetingEventGreeting.name) &&
+            Objects.equals(this.type, userGreetingEventGreeting.type) &&
+            Objects.equals(this.ownerType, userGreetingEventGreeting.ownerType) &&
+            Objects.equals(this.owner, userGreetingEventGreeting.owner) &&
+            Objects.equals(this.greetingAudioFile, userGreetingEventGreeting.greetingAudioFile) &&
+            Objects.equals(this.audioTTS, userGreetingEventGreeting.audioTTS);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing total(Long total) {
@@ -103,7 +104,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.total = total;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public EmergencyGroupListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class EmergencyGroupListing  implements Serializable, PagedResource<Emerg
       return false;
     }
     EmergencyGroupListing emergencyGroupListing = (EmergencyGroupListing) o;
+
     return Objects.equals(this.entities, emergencyGroupListing.entities) &&
-        Objects.equals(this.pageSize, emergencyGroupListing.pageSize) &&
-        Objects.equals(this.pageNumber, emergencyGroupListing.pageNumber) &&
-        Objects.equals(this.total, emergencyGroupListing.total) &&
-        Objects.equals(this.lastUri, emergencyGroupListing.lastUri) &&
-        Objects.equals(this.firstUri, emergencyGroupListing.firstUri) &&
-        Objects.equals(this.selfUri, emergencyGroupListing.selfUri) &&
-        Objects.equals(this.previousUri, emergencyGroupListing.previousUri) &&
-        Objects.equals(this.nextUri, emergencyGroupListing.nextUri) &&
-        Objects.equals(this.pageCount, emergencyGroupListing.pageCount);
+            Objects.equals(this.pageSize, emergencyGroupListing.pageSize) &&
+            Objects.equals(this.pageNumber, emergencyGroupListing.pageNumber) &&
+            Objects.equals(this.total, emergencyGroupListing.total) &&
+            Objects.equals(this.lastUri, emergencyGroupListing.lastUri) &&
+            Objects.equals(this.firstUri, emergencyGroupListing.firstUri) &&
+            Objects.equals(this.selfUri, emergencyGroupListing.selfUri) &&
+            Objects.equals(this.previousUri, emergencyGroupListing.previousUri) &&
+            Objects.equals(this.nextUri, emergencyGroupListing.nextUri) &&
+            Objects.equals(this.pageCount, emergencyGroupListing.pageCount);
   }
 
   @Override

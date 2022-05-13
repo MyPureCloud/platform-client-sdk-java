@@ -13,8 +13,8 @@ title: BuForecastModification
 | **endIntervalIndex** | <!----><!---->**Integer**<!----> | The number of 15 minute intervals past referenceStartDate representing the last interval to which to apply this modification.  Must be null if values is populated |  [optional] |
 | **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric to which this modification applies |  |
 | **legacyMetric** | [**LegacyMetricEnum**](#LegacyMetricEnum)<!----> | The legacy metric to which this modification applies if applicable |  [optional] |
-| **value** | <!----><!---->**Double**<!----> | The value of the modification.  Must be null if \&quot;values\&quot; is populated |  [optional] |
-| **values** | <!----><!---->[**List&lt;WfmForecastModificationIntervalOffsetValue&gt;**](WfmForecastModificationIntervalOffsetValue.html)<!----> | The list of values to update.  Only applicable for grid-type modifications. Must be null if \&quot;value\&quot; is populated |  [optional] |
+| **value** | <!----><!---->**Double**<!----> | The value of the modification.  Must be null if \"values\" is populated |  [optional] |
+| **values** | <!----><!---->[**List&lt;WfmForecastModificationIntervalOffsetValue&gt;**](WfmForecastModificationIntervalOffsetValue.html)<!----> | The list of values to update.  Only applicable for grid-type modifications. Must be null if \"value\" is populated |  [optional] |
 | **displayGranularity** | <!----><!---->**String**<!----> | The client side display granularity of the modification, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  |
 | **granularity** | <!----><!---->**String**<!----> | The actual granularity of the modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> | Whether the modification is enabled for the forecast |  |
@@ -28,15 +28,15 @@ title: BuForecastModification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MINIMUMPERINTERVAL | &quot;MinimumPerInterval&quot; |
-| MAXIMUMPERINTERVAL | &quot;MaximumPerInterval&quot; |
-| SETVALUEPERINTERVAL | &quot;SetValuePerInterval&quot; |
-| CHANGEVALUEPERINTERVAL | &quot;ChangeValuePerInterval&quot; |
-| CHANGEPERCENTPERINTERVAL | &quot;ChangePercentPerInterval&quot; |
-| SETVALUEOVERRANGE | &quot;SetValueOverRange&quot; |
-| CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; |
-| SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MINIMUMPERINTERVAL | &quot;MinimumPerInterval&quot; | 
+| MAXIMUMPERINTERVAL | &quot;MaximumPerInterval&quot; | 
+| SETVALUEPERINTERVAL | &quot;SetValuePerInterval&quot; | 
+| CHANGEVALUEPERINTERVAL | &quot;ChangeValuePerInterval&quot; | 
+| CHANGEPERCENTPERINTERVAL | &quot;ChangePercentPerInterval&quot; | 
+| SETVALUEOVERRANGE | &quot;SetValueOverRange&quot; | 
+| CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; | 
+| SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; | 
 {: class="table table-striped"}
 
 
@@ -46,9 +46,9 @@ title: BuForecastModification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OFFERED | &quot;Offered&quot; |
-| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OFFERED | &quot;Offered&quot; | 
+| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
 {: class="table table-striped"}
 
 
@@ -58,11 +58,11 @@ title: BuForecastModification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AVERAGEAFTERCALLWORKTIMESECONDS | &quot;AverageAfterCallWorkTimeSeconds&quot; |
-| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; |
-| AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; |
-| OFFERED | &quot;Offered&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AVERAGEAFTERCALLWORKTIMESECONDS | &quot;AverageAfterCallWorkTimeSeconds&quot; | 
+| AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
+| AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; | 
+| OFFERED | &quot;Offered&quot; | 
 {: class="table table-striped"}
 
 

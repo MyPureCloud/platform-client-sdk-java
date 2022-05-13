@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -105,7 +106,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.message = message;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicMessageDetails messageTime(Date messageTime) {
@@ -122,7 +123,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.messageTime = messageTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
@@ -139,7 +140,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.messageSegmentCount = messageSegmentCount;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicMessageDetails messageStatus(MessageStatusEnum messageStatus) {
@@ -156,7 +157,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.messageStatus = messageStatus;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicMessageDetails media(List<QueueConversationMessageEventTopicMessageMedia> media) {
@@ -173,7 +174,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.media = media;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicMessageDetails stickers(List<QueueConversationMessageEventTopicMessageSticker> stickers) {
@@ -190,7 +191,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.stickers = stickers;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicMessageDetails errorInfo(QueueConversationMessageEventTopicErrorDetails errorInfo) {
@@ -207,7 +208,6 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,13 +218,14 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
       return false;
     }
     QueueConversationMessageEventTopicMessageDetails queueConversationMessageEventTopicMessageDetails = (QueueConversationMessageEventTopicMessageDetails) o;
+
     return Objects.equals(this.message, queueConversationMessageEventTopicMessageDetails.message) &&
-        Objects.equals(this.messageTime, queueConversationMessageEventTopicMessageDetails.messageTime) &&
-        Objects.equals(this.messageSegmentCount, queueConversationMessageEventTopicMessageDetails.messageSegmentCount) &&
-        Objects.equals(this.messageStatus, queueConversationMessageEventTopicMessageDetails.messageStatus) &&
-        Objects.equals(this.media, queueConversationMessageEventTopicMessageDetails.media) &&
-        Objects.equals(this.stickers, queueConversationMessageEventTopicMessageDetails.stickers) &&
-        Objects.equals(this.errorInfo, queueConversationMessageEventTopicMessageDetails.errorInfo);
+            Objects.equals(this.messageTime, queueConversationMessageEventTopicMessageDetails.messageTime) &&
+            Objects.equals(this.messageSegmentCount, queueConversationMessageEventTopicMessageDetails.messageSegmentCount) &&
+            Objects.equals(this.messageStatus, queueConversationMessageEventTopicMessageDetails.messageStatus) &&
+            Objects.equals(this.media, queueConversationMessageEventTopicMessageDetails.media) &&
+            Objects.equals(this.stickers, queueConversationMessageEventTopicMessageDetails.stickers) &&
+            Objects.equals(this.errorInfo, queueConversationMessageEventTopicMessageDetails.errorInfo);
   }
 
   @Override

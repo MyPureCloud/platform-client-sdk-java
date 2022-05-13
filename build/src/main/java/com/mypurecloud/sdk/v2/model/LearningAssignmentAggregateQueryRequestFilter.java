@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class LearningAssignmentAggregateQueryRequestFilter  implements Serializa
     this.type = type;
   }
 
-  
+
   /**
    * The list of clauses used to filter the data. Note that clauses must filter by attendeeId and a maximum of 100 user IDs are allowed
    **/
@@ -110,7 +111,6 @@ public class LearningAssignmentAggregateQueryRequestFilter  implements Serializa
     this.clauses = clauses;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class LearningAssignmentAggregateQueryRequestFilter  implements Serializa
       return false;
     }
     LearningAssignmentAggregateQueryRequestFilter learningAssignmentAggregateQueryRequestFilter = (LearningAssignmentAggregateQueryRequestFilter) o;
+
     return Objects.equals(this.type, learningAssignmentAggregateQueryRequestFilter.type) &&
-        Objects.equals(this.clauses, learningAssignmentAggregateQueryRequestFilter.clauses);
+            Objects.equals(this.clauses, learningAssignmentAggregateQueryRequestFilter.clauses);
   }
 
   @Override

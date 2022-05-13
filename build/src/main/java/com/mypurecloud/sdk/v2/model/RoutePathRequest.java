@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SourcePlanningGroupRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -98,7 +98,7 @@ public class RoutePathRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The media type of the given queue to associate with the route path
    **/
@@ -116,7 +116,7 @@ public class RoutePathRequest  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The ID of the language to associate with the route path
    **/
@@ -134,7 +134,7 @@ public class RoutePathRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    * The set of skill IDs to associate with the route path
    **/
@@ -143,7 +143,7 @@ public class RoutePathRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "[\"33d29376-4267-4968-8042-dcabdf2c1d98\"]", value = "The set of skill IDs to associate with the route path")
+  @ApiModelProperty(example = "[&quot;33d29376-4267-4968-8042-dcabdf2c1d98&quot;]", value = "The set of skill IDs to associate with the route path")
   @JsonProperty("skillIds")
   public List<String> getSkillIds() {
     return skillIds;
@@ -152,7 +152,7 @@ public class RoutePathRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group
    **/
@@ -170,7 +170,6 @@ public class RoutePathRequest  implements Serializable {
     this.sourcePlanningGroup = sourcePlanningGroup;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,11 +180,12 @@ public class RoutePathRequest  implements Serializable {
       return false;
     }
     RoutePathRequest routePathRequest = (RoutePathRequest) o;
+
     return Objects.equals(this.queueId, routePathRequest.queueId) &&
-        Objects.equals(this.mediaType, routePathRequest.mediaType) &&
-        Objects.equals(this.languageId, routePathRequest.languageId) &&
-        Objects.equals(this.skillIds, routePathRequest.skillIds) &&
-        Objects.equals(this.sourcePlanningGroup, routePathRequest.sourcePlanningGroup);
+            Objects.equals(this.mediaType, routePathRequest.mediaType) &&
+            Objects.equals(this.languageId, routePathRequest.languageId) &&
+            Objects.equals(this.skillIds, routePathRequest.skillIds) &&
+            Objects.equals(this.sourcePlanningGroup, routePathRequest.sourcePlanningGroup);
   }
 
   @Override

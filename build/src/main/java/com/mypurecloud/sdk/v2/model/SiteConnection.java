@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class SiteConnection  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public SiteConnection name(String name) {
@@ -166,7 +167,7 @@ public class SiteConnection  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SiteConnection selfUri(String selfUri) {
@@ -183,7 +184,7 @@ public class SiteConnection  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SiteConnection managed(Boolean managed) {
@@ -200,7 +201,7 @@ public class SiteConnection  implements Serializable {
     this.managed = managed;
   }
 
-  
+
   /**
    * Connection method from site to site (Direct, Indirect, CloudProxy
    **/
@@ -218,7 +219,7 @@ public class SiteConnection  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates if the current site is linked
    **/
@@ -236,42 +237,41 @@ public class SiteConnection  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Media model for the current site.")
   @JsonProperty("mediaModel")
   public MediaModelEnum getMediaModel() {
     return mediaModel;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "All of the edges to which the site connects")
   @JsonProperty("edgeList")
   public List<ConnectedEdge> getEdgeList() {
     return edgeList;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The core site")
   @JsonProperty("coreSite")
   public Boolean getCoreSite() {
     return coreSite;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of site ids names and selfUris for the primary core sites")
   @JsonProperty("primaryCoreSites")
   public List<DomainEntityRef> getPrimaryCoreSites() {
     return primaryCoreSites;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of site ids names and selfUris for the secondary core sites")
   @JsonProperty("secondaryCoreSites")
   public List<DomainEntityRef> getSecondaryCoreSites() {
     return secondaryCoreSites;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -282,17 +282,18 @@ public class SiteConnection  implements Serializable {
       return false;
     }
     SiteConnection siteConnection = (SiteConnection) o;
+
     return Objects.equals(this.id, siteConnection.id) &&
-        Objects.equals(this.name, siteConnection.name) &&
-        Objects.equals(this.selfUri, siteConnection.selfUri) &&
-        Objects.equals(this.managed, siteConnection.managed) &&
-        Objects.equals(this.type, siteConnection.type) &&
-        Objects.equals(this.enabled, siteConnection.enabled) &&
-        Objects.equals(this.mediaModel, siteConnection.mediaModel) &&
-        Objects.equals(this.edgeList, siteConnection.edgeList) &&
-        Objects.equals(this.coreSite, siteConnection.coreSite) &&
-        Objects.equals(this.primaryCoreSites, siteConnection.primaryCoreSites) &&
-        Objects.equals(this.secondaryCoreSites, siteConnection.secondaryCoreSites);
+            Objects.equals(this.name, siteConnection.name) &&
+            Objects.equals(this.selfUri, siteConnection.selfUri) &&
+            Objects.equals(this.managed, siteConnection.managed) &&
+            Objects.equals(this.type, siteConnection.type) &&
+            Objects.equals(this.enabled, siteConnection.enabled) &&
+            Objects.equals(this.mediaModel, siteConnection.mediaModel) &&
+            Objects.equals(this.edgeList, siteConnection.edgeList) &&
+            Objects.equals(this.coreSite, siteConnection.coreSite) &&
+            Objects.equals(this.primaryCoreSites, siteConnection.primaryCoreSites) &&
+            Objects.equals(this.secondaryCoreSites, siteConnection.secondaryCoreSites);
   }
 
   @Override

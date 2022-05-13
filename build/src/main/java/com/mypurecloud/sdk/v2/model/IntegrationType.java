@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialSpecification;
@@ -71,7 +72,7 @@ public class IntegrationType  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public IntegrationType name(String name) {
@@ -88,161 +89,160 @@ public class IntegrationType  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Description of the integration type.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "PureCloud provider of the integration type.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category describing the integration type.")
   @JsonProperty("category")
   public String getCategory() {
     return category;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Collection of logos.")
   @JsonProperty("images")
   public List<UserImage> getImages() {
     return images;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of the schema describing the key-value properties needed to configure an integration of this type.")
   @JsonProperty("configPropertiesSchemaUri")
   public String getConfigPropertiesSchemaUri() {
     return configPropertiesSchemaUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of the schema describing the advanced JSON document needed to configure an integration of this type.")
   @JsonProperty("configAdvancedSchemaUri")
   public String getConfigAdvancedSchemaUri() {
     return configAdvancedSchemaUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of a page with more information about the integration type")
   @JsonProperty("helpUri")
   public String getHelpUri() {
     return helpUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of a page with terms and conditions for the integration type")
   @JsonProperty("termsOfServiceUri")
   public String getTermsOfServiceUri() {
     return termsOfServiceUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Name of the vendor of this integration type")
   @JsonProperty("vendorName")
   public String getVendorName() {
     return vendorName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of the vendor's website")
   @JsonProperty("vendorWebsiteUri")
   public String getVendorWebsiteUri() {
     return vendorWebsiteUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of the marketplace listing for this integration type")
   @JsonProperty("marketplaceUri")
   public String getMarketplaceUri() {
     return marketplaceUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of frequently asked questions about the integration type")
   @JsonProperty("faqUri")
   public String getFaqUri() {
     return faqUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of a privacy policy for users of the integration type")
   @JsonProperty("privacyPolicyUri")
   public String getPrivacyPolicyUri() {
     return privacyPolicyUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI for vendor support")
   @JsonProperty("supportContactUri")
   public String getSupportContactUri() {
     return supportContactUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI for vendor sales information")
   @JsonProperty("salesContactUri")
   public String getSalesContactUri() {
     return salesContactUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of links to additional help resources")
   @JsonProperty("helpLinks")
   public List<HelpLink> getHelpLinks() {
     return helpLinks;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.")
   @JsonProperty("credentials")
   public Map<String, CredentialSpecification> getCredentials() {
     return credentials;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the integration type is installable or not.")
   @JsonProperty("nonInstallable")
   public Boolean getNonInstallable() {
     return nonInstallable;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The maximum number of integration instances allowable for this integration type")
   @JsonProperty("maxInstances")
   public Integer getMaxInstances() {
     return maxInstances;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of permissions required to permit user access to the integration type.")
   @JsonProperty("userPermissions")
   public List<String> getUserPermissions() {
     return userPermissions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of OAuth Client IDs that must be authorized when the integration is created.")
   @JsonProperty("vendorOAuthClientIds")
   public List<String> getVendorOAuthClientIds() {
     return vendorOAuthClientIds;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -253,30 +253,31 @@ public class IntegrationType  implements Serializable {
       return false;
     }
     IntegrationType integrationType = (IntegrationType) o;
+
     return Objects.equals(this.id, integrationType.id) &&
-        Objects.equals(this.name, integrationType.name) &&
-        Objects.equals(this.description, integrationType.description) &&
-        Objects.equals(this.provider, integrationType.provider) &&
-        Objects.equals(this.category, integrationType.category) &&
-        Objects.equals(this.images, integrationType.images) &&
-        Objects.equals(this.configPropertiesSchemaUri, integrationType.configPropertiesSchemaUri) &&
-        Objects.equals(this.configAdvancedSchemaUri, integrationType.configAdvancedSchemaUri) &&
-        Objects.equals(this.helpUri, integrationType.helpUri) &&
-        Objects.equals(this.termsOfServiceUri, integrationType.termsOfServiceUri) &&
-        Objects.equals(this.vendorName, integrationType.vendorName) &&
-        Objects.equals(this.vendorWebsiteUri, integrationType.vendorWebsiteUri) &&
-        Objects.equals(this.marketplaceUri, integrationType.marketplaceUri) &&
-        Objects.equals(this.faqUri, integrationType.faqUri) &&
-        Objects.equals(this.privacyPolicyUri, integrationType.privacyPolicyUri) &&
-        Objects.equals(this.supportContactUri, integrationType.supportContactUri) &&
-        Objects.equals(this.salesContactUri, integrationType.salesContactUri) &&
-        Objects.equals(this.helpLinks, integrationType.helpLinks) &&
-        Objects.equals(this.credentials, integrationType.credentials) &&
-        Objects.equals(this.nonInstallable, integrationType.nonInstallable) &&
-        Objects.equals(this.maxInstances, integrationType.maxInstances) &&
-        Objects.equals(this.userPermissions, integrationType.userPermissions) &&
-        Objects.equals(this.vendorOAuthClientIds, integrationType.vendorOAuthClientIds) &&
-        Objects.equals(this.selfUri, integrationType.selfUri);
+            Objects.equals(this.name, integrationType.name) &&
+            Objects.equals(this.description, integrationType.description) &&
+            Objects.equals(this.provider, integrationType.provider) &&
+            Objects.equals(this.category, integrationType.category) &&
+            Objects.equals(this.images, integrationType.images) &&
+            Objects.equals(this.configPropertiesSchemaUri, integrationType.configPropertiesSchemaUri) &&
+            Objects.equals(this.configAdvancedSchemaUri, integrationType.configAdvancedSchemaUri) &&
+            Objects.equals(this.helpUri, integrationType.helpUri) &&
+            Objects.equals(this.termsOfServiceUri, integrationType.termsOfServiceUri) &&
+            Objects.equals(this.vendorName, integrationType.vendorName) &&
+            Objects.equals(this.vendorWebsiteUri, integrationType.vendorWebsiteUri) &&
+            Objects.equals(this.marketplaceUri, integrationType.marketplaceUri) &&
+            Objects.equals(this.faqUri, integrationType.faqUri) &&
+            Objects.equals(this.privacyPolicyUri, integrationType.privacyPolicyUri) &&
+            Objects.equals(this.supportContactUri, integrationType.supportContactUri) &&
+            Objects.equals(this.salesContactUri, integrationType.salesContactUri) &&
+            Objects.equals(this.helpLinks, integrationType.helpLinks) &&
+            Objects.equals(this.credentials, integrationType.credentials) &&
+            Objects.equals(this.nonInstallable, integrationType.nonInstallable) &&
+            Objects.equals(this.maxInstances, integrationType.maxInstances) &&
+            Objects.equals(this.userPermissions, integrationType.userPermissions) &&
+            Objects.equals(this.vendorOAuthClientIds, integrationType.vendorOAuthClientIds) &&
+            Objects.equals(this.selfUri, integrationType.selfUri);
   }
 
   @Override

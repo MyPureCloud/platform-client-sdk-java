@@ -10,69 +10,69 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.BenefitAssessment;
-import com.mypurecloud.sdk.v2.model.AssessmentListing;
-import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
-import com.mypurecloud.sdk.v2.model.InboundDomain;
-import com.mypurecloud.sdk.v2.model.InboundRoute;
-import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
-import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.EmailSetup;
-import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.Recipient;
-import com.mypurecloud.sdk.v2.model.RecipientListing;
-import com.mypurecloud.sdk.v2.model.Predictor;
-import com.mypurecloud.sdk.v2.model.PredictorListing;
-import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
-import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.BenefitAssessment;
+import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
+import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
+import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.EmailSetup;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.InboundRoute;
+import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
+import com.mypurecloud.sdk.v2.model.Predictor;
+import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.QueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
-import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
-import com.mypurecloud.sdk.v2.model.QueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.RoutingSettings;
-import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
-import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
-import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.Utilization;
-import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
+import com.mypurecloud.sdk.v2.model.TestMessage;
+import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
-import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
-import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
-import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
-import com.mypurecloud.sdk.v2.model.TestMessage;
-import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
-import com.mypurecloud.sdk.v2.model.WritableEntity;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
-import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
-import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
-import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
+import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingAssessmentRequest;
@@ -186,7 +186,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class RoutingApi {
   private final ApiClient pcapiClient;
 
@@ -198,7 +197,6 @@ public class RoutingApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete single benefit assessment.
    * 
@@ -223,7 +221,7 @@ public class RoutingApi {
   private DeleteRoutingAssessmentRequest createDeleteRoutingAssessmentRequest(String assessmentId) {
     return DeleteRoutingAssessmentRequest.builder()
             .withAssessmentId(assessmentId)
-    
+
             .build();
   }
 
@@ -274,7 +272,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete a domain
    * 
@@ -299,7 +296,7 @@ public class RoutingApi {
   private DeleteRoutingEmailDomainRequest createDeleteRoutingEmailDomainRequest(String domainId) {
     return DeleteRoutingEmailDomainRequest.builder()
             .withDomainId(domainId)
-    
+
             .build();
   }
 
@@ -350,7 +347,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete a route
    * 
@@ -377,9 +373,9 @@ public class RoutingApi {
   private DeleteRoutingEmailDomainRouteRequest createDeleteRoutingEmailDomainRouteRequest(String domainName, String routeId) {
     return DeleteRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
-    
+
             .withRouteId(routeId)
-    
+
             .build();
   }
 
@@ -430,7 +426,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete single predictor.
    * 
@@ -455,7 +450,7 @@ public class RoutingApi {
   private DeleteRoutingPredictorRequest createDeleteRoutingPredictorRequest(String predictorId) {
     return DeleteRoutingPredictorRequest.builder()
             .withPredictorId(predictorId)
-    
+
             .build();
   }
 
@@ -506,7 +501,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete a queue
    * 
@@ -533,9 +527,9 @@ public class RoutingApi {
   private DeleteRoutingQueueRequest createDeleteRoutingQueueRequest(String queueId, Boolean forceDelete) {
     return DeleteRoutingQueueRequest.builder()
             .withQueueId(queueId)
-    
+
             .withForceDelete(forceDelete)
-    
+
             .build();
   }
 
@@ -586,7 +580,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete a queue member.
    * 
@@ -613,9 +606,9 @@ public class RoutingApi {
   private DeleteRoutingQueueMemberRequest createDeleteRoutingQueueMemberRequest(String queueId, String memberId) {
     return DeleteRoutingQueueMemberRequest.builder()
             .withQueueId(queueId)
-    
+
             .withMemberId(memberId)
-    
+
             .build();
   }
 
@@ -666,7 +659,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
@@ -693,9 +685,9 @@ public class RoutingApi {
   private DeleteRoutingQueueUserRequest createDeleteRoutingQueueUserRequest(String queueId, String memberId) {
     return DeleteRoutingQueueUserRequest.builder()
             .withQueueId(queueId)
-    
+
             .withMemberId(memberId)
-    
+
             .build();
   }
 
@@ -746,7 +738,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete a wrap-up code from a queue
    * 
@@ -773,9 +764,9 @@ public class RoutingApi {
   private DeleteRoutingQueueWrapupcodeRequest createDeleteRoutingQueueWrapupcodeRequest(String queueId, String codeId) {
     return DeleteRoutingQueueWrapupcodeRequest.builder()
             .withQueueId(queueId)
-    
+
             .withCodeId(codeId)
-    
+
             .build();
   }
 
@@ -826,9 +817,8 @@ public class RoutingApi {
     }
   }
 
-  
   /**
-   * Delete an organization&#39;s routing settings
+   * Delete an organization's routing settings
    * 
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -838,7 +828,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete an organization&#39;s routing settings
+   * Delete an organization's routing settings
    * 
    * @throws IOException if the request fails to be processed
    */
@@ -852,7 +842,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete an organization&#39;s routing settings
+   * Delete an organization's routing settings
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -870,7 +860,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete an organization&#39;s routing settings
+   * Delete an organization's routing settings
    * 
    * @param request The request object
    * @return the response
@@ -898,7 +888,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete Routing Skill
    * 
@@ -923,7 +912,7 @@ public class RoutingApi {
   private DeleteRoutingSkillRequest createDeleteRoutingSkillRequest(String skillId) {
     return DeleteRoutingSkillRequest.builder()
             .withSkillId(skillId)
-    
+
             .build();
   }
 
@@ -974,7 +963,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete an Address by Id for SMS
    * 
@@ -999,7 +987,7 @@ public class RoutingApi {
   private DeleteRoutingSmsAddressRequest createDeleteRoutingSmsAddressRequest(String addressId) {
     return DeleteRoutingSmsAddressRequest.builder()
             .withAddressId(addressId)
-    
+
             .build();
   }
 
@@ -1050,7 +1038,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete a phone number provisioned for SMS.
    * 
@@ -1077,9 +1064,9 @@ public class RoutingApi {
   private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId, Boolean async) {
     return DeleteRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
-    
+
             .withAsync(async)
-    
+
             .build();
   }
 
@@ -1130,9 +1117,8 @@ public class RoutingApi {
     }
   }
 
-  
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param userId User ID (required)
    * @throws ApiException if the request fails on the server
@@ -1143,7 +1129,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param userId User ID (required)
    * @throws IOException if the request fails to be processed
@@ -1155,12 +1141,12 @@ public class RoutingApi {
   private DeleteRoutingUserUtilizationRequest createDeleteRoutingUserUtilizationRequest(String userId) {
     return DeleteRoutingUserUtilizationRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -1178,7 +1164,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param request The request object
    * @return the response
@@ -1206,7 +1192,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete the organization-wide max utilization settings and revert to the system default.
    * 
@@ -1278,7 +1263,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Delete wrap-up code
    * 
@@ -1303,7 +1287,7 @@ public class RoutingApi {
   private DeleteRoutingWrapupcodeRequest createDeleteRoutingWrapupcodeRequest(String codeId) {
     return DeleteRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
-    
+
             .build();
   }
 
@@ -1354,7 +1338,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Remove routing language from user
    * 
@@ -1381,9 +1364,9 @@ public class RoutingApi {
   private DeleteUserRoutinglanguageRequest createDeleteUserRoutinglanguageRequest(String userId, String languageId) {
     return DeleteUserRoutinglanguageRequest.builder()
             .withUserId(userId)
-    
+
             .withLanguageId(languageId)
-    
+
             .build();
   }
 
@@ -1434,7 +1417,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Remove routing skill from user
    * 
@@ -1461,9 +1443,9 @@ public class RoutingApi {
   private DeleteUserRoutingskillRequest createDeleteUserRoutingskillRequest(String userId, String skillId) {
     return DeleteUserRoutingskillRequest.builder()
             .withUserId(userId)
-    
+
             .withSkillId(skillId)
-    
+
             .build();
   }
 
@@ -1514,7 +1496,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Retrieve a single benefit assessment.
    * 
@@ -1541,7 +1522,7 @@ public class RoutingApi {
   private GetRoutingAssessmentRequest createGetRoutingAssessmentRequest(String assessmentId) {
     return GetRoutingAssessmentRequest.builder()
             .withAssessmentId(assessmentId)
-    
+
             .build();
   }
 
@@ -1593,7 +1574,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Retrieve all benefit assessments.
    * 
@@ -1628,15 +1608,15 @@ public class RoutingApi {
   private GetRoutingAssessmentsRequest createGetRoutingAssessmentsRequest(String before, String after, String limit, String pageSize, List<String> queueId) {
     return GetRoutingAssessmentsRequest.builder()
             .withBefore(before)
-    
+
             .withAfter(after)
-    
+
             .withLimit(limit)
-    
+
             .withPageSize(pageSize)
-    
+
             .withQueueId(queueId)
-    
+
             .build();
   }
 
@@ -1688,7 +1668,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Retrieve a single benefit assessments job.
    * 
@@ -1715,7 +1694,7 @@ public class RoutingApi {
   private GetRoutingAssessmentsJobRequest createGetRoutingAssessmentsJobRequest(String jobId) {
     return GetRoutingAssessmentsJobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
@@ -1767,7 +1746,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Retrieve all benefit assessment jobs.
    * 
@@ -1794,7 +1772,7 @@ public class RoutingApi {
   private GetRoutingAssessmentsJobsRequest createGetRoutingAssessmentsJobsRequest(List<String> divisionId) {
     return GetRoutingAssessmentsJobsRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -1846,7 +1824,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get domain
    * 
@@ -1873,7 +1850,7 @@ public class RoutingApi {
   private GetRoutingEmailDomainRequest createGetRoutingEmailDomainRequest(String domainId) {
     return GetRoutingEmailDomainRequest.builder()
             .withDomainId(domainId)
-    
+
             .build();
   }
 
@@ -1925,7 +1902,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a route
    * 
@@ -1954,9 +1930,9 @@ public class RoutingApi {
   private GetRoutingEmailDomainRouteRequest createGetRoutingEmailDomainRouteRequest(String domainName, String routeId) {
     return GetRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
-    
+
             .withRouteId(routeId)
-    
+
             .build();
   }
 
@@ -2008,14 +1984,13 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get routes
    * 
    * @param domainName email domain (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param pattern Filter routes by the route&#39;s pattern property (optional)
+   * @param pattern Filter routes by the route's pattern property (optional)
    * @return InboundRouteEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2030,7 +2005,7 @@ public class RoutingApi {
    * @param domainName email domain (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param pattern Filter routes by the route&#39;s pattern property (optional)
+   * @param pattern Filter routes by the route's pattern property (optional)
    * @return InboundRouteEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -2041,13 +2016,13 @@ public class RoutingApi {
   private GetRoutingEmailDomainRoutesRequest createGetRoutingEmailDomainRoutesRequest(String domainName, Integer pageSize, Integer pageNumber, String pattern) {
     return GetRoutingEmailDomainRoutesRequest.builder()
             .withDomainName(domainName)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPattern(pattern)
-    
+
             .build();
   }
 
@@ -2099,7 +2074,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get domains
    * 
@@ -2126,7 +2100,7 @@ public class RoutingApi {
   private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Boolean excludeStatus) {
     return GetRoutingEmailDomainsRequest.builder()
             .withExcludeStatus(excludeStatus)
-    
+
             .build();
   }
 
@@ -2178,7 +2152,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get email setup
    * 
@@ -2253,7 +2226,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get the list of supported languages.
    * 
@@ -2288,15 +2260,15 @@ public class RoutingApi {
   private GetRoutingLanguagesRequest createGetRoutingLanguagesRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id) {
     return GetRoutingLanguagesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .build();
   }
 
@@ -2348,7 +2320,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a recipient
    * 
@@ -2375,7 +2346,7 @@ public class RoutingApi {
   private GetRoutingMessageRecipientRequest createGetRoutingMessageRecipientRequest(String recipientId) {
     return GetRoutingMessageRecipientRequest.builder()
             .withRecipientId(recipientId)
-    
+
             .build();
   }
 
@@ -2427,7 +2398,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get recipients
    * 
@@ -2458,11 +2428,11 @@ public class RoutingApi {
   private GetRoutingMessageRecipientsRequest createGetRoutingMessageRecipientsRequest(String messengerType, Integer pageSize, Integer pageNumber) {
     return GetRoutingMessageRecipientsRequest.builder()
             .withMessengerType(messengerType)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -2514,7 +2484,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Retrieve a single predictor.
    * 
@@ -2541,7 +2510,7 @@ public class RoutingApi {
   private GetRoutingPredictorRequest createGetRoutingPredictorRequest(String predictorId) {
     return GetRoutingPredictorRequest.builder()
             .withPredictorId(predictorId)
-    
+
             .build();
   }
 
@@ -2593,7 +2562,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Retrieve all predictors.
    * 
@@ -2628,15 +2596,15 @@ public class RoutingApi {
   private GetRoutingPredictorsRequest createGetRoutingPredictorsRequest(String before, String after, String limit, String pageSize, List<String> queueId) {
     return GetRoutingPredictorsRequest.builder()
             .withBefore(before)
-    
+
             .withAfter(after)
-    
+
             .withLimit(limit)
-    
+
             .withPageSize(pageSize)
-    
+
             .withQueueId(queueId)
-    
+
             .build();
   }
 
@@ -2688,7 +2656,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a list of Key Performance Indicators available for the predictors.
    * 
@@ -2763,7 +2730,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get details about this queue.
    * 
@@ -2790,7 +2756,7 @@ public class RoutingApi {
   private GetRoutingQueueRequest createGetRoutingQueueRequest(String queueId) {
     return GetRoutingQueueRequest.builder()
             .withQueueId(queueId)
-    
+
             .build();
   }
 
@@ -2842,7 +2808,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a Comparison Period.
    * 
@@ -2871,9 +2836,9 @@ public class RoutingApi {
   private GetRoutingQueueComparisonperiodRequest createGetRoutingQueueComparisonperiodRequest(String queueId, String comparisonPeriodId) {
     return GetRoutingQueueComparisonperiodRequest.builder()
             .withQueueId(queueId)
-    
+
             .withComparisonPeriodId(comparisonPeriodId)
-    
+
             .build();
   }
 
@@ -2925,7 +2890,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get list of comparison periods
    * 
@@ -2952,7 +2916,7 @@ public class RoutingApi {
   private GetRoutingQueueComparisonperiodsRequest createGetRoutingQueueComparisonperiodsRequest(String queueId) {
     return GetRoutingQueueComparisonperiodsRequest.builder()
             .withQueueId(queueId)
-    
+
             .build();
   }
 
@@ -3004,7 +2968,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get Estimated Wait Time
    * 
@@ -3033,9 +2996,9 @@ public class RoutingApi {
   private GetRoutingQueueEstimatedwaittimeRequest createGetRoutingQueueEstimatedwaittimeRequest(String queueId, String conversationId) {
     return GetRoutingQueueEstimatedwaittimeRequest.builder()
             .withQueueId(queueId)
-    
+
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -3087,7 +3050,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get Estimated Wait Time
    * 
@@ -3116,9 +3078,9 @@ public class RoutingApi {
   private GetRoutingQueueMediatypeEstimatedwaittimeRequest createGetRoutingQueueMediatypeEstimatedwaittimeRequest(String queueId, String mediaType) {
     return GetRoutingQueueMediatypeEstimatedwaittimeRequest.builder()
             .withQueueId(queueId)
-    
+
             .withMediaType(mediaType)
-    
+
             .build();
   }
 
@@ -3170,7 +3132,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get the members of this queue.
    * 
@@ -3221,31 +3182,31 @@ public class RoutingApi {
   private GetRoutingQueueMembersRequest createGetRoutingQueueMembersRequest(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence, String memberBy, Boolean joined) {
     return GetRoutingQueueMembersRequest.builder()
             .withQueueId(queueId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withProfileSkills(profileSkills)
-    
+
             .withSkills(skills)
-    
+
             .withLanguages(languages)
-    
+
             .withRoutingStatus(routingStatus)
-    
+
             .withPresence(presence)
-    
+
             .withMemberBy(memberBy)
-    
+
             .withJoined(joined)
-    
+
             .build();
   }
 
@@ -3297,7 +3258,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
@@ -3346,29 +3306,29 @@ public class RoutingApi {
   private GetRoutingQueueUsersRequest createGetRoutingQueueUsersRequest(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) {
     return GetRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .withJoined(joined)
-    
+
             .withName(name)
-    
+
             .withProfileSkills(profileSkills)
-    
+
             .withSkills(skills)
-    
+
             .withLanguages(languages)
-    
+
             .withRoutingStatus(routingStatus)
-    
+
             .withPresence(presence)
-    
+
             .build();
   }
 
@@ -3420,7 +3380,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get the wrap-up codes for a queue
    * 
@@ -3451,11 +3410,11 @@ public class RoutingApi {
   private GetRoutingQueueWrapupcodesRequest createGetRoutingQueueWrapupcodesRequest(String queueId, Integer pageSize, Integer pageNumber) {
     return GetRoutingQueueWrapupcodesRequest.builder()
             .withQueueId(queueId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -3507,7 +3466,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get list of queues.
    * 
@@ -3544,17 +3502,17 @@ public class RoutingApi {
   private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) {
     return GetRoutingQueuesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -3606,7 +3564,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
@@ -3645,19 +3602,19 @@ public class RoutingApi {
   private GetRoutingQueuesDivisionviewsRequest createGetRoutingQueuesDivisionviewsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) {
     return GetRoutingQueuesDivisionviewsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -3709,7 +3666,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
@@ -3740,11 +3696,11 @@ public class RoutingApi {
   private GetRoutingQueuesDivisionviewsAllRequest createGetRoutingQueuesDivisionviewsAllRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetRoutingQueuesDivisionviewsAllRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3796,7 +3752,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a paged listing of queues the user is a member of.
    * 
@@ -3829,13 +3784,13 @@ public class RoutingApi {
   private GetRoutingQueuesMeRequest createGetRoutingQueuesMeRequest(Integer pageNumber, Integer pageSize, Boolean joined, String sortOrder) {
     return GetRoutingQueuesMeRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withJoined(joined)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3887,9 +3842,8 @@ public class RoutingApi {
     }
   }
 
-  
   /**
-   * Get an organization&#39;s routing settings
+   * Get an organization's routing settings
    * 
    * @return RoutingSettings
    * @throws ApiException if the request fails on the server
@@ -3900,7 +3854,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get an organization&#39;s routing settings
+   * Get an organization's routing settings
    * 
    * @return RoutingSettings
    * @throws IOException if the request fails to be processed
@@ -3915,7 +3869,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get an organization&#39;s routing settings
+   * Get an organization's routing settings
    * 
    * @param request The request object
    * @return RoutingSettings
@@ -3934,7 +3888,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get an organization&#39;s routing settings
+   * Get an organization's routing settings
    * 
    * @param request The request object
    * @return the response
@@ -3962,7 +3916,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get Contact Center Settings
    * 
@@ -4037,7 +3990,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get Transcription Settings
    * 
@@ -4112,7 +4064,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get Routing Skill
    * 
@@ -4139,7 +4090,7 @@ public class RoutingApi {
   private GetRoutingSkillRequest createGetRoutingSkillRequest(String skillId) {
     return GetRoutingSkillRequest.builder()
             .withSkillId(skillId)
-    
+
             .build();
   }
 
@@ -4191,7 +4142,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get the list of routing skills.
    * 
@@ -4224,13 +4174,13 @@ public class RoutingApi {
   private GetRoutingSkillsRequest createGetRoutingSkillsRequest(Integer pageSize, Integer pageNumber, String name, List<String> id) {
     return GetRoutingSkillsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .build();
   }
 
@@ -4282,7 +4232,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get an Address by Id for SMS
    * 
@@ -4309,7 +4258,7 @@ public class RoutingApi {
   private GetRoutingSmsAddressRequest createGetRoutingSmsAddressRequest(String addressId) {
     return GetRoutingSmsAddressRequest.builder()
             .withAddressId(addressId)
-    
+
             .build();
   }
 
@@ -4361,7 +4310,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a list of Addresses for SMS
    * 
@@ -4390,9 +4338,9 @@ public class RoutingApi {
   private GetRoutingSmsAddressesRequest createGetRoutingSmsAddressesRequest(Integer pageSize, Integer pageNumber) {
     return GetRoutingSmsAddressesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -4444,7 +4392,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a list of available phone numbers for SMS provisioning.
    * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
@@ -4453,7 +4400,7 @@ public class RoutingApi {
    * @param region Region/province/state that can be used to restrict the numbers returned (optional)
    * @param city City that can be used to restrict the numbers returned (optional)
    * @param areaCode Area code that can be used to restrict the numbers returned (optional)
-   * @param pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. (optional)
+   * @param pattern A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit. (optional)
    * @param addressRequirement This indicates whether the phone number requires to have an Address registered. (optional)
    * @return SMSAvailablePhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
@@ -4471,7 +4418,7 @@ public class RoutingApi {
    * @param region Region/province/state that can be used to restrict the numbers returned (optional)
    * @param city City that can be used to restrict the numbers returned (optional)
    * @param areaCode Area code that can be used to restrict the numbers returned (optional)
-   * @param pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. (optional)
+   * @param pattern A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit. (optional)
    * @param addressRequirement This indicates whether the phone number requires to have an Address registered. (optional)
    * @return SMSAvailablePhoneNumberEntityListing
    * @throws IOException if the request fails to be processed
@@ -4483,19 +4430,19 @@ public class RoutingApi {
   private GetRoutingSmsAvailablephonenumbersRequest createGetRoutingSmsAvailablephonenumbersRequest(String countryCode, String phoneNumberType, String region, String city, String areaCode, String pattern, String addressRequirement) {
     return GetRoutingSmsAvailablephonenumbersRequest.builder()
             .withCountryCode(countryCode)
-    
+
             .withPhoneNumberType(phoneNumberType)
-    
+
             .withRegion(region)
-    
+
             .withCity(city)
-    
+
             .withAreaCode(areaCode)
-    
+
             .withPattern(pattern)
-    
+
             .withAddressRequirement(addressRequirement)
-    
+
             .build();
   }
 
@@ -4547,7 +4494,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a phone number provisioned for SMS.
    * 
@@ -4574,7 +4520,7 @@ public class RoutingApi {
   private GetRoutingSmsPhonenumberRequest createGetRoutingSmsPhonenumberRequest(String addressId) {
     return GetRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
-    
+
             .build();
   }
 
@@ -4626,11 +4572,10 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get a list of provisioned phone numbers.
    * 
-   * @param phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)
+   * @param phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)
    * @param phoneNumberType Filter on phone number type (optional)
    * @param phoneNumberStatus Filter on phone number status (optional)
    * @param countryCode Filter on country code (optional)
@@ -4638,7 +4583,7 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Optional field to sort results (optional)
    * @param sortOrder Sort order (optional)
-   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to en-US)
+   * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
    * @return SmsPhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4650,7 +4595,7 @@ public class RoutingApi {
   /**
    * Get a list of provisioned phone numbers.
    * 
-   * @param phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)
+   * @param phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)
    * @param phoneNumberType Filter on phone number type (optional)
    * @param phoneNumberStatus Filter on phone number status (optional)
    * @param countryCode Filter on country code (optional)
@@ -4658,7 +4603,7 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Optional field to sort results (optional)
    * @param sortOrder Sort order (optional)
-   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to en-US)
+   * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
    * @return SmsPhoneNumberEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -4669,23 +4614,23 @@ public class RoutingApi {
   private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) {
     return GetRoutingSmsPhonenumbersRequest.builder()
             .withPhoneNumber(phoneNumber)
-    
+
             .withPhoneNumberType(phoneNumberType)
-    
+
             .withPhoneNumberStatus(phoneNumberStatus)
-    
+
             .withCountryCode(countryCode)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withLanguage(language)
-    
+
             .build();
   }
 
@@ -4737,9 +4682,8 @@ public class RoutingApi {
     }
   }
 
-  
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param userId User ID (required)
    * @return AgentMaxUtilization
@@ -4751,7 +4695,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param userId User ID (required)
    * @return AgentMaxUtilization
@@ -4764,12 +4708,12 @@ public class RoutingApi {
   private GetRoutingUserUtilizationRequest createGetRoutingUserUtilizationRequest(String userId) {
     return GetRoutingUserUtilizationRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request The request object
    * @return AgentMaxUtilization
@@ -4788,7 +4732,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request The request object
    * @return the response
@@ -4816,7 +4760,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get the organization-wide max utilization settings.
    * 
@@ -4891,7 +4834,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get details about this wrap-up code.
    * 
@@ -4918,7 +4860,7 @@ public class RoutingApi {
   private GetRoutingWrapupcodeRequest createGetRoutingWrapupcodeRequest(String codeId) {
     return GetRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
-    
+
             .build();
   }
 
@@ -4970,7 +4912,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get list of wrapup codes.
    * 
@@ -4978,7 +4919,7 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
-   * @param name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) (optional)
+   * @param name Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
    * @return WrapupCodeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4994,7 +4935,7 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
-   * @param name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) (optional)
+   * @param name Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
    * @return WrapupCodeEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -5005,15 +4946,15 @@ public class RoutingApi {
   private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) {
     return GetRoutingWrapupcodesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -5065,7 +5006,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Get queues for user
    * 
@@ -5100,15 +5040,15 @@ public class RoutingApi {
   private GetUserQueuesRequest createGetUserQueuesRequest(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) {
     return GetUserQueuesRequest.builder()
             .withUserId(userId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withJoined(joined)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -5160,7 +5100,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * List routing language for user
    * 
@@ -5193,13 +5132,13 @@ public class RoutingApi {
   private GetUserRoutinglanguagesRequest createGetUserRoutinglanguagesRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetUserRoutinglanguagesRequest.builder()
             .withUserId(userId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -5251,7 +5190,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * List routing skills for user
    * 
@@ -5284,13 +5222,13 @@ public class RoutingApi {
   private GetUserRoutingskillsRequest createGetUserRoutingskillsRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetUserRoutingskillsRequest.builder()
             .withUserId(userId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -5342,7 +5280,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update attributes of an in-queue conversation
    * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
@@ -5371,9 +5308,9 @@ public class RoutingApi {
   private PatchRoutingConversationRequest createPatchRoutingConversationRequest(String conversationId, RoutingConversationAttributesRequest body) {
     return PatchRoutingConversationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5425,7 +5362,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update domain settings
    * 
@@ -5454,9 +5390,9 @@ public class RoutingApi {
   private PatchRoutingEmailDomainRequest createPatchRoutingEmailDomainRequest(String domainId, InboundDomainPatchRequest body) {
     return PatchRoutingEmailDomainRequest.builder()
             .withDomainId(domainId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5508,7 +5444,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Validate domain settings
    * 
@@ -5537,9 +5472,9 @@ public class RoutingApi {
   private PatchRoutingEmailDomainValidateRequest createPatchRoutingEmailDomainValidateRequest(String domainId, InboundDomainPatchRequest body) {
     return PatchRoutingEmailDomainValidateRequest.builder()
             .withDomainId(domainId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5591,7 +5526,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update single predictor.
    * 
@@ -5620,9 +5554,9 @@ public class RoutingApi {
   private PatchRoutingPredictorRequest createPatchRoutingPredictorRequest(String predictorId, PatchPredictorRequest body) {
     return PatchRoutingPredictorRequest.builder()
             .withPredictorId(predictorId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5674,7 +5608,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update the ring number OR joined status for a queue member.
    * 
@@ -5703,11 +5636,11 @@ public class RoutingApi {
   private PatchRoutingQueueMemberRequest createPatchRoutingQueueMemberRequest(String queueId, String memberId, QueueMember body) {
     return PatchRoutingQueueMemberRequest.builder()
             .withQueueId(queueId)
-    
+
             .withMemberId(memberId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5758,7 +5691,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Join or unjoin a set of users for a queue
    * 
@@ -5787,9 +5719,9 @@ public class RoutingApi {
   private PatchRoutingQueueMembersRequest createPatchRoutingQueueMembersRequest(String queueId, List<QueueMember> body) {
     return PatchRoutingQueueMembersRequest.builder()
             .withQueueId(queueId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5841,7 +5773,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
@@ -5870,11 +5801,11 @@ public class RoutingApi {
   private PatchRoutingQueueUserRequest createPatchRoutingQueueUserRequest(String queueId, String memberId, QueueMember body) {
     return PatchRoutingQueueUserRequest.builder()
             .withQueueId(queueId)
-    
+
             .withMemberId(memberId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5925,7 +5856,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
@@ -5954,9 +5884,9 @@ public class RoutingApi {
   private PatchRoutingQueueUsersRequest createPatchRoutingQueueUsersRequest(String queueId, List<QueueMember> body) {
     return PatchRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6008,7 +5938,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update Contact Center Settings
    * 
@@ -6033,7 +5962,7 @@ public class RoutingApi {
   private PatchRoutingSettingsContactcenterRequest createPatchRoutingSettingsContactcenterRequest(ContactCenterSettings body) {
     return PatchRoutingSettingsContactcenterRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6084,7 +6013,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Join or unjoin a queue for a user
    * 
@@ -6115,11 +6043,11 @@ public class RoutingApi {
   private PatchUserQueueRequest createPatchUserQueueRequest(String queueId, String userId, UserQueue body) {
     return PatchUserQueueRequest.builder()
             .withQueueId(queueId)
-    
+
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6171,7 +6099,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Join or unjoin a set of queues for a user
    * 
@@ -6202,11 +6129,11 @@ public class RoutingApi {
   private PatchUserQueuesRequest createPatchUserQueuesRequest(String userId, List<UserQueue> body, List<String> divisionId) {
     return PatchUserQueuesRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -6258,7 +6185,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update routing language proficiency or state.
    * 
@@ -6289,11 +6215,11 @@ public class RoutingApi {
   private PatchUserRoutinglanguageRequest createPatchUserRoutinglanguageRequest(String userId, String languageId, UserRoutingLanguage body) {
     return PatchUserRoutinglanguageRequest.builder()
             .withUserId(userId)
-    
+
             .withLanguageId(languageId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6345,7 +6271,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Add bulk routing language to user. Max limit 50 languages
    * 
@@ -6374,9 +6299,9 @@ public class RoutingApi {
   private PatchUserRoutinglanguagesBulkRequest createPatchUserRoutinglanguagesBulkRequest(String userId, List<UserRoutingLanguagePost> body) {
     return PatchUserRoutinglanguagesBulkRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6428,7 +6353,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Bulk add routing skills to user
    * 
@@ -6457,9 +6381,9 @@ public class RoutingApi {
   private PatchUserRoutingskillsBulkRequest createPatchUserRoutingskillsBulkRequest(String userId, List<UserRoutingSkillPost> body) {
     return PatchUserRoutingskillsBulkRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6511,7 +6435,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Query for queue observations
    * 
@@ -6538,7 +6461,7 @@ public class RoutingApi {
   private PostAnalyticsQueuesObservationsQueryRequest createPostAnalyticsQueuesObservationsQueryRequest(QueueObservationQuery body) {
     return PostAnalyticsQueuesObservationsQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6590,7 +6513,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a benefit assessment.
    * 
@@ -6617,7 +6539,7 @@ public class RoutingApi {
   private PostRoutingAssessmentsRequest createPostRoutingAssessmentsRequest(CreateBenefitAssessmentRequest body) {
     return PostRoutingAssessmentsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6669,7 +6591,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a benefit assessment job.
    * 
@@ -6696,7 +6617,7 @@ public class RoutingApi {
   private PostRoutingAssessmentsJobsRequest createPostRoutingAssessmentsJobsRequest(CreateBenefitAssessmentJobRequest body) {
     return PostRoutingAssessmentsJobsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6748,7 +6669,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a route
    * 
@@ -6777,9 +6697,9 @@ public class RoutingApi {
   private PostRoutingEmailDomainRoutesRequest createPostRoutingEmailDomainRoutesRequest(String domainName, InboundRoute body) {
     return PostRoutingEmailDomainRoutesRequest.builder()
             .withDomainName(domainName)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6831,7 +6751,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Tests the custom SMTP server integration connection set on this domain
    * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
@@ -6860,9 +6779,9 @@ public class RoutingApi {
   private PostRoutingEmailDomainTestconnectionRequest createPostRoutingEmailDomainTestconnectionRequest(String domainId, TestMessage body) {
     return PostRoutingEmailDomainTestconnectionRequest.builder()
             .withDomainId(domainId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6914,7 +6833,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a domain
    * 
@@ -6941,7 +6859,7 @@ public class RoutingApi {
   private PostRoutingEmailDomainsRequest createPostRoutingEmailDomainsRequest(InboundDomain body) {
     return PostRoutingEmailDomainsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6993,7 +6911,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create Language
    * 
@@ -7020,7 +6937,7 @@ public class RoutingApi {
   private PostRoutingLanguagesRequest createPostRoutingLanguagesRequest(Language body) {
     return PostRoutingLanguagesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7072,7 +6989,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a predictor.
    * 
@@ -7099,7 +7015,7 @@ public class RoutingApi {
   private PostRoutingPredictorsRequest createPostRoutingPredictorsRequest(CreatePredictorRequest body) {
     return PostRoutingPredictorsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7151,7 +7067,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Bulk add or delete up to 100 queue members
    * 
@@ -7180,11 +7095,11 @@ public class RoutingApi {
   private PostRoutingQueueMembersRequest createPostRoutingQueueMembersRequest(String queueId, List<WritableEntity> body, Boolean delete) {
     return PostRoutingQueueMembersRequest.builder()
             .withQueueId(queueId)
-    
+
             .withBody(body)
-    
+
             .withDelete(delete)
-    
+
             .build();
   }
 
@@ -7235,7 +7150,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
@@ -7264,11 +7178,11 @@ public class RoutingApi {
   private PostRoutingQueueUsersRequest createPostRoutingQueueUsersRequest(String queueId, List<WritableEntity> body, Boolean delete) {
     return PostRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
-    
+
             .withBody(body)
-    
+
             .withDelete(delete)
-    
+
             .build();
   }
 
@@ -7319,7 +7233,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Add up to 100 wrap-up codes to a queue
    * 
@@ -7348,9 +7261,9 @@ public class RoutingApi {
   private PostRoutingQueueWrapupcodesRequest createPostRoutingQueueWrapupcodesRequest(String queueId, List<WrapUpCodeReference> body) {
     return PostRoutingQueueWrapupcodesRequest.builder()
             .withQueueId(queueId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7402,7 +7315,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a queue
    * 
@@ -7429,7 +7341,7 @@ public class RoutingApi {
   private PostRoutingQueuesRequest createPostRoutingQueuesRequest(CreateQueueRequest body) {
     return PostRoutingQueuesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7481,7 +7393,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create Skill
    * 
@@ -7508,7 +7419,7 @@ public class RoutingApi {
   private PostRoutingSkillsRequest createPostRoutingSkillsRequest(RoutingSkill body) {
     return PostRoutingSkillsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7560,7 +7471,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Provision an Address for SMS
    * 
@@ -7587,7 +7497,7 @@ public class RoutingApi {
   private PostRoutingSmsAddressesRequest createPostRoutingSmsAddressesRequest(SmsAddressProvision body) {
     return PostRoutingSmsAddressesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7639,12 +7549,11 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Provision a phone number for SMS
    * 
    * @param body SmsPhoneNumber (required)
-   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (optional, default to false)
+   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -7657,7 +7566,7 @@ public class RoutingApi {
    * Provision a phone number for SMS
    * 
    * @param body SmsPhoneNumber (required)
-   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (optional, default to false)
+   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
@@ -7668,9 +7577,9 @@ public class RoutingApi {
   private PostRoutingSmsPhonenumbersRequest createPostRoutingSmsPhonenumbersRequest(SmsPhoneNumberProvision body, Boolean async) {
     return PostRoutingSmsPhonenumbersRequest.builder()
             .withBody(body)
-    
+
             .withAsync(async)
-    
+
             .build();
   }
 
@@ -7722,7 +7631,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Create a wrap-up code
    * 
@@ -7749,7 +7657,7 @@ public class RoutingApi {
   private PostRoutingWrapupcodesRequest createPostRoutingWrapupcodesRequest(WrapupCode body) {
     return PostRoutingWrapupcodesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7801,7 +7709,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Add routing language to user
    * 
@@ -7830,9 +7737,9 @@ public class RoutingApi {
   private PostUserRoutinglanguagesRequest createPostUserRoutinglanguagesRequest(String userId, UserRoutingLanguagePost body) {
     return PostUserRoutinglanguagesRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7884,7 +7791,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Add routing skill to user
    * 
@@ -7913,9 +7819,9 @@ public class RoutingApi {
   private PostUserRoutingskillsRequest createPostUserRoutingskillsRequest(String userId, UserRoutingSkillPost body) {
     return PostUserRoutingskillsRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7967,7 +7873,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update a route
    * 
@@ -7998,11 +7903,11 @@ public class RoutingApi {
   private PutRoutingEmailDomainRouteRequest createPutRoutingEmailDomainRouteRequest(String domainName, String routeId, InboundRoute body) {
     return PutRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
-    
+
             .withRouteId(routeId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8054,7 +7959,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update a recipient
    * 
@@ -8083,9 +7987,9 @@ public class RoutingApi {
   private PutRoutingMessageRecipientRequest createPutRoutingMessageRecipientRequest(String recipientId, Recipient body) {
     return PutRoutingMessageRecipientRequest.builder()
             .withRecipientId(recipientId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8137,7 +8041,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update a queue
    * 
@@ -8166,9 +8069,9 @@ public class RoutingApi {
   private PutRoutingQueueRequest createPutRoutingQueueRequest(String queueId, QueueRequest body) {
     return PutRoutingQueueRequest.builder()
             .withQueueId(queueId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8220,9 +8123,8 @@ public class RoutingApi {
     }
   }
 
-  
   /**
-   * Update an organization&#39;s routing settings
+   * Update an organization's routing settings
    * 
    * @param body Organization Settings (required)
    * @return RoutingSettings
@@ -8234,7 +8136,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update an organization&#39;s routing settings
+   * Update an organization's routing settings
    * 
    * @param body Organization Settings (required)
    * @return RoutingSettings
@@ -8247,12 +8149,12 @@ public class RoutingApi {
   private PutRoutingSettingsRequest createPutRoutingSettingsRequest(RoutingSettings body) {
     return PutRoutingSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update an organization&#39;s routing settings
+   * Update an organization's routing settings
    * 
    * @param request The request object
    * @return RoutingSettings
@@ -8271,7 +8173,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update an organization&#39;s routing settings
+   * Update an organization's routing settings
    * 
    * @param request The request object
    * @return the response
@@ -8299,7 +8201,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update Transcription Settings
    * 
@@ -8326,7 +8227,7 @@ public class RoutingApi {
   private PutRoutingSettingsTranscriptionRequest createPutRoutingSettingsTranscriptionRequest(TranscriptionSettings body) {
     return PutRoutingSettingsTranscriptionRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8378,13 +8279,12 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
    * @param body SmsPhoneNumber (required)
-   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (optional, default to false)
+   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -8398,7 +8298,7 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body SmsPhoneNumber (required)
-   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (optional, default to false)
+   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
@@ -8409,11 +8309,11 @@ public class RoutingApi {
   private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body, Boolean async) {
     return PutRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
-    
+
             .withBody(body)
-    
+
             .withAsync(async)
-    
+
             .build();
   }
 
@@ -8465,9 +8365,8 @@ public class RoutingApi {
     }
   }
 
-  
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
@@ -8480,7 +8379,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
@@ -8494,14 +8393,14 @@ public class RoutingApi {
   private PutRoutingUserUtilizationRequest createPutRoutingUserUtilizationRequest(String userId, Utilization body) {
     return PutRoutingUserUtilizationRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request The request object
    * @return AgentMaxUtilization
@@ -8520,7 +8419,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request The request object
    * @return the response
@@ -8548,7 +8447,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
@@ -8575,7 +8473,7 @@ public class RoutingApi {
   private PutRoutingUtilizationRequest createPutRoutingUtilizationRequest(Utilization body) {
     return PutRoutingUtilizationRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8627,7 +8525,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update wrap-up code
    * 
@@ -8656,9 +8553,9 @@ public class RoutingApi {
   private PutRoutingWrapupcodeRequest createPutRoutingWrapupcodeRequest(String codeId, WrapupCode body) {
     return PutRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8710,7 +8607,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Update routing skill proficiency or state.
    * 
@@ -8741,11 +8637,11 @@ public class RoutingApi {
   private PutUserRoutingskillRequest createPutUserRoutingskillRequest(String userId, String skillId, UserRoutingSkill body) {
     return PutUserRoutingskillRequest.builder()
             .withUserId(userId)
-    
+
             .withSkillId(skillId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8797,7 +8693,6 @@ public class RoutingApi {
     }
   }
 
-  
   /**
    * Replace all routing skills assigned to a user
    * 
@@ -8826,9 +8721,9 @@ public class RoutingApi {
   private PutUserRoutingskillsBulkRequest createPutUserRoutingskillsBulkRequest(String userId, List<UserRoutingSkillPost> body) {
     return PutUserRoutingskillsBulkRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8880,5 +8775,4 @@ public class RoutingApi {
     }
   }
 
-  
 }

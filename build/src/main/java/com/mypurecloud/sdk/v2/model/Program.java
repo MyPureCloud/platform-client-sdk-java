@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -44,7 +45,7 @@ public class Program  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Program name(String name) {
@@ -61,7 +62,7 @@ public class Program  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Program description(String description) {
@@ -78,7 +79,7 @@ public class Program  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public Program published(Boolean published) {
@@ -95,7 +96,7 @@ public class Program  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    **/
   public Program topics(List<BaseTopicEntitiy> topics) {
@@ -112,7 +113,7 @@ public class Program  implements Serializable {
     this.topics = topics;
   }
 
-  
+
   /**
    **/
   public Program tags(List<String> tags) {
@@ -129,7 +130,7 @@ public class Program  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public Program modifiedBy(AddressableEntityRef modifiedBy) {
@@ -146,7 +147,7 @@ public class Program  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -164,7 +165,7 @@ public class Program  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public Program publishedBy(AddressableEntityRef publishedBy) {
@@ -181,7 +182,7 @@ public class Program  implements Serializable {
     this.publishedBy = publishedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -199,14 +200,13 @@ public class Program  implements Serializable {
     this.datePublished = datePublished;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,17 +217,18 @@ public class Program  implements Serializable {
       return false;
     }
     Program program = (Program) o;
+
     return Objects.equals(this.id, program.id) &&
-        Objects.equals(this.name, program.name) &&
-        Objects.equals(this.description, program.description) &&
-        Objects.equals(this.published, program.published) &&
-        Objects.equals(this.topics, program.topics) &&
-        Objects.equals(this.tags, program.tags) &&
-        Objects.equals(this.modifiedBy, program.modifiedBy) &&
-        Objects.equals(this.dateModified, program.dateModified) &&
-        Objects.equals(this.publishedBy, program.publishedBy) &&
-        Objects.equals(this.datePublished, program.datePublished) &&
-        Objects.equals(this.selfUri, program.selfUri);
+            Objects.equals(this.name, program.name) &&
+            Objects.equals(this.description, program.description) &&
+            Objects.equals(this.published, program.published) &&
+            Objects.equals(this.topics, program.topics) &&
+            Objects.equals(this.tags, program.tags) &&
+            Objects.equals(this.modifiedBy, program.modifiedBy) &&
+            Objects.equals(this.dateModified, program.dateModified) &&
+            Objects.equals(this.publishedBy, program.publishedBy) &&
+            Objects.equals(this.datePublished, program.datePublished) &&
+            Objects.equals(this.selfUri, program.selfUri);
   }
 
   @Override

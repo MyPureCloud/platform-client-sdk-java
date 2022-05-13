@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
 
 public class PostAnalyticsFlowsAggregatesQueryRequest {
-    
+
 	private FlowAggregationQuery body;
 	public FlowAggregationQuery getBody() {
 		return this.body;
@@ -41,7 +41,7 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,8 +71,8 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/flows/aggregates/query")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(FlowAggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAnalyticsFlowsAggregatesQueryRequest request;
@@ -97,20 +97,20 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
 			request = new PostAnalyticsFlowsAggregatesQueryRequest();
 		}
 
-		
+
 		public Builder withBody(FlowAggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(FlowAggregationQuery body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostAnalyticsFlowsAggregatesQueryRequest build() {
             

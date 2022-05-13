@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class Activation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Activation delay time amount.
    **/
@@ -59,7 +60,6 @@ public class Activation  implements Serializable {
     this.delayInSeconds = delayInSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class Activation  implements Serializable {
       return false;
     }
     Activation activation = (Activation) o;
+
     return Objects.equals(this.type, activation.type) &&
-        Objects.equals(this.delayInSeconds, activation.delayInSeconds);
+            Objects.equals(this.delayInSeconds, activation.delayInSeconds);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -205,7 +206,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -223,7 +224,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -241,7 +242,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -259,7 +260,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -277,7 +278,6 @@ public class BotAggregateQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -288,11 +288,12 @@ public class BotAggregateQueryPredicate  implements Serializable {
       return false;
     }
     BotAggregateQueryPredicate botAggregateQueryPredicate = (BotAggregateQueryPredicate) o;
+
     return Objects.equals(this.type, botAggregateQueryPredicate.type) &&
-        Objects.equals(this.dimension, botAggregateQueryPredicate.dimension) &&
-        Objects.equals(this.operator, botAggregateQueryPredicate.operator) &&
-        Objects.equals(this.value, botAggregateQueryPredicate.value) &&
-        Objects.equals(this.range, botAggregateQueryPredicate.range);
+            Objects.equals(this.dimension, botAggregateQueryPredicate.dimension) &&
+            Objects.equals(this.operator, botAggregateQueryPredicate.operator) &&
+            Objects.equals(this.value, botAggregateQueryPredicate.value) &&
+            Objects.equals(this.range, botAggregateQueryPredicate.range);
   }
 
   @Override

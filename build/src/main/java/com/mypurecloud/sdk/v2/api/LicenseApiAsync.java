@@ -14,12 +14,12 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
-import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
@@ -39,7 +39,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class LicenseApiAsync {
   private final ApiClient pcapiClient;
 
@@ -51,7 +50,6 @@ public class LicenseApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get PureCloud license definition.
    * 
@@ -127,7 +125,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
@@ -203,7 +200,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Get PureCloud license feature toggle value.
    * 
@@ -279,7 +275,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Get licenses for specified user.
    * 
@@ -355,7 +350,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Get a page of users and their licenses
    * Retrieve a page of users in an organization along with the licenses they possess.
@@ -431,7 +425,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Get a list of licenses inferred based on a list of roleIds
    * 
@@ -507,9 +500,8 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
-   * Update the organization&#39;s license assignments in a batch.
+   * Update the organization's license assignments in a batch.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -543,7 +535,7 @@ public class LicenseApiAsync {
   }
 
   /**
-   * Update the organization&#39;s license assignments in a batch.
+   * Update the organization's license assignments in a batch.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -583,7 +575,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Switch PureCloud license feature toggle value.
    * 
@@ -659,7 +650,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
   /**
    * Fetch user licenses in a batch.
    * 
@@ -735,7 +725,6 @@ public class LicenseApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

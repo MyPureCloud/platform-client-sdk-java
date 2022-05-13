@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -58,7 +59,7 @@ public class OAuthClient  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CODE("CODE"),
     TOKEN("TOKEN"),
-    SAML2_BEARER("SAML2-BEARER"),
+    SAML_2_BEARER("SAML2-BEARER"),
     PASSWORD("PASSWORD"),
     CLIENT_CREDENTIALS("CLIENT-CREDENTIALS");
 
@@ -149,7 +150,7 @@ public class OAuthClient  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the OAuth client.
    **/
@@ -167,7 +168,7 @@ public class OAuthClient  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The number of seconds, between 5mins and 48hrs, until tokens created with this client expire. If this field is omitted, a default of 24 hours will be applied.
    **/
@@ -185,7 +186,7 @@ public class OAuthClient  implements Serializable {
     this.accessTokenValiditySeconds = accessTokenValiditySeconds;
   }
 
-  
+
   /**
    **/
   public OAuthClient description(String description) {
@@ -202,7 +203,7 @@ public class OAuthClient  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback
    **/
@@ -220,7 +221,7 @@ public class OAuthClient  implements Serializable {
     this.registeredRedirectUri = registeredRedirectUri;
   }
 
-  
+
   /**
    * System created secret assigned to this client. Secrets are required for code authorization and client credential grants.
    **/
@@ -238,7 +239,7 @@ public class OAuthClient  implements Serializable {
     this.secret = secret;
   }
 
-  
+
   /**
    * Deprecated. Use roleDivisions instead.
    **/
@@ -256,7 +257,7 @@ public class OAuthClient  implements Serializable {
     this.roleIds = roleIds;
   }
 
-  
+
   /**
    * Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -274,7 +275,7 @@ public class OAuthClient  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -292,7 +293,7 @@ public class OAuthClient  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User that created this client
    **/
@@ -310,7 +311,7 @@ public class OAuthClient  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User that last modified this client
    **/
@@ -328,7 +329,7 @@ public class OAuthClient  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. PKCE-Enabled Code Authorization grant type - Code grant type which requires PKCE challenge and verifier to create tokens. Used in public clients for increased security. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
    **/
@@ -346,7 +347,7 @@ public class OAuthClient  implements Serializable {
     this.authorizedGrantType = authorizedGrantType;
   }
 
-  
+
   /**
    * The scope requested by this client. Scopes only apply to clients not using the client_credential grant
    **/
@@ -364,7 +365,7 @@ public class OAuthClient  implements Serializable {
     this.scope = scope;
   }
 
-  
+
   /**
    * Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
    **/
@@ -382,7 +383,7 @@ public class OAuthClient  implements Serializable {
     this.roleDivisions = roleDivisions;
   }
 
-  
+
   /**
    * The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
    **/
@@ -400,7 +401,7 @@ public class OAuthClient  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -418,14 +419,13 @@ public class OAuthClient  implements Serializable {
     this.dateToDelete = dateToDelete;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -436,23 +436,24 @@ public class OAuthClient  implements Serializable {
       return false;
     }
     OAuthClient oAuthClient = (OAuthClient) o;
+
     return Objects.equals(this.id, oAuthClient.id) &&
-        Objects.equals(this.name, oAuthClient.name) &&
-        Objects.equals(this.accessTokenValiditySeconds, oAuthClient.accessTokenValiditySeconds) &&
-        Objects.equals(this.description, oAuthClient.description) &&
-        Objects.equals(this.registeredRedirectUri, oAuthClient.registeredRedirectUri) &&
-        Objects.equals(this.secret, oAuthClient.secret) &&
-        Objects.equals(this.roleIds, oAuthClient.roleIds) &&
-        Objects.equals(this.dateCreated, oAuthClient.dateCreated) &&
-        Objects.equals(this.dateModified, oAuthClient.dateModified) &&
-        Objects.equals(this.createdBy, oAuthClient.createdBy) &&
-        Objects.equals(this.modifiedBy, oAuthClient.modifiedBy) &&
-        Objects.equals(this.authorizedGrantType, oAuthClient.authorizedGrantType) &&
-        Objects.equals(this.scope, oAuthClient.scope) &&
-        Objects.equals(this.roleDivisions, oAuthClient.roleDivisions) &&
-        Objects.equals(this.state, oAuthClient.state) &&
-        Objects.equals(this.dateToDelete, oAuthClient.dateToDelete) &&
-        Objects.equals(this.selfUri, oAuthClient.selfUri);
+            Objects.equals(this.name, oAuthClient.name) &&
+            Objects.equals(this.accessTokenValiditySeconds, oAuthClient.accessTokenValiditySeconds) &&
+            Objects.equals(this.description, oAuthClient.description) &&
+            Objects.equals(this.registeredRedirectUri, oAuthClient.registeredRedirectUri) &&
+            Objects.equals(this.secret, oAuthClient.secret) &&
+            Objects.equals(this.roleIds, oAuthClient.roleIds) &&
+            Objects.equals(this.dateCreated, oAuthClient.dateCreated) &&
+            Objects.equals(this.dateModified, oAuthClient.dateModified) &&
+            Objects.equals(this.createdBy, oAuthClient.createdBy) &&
+            Objects.equals(this.modifiedBy, oAuthClient.modifiedBy) &&
+            Objects.equals(this.authorizedGrantType, oAuthClient.authorizedGrantType) &&
+            Objects.equals(this.scope, oAuthClient.scope) &&
+            Objects.equals(this.roleDivisions, oAuthClient.roleDivisions) &&
+            Objects.equals(this.state, oAuthClient.state) &&
+            Objects.equals(this.dateToDelete, oAuthClient.dateToDelete) &&
+            Objects.equals(this.selfUri, oAuthClient.selfUri);
   }
 
   @Override

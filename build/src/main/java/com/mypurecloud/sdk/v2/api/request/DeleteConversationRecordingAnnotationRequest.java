@@ -20,46 +20,46 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OrphanRecording;
-import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Annotation;
-import com.mypurecloud.sdk.v2.model.RecordingMetadata;
-import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
-import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
-import com.mypurecloud.sdk.v2.model.RecordingJob;
-import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.Policy;
-import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
-import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
-import com.mypurecloud.sdk.v2.model.RecordingSettings;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
-import com.mypurecloud.sdk.v2.model.PolicyUpdate;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
-import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
-import com.mypurecloud.sdk.v2.model.EncryptionKey;
-import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.EncryptionKey;
+import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.OrphanRecording;
+import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
+import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.Policy;
+import com.mypurecloud.sdk.v2.model.PolicyCreate;
+import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
+import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.RecordingMetadata;
+import com.mypurecloud.sdk.v2.model.RecordingSettings;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 
 public class DeleteConversationRecordingAnnotationRequest {
-    
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -73,7 +73,7 @@ public class DeleteConversationRecordingAnnotationRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -87,7 +87,7 @@ public class DeleteConversationRecordingAnnotationRequest {
 	    this.setRecordingId(recordingId);
 	    return this;
 	} 
-	
+
 	private String annotationId;
 	public String getAnnotationId() {
 		return this.annotationId;
@@ -101,7 +101,7 @@ public class DeleteConversationRecordingAnnotationRequest {
 	    this.setAnnotationId(annotationId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -146,7 +146,7 @@ public class DeleteConversationRecordingAnnotationRequest {
         
                 .withPathParameter("annotationId", annotationId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -157,12 +157,12 @@ public class DeleteConversationRecordingAnnotationRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String conversationId, String recordingId, String annotationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, recordingId, annotationId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteConversationRecordingAnnotationRequest request;
@@ -171,32 +171,32 @@ public class DeleteConversationRecordingAnnotationRequest {
 			request = new DeleteConversationRecordingAnnotationRequest();
 		}
 
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
+
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
-		
+
 		public Builder withAnnotationId(String annotationId) {
 			request.setAnnotationId(annotationId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String conversationId, String recordingId, String annotationId) {
 			request.setConversationId(conversationId);
-						request.setRecordingId(recordingId);
-						request.setAnnotationId(annotationId);
-			
+			request.setRecordingId(recordingId);
+			request.setAnnotationId(annotationId);
+
 			return this;
 		}
-		
+
 
 		public DeleteConversationRecordingAnnotationRequest build() {
             

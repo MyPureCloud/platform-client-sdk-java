@@ -20,28 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.TrustRequest;
-import com.mypurecloud.sdk.v2.model.Trustee;
-import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustUser;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustEntityListing;
-import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
-import com.mypurecloud.sdk.v2.model.TrustCreate;
-import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
-import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.TrustCreate;
+import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
+import com.mypurecloud.sdk.v2.model.TrustRequest;
+import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.TrustUser;
+import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
+import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 public class DeleteOrgauthorizationTrusteeRequest {
-    
+
 	private String trusteeOrgId;
 	public String getTrusteeOrgId() {
 		return this.trusteeOrgId;
@@ -55,7 +54,7 @@ public class DeleteOrgauthorizationTrusteeRequest {
 	    this.setTrusteeOrgId(trusteeOrgId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,7 +85,7 @@ public class DeleteOrgauthorizationTrusteeRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/orgauthorization/trustees/{trusteeOrgId}")
                 .withPathParameter("trusteeOrgId", trusteeOrgId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -97,12 +96,12 @@ public class DeleteOrgauthorizationTrusteeRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String trusteeOrgId) {
 	    return new Builder()
 	            .withRequiredParams(trusteeOrgId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteOrgauthorizationTrusteeRequest request;
@@ -111,20 +110,20 @@ public class DeleteOrgauthorizationTrusteeRequest {
 			request = new DeleteOrgauthorizationTrusteeRequest();
 		}
 
-		
+
 		public Builder withTrusteeOrgId(String trusteeOrgId) {
 			request.setTrusteeOrgId(trusteeOrgId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String trusteeOrgId) {
 			request.setTrusteeOrgId(trusteeOrgId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteOrgauthorizationTrusteeRequest build() {
             

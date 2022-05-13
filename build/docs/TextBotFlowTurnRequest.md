@@ -21,13 +21,13 @@ title: TextBotFlowTurnRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NOOP | &quot;NoOp&quot; |
-| USERINPUT | &quot;UserInput&quot; |
-| ERROR | &quot;Error&quot; |
-| NOMATCH | &quot;NoMatch&quot; |
-| NOINPUT | &quot;NoInput&quot; |
-| USERDISCONNECT | &quot;UserDisconnect&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NOOP | &quot;NoOp&quot; | 
+| USERINPUT | &quot;UserInput&quot; | 
+| ERROR | &quot;Error&quot; | 
+| NOMATCH | &quot;NoMatch&quot; | 
+| NOINPUT | &quot;NoInput&quot; | 
+| USERDISCONNECT | &quot;UserDisconnect&quot; | 
 {: class="table table-striped"}
 
 

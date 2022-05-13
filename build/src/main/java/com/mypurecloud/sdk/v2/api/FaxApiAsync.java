@@ -13,9 +13,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
@@ -34,7 +34,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class FaxApiAsync {
   private final ApiClient pcapiClient;
 
@@ -46,7 +45,6 @@ public class FaxApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a fax document.
    * 
@@ -122,7 +120,6 @@ public class FaxApiAsync {
     }
   }
 
-  
   /**
    * Get a document.
    * 
@@ -198,7 +195,6 @@ public class FaxApiAsync {
     }
   }
 
-  
   /**
    * Download a fax document.
    * 
@@ -274,7 +270,6 @@ public class FaxApiAsync {
     }
   }
 
-  
   /**
    * Get a list of fax documents.
    * 
@@ -350,7 +345,6 @@ public class FaxApiAsync {
     }
   }
 
-  
   /**
    * Get fax summary
    * 
@@ -426,7 +420,6 @@ public class FaxApiAsync {
     }
   }
 
-  
   /**
    * Update a fax document.
    * 
@@ -502,7 +495,6 @@ public class FaxApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

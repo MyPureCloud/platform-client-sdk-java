@@ -19,7 +19,7 @@ title: OrgOAuthClient
 | **roleDivisions** | <!----><!---->[**List&lt;RoleDivision&gt;**](RoleDivision.html)<!----> | Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted. |  [optional] |
 | **dateToDelete** | <!----><!---->[**Date**](Date.html)<!----> | The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **organization** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | The  oauth client&#39;s organization. |  [optional] |
+| **organization** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | The  oauth client's organization. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -29,12 +29,12 @@ title: OrgOAuthClient
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CODE | &quot;CODE&quot; |
-| TOKEN | &quot;TOKEN&quot; |
-| SAML2_BEARER | &quot;SAML2-BEARER&quot; |
-| PASSWORD | &quot;PASSWORD&quot; |
-| CLIENT_CREDENTIALS | &quot;CLIENT-CREDENTIALS&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CODE | &quot;CODE&quot; | 
+| TOKEN | &quot;TOKEN&quot; | 
+| SAML_2_BEARER | &quot;SAML2-BEARER&quot; | 
+| PASSWORD | &quot;PASSWORD&quot; | 
+| CLIENT_CREDENTIALS | &quot;CLIENT-CREDENTIALS&quot; | 
 {: class="table table-striped"}
 
 
@@ -44,10 +44,10 @@ title: OrgOAuthClient
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| DISABLED | &quot;disabled&quot; |
-| INACTIVE | &quot;inactive&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| DISABLED | &quot;disabled&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
 {: class="table table-striped"}
 
 

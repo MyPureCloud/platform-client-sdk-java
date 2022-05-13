@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class UserRoutingLanguagePost  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
    **/
@@ -62,21 +63,20 @@ public class UserRoutingLanguagePost  implements Serializable {
     this.proficiency = proficiency;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI to the organization language used by this user language.")
   @JsonProperty("languageUri")
   public String getLanguageUri() {
     return languageUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,10 +87,11 @@ public class UserRoutingLanguagePost  implements Serializable {
       return false;
     }
     UserRoutingLanguagePost userRoutingLanguagePost = (UserRoutingLanguagePost) o;
+
     return Objects.equals(this.id, userRoutingLanguagePost.id) &&
-        Objects.equals(this.proficiency, userRoutingLanguagePost.proficiency) &&
-        Objects.equals(this.languageUri, userRoutingLanguagePost.languageUri) &&
-        Objects.equals(this.selfUri, userRoutingLanguagePost.selfUri);
+            Objects.equals(this.proficiency, userRoutingLanguagePost.proficiency) &&
+            Objects.equals(this.languageUri, userRoutingLanguagePost.languageUri) &&
+            Objects.equals(this.selfUri, userRoutingLanguagePost.selfUri);
   }
 
   @Override

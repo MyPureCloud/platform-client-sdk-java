@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -80,7 +81,7 @@ public class HomerRecord  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public HomerRecord name(String name) {
@@ -97,7 +98,7 @@ public class HomerRecord  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -115,7 +116,7 @@ public class HomerRecord  implements Serializable {
     this.date = date;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -133,7 +134,7 @@ public class HomerRecord  implements Serializable {
     this.milliTs = milliTs;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -151,7 +152,7 @@ public class HomerRecord  implements Serializable {
     this.microTs = microTs;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -169,7 +170,7 @@ public class HomerRecord  implements Serializable {
     this.method = method;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -187,7 +188,7 @@ public class HomerRecord  implements Serializable {
     this.replyReason = replyReason;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -205,7 +206,7 @@ public class HomerRecord  implements Serializable {
     this.ruri = ruri;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -223,7 +224,7 @@ public class HomerRecord  implements Serializable {
     this.ruriUser = ruriUser;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -241,7 +242,7 @@ public class HomerRecord  implements Serializable {
     this.ruriDomain = ruriDomain;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -259,7 +260,7 @@ public class HomerRecord  implements Serializable {
     this.fromUser = fromUser;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -277,7 +278,7 @@ public class HomerRecord  implements Serializable {
     this.fromDomain = fromDomain;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -295,7 +296,7 @@ public class HomerRecord  implements Serializable {
     this.fromTag = fromTag;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -313,7 +314,7 @@ public class HomerRecord  implements Serializable {
     this.toUser = toUser;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -331,7 +332,7 @@ public class HomerRecord  implements Serializable {
     this.toDomain = toDomain;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -349,7 +350,7 @@ public class HomerRecord  implements Serializable {
     this.toTag = toTag;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -367,7 +368,7 @@ public class HomerRecord  implements Serializable {
     this.pidUser = pidUser;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -385,7 +386,7 @@ public class HomerRecord  implements Serializable {
     this.contactUser = contactUser;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -403,7 +404,7 @@ public class HomerRecord  implements Serializable {
     this.authUser = authUser;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -421,7 +422,7 @@ public class HomerRecord  implements Serializable {
     this.callid = callid;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -439,7 +440,7 @@ public class HomerRecord  implements Serializable {
     this.callidAleg = callidAleg;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -457,7 +458,7 @@ public class HomerRecord  implements Serializable {
     this.via1 = via1;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -475,7 +476,7 @@ public class HomerRecord  implements Serializable {
     this.via1Branch = via1Branch;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -493,7 +494,7 @@ public class HomerRecord  implements Serializable {
     this.cseq = cseq;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -511,7 +512,7 @@ public class HomerRecord  implements Serializable {
     this.diversion = diversion;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -529,7 +530,7 @@ public class HomerRecord  implements Serializable {
     this.reason = reason;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -547,7 +548,7 @@ public class HomerRecord  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -565,7 +566,7 @@ public class HomerRecord  implements Serializable {
     this.auth = auth;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -583,7 +584,7 @@ public class HomerRecord  implements Serializable {
     this.userAgent = userAgent;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -601,7 +602,7 @@ public class HomerRecord  implements Serializable {
     this.sourceIp = sourceIp;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -619,7 +620,7 @@ public class HomerRecord  implements Serializable {
     this.sourcePort = sourcePort;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -637,7 +638,7 @@ public class HomerRecord  implements Serializable {
     this.destinationIp = destinationIp;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -655,7 +656,7 @@ public class HomerRecord  implements Serializable {
     this.destinationPort = destinationPort;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -673,7 +674,7 @@ public class HomerRecord  implements Serializable {
     this.contactIp = contactIp;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -691,7 +692,7 @@ public class HomerRecord  implements Serializable {
     this.contactPort = contactPort;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -709,7 +710,7 @@ public class HomerRecord  implements Serializable {
     this.originatorIp = originatorIp;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -727,7 +728,7 @@ public class HomerRecord  implements Serializable {
     this.originatorPort = originatorPort;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -745,7 +746,7 @@ public class HomerRecord  implements Serializable {
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -763,7 +764,7 @@ public class HomerRecord  implements Serializable {
     this.proto = proto;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -781,7 +782,7 @@ public class HomerRecord  implements Serializable {
     this.family = family;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -799,7 +800,7 @@ public class HomerRecord  implements Serializable {
     this.rtpStat = rtpStat;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -817,7 +818,7 @@ public class HomerRecord  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -835,7 +836,7 @@ public class HomerRecord  implements Serializable {
     this.node = node;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -853,7 +854,7 @@ public class HomerRecord  implements Serializable {
     this.trans = trans;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -871,7 +872,7 @@ public class HomerRecord  implements Serializable {
     this.dbnode = dbnode;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -889,7 +890,7 @@ public class HomerRecord  implements Serializable {
     this.msg = msg;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -907,7 +908,7 @@ public class HomerRecord  implements Serializable {
     this.sourceAlias = sourceAlias;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -925,7 +926,7 @@ public class HomerRecord  implements Serializable {
     this.destinationAlias = destinationAlias;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -943,7 +944,7 @@ public class HomerRecord  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * metadata associated to the SIP calls
    **/
@@ -961,14 +962,13 @@ public class HomerRecord  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -979,57 +979,58 @@ public class HomerRecord  implements Serializable {
       return false;
     }
     HomerRecord homerRecord = (HomerRecord) o;
+
     return Objects.equals(this.id, homerRecord.id) &&
-        Objects.equals(this.name, homerRecord.name) &&
-        Objects.equals(this.date, homerRecord.date) &&
-        Objects.equals(this.milliTs, homerRecord.milliTs) &&
-        Objects.equals(this.microTs, homerRecord.microTs) &&
-        Objects.equals(this.method, homerRecord.method) &&
-        Objects.equals(this.replyReason, homerRecord.replyReason) &&
-        Objects.equals(this.ruri, homerRecord.ruri) &&
-        Objects.equals(this.ruriUser, homerRecord.ruriUser) &&
-        Objects.equals(this.ruriDomain, homerRecord.ruriDomain) &&
-        Objects.equals(this.fromUser, homerRecord.fromUser) &&
-        Objects.equals(this.fromDomain, homerRecord.fromDomain) &&
-        Objects.equals(this.fromTag, homerRecord.fromTag) &&
-        Objects.equals(this.toUser, homerRecord.toUser) &&
-        Objects.equals(this.toDomain, homerRecord.toDomain) &&
-        Objects.equals(this.toTag, homerRecord.toTag) &&
-        Objects.equals(this.pidUser, homerRecord.pidUser) &&
-        Objects.equals(this.contactUser, homerRecord.contactUser) &&
-        Objects.equals(this.authUser, homerRecord.authUser) &&
-        Objects.equals(this.callid, homerRecord.callid) &&
-        Objects.equals(this.callidAleg, homerRecord.callidAleg) &&
-        Objects.equals(this.via1, homerRecord.via1) &&
-        Objects.equals(this.via1Branch, homerRecord.via1Branch) &&
-        Objects.equals(this.cseq, homerRecord.cseq) &&
-        Objects.equals(this.diversion, homerRecord.diversion) &&
-        Objects.equals(this.reason, homerRecord.reason) &&
-        Objects.equals(this.contentType, homerRecord.contentType) &&
-        Objects.equals(this.auth, homerRecord.auth) &&
-        Objects.equals(this.userAgent, homerRecord.userAgent) &&
-        Objects.equals(this.sourceIp, homerRecord.sourceIp) &&
-        Objects.equals(this.sourcePort, homerRecord.sourcePort) &&
-        Objects.equals(this.destinationIp, homerRecord.destinationIp) &&
-        Objects.equals(this.destinationPort, homerRecord.destinationPort) &&
-        Objects.equals(this.contactIp, homerRecord.contactIp) &&
-        Objects.equals(this.contactPort, homerRecord.contactPort) &&
-        Objects.equals(this.originatorIp, homerRecord.originatorIp) &&
-        Objects.equals(this.originatorPort, homerRecord.originatorPort) &&
-        Objects.equals(this.correlationId, homerRecord.correlationId) &&
-        Objects.equals(this.proto, homerRecord.proto) &&
-        Objects.equals(this.family, homerRecord.family) &&
-        Objects.equals(this.rtpStat, homerRecord.rtpStat) &&
-        Objects.equals(this.type, homerRecord.type) &&
-        Objects.equals(this.node, homerRecord.node) &&
-        Objects.equals(this.trans, homerRecord.trans) &&
-        Objects.equals(this.dbnode, homerRecord.dbnode) &&
-        Objects.equals(this.msg, homerRecord.msg) &&
-        Objects.equals(this.sourceAlias, homerRecord.sourceAlias) &&
-        Objects.equals(this.destinationAlias, homerRecord.destinationAlias) &&
-        Objects.equals(this.conversationId, homerRecord.conversationId) &&
-        Objects.equals(this.participantId, homerRecord.participantId) &&
-        Objects.equals(this.selfUri, homerRecord.selfUri);
+            Objects.equals(this.name, homerRecord.name) &&
+            Objects.equals(this.date, homerRecord.date) &&
+            Objects.equals(this.milliTs, homerRecord.milliTs) &&
+            Objects.equals(this.microTs, homerRecord.microTs) &&
+            Objects.equals(this.method, homerRecord.method) &&
+            Objects.equals(this.replyReason, homerRecord.replyReason) &&
+            Objects.equals(this.ruri, homerRecord.ruri) &&
+            Objects.equals(this.ruriUser, homerRecord.ruriUser) &&
+            Objects.equals(this.ruriDomain, homerRecord.ruriDomain) &&
+            Objects.equals(this.fromUser, homerRecord.fromUser) &&
+            Objects.equals(this.fromDomain, homerRecord.fromDomain) &&
+            Objects.equals(this.fromTag, homerRecord.fromTag) &&
+            Objects.equals(this.toUser, homerRecord.toUser) &&
+            Objects.equals(this.toDomain, homerRecord.toDomain) &&
+            Objects.equals(this.toTag, homerRecord.toTag) &&
+            Objects.equals(this.pidUser, homerRecord.pidUser) &&
+            Objects.equals(this.contactUser, homerRecord.contactUser) &&
+            Objects.equals(this.authUser, homerRecord.authUser) &&
+            Objects.equals(this.callid, homerRecord.callid) &&
+            Objects.equals(this.callidAleg, homerRecord.callidAleg) &&
+            Objects.equals(this.via1, homerRecord.via1) &&
+            Objects.equals(this.via1Branch, homerRecord.via1Branch) &&
+            Objects.equals(this.cseq, homerRecord.cseq) &&
+            Objects.equals(this.diversion, homerRecord.diversion) &&
+            Objects.equals(this.reason, homerRecord.reason) &&
+            Objects.equals(this.contentType, homerRecord.contentType) &&
+            Objects.equals(this.auth, homerRecord.auth) &&
+            Objects.equals(this.userAgent, homerRecord.userAgent) &&
+            Objects.equals(this.sourceIp, homerRecord.sourceIp) &&
+            Objects.equals(this.sourcePort, homerRecord.sourcePort) &&
+            Objects.equals(this.destinationIp, homerRecord.destinationIp) &&
+            Objects.equals(this.destinationPort, homerRecord.destinationPort) &&
+            Objects.equals(this.contactIp, homerRecord.contactIp) &&
+            Objects.equals(this.contactPort, homerRecord.contactPort) &&
+            Objects.equals(this.originatorIp, homerRecord.originatorIp) &&
+            Objects.equals(this.originatorPort, homerRecord.originatorPort) &&
+            Objects.equals(this.correlationId, homerRecord.correlationId) &&
+            Objects.equals(this.proto, homerRecord.proto) &&
+            Objects.equals(this.family, homerRecord.family) &&
+            Objects.equals(this.rtpStat, homerRecord.rtpStat) &&
+            Objects.equals(this.type, homerRecord.type) &&
+            Objects.equals(this.node, homerRecord.node) &&
+            Objects.equals(this.trans, homerRecord.trans) &&
+            Objects.equals(this.dbnode, homerRecord.dbnode) &&
+            Objects.equals(this.msg, homerRecord.msg) &&
+            Objects.equals(this.sourceAlias, homerRecord.sourceAlias) &&
+            Objects.equals(this.destinationAlias, homerRecord.destinationAlias) &&
+            Objects.equals(this.conversationId, homerRecord.conversationId) &&
+            Objects.equals(this.participantId, homerRecord.participantId) &&
+            Objects.equals(this.selfUri, homerRecord.selfUri);
   }
 
   @Override

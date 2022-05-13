@@ -13,27 +13,27 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
@@ -74,7 +74,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class LanguageUnderstandingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -86,7 +85,6 @@ public class LanguageUnderstandingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an NLU Domain.
    * 
@@ -162,7 +160,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Delete the feedback on the NLU Domain Version.
    * 
@@ -238,7 +235,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Delete an NLU Domain Version
    * 
@@ -314,7 +310,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Delete a miner.
    * 
@@ -390,7 +385,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Delete a draft
    * 
@@ -466,7 +460,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Find an NLU Domain.
    * 
@@ -542,7 +535,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Get all feedback in the given NLU Domain Version.
    * 
@@ -618,7 +610,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Find a Feedback
    * 
@@ -694,7 +685,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Find an NLU Domain Version.
    * 
@@ -770,7 +760,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Retrieved quality report for the specified NLU Domain Version
    * 
@@ -846,7 +835,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Get all NLU Domain Versions for a given Domain.
    * 
@@ -922,7 +910,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Get all NLU Domains.
    * 
@@ -998,7 +985,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Get information about a miner.
    * 
@@ -1074,7 +1060,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Get information about a draft.
    * 
@@ -1150,7 +1135,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve the list of drafts created.
    * 
@@ -1226,7 +1210,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Get information about a mined intent
    * 
@@ -1302,7 +1285,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of mined intents.
    * 
@@ -1378,7 +1360,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve the list of miners created.
    * 
@@ -1454,7 +1435,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Update an NLU Domain.
    * 
@@ -1530,7 +1510,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
@@ -1606,7 +1585,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Create feedback for the NLU Domain Version.
    * 
@@ -1682,7 +1660,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
    * 
@@ -1758,7 +1735,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Publish the draft NLU Domain Version.
    * 
@@ -1834,7 +1810,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Train the draft NLU Domain Version.
    * 
@@ -1910,7 +1885,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Create an NLU Domain Version.
    * 
@@ -1986,7 +1960,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Create an NLU Domain.
    * 
@@ -2062,7 +2035,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Create a new draft resource.
    * 
@@ -2138,7 +2110,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
@@ -2214,7 +2185,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Create a unique miner.
    * 
@@ -2290,7 +2260,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
   /**
    * Update an NLU Domain Version.
    * 
@@ -2366,7 +2335,6 @@ public class LanguageUnderstandingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

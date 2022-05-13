@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class QueueConversationChatEventTopicDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicDetail fieldName(String fieldName) {
@@ -59,7 +60,7 @@ public class QueueConversationChatEventTopicDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicDetail entityId(String entityId) {
@@ -76,7 +77,7 @@ public class QueueConversationChatEventTopicDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicDetail entityName(String entityName) {
@@ -93,7 +94,6 @@ public class QueueConversationChatEventTopicDetail  implements Serializable {
     this.entityName = entityName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class QueueConversationChatEventTopicDetail  implements Serializable {
       return false;
     }
     QueueConversationChatEventTopicDetail queueConversationChatEventTopicDetail = (QueueConversationChatEventTopicDetail) o;
+
     return Objects.equals(this.errorCode, queueConversationChatEventTopicDetail.errorCode) &&
-        Objects.equals(this.fieldName, queueConversationChatEventTopicDetail.fieldName) &&
-        Objects.equals(this.entityId, queueConversationChatEventTopicDetail.entityId) &&
-        Objects.equals(this.entityName, queueConversationChatEventTopicDetail.entityName);
+            Objects.equals(this.fieldName, queueConversationChatEventTopicDetail.fieldName) &&
+            Objects.equals(this.entityId, queueConversationChatEventTopicDetail.entityId) &&
+            Objects.equals(this.entityName, queueConversationChatEventTopicDetail.entityName);
   }
 
   @Override

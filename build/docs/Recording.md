@@ -49,14 +49,14 @@ title: Recording
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ARCHIVED | &quot;ARCHIVED&quot; |
-| AVAILABLE | &quot;AVAILABLE&quot; |
-| DELETED | &quot;DELETED&quot; |
-| RESTORED | &quot;RESTORED&quot; |
-| RESTORING | &quot;RESTORING&quot; |
-| UPLOADING | &quot;UPLOADING&quot; |
-| ERROR | &quot;ERROR&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ARCHIVED | &quot;ARCHIVED&quot; | 
+| AVAILABLE | &quot;AVAILABLE&quot; | 
+| DELETED | &quot;DELETED&quot; | 
+| RESTORED | &quot;RESTORED&quot; | 
+| RESTORING | &quot;RESTORING&quot; | 
+| UPLOADING | &quot;UPLOADING&quot; | 
+| ERROR | &quot;ERROR&quot; | 
 {: class="table table-striped"}
 
 
@@ -66,8 +66,8 @@ title: Recording
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; | 
 {: class="table table-striped"}
 
 
@@ -77,9 +77,9 @@ title: Recording
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CUSTOMER_EXPERIENCE | &quot;CUSTOMER_EXPERIENCE&quot; |
-| ADHOC | &quot;ADHOC&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CUSTOMER_EXPERIENCE | &quot;CUSTOMER_EXPERIENCE&quot; | 
+| ADHOC | &quot;ADHOC&quot; | 
 {: class="table table-striped"}
 
 
@@ -89,8 +89,8 @@ title: Recording
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EMAIL_TRANSCRIPT_TOO_LARGE | &quot;EMAIL_TRANSCRIPT_TOO_LARGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EMAIL_TRANSCRIPT_TOO_LARGE | &quot;EMAIL_TRANSCRIPT_TOO_LARGE&quot; | 
 {: class="table table-striped"}
 
 

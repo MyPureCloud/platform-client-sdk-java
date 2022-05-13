@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -48,7 +49,7 @@ public class Script  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Script name(String name) {
@@ -65,7 +66,7 @@ public class Script  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -83,7 +84,7 @@ public class Script  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public Script versionId(String versionId) {
@@ -100,7 +101,7 @@ public class Script  implements Serializable {
     this.versionId = versionId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -118,7 +119,7 @@ public class Script  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -136,7 +137,7 @@ public class Script  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -154,7 +155,7 @@ public class Script  implements Serializable {
     this.publishedDate = publishedDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -172,7 +173,7 @@ public class Script  implements Serializable {
     this.versionDate = versionDate;
   }
 
-  
+
   /**
    **/
   public Script startPageId(String startPageId) {
@@ -189,7 +190,7 @@ public class Script  implements Serializable {
     this.startPageId = startPageId;
   }
 
-  
+
   /**
    **/
   public Script startPageName(String startPageName) {
@@ -206,7 +207,7 @@ public class Script  implements Serializable {
     this.startPageName = startPageName;
   }
 
-  
+
   /**
    **/
   public Script features(Object features) {
@@ -223,7 +224,7 @@ public class Script  implements Serializable {
     this.features = features;
   }
 
-  
+
   /**
    **/
   public Script variables(Object variables) {
@@ -240,7 +241,7 @@ public class Script  implements Serializable {
     this.variables = variables;
   }
 
-  
+
   /**
    **/
   public Script customActions(Object customActions) {
@@ -257,7 +258,7 @@ public class Script  implements Serializable {
     this.customActions = customActions;
   }
 
-  
+
   /**
    **/
   public Script pages(List<Page> pages) {
@@ -274,14 +275,13 @@ public class Script  implements Serializable {
     this.pages = pages;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -292,21 +292,22 @@ public class Script  implements Serializable {
       return false;
     }
     Script script = (Script) o;
+
     return Objects.equals(this.id, script.id) &&
-        Objects.equals(this.name, script.name) &&
-        Objects.equals(this.division, script.division) &&
-        Objects.equals(this.versionId, script.versionId) &&
-        Objects.equals(this.createdDate, script.createdDate) &&
-        Objects.equals(this.modifiedDate, script.modifiedDate) &&
-        Objects.equals(this.publishedDate, script.publishedDate) &&
-        Objects.equals(this.versionDate, script.versionDate) &&
-        Objects.equals(this.startPageId, script.startPageId) &&
-        Objects.equals(this.startPageName, script.startPageName) &&
-        Objects.equals(this.features, script.features) &&
-        Objects.equals(this.variables, script.variables) &&
-        Objects.equals(this.customActions, script.customActions) &&
-        Objects.equals(this.pages, script.pages) &&
-        Objects.equals(this.selfUri, script.selfUri);
+            Objects.equals(this.name, script.name) &&
+            Objects.equals(this.division, script.division) &&
+            Objects.equals(this.versionId, script.versionId) &&
+            Objects.equals(this.createdDate, script.createdDate) &&
+            Objects.equals(this.modifiedDate, script.modifiedDate) &&
+            Objects.equals(this.publishedDate, script.publishedDate) &&
+            Objects.equals(this.versionDate, script.versionDate) &&
+            Objects.equals(this.startPageId, script.startPageId) &&
+            Objects.equals(this.startPageName, script.startPageName) &&
+            Objects.equals(this.features, script.features) &&
+            Objects.equals(this.variables, script.variables) &&
+            Objects.equals(this.customActions, script.customActions) &&
+            Objects.equals(this.pages, script.pages) &&
+            Objects.equals(this.selfUri, script.selfUri);
   }
 
   @Override

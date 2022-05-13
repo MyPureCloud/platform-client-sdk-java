@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class StationsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -44,7 +43,6 @@ public class StationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Unassigns the user assigned to this station
    * 
@@ -120,7 +118,6 @@ public class StationsApiAsync {
     }
   }
 
-  
   /**
    * Get station.
    * 
@@ -196,7 +193,6 @@ public class StationsApiAsync {
     }
   }
 
-  
   /**
    * Get the list of available stations.
    * 
@@ -272,9 +268,8 @@ public class StationsApiAsync {
     }
   }
 
-  
   /**
-   * Get an organization&#39;s StationSettings
+   * Get an organization's StationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -308,7 +303,7 @@ public class StationsApiAsync {
   }
 
   /**
-   * Get an organization&#39;s StationSettings
+   * Get an organization's StationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -348,9 +343,8 @@ public class StationsApiAsync {
     }
   }
 
-  
   /**
-   * Patch an organization&#39;s StationSettings
+   * Patch an organization's StationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -384,7 +378,7 @@ public class StationsApiAsync {
   }
 
   /**
-   * Patch an organization&#39;s StationSettings
+   * Patch an organization's StationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -424,7 +418,6 @@ public class StationsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

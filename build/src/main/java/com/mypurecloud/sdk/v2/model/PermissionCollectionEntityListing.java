@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public PermissionCollectionEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class PermissionCollectionEntityListing  implements Serializable, PagedRe
       return false;
     }
     PermissionCollectionEntityListing permissionCollectionEntityListing = (PermissionCollectionEntityListing) o;
+
     return Objects.equals(this.entities, permissionCollectionEntityListing.entities) &&
-        Objects.equals(this.pageSize, permissionCollectionEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, permissionCollectionEntityListing.pageNumber) &&
-        Objects.equals(this.total, permissionCollectionEntityListing.total) &&
-        Objects.equals(this.lastUri, permissionCollectionEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, permissionCollectionEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, permissionCollectionEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, permissionCollectionEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, permissionCollectionEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, permissionCollectionEntityListing.pageCount);
+            Objects.equals(this.pageSize, permissionCollectionEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, permissionCollectionEntityListing.pageNumber) &&
+            Objects.equals(this.total, permissionCollectionEntityListing.total) &&
+            Objects.equals(this.lastUri, permissionCollectionEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, permissionCollectionEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, permissionCollectionEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, permissionCollectionEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, permissionCollectionEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, permissionCollectionEntityListing.pageCount);
   }
 
   @Override

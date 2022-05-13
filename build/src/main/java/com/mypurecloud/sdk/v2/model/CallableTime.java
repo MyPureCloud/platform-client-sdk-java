@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignTimeSlot;
@@ -44,7 +45,7 @@ public class CallableTime  implements Serializable {
     this.timeSlots = timeSlots;
   }
 
-  
+
   /**
    * The time zone for the time slots; for example, Africa/Abidjan
    **/
@@ -62,7 +63,6 @@ public class CallableTime  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class CallableTime  implements Serializable {
       return false;
     }
     CallableTime callableTime = (CallableTime) o;
+
     return Objects.equals(this.timeSlots, callableTime.timeSlots) &&
-        Objects.equals(this.timeZoneId, callableTime.timeZoneId);
+            Objects.equals(this.timeZoneId, callableTime.timeZoneId);
   }
 
   @Override

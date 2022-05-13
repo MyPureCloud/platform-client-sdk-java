@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -104,7 +105,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification correlationId(String correlationId) {
@@ -121,7 +122,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification externalContact(JourneyWebEventsNotificationExternalContact externalContact) {
@@ -138,7 +139,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification createdDate(Date createdDate) {
@@ -155,7 +156,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification customerId(String customerId) {
@@ -172,7 +173,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.customerId = customerId;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification customerIdType(String customerIdType) {
@@ -189,7 +190,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.customerIdType = customerIdType;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification session(JourneyWebEventsNotificationSession session) {
@@ -206,7 +207,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.session = session;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification eventType(EventTypeEnum eventType) {
@@ -223,7 +224,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.eventType = eventType;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification webEvent(JourneyWebEventsNotificationWebMessage webEvent) {
@@ -240,7 +241,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.webEvent = webEvent;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification webActionEvent(JourneyWebEventsNotificationWebActionMessage webActionEvent) {
@@ -257,7 +258,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.webActionEvent = webActionEvent;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebEventsNotification outcomeAchievedEvent(JourneyWebEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent) {
@@ -274,7 +275,6 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     this.outcomeAchievedEvent = outcomeAchievedEvent;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -285,17 +285,18 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
       return false;
     }
     JourneyWebEventsNotificationWebEventsNotification journeyWebEventsNotificationWebEventsNotification = (JourneyWebEventsNotificationWebEventsNotification) o;
+
     return Objects.equals(this.id, journeyWebEventsNotificationWebEventsNotification.id) &&
-        Objects.equals(this.correlationId, journeyWebEventsNotificationWebEventsNotification.correlationId) &&
-        Objects.equals(this.externalContact, journeyWebEventsNotificationWebEventsNotification.externalContact) &&
-        Objects.equals(this.createdDate, journeyWebEventsNotificationWebEventsNotification.createdDate) &&
-        Objects.equals(this.customerId, journeyWebEventsNotificationWebEventsNotification.customerId) &&
-        Objects.equals(this.customerIdType, journeyWebEventsNotificationWebEventsNotification.customerIdType) &&
-        Objects.equals(this.session, journeyWebEventsNotificationWebEventsNotification.session) &&
-        Objects.equals(this.eventType, journeyWebEventsNotificationWebEventsNotification.eventType) &&
-        Objects.equals(this.webEvent, journeyWebEventsNotificationWebEventsNotification.webEvent) &&
-        Objects.equals(this.webActionEvent, journeyWebEventsNotificationWebEventsNotification.webActionEvent) &&
-        Objects.equals(this.outcomeAchievedEvent, journeyWebEventsNotificationWebEventsNotification.outcomeAchievedEvent);
+            Objects.equals(this.correlationId, journeyWebEventsNotificationWebEventsNotification.correlationId) &&
+            Objects.equals(this.externalContact, journeyWebEventsNotificationWebEventsNotification.externalContact) &&
+            Objects.equals(this.createdDate, journeyWebEventsNotificationWebEventsNotification.createdDate) &&
+            Objects.equals(this.customerId, journeyWebEventsNotificationWebEventsNotification.customerId) &&
+            Objects.equals(this.customerIdType, journeyWebEventsNotificationWebEventsNotification.customerIdType) &&
+            Objects.equals(this.session, journeyWebEventsNotificationWebEventsNotification.session) &&
+            Objects.equals(this.eventType, journeyWebEventsNotificationWebEventsNotification.eventType) &&
+            Objects.equals(this.webEvent, journeyWebEventsNotificationWebEventsNotification.webEvent) &&
+            Objects.equals(this.webActionEvent, journeyWebEventsNotificationWebEventsNotification.webActionEvent) &&
+            Objects.equals(this.outcomeAchievedEvent, journeyWebEventsNotificationWebEventsNotification.outcomeAchievedEvent);
   }
 
   @Override

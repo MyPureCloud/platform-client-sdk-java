@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
@@ -39,7 +40,7 @@ public class Trustee  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * If disabled no trustee user will have access, even if they were previously added.
    **/
@@ -57,7 +58,7 @@ public class Trustee  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Denotes if trustee uses admin role by default.
    **/
@@ -75,14 +76,14 @@ public class Trustee  implements Serializable {
     this.usesDefaultRole = usesDefaultRole;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   /**
    * The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -100,28 +101,27 @@ public class Trustee  implements Serializable {
     this.dateExpired = dateExpired;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that created trust.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Organization associated with this trust.")
   @JsonProperty("organization")
   public Organization getOrganization() {
     return organization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -132,14 +132,15 @@ public class Trustee  implements Serializable {
       return false;
     }
     Trustee trustee = (Trustee) o;
+
     return Objects.equals(this.id, trustee.id) &&
-        Objects.equals(this.enabled, trustee.enabled) &&
-        Objects.equals(this.usesDefaultRole, trustee.usesDefaultRole) &&
-        Objects.equals(this.dateCreated, trustee.dateCreated) &&
-        Objects.equals(this.dateExpired, trustee.dateExpired) &&
-        Objects.equals(this.createdBy, trustee.createdBy) &&
-        Objects.equals(this.organization, trustee.organization) &&
-        Objects.equals(this.selfUri, trustee.selfUri);
+            Objects.equals(this.enabled, trustee.enabled) &&
+            Objects.equals(this.usesDefaultRole, trustee.usesDefaultRole) &&
+            Objects.equals(this.dateCreated, trustee.dateCreated) &&
+            Objects.equals(this.dateExpired, trustee.dateExpired) &&
+            Objects.equals(this.createdBy, trustee.createdBy) &&
+            Objects.equals(this.organization, trustee.organization) &&
+            Objects.equals(this.selfUri, trustee.selfUri);
   }
 
   @Override

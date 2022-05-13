@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class TextBotErrorInputEvent  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * The error message.
    **/
@@ -60,7 +61,6 @@ public class TextBotErrorInputEvent  implements Serializable {
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class TextBotErrorInputEvent  implements Serializable {
       return false;
     }
     TextBotErrorInputEvent textBotErrorInputEvent = (TextBotErrorInputEvent) o;
+
     return Objects.equals(this.code, textBotErrorInputEvent.code) &&
-        Objects.equals(this.message, textBotErrorInputEvent.message);
+            Objects.equals(this.message, textBotErrorInputEvent.message);
   }
 
   @Override

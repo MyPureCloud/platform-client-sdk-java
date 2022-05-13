@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -210,7 +211,7 @@ public class Evaluation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Evaluation name(String name) {
@@ -227,7 +228,7 @@ public class Evaluation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Evaluation conversation(ConversationReference conversation) {
@@ -244,7 +245,7 @@ public class Evaluation  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * Evaluation form used for evaluation.
    **/
@@ -262,7 +263,7 @@ public class Evaluation  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-  
+
   /**
    **/
   public Evaluation evaluator(User evaluator) {
@@ -279,7 +280,7 @@ public class Evaluation  implements Serializable {
     this.evaluator = evaluator;
   }
 
-  
+
   /**
    **/
   public Evaluation agent(User agent) {
@@ -296,7 +297,7 @@ public class Evaluation  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public Evaluation calibration(Calibration calibration) {
@@ -313,7 +314,7 @@ public class Evaluation  implements Serializable {
     this.calibration = calibration;
   }
 
-  
+
   /**
    **/
   public Evaluation status(StatusEnum status) {
@@ -330,7 +331,7 @@ public class Evaluation  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public Evaluation answers(EvaluationScoringSet answers) {
@@ -347,7 +348,7 @@ public class Evaluation  implements Serializable {
     this.answers = answers;
   }
 
-  
+
   /**
    **/
   public Evaluation agentHasRead(Boolean agentHasRead) {
@@ -364,7 +365,7 @@ public class Evaluation  implements Serializable {
     this.agentHasRead = agentHasRead;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -382,7 +383,7 @@ public class Evaluation  implements Serializable {
     this.releaseDate = releaseDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -400,7 +401,7 @@ public class Evaluation  implements Serializable {
     this.assignedDate = assignedDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -418,7 +419,7 @@ public class Evaluation  implements Serializable {
     this.changedDate = changedDate;
   }
 
-  
+
   /**
    **/
   public Evaluation queue(Queue queue) {
@@ -435,7 +436,7 @@ public class Evaluation  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * List of different communication types used in conversation.
    **/
@@ -453,7 +454,7 @@ public class Evaluation  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Is only true when evaluation is re-scored.
    **/
@@ -471,7 +472,7 @@ public class Evaluation  implements Serializable {
     this.rescore = rescore;
   }
 
-  
+
   /**
    * Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -489,7 +490,7 @@ public class Evaluation  implements Serializable {
     this.conversationDate = conversationDate;
   }
 
-  
+
   /**
    * End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -507,7 +508,7 @@ public class Evaluation  implements Serializable {
     this.conversationEndDate = conversationEndDate;
   }
 
-  
+
   /**
    * Signifies if the evaluation is never to be released. This cannot be set true if release date is also set.
    **/
@@ -525,7 +526,7 @@ public class Evaluation  implements Serializable {
     this.neverRelease = neverRelease;
   }
 
-  
+
   /**
    * Only used for email evaluations. Will be null for all other evaluations.
    **/
@@ -543,7 +544,7 @@ public class Evaluation  implements Serializable {
     this.resourceId = resourceId;
   }
 
-  
+
   /**
    * The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.
    **/
@@ -561,7 +562,7 @@ public class Evaluation  implements Serializable {
     this.resourceType = resourceType;
   }
 
-  
+
   /**
    * Is only true when the user making the request does not have sufficient permissions to see evaluation
    **/
@@ -579,7 +580,7 @@ public class Evaluation  implements Serializable {
     this.redacted = redacted;
   }
 
-  
+
   /**
    **/
   public Evaluation isScoringIndex(Boolean isScoringIndex) {
@@ -596,7 +597,7 @@ public class Evaluation  implements Serializable {
     this.isScoringIndex = isScoringIndex;
   }
 
-  
+
   /**
    * List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
    **/
@@ -614,14 +615,13 @@ public class Evaluation  implements Serializable {
     this.authorizedActions = authorizedActions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -632,31 +632,32 @@ public class Evaluation  implements Serializable {
       return false;
     }
     Evaluation evaluation = (Evaluation) o;
+
     return Objects.equals(this.id, evaluation.id) &&
-        Objects.equals(this.name, evaluation.name) &&
-        Objects.equals(this.conversation, evaluation.conversation) &&
-        Objects.equals(this.evaluationForm, evaluation.evaluationForm) &&
-        Objects.equals(this.evaluator, evaluation.evaluator) &&
-        Objects.equals(this.agent, evaluation.agent) &&
-        Objects.equals(this.calibration, evaluation.calibration) &&
-        Objects.equals(this.status, evaluation.status) &&
-        Objects.equals(this.answers, evaluation.answers) &&
-        Objects.equals(this.agentHasRead, evaluation.agentHasRead) &&
-        Objects.equals(this.releaseDate, evaluation.releaseDate) &&
-        Objects.equals(this.assignedDate, evaluation.assignedDate) &&
-        Objects.equals(this.changedDate, evaluation.changedDate) &&
-        Objects.equals(this.queue, evaluation.queue) &&
-        Objects.equals(this.mediaType, evaluation.mediaType) &&
-        Objects.equals(this.rescore, evaluation.rescore) &&
-        Objects.equals(this.conversationDate, evaluation.conversationDate) &&
-        Objects.equals(this.conversationEndDate, evaluation.conversationEndDate) &&
-        Objects.equals(this.neverRelease, evaluation.neverRelease) &&
-        Objects.equals(this.resourceId, evaluation.resourceId) &&
-        Objects.equals(this.resourceType, evaluation.resourceType) &&
-        Objects.equals(this.redacted, evaluation.redacted) &&
-        Objects.equals(this.isScoringIndex, evaluation.isScoringIndex) &&
-        Objects.equals(this.authorizedActions, evaluation.authorizedActions) &&
-        Objects.equals(this.selfUri, evaluation.selfUri);
+            Objects.equals(this.name, evaluation.name) &&
+            Objects.equals(this.conversation, evaluation.conversation) &&
+            Objects.equals(this.evaluationForm, evaluation.evaluationForm) &&
+            Objects.equals(this.evaluator, evaluation.evaluator) &&
+            Objects.equals(this.agent, evaluation.agent) &&
+            Objects.equals(this.calibration, evaluation.calibration) &&
+            Objects.equals(this.status, evaluation.status) &&
+            Objects.equals(this.answers, evaluation.answers) &&
+            Objects.equals(this.agentHasRead, evaluation.agentHasRead) &&
+            Objects.equals(this.releaseDate, evaluation.releaseDate) &&
+            Objects.equals(this.assignedDate, evaluation.assignedDate) &&
+            Objects.equals(this.changedDate, evaluation.changedDate) &&
+            Objects.equals(this.queue, evaluation.queue) &&
+            Objects.equals(this.mediaType, evaluation.mediaType) &&
+            Objects.equals(this.rescore, evaluation.rescore) &&
+            Objects.equals(this.conversationDate, evaluation.conversationDate) &&
+            Objects.equals(this.conversationEndDate, evaluation.conversationEndDate) &&
+            Objects.equals(this.neverRelease, evaluation.neverRelease) &&
+            Objects.equals(this.resourceId, evaluation.resourceId) &&
+            Objects.equals(this.resourceType, evaluation.resourceType) &&
+            Objects.equals(this.redacted, evaluation.redacted) &&
+            Objects.equals(this.isScoringIndex, evaluation.isScoringIndex) &&
+            Objects.equals(this.authorizedActions, evaluation.authorizedActions) &&
+            Objects.equals(this.selfUri, evaluation.selfUri);
   }
 
   @Override

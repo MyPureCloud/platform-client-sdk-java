@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * External Url to the document
    **/
@@ -116,7 +117,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     this.externalUrl = externalUrl;
   }
 
-  
+
   /**
    * Faq document details
    **/
@@ -134,7 +135,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     this.faq = faq;
   }
 
-  
+
   /**
    * Document categories
    **/
@@ -152,7 +153,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   /**
    * Article details
    **/
@@ -170,7 +171,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     this.article = article;
   }
 
-  
+
   /**
    * Identifier of document for update. Omit for create new Document.
    **/
@@ -188,7 +189,6 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,12 +199,13 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
       return false;
     }
     KnowledgeDocumentBulkRequest knowledgeDocumentBulkRequest = (KnowledgeDocumentBulkRequest) o;
+
     return Objects.equals(this.type, knowledgeDocumentBulkRequest.type) &&
-        Objects.equals(this.externalUrl, knowledgeDocumentBulkRequest.externalUrl) &&
-        Objects.equals(this.faq, knowledgeDocumentBulkRequest.faq) &&
-        Objects.equals(this.categories, knowledgeDocumentBulkRequest.categories) &&
-        Objects.equals(this.article, knowledgeDocumentBulkRequest.article) &&
-        Objects.equals(this.id, knowledgeDocumentBulkRequest.id);
+            Objects.equals(this.externalUrl, knowledgeDocumentBulkRequest.externalUrl) &&
+            Objects.equals(this.faq, knowledgeDocumentBulkRequest.faq) &&
+            Objects.equals(this.categories, knowledgeDocumentBulkRequest.categories) &&
+            Objects.equals(this.article, knowledgeDocumentBulkRequest.article) &&
+            Objects.equals(this.id, knowledgeDocumentBulkRequest.id);
   }
 
   @Override

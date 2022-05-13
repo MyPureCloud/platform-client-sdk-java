@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class EventEntity  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    * ID of the entity the event pertains to.
    **/
@@ -59,7 +60,6 @@ public class EventEntity  implements Serializable {
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class EventEntity  implements Serializable {
       return false;
     }
     EventEntity eventEntity = (EventEntity) o;
+
     return Objects.equals(this.entityType, eventEntity.entityType) &&
-        Objects.equals(this.id, eventEntity.id);
+            Objects.equals(this.id, eventEntity.id);
   }
 
   @Override

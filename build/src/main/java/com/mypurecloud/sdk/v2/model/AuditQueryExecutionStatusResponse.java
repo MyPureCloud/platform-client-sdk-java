@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -184,7 +185,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Status of the audit query execution request.
    **/
@@ -202,7 +203,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -220,7 +221,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -238,7 +239,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Service name for the audit query.
    **/
@@ -256,7 +257,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    * Filters for the audit query.
    **/
@@ -274,7 +275,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    * Sort parameter for the audit query.
    **/
@@ -292,7 +293,6 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     this.sort = sort;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -303,13 +303,14 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
       return false;
     }
     AuditQueryExecutionStatusResponse auditQueryExecutionStatusResponse = (AuditQueryExecutionStatusResponse) o;
+
     return Objects.equals(this.id, auditQueryExecutionStatusResponse.id) &&
-        Objects.equals(this.state, auditQueryExecutionStatusResponse.state) &&
-        Objects.equals(this.startDate, auditQueryExecutionStatusResponse.startDate) &&
-        Objects.equals(this.interval, auditQueryExecutionStatusResponse.interval) &&
-        Objects.equals(this.serviceName, auditQueryExecutionStatusResponse.serviceName) &&
-        Objects.equals(this.filters, auditQueryExecutionStatusResponse.filters) &&
-        Objects.equals(this.sort, auditQueryExecutionStatusResponse.sort);
+            Objects.equals(this.state, auditQueryExecutionStatusResponse.state) &&
+            Objects.equals(this.startDate, auditQueryExecutionStatusResponse.startDate) &&
+            Objects.equals(this.interval, auditQueryExecutionStatusResponse.interval) &&
+            Objects.equals(this.serviceName, auditQueryExecutionStatusResponse.serviceName) &&
+            Objects.equals(this.filters, auditQueryExecutionStatusResponse.filters) &&
+            Objects.equals(this.sort, auditQueryExecutionStatusResponse.sort);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class EdgeMetricsProcessor  implements Serializable {
     this.activeTimePct = activeTimePct;
   }
 
-  
+
   /**
    * Machine CPU identifier. 'total' will always be included in the array and is the total of all CPU resources.
    **/
@@ -62,7 +63,7 @@ public class EdgeMetricsProcessor  implements Serializable {
     this.cpuId = cpuId;
   }
 
-  
+
   /**
    * Percent time processor was idle.
    **/
@@ -80,7 +81,7 @@ public class EdgeMetricsProcessor  implements Serializable {
     this.idleTimePct = idleTimePct;
   }
 
-  
+
   /**
    * Percent time processor spent in privileged mode.
    **/
@@ -98,7 +99,7 @@ public class EdgeMetricsProcessor  implements Serializable {
     this.privilegedTimePct = privilegedTimePct;
   }
 
-  
+
   /**
    * Percent time processor spent in user mode.
    **/
@@ -116,7 +117,6 @@ public class EdgeMetricsProcessor  implements Serializable {
     this.userTimePct = userTimePct;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class EdgeMetricsProcessor  implements Serializable {
       return false;
     }
     EdgeMetricsProcessor edgeMetricsProcessor = (EdgeMetricsProcessor) o;
+
     return Objects.equals(this.activeTimePct, edgeMetricsProcessor.activeTimePct) &&
-        Objects.equals(this.cpuId, edgeMetricsProcessor.cpuId) &&
-        Objects.equals(this.idleTimePct, edgeMetricsProcessor.idleTimePct) &&
-        Objects.equals(this.privilegedTimePct, edgeMetricsProcessor.privilegedTimePct) &&
-        Objects.equals(this.userTimePct, edgeMetricsProcessor.userTimePct);
+            Objects.equals(this.cpuId, edgeMetricsProcessor.cpuId) &&
+            Objects.equals(this.idleTimePct, edgeMetricsProcessor.idleTimePct) &&
+            Objects.equals(this.privilegedTimePct, edgeMetricsProcessor.privilegedTimePct) &&
+            Objects.equals(this.userTimePct, edgeMetricsProcessor.userTimePct);
   }
 
   @Override

@@ -27,7 +27,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class PatchUserPresencesPurecloudRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -41,7 +41,7 @@ public class PatchUserPresencesPurecloudRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private UserPresence body;
 	public UserPresence getBody() {
 		return this.body;
@@ -55,7 +55,7 @@ public class PatchUserPresencesPurecloudRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -92,8 +92,8 @@ public class PatchUserPresencesPurecloudRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -104,12 +104,12 @@ public class PatchUserPresencesPurecloudRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId, UserPresence body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchUserPresencesPurecloudRequest request;
@@ -118,26 +118,26 @@ public class PatchUserPresencesPurecloudRequest {
 			request = new PatchUserPresencesPurecloudRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
+
 		public Builder withBody(UserPresence body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId, UserPresence body) {
 			request.setUserId(userId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PatchUserPresencesPurecloudRequest build() {
             

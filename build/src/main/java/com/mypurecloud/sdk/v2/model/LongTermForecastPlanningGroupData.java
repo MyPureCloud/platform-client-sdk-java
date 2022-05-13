@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
     this.planningGroupId = planningGroupId;
   }
 
-  
+
   /**
    * Forecast offered counts per day for this planning group
    **/
@@ -62,7 +63,7 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
     this.offeredPerDay = offeredPerDay;
   }
 
-  
+
   /**
    * Forecast average handle time per day in seconds
    **/
@@ -80,7 +81,6 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
     this.averageHandleTimeSecondsPerDay = averageHandleTimeSecondsPerDay;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
       return false;
     }
     LongTermForecastPlanningGroupData longTermForecastPlanningGroupData = (LongTermForecastPlanningGroupData) o;
+
     return Objects.equals(this.planningGroupId, longTermForecastPlanningGroupData.planningGroupId) &&
-        Objects.equals(this.offeredPerDay, longTermForecastPlanningGroupData.offeredPerDay) &&
-        Objects.equals(this.averageHandleTimeSecondsPerDay, longTermForecastPlanningGroupData.averageHandleTimeSecondsPerDay);
+            Objects.equals(this.offeredPerDay, longTermForecastPlanningGroupData.offeredPerDay) &&
+            Objects.equals(this.averageHandleTimeSecondsPerDay, longTermForecastPlanningGroupData.averageHandleTimeSecondsPerDay);
   }
 
   @Override

@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DomainResourceConditionNode;
 import com.mypurecloud.sdk.v2.model.DomainResourceConditionValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -146,7 +146,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.variableName = variableName;
   }
 
-  
+
   /**
    **/
   public DomainResourceConditionNode operator(OperatorEnum operator) {
@@ -163,7 +163,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    **/
   public DomainResourceConditionNode operands(List<DomainResourceConditionValue> operands) {
@@ -180,7 +180,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.operands = operands;
   }
 
-  
+
   /**
    **/
   public DomainResourceConditionNode conjunction(ConjunctionEnum conjunction) {
@@ -197,7 +197,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.conjunction = conjunction;
   }
 
-  
+
   /**
    **/
   public DomainResourceConditionNode terms(List<DomainResourceConditionNode> terms) {
@@ -214,7 +214,6 @@ public class DomainResourceConditionNode  implements Serializable {
     this.terms = terms;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -225,11 +224,12 @@ public class DomainResourceConditionNode  implements Serializable {
       return false;
     }
     DomainResourceConditionNode domainResourceConditionNode = (DomainResourceConditionNode) o;
+
     return Objects.equals(this.variableName, domainResourceConditionNode.variableName) &&
-        Objects.equals(this.operator, domainResourceConditionNode.operator) &&
-        Objects.equals(this.operands, domainResourceConditionNode.operands) &&
-        Objects.equals(this.conjunction, domainResourceConditionNode.conjunction) &&
-        Objects.equals(this.terms, domainResourceConditionNode.terms);
+            Objects.equals(this.operator, domainResourceConditionNode.operator) &&
+            Objects.equals(this.operands, domainResourceConditionNode.operands) &&
+            Objects.equals(this.conjunction, domainResourceConditionNode.conjunction) &&
+            Objects.equals(this.terms, domainResourceConditionNode.terms);
   }
 
   @Override

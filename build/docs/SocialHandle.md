@@ -19,8 +19,8 @@ title: SocialHandle
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TWITTER | &quot;TWITTER&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TWITTER | &quot;TWITTER&quot; | 
 {: class="table table-striped"}
 
 

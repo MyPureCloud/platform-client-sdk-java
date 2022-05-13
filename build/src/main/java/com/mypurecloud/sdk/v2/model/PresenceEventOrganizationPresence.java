@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class PresenceEventOrganizationPresence  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public PresenceEventOrganizationPresence systemPresence(String systemPresence) {
@@ -57,7 +58,6 @@ public class PresenceEventOrganizationPresence  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class PresenceEventOrganizationPresence  implements Serializable {
       return false;
     }
     PresenceEventOrganizationPresence presenceEventOrganizationPresence = (PresenceEventOrganizationPresence) o;
+
     return Objects.equals(this.id, presenceEventOrganizationPresence.id) &&
-        Objects.equals(this.systemPresence, presenceEventOrganizationPresence.systemPresence);
+            Objects.equals(this.systemPresence, presenceEventOrganizationPresence.systemPresence);
   }
 
   @Override

@@ -20,15 +20,15 @@ title: PredictionResults
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALL | &quot;ALL&quot; |
-| CALL | &quot;CALL&quot; |
-| CALLBACK | &quot;CALLBACK&quot; |
-| CHAT | &quot;CHAT&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| SOCIALEXPRESSION | &quot;SOCIALEXPRESSION&quot; |
-| VIDEOCOMM | &quot;VIDEOCOMM&quot; |
-| MESSAGE | &quot;MESSAGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALL | &quot;ALL&quot; | 
+| CALL | &quot;CALL&quot; | 
+| CALLBACK | &quot;CALLBACK&quot; | 
+| CHAT | &quot;CHAT&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| SOCIALEXPRESSION | &quot;SOCIALEXPRESSION&quot; | 
+| VIDEOCOMM | &quot;VIDEOCOMM&quot; | 
+| MESSAGE | &quot;MESSAGE&quot; | 
 {: class="table table-striped"}
 
 
@@ -38,11 +38,11 @@ title: PredictionResults
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BEST | &quot;BEST&quot; |
-| SIMPLE | &quot;SIMPLE&quot; |
-| ABANDON | &quot;ABANDON&quot; |
-| PATIENCE_ABANDON | &quot;PATIENCE_ABANDON&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BEST | &quot;BEST&quot; | 
+| SIMPLE | &quot;SIMPLE&quot; | 
+| ABANDON | &quot;ABANDON&quot; | 
+| PATIENCE_ABANDON | &quot;PATIENCE_ABANDON&quot; | 
 {: class="table table-striped"}
 
 

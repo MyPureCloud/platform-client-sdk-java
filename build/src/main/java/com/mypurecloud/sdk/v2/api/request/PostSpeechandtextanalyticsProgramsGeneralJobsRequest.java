@@ -20,36 +20,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class PostSpeechandtextanalyticsProgramsGeneralJobsRequest {
-    
+
 	private GeneralProgramJobRequest body;
 	public GeneralProgramJobRequest getBody() {
 		return this.body;
@@ -63,7 +63,7 @@ public class PostSpeechandtextanalyticsProgramsGeneralJobsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,8 +93,8 @@ public class PostSpeechandtextanalyticsProgramsGeneralJobsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/speechandtextanalytics/programs/general/jobs")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class PostSpeechandtextanalyticsProgramsGeneralJobsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(GeneralProgramJobRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostSpeechandtextanalyticsProgramsGeneralJobsRequest request;
@@ -119,20 +119,20 @@ public class PostSpeechandtextanalyticsProgramsGeneralJobsRequest {
 			request = new PostSpeechandtextanalyticsProgramsGeneralJobsRequest();
 		}
 
-		
+
 		public Builder withBody(GeneralProgramJobRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(GeneralProgramJobRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostSpeechandtextanalyticsProgramsGeneralJobsRequest build() {
             

@@ -19,10 +19,10 @@ title: BuAgentScheduleUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ADDED | &quot;Added&quot; |
-| EDITED | &quot;Edited&quot; |
-| DELETED | &quot;Deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ADDED | &quot;Added&quot; | 
+| EDITED | &quot;Edited&quot; | 
+| DELETED | &quot;Deleted&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingNotification;
-import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
-import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
-import com.mypurecloud.sdk.v2.model.AddConversationResponse;
 import com.mypurecloud.sdk.v2.model.AddConversationRequest;
-import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingNotification;
+import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
+import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 
 public class PostCoachingAppointmentsAggregatesQueryRequest {
-    
+
 	private CoachingAppointmentAggregateRequest body;
 	public CoachingAppointmentAggregateRequest getBody() {
 		return this.body;
@@ -56,7 +56,7 @@ public class PostCoachingAppointmentsAggregatesQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,8 +86,8 @@ public class PostCoachingAppointmentsAggregatesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/coaching/appointments/aggregates/query")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -98,12 +98,12 @@ public class PostCoachingAppointmentsAggregatesQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(CoachingAppointmentAggregateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostCoachingAppointmentsAggregatesQueryRequest request;
@@ -112,20 +112,20 @@ public class PostCoachingAppointmentsAggregatesQueryRequest {
 			request = new PostCoachingAppointmentsAggregatesQueryRequest();
 		}
 
-		
+
 		public Builder withBody(CoachingAppointmentAggregateRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(CoachingAppointmentAggregateRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostCoachingAppointmentsAggregatesQueryRequest build() {
             

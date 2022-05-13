@@ -30,8 +30,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an interaction stats alert
 
-
-
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId}  
 
 Requires ALL permissions: 
@@ -91,8 +89,6 @@ null (empty response body)
 > Void deleteAlertingInteractionstatsRule(ruleId)
 
 Delete an interaction stats rule.
-
-
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId}  
 
@@ -154,8 +150,6 @@ null (empty response body)
 
 Gets active alert count for a user.
 
-
-
 Wraps GET /api/v2/alerting/alerts/active  
 
 Requires NO permissions: 
@@ -212,8 +206,6 @@ This endpoint does not require any parameters.
 
 Get an interaction stats alert
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId}  
 
 Requires ALL permissions: 
@@ -243,7 +235,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AlertingApi apiInstance = new AlertingApi();
 String alertId = "alertId_example"; // String | Alert ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     InteractionStatsAlert result = apiInstance.getAlertingInteractionstatsAlert(alertId, expand);
     System.out.println(result);
@@ -277,8 +269,6 @@ try {
 
 Get interaction stats alert list.
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/alerts  
 
 Requires ALL permissions: 
@@ -307,7 +297,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AlertingApi apiInstance = new AlertingApi();
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     InteractionStatsAlertContainer result = apiInstance.getAlertingInteractionstatsAlerts(expand);
     System.out.println(result);
@@ -339,8 +329,6 @@ try {
 > [UnreadMetric](UnreadMetric.html) getAlertingInteractionstatsAlertsUnread()
 
 Gets user unread count of interaction stats alerts.
-
-
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread  
 
@@ -398,8 +386,6 @@ This endpoint does not require any parameters.
 
 Get an interaction stats rule.
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId}  
 
 Requires ALL permissions: 
@@ -429,7 +415,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AlertingApi apiInstance = new AlertingApi();
 String ruleId = "ruleId_example"; // String | Rule ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     InteractionStatsRule result = apiInstance.getAlertingInteractionstatsRule(ruleId, expand);
     System.out.println(result);
@@ -463,8 +449,6 @@ try {
 
 Get an interaction stats rule list.
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/rules  
 
 Requires ALL permissions: 
@@ -493,7 +477,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AlertingApi apiInstance = new AlertingApi();
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     InteractionStatsRuleContainer result = apiInstance.getAlertingInteractionstatsRules(expand);
     System.out.println(result);
@@ -526,8 +510,6 @@ try {
 
 Create an interaction stats rule.
 
-
-
 Wraps POST /api/v2/alerting/interactionstats/rules  
 
 Requires ALL permissions: 
@@ -557,7 +539,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AlertingApi apiInstance = new AlertingApi();
 InteractionStatsRule body = new InteractionStatsRule(); // InteractionStatsRule | AlertingRule
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     InteractionStatsRule result = apiInstance.postAlertingInteractionstatsRules(body, expand);
     System.out.println(result);
@@ -591,8 +573,6 @@ try {
 
 Update an interaction stats alert read status
 
-
-
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId}  
 
 Requires ALL permissions: 
@@ -623,7 +603,7 @@ Configuration.setDefaultApiClient(apiClient);
 AlertingApi apiInstance = new AlertingApi();
 String alertId = "alertId_example"; // String | Alert ID
 UnreadStatus body = new UnreadStatus(); // UnreadStatus | InteractionStatsAlert
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     UnreadStatus result = apiInstance.putAlertingInteractionstatsAlert(alertId, body, expand);
     System.out.println(result);
@@ -658,8 +638,6 @@ try {
 
 Update an interaction stats rule
 
-
-
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId}  
 
 Requires ALL permissions: 
@@ -690,7 +668,7 @@ Configuration.setDefaultApiClient(apiClient);
 AlertingApi apiInstance = new AlertingApi();
 String ruleId = "ruleId_example"; // String | Rule ID
 InteractionStatsRule body = new InteractionStatsRule(); // InteractionStatsRule | AlertingRule
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     InteractionStatsRule result = apiInstance.putAlertingInteractionstatsRule(ruleId, body, expand);
     System.out.println(result);

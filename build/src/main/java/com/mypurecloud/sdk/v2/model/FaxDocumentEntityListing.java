@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FaxDocumentEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
       return false;
     }
     FaxDocumentEntityListing faxDocumentEntityListing = (FaxDocumentEntityListing) o;
+
     return Objects.equals(this.entities, faxDocumentEntityListing.entities) &&
-        Objects.equals(this.pageSize, faxDocumentEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, faxDocumentEntityListing.pageNumber) &&
-        Objects.equals(this.total, faxDocumentEntityListing.total) &&
-        Objects.equals(this.lastUri, faxDocumentEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, faxDocumentEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, faxDocumentEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, faxDocumentEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, faxDocumentEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, faxDocumentEntityListing.pageCount);
+            Objects.equals(this.pageSize, faxDocumentEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, faxDocumentEntityListing.pageNumber) &&
+            Objects.equals(this.total, faxDocumentEntityListing.total) &&
+            Objects.equals(this.lastUri, faxDocumentEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, faxDocumentEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, faxDocumentEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, faxDocumentEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, faxDocumentEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, faxDocumentEntityListing.pageCount);
   }
 
   @Override

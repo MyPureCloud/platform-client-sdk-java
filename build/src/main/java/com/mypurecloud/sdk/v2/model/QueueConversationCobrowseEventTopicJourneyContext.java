@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class QueueConversationCobrowseEventTopicJourneyContext  implements Seria
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationCobrowseEventTopicJourneyContext customerSession(QueueConversationCobrowseEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class QueueConversationCobrowseEventTopicJourneyContext  implements Seria
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationCobrowseEventTopicJourneyContext triggeringAction(QueueConversationCobrowseEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class QueueConversationCobrowseEventTopicJourneyContext  implements Seria
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class QueueConversationCobrowseEventTopicJourneyContext  implements Seria
       return false;
     }
     QueueConversationCobrowseEventTopicJourneyContext queueConversationCobrowseEventTopicJourneyContext = (QueueConversationCobrowseEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationCobrowseEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationCobrowseEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationCobrowseEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationCobrowseEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationCobrowseEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

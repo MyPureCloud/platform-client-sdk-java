@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
@@ -44,7 +45,7 @@ public class BuRescheduleAgentScheduleResult  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    * The agent schedules.  Result will always come via the downloadUrl; however the schema is included for documentation
    **/
@@ -62,7 +63,7 @@ public class BuRescheduleAgentScheduleResult  implements Serializable {
     this.downloadResult = downloadResult;
   }
 
-  
+
   /**
    * The download URL from which to fetch the result
    **/
@@ -80,7 +81,6 @@ public class BuRescheduleAgentScheduleResult  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class BuRescheduleAgentScheduleResult  implements Serializable {
       return false;
     }
     BuRescheduleAgentScheduleResult buRescheduleAgentScheduleResult = (BuRescheduleAgentScheduleResult) o;
+
     return Objects.equals(this.managementUnit, buRescheduleAgentScheduleResult.managementUnit) &&
-        Objects.equals(this.downloadResult, buRescheduleAgentScheduleResult.downloadResult) &&
-        Objects.equals(this.downloadUrl, buRescheduleAgentScheduleResult.downloadUrl);
+            Objects.equals(this.downloadResult, buRescheduleAgentScheduleResult.downloadResult) &&
+            Objects.equals(this.downloadUrl, buRescheduleAgentScheduleResult.downloadUrl);
   }
 
   @Override

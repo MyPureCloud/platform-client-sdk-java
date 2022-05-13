@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
@@ -44,7 +45,7 @@ public class ClonedUserEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ClonedUserEntityListing entities(List<ClonedUser> entities) {
@@ -61,7 +62,7 @@ public class ClonedUserEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ClonedUserEntityListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class ClonedUserEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ClonedUserEntityListing  implements Serializable {
       return false;
     }
     ClonedUserEntityListing clonedUserEntityListing = (ClonedUserEntityListing) o;
+
     return Objects.equals(this.total, clonedUserEntityListing.total) &&
-        Objects.equals(this.entities, clonedUserEntityListing.entities) &&
-        Objects.equals(this.selfUri, clonedUserEntityListing.selfUri);
+            Objects.equals(this.entities, clonedUserEntityListing.entities) &&
+            Objects.equals(this.selfUri, clonedUserEntityListing.selfUri);
   }
 
   @Override

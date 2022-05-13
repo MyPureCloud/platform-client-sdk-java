@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class SocialHandle  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public SocialHandle value(String value) {
@@ -104,7 +105,6 @@ public class SocialHandle  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,8 +115,9 @@ public class SocialHandle  implements Serializable {
       return false;
     }
     SocialHandle socialHandle = (SocialHandle) o;
+
     return Objects.equals(this.type, socialHandle.type) &&
-        Objects.equals(this.value, socialHandle.value);
+            Objects.equals(this.value, socialHandle.value);
   }
 
   @Override

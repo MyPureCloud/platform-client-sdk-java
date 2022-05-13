@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -193,7 +194,7 @@ public class ApiUsageQuery  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Date granularity of the results
    **/
@@ -211,7 +212,7 @@ public class ApiUsageQuery  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
    **/
@@ -229,7 +230,7 @@ public class ApiUsageQuery  implements Serializable {
     this.groupBy = groupBy;
   }
 
-  
+
   /**
    * Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
    **/
@@ -247,7 +248,6 @@ public class ApiUsageQuery  implements Serializable {
     this.metrics = metrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -258,10 +258,11 @@ public class ApiUsageQuery  implements Serializable {
       return false;
     }
     ApiUsageQuery apiUsageQuery = (ApiUsageQuery) o;
+
     return Objects.equals(this.interval, apiUsageQuery.interval) &&
-        Objects.equals(this.granularity, apiUsageQuery.granularity) &&
-        Objects.equals(this.groupBy, apiUsageQuery.groupBy) &&
-        Objects.equals(this.metrics, apiUsageQuery.metrics);
+            Objects.equals(this.granularity, apiUsageQuery.granularity) &&
+            Objects.equals(this.groupBy, apiUsageQuery.groupBy) &&
+            Objects.equals(this.metrics, apiUsageQuery.metrics);
   }
 
   @Override

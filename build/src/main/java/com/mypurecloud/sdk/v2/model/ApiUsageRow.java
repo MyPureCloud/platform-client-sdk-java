@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -53,7 +54,7 @@ public class ApiUsageRow  implements Serializable {
     this.clientId = clientId;
   }
 
-  
+
   /**
    * Client Name associated with this query result
    **/
@@ -71,7 +72,7 @@ public class ApiUsageRow  implements Serializable {
     this.clientName = clientName;
   }
 
-  
+
   /**
    * Organization Id associated with this query result
    **/
@@ -89,7 +90,7 @@ public class ApiUsageRow  implements Serializable {
     this.organizationId = organizationId;
   }
 
-  
+
   /**
    * User Id associated with this query result
    **/
@@ -107,7 +108,7 @@ public class ApiUsageRow  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * Template Uri associated with this query result
    **/
@@ -125,7 +126,7 @@ public class ApiUsageRow  implements Serializable {
     this.templateUri = templateUri;
   }
 
-  
+
   /**
    * HTTP Method associated with this query result
    **/
@@ -143,7 +144,7 @@ public class ApiUsageRow  implements Serializable {
     this.httpMethod = httpMethod;
   }
 
-  
+
   /**
    * Number of requests resulting in a 2xx HTTP status code
    **/
@@ -161,7 +162,7 @@ public class ApiUsageRow  implements Serializable {
     this.status200 = status200;
   }
 
-  
+
   /**
    * Number of requests resulting in a 3xx HTTP status code
    **/
@@ -179,7 +180,7 @@ public class ApiUsageRow  implements Serializable {
     this.status300 = status300;
   }
 
-  
+
   /**
    * Number of requests resulting in a 4xx HTTP status code
    **/
@@ -197,7 +198,7 @@ public class ApiUsageRow  implements Serializable {
     this.status400 = status400;
   }
 
-  
+
   /**
    * Number of requests resulting in a 5xx HTTP status code
    **/
@@ -215,7 +216,7 @@ public class ApiUsageRow  implements Serializable {
     this.status500 = status500;
   }
 
-  
+
   /**
    * Number of requests resulting in a 429 HTTP status code, this is a subset of the count returned with status400
    **/
@@ -233,7 +234,7 @@ public class ApiUsageRow  implements Serializable {
     this.status429 = status429;
   }
 
-  
+
   /**
    * Total number of requests
    **/
@@ -251,7 +252,7 @@ public class ApiUsageRow  implements Serializable {
     this.requests = requests;
   }
 
-  
+
   /**
    * Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -269,7 +270,6 @@ public class ApiUsageRow  implements Serializable {
     this.date = date;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -280,19 +280,20 @@ public class ApiUsageRow  implements Serializable {
       return false;
     }
     ApiUsageRow apiUsageRow = (ApiUsageRow) o;
+
     return Objects.equals(this.clientId, apiUsageRow.clientId) &&
-        Objects.equals(this.clientName, apiUsageRow.clientName) &&
-        Objects.equals(this.organizationId, apiUsageRow.organizationId) &&
-        Objects.equals(this.userId, apiUsageRow.userId) &&
-        Objects.equals(this.templateUri, apiUsageRow.templateUri) &&
-        Objects.equals(this.httpMethod, apiUsageRow.httpMethod) &&
-        Objects.equals(this.status200, apiUsageRow.status200) &&
-        Objects.equals(this.status300, apiUsageRow.status300) &&
-        Objects.equals(this.status400, apiUsageRow.status400) &&
-        Objects.equals(this.status500, apiUsageRow.status500) &&
-        Objects.equals(this.status429, apiUsageRow.status429) &&
-        Objects.equals(this.requests, apiUsageRow.requests) &&
-        Objects.equals(this.date, apiUsageRow.date);
+            Objects.equals(this.clientName, apiUsageRow.clientName) &&
+            Objects.equals(this.organizationId, apiUsageRow.organizationId) &&
+            Objects.equals(this.userId, apiUsageRow.userId) &&
+            Objects.equals(this.templateUri, apiUsageRow.templateUri) &&
+            Objects.equals(this.httpMethod, apiUsageRow.httpMethod) &&
+            Objects.equals(this.status200, apiUsageRow.status200) &&
+            Objects.equals(this.status300, apiUsageRow.status300) &&
+            Objects.equals(this.status400, apiUsageRow.status400) &&
+            Objects.equals(this.status500, apiUsageRow.status500) &&
+            Objects.equals(this.status429, apiUsageRow.status429) &&
+            Objects.equals(this.requests, apiUsageRow.requests) &&
+            Objects.equals(this.date, apiUsageRow.date);
   }
 
   @Override

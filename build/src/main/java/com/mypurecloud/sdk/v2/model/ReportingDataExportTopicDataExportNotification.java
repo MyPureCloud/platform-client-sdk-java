@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -352,7 +353,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
       return String.valueOf(value);
     }
   }
-  private Map<String, String> emailStatuses = null;
+  private Map<String, InnerEnum> emailStatuses = null;
   private String emailErrorDescription = null;
   private String scheduleExpression = null;
 
@@ -373,7 +374,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification runId(String runId) {
@@ -390,7 +391,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.runId = runId;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification name(String name) {
@@ -407,7 +408,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification status(StatusEnum status) {
@@ -424,7 +425,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification exportFormat(ExportFormatEnum exportFormat) {
@@ -441,7 +442,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.exportFormat = exportFormat;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification downloadUrl(String downloadUrl) {
@@ -458,7 +459,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.downloadUrl = downloadUrl;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification viewType(ViewTypeEnum viewType) {
@@ -475,7 +476,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.viewType = viewType;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification exportErrorMessagesType(ExportErrorMessagesTypeEnum exportErrorMessagesType) {
@@ -492,7 +493,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.exportErrorMessagesType = exportErrorMessagesType;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification read(Boolean read) {
@@ -509,7 +510,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.read = read;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification createdDateTime(Date createdDateTime) {
@@ -526,7 +527,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.createdDateTime = createdDateTime;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification modifiedDateTime(Date modifiedDateTime) {
@@ -543,7 +544,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.modifiedDateTime = modifiedDateTime;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification percentageComplete(BigDecimal percentageComplete) {
@@ -560,24 +561,24 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.percentageComplete = percentageComplete;
   }
 
-  
+
   /**
    **/
-  public ReportingDataExportTopicDataExportNotification emailStatuses(Map<String, String> emailStatuses) {
+  public ReportingDataExportTopicDataExportNotification emailStatuses(Map<String, InnerEnum> emailStatuses) {
     this.emailStatuses = emailStatuses;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("emailStatuses")
-  public Map<String, String> getEmailStatuses() {
+  public Map<String, InnerEnum> getEmailStatuses() {
     return emailStatuses;
   }
-  public void setEmailStatuses(Map<String, String> emailStatuses) {
+  public void setEmailStatuses(Map<String, InnerEnum> emailStatuses) {
     this.emailStatuses = emailStatuses;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification emailErrorDescription(String emailErrorDescription) {
@@ -594,7 +595,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.emailErrorDescription = emailErrorDescription;
   }
 
-  
+
   /**
    **/
   public ReportingDataExportTopicDataExportNotification scheduleExpression(String scheduleExpression) {
@@ -611,7 +612,6 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     this.scheduleExpression = scheduleExpression;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -622,21 +622,22 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
       return false;
     }
     ReportingDataExportTopicDataExportNotification reportingDataExportTopicDataExportNotification = (ReportingDataExportTopicDataExportNotification) o;
+
     return Objects.equals(this.id, reportingDataExportTopicDataExportNotification.id) &&
-        Objects.equals(this.runId, reportingDataExportTopicDataExportNotification.runId) &&
-        Objects.equals(this.name, reportingDataExportTopicDataExportNotification.name) &&
-        Objects.equals(this.status, reportingDataExportTopicDataExportNotification.status) &&
-        Objects.equals(this.exportFormat, reportingDataExportTopicDataExportNotification.exportFormat) &&
-        Objects.equals(this.downloadUrl, reportingDataExportTopicDataExportNotification.downloadUrl) &&
-        Objects.equals(this.viewType, reportingDataExportTopicDataExportNotification.viewType) &&
-        Objects.equals(this.exportErrorMessagesType, reportingDataExportTopicDataExportNotification.exportErrorMessagesType) &&
-        Objects.equals(this.read, reportingDataExportTopicDataExportNotification.read) &&
-        Objects.equals(this.createdDateTime, reportingDataExportTopicDataExportNotification.createdDateTime) &&
-        Objects.equals(this.modifiedDateTime, reportingDataExportTopicDataExportNotification.modifiedDateTime) &&
-        Objects.equals(this.percentageComplete, reportingDataExportTopicDataExportNotification.percentageComplete) &&
-        Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses) &&
-        Objects.equals(this.emailErrorDescription, reportingDataExportTopicDataExportNotification.emailErrorDescription) &&
-        Objects.equals(this.scheduleExpression, reportingDataExportTopicDataExportNotification.scheduleExpression);
+            Objects.equals(this.runId, reportingDataExportTopicDataExportNotification.runId) &&
+            Objects.equals(this.name, reportingDataExportTopicDataExportNotification.name) &&
+            Objects.equals(this.status, reportingDataExportTopicDataExportNotification.status) &&
+            Objects.equals(this.exportFormat, reportingDataExportTopicDataExportNotification.exportFormat) &&
+            Objects.equals(this.downloadUrl, reportingDataExportTopicDataExportNotification.downloadUrl) &&
+            Objects.equals(this.viewType, reportingDataExportTopicDataExportNotification.viewType) &&
+            Objects.equals(this.exportErrorMessagesType, reportingDataExportTopicDataExportNotification.exportErrorMessagesType) &&
+            Objects.equals(this.read, reportingDataExportTopicDataExportNotification.read) &&
+            Objects.equals(this.createdDateTime, reportingDataExportTopicDataExportNotification.createdDateTime) &&
+            Objects.equals(this.modifiedDateTime, reportingDataExportTopicDataExportNotification.modifiedDateTime) &&
+            Objects.equals(this.percentageComplete, reportingDataExportTopicDataExportNotification.percentageComplete) &&
+            Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses) &&
+            Objects.equals(this.emailErrorDescription, reportingDataExportTopicDataExportNotification.emailErrorDescription) &&
+            Objects.equals(this.scheduleExpression, reportingDataExportTopicDataExportNotification.scheduleExpression);
   }
 
   @Override

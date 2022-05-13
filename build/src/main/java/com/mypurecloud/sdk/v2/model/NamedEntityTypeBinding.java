@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class NamedEntityTypeBinding  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    * The name that this named entity type is bound to.
    **/
@@ -59,7 +60,6 @@ public class NamedEntityTypeBinding  implements Serializable {
     this.entityName = entityName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class NamedEntityTypeBinding  implements Serializable {
       return false;
     }
     NamedEntityTypeBinding namedEntityTypeBinding = (NamedEntityTypeBinding) o;
+
     return Objects.equals(this.entityType, namedEntityTypeBinding.entityType) &&
-        Objects.equals(this.entityName, namedEntityTypeBinding.entityName);
+            Objects.equals(this.entityName, namedEntityTypeBinding.entityName);
   }
 
   @Override

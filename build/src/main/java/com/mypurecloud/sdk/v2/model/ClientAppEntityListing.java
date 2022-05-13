@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ClientAppEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ClientAppEntityListing  implements Serializable, PagedResource<Clie
       return false;
     }
     ClientAppEntityListing clientAppEntityListing = (ClientAppEntityListing) o;
+
     return Objects.equals(this.entities, clientAppEntityListing.entities) &&
-        Objects.equals(this.pageSize, clientAppEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, clientAppEntityListing.pageNumber) &&
-        Objects.equals(this.total, clientAppEntityListing.total) &&
-        Objects.equals(this.lastUri, clientAppEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, clientAppEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, clientAppEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, clientAppEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, clientAppEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, clientAppEntityListing.pageCount);
+            Objects.equals(this.pageSize, clientAppEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, clientAppEntityListing.pageNumber) &&
+            Objects.equals(this.total, clientAppEntityListing.total) &&
+            Objects.equals(this.lastUri, clientAppEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, clientAppEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, clientAppEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, clientAppEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, clientAppEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, clientAppEntityListing.pageCount);
   }
 
   @Override

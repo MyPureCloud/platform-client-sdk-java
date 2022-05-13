@@ -11,7 +11,7 @@ title: Edge
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The name of the entity. |  |
 | **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The resource&#39;s description. |  [optional] |
+| **description** | <!----><!---->**String**<!----> | The resource's description. |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | The current version of the resource. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -44,7 +44,7 @@ title: Edge
 | **physicalEdge** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **managed** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **edgeDeploymentType** | [**EdgeDeploymentTypeEnum**](#EdgeDeploymentTypeEnum)<!----> |  |  [optional] |
-| **callDrainingState** | [**CallDrainingStateEnum**](#CallDrainingStateEnum)<!----> | The current state of the Edge&#39;s call draining process before it can be safely rebooted or updated. |  [optional] |
+| **callDrainingState** | [**CallDrainingStateEnum**](#CallDrainingStateEnum)<!----> | The current state of the Edge's call draining process before it can be safely rebooted or updated. |  [optional] |
 | **conversationCount** | <!----><!---->**Integer**<!----> | The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0. |  [optional] |
 | **proxy** | <!----><!---->**String**<!----> | Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed. |  [optional] |
 | **offlineConfigCalled** | <!----><!---->**Boolean**<!----> | True if the offline edge configuration endpoint has been called for this edge. |  [optional] |
@@ -59,10 +59,10 @@ title: Edge
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -72,19 +72,19 @@ title: Edge
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NEW | &quot;NEW&quot; |
-| AWAITING_CONNECTION | &quot;AWAITING_CONNECTION&quot; |
-| AWAITING_FINGERPRINT | &quot;AWAITING_FINGERPRINT&quot; |
-| AWAITING_FINGERPRINT_VERIFICATION | &quot;AWAITING_FINGERPRINT_VERIFICATION&quot; |
-| FINGERPRINT_VERIFIED | &quot;FINGERPRINT_VERIFIED&quot; |
-| AWAITING_BOOTSTRAP | &quot;AWAITING_BOOTSTRAP&quot; |
-| ACTIVE | &quot;ACTIVE&quot; |
-| INACTIVE | &quot;INACTIVE&quot; |
-| RMA | &quot;RMA&quot; |
-| UNPAIRING | &quot;UNPAIRING&quot; |
-| UNPAIRED | &quot;UNPAIRED&quot; |
-| INITIALIZING | &quot;INITIALIZING&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEW | &quot;NEW&quot; | 
+| AWAITING_CONNECTION | &quot;AWAITING_CONNECTION&quot; | 
+| AWAITING_FINGERPRINT | &quot;AWAITING_FINGERPRINT&quot; | 
+| AWAITING_FINGERPRINT_VERIFICATION | &quot;AWAITING_FINGERPRINT_VERIFICATION&quot; | 
+| FINGERPRINT_VERIFIED | &quot;FINGERPRINT_VERIFIED&quot; | 
+| AWAITING_BOOTSTRAP | &quot;AWAITING_BOOTSTRAP&quot; | 
+| ACTIVE | &quot;ACTIVE&quot; | 
+| INACTIVE | &quot;INACTIVE&quot; | 
+| RMA | &quot;RMA&quot; | 
+| UNPAIRING | &quot;UNPAIRING&quot; | 
+| UNPAIRED | &quot;UNPAIRED&quot; | 
+| INITIALIZING | &quot;INITIALIZING&quot; | 
 {: class="table table-striped"}
 
 
@@ -94,9 +94,9 @@ title: Edge
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ONLINE | &quot;ONLINE&quot; |
-| OFFLINE | &quot;OFFLINE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONLINE | &quot;ONLINE&quot; | 
+| OFFLINE | &quot;OFFLINE&quot; | 
 {: class="table table-striped"}
 
 
@@ -106,12 +106,12 @@ title: Edge
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HARDWARE | &quot;HARDWARE&quot; |
-| LDM | &quot;LDM&quot; |
-| CDM | &quot;CDM&quot; |
-| CHS | &quot;CHS&quot; |
-| INVALID | &quot;INVALID&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HARDWARE | &quot;HARDWARE&quot; | 
+| LDM | &quot;LDM&quot; | 
+| CDM | &quot;CDM&quot; | 
+| CHS | &quot;CHS&quot; | 
+| INVALID | &quot;INVALID&quot; | 
 {: class="table table-striped"}
 
 
@@ -121,12 +121,12 @@ title: Edge
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;NONE&quot; |
-| WAIT | &quot;WAIT&quot; |
-| WAIT_TIMEOUT | &quot;WAIT_TIMEOUT&quot; |
-| TERMINATE | &quot;TERMINATE&quot; |
-| COMPLETE | &quot;COMPLETE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;NONE&quot; | 
+| WAIT | &quot;WAIT&quot; | 
+| WAIT_TIMEOUT | &quot;WAIT_TIMEOUT&quot; | 
+| TERMINATE | &quot;TERMINATE&quot; | 
+| COMPLETE | &quot;COMPLETE&quot; | 
 {: class="table table-striped"}
 
 

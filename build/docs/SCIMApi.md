@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScimResourcetypes**](SCIMApi.html#getScimResourcetypes) | Get a list of resource types |
 | [**getScimSchema**](SCIMApi.html#getScimSchema) | Get a SCIM schema |
 | [**getScimSchemas**](SCIMApi.html#getScimSchemas) | Get a list of SCIM schemas |
-| [**getScimServiceproviderconfig**](SCIMApi.html#getScimServiceproviderconfig) | Get a service provider&#39;s configuration |
+| [**getScimServiceproviderconfig**](SCIMApi.html#getScimServiceproviderconfig) | Get a service provider's configuration |
 | [**getScimUser**](SCIMApi.html#getScimUser) | Get a user |
 | [**getScimUsers**](SCIMApi.html#getScimUsers) | Get a list of users |
 | [**getScimV2Group**](SCIMApi.html#getScimV2Group) | Get a group |
@@ -24,7 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScimV2Resourcetypes**](SCIMApi.html#getScimV2Resourcetypes) | Get a list of resource types |
 | [**getScimV2Schema**](SCIMApi.html#getScimV2Schema) | Get a SCIM schema |
 | [**getScimV2Schemas**](SCIMApi.html#getScimV2Schemas) | Get a list of SCIM schemas |
-| [**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | Get a service provider&#39;s configuration |
+| [**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | Get a service provider's configuration |
 | [**getScimV2User**](SCIMApi.html#getScimV2User) | Get a user |
 | [**getScimV2Users**](SCIMApi.html#getScimV2Users) | Get a list of users |
 | [**patchScimGroup**](SCIMApi.html#patchScimGroup) | Modify a group |
@@ -45,11 +45,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> [Empty](Empty.html) deleteScimUser(userId, ifMatch)
+> Empty deleteScimUser(userId, ifMatch)
 
 Delete a user
-
-
 
 Wraps DELETE /api/v2/scim/users/{userId}  
 
@@ -102,7 +100,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteScimV2User"></a>
 
@@ -110,11 +108,9 @@ try {
 
 
 
-> [Empty](Empty.html) deleteScimV2User(userId, ifMatch)
+> Empty deleteScimV2User(userId, ifMatch)
 
 Delete a user
-
-
 
 Wraps DELETE /api/v2/scim/v2/users/{userId}  
 
@@ -167,7 +163,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getScimGroup"></a>
 
@@ -178,8 +174,6 @@ try {
 > [ScimV2Group](ScimV2Group.html) getScimGroup(groupId, attributes, excludedAttributes, ifNoneMatch)
 
 Get a group
-
-
 
 Wraps GET /api/v2/scim/groups/{groupId}  
 
@@ -210,8 +204,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
 String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 try {
     ScimV2Group result = apiInstance.getScimGroup(groupId, attributes, excludedAttributes, ifNoneMatch);
@@ -248,8 +242,6 @@ try {
 
 Get a list of groups
 
-
-
 Wraps GET /api/v2/scim/groups  
 
 Requires ANY permissions: 
@@ -280,9 +272,9 @@ Configuration.setDefaultApiClient(apiClient);
 SCIMApi apiInstance = new SCIMApi();
 Integer startIndex = 1; // Integer | The 1-based index of the first query result.
 Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns \"totalResults\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \"excludedAttributes\" or \"attributes\" query parameters to exclude or only include secondary lookup values such as \"externalId\",  \"roles\", \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\", or \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\".
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
-String filter = "displayName eq groupName"; // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\", \"displayname eq Sales\".
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+String filter = displayName eq groupName; // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\", \"displayname eq Sales\".
 try {
     ScimGroupListResponse result = apiInstance.getScimGroups(startIndex, count, attributes, excludedAttributes, filter);
     System.out.println(result);
@@ -301,7 +293,7 @@ try {
 | **count** | **Integer**| The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \&quot;excludedAttributes\&quot; or \&quot;attributes\&quot; query parameters to exclude or only include secondary lookup values such as \&quot;externalId\&quot;,  \&quot;roles\&quot;, \&quot;urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\&quot;, or \&quot;urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\&quot;. | [optional] [default to 25] 
 | **attributes** | [**List&lt;String&gt;**](String.html)| Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
 | **excludedAttributes** | [**List&lt;String&gt;**](String.html)| Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
-| **filter** | **String**| Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;. | [optional] 
+| **filter** | **String**| Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;. | [optional] [default to null] 
 {: class="table-striped"}
 
 
@@ -318,8 +310,6 @@ try {
 > [ScimConfigResourceType](ScimConfigResourceType.html) getScimResourcetype(resourceType)
 
 Get a resource type
-
-
 
 Wraps GET /api/v2/scim/resourcetypes/{resourceType}  
 
@@ -381,8 +371,6 @@ try {
 
 Get a list of resource types
 
-
-
 Wraps GET /api/v2/scim/resourcetypes  
 
 Requires NO permissions: 
@@ -438,8 +426,6 @@ This endpoint does not require any parameters.
 > [ScimV2SchemaDefinition](ScimV2SchemaDefinition.html) getScimSchema(schemaId)
 
 Get a SCIM schema
-
-
 
 Wraps GET /api/v2/scim/schemas/{schemaId}  
 
@@ -501,8 +487,6 @@ try {
 
 Get a list of SCIM schemas
 
-
-
 Wraps GET /api/v2/scim/schemas  
 
 Requires NO permissions: 
@@ -530,7 +514,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String filter = "displayName eq groupName"; // String | Filtered results are invalid and return 403 Unauthorized.
+String filter = displayName eq groupName; // String | Filtered results are invalid and return 403 Unauthorized.
 try {
     ScimV2SchemaListResponse result = apiInstance.getScimSchemas(filter);
     System.out.println(result);
@@ -545,7 +529,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| Filtered results are invalid and return 403 Unauthorized. | [optional] 
+| **filter** | **String**| Filtered results are invalid and return 403 Unauthorized. | [optional] [default to null] 
 {: class="table-striped"}
 
 
@@ -561,9 +545,7 @@ try {
 
 > [ScimServiceProviderConfig](ScimServiceProviderConfig.html) getScimServiceproviderconfig(ifNoneMatch)
 
-Get a service provider&#39;s configuration
-
-
+Get a service provider's configuration
 
 Wraps GET /api/v2/scim/serviceproviderconfig  
 
@@ -625,8 +607,6 @@ try {
 
 Get a user
 
-
-
 Wraps GET /api/v2/scim/users/{userId}  
 
 Requires NO permissions: 
@@ -655,8 +635,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
 String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 try {
     ScimV2User result = apiInstance.getScimUser(userId, attributes, excludedAttributes, ifNoneMatch);
@@ -693,7 +673,7 @@ try {
 
 Get a list of users
 
-To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
 Wraps GET /api/v2/scim/users  
 
@@ -724,8 +704,8 @@ Configuration.setDefaultApiClient(apiClient);
 SCIMApi apiInstance = new SCIMApi();
 Integer startIndex = 1; // Integer | The 1-based index of the first query result.
 Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns \"totalResults\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \"excludedAttributes\" or \"attributes\" query parameters to exclude or only include secondary lookup values such as \"externalId\",  \"roles\", \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\", or \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\".
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 String filter = "filter_example"; // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\", \"employeeNumber eq 9876543210\".
 try {
     ScimUserListResponse result = apiInstance.getScimUsers(startIndex, count, attributes, excludedAttributes, filter);
@@ -763,8 +743,6 @@ try {
 
 Get a group
 
-
-
 Wraps GET /api/v2/scim/v2/groups/{groupId}  
 
 Requires ANY permissions: 
@@ -794,8 +772,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
 String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 try {
     ScimV2Group result = apiInstance.getScimV2Group(groupId, attributes, excludedAttributes, ifNoneMatch);
@@ -832,8 +810,6 @@ try {
 
 Get a list of groups
 
-
-
 Wraps GET /api/v2/scim/v2/groups  
 
 Requires ANY permissions: 
@@ -862,11 +838,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String filter = "displayName eq groupName"; // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\", \"displayname eq Sales\".
+String filter = displayName eq groupName; // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\", \"displayname eq Sales\".
 Integer startIndex = 1; // Integer | The 1-based index of the first query result.
 Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns \"totalResults\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \"excludedAttributes\" or \"attributes\" query parameters to exclude or only include secondary lookup values such as \"externalId\",  \"roles\", \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\", or \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\".
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 try {
     ScimGroupListResponse result = apiInstance.getScimV2Groups(filter, startIndex, count, attributes, excludedAttributes);
     System.out.println(result);
@@ -881,7 +857,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;. | 
+| **filter** | **String**| Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;. | [default to null] 
 | **startIndex** | **Integer**| The 1-based index of the first query result. | [optional] [default to 1] 
 | **count** | **Integer**| The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \&quot;excludedAttributes\&quot; or \&quot;attributes\&quot; query parameters to exclude or only include secondary lookup values such as \&quot;externalId\&quot;,  \&quot;roles\&quot;, \&quot;urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\&quot;, or \&quot;urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\&quot;. | [optional] [default to 25] 
 | **attributes** | [**List&lt;String&gt;**](String.html)| Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
@@ -902,8 +878,6 @@ try {
 > [ScimConfigResourceType](ScimConfigResourceType.html) getScimV2Resourcetype(resourceType)
 
 Get a resource type
-
-
 
 Wraps GET /api/v2/scim/v2/resourcetypes/{resourceType}  
 
@@ -965,8 +939,6 @@ try {
 
 Get a list of resource types
 
-
-
 Wraps GET /api/v2/scim/v2/resourcetypes  
 
 Requires NO permissions: 
@@ -1022,8 +994,6 @@ This endpoint does not require any parameters.
 > [ScimV2SchemaDefinition](ScimV2SchemaDefinition.html) getScimV2Schema(schemaId)
 
 Get a SCIM schema
-
-
 
 Wraps GET /api/v2/scim/v2/schemas/{schemaId}  
 
@@ -1085,8 +1055,6 @@ try {
 
 Get a list of SCIM schemas
 
-
-
 Wraps GET /api/v2/scim/v2/schemas  
 
 Requires NO permissions: 
@@ -1114,7 +1082,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String filter = "displayName eq groupName"; // String | Filtered results are invalid and return 403 Unauthorized.
+String filter = displayName eq groupName; // String | Filtered results are invalid and return 403 Unauthorized.
 try {
     ScimV2SchemaListResponse result = apiInstance.getScimV2Schemas(filter);
     System.out.println(result);
@@ -1129,7 +1097,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| Filtered results are invalid and return 403 Unauthorized. | [optional] 
+| **filter** | **String**| Filtered results are invalid and return 403 Unauthorized. | [optional] [default to null] 
 {: class="table-striped"}
 
 
@@ -1145,9 +1113,7 @@ try {
 
 > [ScimServiceProviderConfig](ScimServiceProviderConfig.html) getScimV2Serviceproviderconfig(ifNoneMatch)
 
-Get a service provider&#39;s configuration
-
-
+Get a service provider's configuration
 
 Wraps GET /api/v2/scim/v2/serviceproviderconfig  
 
@@ -1209,8 +1175,6 @@ try {
 
 Get a user
 
-
-
 Wraps GET /api/v2/scim/v2/users/{userId}  
 
 Requires NO permissions: 
@@ -1239,8 +1203,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
 String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 try {
     ScimV2User result = apiInstance.getScimV2User(userId, attributes, excludedAttributes, ifNoneMatch);
@@ -1277,7 +1241,7 @@ try {
 
 Get a list of users
 
-To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
 Wraps GET /api/v2/scim/v2/users  
 
@@ -1308,8 +1272,8 @@ Configuration.setDefaultApiClient(apiClient);
 SCIMApi apiInstance = new SCIMApi();
 Integer startIndex = 1; // Integer | The 1-based index of the first query result.
 Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns \"totalResults\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \"excludedAttributes\" or \"attributes\" query parameters to exclude or only include secondary lookup values such as \"externalId\",  \"roles\", \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\", or \"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\".
-List<String> attributes = Arrays.asList("attributes_example"); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
-List<String> excludedAttributes = Arrays.asList("excludedAttributes_example"); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns the \"id\", \"userName\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 String filter = "filter_example"; // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\", \"employeeNumber eq 9876543210\".
 try {
     ScimUserListResponse result = apiInstance.getScimV2Users(startIndex, count, attributes, excludedAttributes, filter);
@@ -1346,8 +1310,6 @@ try {
 > [ScimV2Group](ScimV2Group.html) patchScimGroup(groupId, body, ifMatch)
 
 Modify a group
-
-
 
 Wraps PATCH /api/v2/scim/groups/{groupId}  
 
@@ -1413,8 +1375,6 @@ try {
 > [ScimV2User](ScimV2User.html) patchScimUser(userId, body, ifMatch)
 
 Modify a user
-
-
 
 Wraps PATCH /api/v2/scim/users/{userId}  
 
@@ -1486,8 +1446,6 @@ try {
 
 Modify a group
 
-
-
 Wraps PATCH /api/v2/scim/v2/groups/{groupId}  
 
 Requires ANY permissions: 
@@ -1552,8 +1510,6 @@ try {
 > [ScimV2User](ScimV2User.html) patchScimV2User(userId, body, ifMatch)
 
 Modify a user
-
-
 
 Wraps PATCH /api/v2/scim/v2/users/{userId}  
 
@@ -1625,8 +1581,6 @@ try {
 
 Create a user
 
-
-
 Wraps POST /api/v2/scim/users  
 
 Requires ANY permissions: 
@@ -1691,8 +1645,6 @@ try {
 > [ScimV2User](ScimV2User.html) postScimV2Users(body)
 
 Create a user
-
-
 
 Wraps POST /api/v2/scim/v2/users  
 
@@ -1759,8 +1711,6 @@ try {
 
 Replace a group
 
-
-
 Wraps PUT /api/v2/scim/groups/{groupId}  
 
 Requires ANY permissions: 
@@ -1825,8 +1775,6 @@ try {
 > [ScimV2User](ScimV2User.html) putScimUser(userId, body, ifMatch)
 
 Replace a user
-
-
 
 Wraps PUT /api/v2/scim/users/{userId}  
 
@@ -1898,8 +1846,6 @@ try {
 
 Replace a group
 
-
-
 Wraps PUT /api/v2/scim/v2/groups/{groupId}  
 
 Requires ANY permissions: 
@@ -1964,8 +1910,6 @@ try {
 > [ScimV2User](ScimV2User.html) putScimV2User(userId, body, ifMatch)
 
 Replace a user
-
-
 
 Wraps PUT /api/v2/scim/v2/users/{userId}  
 

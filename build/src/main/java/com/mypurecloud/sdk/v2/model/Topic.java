@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class Topic  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Topic name(String name) {
@@ -166,7 +167,7 @@ public class Topic  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Topic description(String description) {
@@ -183,7 +184,7 @@ public class Topic  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public Topic published(Boolean published) {
@@ -200,7 +201,7 @@ public class Topic  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    **/
   public Topic strictness(StrictnessEnum strictness) {
@@ -217,7 +218,7 @@ public class Topic  implements Serializable {
     this.strictness = strictness;
   }
 
-  
+
   /**
    **/
   public Topic programs(List<BaseProgramEntity> programs) {
@@ -234,7 +235,7 @@ public class Topic  implements Serializable {
     this.programs = programs;
   }
 
-  
+
   /**
    **/
   public Topic tags(List<String> tags) {
@@ -251,7 +252,7 @@ public class Topic  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public Topic dialect(String dialect) {
@@ -268,7 +269,7 @@ public class Topic  implements Serializable {
     this.dialect = dialect;
   }
 
-  
+
   /**
    **/
   public Topic participants(ParticipantsEnum participants) {
@@ -285,7 +286,7 @@ public class Topic  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public Topic phrases(List<Phrase> phrases) {
@@ -302,7 +303,7 @@ public class Topic  implements Serializable {
     this.phrases = phrases;
   }
 
-  
+
   /**
    **/
   public Topic modifiedBy(AddressableEntityRef modifiedBy) {
@@ -319,7 +320,7 @@ public class Topic  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -337,7 +338,7 @@ public class Topic  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public Topic publishedBy(AddressableEntityRef publishedBy) {
@@ -354,7 +355,7 @@ public class Topic  implements Serializable {
     this.publishedBy = publishedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -372,14 +373,13 @@ public class Topic  implements Serializable {
     this.datePublished = datePublished;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -390,21 +390,22 @@ public class Topic  implements Serializable {
       return false;
     }
     Topic topic = (Topic) o;
+
     return Objects.equals(this.id, topic.id) &&
-        Objects.equals(this.name, topic.name) &&
-        Objects.equals(this.description, topic.description) &&
-        Objects.equals(this.published, topic.published) &&
-        Objects.equals(this.strictness, topic.strictness) &&
-        Objects.equals(this.programs, topic.programs) &&
-        Objects.equals(this.tags, topic.tags) &&
-        Objects.equals(this.dialect, topic.dialect) &&
-        Objects.equals(this.participants, topic.participants) &&
-        Objects.equals(this.phrases, topic.phrases) &&
-        Objects.equals(this.modifiedBy, topic.modifiedBy) &&
-        Objects.equals(this.dateModified, topic.dateModified) &&
-        Objects.equals(this.publishedBy, topic.publishedBy) &&
-        Objects.equals(this.datePublished, topic.datePublished) &&
-        Objects.equals(this.selfUri, topic.selfUri);
+            Objects.equals(this.name, topic.name) &&
+            Objects.equals(this.description, topic.description) &&
+            Objects.equals(this.published, topic.published) &&
+            Objects.equals(this.strictness, topic.strictness) &&
+            Objects.equals(this.programs, topic.programs) &&
+            Objects.equals(this.tags, topic.tags) &&
+            Objects.equals(this.dialect, topic.dialect) &&
+            Objects.equals(this.participants, topic.participants) &&
+            Objects.equals(this.phrases, topic.phrases) &&
+            Objects.equals(this.modifiedBy, topic.modifiedBy) &&
+            Objects.equals(this.dateModified, topic.dateModified) &&
+            Objects.equals(this.publishedBy, topic.publishedBy) &&
+            Objects.equals(this.datePublished, topic.datePublished) &&
+            Objects.equals(this.selfUri, topic.selfUri);
   }
 
   @Override

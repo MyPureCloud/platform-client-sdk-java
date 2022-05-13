@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -239,7 +240,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    * The connection state of this communication.
    **/
@@ -257,7 +258,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.state = state;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -275,7 +276,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.held = held;
   }
 
-  
+
   /**
    * Detailed information about an error response.
    **/
@@ -293,7 +294,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The source provider of the email.
    **/
@@ -311,7 +312,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -329,7 +330,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -347,7 +348,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.peerId = peerId;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -365,7 +366,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
    **/
@@ -383,7 +384,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -401,7 +402,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -419,7 +420,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -437,7 +438,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -455,7 +456,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The messages sent on this communication channel.
    **/
@@ -473,7 +474,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.messages = messages;
   }
 
-  
+
   /**
    * the messages transcript file uri.
    **/
@@ -491,7 +492,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.messagesTranscriptUri = messagesTranscriptUri;
   }
 
-  
+
   /**
    * Indicates the type of message platform from which the message originated.
    **/
@@ -509,7 +510,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.type = type;
   }
 
-  
+
   /**
    * Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
    **/
@@ -527,7 +528,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.recipientCountry = recipientCountry;
   }
 
-  
+
   /**
    * The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
    **/
@@ -545,7 +546,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.recipientType = recipientType;
   }
 
-  
+
   /**
    * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
    **/
@@ -563,7 +564,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -581,7 +582,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -599,7 +600,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -617,7 +618,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
@@ -635,7 +636,6 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     this.agentAssistantId = agentAssistantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -646,29 +646,30 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
       return false;
     }
     QueueConversationSocialExpressionEventTopicMessage queueConversationSocialExpressionEventTopicMessage = (QueueConversationSocialExpressionEventTopicMessage) o;
+
     return Objects.equals(this.id, queueConversationSocialExpressionEventTopicMessage.id) &&
-        Objects.equals(this.state, queueConversationSocialExpressionEventTopicMessage.state) &&
-        Objects.equals(this.held, queueConversationSocialExpressionEventTopicMessage.held) &&
-        Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicMessage.errorInfo) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicMessage.provider) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicMessage.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicMessage.peerId) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicMessage.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicMessage.startHoldTime) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicMessage.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicMessage.disconnectedTime) &&
-        Objects.equals(this.toAddress, queueConversationSocialExpressionEventTopicMessage.toAddress) &&
-        Objects.equals(this.fromAddress, queueConversationSocialExpressionEventTopicMessage.fromAddress) &&
-        Objects.equals(this.messages, queueConversationSocialExpressionEventTopicMessage.messages) &&
-        Objects.equals(this.messagesTranscriptUri, queueConversationSocialExpressionEventTopicMessage.messagesTranscriptUri) &&
-        Objects.equals(this.type, queueConversationSocialExpressionEventTopicMessage.type) &&
-        Objects.equals(this.recipientCountry, queueConversationSocialExpressionEventTopicMessage.recipientCountry) &&
-        Objects.equals(this.recipientType, queueConversationSocialExpressionEventTopicMessage.recipientType) &&
-        Objects.equals(this.journeyContext, queueConversationSocialExpressionEventTopicMessage.journeyContext) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicMessage.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicMessage.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicMessage.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicMessage.agentAssistantId);
+            Objects.equals(this.state, queueConversationSocialExpressionEventTopicMessage.state) &&
+            Objects.equals(this.held, queueConversationSocialExpressionEventTopicMessage.held) &&
+            Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicMessage.errorInfo) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicMessage.provider) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicMessage.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicMessage.peerId) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicMessage.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicMessage.startHoldTime) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicMessage.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicMessage.disconnectedTime) &&
+            Objects.equals(this.toAddress, queueConversationSocialExpressionEventTopicMessage.toAddress) &&
+            Objects.equals(this.fromAddress, queueConversationSocialExpressionEventTopicMessage.fromAddress) &&
+            Objects.equals(this.messages, queueConversationSocialExpressionEventTopicMessage.messages) &&
+            Objects.equals(this.messagesTranscriptUri, queueConversationSocialExpressionEventTopicMessage.messagesTranscriptUri) &&
+            Objects.equals(this.type, queueConversationSocialExpressionEventTopicMessage.type) &&
+            Objects.equals(this.recipientCountry, queueConversationSocialExpressionEventTopicMessage.recipientCountry) &&
+            Objects.equals(this.recipientType, queueConversationSocialExpressionEventTopicMessage.recipientType) &&
+            Objects.equals(this.journeyContext, queueConversationSocialExpressionEventTopicMessage.journeyContext) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicMessage.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicMessage.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicMessage.afterCallWorkRequired) &&
+            Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicMessage.agentAssistantId);
   }
 
   @Override

@@ -19,11 +19,11 @@ title: SupportCenterScreen
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HOME | &quot;Home&quot; |
-| CATEGORY | &quot;Category&quot; |
-| SEARCHRESULTS | &quot;SearchResults&quot; |
-| ARTICLE | &quot;Article&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HOME | &quot;Home&quot; | 
+| CATEGORY | &quot;Category&quot; | 
+| SEARCHRESULTS | &quot;SearchResults&quot; | 
+| ARTICLE | &quot;Article&quot; | 
 {: class="table table-striped"}
 
 

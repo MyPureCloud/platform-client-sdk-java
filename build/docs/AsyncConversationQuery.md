@@ -27,9 +27,9 @@ title: AsyncConversationQuery
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASC | &quot;asc&quot; |
-| DESC | &quot;desc&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASC | &quot;asc&quot; | 
+| DESC | &quot;desc&quot; | 
 {: class="table table-striped"}
 
 
@@ -39,11 +39,11 @@ title: AsyncConversationQuery
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CONVERSATIONSTART | &quot;conversationStart&quot; |
-| CONVERSATIONEND | &quot;conversationEnd&quot; |
-| SEGMENTSTART | &quot;segmentStart&quot; |
-| SEGMENTEND | &quot;segmentEnd&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CONVERSATIONSTART | &quot;conversationStart&quot; | 
+| CONVERSATIONEND | &quot;conversationEnd&quot; | 
+| SEGMENTSTART | &quot;segmentStart&quot; | 
+| SEGMENTEND | &quot;segmentEnd&quot; | 
 {: class="table table-striped"}
 
 

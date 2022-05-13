@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationButtonComponent;
@@ -48,7 +49,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
     this.title = title;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentGeneric description(String description) {
@@ -65,7 +66,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
     this.description = description;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentGeneric image(String image) {
@@ -82,7 +83,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
     this.image = image;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentGeneric video(String video) {
@@ -99,7 +100,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
     this.video = video;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentGeneric actions(V2ConversationMessageTypingEventForUserTopicConversationContentActions actions) {
@@ -116,7 +117,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
     this.actions = actions;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentGeneric components(List<V2ConversationMessageTypingEventForUserTopicConversationButtonComponent> components) {
@@ -133,7 +134,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
     this.components = components;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentGene
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentGeneric v2ConversationMessageTypingEventForUserTopicConversationContentGeneric = (V2ConversationMessageTypingEventForUserTopicConversationContentGeneric) o;
+
     return Objects.equals(this.title, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.title) &&
-        Objects.equals(this.description, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.description) &&
-        Objects.equals(this.image, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.image) &&
-        Objects.equals(this.video, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.video) &&
-        Objects.equals(this.actions, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.actions) &&
-        Objects.equals(this.components, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.components);
+            Objects.equals(this.description, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.description) &&
+            Objects.equals(this.image, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.image) &&
+            Objects.equals(this.video, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.video) &&
+            Objects.equals(this.actions, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.actions) &&
+            Objects.equals(this.components, v2ConversationMessageTypingEventForUserTopicConversationContentGeneric.components);
   }
 
   @Override

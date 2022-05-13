@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | Get the list of enabled products |
 | [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | Get a single organization role. |
 | [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | Get an org role to default role comparison |
-| [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | Get the subjects&#39; granted divisions in the specified role. |
+| [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | Get the subjects' granted divisions in the specified role. |
 | [**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | Get a list of the users in a specified role. |
 | [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
 | [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
@@ -39,14 +39,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | Restores all default roles |
 | [**postAuthorizationSubjectBulkadd**](AuthorizationApi.html#postAuthorizationSubjectBulkadd) | Bulk-grant roles and divisions to a subject. |
 | [**postAuthorizationSubjectBulkremove**](AuthorizationApi.html#postAuthorizationSubjectBulkremove) | Bulk-remove grants from a subject. |
-| [**postAuthorizationSubjectBulkreplace**](AuthorizationApi.html#postAuthorizationSubjectBulkreplace) | Replace subject&#39;s roles and divisions with the exact list supplied in the request. |
+| [**postAuthorizationSubjectBulkreplace**](AuthorizationApi.html#postAuthorizationSubjectBulkreplace) | Replace subject's roles and divisions with the exact list supplied in the request. |
 | [**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
 | [**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | Update a division. |
 | [**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | Update an organization role. |
 | [**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | Sets the users for the role |
 | [**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | Removes the users from the role |
 | [**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | Restore specified default roles |
-| [**putUserRoles**](AuthorizationApi.html#putUserRoles) | Sets the user&#39;s roles |
+| [**putUserRoles**](AuthorizationApi.html#putUserRoles) | Sets the user's roles |
 {: class="table-striped"}
 
 <a name="deleteAuthorizationDivision"></a>
@@ -58,8 +58,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteAuthorizationDivision(divisionId, force)
 
 Delete a division.
-
-
 
 Wraps DELETE /api/v2/authorization/divisions/{divisionId}  
 
@@ -123,8 +121,6 @@ null (empty response body)
 
 Delete an organization role.
 
-
-
 Wraps DELETE /api/v2/authorization/roles/{roleId}  
 
 Requires ANY permissions: 
@@ -184,8 +180,6 @@ null (empty response body)
 > Void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 Delete a grant of a role in a division
-
-
 
 Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
 
@@ -251,8 +245,6 @@ null (empty response body)
 
 Returns an authorization division.
 
-
-
 Wraps GET /api/v2/authorization/divisions/{divisionId}  
 
 Requires NO permissions: 
@@ -297,7 +289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false] 
+| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -382,7 +374,7 @@ try {
 
 Retrieve a list of all divisions defined for the organization
 
-Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 
 Wraps GET /api/v2/authorization/divisions  
 
@@ -414,11 +406,11 @@ AuthorizationApi apiInstance = new AuthorizationApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean objectCount = false; // Boolean | Include the count of objects contained in the division
-List<String> id = Arrays.asList("id_example"); // List<String> | Optionally request specific divisions by their IDs
+List<String> id = Arrays.asList(null); // List<String> | Optionally request specific divisions by their IDs
 String name = "name_example"; // String | Search term to filter by division name
 try {
     AuthzDivisionEntityListing result = apiInstance.getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name);
@@ -517,8 +509,6 @@ This endpoint does not require any parameters.
 > Integer getAuthorizationDivisionsLimit()
 
 Returns the maximum allowed number of divisions.
-
-
 
 Wraps GET /api/v2/authorization/divisions/limit  
 
@@ -639,8 +629,6 @@ try {
 > [DivsPermittedEntityListing](DivsPermittedEntityListing.html) getAuthorizationDivisionspermittedPagedMe(permission, pageNumber, pageSize)
 
 Returns which divisions the current user has the given permission in.
-
-
 
 Wraps GET /api/v2/authorization/divisionspermitted/paged/me  
 
@@ -931,7 +919,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
 try {
     DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, expand);
     System.out.println(result);
@@ -1028,7 +1016,7 @@ try {
 
 > [SubjectDivisionGrantsEntityListing](SubjectDivisionGrantsEntityListing.html) getAuthorizationRoleSubjectgrants(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
-Get the subjects&#39; granted divisions in the specified role.
+Get the subjects' granted divisions in the specified role.
 
 Includes the divisions for which the subject has a grant.
 
@@ -1064,7 +1052,7 @@ String roleId = "roleId_example"; // String | Role ID
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -1171,8 +1159,6 @@ try {
 
 Retrieve a list of all roles defined for the organization
 
-
-
 Wraps GET /api/v2/authorization/roles  
 
 Requires ANY permissions: 
@@ -1204,14 +1190,14 @@ AuthorizationApi apiInstance = new AuthorizationApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String name = "name_example"; // String | 
-List<String> permission = Arrays.asList("permission_example"); // List<String> | 
-List<String> defaultRoleId = Arrays.asList("defaultRoleId_example"); // List<String> | 
+List<String> permission = Arrays.asList(null); // List<String> | 
+List<String> defaultRoleId = Arrays.asList(null); // List<String> | 
 Boolean userCount = true; // Boolean | 
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 try {
     OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id);
     System.out.println(result);
@@ -1253,8 +1239,6 @@ try {
 > [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId)
 
 Returns a listing of roles and permissions for a user.
-
-
 
 Wraps GET /api/v2/authorization/subjects/{subjectId}  
 
@@ -1317,8 +1301,6 @@ try {
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
-
-
 Wraps GET /api/v2/authorization/subjects/me  
 
 Requires NO permissions: 
@@ -1371,11 +1353,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) getAuthorizationSubjectsRolecounts(id)
+> Map&lt;String, Object&gt; getAuthorizationSubjectsRolecounts(id)
 
 Get the count of roles granted to a list of subjects
-
-
 
 Wraps GET /api/v2/authorization/subjects/rolecounts  
 
@@ -1405,7 +1385,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 try {
     Map<String, Object> result = apiInstance.getAuthorizationSubjectsRolecounts(id);
     System.out.println(result);
@@ -1426,7 +1406,7 @@ try {
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="getUserRoles"></a>
 
@@ -1437,8 +1417,6 @@ try {
 > [UserAuthorization](UserAuthorization.html) getUserRoles(userId)
 
 Returns a listing of roles and permissions for a user.
-
-
 
 Wraps GET /api/v2/users/{userId}/roles  
 
@@ -1566,7 +1544,7 @@ try {
 
 Assign a list of objects to a division
 
-Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
 
 Wraps POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}  
 
@@ -1597,7 +1575,7 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String divisionId = "divisionId_example"; // String | Division ID
 String objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
-List<String> body = Arrays.asList(new List<String>()); // List<String> | Object Id List
+List<String> body = Arrays.asList(null); // List<String> | Object Id List
 try {
     apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body);
 } catch (ApiException e) {
@@ -1613,7 +1591,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
 | **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT 
-| **body** | **List&lt;String&gt;**| Object Id List | 
+| **body** | [**List&lt;String&gt;**](String.html)| Object Id List | 
 {: class="table-striped"}
 
 
@@ -1630,8 +1608,6 @@ null (empty response body)
 > [AuthzDivision](AuthzDivision.html) postAuthorizationDivisionRestore(divisionId, body)
 
 Recreate a previously deleted division.
-
-
 
 Wraps POST /api/v2/authorization/divisions/{divisionId}/restore  
 
@@ -1696,8 +1672,6 @@ try {
 
 Create a division.
 
-
-
 Wraps POST /api/v2/authorization/divisions  
 
 Requires ALL permissions: 
@@ -1759,8 +1733,6 @@ try {
 > Void postAuthorizationRole(roleId, body, subjectType)
 
 Bulk-grant subjects and divisions with an organization role.
-
-
 
 Wraps POST /api/v2/authorization/roles/{roleId}  
 
@@ -1893,8 +1865,6 @@ try {
 
 Create an organization role.
 
-
-
 Wraps POST /api/v2/authorization/roles  
 
 Requires ANY permissions: 
@@ -2019,8 +1989,6 @@ try {
 
 Bulk-grant roles and divisions to a subject.
 
-
-
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd  
 
 Requires ANY permissions: 
@@ -2085,8 +2053,6 @@ null (empty response body)
 
 Bulk-remove grants from a subject.
 
-
-
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove  
 
 Requires ANY permissions: 
@@ -2147,7 +2113,7 @@ null (empty response body)
 
 > Void postAuthorizationSubjectBulkreplace(subjectId, body, subjectType)
 
-Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+Replace subject's roles and divisions with the exact list supplied in the request.
 
 This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 
@@ -2216,8 +2182,6 @@ null (empty response body)
 
 Make a grant of a role in a division
 
-
-
 Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
 
 Requires ANY permissions: 
@@ -2283,8 +2247,6 @@ null (empty response body)
 > [AuthzDivision](AuthzDivision.html) putAuthorizationDivision(divisionId, body)
 
 Update a division.
-
-
 
 Wraps PUT /api/v2/authorization/divisions/{divisionId}  
 
@@ -2414,8 +2376,6 @@ try {
 
 Sets the users for the role
 
-
-
 Wraps PUT /api/v2/authorization/roles/{roleId}/users/add  
 
 Requires ANY permissions: 
@@ -2445,7 +2405,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | List of user IDs
+List<String> body = Arrays.asList(null); // List<String> | List of user IDs
 try {
     List<String> result = apiInstance.putAuthorizationRoleUsersAdd(roleId, body);
     System.out.println(result);
@@ -2461,7 +2421,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | **List&lt;String&gt;**| List of user IDs | 
+| **body** | [**List&lt;String&gt;**](String.html)| List of user IDs | 
 {: class="table-striped"}
 
 
@@ -2478,8 +2438,6 @@ try {
 > List&lt;String&gt; putAuthorizationRoleUsersRemove(roleId, body)
 
 Removes the users from the role
-
-
 
 Wraps PUT /api/v2/authorization/roles/{roleId}/users/remove  
 
@@ -2510,7 +2468,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | List of user IDs
+List<String> body = Arrays.asList(null); // List<String> | List of user IDs
 try {
     List<String> result = apiInstance.putAuthorizationRoleUsersRemove(roleId, body);
     System.out.println(result);
@@ -2526,7 +2484,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | **List&lt;String&gt;**| List of user IDs | 
+| **body** | [**List&lt;String&gt;**](String.html)| List of user IDs | 
 {: class="table-striped"}
 
 
@@ -2543,8 +2501,6 @@ try {
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) putAuthorizationRolesDefault(body)
 
 Restore specified default roles
-
-
 
 Wraps PUT /api/v2/authorization/roles/default  
 
@@ -2605,9 +2561,7 @@ try {
 
 > [UserAuthorization](UserAuthorization.html) putUserRoles(userId, body)
 
-Sets the user&#39;s roles
-
-
+Sets the user's roles
 
 Wraps PUT /api/v2/users/{userId}/roles  
 
@@ -2638,7 +2592,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String userId = "userId_example"; // String | User ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | List of roles
+List<String> body = Arrays.asList(null); // List<String> | List of roles
 try {
     UserAuthorization result = apiInstance.putUserRoles(userId, body);
     System.out.println(result);
@@ -2654,7 +2608,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | **List&lt;String&gt;**| List of roles | 
+| **body** | [**List&lt;String&gt;**](String.html)| List of roles | 
 {: class="table-striped"}
 
 

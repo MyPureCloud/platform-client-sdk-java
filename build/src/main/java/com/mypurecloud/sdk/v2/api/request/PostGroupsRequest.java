@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class PostGroupsRequest {
-    
+
 	private GroupCreate body;
 	public GroupCreate getBody() {
 		return this.body;
@@ -49,7 +48,7 @@ public class PostGroupsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -79,8 +78,8 @@ public class PostGroupsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/groups")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -91,12 +90,12 @@ public class PostGroupsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(GroupCreate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostGroupsRequest request;
@@ -105,20 +104,20 @@ public class PostGroupsRequest {
 			request = new PostGroupsRequest();
 		}
 
-		
+
 		public Builder withBody(GroupCreate body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(GroupCreate body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostGroupsRequest build() {
             

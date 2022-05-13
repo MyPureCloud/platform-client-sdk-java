@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class SkillsToRemove  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SkillsToRemove id(String id) {
@@ -58,7 +59,7 @@ public class SkillsToRemove  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public SkillsToRemove selfUri(String selfUri) {
@@ -75,7 +76,6 @@ public class SkillsToRemove  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class SkillsToRemove  implements Serializable {
       return false;
     }
     SkillsToRemove skillsToRemove = (SkillsToRemove) o;
+
     return Objects.equals(this.name, skillsToRemove.name) &&
-        Objects.equals(this.id, skillsToRemove.id) &&
-        Objects.equals(this.selfUri, skillsToRemove.selfUri);
+            Objects.equals(this.id, skillsToRemove.id) &&
+            Objects.equals(this.selfUri, skillsToRemove.selfUri);
   }
 
   @Override

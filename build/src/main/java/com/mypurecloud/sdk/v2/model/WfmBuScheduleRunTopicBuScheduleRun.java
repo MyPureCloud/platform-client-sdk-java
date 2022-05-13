@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -106,7 +107,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun percentComplete(BigDecimal percentComplete) {
@@ -123,7 +124,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.percentComplete = percentComplete;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun intradayRescheduling(Boolean intradayRescheduling) {
@@ -140,7 +141,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.intradayRescheduling = intradayRescheduling;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun state(StateEnum state) {
@@ -157,7 +158,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun weekCount(Integer weekCount) {
@@ -174,7 +175,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun schedule(WfmBuScheduleRunTopicBuScheduleReference schedule) {
@@ -191,7 +192,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun schedulingCanceledBy(WfmBuScheduleRunTopicUserReference schedulingCanceledBy) {
@@ -208,7 +209,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.schedulingCanceledBy = schedulingCanceledBy;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun schedulingCompletedTime(String schedulingCompletedTime) {
@@ -225,7 +226,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.schedulingCompletedTime = schedulingCompletedTime;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun messageCount(Integer messageCount) {
@@ -242,7 +243,7 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.messageCount = messageCount;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuScheduleRun messageSeverityCounts(List<WfmBuScheduleRunTopicSchedulerMessageSeverityCount> messageSeverityCounts) {
@@ -259,7 +260,6 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     this.messageSeverityCounts = messageSeverityCounts;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -270,16 +270,17 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
       return false;
     }
     WfmBuScheduleRunTopicBuScheduleRun wfmBuScheduleRunTopicBuScheduleRun = (WfmBuScheduleRunTopicBuScheduleRun) o;
+
     return Objects.equals(this.id, wfmBuScheduleRunTopicBuScheduleRun.id) &&
-        Objects.equals(this.percentComplete, wfmBuScheduleRunTopicBuScheduleRun.percentComplete) &&
-        Objects.equals(this.intradayRescheduling, wfmBuScheduleRunTopicBuScheduleRun.intradayRescheduling) &&
-        Objects.equals(this.state, wfmBuScheduleRunTopicBuScheduleRun.state) &&
-        Objects.equals(this.weekCount, wfmBuScheduleRunTopicBuScheduleRun.weekCount) &&
-        Objects.equals(this.schedule, wfmBuScheduleRunTopicBuScheduleRun.schedule) &&
-        Objects.equals(this.schedulingCanceledBy, wfmBuScheduleRunTopicBuScheduleRun.schedulingCanceledBy) &&
-        Objects.equals(this.schedulingCompletedTime, wfmBuScheduleRunTopicBuScheduleRun.schedulingCompletedTime) &&
-        Objects.equals(this.messageCount, wfmBuScheduleRunTopicBuScheduleRun.messageCount) &&
-        Objects.equals(this.messageSeverityCounts, wfmBuScheduleRunTopicBuScheduleRun.messageSeverityCounts);
+            Objects.equals(this.percentComplete, wfmBuScheduleRunTopicBuScheduleRun.percentComplete) &&
+            Objects.equals(this.intradayRescheduling, wfmBuScheduleRunTopicBuScheduleRun.intradayRescheduling) &&
+            Objects.equals(this.state, wfmBuScheduleRunTopicBuScheduleRun.state) &&
+            Objects.equals(this.weekCount, wfmBuScheduleRunTopicBuScheduleRun.weekCount) &&
+            Objects.equals(this.schedule, wfmBuScheduleRunTopicBuScheduleRun.schedule) &&
+            Objects.equals(this.schedulingCanceledBy, wfmBuScheduleRunTopicBuScheduleRun.schedulingCanceledBy) &&
+            Objects.equals(this.schedulingCompletedTime, wfmBuScheduleRunTopicBuScheduleRun.schedulingCompletedTime) &&
+            Objects.equals(this.messageCount, wfmBuScheduleRunTopicBuScheduleRun.messageCount) &&
+            Objects.equals(this.messageSeverityCounts, wfmBuScheduleRunTopicBuScheduleRun.messageSeverityCounts);
   }
 
   @Override

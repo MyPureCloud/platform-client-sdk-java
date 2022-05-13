@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -174,7 +175,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -192,7 +193,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.id = id;
   }
 
-  
+
   /**
    * The source provider of the chat.
    **/
@@ -210,7 +211,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -228,7 +229,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -246,7 +247,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The room id for the chat.
    **/
@@ -264,7 +265,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.roomId = roomId;
   }
 
-  
+
   /**
    * The avatar for the chat (if available).
    **/
@@ -282,7 +283,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.avatarImageUrl = avatarImageUrl;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -300,7 +301,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.held = held;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -318,7 +319,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
    **/
@@ -336,7 +337,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -354,7 +355,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -372,7 +373,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicChat journeyContext(QueueConversationSocialExpressionEventTopicJourneyContext journeyContext) {
@@ -389,7 +390,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -407,7 +408,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -425,7 +426,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -443,7 +444,6 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -454,22 +454,23 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
       return false;
     }
     QueueConversationSocialExpressionEventTopicChat queueConversationSocialExpressionEventTopicChat = (QueueConversationSocialExpressionEventTopicChat) o;
+
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicChat.state) &&
-        Objects.equals(this.id, queueConversationSocialExpressionEventTopicChat.id) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicChat.provider) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicChat.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicChat.peerId) &&
-        Objects.equals(this.roomId, queueConversationSocialExpressionEventTopicChat.roomId) &&
-        Objects.equals(this.avatarImageUrl, queueConversationSocialExpressionEventTopicChat.avatarImageUrl) &&
-        Objects.equals(this.held, queueConversationSocialExpressionEventTopicChat.held) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicChat.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicChat.startHoldTime) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicChat.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicChat.disconnectedTime) &&
-        Objects.equals(this.journeyContext, queueConversationSocialExpressionEventTopicChat.journeyContext) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicChat.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicChat.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicChat.afterCallWorkRequired);
+            Objects.equals(this.id, queueConversationSocialExpressionEventTopicChat.id) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicChat.provider) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicChat.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicChat.peerId) &&
+            Objects.equals(this.roomId, queueConversationSocialExpressionEventTopicChat.roomId) &&
+            Objects.equals(this.avatarImageUrl, queueConversationSocialExpressionEventTopicChat.avatarImageUrl) &&
+            Objects.equals(this.held, queueConversationSocialExpressionEventTopicChat.held) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicChat.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicChat.startHoldTime) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicChat.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicChat.disconnectedTime) &&
+            Objects.equals(this.journeyContext, queueConversationSocialExpressionEventTopicChat.journeyContext) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicChat.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicChat.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicChat.afterCallWorkRequired);
   }
 
   @Override

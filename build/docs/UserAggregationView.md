@@ -21,10 +21,10 @@ title: UserAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TAGENTROUTINGSTATUS | &quot;tAgentRoutingStatus&quot; |
-| TORGANIZATIONPRESENCE | &quot;tOrganizationPresence&quot; |
-| TSYSTEMPRESENCE | &quot;tSystemPresence&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TAGENTROUTINGSTATUS | &quot;tAgentRoutingStatus&quot; | 
+| TORGANIZATIONPRESENCE | &quot;tOrganizationPresence&quot; | 
+| TSYSTEMPRESENCE | &quot;tSystemPresence&quot; | 
 {: class="table table-striped"}
 
 
@@ -34,8 +34,8 @@ title: UserAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANGEBOUND | &quot;rangeBound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANGEBOUND | &quot;rangeBound&quot; | 
 {: class="table table-striped"}
 
 

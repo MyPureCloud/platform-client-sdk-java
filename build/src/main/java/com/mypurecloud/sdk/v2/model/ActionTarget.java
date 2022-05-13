@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class ActionTarget  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ActionTarget name(String name) {
@@ -161,7 +162,7 @@ public class ActionTarget  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Additional user data associated with the target in key/value format.
    **/
@@ -179,7 +180,7 @@ public class ActionTarget  implements Serializable {
     this.userData = userData;
   }
 
-  
+
   /**
    * Supported media types of the target.
    **/
@@ -197,7 +198,7 @@ public class ActionTarget  implements Serializable {
     this.supportedMediaTypes = supportedMediaTypes;
   }
 
-  
+
   /**
    * Indicates the state of the target.
    **/
@@ -215,7 +216,7 @@ public class ActionTarget  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Description of the target.
    **/
@@ -233,7 +234,7 @@ public class ActionTarget  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level.
    **/
@@ -251,7 +252,7 @@ public class ActionTarget  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
-  
+
   /**
    * Indicates the non-default short abandon threshold
    **/
@@ -269,14 +270,14 @@ public class ActionTarget  implements Serializable {
     this.shortAbandonThreshold = shortAbandonThreshold;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * The date the target was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -294,7 +295,7 @@ public class ActionTarget  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * The date the target was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -312,7 +313,6 @@ public class ActionTarget  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -323,17 +323,18 @@ public class ActionTarget  implements Serializable {
       return false;
     }
     ActionTarget actionTarget = (ActionTarget) o;
+
     return Objects.equals(this.id, actionTarget.id) &&
-        Objects.equals(this.name, actionTarget.name) &&
-        Objects.equals(this.userData, actionTarget.userData) &&
-        Objects.equals(this.supportedMediaTypes, actionTarget.supportedMediaTypes) &&
-        Objects.equals(this.state, actionTarget.state) &&
-        Objects.equals(this.description, actionTarget.description) &&
-        Objects.equals(this.serviceLevel, actionTarget.serviceLevel) &&
-        Objects.equals(this.shortAbandonThreshold, actionTarget.shortAbandonThreshold) &&
-        Objects.equals(this.selfUri, actionTarget.selfUri) &&
-        Objects.equals(this.createdDate, actionTarget.createdDate) &&
-        Objects.equals(this.modifiedDate, actionTarget.modifiedDate);
+            Objects.equals(this.name, actionTarget.name) &&
+            Objects.equals(this.userData, actionTarget.userData) &&
+            Objects.equals(this.supportedMediaTypes, actionTarget.supportedMediaTypes) &&
+            Objects.equals(this.state, actionTarget.state) &&
+            Objects.equals(this.description, actionTarget.description) &&
+            Objects.equals(this.serviceLevel, actionTarget.serviceLevel) &&
+            Objects.equals(this.shortAbandonThreshold, actionTarget.shortAbandonThreshold) &&
+            Objects.equals(this.selfUri, actionTarget.selfUri) &&
+            Objects.equals(this.createdDate, actionTarget.createdDate) &&
+            Objects.equals(this.modifiedDate, actionTarget.modifiedDate);
   }
 
   @Override

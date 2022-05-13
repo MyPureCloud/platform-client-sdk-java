@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.Certificate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
-import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
-import com.mypurecloud.sdk.v2.model.Certificate;
+import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 
 public class GetTimezonesRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -42,7 +42,7 @@ public class GetTimezonesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -56,7 +56,7 @@ public class GetTimezonesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -80,11 +80,13 @@ public class GetTimezonesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/timezones")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -95,7 +97,7 @@ public class GetTimezonesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetTimezonesRequest request;
@@ -104,19 +106,19 @@ public class GetTimezonesRequest {
 			request = new GetTimezonesRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetTimezonesRequest build() {
             

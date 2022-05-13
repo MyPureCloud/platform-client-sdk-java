@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class LearningAssignmentAggregateQueryRequestClause  implements Serializa
     this.type = type;
   }
 
-  
+
   /**
    * The list of predicates used to filter the data
    **/
@@ -110,7 +111,6 @@ public class LearningAssignmentAggregateQueryRequestClause  implements Serializa
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class LearningAssignmentAggregateQueryRequestClause  implements Serializa
       return false;
     }
     LearningAssignmentAggregateQueryRequestClause learningAssignmentAggregateQueryRequestClause = (LearningAssignmentAggregateQueryRequestClause) o;
+
     return Objects.equals(this.type, learningAssignmentAggregateQueryRequestClause.type) &&
-        Objects.equals(this.predicates, learningAssignmentAggregateQueryRequestClause.predicates);
+            Objects.equals(this.predicates, learningAssignmentAggregateQueryRequestClause.predicates);
   }
 
   @Override

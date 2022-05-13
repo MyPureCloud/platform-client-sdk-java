@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class BotVersionSummary  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The id of the bot.
    **/
@@ -63,7 +64,7 @@ public class BotVersionSummary  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * An optional description of the bot.
    **/
@@ -81,14 +82,14 @@ public class BotVersionSummary  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A system-generated string that contains metadata about this bot.")
   @JsonProperty("botCompositeTag")
   public String getBotCompositeTag() {
     return botCompositeTag;
   }
 
-  
+
   /**
    * The name of the version.
    **/
@@ -106,7 +107,6 @@ public class BotVersionSummary  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,11 +117,12 @@ public class BotVersionSummary  implements Serializable {
       return false;
     }
     BotVersionSummary botVersionSummary = (BotVersionSummary) o;
+
     return Objects.equals(this.name, botVersionSummary.name) &&
-        Objects.equals(this.id, botVersionSummary.id) &&
-        Objects.equals(this.description, botVersionSummary.description) &&
-        Objects.equals(this.botCompositeTag, botVersionSummary.botCompositeTag) &&
-        Objects.equals(this.version, botVersionSummary.version);
+            Objects.equals(this.id, botVersionSummary.id) &&
+            Objects.equals(this.description, botVersionSummary.description) &&
+            Objects.equals(this.botCompositeTag, botVersionSummary.botCompositeTag) &&
+            Objects.equals(this.version, botVersionSummary.version);
   }
 
   @Override

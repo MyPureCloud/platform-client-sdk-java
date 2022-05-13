@@ -20,12 +20,12 @@ title: KeyPerformanceIndicatorAssessment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| NOTSUPPORTED | &quot;NotSupported&quot; |
-| HIGH | &quot;High&quot; |
-| LOW | &quot;Low&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| NOTSUPPORTED | &quot;NotSupported&quot; | 
+| HIGH | &quot;High&quot; | 
+| LOW | &quot;Low&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

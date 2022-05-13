@@ -12,7 +12,7 @@ title: QueueConversationVideoEventTopicCall
 | **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
 | **recording** | <!----><!---->**Boolean**<!----> | True if this call is being recorded. |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | State of recording on this call. |  [optional] |
-| **muted** | <!----><!---->**Boolean**<!----> | True if this call is muted so that remote participants can&#39;t hear any audio from this end. |  [optional] |
+| **muted** | <!----><!---->**Boolean**<!----> | True if this call is muted so that remote participants can't hear any audio from this end. |  [optional] |
 | **confined** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears hold music. |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationVideoEventTopicErrorDetails**](QueueConversationVideoEventTopicErrorDetails.html)<!----> |  |  [optional] |
@@ -44,18 +44,18 @@ title: QueueConversationVideoEventTopicCall
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| DIALING | &quot;dialing&quot; |
-| CONTACTING | &quot;contacting&quot; |
-| OFFERING | &quot;offering&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
-| TERMINATED | &quot;terminated&quot; |
-| UPLOADING | &quot;uploading&quot; |
-| CONVERTING | &quot;converting&quot; |
-| TRANSMITTING | &quot;transmitting&quot; |
-| NONE | &quot;none&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| UPLOADING | &quot;uploading&quot; | 
+| CONVERTING | &quot;converting&quot; | 
+| TRANSMITTING | &quot;transmitting&quot; | 
+| NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 
 
@@ -65,10 +65,10 @@ title: QueueConversationVideoEventTopicCall
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;none&quot; |
-| ACTIVE | &quot;active&quot; |
-| PAUSED | &quot;paused&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;none&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| PAUSED | &quot;paused&quot; | 
 {: class="table table-striped"}
 
 
@@ -78,23 +78,23 @@ title: QueueConversationVideoEventTopicCall
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
-| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| SPAM | &quot;spam&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| SPAM | &quot;spam&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -104,9 +104,9 @@ title: QueueConversationVideoEventTopicCall
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OUTBOUND | &quot;outbound&quot; |
-| INBOUND | &quot;inbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
+| INBOUND | &quot;inbound&quot; | 
 {: class="table table-striped"}
 
 

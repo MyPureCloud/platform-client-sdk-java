@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
    **/
@@ -65,7 +65,7 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
    **/
@@ -83,7 +83,7 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The userIds to report on
    **/
@@ -101,7 +101,7 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
     this.userIds = userIds;
   }
 
-  
+
   /**
    * Whether user exceptions should be returned as part of the results
    **/
@@ -119,7 +119,6 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
     this.includeExceptions = includeExceptions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +129,12 @@ public class WfmHistoricalAdherenceQueryForUsers  implements Serializable {
       return false;
     }
     WfmHistoricalAdherenceQueryForUsers wfmHistoricalAdherenceQueryForUsers = (WfmHistoricalAdherenceQueryForUsers) o;
+
     return Objects.equals(this.startDate, wfmHistoricalAdherenceQueryForUsers.startDate) &&
-        Objects.equals(this.endDate, wfmHistoricalAdherenceQueryForUsers.endDate) &&
-        Objects.equals(this.timeZone, wfmHistoricalAdherenceQueryForUsers.timeZone) &&
-        Objects.equals(this.userIds, wfmHistoricalAdherenceQueryForUsers.userIds) &&
-        Objects.equals(this.includeExceptions, wfmHistoricalAdherenceQueryForUsers.includeExceptions);
+            Objects.equals(this.endDate, wfmHistoricalAdherenceQueryForUsers.endDate) &&
+            Objects.equals(this.timeZone, wfmHistoricalAdherenceQueryForUsers.timeZone) &&
+            Objects.equals(this.userIds, wfmHistoricalAdherenceQueryForUsers.userIds) &&
+            Objects.equals(this.includeExceptions, wfmHistoricalAdherenceQueryForUsers.includeExceptions);
   }
 
   @Override

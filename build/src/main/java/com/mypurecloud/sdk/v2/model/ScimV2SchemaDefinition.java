@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
@@ -38,35 +39,34 @@ public class ScimV2SchemaDefinition  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of the schema.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The description of the schema.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of service provider attributes.")
   @JsonProperty("attributes")
   public List<ScimV2SchemaAttribute> getAttributes() {
     return attributes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,11 +77,12 @@ public class ScimV2SchemaDefinition  implements Serializable {
       return false;
     }
     ScimV2SchemaDefinition scimV2SchemaDefinition = (ScimV2SchemaDefinition) o;
+
     return Objects.equals(this.id, scimV2SchemaDefinition.id) &&
-        Objects.equals(this.name, scimV2SchemaDefinition.name) &&
-        Objects.equals(this.description, scimV2SchemaDefinition.description) &&
-        Objects.equals(this.attributes, scimV2SchemaDefinition.attributes) &&
-        Objects.equals(this.meta, scimV2SchemaDefinition.meta);
+            Objects.equals(this.name, scimV2SchemaDefinition.name) &&
+            Objects.equals(this.description, scimV2SchemaDefinition.description) &&
+            Objects.equals(this.attributes, scimV2SchemaDefinition.attributes) &&
+            Objects.equals(this.meta, scimV2SchemaDefinition.meta);
   }
 
   @Override

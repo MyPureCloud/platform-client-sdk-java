@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -288,7 +289,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The connection state of this communication.
    **/
@@ -306,7 +307,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * True if this call is being recorded.
    **/
@@ -324,7 +325,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.recording = recording;
   }
 
-  
+
   /**
    * State of recording on this call.
    **/
@@ -342,7 +343,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    * True if this call is muted so that remote participants can't hear any audio from this end.
    **/
@@ -360,7 +361,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.muted = muted;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears hold music.
    **/
@@ -378,7 +379,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.confined = confined;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -396,7 +397,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicCall errorInfo(QueueConversationVideoEventTopicErrorDetails errorInfo) {
@@ -413,7 +414,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -431,7 +432,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the call was placed on hold in the cloud clock if the call is currently on hold.
    **/
@@ -449,7 +450,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * Whether a call is inbound or outbound.
    **/
@@ -467,7 +468,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * If call is a fax of a document in content management, the id of the document in content management.
    **/
@@ -485,7 +486,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.documentId = documentId;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicCall self(QueueConversationVideoEventTopicAddress self) {
@@ -502,7 +503,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.self = self;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -520,7 +521,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.other = other;
   }
 
-  
+
   /**
    * The source provider of the call.
    **/
@@ -538,7 +539,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -556,7 +557,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -574,7 +575,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -592,7 +593,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -610,7 +611,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * List of reasons that this call was disconnected. This will be set once the call disconnects.
    **/
@@ -628,7 +629,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.disconnectReasons = disconnectReasons;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicCall faxStatus(QueueConversationVideoEventTopicFaxStatus faxStatus) {
@@ -645,7 +646,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
-  
+
   /**
    * User to User Information (UUI) data managed by SIP session application.
    **/
@@ -663,7 +664,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.uuiData = uuiData;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the barge conference in the provider clock.
    **/
@@ -681,7 +682,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.bargedTime = bargedTime;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -699,7 +700,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicCall afterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
@@ -716,7 +717,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -734,7 +735,7 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
@@ -752,7 +753,6 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -763,33 +763,34 @@ public class QueueConversationVideoEventTopicCall  implements Serializable {
       return false;
     }
     QueueConversationVideoEventTopicCall queueConversationVideoEventTopicCall = (QueueConversationVideoEventTopicCall) o;
+
     return Objects.equals(this.id, queueConversationVideoEventTopicCall.id) &&
-        Objects.equals(this.state, queueConversationVideoEventTopicCall.state) &&
-        Objects.equals(this.recording, queueConversationVideoEventTopicCall.recording) &&
-        Objects.equals(this.recordingState, queueConversationVideoEventTopicCall.recordingState) &&
-        Objects.equals(this.muted, queueConversationVideoEventTopicCall.muted) &&
-        Objects.equals(this.confined, queueConversationVideoEventTopicCall.confined) &&
-        Objects.equals(this.held, queueConversationVideoEventTopicCall.held) &&
-        Objects.equals(this.errorInfo, queueConversationVideoEventTopicCall.errorInfo) &&
-        Objects.equals(this.disconnectType, queueConversationVideoEventTopicCall.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationVideoEventTopicCall.startHoldTime) &&
-        Objects.equals(this.direction, queueConversationVideoEventTopicCall.direction) &&
-        Objects.equals(this.documentId, queueConversationVideoEventTopicCall.documentId) &&
-        Objects.equals(this.self, queueConversationVideoEventTopicCall.self) &&
-        Objects.equals(this.other, queueConversationVideoEventTopicCall.other) &&
-        Objects.equals(this.provider, queueConversationVideoEventTopicCall.provider) &&
-        Objects.equals(this.scriptId, queueConversationVideoEventTopicCall.scriptId) &&
-        Objects.equals(this.peerId, queueConversationVideoEventTopicCall.peerId) &&
-        Objects.equals(this.connectedTime, queueConversationVideoEventTopicCall.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicCall.disconnectedTime) &&
-        Objects.equals(this.disconnectReasons, queueConversationVideoEventTopicCall.disconnectReasons) &&
-        Objects.equals(this.faxStatus, queueConversationVideoEventTopicCall.faxStatus) &&
-        Objects.equals(this.uuiData, queueConversationVideoEventTopicCall.uuiData) &&
-        Objects.equals(this.bargedTime, queueConversationVideoEventTopicCall.bargedTime) &&
-        Objects.equals(this.wrapup, queueConversationVideoEventTopicCall.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationVideoEventTopicCall.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCall.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, queueConversationVideoEventTopicCall.agentAssistantId);
+            Objects.equals(this.state, queueConversationVideoEventTopicCall.state) &&
+            Objects.equals(this.recording, queueConversationVideoEventTopicCall.recording) &&
+            Objects.equals(this.recordingState, queueConversationVideoEventTopicCall.recordingState) &&
+            Objects.equals(this.muted, queueConversationVideoEventTopicCall.muted) &&
+            Objects.equals(this.confined, queueConversationVideoEventTopicCall.confined) &&
+            Objects.equals(this.held, queueConversationVideoEventTopicCall.held) &&
+            Objects.equals(this.errorInfo, queueConversationVideoEventTopicCall.errorInfo) &&
+            Objects.equals(this.disconnectType, queueConversationVideoEventTopicCall.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationVideoEventTopicCall.startHoldTime) &&
+            Objects.equals(this.direction, queueConversationVideoEventTopicCall.direction) &&
+            Objects.equals(this.documentId, queueConversationVideoEventTopicCall.documentId) &&
+            Objects.equals(this.self, queueConversationVideoEventTopicCall.self) &&
+            Objects.equals(this.other, queueConversationVideoEventTopicCall.other) &&
+            Objects.equals(this.provider, queueConversationVideoEventTopicCall.provider) &&
+            Objects.equals(this.scriptId, queueConversationVideoEventTopicCall.scriptId) &&
+            Objects.equals(this.peerId, queueConversationVideoEventTopicCall.peerId) &&
+            Objects.equals(this.connectedTime, queueConversationVideoEventTopicCall.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicCall.disconnectedTime) &&
+            Objects.equals(this.disconnectReasons, queueConversationVideoEventTopicCall.disconnectReasons) &&
+            Objects.equals(this.faxStatus, queueConversationVideoEventTopicCall.faxStatus) &&
+            Objects.equals(this.uuiData, queueConversationVideoEventTopicCall.uuiData) &&
+            Objects.equals(this.bargedTime, queueConversationVideoEventTopicCall.bargedTime) &&
+            Objects.equals(this.wrapup, queueConversationVideoEventTopicCall.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationVideoEventTopicCall.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCall.afterCallWorkRequired) &&
+            Objects.equals(this.agentAssistantId, queueConversationVideoEventTopicCall.agentAssistantId);
   }
 
   @Override

@@ -20,36 +20,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class PutSpeechandtextanalyticsProgramMappingsRequest {
-    
+
 	private String programId;
 	public String getProgramId() {
 		return this.programId;
@@ -63,7 +63,7 @@ public class PutSpeechandtextanalyticsProgramMappingsRequest {
 	    this.setProgramId(programId);
 	    return this;
 	} 
-	
+
 	private ProgramMappingsRequest body;
 	public ProgramMappingsRequest getBody() {
 		return this.body;
@@ -77,7 +77,7 @@ public class PutSpeechandtextanalyticsProgramMappingsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,8 +114,8 @@ public class PutSpeechandtextanalyticsProgramMappingsRequest {
                 .withPathParameter("programId", programId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -126,12 +126,12 @@ public class PutSpeechandtextanalyticsProgramMappingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String programId, ProgramMappingsRequest body) {
 	    return new Builder()
 	            .withRequiredParams(programId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutSpeechandtextanalyticsProgramMappingsRequest request;
@@ -140,26 +140,26 @@ public class PutSpeechandtextanalyticsProgramMappingsRequest {
 			request = new PutSpeechandtextanalyticsProgramMappingsRequest();
 		}
 
-		
+
 		public Builder withProgramId(String programId) {
 			request.setProgramId(programId);
 			return this;
 		}
-		
+
 		public Builder withBody(ProgramMappingsRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String programId, ProgramMappingsRequest body) {
 			request.setProgramId(programId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutSpeechandtextanalyticsProgramMappingsRequest build() {
             

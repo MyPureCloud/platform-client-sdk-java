@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ObservationValue;
@@ -47,7 +48,7 @@ public class ObservationMetricData  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public ObservationMetricData qualifier(String qualifier) {
@@ -64,7 +65,7 @@ public class ObservationMetricData  implements Serializable {
     this.qualifier = qualifier;
   }
 
-  
+
   /**
    **/
   public ObservationMetricData stats(StatisticalSummary stats) {
@@ -81,7 +82,7 @@ public class ObservationMetricData  implements Serializable {
     this.stats = stats;
   }
 
-  
+
   /**
    * Flag for a truncated list of observations. If truncated, the first half of the list of observations will contain the oldest observations and the second half the newest observations.
    **/
@@ -99,7 +100,7 @@ public class ObservationMetricData  implements Serializable {
     this.truncated = truncated;
   }
 
-  
+
   /**
    * List of observations sorted by timestamp in ascending order. This list may be truncated.
    **/
@@ -117,7 +118,6 @@ public class ObservationMetricData  implements Serializable {
     this.observations = observations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class ObservationMetricData  implements Serializable {
       return false;
     }
     ObservationMetricData observationMetricData = (ObservationMetricData) o;
+
     return Objects.equals(this.metric, observationMetricData.metric) &&
-        Objects.equals(this.qualifier, observationMetricData.qualifier) &&
-        Objects.equals(this.stats, observationMetricData.stats) &&
-        Objects.equals(this.truncated, observationMetricData.truncated) &&
-        Objects.equals(this.observations, observationMetricData.observations);
+            Objects.equals(this.qualifier, observationMetricData.qualifier) &&
+            Objects.equals(this.stats, observationMetricData.stats) &&
+            Objects.equals(this.truncated, observationMetricData.truncated) &&
+            Objects.equals(this.observations, observationMetricData.observations);
   }
 
   @Override

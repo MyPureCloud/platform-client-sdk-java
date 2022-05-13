@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Status of the audit query execution request.
    **/
@@ -119,7 +120,7 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Start date and time of the audit query execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -137,7 +138,7 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -155,7 +156,7 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Filters for the audit query.
    **/
@@ -173,7 +174,7 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    * Sort parameter for the audit query.
    **/
@@ -191,7 +192,6 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
     this.sort = sort;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -202,12 +202,13 @@ public class QualityAuditQueryExecutionStatusResponse  implements Serializable {
       return false;
     }
     QualityAuditQueryExecutionStatusResponse qualityAuditQueryExecutionStatusResponse = (QualityAuditQueryExecutionStatusResponse) o;
+
     return Objects.equals(this.id, qualityAuditQueryExecutionStatusResponse.id) &&
-        Objects.equals(this.state, qualityAuditQueryExecutionStatusResponse.state) &&
-        Objects.equals(this.dateStart, qualityAuditQueryExecutionStatusResponse.dateStart) &&
-        Objects.equals(this.interval, qualityAuditQueryExecutionStatusResponse.interval) &&
-        Objects.equals(this.filters, qualityAuditQueryExecutionStatusResponse.filters) &&
-        Objects.equals(this.sort, qualityAuditQueryExecutionStatusResponse.sort);
+            Objects.equals(this.state, qualityAuditQueryExecutionStatusResponse.state) &&
+            Objects.equals(this.dateStart, qualityAuditQueryExecutionStatusResponse.dateStart) &&
+            Objects.equals(this.interval, qualityAuditQueryExecutionStatusResponse.interval) &&
+            Objects.equals(this.filters, qualityAuditQueryExecutionStatusResponse.filters) &&
+            Objects.equals(this.sort, qualityAuditQueryExecutionStatusResponse.sort);
   }
 
   @Override

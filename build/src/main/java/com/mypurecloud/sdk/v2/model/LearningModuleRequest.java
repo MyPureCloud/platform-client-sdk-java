@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class LearningModuleRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The description of learning module
    **/
@@ -119,7 +120,7 @@ public class LearningModuleRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The completion time of learning module in days
    **/
@@ -137,7 +138,7 @@ public class LearningModuleRequest  implements Serializable {
     this.completionTimeInDays = completionTimeInDays;
   }
 
-  
+
   /**
    * The list of inform steps in a learning module
    **/
@@ -155,7 +156,7 @@ public class LearningModuleRequest  implements Serializable {
     this.informSteps = informSteps;
   }
 
-  
+
   /**
    * The type for the learning module
    **/
@@ -173,7 +174,7 @@ public class LearningModuleRequest  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The assessment form for learning module
    **/
@@ -191,7 +192,7 @@ public class LearningModuleRequest  implements Serializable {
     this.assessmentForm = assessmentForm;
   }
 
-  
+
   /**
    * The cover art for the learning module
    **/
@@ -209,7 +210,6 @@ public class LearningModuleRequest  implements Serializable {
     this.coverArt = coverArt;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -220,13 +220,14 @@ public class LearningModuleRequest  implements Serializable {
       return false;
     }
     LearningModuleRequest learningModuleRequest = (LearningModuleRequest) o;
+
     return Objects.equals(this.name, learningModuleRequest.name) &&
-        Objects.equals(this.description, learningModuleRequest.description) &&
-        Objects.equals(this.completionTimeInDays, learningModuleRequest.completionTimeInDays) &&
-        Objects.equals(this.informSteps, learningModuleRequest.informSteps) &&
-        Objects.equals(this.type, learningModuleRequest.type) &&
-        Objects.equals(this.assessmentForm, learningModuleRequest.assessmentForm) &&
-        Objects.equals(this.coverArt, learningModuleRequest.coverArt);
+            Objects.equals(this.description, learningModuleRequest.description) &&
+            Objects.equals(this.completionTimeInDays, learningModuleRequest.completionTimeInDays) &&
+            Objects.equals(this.informSteps, learningModuleRequest.informSteps) &&
+            Objects.equals(this.type, learningModuleRequest.type) &&
+            Objects.equals(this.assessmentForm, learningModuleRequest.assessmentForm) &&
+            Objects.equals(this.coverArt, learningModuleRequest.coverArt);
   }
 
   @Override

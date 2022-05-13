@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,14 +90,13 @@ public class ConversationEventTyping  implements Serializable {
     this.type = type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The duration of the Typing event in milliseconds.")
   @JsonProperty("duration")
   public Long getDuration() {
     return duration;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,8 +107,9 @@ public class ConversationEventTyping  implements Serializable {
       return false;
     }
     ConversationEventTyping conversationEventTyping = (ConversationEventTyping) o;
+
     return Objects.equals(this.type, conversationEventTyping.type) &&
-        Objects.equals(this.duration, conversationEventTyping.duration);
+            Objects.equals(this.duration, conversationEventTyping.duration);
   }
 
   @Override

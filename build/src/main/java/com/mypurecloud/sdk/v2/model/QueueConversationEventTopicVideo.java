@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
-import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -88,7 +88,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
-  private QueueConversationEventTopicObject peerCount = null;
+  private Object peerCount = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -179,7 +179,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -197,7 +197,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.self = self;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -215,7 +215,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -233,7 +233,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * Indicates whether this participant has muted their outgoing audio.
    **/
@@ -251,7 +251,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.audioMuted = audioMuted;
   }
 
-  
+
   /**
    * Indicates whether this participant has muted/paused their outgoing video.
    **/
@@ -269,7 +269,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.videoMuted = videoMuted;
   }
 
-  
+
   /**
    * Indicates whether this participant is sharing their screen to the session.
    **/
@@ -287,25 +287,25 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.sharingScreen = sharingScreen;
   }
 
-  
+
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
-  public QueueConversationEventTopicVideo peerCount(QueueConversationEventTopicObject peerCount) {
+  public QueueConversationEventTopicVideo peerCount(Object peerCount) {
     this.peerCount = peerCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
   @JsonProperty("peerCount")
-  public QueueConversationEventTopicObject getPeerCount() {
+  public Object getPeerCount() {
     return peerCount;
   }
-  public void setPeerCount(QueueConversationEventTopicObject peerCount) {
+  public void setPeerCount(Object peerCount) {
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    * The media provider controlling the video.
    **/
@@ -323,7 +323,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -341,7 +341,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -359,7 +359,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -377,7 +377,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -395,7 +395,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -413,7 +413,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * List of media stream ids
    **/
@@ -431,7 +431,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.msids = msids;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -449,7 +449,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -467,7 +467,7 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -485,7 +485,6 @@ public class QueueConversationEventTopicVideo  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -496,24 +495,25 @@ public class QueueConversationEventTopicVideo  implements Serializable {
       return false;
     }
     QueueConversationEventTopicVideo queueConversationEventTopicVideo = (QueueConversationEventTopicVideo) o;
+
     return Objects.equals(this.state, queueConversationEventTopicVideo.state) &&
-        Objects.equals(this.self, queueConversationEventTopicVideo.self) &&
-        Objects.equals(this.id, queueConversationEventTopicVideo.id) &&
-        Objects.equals(this.context, queueConversationEventTopicVideo.context) &&
-        Objects.equals(this.audioMuted, queueConversationEventTopicVideo.audioMuted) &&
-        Objects.equals(this.videoMuted, queueConversationEventTopicVideo.videoMuted) &&
-        Objects.equals(this.sharingScreen, queueConversationEventTopicVideo.sharingScreen) &&
-        Objects.equals(this.peerCount, queueConversationEventTopicVideo.peerCount) &&
-        Objects.equals(this.provider, queueConversationEventTopicVideo.provider) &&
-        Objects.equals(this.scriptId, queueConversationEventTopicVideo.scriptId) &&
-        Objects.equals(this.peerId, queueConversationEventTopicVideo.peerId) &&
-        Objects.equals(this.disconnectType, queueConversationEventTopicVideo.disconnectType) &&
-        Objects.equals(this.connectedTime, queueConversationEventTopicVideo.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationEventTopicVideo.disconnectedTime) &&
-        Objects.equals(this.msids, queueConversationEventTopicVideo.msids) &&
-        Objects.equals(this.wrapup, queueConversationEventTopicVideo.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationEventTopicVideo.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicVideo.afterCallWorkRequired);
+            Objects.equals(this.self, queueConversationEventTopicVideo.self) &&
+            Objects.equals(this.id, queueConversationEventTopicVideo.id) &&
+            Objects.equals(this.context, queueConversationEventTopicVideo.context) &&
+            Objects.equals(this.audioMuted, queueConversationEventTopicVideo.audioMuted) &&
+            Objects.equals(this.videoMuted, queueConversationEventTopicVideo.videoMuted) &&
+            Objects.equals(this.sharingScreen, queueConversationEventTopicVideo.sharingScreen) &&
+            Objects.equals(this.peerCount, queueConversationEventTopicVideo.peerCount) &&
+            Objects.equals(this.provider, queueConversationEventTopicVideo.provider) &&
+            Objects.equals(this.scriptId, queueConversationEventTopicVideo.scriptId) &&
+            Objects.equals(this.peerId, queueConversationEventTopicVideo.peerId) &&
+            Objects.equals(this.disconnectType, queueConversationEventTopicVideo.disconnectType) &&
+            Objects.equals(this.connectedTime, queueConversationEventTopicVideo.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationEventTopicVideo.disconnectedTime) &&
+            Objects.equals(this.msids, queueConversationEventTopicVideo.msids) &&
+            Objects.equals(this.wrapup, queueConversationEventTopicVideo.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationEventTopicVideo.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicVideo.afterCallWorkRequired);
   }
 
   @Override

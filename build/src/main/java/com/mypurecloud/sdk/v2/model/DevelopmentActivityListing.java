@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DevelopmentActivityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DevelopmentActivityListing  implements Serializable, PagedResource<
       return false;
     }
     DevelopmentActivityListing developmentActivityListing = (DevelopmentActivityListing) o;
+
     return Objects.equals(this.entities, developmentActivityListing.entities) &&
-        Objects.equals(this.pageSize, developmentActivityListing.pageSize) &&
-        Objects.equals(this.pageNumber, developmentActivityListing.pageNumber) &&
-        Objects.equals(this.total, developmentActivityListing.total) &&
-        Objects.equals(this.lastUri, developmentActivityListing.lastUri) &&
-        Objects.equals(this.firstUri, developmentActivityListing.firstUri) &&
-        Objects.equals(this.selfUri, developmentActivityListing.selfUri) &&
-        Objects.equals(this.previousUri, developmentActivityListing.previousUri) &&
-        Objects.equals(this.nextUri, developmentActivityListing.nextUri) &&
-        Objects.equals(this.pageCount, developmentActivityListing.pageCount);
+            Objects.equals(this.pageSize, developmentActivityListing.pageSize) &&
+            Objects.equals(this.pageNumber, developmentActivityListing.pageNumber) &&
+            Objects.equals(this.total, developmentActivityListing.total) &&
+            Objects.equals(this.lastUri, developmentActivityListing.lastUri) &&
+            Objects.equals(this.firstUri, developmentActivityListing.firstUri) &&
+            Objects.equals(this.selfUri, developmentActivityListing.selfUri) &&
+            Objects.equals(this.previousUri, developmentActivityListing.previousUri) &&
+            Objects.equals(this.nextUri, developmentActivityListing.nextUri) &&
+            Objects.equals(this.pageCount, developmentActivityListing.pageCount);
   }
 
   @Override

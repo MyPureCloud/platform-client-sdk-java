@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class SupportCenterSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The knowledge base for support center
    **/
@@ -119,7 +120,7 @@ public class SupportCenterSettings  implements Serializable {
     this.knowledgeBase = knowledgeBase;
   }
 
-  
+
   /**
    * Customizable display texts for support center
    **/
@@ -137,7 +138,7 @@ public class SupportCenterSettings  implements Serializable {
     this.customMessages = customMessages;
   }
 
-  
+
   /**
    * Router type for support center
    **/
@@ -155,7 +156,7 @@ public class SupportCenterSettings  implements Serializable {
     this.routerType = routerType;
   }
 
-  
+
   /**
    * Available screens for the support center with its modules
    **/
@@ -173,7 +174,7 @@ public class SupportCenterSettings  implements Serializable {
     this.screens = screens;
   }
 
-  
+
   /**
    * Enabled article categories for support center
    **/
@@ -191,7 +192,7 @@ public class SupportCenterSettings  implements Serializable {
     this.enabledCategories = enabledCategories;
   }
 
-  
+
   /**
    * Style attributes for support center
    **/
@@ -209,7 +210,6 @@ public class SupportCenterSettings  implements Serializable {
     this.styleSetting = styleSetting;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -220,13 +220,14 @@ public class SupportCenterSettings  implements Serializable {
       return false;
     }
     SupportCenterSettings supportCenterSettings = (SupportCenterSettings) o;
+
     return Objects.equals(this.enabled, supportCenterSettings.enabled) &&
-        Objects.equals(this.knowledgeBase, supportCenterSettings.knowledgeBase) &&
-        Objects.equals(this.customMessages, supportCenterSettings.customMessages) &&
-        Objects.equals(this.routerType, supportCenterSettings.routerType) &&
-        Objects.equals(this.screens, supportCenterSettings.screens) &&
-        Objects.equals(this.enabledCategories, supportCenterSettings.enabledCategories) &&
-        Objects.equals(this.styleSetting, supportCenterSettings.styleSetting);
+            Objects.equals(this.knowledgeBase, supportCenterSettings.knowledgeBase) &&
+            Objects.equals(this.customMessages, supportCenterSettings.customMessages) &&
+            Objects.equals(this.routerType, supportCenterSettings.routerType) &&
+            Objects.equals(this.screens, supportCenterSettings.screens) &&
+            Objects.equals(this.enabledCategories, supportCenterSettings.enabledCategories) &&
+            Objects.equals(this.styleSetting, supportCenterSettings.styleSetting);
   }
 
   @Override

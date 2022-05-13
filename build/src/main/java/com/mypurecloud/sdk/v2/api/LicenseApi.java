@@ -11,12 +11,12 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
-import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
@@ -35,7 +35,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class LicenseApi {
   private final ApiClient pcapiClient;
 
@@ -47,7 +46,6 @@ public class LicenseApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get PureCloud license definition.
    * 
@@ -74,7 +72,7 @@ public class LicenseApi {
   private GetLicenseDefinitionRequest createGetLicenseDefinitionRequest(String licenseId) {
     return GetLicenseDefinitionRequest.builder()
             .withLicenseId(licenseId)
-    
+
             .build();
   }
 
@@ -126,7 +124,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
@@ -201,7 +198,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Get PureCloud license feature toggle value.
    * 
@@ -228,7 +224,7 @@ public class LicenseApi {
   private GetLicenseToggleRequest createGetLicenseToggleRequest(String featureName) {
     return GetLicenseToggleRequest.builder()
             .withFeatureName(featureName)
-    
+
             .build();
   }
 
@@ -280,7 +276,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Get licenses for specified user.
    * 
@@ -307,7 +302,7 @@ public class LicenseApi {
   private GetLicenseUserRequest createGetLicenseUserRequest(String userId) {
     return GetLicenseUserRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
@@ -359,7 +354,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Get a page of users and their licenses
    * Retrieve a page of users in an organization along with the licenses they possess.
@@ -388,9 +382,9 @@ public class LicenseApi {
   private GetLicenseUsersRequest createGetLicenseUsersRequest(Integer pageSize, Integer pageNumber) {
     return GetLicenseUsersRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -442,7 +436,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Get a list of licenses inferred based on a list of roleIds
    * 
@@ -469,7 +462,7 @@ public class LicenseApi {
   private PostLicenseInferRequest createPostLicenseInferRequest(List<String> body) {
     return PostLicenseInferRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -521,9 +514,8 @@ public class LicenseApi {
     }
   }
 
-  
   /**
-   * Update the organization&#39;s license assignments in a batch.
+   * Update the organization's license assignments in a batch.
    * 
    * @param body The license assignments to update. (optional)
    * @return List<LicenseUpdateStatus>
@@ -535,7 +527,7 @@ public class LicenseApi {
   }
 
   /**
-   * Update the organization&#39;s license assignments in a batch.
+   * Update the organization's license assignments in a batch.
    * 
    * @param body The license assignments to update. (optional)
    * @return List<LicenseUpdateStatus>
@@ -548,12 +540,12 @@ public class LicenseApi {
   private PostLicenseOrganizationRequest createPostLicenseOrganizationRequest(LicenseBatchAssignmentRequest body) {
     return PostLicenseOrganizationRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update the organization&#39;s license assignments in a batch.
+   * Update the organization's license assignments in a batch.
    * 
    * @param request The request object
    * @return List<LicenseUpdateStatus>
@@ -572,7 +564,7 @@ public class LicenseApi {
   }
 
   /**
-   * Update the organization&#39;s license assignments in a batch.
+   * Update the organization's license assignments in a batch.
    * 
    * @param request The request object
    * @return the response
@@ -600,7 +592,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Switch PureCloud license feature toggle value.
    * 
@@ -627,7 +618,7 @@ public class LicenseApi {
   private PostLicenseToggleRequest createPostLicenseToggleRequest(String featureName) {
     return PostLicenseToggleRequest.builder()
             .withFeatureName(featureName)
-    
+
             .build();
   }
 
@@ -679,7 +670,6 @@ public class LicenseApi {
     }
   }
 
-  
   /**
    * Fetch user licenses in a batch.
    * 
@@ -706,7 +696,7 @@ public class LicenseApi {
   private PostLicenseUsersRequest createPostLicenseUsersRequest(List<String> body) {
     return PostLicenseUsersRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -758,5 +748,4 @@ public class LicenseApi {
     }
   }
 
-  
 }

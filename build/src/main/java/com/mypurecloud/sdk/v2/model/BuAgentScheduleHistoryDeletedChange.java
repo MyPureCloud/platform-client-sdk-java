@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -45,7 +45,7 @@ public class BuAgentScheduleHistoryDeletedChange  implements Serializable {
     this.shiftIds = shiftIds;
   }
 
-  
+
   /**
    * The dates of any deleted full day time off markers
    **/
@@ -63,7 +63,7 @@ public class BuAgentScheduleHistoryDeletedChange  implements Serializable {
     this.fullDayTimeOffMarkerDates = fullDayTimeOffMarkerDates;
   }
 
-  
+
   /**
    * Whether the entire agent schedule was deleted
    **/
@@ -81,7 +81,6 @@ public class BuAgentScheduleHistoryDeletedChange  implements Serializable {
     this.agentSchedule = agentSchedule;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +91,10 @@ public class BuAgentScheduleHistoryDeletedChange  implements Serializable {
       return false;
     }
     BuAgentScheduleHistoryDeletedChange buAgentScheduleHistoryDeletedChange = (BuAgentScheduleHistoryDeletedChange) o;
+
     return Objects.equals(this.shiftIds, buAgentScheduleHistoryDeletedChange.shiftIds) &&
-        Objects.equals(this.fullDayTimeOffMarkerDates, buAgentScheduleHistoryDeletedChange.fullDayTimeOffMarkerDates) &&
-        Objects.equals(this.agentSchedule, buAgentScheduleHistoryDeletedChange.agentSchedule);
+            Objects.equals(this.fullDayTimeOffMarkerDates, buAgentScheduleHistoryDeletedChange.fullDayTimeOffMarkerDates) &&
+            Objects.equals(this.agentSchedule, buAgentScheduleHistoryDeletedChange.agentSchedule);
   }
 
   @Override

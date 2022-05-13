@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class DomainPhysicalInterface  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -116,7 +117,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -134,7 +135,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -152,7 +153,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -170,7 +171,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -188,7 +189,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -206,7 +207,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -224,7 +225,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -242,14 +243,14 @@ public class DomainPhysicalInterface  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -267,7 +268,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -285,7 +286,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public DomainPhysicalInterface edgeUri(String edgeUri) {
@@ -302,7 +303,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-  
+
   /**
    **/
   public DomainPhysicalInterface friendlyName(String friendlyName) {
@@ -319,7 +320,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.friendlyName = friendlyName;
   }
 
-  
+
   /**
    **/
   public DomainPhysicalInterface hardwareAddress(String hardwareAddress) {
@@ -336,7 +337,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.hardwareAddress = hardwareAddress;
   }
 
-  
+
   /**
    **/
   public DomainPhysicalInterface portLabel(String portLabel) {
@@ -353,7 +354,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.portLabel = portLabel;
   }
 
-  
+
   /**
    **/
   public DomainPhysicalInterface physicalCapabilities(DomainPhysicalCapabilities physicalCapabilities) {
@@ -370,14 +371,13 @@ public class DomainPhysicalInterface  implements Serializable {
     this.physicalCapabilities = physicalCapabilities;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -388,24 +388,25 @@ public class DomainPhysicalInterface  implements Serializable {
       return false;
     }
     DomainPhysicalInterface domainPhysicalInterface = (DomainPhysicalInterface) o;
+
     return Objects.equals(this.id, domainPhysicalInterface.id) &&
-        Objects.equals(this.name, domainPhysicalInterface.name) &&
-        Objects.equals(this.division, domainPhysicalInterface.division) &&
-        Objects.equals(this.description, domainPhysicalInterface.description) &&
-        Objects.equals(this.version, domainPhysicalInterface.version) &&
-        Objects.equals(this.dateCreated, domainPhysicalInterface.dateCreated) &&
-        Objects.equals(this.dateModified, domainPhysicalInterface.dateModified) &&
-        Objects.equals(this.modifiedBy, domainPhysicalInterface.modifiedBy) &&
-        Objects.equals(this.createdBy, domainPhysicalInterface.createdBy) &&
-        Objects.equals(this.state, domainPhysicalInterface.state) &&
-        Objects.equals(this.modifiedByApp, domainPhysicalInterface.modifiedByApp) &&
-        Objects.equals(this.createdByApp, domainPhysicalInterface.createdByApp) &&
-        Objects.equals(this.edgeUri, domainPhysicalInterface.edgeUri) &&
-        Objects.equals(this.friendlyName, domainPhysicalInterface.friendlyName) &&
-        Objects.equals(this.hardwareAddress, domainPhysicalInterface.hardwareAddress) &&
-        Objects.equals(this.portLabel, domainPhysicalInterface.portLabel) &&
-        Objects.equals(this.physicalCapabilities, domainPhysicalInterface.physicalCapabilities) &&
-        Objects.equals(this.selfUri, domainPhysicalInterface.selfUri);
+            Objects.equals(this.name, domainPhysicalInterface.name) &&
+            Objects.equals(this.division, domainPhysicalInterface.division) &&
+            Objects.equals(this.description, domainPhysicalInterface.description) &&
+            Objects.equals(this.version, domainPhysicalInterface.version) &&
+            Objects.equals(this.dateCreated, domainPhysicalInterface.dateCreated) &&
+            Objects.equals(this.dateModified, domainPhysicalInterface.dateModified) &&
+            Objects.equals(this.modifiedBy, domainPhysicalInterface.modifiedBy) &&
+            Objects.equals(this.createdBy, domainPhysicalInterface.createdBy) &&
+            Objects.equals(this.state, domainPhysicalInterface.state) &&
+            Objects.equals(this.modifiedByApp, domainPhysicalInterface.modifiedByApp) &&
+            Objects.equals(this.createdByApp, domainPhysicalInterface.createdByApp) &&
+            Objects.equals(this.edgeUri, domainPhysicalInterface.edgeUri) &&
+            Objects.equals(this.friendlyName, domainPhysicalInterface.friendlyName) &&
+            Objects.equals(this.hardwareAddress, domainPhysicalInterface.hardwareAddress) &&
+            Objects.equals(this.portLabel, domainPhysicalInterface.portLabel) &&
+            Objects.equals(this.physicalCapabilities, domainPhysicalInterface.physicalCapabilities) &&
+            Objects.equals(this.selfUri, domainPhysicalInterface.selfUri);
   }
 
   @Override

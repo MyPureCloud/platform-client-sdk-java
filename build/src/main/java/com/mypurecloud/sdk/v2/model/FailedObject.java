@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class FailedObject  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public FailedObject version(String version) {
@@ -59,7 +60,7 @@ public class FailedObject  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public FailedObject name(String name) {
@@ -76,7 +77,7 @@ public class FailedObject  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public FailedObject errorCode(String errorCode) {
@@ -93,7 +94,6 @@ public class FailedObject  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class FailedObject  implements Serializable {
       return false;
     }
     FailedObject failedObject = (FailedObject) o;
+
     return Objects.equals(this.id, failedObject.id) &&
-        Objects.equals(this.version, failedObject.version) &&
-        Objects.equals(this.name, failedObject.name) &&
-        Objects.equals(this.errorCode, failedObject.errorCode);
+            Objects.equals(this.version, failedObject.version) &&
+            Objects.equals(this.name, failedObject.name) &&
+            Objects.equals(this.errorCode, failedObject.errorCode);
   }
 
   @Override

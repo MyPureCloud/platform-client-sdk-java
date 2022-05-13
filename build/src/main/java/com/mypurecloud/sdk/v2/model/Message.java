@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -289,7 +290,7 @@ public class Message  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -307,7 +308,7 @@ public class Message  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -325,7 +326,7 @@ public class Message  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * The time line of the participant's message, divided into activity segments.
    **/
@@ -343,7 +344,7 @@ public class Message  implements Serializable {
     this.segments = segments;
   }
 
-  
+
   /**
    * The direction of the message.
    **/
@@ -361,7 +362,7 @@ public class Message  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * A globally unique identifier for the recording associated with this message.
    **/
@@ -379,7 +380,7 @@ public class Message  implements Serializable {
     this.recordingId = recordingId;
   }
 
-  
+
   /**
    **/
   public Message errorInfo(ErrorBody errorInfo) {
@@ -396,7 +397,7 @@ public class Message  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -414,7 +415,7 @@ public class Message  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the message was placed on hold in the cloud clock if the message is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -432,7 +433,7 @@ public class Message  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -450,7 +451,7 @@ public class Message  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -468,7 +469,7 @@ public class Message  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -486,7 +487,7 @@ public class Message  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The source provider for the message.
    **/
@@ -504,7 +505,7 @@ public class Message  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * If true, the participant member is authenticated.
    **/
@@ -522,7 +523,7 @@ public class Message  implements Serializable {
     this.authenticated = authenticated;
   }
 
-  
+
   /**
    * Indicates the type of message platform from which the message originated.
    **/
@@ -540,7 +541,7 @@ public class Message  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
    **/
@@ -558,7 +559,7 @@ public class Message  implements Serializable {
     this.recipientCountry = recipientCountry;
   }
 
-  
+
   /**
    * The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
    **/
@@ -576,7 +577,7 @@ public class Message  implements Serializable {
     this.recipientType = recipientType;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -594,7 +595,7 @@ public class Message  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -612,7 +613,7 @@ public class Message  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -630,7 +631,7 @@ public class Message  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -648,7 +649,7 @@ public class Message  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The messages sent on this communication channel.
    **/
@@ -666,7 +667,7 @@ public class Message  implements Serializable {
     this.messages = messages;
   }
 
-  
+
   /**
    * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
    **/
@@ -684,7 +685,7 @@ public class Message  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -702,7 +703,7 @@ public class Message  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -720,7 +721,7 @@ public class Message  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -738,7 +739,7 @@ public class Message  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
@@ -756,7 +757,6 @@ public class Message  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -767,33 +767,34 @@ public class Message  implements Serializable {
       return false;
     }
     Message message = (Message) o;
+
     return Objects.equals(this.state, message.state) &&
-        Objects.equals(this.id, message.id) &&
-        Objects.equals(this.held, message.held) &&
-        Objects.equals(this.segments, message.segments) &&
-        Objects.equals(this.direction, message.direction) &&
-        Objects.equals(this.recordingId, message.recordingId) &&
-        Objects.equals(this.errorInfo, message.errorInfo) &&
-        Objects.equals(this.disconnectType, message.disconnectType) &&
-        Objects.equals(this.startHoldTime, message.startHoldTime) &&
-        Objects.equals(this.startAlertingTime, message.startAlertingTime) &&
-        Objects.equals(this.connectedTime, message.connectedTime) &&
-        Objects.equals(this.disconnectedTime, message.disconnectedTime) &&
-        Objects.equals(this.provider, message.provider) &&
-        Objects.equals(this.authenticated, message.authenticated) &&
-        Objects.equals(this.type, message.type) &&
-        Objects.equals(this.recipientCountry, message.recipientCountry) &&
-        Objects.equals(this.recipientType, message.recipientType) &&
-        Objects.equals(this.scriptId, message.scriptId) &&
-        Objects.equals(this.peerId, message.peerId) &&
-        Objects.equals(this.toAddress, message.toAddress) &&
-        Objects.equals(this.fromAddress, message.fromAddress) &&
-        Objects.equals(this.messages, message.messages) &&
-        Objects.equals(this.journeyContext, message.journeyContext) &&
-        Objects.equals(this.wrapup, message.wrapup) &&
-        Objects.equals(this.afterCallWork, message.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, message.agentAssistantId);
+            Objects.equals(this.id, message.id) &&
+            Objects.equals(this.held, message.held) &&
+            Objects.equals(this.segments, message.segments) &&
+            Objects.equals(this.direction, message.direction) &&
+            Objects.equals(this.recordingId, message.recordingId) &&
+            Objects.equals(this.errorInfo, message.errorInfo) &&
+            Objects.equals(this.disconnectType, message.disconnectType) &&
+            Objects.equals(this.startHoldTime, message.startHoldTime) &&
+            Objects.equals(this.startAlertingTime, message.startAlertingTime) &&
+            Objects.equals(this.connectedTime, message.connectedTime) &&
+            Objects.equals(this.disconnectedTime, message.disconnectedTime) &&
+            Objects.equals(this.provider, message.provider) &&
+            Objects.equals(this.authenticated, message.authenticated) &&
+            Objects.equals(this.type, message.type) &&
+            Objects.equals(this.recipientCountry, message.recipientCountry) &&
+            Objects.equals(this.recipientType, message.recipientType) &&
+            Objects.equals(this.scriptId, message.scriptId) &&
+            Objects.equals(this.peerId, message.peerId) &&
+            Objects.equals(this.toAddress, message.toAddress) &&
+            Objects.equals(this.fromAddress, message.fromAddress) &&
+            Objects.equals(this.messages, message.messages) &&
+            Objects.equals(this.journeyContext, message.journeyContext) &&
+            Objects.equals(this.wrapup, message.wrapup) &&
+            Objects.equals(this.afterCallWork, message.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired) &&
+            Objects.equals(this.agentAssistantId, message.agentAssistantId);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class UsageItem  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public UsageItem totalDocumentByteCount(Long totalDocumentByteCount) {
@@ -108,7 +109,7 @@ public class UsageItem  implements Serializable {
     this.totalDocumentByteCount = totalDocumentByteCount;
   }
 
-  
+
   /**
    **/
   public UsageItem totalDocumentCount(Long totalDocumentCount) {
@@ -125,7 +126,6 @@ public class UsageItem  implements Serializable {
     this.totalDocumentCount = totalDocumentCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class UsageItem  implements Serializable {
       return false;
     }
     UsageItem usageItem = (UsageItem) o;
+
     return Objects.equals(this.type, usageItem.type) &&
-        Objects.equals(this.totalDocumentByteCount, usageItem.totalDocumentByteCount) &&
-        Objects.equals(this.totalDocumentCount, usageItem.totalDocumentCount);
+            Objects.equals(this.totalDocumentByteCount, usageItem.totalDocumentByteCount) &&
+            Objects.equals(this.totalDocumentCount, usageItem.totalDocumentCount);
   }
 
   @Override

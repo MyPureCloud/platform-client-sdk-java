@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -300,7 +301,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant name(String name) {
@@ -317,7 +318,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant address(String address) {
@@ -334,7 +335,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant startTime(Date startTime) {
@@ -351,7 +352,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant connectedTime(Date connectedTime) {
@@ -368,7 +369,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant endTime(Date endTime) {
@@ -385,7 +386,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant startHoldTime(Date startHoldTime) {
@@ -402,7 +403,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant purpose(String purpose) {
@@ -419,7 +420,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant state(StateEnum state) {
@@ -436,7 +437,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant direction(DirectionEnum direction) {
@@ -453,7 +454,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -470,7 +471,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant held(Boolean held) {
@@ -487,7 +488,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -504,7 +505,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -521,7 +522,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant user(ConversationVideoEventTopicUriReference user) {
@@ -538,7 +539,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant queue(ConversationVideoEventTopicUriReference queue) {
@@ -555,7 +556,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant team(ConversationVideoEventTopicUriReference team) {
@@ -572,7 +573,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant attributes(Map<String, String> attributes) {
@@ -589,7 +590,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant errorInfo(ConversationVideoEventTopicErrorBody errorInfo) {
@@ -606,7 +607,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant script(ConversationVideoEventTopicUriReference script) {
@@ -623,7 +624,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -640,7 +641,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -657,7 +658,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -674,7 +675,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant provider(String provider) {
@@ -691,7 +692,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant externalContact(ConversationVideoEventTopicUriReference externalContact) {
@@ -708,7 +709,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant externalOrganization(ConversationVideoEventTopicUriReference externalOrganization) {
@@ -725,7 +726,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant wrapup(ConversationVideoEventTopicWrapup wrapup) {
@@ -742,7 +743,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant conversationRoutingData(ConversationVideoEventTopicConversationRoutingData conversationRoutingData) {
@@ -759,7 +760,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant peer(String peer) {
@@ -776,7 +777,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -793,7 +794,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -810,7 +811,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant journeyContext(ConversationVideoEventTopicJourneyContext journeyContext) {
@@ -827,7 +828,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant startAcwTime(Date startAcwTime) {
@@ -844,7 +845,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant endAcwTime(Date endAcwTime) {
@@ -861,7 +862,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant audioMuted(Boolean audioMuted) {
@@ -878,7 +879,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.audioMuted = audioMuted;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant videoMuted(Boolean videoMuted) {
@@ -895,7 +896,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.videoMuted = videoMuted;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant sharingScreen(Boolean sharingScreen) {
@@ -912,7 +913,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.sharingScreen = sharingScreen;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant peerCount(Integer peerCount) {
@@ -929,7 +930,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant context(String context) {
@@ -946,7 +947,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.context = context;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoMediaParticipant msids(List<String> msids) {
@@ -963,7 +964,6 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     this.msids = msids;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -974,46 +974,47 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
       return false;
     }
     ConversationVideoEventTopicVideoMediaParticipant conversationVideoEventTopicVideoMediaParticipant = (ConversationVideoEventTopicVideoMediaParticipant) o;
+
     return Objects.equals(this.id, conversationVideoEventTopicVideoMediaParticipant.id) &&
-        Objects.equals(this.name, conversationVideoEventTopicVideoMediaParticipant.name) &&
-        Objects.equals(this.address, conversationVideoEventTopicVideoMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationVideoEventTopicVideoMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationVideoEventTopicVideoMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationVideoEventTopicVideoMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationVideoEventTopicVideoMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationVideoEventTopicVideoMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationVideoEventTopicVideoMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationVideoEventTopicVideoMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationVideoEventTopicVideoMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationVideoEventTopicVideoMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationVideoEventTopicVideoMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationVideoEventTopicVideoMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationVideoEventTopicVideoMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationVideoEventTopicVideoMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationVideoEventTopicVideoMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationVideoEventTopicVideoMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationVideoEventTopicVideoMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationVideoEventTopicVideoMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationVideoEventTopicVideoMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationVideoEventTopicVideoMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationVideoEventTopicVideoMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationVideoEventTopicVideoMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationVideoEventTopicVideoMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationVideoEventTopicVideoMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationVideoEventTopicVideoMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationVideoEventTopicVideoMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationVideoEventTopicVideoMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationVideoEventTopicVideoMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationVideoEventTopicVideoMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationVideoEventTopicVideoMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationVideoEventTopicVideoMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationVideoEventTopicVideoMediaParticipant.endAcwTime) &&
-        Objects.equals(this.audioMuted, conversationVideoEventTopicVideoMediaParticipant.audioMuted) &&
-        Objects.equals(this.videoMuted, conversationVideoEventTopicVideoMediaParticipant.videoMuted) &&
-        Objects.equals(this.sharingScreen, conversationVideoEventTopicVideoMediaParticipant.sharingScreen) &&
-        Objects.equals(this.peerCount, conversationVideoEventTopicVideoMediaParticipant.peerCount) &&
-        Objects.equals(this.context, conversationVideoEventTopicVideoMediaParticipant.context) &&
-        Objects.equals(this.msids, conversationVideoEventTopicVideoMediaParticipant.msids);
+            Objects.equals(this.name, conversationVideoEventTopicVideoMediaParticipant.name) &&
+            Objects.equals(this.address, conversationVideoEventTopicVideoMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationVideoEventTopicVideoMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationVideoEventTopicVideoMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationVideoEventTopicVideoMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationVideoEventTopicVideoMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationVideoEventTopicVideoMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationVideoEventTopicVideoMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationVideoEventTopicVideoMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationVideoEventTopicVideoMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationVideoEventTopicVideoMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationVideoEventTopicVideoMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationVideoEventTopicVideoMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationVideoEventTopicVideoMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationVideoEventTopicVideoMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationVideoEventTopicVideoMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationVideoEventTopicVideoMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationVideoEventTopicVideoMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationVideoEventTopicVideoMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationVideoEventTopicVideoMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationVideoEventTopicVideoMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationVideoEventTopicVideoMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationVideoEventTopicVideoMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationVideoEventTopicVideoMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationVideoEventTopicVideoMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationVideoEventTopicVideoMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationVideoEventTopicVideoMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationVideoEventTopicVideoMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationVideoEventTopicVideoMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationVideoEventTopicVideoMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationVideoEventTopicVideoMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationVideoEventTopicVideoMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationVideoEventTopicVideoMediaParticipant.endAcwTime) &&
+            Objects.equals(this.audioMuted, conversationVideoEventTopicVideoMediaParticipant.audioMuted) &&
+            Objects.equals(this.videoMuted, conversationVideoEventTopicVideoMediaParticipant.videoMuted) &&
+            Objects.equals(this.sharingScreen, conversationVideoEventTopicVideoMediaParticipant.sharingScreen) &&
+            Objects.equals(this.peerCount, conversationVideoEventTopicVideoMediaParticipant.peerCount) &&
+            Objects.equals(this.context, conversationVideoEventTopicVideoMediaParticipant.context) &&
+            Objects.equals(this.msids, conversationVideoEventTopicVideoMediaParticipant.msids);
   }
 
   @Override

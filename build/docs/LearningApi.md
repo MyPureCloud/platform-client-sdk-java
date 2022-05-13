@@ -39,8 +39,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a learning assignment
 
-
-
 Wraps DELETE /api/v2/learning/assignments/{assignmentId}  
 
 Requires ANY permissions: 
@@ -194,7 +192,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LearningApi apiInstance = new LearningApi();
 String assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in response
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response
 try {
     LearningAssignment result = apiInstance.getLearningAssignment(assignmentId, expand);
     System.out.println(result);
@@ -269,10 +267,10 @@ Float minPercentageScore = 3.4F; // Float | The minimum assessment score for an 
 Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
 String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-List<String> userId = Arrays.asList("userId_example"); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.
-List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
-List<String> states = Arrays.asList("states_example"); // List<String> | Specifies the assignment states to filter by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Specifies the expand option for returning additional information
+List<String> userId = Arrays.asList(null); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.
+List<String> types = Arrays.asList(null); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+List<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by
+List<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information
 try {
     LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand);
     System.out.println(result);
@@ -319,8 +317,6 @@ try {
 
 List of Learning Assignments assigned to current user
 
-
-
 Wraps GET /api/v2/learning/assignments/me  
 
 Requires NO permissions: 
@@ -359,9 +355,9 @@ Float minPercentageScore = 3.4F; // Float | The minimum assessment score for an 
 Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
 String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
-List<String> states = Arrays.asList("states_example"); // List<String> | Specifies the assignment states to filter by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Specifies the expand option for returning additional information
+List<String> types = Arrays.asList(null); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+List<String> states = Arrays.asList(null); // List<String> | Specifies the assignment states to filter by
+List<String> expand = Arrays.asList(null); // List<String> | Specifies the expand option for returning additional information
 try {
     LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand);
     System.out.println(result);
@@ -407,8 +403,6 @@ try {
 
 Get a learning module
 
-
-
 Wraps GET /api/v2/learning/modules/{moduleId}  
 
 Requires ANY permissions: 
@@ -438,7 +432,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LearningApi apiInstance = new LearningApi();
 String moduleId = "moduleId_example"; // String | The ID of the learning module
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in response(case insensitive)
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
 try {
     LearningModule result = apiInstance.getLearningModule(moduleId, expand);
     System.out.println(result);
@@ -471,8 +465,6 @@ try {
 > [LearningModuleRule](LearningModuleRule.html) getLearningModuleRule(moduleId)
 
 Get a learning module rule
-
-
 
 Wraps GET /api/v2/learning/modules/{moduleId}/rule  
 
@@ -535,8 +527,6 @@ try {
 
 Get specific version of a published module
 
-
-
 Wraps GET /api/v2/learning/modules/{moduleId}/versions/{versionId}  
 
 Requires ANY permissions: 
@@ -567,7 +557,7 @@ Configuration.setDefaultApiClient(apiClient);
 LearningApi apiInstance = new LearningApi();
 String moduleId = "moduleId_example"; // String | The ID of the learning module
 String versionId = "versionId_example"; // String | The version of learning module
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in response(case insensitive)
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
 try {
     LearningModule result = apiInstance.getLearningModuleVersion(moduleId, versionId, expand);
     System.out.println(result);
@@ -602,8 +592,6 @@ try {
 
 Get all learning modules of an organization
 
-
-
 Wraps GET /api/v2/learning/modules  
 
 Requires ANY permissions: 
@@ -633,13 +621,13 @@ Configuration.setDefaultApiClient(apiClient);
 
 LearningApi apiInstance = new LearningApi();
 Boolean isArchived = false; // Boolean | Archive status
-List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the module types.
+List<String> types = Arrays.asList(null); // List<String> | Specifies the module types.
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "ascending"; // String | Sort order
 String sortBy = "name"; // String | Sort by
 String searchTerm = "searchTerm_example"; // String | Search Term (searchable by name)
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in response(case insensitive)
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
 String isPublished = "Any"; // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
 try {
     LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished);
@@ -680,8 +668,6 @@ try {
 > [LearningAssignment](LearningAssignment.html) patchLearningAssignment(assignmentId, body)
 
 Update Learning Assignment
-
-
 
 Wraps PATCH /api/v2/learning/assignments/{assignmentId}  
 
@@ -744,8 +730,6 @@ try {
 > [AssessmentScoringSet](AssessmentScoringSet.html) postLearningAssessmentsScoring(body)
 
 Score learning assessment for preview
-
-
 
 Wraps POST /api/v2/learning/assessments/scoring  
 
@@ -810,8 +794,6 @@ try {
 
 Create Learning Assignment
 
-
-
 Wraps POST /api/v2/learning/assignments  
 
 Requires ANY permissions: 
@@ -872,8 +854,6 @@ try {
 > [LearningAssignmentAggregateResponse](LearningAssignmentAggregateResponse.html) postLearningAssignmentsAggregatesQuery(body)
 
 Retrieve aggregated assignment data
-
-
 
 Wraps POST /api/v2/learning/assignments/aggregates/query  
 
@@ -936,8 +916,6 @@ try {
 
 Add multiple learning assignments
 
-
-
 Wraps POST /api/v2/learning/assignments/bulkadd  
 
 Requires ANY permissions: 
@@ -999,8 +977,6 @@ try {
 
 Remove multiple Learning Assignments
 
-
-
 Wraps POST /api/v2/learning/assignments/bulkremove  
 
 Requires ANY permissions: 
@@ -1029,7 +1005,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LearningApi apiInstance = new LearningApi();
-List<String> body = Arrays.asList(new List<String>()); // List<String> | The IDs of the learning assignments to be removed
+List<String> body = Arrays.asList(null); // List<String> | The IDs of the learning assignments to be removed
 try {
     LearningAssignmentBulkRemoveResponse result = apiInstance.postLearningAssignmentsBulkremove(body);
     System.out.println(result);
@@ -1044,7 +1020,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **List&lt;String&gt;**| The IDs of the learning assignments to be removed | [optional] 
+| **body** | [**List&lt;String&gt;**](String.html)| The IDs of the learning assignments to be removed | [optional] 
 {: class="table-striped"}
 
 
@@ -1061,8 +1037,6 @@ try {
 > [LearningModulePublishResponse](LearningModulePublishResponse.html) postLearningModulePublish(moduleId)
 
 Publish a Learning module
-
-
 
 Wraps POST /api/v2/learning/modules/{moduleId}/publish  
 

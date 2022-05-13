@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -139,7 +140,7 @@ public class ButtonResponse  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Text to show inside the Button reply. This is also used as the response text after clicking on the Button.
    **/
@@ -157,7 +158,7 @@ public class ButtonResponse  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Content of the textback payload after clicking a button
    **/
@@ -175,7 +176,7 @@ public class ButtonResponse  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
    **/
@@ -193,7 +194,6 @@ public class ButtonResponse  implements Serializable {
     this.messageType = messageType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -204,10 +204,11 @@ public class ButtonResponse  implements Serializable {
       return false;
     }
     ButtonResponse buttonResponse = (ButtonResponse) o;
+
     return Objects.equals(this.type, buttonResponse.type) &&
-        Objects.equals(this.text, buttonResponse.text) &&
-        Objects.equals(this.payload, buttonResponse.payload) &&
-        Objects.equals(this.messageType, buttonResponse.messageType);
+            Objects.equals(this.text, buttonResponse.text) &&
+            Objects.equals(this.payload, buttonResponse.payload) &&
+            Objects.equals(this.messageType, buttonResponse.messageType);
   }
 
   @Override

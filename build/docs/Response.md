@@ -31,10 +31,10 @@ title: Response
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CHAT | &quot;chat&quot; |
-| EMAIL | &quot;email&quot; |
-| TWITTER | &quot;twitter&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CHAT | &quot;chat&quot; | 
+| EMAIL | &quot;email&quot; | 
+| TWITTER | &quot;twitter&quot; | 
 {: class="table table-striped"}
 
 
@@ -44,10 +44,10 @@ title: Response
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; |
-| CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; |
-| CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; | 
+| CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; | 
+| CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; | 
 {: class="table table-striped"}
 
 

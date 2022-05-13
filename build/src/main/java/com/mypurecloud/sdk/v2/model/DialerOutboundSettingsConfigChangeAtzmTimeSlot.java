@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializ
     this.earliestCallableTime = earliestCallableTime;
   }
 
-  
+
   /**
    * The latest time to dial a contact
    **/
@@ -60,7 +61,6 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializ
     this.latestCallableTime = latestCallableTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializ
       return false;
     }
     DialerOutboundSettingsConfigChangeAtzmTimeSlot dialerOutboundSettingsConfigChangeAtzmTimeSlot = (DialerOutboundSettingsConfigChangeAtzmTimeSlot) o;
+
     return Objects.equals(this.earliestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlot.earliestCallableTime) &&
-        Objects.equals(this.latestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlot.latestCallableTime);
+            Objects.equals(this.latestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlot.latestCallableTime);
   }
 
   @Override

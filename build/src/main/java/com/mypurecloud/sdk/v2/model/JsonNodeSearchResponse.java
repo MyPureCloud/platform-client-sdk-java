@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -52,7 +53,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The total number of pages
    **/
@@ -70,7 +71,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    * The current page size
    **/
@@ -88,7 +89,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The current page number
    **/
@@ -106,7 +107,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Q64 value for the previous page of results
    **/
@@ -124,7 +125,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.previousPage = previousPage;
   }
 
-  
+
   /**
    * Q64 value for the current page of results
    **/
@@ -142,7 +143,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.currentPage = currentPage;
   }
 
-  
+
   /**
    * Q64 value for the next page of results
    **/
@@ -160,7 +161,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.nextPage = nextPage;
   }
 
-  
+
   /**
    * Resource types the search was performed against
    **/
@@ -178,7 +179,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * Search results
    **/
@@ -196,7 +197,7 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    **/
   public JsonNodeSearchResponse aggregations(ArrayNode aggregations) {
@@ -213,7 +214,6 @@ public class JsonNodeSearchResponse  implements Serializable {
     this.aggregations = aggregations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,16 +224,17 @@ public class JsonNodeSearchResponse  implements Serializable {
       return false;
     }
     JsonNodeSearchResponse jsonNodeSearchResponse = (JsonNodeSearchResponse) o;
+
     return Objects.equals(this.total, jsonNodeSearchResponse.total) &&
-        Objects.equals(this.pageCount, jsonNodeSearchResponse.pageCount) &&
-        Objects.equals(this.pageSize, jsonNodeSearchResponse.pageSize) &&
-        Objects.equals(this.pageNumber, jsonNodeSearchResponse.pageNumber) &&
-        Objects.equals(this.previousPage, jsonNodeSearchResponse.previousPage) &&
-        Objects.equals(this.currentPage, jsonNodeSearchResponse.currentPage) &&
-        Objects.equals(this.nextPage, jsonNodeSearchResponse.nextPage) &&
-        Objects.equals(this.types, jsonNodeSearchResponse.types) &&
-        Objects.equals(this.results, jsonNodeSearchResponse.results) &&
-        Objects.equals(this.aggregations, jsonNodeSearchResponse.aggregations);
+            Objects.equals(this.pageCount, jsonNodeSearchResponse.pageCount) &&
+            Objects.equals(this.pageSize, jsonNodeSearchResponse.pageSize) &&
+            Objects.equals(this.pageNumber, jsonNodeSearchResponse.pageNumber) &&
+            Objects.equals(this.previousPage, jsonNodeSearchResponse.previousPage) &&
+            Objects.equals(this.currentPage, jsonNodeSearchResponse.currentPage) &&
+            Objects.equals(this.nextPage, jsonNodeSearchResponse.nextPage) &&
+            Objects.equals(this.types, jsonNodeSearchResponse.types) &&
+            Objects.equals(this.results, jsonNodeSearchResponse.results) &&
+            Objects.equals(this.aggregations, jsonNodeSearchResponse.aggregations);
   }
 
   @Override

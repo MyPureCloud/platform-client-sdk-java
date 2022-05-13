@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.
    **/
@@ -113,7 +114,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * The recipient messaging address messenger type.
    **/
@@ -131,7 +132,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     this.toAddressMessengerType = toAddressMessengerType;
   }
 
-  
+
   /**
    * The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
    **/
@@ -149,7 +150,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
    **/
@@ -167,7 +168,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     this.messagingTemplate = messagingTemplate;
   }
 
-  
+
   /**
    * Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
    **/
@@ -185,7 +186,6 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     this.useExistingActiveConversation = useExistingActiveConversation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -196,12 +196,13 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
       return false;
     }
     SendAgentlessOutboundMessageRequest sendAgentlessOutboundMessageRequest = (SendAgentlessOutboundMessageRequest) o;
+
     return Objects.equals(this.fromAddress, sendAgentlessOutboundMessageRequest.fromAddress) &&
-        Objects.equals(this.toAddress, sendAgentlessOutboundMessageRequest.toAddress) &&
-        Objects.equals(this.toAddressMessengerType, sendAgentlessOutboundMessageRequest.toAddressMessengerType) &&
-        Objects.equals(this.textBody, sendAgentlessOutboundMessageRequest.textBody) &&
-        Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageRequest.messagingTemplate) &&
-        Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageRequest.useExistingActiveConversation);
+            Objects.equals(this.toAddress, sendAgentlessOutboundMessageRequest.toAddress) &&
+            Objects.equals(this.toAddressMessengerType, sendAgentlessOutboundMessageRequest.toAddressMessengerType) &&
+            Objects.equals(this.textBody, sendAgentlessOutboundMessageRequest.textBody) &&
+            Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageRequest.messagingTemplate) &&
+            Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageRequest.useExistingActiveConversation);
   }
 
   @Override

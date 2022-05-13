@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeSlot;
@@ -44,7 +45,7 @@ public class TimeAllowed  implements Serializable {
     this.timeSlots = timeSlots;
   }
 
-  
+
   /**
    **/
   public TimeAllowed timeZoneId(String timeZoneId) {
@@ -61,7 +62,7 @@ public class TimeAllowed  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-  
+
   /**
    **/
   public TimeAllowed empty(Boolean empty) {
@@ -78,7 +79,6 @@ public class TimeAllowed  implements Serializable {
     this.empty = empty;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class TimeAllowed  implements Serializable {
       return false;
     }
     TimeAllowed timeAllowed = (TimeAllowed) o;
+
     return Objects.equals(this.timeSlots, timeAllowed.timeSlots) &&
-        Objects.equals(this.timeZoneId, timeAllowed.timeZoneId) &&
-        Objects.equals(this.empty, timeAllowed.empty);
+            Objects.equals(this.timeZoneId, timeAllowed.timeZoneId) &&
+            Objects.equals(this.empty, timeAllowed.empty);
   }
 
   @Override

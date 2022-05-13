@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditMessage;
@@ -49,7 +50,7 @@ public class AuditSearchResult  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * The number of results in a page.
    **/
@@ -67,7 +68,7 @@ public class AuditSearchResult  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The total number of results.
    **/
@@ -85,7 +86,7 @@ public class AuditSearchResult  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The number of pages of results.
    **/
@@ -103,7 +104,7 @@ public class AuditSearchResult  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    **/
   public AuditSearchResult facetInfo(List<FacetInfo> facetInfo) {
@@ -120,7 +121,7 @@ public class AuditSearchResult  implements Serializable {
     this.facetInfo = facetInfo;
   }
 
-  
+
   /**
    **/
   public AuditSearchResult auditMessages(List<AuditMessage> auditMessages) {
@@ -137,7 +138,6 @@ public class AuditSearchResult  implements Serializable {
     this.auditMessages = auditMessages;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +148,13 @@ public class AuditSearchResult  implements Serializable {
       return false;
     }
     AuditSearchResult auditSearchResult = (AuditSearchResult) o;
+
     return Objects.equals(this.pageNumber, auditSearchResult.pageNumber) &&
-        Objects.equals(this.pageSize, auditSearchResult.pageSize) &&
-        Objects.equals(this.total, auditSearchResult.total) &&
-        Objects.equals(this.pageCount, auditSearchResult.pageCount) &&
-        Objects.equals(this.facetInfo, auditSearchResult.facetInfo) &&
-        Objects.equals(this.auditMessages, auditSearchResult.auditMessages);
+            Objects.equals(this.pageSize, auditSearchResult.pageSize) &&
+            Objects.equals(this.total, auditSearchResult.total) &&
+            Objects.equals(this.pageCount, auditSearchResult.pageCount) &&
+            Objects.equals(this.facetInfo, auditSearchResult.facetInfo) &&
+            Objects.equals(this.auditMessages, auditSearchResult.auditMessages);
   }
 
   @Override

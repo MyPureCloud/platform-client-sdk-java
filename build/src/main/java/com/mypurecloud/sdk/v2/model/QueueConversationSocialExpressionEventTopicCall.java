@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -288,7 +289,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.id = id;
   }
 
-  
+
   /**
    * The connection state of this communication.
    **/
@@ -306,7 +307,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.state = state;
   }
 
-  
+
   /**
    * True if this call is being recorded.
    **/
@@ -324,7 +325,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.recording = recording;
   }
 
-  
+
   /**
    * State of recording on this call.
    **/
@@ -342,7 +343,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    * True if this call is muted so that remote participants can't hear any audio from this end.
    **/
@@ -360,7 +361,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.muted = muted;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears hold music.
    **/
@@ -378,7 +379,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.confined = confined;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -396,7 +397,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.held = held;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicCall errorInfo(QueueConversationSocialExpressionEventTopicErrorDetails errorInfo) {
@@ -413,7 +414,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -431,7 +432,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the call was placed on hold in the cloud clock if the call is currently on hold.
    **/
@@ -449,7 +450,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * Whether a call is inbound or outbound.
    **/
@@ -467,7 +468,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.direction = direction;
   }
 
-  
+
   /**
    * If call is a fax of a document in content management, the id of the document in content management.
    **/
@@ -485,7 +486,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.documentId = documentId;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicCall self(QueueConversationSocialExpressionEventTopicAddress self) {
@@ -502,7 +503,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.self = self;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -520,7 +521,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.other = other;
   }
 
-  
+
   /**
    * The source provider of the call.
    **/
@@ -538,7 +539,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -556,7 +557,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -574,7 +575,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -592,7 +593,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -610,7 +611,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * List of reasons that this call was disconnected. This will be set once the call disconnects.
    **/
@@ -628,7 +629,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.disconnectReasons = disconnectReasons;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicCall faxStatus(QueueConversationSocialExpressionEventTopicFaxStatus faxStatus) {
@@ -645,7 +646,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.faxStatus = faxStatus;
   }
 
-  
+
   /**
    * User to User Information (UUI) data managed by SIP session application.
    **/
@@ -663,7 +664,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.uuiData = uuiData;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the barge conference in the provider clock.
    **/
@@ -681,7 +682,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.bargedTime = bargedTime;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -699,7 +700,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicCall afterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
@@ -716,7 +717,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -734,7 +735,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
@@ -752,7 +753,6 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     this.agentAssistantId = agentAssistantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -763,33 +763,34 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
       return false;
     }
     QueueConversationSocialExpressionEventTopicCall queueConversationSocialExpressionEventTopicCall = (QueueConversationSocialExpressionEventTopicCall) o;
+
     return Objects.equals(this.id, queueConversationSocialExpressionEventTopicCall.id) &&
-        Objects.equals(this.state, queueConversationSocialExpressionEventTopicCall.state) &&
-        Objects.equals(this.recording, queueConversationSocialExpressionEventTopicCall.recording) &&
-        Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicCall.recordingState) &&
-        Objects.equals(this.muted, queueConversationSocialExpressionEventTopicCall.muted) &&
-        Objects.equals(this.confined, queueConversationSocialExpressionEventTopicCall.confined) &&
-        Objects.equals(this.held, queueConversationSocialExpressionEventTopicCall.held) &&
-        Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicCall.errorInfo) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicCall.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicCall.startHoldTime) &&
-        Objects.equals(this.direction, queueConversationSocialExpressionEventTopicCall.direction) &&
-        Objects.equals(this.documentId, queueConversationSocialExpressionEventTopicCall.documentId) &&
-        Objects.equals(this.self, queueConversationSocialExpressionEventTopicCall.self) &&
-        Objects.equals(this.other, queueConversationSocialExpressionEventTopicCall.other) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicCall.provider) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicCall.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicCall.peerId) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicCall.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCall.disconnectedTime) &&
-        Objects.equals(this.disconnectReasons, queueConversationSocialExpressionEventTopicCall.disconnectReasons) &&
-        Objects.equals(this.faxStatus, queueConversationSocialExpressionEventTopicCall.faxStatus) &&
-        Objects.equals(this.uuiData, queueConversationSocialExpressionEventTopicCall.uuiData) &&
-        Objects.equals(this.bargedTime, queueConversationSocialExpressionEventTopicCall.bargedTime) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCall.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCall.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCall.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId);
+            Objects.equals(this.state, queueConversationSocialExpressionEventTopicCall.state) &&
+            Objects.equals(this.recording, queueConversationSocialExpressionEventTopicCall.recording) &&
+            Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicCall.recordingState) &&
+            Objects.equals(this.muted, queueConversationSocialExpressionEventTopicCall.muted) &&
+            Objects.equals(this.confined, queueConversationSocialExpressionEventTopicCall.confined) &&
+            Objects.equals(this.held, queueConversationSocialExpressionEventTopicCall.held) &&
+            Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicCall.errorInfo) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicCall.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicCall.startHoldTime) &&
+            Objects.equals(this.direction, queueConversationSocialExpressionEventTopicCall.direction) &&
+            Objects.equals(this.documentId, queueConversationSocialExpressionEventTopicCall.documentId) &&
+            Objects.equals(this.self, queueConversationSocialExpressionEventTopicCall.self) &&
+            Objects.equals(this.other, queueConversationSocialExpressionEventTopicCall.other) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicCall.provider) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicCall.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicCall.peerId) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicCall.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCall.disconnectedTime) &&
+            Objects.equals(this.disconnectReasons, queueConversationSocialExpressionEventTopicCall.disconnectReasons) &&
+            Objects.equals(this.faxStatus, queueConversationSocialExpressionEventTopicCall.faxStatus) &&
+            Objects.equals(this.uuiData, queueConversationSocialExpressionEventTopicCall.uuiData) &&
+            Objects.equals(this.bargedTime, queueConversationSocialExpressionEventTopicCall.bargedTime) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCall.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCall.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCall.afterCallWorkRequired) &&
+            Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId);
   }
 
   @Override

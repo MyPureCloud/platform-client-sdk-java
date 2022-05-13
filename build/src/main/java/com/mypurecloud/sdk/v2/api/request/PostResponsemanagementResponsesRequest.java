@@ -20,23 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 public class PostResponsemanagementResponsesRequest {
-    
+
 	private Response body;
 	public Response getBody() {
 		return this.body;
@@ -50,7 +50,7 @@ public class PostResponsemanagementResponsesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -93,7 +93,7 @@ public class PostResponsemanagementResponsesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,11 +122,12 @@ public class PostResponsemanagementResponsesRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/responsemanagement/responses")
+
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -137,12 +138,12 @@ public class PostResponsemanagementResponsesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Response body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostResponsemanagementResponsesRequest request;
@@ -151,30 +152,34 @@ public class PostResponsemanagementResponsesRequest {
 			request = new PostResponsemanagementResponsesRequest();
 		}
 
-		
+
 		public Builder withBody(Response body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
 
-		public Builder withExpand(expandValues expand) {
-		    request.setExpand(expand.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(Response body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostResponsemanagementResponsesRequest build() {
             

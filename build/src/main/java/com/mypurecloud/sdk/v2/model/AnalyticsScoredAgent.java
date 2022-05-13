@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class AnalyticsScoredAgent  implements Serializable {
     this.agentScore = agentScore;
   }
 
-  
+
   /**
    * Unique identifier for the agent that was scored for this conversation
    **/
@@ -59,7 +60,6 @@ public class AnalyticsScoredAgent  implements Serializable {
     this.scoredAgentId = scoredAgentId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class AnalyticsScoredAgent  implements Serializable {
       return false;
     }
     AnalyticsScoredAgent analyticsScoredAgent = (AnalyticsScoredAgent) o;
+
     return Objects.equals(this.agentScore, analyticsScoredAgent.agentScore) &&
-        Objects.equals(this.scoredAgentId, analyticsScoredAgent.scoredAgentId);
+            Objects.equals(this.scoredAgentId, analyticsScoredAgent.scoredAgentId);
   }
 
   @Override

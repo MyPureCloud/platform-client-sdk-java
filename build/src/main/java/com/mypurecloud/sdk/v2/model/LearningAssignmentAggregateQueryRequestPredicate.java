@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment
    **/
@@ -109,7 +110,6 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,8 +120,9 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
       return false;
     }
     LearningAssignmentAggregateQueryRequestPredicate learningAssignmentAggregateQueryRequestPredicate = (LearningAssignmentAggregateQueryRequestPredicate) o;
+
     return Objects.equals(this.dimension, learningAssignmentAggregateQueryRequestPredicate.dimension) &&
-        Objects.equals(this.value, learningAssignmentAggregateQueryRequestPredicate.value);
+            Objects.equals(this.value, learningAssignmentAggregateQueryRequestPredicate.value);
   }
 
   @Override

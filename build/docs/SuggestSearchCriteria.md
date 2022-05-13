@@ -15,7 +15,7 @@ title: SuggestSearchCriteria
 | **value** | <!----><!---->**String**<!----> | A value for the search to match against |  [optional] |
 | **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | How to apply this search criteria against other criteria |  [optional] |
 | **group** | <!----><!---->[**List&lt;SuggestSearchCriteria&gt;**](SuggestSearchCriteria.html)<!----> | Groups multiple conditions |  [optional] |
-| **dateFormat** | <!----><!---->**String**<!----> | Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX. |  [optional] |
+| **dateFormat** | <!----><!---->**String**<!----> | Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -25,10 +25,10 @@ title: SuggestSearchCriteria
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AND | &quot;AND&quot; |
-| OR | &quot;OR&quot; |
-| NOT | &quot;NOT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AND | &quot;AND&quot; | 
+| OR | &quot;OR&quot; | 
+| NOT | &quot;NOT&quot; | 
 {: class="table table-striped"}
 
 

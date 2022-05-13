@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class ContentQuickReply  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply.
    **/
@@ -110,7 +111,7 @@ public class ContentQuickReply  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.
    **/
@@ -128,7 +129,7 @@ public class ContentQuickReply  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * URL of an image associated with the quick reply.
    **/
@@ -146,7 +147,7 @@ public class ContentQuickReply  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * Specifies the type of action that is triggered upon clicking the quick reply.
    **/
@@ -164,7 +165,6 @@ public class ContentQuickReply  implements Serializable {
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,11 +175,12 @@ public class ContentQuickReply  implements Serializable {
       return false;
     }
     ContentQuickReply contentQuickReply = (ContentQuickReply) o;
+
     return Objects.equals(this.id, contentQuickReply.id) &&
-        Objects.equals(this.text, contentQuickReply.text) &&
-        Objects.equals(this.payload, contentQuickReply.payload) &&
-        Objects.equals(this.image, contentQuickReply.image) &&
-        Objects.equals(this.action, contentQuickReply.action);
+            Objects.equals(this.text, contentQuickReply.text) &&
+            Objects.equals(this.payload, contentQuickReply.payload) &&
+            Objects.equals(this.image, contentQuickReply.image) &&
+            Objects.equals(this.action, contentQuickReply.action);
   }
 
   @Override

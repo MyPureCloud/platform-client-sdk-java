@@ -24,10 +24,10 @@ title: ObjectiveZone
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UP | &quot;Up&quot; |
-| DOWN | &quot;Down&quot; |
-| FLAT | &quot;Flat&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UP | &quot;Up&quot; | 
+| DOWN | &quot;Down&quot; | 
+| FLAT | &quot;Flat&quot; | 
 {: class="table table-striped"}
 
 
@@ -37,11 +37,11 @@ title: ObjectiveZone
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GOOD | &quot;Good&quot; |
-| TARGET | &quot;Target&quot; |
-| GREAT | &quot;Great&quot; |
-| OUT | &quot;Out&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GOOD | &quot;Good&quot; | 
+| TARGET | &quot;Target&quot; | 
+| GREAT | &quot;Great&quot; | 
+| OUT | &quot;Out&quot; | 
 {: class="table table-striped"}
 
 

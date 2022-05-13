@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class MoveManagementUnitResponse  implements Serializable {
     this.businessUnit = businessUnit;
   }
 
-  
+
   /**
    * The status of the move.  Will always be 'Processing' unless the Management Unit is already in the requested Business Unit in which case it will be 'Complete'
    **/
@@ -110,7 +111,6 @@ public class MoveManagementUnitResponse  implements Serializable {
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class MoveManagementUnitResponse  implements Serializable {
       return false;
     }
     MoveManagementUnitResponse moveManagementUnitResponse = (MoveManagementUnitResponse) o;
+
     return Objects.equals(this.businessUnit, moveManagementUnitResponse.businessUnit) &&
-        Objects.equals(this.status, moveManagementUnitResponse.status);
+            Objects.equals(this.status, moveManagementUnitResponse.status);
   }
 
   @Override

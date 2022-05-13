@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Operation;
@@ -47,7 +48,7 @@ public class FlowOutcome  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The flow outcome name.
    **/
@@ -65,7 +66,7 @@ public class FlowOutcome  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -83,7 +84,7 @@ public class FlowOutcome  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public FlowOutcome description(String description) {
@@ -100,7 +101,7 @@ public class FlowOutcome  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public FlowOutcome currentOperation(Operation currentOperation) {
@@ -117,14 +118,13 @@ public class FlowOutcome  implements Serializable {
     this.currentOperation = currentOperation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -135,12 +135,13 @@ public class FlowOutcome  implements Serializable {
       return false;
     }
     FlowOutcome flowOutcome = (FlowOutcome) o;
+
     return Objects.equals(this.id, flowOutcome.id) &&
-        Objects.equals(this.name, flowOutcome.name) &&
-        Objects.equals(this.division, flowOutcome.division) &&
-        Objects.equals(this.description, flowOutcome.description) &&
-        Objects.equals(this.currentOperation, flowOutcome.currentOperation) &&
-        Objects.equals(this.selfUri, flowOutcome.selfUri);
+            Objects.equals(this.name, flowOutcome.name) &&
+            Objects.equals(this.division, flowOutcome.division) &&
+            Objects.equals(this.description, flowOutcome.description) &&
+            Objects.equals(this.currentOperation, flowOutcome.currentOperation) &&
+            Objects.equals(this.selfUri, flowOutcome.selfUri);
   }
 
   @Override

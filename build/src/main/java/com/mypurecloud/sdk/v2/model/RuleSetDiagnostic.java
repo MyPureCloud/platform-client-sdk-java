@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -81,14 +82,13 @@ public class RuleSetDiagnostic  implements Serializable {
     return ruleSet;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Diagnostic warnings for the rule set")
   @JsonProperty("warnings")
   public List<WarningsEnum> getWarnings() {
     return warnings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,8 +99,9 @@ public class RuleSetDiagnostic  implements Serializable {
       return false;
     }
     RuleSetDiagnostic ruleSetDiagnostic = (RuleSetDiagnostic) o;
+
     return Objects.equals(this.ruleSet, ruleSetDiagnostic.ruleSet) &&
-        Objects.equals(this.warnings, ruleSetDiagnostic.warnings);
+            Objects.equals(this.warnings, ruleSetDiagnostic.warnings);
   }
 
   @Override

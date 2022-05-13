@@ -26,10 +26,10 @@ title: CallForwarding
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PURECLOUD | &quot;PURECLOUD&quot; |
-| LASTCALL | &quot;LASTCALL&quot; |
-| NONE | &quot;NONE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PURECLOUD | &quot;PURECLOUD&quot; | 
+| LASTCALL | &quot;LASTCALL&quot; | 
+| NONE | &quot;NONE&quot; | 
 {: class="table table-striped"}
 
 

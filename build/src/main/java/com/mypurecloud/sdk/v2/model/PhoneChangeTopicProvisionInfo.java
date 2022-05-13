@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class PhoneChangeTopicProvisionInfo  implements Serializable {
     this.time = time;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicProvisionInfo source(String source) {
@@ -59,7 +60,7 @@ public class PhoneChangeTopicProvisionInfo  implements Serializable {
     this.source = source;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicProvisionInfo errorInfo(String errorInfo) {
@@ -76,7 +77,6 @@ public class PhoneChangeTopicProvisionInfo  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class PhoneChangeTopicProvisionInfo  implements Serializable {
       return false;
     }
     PhoneChangeTopicProvisionInfo phoneChangeTopicProvisionInfo = (PhoneChangeTopicProvisionInfo) o;
+
     return Objects.equals(this.time, phoneChangeTopicProvisionInfo.time) &&
-        Objects.equals(this.source, phoneChangeTopicProvisionInfo.source) &&
-        Objects.equals(this.errorInfo, phoneChangeTopicProvisionInfo.errorInfo);
+            Objects.equals(this.source, phoneChangeTopicProvisionInfo.source) &&
+            Objects.equals(this.errorInfo, phoneChangeTopicProvisionInfo.errorInfo);
   }
 
   @Override

@@ -35,14 +35,14 @@ title: WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| _EMPTY_ | &quot;__EMPTY__&quot; |
-| OFF_QUEUE | &quot;OFF_QUEUE&quot; |
-| IDLE | &quot;IDLE&quot; |
-| INTERACTING | &quot;INTERACTING&quot; |
-| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
-| COMMUNICATING | &quot;COMMUNICATING&quot; |
-| OFFLINE | &quot;OFFLINE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| _EMPTY_ | &quot;__EMPTY__&quot; | 
+| OFF_QUEUE | &quot;OFF_QUEUE&quot; | 
+| IDLE | &quot;IDLE&quot; | 
+| INTERACTING | &quot;INTERACTING&quot; | 
+| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
+| COMMUNICATING | &quot;COMMUNICATING&quot; | 
+| OFFLINE | &quot;OFFLINE&quot; | 
 {: class="table table-striped"}
 
 
@@ -52,13 +52,13 @@ title: WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INADHERENCE | &quot;InAdherence&quot; |
-| OUTOFADHERENCE | &quot;OutOfAdherence&quot; |
-| UNSCHEDULED | &quot;Unscheduled&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| IGNORED | &quot;Ignored&quot; |
-| EXPLAINED | &quot;Explained&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INADHERENCE | &quot;InAdherence&quot; | 
+| OUTOFADHERENCE | &quot;OutOfAdherence&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| IGNORED | &quot;Ignored&quot; | 
+| EXPLAINED | &quot;Explained&quot; | 
 {: class="table table-striped"}
 
 

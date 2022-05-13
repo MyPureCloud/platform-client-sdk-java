@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class MediaResult  implements Serializable {
     this.mediaUri = mediaUri;
   }
 
-  
+
   /**
    **/
   public MediaResult waveformData(List<Float> waveformData) {
@@ -59,7 +60,6 @@ public class MediaResult  implements Serializable {
     this.waveformData = waveformData;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class MediaResult  implements Serializable {
       return false;
     }
     MediaResult mediaResult = (MediaResult) o;
+
     return Objects.equals(this.mediaUri, mediaResult.mediaUri) &&
-        Objects.equals(this.waveformData, mediaResult.waveformData);
+            Objects.equals(this.waveformData, mediaResult.waveformData);
   }
 
   @Override

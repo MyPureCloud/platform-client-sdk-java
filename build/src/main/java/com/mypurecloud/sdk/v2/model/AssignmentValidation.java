@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.InvalidAssignment;
@@ -48,7 +49,7 @@ public class AssignmentValidation  implements Serializable {
     this.membersNotAssigned = membersNotAssigned;
   }
 
-  
+
   /**
    * The list of users that are already assigned to the requesting custom performance profile
    **/
@@ -66,7 +67,7 @@ public class AssignmentValidation  implements Serializable {
     this.membersAlreadyAssigned = membersAlreadyAssigned;
   }
 
-  
+
   /**
    * The list of users that are already assigned to other custom performance profiles
    **/
@@ -84,7 +85,7 @@ public class AssignmentValidation  implements Serializable {
     this.membersAlreadyAssignedToOther = membersAlreadyAssignedToOther;
   }
 
-  
+
   /**
    * The list of user id that are invalid for the gamfication service to handle
    **/
@@ -102,7 +103,6 @@ public class AssignmentValidation  implements Serializable {
     this.invalidMemberAssignments = invalidMemberAssignments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +113,11 @@ public class AssignmentValidation  implements Serializable {
       return false;
     }
     AssignmentValidation assignmentValidation = (AssignmentValidation) o;
+
     return Objects.equals(this.membersNotAssigned, assignmentValidation.membersNotAssigned) &&
-        Objects.equals(this.membersAlreadyAssigned, assignmentValidation.membersAlreadyAssigned) &&
-        Objects.equals(this.membersAlreadyAssignedToOther, assignmentValidation.membersAlreadyAssignedToOther) &&
-        Objects.equals(this.invalidMemberAssignments, assignmentValidation.invalidMemberAssignments);
+            Objects.equals(this.membersAlreadyAssigned, assignmentValidation.membersAlreadyAssigned) &&
+            Objects.equals(this.membersAlreadyAssignedToOther, assignmentValidation.membersAlreadyAssignedToOther) &&
+            Objects.equals(this.invalidMemberAssignments, assignmentValidation.invalidMemberAssignments);
   }
 
   @Override

@@ -23,8 +23,8 @@ title: AvailableTimeOffRange
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DAILY | &quot;Daily&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DAILY | &quot;Daily&quot; | 
 {: class="table table-striped"}
 
 

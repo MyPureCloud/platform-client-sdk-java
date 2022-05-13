@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class CreateTimeOffLimitRequest  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * The default limit value in minutes per granularity.If not specified, then 0 is assumed, which means there are no time off minutes available
    **/
@@ -107,7 +108,6 @@ public class CreateTimeOffLimitRequest  implements Serializable {
     this.defaultLimitMinutes = defaultLimitMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class CreateTimeOffLimitRequest  implements Serializable {
       return false;
     }
     CreateTimeOffLimitRequest createTimeOffLimitRequest = (CreateTimeOffLimitRequest) o;
+
     return Objects.equals(this.granularity, createTimeOffLimitRequest.granularity) &&
-        Objects.equals(this.defaultLimitMinutes, createTimeOffLimitRequest.defaultLimitMinutes);
+            Objects.equals(this.defaultLimitMinutes, createTimeOffLimitRequest.defaultLimitMinutes);
   }
 
   @Override

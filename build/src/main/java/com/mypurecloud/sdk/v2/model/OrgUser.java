@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -137,7 +138,7 @@ public class OrgUser  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public OrgUser name(String name) {
@@ -154,7 +155,7 @@ public class OrgUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -172,7 +173,7 @@ public class OrgUser  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public OrgUser chat(Chat chat) {
@@ -189,7 +190,7 @@ public class OrgUser  implements Serializable {
     this.chat = chat;
   }
 
-  
+
   /**
    **/
   public OrgUser department(String department) {
@@ -206,7 +207,7 @@ public class OrgUser  implements Serializable {
     this.department = department;
   }
 
-  
+
   /**
    **/
   public OrgUser email(String email) {
@@ -223,14 +224,14 @@ public class OrgUser  implements Serializable {
     this.email = email;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Auto populated from addresses.")
   @JsonProperty("primaryContactInfo")
   public List<Contact> getPrimaryContactInfo() {
     return primaryContactInfo;
   }
 
-  
+
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -248,14 +249,14 @@ public class OrgUser  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The current state for this user.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    **/
   public OrgUser title(String title) {
@@ -272,7 +273,7 @@ public class OrgUser  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    **/
   public OrgUser username(String username) {
@@ -289,7 +290,7 @@ public class OrgUser  implements Serializable {
     this.username = username;
   }
 
-  
+
   /**
    **/
   public OrgUser manager(User manager) {
@@ -306,7 +307,7 @@ public class OrgUser  implements Serializable {
     this.manager = manager;
   }
 
-  
+
   /**
    **/
   public OrgUser images(List<UserImage> images) {
@@ -323,7 +324,7 @@ public class OrgUser  implements Serializable {
     this.images = images;
   }
 
-  
+
   /**
    * Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
    **/
@@ -341,7 +342,7 @@ public class OrgUser  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public OrgUser certifications(List<String> certifications) {
@@ -358,7 +359,7 @@ public class OrgUser  implements Serializable {
     this.certifications = certifications;
   }
 
-  
+
   /**
    **/
   public OrgUser biography(Biography biography) {
@@ -375,7 +376,7 @@ public class OrgUser  implements Serializable {
     this.biography = biography;
   }
 
-  
+
   /**
    **/
   public OrgUser employerInfo(EmployerInfo employerInfo) {
@@ -392,105 +393,105 @@ public class OrgUser  implements Serializable {
     this.employerInfo = employerInfo;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
     return routingStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active presence")
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Integration presence")
   @JsonProperty("integrationPresence")
   public UserPresence getIntegrationPresence() {
     return integrationPresence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
     return conversationSummary;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Determine if out of office is enabled")
   @JsonProperty("outOfOffice")
   public OutOfOffice getOutOfOffice() {
     return outOfOffice;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current geolocation position")
   @JsonProperty("geolocation")
   public Geolocation getGeolocation() {
     return geolocation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Effective, default, and last station information")
   @JsonProperty("station")
   public UserStations getStation() {
     return station;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Roles and permissions assigned to the user")
   @JsonProperty("authorization")
   public UserAuthorization getAuthorization() {
     return authorization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user placement at each site location.")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The groups the user is a member of")
   @JsonProperty("groups")
   public List<Group> getGroups() {
     return groups;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The team the user is a member of")
   @JsonProperty("team")
   public Team getTeam() {
     return team;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Routing (ACD) skills possessed by the user")
   @JsonProperty("skills")
   public List<UserRoutingSkill> getSkills() {
     return skills;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Routing (ACD) languages possessed by the user")
   @JsonProperty("languages")
   public List<UserRoutingLanguage> getLanguages() {
     return languages;
   }
 
-  
+
   /**
    * acd auto answer
    **/
@@ -508,14 +509,14 @@ public class OrgUser  implements Serializable {
     this.acdAutoAnswer = acdAutoAnswer;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "preferred language by the user")
   @JsonProperty("languagePreference")
   public String getLanguagePreference() {
     return languagePreference;
   }
 
-  
+
   /**
    **/
   public OrgUser lastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
@@ -532,14 +533,14 @@ public class OrgUser  implements Serializable {
     this.lastTokenIssued = lastTokenIssued;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateLastLogin")
   public Date getDateLastLogin() {
     return dateLastLogin;
   }
 
-  
+
   /**
    **/
   public OrgUser organization(Organization organization) {
@@ -556,7 +557,6 @@ public class OrgUser  implements Serializable {
     this.organization = organization;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -567,42 +567,43 @@ public class OrgUser  implements Serializable {
       return false;
     }
     OrgUser orgUser = (OrgUser) o;
+
     return Objects.equals(this.id, orgUser.id) &&
-        Objects.equals(this.name, orgUser.name) &&
-        Objects.equals(this.division, orgUser.division) &&
-        Objects.equals(this.chat, orgUser.chat) &&
-        Objects.equals(this.department, orgUser.department) &&
-        Objects.equals(this.email, orgUser.email) &&
-        Objects.equals(this.primaryContactInfo, orgUser.primaryContactInfo) &&
-        Objects.equals(this.addresses, orgUser.addresses) &&
-        Objects.equals(this.state, orgUser.state) &&
-        Objects.equals(this.title, orgUser.title) &&
-        Objects.equals(this.username, orgUser.username) &&
-        Objects.equals(this.manager, orgUser.manager) &&
-        Objects.equals(this.images, orgUser.images) &&
-        Objects.equals(this.version, orgUser.version) &&
-        Objects.equals(this.certifications, orgUser.certifications) &&
-        Objects.equals(this.biography, orgUser.biography) &&
-        Objects.equals(this.employerInfo, orgUser.employerInfo) &&
-        Objects.equals(this.routingStatus, orgUser.routingStatus) &&
-        Objects.equals(this.presence, orgUser.presence) &&
-        Objects.equals(this.integrationPresence, orgUser.integrationPresence) &&
-        Objects.equals(this.conversationSummary, orgUser.conversationSummary) &&
-        Objects.equals(this.outOfOffice, orgUser.outOfOffice) &&
-        Objects.equals(this.geolocation, orgUser.geolocation) &&
-        Objects.equals(this.station, orgUser.station) &&
-        Objects.equals(this.authorization, orgUser.authorization) &&
-        Objects.equals(this.profileSkills, orgUser.profileSkills) &&
-        Objects.equals(this.locations, orgUser.locations) &&
-        Objects.equals(this.groups, orgUser.groups) &&
-        Objects.equals(this.team, orgUser.team) &&
-        Objects.equals(this.skills, orgUser.skills) &&
-        Objects.equals(this.languages, orgUser.languages) &&
-        Objects.equals(this.acdAutoAnswer, orgUser.acdAutoAnswer) &&
-        Objects.equals(this.languagePreference, orgUser.languagePreference) &&
-        Objects.equals(this.lastTokenIssued, orgUser.lastTokenIssued) &&
-        Objects.equals(this.dateLastLogin, orgUser.dateLastLogin) &&
-        Objects.equals(this.organization, orgUser.organization);
+            Objects.equals(this.name, orgUser.name) &&
+            Objects.equals(this.division, orgUser.division) &&
+            Objects.equals(this.chat, orgUser.chat) &&
+            Objects.equals(this.department, orgUser.department) &&
+            Objects.equals(this.email, orgUser.email) &&
+            Objects.equals(this.primaryContactInfo, orgUser.primaryContactInfo) &&
+            Objects.equals(this.addresses, orgUser.addresses) &&
+            Objects.equals(this.state, orgUser.state) &&
+            Objects.equals(this.title, orgUser.title) &&
+            Objects.equals(this.username, orgUser.username) &&
+            Objects.equals(this.manager, orgUser.manager) &&
+            Objects.equals(this.images, orgUser.images) &&
+            Objects.equals(this.version, orgUser.version) &&
+            Objects.equals(this.certifications, orgUser.certifications) &&
+            Objects.equals(this.biography, orgUser.biography) &&
+            Objects.equals(this.employerInfo, orgUser.employerInfo) &&
+            Objects.equals(this.routingStatus, orgUser.routingStatus) &&
+            Objects.equals(this.presence, orgUser.presence) &&
+            Objects.equals(this.integrationPresence, orgUser.integrationPresence) &&
+            Objects.equals(this.conversationSummary, orgUser.conversationSummary) &&
+            Objects.equals(this.outOfOffice, orgUser.outOfOffice) &&
+            Objects.equals(this.geolocation, orgUser.geolocation) &&
+            Objects.equals(this.station, orgUser.station) &&
+            Objects.equals(this.authorization, orgUser.authorization) &&
+            Objects.equals(this.profileSkills, orgUser.profileSkills) &&
+            Objects.equals(this.locations, orgUser.locations) &&
+            Objects.equals(this.groups, orgUser.groups) &&
+            Objects.equals(this.team, orgUser.team) &&
+            Objects.equals(this.skills, orgUser.skills) &&
+            Objects.equals(this.languages, orgUser.languages) &&
+            Objects.equals(this.acdAutoAnswer, orgUser.acdAutoAnswer) &&
+            Objects.equals(this.languagePreference, orgUser.languagePreference) &&
+            Objects.equals(this.lastTokenIssued, orgUser.lastTokenIssued) &&
+            Objects.equals(this.dateLastLogin, orgUser.dateLastLogin) &&
+            Objects.equals(this.organization, orgUser.organization);
   }
 
   @Override

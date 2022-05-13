@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.total = total;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public RecordingJobEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class RecordingJobEntityListing  implements Serializable, PagedResource<R
       return false;
     }
     RecordingJobEntityListing recordingJobEntityListing = (RecordingJobEntityListing) o;
+
     return Objects.equals(this.entities, recordingJobEntityListing.entities) &&
-        Objects.equals(this.pageSize, recordingJobEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, recordingJobEntityListing.pageNumber) &&
-        Objects.equals(this.total, recordingJobEntityListing.total) &&
-        Objects.equals(this.lastUri, recordingJobEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, recordingJobEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, recordingJobEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, recordingJobEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, recordingJobEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, recordingJobEntityListing.pageCount);
+            Objects.equals(this.pageSize, recordingJobEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, recordingJobEntityListing.pageNumber) &&
+            Objects.equals(this.total, recordingJobEntityListing.total) &&
+            Objects.equals(this.lastUri, recordingJobEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, recordingJobEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, recordingJobEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, recordingJobEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, recordingJobEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, recordingJobEntityListing.pageCount);
   }
 
   @Override

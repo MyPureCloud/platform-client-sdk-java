@@ -18,7 +18,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **agentAssistantId** | <!----><!---->**String**<!----> | Unique identifier of the active virtual agent assistant |  [optional] |
 | **agentBullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the targeted agent |  [optional] |
 | **agentOwned** | <!----><!---->**Boolean**<!----> | Flag indicating an agent-owned callback |  [optional] |
-| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller&#39;s number) |  [optional] |
+| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller's number) |  [optional] |
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
 | **conversationId** | <!----><!---->**String**<!----> | Unique identifier for the conversation |  [optional] |
@@ -63,7 +63,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **participantName** | <!----><!---->**String**<!----> | A human readable name identifying the participant |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> | This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session. |  [optional] |
 | **provider** | <!----><!---->**String**<!----> | The source provider for the communication. |  [optional] |
-| **purpose** | [**PurposeEnum**](#PurposeEnum)<!----> | The participant&#39;s purpose |  [optional] |
+| **purpose** | [**PurposeEnum**](#PurposeEnum)<!----> | The participant's purpose |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> | Queue identifier |  [optional] |
 | **remote** | <!----><!---->**String**<!----> | Name, phone number, or email address of the remote party. |  [optional] |
 | **removedSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | ID(s) of Skill(s) that have been removed by bullseye routing |  [optional] |
@@ -96,48 +96,48 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
-| NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; |
-| NCONNECTED | &quot;nConnected&quot; |
-| NCONSULT | &quot;nConsult&quot; |
-| NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; |
-| NERROR | &quot;nError&quot; |
-| NOFFERED | &quot;nOffered&quot; |
-| NOUTBOUND | &quot;nOutbound&quot; |
-| NOUTBOUNDABANDONED | &quot;nOutboundAbandoned&quot; |
-| NOUTBOUNDATTEMPTED | &quot;nOutboundAttempted&quot; |
-| NOUTBOUNDCONNECTED | &quot;nOutboundConnected&quot; |
-| NOVERSLA | &quot;nOverSla&quot; |
-| NTRANSFERRED | &quot;nTransferred&quot; |
-| OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
-| OMEDIACOUNT | &quot;oMediaCount&quot; |
-| OMESSAGETURN | &quot;oMessageTurn&quot; |
-| TABANDON | &quot;tAbandon&quot; |
-| TACD | &quot;tAcd&quot; |
-| TACW | &quot;tAcw&quot; |
-| TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; |
-| TALERT | &quot;tAlert&quot; |
-| TANSWERED | &quot;tAnswered&quot; |
-| TCALLBACK | &quot;tCallback&quot; |
-| TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; |
-| TCOACHING | &quot;tCoaching&quot; |
-| TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; |
-| TCONNECTED | &quot;tConnected&quot; |
-| TCONTACTING | &quot;tContacting&quot; |
-| TDIALING | &quot;tDialing&quot; |
-| TFLOWOUT | &quot;tFlowOut&quot; |
-| THANDLE | &quot;tHandle&quot; |
-| THELD | &quot;tHeld&quot; |
-| THELDCOMPLETE | &quot;tHeldComplete&quot; |
-| TIVR | &quot;tIvr&quot; |
-| TMONITORING | &quot;tMonitoring&quot; |
-| TMONITORINGCOMPLETE | &quot;tMonitoringComplete&quot; |
-| TNOTRESPONDING | &quot;tNotResponding&quot; |
-| TTALK | &quot;tTalk&quot; |
-| TTALKCOMPLETE | &quot;tTalkComplete&quot; |
-| TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |
-| TVOICEMAIL | &quot;tVoicemail&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; | 
+| NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; | 
+| NCONNECTED | &quot;nConnected&quot; | 
+| NCONSULT | &quot;nConsult&quot; | 
+| NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; | 
+| NERROR | &quot;nError&quot; | 
+| NOFFERED | &quot;nOffered&quot; | 
+| NOUTBOUND | &quot;nOutbound&quot; | 
+| NOUTBOUNDABANDONED | &quot;nOutboundAbandoned&quot; | 
+| NOUTBOUNDATTEMPTED | &quot;nOutboundAttempted&quot; | 
+| NOUTBOUNDCONNECTED | &quot;nOutboundConnected&quot; | 
+| NOVERSLA | &quot;nOverSla&quot; | 
+| NTRANSFERRED | &quot;nTransferred&quot; | 
+| OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; | 
+| OMEDIACOUNT | &quot;oMediaCount&quot; | 
+| OMESSAGETURN | &quot;oMessageTurn&quot; | 
+| TABANDON | &quot;tAbandon&quot; | 
+| TACD | &quot;tAcd&quot; | 
+| TACW | &quot;tAcw&quot; | 
+| TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; | 
+| TALERT | &quot;tAlert&quot; | 
+| TANSWERED | &quot;tAnswered&quot; | 
+| TCALLBACK | &quot;tCallback&quot; | 
+| TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; | 
+| TCOACHING | &quot;tCoaching&quot; | 
+| TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; | 
+| TCONNECTED | &quot;tConnected&quot; | 
+| TCONTACTING | &quot;tContacting&quot; | 
+| TDIALING | &quot;tDialing&quot; | 
+| TFLOWOUT | &quot;tFlowOut&quot; | 
+| THANDLE | &quot;tHandle&quot; | 
+| THELD | &quot;tHeld&quot; | 
+| THELDCOMPLETE | &quot;tHeldComplete&quot; | 
+| TIVR | &quot;tIvr&quot; | 
+| TMONITORING | &quot;tMonitoring&quot; | 
+| TMONITORINGCOMPLETE | &quot;tMonitoringComplete&quot; | 
+| TNOTRESPONDING | &quot;tNotResponding&quot; | 
+| TTALK | &quot;tTalk&quot; | 
+| TTALKCOMPLETE | &quot;tTalkComplete&quot; | 
+| TUSERRESPONSETIME | &quot;tUserResponseTime&quot; | 
+| TVOICEMAIL | &quot;tVoicemail&quot; | 
 {: class="table table-striped"}
 
 
@@ -147,25 +147,25 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACD | &quot;acd&quot; |
-| AGENT | &quot;agent&quot; |
-| API | &quot;api&quot; |
-| BOTFLOW | &quot;botflow&quot; |
-| CAMPAIGN | &quot;campaign&quot; |
-| CUSTOMER | &quot;customer&quot; |
-| DIALER | &quot;dialer&quot; |
-| EXTERNAL | &quot;external&quot; |
-| FAX | &quot;fax&quot; |
-| GROUP | &quot;group&quot; |
-| INBOUND | &quot;inbound&quot; |
-| IVR | &quot;ivr&quot; |
-| MANUAL | &quot;manual&quot; |
-| OUTBOUND | &quot;outbound&quot; |
-| STATION | &quot;station&quot; |
-| USER | &quot;user&quot; |
-| VOICEMAIL | &quot;voicemail&quot; |
-| WORKFLOW | &quot;workflow&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACD | &quot;acd&quot; | 
+| AGENT | &quot;agent&quot; | 
+| API | &quot;api&quot; | 
+| BOTFLOW | &quot;botflow&quot; | 
+| CAMPAIGN | &quot;campaign&quot; | 
+| CUSTOMER | &quot;customer&quot; | 
+| DIALER | &quot;dialer&quot; | 
+| EXTERNAL | &quot;external&quot; | 
+| FAX | &quot;fax&quot; | 
+| GROUP | &quot;group&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| IVR | &quot;ivr&quot; | 
+| MANUAL | &quot;manual&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
+| STATION | &quot;station&quot; | 
+| USER | &quot;user&quot; | 
+| VOICEMAIL | &quot;voicemail&quot; | 
+| WORKFLOW | &quot;workflow&quot; | 
 {: class="table table-striped"}
 
 
@@ -175,14 +175,14 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DELIVERYFAILED | &quot;DeliveryFailed&quot; |
-| DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
-| FAILED | &quot;Failed&quot; |
-| QUEUED | &quot;Queued&quot; |
-| READ | &quot;Read&quot; |
-| RECEIVED | &quot;Received&quot; |
-| SENT | &quot;Sent&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DELIVERYFAILED | &quot;DeliveryFailed&quot; | 
+| DELIVERYSUCCESS | &quot;DeliverySuccess&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| QUEUED | &quot;Queued&quot; | 
+| READ | &quot;Read&quot; | 
+| RECEIVED | &quot;Received&quot; | 
+| SENT | &quot;Sent&quot; | 
 {: class="table table-striped"}
 
 
@@ -192,9 +192,9 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -204,23 +204,23 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CLIENT | &quot;client&quot; |
-| CONFERENCETRANSFER | &quot;conferenceTransfer&quot; |
-| CONSULTTRANSFER | &quot;consultTransfer&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| ERROR | &quot;error&quot; |
-| FORWARDTRANSFER | &quot;forwardTransfer&quot; |
-| NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; |
-| NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; |
-| OTHER | &quot;other&quot; |
-| PEER | &quot;peer&quot; |
-| SPAM | &quot;spam&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSPORTFAILURE | &quot;transportFailure&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CLIENT | &quot;client&quot; | 
+| CONFERENCETRANSFER | &quot;conferenceTransfer&quot; | 
+| CONSULTTRANSFER | &quot;consultTransfer&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| ERROR | &quot;error&quot; | 
+| FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
+| NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
+| NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; | 
+| OTHER | &quot;other&quot; | 
+| PEER | &quot;peer&quot; | 
+| SPAM | &quot;spam&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSPORTFAILURE | &quot;transportFailure&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -230,8 +230,8 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GENERAL | &quot;general&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GENERAL | &quot;general&quot; | 
 {: class="table table-striped"}
 
 
@@ -241,16 +241,16 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CALLBACK | &quot;callback&quot; |
-| CHAT | &quot;chat&quot; |
-| COBROWSE | &quot;cobrowse&quot; |
-| EMAIL | &quot;email&quot; |
-| MESSAGE | &quot;message&quot; |
-| SCREENSHARE | &quot;screenshare&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| VIDEO | &quot;video&quot; |
-| VOICE | &quot;voice&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CALLBACK | &quot;callback&quot; | 
+| CHAT | &quot;chat&quot; | 
+| COBROWSE | &quot;cobrowse&quot; | 
+| EMAIL | &quot;email&quot; | 
+| MESSAGE | &quot;message&quot; | 
+| SCREENSHARE | &quot;screenshare&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| VIDEO | &quot;video&quot; | 
+| VOICE | &quot;voice&quot; | 
 {: class="table table-striped"}
 
 
@@ -260,9 +260,9 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -272,25 +272,25 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACD | &quot;acd&quot; |
-| AGENT | &quot;agent&quot; |
-| API | &quot;api&quot; |
-| BOTFLOW | &quot;botflow&quot; |
-| CAMPAIGN | &quot;campaign&quot; |
-| CUSTOMER | &quot;customer&quot; |
-| DIALER | &quot;dialer&quot; |
-| EXTERNAL | &quot;external&quot; |
-| FAX | &quot;fax&quot; |
-| GROUP | &quot;group&quot; |
-| INBOUND | &quot;inbound&quot; |
-| IVR | &quot;ivr&quot; |
-| MANUAL | &quot;manual&quot; |
-| OUTBOUND | &quot;outbound&quot; |
-| STATION | &quot;station&quot; |
-| USER | &quot;user&quot; |
-| VOICEMAIL | &quot;voicemail&quot; |
-| WORKFLOW | &quot;workflow&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACD | &quot;acd&quot; | 
+| AGENT | &quot;agent&quot; | 
+| API | &quot;api&quot; | 
+| BOTFLOW | &quot;botflow&quot; | 
+| CAMPAIGN | &quot;campaign&quot; | 
+| CUSTOMER | &quot;customer&quot; | 
+| DIALER | &quot;dialer&quot; | 
+| EXTERNAL | &quot;external&quot; | 
+| FAX | &quot;fax&quot; | 
+| GROUP | &quot;group&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| IVR | &quot;ivr&quot; | 
+| MANUAL | &quot;manual&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
+| STATION | &quot;station&quot; | 
+| USER | &quot;user&quot; | 
+| VOICEMAIL | &quot;voicemail&quot; | 
+| WORKFLOW | &quot;workflow&quot; | 
 {: class="table table-striped"}
 
 
@@ -316,14 +316,14 @@ title: ConversationMetricsTopicConversationMetricRecord
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
-| CONDITIONAL | &quot;Conditional&quot; |
-| LAST | &quot;Last&quot; |
-| MANUAL | &quot;Manual&quot; |
-| PREDICTIVE | &quot;Predictive&quot; |
-| PREFERRED | &quot;Preferred&quot; |
-| STANDARD | &quot;Standard&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| LAST | &quot;Last&quot; | 
+| MANUAL | &quot;Manual&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
+| STANDARD | &quot;Standard&quot; | 
 {: class="table table-striped"}
 
 

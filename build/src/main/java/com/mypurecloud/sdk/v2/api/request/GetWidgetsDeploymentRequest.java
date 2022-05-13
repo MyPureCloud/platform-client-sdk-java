@@ -25,7 +25,7 @@ import com.mypurecloud.sdk.v2.model.WidgetDeployment;
 import com.mypurecloud.sdk.v2.model.WidgetDeploymentEntityListing;
 
 public class GetWidgetsDeploymentRequest {
-    
+
 	private String deploymentId;
 	public String getDeploymentId() {
 		return this.deploymentId;
@@ -39,7 +39,7 @@ public class GetWidgetsDeploymentRequest {
 	    this.setDeploymentId(deploymentId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,7 +70,7 @@ public class GetWidgetsDeploymentRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/widgets/deployments/{deploymentId}")
                 .withPathParameter("deploymentId", deploymentId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class GetWidgetsDeploymentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String deploymentId) {
 	    return new Builder()
 	            .withRequiredParams(deploymentId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetWidgetsDeploymentRequest request;
@@ -95,20 +95,20 @@ public class GetWidgetsDeploymentRequest {
 			request = new GetWidgetsDeploymentRequest();
 		}
 
-		
+
 		public Builder withDeploymentId(String deploymentId) {
 			request.setDeploymentId(deploymentId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String deploymentId) {
 			request.setDeploymentId(deploymentId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetWidgetsDeploymentRequest build() {
             

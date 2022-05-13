@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
@@ -39,7 +40,7 @@ public class Trustor  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * If disabled no trustee user will have access, even if they were previously added.
    **/
@@ -57,42 +58,41 @@ public class Trustor  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date Trust was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that created trust.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Organization associated with this trust.")
   @JsonProperty("organization")
   public Organization getOrganization() {
     return organization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Authorization for the trustee user has in this trustor organization")
   @JsonProperty("authorization")
   public TrusteeAuthorization getAuthorization() {
     return authorization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,13 +103,14 @@ public class Trustor  implements Serializable {
       return false;
     }
     Trustor trustor = (Trustor) o;
+
     return Objects.equals(this.id, trustor.id) &&
-        Objects.equals(this.enabled, trustor.enabled) &&
-        Objects.equals(this.dateCreated, trustor.dateCreated) &&
-        Objects.equals(this.createdBy, trustor.createdBy) &&
-        Objects.equals(this.organization, trustor.organization) &&
-        Objects.equals(this.authorization, trustor.authorization) &&
-        Objects.equals(this.selfUri, trustor.selfUri);
+            Objects.equals(this.enabled, trustor.enabled) &&
+            Objects.equals(this.dateCreated, trustor.dateCreated) &&
+            Objects.equals(this.createdBy, trustor.createdBy) &&
+            Objects.equals(this.organization, trustor.organization) &&
+            Objects.equals(this.authorization, trustor.authorization) &&
+            Objects.equals(this.selfUri, trustor.selfUri);
   }
 
   @Override

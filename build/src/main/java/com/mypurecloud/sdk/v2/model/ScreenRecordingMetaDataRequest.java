@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaData;
@@ -44,7 +45,7 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
     this.participantJid = participantJid;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaDataRequest roomId(String roomId) {
@@ -61,7 +62,7 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaDataRequest metaData(List<ScreenRecordingMetaData> metaData) {
@@ -78,7 +79,6 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
     this.metaData = metaData;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ScreenRecordingMetaDataRequest  implements Serializable {
       return false;
     }
     ScreenRecordingMetaDataRequest screenRecordingMetaDataRequest = (ScreenRecordingMetaDataRequest) o;
+
     return Objects.equals(this.participantJid, screenRecordingMetaDataRequest.participantJid) &&
-        Objects.equals(this.roomId, screenRecordingMetaDataRequest.roomId) &&
-        Objects.equals(this.metaData, screenRecordingMetaDataRequest.metaData);
+            Objects.equals(this.roomId, screenRecordingMetaDataRequest.roomId) &&
+            Objects.equals(this.metaData, screenRecordingMetaDataRequest.metaData);
   }
 
   @Override

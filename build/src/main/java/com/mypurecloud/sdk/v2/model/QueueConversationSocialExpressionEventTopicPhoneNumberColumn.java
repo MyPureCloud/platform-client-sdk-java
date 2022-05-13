@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
     this.columnName = columnName;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicPhoneNumberColumn type(String type) {
@@ -57,7 +58,6 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
       return false;
     }
     QueueConversationSocialExpressionEventTopicPhoneNumberColumn queueConversationSocialExpressionEventTopicPhoneNumberColumn = (QueueConversationSocialExpressionEventTopicPhoneNumberColumn) o;
+
     return Objects.equals(this.columnName, queueConversationSocialExpressionEventTopicPhoneNumberColumn.columnName) &&
-        Objects.equals(this.type, queueConversationSocialExpressionEventTopicPhoneNumberColumn.type);
+            Objects.equals(this.type, queueConversationSocialExpressionEventTopicPhoneNumberColumn.type);
   }
 
   @Override

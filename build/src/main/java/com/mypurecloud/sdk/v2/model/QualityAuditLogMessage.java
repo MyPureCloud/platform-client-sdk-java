@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -316,7 +317,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Home Organization Id associated with this audit message.
    **/
@@ -334,7 +335,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.userHomeOrgId = userHomeOrgId;
   }
 
-  
+
   /**
    * Trustee Organization Id if this audit message is from trustee access.
    **/
@@ -352,7 +353,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.userTrusteeOrgId = userTrusteeOrgId;
   }
 
-  
+
   /**
    * User associated with this audit message.
    **/
@@ -370,7 +371,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Client associated with this audit message.
    **/
@@ -388,7 +389,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.client = client;
   }
 
-  
+
   /**
    * List of IP addresses of systems that originated or handled the request.
    **/
@@ -406,7 +407,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.remoteIps = remoteIps;
   }
 
-  
+
   /**
    * Name of the service that logged this audit message.
    **/
@@ -424,7 +425,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    * The level of this audit message.
    **/
@@ -442,7 +443,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.level = level;
   }
 
-  
+
   /**
    * The status of the action of this audit message.
    **/
@@ -460,7 +461,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -478,7 +479,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.eventDate = eventDate;
   }
 
-  
+
   /**
    * Message describing the event being audited.
    **/
@@ -496,7 +497,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.messageInfo = messageInfo;
   }
 
-  
+
   /**
    * Action that took place.
    **/
@@ -514,7 +515,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * Entity that was impacted.
    **/
@@ -532,7 +533,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    * Type of the entity that was impacted.
    **/
@@ -550,7 +551,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    * List of properties that were changed and changes made to those properties.
    **/
@@ -568,7 +569,7 @@ public class QualityAuditLogMessage  implements Serializable {
     this.propertyChanges = propertyChanges;
   }
 
-  
+
   /**
    * Additional context for this message.
    **/
@@ -586,7 +587,6 @@ public class QualityAuditLogMessage  implements Serializable {
     this.context = context;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -597,22 +597,23 @@ public class QualityAuditLogMessage  implements Serializable {
       return false;
     }
     QualityAuditLogMessage qualityAuditLogMessage = (QualityAuditLogMessage) o;
+
     return Objects.equals(this.id, qualityAuditLogMessage.id) &&
-        Objects.equals(this.userHomeOrgId, qualityAuditLogMessage.userHomeOrgId) &&
-        Objects.equals(this.userTrusteeOrgId, qualityAuditLogMessage.userTrusteeOrgId) &&
-        Objects.equals(this.user, qualityAuditLogMessage.user) &&
-        Objects.equals(this.client, qualityAuditLogMessage.client) &&
-        Objects.equals(this.remoteIps, qualityAuditLogMessage.remoteIps) &&
-        Objects.equals(this.serviceName, qualityAuditLogMessage.serviceName) &&
-        Objects.equals(this.level, qualityAuditLogMessage.level) &&
-        Objects.equals(this.status, qualityAuditLogMessage.status) &&
-        Objects.equals(this.eventDate, qualityAuditLogMessage.eventDate) &&
-        Objects.equals(this.messageInfo, qualityAuditLogMessage.messageInfo) &&
-        Objects.equals(this.action, qualityAuditLogMessage.action) &&
-        Objects.equals(this.entity, qualityAuditLogMessage.entity) &&
-        Objects.equals(this.entityType, qualityAuditLogMessage.entityType) &&
-        Objects.equals(this.propertyChanges, qualityAuditLogMessage.propertyChanges) &&
-        Objects.equals(this.context, qualityAuditLogMessage.context);
+            Objects.equals(this.userHomeOrgId, qualityAuditLogMessage.userHomeOrgId) &&
+            Objects.equals(this.userTrusteeOrgId, qualityAuditLogMessage.userTrusteeOrgId) &&
+            Objects.equals(this.user, qualityAuditLogMessage.user) &&
+            Objects.equals(this.client, qualityAuditLogMessage.client) &&
+            Objects.equals(this.remoteIps, qualityAuditLogMessage.remoteIps) &&
+            Objects.equals(this.serviceName, qualityAuditLogMessage.serviceName) &&
+            Objects.equals(this.level, qualityAuditLogMessage.level) &&
+            Objects.equals(this.status, qualityAuditLogMessage.status) &&
+            Objects.equals(this.eventDate, qualityAuditLogMessage.eventDate) &&
+            Objects.equals(this.messageInfo, qualityAuditLogMessage.messageInfo) &&
+            Objects.equals(this.action, qualityAuditLogMessage.action) &&
+            Objects.equals(this.entity, qualityAuditLogMessage.entity) &&
+            Objects.equals(this.entityType, qualityAuditLogMessage.entityType) &&
+            Objects.equals(this.propertyChanges, qualityAuditLogMessage.propertyChanges) &&
+            Objects.equals(this.context, qualityAuditLogMessage.context);
   }
 
   @Override

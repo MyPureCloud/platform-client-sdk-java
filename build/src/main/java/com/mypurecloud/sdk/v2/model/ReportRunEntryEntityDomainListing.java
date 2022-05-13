@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing total(Long total) {
@@ -103,7 +104,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ReportRunEntryEntityDomainListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
       return false;
     }
     ReportRunEntryEntityDomainListing reportRunEntryEntityDomainListing = (ReportRunEntryEntityDomainListing) o;
+
     return Objects.equals(this.entities, reportRunEntryEntityDomainListing.entities) &&
-        Objects.equals(this.pageSize, reportRunEntryEntityDomainListing.pageSize) &&
-        Objects.equals(this.pageNumber, reportRunEntryEntityDomainListing.pageNumber) &&
-        Objects.equals(this.total, reportRunEntryEntityDomainListing.total) &&
-        Objects.equals(this.lastUri, reportRunEntryEntityDomainListing.lastUri) &&
-        Objects.equals(this.firstUri, reportRunEntryEntityDomainListing.firstUri) &&
-        Objects.equals(this.selfUri, reportRunEntryEntityDomainListing.selfUri) &&
-        Objects.equals(this.previousUri, reportRunEntryEntityDomainListing.previousUri) &&
-        Objects.equals(this.nextUri, reportRunEntryEntityDomainListing.nextUri) &&
-        Objects.equals(this.pageCount, reportRunEntryEntityDomainListing.pageCount);
+            Objects.equals(this.pageSize, reportRunEntryEntityDomainListing.pageSize) &&
+            Objects.equals(this.pageNumber, reportRunEntryEntityDomainListing.pageNumber) &&
+            Objects.equals(this.total, reportRunEntryEntityDomainListing.total) &&
+            Objects.equals(this.lastUri, reportRunEntryEntityDomainListing.lastUri) &&
+            Objects.equals(this.firstUri, reportRunEntryEntityDomainListing.firstUri) &&
+            Objects.equals(this.selfUri, reportRunEntryEntityDomainListing.selfUri) &&
+            Objects.equals(this.previousUri, reportRunEntryEntityDomainListing.previousUri) &&
+            Objects.equals(this.nextUri, reportRunEntryEntityDomainListing.nextUri) &&
+            Objects.equals(this.pageCount, reportRunEntryEntityDomainListing.pageCount);
   }
 
   @Override

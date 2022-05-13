@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class ConversationScreenShareEventTopicJourneyContext  implements Seriali
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicJourneyContext customerSession(ConversationScreenShareEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class ConversationScreenShareEventTopicJourneyContext  implements Seriali
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicJourneyContext triggeringAction(ConversationScreenShareEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class ConversationScreenShareEventTopicJourneyContext  implements Seriali
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ConversationScreenShareEventTopicJourneyContext  implements Seriali
       return false;
     }
     ConversationScreenShareEventTopicJourneyContext conversationScreenShareEventTopicJourneyContext = (ConversationScreenShareEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, conversationScreenShareEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, conversationScreenShareEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, conversationScreenShareEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, conversationScreenShareEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, conversationScreenShareEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

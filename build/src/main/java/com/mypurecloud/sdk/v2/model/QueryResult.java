@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntity;
@@ -33,7 +34,7 @@ public class QueryResult  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public QueryResult name(String name) {
@@ -50,7 +51,7 @@ public class QueryResult  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueryResult body(DomainEntity body) {
@@ -67,14 +68,13 @@ public class QueryResult  implements Serializable {
     this.body = body;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -85,10 +85,11 @@ public class QueryResult  implements Serializable {
       return false;
     }
     QueryResult queryResult = (QueryResult) o;
+
     return Objects.equals(this.id, queryResult.id) &&
-        Objects.equals(this.name, queryResult.name) &&
-        Objects.equals(this.body, queryResult.body) &&
-        Objects.equals(this.selfUri, queryResult.selfUri);
+            Objects.equals(this.name, queryResult.name) &&
+            Objects.equals(this.body, queryResult.body) &&
+            Objects.equals(this.selfUri, queryResult.selfUri);
   }
 
   @Override

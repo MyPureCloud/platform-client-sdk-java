@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
@@ -34,7 +35,7 @@ public class PatchActionTarget  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public PatchActionTarget name(String name) {
@@ -51,7 +52,7 @@ public class PatchActionTarget  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level.
    **/
@@ -69,7 +70,7 @@ public class PatchActionTarget  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
-  
+
   /**
    * Indicates the non-default short abandon threshold
    **/
@@ -87,14 +88,13 @@ public class PatchActionTarget  implements Serializable {
     this.shortAbandonThreshold = shortAbandonThreshold;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,11 +105,12 @@ public class PatchActionTarget  implements Serializable {
       return false;
     }
     PatchActionTarget patchActionTarget = (PatchActionTarget) o;
+
     return Objects.equals(this.id, patchActionTarget.id) &&
-        Objects.equals(this.name, patchActionTarget.name) &&
-        Objects.equals(this.serviceLevel, patchActionTarget.serviceLevel) &&
-        Objects.equals(this.shortAbandonThreshold, patchActionTarget.shortAbandonThreshold) &&
-        Objects.equals(this.selfUri, patchActionTarget.selfUri);
+            Objects.equals(this.name, patchActionTarget.name) &&
+            Objects.equals(this.serviceLevel, patchActionTarget.serviceLevel) &&
+            Objects.equals(this.shortAbandonThreshold, patchActionTarget.shortAbandonThreshold) &&
+            Objects.equals(this.selfUri, patchActionTarget.selfUri);
   }
 
   @Override

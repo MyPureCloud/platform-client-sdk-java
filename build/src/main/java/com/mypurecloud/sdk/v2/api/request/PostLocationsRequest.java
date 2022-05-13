@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 public class PostLocationsRequest {
-    
+
 	private LocationCreateDefinition body;
 	public LocationCreateDefinition getBody() {
 		return this.body;
@@ -43,7 +43,7 @@ public class PostLocationsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,8 +73,8 @@ public class PostLocationsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/locations")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -85,12 +85,12 @@ public class PostLocationsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(LocationCreateDefinition body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostLocationsRequest request;
@@ -99,20 +99,20 @@ public class PostLocationsRequest {
 			request = new PostLocationsRequest();
 		}
 
-		
+
 		public Builder withBody(LocationCreateDefinition body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(LocationCreateDefinition body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostLocationsRequest build() {
             

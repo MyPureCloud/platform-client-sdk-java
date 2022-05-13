@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserStationChangeTopicUser;
@@ -42,7 +43,7 @@ public class UserStationChangeTopicUserStation  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public UserStationChangeTopicUserStation name(String name) {
@@ -59,7 +60,7 @@ public class UserStationChangeTopicUserStation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public UserStationChangeTopicUserStation associatedUser(UserStationChangeTopicUser associatedUser) {
@@ -76,7 +77,6 @@ public class UserStationChangeTopicUserStation  implements Serializable {
     this.associatedUser = associatedUser;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class UserStationChangeTopicUserStation  implements Serializable {
       return false;
     }
     UserStationChangeTopicUserStation userStationChangeTopicUserStation = (UserStationChangeTopicUserStation) o;
+
     return Objects.equals(this.id, userStationChangeTopicUserStation.id) &&
-        Objects.equals(this.name, userStationChangeTopicUserStation.name) &&
-        Objects.equals(this.associatedUser, userStationChangeTopicUserStation.associatedUser);
+            Objects.equals(this.name, userStationChangeTopicUserStation.name) &&
+            Objects.equals(this.associatedUser, userStationChangeTopicUserStation.associatedUser);
   }
 
   @Override

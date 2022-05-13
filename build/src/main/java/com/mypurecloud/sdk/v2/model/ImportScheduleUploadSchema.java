@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
@@ -50,7 +51,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The number of weeks the imported schedule will cover
    **/
@@ -68,7 +69,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * Whether the imported schedule should be immediately published
    **/
@@ -86,7 +87,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    * The short term forecast to associate with the imported schedule
    **/
@@ -104,7 +105,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * The headcount forecast to associate with the imported schedule
    **/
@@ -122,7 +123,7 @@ public class ImportScheduleUploadSchema  implements Serializable {
     this.headcountForecast = headcountForecast;
   }
 
-  
+
   /**
    * Individual agent schedules
    **/
@@ -140,7 +141,6 @@ public class ImportScheduleUploadSchema  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,12 +151,13 @@ public class ImportScheduleUploadSchema  implements Serializable {
       return false;
     }
     ImportScheduleUploadSchema importScheduleUploadSchema = (ImportScheduleUploadSchema) o;
+
     return Objects.equals(this.description, importScheduleUploadSchema.description) &&
-        Objects.equals(this.weekCount, importScheduleUploadSchema.weekCount) &&
-        Objects.equals(this.published, importScheduleUploadSchema.published) &&
-        Objects.equals(this.shortTermForecast, importScheduleUploadSchema.shortTermForecast) &&
-        Objects.equals(this.headcountForecast, importScheduleUploadSchema.headcountForecast) &&
-        Objects.equals(this.agentSchedules, importScheduleUploadSchema.agentSchedules);
+            Objects.equals(this.weekCount, importScheduleUploadSchema.weekCount) &&
+            Objects.equals(this.published, importScheduleUploadSchema.published) &&
+            Objects.equals(this.shortTermForecast, importScheduleUploadSchema.shortTermForecast) &&
+            Objects.equals(this.headcountForecast, importScheduleUploadSchema.headcountForecast) &&
+            Objects.equals(this.agentSchedules, importScheduleUploadSchema.agentSchedules);
   }
 
   @Override

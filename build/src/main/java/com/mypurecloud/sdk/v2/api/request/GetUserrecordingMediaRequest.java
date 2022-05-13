@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.UserRecording;
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
-import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.UserRecording;
+import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 public class GetUserrecordingMediaRequest {
-    
+
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -41,7 +41,7 @@ public class GetUserrecordingMediaRequest {
 	    this.setRecordingId(recordingId);
 	    return this;
 	} 
-	
+
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -57,12 +57,12 @@ public class GetUserrecordingMediaRequest {
 	} 
 
 	public enum formatIdValues { 
-		WAV("WAV"), 
-		WEBM("WEBM"), 
-		WAV_ULAW("WAV_ULAW"), 
-		OGG_VORBIS("OGG_VORBIS"), 
-		OGG_OPUS("OGG_OPUS"), 
-		MP3("MP3"), 
+		WAV("WAV"),
+		WEBM("WEBM"),
+		WAV_ULAW("WAV_ULAW"),
+		OGG_VORBIS("OGG_VORBIS"),
+		OGG_OPUS("OGG_OPUS"),
+		MP3("MP3"),
 		NONE("NONE");
 
 		private String value;
@@ -90,7 +90,7 @@ public class GetUserrecordingMediaRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -121,9 +121,10 @@ public class GetUserrecordingMediaRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/userrecordings/{recordingId}/media")
                 .withPathParameter("recordingId", recordingId)
         
+
                 .withQueryParameters("formatId", "", formatId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -134,12 +135,12 @@ public class GetUserrecordingMediaRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String recordingId) {
 	    return new Builder()
 	            .withRequiredParams(recordingId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetUserrecordingMediaRequest request;
@@ -148,30 +149,34 @@ public class GetUserrecordingMediaRequest {
 			request = new GetUserrecordingMediaRequest();
 		}
 
-		
+
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
-		
+
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
 
-		public Builder withFormatId(formatIdValues formatId) {
-		    request.setFormatId(formatId.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withFormatId(formatIdValues formatId) {
+		    request.setFormatId(formatId.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String recordingId) {
 			request.setRecordingId(recordingId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetUserrecordingMediaRequest build() {
             

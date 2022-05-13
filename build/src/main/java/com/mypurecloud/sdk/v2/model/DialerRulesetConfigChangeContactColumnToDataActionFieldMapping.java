@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
     this.contactColumnName = contactColumnName;
   }
 
-  
+
   /**
    * The name of an output field from the data action that the contact column data will be passed to
    **/
@@ -59,7 +60,6 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
     this.dataActionField = dataActionField;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
       return false;
     }
     DialerRulesetConfigChangeContactColumnToDataActionFieldMapping dialerRulesetConfigChangeContactColumnToDataActionFieldMapping = (DialerRulesetConfigChangeContactColumnToDataActionFieldMapping) o;
+
     return Objects.equals(this.contactColumnName, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.contactColumnName) &&
-        Objects.equals(this.dataActionField, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.dataActionField);
+            Objects.equals(this.dataActionField, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.dataActionField);
   }
 
   @Override

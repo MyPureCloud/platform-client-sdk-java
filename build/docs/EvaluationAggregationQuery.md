@@ -14,9 +14,9 @@ title: EvaluationAggregationQuery
 | **groupBy** | <!---->[**List&lt;GroupByEnum&gt;**](#GroupByEnum)<!----> | Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group. |  [optional] |
 | **filter** | <!----><!---->[**EvaluationAggregateQueryFilter**](EvaluationAggregateQueryFilter.html)<!----> | Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters |  [optional] |
 | **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Only named metrics will be retrieved. |  |
-| **flattenMultivaluedDimensions** | <!----><!---->**Boolean**<!----> | Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;) |  [optional] |
+| **flattenMultivaluedDimensions** | <!----><!---->**Boolean**<!----> | Flattens any multivalued dimensions used in response groups (e.g. ['a','b','c']->'a,b,c') |  [optional] |
 | **views** | <!----><!---->[**List&lt;EvaluationAggregationView&gt;**](EvaluationAggregationView.html)<!----> | Custom derived metric views |  [optional] |
-| **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum)<!----> | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event. |  [optional] |
+| **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum)<!----> | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -64,11 +64,11 @@ title: EvaluationAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CONVERSATIONSTART | &quot;conversationStart&quot; |
-| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
-| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; |
-| EVENTTIME | &quot;eventTime&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CONVERSATIONSTART | &quot;conversationStart&quot; | 
+| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; | 
+| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; | 
+| EVENTTIME | &quot;eventTime&quot; | 
 {: class="table table-striped"}
 
 

@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get a report of the billable license usages
 
-Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
 
 Wraps GET /api/v2/billing/reports/billableusage  
 

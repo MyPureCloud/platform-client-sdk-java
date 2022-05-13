@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class ConversationMessageEventTopicJourneyContext  implements Serializabl
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicJourneyContext customerSession(ConversationMessageEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class ConversationMessageEventTopicJourneyContext  implements Serializabl
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicJourneyContext triggeringAction(ConversationMessageEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class ConversationMessageEventTopicJourneyContext  implements Serializabl
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ConversationMessageEventTopicJourneyContext  implements Serializabl
       return false;
     }
     ConversationMessageEventTopicJourneyContext conversationMessageEventTopicJourneyContext = (ConversationMessageEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, conversationMessageEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, conversationMessageEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, conversationMessageEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, conversationMessageEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, conversationMessageEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

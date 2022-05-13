@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class WebChatMessage  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WebChatMessage name(String name) {
@@ -107,7 +108,7 @@ public class WebChatMessage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The identifier of the conversation
    **/
@@ -125,7 +126,7 @@ public class WebChatMessage  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * The member who sent the message
    **/
@@ -143,7 +144,7 @@ public class WebChatMessage  implements Serializable {
     this.sender = sender;
   }
 
-  
+
   /**
    * The message body.
    **/
@@ -161,7 +162,7 @@ public class WebChatMessage  implements Serializable {
     this.body = body;
   }
 
-  
+
   /**
    * The purpose of the message within the conversation, such as a standard text entry versus a greeting.
    **/
@@ -179,7 +180,7 @@ public class WebChatMessage  implements Serializable {
     this.bodyType = bodyType;
   }
 
-  
+
   /**
    * The timestamp of the message, in ISO-8601 format
    **/
@@ -197,14 +198,13 @@ public class WebChatMessage  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,14 +215,15 @@ public class WebChatMessage  implements Serializable {
       return false;
     }
     WebChatMessage webChatMessage = (WebChatMessage) o;
+
     return Objects.equals(this.id, webChatMessage.id) &&
-        Objects.equals(this.name, webChatMessage.name) &&
-        Objects.equals(this.conversation, webChatMessage.conversation) &&
-        Objects.equals(this.sender, webChatMessage.sender) &&
-        Objects.equals(this.body, webChatMessage.body) &&
-        Objects.equals(this.bodyType, webChatMessage.bodyType) &&
-        Objects.equals(this.timestamp, webChatMessage.timestamp) &&
-        Objects.equals(this.selfUri, webChatMessage.selfUri);
+            Objects.equals(this.name, webChatMessage.name) &&
+            Objects.equals(this.conversation, webChatMessage.conversation) &&
+            Objects.equals(this.sender, webChatMessage.sender) &&
+            Objects.equals(this.body, webChatMessage.body) &&
+            Objects.equals(this.bodyType, webChatMessage.bodyType) &&
+            Objects.equals(this.timestamp, webChatMessage.timestamp) &&
+            Objects.equals(this.selfUri, webChatMessage.selfUri);
   }
 
   @Override

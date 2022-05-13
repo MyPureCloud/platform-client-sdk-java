@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
@@ -50,7 +51,7 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The shift definitions for this agent schedule
    **/
@@ -68,7 +69,7 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * Full day time off markers which apply to this agent schedule
    **/
@@ -86,7 +87,7 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
+
   /**
    * The work plan for this user
    **/
@@ -104,7 +105,7 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     this.workPlan = workPlan;
   }
 
-  
+
   /**
    * The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
    **/
@@ -122,7 +123,6 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     this.workPlansPerWeek = workPlansPerWeek;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -133,11 +133,12 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
       return false;
     }
     BuAgentScheduleRescheduleResponse buAgentScheduleRescheduleResponse = (BuAgentScheduleRescheduleResponse) o;
+
     return Objects.equals(this.user, buAgentScheduleRescheduleResponse.user) &&
-        Objects.equals(this.shifts, buAgentScheduleRescheduleResponse.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleRescheduleResponse.fullDayTimeOffMarkers) &&
-        Objects.equals(this.workPlan, buAgentScheduleRescheduleResponse.workPlan) &&
-        Objects.equals(this.workPlansPerWeek, buAgentScheduleRescheduleResponse.workPlansPerWeek);
+            Objects.equals(this.shifts, buAgentScheduleRescheduleResponse.shifts) &&
+            Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleRescheduleResponse.fullDayTimeOffMarkers) &&
+            Objects.equals(this.workPlan, buAgentScheduleRescheduleResponse.workPlan) &&
+            Objects.equals(this.workPlansPerWeek, buAgentScheduleRescheduleResponse.workPlansPerWeek);
   }
 
   @Override

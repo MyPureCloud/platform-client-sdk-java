@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class ManagementUnit  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ManagementUnit name(String name) {
@@ -117,7 +118,7 @@ public class ManagementUnit  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The business unit to which this management unit belongs
    **/
@@ -135,7 +136,7 @@ public class ManagementUnit  implements Serializable {
     this.businessUnit = businessUnit;
   }
 
-  
+
   /**
    * Start day of week for scheduling and forecasting purposes. Moving to Business Unit
    **/
@@ -153,7 +154,7 @@ public class ManagementUnit  implements Serializable {
     this.startDayOfWeek = startDayOfWeek;
   }
 
-  
+
   /**
    * The time zone for the management unit in standard Olson format.  Moving to Business Unit
    **/
@@ -171,7 +172,7 @@ public class ManagementUnit  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The configuration settings for this management unit
    **/
@@ -189,7 +190,7 @@ public class ManagementUnit  implements Serializable {
     this.settings = settings;
   }
 
-  
+
   /**
    * Version info metadata for this management unit. Deprecated, use settings.metadata
    **/
@@ -207,7 +208,7 @@ public class ManagementUnit  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -225,35 +226,34 @@ public class ManagementUnit  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The version of the underlying entity.  Deprecated, use field from settings.metadata instead")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who last modified this entity.  Deprecated, use field from settings.metadata instead")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -264,18 +264,19 @@ public class ManagementUnit  implements Serializable {
       return false;
     }
     ManagementUnit managementUnit = (ManagementUnit) o;
+
     return Objects.equals(this.id, managementUnit.id) &&
-        Objects.equals(this.name, managementUnit.name) &&
-        Objects.equals(this.businessUnit, managementUnit.businessUnit) &&
-        Objects.equals(this.startDayOfWeek, managementUnit.startDayOfWeek) &&
-        Objects.equals(this.timeZone, managementUnit.timeZone) &&
-        Objects.equals(this.settings, managementUnit.settings) &&
-        Objects.equals(this.metadata, managementUnit.metadata) &&
-        Objects.equals(this.division, managementUnit.division) &&
-        Objects.equals(this.version, managementUnit.version) &&
-        Objects.equals(this.dateModified, managementUnit.dateModified) &&
-        Objects.equals(this.modifiedBy, managementUnit.modifiedBy) &&
-        Objects.equals(this.selfUri, managementUnit.selfUri);
+            Objects.equals(this.name, managementUnit.name) &&
+            Objects.equals(this.businessUnit, managementUnit.businessUnit) &&
+            Objects.equals(this.startDayOfWeek, managementUnit.startDayOfWeek) &&
+            Objects.equals(this.timeZone, managementUnit.timeZone) &&
+            Objects.equals(this.settings, managementUnit.settings) &&
+            Objects.equals(this.metadata, managementUnit.metadata) &&
+            Objects.equals(this.division, managementUnit.division) &&
+            Objects.equals(this.version, managementUnit.version) &&
+            Objects.equals(this.dateModified, managementUnit.dateModified) &&
+            Objects.equals(this.modifiedBy, managementUnit.modifiedBy) &&
+            Objects.equals(this.selfUri, managementUnit.selfUri);
   }
 
   @Override

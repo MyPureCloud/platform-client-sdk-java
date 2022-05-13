@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class MessagingRecipient  implements Serializable {
     return nickname;
   }
 
-  
+
   /**
    * The recipient ID specific to the provider.
    **/
@@ -107,7 +108,7 @@ public class MessagingRecipient  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The recipient ID type. This is used to indicate the format used for the ID.
    **/
@@ -125,35 +126,35 @@ public class MessagingRecipient  implements Serializable {
     this.idType = idType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URL of an image that represents the recipient.")
   @JsonProperty("image")
   public String getImage() {
     return image;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "First name of the recipient.")
   @JsonProperty("firstName")
   public String getFirstName() {
     return firstName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last name of the recipient.")
   @JsonProperty("lastName")
   public String getLastName() {
     return lastName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "E-mail address of the recipient.")
   @JsonProperty("email")
   public String getEmail() {
     return email;
   }
 
-  
+
   /**
    * List of recipient additional identifiers
    **/
@@ -171,7 +172,6 @@ public class MessagingRecipient  implements Serializable {
     this.additionalIds = additionalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,14 +182,15 @@ public class MessagingRecipient  implements Serializable {
       return false;
     }
     MessagingRecipient messagingRecipient = (MessagingRecipient) o;
+
     return Objects.equals(this.nickname, messagingRecipient.nickname) &&
-        Objects.equals(this.id, messagingRecipient.id) &&
-        Objects.equals(this.idType, messagingRecipient.idType) &&
-        Objects.equals(this.image, messagingRecipient.image) &&
-        Objects.equals(this.firstName, messagingRecipient.firstName) &&
-        Objects.equals(this.lastName, messagingRecipient.lastName) &&
-        Objects.equals(this.email, messagingRecipient.email) &&
-        Objects.equals(this.additionalIds, messagingRecipient.additionalIds);
+            Objects.equals(this.id, messagingRecipient.id) &&
+            Objects.equals(this.idType, messagingRecipient.idType) &&
+            Objects.equals(this.image, messagingRecipient.image) &&
+            Objects.equals(this.firstName, messagingRecipient.firstName) &&
+            Objects.equals(this.lastName, messagingRecipient.lastName) &&
+            Objects.equals(this.email, messagingRecipient.email) &&
+            Objects.equals(this.additionalIds, messagingRecipient.additionalIds);
   }
 
   @Override

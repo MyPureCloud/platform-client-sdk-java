@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicVideoMediaParticipant;
@@ -45,7 +46,7 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoConversation name(String name) {
@@ -62,7 +63,7 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoConversation participants(List<ConversationVideoEventTopicVideoMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicVideoConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class ConversationVideoEventTopicVideoConversation  implements Serializab
       return false;
     }
     ConversationVideoEventTopicVideoConversation conversationVideoEventTopicVideoConversation = (ConversationVideoEventTopicVideoConversation) o;
+
     return Objects.equals(this.id, conversationVideoEventTopicVideoConversation.id) &&
-        Objects.equals(this.name, conversationVideoEventTopicVideoConversation.name) &&
-        Objects.equals(this.participants, conversationVideoEventTopicVideoConversation.participants) &&
-        Objects.equals(this.otherMediaUris, conversationVideoEventTopicVideoConversation.otherMediaUris);
+            Objects.equals(this.name, conversationVideoEventTopicVideoConversation.name) &&
+            Objects.equals(this.participants, conversationVideoEventTopicVideoConversation.participants) &&
+            Objects.equals(this.otherMediaUris, conversationVideoEventTopicVideoConversation.otherMediaUris);
   }
 
   @Override

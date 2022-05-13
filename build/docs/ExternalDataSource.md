@@ -19,8 +19,8 @@ title: ExternalDataSource
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SALESFORCE | &quot;SALESFORCE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SALESFORCE | &quot;SALESFORCE&quot; | 
 {: class="table table-striped"}
 
 

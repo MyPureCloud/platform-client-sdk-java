@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentRuleRunTopicLearningAssignmentsCreated;
@@ -43,7 +44,7 @@ public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification total(Integer total) {
@@ -60,7 +61,6 @@ public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
     this.total = total;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
       return false;
     }
     LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification learningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification = (LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification) o;
+
     return Objects.equals(this.entities, learningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.entities) &&
-        Objects.equals(this.total, learningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.total);
+            Objects.equals(this.total, learningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification.total);
   }
 
   @Override

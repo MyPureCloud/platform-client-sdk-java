@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class QueueConversationScreenShareEventTopicWrapup  implements Serializab
     this.code = code;
   }
 
-  
+
   /**
    * Text entered by the agent to describe the call or disposition.
    **/
@@ -65,7 +66,7 @@ public class QueueConversationScreenShareEventTopicWrapup  implements Serializab
     this.notes = notes;
   }
 
-  
+
   /**
    * List of tags selected by the agent to describe the call or disposition.
    **/
@@ -83,7 +84,7 @@ public class QueueConversationScreenShareEventTopicWrapup  implements Serializab
     this.tags = tags;
   }
 
-  
+
   /**
    * The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
    **/
@@ -101,7 +102,7 @@ public class QueueConversationScreenShareEventTopicWrapup  implements Serializab
     this.durationSeconds = durationSeconds;
   }
 
-  
+
   /**
    * The timestamp when the wrapup was finished.
    **/
@@ -119,7 +120,6 @@ public class QueueConversationScreenShareEventTopicWrapup  implements Serializab
     this.endTime = endTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class QueueConversationScreenShareEventTopicWrapup  implements Serializab
       return false;
     }
     QueueConversationScreenShareEventTopicWrapup queueConversationScreenShareEventTopicWrapup = (QueueConversationScreenShareEventTopicWrapup) o;
+
     return Objects.equals(this.code, queueConversationScreenShareEventTopicWrapup.code) &&
-        Objects.equals(this.notes, queueConversationScreenShareEventTopicWrapup.notes) &&
-        Objects.equals(this.tags, queueConversationScreenShareEventTopicWrapup.tags) &&
-        Objects.equals(this.durationSeconds, queueConversationScreenShareEventTopicWrapup.durationSeconds) &&
-        Objects.equals(this.endTime, queueConversationScreenShareEventTopicWrapup.endTime);
+            Objects.equals(this.notes, queueConversationScreenShareEventTopicWrapup.notes) &&
+            Objects.equals(this.tags, queueConversationScreenShareEventTopicWrapup.tags) &&
+            Objects.equals(this.durationSeconds, queueConversationScreenShareEventTopicWrapup.durationSeconds) &&
+            Objects.equals(this.endTime, queueConversationScreenShareEventTopicWrapup.endTime);
   }
 
   @Override

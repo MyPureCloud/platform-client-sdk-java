@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerResponsesetConfigChangeReaction;
@@ -51,7 +52,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.responses = responses;
   }
 
-  
+
   /**
    * When beep detection is enabled, answering machine detection will wait for the beep before transferring the call
    **/
@@ -69,7 +70,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.beepDetectionEnabled = beepDetectionEnabled;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -87,7 +88,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -105,7 +106,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -123,7 +124,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -141,7 +142,7 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -159,7 +160,6 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,13 +170,14 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
       return false;
     }
     DialerResponsesetConfigChangeResponseSet dialerResponsesetConfigChangeResponseSet = (DialerResponsesetConfigChangeResponseSet) o;
+
     return Objects.equals(this.responses, dialerResponsesetConfigChangeResponseSet.responses) &&
-        Objects.equals(this.beepDetectionEnabled, dialerResponsesetConfigChangeResponseSet.beepDetectionEnabled) &&
-        Objects.equals(this.id, dialerResponsesetConfigChangeResponseSet.id) &&
-        Objects.equals(this.name, dialerResponsesetConfigChangeResponseSet.name) &&
-        Objects.equals(this.dateCreated, dialerResponsesetConfigChangeResponseSet.dateCreated) &&
-        Objects.equals(this.dateModified, dialerResponsesetConfigChangeResponseSet.dateModified) &&
-        Objects.equals(this.version, dialerResponsesetConfigChangeResponseSet.version);
+            Objects.equals(this.beepDetectionEnabled, dialerResponsesetConfigChangeResponseSet.beepDetectionEnabled) &&
+            Objects.equals(this.id, dialerResponsesetConfigChangeResponseSet.id) &&
+            Objects.equals(this.name, dialerResponsesetConfigChangeResponseSet.name) &&
+            Objects.equals(this.dateCreated, dialerResponsesetConfigChangeResponseSet.dateCreated) &&
+            Objects.equals(this.dateModified, dialerResponsesetConfigChangeResponseSet.dateModified) &&
+            Objects.equals(this.version, dialerResponsesetConfigChangeResponseSet.version);
   }
 
   @Override

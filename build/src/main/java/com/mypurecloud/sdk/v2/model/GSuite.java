@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class GSuite  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GSuite name(String name) {
@@ -58,7 +59,7 @@ public class GSuite  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public GSuite disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class GSuite  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public GSuite issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class GSuite  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public GSuite ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class GSuite  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public GSuite sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class GSuite  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public GSuite sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class GSuite  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public GSuite relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class GSuite  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public GSuite certificate(String certificate) {
@@ -177,7 +178,7 @@ public class GSuite  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public GSuite certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class GSuite  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class GSuite  implements Serializable {
       return false;
     }
     GSuite gSuite = (GSuite) o;
+
     return Objects.equals(this.id, gSuite.id) &&
-        Objects.equals(this.name, gSuite.name) &&
-        Objects.equals(this.disabled, gSuite.disabled) &&
-        Objects.equals(this.issuerURI, gSuite.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, gSuite.ssoTargetURI) &&
-        Objects.equals(this.sloURI, gSuite.sloURI) &&
-        Objects.equals(this.sloBinding, gSuite.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, gSuite.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, gSuite.certificate) &&
-        Objects.equals(this.certificates, gSuite.certificates) &&
-        Objects.equals(this.selfUri, gSuite.selfUri);
+            Objects.equals(this.name, gSuite.name) &&
+            Objects.equals(this.disabled, gSuite.disabled) &&
+            Objects.equals(this.issuerURI, gSuite.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, gSuite.ssoTargetURI) &&
+            Objects.equals(this.sloURI, gSuite.sloURI) &&
+            Objects.equals(this.sloBinding, gSuite.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, gSuite.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, gSuite.certificate) &&
+            Objects.equals(this.certificates, gSuite.certificates) &&
+            Objects.equals(this.selfUri, gSuite.selfUri);
   }
 
   @Override

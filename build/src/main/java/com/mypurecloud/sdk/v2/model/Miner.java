@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -213,7 +214,7 @@ public class Miner  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Chat Corpus Name.
    **/
@@ -231,7 +232,7 @@ public class Miner  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Language Localization code.
    **/
@@ -249,98 +250,97 @@ public class Miner  implements Serializable {
     this.language = language;
   }
 
-  
-  @ApiModelProperty(example = "2020-04-29T17:12:06.613", value = "Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+
+  @ApiModelProperty(example = "null", value = "Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of the miner.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
-  @ApiModelProperty(example = "2019-06-20", value = "Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+
+  @ApiModelProperty(example = "Thu Jun 20 00:00:00 UTC 2019", value = "Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("conversationsDateRangeStart")
   public LocalDate getConversationsDateRangeStart() {
     return conversationsDateRangeStart;
   }
 
-  
-  @ApiModelProperty(example = "2019-12-20", value = "Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+
+  @ApiModelProperty(example = "Fri Dec 20 00:00:00 UTC 2019", value = "Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("conversationsDateRangeEnd")
   public LocalDate getConversationsDateRangeEnd() {
     return conversationsDateRangeEnd;
   }
 
-  
-  @ApiModelProperty(example = "2020-05-20T23:56:07.268", value = "Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+
+  @ApiModelProperty(example = "null", value = "Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Mining message if present.")
   @JsonProperty("message")
   public String getMessage() {
     return message;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Flag to indicate whether data file to be mined was uploaded.")
   @JsonProperty("conversationDataUploaded")
   public Boolean getConversationDataUploaded() {
     return conversationDataUploaded;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Media type for filtering conversations.")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of queue IDs for filtering conversations.")
   @JsonProperty("queueIds")
   public List<String> getQueueIds() {
     return queueIds;
   }
 
-  
-  @ApiModelProperty(example = "2020-04-30T23:56:07.268", value = "Date when the miner started execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+
+  @ApiModelProperty(example = "null", value = "Date when the miner started execution. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateTriggered")
   public Date getDateTriggered() {
     return dateTriggered;
   }
 
-  
-  @ApiModelProperty(example = "2020-04-30T23:56:07.268", value = "Date when the miner was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+
+  @ApiModelProperty(example = "null", value = "Date when the miner was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Latest draft details of the miner.")
   @JsonProperty("latestDraftVersion")
   public Draft getLatestDraftVersion() {
     return latestDraftVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -351,22 +351,23 @@ public class Miner  implements Serializable {
       return false;
     }
     Miner miner = (Miner) o;
+
     return Objects.equals(this.id, miner.id) &&
-        Objects.equals(this.name, miner.name) &&
-        Objects.equals(this.language, miner.language) &&
-        Objects.equals(this.dateCreated, miner.dateCreated) &&
-        Objects.equals(this.status, miner.status) &&
-        Objects.equals(this.conversationsDateRangeStart, miner.conversationsDateRangeStart) &&
-        Objects.equals(this.conversationsDateRangeEnd, miner.conversationsDateRangeEnd) &&
-        Objects.equals(this.dateCompleted, miner.dateCompleted) &&
-        Objects.equals(this.message, miner.message) &&
-        Objects.equals(this.conversationDataUploaded, miner.conversationDataUploaded) &&
-        Objects.equals(this.mediaType, miner.mediaType) &&
-        Objects.equals(this.queueIds, miner.queueIds) &&
-        Objects.equals(this.dateTriggered, miner.dateTriggered) &&
-        Objects.equals(this.dateModified, miner.dateModified) &&
-        Objects.equals(this.latestDraftVersion, miner.latestDraftVersion) &&
-        Objects.equals(this.selfUri, miner.selfUri);
+            Objects.equals(this.name, miner.name) &&
+            Objects.equals(this.language, miner.language) &&
+            Objects.equals(this.dateCreated, miner.dateCreated) &&
+            Objects.equals(this.status, miner.status) &&
+            Objects.equals(this.conversationsDateRangeStart, miner.conversationsDateRangeStart) &&
+            Objects.equals(this.conversationsDateRangeEnd, miner.conversationsDateRangeEnd) &&
+            Objects.equals(this.dateCompleted, miner.dateCompleted) &&
+            Objects.equals(this.message, miner.message) &&
+            Objects.equals(this.conversationDataUploaded, miner.conversationDataUploaded) &&
+            Objects.equals(this.mediaType, miner.mediaType) &&
+            Objects.equals(this.queueIds, miner.queueIds) &&
+            Objects.equals(this.dateTriggered, miner.dateTriggered) &&
+            Objects.equals(this.dateModified, miner.dateModified) &&
+            Objects.equals(this.latestDraftVersion, miner.latestDraftVersion) &&
+            Objects.equals(this.selfUri, miner.selfUri);
   }
 
   @Override

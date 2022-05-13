@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class ConversationCallEventTopicJourneyContext  implements Serializable {
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicJourneyContext customerSession(ConversationCallEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class ConversationCallEventTopicJourneyContext  implements Serializable {
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicJourneyContext triggeringAction(ConversationCallEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class ConversationCallEventTopicJourneyContext  implements Serializable {
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ConversationCallEventTopicJourneyContext  implements Serializable {
       return false;
     }
     ConversationCallEventTopicJourneyContext conversationCallEventTopicJourneyContext = (ConversationCallEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, conversationCallEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, conversationCallEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, conversationCallEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, conversationCallEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, conversationCallEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

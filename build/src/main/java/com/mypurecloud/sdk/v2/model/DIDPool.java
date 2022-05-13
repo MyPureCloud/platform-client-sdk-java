@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class DIDPool  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -161,7 +162,7 @@ public class DIDPool  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -179,7 +180,7 @@ public class DIDPool  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -197,7 +198,7 @@ public class DIDPool  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -215,7 +216,7 @@ public class DIDPool  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -233,7 +234,7 @@ public class DIDPool  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -251,7 +252,7 @@ public class DIDPool  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -269,7 +270,7 @@ public class DIDPool  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -287,14 +288,14 @@ public class DIDPool  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -312,7 +313,7 @@ public class DIDPool  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -330,7 +331,7 @@ public class DIDPool  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The starting phone number for the range of this DID pool. Must be in E.164 format
    **/
@@ -348,7 +349,7 @@ public class DIDPool  implements Serializable {
     this.startPhoneNumber = startPhoneNumber;
   }
 
-  
+
   /**
    * The ending phone number for the range of this DID pool. Must be in E.164 format
    **/
@@ -366,7 +367,7 @@ public class DIDPool  implements Serializable {
     this.endPhoneNumber = endPhoneNumber;
   }
 
-  
+
   /**
    **/
   public DIDPool comments(String comments) {
@@ -383,7 +384,7 @@ public class DIDPool  implements Serializable {
     this.comments = comments;
   }
 
-  
+
   /**
    * The provider for this DID pool
    **/
@@ -401,14 +402,13 @@ public class DIDPool  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -419,23 +419,24 @@ public class DIDPool  implements Serializable {
       return false;
     }
     DIDPool dIDPool = (DIDPool) o;
+
     return Objects.equals(this.id, dIDPool.id) &&
-        Objects.equals(this.name, dIDPool.name) &&
-        Objects.equals(this.division, dIDPool.division) &&
-        Objects.equals(this.description, dIDPool.description) &&
-        Objects.equals(this.version, dIDPool.version) &&
-        Objects.equals(this.dateCreated, dIDPool.dateCreated) &&
-        Objects.equals(this.dateModified, dIDPool.dateModified) &&
-        Objects.equals(this.modifiedBy, dIDPool.modifiedBy) &&
-        Objects.equals(this.createdBy, dIDPool.createdBy) &&
-        Objects.equals(this.state, dIDPool.state) &&
-        Objects.equals(this.modifiedByApp, dIDPool.modifiedByApp) &&
-        Objects.equals(this.createdByApp, dIDPool.createdByApp) &&
-        Objects.equals(this.startPhoneNumber, dIDPool.startPhoneNumber) &&
-        Objects.equals(this.endPhoneNumber, dIDPool.endPhoneNumber) &&
-        Objects.equals(this.comments, dIDPool.comments) &&
-        Objects.equals(this.provider, dIDPool.provider) &&
-        Objects.equals(this.selfUri, dIDPool.selfUri);
+            Objects.equals(this.name, dIDPool.name) &&
+            Objects.equals(this.division, dIDPool.division) &&
+            Objects.equals(this.description, dIDPool.description) &&
+            Objects.equals(this.version, dIDPool.version) &&
+            Objects.equals(this.dateCreated, dIDPool.dateCreated) &&
+            Objects.equals(this.dateModified, dIDPool.dateModified) &&
+            Objects.equals(this.modifiedBy, dIDPool.modifiedBy) &&
+            Objects.equals(this.createdBy, dIDPool.createdBy) &&
+            Objects.equals(this.state, dIDPool.state) &&
+            Objects.equals(this.modifiedByApp, dIDPool.modifiedByApp) &&
+            Objects.equals(this.createdByApp, dIDPool.createdByApp) &&
+            Objects.equals(this.startPhoneNumber, dIDPool.startPhoneNumber) &&
+            Objects.equals(this.endPhoneNumber, dIDPool.endPhoneNumber) &&
+            Objects.equals(this.comments, dIDPool.comments) &&
+            Objects.equals(this.provider, dIDPool.provider) &&
+            Objects.equals(this.selfUri, dIDPool.selfUri);
   }
 
   @Override

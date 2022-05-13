@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -48,7 +49,7 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     this.code = code;
   }
 
-  
+
   /**
    * Text entered by the agent to describe the call or disposition.
    **/
@@ -66,7 +67,7 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     this.notes = notes;
   }
 
-  
+
   /**
    * List of tags selected by the agent to describe the call or disposition.
    **/
@@ -84,7 +85,7 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     this.tags = tags;
   }
 
-  
+
   /**
    * The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
    **/
@@ -102,7 +103,7 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     this.durationSeconds = durationSeconds;
   }
 
-  
+
   /**
    * The timestamp when the wrapup was finished.
    **/
@@ -120,7 +121,6 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     this.endTime = endTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
       return false;
     }
     QueueConversationSocialExpressionEventTopicWrapup queueConversationSocialExpressionEventTopicWrapup = (QueueConversationSocialExpressionEventTopicWrapup) o;
+
     return Objects.equals(this.code, queueConversationSocialExpressionEventTopicWrapup.code) &&
-        Objects.equals(this.notes, queueConversationSocialExpressionEventTopicWrapup.notes) &&
-        Objects.equals(this.tags, queueConversationSocialExpressionEventTopicWrapup.tags) &&
-        Objects.equals(this.durationSeconds, queueConversationSocialExpressionEventTopicWrapup.durationSeconds) &&
-        Objects.equals(this.endTime, queueConversationSocialExpressionEventTopicWrapup.endTime);
+            Objects.equals(this.notes, queueConversationSocialExpressionEventTopicWrapup.notes) &&
+            Objects.equals(this.tags, queueConversationSocialExpressionEventTopicWrapup.tags) &&
+            Objects.equals(this.durationSeconds, queueConversationSocialExpressionEventTopicWrapup.durationSeconds) &&
+            Objects.equals(this.endTime, queueConversationSocialExpressionEventTopicWrapup.endTime);
   }
 
   @Override

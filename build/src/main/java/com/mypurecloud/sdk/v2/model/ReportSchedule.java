@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;
@@ -50,7 +51,7 @@ public class ReportSchedule  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ReportSchedule name(String name) {
@@ -67,7 +68,7 @@ public class ReportSchedule  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Quartz Cron Expression
    **/
@@ -85,7 +86,7 @@ public class ReportSchedule  implements Serializable {
     this.quartzCronExpression = quartzCronExpression;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -103,7 +104,7 @@ public class ReportSchedule  implements Serializable {
     this.nextFireTime = nextFireTime;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -121,7 +122,7 @@ public class ReportSchedule  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -139,7 +140,7 @@ public class ReportSchedule  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public ReportSchedule description(String description) {
@@ -156,7 +157,7 @@ public class ReportSchedule  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public ReportSchedule timeZone(String timeZone) {
@@ -173,7 +174,7 @@ public class ReportSchedule  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    **/
   public ReportSchedule timePeriod(String timePeriod) {
@@ -190,7 +191,7 @@ public class ReportSchedule  implements Serializable {
     this.timePeriod = timePeriod;
   }
 
-  
+
   /**
    * Interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -208,7 +209,7 @@ public class ReportSchedule  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    **/
   public ReportSchedule reportFormat(String reportFormat) {
@@ -225,7 +226,7 @@ public class ReportSchedule  implements Serializable {
     this.reportFormat = reportFormat;
   }
 
-  
+
   /**
    **/
   public ReportSchedule locale(String locale) {
@@ -242,7 +243,7 @@ public class ReportSchedule  implements Serializable {
     this.locale = locale;
   }
 
-  
+
   /**
    **/
   public ReportSchedule enabled(Boolean enabled) {
@@ -259,7 +260,7 @@ public class ReportSchedule  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Report ID
    **/
@@ -277,7 +278,7 @@ public class ReportSchedule  implements Serializable {
     this.reportId = reportId;
   }
 
-  
+
   /**
    **/
   public ReportSchedule parameters(Map<String, Object> parameters) {
@@ -294,7 +295,7 @@ public class ReportSchedule  implements Serializable {
     this.parameters = parameters;
   }
 
-  
+
   /**
    **/
   public ReportSchedule lastRun(ReportRunEntry lastRun) {
@@ -311,14 +312,13 @@ public class ReportSchedule  implements Serializable {
     this.lastRun = lastRun;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -329,23 +329,24 @@ public class ReportSchedule  implements Serializable {
       return false;
     }
     ReportSchedule reportSchedule = (ReportSchedule) o;
+
     return Objects.equals(this.id, reportSchedule.id) &&
-        Objects.equals(this.name, reportSchedule.name) &&
-        Objects.equals(this.quartzCronExpression, reportSchedule.quartzCronExpression) &&
-        Objects.equals(this.nextFireTime, reportSchedule.nextFireTime) &&
-        Objects.equals(this.dateCreated, reportSchedule.dateCreated) &&
-        Objects.equals(this.dateModified, reportSchedule.dateModified) &&
-        Objects.equals(this.description, reportSchedule.description) &&
-        Objects.equals(this.timeZone, reportSchedule.timeZone) &&
-        Objects.equals(this.timePeriod, reportSchedule.timePeriod) &&
-        Objects.equals(this.interval, reportSchedule.interval) &&
-        Objects.equals(this.reportFormat, reportSchedule.reportFormat) &&
-        Objects.equals(this.locale, reportSchedule.locale) &&
-        Objects.equals(this.enabled, reportSchedule.enabled) &&
-        Objects.equals(this.reportId, reportSchedule.reportId) &&
-        Objects.equals(this.parameters, reportSchedule.parameters) &&
-        Objects.equals(this.lastRun, reportSchedule.lastRun) &&
-        Objects.equals(this.selfUri, reportSchedule.selfUri);
+            Objects.equals(this.name, reportSchedule.name) &&
+            Objects.equals(this.quartzCronExpression, reportSchedule.quartzCronExpression) &&
+            Objects.equals(this.nextFireTime, reportSchedule.nextFireTime) &&
+            Objects.equals(this.dateCreated, reportSchedule.dateCreated) &&
+            Objects.equals(this.dateModified, reportSchedule.dateModified) &&
+            Objects.equals(this.description, reportSchedule.description) &&
+            Objects.equals(this.timeZone, reportSchedule.timeZone) &&
+            Objects.equals(this.timePeriod, reportSchedule.timePeriod) &&
+            Objects.equals(this.interval, reportSchedule.interval) &&
+            Objects.equals(this.reportFormat, reportSchedule.reportFormat) &&
+            Objects.equals(this.locale, reportSchedule.locale) &&
+            Objects.equals(this.enabled, reportSchedule.enabled) &&
+            Objects.equals(this.reportId, reportSchedule.reportId) &&
+            Objects.equals(this.parameters, reportSchedule.parameters) &&
+            Objects.equals(this.lastRun, reportSchedule.lastRun) &&
+            Objects.equals(this.selfUri, reportSchedule.selfUri);
   }
 
   @Override

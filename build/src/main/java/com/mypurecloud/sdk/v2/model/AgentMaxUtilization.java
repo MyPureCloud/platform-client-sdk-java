@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class AgentMaxUtilization  implements Serializable {
     this.utilization = utilization;
   }
 
-  
+
   /**
    **/
   public AgentMaxUtilization level(LevelEnum level) {
@@ -110,7 +111,6 @@ public class AgentMaxUtilization  implements Serializable {
     this.level = level;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class AgentMaxUtilization  implements Serializable {
       return false;
     }
     AgentMaxUtilization agentMaxUtilization = (AgentMaxUtilization) o;
+
     return Objects.equals(this.utilization, agentMaxUtilization.utilization) &&
-        Objects.equals(this.level, agentMaxUtilization.level);
+            Objects.equals(this.level, agentMaxUtilization.level);
   }
 
   @Override

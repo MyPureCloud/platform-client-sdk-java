@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public AttemptLimitsEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class AttemptLimitsEntityListing  implements Serializable, PagedResource<
       return false;
     }
     AttemptLimitsEntityListing attemptLimitsEntityListing = (AttemptLimitsEntityListing) o;
+
     return Objects.equals(this.entities, attemptLimitsEntityListing.entities) &&
-        Objects.equals(this.pageSize, attemptLimitsEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, attemptLimitsEntityListing.pageNumber) &&
-        Objects.equals(this.total, attemptLimitsEntityListing.total) &&
-        Objects.equals(this.lastUri, attemptLimitsEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, attemptLimitsEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, attemptLimitsEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, attemptLimitsEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, attemptLimitsEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, attemptLimitsEntityListing.pageCount);
+            Objects.equals(this.pageSize, attemptLimitsEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, attemptLimitsEntityListing.pageNumber) &&
+            Objects.equals(this.total, attemptLimitsEntityListing.total) &&
+            Objects.equals(this.lastUri, attemptLimitsEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, attemptLimitsEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, attemptLimitsEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, attemptLimitsEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, attemptLimitsEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, attemptLimitsEntityListing.pageCount);
   }
 
   @Override

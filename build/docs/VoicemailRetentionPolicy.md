@@ -19,10 +19,10 @@ title: VoicemailRetentionPolicy
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RETAIN_INDEFINITELY | &quot;RETAIN_INDEFINITELY&quot; |
-| RETAIN_WITH_TTL | &quot;RETAIN_WITH_TTL&quot; |
-| IMMEDIATE_DELETE | &quot;IMMEDIATE_DELETE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RETAIN_INDEFINITELY | &quot;RETAIN_INDEFINITELY&quot; | 
+| RETAIN_WITH_TTL | &quot;RETAIN_WITH_TTL&quot; | 
+| IMMEDIATE_DELETE | &quot;IMMEDIATE_DELETE&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
     this.partitionName = partitionName;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricDisk availableBytes(Integer availableBytes) {
@@ -58,7 +59,7 @@ public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
     this.availableBytes = availableBytes;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricDisk totalBytes(Integer totalBytes) {
@@ -75,7 +76,6 @@ public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
     this.totalBytes = totalBytes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class EdgeMetricsTopicEdgeMetricDisk  implements Serializable {
       return false;
     }
     EdgeMetricsTopicEdgeMetricDisk edgeMetricsTopicEdgeMetricDisk = (EdgeMetricsTopicEdgeMetricDisk) o;
+
     return Objects.equals(this.partitionName, edgeMetricsTopicEdgeMetricDisk.partitionName) &&
-        Objects.equals(this.availableBytes, edgeMetricsTopicEdgeMetricDisk.availableBytes) &&
-        Objects.equals(this.totalBytes, edgeMetricsTopicEdgeMetricDisk.totalBytes);
+            Objects.equals(this.availableBytes, edgeMetricsTopicEdgeMetricDisk.availableBytes) &&
+            Objects.equals(this.totalBytes, edgeMetricsTopicEdgeMetricDisk.totalBytes);
   }
 
   @Override

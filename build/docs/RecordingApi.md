@@ -17,9 +17,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationRecording**](RecordingApi.html#getConversationRecording) | Gets a specific recording. |
 | [**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | Get annotation |
 | [**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | Get annotations for recording |
-| [**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing. |
+| [**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing. |
 | [**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | Get metadata for a specific recording. Does not return playable media. |
-| [**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | Get all of a Conversation&#39;s Recordings. |
+| [**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | Get all of a Conversation's Recordings. |
 | [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | Gets a single orphan recording |
 | [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
 | [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | Gets all orphan recordings |
@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | Get a media retention policy |
 | [**getRecordingJob**](RecordingApi.html#getRecordingJob) | Get the status of the job associated with the job id. |
 | [**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | Get IDs of recordings that the bulk job failed for |
-| [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user&#39;s organization |
+| [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user's organization |
 | [**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | Get the encryption key configurations |
 | [**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | Get a list of key configurations data |
 | [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
@@ -77,8 +77,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 Delete annotation
-
-
 
 Wraps DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
@@ -143,8 +141,6 @@ null (empty response body)
 > [OrphanRecording](OrphanRecording.html) deleteOrphanrecording(orphanId)
 
 Deletes a single orphan recording
-
-
 
 Wraps DELETE /api/v2/orphanrecordings/{orphanId}  
 
@@ -269,8 +265,6 @@ null (empty response body)
 
 Delete a media retention policy
 
-
-
 Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
 
 Requires ANY permissions: 
@@ -330,8 +324,6 @@ null (empty response body)
 > Void deleteRecordingJob(jobId)
 
 Delete the recording bulk job
-
-
 
 Wraps DELETE /api/v2/recording/jobs/{jobId}  
 
@@ -455,8 +447,6 @@ null (empty response body)
 
 Delete a media retention policy
 
-
-
 Wraps DELETE /api/v2/recording/mediaretentionpolicies/{policyId}  
 
 Requires ANY permissions: 
@@ -517,8 +507,6 @@ null (empty response body)
 
 Gets a specific recording.
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}  
 
 Requires ANY permissions: 
@@ -557,7 +545,7 @@ String messageFormatId = "ZIP"; // String | The desired media format when downlo
 Boolean download = false; // Boolean | requesting a download format of the recording. Valid values:true,false
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
 String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
-List<String> mediaFormats = Arrays.asList("mediaFormats_example"); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+List<String> mediaFormats = Arrays.asList(null); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 try {
     Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats);
     System.out.println(result);
@@ -578,7 +566,7 @@ try {
 | **emailFormatId** | **String**| The desired media format when downloading an email recording. Valid values:EML,NONE | [optional] [default to EML]<br />**Values**: EML, NONE 
 | **chatFormatId** | **String**| The desired media format when downloading a chat recording. Valid values:ZIP,NONE  | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
 | **messageFormatId** | **String**| The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
-| **download** | **Boolean**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false] 
+| **download** | **Boolean**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false]<br />**Values**: true, false 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
 | **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
 | **mediaFormats** | [**List&lt;String&gt;**](String.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional] 
@@ -598,8 +586,6 @@ try {
 > [Annotation](Annotation.html) getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 Get annotation
-
-
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
@@ -666,8 +652,6 @@ try {
 
 Get annotations for recording
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations  
 
 Requires ANY permissions: 
@@ -729,9 +713,7 @@ try {
 
 > [List&lt;RecordingMetadata&gt;](RecordingMetadata.html) getConversationRecordingmetadata(conversationId)
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
-
-
+Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata  
 
@@ -795,8 +777,6 @@ try {
 
 Get metadata for a specific recording. Does not return playable media.
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}  
 
 Requires ANY permissions: 
@@ -859,9 +839,7 @@ try {
 
 > [List&lt;Recording&gt;](Recording.html) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats)
 
-Get all of a Conversation&#39;s Recordings.
-
-
+Get all of a Conversation's Recordings.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings  
 
@@ -895,7 +873,7 @@ RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 Integer maxWaitMs = 5000; // Integer | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
 String formatId = "WEBM"; // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
-List<String> mediaFormats = Arrays.asList("mediaFormats_example"); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+List<String> mediaFormats = Arrays.asList(null); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 try {
     List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats);
     System.out.println(result);
@@ -930,8 +908,6 @@ try {
 > [OrphanRecording](OrphanRecording.html) getOrphanrecording(orphanId)
 
 Gets a single orphan recording
-
-
 
 Wraps GET /api/v2/orphanrecordings/{orphanId}  
 
@@ -1032,7 +1008,7 @@ String messageFormatId = "ZIP"; // String | The desired media format when downlo
 Boolean download = false; // Boolean | requesting a download format of the recording
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
 String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
-List<String> mediaFormats = Arrays.asList("mediaFormats_example"); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+List<String> mediaFormats = Arrays.asList(null); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 try {
     Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats);
     System.out.println(result);
@@ -1052,7 +1028,7 @@ try {
 | **emailFormatId** | **String**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE 
 | **chatFormatId** | **String**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
 | **messageFormatId** | **String**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
-| **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
+| **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false]<br />**Values**: true, false 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
 | **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
 | **mediaFormats** | [**List&lt;String&gt;**](String.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional] 
@@ -1072,8 +1048,6 @@ try {
 > [OrphanRecordingListing](OrphanRecordingListing.html) getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)
 
 Gets all orphan recordings
-
-
 
 Wraps GET /api/v2/orphanrecordings  
 
@@ -1106,7 +1080,7 @@ RecordingApi apiInstance = new RecordingApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean hasConversation = false; // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
@@ -1149,8 +1123,6 @@ try {
 > [BatchDownloadJobStatusResult](BatchDownloadJobStatusResult.html) getRecordingBatchrequest(jobId)
 
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results
-
-
 
 Wraps GET /api/v2/recording/batchrequests/{jobId}  
 
@@ -1245,7 +1217,7 @@ RecordingApi apiInstance = new RecordingApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String name = "name_example"; // String | the policy name - used for filtering results in searches.
@@ -1274,7 +1246,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **name** | **String**| the policy name - used for filtering results in searches. | [optional] 
-| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] 
+| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false | [optional] 
 | **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] 
 | **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] 
 | **deleteDaysThreshold** | **Integer**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional] 
@@ -1294,8 +1266,6 @@ try {
 > [CrossPlatformPolicy](CrossPlatformPolicy.html) getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 Get a media retention policy
-
-
 
 Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
 
@@ -1358,8 +1328,6 @@ try {
 
 Get the status of the job associated with the job id.
 
-
-
 Wraps GET /api/v2/recording/jobs/{jobId}  
 
 Requires ALL permissions: 
@@ -1420,8 +1388,6 @@ try {
 > [FailedRecordingEntityListing](FailedRecordingEntityListing.html) getRecordingJobFailedrecordings(jobId, pageSize, pageNumber, includeTotal, cursor)
 
 Get IDs of recordings that the bulk job failed for
-
-
 
 Wraps GET /api/v2/recording/jobs/{jobId}/failedrecordings  
 
@@ -1490,9 +1456,7 @@ try {
 
 > [RecordingJobEntityListing](RecordingJobEntityListing.html) getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor)
 
-Get the status of all jobs within the user&#39;s organization
-
-
+Get the status of all jobs within the user's organization
 
 Wraps GET /api/v2/recording/jobs  
 
@@ -1569,8 +1533,6 @@ try {
 
 Get the encryption key configurations
 
-
-
 Wraps GET /api/v2/recording/keyconfigurations/{keyConfigurationId}  
 
 Requires ANY permissions: 
@@ -1632,8 +1594,6 @@ try {
 
 Get a list of key configurations data
 
-
-
 Wraps GET /api/v2/recording/keyconfigurations  
 
 Requires ANY permissions: 
@@ -1690,8 +1650,6 @@ This endpoint does not require any parameters.
 > [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) getRecordingLocalkeysSetting(settingsId)
 
 Get the local encryption settings
-
-
 
 Wraps GET /api/v2/recording/localkeys/settings/{settingsId}  
 
@@ -1753,8 +1711,6 @@ try {
 > [LocalEncryptionConfigurationListing](LocalEncryptionConfigurationListing.html) getRecordingLocalkeysSettings()
 
 gets a list local key settings data
-
-
 
 Wraps GET /api/v2/recording/localkeys/settings  
 
@@ -1846,7 +1802,7 @@ RecordingApi apiInstance = new RecordingApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String name = "name_example"; // String | the policy name - used for filtering results in searches.
@@ -1875,7 +1831,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **name** | **String**| the policy name - used for filtering results in searches. | [optional] 
-| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] 
+| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false | [optional] 
 | **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] 
 | **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] 
 | **deleteDaysThreshold** | **Integer**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional] 
@@ -1895,8 +1851,6 @@ try {
 > [Policy](Policy.html) getRecordingMediaretentionpolicy(policyId)
 
 Get a media retention policy
-
-
 
 Wraps GET /api/v2/recording/mediaretentionpolicies/{policyId}  
 
@@ -1958,8 +1912,6 @@ try {
 > [EncryptionKeyEntityListing](EncryptionKeyEntityListing.html) getRecordingRecordingkeys(pageSize, pageNumber)
 
 Get encryption key list
-
-
 
 Wraps GET /api/v2/recording/recordingkeys  
 
@@ -2024,8 +1976,6 @@ try {
 
 Get key rotation schedule
 
-
-
 Wraps GET /api/v2/recording/recordingkeys/rotationschedule  
 
 Requires ANY permissions: 
@@ -2082,8 +2032,6 @@ This endpoint does not require any parameters.
 > [RecordingSettings](RecordingSettings.html) getRecordingSettings(createDefault)
 
 Get the Recording Settings for the Organization
-
-
 
 Wraps GET /api/v2/recording/settings  
 
@@ -2146,8 +2094,6 @@ try {
 > [ScreenRecordingSessionListing](ScreenRecordingSessionListing.html) getRecordingsScreensessions(pageSize, pageNumber)
 
 Retrieves a paged listing of screen recording sessions
-
-
 
 Wraps GET /api/v2/recordings/screensessions  
 
@@ -2212,8 +2158,6 @@ try {
 
 Patch a media retention policy
 
-
-
 Wraps PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
 
 Requires ANY permissions: 
@@ -2276,8 +2220,6 @@ try {
 > [Policy](Policy.html) patchRecordingMediaretentionpolicy(policyId, body)
 
 Patch a media retention policy
-
-
 
 Wraps PATCH /api/v2/recording/mediaretentionpolicies/{policyId}  
 
@@ -2342,8 +2284,6 @@ try {
 
 Update a screen recording session
 
-
-
 Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId}  
 
 Requires ANY permissions: 
@@ -2405,8 +2345,6 @@ null (empty response body)
 > [Annotation](Annotation.html) postConversationRecordingAnnotations(conversationId, recordingId, body)
 
 Create annotation
-
-
 
 Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations  
 
@@ -2472,8 +2410,6 @@ try {
 > [BatchDownloadJobSubmissionResult](BatchDownloadJobSubmissionResult.html) postRecordingBatchrequests(body)
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
-
-
 
 Wraps POST /api/v2/recording/batchrequests  
 
@@ -2661,8 +2597,6 @@ try {
 
 Setup configurations for encryption key creation
 
-
-
 Wraps POST /api/v2/recording/keyconfigurations  
 
 Requires ANY permissions: 
@@ -2723,8 +2657,6 @@ try {
 > [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration.html) postRecordingKeyconfigurationsValidate(body)
 
 Validate encryption key configurations without saving it
-
-
 
 Wraps POST /api/v2/recording/keyconfigurations/validate  
 
@@ -2787,8 +2719,6 @@ try {
 
 create a local recording key
 
-
-
 Wraps POST /api/v2/recording/localkeys  
 
 Requires ANY permissions: 
@@ -2849,8 +2779,6 @@ try {
 > [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) postRecordingLocalkeysSettings(body)
 
 create settings for local key creation
-
-
 
 Wraps POST /api/v2/recording/localkeys/settings  
 
@@ -2976,8 +2904,6 @@ try {
 
 Create encryption key
 
-
-
 Wraps POST /api/v2/recording/recordingkeys  
 
 Requires ANY permissions: 
@@ -3034,8 +2960,6 @@ This endpoint does not require any parameters.
 > [List&lt;AddressableEntityRef&gt;](AddressableEntityRef.html) postRecordingsDeletionprotection(body)
 
 Get a list of conversations with protected recordings
-
-
 
 Wraps POST /api/v2/recordings/deletionprotection  
 
@@ -3097,8 +3021,6 @@ try {
 
 Acknowledge a screen recording.
 
-
-
 Wraps POST /api/v2/recordings/screensessions/acknowledge  
 
 Requires NO permissions: 
@@ -3157,8 +3079,6 @@ null (empty response body)
 > Void postRecordingsScreensessionsMetadata(body)
 
 Provide meta-data a screen recording.
-
-
 
 Wraps POST /api/v2/recordings/screensessions/metadata  
 
@@ -3287,8 +3207,6 @@ try {
 > [Annotation](Annotation.html) putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
 Update annotation
-
-
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
@@ -3489,7 +3407,7 @@ try {
 
 Execute the recording bulk job.
 
-A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
+A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
 
 Wraps PUT /api/v2/recording/jobs/{jobId}  
 
@@ -3556,8 +3474,6 @@ try {
 
 Update the encryption key configurations
 
-
-
 Wraps PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}  
 
 Requires ANY permissions: 
@@ -3620,8 +3536,6 @@ try {
 > [LocalEncryptionConfiguration](LocalEncryptionConfiguration.html) putRecordingLocalkeysSetting(settingsId, body)
 
 Update the local encryption settings
-
-
 
 Wraps PUT /api/v2/recording/localkeys/settings/{settingsId}  
 
@@ -3751,8 +3665,6 @@ try {
 
 Update key rotation schedule
 
-
-
 Wraps PUT /api/v2/recording/recordingkeys/rotationschedule  
 
 Requires ANY permissions: 
@@ -3814,8 +3726,6 @@ try {
 
 Update the Recording Settings for the Organization
 
-
-
 Wraps PUT /api/v2/recording/settings  
 
 Requires ANY permissions: 
@@ -3876,8 +3786,6 @@ try {
 > Void putRecordingsDeletionprotection(protect, body)
 
 Apply or revoke recording protection for conversations
-
-
 
 Wraps PUT /api/v2/recordings/deletionprotection  
 

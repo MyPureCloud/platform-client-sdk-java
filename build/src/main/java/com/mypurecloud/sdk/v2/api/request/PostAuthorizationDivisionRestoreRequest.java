@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PostAuthorizationDivisionRestoreRequest {
-    
+
 	private String divisionId;
 	public String getDivisionId() {
 		return this.divisionId;
@@ -39,7 +39,7 @@ public class PostAuthorizationDivisionRestoreRequest {
 	    this.setDivisionId(divisionId);
 	    return this;
 	} 
-	
+
 	private AuthzDivision body;
 	public AuthzDivision getBody() {
 		return this.body;
@@ -53,7 +53,7 @@ public class PostAuthorizationDivisionRestoreRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,8 +90,8 @@ public class PostAuthorizationDivisionRestoreRequest {
                 .withPathParameter("divisionId", divisionId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -102,12 +102,12 @@ public class PostAuthorizationDivisionRestoreRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String divisionId, AuthzDivision body) {
 	    return new Builder()
 	            .withRequiredParams(divisionId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAuthorizationDivisionRestoreRequest request;
@@ -116,26 +116,26 @@ public class PostAuthorizationDivisionRestoreRequest {
 			request = new PostAuthorizationDivisionRestoreRequest();
 		}
 
-		
+
 		public Builder withDivisionId(String divisionId) {
 			request.setDivisionId(divisionId);
 			return this;
 		}
-		
+
 		public Builder withBody(AuthzDivision body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String divisionId, AuthzDivision body) {
 			request.setDivisionId(divisionId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostAuthorizationDivisionRestoreRequest build() {
             

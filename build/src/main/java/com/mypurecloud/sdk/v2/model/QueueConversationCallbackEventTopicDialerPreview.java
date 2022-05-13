@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicPhoneNumberColumn;
@@ -46,7 +47,7 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    * The contact associated with this preview data pop
    **/
@@ -64,7 +65,7 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     this.contactId = contactId;
   }
 
-  
+
   /**
    * The contactList associated with this preview data pop.
    **/
@@ -82,7 +83,7 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     this.contactListId = contactListId;
   }
 
-  
+
   /**
    * The campaignId associated with this preview data pop.
    **/
@@ -100,7 +101,7 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     this.campaignId = campaignId;
   }
 
-  
+
   /**
    * The phone number columns associated with this campaign
    **/
@@ -118,7 +119,6 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     this.phoneNumberColumns = phoneNumberColumns;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,11 +129,12 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
       return false;
     }
     QueueConversationCallbackEventTopicDialerPreview queueConversationCallbackEventTopicDialerPreview = (QueueConversationCallbackEventTopicDialerPreview) o;
+
     return Objects.equals(this.id, queueConversationCallbackEventTopicDialerPreview.id) &&
-        Objects.equals(this.contactId, queueConversationCallbackEventTopicDialerPreview.contactId) &&
-        Objects.equals(this.contactListId, queueConversationCallbackEventTopicDialerPreview.contactListId) &&
-        Objects.equals(this.campaignId, queueConversationCallbackEventTopicDialerPreview.campaignId) &&
-        Objects.equals(this.phoneNumberColumns, queueConversationCallbackEventTopicDialerPreview.phoneNumberColumns);
+            Objects.equals(this.contactId, queueConversationCallbackEventTopicDialerPreview.contactId) &&
+            Objects.equals(this.contactListId, queueConversationCallbackEventTopicDialerPreview.contactListId) &&
+            Objects.equals(this.campaignId, queueConversationCallbackEventTopicDialerPreview.campaignId) &&
+            Objects.equals(this.phoneNumberColumns, queueConversationCallbackEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override

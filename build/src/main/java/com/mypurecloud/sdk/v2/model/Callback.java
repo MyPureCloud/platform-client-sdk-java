@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -237,7 +238,7 @@ public class Callback  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -255,7 +256,7 @@ public class Callback  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The time line of the participant's callback, divided into activity segments.
    **/
@@ -273,7 +274,7 @@ public class Callback  implements Serializable {
     this.segments = segments;
   }
 
-  
+
   /**
    * The direction of the call
    **/
@@ -291,7 +292,7 @@ public class Callback  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -309,7 +310,7 @@ public class Callback  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -327,7 +328,7 @@ public class Callback  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -345,7 +346,7 @@ public class Callback  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The preview data to be used when this callback is a Preview.
    **/
@@ -363,7 +364,7 @@ public class Callback  implements Serializable {
     this.dialerPreview = dialerPreview;
   }
 
-  
+
   /**
    * The voicemail data to be used when this callback is an ACD voicemail.
    **/
@@ -381,7 +382,7 @@ public class Callback  implements Serializable {
     this.voicemail = voicemail;
   }
 
-  
+
   /**
    * The phone number(s) to use to place the callback.
    **/
@@ -399,7 +400,7 @@ public class Callback  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    * The name of the user requesting a callback.
    **/
@@ -417,7 +418,7 @@ public class Callback  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -435,7 +436,7 @@ public class Callback  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * True if the call for the callback uses external dialing.
    **/
@@ -453,7 +454,7 @@ public class Callback  implements Serializable {
     this.externalCampaign = externalCampaign;
   }
 
-  
+
   /**
    * True if the ability to skip a callback should be enabled.
    **/
@@ -471,7 +472,7 @@ public class Callback  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-  
+
   /**
    * The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
    **/
@@ -489,7 +490,7 @@ public class Callback  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -507,7 +508,7 @@ public class Callback  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -525,7 +526,7 @@ public class Callback  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -543,7 +544,7 @@ public class Callback  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -561,7 +562,7 @@ public class Callback  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    * The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
    **/
@@ -579,7 +580,7 @@ public class Callback  implements Serializable {
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
-  
+
   /**
    * The source provider for the callback.
    **/
@@ -597,7 +598,7 @@ public class Callback  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -615,7 +616,7 @@ public class Callback  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -633,7 +634,7 @@ public class Callback  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -651,7 +652,7 @@ public class Callback  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -669,7 +670,7 @@ public class Callback  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
    **/
@@ -687,7 +688,7 @@ public class Callback  implements Serializable {
     this.callerId = callerId;
   }
 
-  
+
   /**
    * The name displayed to recipients of the phone call.
    **/
@@ -705,7 +706,6 @@ public class Callback  implements Serializable {
     this.callerIdName = callerIdName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -716,33 +716,34 @@ public class Callback  implements Serializable {
       return false;
     }
     Callback callback = (Callback) o;
+
     return Objects.equals(this.state, callback.state) &&
-        Objects.equals(this.id, callback.id) &&
-        Objects.equals(this.segments, callback.segments) &&
-        Objects.equals(this.direction, callback.direction) &&
-        Objects.equals(this.held, callback.held) &&
-        Objects.equals(this.disconnectType, callback.disconnectType) &&
-        Objects.equals(this.startHoldTime, callback.startHoldTime) &&
-        Objects.equals(this.dialerPreview, callback.dialerPreview) &&
-        Objects.equals(this.voicemail, callback.voicemail) &&
-        Objects.equals(this.callbackNumbers, callback.callbackNumbers) &&
-        Objects.equals(this.callbackUserName, callback.callbackUserName) &&
-        Objects.equals(this.scriptId, callback.scriptId) &&
-        Objects.equals(this.externalCampaign, callback.externalCampaign) &&
-        Objects.equals(this.skipEnabled, callback.skipEnabled) &&
-        Objects.equals(this.timeoutSeconds, callback.timeoutSeconds) &&
-        Objects.equals(this.startAlertingTime, callback.startAlertingTime) &&
-        Objects.equals(this.connectedTime, callback.connectedTime) &&
-        Objects.equals(this.disconnectedTime, callback.disconnectedTime) &&
-        Objects.equals(this.callbackScheduledTime, callback.callbackScheduledTime) &&
-        Objects.equals(this.automatedCallbackConfigId, callback.automatedCallbackConfigId) &&
-        Objects.equals(this.provider, callback.provider) &&
-        Objects.equals(this.peerId, callback.peerId) &&
-        Objects.equals(this.wrapup, callback.wrapup) &&
-        Objects.equals(this.afterCallWork, callback.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, callback.afterCallWorkRequired) &&
-        Objects.equals(this.callerId, callback.callerId) &&
-        Objects.equals(this.callerIdName, callback.callerIdName);
+            Objects.equals(this.id, callback.id) &&
+            Objects.equals(this.segments, callback.segments) &&
+            Objects.equals(this.direction, callback.direction) &&
+            Objects.equals(this.held, callback.held) &&
+            Objects.equals(this.disconnectType, callback.disconnectType) &&
+            Objects.equals(this.startHoldTime, callback.startHoldTime) &&
+            Objects.equals(this.dialerPreview, callback.dialerPreview) &&
+            Objects.equals(this.voicemail, callback.voicemail) &&
+            Objects.equals(this.callbackNumbers, callback.callbackNumbers) &&
+            Objects.equals(this.callbackUserName, callback.callbackUserName) &&
+            Objects.equals(this.scriptId, callback.scriptId) &&
+            Objects.equals(this.externalCampaign, callback.externalCampaign) &&
+            Objects.equals(this.skipEnabled, callback.skipEnabled) &&
+            Objects.equals(this.timeoutSeconds, callback.timeoutSeconds) &&
+            Objects.equals(this.startAlertingTime, callback.startAlertingTime) &&
+            Objects.equals(this.connectedTime, callback.connectedTime) &&
+            Objects.equals(this.disconnectedTime, callback.disconnectedTime) &&
+            Objects.equals(this.callbackScheduledTime, callback.callbackScheduledTime) &&
+            Objects.equals(this.automatedCallbackConfigId, callback.automatedCallbackConfigId) &&
+            Objects.equals(this.provider, callback.provider) &&
+            Objects.equals(this.peerId, callback.peerId) &&
+            Objects.equals(this.wrapup, callback.wrapup) &&
+            Objects.equals(this.afterCallWork, callback.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, callback.afterCallWorkRequired) &&
+            Objects.equals(this.callerId, callback.callerId) &&
+            Objects.equals(this.callerIdName, callback.callerIdName);
   }
 
   @Override

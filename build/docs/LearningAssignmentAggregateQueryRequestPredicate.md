@@ -19,11 +19,11 @@ title: LearningAssignmentAggregateQueryRequestPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ATTENDEEID | &quot;attendeeId&quot; |
-| TYPE | &quot;type&quot; |
-| MODULEID | &quot;moduleId&quot; |
-| ISPASSED | &quot;isPassed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ATTENDEEID | &quot;attendeeId&quot; | 
+| TYPE | &quot;type&quot; | 
+| MODULEID | &quot;moduleId&quot; | 
+| ISPASSED | &quot;isPassed&quot; | 
 {: class="table table-striped"}
 
 

@@ -42,10 +42,10 @@ title: Evaluation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| INPROGRESS | &quot;INPROGRESS&quot; |
-| FINISHED | &quot;FINISHED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| INPROGRESS | &quot;INPROGRESS&quot; | 
+| FINISHED | &quot;FINISHED&quot; | 
 {: class="table table-striped"}
 
 
@@ -73,8 +73,8 @@ title: Evaluation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EMAIL | &quot;EMAIL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
 {: class="table table-striped"}
 
 

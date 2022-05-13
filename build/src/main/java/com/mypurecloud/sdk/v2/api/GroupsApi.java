@@ -11,18 +11,17 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupRequest;
@@ -46,7 +45,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class GroupsApi {
   private final ApiClient pcapiClient;
 
@@ -58,7 +56,6 @@ public class GroupsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete group
    * 
@@ -83,7 +80,7 @@ public class GroupsApi {
   private DeleteGroupRequest createDeleteGroupRequest(String groupId) {
     return DeleteGroupRequest.builder()
             .withGroupId(groupId)
-    
+
             .build();
   }
 
@@ -134,7 +131,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Remove members
    * 
@@ -163,9 +159,9 @@ public class GroupsApi {
   private DeleteGroupMembersRequest createDeleteGroupMembersRequest(String groupId, String ids) {
     return DeleteGroupMembersRequest.builder()
             .withGroupId(groupId)
-    
+
             .withIds(ids)
-    
+
             .build();
   }
 
@@ -217,7 +213,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Fetch field config for an entity type
    * 
@@ -244,7 +239,7 @@ public class GroupsApi {
   private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
     return GetFieldconfigRequest.builder()
             .withType(type)
-    
+
             .build();
   }
 
@@ -296,7 +291,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Get group
    * 
@@ -323,7 +317,7 @@ public class GroupsApi {
   private GetGroupRequest createGetGroupRequest(String groupId) {
     return GetGroupRequest.builder()
             .withGroupId(groupId)
-    
+
             .build();
   }
 
@@ -375,7 +369,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Get all individuals associated with the group
    * 
@@ -402,7 +395,7 @@ public class GroupsApi {
   private GetGroupIndividualsRequest createGetGroupIndividualsRequest(String groupId) {
     return GetGroupIndividualsRequest.builder()
             .withGroupId(groupId)
-    
+
             .build();
   }
 
@@ -454,7 +447,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Get group members, includes individuals, owners, and dynamically included people
    * 
@@ -489,15 +481,15 @@ public class GroupsApi {
   private GetGroupMembersRequest createGetGroupMembersRequest(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
     return GetGroupMembersRequest.builder()
             .withGroupId(groupId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -549,7 +541,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Get group profile
    * This api is deprecated. Use /api/v2/groups instead
@@ -578,9 +569,9 @@ public class GroupsApi {
   private GetGroupProfileRequest createGetGroupProfileRequest(String groupId, String fields) {
     return GetGroupProfileRequest.builder()
             .withGroupId(groupId)
-    
+
             .withFields(fields)
-    
+
             .build();
   }
 
@@ -632,14 +623,13 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Get a group list
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
-   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
    * @throws ApiException if the request fails on the server
@@ -655,7 +645,7 @@ public class GroupsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
-   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
    * @throws IOException if the request fails to be processed
@@ -667,15 +657,15 @@ public class GroupsApi {
   private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) {
     return GetGroupsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withId(id)
-    
+
             .withJabberId(jabberId)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -727,7 +717,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -756,9 +745,9 @@ public class GroupsApi {
   private GetGroupsSearchRequest createGetGroupsSearchRequest(String q64, List<String> expand) {
     return GetGroupsSearchRequest.builder()
             .withQ64(q64)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -810,7 +799,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Get group profile listing
    * This api is deprecated. Use /api/v2/groups instead.
@@ -843,13 +831,13 @@ public class GroupsApi {
   private GetProfilesGroupsRequest createGetProfilesGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
     return GetProfilesGroupsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withId(id)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -901,7 +889,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Add members
    * 
@@ -930,9 +917,9 @@ public class GroupsApi {
   private PostGroupMembersRequest createPostGroupMembersRequest(String groupId, GroupMembersUpdate body) {
     return PostGroupMembersRequest.builder()
             .withGroupId(groupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -984,7 +971,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Create a group
    * 
@@ -1011,7 +997,7 @@ public class GroupsApi {
   private PostGroupsRequest createPostGroupsRequest(GroupCreate body) {
     return PostGroupsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1063,7 +1049,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Search groups
    * 
@@ -1090,7 +1075,7 @@ public class GroupsApi {
   private PostGroupsSearchRequest createPostGroupsSearchRequest(GroupSearchRequest body) {
     return PostGroupsSearchRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1142,7 +1127,6 @@ public class GroupsApi {
     }
   }
 
-  
   /**
    * Update group
    * 
@@ -1171,9 +1155,9 @@ public class GroupsApi {
   private PutGroupRequest createPutGroupRequest(String groupId, GroupUpdate body) {
     return PutGroupRequest.builder()
             .withGroupId(groupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1225,5 +1209,4 @@ public class GroupsApi {
     }
   }
 
-  
 }

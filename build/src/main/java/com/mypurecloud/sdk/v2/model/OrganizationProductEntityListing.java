@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationProduct;
@@ -46,7 +47,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public OrganizationProductEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public OrganizationProductEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public OrganizationProductEntityListing total(Long total) {
@@ -97,7 +98,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public OrganizationProductEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class OrganizationProductEntityListing  implements Serializable {
       return false;
     }
     OrganizationProductEntityListing organizationProductEntityListing = (OrganizationProductEntityListing) o;
+
     return Objects.equals(this.entities, organizationProductEntityListing.entities) &&
-        Objects.equals(this.pageSize, organizationProductEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, organizationProductEntityListing.pageNumber) &&
-        Objects.equals(this.total, organizationProductEntityListing.total) &&
-        Objects.equals(this.pageCount, organizationProductEntityListing.pageCount);
+            Objects.equals(this.pageSize, organizationProductEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, organizationProductEntityListing.pageNumber) &&
+            Objects.equals(this.total, organizationProductEntityListing.total) &&
+            Objects.equals(this.pageCount, organizationProductEntityListing.pageCount);
   }
 
   @Override

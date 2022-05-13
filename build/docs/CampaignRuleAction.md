@@ -21,14 +21,14 @@ title: CampaignRuleAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TURNONCAMPAIGN | &quot;turnOnCampaign&quot; |
-| TURNOFFCAMPAIGN | &quot;turnOffCampaign&quot; |
-| TURNONSEQUENCE | &quot;turnOnSequence&quot; |
-| TURNOFFSEQUENCE | &quot;turnOffSequence&quot; |
-| SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; |
-| RECYCLECAMPAIGN | &quot;recycleCampaign&quot; |
-| SETCAMPAIGNDIALINGMODE | &quot;setCampaignDialingMode&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TURNONCAMPAIGN | &quot;turnOnCampaign&quot; | 
+| TURNOFFCAMPAIGN | &quot;turnOffCampaign&quot; | 
+| TURNONSEQUENCE | &quot;turnOnSequence&quot; | 
+| TURNOFFSEQUENCE | &quot;turnOffSequence&quot; | 
+| SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; | 
+| RECYCLECAMPAIGN | &quot;recycleCampaign&quot; | 
+| SETCAMPAIGNDIALINGMODE | &quot;setCampaignDialingMode&quot; | 
 {: class="table table-striped"}
 
 

@@ -25,7 +25,7 @@ import com.mypurecloud.sdk.v2.model.WidgetDeployment;
 import com.mypurecloud.sdk.v2.model.WidgetDeploymentEntityListing;
 
 public class PutWidgetsDeploymentRequest {
-    
+
 	private String deploymentId;
 	public String getDeploymentId() {
 		return this.deploymentId;
@@ -39,7 +39,7 @@ public class PutWidgetsDeploymentRequest {
 	    this.setDeploymentId(deploymentId);
 	    return this;
 	} 
-	
+
 	private WidgetDeployment body;
 	public WidgetDeployment getBody() {
 		return this.body;
@@ -53,7 +53,7 @@ public class PutWidgetsDeploymentRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,8 +90,8 @@ public class PutWidgetsDeploymentRequest {
                 .withPathParameter("deploymentId", deploymentId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -102,12 +102,12 @@ public class PutWidgetsDeploymentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String deploymentId, WidgetDeployment body) {
 	    return new Builder()
 	            .withRequiredParams(deploymentId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutWidgetsDeploymentRequest request;
@@ -116,26 +116,26 @@ public class PutWidgetsDeploymentRequest {
 			request = new PutWidgetsDeploymentRequest();
 		}
 
-		
+
 		public Builder withDeploymentId(String deploymentId) {
 			request.setDeploymentId(deploymentId);
 			return this;
 		}
-		
+
 		public Builder withBody(WidgetDeployment body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String deploymentId, WidgetDeployment body) {
 			request.setDeploymentId(deploymentId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutWidgetsDeploymentRequest build() {
             

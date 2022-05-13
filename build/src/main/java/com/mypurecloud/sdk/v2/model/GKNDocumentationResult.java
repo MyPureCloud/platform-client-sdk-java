@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class GKNDocumentationResult  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * URL link for the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -61,7 +62,7 @@ public class GKNDocumentationResult  implements Serializable {
     this.link = link;
   }
 
-  
+
   /**
    * The title of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -79,7 +80,7 @@ public class GKNDocumentationResult  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * The search type. Will be returned in responses for certain entities.
    **/
@@ -97,7 +98,6 @@ public class GKNDocumentationResult  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class GKNDocumentationResult  implements Serializable {
       return false;
     }
     GKNDocumentationResult gKNDocumentationResult = (GKNDocumentationResult) o;
+
     return Objects.equals(this.content, gKNDocumentationResult.content) &&
-        Objects.equals(this.link, gKNDocumentationResult.link) &&
-        Objects.equals(this.title, gKNDocumentationResult.title) &&
-        Objects.equals(this.type, gKNDocumentationResult.type);
+            Objects.equals(this.link, gKNDocumentationResult.link) &&
+            Objects.equals(this.title, gKNDocumentationResult.title) &&
+            Objects.equals(this.type, gKNDocumentationResult.type);
   }
 
   @Override

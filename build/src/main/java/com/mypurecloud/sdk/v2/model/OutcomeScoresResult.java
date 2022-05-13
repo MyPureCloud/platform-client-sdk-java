@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutcomeEventScore;
@@ -45,14 +46,13 @@ public class OutcomeScoresResult  implements Serializable {
     this.outcomeScores = outcomeScores;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Timestamp indicating the last time that the event was scored. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -63,8 +63,9 @@ public class OutcomeScoresResult  implements Serializable {
       return false;
     }
     OutcomeScoresResult outcomeScoresResult = (OutcomeScoresResult) o;
+
     return Objects.equals(this.outcomeScores, outcomeScoresResult.outcomeScores) &&
-        Objects.equals(this.modifiedDate, outcomeScoresResult.modifiedDate);
+            Objects.equals(this.modifiedDate, outcomeScoresResult.modifiedDate);
   }
 
   @Override

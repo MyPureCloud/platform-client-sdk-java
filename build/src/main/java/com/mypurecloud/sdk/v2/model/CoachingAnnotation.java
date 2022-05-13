@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,35 +88,35 @@ public class CoachingAnnotation  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who created the annotation.")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the annotation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last user to modify the annotation.")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the annotation was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * The text of the annotation.
    **/
@@ -133,28 +134,27 @@ public class CoachingAnnotation  implements Serializable {
     this.text = text;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Flag indicating whether the annotation is deleted.")
   @JsonProperty("isDeleted")
   public Boolean getIsDeleted() {
     return isDeleted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Determines the permissions required to view this item.")
   @JsonProperty("accessType")
   public AccessTypeEnum getAccessType() {
     return accessType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,15 +165,16 @@ public class CoachingAnnotation  implements Serializable {
       return false;
     }
     CoachingAnnotation coachingAnnotation = (CoachingAnnotation) o;
+
     return Objects.equals(this.id, coachingAnnotation.id) &&
-        Objects.equals(this.createdBy, coachingAnnotation.createdBy) &&
-        Objects.equals(this.dateCreated, coachingAnnotation.dateCreated) &&
-        Objects.equals(this.modifiedBy, coachingAnnotation.modifiedBy) &&
-        Objects.equals(this.dateModified, coachingAnnotation.dateModified) &&
-        Objects.equals(this.text, coachingAnnotation.text) &&
-        Objects.equals(this.isDeleted, coachingAnnotation.isDeleted) &&
-        Objects.equals(this.accessType, coachingAnnotation.accessType) &&
-        Objects.equals(this.selfUri, coachingAnnotation.selfUri);
+            Objects.equals(this.createdBy, coachingAnnotation.createdBy) &&
+            Objects.equals(this.dateCreated, coachingAnnotation.dateCreated) &&
+            Objects.equals(this.modifiedBy, coachingAnnotation.modifiedBy) &&
+            Objects.equals(this.dateModified, coachingAnnotation.dateModified) &&
+            Objects.equals(this.text, coachingAnnotation.text) &&
+            Objects.equals(this.isDeleted, coachingAnnotation.isDeleted) &&
+            Objects.equals(this.accessType, coachingAnnotation.accessType) &&
+            Objects.equals(this.selfUri, coachingAnnotation.selfUri);
   }
 
   @Override

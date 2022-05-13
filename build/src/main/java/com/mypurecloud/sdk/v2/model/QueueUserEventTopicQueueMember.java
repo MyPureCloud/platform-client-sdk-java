@@ -8,9 +8,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.QueueUserEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueUserEventTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +29,7 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
   private QueueUserEventTopicUserReference user = null;
   private String queueId = null;
   private Boolean joined = null;
-  private Map<String, QueueUserEventTopicObject> additionalProperties = null;
+  private Map<String, Object> additionalProperties = null;
 
   
   /**
@@ -48,7 +48,7 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueUserEventTopicQueueMember user(QueueUserEventTopicUserReference user) {
@@ -65,7 +65,7 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public QueueUserEventTopicQueueMember queueId(String queueId) {
@@ -82,7 +82,7 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public QueueUserEventTopicQueueMember joined(Boolean joined) {
@@ -99,24 +99,23 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
     this.joined = joined;
   }
 
-  
+
   /**
    **/
-  public QueueUserEventTopicQueueMember additionalProperties(Map<String, QueueUserEventTopicObject> additionalProperties) {
+  public QueueUserEventTopicQueueMember additionalProperties(Map<String, Object> additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("additionalProperties")
-  public Map<String, QueueUserEventTopicObject> getAdditionalProperties() {
+  public Map<String, Object> getAdditionalProperties() {
     return additionalProperties;
   }
-  public void setAdditionalProperties(Map<String, QueueUserEventTopicObject> additionalProperties) {
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) {
     this.additionalProperties = additionalProperties;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +126,12 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
       return false;
     }
     QueueUserEventTopicQueueMember queueUserEventTopicQueueMember = (QueueUserEventTopicQueueMember) o;
+
     return Objects.equals(this.id, queueUserEventTopicQueueMember.id) &&
-        Objects.equals(this.user, queueUserEventTopicQueueMember.user) &&
-        Objects.equals(this.queueId, queueUserEventTopicQueueMember.queueId) &&
-        Objects.equals(this.joined, queueUserEventTopicQueueMember.joined) &&
-        Objects.equals(this.additionalProperties, queueUserEventTopicQueueMember.additionalProperties);
+            Objects.equals(this.user, queueUserEventTopicQueueMember.user) &&
+            Objects.equals(this.queueId, queueUserEventTopicQueueMember.queueId) &&
+            Objects.equals(this.joined, queueUserEventTopicQueueMember.joined) &&
+            Objects.equals(this.additionalProperties, queueUserEventTopicQueueMember.additionalProperties);
   }
 
   @Override

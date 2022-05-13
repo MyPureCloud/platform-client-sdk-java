@@ -35,12 +35,12 @@ title: OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;on&quot; |
-| OFF | &quot;off&quot; |
-| COMPLETE | &quot;complete&quot; |
-| STOPPING | &quot;stopping&quot; |
-| INVALID | &quot;invalid&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;on&quot; | 
+| OFF | &quot;off&quot; | 
+| COMPLETE | &quot;complete&quot; | 
+| STOPPING | &quot;stopping&quot; | 
+| INVALID | &quot;invalid&quot; | 
 {: class="table table-striped"}
 
 

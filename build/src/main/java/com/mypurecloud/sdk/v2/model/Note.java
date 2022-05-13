@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class Note  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.
    **/
@@ -108,7 +109,7 @@ public class Note  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    * This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
    **/
@@ -126,7 +127,7 @@ public class Note  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    **/
   public Note noteText(String noteText) {
@@ -143,7 +144,7 @@ public class Note  implements Serializable {
     this.noteText = noteText;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -161,7 +162,7 @@ public class Note  implements Serializable {
     this.modifyDate = modifyDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -179,7 +180,7 @@ public class Note  implements Serializable {
     this.createDate = createDate;
   }
 
-  
+
   /**
    * When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.
    **/
@@ -197,21 +198,20 @@ public class Note  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.")
   @JsonProperty("externalDataSources")
   public List<ExternalDataSource> getExternalDataSources() {
     return externalDataSources;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -222,15 +222,16 @@ public class Note  implements Serializable {
       return false;
     }
     Note note = (Note) o;
+
     return Objects.equals(this.id, note.id) &&
-        Objects.equals(this.entityId, note.entityId) &&
-        Objects.equals(this.entityType, note.entityType) &&
-        Objects.equals(this.noteText, note.noteText) &&
-        Objects.equals(this.modifyDate, note.modifyDate) &&
-        Objects.equals(this.createDate, note.createDate) &&
-        Objects.equals(this.createdBy, note.createdBy) &&
-        Objects.equals(this.externalDataSources, note.externalDataSources) &&
-        Objects.equals(this.selfUri, note.selfUri);
+            Objects.equals(this.entityId, note.entityId) &&
+            Objects.equals(this.entityType, note.entityType) &&
+            Objects.equals(this.noteText, note.noteText) &&
+            Objects.equals(this.modifyDate, note.modifyDate) &&
+            Objects.equals(this.createDate, note.createDate) &&
+            Objects.equals(this.createdBy, note.createdBy) &&
+            Objects.equals(this.externalDataSources, note.externalDataSources) &&
+            Objects.equals(this.selfUri, note.selfUri);
   }
 
   @Override

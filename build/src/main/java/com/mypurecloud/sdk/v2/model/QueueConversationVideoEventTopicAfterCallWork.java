@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class QueueConversationVideoEventTopicAfterCallWork  implements Serializa
     this.state = state;
   }
 
-  
+
   /**
    * The timestamp when this communication started after-call work in the cloud clock.
    **/
@@ -113,7 +114,7 @@ public class QueueConversationVideoEventTopicAfterCallWork  implements Serializa
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The timestamp when this communication ended after-call work in the cloud clock.
    **/
@@ -131,7 +132,6 @@ public class QueueConversationVideoEventTopicAfterCallWork  implements Serializa
     this.endTime = endTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,9 +142,10 @@ public class QueueConversationVideoEventTopicAfterCallWork  implements Serializa
       return false;
     }
     QueueConversationVideoEventTopicAfterCallWork queueConversationVideoEventTopicAfterCallWork = (QueueConversationVideoEventTopicAfterCallWork) o;
+
     return Objects.equals(this.state, queueConversationVideoEventTopicAfterCallWork.state) &&
-        Objects.equals(this.startTime, queueConversationVideoEventTopicAfterCallWork.startTime) &&
-        Objects.equals(this.endTime, queueConversationVideoEventTopicAfterCallWork.endTime);
+            Objects.equals(this.startTime, queueConversationVideoEventTopicAfterCallWork.startTime) &&
+            Objects.equals(this.endTime, queueConversationVideoEventTopicAfterCallWork.endTime);
   }
 
   @Override

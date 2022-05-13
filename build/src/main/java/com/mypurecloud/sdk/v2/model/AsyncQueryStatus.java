@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class AsyncQueryStatus  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The error associated with the current query, if the state is FAILED
    **/
@@ -115,7 +116,7 @@ public class AsyncQueryStatus  implements Serializable {
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    * The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -133,7 +134,7 @@ public class AsyncQueryStatus  implements Serializable {
     this.expirationDate = expirationDate;
   }
 
-  
+
   /**
    * The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -151,7 +152,7 @@ public class AsyncQueryStatus  implements Serializable {
     this.submissionDate = submissionDate;
   }
 
-  
+
   /**
    * The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -169,7 +170,6 @@ public class AsyncQueryStatus  implements Serializable {
     this.completionDate = completionDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,11 +180,12 @@ public class AsyncQueryStatus  implements Serializable {
       return false;
     }
     AsyncQueryStatus asyncQueryStatus = (AsyncQueryStatus) o;
+
     return Objects.equals(this.state, asyncQueryStatus.state) &&
-        Objects.equals(this.errorMessage, asyncQueryStatus.errorMessage) &&
-        Objects.equals(this.expirationDate, asyncQueryStatus.expirationDate) &&
-        Objects.equals(this.submissionDate, asyncQueryStatus.submissionDate) &&
-        Objects.equals(this.completionDate, asyncQueryStatus.completionDate);
+            Objects.equals(this.errorMessage, asyncQueryStatus.errorMessage) &&
+            Objects.equals(this.expirationDate, asyncQueryStatus.expirationDate) &&
+            Objects.equals(this.submissionDate, asyncQueryStatus.submissionDate) &&
+            Objects.equals(this.completionDate, asyncQueryStatus.completionDate);
   }
 
   @Override

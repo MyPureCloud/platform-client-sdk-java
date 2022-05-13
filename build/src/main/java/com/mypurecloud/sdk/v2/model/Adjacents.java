@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -44,7 +45,7 @@ public class Adjacents  implements Serializable {
     this.superiors = superiors;
   }
 
-  
+
   /**
    **/
   public Adjacents siblings(List<User> siblings) {
@@ -61,7 +62,7 @@ public class Adjacents  implements Serializable {
     this.siblings = siblings;
   }
 
-  
+
   /**
    **/
   public Adjacents directReports(List<User> directReports) {
@@ -78,7 +79,6 @@ public class Adjacents  implements Serializable {
     this.directReports = directReports;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class Adjacents  implements Serializable {
       return false;
     }
     Adjacents adjacents = (Adjacents) o;
+
     return Objects.equals(this.superiors, adjacents.superiors) &&
-        Objects.equals(this.siblings, adjacents.siblings) &&
-        Objects.equals(this.directReports, adjacents.directReports);
+            Objects.equals(this.siblings, adjacents.siblings) &&
+            Objects.equals(this.directReports, adjacents.directReports);
   }
 
   @Override

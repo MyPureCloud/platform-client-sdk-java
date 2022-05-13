@@ -27,10 +27,10 @@ title: AdherenceExplanationNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;Pending&quot; |
-| APPROVED | &quot;Approved&quot; |
-| DENIED | &quot;Denied&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| APPROVED | &quot;Approved&quot; | 
+| DENIED | &quot;Denied&quot; | 
 {: class="table table-striped"}
 
 
@@ -40,8 +40,8 @@ title: AdherenceExplanationNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LATE | &quot;Late&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LATE | &quot;Late&quot; | 
 {: class="table table-striped"}
 
 

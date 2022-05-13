@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.content = content;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationMktCampaign medium(String medium) {
@@ -62,7 +63,7 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.medium = medium;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationMktCampaign name(String name) {
@@ -79,7 +80,7 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.name = name;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationMktCampaign source(String source) {
@@ -96,7 +97,7 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.source = source;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationMktCampaign term(String term) {
@@ -113,7 +114,7 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.term = term;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationMktCampaign clickId(String clickId) {
@@ -130,7 +131,7 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.clickId = clickId;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationMktCampaign network(String network) {
@@ -147,7 +148,6 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
     this.network = network;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,13 +158,14 @@ public class JourneyOutcomeEventsNotificationMktCampaign  implements Serializabl
       return false;
     }
     JourneyOutcomeEventsNotificationMktCampaign journeyOutcomeEventsNotificationMktCampaign = (JourneyOutcomeEventsNotificationMktCampaign) o;
+
     return Objects.equals(this.content, journeyOutcomeEventsNotificationMktCampaign.content) &&
-        Objects.equals(this.medium, journeyOutcomeEventsNotificationMktCampaign.medium) &&
-        Objects.equals(this.name, journeyOutcomeEventsNotificationMktCampaign.name) &&
-        Objects.equals(this.source, journeyOutcomeEventsNotificationMktCampaign.source) &&
-        Objects.equals(this.term, journeyOutcomeEventsNotificationMktCampaign.term) &&
-        Objects.equals(this.clickId, journeyOutcomeEventsNotificationMktCampaign.clickId) &&
-        Objects.equals(this.network, journeyOutcomeEventsNotificationMktCampaign.network);
+            Objects.equals(this.medium, journeyOutcomeEventsNotificationMktCampaign.medium) &&
+            Objects.equals(this.name, journeyOutcomeEventsNotificationMktCampaign.name) &&
+            Objects.equals(this.source, journeyOutcomeEventsNotificationMktCampaign.source) &&
+            Objects.equals(this.term, journeyOutcomeEventsNotificationMktCampaign.term) &&
+            Objects.equals(this.clickId, journeyOutcomeEventsNotificationMktCampaign.clickId) &&
+            Objects.equals(this.network, journeyOutcomeEventsNotificationMktCampaign.network);
   }
 
   @Override

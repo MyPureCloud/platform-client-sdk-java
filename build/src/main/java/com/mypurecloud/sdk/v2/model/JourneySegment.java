@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class JourneySegment  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Whether or not the segment is active.
    **/
@@ -113,7 +114,7 @@ public class JourneySegment  implements Serializable {
     this.isActive = isActive;
   }
 
-  
+
   /**
    * The display name of the segment.
    **/
@@ -131,7 +132,7 @@ public class JourneySegment  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * The version of the segment.
    **/
@@ -149,7 +150,7 @@ public class JourneySegment  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * A description of the segment.
    **/
@@ -167,7 +168,7 @@ public class JourneySegment  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The hexadecimal color value of the segment.
    **/
@@ -185,7 +186,7 @@ public class JourneySegment  implements Serializable {
     this.color = color;
   }
 
-  
+
   /**
    * The target entity that a segment applies to.
    **/
@@ -203,7 +204,7 @@ public class JourneySegment  implements Serializable {
     this.scope = scope;
   }
 
-  
+
   /**
    * Whether or not the segment should be displayed to agent/supervisor users.
    **/
@@ -221,7 +222,7 @@ public class JourneySegment  implements Serializable {
     this.shouldDisplayToAgent = shouldDisplayToAgent;
   }
 
-  
+
   /**
    * The context of the segment.
    **/
@@ -239,7 +240,7 @@ public class JourneySegment  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * The pattern of rules defining the segment.
    **/
@@ -257,7 +258,7 @@ public class JourneySegment  implements Serializable {
     this.journey = journey;
   }
 
-  
+
   /**
    * Details of an entity corresponding to this segment in an external system.
    **/
@@ -275,7 +276,7 @@ public class JourneySegment  implements Serializable {
     this.externalSegment = externalSegment;
   }
 
-  
+
   /**
    * Time, in days, from when the segment is assigned until it is automatically unassigned.
    **/
@@ -293,14 +294,14 @@ public class JourneySegment  implements Serializable {
     this.assignmentExpirationDays = assignmentExpirationDays;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -318,7 +319,7 @@ public class JourneySegment  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -336,7 +337,6 @@ public class JourneySegment  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -347,21 +347,22 @@ public class JourneySegment  implements Serializable {
       return false;
     }
     JourneySegment journeySegment = (JourneySegment) o;
+
     return Objects.equals(this.id, journeySegment.id) &&
-        Objects.equals(this.isActive, journeySegment.isActive) &&
-        Objects.equals(this.displayName, journeySegment.displayName) &&
-        Objects.equals(this.version, journeySegment.version) &&
-        Objects.equals(this.description, journeySegment.description) &&
-        Objects.equals(this.color, journeySegment.color) &&
-        Objects.equals(this.scope, journeySegment.scope) &&
-        Objects.equals(this.shouldDisplayToAgent, journeySegment.shouldDisplayToAgent) &&
-        Objects.equals(this.context, journeySegment.context) &&
-        Objects.equals(this.journey, journeySegment.journey) &&
-        Objects.equals(this.externalSegment, journeySegment.externalSegment) &&
-        Objects.equals(this.assignmentExpirationDays, journeySegment.assignmentExpirationDays) &&
-        Objects.equals(this.selfUri, journeySegment.selfUri) &&
-        Objects.equals(this.createdDate, journeySegment.createdDate) &&
-        Objects.equals(this.modifiedDate, journeySegment.modifiedDate);
+            Objects.equals(this.isActive, journeySegment.isActive) &&
+            Objects.equals(this.displayName, journeySegment.displayName) &&
+            Objects.equals(this.version, journeySegment.version) &&
+            Objects.equals(this.description, journeySegment.description) &&
+            Objects.equals(this.color, journeySegment.color) &&
+            Objects.equals(this.scope, journeySegment.scope) &&
+            Objects.equals(this.shouldDisplayToAgent, journeySegment.shouldDisplayToAgent) &&
+            Objects.equals(this.context, journeySegment.context) &&
+            Objects.equals(this.journey, journeySegment.journey) &&
+            Objects.equals(this.externalSegment, journeySegment.externalSegment) &&
+            Objects.equals(this.assignmentExpirationDays, journeySegment.assignmentExpirationDays) &&
+            Objects.equals(this.selfUri, journeySegment.selfUri) &&
+            Objects.equals(this.createdDate, journeySegment.createdDate) &&
+            Objects.equals(this.modifiedDate, journeySegment.modifiedDate);
   }
 
   @Override

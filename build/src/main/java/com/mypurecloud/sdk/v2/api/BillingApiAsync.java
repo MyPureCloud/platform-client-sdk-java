@@ -14,8 +14,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 
@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class BillingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -41,10 +40,9 @@ public class BillingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get a report of the billable license usages
-   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -78,7 +76,7 @@ public class BillingApiAsync {
 
   /**
    * Get a report of the billable license usages
-   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -117,7 +115,6 @@ public class BillingApiAsync {
     }
   }
 
-  
   /**
    * Get the billing overview for an organization that is managed by a partner.
    * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
@@ -193,7 +190,6 @@ public class BillingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

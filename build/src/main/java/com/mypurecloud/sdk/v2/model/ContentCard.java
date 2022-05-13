@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentCardAction;
@@ -49,7 +50,7 @@ public class ContentCard  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the description.
    **/
@@ -67,7 +68,7 @@ public class ContentCard  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * URL of an image.
    **/
@@ -85,7 +86,7 @@ public class ContentCard  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * URL of a video.
    **/
@@ -103,7 +104,7 @@ public class ContentCard  implements Serializable {
     this.video = video;
   }
 
-  
+
   /**
    * The default button action.
    **/
@@ -121,7 +122,7 @@ public class ContentCard  implements Serializable {
     this.defaultAction = defaultAction;
   }
 
-  
+
   /**
    * An array of action objects.
    **/
@@ -139,7 +140,6 @@ public class ContentCard  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,12 +150,13 @@ public class ContentCard  implements Serializable {
       return false;
     }
     ContentCard contentCard = (ContentCard) o;
+
     return Objects.equals(this.title, contentCard.title) &&
-        Objects.equals(this.description, contentCard.description) &&
-        Objects.equals(this.image, contentCard.image) &&
-        Objects.equals(this.video, contentCard.video) &&
-        Objects.equals(this.defaultAction, contentCard.defaultAction) &&
-        Objects.equals(this.actions, contentCard.actions);
+            Objects.equals(this.description, contentCard.description) &&
+            Objects.equals(this.image, contentCard.image) &&
+            Objects.equals(this.video, contentCard.video) &&
+            Objects.equals(this.defaultAction, contentCard.defaultAction) &&
+            Objects.equals(this.actions, contentCard.actions);
   }
 
   @Override

@@ -19,9 +19,9 @@ title: DialerContactlistfilterConfigChangeFilterClause
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AND | &quot;AND&quot; |
-| OR | &quot;OR&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AND | &quot;AND&quot; | 
+| OR | &quot;OR&quot; | 
 {: class="table table-striped"}
 
 

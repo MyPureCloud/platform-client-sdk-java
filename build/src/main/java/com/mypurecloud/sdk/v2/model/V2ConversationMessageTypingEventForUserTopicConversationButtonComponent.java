@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationContentActions;
@@ -41,7 +42,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationButtonCompo
     this.title = title;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationButtonComponent actions(V2ConversationMessageTypingEventForUserTopicConversationContentActions actions) {
@@ -58,7 +59,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationButtonCompo
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class V2ConversationMessageTypingEventForUserTopicConversationButtonCompo
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationButtonComponent v2ConversationMessageTypingEventForUserTopicConversationButtonComponent = (V2ConversationMessageTypingEventForUserTopicConversationButtonComponent) o;
+
     return Objects.equals(this.title, v2ConversationMessageTypingEventForUserTopicConversationButtonComponent.title) &&
-        Objects.equals(this.actions, v2ConversationMessageTypingEventForUserTopicConversationButtonComponent.actions);
+            Objects.equals(this.actions, v2ConversationMessageTypingEventForUserTopicConversationButtonComponent.actions);
   }
 
   @Override

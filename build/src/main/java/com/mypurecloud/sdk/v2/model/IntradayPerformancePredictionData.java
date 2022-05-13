@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class IntradayPerformancePredictionData  implements Serializable {
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-  
+
   /**
    * Predicted average time in seconds it takes to answer an interaction once the interaction becomes available to be routed
    **/
@@ -60,7 +61,7 @@ public class IntradayPerformancePredictionData  implements Serializable {
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
-  
+
   /**
    * Percentage of on-queue time for all agents in this group that are occupied handling interactions
    **/
@@ -78,7 +79,6 @@ public class IntradayPerformancePredictionData  implements Serializable {
     this.occupancyPercent = occupancyPercent;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class IntradayPerformancePredictionData  implements Serializable {
       return false;
     }
     IntradayPerformancePredictionData intradayPerformancePredictionData = (IntradayPerformancePredictionData) o;
+
     return Objects.equals(this.serviceLevelPercent, intradayPerformancePredictionData.serviceLevelPercent) &&
-        Objects.equals(this.averageSpeedOfAnswerSeconds, intradayPerformancePredictionData.averageSpeedOfAnswerSeconds) &&
-        Objects.equals(this.occupancyPercent, intradayPerformancePredictionData.occupancyPercent);
+            Objects.equals(this.averageSpeedOfAnswerSeconds, intradayPerformancePredictionData.averageSpeedOfAnswerSeconds) &&
+            Objects.equals(this.occupancyPercent, intradayPerformancePredictionData.occupancyPercent);
   }
 
   @Override

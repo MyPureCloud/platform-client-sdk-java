@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurnIntentSlot;
@@ -45,7 +46,7 @@ public class ReportingTurnIntent  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The confidence score of the intent detected during this reporting turn.
    **/
@@ -63,7 +64,7 @@ public class ReportingTurnIntent  implements Serializable {
     this.confidence = confidence;
   }
 
-  
+
   /**
    * The slots detected during this reporting turn.
    **/
@@ -81,7 +82,6 @@ public class ReportingTurnIntent  implements Serializable {
     this.slots = slots;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class ReportingTurnIntent  implements Serializable {
       return false;
     }
     ReportingTurnIntent reportingTurnIntent = (ReportingTurnIntent) o;
+
     return Objects.equals(this.name, reportingTurnIntent.name) &&
-        Objects.equals(this.confidence, reportingTurnIntent.confidence) &&
-        Objects.equals(this.slots, reportingTurnIntent.slots);
+            Objects.equals(this.confidence, reportingTurnIntent.confidence) &&
+            Objects.equals(this.slots, reportingTurnIntent.slots);
   }
 
   @Override

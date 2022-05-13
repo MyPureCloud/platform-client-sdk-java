@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceTopicTrunkErrorInfoDetails;
@@ -42,7 +43,7 @@ public class TrunkInstanceTopicTrunkErrorInfo  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkErrorInfo code(String code) {
@@ -59,7 +60,7 @@ public class TrunkInstanceTopicTrunkErrorInfo  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkErrorInfo details(TrunkInstanceTopicTrunkErrorInfoDetails details) {
@@ -76,7 +77,6 @@ public class TrunkInstanceTopicTrunkErrorInfo  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class TrunkInstanceTopicTrunkErrorInfo  implements Serializable {
       return false;
     }
     TrunkInstanceTopicTrunkErrorInfo trunkInstanceTopicTrunkErrorInfo = (TrunkInstanceTopicTrunkErrorInfo) o;
+
     return Objects.equals(this.text, trunkInstanceTopicTrunkErrorInfo.text) &&
-        Objects.equals(this.code, trunkInstanceTopicTrunkErrorInfo.code) &&
-        Objects.equals(this.details, trunkInstanceTopicTrunkErrorInfo.details);
+            Objects.equals(this.code, trunkInstanceTopicTrunkErrorInfo.code) &&
+            Objects.equals(this.details, trunkInstanceTopicTrunkErrorInfo.details);
   }
 
   @Override

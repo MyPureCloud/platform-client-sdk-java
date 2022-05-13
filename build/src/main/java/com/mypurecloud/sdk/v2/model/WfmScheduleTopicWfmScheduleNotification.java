@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmScheduleTopicWfmScheduleNotification operationId(String operationId) {
@@ -160,7 +161,7 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmScheduleTopicWfmScheduleNotification downloadUrl(String downloadUrl) {
@@ -177,7 +178,7 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
+
   /**
    **/
   public WfmScheduleTopicWfmScheduleNotification percentComplete(Integer percentComplete) {
@@ -194,7 +195,7 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     this.percentComplete = percentComplete;
   }
 
-  
+
   /**
    **/
   public WfmScheduleTopicWfmScheduleNotification eventType(EventTypeEnum eventType) {
@@ -211,7 +212,6 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
     this.eventType = eventType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -222,11 +222,12 @@ public class WfmScheduleTopicWfmScheduleNotification  implements Serializable {
       return false;
     }
     WfmScheduleTopicWfmScheduleNotification wfmScheduleTopicWfmScheduleNotification = (WfmScheduleTopicWfmScheduleNotification) o;
+
     return Objects.equals(this.status, wfmScheduleTopicWfmScheduleNotification.status) &&
-        Objects.equals(this.operationId, wfmScheduleTopicWfmScheduleNotification.operationId) &&
-        Objects.equals(this.downloadUrl, wfmScheduleTopicWfmScheduleNotification.downloadUrl) &&
-        Objects.equals(this.percentComplete, wfmScheduleTopicWfmScheduleNotification.percentComplete) &&
-        Objects.equals(this.eventType, wfmScheduleTopicWfmScheduleNotification.eventType);
+            Objects.equals(this.operationId, wfmScheduleTopicWfmScheduleNotification.operationId) &&
+            Objects.equals(this.downloadUrl, wfmScheduleTopicWfmScheduleNotification.downloadUrl) &&
+            Objects.equals(this.percentComplete, wfmScheduleTopicWfmScheduleNotification.percentComplete) &&
+            Objects.equals(this.eventType, wfmScheduleTopicWfmScheduleNotification.eventType);
   }
 
   @Override

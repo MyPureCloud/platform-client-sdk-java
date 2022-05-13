@@ -21,11 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 import com.mypurecloud.sdk.v2.model.Geolocation;
+import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 
 public class PatchGeolocationsSettingsRequest {
-    
+
 	private GeolocationSettings body;
 	public GeolocationSettings getBody() {
 		return this.body;
@@ -39,7 +39,7 @@ public class PatchGeolocationsSettingsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,8 +69,8 @@ public class PatchGeolocationsSettingsRequest {
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/geolocations/settings")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class PatchGeolocationsSettingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(GeolocationSettings body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchGeolocationsSettingsRequest request;
@@ -95,20 +95,20 @@ public class PatchGeolocationsSettingsRequest {
 			request = new PatchGeolocationsSettingsRequest();
 		}
 
-		
+
 		public Builder withBody(GeolocationSettings body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(GeolocationSettings body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PatchGeolocationsSettingsRequest build() {
             

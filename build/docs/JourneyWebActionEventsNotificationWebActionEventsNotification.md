@@ -27,9 +27,9 @@ title: JourneyWebActionEventsNotificationWebActionEventsNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WEBACTIONEVENT | &quot;WebActionEvent&quot; |
-| BLOCKEDWEBACTIONOFFEREVENT | &quot;BlockedWebActionOfferEvent&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEBACTIONEVENT | &quot;WebActionEvent&quot; | 
+| BLOCKEDWEBACTIONOFFEREVENT | &quot;BlockedWebActionOfferEvent&quot; | 
 {: class="table table-striped"}
 
 

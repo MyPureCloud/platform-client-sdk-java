@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class RoleDivisionPair  implements Serializable {
     this.roleId = roleId;
   }
 
-  
+
   /**
    * The ID of the division
    **/
@@ -59,7 +60,6 @@ public class RoleDivisionPair  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class RoleDivisionPair  implements Serializable {
       return false;
     }
     RoleDivisionPair roleDivisionPair = (RoleDivisionPair) o;
+
     return Objects.equals(this.roleId, roleDivisionPair.roleId) &&
-        Objects.equals(this.divisionId, roleDivisionPair.divisionId);
+            Objects.equals(this.divisionId, roleDivisionPair.divisionId);
   }
 
   @Override

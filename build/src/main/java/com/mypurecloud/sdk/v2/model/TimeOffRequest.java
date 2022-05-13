@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -110,7 +110,7 @@ public class TimeOffRequest  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The user that the time off request belongs to
    **/
@@ -128,7 +128,7 @@ public class TimeOffRequest  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Whether this is a full day request (false means partial day)
    **/
@@ -146,7 +146,7 @@ public class TimeOffRequest  implements Serializable {
     this.isFullDayRequest = isFullDayRequest;
   }
 
-  
+
   /**
    * Whether this request has been marked as read by the agent
    **/
@@ -164,7 +164,7 @@ public class TimeOffRequest  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
-  
+
   /**
    * The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category
    **/
@@ -182,7 +182,7 @@ public class TimeOffRequest  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * The status of this time off request
    **/
@@ -200,7 +200,7 @@ public class TimeOffRequest  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
    **/
@@ -218,7 +218,7 @@ public class TimeOffRequest  implements Serializable {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-  
+
   /**
    * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true
    **/
@@ -236,7 +236,7 @@ public class TimeOffRequest  implements Serializable {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-  
+
   /**
    * The daily duration of this time off request in minutes
    **/
@@ -254,7 +254,7 @@ public class TimeOffRequest  implements Serializable {
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
-  
+
   /**
    * Notes about the time off request
    **/
@@ -272,7 +272,7 @@ public class TimeOffRequest  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * The user who submitted this time off request
    **/
@@ -290,7 +290,7 @@ public class TimeOffRequest  implements Serializable {
     this.submittedBy = submittedBy;
   }
 
-  
+
   /**
    * The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -308,7 +308,7 @@ public class TimeOffRequest  implements Serializable {
     this.submittedDate = submittedDate;
   }
 
-  
+
   /**
    * The user who reviewed this time off request
    **/
@@ -326,7 +326,7 @@ public class TimeOffRequest  implements Serializable {
     this.reviewedBy = reviewedBy;
   }
 
-  
+
   /**
    * The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -344,7 +344,7 @@ public class TimeOffRequest  implements Serializable {
     this.reviewedDate = reviewedDate;
   }
 
-  
+
   /**
    * The version metadata of the time off request
    **/
@@ -362,14 +362,13 @@ public class TimeOffRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -380,22 +379,23 @@ public class TimeOffRequest  implements Serializable {
       return false;
     }
     TimeOffRequest timeOffRequest = (TimeOffRequest) o;
+
     return Objects.equals(this.id, timeOffRequest.id) &&
-        Objects.equals(this.user, timeOffRequest.user) &&
-        Objects.equals(this.isFullDayRequest, timeOffRequest.isFullDayRequest) &&
-        Objects.equals(this.markedAsRead, timeOffRequest.markedAsRead) &&
-        Objects.equals(this.activityCodeId, timeOffRequest.activityCodeId) &&
-        Objects.equals(this.status, timeOffRequest.status) &&
-        Objects.equals(this.partialDayStartDateTimes, timeOffRequest.partialDayStartDateTimes) &&
-        Objects.equals(this.fullDayManagementUnitDates, timeOffRequest.fullDayManagementUnitDates) &&
-        Objects.equals(this.dailyDurationMinutes, timeOffRequest.dailyDurationMinutes) &&
-        Objects.equals(this.notes, timeOffRequest.notes) &&
-        Objects.equals(this.submittedBy, timeOffRequest.submittedBy) &&
-        Objects.equals(this.submittedDate, timeOffRequest.submittedDate) &&
-        Objects.equals(this.reviewedBy, timeOffRequest.reviewedBy) &&
-        Objects.equals(this.reviewedDate, timeOffRequest.reviewedDate) &&
-        Objects.equals(this.metadata, timeOffRequest.metadata) &&
-        Objects.equals(this.selfUri, timeOffRequest.selfUri);
+            Objects.equals(this.user, timeOffRequest.user) &&
+            Objects.equals(this.isFullDayRequest, timeOffRequest.isFullDayRequest) &&
+            Objects.equals(this.markedAsRead, timeOffRequest.markedAsRead) &&
+            Objects.equals(this.activityCodeId, timeOffRequest.activityCodeId) &&
+            Objects.equals(this.status, timeOffRequest.status) &&
+            Objects.equals(this.partialDayStartDateTimes, timeOffRequest.partialDayStartDateTimes) &&
+            Objects.equals(this.fullDayManagementUnitDates, timeOffRequest.fullDayManagementUnitDates) &&
+            Objects.equals(this.dailyDurationMinutes, timeOffRequest.dailyDurationMinutes) &&
+            Objects.equals(this.notes, timeOffRequest.notes) &&
+            Objects.equals(this.submittedBy, timeOffRequest.submittedBy) &&
+            Objects.equals(this.submittedDate, timeOffRequest.submittedDate) &&
+            Objects.equals(this.reviewedBy, timeOffRequest.reviewedBy) &&
+            Objects.equals(this.reviewedDate, timeOffRequest.reviewedDate) &&
+            Objects.equals(this.metadata, timeOffRequest.metadata) &&
+            Objects.equals(this.selfUri, timeOffRequest.selfUri);
   }
 
   @Override

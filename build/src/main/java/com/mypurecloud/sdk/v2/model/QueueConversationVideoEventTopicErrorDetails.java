@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.status = status;
   }
 
-  
+
   /**
    * A code unique to this error.
    **/
@@ -68,7 +69,7 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.code = code;
   }
 
-  
+
   /**
    * Friendly description of this error.
    **/
@@ -86,7 +87,7 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.message = message;
   }
 
-  
+
   /**
    * This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'
    **/
@@ -104,7 +105,7 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    * Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'
    **/
@@ -122,7 +123,7 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    * The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
    **/
@@ -140,7 +141,7 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicErrorDetails uri(String uri) {
@@ -157,7 +158,6 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
     this.uri = uri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,13 +168,14 @@ public class QueueConversationVideoEventTopicErrorDetails  implements Serializab
       return false;
     }
     QueueConversationVideoEventTopicErrorDetails queueConversationVideoEventTopicErrorDetails = (QueueConversationVideoEventTopicErrorDetails) o;
+
     return Objects.equals(this.status, queueConversationVideoEventTopicErrorDetails.status) &&
-        Objects.equals(this.code, queueConversationVideoEventTopicErrorDetails.code) &&
-        Objects.equals(this.message, queueConversationVideoEventTopicErrorDetails.message) &&
-        Objects.equals(this.messageWithParams, queueConversationVideoEventTopicErrorDetails.messageWithParams) &&
-        Objects.equals(this.messageParams, queueConversationVideoEventTopicErrorDetails.messageParams) &&
-        Objects.equals(this.contextId, queueConversationVideoEventTopicErrorDetails.contextId) &&
-        Objects.equals(this.uri, queueConversationVideoEventTopicErrorDetails.uri);
+            Objects.equals(this.code, queueConversationVideoEventTopicErrorDetails.code) &&
+            Objects.equals(this.message, queueConversationVideoEventTopicErrorDetails.message) &&
+            Objects.equals(this.messageWithParams, queueConversationVideoEventTopicErrorDetails.messageWithParams) &&
+            Objects.equals(this.messageParams, queueConversationVideoEventTopicErrorDetails.messageParams) &&
+            Objects.equals(this.contextId, queueConversationVideoEventTopicErrorDetails.contextId) &&
+            Objects.equals(this.uri, queueConversationVideoEventTopicErrorDetails.uri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class NotificationTemplateHeader  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Header text. For WhatsApp, ignored.
    **/
@@ -114,7 +115,7 @@ public class NotificationTemplateHeader  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Media template header image.
    **/
@@ -132,7 +133,7 @@ public class NotificationTemplateHeader  implements Serializable {
     this.media = media;
   }
 
-  
+
   /**
    * Template parameters for placeholders in template.
    **/
@@ -150,7 +151,6 @@ public class NotificationTemplateHeader  implements Serializable {
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,10 +161,11 @@ public class NotificationTemplateHeader  implements Serializable {
       return false;
     }
     NotificationTemplateHeader notificationTemplateHeader = (NotificationTemplateHeader) o;
+
     return Objects.equals(this.type, notificationTemplateHeader.type) &&
-        Objects.equals(this.text, notificationTemplateHeader.text) &&
-        Objects.equals(this.media, notificationTemplateHeader.media) &&
-        Objects.equals(this.parameters, notificationTemplateHeader.parameters);
+            Objects.equals(this.text, notificationTemplateHeader.text) &&
+            Objects.equals(this.media, notificationTemplateHeader.media) &&
+            Objects.equals(this.parameters, notificationTemplateHeader.parameters);
   }
 
   @Override

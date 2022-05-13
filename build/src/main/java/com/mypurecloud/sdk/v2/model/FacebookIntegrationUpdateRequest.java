@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
@@ -37,7 +38,7 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Facebook Integration
    **/
@@ -55,7 +56,7 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -73,7 +74,7 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationUpdateRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -90,7 +91,7 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
    **/
@@ -108,7 +109,7 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     this.pageAccessToken = pageAccessToken;
   }
 
-  
+
   /**
    * The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
    **/
@@ -126,14 +127,13 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     this.userAccessToken = userAccessToken;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,13 +144,14 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
       return false;
     }
     FacebookIntegrationUpdateRequest facebookIntegrationUpdateRequest = (FacebookIntegrationUpdateRequest) o;
+
     return Objects.equals(this.id, facebookIntegrationUpdateRequest.id) &&
-        Objects.equals(this.name, facebookIntegrationUpdateRequest.name) &&
-        Objects.equals(this.supportedContent, facebookIntegrationUpdateRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, facebookIntegrationUpdateRequest.messagingSetting) &&
-        Objects.equals(this.pageAccessToken, facebookIntegrationUpdateRequest.pageAccessToken) &&
-        Objects.equals(this.userAccessToken, facebookIntegrationUpdateRequest.userAccessToken) &&
-        Objects.equals(this.selfUri, facebookIntegrationUpdateRequest.selfUri);
+            Objects.equals(this.name, facebookIntegrationUpdateRequest.name) &&
+            Objects.equals(this.supportedContent, facebookIntegrationUpdateRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, facebookIntegrationUpdateRequest.messagingSetting) &&
+            Objects.equals(this.pageAccessToken, facebookIntegrationUpdateRequest.pageAccessToken) &&
+            Objects.equals(this.userAccessToken, facebookIntegrationUpdateRequest.userAccessToken) &&
+            Objects.equals(this.selfUri, facebookIntegrationUpdateRequest.selfUri);
   }
 
   @Override

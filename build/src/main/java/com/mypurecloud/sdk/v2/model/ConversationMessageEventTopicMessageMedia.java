@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
     this.url = url;
   }
 
-  
+
   /**
    * The optional internet media type of the the media object.  If null then the media type should be dictated by the url
    **/
@@ -62,7 +63,7 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The optional content length of the the media object, in bytes.
    **/
@@ -80,7 +81,7 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
     this.contentLengthBytes = contentLengthBytes;
   }
 
-  
+
   /**
    * The optional name of the the media object.
    **/
@@ -98,7 +99,7 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
     this.name = name;
   }
 
-  
+
   /**
    * The optional id of the the media object.
    **/
@@ -116,7 +117,6 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class ConversationMessageEventTopicMessageMedia  implements Serializable 
       return false;
     }
     ConversationMessageEventTopicMessageMedia conversationMessageEventTopicMessageMedia = (ConversationMessageEventTopicMessageMedia) o;
+
     return Objects.equals(this.url, conversationMessageEventTopicMessageMedia.url) &&
-        Objects.equals(this.mediaType, conversationMessageEventTopicMessageMedia.mediaType) &&
-        Objects.equals(this.contentLengthBytes, conversationMessageEventTopicMessageMedia.contentLengthBytes) &&
-        Objects.equals(this.name, conversationMessageEventTopicMessageMedia.name) &&
-        Objects.equals(this.id, conversationMessageEventTopicMessageMedia.id);
+            Objects.equals(this.mediaType, conversationMessageEventTopicMessageMedia.mediaType) &&
+            Objects.equals(this.contentLengthBytes, conversationMessageEventTopicMessageMedia.contentLengthBytes) &&
+            Objects.equals(this.name, conversationMessageEventTopicMessageMedia.name) &&
+            Objects.equals(this.id, conversationMessageEventTopicMessageMedia.id);
   }
 
   @Override

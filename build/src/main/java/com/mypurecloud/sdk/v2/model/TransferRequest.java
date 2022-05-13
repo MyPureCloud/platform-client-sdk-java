@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class TransferRequest  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The phone number or address of the transfer target.
    **/
@@ -62,7 +63,7 @@ public class TransferRequest  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The user name of the transfer target.
    **/
@@ -80,7 +81,7 @@ public class TransferRequest  implements Serializable {
     this.userName = userName;
   }
 
-  
+
   /**
    * The queue ID of the transfer target.
    **/
@@ -98,7 +99,7 @@ public class TransferRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * If true, transfer to the voicemail inbox of the participant that is being replaced.
    **/
@@ -116,7 +117,6 @@ public class TransferRequest  implements Serializable {
     this.voicemail = voicemail;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class TransferRequest  implements Serializable {
       return false;
     }
     TransferRequest transferRequest = (TransferRequest) o;
+
     return Objects.equals(this.userId, transferRequest.userId) &&
-        Objects.equals(this.address, transferRequest.address) &&
-        Objects.equals(this.userName, transferRequest.userName) &&
-        Objects.equals(this.queueId, transferRequest.queueId) &&
-        Objects.equals(this.voicemail, transferRequest.voicemail);
+            Objects.equals(this.address, transferRequest.address) &&
+            Objects.equals(this.userName, transferRequest.userName) &&
+            Objects.equals(this.queueId, transferRequest.queueId) &&
+            Objects.equals(this.voicemail, transferRequest.voicemail);
   }
 
   @Override

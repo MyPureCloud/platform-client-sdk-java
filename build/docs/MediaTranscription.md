@@ -20,9 +20,9 @@ title: MediaTranscription
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| VOCI | &quot;VOCI&quot; |
-| CALLJOURNEY | &quot;CALLJOURNEY&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| VOCI | &quot;VOCI&quot; | 
+| CALLJOURNEY | &quot;CALLJOURNEY&quot; | 
 {: class="table table-striped"}
 
 

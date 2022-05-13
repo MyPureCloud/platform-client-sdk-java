@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetProfilesGroupsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -49,7 +48,7 @@ public class GetProfilesGroupsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -63,7 +62,7 @@ public class GetProfilesGroupsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -77,7 +76,7 @@ public class GetProfilesGroupsRequest {
 	    this.setId(id);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -93,7 +92,7 @@ public class GetProfilesGroupsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -121,7 +120,7 @@ public class GetProfilesGroupsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,15 +144,19 @@ public class GetProfilesGroupsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/profiles/groups")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("id", "multi", id)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -164,7 +167,7 @@ public class GetProfilesGroupsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetProfilesGroupsRequest request;
@@ -173,34 +176,38 @@ public class GetProfilesGroupsRequest {
 			request = new GetProfilesGroupsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
-		public Builder withSortOrder(sortOrderValues sortOrder) {
-		    request.setSortOrder(sortOrder.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetProfilesGroupsRequest build() {
             

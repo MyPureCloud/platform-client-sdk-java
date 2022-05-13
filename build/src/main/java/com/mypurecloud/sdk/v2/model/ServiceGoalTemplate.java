@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAbandonRate;
@@ -40,7 +41,7 @@ public class ServiceGoalTemplate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ServiceGoalTemplate name(String name) {
@@ -57,7 +58,7 @@ public class ServiceGoalTemplate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Service level targets for this service goal template
    **/
@@ -75,7 +76,7 @@ public class ServiceGoalTemplate  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
-  
+
   /**
    * Average speed of answer targets for this service goal template
    **/
@@ -93,7 +94,7 @@ public class ServiceGoalTemplate  implements Serializable {
     this.averageSpeedOfAnswer = averageSpeedOfAnswer;
   }
 
-  
+
   /**
    * Abandon rate targets for this service goal template
    **/
@@ -111,7 +112,7 @@ public class ServiceGoalTemplate  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-  
+
   /**
    * Version metadata for the service goal template
    **/
@@ -129,14 +130,13 @@ public class ServiceGoalTemplate  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,13 +147,14 @@ public class ServiceGoalTemplate  implements Serializable {
       return false;
     }
     ServiceGoalTemplate serviceGoalTemplate = (ServiceGoalTemplate) o;
+
     return Objects.equals(this.id, serviceGoalTemplate.id) &&
-        Objects.equals(this.name, serviceGoalTemplate.name) &&
-        Objects.equals(this.serviceLevel, serviceGoalTemplate.serviceLevel) &&
-        Objects.equals(this.averageSpeedOfAnswer, serviceGoalTemplate.averageSpeedOfAnswer) &&
-        Objects.equals(this.abandonRate, serviceGoalTemplate.abandonRate) &&
-        Objects.equals(this.metadata, serviceGoalTemplate.metadata) &&
-        Objects.equals(this.selfUri, serviceGoalTemplate.selfUri);
+            Objects.equals(this.name, serviceGoalTemplate.name) &&
+            Objects.equals(this.serviceLevel, serviceGoalTemplate.serviceLevel) &&
+            Objects.equals(this.averageSpeedOfAnswer, serviceGoalTemplate.averageSpeedOfAnswer) &&
+            Objects.equals(this.abandonRate, serviceGoalTemplate.abandonRate) &&
+            Objects.equals(this.metadata, serviceGoalTemplate.metadata) &&
+            Objects.equals(this.selfUri, serviceGoalTemplate.selfUri);
   }
 
   @Override

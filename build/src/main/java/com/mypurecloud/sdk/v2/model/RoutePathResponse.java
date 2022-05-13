@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -16,7 +17,6 @@ import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -99,7 +99,7 @@ public class RoutePathResponse  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The media type of the given queue associated with the route path
    **/
@@ -117,7 +117,7 @@ public class RoutePathResponse  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The ID of the language associated with the route path
    **/
@@ -135,7 +135,7 @@ public class RoutePathResponse  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * The set of skills associated with the route path
    **/
@@ -153,7 +153,6 @@ public class RoutePathResponse  implements Serializable {
     this.skills = skills;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,10 +163,11 @@ public class RoutePathResponse  implements Serializable {
       return false;
     }
     RoutePathResponse routePathResponse = (RoutePathResponse) o;
+
     return Objects.equals(this.queue, routePathResponse.queue) &&
-        Objects.equals(this.mediaType, routePathResponse.mediaType) &&
-        Objects.equals(this.language, routePathResponse.language) &&
-        Objects.equals(this.skills, routePathResponse.skills);
+            Objects.equals(this.mediaType, routePathResponse.mediaType) &&
+            Objects.equals(this.language, routePathResponse.language) &&
+            Objects.equals(this.skills, routePathResponse.skills);
   }
 
   @Override

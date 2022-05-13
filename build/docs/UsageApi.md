@@ -21,8 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get the results of a usage query
 
-
-
 Wraps GET /api/v2/usage/query/{executionId}/results  
 
 Requires ANY permissions: 

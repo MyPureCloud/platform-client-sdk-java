@@ -15,7 +15,7 @@ title: DataTableImportJob
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **uploadURI** | <!----><!---->**String**<!----> | The URL of the location at which the caller can upload the file to be imported |  [optional] |
-| **importMode** | [**ImportModeEnum**](#ImportModeEnum)<!----> | The indication of whether the processing should remove rows that don&#39;t appear in the import file |  [optional] |
+| **importMode** | [**ImportModeEnum**](#ImportModeEnum)<!----> | The indication of whether the processing should remove rows that don't appear in the import file |  [optional] |
 | **errorInformation** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | Any error information, or null of the processing is not in an error state |  [optional] |
 | **countRecordsUpdated** | <!----><!---->**Integer**<!----> | The current count of the number of records processed |  [optional] |
 | **countRecordsDeleted** | <!----><!---->**Integer**<!----> | The current count of the number of records deleted |  [optional] |
@@ -30,11 +30,11 @@ title: DataTableImportJob
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WAITINGFORUPLOAD | &quot;WaitingForUpload&quot; |
-| PROCESSING | &quot;Processing&quot; |
-| FAILED | &quot;Failed&quot; |
-| SUCCEEDED | &quot;Succeeded&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WAITINGFORUPLOAD | &quot;WaitingForUpload&quot; | 
+| PROCESSING | &quot;Processing&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| SUCCEEDED | &quot;Succeeded&quot; | 
 {: class="table table-striped"}
 
 
@@ -44,9 +44,9 @@ title: DataTableImportJob
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| REPLACEALL | &quot;ReplaceAll&quot; |
-| APPEND | &quot;Append&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REPLACEALL | &quot;ReplaceAll&quot; | 
+| APPEND | &quot;Append&quot; | 
 {: class="table table-striped"}
 
 

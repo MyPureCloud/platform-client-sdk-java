@@ -20,9 +20,9 @@ title: IpAddressRange
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DATA_ACTIONS | &quot;data-actions&quot; |
-| SMTP | &quot;smtp&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DATA_ACTIONS | &quot;data-actions&quot; | 
+| SMTP | &quot;smtp&quot; | 
 {: class="table table-striped"}
 
 

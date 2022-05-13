@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicEmailMediaParticipant;
@@ -45,7 +46,7 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailConversation name(String name) {
@@ -62,7 +63,7 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailConversation participants(List<ConversationEmailEventTopicEmailMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class ConversationEmailEventTopicEmailConversation  implements Serializab
       return false;
     }
     ConversationEmailEventTopicEmailConversation conversationEmailEventTopicEmailConversation = (ConversationEmailEventTopicEmailConversation) o;
+
     return Objects.equals(this.id, conversationEmailEventTopicEmailConversation.id) &&
-        Objects.equals(this.name, conversationEmailEventTopicEmailConversation.name) &&
-        Objects.equals(this.participants, conversationEmailEventTopicEmailConversation.participants) &&
-        Objects.equals(this.otherMediaUris, conversationEmailEventTopicEmailConversation.otherMediaUris);
+            Objects.equals(this.name, conversationEmailEventTopicEmailConversation.name) &&
+            Objects.equals(this.participants, conversationEmailEventTopicEmailConversation.participants) &&
+            Objects.equals(this.otherMediaUris, conversationEmailEventTopicEmailConversation.otherMediaUris);
   }
 
   @Override

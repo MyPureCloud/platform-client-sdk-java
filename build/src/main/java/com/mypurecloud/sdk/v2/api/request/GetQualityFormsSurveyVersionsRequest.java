@@ -20,37 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 public class GetQualityFormsSurveyVersionsRequest {
-    
+
 	private String formId;
 	public String getFormId() {
 		return this.formId;
@@ -64,7 +64,7 @@ public class GetQualityFormsSurveyVersionsRequest {
 	    this.setFormId(formId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -78,7 +78,7 @@ public class GetQualityFormsSurveyVersionsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -92,7 +92,7 @@ public class GetQualityFormsSurveyVersionsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -123,11 +123,13 @@ public class GetQualityFormsSurveyVersionsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/quality/forms/surveys/{formId}/versions")
                 .withPathParameter("formId", formId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -138,12 +140,12 @@ public class GetQualityFormsSurveyVersionsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String formId) {
 	    return new Builder()
 	            .withRequiredParams(formId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetQualityFormsSurveyVersionsRequest request;
@@ -152,30 +154,30 @@ public class GetQualityFormsSurveyVersionsRequest {
 			request = new GetQualityFormsSurveyVersionsRequest();
 		}
 
-		
+
 		public Builder withFormId(String formId) {
 			request.setFormId(formId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String formId) {
 			request.setFormId(formId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetQualityFormsSurveyVersionsRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice isMobile(Boolean isMobile) {
@@ -113,7 +114,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.isMobile = isMobile;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice screenHeight(Integer screenHeight) {
@@ -130,7 +131,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.screenHeight = screenHeight;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice screenWidth(Integer screenWidth) {
@@ -147,7 +148,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.screenWidth = screenWidth;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice fingerprint(String fingerprint) {
@@ -164,7 +165,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.fingerprint = fingerprint;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice osFamily(String osFamily) {
@@ -181,7 +182,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.osFamily = osFamily;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice osVersion(String osVersion) {
@@ -198,7 +199,7 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.osVersion = osVersion;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationDevice category(CategoryEnum category) {
@@ -215,7 +216,6 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
     this.category = category;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -226,14 +226,15 @@ public class JourneyOutcomeEventsNotificationDevice  implements Serializable {
       return false;
     }
     JourneyOutcomeEventsNotificationDevice journeyOutcomeEventsNotificationDevice = (JourneyOutcomeEventsNotificationDevice) o;
+
     return Objects.equals(this.type, journeyOutcomeEventsNotificationDevice.type) &&
-        Objects.equals(this.isMobile, journeyOutcomeEventsNotificationDevice.isMobile) &&
-        Objects.equals(this.screenHeight, journeyOutcomeEventsNotificationDevice.screenHeight) &&
-        Objects.equals(this.screenWidth, journeyOutcomeEventsNotificationDevice.screenWidth) &&
-        Objects.equals(this.fingerprint, journeyOutcomeEventsNotificationDevice.fingerprint) &&
-        Objects.equals(this.osFamily, journeyOutcomeEventsNotificationDevice.osFamily) &&
-        Objects.equals(this.osVersion, journeyOutcomeEventsNotificationDevice.osVersion) &&
-        Objects.equals(this.category, journeyOutcomeEventsNotificationDevice.category);
+            Objects.equals(this.isMobile, journeyOutcomeEventsNotificationDevice.isMobile) &&
+            Objects.equals(this.screenHeight, journeyOutcomeEventsNotificationDevice.screenHeight) &&
+            Objects.equals(this.screenWidth, journeyOutcomeEventsNotificationDevice.screenWidth) &&
+            Objects.equals(this.fingerprint, journeyOutcomeEventsNotificationDevice.fingerprint) &&
+            Objects.equals(this.osFamily, journeyOutcomeEventsNotificationDevice.osFamily) &&
+            Objects.equals(this.osVersion, journeyOutcomeEventsNotificationDevice.osVersion) &&
+            Objects.equals(this.category, journeyOutcomeEventsNotificationDevice.category);
   }
 
   @Override

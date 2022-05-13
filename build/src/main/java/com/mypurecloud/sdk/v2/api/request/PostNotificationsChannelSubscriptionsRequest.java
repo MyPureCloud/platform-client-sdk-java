@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AvailableTopicEntityListing;
-import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelEntityListing;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
-import com.mypurecloud.sdk.v2.model.Channel;
+import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PostNotificationsChannelSubscriptionsRequest {
-    
+
 	private String channelId;
 	public String getChannelId() {
 		return this.channelId;
@@ -42,7 +42,7 @@ public class PostNotificationsChannelSubscriptionsRequest {
 	    this.setChannelId(channelId);
 	    return this;
 	} 
-	
+
 	private List<ChannelTopic> body;
 	public List<ChannelTopic> getBody() {
 		return this.body;
@@ -56,7 +56,7 @@ public class PostNotificationsChannelSubscriptionsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,8 +93,8 @@ public class PostNotificationsChannelSubscriptionsRequest {
                 .withPathParameter("channelId", channelId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class PostNotificationsChannelSubscriptionsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String channelId, List<ChannelTopic> body) {
 	    return new Builder()
 	            .withRequiredParams(channelId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostNotificationsChannelSubscriptionsRequest request;
@@ -119,26 +119,26 @@ public class PostNotificationsChannelSubscriptionsRequest {
 			request = new PostNotificationsChannelSubscriptionsRequest();
 		}
 
-		
+
 		public Builder withChannelId(String channelId) {
 			request.setChannelId(channelId);
 			return this;
 		}
-		
+
 		public Builder withBody(List<ChannelTopic> body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String channelId, List<ChannelTopic> body) {
 			request.setChannelId(channelId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostNotificationsChannelSubscriptionsRequest build() {
             

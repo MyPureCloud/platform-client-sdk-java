@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -117,7 +118,7 @@ public class ReportingTurn  implements Serializable {
     this.userInput = userInput;
   }
 
-  
+
   /**
    * The bot prompts associated with this reporting turn.
    **/
@@ -135,7 +136,7 @@ public class ReportingTurn  implements Serializable {
     this.botPrompts = botPrompts;
   }
 
-  
+
   /**
    * The bot session ID that this reporting turn is grouped under.
    **/
@@ -153,7 +154,7 @@ public class ReportingTurn  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * The bot flow 'ask' action associated with this reporting turn (e.g. AskForIntent).
    **/
@@ -171,7 +172,7 @@ public class ReportingTurn  implements Serializable {
     this.askAction = askAction;
   }
 
-  
+
   /**
    * The intent and associated slots detected during this reporting turn.
    **/
@@ -189,7 +190,7 @@ public class ReportingTurn  implements Serializable {
     this.intent = intent;
   }
 
-  
+
   /**
    * The knowledge data captured during this reporting turn.
    **/
@@ -207,7 +208,7 @@ public class ReportingTurn  implements Serializable {
     this.knowledge = knowledge;
   }
 
-  
+
   /**
    * Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -225,7 +226,7 @@ public class ReportingTurn  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Result of the bot flow 'ask' action.
    **/
@@ -243,14 +244,13 @@ public class ReportingTurn  implements Serializable {
     this.askActionResult = askActionResult;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
     return conversation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -261,15 +261,16 @@ public class ReportingTurn  implements Serializable {
       return false;
     }
     ReportingTurn reportingTurn = (ReportingTurn) o;
+
     return Objects.equals(this.userInput, reportingTurn.userInput) &&
-        Objects.equals(this.botPrompts, reportingTurn.botPrompts) &&
-        Objects.equals(this.sessionId, reportingTurn.sessionId) &&
-        Objects.equals(this.askAction, reportingTurn.askAction) &&
-        Objects.equals(this.intent, reportingTurn.intent) &&
-        Objects.equals(this.knowledge, reportingTurn.knowledge) &&
-        Objects.equals(this.dateCreated, reportingTurn.dateCreated) &&
-        Objects.equals(this.askActionResult, reportingTurn.askActionResult) &&
-        Objects.equals(this.conversation, reportingTurn.conversation);
+            Objects.equals(this.botPrompts, reportingTurn.botPrompts) &&
+            Objects.equals(this.sessionId, reportingTurn.sessionId) &&
+            Objects.equals(this.askAction, reportingTurn.askAction) &&
+            Objects.equals(this.intent, reportingTurn.intent) &&
+            Objects.equals(this.knowledge, reportingTurn.knowledge) &&
+            Objects.equals(this.dateCreated, reportingTurn.dateCreated) &&
+            Objects.equals(this.askActionResult, reportingTurn.askActionResult) &&
+            Objects.equals(this.conversation, reportingTurn.conversation);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class EdgeLogsJobRequest  implements Serializable {
     this.path = path;
   }
 
-  
+
   /**
    * The pattern to use when searching for logs, which may include the wildcards {*, ?}.  Multiple search patterns may be combined using a pipe '|' as a delimiter.
    **/
@@ -60,7 +61,7 @@ public class EdgeLogsJobRequest  implements Serializable {
     this.query = query;
   }
 
-  
+
   /**
    * Boolean whether or not to recurse into directories.
    **/
@@ -78,7 +79,6 @@ public class EdgeLogsJobRequest  implements Serializable {
     this.recurse = recurse;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class EdgeLogsJobRequest  implements Serializable {
       return false;
     }
     EdgeLogsJobRequest edgeLogsJobRequest = (EdgeLogsJobRequest) o;
+
     return Objects.equals(this.path, edgeLogsJobRequest.path) &&
-        Objects.equals(this.query, edgeLogsJobRequest.query) &&
-        Objects.equals(this.recurse, edgeLogsJobRequest.recurse);
+            Objects.equals(this.query, edgeLogsJobRequest.query) &&
+            Objects.equals(this.recurse, edgeLogsJobRequest.recurse);
   }
 
   @Override

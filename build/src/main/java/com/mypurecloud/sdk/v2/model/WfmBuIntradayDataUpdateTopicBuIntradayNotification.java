@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuIntradayResult;
@@ -41,7 +42,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayNotification  implements Seri
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayNotification result(WfmBuIntradayDataUpdateTopicBuIntradayResult result) {
@@ -58,7 +59,6 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayNotification  implements Seri
     this.result = result;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayNotification  implements Seri
       return false;
     }
     WfmBuIntradayDataUpdateTopicBuIntradayNotification wfmBuIntradayDataUpdateTopicBuIntradayNotification = (WfmBuIntradayDataUpdateTopicBuIntradayNotification) o;
+
     return Objects.equals(this.operationId, wfmBuIntradayDataUpdateTopicBuIntradayNotification.operationId) &&
-        Objects.equals(this.result, wfmBuIntradayDataUpdateTopicBuIntradayNotification.result);
+            Objects.equals(this.result, wfmBuIntradayDataUpdateTopicBuIntradayNotification.result);
   }
 
   @Override

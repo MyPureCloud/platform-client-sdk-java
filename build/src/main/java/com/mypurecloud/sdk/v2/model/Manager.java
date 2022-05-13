@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,14 +43,13 @@ public class Manager  implements Serializable {
     this.value = value;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The reference URI of the manager's user record.")
   @JsonProperty("$ref")
   public String getRef() {
     return ref;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,8 +60,9 @@ public class Manager  implements Serializable {
       return false;
     }
     Manager manager = (Manager) o;
+
     return Objects.equals(this.value, manager.value) &&
-        Objects.equals(this.ref, manager.ref);
+            Objects.equals(this.ref, manager.ref);
   }
 
   @Override

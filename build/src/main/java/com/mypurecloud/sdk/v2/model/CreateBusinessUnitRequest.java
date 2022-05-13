@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitSettings;
@@ -43,7 +44,7 @@ public class CreateBusinessUnitRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The ID of the division to which the business unit should be added
    **/
@@ -61,7 +62,7 @@ public class CreateBusinessUnitRequest  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    * Configuration for the business unit
    **/
@@ -79,7 +80,6 @@ public class CreateBusinessUnitRequest  implements Serializable {
     this.settings = settings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class CreateBusinessUnitRequest  implements Serializable {
       return false;
     }
     CreateBusinessUnitRequest createBusinessUnitRequest = (CreateBusinessUnitRequest) o;
+
     return Objects.equals(this.name, createBusinessUnitRequest.name) &&
-        Objects.equals(this.divisionId, createBusinessUnitRequest.divisionId) &&
-        Objects.equals(this.settings, createBusinessUnitRequest.settings);
+            Objects.equals(this.divisionId, createBusinessUnitRequest.divisionId) &&
+            Objects.equals(this.settings, createBusinessUnitRequest.settings);
   }
 
   @Override

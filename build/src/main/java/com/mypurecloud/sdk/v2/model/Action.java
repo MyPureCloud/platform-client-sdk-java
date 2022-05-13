@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionConfig;
@@ -39,7 +40,7 @@ public class Action  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Action name(String name) {
@@ -56,7 +57,7 @@ public class Action  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The ID of the integration for which this action is associated
    **/
@@ -74,7 +75,7 @@ public class Action  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
+
   /**
    * Category of Action
    **/
@@ -92,7 +93,7 @@ public class Action  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * Action contract
    **/
@@ -110,7 +111,7 @@ public class Action  implements Serializable {
     this.contract = contract;
   }
 
-  
+
   /**
    * Version of this action
    **/
@@ -128,7 +129,7 @@ public class Action  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Indication of whether or not the action is designed to accept sensitive data
    **/
@@ -146,7 +147,7 @@ public class Action  implements Serializable {
     this.secure = secure;
   }
 
-  
+
   /**
    * Configuration to support request and response processing
    **/
@@ -164,14 +165,13 @@ public class Action  implements Serializable {
     this.config = config;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,15 +182,16 @@ public class Action  implements Serializable {
       return false;
     }
     Action action = (Action) o;
+
     return Objects.equals(this.id, action.id) &&
-        Objects.equals(this.name, action.name) &&
-        Objects.equals(this.integrationId, action.integrationId) &&
-        Objects.equals(this.category, action.category) &&
-        Objects.equals(this.contract, action.contract) &&
-        Objects.equals(this.version, action.version) &&
-        Objects.equals(this.secure, action.secure) &&
-        Objects.equals(this.config, action.config) &&
-        Objects.equals(this.selfUri, action.selfUri);
+            Objects.equals(this.name, action.name) &&
+            Objects.equals(this.integrationId, action.integrationId) &&
+            Objects.equals(this.category, action.category) &&
+            Objects.equals(this.contract, action.contract) &&
+            Objects.equals(this.version, action.version) &&
+            Objects.equals(this.secure, action.secure) &&
+            Objects.equals(this.config, action.config) &&
+            Objects.equals(this.selfUri, action.selfUri);
   }
 
   @Override

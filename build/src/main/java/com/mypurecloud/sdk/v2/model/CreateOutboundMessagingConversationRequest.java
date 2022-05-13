@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
    **/
@@ -109,7 +110,7 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * The messaging address messenger type.
    **/
@@ -127,7 +128,7 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     this.toAddressMessengerType = toAddressMessengerType;
   }
 
-  
+
   /**
    * An override to use an existing conversation.  If set to true, an existing conversation will be used if there is one within the conversation window.  If set to false, create request fails if there is a conversation within the conversation window.
    **/
@@ -145,7 +146,7 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     this.useExistingConversation = useExistingConversation;
   }
 
-  
+
   /**
    * The external contact with which the message will be associated.
    **/
@@ -163,7 +164,6 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     this.externalContactId = externalContactId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -174,11 +174,12 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
       return false;
     }
     CreateOutboundMessagingConversationRequest createOutboundMessagingConversationRequest = (CreateOutboundMessagingConversationRequest) o;
+
     return Objects.equals(this.queueId, createOutboundMessagingConversationRequest.queueId) &&
-        Objects.equals(this.toAddress, createOutboundMessagingConversationRequest.toAddress) &&
-        Objects.equals(this.toAddressMessengerType, createOutboundMessagingConversationRequest.toAddressMessengerType) &&
-        Objects.equals(this.useExistingConversation, createOutboundMessagingConversationRequest.useExistingConversation) &&
-        Objects.equals(this.externalContactId, createOutboundMessagingConversationRequest.externalContactId);
+            Objects.equals(this.toAddress, createOutboundMessagingConversationRequest.toAddress) &&
+            Objects.equals(this.toAddressMessengerType, createOutboundMessagingConversationRequest.toAddressMessengerType) &&
+            Objects.equals(this.useExistingConversation, createOutboundMessagingConversationRequest.useExistingConversation) &&
+            Objects.equals(this.externalContactId, createOutboundMessagingConversationRequest.externalContactId);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersion;
@@ -49,7 +50,7 @@ public class BotConnectorBot  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public BotConnectorBot name(String name) {
@@ -66,7 +67,7 @@ public class BotConnectorBot  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * An optional description of the bot.  This can be up to 256 characters long and must be comprised of displayable characters without leading or trailing whitespace
    **/
@@ -84,7 +85,7 @@ public class BotConnectorBot  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * This bots versions, limit of 50 per bot
    **/
@@ -102,21 +103,20 @@ public class BotConnectorBot  implements Serializable {
     this.versions = versions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A system-generated string that contains metadata about this bot.")
   @JsonProperty("botCompositeTag")
   public String getBotCompositeTag() {
     return botCompositeTag;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,12 +127,13 @@ public class BotConnectorBot  implements Serializable {
       return false;
     }
     BotConnectorBot botConnectorBot = (BotConnectorBot) o;
+
     return Objects.equals(this.id, botConnectorBot.id) &&
-        Objects.equals(this.name, botConnectorBot.name) &&
-        Objects.equals(this.description, botConnectorBot.description) &&
-        Objects.equals(this.versions, botConnectorBot.versions) &&
-        Objects.equals(this.botCompositeTag, botConnectorBot.botCompositeTag) &&
-        Objects.equals(this.selfUri, botConnectorBot.selfUri);
+            Objects.equals(this.name, botConnectorBot.name) &&
+            Objects.equals(this.description, botConnectorBot.description) &&
+            Objects.equals(this.versions, botConnectorBot.versions) &&
+            Objects.equals(this.botCompositeTag, botConnectorBot.botCompositeTag) &&
+            Objects.equals(this.selfUri, botConnectorBot.selfUri);
   }
 
   @Override

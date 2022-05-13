@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public RuleSetEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
       return false;
     }
     RuleSetEntityListing ruleSetEntityListing = (RuleSetEntityListing) o;
+
     return Objects.equals(this.entities, ruleSetEntityListing.entities) &&
-        Objects.equals(this.pageSize, ruleSetEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, ruleSetEntityListing.pageNumber) &&
-        Objects.equals(this.total, ruleSetEntityListing.total) &&
-        Objects.equals(this.lastUri, ruleSetEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, ruleSetEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, ruleSetEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, ruleSetEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, ruleSetEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, ruleSetEntityListing.pageCount);
+            Objects.equals(this.pageSize, ruleSetEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, ruleSetEntityListing.pageNumber) &&
+            Objects.equals(this.total, ruleSetEntityListing.total) &&
+            Objects.equals(this.lastUri, ruleSetEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, ruleSetEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, ruleSetEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, ruleSetEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, ruleSetEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, ruleSetEntityListing.pageCount);
   }
 
   @Override

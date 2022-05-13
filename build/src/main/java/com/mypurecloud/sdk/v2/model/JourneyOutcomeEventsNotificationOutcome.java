@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class JourneyOutcomeEventsNotificationOutcome  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcome selfUri(String selfUri) {
@@ -58,7 +59,7 @@ public class JourneyOutcomeEventsNotificationOutcome  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcome displayName(String displayName) {
@@ -75,7 +76,6 @@ public class JourneyOutcomeEventsNotificationOutcome  implements Serializable {
     this.displayName = displayName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class JourneyOutcomeEventsNotificationOutcome  implements Serializable {
       return false;
     }
     JourneyOutcomeEventsNotificationOutcome journeyOutcomeEventsNotificationOutcome = (JourneyOutcomeEventsNotificationOutcome) o;
+
     return Objects.equals(this.id, journeyOutcomeEventsNotificationOutcome.id) &&
-        Objects.equals(this.selfUri, journeyOutcomeEventsNotificationOutcome.selfUri) &&
-        Objects.equals(this.displayName, journeyOutcomeEventsNotificationOutcome.displayName);
+            Objects.equals(this.selfUri, journeyOutcomeEventsNotificationOutcome.selfUri) &&
+            Objects.equals(this.displayName, journeyOutcomeEventsNotificationOutcome.displayName);
   }
 
   @Override

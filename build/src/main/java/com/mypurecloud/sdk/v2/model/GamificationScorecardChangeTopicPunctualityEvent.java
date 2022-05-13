@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicPunctualityEvent dateScheduleStart(String dateScheduleStart) {
@@ -59,7 +60,7 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     this.dateScheduleStart = dateScheduleStart;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicPunctualityEvent activityCode(String activityCode) {
@@ -76,7 +77,7 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     this.activityCode = activityCode;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicPunctualityEvent points(Integer points) {
@@ -93,7 +94,6 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
     this.points = points;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class GamificationScorecardChangeTopicPunctualityEvent  implements Serial
       return false;
     }
     GamificationScorecardChangeTopicPunctualityEvent gamificationScorecardChangeTopicPunctualityEvent = (GamificationScorecardChangeTopicPunctualityEvent) o;
+
     return Objects.equals(this.dateStart, gamificationScorecardChangeTopicPunctualityEvent.dateStart) &&
-        Objects.equals(this.dateScheduleStart, gamificationScorecardChangeTopicPunctualityEvent.dateScheduleStart) &&
-        Objects.equals(this.activityCode, gamificationScorecardChangeTopicPunctualityEvent.activityCode) &&
-        Objects.equals(this.points, gamificationScorecardChangeTopicPunctualityEvent.points);
+            Objects.equals(this.dateScheduleStart, gamificationScorecardChangeTopicPunctualityEvent.dateScheduleStart) &&
+            Objects.equals(this.activityCode, gamificationScorecardChangeTopicPunctualityEvent.activityCode) &&
+            Objects.equals(this.points, gamificationScorecardChangeTopicPunctualityEvent.points);
   }
 
   @Override

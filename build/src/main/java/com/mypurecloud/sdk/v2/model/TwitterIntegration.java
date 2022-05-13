@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class TwitterIntegration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Twitter Integration
    **/
@@ -167,7 +168,7 @@ public class TwitterIntegration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -185,7 +186,7 @@ public class TwitterIntegration  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public TwitterIntegration messagingSetting(MessagingSettingReference messagingSetting) {
@@ -202,7 +203,7 @@ public class TwitterIntegration  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The Access Token Key from Twitter messenger
    **/
@@ -220,7 +221,7 @@ public class TwitterIntegration  implements Serializable {
     this.accessTokenKey = accessTokenKey;
   }
 
-  
+
   /**
    * The Consumer Key from Twitter messenger
    **/
@@ -238,7 +239,7 @@ public class TwitterIntegration  implements Serializable {
     this.consumerKey = consumerKey;
   }
 
-  
+
   /**
    * The Username from Twitter
    **/
@@ -256,7 +257,7 @@ public class TwitterIntegration  implements Serializable {
     this.username = username;
   }
 
-  
+
   /**
    * The UserId from Twitter
    **/
@@ -274,7 +275,7 @@ public class TwitterIntegration  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The status of the Twitter Integration
    **/
@@ -292,7 +293,7 @@ public class TwitterIntegration  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The type of twitter account to be used for the integration
    **/
@@ -310,7 +311,7 @@ public class TwitterIntegration  implements Serializable {
     this.tier = tier;
   }
 
-  
+
   /**
    * The Twitter environment name, e.g.: env-beta (required for premium tier)
    **/
@@ -328,14 +329,14 @@ public class TwitterIntegration  implements Serializable {
     this.envName = envName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient associated to the Twitter Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
   }
 
-  
+
   /**
    * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -353,7 +354,7 @@ public class TwitterIntegration  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -371,7 +372,7 @@ public class TwitterIntegration  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User reference that created this Integration
    **/
@@ -389,7 +390,7 @@ public class TwitterIntegration  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User reference that last modified this Integration
    **/
@@ -407,7 +408,7 @@ public class TwitterIntegration  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -425,28 +426,27 @@ public class TwitterIntegration  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
   @JsonProperty("createStatus")
   public CreateStatusEnum getCreateStatus() {
     return createStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -457,26 +457,27 @@ public class TwitterIntegration  implements Serializable {
       return false;
     }
     TwitterIntegration twitterIntegration = (TwitterIntegration) o;
+
     return Objects.equals(this.id, twitterIntegration.id) &&
-        Objects.equals(this.name, twitterIntegration.name) &&
-        Objects.equals(this.supportedContent, twitterIntegration.supportedContent) &&
-        Objects.equals(this.messagingSetting, twitterIntegration.messagingSetting) &&
-        Objects.equals(this.accessTokenKey, twitterIntegration.accessTokenKey) &&
-        Objects.equals(this.consumerKey, twitterIntegration.consumerKey) &&
-        Objects.equals(this.username, twitterIntegration.username) &&
-        Objects.equals(this.userId, twitterIntegration.userId) &&
-        Objects.equals(this.status, twitterIntegration.status) &&
-        Objects.equals(this.tier, twitterIntegration.tier) &&
-        Objects.equals(this.envName, twitterIntegration.envName) &&
-        Objects.equals(this.recipient, twitterIntegration.recipient) &&
-        Objects.equals(this.dateCreated, twitterIntegration.dateCreated) &&
-        Objects.equals(this.dateModified, twitterIntegration.dateModified) &&
-        Objects.equals(this.createdBy, twitterIntegration.createdBy) &&
-        Objects.equals(this.modifiedBy, twitterIntegration.modifiedBy) &&
-        Objects.equals(this.version, twitterIntegration.version) &&
-        Objects.equals(this.createStatus, twitterIntegration.createStatus) &&
-        Objects.equals(this.createError, twitterIntegration.createError) &&
-        Objects.equals(this.selfUri, twitterIntegration.selfUri);
+            Objects.equals(this.name, twitterIntegration.name) &&
+            Objects.equals(this.supportedContent, twitterIntegration.supportedContent) &&
+            Objects.equals(this.messagingSetting, twitterIntegration.messagingSetting) &&
+            Objects.equals(this.accessTokenKey, twitterIntegration.accessTokenKey) &&
+            Objects.equals(this.consumerKey, twitterIntegration.consumerKey) &&
+            Objects.equals(this.username, twitterIntegration.username) &&
+            Objects.equals(this.userId, twitterIntegration.userId) &&
+            Objects.equals(this.status, twitterIntegration.status) &&
+            Objects.equals(this.tier, twitterIntegration.tier) &&
+            Objects.equals(this.envName, twitterIntegration.envName) &&
+            Objects.equals(this.recipient, twitterIntegration.recipient) &&
+            Objects.equals(this.dateCreated, twitterIntegration.dateCreated) &&
+            Objects.equals(this.dateModified, twitterIntegration.dateModified) &&
+            Objects.equals(this.createdBy, twitterIntegration.createdBy) &&
+            Objects.equals(this.modifiedBy, twitterIntegration.modifiedBy) &&
+            Objects.equals(this.version, twitterIntegration.version) &&
+            Objects.equals(this.createStatus, twitterIntegration.createStatus) &&
+            Objects.equals(this.createError, twitterIntegration.createError) &&
+            Objects.equals(this.selfUri, twitterIntegration.selfUri);
   }
 
   @Override

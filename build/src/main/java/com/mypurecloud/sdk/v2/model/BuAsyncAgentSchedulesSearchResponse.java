@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The ID for the operation
    **/
@@ -113,7 +114,7 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
     this.operationId = operationId;
   }
 
-  
+
   /**
    * The result of the operation.  Null unless status == Complete
    **/
@@ -131,7 +132,7 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
     this.result = result;
   }
 
-  
+
   /**
    * Percent progress for the operation
    **/
@@ -149,7 +150,7 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
     this.progress = progress;
   }
 
-  
+
   /**
    * The URL from which to download the result if it is too large to pass directly
    **/
@@ -167,7 +168,6 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,11 +178,12 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
       return false;
     }
     BuAsyncAgentSchedulesSearchResponse buAsyncAgentSchedulesSearchResponse = (BuAsyncAgentSchedulesSearchResponse) o;
+
     return Objects.equals(this.status, buAsyncAgentSchedulesSearchResponse.status) &&
-        Objects.equals(this.operationId, buAsyncAgentSchedulesSearchResponse.operationId) &&
-        Objects.equals(this.result, buAsyncAgentSchedulesSearchResponse.result) &&
-        Objects.equals(this.progress, buAsyncAgentSchedulesSearchResponse.progress) &&
-        Objects.equals(this.downloadUrl, buAsyncAgentSchedulesSearchResponse.downloadUrl);
+            Objects.equals(this.operationId, buAsyncAgentSchedulesSearchResponse.operationId) &&
+            Objects.equals(this.result, buAsyncAgentSchedulesSearchResponse.result) &&
+            Objects.equals(this.progress, buAsyncAgentSchedulesSearchResponse.progress) &&
+            Objects.equals(this.downloadUrl, buAsyncAgentSchedulesSearchResponse.downloadUrl);
   }
 
   @Override

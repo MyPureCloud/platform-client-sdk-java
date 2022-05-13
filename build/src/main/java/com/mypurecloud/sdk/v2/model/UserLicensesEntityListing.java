@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserLicenses;
@@ -46,7 +47,7 @@ public class UserLicensesEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public UserLicensesEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class UserLicensesEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public UserLicensesEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class UserLicensesEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public UserLicensesEntityListing total(Long total) {
@@ -97,7 +98,7 @@ public class UserLicensesEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public UserLicensesEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class UserLicensesEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class UserLicensesEntityListing  implements Serializable {
       return false;
     }
     UserLicensesEntityListing userLicensesEntityListing = (UserLicensesEntityListing) o;
+
     return Objects.equals(this.entities, userLicensesEntityListing.entities) &&
-        Objects.equals(this.pageSize, userLicensesEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, userLicensesEntityListing.pageNumber) &&
-        Objects.equals(this.total, userLicensesEntityListing.total) &&
-        Objects.equals(this.pageCount, userLicensesEntityListing.pageCount);
+            Objects.equals(this.pageSize, userLicensesEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, userLicensesEntityListing.pageNumber) &&
+            Objects.equals(this.total, userLicensesEntityListing.total) &&
+            Objects.equals(this.pageCount, userLicensesEntityListing.pageCount);
   }
 
   @Override

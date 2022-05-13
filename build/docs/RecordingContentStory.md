@@ -20,9 +20,9 @@ title: RecordingContentStory
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MENTION | &quot;Mention&quot; |
-| REPLY | &quot;Reply&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MENTION | &quot;Mention&quot; | 
+| REPLY | &quot;Reply&quot; | 
 {: class="table table-striped"}
 
 

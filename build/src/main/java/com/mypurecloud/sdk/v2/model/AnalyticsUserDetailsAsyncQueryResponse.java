@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetail;
@@ -45,7 +46,7 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
     this.userDetails = userDetails;
   }
 
-  
+
   /**
    * Optional cursor to indicate where to resume the results
    **/
@@ -63,7 +64,7 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
     this.cursor = cursor;
   }
 
-  
+
   /**
    * Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -81,7 +82,6 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
     this.dataAvailabilityDate = dataAvailabilityDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
       return false;
     }
     AnalyticsUserDetailsAsyncQueryResponse analyticsUserDetailsAsyncQueryResponse = (AnalyticsUserDetailsAsyncQueryResponse) o;
+
     return Objects.equals(this.userDetails, analyticsUserDetailsAsyncQueryResponse.userDetails) &&
-        Objects.equals(this.cursor, analyticsUserDetailsAsyncQueryResponse.cursor) &&
-        Objects.equals(this.dataAvailabilityDate, analyticsUserDetailsAsyncQueryResponse.dataAvailabilityDate);
+            Objects.equals(this.cursor, analyticsUserDetailsAsyncQueryResponse.cursor) &&
+            Objects.equals(this.dataAvailabilityDate, analyticsUserDetailsAsyncQueryResponse.dataAvailabilityDate);
   }
 
   @Override

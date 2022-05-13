@@ -20,17 +20,17 @@ title: ScimPhoneNumber
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WORK | &quot;work&quot; |
-| WORK2 | &quot;work2&quot; |
-| WORK3 | &quot;work3&quot; |
-| WORK4 | &quot;work4&quot; |
-| HOME | &quot;home&quot; |
-| MOBILE | &quot;mobile&quot; |
-| OTHER | &quot;other&quot; |
-| MICROSOFTTEAMS | &quot;microsoftteams&quot; |
-| ZOOMPHONE | &quot;zoomphone&quot; |
-| RINGCENTRAL | &quot;ringcentral&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WORK | &quot;work&quot; | 
+| WORK2 | &quot;work2&quot; | 
+| WORK3 | &quot;work3&quot; | 
+| WORK4 | &quot;work4&quot; | 
+| HOME | &quot;home&quot; | 
+| MOBILE | &quot;mobile&quot; | 
+| OTHER | &quot;other&quot; | 
+| MICROSOFTTEAMS | &quot;microsoftteams&quot; | 
+| ZOOMPHONE | &quot;zoomphone&quot; | 
+| RINGCENTRAL | &quot;ringcentral&quot; | 
 {: class="table table-striped"}
 
 

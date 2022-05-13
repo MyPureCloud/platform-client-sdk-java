@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class Destination  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    **/
   public Destination name(String name) {
@@ -60,7 +61,7 @@ public class Destination  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Destination userId(String userId) {
@@ -77,7 +78,7 @@ public class Destination  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public Destination queueId(String queueId) {
@@ -94,7 +95,6 @@ public class Destination  implements Serializable {
     this.queueId = queueId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,10 +105,11 @@ public class Destination  implements Serializable {
       return false;
     }
     Destination destination = (Destination) o;
+
     return Objects.equals(this.address, destination.address) &&
-        Objects.equals(this.name, destination.name) &&
-        Objects.equals(this.userId, destination.userId) &&
-        Objects.equals(this.queueId, destination.queueId);
+            Objects.equals(this.name, destination.name) &&
+            Objects.equals(this.userId, destination.userId) &&
+            Objects.equals(this.queueId, destination.queueId);
   }
 
   @Override

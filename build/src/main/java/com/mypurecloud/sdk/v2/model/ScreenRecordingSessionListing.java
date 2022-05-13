@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing total(Long total) {
@@ -103,7 +104,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSessionListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
       return false;
     }
     ScreenRecordingSessionListing screenRecordingSessionListing = (ScreenRecordingSessionListing) o;
+
     return Objects.equals(this.entities, screenRecordingSessionListing.entities) &&
-        Objects.equals(this.pageSize, screenRecordingSessionListing.pageSize) &&
-        Objects.equals(this.pageNumber, screenRecordingSessionListing.pageNumber) &&
-        Objects.equals(this.total, screenRecordingSessionListing.total) &&
-        Objects.equals(this.lastUri, screenRecordingSessionListing.lastUri) &&
-        Objects.equals(this.firstUri, screenRecordingSessionListing.firstUri) &&
-        Objects.equals(this.selfUri, screenRecordingSessionListing.selfUri) &&
-        Objects.equals(this.previousUri, screenRecordingSessionListing.previousUri) &&
-        Objects.equals(this.nextUri, screenRecordingSessionListing.nextUri) &&
-        Objects.equals(this.pageCount, screenRecordingSessionListing.pageCount);
+            Objects.equals(this.pageSize, screenRecordingSessionListing.pageSize) &&
+            Objects.equals(this.pageNumber, screenRecordingSessionListing.pageNumber) &&
+            Objects.equals(this.total, screenRecordingSessionListing.total) &&
+            Objects.equals(this.lastUri, screenRecordingSessionListing.lastUri) &&
+            Objects.equals(this.firstUri, screenRecordingSessionListing.firstUri) &&
+            Objects.equals(this.selfUri, screenRecordingSessionListing.selfUri) &&
+            Objects.equals(this.previousUri, screenRecordingSessionListing.previousUri) &&
+            Objects.equals(this.nextUri, screenRecordingSessionListing.nextUri) &&
+            Objects.equals(this.pageCount, screenRecordingSessionListing.pageCount);
   }
 
   @Override

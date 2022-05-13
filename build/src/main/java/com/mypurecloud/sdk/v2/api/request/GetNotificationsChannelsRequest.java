@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AvailableTopicEntityListing;
-import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelEntityListing;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
-import com.mypurecloud.sdk.v2.model.Channel;
+import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetNotificationsChannelsRequest {
-    
+
 	private String includechannels;
 	public String getIncludechannels() {
 		return this.includechannels;
@@ -44,7 +44,7 @@ public class GetNotificationsChannelsRequest {
 	} 
 
 	public enum includechannelsValues { 
-		TOKEN("token"), 
+		TOKEN("token"),
 		OAUTHCLIENT("oauthclient");
 
 		private String value;
@@ -72,7 +72,7 @@ public class GetNotificationsChannelsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -96,9 +96,10 @@ public class GetNotificationsChannelsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/notifications/channels")
+
                 .withQueryParameters("includechannels", "", includechannels)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -109,7 +110,7 @@ public class GetNotificationsChannelsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetNotificationsChannelsRequest request;
@@ -118,19 +119,23 @@ public class GetNotificationsChannelsRequest {
 			request = new GetNotificationsChannelsRequest();
 		}
 
-		
+
 		public Builder withIncludechannels(String includechannels) {
 			request.setIncludechannels(includechannels);
 			return this;
 		}
 
-		public Builder withIncludechannels(includechannelsValues includechannels) {
-		    request.setIncludechannels(includechannels.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withIncludechannels(includechannelsValues includechannels) {
+		    request.setIncludechannels(includechannels.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetNotificationsChannelsRequest build() {
             

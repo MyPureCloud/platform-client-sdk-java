@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -44,7 +45,7 @@ public class ConversationDivisionMembership  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
    **/
@@ -62,7 +63,6 @@ public class ConversationDivisionMembership  implements Serializable {
     this.entities = entities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class ConversationDivisionMembership  implements Serializable {
       return false;
     }
     ConversationDivisionMembership conversationDivisionMembership = (ConversationDivisionMembership) o;
+
     return Objects.equals(this.division, conversationDivisionMembership.division) &&
-        Objects.equals(this.entities, conversationDivisionMembership.entities);
+            Objects.equals(this.entities, conversationDivisionMembership.entities);
   }
 
   @Override

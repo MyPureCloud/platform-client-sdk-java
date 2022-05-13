@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.KnowledgeBase;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeImport;
-import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
-import com.mypurecloud.sdk.v2.model.TrainingListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
+import com.mypurecloud.sdk.v2.model.TrainingListing;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class GetKnowledgeKnowledgebasesRequest {
-    
+
 	private String before;
 	public String getBefore() {
 		return this.before;
@@ -55,7 +55,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    this.setBefore(before);
 	    return this;
 	} 
-	
+
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -69,7 +69,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    this.setAfter(after);
 	    return this;
 	} 
-	
+
 	private String limit;
 	public String getLimit() {
 		return this.limit;
@@ -83,7 +83,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    this.setLimit(limit);
 	    return this;
 	} 
-	
+
 	private String pageSize;
 	public String getPageSize() {
 		return this.pageSize;
@@ -97,7 +97,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -111,7 +111,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private String coreLanguage;
 	public String getCoreLanguage() {
 		return this.coreLanguage;
@@ -127,15 +127,15 @@ public class GetKnowledgeKnowledgebasesRequest {
 	} 
 
 	public enum coreLanguageValues { 
-		EN_US("en-US"), 
-		EN_UK("en-UK"), 
-		EN_AU("en-AU"), 
-		DE_DE("de-DE"), 
-		ES_US("es-US"), 
-		ES_ES("es-ES"), 
-		FR_FR("fr-FR"), 
-		PT_BR("pt-BR"), 
-		NL_NL("nl-NL"), 
+		EN_US("en-US"),
+		EN_UK("en-UK"),
+		EN_AU("en-AU"),
+		DE_DE("de-DE"),
+		ES_US("es-US"),
+		ES_ES("es-ES"),
+		FR_FR("fr-FR"),
+		PT_BR("pt-BR"),
+		NL_NL("nl-NL"),
 		IT_IT("it-IT");
 
 		private String value;
@@ -163,7 +163,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Boolean published;
 	public Boolean getPublished() {
 		return this.published;
@@ -177,7 +177,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    this.setPublished(published);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -193,7 +193,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 	} 
 
 	public enum sortByValues { 
-		NAME("Name"), 
+		NAME("Name"),
 		DATE("Date");
 
 		private String value;
@@ -221,7 +221,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -237,9 +237,9 @@ public class GetKnowledgeKnowledgebasesRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASC("ASC"), 
-		ASCENDING("ascending"), 
-		DESC("DESC"), 
+		ASC("ASC"),
+		ASCENDING("ascending"),
+		DESC("DESC"),
 		DESCENDING("descending");
 
 		private String value;
@@ -267,7 +267,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -291,25 +291,34 @@ public class GetKnowledgeKnowledgebasesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/knowledge/knowledgebases")
+
                 .withQueryParameters("before", "", before)
         
+
                 .withQueryParameters("after", "", after)
         
+
                 .withQueryParameters("limit", "", limit)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("coreLanguage", "", coreLanguage)
         
+
                 .withQueryParameters("published", "", published)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -320,7 +329,7 @@ public class GetKnowledgeKnowledgebasesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetKnowledgeKnowledgebasesRequest request;
@@ -329,69 +338,81 @@ public class GetKnowledgeKnowledgebasesRequest {
 			request = new GetKnowledgeKnowledgebasesRequest();
 		}
 
-		
+
 		public Builder withBefore(String before) {
 			request.setBefore(before);
 			return this;
 		}
-		
+
 		public Builder withAfter(String after) {
 			request.setAfter(after);
 			return this;
 		}
-		
+
 		public Builder withLimit(String limit) {
 			request.setLimit(limit);
 			return this;
 		}
-		
+
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withCoreLanguage(String coreLanguage) {
 			request.setCoreLanguage(coreLanguage);
 			return this;
 		}
 
+
+
+		
 		public Builder withCoreLanguage(coreLanguageValues coreLanguage) {
 		    request.setCoreLanguage(coreLanguage.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withPublished(Boolean published) {
 			request.setPublished(published);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortBy(sortByValues sortBy) {
 		    request.setSortBy(sortBy.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
-		public Builder withSortOrder(sortOrderValues sortOrder) {
-		    request.setSortOrder(sortOrder.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetKnowledgeKnowledgebasesRequest build() {
             

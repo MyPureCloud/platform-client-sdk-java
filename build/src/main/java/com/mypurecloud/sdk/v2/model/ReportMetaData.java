@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Parameter;
@@ -40,7 +41,7 @@ public class ReportMetaData  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ReportMetaData name(String name) {
@@ -57,7 +58,7 @@ public class ReportMetaData  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ReportMetaData title(String title) {
@@ -74,7 +75,7 @@ public class ReportMetaData  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    **/
   public ReportMetaData description(String description) {
@@ -91,7 +92,7 @@ public class ReportMetaData  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public ReportMetaData keywords(List<String> keywords) {
@@ -108,7 +109,7 @@ public class ReportMetaData  implements Serializable {
     this.keywords = keywords;
   }
 
-  
+
   /**
    **/
   public ReportMetaData availableLocales(List<String> availableLocales) {
@@ -125,7 +126,7 @@ public class ReportMetaData  implements Serializable {
     this.availableLocales = availableLocales;
   }
 
-  
+
   /**
    **/
   public ReportMetaData parameters(List<Parameter> parameters) {
@@ -142,7 +143,7 @@ public class ReportMetaData  implements Serializable {
     this.parameters = parameters;
   }
 
-  
+
   /**
    **/
   public ReportMetaData exampleUrl(String exampleUrl) {
@@ -159,14 +160,13 @@ public class ReportMetaData  implements Serializable {
     this.exampleUrl = exampleUrl;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,15 +177,16 @@ public class ReportMetaData  implements Serializable {
       return false;
     }
     ReportMetaData reportMetaData = (ReportMetaData) o;
+
     return Objects.equals(this.id, reportMetaData.id) &&
-        Objects.equals(this.name, reportMetaData.name) &&
-        Objects.equals(this.title, reportMetaData.title) &&
-        Objects.equals(this.description, reportMetaData.description) &&
-        Objects.equals(this.keywords, reportMetaData.keywords) &&
-        Objects.equals(this.availableLocales, reportMetaData.availableLocales) &&
-        Objects.equals(this.parameters, reportMetaData.parameters) &&
-        Objects.equals(this.exampleUrl, reportMetaData.exampleUrl) &&
-        Objects.equals(this.selfUri, reportMetaData.selfUri);
+            Objects.equals(this.name, reportMetaData.name) &&
+            Objects.equals(this.title, reportMetaData.title) &&
+            Objects.equals(this.description, reportMetaData.description) &&
+            Objects.equals(this.keywords, reportMetaData.keywords) &&
+            Objects.equals(this.availableLocales, reportMetaData.availableLocales) &&
+            Objects.equals(this.parameters, reportMetaData.parameters) &&
+            Objects.equals(this.exampleUrl, reportMetaData.exampleUrl) &&
+            Objects.equals(this.selfUri, reportMetaData.selfUri);
   }
 
   @Override

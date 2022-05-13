@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CommonCampaignEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CommonCampaignEntityListing  implements Serializable, PagedResource
       return false;
     }
     CommonCampaignEntityListing commonCampaignEntityListing = (CommonCampaignEntityListing) o;
+
     return Objects.equals(this.entities, commonCampaignEntityListing.entities) &&
-        Objects.equals(this.pageSize, commonCampaignEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, commonCampaignEntityListing.pageNumber) &&
-        Objects.equals(this.total, commonCampaignEntityListing.total) &&
-        Objects.equals(this.lastUri, commonCampaignEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, commonCampaignEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, commonCampaignEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, commonCampaignEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, commonCampaignEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, commonCampaignEntityListing.pageCount);
+            Objects.equals(this.pageSize, commonCampaignEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, commonCampaignEntityListing.pageNumber) &&
+            Objects.equals(this.total, commonCampaignEntityListing.total) &&
+            Objects.equals(this.lastUri, commonCampaignEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, commonCampaignEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, commonCampaignEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, commonCampaignEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, commonCampaignEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, commonCampaignEntityListing.pageCount);
   }
 
   @Override

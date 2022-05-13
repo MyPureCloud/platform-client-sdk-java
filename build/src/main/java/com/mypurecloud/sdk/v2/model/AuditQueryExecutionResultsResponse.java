@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditLogMessage;
@@ -46,7 +47,7 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Number of results in a page.
    **/
@@ -64,7 +65,7 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * Optional cursor to indicate where to resume the results.
    **/
@@ -82,7 +83,7 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
     this.cursor = cursor;
   }
 
-  
+
   /**
    * List of audit messages.
    **/
@@ -100,7 +101,6 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
     this.entities = entities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class AuditQueryExecutionResultsResponse  implements Serializable {
       return false;
     }
     AuditQueryExecutionResultsResponse auditQueryExecutionResultsResponse = (AuditQueryExecutionResultsResponse) o;
+
     return Objects.equals(this.id, auditQueryExecutionResultsResponse.id) &&
-        Objects.equals(this.pageSize, auditQueryExecutionResultsResponse.pageSize) &&
-        Objects.equals(this.cursor, auditQueryExecutionResultsResponse.cursor) &&
-        Objects.equals(this.entities, auditQueryExecutionResultsResponse.entities);
+            Objects.equals(this.pageSize, auditQueryExecutionResultsResponse.pageSize) &&
+            Objects.equals(this.cursor, auditQueryExecutionResultsResponse.cursor) &&
+            Objects.equals(this.entities, auditQueryExecutionResultsResponse.entities);
   }
 
   @Override

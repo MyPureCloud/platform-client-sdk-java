@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class BuShortTermForecastListItem  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -107,7 +108,7 @@ public class BuShortTermForecastListItem  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The number of weeks this forecast covers
    **/
@@ -125,7 +126,7 @@ public class BuShortTermForecastListItem  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * The method by which this forecast was created
    **/
@@ -143,7 +144,7 @@ public class BuShortTermForecastListItem  implements Serializable {
     this.creationMethod = creationMethod;
   }
 
-  
+
   /**
    * The description of this forecast
    **/
@@ -161,14 +162,14 @@ public class BuShortTermForecastListItem  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether this forecast contains modifications on legacy metrics")
   @JsonProperty("legacy")
   public Boolean getLegacy() {
     return legacy;
   }
 
-  
+
   /**
    * Metadata for this forecast
    **/
@@ -186,7 +187,7 @@ public class BuShortTermForecastListItem  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * Whether this forecast can be used for scheduling
    **/
@@ -204,14 +205,13 @@ public class BuShortTermForecastListItem  implements Serializable {
     this.canUseForScheduling = canUseForScheduling;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -222,15 +222,16 @@ public class BuShortTermForecastListItem  implements Serializable {
       return false;
     }
     BuShortTermForecastListItem buShortTermForecastListItem = (BuShortTermForecastListItem) o;
+
     return Objects.equals(this.id, buShortTermForecastListItem.id) &&
-        Objects.equals(this.weekDate, buShortTermForecastListItem.weekDate) &&
-        Objects.equals(this.weekCount, buShortTermForecastListItem.weekCount) &&
-        Objects.equals(this.creationMethod, buShortTermForecastListItem.creationMethod) &&
-        Objects.equals(this.description, buShortTermForecastListItem.description) &&
-        Objects.equals(this.legacy, buShortTermForecastListItem.legacy) &&
-        Objects.equals(this.metadata, buShortTermForecastListItem.metadata) &&
-        Objects.equals(this.canUseForScheduling, buShortTermForecastListItem.canUseForScheduling) &&
-        Objects.equals(this.selfUri, buShortTermForecastListItem.selfUri);
+            Objects.equals(this.weekDate, buShortTermForecastListItem.weekDate) &&
+            Objects.equals(this.weekCount, buShortTermForecastListItem.weekCount) &&
+            Objects.equals(this.creationMethod, buShortTermForecastListItem.creationMethod) &&
+            Objects.equals(this.description, buShortTermForecastListItem.description) &&
+            Objects.equals(this.legacy, buShortTermForecastListItem.legacy) &&
+            Objects.equals(this.metadata, buShortTermForecastListItem.metadata) &&
+            Objects.equals(this.canUseForScheduling, buShortTermForecastListItem.canUseForScheduling) &&
+            Objects.equals(this.selfUri, buShortTermForecastListItem.selfUri);
   }
 
   @Override

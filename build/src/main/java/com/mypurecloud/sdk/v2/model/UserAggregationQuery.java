@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -191,7 +192,7 @@ public class UserAggregationQuery  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
@@ -209,7 +210,7 @@ public class UserAggregationQuery  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
@@ -227,7 +228,7 @@ public class UserAggregationQuery  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
    **/
@@ -245,7 +246,7 @@ public class UserAggregationQuery  implements Serializable {
     this.groupBy = groupBy;
   }
 
-  
+
   /**
    * Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
    **/
@@ -263,7 +264,7 @@ public class UserAggregationQuery  implements Serializable {
     this.filter = filter;
   }
 
-  
+
   /**
    * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
@@ -281,7 +282,7 @@ public class UserAggregationQuery  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * Flattens any multivalued dimensions used in response groups (e.g. ['a','b','c']->'a,b,c')
    **/
@@ -299,7 +300,7 @@ public class UserAggregationQuery  implements Serializable {
     this.flattenMultivaluedDimensions = flattenMultivaluedDimensions;
   }
 
-  
+
   /**
    * Custom derived metric views
    **/
@@ -317,7 +318,7 @@ public class UserAggregationQuery  implements Serializable {
     this.views = views;
   }
 
-  
+
   /**
    * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
    **/
@@ -335,7 +336,6 @@ public class UserAggregationQuery  implements Serializable {
     this.alternateTimeDimension = alternateTimeDimension;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -346,15 +346,16 @@ public class UserAggregationQuery  implements Serializable {
       return false;
     }
     UserAggregationQuery userAggregationQuery = (UserAggregationQuery) o;
+
     return Objects.equals(this.interval, userAggregationQuery.interval) &&
-        Objects.equals(this.granularity, userAggregationQuery.granularity) &&
-        Objects.equals(this.timeZone, userAggregationQuery.timeZone) &&
-        Objects.equals(this.groupBy, userAggregationQuery.groupBy) &&
-        Objects.equals(this.filter, userAggregationQuery.filter) &&
-        Objects.equals(this.metrics, userAggregationQuery.metrics) &&
-        Objects.equals(this.flattenMultivaluedDimensions, userAggregationQuery.flattenMultivaluedDimensions) &&
-        Objects.equals(this.views, userAggregationQuery.views) &&
-        Objects.equals(this.alternateTimeDimension, userAggregationQuery.alternateTimeDimension);
+            Objects.equals(this.granularity, userAggregationQuery.granularity) &&
+            Objects.equals(this.timeZone, userAggregationQuery.timeZone) &&
+            Objects.equals(this.groupBy, userAggregationQuery.groupBy) &&
+            Objects.equals(this.filter, userAggregationQuery.filter) &&
+            Objects.equals(this.metrics, userAggregationQuery.metrics) &&
+            Objects.equals(this.flattenMultivaluedDimensions, userAggregationQuery.flattenMultivaluedDimensions) &&
+            Objects.equals(this.views, userAggregationQuery.views) &&
+            Objects.equals(this.alternateTimeDimension, userAggregationQuery.alternateTimeDimension);
   }
 
   @Override

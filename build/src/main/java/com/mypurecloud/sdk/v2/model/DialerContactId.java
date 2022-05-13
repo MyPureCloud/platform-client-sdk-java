@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class DialerContactId  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public DialerContactId contactListId(String contactListId) {
@@ -57,7 +58,6 @@ public class DialerContactId  implements Serializable {
     this.contactListId = contactListId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class DialerContactId  implements Serializable {
       return false;
     }
     DialerContactId dialerContactId = (DialerContactId) o;
+
     return Objects.equals(this.id, dialerContactId.id) &&
-        Objects.equals(this.contactListId, dialerContactId.contactListId);
+            Objects.equals(this.contactListId, dialerContactId.contactListId);
   }
 
   @Override

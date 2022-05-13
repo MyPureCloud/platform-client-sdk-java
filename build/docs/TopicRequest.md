@@ -25,13 +25,13 @@ title: TopicRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| _1 | &quot;1&quot; |
-| _55 | &quot;55&quot; |
-| _65 | &quot;65&quot; |
-| _72 | &quot;72&quot; |
-| _85 | &quot;85&quot; |
-| _90 | &quot;90&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| _1 | &quot;1&quot; | 
+| _55 | &quot;55&quot; | 
+| _65 | &quot;65&quot; | 
+| _72 | &quot;72&quot; | 
+| _85 | &quot;85&quot; | 
+| _90 | &quot;90&quot; | 
 {: class="table table-striped"}
 
 
@@ -41,10 +41,10 @@ title: TopicRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EXTERNAL | &quot;External&quot; |
-| INTERNAL | &quot;Internal&quot; |
-| ALL | &quot;All&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EXTERNAL | &quot;External&quot; | 
+| INTERNAL | &quot;Internal&quot; | 
+| ALL | &quot;All&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FieldList;
@@ -45,7 +46,7 @@ public class Section  implements Serializable {
     this.fieldList = fieldList;
   }
 
-  
+
   /**
    **/
   public Section instructionText(String instructionText) {
@@ -62,7 +63,7 @@ public class Section  implements Serializable {
     this.instructionText = instructionText;
   }
 
-  
+
   /**
    **/
   public Section key(String key) {
@@ -79,7 +80,7 @@ public class Section  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    **/
   public Section state(String state) {
@@ -96,7 +97,6 @@ public class Section  implements Serializable {
     this.state = state;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class Section  implements Serializable {
       return false;
     }
     Section section = (Section) o;
+
     return Objects.equals(this.fieldList, section.fieldList) &&
-        Objects.equals(this.instructionText, section.instructionText) &&
-        Objects.equals(this.key, section.key) &&
-        Objects.equals(this.state, section.state);
+            Objects.equals(this.instructionText, section.instructionText) &&
+            Objects.equals(this.key, section.key) &&
+            Objects.equals(this.state, section.state);
   }
 
   @Override

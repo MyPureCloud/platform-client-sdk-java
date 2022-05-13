@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class ExpansionCriterium  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public ExpansionCriterium threshold(Double threshold) {
@@ -104,7 +105,6 @@ public class ExpansionCriterium  implements Serializable {
     this.threshold = threshold;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,8 +115,9 @@ public class ExpansionCriterium  implements Serializable {
       return false;
     }
     ExpansionCriterium expansionCriterium = (ExpansionCriterium) o;
+
     return Objects.equals(this.type, expansionCriterium.type) &&
-        Objects.equals(this.threshold, expansionCriterium.threshold);
+            Objects.equals(this.threshold, expansionCriterium.threshold);
   }
 
   @Override

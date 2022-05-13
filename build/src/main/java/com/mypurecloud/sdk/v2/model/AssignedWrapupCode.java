@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class AssignedWrapupCode  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * Text entered by the agent to describe the call or disposition.
    **/
@@ -65,7 +66,7 @@ public class AssignedWrapupCode  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * List of tags selected by the agent to describe the call or disposition.
    **/
@@ -83,7 +84,7 @@ public class AssignedWrapupCode  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    * The duration in seconds of the wrap-up segment.
    **/
@@ -101,7 +102,7 @@ public class AssignedWrapupCode  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-  
+
   /**
    * The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -119,7 +120,6 @@ public class AssignedWrapupCode  implements Serializable {
     this.endTime = endTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class AssignedWrapupCode  implements Serializable {
       return false;
     }
     AssignedWrapupCode assignedWrapupCode = (AssignedWrapupCode) o;
+
     return Objects.equals(this.code, assignedWrapupCode.code) &&
-        Objects.equals(this.notes, assignedWrapupCode.notes) &&
-        Objects.equals(this.tags, assignedWrapupCode.tags) &&
-        Objects.equals(this.durationSeconds, assignedWrapupCode.durationSeconds) &&
-        Objects.equals(this.endTime, assignedWrapupCode.endTime);
+            Objects.equals(this.notes, assignedWrapupCode.notes) &&
+            Objects.equals(this.tags, assignedWrapupCode.tags) &&
+            Objects.equals(this.durationSeconds, assignedWrapupCode.durationSeconds) &&
+            Objects.equals(this.endTime, assignedWrapupCode.endTime);
   }
 
   @Override

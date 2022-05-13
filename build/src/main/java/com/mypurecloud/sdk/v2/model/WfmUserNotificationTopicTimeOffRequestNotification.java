@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicTimeOffRequestNotification user(WfmUserNotificationTopicUserReference user) {
@@ -115,7 +116,7 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     this.user = user;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicTimeOffRequestNotification isFullDayRequest(Boolean isFullDayRequest) {
@@ -132,7 +133,7 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     this.isFullDayRequest = isFullDayRequest;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicTimeOffRequestNotification status(StatusEnum status) {
@@ -149,7 +150,7 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicTimeOffRequestNotification partialDayStartDateTimes(List<Date> partialDayStartDateTimes) {
@@ -166,7 +167,7 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicTimeOffRequestNotification fullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
@@ -183,7 +184,6 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,12 +194,13 @@ public class WfmUserNotificationTopicTimeOffRequestNotification  implements Seri
       return false;
     }
     WfmUserNotificationTopicTimeOffRequestNotification wfmUserNotificationTopicTimeOffRequestNotification = (WfmUserNotificationTopicTimeOffRequestNotification) o;
+
     return Objects.equals(this.timeOffRequestId, wfmUserNotificationTopicTimeOffRequestNotification.timeOffRequestId) &&
-        Objects.equals(this.user, wfmUserNotificationTopicTimeOffRequestNotification.user) &&
-        Objects.equals(this.isFullDayRequest, wfmUserNotificationTopicTimeOffRequestNotification.isFullDayRequest) &&
-        Objects.equals(this.status, wfmUserNotificationTopicTimeOffRequestNotification.status) &&
-        Objects.equals(this.partialDayStartDateTimes, wfmUserNotificationTopicTimeOffRequestNotification.partialDayStartDateTimes) &&
-        Objects.equals(this.fullDayManagementUnitDates, wfmUserNotificationTopicTimeOffRequestNotification.fullDayManagementUnitDates);
+            Objects.equals(this.user, wfmUserNotificationTopicTimeOffRequestNotification.user) &&
+            Objects.equals(this.isFullDayRequest, wfmUserNotificationTopicTimeOffRequestNotification.isFullDayRequest) &&
+            Objects.equals(this.status, wfmUserNotificationTopicTimeOffRequestNotification.status) &&
+            Objects.equals(this.partialDayStartDateTimes, wfmUserNotificationTopicTimeOffRequestNotification.partialDayStartDateTimes) &&
+            Objects.equals(this.fullDayManagementUnitDates, wfmUserNotificationTopicTimeOffRequestNotification.fullDayManagementUnitDates);
   }
 
   @Override

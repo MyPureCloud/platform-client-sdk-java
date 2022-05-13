@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class CustomEventAttributeList  implements Serializable {
     this.dataType = dataType;
   }
 
-  
+
   /**
    * The list of custom event attribute values.
    **/
@@ -61,7 +62,6 @@ public class CustomEventAttributeList  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class CustomEventAttributeList  implements Serializable {
       return false;
     }
     CustomEventAttributeList customEventAttributeList = (CustomEventAttributeList) o;
+
     return Objects.equals(this.dataType, customEventAttributeList.dataType) &&
-        Objects.equals(this.values, customEventAttributeList.values);
+            Objects.equals(this.values, customEventAttributeList.values);
   }
 
   @Override

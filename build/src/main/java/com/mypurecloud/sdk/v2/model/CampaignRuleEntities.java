@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -44,7 +45,7 @@ public class CampaignRuleEntities  implements Serializable {
     this.campaigns = campaigns;
   }
 
-  
+
   /**
    * The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
    **/
@@ -62,7 +63,6 @@ public class CampaignRuleEntities  implements Serializable {
     this.sequences = sequences;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class CampaignRuleEntities  implements Serializable {
       return false;
     }
     CampaignRuleEntities campaignRuleEntities = (CampaignRuleEntities) o;
+
     return Objects.equals(this.campaigns, campaignRuleEntities.campaigns) &&
-        Objects.equals(this.sequences, campaignRuleEntities.sequences);
+            Objects.equals(this.sequences, campaignRuleEntities.sequences);
   }
 
   @Override

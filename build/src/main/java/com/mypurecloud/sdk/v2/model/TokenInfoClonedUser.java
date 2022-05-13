@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Entity;
@@ -31,14 +32,13 @@ public class TokenInfoClonedUser  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Organization of the original native user")
   @JsonProperty("organization")
   public Entity getOrganization() {
     return organization;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -49,8 +49,9 @@ public class TokenInfoClonedUser  implements Serializable {
       return false;
     }
     TokenInfoClonedUser tokenInfoClonedUser = (TokenInfoClonedUser) o;
+
     return Objects.equals(this.id, tokenInfoClonedUser.id) &&
-        Objects.equals(this.organization, tokenInfoClonedUser.organization);
+            Objects.equals(this.organization, tokenInfoClonedUser.organization);
   }
 
   @Override

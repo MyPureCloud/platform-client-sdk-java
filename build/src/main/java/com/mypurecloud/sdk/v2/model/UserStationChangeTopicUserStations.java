@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserStationChangeTopicUserStation;
@@ -40,7 +41,6 @@ public class UserStationChangeTopicUserStations  implements Serializable {
     this.associatedStation = associatedStation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -51,6 +51,7 @@ public class UserStationChangeTopicUserStations  implements Serializable {
       return false;
     }
     UserStationChangeTopicUserStations userStationChangeTopicUserStations = (UserStationChangeTopicUserStations) o;
+
     return Objects.equals(this.associatedStation, userStationChangeTopicUserStations.associatedStation);
   }
 

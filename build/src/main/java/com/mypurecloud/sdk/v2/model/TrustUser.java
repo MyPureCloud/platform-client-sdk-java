@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -137,7 +138,7 @@ public class TrustUser  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public TrustUser name(String name) {
@@ -154,7 +155,7 @@ public class TrustUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -172,7 +173,7 @@ public class TrustUser  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public TrustUser chat(Chat chat) {
@@ -189,7 +190,7 @@ public class TrustUser  implements Serializable {
     this.chat = chat;
   }
 
-  
+
   /**
    **/
   public TrustUser department(String department) {
@@ -206,7 +207,7 @@ public class TrustUser  implements Serializable {
     this.department = department;
   }
 
-  
+
   /**
    **/
   public TrustUser email(String email) {
@@ -223,14 +224,14 @@ public class TrustUser  implements Serializable {
     this.email = email;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Auto populated from addresses.")
   @JsonProperty("primaryContactInfo")
   public List<Contact> getPrimaryContactInfo() {
     return primaryContactInfo;
   }
 
-  
+
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -248,14 +249,14 @@ public class TrustUser  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The current state for this user.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    **/
   public TrustUser title(String title) {
@@ -272,7 +273,7 @@ public class TrustUser  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    **/
   public TrustUser username(String username) {
@@ -289,7 +290,7 @@ public class TrustUser  implements Serializable {
     this.username = username;
   }
 
-  
+
   /**
    **/
   public TrustUser manager(User manager) {
@@ -306,7 +307,7 @@ public class TrustUser  implements Serializable {
     this.manager = manager;
   }
 
-  
+
   /**
    **/
   public TrustUser images(List<UserImage> images) {
@@ -323,7 +324,7 @@ public class TrustUser  implements Serializable {
     this.images = images;
   }
 
-  
+
   /**
    * Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
    **/
@@ -341,7 +342,7 @@ public class TrustUser  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public TrustUser certifications(List<String> certifications) {
@@ -358,7 +359,7 @@ public class TrustUser  implements Serializable {
     this.certifications = certifications;
   }
 
-  
+
   /**
    **/
   public TrustUser biography(Biography biography) {
@@ -375,7 +376,7 @@ public class TrustUser  implements Serializable {
     this.biography = biography;
   }
 
-  
+
   /**
    **/
   public TrustUser employerInfo(EmployerInfo employerInfo) {
@@ -392,105 +393,105 @@ public class TrustUser  implements Serializable {
     this.employerInfo = employerInfo;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
     return routingStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active presence")
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Integration presence")
   @JsonProperty("integrationPresence")
   public UserPresence getIntegrationPresence() {
     return integrationPresence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
     return conversationSummary;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Determine if out of office is enabled")
   @JsonProperty("outOfOffice")
   public OutOfOffice getOutOfOffice() {
     return outOfOffice;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current geolocation position")
   @JsonProperty("geolocation")
   public Geolocation getGeolocation() {
     return geolocation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Effective, default, and last station information")
   @JsonProperty("station")
   public UserStations getStation() {
     return station;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Roles and permissions assigned to the user")
   @JsonProperty("authorization")
   public UserAuthorization getAuthorization() {
     return authorization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user placement at each site location.")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The groups the user is a member of")
   @JsonProperty("groups")
   public List<Group> getGroups() {
     return groups;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The team the user is a member of")
   @JsonProperty("team")
   public Team getTeam() {
     return team;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Routing (ACD) skills possessed by the user")
   @JsonProperty("skills")
   public List<UserRoutingSkill> getSkills() {
     return skills;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Routing (ACD) languages possessed by the user")
   @JsonProperty("languages")
   public List<UserRoutingLanguage> getLanguages() {
     return languages;
   }
 
-  
+
   /**
    * acd auto answer
    **/
@@ -508,14 +509,14 @@ public class TrustUser  implements Serializable {
     this.acdAutoAnswer = acdAutoAnswer;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "preferred language by the user")
   @JsonProperty("languagePreference")
   public String getLanguagePreference() {
     return languagePreference;
   }
 
-  
+
   /**
    **/
   public TrustUser lastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
@@ -532,14 +533,14 @@ public class TrustUser  implements Serializable {
     this.lastTokenIssued = lastTokenIssued;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateLastLogin")
   public Date getDateLastLogin() {
     return dateLastLogin;
   }
 
-  
+
   /**
    **/
   public TrustUser trustUserDetails(TrustUserDetails trustUserDetails) {
@@ -556,7 +557,6 @@ public class TrustUser  implements Serializable {
     this.trustUserDetails = trustUserDetails;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -567,42 +567,43 @@ public class TrustUser  implements Serializable {
       return false;
     }
     TrustUser trustUser = (TrustUser) o;
+
     return Objects.equals(this.id, trustUser.id) &&
-        Objects.equals(this.name, trustUser.name) &&
-        Objects.equals(this.division, trustUser.division) &&
-        Objects.equals(this.chat, trustUser.chat) &&
-        Objects.equals(this.department, trustUser.department) &&
-        Objects.equals(this.email, trustUser.email) &&
-        Objects.equals(this.primaryContactInfo, trustUser.primaryContactInfo) &&
-        Objects.equals(this.addresses, trustUser.addresses) &&
-        Objects.equals(this.state, trustUser.state) &&
-        Objects.equals(this.title, trustUser.title) &&
-        Objects.equals(this.username, trustUser.username) &&
-        Objects.equals(this.manager, trustUser.manager) &&
-        Objects.equals(this.images, trustUser.images) &&
-        Objects.equals(this.version, trustUser.version) &&
-        Objects.equals(this.certifications, trustUser.certifications) &&
-        Objects.equals(this.biography, trustUser.biography) &&
-        Objects.equals(this.employerInfo, trustUser.employerInfo) &&
-        Objects.equals(this.routingStatus, trustUser.routingStatus) &&
-        Objects.equals(this.presence, trustUser.presence) &&
-        Objects.equals(this.integrationPresence, trustUser.integrationPresence) &&
-        Objects.equals(this.conversationSummary, trustUser.conversationSummary) &&
-        Objects.equals(this.outOfOffice, trustUser.outOfOffice) &&
-        Objects.equals(this.geolocation, trustUser.geolocation) &&
-        Objects.equals(this.station, trustUser.station) &&
-        Objects.equals(this.authorization, trustUser.authorization) &&
-        Objects.equals(this.profileSkills, trustUser.profileSkills) &&
-        Objects.equals(this.locations, trustUser.locations) &&
-        Objects.equals(this.groups, trustUser.groups) &&
-        Objects.equals(this.team, trustUser.team) &&
-        Objects.equals(this.skills, trustUser.skills) &&
-        Objects.equals(this.languages, trustUser.languages) &&
-        Objects.equals(this.acdAutoAnswer, trustUser.acdAutoAnswer) &&
-        Objects.equals(this.languagePreference, trustUser.languagePreference) &&
-        Objects.equals(this.lastTokenIssued, trustUser.lastTokenIssued) &&
-        Objects.equals(this.dateLastLogin, trustUser.dateLastLogin) &&
-        Objects.equals(this.trustUserDetails, trustUser.trustUserDetails);
+            Objects.equals(this.name, trustUser.name) &&
+            Objects.equals(this.division, trustUser.division) &&
+            Objects.equals(this.chat, trustUser.chat) &&
+            Objects.equals(this.department, trustUser.department) &&
+            Objects.equals(this.email, trustUser.email) &&
+            Objects.equals(this.primaryContactInfo, trustUser.primaryContactInfo) &&
+            Objects.equals(this.addresses, trustUser.addresses) &&
+            Objects.equals(this.state, trustUser.state) &&
+            Objects.equals(this.title, trustUser.title) &&
+            Objects.equals(this.username, trustUser.username) &&
+            Objects.equals(this.manager, trustUser.manager) &&
+            Objects.equals(this.images, trustUser.images) &&
+            Objects.equals(this.version, trustUser.version) &&
+            Objects.equals(this.certifications, trustUser.certifications) &&
+            Objects.equals(this.biography, trustUser.biography) &&
+            Objects.equals(this.employerInfo, trustUser.employerInfo) &&
+            Objects.equals(this.routingStatus, trustUser.routingStatus) &&
+            Objects.equals(this.presence, trustUser.presence) &&
+            Objects.equals(this.integrationPresence, trustUser.integrationPresence) &&
+            Objects.equals(this.conversationSummary, trustUser.conversationSummary) &&
+            Objects.equals(this.outOfOffice, trustUser.outOfOffice) &&
+            Objects.equals(this.geolocation, trustUser.geolocation) &&
+            Objects.equals(this.station, trustUser.station) &&
+            Objects.equals(this.authorization, trustUser.authorization) &&
+            Objects.equals(this.profileSkills, trustUser.profileSkills) &&
+            Objects.equals(this.locations, trustUser.locations) &&
+            Objects.equals(this.groups, trustUser.groups) &&
+            Objects.equals(this.team, trustUser.team) &&
+            Objects.equals(this.skills, trustUser.skills) &&
+            Objects.equals(this.languages, trustUser.languages) &&
+            Objects.equals(this.acdAutoAnswer, trustUser.acdAutoAnswer) &&
+            Objects.equals(this.languagePreference, trustUser.languagePreference) &&
+            Objects.equals(this.lastTokenIssued, trustUser.lastTokenIssued) &&
+            Objects.equals(this.dateLastLogin, trustUser.dateLastLogin) &&
+            Objects.equals(this.trustUserDetails, trustUser.trustUserDetails);
   }
 
   @Override

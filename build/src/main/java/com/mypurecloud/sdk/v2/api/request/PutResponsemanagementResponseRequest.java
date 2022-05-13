@@ -20,23 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 public class PutResponsemanagementResponseRequest {
-    
+
 	private String responseId;
 	public String getResponseId() {
 		return this.responseId;
@@ -50,7 +50,7 @@ public class PutResponsemanagementResponseRequest {
 	    this.setResponseId(responseId);
 	    return this;
 	} 
-	
+
 	private Response body;
 	public Response getBody() {
 		return this.body;
@@ -64,7 +64,7 @@ public class PutResponsemanagementResponseRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -107,7 +107,7 @@ public class PutResponsemanagementResponseRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,11 +143,12 @@ public class PutResponsemanagementResponseRequest {
         return ApiRequestBuilder.create("PUT", "/api/v2/responsemanagement/responses/{responseId}")
                 .withPathParameter("responseId", responseId)
         
+
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -158,12 +159,12 @@ public class PutResponsemanagementResponseRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String responseId, Response body) {
 	    return new Builder()
 	            .withRequiredParams(responseId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutResponsemanagementResponseRequest request;
@@ -172,36 +173,40 @@ public class PutResponsemanagementResponseRequest {
 			request = new PutResponsemanagementResponseRequest();
 		}
 
-		
+
 		public Builder withResponseId(String responseId) {
 			request.setResponseId(responseId);
 			return this;
 		}
-		
+
 		public Builder withBody(Response body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
 
-		public Builder withExpand(expandValues expand) {
-		    request.setExpand(expand.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String responseId, Response body) {
 			request.setResponseId(responseId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutResponsemanagementResponseRequest build() {
             

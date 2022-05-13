@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,14 +33,14 @@ public class LearningModuleCoverArtResponse  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * The URL for the cover art
    **/
@@ -57,7 +58,6 @@ public class LearningModuleCoverArtResponse  implements Serializable {
     this.url = url;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,9 +68,10 @@ public class LearningModuleCoverArtResponse  implements Serializable {
       return false;
     }
     LearningModuleCoverArtResponse learningModuleCoverArtResponse = (LearningModuleCoverArtResponse) o;
+
     return Objects.equals(this.id, learningModuleCoverArtResponse.id) &&
-        Objects.equals(this.selfUri, learningModuleCoverArtResponse.selfUri) &&
-        Objects.equals(this.url, learningModuleCoverArtResponse.url);
+            Objects.equals(this.selfUri, learningModuleCoverArtResponse.selfUri) &&
+            Objects.equals(this.url, learningModuleCoverArtResponse.url);
   }
 
   @Override

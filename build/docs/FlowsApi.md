@@ -21,8 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Query for flow aggregates
 
-
-
 Wraps POST /api/v2/analytics/flows/aggregates/query  
 
 Requires ANY permissions: 
@@ -83,8 +81,6 @@ try {
 > [FlowObservationQueryResponse](FlowObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
-
-
 
 Wraps POST /api/v2/analytics/flows/observations/query  
 

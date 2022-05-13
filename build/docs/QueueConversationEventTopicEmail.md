@@ -27,7 +27,7 @@ title: QueueConversationEventTopicEmail
 | **draftAttachments** | <!----><!---->[**List&lt;QueueConversationEventTopicAttachment&gt;**](QueueConversationEventTopicAttachment.html)<!----> | A list of uploaded attachments on the email draft. |  [optional] |
 | **spam** | <!----><!---->**Boolean**<!----> | Indicates if the inbound email was marked as spam. |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
-| **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> | A communication&#39;s after-call work data. |  [optional] |
+| **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> | A communication's after-call work data. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 {: class="table table-striped"}
 
@@ -38,12 +38,12 @@ title: QueueConversationEventTopicEmail
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
-| NONE | &quot;none&quot; |
-| TRANSMITTING | &quot;transmitting&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| NONE | &quot;none&quot; | 
+| TRANSMITTING | &quot;transmitting&quot; | 
 {: class="table table-striped"}
 
 
@@ -53,23 +53,23 @@ title: QueueConversationEventTopicEmail
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
-| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| SPAM | &quot;spam&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| SPAM | &quot;spam&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -79,9 +79,9 @@ title: QueueConversationEventTopicEmail
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OUTBOUND | &quot;outbound&quot; |
-| INBOUND | &quot;inbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
+| INBOUND | &quot;inbound&quot; | 
 {: class="table table-striped"}
 
 

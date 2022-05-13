@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -46,7 +47,7 @@ public class DocumentUpload  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The workspace the document will be uploaded to
    **/
@@ -64,7 +65,7 @@ public class DocumentUpload  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public DocumentUpload tags(List<String> tags) {
@@ -81,7 +82,7 @@ public class DocumentUpload  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public DocumentUpload tagIds(List<String> tagIds) {
@@ -98,7 +99,6 @@ public class DocumentUpload  implements Serializable {
     this.tagIds = tagIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class DocumentUpload  implements Serializable {
       return false;
     }
     DocumentUpload documentUpload = (DocumentUpload) o;
+
     return Objects.equals(this.name, documentUpload.name) &&
-        Objects.equals(this.workspace, documentUpload.workspace) &&
-        Objects.equals(this.tags, documentUpload.tags) &&
-        Objects.equals(this.tagIds, documentUpload.tagIds);
+            Objects.equals(this.workspace, documentUpload.workspace) &&
+            Objects.equals(this.tags, documentUpload.tags) &&
+            Objects.equals(this.tagIds, documentUpload.tagIds);
   }
 
   @Override

@@ -10,9 +10,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
@@ -31,7 +31,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ObjectsApi {
   private final ApiClient pcapiClient;
 
@@ -43,7 +42,6 @@ public class ObjectsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a division.
    * 
@@ -70,9 +68,9 @@ public class ObjectsApi {
   private DeleteAuthorizationDivisionRequest createDeleteAuthorizationDivisionRequest(String divisionId, Boolean force) {
     return DeleteAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withForce(force)
-    
+
             .build();
   }
 
@@ -123,7 +121,6 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Returns an authorization division.
    * 
@@ -152,9 +149,9 @@ public class ObjectsApi {
   private GetAuthorizationDivisionRequest createGetAuthorizationDivisionRequest(String divisionId, Boolean objectCount) {
     return GetAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withObjectCount(objectCount)
-    
+
             .build();
   }
 
@@ -206,10 +203,9 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -229,7 +225,7 @@ public class ObjectsApi {
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -249,29 +245,29 @@ public class ObjectsApi {
   private GetAuthorizationDivisionsRequest createGetAuthorizationDivisionsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, List<String> id, String name) {
     return GetAuthorizationDivisionsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withObjectCount(objectCount)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request The request object
    * @return AuthzDivisionEntityListing
    * @throws ApiException if the request fails on the server
@@ -290,7 +286,7 @@ public class ObjectsApi {
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -317,7 +313,6 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Retrieve the home division for the organization.
    * Will not include object counts.
@@ -392,7 +387,6 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Returns the maximum allowed number of divisions.
    * 
@@ -467,10 +461,9 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param divisionId Division ID (required)
    * @param objectType The type of the objects. Must be one of the valid object types (required)
    * @param body Object Id List (required)
@@ -483,7 +476,7 @@ public class ObjectsApi {
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param divisionId Division ID (required)
    * @param objectType The type of the objects. Must be one of the valid object types (required)
    * @param body Object Id List (required)
@@ -496,17 +489,17 @@ public class ObjectsApi {
   private PostAuthorizationDivisionObjectRequest createPostAuthorizationDivisionObjectRequest(String divisionId, String objectType, List<String> body) {
     return PostAuthorizationDivisionObjectRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withObjectType(objectType)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -524,7 +517,7 @@ public class ObjectsApi {
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -551,7 +544,6 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Recreate a previously deleted division.
    * 
@@ -580,9 +572,9 @@ public class ObjectsApi {
   private PostAuthorizationDivisionRestoreRequest createPostAuthorizationDivisionRestoreRequest(String divisionId, AuthzDivision body) {
     return PostAuthorizationDivisionRestoreRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -634,7 +626,6 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Create a division.
    * 
@@ -661,7 +652,7 @@ public class ObjectsApi {
   private PostAuthorizationDivisionsRequest createPostAuthorizationDivisionsRequest(AuthzDivision body) {
     return PostAuthorizationDivisionsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -713,7 +704,6 @@ public class ObjectsApi {
     }
   }
 
-  
   /**
    * Update a division.
    * 
@@ -742,9 +732,9 @@ public class ObjectsApi {
   private PutAuthorizationDivisionRequest createPutAuthorizationDivisionRequest(String divisionId, AuthzDivision body) {
     return PutAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -796,5 +786,4 @@ public class ObjectsApi {
     }
   }
 
-  
 }

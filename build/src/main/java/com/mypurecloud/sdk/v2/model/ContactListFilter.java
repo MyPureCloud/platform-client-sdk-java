@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class ContactListFilter  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the list.
    **/
@@ -108,21 +109,21 @@ public class ContactListFilter  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -140,7 +141,7 @@ public class ContactListFilter  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The contact list the filter is based on.
    **/
@@ -158,7 +159,7 @@ public class ContactListFilter  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * Groups of conditions to filter the contacts by.
    **/
@@ -176,7 +177,7 @@ public class ContactListFilter  implements Serializable {
     this.clauses = clauses;
   }
 
-  
+
   /**
    * How to join clauses together.
    **/
@@ -194,14 +195,13 @@ public class ContactListFilter  implements Serializable {
     this.filterType = filterType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,15 +212,16 @@ public class ContactListFilter  implements Serializable {
       return false;
     }
     ContactListFilter contactListFilter = (ContactListFilter) o;
+
     return Objects.equals(this.id, contactListFilter.id) &&
-        Objects.equals(this.name, contactListFilter.name) &&
-        Objects.equals(this.dateCreated, contactListFilter.dateCreated) &&
-        Objects.equals(this.dateModified, contactListFilter.dateModified) &&
-        Objects.equals(this.version, contactListFilter.version) &&
-        Objects.equals(this.contactList, contactListFilter.contactList) &&
-        Objects.equals(this.clauses, contactListFilter.clauses) &&
-        Objects.equals(this.filterType, contactListFilter.filterType) &&
-        Objects.equals(this.selfUri, contactListFilter.selfUri);
+            Objects.equals(this.name, contactListFilter.name) &&
+            Objects.equals(this.dateCreated, contactListFilter.dateCreated) &&
+            Objects.equals(this.dateModified, contactListFilter.dateModified) &&
+            Objects.equals(this.version, contactListFilter.version) &&
+            Objects.equals(this.contactList, contactListFilter.contactList) &&
+            Objects.equals(this.clauses, contactListFilter.clauses) &&
+            Objects.equals(this.filterType, contactListFilter.filterType) &&
+            Objects.equals(this.selfUri, contactListFilter.selfUri);
   }
 
   @Override

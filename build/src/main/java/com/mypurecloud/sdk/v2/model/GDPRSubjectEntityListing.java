@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.total = total;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public GDPRSubjectEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class GDPRSubjectEntityListing  implements Serializable, PagedResource<GD
       return false;
     }
     GDPRSubjectEntityListing gDPRSubjectEntityListing = (GDPRSubjectEntityListing) o;
+
     return Objects.equals(this.entities, gDPRSubjectEntityListing.entities) &&
-        Objects.equals(this.pageSize, gDPRSubjectEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, gDPRSubjectEntityListing.pageNumber) &&
-        Objects.equals(this.total, gDPRSubjectEntityListing.total) &&
-        Objects.equals(this.lastUri, gDPRSubjectEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, gDPRSubjectEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, gDPRSubjectEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, gDPRSubjectEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, gDPRSubjectEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, gDPRSubjectEntityListing.pageCount);
+            Objects.equals(this.pageSize, gDPRSubjectEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, gDPRSubjectEntityListing.pageNumber) &&
+            Objects.equals(this.total, gDPRSubjectEntityListing.total) &&
+            Objects.equals(this.lastUri, gDPRSubjectEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, gDPRSubjectEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, gDPRSubjectEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, gDPRSubjectEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, gDPRSubjectEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, gDPRSubjectEntityListing.pageCount);
   }
 
   @Override

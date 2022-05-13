@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class Survey  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Survey name(String name) {
@@ -116,7 +117,7 @@ public class Survey  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Survey conversation(Conversation conversation) {
@@ -133,7 +134,7 @@ public class Survey  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * Survey form used for this survey.
    **/
@@ -151,7 +152,7 @@ public class Survey  implements Serializable {
     this.surveyForm = surveyForm;
   }
 
-  
+
   /**
    **/
   public Survey agent(DomainEntityRef agent) {
@@ -168,7 +169,7 @@ public class Survey  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public Survey status(StatusEnum status) {
@@ -185,7 +186,7 @@ public class Survey  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public Survey queue(QueueReference queue) {
@@ -202,7 +203,7 @@ public class Survey  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public Survey answers(SurveyScoringSet answers) {
@@ -219,7 +220,7 @@ public class Survey  implements Serializable {
     this.answers = answers;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -237,7 +238,7 @@ public class Survey  implements Serializable {
     this.completedDate = completedDate;
   }
 
-  
+
   /**
    * Additional information about what happened when the survey is in Error status.
    **/
@@ -255,14 +256,13 @@ public class Survey  implements Serializable {
     this.surveyErrorDetails = surveyErrorDetails;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -273,17 +273,18 @@ public class Survey  implements Serializable {
       return false;
     }
     Survey survey = (Survey) o;
+
     return Objects.equals(this.id, survey.id) &&
-        Objects.equals(this.name, survey.name) &&
-        Objects.equals(this.conversation, survey.conversation) &&
-        Objects.equals(this.surveyForm, survey.surveyForm) &&
-        Objects.equals(this.agent, survey.agent) &&
-        Objects.equals(this.status, survey.status) &&
-        Objects.equals(this.queue, survey.queue) &&
-        Objects.equals(this.answers, survey.answers) &&
-        Objects.equals(this.completedDate, survey.completedDate) &&
-        Objects.equals(this.surveyErrorDetails, survey.surveyErrorDetails) &&
-        Objects.equals(this.selfUri, survey.selfUri);
+            Objects.equals(this.name, survey.name) &&
+            Objects.equals(this.conversation, survey.conversation) &&
+            Objects.equals(this.surveyForm, survey.surveyForm) &&
+            Objects.equals(this.agent, survey.agent) &&
+            Objects.equals(this.status, survey.status) &&
+            Objects.equals(this.queue, survey.queue) &&
+            Objects.equals(this.answers, survey.answers) &&
+            Objects.equals(this.completedDate, survey.completedDate) &&
+            Objects.equals(this.surveyErrorDetails, survey.surveyErrorDetails) &&
+            Objects.equals(this.selfUri, survey.selfUri);
   }
 
   @Override

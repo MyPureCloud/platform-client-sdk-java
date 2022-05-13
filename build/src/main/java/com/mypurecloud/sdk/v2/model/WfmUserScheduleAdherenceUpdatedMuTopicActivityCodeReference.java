@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference;
@@ -43,7 +44,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference  implem
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference secondaryPresences(List<WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference> secondaryPresences) {
@@ -60,7 +61,6 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference  implem
     this.secondaryPresences = secondaryPresences;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference  implem
       return false;
     }
     WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference wfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference = (WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference) o;
+
     return Objects.equals(this.id, wfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference.id) &&
-        Objects.equals(this.secondaryPresences, wfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference.secondaryPresences);
+            Objects.equals(this.secondaryPresences, wfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference.secondaryPresences);
   }
 
   @Override

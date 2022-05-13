@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class ScimV2PatchOperation  implements Serializable {
     this.op = op;
   }
 
-  
+
   /**
    * The attribute path that describes the target of the operation. Required for a \"remove\" operation.
    **/
@@ -111,7 +112,7 @@ public class ScimV2PatchOperation  implements Serializable {
     this.path = path;
   }
 
-  
+
   /**
    * The value to set in the path.
    **/
@@ -129,7 +130,6 @@ public class ScimV2PatchOperation  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class ScimV2PatchOperation  implements Serializable {
       return false;
     }
     ScimV2PatchOperation scimV2PatchOperation = (ScimV2PatchOperation) o;
+
     return Objects.equals(this.op, scimV2PatchOperation.op) &&
-        Objects.equals(this.path, scimV2PatchOperation.path) &&
-        Objects.equals(this.value, scimV2PatchOperation.value);
+            Objects.equals(this.path, scimV2PatchOperation.path) &&
+            Objects.equals(this.value, scimV2PatchOperation.value);
   }
 
   @Override

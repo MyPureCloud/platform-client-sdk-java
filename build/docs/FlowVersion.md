@@ -36,10 +36,10 @@ title: FlowVersion
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PUBLISH | &quot;PUBLISH&quot; |
-| CHECKIN | &quot;CHECKIN&quot; |
-| SAVE | &quot;SAVE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLISH | &quot;PUBLISH&quot; | 
+| CHECKIN | &quot;CHECKIN&quot; | 
+| SAVE | &quot;SAVE&quot; | 
 {: class="table table-striped"}
 
 

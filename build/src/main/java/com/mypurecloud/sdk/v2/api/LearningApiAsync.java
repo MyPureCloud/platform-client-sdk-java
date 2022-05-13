@@ -13,25 +13,25 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningAssignmentRequest;
@@ -62,7 +62,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class LearningApiAsync {
   private final ApiClient pcapiClient;
 
@@ -74,7 +73,6 @@ public class LearningApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a learning assignment
    * 
@@ -150,7 +148,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Delete a learning module
    * This will delete a learning module if it is unpublished or it will delete a published and archived learning module
@@ -226,7 +223,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Get Learning Assignment
    * Permission not required if you are the assigned user of the learning assignment
@@ -302,7 +298,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * List of Learning module Assignments
    * Either moduleId or user value is required
@@ -378,7 +373,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * List of Learning Assignments assigned to current user
    * 
@@ -454,7 +448,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Get a learning module
    * 
@@ -530,7 +523,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Get a learning module rule
    * 
@@ -606,7 +598,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Get specific version of a published module
    * 
@@ -682,7 +673,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Get all learning modules of an organization
    * 
@@ -758,7 +748,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Update Learning Assignment
    * 
@@ -834,7 +823,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Score learning assessment for preview
    * 
@@ -910,7 +898,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Create Learning Assignment
    * 
@@ -986,7 +973,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Retrieve aggregated assignment data
    * 
@@ -1062,7 +1048,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Add multiple learning assignments
    * 
@@ -1138,7 +1123,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Remove multiple Learning Assignments
    * 
@@ -1214,7 +1198,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Publish a Learning module
    * 
@@ -1290,7 +1273,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Create a new learning module
    * This will create a new unpublished learning module with the specified fields.
@@ -1366,7 +1348,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Get users for learning module rule
    * This will get the users who matches the given rule.
@@ -1442,7 +1423,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Update a learning module
    * This will update the name, description, completion time in days and inform steps for a learning module
@@ -1518,7 +1498,6 @@ public class LearningApiAsync {
     }
   }
 
-  
   /**
    * Update a learning module rule
    * This will update a learning module rule with the specified fields.
@@ -1594,7 +1573,6 @@ public class LearningApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

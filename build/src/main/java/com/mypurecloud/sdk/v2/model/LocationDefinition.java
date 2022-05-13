@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class LocationDefinition  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public LocationDefinition name(String name) {
@@ -116,7 +117,7 @@ public class LocationDefinition  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Site contact for the location entity
    **/
@@ -134,7 +135,7 @@ public class LocationDefinition  implements Serializable {
     this.contactUser = contactUser;
   }
 
-  
+
   /**
    * Emergency number for the location entity
    **/
@@ -152,7 +153,7 @@ public class LocationDefinition  implements Serializable {
     this.emergencyNumber = emergencyNumber;
   }
 
-  
+
   /**
    **/
   public LocationDefinition address(LocationAddress address) {
@@ -169,7 +170,7 @@ public class LocationDefinition  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * Current state of the location entity
    **/
@@ -187,7 +188,7 @@ public class LocationDefinition  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Notes for the location entity
    **/
@@ -205,7 +206,7 @@ public class LocationDefinition  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * Current version of the location entity, value to be supplied should be retrieved by a GET or on create/update response
    **/
@@ -223,49 +224,49 @@ public class LocationDefinition  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A list of ancestor IDs in order")
   @JsonProperty("path")
   public List<String> getPath() {
     return path;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Profile image of the location entity, retrieved with ?expand=images query parameter")
   @JsonProperty("profileImage")
   public List<LocationImage> getProfileImage() {
     return profileImage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Floorplan images of the location entity, retrieved with ?expand=images query parameter")
   @JsonProperty("floorplanImage")
   public List<LocationImage> getFloorplanImage() {
     return floorplanImage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Address verification information, retrieve dwith the ?expand=addressVerificationDetails query parameter")
   @JsonProperty("addressVerificationDetails")
   public LocationAddressVerificationDetails getAddressVerificationDetails() {
     return addressVerificationDetails;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Boolean field which states if the address has been verified as an actual address")
   @JsonProperty("addressVerified")
   public Boolean getAddressVerified() {
     return addressVerified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Boolean field which states if the address has been stored for E911")
   @JsonProperty("addressStored")
   public Boolean getAddressStored() {
     return addressStored;
   }
 
-  
+
   /**
    **/
   public LocationDefinition images(String images) {
@@ -282,14 +283,13 @@ public class LocationDefinition  implements Serializable {
     this.images = images;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -300,22 +300,23 @@ public class LocationDefinition  implements Serializable {
       return false;
     }
     LocationDefinition locationDefinition = (LocationDefinition) o;
+
     return Objects.equals(this.id, locationDefinition.id) &&
-        Objects.equals(this.name, locationDefinition.name) &&
-        Objects.equals(this.contactUser, locationDefinition.contactUser) &&
-        Objects.equals(this.emergencyNumber, locationDefinition.emergencyNumber) &&
-        Objects.equals(this.address, locationDefinition.address) &&
-        Objects.equals(this.state, locationDefinition.state) &&
-        Objects.equals(this.notes, locationDefinition.notes) &&
-        Objects.equals(this.version, locationDefinition.version) &&
-        Objects.equals(this.path, locationDefinition.path) &&
-        Objects.equals(this.profileImage, locationDefinition.profileImage) &&
-        Objects.equals(this.floorplanImage, locationDefinition.floorplanImage) &&
-        Objects.equals(this.addressVerificationDetails, locationDefinition.addressVerificationDetails) &&
-        Objects.equals(this.addressVerified, locationDefinition.addressVerified) &&
-        Objects.equals(this.addressStored, locationDefinition.addressStored) &&
-        Objects.equals(this.images, locationDefinition.images) &&
-        Objects.equals(this.selfUri, locationDefinition.selfUri);
+            Objects.equals(this.name, locationDefinition.name) &&
+            Objects.equals(this.contactUser, locationDefinition.contactUser) &&
+            Objects.equals(this.emergencyNumber, locationDefinition.emergencyNumber) &&
+            Objects.equals(this.address, locationDefinition.address) &&
+            Objects.equals(this.state, locationDefinition.state) &&
+            Objects.equals(this.notes, locationDefinition.notes) &&
+            Objects.equals(this.version, locationDefinition.version) &&
+            Objects.equals(this.path, locationDefinition.path) &&
+            Objects.equals(this.profileImage, locationDefinition.profileImage) &&
+            Objects.equals(this.floorplanImage, locationDefinition.floorplanImage) &&
+            Objects.equals(this.addressVerificationDetails, locationDefinition.addressVerificationDetails) &&
+            Objects.equals(this.addressVerified, locationDefinition.addressVerified) &&
+            Objects.equals(this.addressStored, locationDefinition.addressStored) &&
+            Objects.equals(this.images, locationDefinition.images) &&
+            Objects.equals(this.selfUri, locationDefinition.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -36,7 +37,7 @@ public class BatchDownloadJobResult  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public BatchDownloadJobResult name(String name) {
@@ -53,7 +54,7 @@ public class BatchDownloadJobResult  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Conversation id of the result
    **/
@@ -71,7 +72,7 @@ public class BatchDownloadJobResult  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Recording id of the result
    **/
@@ -89,7 +90,7 @@ public class BatchDownloadJobResult  implements Serializable {
     this.recordingId = recordingId;
   }
 
-  
+
   /**
    * URL of results... HTTP GET from this location to download results for this item
    **/
@@ -107,7 +108,7 @@ public class BatchDownloadJobResult  implements Serializable {
     this.resultUrl = resultUrl;
   }
 
-  
+
   /**
    * Content type of this result
    **/
@@ -125,7 +126,7 @@ public class BatchDownloadJobResult  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * An error message, in case of failed processing will indicate the cause of the failure
    **/
@@ -143,14 +144,13 @@ public class BatchDownloadJobResult  implements Serializable {
     this.errorMsg = errorMsg;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,14 +161,15 @@ public class BatchDownloadJobResult  implements Serializable {
       return false;
     }
     BatchDownloadJobResult batchDownloadJobResult = (BatchDownloadJobResult) o;
+
     return Objects.equals(this.id, batchDownloadJobResult.id) &&
-        Objects.equals(this.name, batchDownloadJobResult.name) &&
-        Objects.equals(this.conversationId, batchDownloadJobResult.conversationId) &&
-        Objects.equals(this.recordingId, batchDownloadJobResult.recordingId) &&
-        Objects.equals(this.resultUrl, batchDownloadJobResult.resultUrl) &&
-        Objects.equals(this.contentType, batchDownloadJobResult.contentType) &&
-        Objects.equals(this.errorMsg, batchDownloadJobResult.errorMsg) &&
-        Objects.equals(this.selfUri, batchDownloadJobResult.selfUri);
+            Objects.equals(this.name, batchDownloadJobResult.name) &&
+            Objects.equals(this.conversationId, batchDownloadJobResult.conversationId) &&
+            Objects.equals(this.recordingId, batchDownloadJobResult.recordingId) &&
+            Objects.equals(this.resultUrl, batchDownloadJobResult.resultUrl) &&
+            Objects.equals(this.contentType, batchDownloadJobResult.contentType) &&
+            Objects.equals(this.errorMsg, batchDownloadJobResult.errorMsg) &&
+            Objects.equals(this.selfUri, batchDownloadJobResult.selfUri);
   }
 
   @Override

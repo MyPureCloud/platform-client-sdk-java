@@ -13,140 +13,140 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
-import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
+import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
+import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
+import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
+import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
+import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
+import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
+import com.mypurecloud.sdk.v2.model.BuScheduleListing;
+import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
+import com.mypurecloud.sdk.v2.model.BuScheduleRun;
+import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
+import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
+import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
+import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnit;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
-import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
-import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
-import com.mypurecloud.sdk.v2.model.PlanningGroup;
-import com.mypurecloud.sdk.v2.model.PlanningGroupList;
-import com.mypurecloud.sdk.v2.model.BuScheduleRun;
-import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
-import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
-import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
-import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
-import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
-import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
-import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
-import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
-import com.mypurecloud.sdk.v2.model.BuScheduleListing;
-import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
-import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
-import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
-import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
-import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
-import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
+import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
+import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
+import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
+import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
+import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
+import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
+import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
+import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
+import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
-import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
-import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
-import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
+import com.mypurecloud.sdk.v2.model.NotificationsResponse;
+import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
+import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.PlanningGroup;
+import com.mypurecloud.sdk.v2.model.PlanningGroupList;
+import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
+import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
+import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
+import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
+import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
+import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
-import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffLimit;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffPlan;
 import com.mypurecloud.sdk.v2.model.TimeOffPlanListing;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
-import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
-import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
-import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
-import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.WorkPlan;
-import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
-import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
-import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
-import com.mypurecloud.sdk.v2.model.NotificationsResponse;
-import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
-import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
-import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
-import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
-import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
-import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
+import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
+import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
+import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
-import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
-import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
-import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
-import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
-import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
-import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
-import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
-import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
-import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
-import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
-import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
-import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
-import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
-import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
-import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
-import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
-import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
-import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
-import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
-import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
-import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
-import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
-import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
-import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
-import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
-import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
-import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
-import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
-import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
-import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
-import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
-import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
-import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
-import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
-import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
-import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
-import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
-import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
-import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
-import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
-import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
-import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
-import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
-import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
-import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
-import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
-import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
+import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
+import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
+import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
+import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
+import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
+import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
+import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
+import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
+import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
+import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkPlan;
+import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
-import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
-import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
-import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
-import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
-import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
-import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
-import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
-import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
@@ -295,7 +295,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class WorkforceManagementApiAsync {
   private final ApiClient pcapiClient;
 
@@ -307,7 +306,6 @@ public class WorkforceManagementApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete business unit
    * A business unit cannot be deleted if it contains one or more management units
@@ -383,7 +381,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Deletes an activity code
    * 
@@ -459,7 +456,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Deletes the planning group
    * 
@@ -535,7 +531,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Cancel a scheduling run
    * 
@@ -611,7 +606,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a service goal template
    * 
@@ -687,7 +681,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a schedule
    * 
@@ -763,7 +756,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a short term forecast
    * Must not be tied to any schedules
@@ -839,7 +831,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Disable generated calendar link for the current user
    * 
@@ -915,7 +906,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete management unit
    * 
@@ -991,7 +981,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Deletes a time off limit object
    * 
@@ -1067,7 +1056,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Deletes a time off plan
    * 
@@ -1143,7 +1131,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a work plan
    * 
@@ -1219,7 +1206,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete a work plan rotation
    * 
@@ -1295,7 +1281,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of UserScheduleAdherence records for the requested users
    * 
@@ -1371,7 +1356,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get status of the modeling job
    * 
@@ -1447,7 +1431,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the management unit to which the agent belongs
    * 
@@ -1523,7 +1506,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the management unit to which the currently logged in agent belongs
    * 
@@ -1599,10 +1581,9 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get business unit
-   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1636,7 +1617,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get business unit
-   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1675,7 +1656,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get an activity code
    * 
@@ -1751,7 +1731,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get activity codes
    * 
@@ -1827,7 +1806,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get intraday planning groups for the given date
    * 
@@ -1903,7 +1881,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get all authorized management units in the business unit
    * 
@@ -1979,7 +1956,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a planning group
    * 
@@ -2055,7 +2031,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets list of planning groups
    * 
@@ -2131,7 +2106,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a scheduling run
    * 
@@ -2207,7 +2181,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the result of a rescheduling operation
    * 
@@ -2283,7 +2256,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the list of scheduling runs
    * 
@@ -2359,7 +2331,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a service goal template
    * 
@@ -2435,7 +2406,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets list of service goal templates
    * 
@@ -2511,7 +2481,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
    * 
@@ -2587,7 +2556,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the generation results for a generated schedule
    * 
@@ -2663,7 +2631,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the headcount forecast by planning group for the schedule
    * 
@@ -2739,9 +2706,8 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
-   * Loads agent&#39;s schedule history.
+   * Loads agent's schedule history.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2775,7 +2741,7 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Loads agent&#39;s schedule history.
+   * Loads agent's schedule history.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2815,10 +2781,9 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2852,7 +2817,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2891,7 +2856,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a short term forecast
    * 
@@ -2967,7 +2931,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the result of a short term forecast calculation
    * Includes modifications unless you pass the doNotApplyModifications query parameter
@@ -3043,7 +3006,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets the forecast generation results
    * 
@@ -3119,7 +3081,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the result of a long term forecast calculation
    * Includes modifications unless you pass the doNotApplyModifications query parameter
@@ -3195,7 +3156,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets the forecast planning group snapshot
    * 
@@ -3271,10 +3231,9 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3308,7 +3267,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3347,7 +3306,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get business units
    * 
@@ -3423,7 +3381,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get business units across divisions
    * 
@@ -3499,7 +3456,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get ics formatted calendar based on shareable link
    * 
@@ -3575,7 +3531,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get existing calendar link for the current user
    * 
@@ -3651,7 +3606,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Retrieves delete job status for historical data imports of the organization
    * 
@@ -3727,7 +3681,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Retrieves status of the historical data imports of the organization
    * 
@@ -3803,7 +3756,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get management unit
    * settings.shortTermForecasting is deprecated and now lives on the business unit
@@ -3879,7 +3831,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get activity codes
    * 
@@ -3955,7 +3906,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of user schedule adherence records for the requested management unit
    * 
@@ -4031,7 +3981,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get data for agent in the management unit
    * 
@@ -4107,7 +4056,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets all the shift trades for a given agent
    * 
@@ -4183,7 +4131,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a summary of all shift trades in the matched state
    * 
@@ -4259,7 +4206,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets list of users available for whom you can send direct shift trade requests
    * 
@@ -4335,7 +4281,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a time off limit object
    * Returns properties of time off limit object, but not daily values.
@@ -4411,7 +4356,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a list of time off limit objects under management unit.
    * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
@@ -4487,7 +4431,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a time off plan
    * 
@@ -4563,7 +4506,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a list of time off plans
    * 
@@ -4639,7 +4581,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a time off request
    * 
@@ -4715,7 +4656,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Retrieves time off limit, allocated and waitlisted values according to specific time off request
    * 
@@ -4791,7 +4731,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of time off requests for a given user
    * 
@@ -4867,7 +4806,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get users in the management unit
    * 
@@ -4943,7 +4881,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
    * 
@@ -5019,7 +4956,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
    * 
@@ -5095,7 +5031,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets all the shift trades for a given week
    * 
@@ -5171,7 +5106,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a work plan
    * 
@@ -5247,7 +5181,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a work plan rotation
    * 
@@ -5323,7 +5256,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get work plan rotations
    * 
@@ -5399,10 +5331,9 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get work plans
-   * \&quot;expand=details\&quot; is deprecated
+   * \"expand=details\" is deprecated
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5436,7 +5367,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get work plans
-   * \&quot;expand=details\&quot; is deprecated
+   * \"expand=details\" is deprecated
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5475,7 +5406,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get management units
    * 
@@ -5551,7 +5481,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get management units across divisions
    * 
@@ -5627,7 +5556,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of notifications for the current user
    * Notifications are only initially sent if you have the relevant Notify and Edit permissions
@@ -5703,7 +5631,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get status of the scheduling job
    * 
@@ -5779,7 +5706,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets all of my shift trades
    * 
@@ -5855,7 +5781,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a time off request for the current user
    * 
@@ -5931,7 +5856,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get the daily waitlist positions of a time off request for the current user
    * 
@@ -6007,7 +5931,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get a list of time off requests for the current user
    * 
@@ -6083,7 +6006,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update business unit
    * 
@@ -6159,7 +6081,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update an activity code
    * 
@@ -6235,7 +6156,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Updates the planning group
    * 
@@ -6311,7 +6231,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Mark a schedule run as applied
    * 
@@ -6387,7 +6306,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Updates a service goal template
    * 
@@ -6463,7 +6381,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update the requested management unit
    * 
@@ -6539,7 +6456,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values.
@@ -6615,7 +6531,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Updates a time off plan
    * 
@@ -6691,7 +6606,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a time off request
    * 
@@ -6767,7 +6681,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Updates a shift trade. This route can only be called by the initiating agent
    * 
@@ -6843,7 +6756,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a work plan
    * 
@@ -6919,7 +6831,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a work plan rotation
    * 
@@ -6995,7 +6906,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Update a time off request for the current user
    * 
@@ -7071,7 +6981,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Request a historical adherence report for users across management units
    * 
@@ -7147,7 +7056,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get published schedule for the current user
    * 
@@ -7223,7 +7131,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a new activity code
    * 
@@ -7299,7 +7206,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Search published schedules
    * 
@@ -7375,7 +7281,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get intraday data for the given date for the requested planningGroupIds
    * 
@@ -7451,7 +7356,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Adds a new planning group
    * 
@@ -7527,7 +7431,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Adds a new service goal template
    * 
@@ -7603,7 +7506,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Loads agent schedule data from the schedule. Used in combination with the metadata route
    * 
@@ -7679,7 +7581,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Copy a schedule
    * 
@@ -7755,7 +7656,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Start a rescheduling run
    * 
@@ -7831,7 +7731,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Starts processing a schedule update
    * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
@@ -7907,7 +7806,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates a signed upload URL for updating a schedule
    * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
@@ -7983,7 +7881,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a blank schedule
    * 
@@ -8059,7 +7956,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Generate a schedule
    * 
@@ -8135,7 +8031,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Starts processing a schedule import
    * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
@@ -8211,7 +8106,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates a signed upload URL for importing a schedule
    * Once the upload is complete, call the /import route to start the schedule import process
@@ -8287,7 +8181,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Copy a short term forecast
    * 
@@ -8363,7 +8256,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Generate a short term forecast
    * 
@@ -8439,7 +8331,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Starts importing the uploaded short term forecast
    * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
@@ -8515,7 +8406,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates a signed upload URL for importing a short term forecast
    * Once the upload is complete, call the /import route to start the short term forecast import process
@@ -8591,7 +8481,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Add a new business unit
    * It may take a minute or two for a new business unit to be available for api operations
@@ -8667,7 +8556,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
    * 
@@ -8743,7 +8631,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete the entries of the historical data imports in the organization
    * 
@@ -8819,7 +8706,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Trigger validation process for historical import
    * 
@@ -8895,7 +8781,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Query published schedules for given given time range for set of users
    * 
@@ -8971,7 +8856,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Request a historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
@@ -9047,7 +8931,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
@@ -9123,7 +9006,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Query published schedules for given given time range for set of users
    * 
@@ -9199,7 +9081,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates a new time off limit object under management unit.
    * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
@@ -9275,7 +9156,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Retrieves time off limit related values based on a given set of filters.
    * 
@@ -9351,7 +9231,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates a new time off plan
    * 
@@ -9427,7 +9306,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a new time off request
    * 
@@ -9503,7 +9381,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Fetches time off requests matching the conditions specified in the request body
    * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
@@ -9579,7 +9456,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Retrieves daily waitlist position for a list of time off requests
    * 
@@ -9655,7 +9531,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Matches a shift trade. This route can only be called by the receiving agent
    * 
@@ -9731,7 +9606,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Adds a shift trade
    * 
@@ -9807,7 +9681,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Searches for potential shift trade matches for the current agent
    * 
@@ -9883,10 +9756,9 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * Admin functionality is not supported with \"mine\".
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9920,7 +9792,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Updates the state of a batch of shift trades
-   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * Admin functionality is not supported with \"mine\".
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9959,7 +9831,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a copy of work plan
    * 
@@ -10035,7 +9906,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Validate Work Plan
    * 
@@ -10111,7 +9981,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a copy of work plan rotation
    * 
@@ -10187,7 +10056,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a new work plan rotation
    * 
@@ -10263,7 +10131,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a new work plan
    * 
@@ -10339,7 +10206,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Add a management unit
    * It may take a minute or two for a new management unit to be available for api operations
@@ -10415,7 +10281,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Mark a list of notifications as read or unread
    * 
@@ -10491,7 +10356,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Get published schedule for the current user
    * 
@@ -10567,7 +10431,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Queries available time off for the current user
    * 
@@ -10643,7 +10506,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a time off request for the current user
    * 
@@ -10719,7 +10581,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
   /**
    * Sets daily values for a date range of time off limit object
    * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
@@ -10795,7 +10656,6 @@ public class WorkforceManagementApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

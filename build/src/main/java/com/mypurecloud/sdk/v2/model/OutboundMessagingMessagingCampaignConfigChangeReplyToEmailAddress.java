@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeUriReference;
@@ -43,7 +44,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
     this.domain = domain;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -61,7 +62,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
     this.route = route;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress = (OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress) o;
+
     return Objects.equals(this.domain, outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.domain) &&
-        Objects.equals(this.route, outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.route);
+            Objects.equals(this.route, outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.route);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
@@ -45,7 +46,7 @@ public class TrustMemberCreate  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The list of roles to be granted to this user or group. Roles will be granted in all divisions.
    **/
@@ -63,7 +64,7 @@ public class TrustMemberCreate  implements Serializable {
     this.roleIds = roleIds;
   }
 
-  
+
   /**
    * The list of trustor organization roles granting this user or group access paired with the divisions for those roles.
    **/
@@ -81,7 +82,6 @@ public class TrustMemberCreate  implements Serializable {
     this.roleDivisions = roleDivisions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class TrustMemberCreate  implements Serializable {
       return false;
     }
     TrustMemberCreate trustMemberCreate = (TrustMemberCreate) o;
+
     return Objects.equals(this.id, trustMemberCreate.id) &&
-        Objects.equals(this.roleIds, trustMemberCreate.roleIds) &&
-        Objects.equals(this.roleDivisions, trustMemberCreate.roleDivisions);
+            Objects.equals(this.roleIds, trustMemberCreate.roleIds) &&
+            Objects.equals(this.roleDivisions, trustMemberCreate.roleDivisions);
   }
 
   @Override

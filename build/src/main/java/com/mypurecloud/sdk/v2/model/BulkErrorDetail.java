@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class BulkErrorDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public BulkErrorDetail value(String value) {
@@ -58,7 +59,7 @@ public class BulkErrorDetail  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    **/
   public BulkErrorDetail message(String message) {
@@ -75,7 +76,6 @@ public class BulkErrorDetail  implements Serializable {
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class BulkErrorDetail  implements Serializable {
       return false;
     }
     BulkErrorDetail bulkErrorDetail = (BulkErrorDetail) o;
+
     return Objects.equals(this.fieldName, bulkErrorDetail.fieldName) &&
-        Objects.equals(this.value, bulkErrorDetail.value) &&
-        Objects.equals(this.message, bulkErrorDetail.message);
+            Objects.equals(this.value, bulkErrorDetail.value) &&
+            Objects.equals(this.message, bulkErrorDetail.message);
   }
 
   @Override

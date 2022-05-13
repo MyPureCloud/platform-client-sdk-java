@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
@@ -44,7 +45,7 @@ public class WorkPlanRotationAgentResponse  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The date range to which this agent is effective in the work plan rotation
    **/
@@ -62,7 +63,7 @@ public class WorkPlanRotationAgentResponse  implements Serializable {
     this.dateRange = dateRange;
   }
 
-  
+
   /**
    * Start position of the work plan in the pattern for this agent in the work plan rotation. Position value starts from 0
    **/
@@ -80,7 +81,6 @@ public class WorkPlanRotationAgentResponse  implements Serializable {
     this.position = position;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class WorkPlanRotationAgentResponse  implements Serializable {
       return false;
     }
     WorkPlanRotationAgentResponse workPlanRotationAgentResponse = (WorkPlanRotationAgentResponse) o;
+
     return Objects.equals(this.user, workPlanRotationAgentResponse.user) &&
-        Objects.equals(this.dateRange, workPlanRotationAgentResponse.dateRange) &&
-        Objects.equals(this.position, workPlanRotationAgentResponse.position);
+            Objects.equals(this.dateRange, workPlanRotationAgentResponse.dateRange) &&
+            Objects.equals(this.position, workPlanRotationAgentResponse.position);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -152,7 +153,7 @@ public class AvailableTopic  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public AvailableTopic id(String id) {
@@ -169,7 +170,7 @@ public class AvailableTopic  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Full detailed permissions required to subscribe to the topic
    **/
@@ -187,7 +188,7 @@ public class AvailableTopic  implements Serializable {
     this.permissionDetails = permissionDetails;
   }
 
-  
+
   /**
    * Permissions required to subscribe to the topic
    **/
@@ -205,7 +206,7 @@ public class AvailableTopic  implements Serializable {
     this.requiresPermissions = requiresPermissions;
   }
 
-  
+
   /**
    * True if the subscribing user must belong to the same division as the topic object ID
    **/
@@ -223,7 +224,7 @@ public class AvailableTopic  implements Serializable {
     this.requiresDivisionPermissions = requiresDivisionPermissions;
   }
 
-  
+
   /**
    * If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.
    **/
@@ -241,7 +242,7 @@ public class AvailableTopic  implements Serializable {
     this.requiresAnyValidator = requiresAnyValidator;
   }
 
-  
+
   /**
    * Whether or not the permissions on this topic are enforced
    **/
@@ -259,7 +260,7 @@ public class AvailableTopic  implements Serializable {
     this.enforced = enforced;
   }
 
-  
+
   /**
    * Visibility of this topic (Public or Preview)
    **/
@@ -277,7 +278,7 @@ public class AvailableTopic  implements Serializable {
     this.visibility = visibility;
   }
 
-  
+
   /**
    **/
   public AvailableTopic schema(Map<String, Object> schema) {
@@ -294,7 +295,7 @@ public class AvailableTopic  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    * True if the topic user ID is required to match the subscribing user ID
    **/
@@ -312,7 +313,7 @@ public class AvailableTopic  implements Serializable {
     this.requiresCurrentUser = requiresCurrentUser;
   }
 
-  
+
   /**
    * True if permissions are only required when the topic user ID does not match the subscribing user ID
    **/
@@ -330,7 +331,7 @@ public class AvailableTopic  implements Serializable {
     this.requiresCurrentUserOrPermission = requiresCurrentUserOrPermission;
   }
 
-  
+
   /**
    * Transports that support events for the topic
    **/
@@ -348,7 +349,7 @@ public class AvailableTopic  implements Serializable {
     this.transports = transports;
   }
 
-  
+
   /**
    **/
   public AvailableTopic publicApiTemplateUriPaths(List<String> publicApiTemplateUriPaths) {
@@ -365,7 +366,7 @@ public class AvailableTopic  implements Serializable {
     this.publicApiTemplateUriPaths = publicApiTemplateUriPaths;
   }
 
-  
+
   /**
    * Parameters in the topic name that can be substituted, in the order they appear in the topic name
    **/
@@ -383,7 +384,6 @@ public class AvailableTopic  implements Serializable {
     this.topicParameters = topicParameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -394,20 +394,21 @@ public class AvailableTopic  implements Serializable {
       return false;
     }
     AvailableTopic availableTopic = (AvailableTopic) o;
+
     return Objects.equals(this.description, availableTopic.description) &&
-        Objects.equals(this.id, availableTopic.id) &&
-        Objects.equals(this.permissionDetails, availableTopic.permissionDetails) &&
-        Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
-        Objects.equals(this.requiresDivisionPermissions, availableTopic.requiresDivisionPermissions) &&
-        Objects.equals(this.requiresAnyValidator, availableTopic.requiresAnyValidator) &&
-        Objects.equals(this.enforced, availableTopic.enforced) &&
-        Objects.equals(this.visibility, availableTopic.visibility) &&
-        Objects.equals(this.schema, availableTopic.schema) &&
-        Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
-        Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission) &&
-        Objects.equals(this.transports, availableTopic.transports) &&
-        Objects.equals(this.publicApiTemplateUriPaths, availableTopic.publicApiTemplateUriPaths) &&
-        Objects.equals(this.topicParameters, availableTopic.topicParameters);
+            Objects.equals(this.id, availableTopic.id) &&
+            Objects.equals(this.permissionDetails, availableTopic.permissionDetails) &&
+            Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
+            Objects.equals(this.requiresDivisionPermissions, availableTopic.requiresDivisionPermissions) &&
+            Objects.equals(this.requiresAnyValidator, availableTopic.requiresAnyValidator) &&
+            Objects.equals(this.enforced, availableTopic.enforced) &&
+            Objects.equals(this.visibility, availableTopic.visibility) &&
+            Objects.equals(this.schema, availableTopic.schema) &&
+            Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
+            Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission) &&
+            Objects.equals(this.transports, availableTopic.transports) &&
+            Objects.equals(this.publicApiTemplateUriPaths, availableTopic.publicApiTemplateUriPaths) &&
+            Objects.equals(this.topicParameters, availableTopic.topicParameters);
   }
 
   @Override

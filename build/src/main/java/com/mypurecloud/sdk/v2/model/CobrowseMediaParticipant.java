@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -296,7 +297,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display friendly name of the participant.
    **/
@@ -314,7 +315,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The participant address.
    **/
@@ -332,7 +333,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -350,7 +351,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -368,7 +369,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -386,7 +387,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -404,7 +405,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -422,7 +423,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -440,7 +441,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -458,7 +459,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -476,7 +477,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Value is true when the participant is on hold.
    **/
@@ -494,7 +495,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -512,7 +513,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -530,7 +531,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * The PureCloud user for this participant.
    **/
@@ -548,7 +549,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The PureCloud queue for this participant.
    **/
@@ -566,7 +567,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The PureCloud team for this participant.
    **/
@@ -584,7 +585,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.team = team;
   }
 
-  
+
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -602,7 +603,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -620,7 +621,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -638,7 +639,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -656,7 +657,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -674,7 +675,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -692,7 +693,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -710,7 +711,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -728,7 +729,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -746,7 +747,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -764,7 +765,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -782,7 +783,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -800,7 +801,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
    **/
@@ -818,7 +819,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Information on how a communication should be routed to an agent.
    **/
@@ -836,7 +837,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -854,7 +855,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -872,7 +873,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    * The co-browse session ID.
    **/
@@ -890,7 +891,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-  
+
   /**
    * This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).
    **/
@@ -908,7 +909,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.cobrowseRole = cobrowseRole;
   }
 
-  
+
   /**
    * ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).
    **/
@@ -926,7 +927,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.controlling = controlling;
   }
 
-  
+
   /**
    * The URL that can be used to open co-browse session in web browser.
    **/
@@ -944,7 +945,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.viewerUrl = viewerUrl;
   }
 
-  
+
   /**
    * The time when the provider event which triggered this conversation update happened in the corrected provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -962,7 +963,6 @@ public class CobrowseMediaParticipant  implements Serializable {
     this.providerEventTime = providerEventTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -973,44 +973,45 @@ public class CobrowseMediaParticipant  implements Serializable {
       return false;
     }
     CobrowseMediaParticipant cobrowseMediaParticipant = (CobrowseMediaParticipant) o;
+
     return Objects.equals(this.id, cobrowseMediaParticipant.id) &&
-        Objects.equals(this.name, cobrowseMediaParticipant.name) &&
-        Objects.equals(this.address, cobrowseMediaParticipant.address) &&
-        Objects.equals(this.startTime, cobrowseMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, cobrowseMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, cobrowseMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, cobrowseMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, cobrowseMediaParticipant.purpose) &&
-        Objects.equals(this.state, cobrowseMediaParticipant.state) &&
-        Objects.equals(this.direction, cobrowseMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, cobrowseMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, cobrowseMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, cobrowseMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, cobrowseMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, cobrowseMediaParticipant.user) &&
-        Objects.equals(this.queue, cobrowseMediaParticipant.queue) &&
-        Objects.equals(this.team, cobrowseMediaParticipant.team) &&
-        Objects.equals(this.attributes, cobrowseMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, cobrowseMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, cobrowseMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, cobrowseMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, cobrowseMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, cobrowseMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, cobrowseMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, cobrowseMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, cobrowseMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, cobrowseMediaParticipant.wrapup) &&
-        Objects.equals(this.peer, cobrowseMediaParticipant.peer) &&
-        Objects.equals(this.flaggedReason, cobrowseMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, cobrowseMediaParticipant.journeyContext) &&
-        Objects.equals(this.conversationRoutingData, cobrowseMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.startAcwTime, cobrowseMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, cobrowseMediaParticipant.endAcwTime) &&
-        Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
-        Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
-        Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
-        Objects.equals(this.viewerUrl, cobrowseMediaParticipant.viewerUrl) &&
-        Objects.equals(this.providerEventTime, cobrowseMediaParticipant.providerEventTime);
+            Objects.equals(this.name, cobrowseMediaParticipant.name) &&
+            Objects.equals(this.address, cobrowseMediaParticipant.address) &&
+            Objects.equals(this.startTime, cobrowseMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, cobrowseMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, cobrowseMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, cobrowseMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, cobrowseMediaParticipant.purpose) &&
+            Objects.equals(this.state, cobrowseMediaParticipant.state) &&
+            Objects.equals(this.direction, cobrowseMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, cobrowseMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, cobrowseMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, cobrowseMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, cobrowseMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, cobrowseMediaParticipant.user) &&
+            Objects.equals(this.queue, cobrowseMediaParticipant.queue) &&
+            Objects.equals(this.team, cobrowseMediaParticipant.team) &&
+            Objects.equals(this.attributes, cobrowseMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, cobrowseMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, cobrowseMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, cobrowseMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, cobrowseMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, cobrowseMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, cobrowseMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, cobrowseMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, cobrowseMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, cobrowseMediaParticipant.wrapup) &&
+            Objects.equals(this.peer, cobrowseMediaParticipant.peer) &&
+            Objects.equals(this.flaggedReason, cobrowseMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, cobrowseMediaParticipant.journeyContext) &&
+            Objects.equals(this.conversationRoutingData, cobrowseMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.startAcwTime, cobrowseMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, cobrowseMediaParticipant.endAcwTime) &&
+            Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
+            Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
+            Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
+            Objects.equals(this.viewerUrl, cobrowseMediaParticipant.viewerUrl) &&
+            Objects.equals(this.providerEventTime, cobrowseMediaParticipant.providerEventTime);
   }
 
   @Override

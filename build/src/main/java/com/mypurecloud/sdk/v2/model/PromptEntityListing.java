@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.total = total;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public PromptEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
       return false;
     }
     PromptEntityListing promptEntityListing = (PromptEntityListing) o;
+
     return Objects.equals(this.entities, promptEntityListing.entities) &&
-        Objects.equals(this.pageSize, promptEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, promptEntityListing.pageNumber) &&
-        Objects.equals(this.total, promptEntityListing.total) &&
-        Objects.equals(this.lastUri, promptEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, promptEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, promptEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, promptEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, promptEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, promptEntityListing.pageCount);
+            Objects.equals(this.pageSize, promptEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, promptEntityListing.pageNumber) &&
+            Objects.equals(this.total, promptEntityListing.total) &&
+            Objects.equals(this.lastUri, promptEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, promptEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, promptEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, promptEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, promptEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, promptEntityListing.pageCount);
   }
 
   @Override

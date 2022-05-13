@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody 
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody _configuration(WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody _configuration) {
@@ -110,7 +111,7 @@ public class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody 
     this._configuration = _configuration;
   }
 
-  
+
   /**
    **/
   public WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody status(StatusEnum status) {
@@ -127,7 +128,6 @@ public class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody 
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,9 +138,10 @@ public class WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody 
       return false;
     }
     WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody webDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody = (WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody) o;
+
     return Objects.equals(this.id, webDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody.id) &&
-        Objects.equals(this._configuration, webDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody._configuration) &&
-        Objects.equals(this.status, webDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody.status);
+            Objects.equals(this._configuration, webDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody._configuration) &&
+            Objects.equals(this.status, webDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody.status);
   }
 
   @Override

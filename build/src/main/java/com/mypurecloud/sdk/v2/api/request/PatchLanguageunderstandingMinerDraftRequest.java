@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class PatchLanguageunderstandingMinerDraftRequest {
-    
+
 	private String minerId;
 	public String getMinerId() {
 		return this.minerId;
@@ -57,7 +57,7 @@ public class PatchLanguageunderstandingMinerDraftRequest {
 	    this.setMinerId(minerId);
 	    return this;
 	} 
-	
+
 	private String draftId;
 	public String getDraftId() {
 		return this.draftId;
@@ -71,7 +71,7 @@ public class PatchLanguageunderstandingMinerDraftRequest {
 	    this.setDraftId(draftId);
 	    return this;
 	} 
-	
+
 	private DraftRequest body;
 	public DraftRequest getBody() {
 		return this.body;
@@ -85,7 +85,7 @@ public class PatchLanguageunderstandingMinerDraftRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,8 +124,8 @@ public class PatchLanguageunderstandingMinerDraftRequest {
                 .withPathParameter("draftId", draftId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -136,12 +136,12 @@ public class PatchLanguageunderstandingMinerDraftRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String minerId, String draftId) {
 	    return new Builder()
 	            .withRequiredParams(minerId, draftId);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchLanguageunderstandingMinerDraftRequest request;
@@ -150,31 +150,31 @@ public class PatchLanguageunderstandingMinerDraftRequest {
 			request = new PatchLanguageunderstandingMinerDraftRequest();
 		}
 
-		
+
 		public Builder withMinerId(String minerId) {
 			request.setMinerId(minerId);
 			return this;
 		}
-		
+
 		public Builder withDraftId(String draftId) {
 			request.setDraftId(draftId);
 			return this;
 		}
-		
+
 		public Builder withBody(DraftRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String minerId, String draftId) {
 			request.setMinerId(minerId);
-						request.setDraftId(draftId);
-			
+			request.setDraftId(draftId);
+
 			return this;
 		}
-		
+
 
 		public PatchLanguageunderstandingMinerDraftRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class RoutingRule  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * threshold required for routing attempt (generally an agent score).  may be null for operator ANY.
    **/
@@ -108,7 +109,7 @@ public class RoutingRule  implements Serializable {
     this.threshold = threshold;
   }
 
-  
+
   /**
    * seconds to wait in this rule before moving to the next
    **/
@@ -126,7 +127,6 @@ public class RoutingRule  implements Serializable {
     this.waitSeconds = waitSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class RoutingRule  implements Serializable {
       return false;
     }
     RoutingRule routingRule = (RoutingRule) o;
+
     return Objects.equals(this.operator, routingRule.operator) &&
-        Objects.equals(this.threshold, routingRule.threshold) &&
-        Objects.equals(this.waitSeconds, routingRule.waitSeconds);
+            Objects.equals(this.threshold, routingRule.threshold) &&
+            Objects.equals(this.waitSeconds, routingRule.waitSeconds);
   }
 
   @Override

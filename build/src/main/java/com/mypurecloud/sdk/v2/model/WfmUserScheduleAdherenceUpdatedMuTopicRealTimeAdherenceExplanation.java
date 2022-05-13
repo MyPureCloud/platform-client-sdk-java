@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation 
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation startDate(Date startDate) {
@@ -109,7 +110,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation 
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation lengthMinutes(Integer lengthMinutes) {
@@ -126,7 +127,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation 
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation status(StatusEnum status) {
@@ -143,7 +144,6 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation 
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -154,10 +154,11 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation 
       return false;
     }
     WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation = (WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation) o;
+
     return Objects.equals(this.id, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.id) &&
-        Objects.equals(this.startDate, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.startDate) &&
-        Objects.equals(this.lengthMinutes, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.lengthMinutes) &&
-        Objects.equals(this.status, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.status);
+            Objects.equals(this.startDate, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.startDate) &&
+            Objects.equals(this.lengthMinutes, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.lengthMinutes) &&
+            Objects.equals(this.status, wfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.status);
   }
 
   @Override

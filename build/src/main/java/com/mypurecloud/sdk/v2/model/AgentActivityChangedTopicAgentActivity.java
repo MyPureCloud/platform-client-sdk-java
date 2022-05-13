@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentActivityChangedTopicOutOfOffice;
@@ -50,7 +51,7 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicAgentActivity routingStatus(AgentActivityChangedTopicRoutingStatus routingStatus) {
@@ -67,7 +68,7 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicAgentActivity presence(AgentActivityChangedTopicPresence presence) {
@@ -84,7 +85,7 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     this.presence = presence;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicAgentActivity outOfOffice(AgentActivityChangedTopicOutOfOffice outOfOffice) {
@@ -101,7 +102,7 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     this.outOfOffice = outOfOffice;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicAgentActivity activeQueueIds(List<String> activeQueueIds) {
@@ -118,7 +119,7 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     this.activeQueueIds = activeQueueIds;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicAgentActivity dateActiveQueuesChanged(Date dateActiveQueuesChanged) {
@@ -135,7 +136,6 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
     this.dateActiveQueuesChanged = dateActiveQueuesChanged;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,12 +146,13 @@ public class AgentActivityChangedTopicAgentActivity  implements Serializable {
       return false;
     }
     AgentActivityChangedTopicAgentActivity agentActivityChangedTopicAgentActivity = (AgentActivityChangedTopicAgentActivity) o;
+
     return Objects.equals(this.id, agentActivityChangedTopicAgentActivity.id) &&
-        Objects.equals(this.routingStatus, agentActivityChangedTopicAgentActivity.routingStatus) &&
-        Objects.equals(this.presence, agentActivityChangedTopicAgentActivity.presence) &&
-        Objects.equals(this.outOfOffice, agentActivityChangedTopicAgentActivity.outOfOffice) &&
-        Objects.equals(this.activeQueueIds, agentActivityChangedTopicAgentActivity.activeQueueIds) &&
-        Objects.equals(this.dateActiveQueuesChanged, agentActivityChangedTopicAgentActivity.dateActiveQueuesChanged);
+            Objects.equals(this.routingStatus, agentActivityChangedTopicAgentActivity.routingStatus) &&
+            Objects.equals(this.presence, agentActivityChangedTopicAgentActivity.presence) &&
+            Objects.equals(this.outOfOffice, agentActivityChangedTopicAgentActivity.outOfOffice) &&
+            Objects.equals(this.activeQueueIds, agentActivityChangedTopicAgentActivity.activeQueueIds) &&
+            Objects.equals(this.dateActiveQueuesChanged, agentActivityChangedTopicAgentActivity.dateActiveQueuesChanged);
   }
 
   @Override

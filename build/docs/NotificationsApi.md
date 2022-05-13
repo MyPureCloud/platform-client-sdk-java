@@ -27,8 +27,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Remove all subscriptions
 
-
-
 Wraps DELETE /api/v2/notifications/channels/{channelId}/subscriptions  
 
 Requires NO permissions: 
@@ -88,8 +86,6 @@ null (empty response body)
 
 Get available notification topics.
 
-
-
 Wraps GET /api/v2/notifications/availabletopics  
 
 Requires NO permissions: 
@@ -117,7 +113,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 NotificationsApi apiInstance = new NotificationsApi();
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 Boolean includePreview = true; // Boolean | Whether or not to include Preview topics
 try {
     AvailableTopicEntityListing result = apiInstance.getNotificationsAvailabletopics(expand, includePreview);
@@ -151,8 +147,6 @@ try {
 > [ChannelTopicEntityListing](ChannelTopicEntityListing.html) getNotificationsChannelSubscriptions(channelId)
 
 The list of all subscriptions for this channel
-
-
 
 Wraps GET /api/v2/notifications/channels/{channelId}/subscriptions  
 
@@ -214,8 +208,6 @@ try {
 
 The list of existing channels
 
-
-
 Wraps GET /api/v2/notifications/channels  
 
 Requires NO permissions: 
@@ -276,7 +268,7 @@ try {
 
 Verify a channel still exists and is valid
 
-Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
 
 Wraps HEAD /api/v2/notifications/channels/{channelId}  
 
@@ -336,8 +328,6 @@ null (empty response body)
 > [ChannelTopicEntityListing](ChannelTopicEntityListing.html) postNotificationsChannelSubscriptions(channelId, body)
 
 Add a list of subscriptions to the existing list of subscriptions
-
-
 
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions  
 
@@ -458,8 +448,6 @@ This endpoint does not require any parameters.
 > [ChannelTopicEntityListing](ChannelTopicEntityListing.html) putNotificationsChannelSubscriptions(channelId, body)
 
 Replace the current list of subscriptions with a new list.
-
-
 
 Wraps PUT /api/v2/notifications/channels/{channelId}/subscriptions  
 

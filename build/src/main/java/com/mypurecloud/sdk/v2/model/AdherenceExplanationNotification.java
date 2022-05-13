@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -137,7 +138,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The agent for whom the adherence explanation applies
    **/
@@ -155,7 +156,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    * The management unit to which the agent belonged at the time the adherence explanation was submitted
    **/
@@ -173,7 +174,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    * The business unit to which the agent belonged at the time the adherence explanation was submitted
    **/
@@ -191,7 +192,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.businessUnit = businessUnit;
   }
 
-  
+
   /**
    * The start date of the adherence explanation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -209,7 +210,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The length of the adherence explanation in minutes
    **/
@@ -227,7 +228,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    * The status of the adherence explanation
    **/
@@ -245,7 +246,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The type of the adherence explanation
    **/
@@ -263,7 +264,7 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Notes about the adherence explanation
    **/
@@ -281,14 +282,13 @@ public class AdherenceExplanationNotification  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -299,16 +299,17 @@ public class AdherenceExplanationNotification  implements Serializable {
       return false;
     }
     AdherenceExplanationNotification adherenceExplanationNotification = (AdherenceExplanationNotification) o;
+
     return Objects.equals(this.id, adherenceExplanationNotification.id) &&
-        Objects.equals(this.agent, adherenceExplanationNotification.agent) &&
-        Objects.equals(this.managementUnit, adherenceExplanationNotification.managementUnit) &&
-        Objects.equals(this.businessUnit, adherenceExplanationNotification.businessUnit) &&
-        Objects.equals(this.startDate, adherenceExplanationNotification.startDate) &&
-        Objects.equals(this.lengthMinutes, adherenceExplanationNotification.lengthMinutes) &&
-        Objects.equals(this.status, adherenceExplanationNotification.status) &&
-        Objects.equals(this.type, adherenceExplanationNotification.type) &&
-        Objects.equals(this.notes, adherenceExplanationNotification.notes) &&
-        Objects.equals(this.selfUri, adherenceExplanationNotification.selfUri);
+            Objects.equals(this.agent, adherenceExplanationNotification.agent) &&
+            Objects.equals(this.managementUnit, adherenceExplanationNotification.managementUnit) &&
+            Objects.equals(this.businessUnit, adherenceExplanationNotification.businessUnit) &&
+            Objects.equals(this.startDate, adherenceExplanationNotification.startDate) &&
+            Objects.equals(this.lengthMinutes, adherenceExplanationNotification.lengthMinutes) &&
+            Objects.equals(this.status, adherenceExplanationNotification.status) &&
+            Objects.equals(this.type, adherenceExplanationNotification.type) &&
+            Objects.equals(this.notes, adherenceExplanationNotification.notes) &&
+            Objects.equals(this.selfUri, adherenceExplanationNotification.selfUri);
   }
 
   @Override

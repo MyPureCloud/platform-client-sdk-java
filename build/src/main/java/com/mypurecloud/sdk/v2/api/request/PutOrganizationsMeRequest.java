@@ -20,22 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 public class PutOrganizationsMeRequest {
-    
+
 	private Organization body;
 	public Organization getBody() {
 		return this.body;
@@ -49,7 +48,7 @@ public class PutOrganizationsMeRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,8 +73,8 @@ public class PutOrganizationsMeRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/organizations/me")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -86,7 +85,7 @@ public class PutOrganizationsMeRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final PutOrganizationsMeRequest request;
@@ -95,14 +94,14 @@ public class PutOrganizationsMeRequest {
 			request = new PutOrganizationsMeRequest();
 		}
 
-		
+
 		public Builder withBody(Organization body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 
 		public PutOrganizationsMeRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -124,7 +125,7 @@ public class ReportingTurnAction  implements Serializable {
     this.actionId = actionId;
   }
 
-  
+
   /**
    * The name of the action in the bot flow.
    **/
@@ -142,7 +143,7 @@ public class ReportingTurnAction  implements Serializable {
     this.actionName = actionName;
   }
 
-  
+
   /**
    * The number of the action in the bot flow.
    **/
@@ -160,7 +161,7 @@ public class ReportingTurnAction  implements Serializable {
     this.actionNumber = actionNumber;
   }
 
-  
+
   /**
    **/
   public ReportingTurnAction actionType(ActionTypeEnum actionType) {
@@ -177,7 +178,6 @@ public class ReportingTurnAction  implements Serializable {
     this.actionType = actionType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -188,10 +188,11 @@ public class ReportingTurnAction  implements Serializable {
       return false;
     }
     ReportingTurnAction reportingTurnAction = (ReportingTurnAction) o;
+
     return Objects.equals(this.actionId, reportingTurnAction.actionId) &&
-        Objects.equals(this.actionName, reportingTurnAction.actionName) &&
-        Objects.equals(this.actionNumber, reportingTurnAction.actionNumber) &&
-        Objects.equals(this.actionType, reportingTurnAction.actionType);
+            Objects.equals(this.actionName, reportingTurnAction.actionName) &&
+            Objects.equals(this.actionNumber, reportingTurnAction.actionNumber) &&
+            Objects.equals(this.actionType, reportingTurnAction.actionType);
   }
 
   @Override

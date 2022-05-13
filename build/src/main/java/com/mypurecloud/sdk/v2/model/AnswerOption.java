@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssistanceCondition;
@@ -45,7 +46,7 @@ public class AnswerOption  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AnswerOption text(String text) {
@@ -62,7 +63,7 @@ public class AnswerOption  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    **/
   public AnswerOption value(Integer value) {
@@ -79,7 +80,7 @@ public class AnswerOption  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 && assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).
    **/
@@ -97,7 +98,6 @@ public class AnswerOption  implements Serializable {
     this.assistanceConditions = assistanceConditions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class AnswerOption  implements Serializable {
       return false;
     }
     AnswerOption answerOption = (AnswerOption) o;
+
     return Objects.equals(this.id, answerOption.id) &&
-        Objects.equals(this.text, answerOption.text) &&
-        Objects.equals(this.value, answerOption.value) &&
-        Objects.equals(this.assistanceConditions, answerOption.assistanceConditions);
+            Objects.equals(this.text, answerOption.text) &&
+            Objects.equals(this.value, answerOption.value) &&
+            Objects.equals(this.assistanceConditions, answerOption.assistanceConditions);
   }
 
   @Override

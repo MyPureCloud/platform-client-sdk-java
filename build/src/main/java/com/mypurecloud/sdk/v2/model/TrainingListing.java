@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
@@ -45,7 +46,7 @@ public class TrainingListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TrainingListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class TrainingListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TrainingListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class TrainingListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TrainingListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class TrainingListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class TrainingListing  implements Serializable {
       return false;
     }
     TrainingListing trainingListing = (TrainingListing) o;
+
     return Objects.equals(this.entities, trainingListing.entities) &&
-        Objects.equals(this.nextUri, trainingListing.nextUri) &&
-        Objects.equals(this.selfUri, trainingListing.selfUri) &&
-        Objects.equals(this.previousUri, trainingListing.previousUri);
+            Objects.equals(this.nextUri, trainingListing.nextUri) &&
+            Objects.equals(this.selfUri, trainingListing.selfUri) &&
+            Objects.equals(this.previousUri, trainingListing.previousUri);
   }
 
   @Override

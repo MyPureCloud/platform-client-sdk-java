@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,14 +32,13 @@ public class ScimConfigResourceTypeSchemaExtension  implements Serializable {
     return schema;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates whether a schema extension is required.")
   @JsonProperty("required")
   public Boolean getRequired() {
     return required;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -49,8 +49,9 @@ public class ScimConfigResourceTypeSchemaExtension  implements Serializable {
       return false;
     }
     ScimConfigResourceTypeSchemaExtension scimConfigResourceTypeSchemaExtension = (ScimConfigResourceTypeSchemaExtension) o;
+
     return Objects.equals(this.schema, scimConfigResourceTypeSchemaExtension.schema) &&
-        Objects.equals(this.required, scimConfigResourceTypeSchemaExtension.required);
+            Objects.equals(this.required, scimConfigResourceTypeSchemaExtension.required);
   }
 
   @Override

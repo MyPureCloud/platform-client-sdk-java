@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ContentFacetFilterItem type(TypeEnum type) {
@@ -166,7 +167,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public ContentFacetFilterItem operator(OperatorEnum operator) {
@@ -183,7 +184,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    **/
   public ContentFacetFilterItem values(List<String> values) {
@@ -200,7 +201,6 @@ public class ContentFacetFilterItem  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -211,10 +211,11 @@ public class ContentFacetFilterItem  implements Serializable {
       return false;
     }
     ContentFacetFilterItem contentFacetFilterItem = (ContentFacetFilterItem) o;
+
     return Objects.equals(this.name, contentFacetFilterItem.name) &&
-        Objects.equals(this.type, contentFacetFilterItem.type) &&
-        Objects.equals(this.operator, contentFacetFilterItem.operator) &&
-        Objects.equals(this.values, contentFacetFilterItem.values);
+            Objects.equals(this.type, contentFacetFilterItem.type) &&
+            Objects.equals(this.operator, contentFacetFilterItem.operator) &&
+            Objects.equals(this.values, contentFacetFilterItem.values);
   }
 
   @Override

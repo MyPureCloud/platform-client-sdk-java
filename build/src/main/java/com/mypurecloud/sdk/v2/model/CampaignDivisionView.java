@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -33,7 +34,7 @@ public class CampaignDivisionView  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CampaignDivisionView name(String name) {
@@ -50,7 +51,7 @@ public class CampaignDivisionView  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -68,14 +69,13 @@ public class CampaignDivisionView  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,10 +86,11 @@ public class CampaignDivisionView  implements Serializable {
       return false;
     }
     CampaignDivisionView campaignDivisionView = (CampaignDivisionView) o;
+
     return Objects.equals(this.id, campaignDivisionView.id) &&
-        Objects.equals(this.name, campaignDivisionView.name) &&
-        Objects.equals(this.division, campaignDivisionView.division) &&
-        Objects.equals(this.selfUri, campaignDivisionView.selfUri);
+            Objects.equals(this.name, campaignDivisionView.name) &&
+            Objects.equals(this.division, campaignDivisionView.division) &&
+            Objects.equals(this.selfUri, campaignDivisionView.selfUri);
   }
 
   @Override

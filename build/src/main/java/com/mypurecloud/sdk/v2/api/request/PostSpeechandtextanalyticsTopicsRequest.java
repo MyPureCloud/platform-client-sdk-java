@@ -20,36 +20,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class PostSpeechandtextanalyticsTopicsRequest {
-    
+
 	private TopicRequest body;
 	public TopicRequest getBody() {
 		return this.body;
@@ -63,7 +63,7 @@ public class PostSpeechandtextanalyticsTopicsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,8 +93,8 @@ public class PostSpeechandtextanalyticsTopicsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/speechandtextanalytics/topics")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class PostSpeechandtextanalyticsTopicsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(TopicRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostSpeechandtextanalyticsTopicsRequest request;
@@ -119,20 +119,20 @@ public class PostSpeechandtextanalyticsTopicsRequest {
 			request = new PostSpeechandtextanalyticsTopicsRequest();
 		}
 
-		
+
 		public Builder withBody(TopicRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(TopicRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostSpeechandtextanalyticsTopicsRequest build() {
             

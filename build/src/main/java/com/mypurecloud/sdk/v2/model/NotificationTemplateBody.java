@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NotificationTemplateParameter;
@@ -45,7 +46,7 @@ public class NotificationTemplateBody  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Template parameters for placeholders in template.
    **/
@@ -63,7 +64,6 @@ public class NotificationTemplateBody  implements Serializable {
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class NotificationTemplateBody  implements Serializable {
       return false;
     }
     NotificationTemplateBody notificationTemplateBody = (NotificationTemplateBody) o;
+
     return Objects.equals(this.text, notificationTemplateBody.text) &&
-        Objects.equals(this.parameters, notificationTemplateBody.parameters);
+            Objects.equals(this.parameters, notificationTemplateBody.parameters);
   }
 
   @Override

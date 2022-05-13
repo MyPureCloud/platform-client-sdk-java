@@ -13,9 +13,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserDevice;
-import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteMobiledeviceRequest;
@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class MobileDevicesApiAsync {
   private final ApiClient pcapiClient;
 
@@ -43,7 +42,6 @@ public class MobileDevicesApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete device
    * 
@@ -119,7 +117,6 @@ public class MobileDevicesApiAsync {
     }
   }
 
-  
   /**
    * Get device
    * 
@@ -195,7 +192,6 @@ public class MobileDevicesApiAsync {
     }
   }
 
-  
   /**
    * Get a list of all devices.
    * 
@@ -271,7 +267,6 @@ public class MobileDevicesApiAsync {
     }
   }
 
-  
   /**
    * Create User device
    * 
@@ -347,7 +342,6 @@ public class MobileDevicesApiAsync {
     }
   }
 
-  
   /**
    * Update device
    * 
@@ -423,7 +417,6 @@ public class MobileDevicesApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

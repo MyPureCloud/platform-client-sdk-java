@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class FaxSendRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public FaxSendRequest name(String name) {
@@ -109,7 +110,7 @@ public class FaxSendRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A list of outbound fax dialing addresses. E.g. +13175555555 or 3175555555
    **/
@@ -127,7 +128,7 @@ public class FaxSendRequest  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    * DocumentId of Content Management artifact. If Content Management document is not used for faxing, documentId should be null
    **/
@@ -145,7 +146,7 @@ public class FaxSendRequest  implements Serializable {
     this.documentId = documentId;
   }
 
-  
+
   /**
    * The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored
    **/
@@ -163,7 +164,7 @@ public class FaxSendRequest  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * Workspace in which the document should be stored. If Content Management document is used for faxing, workspace will be ignored
    **/
@@ -181,7 +182,7 @@ public class FaxSendRequest  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    * Data for coversheet generation.
    **/
@@ -199,7 +200,7 @@ public class FaxSendRequest  implements Serializable {
     this.coverSheet = coverSheet;
   }
 
-  
+
   /**
    * Time zone offset minutes from GMT
    **/
@@ -217,14 +218,13 @@ public class FaxSendRequest  implements Serializable {
     this.timeZoneOffsetMinutes = timeZoneOffsetMinutes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -235,15 +235,16 @@ public class FaxSendRequest  implements Serializable {
       return false;
     }
     FaxSendRequest faxSendRequest = (FaxSendRequest) o;
+
     return Objects.equals(this.id, faxSendRequest.id) &&
-        Objects.equals(this.name, faxSendRequest.name) &&
-        Objects.equals(this.addresses, faxSendRequest.addresses) &&
-        Objects.equals(this.documentId, faxSendRequest.documentId) &&
-        Objects.equals(this.contentType, faxSendRequest.contentType) &&
-        Objects.equals(this.workspace, faxSendRequest.workspace) &&
-        Objects.equals(this.coverSheet, faxSendRequest.coverSheet) &&
-        Objects.equals(this.timeZoneOffsetMinutes, faxSendRequest.timeZoneOffsetMinutes) &&
-        Objects.equals(this.selfUri, faxSendRequest.selfUri);
+            Objects.equals(this.name, faxSendRequest.name) &&
+            Objects.equals(this.addresses, faxSendRequest.addresses) &&
+            Objects.equals(this.documentId, faxSendRequest.documentId) &&
+            Objects.equals(this.contentType, faxSendRequest.contentType) &&
+            Objects.equals(this.workspace, faxSendRequest.workspace) &&
+            Objects.equals(this.coverSheet, faxSendRequest.coverSheet) &&
+            Objects.equals(this.timeZoneOffsetMinutes, faxSendRequest.timeZoneOffsetMinutes) &&
+            Objects.equals(this.selfUri, faxSendRequest.selfUri);
   }
 
   @Override

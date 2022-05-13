@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class AssociatedValueField  implements Serializable {
     this.dataType = dataType;
   }
 
-  
+
   /**
    * The field name for extracting value from event.
    **/
@@ -107,7 +108,6 @@ public class AssociatedValueField  implements Serializable {
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class AssociatedValueField  implements Serializable {
       return false;
     }
     AssociatedValueField associatedValueField = (AssociatedValueField) o;
+
     return Objects.equals(this.dataType, associatedValueField.dataType) &&
-        Objects.equals(this.name, associatedValueField.name);
+            Objects.equals(this.name, associatedValueField.name);
   }
 
   @Override

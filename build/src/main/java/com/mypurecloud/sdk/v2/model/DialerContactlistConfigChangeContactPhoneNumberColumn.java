@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
     this.columnName = columnName;
   }
 
-  
+
   /**
    * type of the phone column, for example, 'cell' or 'home'
    **/
@@ -60,7 +61,7 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
     this.type = type;
   }
 
-  
+
   /**
    * name of the column indicating the timezone to be considered for determining callable times
    **/
@@ -78,7 +79,6 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
     this.callableTimeColumn = callableTimeColumn;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class DialerContactlistConfigChangeContactPhoneNumberColumn  implements S
       return false;
     }
     DialerContactlistConfigChangeContactPhoneNumberColumn dialerContactlistConfigChangeContactPhoneNumberColumn = (DialerContactlistConfigChangeContactPhoneNumberColumn) o;
+
     return Objects.equals(this.columnName, dialerContactlistConfigChangeContactPhoneNumberColumn.columnName) &&
-        Objects.equals(this.type, dialerContactlistConfigChangeContactPhoneNumberColumn.type) &&
-        Objects.equals(this.callableTimeColumn, dialerContactlistConfigChangeContactPhoneNumberColumn.callableTimeColumn);
+            Objects.equals(this.type, dialerContactlistConfigChangeContactPhoneNumberColumn.type) &&
+            Objects.equals(this.callableTimeColumn, dialerContactlistConfigChangeContactPhoneNumberColumn.callableTimeColumn);
   }
 
   @Override

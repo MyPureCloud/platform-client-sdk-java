@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionConfig;
@@ -48,7 +49,7 @@ public class PostActionInput  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * Name of action, Can be up to 256 characters long
    **/
@@ -66,7 +67,7 @@ public class PostActionInput  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The ID of the integration this action is associated to
    **/
@@ -84,7 +85,7 @@ public class PostActionInput  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
+
   /**
    * Configuration to support request and response processing
    **/
@@ -102,7 +103,7 @@ public class PostActionInput  implements Serializable {
     this.config = config;
   }
 
-  
+
   /**
    * Action contract
    **/
@@ -120,7 +121,7 @@ public class PostActionInput  implements Serializable {
     this.contract = contract;
   }
 
-  
+
   /**
    * Indication of whether or not the action is designed to accept sensitive data
    **/
@@ -138,7 +139,6 @@ public class PostActionInput  implements Serializable {
     this.secure = secure;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +149,13 @@ public class PostActionInput  implements Serializable {
       return false;
     }
     PostActionInput postActionInput = (PostActionInput) o;
+
     return Objects.equals(this.category, postActionInput.category) &&
-        Objects.equals(this.name, postActionInput.name) &&
-        Objects.equals(this.integrationId, postActionInput.integrationId) &&
-        Objects.equals(this.config, postActionInput.config) &&
-        Objects.equals(this.contract, postActionInput.contract) &&
-        Objects.equals(this.secure, postActionInput.secure);
+            Objects.equals(this.name, postActionInput.name) &&
+            Objects.equals(this.integrationId, postActionInput.integrationId) &&
+            Objects.equals(this.config, postActionInput.config) &&
+            Objects.equals(this.contract, postActionInput.contract) &&
+            Objects.equals(this.secure, postActionInput.secure);
   }
 
   @Override

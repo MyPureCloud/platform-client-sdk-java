@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -359,7 +360,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.id = id;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert name(String name) {
@@ -376,7 +377,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.name = name;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert ruleId(String ruleId) {
@@ -393,7 +394,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.ruleId = ruleId;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert dimension(DimensionEnum dimension) {
@@ -410,7 +411,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.dimension = dimension;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert dimensionValue(String dimensionValue) {
@@ -427,7 +428,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.dimensionValue = dimensionValue;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert dimensionValueName(String dimensionValueName) {
@@ -444,7 +445,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.dimensionValueName = dimensionValueName;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert metric(MetricEnum metric) {
@@ -461,7 +462,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert mediaType(MediaTypeEnum mediaType) {
@@ -478,7 +479,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert numericRange(NumericRangeEnum numericRange) {
@@ -495,7 +496,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.numericRange = numericRange;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert statistic(StatisticEnum statistic) {
@@ -512,7 +513,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.statistic = statistic;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert value(BigDecimal value) {
@@ -529,7 +530,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.value = value;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert unread(Boolean unread) {
@@ -546,7 +547,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.unread = unread;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert startDate(Date startDate) {
@@ -563,7 +564,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert endDate(Date endDate) {
@@ -580,7 +581,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert notificationUsers(List<KlaxonInteractionStatsAlertsTopicNotificationUser> notificationUsers) {
@@ -597,7 +598,7 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.notificationUsers = notificationUsers;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsAlertsTopicInteractionStatAlert alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -614,7 +615,6 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
     this.alertTypes = alertTypes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -625,22 +625,23 @@ public class KlaxonInteractionStatsAlertsTopicInteractionStatAlert  implements S
       return false;
     }
     KlaxonInteractionStatsAlertsTopicInteractionStatAlert klaxonInteractionStatsAlertsTopicInteractionStatAlert = (KlaxonInteractionStatsAlertsTopicInteractionStatAlert) o;
+
     return Objects.equals(this.id, klaxonInteractionStatsAlertsTopicInteractionStatAlert.id) &&
-        Objects.equals(this.name, klaxonInteractionStatsAlertsTopicInteractionStatAlert.name) &&
-        Objects.equals(this.ruleId, klaxonInteractionStatsAlertsTopicInteractionStatAlert.ruleId) &&
-        Objects.equals(this.dimension, klaxonInteractionStatsAlertsTopicInteractionStatAlert.dimension) &&
-        Objects.equals(this.dimensionValue, klaxonInteractionStatsAlertsTopicInteractionStatAlert.dimensionValue) &&
-        Objects.equals(this.dimensionValueName, klaxonInteractionStatsAlertsTopicInteractionStatAlert.dimensionValueName) &&
-        Objects.equals(this.metric, klaxonInteractionStatsAlertsTopicInteractionStatAlert.metric) &&
-        Objects.equals(this.mediaType, klaxonInteractionStatsAlertsTopicInteractionStatAlert.mediaType) &&
-        Objects.equals(this.numericRange, klaxonInteractionStatsAlertsTopicInteractionStatAlert.numericRange) &&
-        Objects.equals(this.statistic, klaxonInteractionStatsAlertsTopicInteractionStatAlert.statistic) &&
-        Objects.equals(this.value, klaxonInteractionStatsAlertsTopicInteractionStatAlert.value) &&
-        Objects.equals(this.unread, klaxonInteractionStatsAlertsTopicInteractionStatAlert.unread) &&
-        Objects.equals(this.startDate, klaxonInteractionStatsAlertsTopicInteractionStatAlert.startDate) &&
-        Objects.equals(this.endDate, klaxonInteractionStatsAlertsTopicInteractionStatAlert.endDate) &&
-        Objects.equals(this.notificationUsers, klaxonInteractionStatsAlertsTopicInteractionStatAlert.notificationUsers) &&
-        Objects.equals(this.alertTypes, klaxonInteractionStatsAlertsTopicInteractionStatAlert.alertTypes);
+            Objects.equals(this.name, klaxonInteractionStatsAlertsTopicInteractionStatAlert.name) &&
+            Objects.equals(this.ruleId, klaxonInteractionStatsAlertsTopicInteractionStatAlert.ruleId) &&
+            Objects.equals(this.dimension, klaxonInteractionStatsAlertsTopicInteractionStatAlert.dimension) &&
+            Objects.equals(this.dimensionValue, klaxonInteractionStatsAlertsTopicInteractionStatAlert.dimensionValue) &&
+            Objects.equals(this.dimensionValueName, klaxonInteractionStatsAlertsTopicInteractionStatAlert.dimensionValueName) &&
+            Objects.equals(this.metric, klaxonInteractionStatsAlertsTopicInteractionStatAlert.metric) &&
+            Objects.equals(this.mediaType, klaxonInteractionStatsAlertsTopicInteractionStatAlert.mediaType) &&
+            Objects.equals(this.numericRange, klaxonInteractionStatsAlertsTopicInteractionStatAlert.numericRange) &&
+            Objects.equals(this.statistic, klaxonInteractionStatsAlertsTopicInteractionStatAlert.statistic) &&
+            Objects.equals(this.value, klaxonInteractionStatsAlertsTopicInteractionStatAlert.value) &&
+            Objects.equals(this.unread, klaxonInteractionStatsAlertsTopicInteractionStatAlert.unread) &&
+            Objects.equals(this.startDate, klaxonInteractionStatsAlertsTopicInteractionStatAlert.startDate) &&
+            Objects.equals(this.endDate, klaxonInteractionStatsAlertsTopicInteractionStatAlert.endDate) &&
+            Objects.equals(this.notificationUsers, klaxonInteractionStatsAlertsTopicInteractionStatAlert.notificationUsers) &&
+            Objects.equals(this.alertTypes, klaxonInteractionStatsAlertsTopicInteractionStatAlert.alertTypes);
   }
 
   @Override

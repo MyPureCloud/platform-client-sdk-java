@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -93,7 +94,7 @@ public class IntradayPlanningGroupRequest  implements Serializable {
     this.businessUnitDate = businessUnitDate;
   }
 
-  
+
   /**
    * The metric categories
    **/
@@ -111,7 +112,7 @@ public class IntradayPlanningGroupRequest  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   /**
    * The IDs of the planning groups for which to fetch data.  Omitting or passing an empty list will return all available planning groups
    **/
@@ -129,7 +130,7 @@ public class IntradayPlanningGroupRequest  implements Serializable {
     this.planningGroupIds = planningGroupIds;
   }
 
-  
+
   /**
    * The period/interval in minutes for which to aggregate the data. Required, defaults to 15
    **/
@@ -147,7 +148,6 @@ public class IntradayPlanningGroupRequest  implements Serializable {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,10 +158,11 @@ public class IntradayPlanningGroupRequest  implements Serializable {
       return false;
     }
     IntradayPlanningGroupRequest intradayPlanningGroupRequest = (IntradayPlanningGroupRequest) o;
+
     return Objects.equals(this.businessUnitDate, intradayPlanningGroupRequest.businessUnitDate) &&
-        Objects.equals(this.categories, intradayPlanningGroupRequest.categories) &&
-        Objects.equals(this.planningGroupIds, intradayPlanningGroupRequest.planningGroupIds) &&
-        Objects.equals(this.intervalLengthMinutes, intradayPlanningGroupRequest.intervalLengthMinutes);
+            Objects.equals(this.categories, intradayPlanningGroupRequest.categories) &&
+            Objects.equals(this.planningGroupIds, intradayPlanningGroupRequest.planningGroupIds) &&
+            Objects.equals(this.intervalLengthMinutes, intradayPlanningGroupRequest.intervalLengthMinutes);
   }
 
   @Override

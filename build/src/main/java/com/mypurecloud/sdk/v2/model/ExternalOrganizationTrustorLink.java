@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * The id of a PureCloud organization that has granted trust to this PureCloud organization
    **/
@@ -62,7 +63,7 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     this.trustorOrgId = trustorOrgId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -80,14 +81,13 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for the External Organization that is linked to the trustor org")
   @JsonProperty("externalOrganizationUri")
   public String getExternalOrganizationUri() {
     return externalOrganizationUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -98,10 +98,11 @@ public class ExternalOrganizationTrustorLink  implements Serializable {
       return false;
     }
     ExternalOrganizationTrustorLink externalOrganizationTrustorLink = (ExternalOrganizationTrustorLink) o;
+
     return Objects.equals(this.externalOrganizationId, externalOrganizationTrustorLink.externalOrganizationId) &&
-        Objects.equals(this.trustorOrgId, externalOrganizationTrustorLink.trustorOrgId) &&
-        Objects.equals(this.dateCreated, externalOrganizationTrustorLink.dateCreated) &&
-        Objects.equals(this.externalOrganizationUri, externalOrganizationTrustorLink.externalOrganizationUri);
+            Objects.equals(this.trustorOrgId, externalOrganizationTrustorLink.trustorOrgId) &&
+            Objects.equals(this.dateCreated, externalOrganizationTrustorLink.dateCreated) &&
+            Objects.equals(this.externalOrganizationUri, externalOrganizationTrustorLink.externalOrganizationUri);
   }
 
   @Override

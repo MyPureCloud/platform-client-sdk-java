@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmScheduleReference;
@@ -54,7 +55,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The description of coaching appointment.
    **/
@@ -72,7 +73,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -90,7 +91,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * The duration of coaching appointment in minutes.
    **/
@@ -108,7 +109,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * The facilitator ID of coaching appointment.
    **/
@@ -126,7 +127,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.facilitatorId = facilitatorId;
   }
 
-  
+
   /**
    * IDs of attendees in the coaching appointment.
    **/
@@ -144,7 +145,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.attendeeIds = attendeeIds;
   }
 
-  
+
   /**
    * IDs of conversations associated with this coaching appointment.
    **/
@@ -162,7 +163,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.conversationIds = conversationIds;
   }
 
-  
+
   /**
    * IDs of documents associated with this coaching appointment.
    **/
@@ -180,7 +181,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.documentIds = documentIds;
   }
 
-  
+
   /**
    * The Workforce Management schedule the appointment is associated with.
    **/
@@ -198,7 +199,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.wfmSchedule = wfmSchedule;
   }
 
-  
+
   /**
    * The list of external links related to the appointment
    **/
@@ -216,7 +217,6 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     this.externalLinks = externalLinks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,16 +227,17 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
       return false;
     }
     CreateCoachingAppointmentRequest createCoachingAppointmentRequest = (CreateCoachingAppointmentRequest) o;
+
     return Objects.equals(this.name, createCoachingAppointmentRequest.name) &&
-        Objects.equals(this.description, createCoachingAppointmentRequest.description) &&
-        Objects.equals(this.dateStart, createCoachingAppointmentRequest.dateStart) &&
-        Objects.equals(this.lengthInMinutes, createCoachingAppointmentRequest.lengthInMinutes) &&
-        Objects.equals(this.facilitatorId, createCoachingAppointmentRequest.facilitatorId) &&
-        Objects.equals(this.attendeeIds, createCoachingAppointmentRequest.attendeeIds) &&
-        Objects.equals(this.conversationIds, createCoachingAppointmentRequest.conversationIds) &&
-        Objects.equals(this.documentIds, createCoachingAppointmentRequest.documentIds) &&
-        Objects.equals(this.wfmSchedule, createCoachingAppointmentRequest.wfmSchedule) &&
-        Objects.equals(this.externalLinks, createCoachingAppointmentRequest.externalLinks);
+            Objects.equals(this.description, createCoachingAppointmentRequest.description) &&
+            Objects.equals(this.dateStart, createCoachingAppointmentRequest.dateStart) &&
+            Objects.equals(this.lengthInMinutes, createCoachingAppointmentRequest.lengthInMinutes) &&
+            Objects.equals(this.facilitatorId, createCoachingAppointmentRequest.facilitatorId) &&
+            Objects.equals(this.attendeeIds, createCoachingAppointmentRequest.attendeeIds) &&
+            Objects.equals(this.conversationIds, createCoachingAppointmentRequest.conversationIds) &&
+            Objects.equals(this.documentIds, createCoachingAppointmentRequest.documentIds) &&
+            Objects.equals(this.wfmSchedule, createCoachingAppointmentRequest.wfmSchedule) &&
+            Objects.equals(this.externalLinks, createCoachingAppointmentRequest.externalLinks);
   }
 
   @Override

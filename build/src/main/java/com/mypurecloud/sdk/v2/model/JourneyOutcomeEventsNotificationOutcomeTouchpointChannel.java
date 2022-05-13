@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -88,7 +89,6 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpointChannel  implement
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,6 +99,7 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpointChannel  implement
       return false;
     }
     JourneyOutcomeEventsNotificationOutcomeTouchpointChannel journeyOutcomeEventsNotificationOutcomeTouchpointChannel = (JourneyOutcomeEventsNotificationOutcomeTouchpointChannel) o;
+
     return Objects.equals(this.type, journeyOutcomeEventsNotificationOutcomeTouchpointChannel.type);
   }
 

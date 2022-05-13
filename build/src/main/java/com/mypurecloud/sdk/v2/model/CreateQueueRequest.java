@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -122,7 +123,7 @@ public class CreateQueueRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The queue name
    **/
@@ -140,7 +141,7 @@ public class CreateQueueRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -158,7 +159,7 @@ public class CreateQueueRequest  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The queue description.
    **/
@@ -176,7 +177,7 @@ public class CreateQueueRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -194,7 +195,7 @@ public class CreateQueueRequest  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -212,7 +213,7 @@ public class CreateQueueRequest  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the queue.
    **/
@@ -230,7 +231,7 @@ public class CreateQueueRequest  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the queue.
    **/
@@ -248,28 +249,28 @@ public class CreateQueueRequest  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of members in the queue.")
   @JsonProperty("memberCount")
   public Integer getMemberCount() {
     return memberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of user members (i.e., non-group members) in the queue.")
   @JsonProperty("userMemberCount")
   public Integer getUserMemberCount() {
     return userMemberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of joined members in the queue.")
   @JsonProperty("joinedMemberCount")
   public Integer getJoinedMemberCount() {
     return joinedMemberCount;
   }
 
-  
+
   /**
    * The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
    **/
@@ -287,7 +288,7 @@ public class CreateQueueRequest  implements Serializable {
     this.mediaSettings = mediaSettings;
   }
 
-  
+
   /**
    * The routing rules for the queue, used for Preferred Agent Routing.
    **/
@@ -305,7 +306,7 @@ public class CreateQueueRequest  implements Serializable {
     this.routingRules = routingRules;
   }
 
-  
+
   /**
    * The bullseye settings for the queue.
    **/
@@ -323,7 +324,7 @@ public class CreateQueueRequest  implements Serializable {
     this.bullseye = bullseye;
   }
 
-  
+
   /**
    * The ACW settings for the queue.
    **/
@@ -341,7 +342,7 @@ public class CreateQueueRequest  implements Serializable {
     this.acwSettings = acwSettings;
   }
 
-  
+
   /**
    * The skill evaluation method to use when routing conversations.
    **/
@@ -359,7 +360,7 @@ public class CreateQueueRequest  implements Serializable {
     this.skillEvaluationMethod = skillEvaluationMethod;
   }
 
-  
+
   /**
    * The in-queue flow to use for call conversations waiting in queue.
    **/
@@ -377,7 +378,7 @@ public class CreateQueueRequest  implements Serializable {
     this.queueFlow = queueFlow;
   }
 
-  
+
   /**
    * The in-queue flow to use for email conversations waiting in queue.
    **/
@@ -395,7 +396,7 @@ public class CreateQueueRequest  implements Serializable {
     this.emailInQueueFlow = emailInQueueFlow;
   }
 
-  
+
   /**
    * The in-queue flow to use for message conversations waiting in queue.
    **/
@@ -413,7 +414,7 @@ public class CreateQueueRequest  implements Serializable {
     this.messageInQueueFlow = messageInQueueFlow;
   }
 
-  
+
   /**
    * The prompt used for whisper on the queue, if configured.
    **/
@@ -431,7 +432,7 @@ public class CreateQueueRequest  implements Serializable {
     this.whisperPrompt = whisperPrompt;
   }
 
-  
+
   /**
    * The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
    **/
@@ -449,7 +450,7 @@ public class CreateQueueRequest  implements Serializable {
     this.onHoldPrompt = onHoldPrompt;
   }
 
-  
+
   /**
    * Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
    **/
@@ -467,7 +468,7 @@ public class CreateQueueRequest  implements Serializable {
     this.autoAnswerOnly = autoAnswerOnly;
   }
 
-  
+
   /**
    * Indicates whether voice transcription is enabled for this queue.
    **/
@@ -485,7 +486,7 @@ public class CreateQueueRequest  implements Serializable {
     this.enableTranscription = enableTranscription;
   }
 
-  
+
   /**
    * Indicates whether manual assignment is enabled for this queue.
    **/
@@ -503,7 +504,7 @@ public class CreateQueueRequest  implements Serializable {
     this.enableManualAssignment = enableManualAssignment;
   }
 
-  
+
   /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
@@ -521,7 +522,7 @@ public class CreateQueueRequest  implements Serializable {
     this.callingPartyName = callingPartyName;
   }
 
-  
+
   /**
    * The phone number to use for caller identification for outbound calls from this queue.
    **/
@@ -539,7 +540,7 @@ public class CreateQueueRequest  implements Serializable {
     this.callingPartyNumber = callingPartyNumber;
   }
 
-  
+
   /**
    * The default script Ids for the communication types.
    **/
@@ -557,7 +558,7 @@ public class CreateQueueRequest  implements Serializable {
     this.defaultScripts = defaultScripts;
   }
 
-  
+
   /**
    * The messaging addresses for the queue.
    **/
@@ -575,7 +576,7 @@ public class CreateQueueRequest  implements Serializable {
     this.outboundMessagingAddresses = outboundMessagingAddresses;
   }
 
-  
+
   /**
    **/
   public CreateQueueRequest outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
@@ -592,7 +593,7 @@ public class CreateQueueRequest  implements Serializable {
     this.outboundEmailAddress = outboundEmailAddress;
   }
 
-  
+
   /**
    * The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
    **/
@@ -610,14 +611,13 @@ public class CreateQueueRequest  implements Serializable {
     this.sourceQueueId = sourceQueueId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -628,37 +628,38 @@ public class CreateQueueRequest  implements Serializable {
       return false;
     }
     CreateQueueRequest createQueueRequest = (CreateQueueRequest) o;
+
     return Objects.equals(this.id, createQueueRequest.id) &&
-        Objects.equals(this.name, createQueueRequest.name) &&
-        Objects.equals(this.division, createQueueRequest.division) &&
-        Objects.equals(this.description, createQueueRequest.description) &&
-        Objects.equals(this.dateCreated, createQueueRequest.dateCreated) &&
-        Objects.equals(this.dateModified, createQueueRequest.dateModified) &&
-        Objects.equals(this.modifiedBy, createQueueRequest.modifiedBy) &&
-        Objects.equals(this.createdBy, createQueueRequest.createdBy) &&
-        Objects.equals(this.memberCount, createQueueRequest.memberCount) &&
-        Objects.equals(this.userMemberCount, createQueueRequest.userMemberCount) &&
-        Objects.equals(this.joinedMemberCount, createQueueRequest.joinedMemberCount) &&
-        Objects.equals(this.mediaSettings, createQueueRequest.mediaSettings) &&
-        Objects.equals(this.routingRules, createQueueRequest.routingRules) &&
-        Objects.equals(this.bullseye, createQueueRequest.bullseye) &&
-        Objects.equals(this.acwSettings, createQueueRequest.acwSettings) &&
-        Objects.equals(this.skillEvaluationMethod, createQueueRequest.skillEvaluationMethod) &&
-        Objects.equals(this.queueFlow, createQueueRequest.queueFlow) &&
-        Objects.equals(this.emailInQueueFlow, createQueueRequest.emailInQueueFlow) &&
-        Objects.equals(this.messageInQueueFlow, createQueueRequest.messageInQueueFlow) &&
-        Objects.equals(this.whisperPrompt, createQueueRequest.whisperPrompt) &&
-        Objects.equals(this.onHoldPrompt, createQueueRequest.onHoldPrompt) &&
-        Objects.equals(this.autoAnswerOnly, createQueueRequest.autoAnswerOnly) &&
-        Objects.equals(this.enableTranscription, createQueueRequest.enableTranscription) &&
-        Objects.equals(this.enableManualAssignment, createQueueRequest.enableManualAssignment) &&
-        Objects.equals(this.callingPartyName, createQueueRequest.callingPartyName) &&
-        Objects.equals(this.callingPartyNumber, createQueueRequest.callingPartyNumber) &&
-        Objects.equals(this.defaultScripts, createQueueRequest.defaultScripts) &&
-        Objects.equals(this.outboundMessagingAddresses, createQueueRequest.outboundMessagingAddresses) &&
-        Objects.equals(this.outboundEmailAddress, createQueueRequest.outboundEmailAddress) &&
-        Objects.equals(this.sourceQueueId, createQueueRequest.sourceQueueId) &&
-        Objects.equals(this.selfUri, createQueueRequest.selfUri);
+            Objects.equals(this.name, createQueueRequest.name) &&
+            Objects.equals(this.division, createQueueRequest.division) &&
+            Objects.equals(this.description, createQueueRequest.description) &&
+            Objects.equals(this.dateCreated, createQueueRequest.dateCreated) &&
+            Objects.equals(this.dateModified, createQueueRequest.dateModified) &&
+            Objects.equals(this.modifiedBy, createQueueRequest.modifiedBy) &&
+            Objects.equals(this.createdBy, createQueueRequest.createdBy) &&
+            Objects.equals(this.memberCount, createQueueRequest.memberCount) &&
+            Objects.equals(this.userMemberCount, createQueueRequest.userMemberCount) &&
+            Objects.equals(this.joinedMemberCount, createQueueRequest.joinedMemberCount) &&
+            Objects.equals(this.mediaSettings, createQueueRequest.mediaSettings) &&
+            Objects.equals(this.routingRules, createQueueRequest.routingRules) &&
+            Objects.equals(this.bullseye, createQueueRequest.bullseye) &&
+            Objects.equals(this.acwSettings, createQueueRequest.acwSettings) &&
+            Objects.equals(this.skillEvaluationMethod, createQueueRequest.skillEvaluationMethod) &&
+            Objects.equals(this.queueFlow, createQueueRequest.queueFlow) &&
+            Objects.equals(this.emailInQueueFlow, createQueueRequest.emailInQueueFlow) &&
+            Objects.equals(this.messageInQueueFlow, createQueueRequest.messageInQueueFlow) &&
+            Objects.equals(this.whisperPrompt, createQueueRequest.whisperPrompt) &&
+            Objects.equals(this.onHoldPrompt, createQueueRequest.onHoldPrompt) &&
+            Objects.equals(this.autoAnswerOnly, createQueueRequest.autoAnswerOnly) &&
+            Objects.equals(this.enableTranscription, createQueueRequest.enableTranscription) &&
+            Objects.equals(this.enableManualAssignment, createQueueRequest.enableManualAssignment) &&
+            Objects.equals(this.callingPartyName, createQueueRequest.callingPartyName) &&
+            Objects.equals(this.callingPartyNumber, createQueueRequest.callingPartyNumber) &&
+            Objects.equals(this.defaultScripts, createQueueRequest.defaultScripts) &&
+            Objects.equals(this.outboundMessagingAddresses, createQueueRequest.outboundMessagingAddresses) &&
+            Objects.equals(this.outboundEmailAddress, createQueueRequest.outboundEmailAddress) &&
+            Objects.equals(this.sourceQueueId, createQueueRequest.sourceQueueId) &&
+            Objects.equals(this.selfUri, createQueueRequest.selfUri);
   }
 
   @Override

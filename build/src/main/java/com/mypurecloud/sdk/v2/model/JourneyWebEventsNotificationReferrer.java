@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer domain(String domain) {
@@ -116,7 +117,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer hostname(String hostname) {
@@ -133,7 +134,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.hostname = hostname;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer keywords(String keywords) {
@@ -150,7 +151,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.keywords = keywords;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer pathname(String pathname) {
@@ -167,7 +168,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.pathname = pathname;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer queryString(String queryString) {
@@ -184,7 +185,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.queryString = queryString;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer fragment(String fragment) {
@@ -201,7 +202,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.fragment = fragment;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer name(String name) {
@@ -218,7 +219,7 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationReferrer medium(MediumEnum medium) {
@@ -235,7 +236,6 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
     this.medium = medium;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -246,15 +246,16 @@ public class JourneyWebEventsNotificationReferrer  implements Serializable {
       return false;
     }
     JourneyWebEventsNotificationReferrer journeyWebEventsNotificationReferrer = (JourneyWebEventsNotificationReferrer) o;
+
     return Objects.equals(this.url, journeyWebEventsNotificationReferrer.url) &&
-        Objects.equals(this.domain, journeyWebEventsNotificationReferrer.domain) &&
-        Objects.equals(this.hostname, journeyWebEventsNotificationReferrer.hostname) &&
-        Objects.equals(this.keywords, journeyWebEventsNotificationReferrer.keywords) &&
-        Objects.equals(this.pathname, journeyWebEventsNotificationReferrer.pathname) &&
-        Objects.equals(this.queryString, journeyWebEventsNotificationReferrer.queryString) &&
-        Objects.equals(this.fragment, journeyWebEventsNotificationReferrer.fragment) &&
-        Objects.equals(this.name, journeyWebEventsNotificationReferrer.name) &&
-        Objects.equals(this.medium, journeyWebEventsNotificationReferrer.medium);
+            Objects.equals(this.domain, journeyWebEventsNotificationReferrer.domain) &&
+            Objects.equals(this.hostname, journeyWebEventsNotificationReferrer.hostname) &&
+            Objects.equals(this.keywords, journeyWebEventsNotificationReferrer.keywords) &&
+            Objects.equals(this.pathname, journeyWebEventsNotificationReferrer.pathname) &&
+            Objects.equals(this.queryString, journeyWebEventsNotificationReferrer.queryString) &&
+            Objects.equals(this.fragment, journeyWebEventsNotificationReferrer.fragment) &&
+            Objects.equals(this.name, journeyWebEventsNotificationReferrer.name) &&
+            Objects.equals(this.medium, journeyWebEventsNotificationReferrer.medium);
   }
 
   @Override

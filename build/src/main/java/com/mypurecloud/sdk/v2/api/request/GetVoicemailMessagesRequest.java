@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class GetVoicemailMessagesRequest {
-    
+
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -47,7 +47,7 @@ public class GetVoicemailMessagesRequest {
 	    this.setIds(ids);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -63,10 +63,10 @@ public class GetVoicemailMessagesRequest {
 	} 
 
 	public enum expandValues { 
-		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"), 
-		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"), 
-		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"), 
-		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"), 
+		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"),
+		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"),
+		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"),
+		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"),
 		CALLERUSER_GEOLOCATION("callerUser.geolocation");
 
 		private String value;
@@ -94,7 +94,7 @@ public class GetVoicemailMessagesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,11 +118,13 @@ public class GetVoicemailMessagesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/messages")
+
                 .withQueryParameters("ids", "", ids)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -133,7 +135,7 @@ public class GetVoicemailMessagesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetVoicemailMessagesRequest request;
@@ -142,16 +144,18 @@ public class GetVoicemailMessagesRequest {
 			request = new GetVoicemailMessagesRequest();
 		}
 
-		
+
 		public Builder withIds(String ids) {
 			request.setIds(ids);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -161,9 +165,9 @@ public class GetVoicemailMessagesRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 
 		public GetVoicemailMessagesRequest build() {
             

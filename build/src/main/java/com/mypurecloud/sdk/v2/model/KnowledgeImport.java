@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -200,7 +201,7 @@ public class KnowledgeImport  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Name of the import operation
    **/
@@ -218,7 +219,7 @@ public class KnowledgeImport  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Upload key
    **/
@@ -236,7 +237,7 @@ public class KnowledgeImport  implements Serializable {
     this.uploadKey = uploadKey;
   }
 
-  
+
   /**
    * file type of the document
    **/
@@ -254,7 +255,7 @@ public class KnowledgeImport  implements Serializable {
     this.fileType = fileType;
   }
 
-  
+
   /**
    * Ignore headers for the specified file
    **/
@@ -272,56 +273,55 @@ public class KnowledgeImport  implements Serializable {
     this.ignoreHeaders = ignoreHeaders;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of the operation")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Report of the import operation")
   @JsonProperty("report")
   public ImportReport getReport() {
     return report;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base which document import does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Language code")
   @JsonProperty("languageCode")
   public LanguageCodeEnum getLanguageCode() {
     return languageCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -332,18 +332,19 @@ public class KnowledgeImport  implements Serializable {
       return false;
     }
     KnowledgeImport knowledgeImport = (KnowledgeImport) o;
+
     return Objects.equals(this.id, knowledgeImport.id) &&
-        Objects.equals(this.name, knowledgeImport.name) &&
-        Objects.equals(this.uploadKey, knowledgeImport.uploadKey) &&
-        Objects.equals(this.fileType, knowledgeImport.fileType) &&
-        Objects.equals(this.ignoreHeaders, knowledgeImport.ignoreHeaders) &&
-        Objects.equals(this.status, knowledgeImport.status) &&
-        Objects.equals(this.report, knowledgeImport.report) &&
-        Objects.equals(this.knowledgeBase, knowledgeImport.knowledgeBase) &&
-        Objects.equals(this.languageCode, knowledgeImport.languageCode) &&
-        Objects.equals(this.dateCreated, knowledgeImport.dateCreated) &&
-        Objects.equals(this.dateModified, knowledgeImport.dateModified) &&
-        Objects.equals(this.selfUri, knowledgeImport.selfUri);
+            Objects.equals(this.name, knowledgeImport.name) &&
+            Objects.equals(this.uploadKey, knowledgeImport.uploadKey) &&
+            Objects.equals(this.fileType, knowledgeImport.fileType) &&
+            Objects.equals(this.ignoreHeaders, knowledgeImport.ignoreHeaders) &&
+            Objects.equals(this.status, knowledgeImport.status) &&
+            Objects.equals(this.report, knowledgeImport.report) &&
+            Objects.equals(this.knowledgeBase, knowledgeImport.knowledgeBase) &&
+            Objects.equals(this.languageCode, knowledgeImport.languageCode) &&
+            Objects.equals(this.dateCreated, knowledgeImport.dateCreated) &&
+            Objects.equals(this.dateModified, knowledgeImport.dateModified) &&
+            Objects.equals(this.selfUri, knowledgeImport.selfUri);
   }
 
   @Override

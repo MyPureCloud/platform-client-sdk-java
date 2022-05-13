@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,14 +32,13 @@ public class CallRecord  implements Serializable {
     return lastAttempt;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Result of the last attempt to reach this number")
   @JsonProperty("lastResult")
   public String getLastResult() {
     return lastResult;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -49,8 +49,9 @@ public class CallRecord  implements Serializable {
       return false;
     }
     CallRecord callRecord = (CallRecord) o;
+
     return Objects.equals(this.lastAttempt, callRecord.lastAttempt) &&
-        Objects.equals(this.lastResult, callRecord.lastResult);
+            Objects.equals(this.lastResult, callRecord.lastResult);
   }
 
   @Override

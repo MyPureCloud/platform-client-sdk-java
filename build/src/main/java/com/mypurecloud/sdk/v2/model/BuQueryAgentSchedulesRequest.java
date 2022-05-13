@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -43,7 +43,7 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     this.managementUnitId = managementUnitId;
   }
 
-  
+
   /**
    * The IDs of the users to query.  Omit to query all user schedules in the management unit. 
    **/
@@ -61,7 +61,6 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     this.userIds = userIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +71,9 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
       return false;
     }
     BuQueryAgentSchedulesRequest buQueryAgentSchedulesRequest = (BuQueryAgentSchedulesRequest) o;
+
     return Objects.equals(this.managementUnitId, buQueryAgentSchedulesRequest.managementUnitId) &&
-        Objects.equals(this.userIds, buQueryAgentSchedulesRequest.userIds);
+            Objects.equals(this.userIds, buQueryAgentSchedulesRequest.userIds);
   }
 
   @Override

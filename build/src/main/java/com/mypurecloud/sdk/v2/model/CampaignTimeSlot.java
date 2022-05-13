@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class CampaignTimeSlot  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss
    **/
@@ -60,7 +61,7 @@ public class CampaignTimeSlot  implements Serializable {
     this.stopTime = stopTime;
   }
 
-  
+
   /**
    * The day of the interval. Valid values: [1-7], representing Monday through Sunday
    **/
@@ -78,7 +79,6 @@ public class CampaignTimeSlot  implements Serializable {
     this.day = day;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class CampaignTimeSlot  implements Serializable {
       return false;
     }
     CampaignTimeSlot campaignTimeSlot = (CampaignTimeSlot) o;
+
     return Objects.equals(this.startTime, campaignTimeSlot.startTime) &&
-        Objects.equals(this.stopTime, campaignTimeSlot.stopTime) &&
-        Objects.equals(this.day, campaignTimeSlot.day);
+            Objects.equals(this.stopTime, campaignTimeSlot.stopTime) &&
+            Objects.equals(this.day, campaignTimeSlot.day);
   }
 
   @Override

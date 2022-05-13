@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorDetails;
@@ -43,7 +44,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    **/
   public DomainNetworkCommandResponse commandName(String commandName) {
@@ -60,7 +61,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.commandName = commandName;
   }
 
-  
+
   /**
    **/
   public DomainNetworkCommandResponse acknowledged(Boolean acknowledged) {
@@ -77,7 +78,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.acknowledged = acknowledged;
   }
 
-  
+
   /**
    **/
   public DomainNetworkCommandResponse errorInfo(ErrorDetails errorInfo) {
@@ -94,7 +95,6 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,10 +105,11 @@ public class DomainNetworkCommandResponse  implements Serializable {
       return false;
     }
     DomainNetworkCommandResponse domainNetworkCommandResponse = (DomainNetworkCommandResponse) o;
+
     return Objects.equals(this.correlationId, domainNetworkCommandResponse.correlationId) &&
-        Objects.equals(this.commandName, domainNetworkCommandResponse.commandName) &&
-        Objects.equals(this.acknowledged, domainNetworkCommandResponse.acknowledged) &&
-        Objects.equals(this.errorInfo, domainNetworkCommandResponse.errorInfo);
+            Objects.equals(this.commandName, domainNetworkCommandResponse.commandName) &&
+            Objects.equals(this.acknowledged, domainNetworkCommandResponse.acknowledged) &&
+            Objects.equals(this.errorInfo, domainNetworkCommandResponse.errorInfo);
   }
 
   @Override

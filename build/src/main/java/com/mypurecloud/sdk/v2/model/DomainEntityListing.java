@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DomainEntityListing  implements Serializable, PagedResource<DomainE
       return false;
     }
     DomainEntityListing domainEntityListing = (DomainEntityListing) o;
+
     return Objects.equals(this.entities, domainEntityListing.entities) &&
-        Objects.equals(this.pageSize, domainEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, domainEntityListing.pageNumber) &&
-        Objects.equals(this.total, domainEntityListing.total) &&
-        Objects.equals(this.lastUri, domainEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, domainEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, domainEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, domainEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, domainEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, domainEntityListing.pageCount);
+            Objects.equals(this.pageSize, domainEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, domainEntityListing.pageNumber) &&
+            Objects.equals(this.total, domainEntityListing.total) &&
+            Objects.equals(this.lastUri, domainEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, domainEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, domainEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, domainEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, domainEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, domainEntityListing.pageCount);
   }
 
   @Override

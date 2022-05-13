@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingInteractionstatsRulesRequest {
-    
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -73,7 +73,7 @@ public class GetAlertingInteractionstatsRulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -97,9 +97,10 @@ public class GetAlertingInteractionstatsRulesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/alerting/interactionstats/rules")
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -110,7 +111,7 @@ public class GetAlertingInteractionstatsRulesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAlertingInteractionstatsRulesRequest request;
@@ -119,11 +120,13 @@ public class GetAlertingInteractionstatsRulesRequest {
 			request = new GetAlertingInteractionstatsRulesRequest();
 		}
 
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -133,9 +136,9 @@ public class GetAlertingInteractionstatsRulesRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 
 		public GetAlertingInteractionstatsRulesRequest build() {
             

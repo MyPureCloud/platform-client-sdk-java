@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public SystemPromptAssetEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class SystemPromptAssetEntityListing  implements Serializable, PagedResou
       return false;
     }
     SystemPromptAssetEntityListing systemPromptAssetEntityListing = (SystemPromptAssetEntityListing) o;
+
     return Objects.equals(this.entities, systemPromptAssetEntityListing.entities) &&
-        Objects.equals(this.pageSize, systemPromptAssetEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, systemPromptAssetEntityListing.pageNumber) &&
-        Objects.equals(this.total, systemPromptAssetEntityListing.total) &&
-        Objects.equals(this.lastUri, systemPromptAssetEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, systemPromptAssetEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, systemPromptAssetEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, systemPromptAssetEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, systemPromptAssetEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, systemPromptAssetEntityListing.pageCount);
+            Objects.equals(this.pageSize, systemPromptAssetEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, systemPromptAssetEntityListing.pageNumber) &&
+            Objects.equals(this.total, systemPromptAssetEntityListing.total) &&
+            Objects.equals(this.lastUri, systemPromptAssetEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, systemPromptAssetEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, systemPromptAssetEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, systemPromptAssetEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, systemPromptAssetEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, systemPromptAssetEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -49,7 +50,7 @@ public class Wrapup  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * The user configured wrap up code name.
    **/
@@ -67,7 +68,7 @@ public class Wrapup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Text entered by the agent to describe the call or disposition.
    **/
@@ -85,7 +86,7 @@ public class Wrapup  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * List of tags selected by the agent to describe the call or disposition.
    **/
@@ -103,7 +104,7 @@ public class Wrapup  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    * The length of time in seconds that the agent spent doing after call work.
    **/
@@ -121,7 +122,7 @@ public class Wrapup  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-  
+
   /**
    * The timestamp when the wrapup was finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -139,7 +140,7 @@ public class Wrapup  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * Indicates if this is a pending save and should not require a code to be specified.  This allows someone to save some temporary wrapup that will be used later.
    **/
@@ -157,7 +158,6 @@ public class Wrapup  implements Serializable {
     this.provisional = provisional;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,13 +168,14 @@ public class Wrapup  implements Serializable {
       return false;
     }
     Wrapup wrapup = (Wrapup) o;
+
     return Objects.equals(this.code, wrapup.code) &&
-        Objects.equals(this.name, wrapup.name) &&
-        Objects.equals(this.notes, wrapup.notes) &&
-        Objects.equals(this.tags, wrapup.tags) &&
-        Objects.equals(this.durationSeconds, wrapup.durationSeconds) &&
-        Objects.equals(this.endTime, wrapup.endTime) &&
-        Objects.equals(this.provisional, wrapup.provisional);
+            Objects.equals(this.name, wrapup.name) &&
+            Objects.equals(this.notes, wrapup.notes) &&
+            Objects.equals(this.tags, wrapup.tags) &&
+            Objects.equals(this.durationSeconds, wrapup.durationSeconds) &&
+            Objects.equals(this.endTime, wrapup.endTime) &&
+            Objects.equals(this.provisional, wrapup.provisional);
   }
 
   @Override

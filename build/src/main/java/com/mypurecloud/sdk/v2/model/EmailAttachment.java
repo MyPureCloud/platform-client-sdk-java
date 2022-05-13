@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class EmailAttachment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public EmailAttachment contentPath(String contentPath) {
@@ -60,7 +61,7 @@ public class EmailAttachment  implements Serializable {
     this.contentPath = contentPath;
   }
 
-  
+
   /**
    **/
   public EmailAttachment contentType(String contentType) {
@@ -77,7 +78,7 @@ public class EmailAttachment  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public EmailAttachment attachmentId(String attachmentId) {
@@ -94,7 +95,7 @@ public class EmailAttachment  implements Serializable {
     this.attachmentId = attachmentId;
   }
 
-  
+
   /**
    **/
   public EmailAttachment contentLength(Integer contentLength) {
@@ -111,7 +112,6 @@ public class EmailAttachment  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,11 +122,12 @@ public class EmailAttachment  implements Serializable {
       return false;
     }
     EmailAttachment emailAttachment = (EmailAttachment) o;
+
     return Objects.equals(this.name, emailAttachment.name) &&
-        Objects.equals(this.contentPath, emailAttachment.contentPath) &&
-        Objects.equals(this.contentType, emailAttachment.contentType) &&
-        Objects.equals(this.attachmentId, emailAttachment.attachmentId) &&
-        Objects.equals(this.contentLength, emailAttachment.contentLength);
+            Objects.equals(this.contentPath, emailAttachment.contentPath) &&
+            Objects.equals(this.contentType, emailAttachment.contentType) &&
+            Objects.equals(this.attachmentId, emailAttachment.attachmentId) &&
+            Objects.equals(this.contentLength, emailAttachment.contentLength);
   }
 
   @Override

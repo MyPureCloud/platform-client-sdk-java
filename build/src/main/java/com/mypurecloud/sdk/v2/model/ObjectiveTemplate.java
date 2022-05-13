@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ObjectiveZone;
@@ -35,7 +36,7 @@ public class ObjectiveTemplate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ObjectiveTemplate name(String name) {
@@ -52,7 +53,7 @@ public class ObjectiveTemplate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ObjectiveTemplate zones(List<ObjectiveZone> zones) {
@@ -69,14 +70,13 @@ public class ObjectiveTemplate  implements Serializable {
     this.zones = zones;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,10 +87,11 @@ public class ObjectiveTemplate  implements Serializable {
       return false;
     }
     ObjectiveTemplate objectiveTemplate = (ObjectiveTemplate) o;
+
     return Objects.equals(this.id, objectiveTemplate.id) &&
-        Objects.equals(this.name, objectiveTemplate.name) &&
-        Objects.equals(this.zones, objectiveTemplate.zones) &&
-        Objects.equals(this.selfUri, objectiveTemplate.selfUri);
+            Objects.equals(this.name, objectiveTemplate.name) &&
+            Objects.equals(this.zones, objectiveTemplate.zones) &&
+            Objects.equals(this.selfUri, objectiveTemplate.selfUri);
   }
 
   @Override

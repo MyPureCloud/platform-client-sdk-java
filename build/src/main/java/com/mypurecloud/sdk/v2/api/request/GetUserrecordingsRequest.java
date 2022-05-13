@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.UserRecording;
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
-import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.UserRecording;
+import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 public class GetUserrecordingsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -41,7 +41,7 @@ public class GetUserrecordingsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -55,7 +55,7 @@ public class GetUserrecordingsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -98,7 +98,7 @@ public class GetUserrecordingsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,13 +122,16 @@ public class GetUserrecordingsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/userrecordings")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -139,7 +142,7 @@ public class GetUserrecordingsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetUserrecordingsRequest request;
@@ -148,21 +151,23 @@ public class GetUserrecordingsRequest {
 			request = new GetUserrecordingsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -172,9 +177,9 @@ public class GetUserrecordingsRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 
 		public GetUserrecordingsRequest build() {
             

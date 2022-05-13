@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.trackId = trackId;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaData mediaId(String mediaId) {
@@ -62,7 +63,7 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.mediaId = mediaId;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaData screenId(String screenId) {
@@ -79,7 +80,7 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.screenId = screenId;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaData originX(Integer originX) {
@@ -96,7 +97,7 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.originX = originX;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaData originY(Integer originY) {
@@ -113,7 +114,7 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.originY = originY;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaData primary(Boolean primary) {
@@ -130,7 +131,7 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.primary = primary;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingMetaData main(Boolean main) {
@@ -147,7 +148,6 @@ public class ScreenRecordingMetaData  implements Serializable {
     this.main = main;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,13 +158,14 @@ public class ScreenRecordingMetaData  implements Serializable {
       return false;
     }
     ScreenRecordingMetaData screenRecordingMetaData = (ScreenRecordingMetaData) o;
+
     return Objects.equals(this.trackId, screenRecordingMetaData.trackId) &&
-        Objects.equals(this.mediaId, screenRecordingMetaData.mediaId) &&
-        Objects.equals(this.screenId, screenRecordingMetaData.screenId) &&
-        Objects.equals(this.originX, screenRecordingMetaData.originX) &&
-        Objects.equals(this.originY, screenRecordingMetaData.originY) &&
-        Objects.equals(this.primary, screenRecordingMetaData.primary) &&
-        Objects.equals(this.main, screenRecordingMetaData.main);
+            Objects.equals(this.mediaId, screenRecordingMetaData.mediaId) &&
+            Objects.equals(this.screenId, screenRecordingMetaData.screenId) &&
+            Objects.equals(this.originX, screenRecordingMetaData.originX) &&
+            Objects.equals(this.originY, screenRecordingMetaData.originY) &&
+            Objects.equals(this.primary, screenRecordingMetaData.primary) &&
+            Objects.equals(this.main, screenRecordingMetaData.main);
   }
 
   @Override

@@ -17,14 +17,14 @@ title: Session
 | **shortId** | <!----><!---->**String**<!----> | Shortened numeric identifier of 4-6 digits. |  [optional] |
 | **outcomeAchievements** | <!----><!---->[**List&lt;OutcomeAchievement&gt;**](OutcomeAchievement.html)<!----> | List of the outcome achievements by the customer in this session. |  [optional] |
 | **segmentAssignments** | <!----><!---->[**List&lt;SessionSegmentAssignment&gt;**](SessionSegmentAssignment.html)<!----> | List of the segment assignments to the customer in this session. |  [optional] |
-| **attributes** | <!----><!---->[**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute.html)<!----> | Attributes projected from the session&#39;s event stream. |  [optional] |
-| **attributeLists** | <!----><!---->[**Map&lt;String, CustomEventAttributeList&gt;**](CustomEventAttributeList.html)<!----> | List-type attributes projected from the session&#39;s event stream. |  [optional] |
-| **browser** | <!----><!---->[**Browser**](Browser.html)<!----> | Customer&#39;s browser. |  [optional] |
-| **device** | <!----><!---->[**Device**](Device.html)<!----> | Customer&#39;s device. |  [optional] |
-| **geolocation** | <!----><!---->[**JourneyGeolocation**](JourneyGeolocation.html)<!----> | Customer&#39;s geolocation. |  [optional] |
-| **ipAddress** | <!----><!---->**String**<!----> | Customer&#39;s IP address. |  [optional] |
-| **ipOrganization** | <!----><!---->**String**<!----> | Customer&#39;s IP-based organization or ISP name. |  [optional] |
-| **lastPage** | <!----><!---->[**JourneyPage**](JourneyPage.html)<!----> | The webpage where the customer&#39;s last web interaction occurred. |  [optional] |
+| **attributes** | <!----><!---->[**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute.html)<!----> | Attributes projected from the session's event stream. |  [optional] |
+| **attributeLists** | <!----><!---->[**Map&lt;String, CustomEventAttributeList&gt;**](CustomEventAttributeList.html)<!----> | List-type attributes projected from the session's event stream. |  [optional] |
+| **browser** | <!----><!---->[**Browser**](Browser.html)<!----> | Customer's browser. |  [optional] |
+| **device** | <!----><!---->[**Device**](Device.html)<!----> | Customer's device. |  [optional] |
+| **geolocation** | <!----><!---->[**JourneyGeolocation**](JourneyGeolocation.html)<!----> | Customer's geolocation. |  [optional] |
+| **ipAddress** | <!----><!---->**String**<!----> | Customer's IP address. |  [optional] |
+| **ipOrganization** | <!----><!---->**String**<!----> | Customer's IP-based organization or ISP name. |  [optional] |
+| **lastPage** | <!----><!---->[**JourneyPage**](JourneyPage.html)<!----> | The webpage where the customer's last web interaction occurred. |  [optional] |
 | **mktCampaign** | <!----><!---->[**JourneyCampaign**](JourneyCampaign.html)<!----> | Marketing / traffic source information. |  [optional] |
 | **referrer** | <!----><!---->[**Referrer**](Referrer.html)<!----> | Identifies the page URL that originally generated the request for the current page being viewed. |  [optional] |
 | **searchTerms** | <!----><!---->**List&lt;String&gt;**<!----> | Search terms associated with the session. |  [optional] |
@@ -59,10 +59,10 @@ title: Session
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| INBOUND | &quot;Inbound&quot; |
-| OUTBOUND | &quot;Outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| INBOUND | &quot;Inbound&quot; | 
+| OUTBOUND | &quot;Outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -72,24 +72,24 @@ title: Session
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| ENDPOINT | &quot;Endpoint&quot; |
-| CLIENT | &quot;Client&quot; |
-| SYSTEM | &quot;System&quot; |
-| TRANSFER | &quot;Transfer&quot; |
-| ERROR | &quot;Error&quot; |
-| PEER | &quot;Peer&quot; |
-| OTHER | &quot;Other&quot; |
-| SPAM | &quot;Spam&quot; |
-| TIMEOUT | &quot;Timeout&quot; |
-| TRANSPORTFAILURE | &quot;TransportFailure&quot; |
-| CONFERENCETRANSFER | &quot;ConferenceTransfer&quot; |
-| CONSULTTRANSFER | &quot;ConsultTransfer&quot; |
-| FORWARDTRANSFER | &quot;ForwardTransfer&quot; |
-| NOANSWERTRANSFER | &quot;NoAnswerTransfer&quot; |
-| NOTAVAILABLETRANSFER | &quot;NotAvailableTransfer&quot; |
-| UNCALLABLE | &quot;Uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| ENDPOINT | &quot;Endpoint&quot; | 
+| CLIENT | &quot;Client&quot; | 
+| SYSTEM | &quot;System&quot; | 
+| TRANSFER | &quot;Transfer&quot; | 
+| ERROR | &quot;Error&quot; | 
+| PEER | &quot;Peer&quot; | 
+| OTHER | &quot;Other&quot; | 
+| SPAM | &quot;Spam&quot; | 
+| TIMEOUT | &quot;Timeout&quot; | 
+| TRANSPORTFAILURE | &quot;TransportFailure&quot; | 
+| CONFERENCETRANSFER | &quot;ConferenceTransfer&quot; | 
+| CONSULTTRANSFER | &quot;ConsultTransfer&quot; | 
+| FORWARDTRANSFER | &quot;ForwardTransfer&quot; | 
+| NOANSWERTRANSFER | &quot;NoAnswerTransfer&quot; | 
+| NOTAVAILABLETRANSFER | &quot;NotAvailableTransfer&quot; | 
+| UNCALLABLE | &quot;Uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -99,11 +99,11 @@ title: Session
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| ABANDON | &quot;Abandon&quot; |
-| ANSWERED | &quot;Answered&quot; |
-| FLOWOUT | &quot;FlowOut&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| ABANDON | &quot;Abandon&quot; | 
+| ANSWERED | &quot;Answered&quot; | 
+| FLOWOUT | &quot;FlowOut&quot; | 
 {: class="table table-striped"}
 
 

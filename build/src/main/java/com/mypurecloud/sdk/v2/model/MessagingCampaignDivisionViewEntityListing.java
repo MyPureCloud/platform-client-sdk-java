@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.total = total;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignDivisionViewEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
       return false;
     }
     MessagingCampaignDivisionViewEntityListing messagingCampaignDivisionViewEntityListing = (MessagingCampaignDivisionViewEntityListing) o;
+
     return Objects.equals(this.entities, messagingCampaignDivisionViewEntityListing.entities) &&
-        Objects.equals(this.pageSize, messagingCampaignDivisionViewEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, messagingCampaignDivisionViewEntityListing.pageNumber) &&
-        Objects.equals(this.total, messagingCampaignDivisionViewEntityListing.total) &&
-        Objects.equals(this.lastUri, messagingCampaignDivisionViewEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, messagingCampaignDivisionViewEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, messagingCampaignDivisionViewEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, messagingCampaignDivisionViewEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, messagingCampaignDivisionViewEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, messagingCampaignDivisionViewEntityListing.pageCount);
+            Objects.equals(this.pageSize, messagingCampaignDivisionViewEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, messagingCampaignDivisionViewEntityListing.pageNumber) &&
+            Objects.equals(this.total, messagingCampaignDivisionViewEntityListing.total) &&
+            Objects.equals(this.lastUri, messagingCampaignDivisionViewEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, messagingCampaignDivisionViewEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, messagingCampaignDivisionViewEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, messagingCampaignDivisionViewEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, messagingCampaignDivisionViewEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, messagingCampaignDivisionViewEntityListing.pageCount);
   }
 
   @Override

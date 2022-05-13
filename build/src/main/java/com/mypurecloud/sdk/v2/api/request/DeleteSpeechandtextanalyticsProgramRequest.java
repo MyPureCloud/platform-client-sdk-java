@@ -20,36 +20,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class DeleteSpeechandtextanalyticsProgramRequest {
-    
+
 	private String programId;
 	public String getProgramId() {
 		return this.programId;
@@ -63,7 +63,7 @@ public class DeleteSpeechandtextanalyticsProgramRequest {
 	    this.setProgramId(programId);
 	    return this;
 	} 
-	
+
 	private Boolean forceDelete;
 	public Boolean getForceDelete() {
 		return this.forceDelete;
@@ -77,7 +77,7 @@ public class DeleteSpeechandtextanalyticsProgramRequest {
 	    this.setForceDelete(forceDelete);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,9 +108,10 @@ public class DeleteSpeechandtextanalyticsProgramRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/speechandtextanalytics/programs/{programId}")
                 .withPathParameter("programId", programId)
         
+
                 .withQueryParameters("forceDelete", "", forceDelete)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -121,12 +122,12 @@ public class DeleteSpeechandtextanalyticsProgramRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String programId) {
 	    return new Builder()
 	            .withRequiredParams(programId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteSpeechandtextanalyticsProgramRequest request;
@@ -135,25 +136,25 @@ public class DeleteSpeechandtextanalyticsProgramRequest {
 			request = new DeleteSpeechandtextanalyticsProgramRequest();
 		}
 
-		
+
 		public Builder withProgramId(String programId) {
 			request.setProgramId(programId);
 			return this;
 		}
-		
+
 		public Builder withForceDelete(Boolean forceDelete) {
 			request.setForceDelete(forceDelete);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String programId) {
 			request.setProgramId(programId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteSpeechandtextanalyticsProgramRequest build() {
             

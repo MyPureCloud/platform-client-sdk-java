@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 public class GetLearningAssignmentRequest {
-    
+
 	private String assignmentId;
 	public String getAssignmentId() {
 		return this.assignmentId;
@@ -55,7 +55,7 @@ public class GetLearningAssignmentRequest {
 	    this.setAssignmentId(assignmentId);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -71,9 +71,9 @@ public class GetLearningAssignmentRequest {
 	} 
 
 	public enum expandValues { 
-		MODULE("module"), 
-		ASSESSMENT("assessment"), 
-		ASSESSMENTFORM("assessmentForm"), 
+		MODULE("module"),
+		ASSESSMENT("assessment"),
+		ASSESSMENTFORM("assessmentForm"),
 		MODULE_COVERART("module.coverArt");
 
 		private String value;
@@ -101,7 +101,7 @@ public class GetLearningAssignmentRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -132,9 +132,10 @@ public class GetLearningAssignmentRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/learning/assignments/{assignmentId}")
                 .withPathParameter("assignmentId", assignmentId)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -145,12 +146,12 @@ public class GetLearningAssignmentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String assignmentId) {
 	    return new Builder()
 	            .withRequiredParams(assignmentId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLearningAssignmentRequest request;
@@ -159,16 +160,18 @@ public class GetLearningAssignmentRequest {
 			request = new GetLearningAssignmentRequest();
 		}
 
-		
+
 		public Builder withAssignmentId(String assignmentId) {
 			request.setAssignmentId(assignmentId);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -178,15 +181,15 @@ public class GetLearningAssignmentRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String assignmentId) {
 			request.setAssignmentId(assignmentId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLearningAssignmentRequest build() {
             

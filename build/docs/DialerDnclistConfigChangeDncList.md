@@ -30,10 +30,10 @@ title: DialerDnclistConfigChangeDncList
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RDS | &quot;rds&quot; |
-| DNC_COM | &quot;dnc.com&quot; |
-| GRYPHON | &quot;gryphon&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RDS | &quot;rds&quot; | 
+| DNC_COM | &quot;dnc.com&quot; | 
+| GRYPHON | &quot;gryphon&quot; | 
 {: class="table table-striped"}
 
 
@@ -43,9 +43,9 @@ title: DialerDnclistConfigChangeDncList
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| PHONE | &quot;PHONE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| PHONE | &quot;PHONE&quot; | 
 {: class="table table-striped"}
 
 

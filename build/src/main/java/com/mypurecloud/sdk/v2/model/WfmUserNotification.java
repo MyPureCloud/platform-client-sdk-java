@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -16,7 +17,6 @@ import com.mypurecloud.sdk.v2.model.ShiftTradeNotification;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestNotification;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -104,7 +104,7 @@ public class WfmUserNotification  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The group ID of the notification (mutable, may change  on update)
    **/
@@ -122,42 +122,42 @@ public class WfmUserNotification  implements Serializable {
     this.mutableGroupId = mutableGroupId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The timestamp for this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("timestamp")
   public Date getTimestamp() {
     return timestamp;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of this notification")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A shift trade notification.  Only set if type == ShiftTrade")
   @JsonProperty("shiftTrade")
   public ShiftTradeNotification getShiftTrade() {
     return shiftTrade;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A time off request notification.  Only set if type == TimeOffRequest")
   @JsonProperty("timeOffRequest")
   public TimeOffRequestNotification getTimeOffRequest() {
     return timeOffRequest;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "An adherence explanation notification.  Only set if type == AdherenceExplanation")
   @JsonProperty("adherenceExplanation")
   public AdherenceExplanationNotification getAdherenceExplanation() {
     return adherenceExplanation;
   }
 
-  
+
   /**
    * Whether this notification has been marked \"read\"
    **/
@@ -175,21 +175,20 @@ public class WfmUserNotification  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether this notification is for an agent")
   @JsonProperty("agentNotification")
   public Boolean getAgentNotification() {
     return agentNotification;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Other notification IDs in group.  This field is only populated in real-time notifications")
   @JsonProperty("otherNotificationIdsInGroup")
   public List<String> getOtherNotificationIdsInGroup() {
     return otherNotificationIdsInGroup;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -200,16 +199,17 @@ public class WfmUserNotification  implements Serializable {
       return false;
     }
     WfmUserNotification wfmUserNotification = (WfmUserNotification) o;
+
     return Objects.equals(this.id, wfmUserNotification.id) &&
-        Objects.equals(this.mutableGroupId, wfmUserNotification.mutableGroupId) &&
-        Objects.equals(this.timestamp, wfmUserNotification.timestamp) &&
-        Objects.equals(this.type, wfmUserNotification.type) &&
-        Objects.equals(this.shiftTrade, wfmUserNotification.shiftTrade) &&
-        Objects.equals(this.timeOffRequest, wfmUserNotification.timeOffRequest) &&
-        Objects.equals(this.adherenceExplanation, wfmUserNotification.adherenceExplanation) &&
-        Objects.equals(this.markedAsRead, wfmUserNotification.markedAsRead) &&
-        Objects.equals(this.agentNotification, wfmUserNotification.agentNotification) &&
-        Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotification.otherNotificationIdsInGroup);
+            Objects.equals(this.mutableGroupId, wfmUserNotification.mutableGroupId) &&
+            Objects.equals(this.timestamp, wfmUserNotification.timestamp) &&
+            Objects.equals(this.type, wfmUserNotification.type) &&
+            Objects.equals(this.shiftTrade, wfmUserNotification.shiftTrade) &&
+            Objects.equals(this.timeOffRequest, wfmUserNotification.timeOffRequest) &&
+            Objects.equals(this.adherenceExplanation, wfmUserNotification.adherenceExplanation) &&
+            Objects.equals(this.markedAsRead, wfmUserNotification.markedAsRead) &&
+            Objects.equals(this.agentNotification, wfmUserNotification.agentNotification) &&
+            Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotification.otherNotificationIdsInGroup);
   }
 
   @Override

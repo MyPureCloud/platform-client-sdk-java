@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -175,7 +176,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -193,7 +194,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.id = id;
   }
 
-  
+
   /**
    * A globally unique identifier for the social media.
    **/
@@ -211,7 +212,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.socialMediaId = socialMediaId;
   }
 
-  
+
   /**
    * The social network of the communication
    **/
@@ -229,7 +230,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.socialMediaHub = socialMediaHub;
   }
 
-  
+
   /**
    * The social media user name of the communication
    **/
@@ -247,7 +248,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.socialUserName = socialUserName;
   }
 
-  
+
   /**
    * The text preview of the communication contents
    **/
@@ -265,7 +266,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.previewText = previewText;
   }
 
-  
+
   /**
    * A globally unique identifier for the recording associated with this chat.
    **/
@@ -283,7 +284,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.recordingId = recordingId;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -301,7 +302,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.held = held;
   }
 
-  
+
   /**
    * The source provider of the social expression.
    **/
@@ -319,7 +320,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -337,7 +338,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -355,7 +356,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.peerId = peerId;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -373,7 +374,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
    **/
@@ -391,7 +392,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -409,7 +410,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -427,7 +428,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -445,7 +446,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -463,7 +464,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -481,7 +482,6 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -492,24 +492,25 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
       return false;
     }
     QueueConversationSocialExpressionEventTopicSocialExpression queueConversationSocialExpressionEventTopicSocialExpression = (QueueConversationSocialExpressionEventTopicSocialExpression) o;
+
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicSocialExpression.state) &&
-        Objects.equals(this.id, queueConversationSocialExpressionEventTopicSocialExpression.id) &&
-        Objects.equals(this.socialMediaId, queueConversationSocialExpressionEventTopicSocialExpression.socialMediaId) &&
-        Objects.equals(this.socialMediaHub, queueConversationSocialExpressionEventTopicSocialExpression.socialMediaHub) &&
-        Objects.equals(this.socialUserName, queueConversationSocialExpressionEventTopicSocialExpression.socialUserName) &&
-        Objects.equals(this.previewText, queueConversationSocialExpressionEventTopicSocialExpression.previewText) &&
-        Objects.equals(this.recordingId, queueConversationSocialExpressionEventTopicSocialExpression.recordingId) &&
-        Objects.equals(this.held, queueConversationSocialExpressionEventTopicSocialExpression.held) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicSocialExpression.provider) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicSocialExpression.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicSocialExpression.peerId) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicSocialExpression.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicSocialExpression.startHoldTime) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicSocialExpression.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicSocialExpression.disconnectedTime) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicSocialExpression.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicSocialExpression.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicSocialExpression.afterCallWorkRequired);
+            Objects.equals(this.id, queueConversationSocialExpressionEventTopicSocialExpression.id) &&
+            Objects.equals(this.socialMediaId, queueConversationSocialExpressionEventTopicSocialExpression.socialMediaId) &&
+            Objects.equals(this.socialMediaHub, queueConversationSocialExpressionEventTopicSocialExpression.socialMediaHub) &&
+            Objects.equals(this.socialUserName, queueConversationSocialExpressionEventTopicSocialExpression.socialUserName) &&
+            Objects.equals(this.previewText, queueConversationSocialExpressionEventTopicSocialExpression.previewText) &&
+            Objects.equals(this.recordingId, queueConversationSocialExpressionEventTopicSocialExpression.recordingId) &&
+            Objects.equals(this.held, queueConversationSocialExpressionEventTopicSocialExpression.held) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicSocialExpression.provider) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicSocialExpression.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicSocialExpression.peerId) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicSocialExpression.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicSocialExpression.startHoldTime) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicSocialExpression.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicSocialExpression.disconnectedTime) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicSocialExpression.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicSocialExpression.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicSocialExpression.afterCallWorkRequired);
   }
 
   @Override

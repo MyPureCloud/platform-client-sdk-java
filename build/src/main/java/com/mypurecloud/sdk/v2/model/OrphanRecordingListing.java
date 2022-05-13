@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing total(Long total) {
@@ -103,7 +104,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.total = total;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public OrphanRecordingListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
       return false;
     }
     OrphanRecordingListing orphanRecordingListing = (OrphanRecordingListing) o;
+
     return Objects.equals(this.entities, orphanRecordingListing.entities) &&
-        Objects.equals(this.pageSize, orphanRecordingListing.pageSize) &&
-        Objects.equals(this.pageNumber, orphanRecordingListing.pageNumber) &&
-        Objects.equals(this.total, orphanRecordingListing.total) &&
-        Objects.equals(this.lastUri, orphanRecordingListing.lastUri) &&
-        Objects.equals(this.firstUri, orphanRecordingListing.firstUri) &&
-        Objects.equals(this.selfUri, orphanRecordingListing.selfUri) &&
-        Objects.equals(this.previousUri, orphanRecordingListing.previousUri) &&
-        Objects.equals(this.nextUri, orphanRecordingListing.nextUri) &&
-        Objects.equals(this.pageCount, orphanRecordingListing.pageCount);
+            Objects.equals(this.pageSize, orphanRecordingListing.pageSize) &&
+            Objects.equals(this.pageNumber, orphanRecordingListing.pageNumber) &&
+            Objects.equals(this.total, orphanRecordingListing.total) &&
+            Objects.equals(this.lastUri, orphanRecordingListing.lastUri) &&
+            Objects.equals(this.firstUri, orphanRecordingListing.firstUri) &&
+            Objects.equals(this.selfUri, orphanRecordingListing.selfUri) &&
+            Objects.equals(this.previousUri, orphanRecordingListing.previousUri) &&
+            Objects.equals(this.nextUri, orphanRecordingListing.nextUri) &&
+            Objects.equals(this.pageCount, orphanRecordingListing.pageCount);
   }
 
   @Override

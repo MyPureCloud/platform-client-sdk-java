@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.StatisticalSummary;
@@ -42,7 +43,7 @@ public class AggregateMetricData  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public AggregateMetricData qualifier(String qualifier) {
@@ -59,7 +60,7 @@ public class AggregateMetricData  implements Serializable {
     this.qualifier = qualifier;
   }
 
-  
+
   /**
    **/
   public AggregateMetricData stats(StatisticalSummary stats) {
@@ -76,7 +77,6 @@ public class AggregateMetricData  implements Serializable {
     this.stats = stats;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class AggregateMetricData  implements Serializable {
       return false;
     }
     AggregateMetricData aggregateMetricData = (AggregateMetricData) o;
+
     return Objects.equals(this.metric, aggregateMetricData.metric) &&
-        Objects.equals(this.qualifier, aggregateMetricData.qualifier) &&
-        Objects.equals(this.stats, aggregateMetricData.stats);
+            Objects.equals(this.qualifier, aggregateMetricData.qualifier) &&
+            Objects.equals(this.stats, aggregateMetricData.stats);
   }
 
   @Override

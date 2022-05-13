@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -160,7 +161,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification name(String name) {
@@ -177,7 +178,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.name = name;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification dateStart(Date dateStart) {
@@ -194,7 +195,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification lengthInMinutes(Integer lengthInMinutes) {
@@ -211,7 +212,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification status(StatusEnum status) {
@@ -228,7 +229,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification facilitator(WemCoachingAppointmentTopicUserReference facilitator) {
@@ -245,7 +246,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.facilitator = facilitator;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification attendees(List<WemCoachingAppointmentTopicUserReference> attendees) {
@@ -262,7 +263,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.attendees = attendees;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification createdBy(WemCoachingAppointmentTopicUserReference createdBy) {
@@ -279,7 +280,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification dateCreated(Date dateCreated) {
@@ -296,7 +297,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification modifiedBy(WemCoachingAppointmentTopicUserReference modifiedBy) {
@@ -313,7 +314,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification dateModified(Date dateModified) {
@@ -330,7 +331,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification conversations(List<WemCoachingAppointmentTopicCoachingAppointmentConversation> conversations) {
@@ -347,7 +348,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.conversations = conversations;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification documents(List<WemCoachingAppointmentTopicCoachingAppointmentDocument> documents) {
@@ -364,7 +365,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.documents = documents;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification changeType(ChangeTypeEnum changeType) {
@@ -381,7 +382,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.changeType = changeType;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification dateCompleted(Date dateCompleted) {
@@ -398,7 +399,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.dateCompleted = dateCompleted;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentNotification externalLinks(List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> externalLinks) {
@@ -415,7 +416,6 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     this.externalLinks = externalLinks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -426,22 +426,23 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
       return false;
     }
     WemCoachingAppointmentTopicCoachingAppointmentNotification wemCoachingAppointmentTopicCoachingAppointmentNotification = (WemCoachingAppointmentTopicCoachingAppointmentNotification) o;
+
     return Objects.equals(this.id, wemCoachingAppointmentTopicCoachingAppointmentNotification.id) &&
-        Objects.equals(this.name, wemCoachingAppointmentTopicCoachingAppointmentNotification.name) &&
-        Objects.equals(this.dateStart, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateStart) &&
-        Objects.equals(this.lengthInMinutes, wemCoachingAppointmentTopicCoachingAppointmentNotification.lengthInMinutes) &&
-        Objects.equals(this.status, wemCoachingAppointmentTopicCoachingAppointmentNotification.status) &&
-        Objects.equals(this.facilitator, wemCoachingAppointmentTopicCoachingAppointmentNotification.facilitator) &&
-        Objects.equals(this.attendees, wemCoachingAppointmentTopicCoachingAppointmentNotification.attendees) &&
-        Objects.equals(this.createdBy, wemCoachingAppointmentTopicCoachingAppointmentNotification.createdBy) &&
-        Objects.equals(this.dateCreated, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCreated) &&
-        Objects.equals(this.modifiedBy, wemCoachingAppointmentTopicCoachingAppointmentNotification.modifiedBy) &&
-        Objects.equals(this.dateModified, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateModified) &&
-        Objects.equals(this.conversations, wemCoachingAppointmentTopicCoachingAppointmentNotification.conversations) &&
-        Objects.equals(this.documents, wemCoachingAppointmentTopicCoachingAppointmentNotification.documents) &&
-        Objects.equals(this.changeType, wemCoachingAppointmentTopicCoachingAppointmentNotification.changeType) &&
-        Objects.equals(this.dateCompleted, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCompleted) &&
-        Objects.equals(this.externalLinks, wemCoachingAppointmentTopicCoachingAppointmentNotification.externalLinks);
+            Objects.equals(this.name, wemCoachingAppointmentTopicCoachingAppointmentNotification.name) &&
+            Objects.equals(this.dateStart, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateStart) &&
+            Objects.equals(this.lengthInMinutes, wemCoachingAppointmentTopicCoachingAppointmentNotification.lengthInMinutes) &&
+            Objects.equals(this.status, wemCoachingAppointmentTopicCoachingAppointmentNotification.status) &&
+            Objects.equals(this.facilitator, wemCoachingAppointmentTopicCoachingAppointmentNotification.facilitator) &&
+            Objects.equals(this.attendees, wemCoachingAppointmentTopicCoachingAppointmentNotification.attendees) &&
+            Objects.equals(this.createdBy, wemCoachingAppointmentTopicCoachingAppointmentNotification.createdBy) &&
+            Objects.equals(this.dateCreated, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCreated) &&
+            Objects.equals(this.modifiedBy, wemCoachingAppointmentTopicCoachingAppointmentNotification.modifiedBy) &&
+            Objects.equals(this.dateModified, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateModified) &&
+            Objects.equals(this.conversations, wemCoachingAppointmentTopicCoachingAppointmentNotification.conversations) &&
+            Objects.equals(this.documents, wemCoachingAppointmentTopicCoachingAppointmentNotification.documents) &&
+            Objects.equals(this.changeType, wemCoachingAppointmentTopicCoachingAppointmentNotification.changeType) &&
+            Objects.equals(this.dateCompleted, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCompleted) &&
+            Objects.equals(this.externalLinks, wemCoachingAppointmentTopicCoachingAppointmentNotification.externalLinks);
   }
 
   @Override

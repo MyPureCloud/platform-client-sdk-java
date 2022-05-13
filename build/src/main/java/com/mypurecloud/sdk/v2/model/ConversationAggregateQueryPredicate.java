@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -264,7 +265,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -282,7 +283,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -300,7 +301,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -318,7 +319,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -336,7 +337,6 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -347,11 +347,12 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
       return false;
     }
     ConversationAggregateQueryPredicate conversationAggregateQueryPredicate = (ConversationAggregateQueryPredicate) o;
+
     return Objects.equals(this.type, conversationAggregateQueryPredicate.type) &&
-        Objects.equals(this.dimension, conversationAggregateQueryPredicate.dimension) &&
-        Objects.equals(this.operator, conversationAggregateQueryPredicate.operator) &&
-        Objects.equals(this.value, conversationAggregateQueryPredicate.value) &&
-        Objects.equals(this.range, conversationAggregateQueryPredicate.range);
+            Objects.equals(this.dimension, conversationAggregateQueryPredicate.dimension) &&
+            Objects.equals(this.operator, conversationAggregateQueryPredicate.operator) &&
+            Objects.equals(this.value, conversationAggregateQueryPredicate.value) &&
+            Objects.equals(this.range, conversationAggregateQueryPredicate.range);
   }
 
   @Override

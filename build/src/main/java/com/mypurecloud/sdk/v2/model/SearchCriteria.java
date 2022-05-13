@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.SearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -160,7 +160,7 @@ public class SearchCriteria  implements Serializable {
     this.endValue = endValue;
   }
 
-  
+
   /**
    * A list of values for the search to match against
    **/
@@ -178,7 +178,7 @@ public class SearchCriteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -196,7 +196,7 @@ public class SearchCriteria  implements Serializable {
     this.startValue = startValue;
   }
 
-  
+
   /**
    * Field names to search against
    **/
@@ -214,7 +214,7 @@ public class SearchCriteria  implements Serializable {
     this.fields = fields;
   }
 
-  
+
   /**
    * A value for the search to match against
    **/
@@ -232,7 +232,7 @@ public class SearchCriteria  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -250,7 +250,7 @@ public class SearchCriteria  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Groups multiple conditions
    **/
@@ -268,7 +268,7 @@ public class SearchCriteria  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
    **/
@@ -286,7 +286,7 @@ public class SearchCriteria  implements Serializable {
     this.dateFormat = dateFormat;
   }
 
-  
+
   /**
    **/
   public SearchCriteria type(TypeEnum type) {
@@ -303,7 +303,6 @@ public class SearchCriteria  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -314,15 +313,16 @@ public class SearchCriteria  implements Serializable {
       return false;
     }
     SearchCriteria searchCriteria = (SearchCriteria) o;
+
     return Objects.equals(this.endValue, searchCriteria.endValue) &&
-        Objects.equals(this.values, searchCriteria.values) &&
-        Objects.equals(this.startValue, searchCriteria.startValue) &&
-        Objects.equals(this.fields, searchCriteria.fields) &&
-        Objects.equals(this.value, searchCriteria.value) &&
-        Objects.equals(this.operator, searchCriteria.operator) &&
-        Objects.equals(this.group, searchCriteria.group) &&
-        Objects.equals(this.dateFormat, searchCriteria.dateFormat) &&
-        Objects.equals(this.type, searchCriteria.type);
+            Objects.equals(this.values, searchCriteria.values) &&
+            Objects.equals(this.startValue, searchCriteria.startValue) &&
+            Objects.equals(this.fields, searchCriteria.fields) &&
+            Objects.equals(this.value, searchCriteria.value) &&
+            Objects.equals(this.operator, searchCriteria.operator) &&
+            Objects.equals(this.group, searchCriteria.group) &&
+            Objects.equals(this.dateFormat, searchCriteria.dateFormat) &&
+            Objects.equals(this.type, searchCriteria.type);
   }
 
   @Override

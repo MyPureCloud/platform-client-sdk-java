@@ -22,10 +22,10 @@ title: CoachingSlot
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| POOR | &quot;Poor&quot; |
-| NEUTRAL | &quot;Neutral&quot; |
-| GOOD | &quot;Good&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| POOR | &quot;Poor&quot; | 
+| NEUTRAL | &quot;Neutral&quot; | 
+| GOOD | &quot;Good&quot; | 
 {: class="table table-striped"}
 
 

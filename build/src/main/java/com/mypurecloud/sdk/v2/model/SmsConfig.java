@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -45,7 +46,7 @@ public class SmsConfig  implements Serializable {
     this.messageColumn = messageColumn;
   }
 
-  
+
   /**
    * The Contact List column specifying the phone number to send a message to.
    **/
@@ -63,7 +64,7 @@ public class SmsConfig  implements Serializable {
     this.phoneColumn = phoneColumn;
   }
 
-  
+
   /**
    * A reference to the SMS Phone Number that will be used as the sender of a message.
    **/
@@ -81,7 +82,7 @@ public class SmsConfig  implements Serializable {
     this.senderSmsPhoneNumber = senderSmsPhoneNumber;
   }
 
-  
+
   /**
    * The content template used to formulate the message to send to the contact.
    **/
@@ -99,7 +100,6 @@ public class SmsConfig  implements Serializable {
     this.contentTemplate = contentTemplate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class SmsConfig  implements Serializable {
       return false;
     }
     SmsConfig smsConfig = (SmsConfig) o;
+
     return Objects.equals(this.messageColumn, smsConfig.messageColumn) &&
-        Objects.equals(this.phoneColumn, smsConfig.phoneColumn) &&
-        Objects.equals(this.senderSmsPhoneNumber, smsConfig.senderSmsPhoneNumber) &&
-        Objects.equals(this.contentTemplate, smsConfig.contentTemplate);
+            Objects.equals(this.phoneColumn, smsConfig.phoneColumn) &&
+            Objects.equals(this.senderSmsPhoneNumber, smsConfig.senderSmsPhoneNumber) &&
+            Objects.equals(this.contentTemplate, smsConfig.contentTemplate);
   }
 
   @Override

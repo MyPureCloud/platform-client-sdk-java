@@ -18,10 +18,10 @@ title: CoachingAppointmentStatusRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SCHEDULED | &quot;Scheduled&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| COMPLETED | &quot;Completed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SCHEDULED | &quot;Scheduled&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
 {: class="table table-striped"}
 
 

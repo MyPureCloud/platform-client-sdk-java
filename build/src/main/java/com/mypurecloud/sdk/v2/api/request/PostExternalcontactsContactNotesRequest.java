@@ -20,42 +20,41 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ExternalContact;
-import com.mypurecloud.sdk.v2.model.Note;
-import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactListing;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
-import com.mypurecloud.sdk.v2.model.ExternalOrganization;
-import com.mypurecloud.sdk.v2.model.RelationshipListing;
-import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
-import com.mypurecloud.sdk.v2.model.Relationship;
-import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
 import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
-import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
-import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
-import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
-import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
-import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
-import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
-import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
-import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
-import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
-import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
-import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
-import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
-import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
-import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
-import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
+import com.mypurecloud.sdk.v2.model.Note;
+import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.Relationship;
+import com.mypurecloud.sdk.v2.model.RelationshipListing;
+import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 
 public class PostExternalcontactsContactNotesRequest {
-    
+
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -69,7 +68,7 @@ public class PostExternalcontactsContactNotesRequest {
 	    this.setContactId(contactId);
 	    return this;
 	} 
-	
+
 	private Note body;
 	public Note getBody() {
 		return this.body;
@@ -83,7 +82,7 @@ public class PostExternalcontactsContactNotesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -120,8 +119,8 @@ public class PostExternalcontactsContactNotesRequest {
                 .withPathParameter("contactId", contactId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -132,12 +131,12 @@ public class PostExternalcontactsContactNotesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String contactId, Note body) {
 	    return new Builder()
 	            .withRequiredParams(contactId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostExternalcontactsContactNotesRequest request;
@@ -146,26 +145,26 @@ public class PostExternalcontactsContactNotesRequest {
 			request = new PostExternalcontactsContactNotesRequest();
 		}
 
-		
+
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
-		
+
 		public Builder withBody(Note body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String contactId, Note body) {
 			request.setContactId(contactId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostExternalcontactsContactNotesRequest build() {
             

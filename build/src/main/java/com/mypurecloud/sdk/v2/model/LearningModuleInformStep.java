@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class LearningModuleInformStep  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The name of the inform step or content
    **/
@@ -113,7 +114,7 @@ public class LearningModuleInformStep  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The value for inform step
    **/
@@ -131,7 +132,7 @@ public class LearningModuleInformStep  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The sharing uri for Content type inform step
    **/
@@ -149,7 +150,7 @@ public class LearningModuleInformStep  implements Serializable {
     this.sharingUri = sharingUri;
   }
 
-  
+
   /**
    * The document type for Content type Inform step
    **/
@@ -167,7 +168,7 @@ public class LearningModuleInformStep  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * The order of inform step in a learning module
    **/
@@ -185,7 +186,6 @@ public class LearningModuleInformStep  implements Serializable {
     this.order = order;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -196,12 +196,13 @@ public class LearningModuleInformStep  implements Serializable {
       return false;
     }
     LearningModuleInformStep learningModuleInformStep = (LearningModuleInformStep) o;
+
     return Objects.equals(this.type, learningModuleInformStep.type) &&
-        Objects.equals(this.name, learningModuleInformStep.name) &&
-        Objects.equals(this.value, learningModuleInformStep.value) &&
-        Objects.equals(this.sharingUri, learningModuleInformStep.sharingUri) &&
-        Objects.equals(this.contentType, learningModuleInformStep.contentType) &&
-        Objects.equals(this.order, learningModuleInformStep.order);
+            Objects.equals(this.name, learningModuleInformStep.name) &&
+            Objects.equals(this.value, learningModuleInformStep.value) &&
+            Objects.equals(this.sharingUri, learningModuleInformStep.sharingUri) &&
+            Objects.equals(this.contentType, learningModuleInformStep.contentType) &&
+            Objects.equals(this.order, learningModuleInformStep.order);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingButtonComponent;
@@ -48,7 +49,7 @@ public class GenericTemplate  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the description.
    **/
@@ -66,7 +67,7 @@ public class GenericTemplate  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * URL of an image.
    **/
@@ -84,7 +85,7 @@ public class GenericTemplate  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * List of button components offered with this message content.
    **/
@@ -102,7 +103,7 @@ public class GenericTemplate  implements Serializable {
     this.components = components;
   }
 
-  
+
   /**
    * Actions to be taken.
    **/
@@ -120,7 +121,6 @@ public class GenericTemplate  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class GenericTemplate  implements Serializable {
       return false;
     }
     GenericTemplate genericTemplate = (GenericTemplate) o;
+
     return Objects.equals(this.title, genericTemplate.title) &&
-        Objects.equals(this.description, genericTemplate.description) &&
-        Objects.equals(this.url, genericTemplate.url) &&
-        Objects.equals(this.components, genericTemplate.components) &&
-        Objects.equals(this.actions, genericTemplate.actions);
+            Objects.equals(this.description, genericTemplate.description) &&
+            Objects.equals(this.url, genericTemplate.url) &&
+            Objects.equals(this.components, genericTemplate.components) &&
+            Objects.equals(this.actions, genericTemplate.actions);
   }
 
   @Override

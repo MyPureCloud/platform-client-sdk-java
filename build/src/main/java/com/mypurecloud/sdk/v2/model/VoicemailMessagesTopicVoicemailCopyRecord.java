@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.VoicemailMessagesTopicOwner;
@@ -41,7 +42,7 @@ public class VoicemailMessagesTopicVoicemailCopyRecord  implements Serializable 
     this.user = user;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailCopyRecord group(VoicemailMessagesTopicOwner group) {
@@ -58,7 +59,6 @@ public class VoicemailMessagesTopicVoicemailCopyRecord  implements Serializable 
     this.group = group;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class VoicemailMessagesTopicVoicemailCopyRecord  implements Serializable 
       return false;
     }
     VoicemailMessagesTopicVoicemailCopyRecord voicemailMessagesTopicVoicemailCopyRecord = (VoicemailMessagesTopicVoicemailCopyRecord) o;
+
     return Objects.equals(this.user, voicemailMessagesTopicVoicemailCopyRecord.user) &&
-        Objects.equals(this.group, voicemailMessagesTopicVoicemailCopyRecord.group);
+            Objects.equals(this.group, voicemailMessagesTopicVoicemailCopyRecord.group);
   }
 
   @Override

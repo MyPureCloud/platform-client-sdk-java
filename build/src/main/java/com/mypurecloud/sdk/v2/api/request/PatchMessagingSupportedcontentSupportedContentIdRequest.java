@@ -21,11 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
 public class PatchMessagingSupportedcontentSupportedContentIdRequest {
-    
+
 	private String supportedContentId;
 	public String getSupportedContentId() {
 		return this.supportedContentId;
@@ -39,7 +39,7 @@ public class PatchMessagingSupportedcontentSupportedContentIdRequest {
 	    this.setSupportedContentId(supportedContentId);
 	    return this;
 	} 
-	
+
 	private SupportedContent body;
 	public SupportedContent getBody() {
 		return this.body;
@@ -53,7 +53,7 @@ public class PatchMessagingSupportedcontentSupportedContentIdRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,8 +90,8 @@ public class PatchMessagingSupportedcontentSupportedContentIdRequest {
                 .withPathParameter("supportedContentId", supportedContentId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -102,12 +102,12 @@ public class PatchMessagingSupportedcontentSupportedContentIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String supportedContentId, SupportedContent body) {
 	    return new Builder()
 	            .withRequiredParams(supportedContentId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchMessagingSupportedcontentSupportedContentIdRequest request;
@@ -116,26 +116,26 @@ public class PatchMessagingSupportedcontentSupportedContentIdRequest {
 			request = new PatchMessagingSupportedcontentSupportedContentIdRequest();
 		}
 
-		
+
 		public Builder withSupportedContentId(String supportedContentId) {
 			request.setSupportedContentId(supportedContentId);
 			return this;
 		}
-		
+
 		public Builder withBody(SupportedContent body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String supportedContentId, SupportedContent body) {
 			request.setSupportedContentId(supportedContentId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PatchMessagingSupportedcontentSupportedContentIdRequest build() {
             

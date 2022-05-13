@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SurveyQuestionScore;
@@ -46,7 +47,7 @@ public class SurveyQuestionGroupScore  implements Serializable {
     this.questionGroupId = questionGroupId;
   }
 
-  
+
   /**
    * Score of all questions in the group
    **/
@@ -64,7 +65,7 @@ public class SurveyQuestionGroupScore  implements Serializable {
     this.totalScore = totalScore;
   }
 
-  
+
   /**
    * Maximum possible score of all questions in the group
    **/
@@ -82,7 +83,7 @@ public class SurveyQuestionGroupScore  implements Serializable {
     this.maxTotalScore = maxTotalScore;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroupScore markedNA(Boolean markedNA) {
@@ -99,7 +100,7 @@ public class SurveyQuestionGroupScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroupScore questionScores(List<SurveyQuestionScore> questionScores) {
@@ -116,7 +117,6 @@ public class SurveyQuestionGroupScore  implements Serializable {
     this.questionScores = questionScores;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class SurveyQuestionGroupScore  implements Serializable {
       return false;
     }
     SurveyQuestionGroupScore surveyQuestionGroupScore = (SurveyQuestionGroupScore) o;
+
     return Objects.equals(this.questionGroupId, surveyQuestionGroupScore.questionGroupId) &&
-        Objects.equals(this.totalScore, surveyQuestionGroupScore.totalScore) &&
-        Objects.equals(this.maxTotalScore, surveyQuestionGroupScore.maxTotalScore) &&
-        Objects.equals(this.markedNA, surveyQuestionGroupScore.markedNA) &&
-        Objects.equals(this.questionScores, surveyQuestionGroupScore.questionScores);
+            Objects.equals(this.totalScore, surveyQuestionGroupScore.totalScore) &&
+            Objects.equals(this.maxTotalScore, surveyQuestionGroupScore.maxTotalScore) &&
+            Objects.equals(this.markedNA, surveyQuestionGroupScore.markedNA) &&
+            Objects.equals(this.questionScores, surveyQuestionGroupScore.questionScores);
   }
 
   @Override

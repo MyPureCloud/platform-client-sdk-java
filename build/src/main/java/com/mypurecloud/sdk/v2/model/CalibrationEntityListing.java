@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CalibrationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CalibrationEntityListing  implements Serializable, PagedResource<Ca
       return false;
     }
     CalibrationEntityListing calibrationEntityListing = (CalibrationEntityListing) o;
+
     return Objects.equals(this.entities, calibrationEntityListing.entities) &&
-        Objects.equals(this.pageSize, calibrationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, calibrationEntityListing.pageNumber) &&
-        Objects.equals(this.total, calibrationEntityListing.total) &&
-        Objects.equals(this.lastUri, calibrationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, calibrationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, calibrationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, calibrationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, calibrationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, calibrationEntityListing.pageCount);
+            Objects.equals(this.pageSize, calibrationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, calibrationEntityListing.pageNumber) &&
+            Objects.equals(this.total, calibrationEntityListing.total) &&
+            Objects.equals(this.lastUri, calibrationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, calibrationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, calibrationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, calibrationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, calibrationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, calibrationEntityListing.pageCount);
   }
 
   @Override

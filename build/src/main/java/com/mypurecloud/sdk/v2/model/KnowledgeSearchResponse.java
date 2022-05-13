@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchDocument;
@@ -37,42 +38,41 @@ public class KnowledgeSearchResponse  implements Serializable {
     return searchId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of records returned")
   @JsonProperty("total")
   public Integer getTotal() {
     return total;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of pages returned in the result calculated according to the pageSize and the total")
   @JsonProperty("pageCount")
   public Integer getPageCount() {
     return pageCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of records according to the page size")
   @JsonProperty("pageSize")
   public Integer getPageSize() {
     return pageSize;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current page number for the returned records")
   @JsonProperty("pageNumber")
   public Integer getPageNumber() {
     return pageNumber;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Results associated to the search response")
   @JsonProperty("results")
   public List<KnowledgeSearchDocument> getResults() {
     return results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +83,13 @@ public class KnowledgeSearchResponse  implements Serializable {
       return false;
     }
     KnowledgeSearchResponse knowledgeSearchResponse = (KnowledgeSearchResponse) o;
+
     return Objects.equals(this.searchId, knowledgeSearchResponse.searchId) &&
-        Objects.equals(this.total, knowledgeSearchResponse.total) &&
-        Objects.equals(this.pageCount, knowledgeSearchResponse.pageCount) &&
-        Objects.equals(this.pageSize, knowledgeSearchResponse.pageSize) &&
-        Objects.equals(this.pageNumber, knowledgeSearchResponse.pageNumber) &&
-        Objects.equals(this.results, knowledgeSearchResponse.results);
+            Objects.equals(this.total, knowledgeSearchResponse.total) &&
+            Objects.equals(this.pageCount, knowledgeSearchResponse.pageCount) &&
+            Objects.equals(this.pageSize, knowledgeSearchResponse.pageSize) &&
+            Objects.equals(this.pageNumber, knowledgeSearchResponse.pageNumber) &&
+            Objects.equals(this.results, knowledgeSearchResponse.results);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public SecurityProfileEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
       return false;
     }
     SecurityProfileEntityListing securityProfileEntityListing = (SecurityProfileEntityListing) o;
+
     return Objects.equals(this.entities, securityProfileEntityListing.entities) &&
-        Objects.equals(this.pageSize, securityProfileEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, securityProfileEntityListing.pageNumber) &&
-        Objects.equals(this.total, securityProfileEntityListing.total) &&
-        Objects.equals(this.lastUri, securityProfileEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, securityProfileEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, securityProfileEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, securityProfileEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, securityProfileEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, securityProfileEntityListing.pageCount);
+            Objects.equals(this.pageSize, securityProfileEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, securityProfileEntityListing.pageNumber) &&
+            Objects.equals(this.total, securityProfileEntityListing.total) &&
+            Objects.equals(this.lastUri, securityProfileEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, securityProfileEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, securityProfileEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, securityProfileEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, securityProfileEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, securityProfileEntityListing.pageCount);
   }
 
   @Override

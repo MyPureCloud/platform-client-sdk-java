@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
@@ -51,7 +52,7 @@ public class FaxDocument  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public FaxDocument name(String name) {
@@ -68,7 +69,7 @@ public class FaxDocument  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -86,7 +87,7 @@ public class FaxDocument  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -104,7 +105,7 @@ public class FaxDocument  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public FaxDocument contentUri(String contentUri) {
@@ -121,7 +122,7 @@ public class FaxDocument  implements Serializable {
     this.contentUri = contentUri;
   }
 
-  
+
   /**
    **/
   public FaxDocument workspace(DomainEntityRef workspace) {
@@ -138,7 +139,7 @@ public class FaxDocument  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public FaxDocument createdBy(DomainEntityRef createdBy) {
@@ -155,7 +156,7 @@ public class FaxDocument  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public FaxDocument sharingUri(String sharingUri) {
@@ -172,7 +173,7 @@ public class FaxDocument  implements Serializable {
     this.sharingUri = sharingUri;
   }
 
-  
+
   /**
    **/
   public FaxDocument contentType(String contentType) {
@@ -189,7 +190,7 @@ public class FaxDocument  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public FaxDocument contentLength(Long contentLength) {
@@ -206,7 +207,7 @@ public class FaxDocument  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    **/
   public FaxDocument filename(String filename) {
@@ -223,7 +224,7 @@ public class FaxDocument  implements Serializable {
     this.filename = filename;
   }
 
-  
+
   /**
    **/
   public FaxDocument read(Boolean read) {
@@ -240,7 +241,7 @@ public class FaxDocument  implements Serializable {
     this.read = read;
   }
 
-  
+
   /**
    **/
   public FaxDocument pageCount(Long pageCount) {
@@ -257,7 +258,7 @@ public class FaxDocument  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    **/
   public FaxDocument callerAddress(String callerAddress) {
@@ -274,7 +275,7 @@ public class FaxDocument  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    **/
   public FaxDocument receiverAddress(String receiverAddress) {
@@ -291,7 +292,7 @@ public class FaxDocument  implements Serializable {
     this.receiverAddress = receiverAddress;
   }
 
-  
+
   /**
    **/
   public FaxDocument thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -308,7 +309,7 @@ public class FaxDocument  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
-  
+
   /**
    **/
   public FaxDocument downloadSharingUri(String downloadSharingUri) {
@@ -325,14 +326,13 @@ public class FaxDocument  implements Serializable {
     this.downloadSharingUri = downloadSharingUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -343,24 +343,25 @@ public class FaxDocument  implements Serializable {
       return false;
     }
     FaxDocument faxDocument = (FaxDocument) o;
+
     return Objects.equals(this.id, faxDocument.id) &&
-        Objects.equals(this.name, faxDocument.name) &&
-        Objects.equals(this.dateCreated, faxDocument.dateCreated) &&
-        Objects.equals(this.dateModified, faxDocument.dateModified) &&
-        Objects.equals(this.contentUri, faxDocument.contentUri) &&
-        Objects.equals(this.workspace, faxDocument.workspace) &&
-        Objects.equals(this.createdBy, faxDocument.createdBy) &&
-        Objects.equals(this.sharingUri, faxDocument.sharingUri) &&
-        Objects.equals(this.contentType, faxDocument.contentType) &&
-        Objects.equals(this.contentLength, faxDocument.contentLength) &&
-        Objects.equals(this.filename, faxDocument.filename) &&
-        Objects.equals(this.read, faxDocument.read) &&
-        Objects.equals(this.pageCount, faxDocument.pageCount) &&
-        Objects.equals(this.callerAddress, faxDocument.callerAddress) &&
-        Objects.equals(this.receiverAddress, faxDocument.receiverAddress) &&
-        Objects.equals(this.thumbnails, faxDocument.thumbnails) &&
-        Objects.equals(this.downloadSharingUri, faxDocument.downloadSharingUri) &&
-        Objects.equals(this.selfUri, faxDocument.selfUri);
+            Objects.equals(this.name, faxDocument.name) &&
+            Objects.equals(this.dateCreated, faxDocument.dateCreated) &&
+            Objects.equals(this.dateModified, faxDocument.dateModified) &&
+            Objects.equals(this.contentUri, faxDocument.contentUri) &&
+            Objects.equals(this.workspace, faxDocument.workspace) &&
+            Objects.equals(this.createdBy, faxDocument.createdBy) &&
+            Objects.equals(this.sharingUri, faxDocument.sharingUri) &&
+            Objects.equals(this.contentType, faxDocument.contentType) &&
+            Objects.equals(this.contentLength, faxDocument.contentLength) &&
+            Objects.equals(this.filename, faxDocument.filename) &&
+            Objects.equals(this.read, faxDocument.read) &&
+            Objects.equals(this.pageCount, faxDocument.pageCount) &&
+            Objects.equals(this.callerAddress, faxDocument.callerAddress) &&
+            Objects.equals(this.receiverAddress, faxDocument.receiverAddress) &&
+            Objects.equals(this.thumbnails, faxDocument.thumbnails) &&
+            Objects.equals(this.downloadSharingUri, faxDocument.downloadSharingUri) &&
+            Objects.equals(this.selfUri, faxDocument.selfUri);
   }
 
   @Override

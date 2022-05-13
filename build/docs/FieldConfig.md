@@ -25,11 +25,11 @@ title: FieldConfig
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PERSON | &quot;person&quot; |
-| GROUP | &quot;group&quot; |
-| ORG | &quot;org&quot; |
-| EXTERNALCONTACT | &quot;externalContact&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PERSON | &quot;person&quot; | 
+| GROUP | &quot;group&quot; | 
+| ORG | &quot;org&quot; | 
+| EXTERNALCONTACT | &quot;externalContact&quot; | 
 {: class="table table-striped"}
 
 

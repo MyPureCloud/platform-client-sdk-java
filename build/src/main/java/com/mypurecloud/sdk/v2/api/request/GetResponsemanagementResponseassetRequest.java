@@ -20,23 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 public class GetResponsemanagementResponseassetRequest {
-    
+
 	private String responseAssetId;
 	public String getResponseAssetId() {
 		return this.responseAssetId;
@@ -50,7 +50,7 @@ public class GetResponsemanagementResponseassetRequest {
 	    this.setResponseAssetId(responseAssetId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +81,7 @@ public class GetResponsemanagementResponseassetRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/responsemanagement/responseassets/{responseAssetId}")
                 .withPathParameter("responseAssetId", responseAssetId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -92,12 +92,12 @@ public class GetResponsemanagementResponseassetRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String responseAssetId) {
 	    return new Builder()
 	            .withRequiredParams(responseAssetId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetResponsemanagementResponseassetRequest request;
@@ -106,20 +106,20 @@ public class GetResponsemanagementResponseassetRequest {
 			request = new GetResponsemanagementResponseassetRequest();
 		}
 
-		
+
 		public Builder withResponseAssetId(String responseAssetId) {
 			request.setResponseAssetId(responseAssetId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String responseAssetId) {
 			request.setResponseAssetId(responseAssetId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetResponsemanagementResponseassetRequest build() {
             

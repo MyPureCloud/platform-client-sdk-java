@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -147,49 +148,49 @@ public class DevelopmentActivity  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that created activity")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user's percentage score for this activity")
   @JsonProperty("percentageScore")
   public Float getPercentageScore() {
     return percentageScore;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "True if the activity was passed")
   @JsonProperty("isPassed")
   public Boolean getIsPassed() {
     return isPassed;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * The name of the activity
    **/
@@ -207,7 +208,7 @@ public class DevelopmentActivity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of activity
    **/
@@ -225,7 +226,7 @@ public class DevelopmentActivity  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The status of the activity
    **/
@@ -243,7 +244,7 @@ public class DevelopmentActivity  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -261,7 +262,7 @@ public class DevelopmentActivity  implements Serializable {
     this.dateDue = dateDue;
   }
 
-  
+
   /**
    * Facilitator of the activity
    **/
@@ -279,7 +280,7 @@ public class DevelopmentActivity  implements Serializable {
     this.facilitator = facilitator;
   }
 
-  
+
   /**
    * List of users attending the activity
    **/
@@ -297,7 +298,7 @@ public class DevelopmentActivity  implements Serializable {
     this.attendees = attendees;
   }
 
-  
+
   /**
    * Indicates if the activity is overdue
    **/
@@ -315,7 +316,6 @@ public class DevelopmentActivity  implements Serializable {
     this.isOverdue = isOverdue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -326,20 +326,21 @@ public class DevelopmentActivity  implements Serializable {
       return false;
     }
     DevelopmentActivity developmentActivity = (DevelopmentActivity) o;
+
     return Objects.equals(this.id, developmentActivity.id) &&
-        Objects.equals(this.dateCompleted, developmentActivity.dateCompleted) &&
-        Objects.equals(this.createdBy, developmentActivity.createdBy) &&
-        Objects.equals(this.dateCreated, developmentActivity.dateCreated) &&
-        Objects.equals(this.percentageScore, developmentActivity.percentageScore) &&
-        Objects.equals(this.isPassed, developmentActivity.isPassed) &&
-        Objects.equals(this.selfUri, developmentActivity.selfUri) &&
-        Objects.equals(this.name, developmentActivity.name) &&
-        Objects.equals(this.type, developmentActivity.type) &&
-        Objects.equals(this.status, developmentActivity.status) &&
-        Objects.equals(this.dateDue, developmentActivity.dateDue) &&
-        Objects.equals(this.facilitator, developmentActivity.facilitator) &&
-        Objects.equals(this.attendees, developmentActivity.attendees) &&
-        Objects.equals(this.isOverdue, developmentActivity.isOverdue);
+            Objects.equals(this.dateCompleted, developmentActivity.dateCompleted) &&
+            Objects.equals(this.createdBy, developmentActivity.createdBy) &&
+            Objects.equals(this.dateCreated, developmentActivity.dateCreated) &&
+            Objects.equals(this.percentageScore, developmentActivity.percentageScore) &&
+            Objects.equals(this.isPassed, developmentActivity.isPassed) &&
+            Objects.equals(this.selfUri, developmentActivity.selfUri) &&
+            Objects.equals(this.name, developmentActivity.name) &&
+            Objects.equals(this.type, developmentActivity.type) &&
+            Objects.equals(this.status, developmentActivity.status) &&
+            Objects.equals(this.dateDue, developmentActivity.dateDue) &&
+            Objects.equals(this.facilitator, developmentActivity.facilitator) &&
+            Objects.equals(this.attendees, developmentActivity.attendees) &&
+            Objects.equals(this.isOverdue, developmentActivity.isOverdue);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class Recipient  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Recipient name(String name) {
@@ -111,7 +112,7 @@ public class Recipient  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.
    **/
@@ -129,7 +130,7 @@ public class Recipient  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * Date this recipient was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -147,7 +148,7 @@ public class Recipient  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this recipient was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -165,7 +166,7 @@ public class Recipient  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User that created this recipient
    **/
@@ -183,7 +184,7 @@ public class Recipient  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User that modified this recipient
    **/
@@ -201,7 +202,7 @@ public class Recipient  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The messenger type for this recipient
    **/
@@ -219,14 +220,13 @@ public class Recipient  implements Serializable {
     this.messengerType = messengerType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -237,15 +237,16 @@ public class Recipient  implements Serializable {
       return false;
     }
     Recipient recipient = (Recipient) o;
+
     return Objects.equals(this.id, recipient.id) &&
-        Objects.equals(this.name, recipient.name) &&
-        Objects.equals(this.flow, recipient.flow) &&
-        Objects.equals(this.dateCreated, recipient.dateCreated) &&
-        Objects.equals(this.dateModified, recipient.dateModified) &&
-        Objects.equals(this.createdBy, recipient.createdBy) &&
-        Objects.equals(this.modifiedBy, recipient.modifiedBy) &&
-        Objects.equals(this.messengerType, recipient.messengerType) &&
-        Objects.equals(this.selfUri, recipient.selfUri);
+            Objects.equals(this.name, recipient.name) &&
+            Objects.equals(this.flow, recipient.flow) &&
+            Objects.equals(this.dateCreated, recipient.dateCreated) &&
+            Objects.equals(this.dateModified, recipient.dateModified) &&
+            Objects.equals(this.createdBy, recipient.createdBy) &&
+            Objects.equals(this.modifiedBy, recipient.modifiedBy) &&
+            Objects.equals(this.messengerType, recipient.messengerType) &&
+            Objects.equals(this.selfUri, recipient.selfUri);
   }
 
   @Override

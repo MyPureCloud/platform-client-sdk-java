@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventTy
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping duration(Integer duration) {
@@ -104,7 +105,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventTy
     this.duration = duration;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,8 +115,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventTy
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping v2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping = (V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping.type) &&
-        Objects.equals(this.duration, v2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping.duration);
+            Objects.equals(this.duration, v2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping.duration);
   }
 
   @Override

@@ -65,8 +65,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request
 
-
-
 Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -128,8 +126,6 @@ null (empty response body)
 
 Delete a scheduled report job.
 
-
-
 Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId}  
 
 Requires NO permissions: 
@@ -188,8 +184,6 @@ null (empty response body)
 > Void deleteAnalyticsUsersDetailsJob(jobId)
 
 Delete/cancel an async request
-
-
 
 Wraps DELETE /api/v2/analytics/users/details/jobs/{jobId}  
 
@@ -250,8 +244,6 @@ null (empty response body)
 > [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId)
 
 Get Reporting Turns.
-
-
 
 Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns  
 
@@ -322,8 +314,6 @@ try {
 
 Get a conversation by id
 
-
-
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details  
 
 Requires ANY permissions: 
@@ -386,8 +376,6 @@ try {
 
 Gets multiple conversations by id
 
-
-
 Wraps GET /api/v2/analytics/conversations/details  
 
 Requires ANY permissions: 
@@ -417,7 +405,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-List<String> id = Arrays.asList("id_example"); // List<String> | Comma-separated conversation ids
+List<String> id = Arrays.asList(null); // List<String> | Comma-separated conversation ids
 try {
     AnalyticsConversationWithoutAttributesMultiGetResponse result = apiInstance.getAnalyticsConversationsDetails(id);
     System.out.println(result);
@@ -449,8 +437,6 @@ try {
 > [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsConversationsDetailsJob(jobId)
 
 Get status for async query for conversation details
-
-
 
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}  
 
@@ -513,8 +499,6 @@ try {
 > [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse.html) getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)
 
 Fetch a page of results for an async query
-
-
 
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results  
 
@@ -582,8 +566,6 @@ try {
 
 Lookup the datalake availability date and time
 
-
-
 Wraps GET /api/v2/analytics/conversations/details/jobs/availability  
 
 Requires ANY permissions: 
@@ -640,8 +622,6 @@ This endpoint does not require any parameters.
 > [ReportingExportJobListing](ReportingExportJobListing.html) getAnalyticsReportingExports(pageNumber, pageSize)
 
 Get all view export requests for a user
-
-
 
 Wraps GET /api/v2/analytics/reporting/exports  
 
@@ -706,8 +686,6 @@ try {
 
 Get all export metadata
 
-
-
 Wraps GET /api/v2/analytics/reporting/exports/metadata  
 
 Requires ALL permissions: 
@@ -764,8 +742,6 @@ This endpoint does not require any parameters.
 > [ReportMetaDataEntityListing](ReportMetaDataEntityListing.html) getAnalyticsReportingMetadata(pageNumber, pageSize, locale)
 
 Get list of reporting metadata.
-
-
 
 Wraps GET /api/v2/analytics/reporting/metadata  
 
@@ -831,8 +807,6 @@ try {
 > [ReportMetaData](ReportMetaData.html) getAnalyticsReportingReportIdMetadata(reportId, locale)
 
 Get a reporting metadata.
-
-
 
 Wraps GET /api/v2/analytics/reporting/{reportId}/metadata  
 
@@ -955,8 +929,6 @@ This endpoint does not require any parameters.
 
 Get a scheduled report job.
 
-
-
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}  
 
 Requires NO permissions: 
@@ -1016,8 +988,6 @@ try {
 > [ReportRunEntryEntityDomainListing](ReportRunEntryEntityDomainListing.html) getAnalyticsReportingScheduleHistory(scheduleId, pageNumber, pageSize)
 
 Get list of completed scheduled report jobs.
-
-
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history  
 
@@ -1082,8 +1052,6 @@ try {
 > [ReportRunEntry](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 
 Get most recently completed scheduled report job.
-
-
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest  
 
@@ -1274,8 +1242,6 @@ try {
 
 Get AnalyticsReportingSettings for an organization
 
-
-
 Wraps GET /api/v2/analytics/reporting/settings  
 
 Requires NO permissions: 
@@ -1332,8 +1298,6 @@ This endpoint does not require any parameters.
 
 Get a list of report time periods.
 
-
-
 Wraps GET /api/v2/analytics/reporting/timeperiods  
 
 Requires NO permissions: 
@@ -1389,8 +1353,6 @@ This endpoint does not require any parameters.
 > [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsUsersDetailsJob(jobId)
 
 Get status for async query for user details
-
-
 
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId}  
 
@@ -1452,8 +1414,6 @@ try {
 > [AnalyticsUserDetailsAsyncQueryResponse](AnalyticsUserDetailsAsyncQueryResponse.html) getAnalyticsUsersDetailsJobResults(jobId, cursor, pageSize)
 
 Fetch a page of results for an async query
-
-
 
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId}/results  
 
@@ -1520,8 +1480,6 @@ try {
 
 Lookup the datalake availability date and time
 
-
-
 Wraps GET /api/v2/analytics/users/details/jobs/availability  
 
 Requires ANY permissions: 
@@ -1578,8 +1536,6 @@ This endpoint does not require any parameters.
 > [AnalyticsReportingSettings](AnalyticsReportingSettings.html) patchAnalyticsReportingSettings(body)
 
 Patch AnalyticsReportingSettings values for an organization
-
-
 
 Wraps PATCH /api/v2/analytics/reporting/settings  
 
@@ -1645,8 +1601,6 @@ try {
 
 Query for bot aggregates
 
-
-
 Wraps POST /api/v2/analytics/bots/aggregates/query  
 
 Requires ANY permissions: 
@@ -1707,8 +1661,6 @@ try {
 > [PropertyIndexRequest](PropertyIndexRequest.html) postAnalyticsConversationDetailsProperties(conversationId, body)
 
 Index conversation properties
-
-
 
 Wraps POST /api/v2/analytics/conversations/{conversationId}/details/properties  
 
@@ -1773,8 +1725,6 @@ try {
 
 Query for conversation aggregates
 
-
-
 Wraps POST /api/v2/analytics/conversations/aggregates/query  
 
 Requires ANY permissions: 
@@ -1835,8 +1785,6 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsConversationsDetailsJobs(body)
 
 Query for conversation details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/conversations/details/jobs  
 
@@ -1900,8 +1848,6 @@ try {
 
 Query for conversation details
 
-
-
 Wraps POST /api/v2/analytics/conversations/details/query  
 
 Requires ANY permissions: 
@@ -1964,8 +1910,6 @@ try {
 
 Search resources.
 
-
-
 Wraps POST /api/v2/analytics/conversations/transcripts/query  
 
 Requires ANY permissions: 
@@ -2026,8 +1970,6 @@ try {
 > [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
 
 Query for evaluation aggregates
-
-
 
 Wraps POST /api/v2/analytics/evaluations/aggregates/query  
 
@@ -2090,8 +2032,6 @@ try {
 
 Query for flow aggregates
 
-
-
 Wraps POST /api/v2/analytics/flows/aggregates/query  
 
 Requires ANY permissions: 
@@ -2152,8 +2092,6 @@ try {
 > [FlowObservationQueryResponse](FlowObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
-
-
 
 Wraps POST /api/v2/analytics/flows/observations/query  
 
@@ -2216,8 +2154,6 @@ try {
 
 Query for journey aggregates
 
-
-
 Wraps POST /api/v2/analytics/journeys/aggregates/query  
 
 Requires ANY permissions: 
@@ -2278,8 +2214,6 @@ try {
 > [QueueObservationQueryResponse](QueueObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
-
-
 
 Wraps POST /api/v2/analytics/queues/observations/query  
 
@@ -2405,8 +2339,6 @@ try {
 
 Place a scheduled report immediately into the reporting queue
 
-
-
 Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport  
 
 Requires ANY permissions: 
@@ -2531,8 +2463,6 @@ try {
 
 Query for survey aggregates
 
-
-
 Wraps POST /api/v2/analytics/surveys/aggregates/query  
 
 Requires ANY permissions: 
@@ -2593,8 +2523,6 @@ try {
 > [TranscriptAggregateQueryResponse](TranscriptAggregateQueryResponse.html) postAnalyticsTranscriptsAggregatesQuery(body)
 
 Query for transcript aggregates
-
-
 
 Wraps POST /api/v2/analytics/transcripts/aggregates/query  
 
@@ -2657,8 +2585,6 @@ try {
 
 Query for user aggregates
 
-
-
 Wraps POST /api/v2/analytics/users/aggregates/query  
 
 Requires ANY permissions: 
@@ -2719,8 +2645,6 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsUsersDetailsJobs(body)
 
 Query for user details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/users/details/jobs  
 
@@ -2783,8 +2707,6 @@ try {
 
 Query for user details
 
-
-
 Wraps POST /api/v2/analytics/users/details/query  
 
 Requires ANY permissions: 
@@ -2846,8 +2768,6 @@ try {
 
 Query for user observations
 
-
-
 Wraps POST /api/v2/analytics/users/observations/query  
 
 Requires ANY permissions: 
@@ -2908,8 +2828,6 @@ try {
 > [ReportSchedule](ReportSchedule.html) putAnalyticsReportingSchedule(scheduleId, body)
 
 Update a scheduled report job.
-
-
 
 Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId}  
 

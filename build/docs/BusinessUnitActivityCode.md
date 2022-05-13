@@ -16,7 +16,7 @@ title: BusinessUnitActivityCode
 | **lengthInMinutes** | <!----><!---->**Integer**<!----> | The default length of the activity in minutes |  [optional] |
 | **countsAsPaidTime** | <!----><!---->**Boolean**<!----> | Whether an agent is paid while performing this activity |  [optional] |
 | **countsAsWorkTime** | <!----><!---->**Boolean**<!----> | Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints |  [optional] |
-| **agentTimeOffSelectable** | <!----><!---->**Boolean**<!----> | Whether an agent can select this activity code when creating or editing a time off request. Null if the activity&#39;s category is not time off. |  [optional] |
+| **agentTimeOffSelectable** | <!----><!---->**Boolean**<!----> | Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off. |  [optional] |
 | **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata of this activity code |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
@@ -28,16 +28,16 @@ title: BusinessUnitActivityCode
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ONQUEUEWORK | &quot;OnQueueWork&quot; |
-| BREAK | &quot;Break&quot; |
-| MEAL | &quot;Meal&quot; |
-| MEETING | &quot;Meeting&quot; |
-| OFFQUEUEWORK | &quot;OffQueueWork&quot; |
-| TIMEOFF | &quot;TimeOff&quot; |
-| TRAINING | &quot;Training&quot; |
-| UNAVAILABLE | &quot;Unavailable&quot; |
-| UNSCHEDULED | &quot;Unscheduled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONQUEUEWORK | &quot;OnQueueWork&quot; | 
+| BREAK | &quot;Break&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| OFFQUEUEWORK | &quot;OffQueueWork&quot; | 
+| TIMEOFF | &quot;TimeOff&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| UNAVAILABLE | &quot;Unavailable&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
 {: class="table table-striped"}
 
 

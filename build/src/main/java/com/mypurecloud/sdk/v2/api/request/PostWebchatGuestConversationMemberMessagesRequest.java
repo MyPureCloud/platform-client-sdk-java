@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebChatDeployment;
 import com.mypurecloud.sdk.v2.model.WebChatDeploymentEntityListing;
@@ -30,13 +33,10 @@ import com.mypurecloud.sdk.v2.model.WebChatMemberInfoEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatSettings;
-import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
 
 public class PostWebchatGuestConversationMemberMessagesRequest {
-    
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -50,7 +50,7 @@ public class PostWebchatGuestConversationMemberMessagesRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private String memberId;
 	public String getMemberId() {
 		return this.memberId;
@@ -64,7 +64,7 @@ public class PostWebchatGuestConversationMemberMessagesRequest {
 	    this.setMemberId(memberId);
 	    return this;
 	} 
-	
+
 	private CreateWebChatMessageRequest body;
 	public CreateWebChatMessageRequest getBody() {
 		return this.body;
@@ -78,7 +78,7 @@ public class PostWebchatGuestConversationMemberMessagesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,8 +122,8 @@ public class PostWebchatGuestConversationMemberMessagesRequest {
                 .withPathParameter("memberId", memberId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("Guest Chat JWT")
@@ -134,12 +134,12 @@ public class PostWebchatGuestConversationMemberMessagesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String conversationId, String memberId, CreateWebChatMessageRequest body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, memberId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostWebchatGuestConversationMemberMessagesRequest request;
@@ -148,32 +148,32 @@ public class PostWebchatGuestConversationMemberMessagesRequest {
 			request = new PostWebchatGuestConversationMemberMessagesRequest();
 		}
 
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
+
 		public Builder withMemberId(String memberId) {
 			request.setMemberId(memberId);
 			return this;
 		}
-		
+
 		public Builder withBody(CreateWebChatMessageRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String conversationId, String memberId, CreateWebChatMessageRequest body) {
 			request.setConversationId(conversationId);
-						request.setMemberId(memberId);
-						request.setBody(body);
-			
+			request.setMemberId(memberId);
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostWebchatGuestConversationMemberMessagesRequest build() {
             

@@ -29,10 +29,10 @@ title: Greeting
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STATION | &quot;STATION&quot; |
-| VOICEMAIL | &quot;VOICEMAIL&quot; |
-| NAME | &quot;NAME&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STATION | &quot;STATION&quot; | 
+| VOICEMAIL | &quot;VOICEMAIL&quot; | 
+| NAME | &quot;NAME&quot; | 
 {: class="table table-striped"}
 
 
@@ -42,10 +42,10 @@ title: Greeting
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USER | &quot;USER&quot; |
-| ORGANIZATION | &quot;ORGANIZATION&quot; |
-| GROUP | &quot;GROUP&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USER | &quot;USER&quot; | 
+| ORGANIZATION | &quot;ORGANIZATION&quot; | 
+| GROUP | &quot;GROUP&quot; | 
 {: class="table table-striped"}
 
 

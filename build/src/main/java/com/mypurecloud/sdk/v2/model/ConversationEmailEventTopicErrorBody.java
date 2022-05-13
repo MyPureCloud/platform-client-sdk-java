@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody details(List<ConversationEmailEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.details = details;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicErrorBody errors(List<ConversationEmailEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class ConversationEmailEventTopicErrorBody  implements Serializable {
       return false;
     }
     ConversationEmailEventTopicErrorBody conversationEmailEventTopicErrorBody = (ConversationEmailEventTopicErrorBody) o;
+
     return Objects.equals(this.message, conversationEmailEventTopicErrorBody.message) &&
-        Objects.equals(this.code, conversationEmailEventTopicErrorBody.code) &&
-        Objects.equals(this.status, conversationEmailEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, conversationEmailEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, conversationEmailEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, conversationEmailEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, conversationEmailEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, conversationEmailEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, conversationEmailEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, conversationEmailEventTopicErrorBody.errors);
+            Objects.equals(this.code, conversationEmailEventTopicErrorBody.code) &&
+            Objects.equals(this.status, conversationEmailEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, conversationEmailEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, conversationEmailEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, conversationEmailEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, conversationEmailEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, conversationEmailEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, conversationEmailEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, conversationEmailEventTopicErrorBody.errors);
   }
 
   @Override

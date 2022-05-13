@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetFaxDocumentsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -41,7 +41,7 @@ public class GetFaxDocumentsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -55,7 +55,7 @@ public class GetFaxDocumentsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -79,11 +79,13 @@ public class GetFaxDocumentsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/fax/documents")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -94,7 +96,7 @@ public class GetFaxDocumentsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetFaxDocumentsRequest request;
@@ -103,19 +105,19 @@ public class GetFaxDocumentsRequest {
 			request = new GetFaxDocumentsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetFaxDocumentsRequest build() {
             

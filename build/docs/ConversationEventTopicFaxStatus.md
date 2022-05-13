@@ -8,7 +8,7 @@ title: ConversationEventTopicFaxStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **direction** | <!----><!---->**String**<!----> | The fax direction, either \&quot;send\&quot; or \&quot;receive\&quot;. |  [optional] |
+| **direction** | <!----><!---->**String**<!----> | The fax direction, either \"send\" or \"receive\". |  [optional] |
 | **expectedPages** | <!----><!---->**Integer**<!----> | Total number of expected pages, if known. |  [optional] |
 | **activePage** | <!----><!---->**Integer**<!----> | Active page of the transmission. |  [optional] |
 | **linesTransmitted** | <!----><!---->**Integer**<!----> | Number of lines that have completed transmission. |  [optional] |

@@ -19,11 +19,11 @@ title: SchedulingNoForecastOptionsRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SHORTEST | &quot;Shortest&quot; |
-| MEDIAN | &quot;Median&quot; |
-| LONGEST | &quot;Longest&quot; |
-| RANDOM | &quot;Random&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SHORTEST | &quot;Shortest&quot; | 
+| MEDIAN | &quot;Median&quot; | 
+| LONGEST | &quot;Longest&quot; | 
+| RANDOM | &quot;Random&quot; | 
 {: class="table table-striped"}
 
 
@@ -33,11 +33,11 @@ title: SchedulingNoForecastOptionsRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EARLIEST | &quot;Earliest&quot; |
-| MEDIAN | &quot;Median&quot; |
-| LATEST | &quot;Latest&quot; |
-| RANDOM | &quot;Random&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EARLIEST | &quot;Earliest&quot; | 
+| MEDIAN | &quot;Median&quot; | 
+| LATEST | &quot;Latest&quot; | 
+| RANDOM | &quot;Random&quot; | 
 {: class="table table-striped"}
 
 

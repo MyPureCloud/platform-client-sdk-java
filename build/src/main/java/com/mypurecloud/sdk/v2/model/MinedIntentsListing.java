@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MinerIntent;
@@ -45,7 +46,7 @@ public class MinedIntentsListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public MinedIntentsListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class MinedIntentsListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public MinedIntentsListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class MinedIntentsListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public MinedIntentsListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class MinedIntentsListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class MinedIntentsListing  implements Serializable {
       return false;
     }
     MinedIntentsListing minedIntentsListing = (MinedIntentsListing) o;
+
     return Objects.equals(this.entities, minedIntentsListing.entities) &&
-        Objects.equals(this.nextUri, minedIntentsListing.nextUri) &&
-        Objects.equals(this.selfUri, minedIntentsListing.selfUri) &&
-        Objects.equals(this.previousUri, minedIntentsListing.previousUri);
+            Objects.equals(this.nextUri, minedIntentsListing.nextUri) &&
+            Objects.equals(this.selfUri, minedIntentsListing.selfUri) &&
+            Objects.equals(this.previousUri, minedIntentsListing.previousUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanMessages;
@@ -44,7 +45,7 @@ public class ValidateWorkPlanResponse  implements Serializable {
     this.workPlan = workPlan;
   }
 
-  
+
   /**
    * Whether the work plan is valid or not
    **/
@@ -62,7 +63,7 @@ public class ValidateWorkPlanResponse  implements Serializable {
     this.valid = valid;
   }
 
-  
+
   /**
    * Validation messages for this work plan
    **/
@@ -80,7 +81,6 @@ public class ValidateWorkPlanResponse  implements Serializable {
     this.messages = messages;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class ValidateWorkPlanResponse  implements Serializable {
       return false;
     }
     ValidateWorkPlanResponse validateWorkPlanResponse = (ValidateWorkPlanResponse) o;
+
     return Objects.equals(this.workPlan, validateWorkPlanResponse.workPlan) &&
-        Objects.equals(this.valid, validateWorkPlanResponse.valid) &&
-        Objects.equals(this.messages, validateWorkPlanResponse.messages);
+            Objects.equals(this.valid, validateWorkPlanResponse.valid) &&
+            Objects.equals(this.messages, validateWorkPlanResponse.messages);
   }
 
   @Override

@@ -30,7 +30,7 @@ title: DialerCampaignConfigChangeCampaign
 | **singleNumberPreview** | <!----><!---->**Boolean**<!----> | for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview |  [optional] |
 | **contactSort** | <!----><!---->[**DialerCampaignConfigChangeContactSort**](DialerCampaignConfigChangeContactSort.html)<!----> |  |  [optional] |
 | **contactSorts** | <!----><!---->[**List&lt;DialerCampaignConfigChangeContactSort&gt;**](DialerCampaignConfigChangeContactSort.html)<!----> | List of contact sort objects. |  [optional] |
-| **noAnswerTimeout** | <!----><!---->**Integer**<!----> | for non-preview campaigns, how long to wait before dispositioning as &#39;no-answer&#39;, default 30 seconds |  [optional] |
+| **noAnswerTimeout** | <!----><!---->**Integer**<!----> | for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds |  [optional] |
 | **callAnalysisLanguage** | <!----><!---->**String**<!----> | The language the edge will use to analyze the call |  [optional] |
 | **priority** | <!----><!---->**Integer**<!----> | The priority of this campaign relative to other campaigns |  [optional] |
 | **contactListFilters** | <!----><!---->[**List&lt;DialerCampaignConfigChangeUriReference&gt;**](DialerCampaignConfigChangeUriReference.html)<!----> | List of contact filters |  [optional] |
@@ -50,13 +50,13 @@ title: DialerCampaignConfigChangeCampaign
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AGENTLESS | &quot;agentless&quot; |
-| EXTERNAL | &quot;external&quot; |
-| PREVIEW | &quot;preview&quot; |
-| POWER | &quot;power&quot; |
-| PREDICTIVE | &quot;predictive&quot; |
-| PROGRESSIVE | &quot;progressive&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENTLESS | &quot;agentless&quot; | 
+| EXTERNAL | &quot;external&quot; | 
+| PREVIEW | &quot;preview&quot; | 
+| POWER | &quot;power&quot; | 
+| PREDICTIVE | &quot;predictive&quot; | 
+| PROGRESSIVE | &quot;progressive&quot; | 
 {: class="table table-striped"}
 
 
@@ -66,12 +66,12 @@ title: DialerCampaignConfigChangeCampaign
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;on&quot; |
-| OFF | &quot;off&quot; |
-| COMPLETE | &quot;complete&quot; |
-| STOPPING | &quot;stopping&quot; |
-| INVALID | &quot;invalid&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;on&quot; | 
+| OFF | &quot;off&quot; | 
+| COMPLETE | &quot;complete&quot; | 
+| STOPPING | &quot;stopping&quot; | 
+| INVALID | &quot;invalid&quot; | 
 {: class="table table-striped"}
 
 

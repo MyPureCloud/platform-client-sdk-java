@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class EvaluationQuestion  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion text(String text) {
@@ -119,7 +120,7 @@ public class EvaluationQuestion  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion helpText(String helpText) {
@@ -136,7 +137,7 @@ public class EvaluationQuestion  implements Serializable {
     this.helpText = helpText;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion type(TypeEnum type) {
@@ -153,7 +154,7 @@ public class EvaluationQuestion  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion naEnabled(Boolean naEnabled) {
@@ -170,7 +171,7 @@ public class EvaluationQuestion  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion commentsRequired(Boolean commentsRequired) {
@@ -187,7 +188,7 @@ public class EvaluationQuestion  implements Serializable {
     this.commentsRequired = commentsRequired;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -204,7 +205,7 @@ public class EvaluationQuestion  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-  
+
   /**
    * Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
    **/
@@ -222,7 +223,7 @@ public class EvaluationQuestion  implements Serializable {
     this.answerOptions = answerOptions;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion isKill(Boolean isKill) {
@@ -239,7 +240,7 @@ public class EvaluationQuestion  implements Serializable {
     this.isKill = isKill;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestion isCritical(Boolean isCritical) {
@@ -256,7 +257,6 @@ public class EvaluationQuestion  implements Serializable {
     this.isCritical = isCritical;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -267,16 +267,17 @@ public class EvaluationQuestion  implements Serializable {
       return false;
     }
     EvaluationQuestion evaluationQuestion = (EvaluationQuestion) o;
+
     return Objects.equals(this.id, evaluationQuestion.id) &&
-        Objects.equals(this.text, evaluationQuestion.text) &&
-        Objects.equals(this.helpText, evaluationQuestion.helpText) &&
-        Objects.equals(this.type, evaluationQuestion.type) &&
-        Objects.equals(this.naEnabled, evaluationQuestion.naEnabled) &&
-        Objects.equals(this.commentsRequired, evaluationQuestion.commentsRequired) &&
-        Objects.equals(this.visibilityCondition, evaluationQuestion.visibilityCondition) &&
-        Objects.equals(this.answerOptions, evaluationQuestion.answerOptions) &&
-        Objects.equals(this.isKill, evaluationQuestion.isKill) &&
-        Objects.equals(this.isCritical, evaluationQuestion.isCritical);
+            Objects.equals(this.text, evaluationQuestion.text) &&
+            Objects.equals(this.helpText, evaluationQuestion.helpText) &&
+            Objects.equals(this.type, evaluationQuestion.type) &&
+            Objects.equals(this.naEnabled, evaluationQuestion.naEnabled) &&
+            Objects.equals(this.commentsRequired, evaluationQuestion.commentsRequired) &&
+            Objects.equals(this.visibilityCondition, evaluationQuestion.visibilityCondition) &&
+            Objects.equals(this.answerOptions, evaluationQuestion.answerOptions) &&
+            Objects.equals(this.isKill, evaluationQuestion.isKill) &&
+            Objects.equals(this.isCritical, evaluationQuestion.isCritical);
   }
 
   @Override

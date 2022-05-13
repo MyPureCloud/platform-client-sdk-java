@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
@@ -41,7 +42,7 @@ public class IntegrationConfiguration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the integration, used to distinguish this integration from others of the same type.
    **/
@@ -59,7 +60,7 @@ public class IntegrationConfiguration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -77,7 +78,7 @@ public class IntegrationConfiguration  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Key-value configuration settings described by the schema in the propertiesSchemaUri field.
    **/
@@ -95,7 +96,7 @@ public class IntegrationConfiguration  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    * Advanced configuration described by the schema in the advancedSchemaUri field.
    **/
@@ -113,7 +114,7 @@ public class IntegrationConfiguration  implements Serializable {
     this.advanced = advanced;
   }
 
-  
+
   /**
    * Notes about the integration.
    **/
@@ -131,7 +132,7 @@ public class IntegrationConfiguration  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
    **/
@@ -149,14 +150,13 @@ public class IntegrationConfiguration  implements Serializable {
     this.credentials = credentials;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -167,14 +167,15 @@ public class IntegrationConfiguration  implements Serializable {
       return false;
     }
     IntegrationConfiguration integrationConfiguration = (IntegrationConfiguration) o;
+
     return Objects.equals(this.id, integrationConfiguration.id) &&
-        Objects.equals(this.name, integrationConfiguration.name) &&
-        Objects.equals(this.version, integrationConfiguration.version) &&
-        Objects.equals(this.properties, integrationConfiguration.properties) &&
-        Objects.equals(this.advanced, integrationConfiguration.advanced) &&
-        Objects.equals(this.notes, integrationConfiguration.notes) &&
-        Objects.equals(this.credentials, integrationConfiguration.credentials) &&
-        Objects.equals(this.selfUri, integrationConfiguration.selfUri);
+            Objects.equals(this.name, integrationConfiguration.name) &&
+            Objects.equals(this.version, integrationConfiguration.version) &&
+            Objects.equals(this.properties, integrationConfiguration.properties) &&
+            Objects.equals(this.advanced, integrationConfiguration.advanced) &&
+            Objects.equals(this.notes, integrationConfiguration.notes) &&
+            Objects.equals(this.credentials, integrationConfiguration.credentials) &&
+            Objects.equals(this.selfUri, integrationConfiguration.selfUri);
   }
 
   @Override

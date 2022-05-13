@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -118,7 +119,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -136,7 +137,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -154,7 +155,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -172,7 +173,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    **/
   public TranscriptSearchRequest returnFields(List<String> returnFields) {
@@ -189,7 +190,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.returnFields = returnFields;
   }
 
-  
+
   /**
    * Resource domain type to search
    **/
@@ -207,7 +208,7 @@ public class TranscriptSearchRequest  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * The search criteria
    **/
@@ -225,7 +226,6 @@ public class TranscriptSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,14 +236,15 @@ public class TranscriptSearchRequest  implements Serializable {
       return false;
     }
     TranscriptSearchRequest transcriptSearchRequest = (TranscriptSearchRequest) o;
+
     return Objects.equals(this.sortOrder, transcriptSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, transcriptSearchRequest.sortBy) &&
-        Objects.equals(this.pageSize, transcriptSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, transcriptSearchRequest.pageNumber) &&
-        Objects.equals(this.sort, transcriptSearchRequest.sort) &&
-        Objects.equals(this.returnFields, transcriptSearchRequest.returnFields) &&
-        Objects.equals(this.types, transcriptSearchRequest.types) &&
-        Objects.equals(this.query, transcriptSearchRequest.query);
+            Objects.equals(this.sortBy, transcriptSearchRequest.sortBy) &&
+            Objects.equals(this.pageSize, transcriptSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, transcriptSearchRequest.pageNumber) &&
+            Objects.equals(this.sort, transcriptSearchRequest.sort) &&
+            Objects.equals(this.returnFields, transcriptSearchRequest.returnFields) &&
+            Objects.equals(this.types, transcriptSearchRequest.types) &&
+            Objects.equals(this.query, transcriptSearchRequest.query);
   }
 
   @Override

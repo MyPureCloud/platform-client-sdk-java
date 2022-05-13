@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class ListItemComponent  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * An ID of the rich message instance.
    **/
@@ -114,7 +115,7 @@ public class ListItemComponent  implements Serializable {
     this.rmid = rmid;
   }
 
-  
+
   /**
    * The type of list item to render.
    **/
@@ -132,7 +133,7 @@ public class ListItemComponent  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * URL of an image.
    **/
@@ -150,7 +151,7 @@ public class ListItemComponent  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * The main headline of the list item.
    **/
@@ -168,7 +169,7 @@ public class ListItemComponent  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the list item description.
    **/
@@ -186,7 +187,7 @@ public class ListItemComponent  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The list item actions (Deprecated).
    **/
@@ -204,7 +205,6 @@ public class ListItemComponent  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,13 +215,14 @@ public class ListItemComponent  implements Serializable {
       return false;
     }
     ListItemComponent listItemComponent = (ListItemComponent) o;
+
     return Objects.equals(this.id, listItemComponent.id) &&
-        Objects.equals(this.rmid, listItemComponent.rmid) &&
-        Objects.equals(this.type, listItemComponent.type) &&
-        Objects.equals(this.image, listItemComponent.image) &&
-        Objects.equals(this.title, listItemComponent.title) &&
-        Objects.equals(this.description, listItemComponent.description) &&
-        Objects.equals(this.actions, listItemComponent.actions);
+            Objects.equals(this.rmid, listItemComponent.rmid) &&
+            Objects.equals(this.type, listItemComponent.type) &&
+            Objects.equals(this.image, listItemComponent.image) &&
+            Objects.equals(this.title, listItemComponent.title) &&
+            Objects.equals(this.description, listItemComponent.description) &&
+            Objects.equals(this.actions, listItemComponent.actions);
   }
 
   @Override

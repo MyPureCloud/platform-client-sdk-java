@@ -21,7 +21,7 @@ title: ObservationValue
 | **convertedTo** | <!----><!---->**String**<!----> | Session media type that was converted to in case of a media type conversion |  [optional] |
 | **addressFrom** | <!----><!---->**String**<!----> | The address that initiated an action |  [optional] |
 | **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
-| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller&#39;s number) |  [optional] |
+| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller's number) |  [optional] |
 | **dnis** | <!----><!---->**String**<!----> | Dialed number identification service (number dialed by the calling party) |  [optional] |
 | **teamId** | <!----><!---->**String**<!----> | The team id the user is a member of |  [optional] |
 | **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | All routing types for requested/attempted routing methods |  [optional] |
@@ -36,9 +36,9 @@ title: ObservationValue
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -64,14 +64,14 @@ title: ObservationValue
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
-| CONDITIONAL | &quot;Conditional&quot; |
-| LAST | &quot;Last&quot; |
-| MANUAL | &quot;Manual&quot; |
-| PREDICTIVE | &quot;Predictive&quot; |
-| PREFERRED | &quot;Preferred&quot; |
-| STANDARD | &quot;Standard&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| LAST | &quot;Last&quot; | 
+| MANUAL | &quot;Manual&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
+| STANDARD | &quot;Standard&quot; | 
 {: class="table table-striped"}
 
 

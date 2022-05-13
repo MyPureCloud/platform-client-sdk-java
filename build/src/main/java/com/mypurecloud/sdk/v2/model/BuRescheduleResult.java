@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
@@ -49,7 +50,7 @@ public class BuRescheduleResult  implements Serializable {
     this.generationResults = generationResults;
   }
 
-  
+
   /**
    * The download URL from which to fetch the generation results for the rescheduling run
    **/
@@ -67,7 +68,7 @@ public class BuRescheduleResult  implements Serializable {
     this.generationResultsDownloadUrl = generationResultsDownloadUrl;
   }
 
-  
+
   /**
    * The headcount forecast.  Note the result will always be delivered via the downloadUrl; however the schema is included for documentation
    **/
@@ -85,7 +86,7 @@ public class BuRescheduleResult  implements Serializable {
     this.headcountForecast = headcountForecast;
   }
 
-  
+
   /**
    * The download URL from which to fetch the headcount forecast for the rescheduling run
    **/
@@ -103,7 +104,7 @@ public class BuRescheduleResult  implements Serializable {
     this.headcountForecastDownloadUrl = headcountForecastDownloadUrl;
   }
 
-  
+
   /**
    * List of download links for agent schedules produced by the rescheduling run
    **/
@@ -121,7 +122,6 @@ public class BuRescheduleResult  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -132,11 +132,12 @@ public class BuRescheduleResult  implements Serializable {
       return false;
     }
     BuRescheduleResult buRescheduleResult = (BuRescheduleResult) o;
+
     return Objects.equals(this.generationResults, buRescheduleResult.generationResults) &&
-        Objects.equals(this.generationResultsDownloadUrl, buRescheduleResult.generationResultsDownloadUrl) &&
-        Objects.equals(this.headcountForecast, buRescheduleResult.headcountForecast) &&
-        Objects.equals(this.headcountForecastDownloadUrl, buRescheduleResult.headcountForecastDownloadUrl) &&
-        Objects.equals(this.agentSchedules, buRescheduleResult.agentSchedules);
+            Objects.equals(this.generationResultsDownloadUrl, buRescheduleResult.generationResultsDownloadUrl) &&
+            Objects.equals(this.headcountForecast, buRescheduleResult.headcountForecast) &&
+            Objects.equals(this.headcountForecastDownloadUrl, buRescheduleResult.headcountForecastDownloadUrl) &&
+            Objects.equals(this.agentSchedules, buRescheduleResult.agentSchedules);
   }
 
   @Override

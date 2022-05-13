@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody details(List<ConversationSocialExpressionEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.details = details;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicErrorBody errors(List<ConversationSocialExpressionEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
       return false;
     }
     ConversationSocialExpressionEventTopicErrorBody conversationSocialExpressionEventTopicErrorBody = (ConversationSocialExpressionEventTopicErrorBody) o;
+
     return Objects.equals(this.message, conversationSocialExpressionEventTopicErrorBody.message) &&
-        Objects.equals(this.code, conversationSocialExpressionEventTopicErrorBody.code) &&
-        Objects.equals(this.status, conversationSocialExpressionEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, conversationSocialExpressionEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, conversationSocialExpressionEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, conversationSocialExpressionEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, conversationSocialExpressionEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, conversationSocialExpressionEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, conversationSocialExpressionEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, conversationSocialExpressionEventTopicErrorBody.errors);
+            Objects.equals(this.code, conversationSocialExpressionEventTopicErrorBody.code) &&
+            Objects.equals(this.status, conversationSocialExpressionEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, conversationSocialExpressionEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, conversationSocialExpressionEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, conversationSocialExpressionEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, conversationSocialExpressionEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, conversationSocialExpressionEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, conversationSocialExpressionEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, conversationSocialExpressionEventTopicErrorBody.errors);
   }
 
   @Override

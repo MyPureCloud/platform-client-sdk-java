@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -42,7 +43,7 @@ public class EvaluationAssignment  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-  
+
   /**
    **/
   public EvaluationAssignment user(User user) {
@@ -59,7 +60,6 @@ public class EvaluationAssignment  implements Serializable {
     this.user = user;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class EvaluationAssignment  implements Serializable {
       return false;
     }
     EvaluationAssignment evaluationAssignment = (EvaluationAssignment) o;
+
     return Objects.equals(this.evaluationForm, evaluationAssignment.evaluationForm) &&
-        Objects.equals(this.user, evaluationAssignment.user);
+            Objects.equals(this.user, evaluationAssignment.user);
   }
 
   @Override

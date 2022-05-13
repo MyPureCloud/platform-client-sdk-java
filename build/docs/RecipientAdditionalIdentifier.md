@@ -19,9 +19,9 @@ title: RecipientAdditionalIdentifier
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DEPLOYMENT | &quot;Deployment&quot; |
-| SUBJECT | &quot;Subject&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DEPLOYMENT | &quot;Deployment&quot; | 
+| SUBJECT | &quot;Subject&quot; | 
 {: class="table table-striped"}
 
 

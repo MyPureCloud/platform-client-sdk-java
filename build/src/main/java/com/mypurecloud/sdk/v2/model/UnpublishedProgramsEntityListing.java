@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Program;
@@ -46,7 +47,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public UnpublishedProgramsEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public UnpublishedProgramsEntityListing selfUri(String selfUri) {
@@ -80,7 +81,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public UnpublishedProgramsEntityListing nextUri(String nextUri) {
@@ -97,7 +98,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public UnpublishedProgramsEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
       return false;
     }
     UnpublishedProgramsEntityListing unpublishedProgramsEntityListing = (UnpublishedProgramsEntityListing) o;
+
     return Objects.equals(this.entities, unpublishedProgramsEntityListing.entities) &&
-        Objects.equals(this.pageSize, unpublishedProgramsEntityListing.pageSize) &&
-        Objects.equals(this.selfUri, unpublishedProgramsEntityListing.selfUri) &&
-        Objects.equals(this.nextUri, unpublishedProgramsEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, unpublishedProgramsEntityListing.pageCount);
+            Objects.equals(this.pageSize, unpublishedProgramsEntityListing.pageSize) &&
+            Objects.equals(this.selfUri, unpublishedProgramsEntityListing.selfUri) &&
+            Objects.equals(this.nextUri, unpublishedProgramsEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, unpublishedProgramsEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialInfo;
@@ -49,7 +50,7 @@ public class EffectiveConfiguration  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    * Advanced configuration described by the schema in the advancedSchemaUri field.
    **/
@@ -67,7 +68,7 @@ public class EffectiveConfiguration  implements Serializable {
     this.advanced = advanced;
   }
 
-  
+
   /**
    * The name of the integration, used to distinguish this integration from others of the same type.
    **/
@@ -85,7 +86,7 @@ public class EffectiveConfiguration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Notes about the integration.
    **/
@@ -103,7 +104,7 @@ public class EffectiveConfiguration  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
    **/
@@ -121,7 +122,6 @@ public class EffectiveConfiguration  implements Serializable {
     this.credentials = credentials;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -132,11 +132,12 @@ public class EffectiveConfiguration  implements Serializable {
       return false;
     }
     EffectiveConfiguration effectiveConfiguration = (EffectiveConfiguration) o;
+
     return Objects.equals(this.properties, effectiveConfiguration.properties) &&
-        Objects.equals(this.advanced, effectiveConfiguration.advanced) &&
-        Objects.equals(this.name, effectiveConfiguration.name) &&
-        Objects.equals(this.notes, effectiveConfiguration.notes) &&
-        Objects.equals(this.credentials, effectiveConfiguration.credentials);
+            Objects.equals(this.advanced, effectiveConfiguration.advanced) &&
+            Objects.equals(this.name, effectiveConfiguration.name) &&
+            Objects.equals(this.notes, effectiveConfiguration.notes) &&
+            Objects.equals(this.credentials, effectiveConfiguration.credentials);
   }
 
   @Override

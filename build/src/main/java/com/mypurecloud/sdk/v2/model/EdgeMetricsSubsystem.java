@@ -8,9 +8,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.EdgeMetricsSubsystem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -43,7 +43,7 @@ public class EdgeMetricsSubsystem  implements Serializable {
     this.delayMs = delayMs;
   }
 
-  
+
   /**
    * Name of the Edge process.
    **/
@@ -61,7 +61,7 @@ public class EdgeMetricsSubsystem  implements Serializable {
     this.processName = processName;
   }
 
-  
+
   /**
    * Subsystem for an Edge device.
    **/
@@ -79,7 +79,6 @@ public class EdgeMetricsSubsystem  implements Serializable {
     this.mediaSubsystem = mediaSubsystem;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +89,10 @@ public class EdgeMetricsSubsystem  implements Serializable {
       return false;
     }
     EdgeMetricsSubsystem edgeMetricsSubsystem = (EdgeMetricsSubsystem) o;
+
     return Objects.equals(this.delayMs, edgeMetricsSubsystem.delayMs) &&
-        Objects.equals(this.processName, edgeMetricsSubsystem.processName) &&
-        Objects.equals(this.mediaSubsystem, edgeMetricsSubsystem.mediaSubsystem);
+            Objects.equals(this.processName, edgeMetricsSubsystem.processName) &&
+            Objects.equals(this.mediaSubsystem, edgeMetricsSubsystem.mediaSubsystem);
   }
 
   @Override

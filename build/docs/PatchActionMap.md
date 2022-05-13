@@ -19,7 +19,7 @@ title: PatchActionMap
 | **activation** | <!----><!---->[**Activation**](Activation.html)<!----> | Type of activation. |  [optional] |
 | **weight** | <!----><!---->**Integer**<!----> | Weight of the action map with higher number denoting higher weight. |  [optional] |
 | **action** | <!----><!---->[**PatchAction**](PatchAction.html)<!----> | The action that will be executed if this action map is triggered. |  [optional] |
-| **actionMapScheduleGroups** | <!----><!---->[**PatchActionMapScheduleGroups**](PatchActionMapScheduleGroups.html)<!----> | The action map&#39;s associated schedule groups. |  [optional] |
+| **actionMapScheduleGroups** | <!----><!---->[**PatchActionMapScheduleGroups**](PatchActionMapScheduleGroups.html)<!----> | The action map's associated schedule groups. |  [optional] |
 | **ignoreFrequencyCap** | <!----><!---->**Boolean**<!----> | Override organization-level frequency cap and always offer web engagements from this action map. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the action map was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

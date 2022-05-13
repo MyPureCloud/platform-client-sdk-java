@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TranscriptionTopicTranscriptResult;
@@ -51,7 +52,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage organizationId(String organizationId) {
@@ -68,7 +69,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.organizationId = organizationId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage conversationId(String conversationId) {
@@ -85,7 +86,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage communicationId(String communicationId) {
@@ -102,7 +103,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.communicationId = communicationId;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage sessionStartTimeMs(Integer sessionStartTimeMs) {
@@ -119,7 +120,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.sessionStartTimeMs = sessionStartTimeMs;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage transcriptionStartTimeMs(Integer transcriptionStartTimeMs) {
@@ -136,7 +137,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.transcriptionStartTimeMs = transcriptionStartTimeMs;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage transcripts(List<TranscriptionTopicTranscriptResult> transcripts) {
@@ -153,7 +154,7 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.transcripts = transcripts;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionMessage status(TranscriptionTopicTranscriptionRequestStatus status) {
@@ -170,7 +171,6 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,14 +181,15 @@ public class TranscriptionTopicTranscriptionMessage  implements Serializable {
       return false;
     }
     TranscriptionTopicTranscriptionMessage transcriptionTopicTranscriptionMessage = (TranscriptionTopicTranscriptionMessage) o;
+
     return Objects.equals(this.eventTime, transcriptionTopicTranscriptionMessage.eventTime) &&
-        Objects.equals(this.organizationId, transcriptionTopicTranscriptionMessage.organizationId) &&
-        Objects.equals(this.conversationId, transcriptionTopicTranscriptionMessage.conversationId) &&
-        Objects.equals(this.communicationId, transcriptionTopicTranscriptionMessage.communicationId) &&
-        Objects.equals(this.sessionStartTimeMs, transcriptionTopicTranscriptionMessage.sessionStartTimeMs) &&
-        Objects.equals(this.transcriptionStartTimeMs, transcriptionTopicTranscriptionMessage.transcriptionStartTimeMs) &&
-        Objects.equals(this.transcripts, transcriptionTopicTranscriptionMessage.transcripts) &&
-        Objects.equals(this.status, transcriptionTopicTranscriptionMessage.status);
+            Objects.equals(this.organizationId, transcriptionTopicTranscriptionMessage.organizationId) &&
+            Objects.equals(this.conversationId, transcriptionTopicTranscriptionMessage.conversationId) &&
+            Objects.equals(this.communicationId, transcriptionTopicTranscriptionMessage.communicationId) &&
+            Objects.equals(this.sessionStartTimeMs, transcriptionTopicTranscriptionMessage.sessionStartTimeMs) &&
+            Objects.equals(this.transcriptionStartTimeMs, transcriptionTopicTranscriptionMessage.transcriptionStartTimeMs) &&
+            Objects.equals(this.transcripts, transcriptionTopicTranscriptionMessage.transcripts) &&
+            Objects.equals(this.status, transcriptionTopicTranscriptionMessage.status);
   }
 
   @Override

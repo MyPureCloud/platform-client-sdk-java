@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ArchitectFlowNotificationHomeOrganization  implements Serializable 
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationHomeOrganization name(String name) {
@@ -58,7 +59,7 @@ public class ArchitectFlowNotificationHomeOrganization  implements Serializable 
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationHomeOrganization thirdPartyOrgName(String thirdPartyOrgName) {
@@ -75,7 +76,6 @@ public class ArchitectFlowNotificationHomeOrganization  implements Serializable 
     this.thirdPartyOrgName = thirdPartyOrgName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class ArchitectFlowNotificationHomeOrganization  implements Serializable 
       return false;
     }
     ArchitectFlowNotificationHomeOrganization architectFlowNotificationHomeOrganization = (ArchitectFlowNotificationHomeOrganization) o;
+
     return Objects.equals(this.id, architectFlowNotificationHomeOrganization.id) &&
-        Objects.equals(this.name, architectFlowNotificationHomeOrganization.name) &&
-        Objects.equals(this.thirdPartyOrgName, architectFlowNotificationHomeOrganization.thirdPartyOrgName);
+            Objects.equals(this.name, architectFlowNotificationHomeOrganization.name) &&
+            Objects.equals(this.thirdPartyOrgName, architectFlowNotificationHomeOrganization.thirdPartyOrgName);
   }
 
   @Override

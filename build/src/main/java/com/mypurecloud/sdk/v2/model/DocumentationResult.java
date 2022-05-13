@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -62,7 +63,7 @@ public class DocumentationResult  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The category of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -80,7 +81,7 @@ public class DocumentationResult  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   /**
    * The description of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -98,7 +99,7 @@ public class DocumentationResult  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The text or html content for the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -116,7 +117,7 @@ public class DocumentationResult  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * The excerpt of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -134,7 +135,7 @@ public class DocumentationResult  implements Serializable {
     this.excerpt = excerpt;
   }
 
-  
+
   /**
    * URL link for the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -152,7 +153,7 @@ public class DocumentationResult  implements Serializable {
     this.link = link;
   }
 
-  
+
   /**
    * The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -170,7 +171,7 @@ public class DocumentationResult  implements Serializable {
     this.modified = modified;
   }
 
-  
+
   /**
    * The name of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -188,7 +189,7 @@ public class DocumentationResult  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The service of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -206,7 +207,7 @@ public class DocumentationResult  implements Serializable {
     this.service = service;
   }
 
-  
+
   /**
    * The slug of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -224,7 +225,7 @@ public class DocumentationResult  implements Serializable {
     this.slug = slug;
   }
 
-  
+
   /**
    * The title of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -242,7 +243,7 @@ public class DocumentationResult  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * The search type. Will be returned in responses for certain entities.
    **/
@@ -260,7 +261,7 @@ public class DocumentationResult  implements Serializable {
     this.getType = getType;
   }
 
-  
+
   /**
    * The facet feature of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -278,7 +279,7 @@ public class DocumentationResult  implements Serializable {
     this.facetFeature = facetFeature;
   }
 
-  
+
   /**
    * The facet role of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -296,7 +297,7 @@ public class DocumentationResult  implements Serializable {
     this.facetRole = facetRole;
   }
 
-  
+
   /**
    * The facet service of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -314,7 +315,7 @@ public class DocumentationResult  implements Serializable {
     this.facetService = facetService;
   }
 
-  
+
   /**
    * The faq categories of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -332,7 +333,7 @@ public class DocumentationResult  implements Serializable {
     this.faqCategories = faqCategories;
   }
 
-  
+
   /**
    * The releasenote category of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -350,7 +351,7 @@ public class DocumentationResult  implements Serializable {
     this.releasenoteCategory = releasenoteCategory;
   }
 
-  
+
   /**
    * The releasenote tag of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -368,7 +369,7 @@ public class DocumentationResult  implements Serializable {
     this.releasenoteTag = releasenoteTag;
   }
 
-  
+
   /**
    * The service area of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -386,7 +387,7 @@ public class DocumentationResult  implements Serializable {
     this.serviceArea = serviceArea;
   }
 
-  
+
   /**
    * The video categories of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -404,7 +405,6 @@ public class DocumentationResult  implements Serializable {
     this.videoCategories = videoCategories;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -415,26 +415,27 @@ public class DocumentationResult  implements Serializable {
       return false;
     }
     DocumentationResult documentationResult = (DocumentationResult) o;
+
     return Objects.equals(this.id, documentationResult.id) &&
-        Objects.equals(this.categories, documentationResult.categories) &&
-        Objects.equals(this.description, documentationResult.description) &&
-        Objects.equals(this.content, documentationResult.content) &&
-        Objects.equals(this.excerpt, documentationResult.excerpt) &&
-        Objects.equals(this.link, documentationResult.link) &&
-        Objects.equals(this.modified, documentationResult.modified) &&
-        Objects.equals(this.name, documentationResult.name) &&
-        Objects.equals(this.service, documentationResult.service) &&
-        Objects.equals(this.slug, documentationResult.slug) &&
-        Objects.equals(this.title, documentationResult.title) &&
-        Objects.equals(this.getType, documentationResult.getType) &&
-        Objects.equals(this.facetFeature, documentationResult.facetFeature) &&
-        Objects.equals(this.facetRole, documentationResult.facetRole) &&
-        Objects.equals(this.facetService, documentationResult.facetService) &&
-        Objects.equals(this.faqCategories, documentationResult.faqCategories) &&
-        Objects.equals(this.releasenoteCategory, documentationResult.releasenoteCategory) &&
-        Objects.equals(this.releasenoteTag, documentationResult.releasenoteTag) &&
-        Objects.equals(this.serviceArea, documentationResult.serviceArea) &&
-        Objects.equals(this.videoCategories, documentationResult.videoCategories);
+            Objects.equals(this.categories, documentationResult.categories) &&
+            Objects.equals(this.description, documentationResult.description) &&
+            Objects.equals(this.content, documentationResult.content) &&
+            Objects.equals(this.excerpt, documentationResult.excerpt) &&
+            Objects.equals(this.link, documentationResult.link) &&
+            Objects.equals(this.modified, documentationResult.modified) &&
+            Objects.equals(this.name, documentationResult.name) &&
+            Objects.equals(this.service, documentationResult.service) &&
+            Objects.equals(this.slug, documentationResult.slug) &&
+            Objects.equals(this.title, documentationResult.title) &&
+            Objects.equals(this.getType, documentationResult.getType) &&
+            Objects.equals(this.facetFeature, documentationResult.facetFeature) &&
+            Objects.equals(this.facetRole, documentationResult.facetRole) &&
+            Objects.equals(this.facetService, documentationResult.facetService) &&
+            Objects.equals(this.faqCategories, documentationResult.faqCategories) &&
+            Objects.equals(this.releasenoteCategory, documentationResult.releasenoteCategory) &&
+            Objects.equals(this.releasenoteTag, documentationResult.releasenoteTag) &&
+            Objects.equals(this.serviceArea, documentationResult.serviceArea) &&
+            Objects.equals(this.videoCategories, documentationResult.videoCategories);
   }
 
   @Override

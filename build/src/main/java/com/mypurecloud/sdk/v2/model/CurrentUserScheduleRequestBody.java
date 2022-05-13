@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * End of the range of schedules to fetch, in ISO-8601 format
    **/
@@ -62,7 +63,7 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * Whether to load the full week's schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false
    **/
@@ -80,7 +81,6 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
     this.loadFullWeeks = loadFullWeeks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
       return false;
     }
     CurrentUserScheduleRequestBody currentUserScheduleRequestBody = (CurrentUserScheduleRequestBody) o;
+
     return Objects.equals(this.startDate, currentUserScheduleRequestBody.startDate) &&
-        Objects.equals(this.endDate, currentUserScheduleRequestBody.endDate) &&
-        Objects.equals(this.loadFullWeeks, currentUserScheduleRequestBody.loadFullWeeks);
+            Objects.equals(this.endDate, currentUserScheduleRequestBody.endDate) &&
+            Objects.equals(this.loadFullWeeks, currentUserScheduleRequestBody.loadFullWeeks);
   }
 
   @Override

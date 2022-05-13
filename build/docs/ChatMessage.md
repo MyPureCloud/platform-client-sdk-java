@@ -29,14 +29,14 @@ title: ChatMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STANDARD | &quot;STANDARD&quot; |
-| ACTIVITY | &quot;ACTIVITY&quot; |
-| TYPING | &quot;TYPING&quot; |
-| NOTICE | &quot;NOTICE&quot; |
-| MEMBERJOIN | &quot;MEMBERJOIN&quot; |
-| MEMBERLEAVE | &quot;MEMBERLEAVE&quot; |
-| MEDIAREQUEST | &quot;MEDIAREQUEST&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STANDARD | &quot;STANDARD&quot; | 
+| ACTIVITY | &quot;ACTIVITY&quot; | 
+| TYPING | &quot;TYPING&quot; | 
+| NOTICE | &quot;NOTICE&quot; | 
+| MEMBERJOIN | &quot;MEMBERJOIN&quot; | 
+| MEMBERLEAVE | &quot;MEMBERLEAVE&quot; | 
+| MEDIAREQUEST | &quot;MEDIAREQUEST&quot; | 
 {: class="table table-striped"}
 
 

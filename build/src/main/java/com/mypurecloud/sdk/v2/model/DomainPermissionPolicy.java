@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainResourceConditionNode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -49,7 +49,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy entityName(String entityName) {
@@ -66,7 +66,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy policyName(String policyName) {
@@ -83,7 +83,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.policyName = policyName;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy policyDescription(String policyDescription) {
@@ -100,7 +100,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.policyDescription = policyDescription;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy actionSet(List<String> actionSet) {
@@ -117,7 +117,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.actionSet = actionSet;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy namedResources(List<String> namedResources) {
@@ -134,7 +134,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.namedResources = namedResources;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy allowConditions(Boolean allowConditions) {
@@ -151,7 +151,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.allowConditions = allowConditions;
   }
 
-  
+
   /**
    **/
   public DomainPermissionPolicy resourceConditionNode(DomainResourceConditionNode resourceConditionNode) {
@@ -168,7 +168,6 @@ public class DomainPermissionPolicy  implements Serializable {
     this.resourceConditionNode = resourceConditionNode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,14 +178,15 @@ public class DomainPermissionPolicy  implements Serializable {
       return false;
     }
     DomainPermissionPolicy domainPermissionPolicy = (DomainPermissionPolicy) o;
+
     return Objects.equals(this.domain, domainPermissionPolicy.domain) &&
-        Objects.equals(this.entityName, domainPermissionPolicy.entityName) &&
-        Objects.equals(this.policyName, domainPermissionPolicy.policyName) &&
-        Objects.equals(this.policyDescription, domainPermissionPolicy.policyDescription) &&
-        Objects.equals(this.actionSet, domainPermissionPolicy.actionSet) &&
-        Objects.equals(this.namedResources, domainPermissionPolicy.namedResources) &&
-        Objects.equals(this.allowConditions, domainPermissionPolicy.allowConditions) &&
-        Objects.equals(this.resourceConditionNode, domainPermissionPolicy.resourceConditionNode);
+            Objects.equals(this.entityName, domainPermissionPolicy.entityName) &&
+            Objects.equals(this.policyName, domainPermissionPolicy.policyName) &&
+            Objects.equals(this.policyDescription, domainPermissionPolicy.policyDescription) &&
+            Objects.equals(this.actionSet, domainPermissionPolicy.actionSet) &&
+            Objects.equals(this.namedResources, domainPermissionPolicy.namedResources) &&
+            Objects.equals(this.allowConditions, domainPermissionPolicy.allowConditions) &&
+            Objects.equals(this.resourceConditionNode, domainPermissionPolicy.resourceConditionNode);
   }
 
   @Override

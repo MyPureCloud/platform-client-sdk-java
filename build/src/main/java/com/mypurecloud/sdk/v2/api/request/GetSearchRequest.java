@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
 
 public class GetSearchRequest {
-    
+
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -40,7 +40,7 @@ public class GetSearchRequest {
 	    this.setQ64(q64);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -56,32 +56,32 @@ public class GetSearchRequest {
 	} 
 
 	public enum expandValues { 
-		ROUTINGSTATUS("routingStatus"), 
-		PRESENCE("presence"), 
-		CONVERSATIONSUMMARY("conversationSummary"), 
-		OUTOFOFFICE("outOfOffice"), 
-		GEOLOCATION("geolocation"), 
-		STATION("station"), 
-		AUTHORIZATION("authorization"), 
-		LASTTOKENISSUED("lasttokenissued"), 
-		DATELASTLOGIN("dateLastLogin"), 
-		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
-		TEAM("team"), 
-		PROFILESKILLS("profileSkills"), 
-		CERTIFICATIONS("certifications"), 
-		LOCATIONS("locations"), 
-		GROUPS("groups"), 
-		SKILLS("skills"), 
-		LANGUAGES("languages"), 
-		LANGUAGEPREFERENCE("languagePreference"), 
-		EMPLOYERINFO("employerInfo"), 
-		BIOGRAPHY("biography"), 
-		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"), 
-		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"), 
-		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"), 
-		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"), 
-		CALLERUSER_GEOLOCATION("callerUser.geolocation"), 
-		IMAGES("images"), 
+		ROUTINGSTATUS("routingStatus"),
+		PRESENCE("presence"),
+		CONVERSATIONSUMMARY("conversationSummary"),
+		OUTOFOFFICE("outOfOffice"),
+		GEOLOCATION("geolocation"),
+		STATION("station"),
+		AUTHORIZATION("authorization"),
+		LASTTOKENISSUED("lasttokenissued"),
+		DATELASTLOGIN("dateLastLogin"),
+		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
+		TEAM("team"),
+		PROFILESKILLS("profileSkills"),
+		CERTIFICATIONS("certifications"),
+		LOCATIONS("locations"),
+		GROUPS("groups"),
+		SKILLS("skills"),
+		LANGUAGES("languages"),
+		LANGUAGEPREFERENCE("languagePreference"),
+		EMPLOYERINFO("employerInfo"),
+		BIOGRAPHY("biography"),
+		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"),
+		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"),
+		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"),
+		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"),
+		CALLERUSER_GEOLOCATION("callerUser.geolocation"),
+		IMAGES("images"),
 		ADDRESSVERIFICATIONDETAILS("addressVerificationDetails");
 
 		private String value;
@@ -109,7 +109,7 @@ public class GetSearchRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Boolean profile;
 	public Boolean getProfile() {
 		return this.profile;
@@ -123,7 +123,7 @@ public class GetSearchRequest {
 	    this.setProfile(profile);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -152,13 +152,16 @@ public class GetSearchRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/search")
+
                 .withQueryParameters("q64", "", q64)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("profile", "", profile)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -169,12 +172,12 @@ public class GetSearchRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String q64) {
 	    return new Builder()
 	            .withRequiredParams(q64);
 	}
-	
+
 
 	public static class Builder {
 		private final GetSearchRequest request;
@@ -183,16 +186,18 @@ public class GetSearchRequest {
 			request = new GetSearchRequest();
 		}
 
-		
+
 		public Builder withQ64(String q64) {
 			request.setQ64(q64);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -202,20 +207,20 @@ public class GetSearchRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
+
 		public Builder withProfile(Boolean profile) {
 			request.setProfile(profile);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String q64) {
 			request.setQ64(q64);
-			
+
 			return this;
 		}
-		
+
 
 		public GetSearchRequest build() {
             

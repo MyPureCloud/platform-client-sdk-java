@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -104,7 +105,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataGroup forecastDataPerInterval(List<WfmIntradayDataUpdateTopicIntradayForecastData> forecastDataPerInterval) {
@@ -121,7 +122,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.forecastDataPerInterval = forecastDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataGroup scheduleDataPerInterval(List<WfmIntradayDataUpdateTopicIntradayScheduleData> scheduleDataPerInterval) {
@@ -138,7 +139,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.scheduleDataPerInterval = scheduleDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataGroup historicalAgentDataPerInterval(List<WfmIntradayDataUpdateTopicIntradayHistoricalAgentData> historicalAgentDataPerInterval) {
@@ -155,7 +156,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.historicalAgentDataPerInterval = historicalAgentDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataGroup historicalQueueDataPerInterval(List<WfmIntradayDataUpdateTopicIntradayHistoricalQueueData> historicalQueueDataPerInterval) {
@@ -172,7 +173,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.historicalQueueDataPerInterval = historicalQueueDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataGroup performancePredictionAgentDataPerInterval(List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData> performancePredictionAgentDataPerInterval) {
@@ -189,7 +190,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.performancePredictionAgentDataPerInterval = performancePredictionAgentDataPerInterval;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataGroup performancePredictionQueueDataPerInterval(List<WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData> performancePredictionQueueDataPerInterval) {
@@ -206,7 +207,6 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     this.performancePredictionQueueDataPerInterval = performancePredictionQueueDataPerInterval;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,13 +217,14 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
       return false;
     }
     WfmIntradayDataUpdateTopicIntradayDataGroup wfmIntradayDataUpdateTopicIntradayDataGroup = (WfmIntradayDataUpdateTopicIntradayDataGroup) o;
+
     return Objects.equals(this.mediaType, wfmIntradayDataUpdateTopicIntradayDataGroup.mediaType) &&
-        Objects.equals(this.forecastDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.forecastDataPerInterval) &&
-        Objects.equals(this.scheduleDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.scheduleDataPerInterval) &&
-        Objects.equals(this.historicalAgentDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.historicalAgentDataPerInterval) &&
-        Objects.equals(this.historicalQueueDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.historicalQueueDataPerInterval) &&
-        Objects.equals(this.performancePredictionAgentDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.performancePredictionAgentDataPerInterval) &&
-        Objects.equals(this.performancePredictionQueueDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.performancePredictionQueueDataPerInterval);
+            Objects.equals(this.forecastDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.forecastDataPerInterval) &&
+            Objects.equals(this.scheduleDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.scheduleDataPerInterval) &&
+            Objects.equals(this.historicalAgentDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.historicalAgentDataPerInterval) &&
+            Objects.equals(this.historicalQueueDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.historicalQueueDataPerInterval) &&
+            Objects.equals(this.performancePredictionAgentDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.performancePredictionAgentDataPerInterval) &&
+            Objects.equals(this.performancePredictionQueueDataPerInterval, wfmIntradayDataUpdateTopicIntradayDataGroup.performancePredictionQueueDataPerInterval);
   }
 
   @Override

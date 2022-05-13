@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SurveyQuestion;
@@ -48,7 +49,7 @@ public class SurveyQuestionGroup  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroup name(String name) {
@@ -65,7 +66,7 @@ public class SurveyQuestionGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroup type(String type) {
@@ -82,7 +83,7 @@ public class SurveyQuestionGroup  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroup naEnabled(Boolean naEnabled) {
@@ -99,7 +100,7 @@ public class SurveyQuestionGroup  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroup questions(List<SurveyQuestion> questions) {
@@ -116,7 +117,7 @@ public class SurveyQuestionGroup  implements Serializable {
     this.questions = questions;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionGroup visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -133,7 +134,6 @@ public class SurveyQuestionGroup  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class SurveyQuestionGroup  implements Serializable {
       return false;
     }
     SurveyQuestionGroup surveyQuestionGroup = (SurveyQuestionGroup) o;
+
     return Objects.equals(this.id, surveyQuestionGroup.id) &&
-        Objects.equals(this.name, surveyQuestionGroup.name) &&
-        Objects.equals(this.type, surveyQuestionGroup.type) &&
-        Objects.equals(this.naEnabled, surveyQuestionGroup.naEnabled) &&
-        Objects.equals(this.questions, surveyQuestionGroup.questions) &&
-        Objects.equals(this.visibilityCondition, surveyQuestionGroup.visibilityCondition);
+            Objects.equals(this.name, surveyQuestionGroup.name) &&
+            Objects.equals(this.type, surveyQuestionGroup.type) &&
+            Objects.equals(this.naEnabled, surveyQuestionGroup.naEnabled) &&
+            Objects.equals(this.questions, surveyQuestionGroup.questions) &&
+            Objects.equals(this.visibilityCondition, surveyQuestionGroup.visibilityCondition);
   }
 
   @Override

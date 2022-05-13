@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
@@ -46,7 +47,7 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentStatusResponseList pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentStatusResponseList pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentStatusResponseList total(Long total) {
@@ -97,7 +98,7 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CoachingAppointmentStatusResponseList pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class CoachingAppointmentStatusResponseList  implements Serializable {
       return false;
     }
     CoachingAppointmentStatusResponseList coachingAppointmentStatusResponseList = (CoachingAppointmentStatusResponseList) o;
+
     return Objects.equals(this.entities, coachingAppointmentStatusResponseList.entities) &&
-        Objects.equals(this.pageSize, coachingAppointmentStatusResponseList.pageSize) &&
-        Objects.equals(this.pageNumber, coachingAppointmentStatusResponseList.pageNumber) &&
-        Objects.equals(this.total, coachingAppointmentStatusResponseList.total) &&
-        Objects.equals(this.pageCount, coachingAppointmentStatusResponseList.pageCount);
+            Objects.equals(this.pageSize, coachingAppointmentStatusResponseList.pageSize) &&
+            Objects.equals(this.pageNumber, coachingAppointmentStatusResponseList.pageNumber) &&
+            Objects.equals(this.total, coachingAppointmentStatusResponseList.total) &&
+            Objects.equals(this.pageCount, coachingAppointmentStatusResponseList.pageCount);
   }
 
   @Override

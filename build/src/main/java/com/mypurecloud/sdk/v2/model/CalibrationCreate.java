@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
@@ -51,7 +52,7 @@ public class CalibrationCreate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate name(String name) {
@@ -68,7 +69,7 @@ public class CalibrationCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate calibrator(User calibrator) {
@@ -85,7 +86,7 @@ public class CalibrationCreate  implements Serializable {
     this.calibrator = calibrator;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate agent(User agent) {
@@ -102,7 +103,7 @@ public class CalibrationCreate  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    * The conversation to use for the calibration.
    **/
@@ -120,7 +121,7 @@ public class CalibrationCreate  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate evaluationForm(EvaluationForm evaluationForm) {
@@ -137,7 +138,7 @@ public class CalibrationCreate  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate contextId(String contextId) {
@@ -154,7 +155,7 @@ public class CalibrationCreate  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate averageScore(Integer averageScore) {
@@ -171,7 +172,7 @@ public class CalibrationCreate  implements Serializable {
     this.averageScore = averageScore;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate highScore(Integer highScore) {
@@ -188,7 +189,7 @@ public class CalibrationCreate  implements Serializable {
     this.highScore = highScore;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate lowScore(Integer lowScore) {
@@ -205,7 +206,7 @@ public class CalibrationCreate  implements Serializable {
     this.lowScore = lowScore;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -223,7 +224,7 @@ public class CalibrationCreate  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate evaluations(List<Evaluation> evaluations) {
@@ -240,7 +241,7 @@ public class CalibrationCreate  implements Serializable {
     this.evaluations = evaluations;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate evaluators(List<User> evaluators) {
@@ -257,7 +258,7 @@ public class CalibrationCreate  implements Serializable {
     this.evaluators = evaluators;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate scoringIndex(Evaluation scoringIndex) {
@@ -274,7 +275,7 @@ public class CalibrationCreate  implements Serializable {
     this.scoringIndex = scoringIndex;
   }
 
-  
+
   /**
    **/
   public CalibrationCreate expertEvaluator(User expertEvaluator) {
@@ -291,14 +292,13 @@ public class CalibrationCreate  implements Serializable {
     this.expertEvaluator = expertEvaluator;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -309,22 +309,23 @@ public class CalibrationCreate  implements Serializable {
       return false;
     }
     CalibrationCreate calibrationCreate = (CalibrationCreate) o;
+
     return Objects.equals(this.id, calibrationCreate.id) &&
-        Objects.equals(this.name, calibrationCreate.name) &&
-        Objects.equals(this.calibrator, calibrationCreate.calibrator) &&
-        Objects.equals(this.agent, calibrationCreate.agent) &&
-        Objects.equals(this.conversation, calibrationCreate.conversation) &&
-        Objects.equals(this.evaluationForm, calibrationCreate.evaluationForm) &&
-        Objects.equals(this.contextId, calibrationCreate.contextId) &&
-        Objects.equals(this.averageScore, calibrationCreate.averageScore) &&
-        Objects.equals(this.highScore, calibrationCreate.highScore) &&
-        Objects.equals(this.lowScore, calibrationCreate.lowScore) &&
-        Objects.equals(this.createdDate, calibrationCreate.createdDate) &&
-        Objects.equals(this.evaluations, calibrationCreate.evaluations) &&
-        Objects.equals(this.evaluators, calibrationCreate.evaluators) &&
-        Objects.equals(this.scoringIndex, calibrationCreate.scoringIndex) &&
-        Objects.equals(this.expertEvaluator, calibrationCreate.expertEvaluator) &&
-        Objects.equals(this.selfUri, calibrationCreate.selfUri);
+            Objects.equals(this.name, calibrationCreate.name) &&
+            Objects.equals(this.calibrator, calibrationCreate.calibrator) &&
+            Objects.equals(this.agent, calibrationCreate.agent) &&
+            Objects.equals(this.conversation, calibrationCreate.conversation) &&
+            Objects.equals(this.evaluationForm, calibrationCreate.evaluationForm) &&
+            Objects.equals(this.contextId, calibrationCreate.contextId) &&
+            Objects.equals(this.averageScore, calibrationCreate.averageScore) &&
+            Objects.equals(this.highScore, calibrationCreate.highScore) &&
+            Objects.equals(this.lowScore, calibrationCreate.lowScore) &&
+            Objects.equals(this.createdDate, calibrationCreate.createdDate) &&
+            Objects.equals(this.evaluations, calibrationCreate.evaluations) &&
+            Objects.equals(this.evaluators, calibrationCreate.evaluators) &&
+            Objects.equals(this.scoringIndex, calibrationCreate.scoringIndex) &&
+            Objects.equals(this.expertEvaluator, calibrationCreate.expertEvaluator) &&
+            Objects.equals(this.selfUri, calibrationCreate.selfUri);
   }
 
   @Override

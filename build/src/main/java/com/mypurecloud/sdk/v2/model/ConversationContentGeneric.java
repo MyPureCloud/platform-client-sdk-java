@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationButtonComponent;
@@ -50,7 +51,7 @@ public class ConversationContentGeneric  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the description.
    **/
@@ -68,7 +69,7 @@ public class ConversationContentGeneric  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * URL of an image.
    **/
@@ -86,7 +87,7 @@ public class ConversationContentGeneric  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * URL of a video.
    **/
@@ -104,7 +105,7 @@ public class ConversationContentGeneric  implements Serializable {
     this.video = video;
   }
 
-  
+
   /**
    * Actions to be taken.
    **/
@@ -122,7 +123,7 @@ public class ConversationContentGeneric  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    * An array of component objects.
    **/
@@ -140,7 +141,6 @@ public class ConversationContentGeneric  implements Serializable {
     this.components = components;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,12 +151,13 @@ public class ConversationContentGeneric  implements Serializable {
       return false;
     }
     ConversationContentGeneric conversationContentGeneric = (ConversationContentGeneric) o;
+
     return Objects.equals(this.title, conversationContentGeneric.title) &&
-        Objects.equals(this.description, conversationContentGeneric.description) &&
-        Objects.equals(this.image, conversationContentGeneric.image) &&
-        Objects.equals(this.video, conversationContentGeneric.video) &&
-        Objects.equals(this.actions, conversationContentGeneric.actions) &&
-        Objects.equals(this.components, conversationContentGeneric.components);
+            Objects.equals(this.description, conversationContentGeneric.description) &&
+            Objects.equals(this.image, conversationContentGeneric.image) &&
+            Objects.equals(this.video, conversationContentGeneric.video) &&
+            Objects.equals(this.actions, conversationContentGeneric.actions) &&
+            Objects.equals(this.components, conversationContentGeneric.components);
   }
 
   @Override

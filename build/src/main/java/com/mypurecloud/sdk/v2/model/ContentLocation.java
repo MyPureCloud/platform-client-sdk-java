@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class ContentLocation  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Location postal address.
    **/
@@ -63,7 +64,7 @@ public class ContentLocation  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * Location name.
    **/
@@ -81,7 +82,7 @@ public class ContentLocation  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Latitude of the location.
    **/
@@ -99,7 +100,7 @@ public class ContentLocation  implements Serializable {
     this.latitude = latitude;
   }
 
-  
+
   /**
    * Longitude of the location.
    **/
@@ -117,7 +118,6 @@ public class ContentLocation  implements Serializable {
     this.longitude = longitude;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class ContentLocation  implements Serializable {
       return false;
     }
     ContentLocation contentLocation = (ContentLocation) o;
+
     return Objects.equals(this.url, contentLocation.url) &&
-        Objects.equals(this.address, contentLocation.address) &&
-        Objects.equals(this.text, contentLocation.text) &&
-        Objects.equals(this.latitude, contentLocation.latitude) &&
-        Objects.equals(this.longitude, contentLocation.longitude);
+            Objects.equals(this.address, contentLocation.address) &&
+            Objects.equals(this.text, contentLocation.text) &&
+            Objects.equals(this.latitude, contentLocation.latitude) &&
+            Objects.equals(this.longitude, contentLocation.longitude);
   }
 
   @Override

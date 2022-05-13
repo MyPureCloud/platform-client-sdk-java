@@ -19,7 +19,7 @@ title: Campaign
 | **script** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless. |  [optional] |
 | **edgeGroup** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The EdgeGroup that will place the calls. Required for all dialing modes except preview. |  [optional] |
 | **site** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The identifier of the site to be used for dialing; can be set in place of an edge group. |  [optional] |
-| **campaignStatus** | [**CampaignStatusEnum**](#CampaignStatusEnum)<!----> | The current status of the Campaign. A Campaign may be turned &#39;on&#39; or &#39;off&#39;. Required for updates. |  [optional] |
+| **campaignStatus** | [**CampaignStatusEnum**](#CampaignStatusEnum)<!----> | The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates. |  [optional] |
 | **phoneColumns** | <!----><!---->[**List&lt;PhoneColumn&gt;**](PhoneColumn.html)<!----> | The ContactPhoneNumberColumns on the ContactList that this Campaign should dial. |  |
 | **abandonRate** | <!----><!---->**Double**<!----> | The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns. |  [optional] |
 | **dncLists** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | DncLists for this Campaign to check before placing a call. |  [optional] |
@@ -35,7 +35,7 @@ title: Campaign
 | **alwaysRunning** | <!----><!---->**Boolean**<!----> | Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually. |  [optional] |
 | **contactSort** | <!----><!---->[**ContactSort**](ContactSort.html)<!----> | The order in which to sort contacts for dialing, based on a column. |  [optional] |
 | **contactSorts** | <!----><!---->[**List&lt;ContactSort&gt;**](ContactSort.html)<!----> | The order in which to sort contacts for dialing, based on up to four columns. |  [optional] |
-| **noAnswerTimeout** | <!----><!---->**Integer**<!----> | How long to wait before dispositioning a call as &#39;no-answer&#39;. Default 30 seconds. Only applicable to non-preview campaigns. |  [optional] |
+| **noAnswerTimeout** | <!----><!---->**Integer**<!----> | How long to wait before dispositioning a call as 'no-answer'. Default 30 seconds. Only applicable to non-preview campaigns. |  [optional] |
 | **callAnalysisLanguage** | <!----><!---->**String**<!----> | The language the edge will use to analyze the call. |  [optional] |
 | **priority** | <!----><!---->**Integer**<!----> | The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest. |  [optional] |
 | **contactListFilters** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied. |  [optional] |
@@ -50,13 +50,13 @@ title: Campaign
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AGENTLESS | &quot;agentless&quot; |
-| PREVIEW | &quot;preview&quot; |
-| POWER | &quot;power&quot; |
-| PREDICTIVE | &quot;predictive&quot; |
-| PROGRESSIVE | &quot;progressive&quot; |
-| EXTERNAL | &quot;external&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENTLESS | &quot;agentless&quot; | 
+| PREVIEW | &quot;preview&quot; | 
+| POWER | &quot;power&quot; | 
+| PREDICTIVE | &quot;predictive&quot; | 
+| PROGRESSIVE | &quot;progressive&quot; | 
+| EXTERNAL | &quot;external&quot; | 
 {: class="table table-striped"}
 
 
@@ -66,14 +66,14 @@ title: Campaign
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;on&quot; |
-| STOPPING | &quot;stopping&quot; |
-| OFF | &quot;off&quot; |
-| COMPLETE | &quot;complete&quot; |
-| INVALID | &quot;invalid&quot; |
-| FORCED_OFF | &quot;forced_off&quot; |
-| FORCED_STOPPING | &quot;forced_stopping&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;on&quot; | 
+| STOPPING | &quot;stopping&quot; | 
+| OFF | &quot;off&quot; | 
+| COMPLETE | &quot;complete&quot; | 
+| INVALID | &quot;invalid&quot; | 
+| FORCED_OFF | &quot;forced_off&quot; | 
+| FORCED_STOPPING | &quot;forced_stopping&quot; | 
 {: class="table table-striped"}
 
 

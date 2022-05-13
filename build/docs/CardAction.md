@@ -22,9 +22,9 @@ title: CardAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LINK | &quot;Link&quot; |
-| POSTBACK | &quot;Postback&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LINK | &quot;Link&quot; | 
+| POSTBACK | &quot;Postback&quot; | 
 {: class="table table-striped"}
 
 

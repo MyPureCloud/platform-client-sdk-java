@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoutePathRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -45,7 +45,7 @@ public class CreatePlanningGroupRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Set of route paths to associate with the planning group
    **/
@@ -63,7 +63,7 @@ public class CreatePlanningGroupRequest  implements Serializable {
     this.routePaths = routePaths;
   }
 
-  
+
   /**
    * The ID of the service goal template to associate with this planning group
    **/
@@ -81,7 +81,6 @@ public class CreatePlanningGroupRequest  implements Serializable {
     this.serviceGoalTemplateId = serviceGoalTemplateId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +91,10 @@ public class CreatePlanningGroupRequest  implements Serializable {
       return false;
     }
     CreatePlanningGroupRequest createPlanningGroupRequest = (CreatePlanningGroupRequest) o;
+
     return Objects.equals(this.name, createPlanningGroupRequest.name) &&
-        Objects.equals(this.routePaths, createPlanningGroupRequest.routePaths) &&
-        Objects.equals(this.serviceGoalTemplateId, createPlanningGroupRequest.serviceGoalTemplateId);
+            Objects.equals(this.routePaths, createPlanningGroupRequest.routePaths) &&
+            Objects.equals(this.serviceGoalTemplateId, createPlanningGroupRequest.serviceGoalTemplateId);
   }
 
   @Override

@@ -35,8 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Fetch field config for an entity type
 
-
-
 Wraps GET /api/v2/fieldconfig  
 
 Requires NO permissions: 
@@ -97,8 +95,6 @@ try {
 
 Get the list of domains that will be allowed to embed PureCloud applications
 
-
-
 Wraps GET /api/v2/organizations/embeddedintegration  
 
 Requires NO permissions: 
@@ -154,8 +150,6 @@ This endpoint does not require any parameters.
 > [IpAddressAuthentication](IpAddressAuthentication.html) getOrganizationsIpaddressauthentication()
 
 Get organization IP address whitelist settings
-
-
 
 Wraps GET /api/v2/organizations/ipaddressauthentication  
 
@@ -213,8 +207,6 @@ This endpoint does not require any parameters.
 > [LimitChangeRequestDetails](LimitChangeRequestDetails.html) getOrganizationsLimitsChangerequest(requestId)
 
 Get a limit change request
-
-
 
 Wraps GET /api/v2/organizations/limits/changerequests/{requestId}  
 
@@ -307,11 +299,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OrganizationApi apiInstance = new OrganizationApi();
-Long after = 789L; // Long | Timestamp indicating the date to begin after when searching for requests.
-Long before = 789L; // Long | Timestamp indicating the date to end before when searching for requests.
+Long after = 56L; // Long | Timestamp indicating the date to begin after when searching for requests.
+Long before = 56L; // Long | Timestamp indicating the date to end before when searching for requests.
 String status = "status_example"; // String | Status of the request to be filtered by
 Integer pageSize = 25; // Integer | Page Size
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     LimitChangeRequestsEntityListing result = apiInstance.getOrganizationsLimitsChangerequests(after, before, status, pageSize, expand);
     System.out.println(result);
@@ -347,8 +339,6 @@ try {
 > [UrlResponse](UrlResponse.html) getOrganizationsLimitsDocs()
 
 Get a link to the limit documentation
-
-
 
 Wraps GET /api/v2/organizations/limits/docs  
 
@@ -405,8 +395,6 @@ This endpoint does not require any parameters.
 > [LimitsEntityListing](LimitsEntityListing.html) getOrganizationsLimitsNamespace(namespaceName)
 
 Get the effective limits in a namespace for an organization
-
-
 
 Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}  
 
@@ -469,8 +457,6 @@ try {
 
 Get the default limits in a namespace for an organization
 
-
-
 Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults  
 
 Requires NO permissions: 
@@ -527,11 +513,9 @@ try {
 
 
 
-> [PagedNamespaceListing](PagedNamespaceListing.html) getOrganizationsLimitsNamespaces(pageSize, pageNumber)
+> Object getOrganizationsLimitsNamespaces(pageSize, pageNumber)
 
 Get the available limit namespaces
-
-
 
 Wraps GET /api/v2/organizations/limits/namespaces  
 
@@ -564,7 +548,7 @@ OrganizationApi apiInstance = new OrganizationApi();
 Integer pageSize = 100; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
-    PagedNamespaceListing result = apiInstance.getOrganizationsLimitsNamespaces(pageSize, pageNumber);
+    Object result = apiInstance.getOrganizationsLimitsNamespaces(pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespaces");
@@ -584,7 +568,7 @@ try {
 
 ### Return type
 
-[**PagedNamespaceListing**](PagedNamespaceListing.html)
+**Object**
 
 <a name="getOrganizationsMe"></a>
 
@@ -595,8 +579,6 @@ try {
 > [Organization](Organization.html) getOrganizationsMe()
 
 Get organization.
-
-
 
 Wraps GET /api/v2/organizations/me  
 
@@ -654,8 +636,6 @@ This endpoint does not require any parameters.
 
 Use PUT /api/v2/organizations/embeddedintegration instead
 
-
-
 Wraps GET /api/v2/organizations/whitelist  
 
 Requires NO permissions: 
@@ -711,8 +691,6 @@ This endpoint does not require any parameters.
 > [OrganizationFeatures](OrganizationFeatures.html) patchOrganizationsFeature(featureName, enabled)
 
 Update organization
-
-
 
 Wraps PATCH /api/v2/organizations/features/{featureName}  
 
@@ -777,8 +755,6 @@ try {
 
 Update the list of domains that will be allowed to embed PureCloud applications
 
-
-
 Wraps PUT /api/v2/organizations/embeddedintegration  
 
 Requires ANY permissions: 
@@ -839,8 +815,6 @@ try {
 > [IpAddressAuthentication](IpAddressAuthentication.html) putOrganizationsIpaddressauthentication(body)
 
 Update organization IP address whitelist settings
-
-
 
 Wraps PUT /api/v2/organizations/ipaddressauthentication  
 
@@ -903,8 +877,6 @@ try {
 
 Update organization.
 
-
-
 Wraps PUT /api/v2/organizations/me  
 
 Requires ANY permissions: 
@@ -965,8 +937,6 @@ try {
 > [OrgWhitelistSettings](OrgWhitelistSettings.html) putOrganizationsWhitelist(body)
 
 Use PUT /api/v2/organizations/embeddedintegration instead
-
-
 
 Wraps PUT /api/v2/organizations/whitelist  
 

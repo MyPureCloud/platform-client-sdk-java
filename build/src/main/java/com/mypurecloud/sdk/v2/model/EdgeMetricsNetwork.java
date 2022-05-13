@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class EdgeMetricsNetwork  implements Serializable {
     this.ifname = ifname;
   }
 
-  
+
   /**
    * Number of byes sent per second.
    **/
@@ -62,7 +63,7 @@ public class EdgeMetricsNetwork  implements Serializable {
     this.sentBytesPerSec = sentBytesPerSec;
   }
 
-  
+
   /**
    * Number of byes received per second.
    **/
@@ -80,7 +81,7 @@ public class EdgeMetricsNetwork  implements Serializable {
     this.receivedBytesPerSec = receivedBytesPerSec;
   }
 
-  
+
   /**
    * Total bandwidth of the adapter in bits per second.
    **/
@@ -98,7 +99,7 @@ public class EdgeMetricsNetwork  implements Serializable {
     this.bandwidthBitsPerSec = bandwidthBitsPerSec;
   }
 
-  
+
   /**
    * Percent utilization of the network adapter.
    **/
@@ -116,7 +117,6 @@ public class EdgeMetricsNetwork  implements Serializable {
     this.utilizationPct = utilizationPct;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class EdgeMetricsNetwork  implements Serializable {
       return false;
     }
     EdgeMetricsNetwork edgeMetricsNetwork = (EdgeMetricsNetwork) o;
+
     return Objects.equals(this.ifname, edgeMetricsNetwork.ifname) &&
-        Objects.equals(this.sentBytesPerSec, edgeMetricsNetwork.sentBytesPerSec) &&
-        Objects.equals(this.receivedBytesPerSec, edgeMetricsNetwork.receivedBytesPerSec) &&
-        Objects.equals(this.bandwidthBitsPerSec, edgeMetricsNetwork.bandwidthBitsPerSec) &&
-        Objects.equals(this.utilizationPct, edgeMetricsNetwork.utilizationPct);
+            Objects.equals(this.sentBytesPerSec, edgeMetricsNetwork.sentBytesPerSec) &&
+            Objects.equals(this.receivedBytesPerSec, edgeMetricsNetwork.receivedBytesPerSec) &&
+            Objects.equals(this.bandwidthBitsPerSec, edgeMetricsNetwork.bandwidthBitsPerSec) &&
+            Objects.equals(this.utilizationPct, edgeMetricsNetwork.utilizationPct);
   }
 
   @Override

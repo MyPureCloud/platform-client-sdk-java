@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -37,7 +38,7 @@ public class SmsAddress  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SmsAddress name(String name) {
@@ -54,7 +55,7 @@ public class SmsAddress  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The number and street address where this address is located.
    **/
@@ -72,7 +73,7 @@ public class SmsAddress  implements Serializable {
     this.street = street;
   }
 
-  
+
   /**
    * The city in which this address is in
    **/
@@ -90,7 +91,7 @@ public class SmsAddress  implements Serializable {
     this.city = city;
   }
 
-  
+
   /**
    * The state or region this address is in
    **/
@@ -108,7 +109,7 @@ public class SmsAddress  implements Serializable {
     this.region = region;
   }
 
-  
+
   /**
    * The postal code this address is in
    **/
@@ -126,7 +127,7 @@ public class SmsAddress  implements Serializable {
     this.postalCode = postalCode;
   }
 
-  
+
   /**
    * The ISO country code of this address
    **/
@@ -144,21 +145,20 @@ public class SmsAddress  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "In some countries, addresses are validated to comply with local regulation. In those countries, if the address you provide does not pass validation, it will not be accepted as an Address. This value will be true if the Address has been validated, or false for countries that don't require validation or if the Address is non-compliant.")
   @JsonProperty("validated")
   public Boolean getValidated() {
     return validated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,15 +169,16 @@ public class SmsAddress  implements Serializable {
       return false;
     }
     SmsAddress smsAddress = (SmsAddress) o;
+
     return Objects.equals(this.id, smsAddress.id) &&
-        Objects.equals(this.name, smsAddress.name) &&
-        Objects.equals(this.street, smsAddress.street) &&
-        Objects.equals(this.city, smsAddress.city) &&
-        Objects.equals(this.region, smsAddress.region) &&
-        Objects.equals(this.postalCode, smsAddress.postalCode) &&
-        Objects.equals(this.countryCode, smsAddress.countryCode) &&
-        Objects.equals(this.validated, smsAddress.validated) &&
-        Objects.equals(this.selfUri, smsAddress.selfUri);
+            Objects.equals(this.name, smsAddress.name) &&
+            Objects.equals(this.street, smsAddress.street) &&
+            Objects.equals(this.city, smsAddress.city) &&
+            Objects.equals(this.region, smsAddress.region) &&
+            Objects.equals(this.postalCode, smsAddress.postalCode) &&
+            Objects.equals(this.countryCode, smsAddress.countryCode) &&
+            Objects.equals(this.validated, smsAddress.validated) &&
+            Objects.equals(this.selfUri, smsAddress.selfUri);
   }
 
   @Override

@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsDivisionviewsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -43,7 +43,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,7 +57,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -71,7 +71,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -85,7 +85,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private String feature;
 	public String getFeature() {
 		return this.feature;
@@ -99,7 +99,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setFeature(feature);
 	    return this;
 	} 
-	
+
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -113,7 +113,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setFlowId(flowId);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -129,7 +129,7 @@ public class GetScriptsDivisionviewsRequest {
 	} 
 
 	public enum sortByValues { 
-		MODIFIEDDATE("modifiedDate"), 
+		MODIFIEDDATE("modifiedDate"),
 		CREATEDDATE("createdDate");
 
 		private String value;
@@ -157,7 +157,7 @@ public class GetScriptsDivisionviewsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -173,7 +173,7 @@ public class GetScriptsDivisionviewsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -201,7 +201,7 @@ public class GetScriptsDivisionviewsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
 		return this.scriptDataVersion;
@@ -215,7 +215,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
 	} 
-	
+
 	private String divisionIds;
 	public String getDivisionIds() {
 		return this.divisionIds;
@@ -229,7 +229,7 @@ public class GetScriptsDivisionviewsRequest {
 	    this.setDivisionIds(divisionIds);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -253,27 +253,37 @@ public class GetScriptsDivisionviewsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/divisionviews")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("expand", "", expand)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("feature", "", feature)
         
+
                 .withQueryParameters("flowId", "", flowId)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
         
+
                 .withQueryParameters("divisionIds", "", divisionIds)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -284,7 +294,7 @@ public class GetScriptsDivisionviewsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetScriptsDivisionviewsRequest request;
@@ -293,69 +303,77 @@ public class GetScriptsDivisionviewsRequest {
 			request = new GetScriptsDivisionviewsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withFeature(String feature) {
 			request.setFeature(feature);
 			return this;
 		}
-		
+
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortBy(sortByValues sortBy) {
 		    request.setSortBy(sortBy.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withScriptDataVersion(String scriptDataVersion) {
 			request.setScriptDataVersion(scriptDataVersion);
 			return this;
 		}
-		
+
 		public Builder withDivisionIds(String divisionIds) {
 			request.setDivisionIds(divisionIds);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetScriptsDivisionviewsRequest build() {
             

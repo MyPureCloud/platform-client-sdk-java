@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeRule;
@@ -51,7 +52,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -69,7 +70,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public DialerRulesetConfigChangeRuleSet rules(List<DialerRulesetConfigChangeRule> rules) {
@@ -86,7 +87,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.rules = rules;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -104,7 +105,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -122,7 +123,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -140,7 +141,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -158,7 +159,7 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -176,7 +177,6 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -187,14 +187,15 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
       return false;
     }
     DialerRulesetConfigChangeRuleSet dialerRulesetConfigChangeRuleSet = (DialerRulesetConfigChangeRuleSet) o;
+
     return Objects.equals(this.contactList, dialerRulesetConfigChangeRuleSet.contactList) &&
-        Objects.equals(this.queue, dialerRulesetConfigChangeRuleSet.queue) &&
-        Objects.equals(this.rules, dialerRulesetConfigChangeRuleSet.rules) &&
-        Objects.equals(this.id, dialerRulesetConfigChangeRuleSet.id) &&
-        Objects.equals(this.name, dialerRulesetConfigChangeRuleSet.name) &&
-        Objects.equals(this.dateCreated, dialerRulesetConfigChangeRuleSet.dateCreated) &&
-        Objects.equals(this.dateModified, dialerRulesetConfigChangeRuleSet.dateModified) &&
-        Objects.equals(this.version, dialerRulesetConfigChangeRuleSet.version);
+            Objects.equals(this.queue, dialerRulesetConfigChangeRuleSet.queue) &&
+            Objects.equals(this.rules, dialerRulesetConfigChangeRuleSet.rules) &&
+            Objects.equals(this.id, dialerRulesetConfigChangeRuleSet.id) &&
+            Objects.equals(this.name, dialerRulesetConfigChangeRuleSet.name) &&
+            Objects.equals(this.dateCreated, dialerRulesetConfigChangeRuleSet.dateCreated) &&
+            Objects.equals(this.dateModified, dialerRulesetConfigChangeRuleSet.dateModified) &&
+            Objects.equals(this.version, dialerRulesetConfigChangeRuleSet.version);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,7 +85,7 @@ public class GroupProfile  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GroupProfile name(String name) {
@@ -101,7 +102,7 @@ public class GroupProfile  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The state of the user resource
    **/
@@ -119,14 +120,14 @@ public class GroupProfile  implements Serializable {
     this.state = state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Datetime of the last modification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * The version of the group resource
    **/
@@ -144,14 +145,13 @@ public class GroupProfile  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,12 +162,13 @@ public class GroupProfile  implements Serializable {
       return false;
     }
     GroupProfile groupProfile = (GroupProfile) o;
+
     return Objects.equals(this.id, groupProfile.id) &&
-        Objects.equals(this.name, groupProfile.name) &&
-        Objects.equals(this.state, groupProfile.state) &&
-        Objects.equals(this.dateModified, groupProfile.dateModified) &&
-        Objects.equals(this.version, groupProfile.version) &&
-        Objects.equals(this.selfUri, groupProfile.selfUri);
+            Objects.equals(this.name, groupProfile.name) &&
+            Objects.equals(this.state, groupProfile.state) &&
+            Objects.equals(this.dateModified, groupProfile.dateModified) &&
+            Objects.equals(this.version, groupProfile.version) &&
+            Objects.equals(this.selfUri, groupProfile.selfUri);
   }
 
   @Override

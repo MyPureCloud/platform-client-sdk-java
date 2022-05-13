@@ -20,62 +20,61 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
-import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
-import com.mypurecloud.sdk.v2.model.UserProfile;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingStatus;
-import com.mypurecloud.sdk.v2.model.UserState;
-import com.mypurecloud.sdk.v2.model.UserStations;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
-import com.mypurecloud.sdk.v2.model.UserMe;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.UpdateUser;
-import com.mypurecloud.sdk.v2.model.UserQueue;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
+import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
-import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserProfile;
+import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
+import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.CreateUser;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
-import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.UserState;
+import com.mypurecloud.sdk.v2.model.UserStations;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.Utilization;
 
 public class GetUsersMeRequest {
-    
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -91,42 +90,42 @@ public class GetUsersMeRequest {
 	} 
 
 	public enum expandValues { 
-		ROUTINGSTATUS("routingStatus"), 
-		PRESENCE("presence"), 
-		CONVERSATIONSUMMARY("conversationSummary"), 
-		OUTOFOFFICE("outOfOffice"), 
-		GEOLOCATION("geolocation"), 
-		STATION("station"), 
-		AUTHORIZATION("authorization"), 
-		LASTTOKENISSUED("lasttokenissued"), 
-		DATELASTLOGIN("dateLastLogin"), 
-		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
-		TEAM("team"), 
-		PROFILESKILLS("profileSkills"), 
-		CERTIFICATIONS("certifications"), 
-		LOCATIONS("locations"), 
-		GROUPS("groups"), 
-		SKILLS("skills"), 
-		LANGUAGES("languages"), 
-		LANGUAGEPREFERENCE("languagePreference"), 
-		EMPLOYERINFO("employerInfo"), 
-		BIOGRAPHY("biography"), 
-		DATE("date"), 
-		GEOLOCATIONSETTINGS("geolocationsettings"), 
-		ORGANIZATION("organization"), 
-		PRESENCEDEFINITIONS("presencedefinitions"), 
-		LOCATIONDEFINITIONS("locationdefinitions"), 
-		ORGAUTHORIZATION("orgauthorization"), 
-		ORGPRODUCTS("orgproducts"), 
-		FAVORITES("favorites"), 
-		SUPERIORS("superiors"), 
-		DIRECTREPORTS("directreports"), 
-		ADJACENTS("adjacents"), 
-		ROUTINGSKILLS("routingskills"), 
-		ROUTINGLANGUAGES("routinglanguages"), 
-		FIELDCONFIGS("fieldconfigs"), 
-		TOKEN("token"), 
-		TRUSTORS("trustors"), 
+		ROUTINGSTATUS("routingStatus"),
+		PRESENCE("presence"),
+		CONVERSATIONSUMMARY("conversationSummary"),
+		OUTOFOFFICE("outOfOffice"),
+		GEOLOCATION("geolocation"),
+		STATION("station"),
+		AUTHORIZATION("authorization"),
+		LASTTOKENISSUED("lasttokenissued"),
+		DATELASTLOGIN("dateLastLogin"),
+		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
+		TEAM("team"),
+		PROFILESKILLS("profileSkills"),
+		CERTIFICATIONS("certifications"),
+		LOCATIONS("locations"),
+		GROUPS("groups"),
+		SKILLS("skills"),
+		LANGUAGES("languages"),
+		LANGUAGEPREFERENCE("languagePreference"),
+		EMPLOYERINFO("employerInfo"),
+		BIOGRAPHY("biography"),
+		DATE("date"),
+		GEOLOCATIONSETTINGS("geolocationsettings"),
+		ORGANIZATION("organization"),
+		PRESENCEDEFINITIONS("presencedefinitions"),
+		LOCATIONDEFINITIONS("locationdefinitions"),
+		ORGAUTHORIZATION("orgauthorization"),
+		ORGPRODUCTS("orgproducts"),
+		FAVORITES("favorites"),
+		SUPERIORS("superiors"),
+		DIRECTREPORTS("directreports"),
+		ADJACENTS("adjacents"),
+		ROUTINGSKILLS("routingskills"),
+		ROUTINGLANGUAGES("routinglanguages"),
+		FIELDCONFIGS("fieldconfigs"),
+		TOKEN("token"),
+		TRUSTORS("trustors"),
 		LOGCAPTURE("logCapture");
 
 		private String value;
@@ -154,7 +153,7 @@ public class GetUsersMeRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String integrationPresenceSource;
 	public String getIntegrationPresenceSource() {
 		return this.integrationPresenceSource;
@@ -170,8 +169,8 @@ public class GetUsersMeRequest {
 	} 
 
 	public enum integrationPresenceSourceValues { 
-		MICROSOFTTEAMS("MicrosoftTeams"), 
-		ZOOMPHONE("ZoomPhone"), 
+		MICROSOFTTEAMS("MicrosoftTeams"),
+		ZOOMPHONE("ZoomPhone"),
 		RINGCENTRAL("RingCentral");
 
 		private String value;
@@ -199,7 +198,7 @@ public class GetUsersMeRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -223,11 +222,13 @@ public class GetUsersMeRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/users/me")
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("integrationPresenceSource", "", integrationPresenceSource)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -238,7 +239,7 @@ public class GetUsersMeRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetUsersMeRequest request;
@@ -247,11 +248,13 @@ public class GetUsersMeRequest {
 			request = new GetUsersMeRequest();
 		}
 
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -261,19 +264,23 @@ public class GetUsersMeRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
+
 		public Builder withIntegrationPresenceSource(String integrationPresenceSource) {
 			request.setIntegrationPresenceSource(integrationPresenceSource);
 			return this;
 		}
 
-		public Builder withIntegrationPresenceSource(integrationPresenceSourceValues integrationPresenceSource) {
-		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withIntegrationPresenceSource(integrationPresenceSourceValues integrationPresenceSource) {
+		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetUsersMeRequest build() {
             

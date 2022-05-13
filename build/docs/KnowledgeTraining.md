@@ -27,11 +27,11 @@ title: KnowledgeTraining
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;Queued&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| SUCCEEDED | &quot;Succeeded&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUEUED | &quot;Queued&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| SUCCEEDED | &quot;Succeeded&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 
@@ -41,11 +41,11 @@ title: KnowledgeTraining
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DRAFT | &quot;Draft&quot; |
-| ACTIVE | &quot;Active&quot; |
-| DISCARDED | &quot;Discarded&quot; |
-| ARCHIVED | &quot;Archived&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DRAFT | &quot;Draft&quot; | 
+| ACTIVE | &quot;Active&quot; | 
+| DISCARDED | &quot;Discarded&quot; | 
+| ARCHIVED | &quot;Archived&quot; | 
 {: class="table table-striped"}
 
 

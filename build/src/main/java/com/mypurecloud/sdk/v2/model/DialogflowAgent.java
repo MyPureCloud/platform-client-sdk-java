@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialogflowIntent;
@@ -39,7 +40,7 @@ public class DialogflowAgent  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DialogflowAgent name(String name) {
@@ -56,7 +57,7 @@ public class DialogflowAgent  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The project this Dialogflow agent belongs to
    **/
@@ -74,7 +75,7 @@ public class DialogflowAgent  implements Serializable {
     this.project = project;
   }
 
-  
+
   /**
    * The supported languages of the Dialogflow agent
    **/
@@ -92,7 +93,7 @@ public class DialogflowAgent  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    * An array of Intents associated with this agent
    **/
@@ -110,7 +111,7 @@ public class DialogflowAgent  implements Serializable {
     this.intents = intents;
   }
 
-  
+
   /**
    * Available environments for this agent
    **/
@@ -128,14 +129,13 @@ public class DialogflowAgent  implements Serializable {
     this.environments = environments;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,13 +146,14 @@ public class DialogflowAgent  implements Serializable {
       return false;
     }
     DialogflowAgent dialogflowAgent = (DialogflowAgent) o;
+
     return Objects.equals(this.id, dialogflowAgent.id) &&
-        Objects.equals(this.name, dialogflowAgent.name) &&
-        Objects.equals(this.project, dialogflowAgent.project) &&
-        Objects.equals(this.languages, dialogflowAgent.languages) &&
-        Objects.equals(this.intents, dialogflowAgent.intents) &&
-        Objects.equals(this.environments, dialogflowAgent.environments) &&
-        Objects.equals(this.selfUri, dialogflowAgent.selfUri);
+            Objects.equals(this.name, dialogflowAgent.name) &&
+            Objects.equals(this.project, dialogflowAgent.project) &&
+            Objects.equals(this.languages, dialogflowAgent.languages) &&
+            Objects.equals(this.intents, dialogflowAgent.intents) &&
+            Objects.equals(this.environments, dialogflowAgent.environments) &&
+            Objects.equals(this.selfUri, dialogflowAgent.selfUri);
   }
 
   @Override

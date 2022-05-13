@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -47,35 +48,34 @@ public class WfmVersionedEntityMetadata  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who last modified the associated entity")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the associated entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who created the associated entity, if available")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,11 +86,12 @@ public class WfmVersionedEntityMetadata  implements Serializable {
       return false;
     }
     WfmVersionedEntityMetadata wfmVersionedEntityMetadata = (WfmVersionedEntityMetadata) o;
+
     return Objects.equals(this.version, wfmVersionedEntityMetadata.version) &&
-        Objects.equals(this.modifiedBy, wfmVersionedEntityMetadata.modifiedBy) &&
-        Objects.equals(this.dateModified, wfmVersionedEntityMetadata.dateModified) &&
-        Objects.equals(this.createdBy, wfmVersionedEntityMetadata.createdBy) &&
-        Objects.equals(this.dateCreated, wfmVersionedEntityMetadata.dateCreated);
+            Objects.equals(this.modifiedBy, wfmVersionedEntityMetadata.modifiedBy) &&
+            Objects.equals(this.dateModified, wfmVersionedEntityMetadata.dateModified) &&
+            Objects.equals(this.createdBy, wfmVersionedEntityMetadata.createdBy) &&
+            Objects.equals(this.dateCreated, wfmVersionedEntityMetadata.dateCreated);
   }
 
   @Override

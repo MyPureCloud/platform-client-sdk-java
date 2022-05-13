@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -155,7 +156,7 @@ public class Dependency  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public Dependency name(String name) {
@@ -172,7 +173,7 @@ public class Dependency  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Dependency version(String version) {
@@ -189,7 +190,7 @@ public class Dependency  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public Dependency type(TypeEnum type) {
@@ -206,7 +207,7 @@ public class Dependency  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public Dependency deleted(Boolean deleted) {
@@ -223,7 +224,7 @@ public class Dependency  implements Serializable {
     this.deleted = deleted;
   }
 
-  
+
   /**
    **/
   public Dependency updated(Boolean updated) {
@@ -240,7 +241,7 @@ public class Dependency  implements Serializable {
     this.updated = updated;
   }
 
-  
+
   /**
    **/
   public Dependency stateUnknown(Boolean stateUnknown) {
@@ -257,14 +258,13 @@ public class Dependency  implements Serializable {
     this.stateUnknown = stateUnknown;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -275,14 +275,15 @@ public class Dependency  implements Serializable {
       return false;
     }
     Dependency dependency = (Dependency) o;
+
     return Objects.equals(this.id, dependency.id) &&
-        Objects.equals(this.name, dependency.name) &&
-        Objects.equals(this.version, dependency.version) &&
-        Objects.equals(this.type, dependency.type) &&
-        Objects.equals(this.deleted, dependency.deleted) &&
-        Objects.equals(this.updated, dependency.updated) &&
-        Objects.equals(this.stateUnknown, dependency.stateUnknown) &&
-        Objects.equals(this.selfUri, dependency.selfUri);
+            Objects.equals(this.name, dependency.name) &&
+            Objects.equals(this.version, dependency.version) &&
+            Objects.equals(this.type, dependency.type) &&
+            Objects.equals(this.deleted, dependency.deleted) &&
+            Objects.equals(this.updated, dependency.updated) &&
+            Objects.equals(this.stateUnknown, dependency.stateUnknown) &&
+            Objects.equals(this.selfUri, dependency.selfUri);
   }
 
   @Override

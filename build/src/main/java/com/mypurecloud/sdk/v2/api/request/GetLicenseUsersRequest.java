@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
-import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 public class GetLicenseUsersRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -43,7 +43,7 @@ public class GetLicenseUsersRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,7 +57,7 @@ public class GetLicenseUsersRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,11 +81,13 @@ public class GetLicenseUsersRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/license/users")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -96,7 +98,7 @@ public class GetLicenseUsersRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLicenseUsersRequest request;
@@ -105,19 +107,19 @@ public class GetLicenseUsersRequest {
 			request = new GetLicenseUsersRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetLicenseUsersRequest build() {
             

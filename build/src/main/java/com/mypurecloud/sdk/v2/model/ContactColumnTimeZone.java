@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,14 +90,13 @@ public class ContactColumnTimeZone  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Column Type will be either PHONE or ZIP")
   @JsonProperty("columnType")
   public ColumnTypeEnum getColumnType() {
     return columnType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,8 +107,9 @@ public class ContactColumnTimeZone  implements Serializable {
       return false;
     }
     ContactColumnTimeZone contactColumnTimeZone = (ContactColumnTimeZone) o;
+
     return Objects.equals(this.timeZone, contactColumnTimeZone.timeZone) &&
-        Objects.equals(this.columnType, contactColumnTimeZone.columnType);
+            Objects.equals(this.columnType, contactColumnTimeZone.columnType);
   }
 
   @Override

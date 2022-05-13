@@ -26,13 +26,13 @@ title: Referrer
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INTERNAL | &quot;internal&quot; |
-| SEARCH | &quot;search&quot; |
-| SOCIAL | &quot;social&quot; |
-| EMAIL | &quot;email&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| PAID | &quot;paid&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INTERNAL | &quot;internal&quot; | 
+| SEARCH | &quot;search&quot; | 
+| SOCIAL | &quot;social&quot; | 
+| EMAIL | &quot;email&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| PAID | &quot;paid&quot; | 
 {: class="table table-striped"}
 
 

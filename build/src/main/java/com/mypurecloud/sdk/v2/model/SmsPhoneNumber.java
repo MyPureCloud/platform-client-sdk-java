@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -300,7 +301,7 @@ public class SmsPhoneNumber  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SmsPhoneNumber name(String name) {
@@ -317,7 +318,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234
    **/
@@ -335,14 +336,14 @@ public class SmsPhoneNumber  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Type of the phone number provisioned.")
   @JsonProperty("phoneNumberType")
   public PhoneNumberTypeEnum getPhoneNumberType() {
     return phoneNumberType;
   }
 
-  
+
   /**
    * Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud
    **/
@@ -360,7 +361,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.provisionedThroughPureCloud = provisionedThroughPureCloud;
   }
 
-  
+
   /**
    * Status of the provisioned phone number.
    **/
@@ -378,14 +379,14 @@ public class SmsPhoneNumber  implements Serializable {
     this.phoneNumberStatus = phoneNumberStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The capabilities of the phone number available for provisioning.")
   @JsonProperty("capabilities")
   public List<CapabilitiesEnum> getCapabilities() {
     return capabilities;
   }
 
-  
+
   /**
    * The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
    **/
@@ -403,7 +404,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
+
   /**
    * Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -421,7 +422,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -439,7 +440,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User that provisioned this phone number
    **/
@@ -457,7 +458,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User that last modified this phone number
    **/
@@ -475,7 +476,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -493,7 +494,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -511,7 +512,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.purchaseDate = purchaseDate;
   }
 
-  
+
   /**
    * Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -529,7 +530,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.cancellationDate = cancellationDate;
   }
 
-  
+
   /**
    * Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -547,7 +548,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.renewalDate = renewalDate;
   }
 
-  
+
   /**
    * Renewal time period of this phone number, if the phoneNumberType is shortcode.
    **/
@@ -565,7 +566,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.autoRenewable = autoRenewable;
   }
 
-  
+
   /**
    * The id of an address attached to this phone number.
    **/
@@ -583,7 +584,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.addressId = addressId;
   }
 
-  
+
   /**
    * BillingType of this phone number, if the phoneNumberType is shortcode.
    **/
@@ -601,7 +602,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.shortCodeBillingType = shortCodeBillingType;
   }
 
-  
+
   /**
    * Status of latest asynchronous provisioning action
    **/
@@ -619,7 +620,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.provisioningStatus = provisioningStatus;
   }
 
-  
+
   /**
    * Localized country name for the country code this phone number belongs too
    **/
@@ -637,7 +638,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.country = country;
   }
 
-  
+
   /**
    * Set to true if this phone number has the capability to support SMS
    **/
@@ -655,7 +656,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.supportsSms = supportsSms;
   }
 
-  
+
   /**
    * Set to true if this phone number has the capability to support MMS
    **/
@@ -673,7 +674,7 @@ public class SmsPhoneNumber  implements Serializable {
     this.supportsMms = supportsMms;
   }
 
-  
+
   /**
    * Set to true if this phone number has the capability to support voice
    **/
@@ -691,14 +692,13 @@ public class SmsPhoneNumber  implements Serializable {
     this.supportsVoice = supportsVoice;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -709,31 +709,32 @@ public class SmsPhoneNumber  implements Serializable {
       return false;
     }
     SmsPhoneNumber smsPhoneNumber = (SmsPhoneNumber) o;
+
     return Objects.equals(this.id, smsPhoneNumber.id) &&
-        Objects.equals(this.name, smsPhoneNumber.name) &&
-        Objects.equals(this.phoneNumber, smsPhoneNumber.phoneNumber) &&
-        Objects.equals(this.phoneNumberType, smsPhoneNumber.phoneNumberType) &&
-        Objects.equals(this.provisionedThroughPureCloud, smsPhoneNumber.provisionedThroughPureCloud) &&
-        Objects.equals(this.phoneNumberStatus, smsPhoneNumber.phoneNumberStatus) &&
-        Objects.equals(this.capabilities, smsPhoneNumber.capabilities) &&
-        Objects.equals(this.countryCode, smsPhoneNumber.countryCode) &&
-        Objects.equals(this.dateCreated, smsPhoneNumber.dateCreated) &&
-        Objects.equals(this.dateModified, smsPhoneNumber.dateModified) &&
-        Objects.equals(this.createdBy, smsPhoneNumber.createdBy) &&
-        Objects.equals(this.modifiedBy, smsPhoneNumber.modifiedBy) &&
-        Objects.equals(this.version, smsPhoneNumber.version) &&
-        Objects.equals(this.purchaseDate, smsPhoneNumber.purchaseDate) &&
-        Objects.equals(this.cancellationDate, smsPhoneNumber.cancellationDate) &&
-        Objects.equals(this.renewalDate, smsPhoneNumber.renewalDate) &&
-        Objects.equals(this.autoRenewable, smsPhoneNumber.autoRenewable) &&
-        Objects.equals(this.addressId, smsPhoneNumber.addressId) &&
-        Objects.equals(this.shortCodeBillingType, smsPhoneNumber.shortCodeBillingType) &&
-        Objects.equals(this.provisioningStatus, smsPhoneNumber.provisioningStatus) &&
-        Objects.equals(this.country, smsPhoneNumber.country) &&
-        Objects.equals(this.supportsSms, smsPhoneNumber.supportsSms) &&
-        Objects.equals(this.supportsMms, smsPhoneNumber.supportsMms) &&
-        Objects.equals(this.supportsVoice, smsPhoneNumber.supportsVoice) &&
-        Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
+            Objects.equals(this.name, smsPhoneNumber.name) &&
+            Objects.equals(this.phoneNumber, smsPhoneNumber.phoneNumber) &&
+            Objects.equals(this.phoneNumberType, smsPhoneNumber.phoneNumberType) &&
+            Objects.equals(this.provisionedThroughPureCloud, smsPhoneNumber.provisionedThroughPureCloud) &&
+            Objects.equals(this.phoneNumberStatus, smsPhoneNumber.phoneNumberStatus) &&
+            Objects.equals(this.capabilities, smsPhoneNumber.capabilities) &&
+            Objects.equals(this.countryCode, smsPhoneNumber.countryCode) &&
+            Objects.equals(this.dateCreated, smsPhoneNumber.dateCreated) &&
+            Objects.equals(this.dateModified, smsPhoneNumber.dateModified) &&
+            Objects.equals(this.createdBy, smsPhoneNumber.createdBy) &&
+            Objects.equals(this.modifiedBy, smsPhoneNumber.modifiedBy) &&
+            Objects.equals(this.version, smsPhoneNumber.version) &&
+            Objects.equals(this.purchaseDate, smsPhoneNumber.purchaseDate) &&
+            Objects.equals(this.cancellationDate, smsPhoneNumber.cancellationDate) &&
+            Objects.equals(this.renewalDate, smsPhoneNumber.renewalDate) &&
+            Objects.equals(this.autoRenewable, smsPhoneNumber.autoRenewable) &&
+            Objects.equals(this.addressId, smsPhoneNumber.addressId) &&
+            Objects.equals(this.shortCodeBillingType, smsPhoneNumber.shortCodeBillingType) &&
+            Objects.equals(this.provisioningStatus, smsPhoneNumber.provisioningStatus) &&
+            Objects.equals(this.country, smsPhoneNumber.country) &&
+            Objects.equals(this.supportsSms, smsPhoneNumber.supportsSms) &&
+            Objects.equals(this.supportsMms, smsPhoneNumber.supportsMms) &&
+            Objects.equals(this.supportsVoice, smsPhoneNumber.supportsVoice) &&
+            Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CertificateAuthorityEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CertificateAuthorityEntityListing  implements Serializable, PagedRe
       return false;
     }
     CertificateAuthorityEntityListing certificateAuthorityEntityListing = (CertificateAuthorityEntityListing) o;
+
     return Objects.equals(this.entities, certificateAuthorityEntityListing.entities) &&
-        Objects.equals(this.pageSize, certificateAuthorityEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, certificateAuthorityEntityListing.pageNumber) &&
-        Objects.equals(this.total, certificateAuthorityEntityListing.total) &&
-        Objects.equals(this.lastUri, certificateAuthorityEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, certificateAuthorityEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, certificateAuthorityEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, certificateAuthorityEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, certificateAuthorityEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, certificateAuthorityEntityListing.pageCount);
+            Objects.equals(this.pageSize, certificateAuthorityEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, certificateAuthorityEntityListing.pageNumber) &&
+            Objects.equals(this.total, certificateAuthorityEntityListing.total) &&
+            Objects.equals(this.lastUri, certificateAuthorityEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, certificateAuthorityEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, certificateAuthorityEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, certificateAuthorityEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, certificateAuthorityEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, certificateAuthorityEntityListing.pageCount);
   }
 
   @Override

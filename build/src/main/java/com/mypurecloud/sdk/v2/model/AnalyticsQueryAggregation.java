@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * For use with termFrequency aggregations
    **/
@@ -113,7 +114,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * For use with numericRange aggregations
    **/
@@ -131,7 +132,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * For use with termFrequency aggregations
    **/
@@ -149,7 +150,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.size = size;
   }
 
-  
+
   /**
    * For use with numericRange aggregations
    **/
@@ -167,7 +168,6 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.ranges = ranges;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,11 +178,12 @@ public class AnalyticsQueryAggregation  implements Serializable {
       return false;
     }
     AnalyticsQueryAggregation analyticsQueryAggregation = (AnalyticsQueryAggregation) o;
+
     return Objects.equals(this.type, analyticsQueryAggregation.type) &&
-        Objects.equals(this.dimension, analyticsQueryAggregation.dimension) &&
-        Objects.equals(this.metric, analyticsQueryAggregation.metric) &&
-        Objects.equals(this.size, analyticsQueryAggregation.size) &&
-        Objects.equals(this.ranges, analyticsQueryAggregation.ranges);
+            Objects.equals(this.dimension, analyticsQueryAggregation.dimension) &&
+            Objects.equals(this.metric, analyticsQueryAggregation.metric) &&
+            Objects.equals(this.size, analyticsQueryAggregation.size) &&
+            Objects.equals(this.ranges, analyticsQueryAggregation.ranges);
   }
 
   @Override

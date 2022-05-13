@@ -22,14 +22,14 @@ title: BotSearchResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GENESYSBOTCONNECTOR | &quot;GenesysBotConnector&quot; |
-| GENESYSDIALOGENGINE | &quot;GenesysDialogEngine&quot; |
-| AMAZONLEX | &quot;AmazonLex&quot; |
-| GOOGLEDIALOGFLOWES | &quot;GoogleDialogFlowES&quot; |
-| GOOGLEDIALOGFLOWCX | &quot;GoogleDialogFlowCX&quot; |
-| NUANCEDLG | &quot;NuanceDlg&quot; |
-| GENESYSBOTFLOW | &quot;GenesysBotFlow&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GENESYSBOTCONNECTOR | &quot;GenesysBotConnector&quot; | 
+| GENESYSDIALOGENGINE | &quot;GenesysDialogEngine&quot; | 
+| AMAZONLEX | &quot;AmazonLex&quot; | 
+| GOOGLEDIALOGFLOWES | &quot;GoogleDialogFlowES&quot; | 
+| GOOGLEDIALOGFLOWCX | &quot;GoogleDialogFlowCX&quot; | 
+| NUANCEDLG | &quot;NuanceDlg&quot; | 
+| GENESYSBOTFLOW | &quot;GenesysBotFlow&quot; | 
 {: class="table table-striped"}
 
 

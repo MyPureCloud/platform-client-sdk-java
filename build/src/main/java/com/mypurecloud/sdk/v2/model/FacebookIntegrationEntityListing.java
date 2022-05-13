@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FacebookIntegrationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FacebookIntegrationEntityListing  implements Serializable, PagedRes
       return false;
     }
     FacebookIntegrationEntityListing facebookIntegrationEntityListing = (FacebookIntegrationEntityListing) o;
+
     return Objects.equals(this.entities, facebookIntegrationEntityListing.entities) &&
-        Objects.equals(this.pageSize, facebookIntegrationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, facebookIntegrationEntityListing.pageNumber) &&
-        Objects.equals(this.total, facebookIntegrationEntityListing.total) &&
-        Objects.equals(this.lastUri, facebookIntegrationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, facebookIntegrationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, facebookIntegrationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, facebookIntegrationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, facebookIntegrationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, facebookIntegrationEntityListing.pageCount);
+            Objects.equals(this.pageSize, facebookIntegrationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, facebookIntegrationEntityListing.pageNumber) &&
+            Objects.equals(this.total, facebookIntegrationEntityListing.total) &&
+            Objects.equals(this.lastUri, facebookIntegrationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, facebookIntegrationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, facebookIntegrationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, facebookIntegrationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, facebookIntegrationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, facebookIntegrationEntityListing.pageCount);
   }
 
   @Override

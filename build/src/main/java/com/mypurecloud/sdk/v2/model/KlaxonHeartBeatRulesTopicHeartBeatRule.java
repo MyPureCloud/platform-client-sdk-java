@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -145,7 +146,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule name(String name) {
@@ -162,7 +163,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule senderId(String senderId) {
@@ -179,7 +180,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.senderId = senderId;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule heartBeatTimeoutInMinutes(BigDecimal heartBeatTimeoutInMinutes) {
@@ -196,7 +197,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.heartBeatTimeoutInMinutes = heartBeatTimeoutInMinutes;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule enabled(Boolean enabled) {
@@ -213,7 +214,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule inAlarm(Boolean inAlarm) {
@@ -230,7 +231,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.inAlarm = inAlarm;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule notificationUsers(List<KlaxonHeartBeatRulesTopicNotificationUser> notificationUsers) {
@@ -247,7 +248,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -264,7 +265,7 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatRulesTopicHeartBeatRule ruleType(RuleTypeEnum ruleType) {
@@ -281,7 +282,6 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
     this.ruleType = ruleType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -292,15 +292,16 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
       return false;
     }
     KlaxonHeartBeatRulesTopicHeartBeatRule klaxonHeartBeatRulesTopicHeartBeatRule = (KlaxonHeartBeatRulesTopicHeartBeatRule) o;
+
     return Objects.equals(this.id, klaxonHeartBeatRulesTopicHeartBeatRule.id) &&
-        Objects.equals(this.name, klaxonHeartBeatRulesTopicHeartBeatRule.name) &&
-        Objects.equals(this.senderId, klaxonHeartBeatRulesTopicHeartBeatRule.senderId) &&
-        Objects.equals(this.heartBeatTimeoutInMinutes, klaxonHeartBeatRulesTopicHeartBeatRule.heartBeatTimeoutInMinutes) &&
-        Objects.equals(this.enabled, klaxonHeartBeatRulesTopicHeartBeatRule.enabled) &&
-        Objects.equals(this.inAlarm, klaxonHeartBeatRulesTopicHeartBeatRule.inAlarm) &&
-        Objects.equals(this.notificationUsers, klaxonHeartBeatRulesTopicHeartBeatRule.notificationUsers) &&
-        Objects.equals(this.alertTypes, klaxonHeartBeatRulesTopicHeartBeatRule.alertTypes) &&
-        Objects.equals(this.ruleType, klaxonHeartBeatRulesTopicHeartBeatRule.ruleType);
+            Objects.equals(this.name, klaxonHeartBeatRulesTopicHeartBeatRule.name) &&
+            Objects.equals(this.senderId, klaxonHeartBeatRulesTopicHeartBeatRule.senderId) &&
+            Objects.equals(this.heartBeatTimeoutInMinutes, klaxonHeartBeatRulesTopicHeartBeatRule.heartBeatTimeoutInMinutes) &&
+            Objects.equals(this.enabled, klaxonHeartBeatRulesTopicHeartBeatRule.enabled) &&
+            Objects.equals(this.inAlarm, klaxonHeartBeatRulesTopicHeartBeatRule.inAlarm) &&
+            Objects.equals(this.notificationUsers, klaxonHeartBeatRulesTopicHeartBeatRule.notificationUsers) &&
+            Objects.equals(this.alertTypes, klaxonHeartBeatRulesTopicHeartBeatRule.alertTypes) &&
+            Objects.equals(this.ruleType, klaxonHeartBeatRulesTopicHeartBeatRule.ruleType);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QualityAuditLogMessage;
@@ -46,7 +47,7 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
     this.id = id;
   }
 
-  
+
   /**
    * Number of results in a page.
    **/
@@ -64,7 +65,7 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * Optional cursor to indicate where to resume the results.
    **/
@@ -82,7 +83,7 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
     this.cursor = cursor;
   }
 
-  
+
   /**
    * List of audit messages.
    **/
@@ -100,7 +101,6 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
     this.entities = entities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class QualityAuditQueryExecutionResultsResponse  implements Serializable 
       return false;
     }
     QualityAuditQueryExecutionResultsResponse qualityAuditQueryExecutionResultsResponse = (QualityAuditQueryExecutionResultsResponse) o;
+
     return Objects.equals(this.id, qualityAuditQueryExecutionResultsResponse.id) &&
-        Objects.equals(this.pageSize, qualityAuditQueryExecutionResultsResponse.pageSize) &&
-        Objects.equals(this.cursor, qualityAuditQueryExecutionResultsResponse.cursor) &&
-        Objects.equals(this.entities, qualityAuditQueryExecutionResultsResponse.entities);
+            Objects.equals(this.pageSize, qualityAuditQueryExecutionResultsResponse.pageSize) &&
+            Objects.equals(this.cursor, qualityAuditQueryExecutionResultsResponse.cursor) &&
+            Objects.equals(this.entities, qualityAuditQueryExecutionResultsResponse.entities);
   }
 
   @Override

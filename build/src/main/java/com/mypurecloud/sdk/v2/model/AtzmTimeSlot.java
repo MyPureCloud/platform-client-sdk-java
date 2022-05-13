@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class AtzmTimeSlot  implements Serializable {
     this.earliestCallableTime = earliestCallableTime;
   }
 
-  
+
   /**
    * The latest time to dial a contact. Valid format is HH:mm
    **/
@@ -59,7 +60,6 @@ public class AtzmTimeSlot  implements Serializable {
     this.latestCallableTime = latestCallableTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class AtzmTimeSlot  implements Serializable {
       return false;
     }
     AtzmTimeSlot atzmTimeSlot = (AtzmTimeSlot) o;
+
     return Objects.equals(this.earliestCallableTime, atzmTimeSlot.earliestCallableTime) &&
-        Objects.equals(this.latestCallableTime, atzmTimeSlot.latestCallableTime);
+            Objects.equals(this.latestCallableTime, atzmTimeSlot.latestCallableTime);
   }
 
   @Override

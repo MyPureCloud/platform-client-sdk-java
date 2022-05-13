@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastReference;
@@ -39,14 +40,14 @@ public class WeekScheduleListItemResponse  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * First day of this week schedule in yyyy-MM-dd format
    **/
@@ -64,7 +65,7 @@ public class WeekScheduleListItemResponse  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * Description of the week schedule
    **/
@@ -82,7 +83,7 @@ public class WeekScheduleListItemResponse  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Whether the week schedule is published
    **/
@@ -100,7 +101,7 @@ public class WeekScheduleListItemResponse  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    * Summary of the results from the schedule run
    **/
@@ -118,7 +119,7 @@ public class WeekScheduleListItemResponse  implements Serializable {
     this.generationResults = generationResults;
   }
 
-  
+
   /**
    * Short term forecast associated with this schedule
    **/
@@ -136,7 +137,7 @@ public class WeekScheduleListItemResponse  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * Version metadata for this work plan
    **/
@@ -154,7 +155,6 @@ public class WeekScheduleListItemResponse  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,14 +165,15 @@ public class WeekScheduleListItemResponse  implements Serializable {
       return false;
     }
     WeekScheduleListItemResponse weekScheduleListItemResponse = (WeekScheduleListItemResponse) o;
+
     return Objects.equals(this.id, weekScheduleListItemResponse.id) &&
-        Objects.equals(this.selfUri, weekScheduleListItemResponse.selfUri) &&
-        Objects.equals(this.weekDate, weekScheduleListItemResponse.weekDate) &&
-        Objects.equals(this.description, weekScheduleListItemResponse.description) &&
-        Objects.equals(this.published, weekScheduleListItemResponse.published) &&
-        Objects.equals(this.generationResults, weekScheduleListItemResponse.generationResults) &&
-        Objects.equals(this.shortTermForecast, weekScheduleListItemResponse.shortTermForecast) &&
-        Objects.equals(this.metadata, weekScheduleListItemResponse.metadata);
+            Objects.equals(this.selfUri, weekScheduleListItemResponse.selfUri) &&
+            Objects.equals(this.weekDate, weekScheduleListItemResponse.weekDate) &&
+            Objects.equals(this.description, weekScheduleListItemResponse.description) &&
+            Objects.equals(this.published, weekScheduleListItemResponse.published) &&
+            Objects.equals(this.generationResults, weekScheduleListItemResponse.generationResults) &&
+            Objects.equals(this.shortTermForecast, weekScheduleListItemResponse.shortTermForecast) &&
+            Objects.equals(this.metadata, weekScheduleListItemResponse.metadata);
   }
 
   @Override

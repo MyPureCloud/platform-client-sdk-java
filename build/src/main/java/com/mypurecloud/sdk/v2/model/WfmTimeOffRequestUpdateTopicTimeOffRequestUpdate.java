@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -160,7 +161,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate user(WfmTimeOffRequestUpdateTopicUserReference user) {
@@ -177,7 +178,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.user = user;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate isFullDayRequest(Boolean isFullDayRequest) {
@@ -194,7 +195,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.isFullDayRequest = isFullDayRequest;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate markedAsRead(Boolean markedAsRead) {
@@ -211,7 +212,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.markedAsRead = markedAsRead;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate activityCodeId(String activityCodeId) {
@@ -228,7 +229,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate paid(Boolean paid) {
@@ -245,7 +246,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.paid = paid;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate status(StatusEnum status) {
@@ -262,7 +263,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate substatus(SubstatusEnum substatus) {
@@ -279,7 +280,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.substatus = substatus;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate partialDayStartDateTimes(List<String> partialDayStartDateTimes) {
@@ -296,7 +297,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate fullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
@@ -313,7 +314,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate dailyDurationMinutes(Integer dailyDurationMinutes) {
@@ -330,7 +331,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate notes(String notes) {
@@ -347,7 +348,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.notes = notes;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate reviewedDate(String reviewedDate) {
@@ -364,7 +365,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.reviewedDate = reviewedDate;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate reviewedBy(String reviewedBy) {
@@ -381,7 +382,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.reviewedBy = reviewedBy;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate submittedDate(String submittedDate) {
@@ -398,7 +399,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.submittedDate = submittedDate;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate submittedBy(String submittedBy) {
@@ -415,7 +416,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.submittedBy = submittedBy;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate modifiedDate(String modifiedDate) {
@@ -432,7 +433,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate modifiedBy(String modifiedBy) {
@@ -449,7 +450,6 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     this.modifiedBy = modifiedBy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -460,24 +460,25 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
       return false;
     }
     WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate = (WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate) o;
+
     return Objects.equals(this.id, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.id) &&
-        Objects.equals(this.user, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.user) &&
-        Objects.equals(this.isFullDayRequest, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.isFullDayRequest) &&
-        Objects.equals(this.markedAsRead, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.markedAsRead) &&
-        Objects.equals(this.activityCodeId, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.activityCodeId) &&
-        Objects.equals(this.paid, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.paid) &&
-        Objects.equals(this.status, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.status) &&
-        Objects.equals(this.substatus, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.substatus) &&
-        Objects.equals(this.partialDayStartDateTimes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.partialDayStartDateTimes) &&
-        Objects.equals(this.fullDayManagementUnitDates, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayManagementUnitDates) &&
-        Objects.equals(this.dailyDurationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.dailyDurationMinutes) &&
-        Objects.equals(this.notes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.notes) &&
-        Objects.equals(this.reviewedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.reviewedDate) &&
-        Objects.equals(this.reviewedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.reviewedBy) &&
-        Objects.equals(this.submittedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.submittedDate) &&
-        Objects.equals(this.submittedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.submittedBy) &&
-        Objects.equals(this.modifiedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.modifiedDate) &&
-        Objects.equals(this.modifiedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.modifiedBy);
+            Objects.equals(this.user, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.user) &&
+            Objects.equals(this.isFullDayRequest, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.isFullDayRequest) &&
+            Objects.equals(this.markedAsRead, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.markedAsRead) &&
+            Objects.equals(this.activityCodeId, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.activityCodeId) &&
+            Objects.equals(this.paid, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.paid) &&
+            Objects.equals(this.status, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.status) &&
+            Objects.equals(this.substatus, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.substatus) &&
+            Objects.equals(this.partialDayStartDateTimes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.partialDayStartDateTimes) &&
+            Objects.equals(this.fullDayManagementUnitDates, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayManagementUnitDates) &&
+            Objects.equals(this.dailyDurationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.dailyDurationMinutes) &&
+            Objects.equals(this.notes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.notes) &&
+            Objects.equals(this.reviewedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.reviewedDate) &&
+            Objects.equals(this.reviewedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.reviewedBy) &&
+            Objects.equals(this.submittedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.submittedDate) &&
+            Objects.equals(this.submittedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.submittedBy) &&
+            Objects.equals(this.modifiedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.modifiedDate) &&
+            Objects.equals(this.modifiedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.modifiedBy);
   }
 
   @Override

@@ -13,19 +13,18 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
@@ -52,7 +51,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class OrganizationApiAsync {
   private final ApiClient pcapiClient;
 
@@ -64,7 +62,6 @@ public class OrganizationApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Fetch field config for an entity type
    * 
@@ -140,7 +137,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get the list of domains that will be allowed to embed PureCloud applications
    * 
@@ -216,7 +212,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get organization IP address whitelist settings
    * 
@@ -292,7 +287,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get a limit change request
    * 
@@ -368,7 +362,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get the available limit change requests
    * Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
@@ -444,7 +437,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get a link to the limit documentation
    * 
@@ -520,7 +512,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get the effective limits in a namespace for an organization
    * 
@@ -596,7 +587,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get the default limits in a namespace for an organization
    * 
@@ -672,7 +662,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get the available limit namespaces
    * 
@@ -680,13 +669,13 @@ public class OrganizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PagedNamespaceListing> getOrganizationsLimitsNamespacesAsync(GetOrganizationsLimitsNamespacesRequest request, final AsyncApiCallback<PagedNamespaceListing> callback) {
+  public Future<Object> getOrganizationsLimitsNamespacesAsync(GetOrganizationsLimitsNamespacesRequest request, final AsyncApiCallback<Object> callback) {
     try {
-      final SettableFuture<PagedNamespaceListing> future = SettableFuture.create();
+      final SettableFuture<Object> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PagedNamespaceListing>() {}, new AsyncApiCallback<ApiResponse<PagedNamespaceListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
-        public void onCompleted(ApiResponse<PagedNamespaceListing> response) {
+        public void onCompleted(ApiResponse<Object> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -714,13 +703,13 @@ public class OrganizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PagedNamespaceListing>> getOrganizationsLimitsNamespacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PagedNamespaceListing>> callback) {
+  public Future<ApiResponse<Object>> getOrganizationsLimitsNamespacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
     try {
-      final SettableFuture<ApiResponse<PagedNamespaceListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<PagedNamespaceListing>() {}, new AsyncApiCallback<ApiResponse<PagedNamespaceListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
-        public void onCompleted(ApiResponse<PagedNamespaceListing> response) {
+        public void onCompleted(ApiResponse<Object> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -728,7 +717,7 @@ public class OrganizationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)exception;
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -736,7 +725,7 @@ public class OrganizationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -748,7 +737,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Get organization.
    * 
@@ -824,7 +812,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
@@ -900,7 +887,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Update organization
    * 
@@ -976,7 +962,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Update the list of domains that will be allowed to embed PureCloud applications
    * 
@@ -1052,7 +1037,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Update organization IP address whitelist settings
    * 
@@ -1128,7 +1112,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Update organization.
    * 
@@ -1204,7 +1187,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
   /**
    * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
@@ -1280,7 +1262,6 @@ public class OrganizationApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

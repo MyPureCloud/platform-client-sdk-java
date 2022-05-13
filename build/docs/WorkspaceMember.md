@@ -26,9 +26,9 @@ title: WorkspaceMember
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USER | &quot;USER&quot; |
-| GROUP | &quot;GROUP&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USER | &quot;USER&quot; | 
+| GROUP | &quot;GROUP&quot; | 
 {: class="table table-striped"}
 
 

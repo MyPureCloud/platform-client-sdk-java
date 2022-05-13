@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -83,7 +84,7 @@ public class ScimV2MemberReference  implements Serializable {
     return type;
   }
 
-  
+
   /**
    * The ID of the group member. Can be \"userId\" or \"groupId\".
    **/
@@ -101,14 +102,13 @@ public class ScimV2MemberReference  implements Serializable {
     this.value = value;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The reference URI of the SCIM resource.")
   @JsonProperty("$ref")
   public String getRef() {
     return ref;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,9 +119,10 @@ public class ScimV2MemberReference  implements Serializable {
       return false;
     }
     ScimV2MemberReference scimV2MemberReference = (ScimV2MemberReference) o;
+
     return Objects.equals(this.type, scimV2MemberReference.type) &&
-        Objects.equals(this.value, scimV2MemberReference.value) &&
-        Objects.equals(this.ref, scimV2MemberReference.ref);
+            Objects.equals(this.value, scimV2MemberReference.value) &&
+            Objects.equals(this.ref, scimV2MemberReference.ref);
   }
 
   @Override

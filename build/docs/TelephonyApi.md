@@ -95,8 +95,6 @@ try {
 
 Get signed S3 URL for a pcap download
 
-
-
 Wraps GET /api/v2/telephony/siptraces/download/{downloadId}  
 
 Requires ALL permissions: 
@@ -157,8 +155,6 @@ try {
 > [SipDownloadResponse](SipDownloadResponse.html) postTelephonySiptracesDownload(sIPSearchPublicRequest)
 
 Request a download of a pcap file to S3
-
-
 
 Wraps POST /api/v2/telephony/siptraces/download  
 

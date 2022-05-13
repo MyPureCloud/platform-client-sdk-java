@@ -15,7 +15,7 @@ title: TimeOffRequest
 | **activityCodeId** | <!----><!---->**String**<!----> | The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of this time off request |  [optional] |
 | **partialDayStartDateTimes** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> | A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false |  [optional] |
-| **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.  Will be not empty if isFullDayRequest == true |  [optional] |
+| **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true |  [optional] |
 | **dailyDurationMinutes** | <!----><!---->**Integer**<!----> | The daily duration of this time off request in minutes |  [optional] |
 | **notes** | <!----><!---->**String**<!----> | Notes about the time off request |  [optional] |
 | **submittedBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who submitted this time off request |  [optional] |
@@ -33,11 +33,11 @@ title: TimeOffRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| APPROVED | &quot;APPROVED&quot; |
-| DENIED | &quot;DENIED&quot; |
-| CANCELED | &quot;CANCELED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| APPROVED | &quot;APPROVED&quot; | 
+| DENIED | &quot;DENIED&quot; | 
+| CANCELED | &quot;CANCELED&quot; | 
 {: class="table table-striped"}
 
 

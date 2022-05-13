@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class EvaluationQuestionScore  implements Serializable {
     this.questionId = questionId;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionScore answerId(String answerId) {
@@ -62,7 +63,7 @@ public class EvaluationQuestionScore  implements Serializable {
     this.answerId = answerId;
   }
 
-  
+
   /**
    * Unweighted score of the question
    **/
@@ -80,7 +81,7 @@ public class EvaluationQuestionScore  implements Serializable {
     this.score = score;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionScore markedNA(Boolean markedNA) {
@@ -97,7 +98,7 @@ public class EvaluationQuestionScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-  
+
   /**
    * AnswerId found with evaluation assistance conditions
    **/
@@ -115,7 +116,7 @@ public class EvaluationQuestionScore  implements Serializable {
     this.assistedAnswerId = assistedAnswerId;
   }
 
-  
+
   /**
    * Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
    **/
@@ -133,7 +134,7 @@ public class EvaluationQuestionScore  implements Serializable {
     this.failedKillQuestion = failedKillQuestion;
   }
 
-  
+
   /**
    * Comments from the evaluator specific to this question
    **/
@@ -151,7 +152,6 @@ public class EvaluationQuestionScore  implements Serializable {
     this.comments = comments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,13 +162,14 @@ public class EvaluationQuestionScore  implements Serializable {
       return false;
     }
     EvaluationQuestionScore evaluationQuestionScore = (EvaluationQuestionScore) o;
+
     return Objects.equals(this.questionId, evaluationQuestionScore.questionId) &&
-        Objects.equals(this.answerId, evaluationQuestionScore.answerId) &&
-        Objects.equals(this.score, evaluationQuestionScore.score) &&
-        Objects.equals(this.markedNA, evaluationQuestionScore.markedNA) &&
-        Objects.equals(this.assistedAnswerId, evaluationQuestionScore.assistedAnswerId) &&
-        Objects.equals(this.failedKillQuestion, evaluationQuestionScore.failedKillQuestion) &&
-        Objects.equals(this.comments, evaluationQuestionScore.comments);
+            Objects.equals(this.answerId, evaluationQuestionScore.answerId) &&
+            Objects.equals(this.score, evaluationQuestionScore.score) &&
+            Objects.equals(this.markedNA, evaluationQuestionScore.markedNA) &&
+            Objects.equals(this.assistedAnswerId, evaluationQuestionScore.assistedAnswerId) &&
+            Objects.equals(this.failedKillQuestion, evaluationQuestionScore.failedKillQuestion) &&
+            Objects.equals(this.comments, evaluationQuestionScore.comments);
   }
 
   @Override

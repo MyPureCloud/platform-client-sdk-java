@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IgnoredActivityCategories;
@@ -47,7 +48,7 @@ public class AdherenceSettings  implements Serializable {
     this.severeAlertThresholdMinutes = severeAlertThresholdMinutes;
   }
 
-  
+
   /**
    * Target adherence percentage
    **/
@@ -65,7 +66,7 @@ public class AdherenceSettings  implements Serializable {
     this.adherenceTargetPercent = adherenceTargetPercent;
   }
 
-  
+
   /**
    * The threshold in seconds for which agents should not be penalized for being momentarily out of adherence
    **/
@@ -83,7 +84,7 @@ public class AdherenceSettings  implements Serializable {
     this.adherenceExceptionThresholdSeconds = adherenceExceptionThresholdSeconds;
   }
 
-  
+
   /**
    * Whether to treat all non-on-queue activities as equivalent for adherence purposes
    **/
@@ -101,7 +102,7 @@ public class AdherenceSettings  implements Serializable {
     this.nonOnQueueActivitiesEquivalent = nonOnQueueActivitiesEquivalent;
   }
 
-  
+
   /**
    * Whether to track on-queue activities
    **/
@@ -119,7 +120,7 @@ public class AdherenceSettings  implements Serializable {
     this.trackOnQueueActivity = trackOnQueueActivity;
   }
 
-  
+
   /**
    * Activity categories that should be ignored for adherence purposes
    **/
@@ -137,7 +138,6 @@ public class AdherenceSettings  implements Serializable {
     this.ignoredActivityCategories = ignoredActivityCategories;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +148,13 @@ public class AdherenceSettings  implements Serializable {
       return false;
     }
     AdherenceSettings adherenceSettings = (AdherenceSettings) o;
+
     return Objects.equals(this.severeAlertThresholdMinutes, adherenceSettings.severeAlertThresholdMinutes) &&
-        Objects.equals(this.adherenceTargetPercent, adherenceSettings.adherenceTargetPercent) &&
-        Objects.equals(this.adherenceExceptionThresholdSeconds, adherenceSettings.adherenceExceptionThresholdSeconds) &&
-        Objects.equals(this.nonOnQueueActivitiesEquivalent, adherenceSettings.nonOnQueueActivitiesEquivalent) &&
-        Objects.equals(this.trackOnQueueActivity, adherenceSettings.trackOnQueueActivity) &&
-        Objects.equals(this.ignoredActivityCategories, adherenceSettings.ignoredActivityCategories);
+            Objects.equals(this.adherenceTargetPercent, adherenceSettings.adherenceTargetPercent) &&
+            Objects.equals(this.adherenceExceptionThresholdSeconds, adherenceSettings.adherenceExceptionThresholdSeconds) &&
+            Objects.equals(this.nonOnQueueActivitiesEquivalent, adherenceSettings.nonOnQueueActivitiesEquivalent) &&
+            Objects.equals(this.trackOnQueueActivity, adherenceSettings.trackOnQueueActivity) &&
+            Objects.equals(this.ignoredActivityCategories, adherenceSettings.ignoredActivityCategories);
   }
 
   @Override

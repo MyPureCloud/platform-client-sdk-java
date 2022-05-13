@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetGroupsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -49,7 +48,7 @@ public class GetGroupsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -63,7 +62,7 @@ public class GetGroupsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -77,7 +76,7 @@ public class GetGroupsRequest {
 	    this.setId(id);
 	    return this;
 	} 
-	
+
 	private List<String> jabberId;
 	public List<String> getJabberId() {
 		return this.jabberId;
@@ -91,7 +90,7 @@ public class GetGroupsRequest {
 	    this.setJabberId(jabberId);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -107,7 +106,7 @@ public class GetGroupsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -135,7 +134,7 @@ public class GetGroupsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -159,17 +158,22 @@ public class GetGroupsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/groups")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("id", "multi", id)
         
+
                 .withQueryParameters("jabberId", "multi", jabberId)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -180,7 +184,7 @@ public class GetGroupsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetGroupsRequest request;
@@ -189,39 +193,43 @@ public class GetGroupsRequest {
 			request = new GetGroupsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
-		
+
 		public Builder withJabberId(List<String> jabberId) {
 			request.setJabberId(jabberId);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
-		public Builder withSortOrder(sortOrderValues sortOrder) {
-		    request.setSortOrder(sortOrder.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetGroupsRequest build() {
             

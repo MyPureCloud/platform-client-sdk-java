@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -98,7 +98,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * A set of IDs for users to associate with this time off request
    **/
@@ -116,7 +116,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.users = users;
   }
 
-  
+
   /**
    * The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category
    **/
@@ -134,7 +134,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Notes about the time off request
    **/
@@ -152,7 +152,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
    **/
@@ -170,7 +170,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-  
+
   /**
    * A set of start date-times in ISO-8601 format for partial day requests.
    **/
@@ -188,7 +188,7 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-  
+
   /**
    * The daily duration of this time off request in minutes
    **/
@@ -206,7 +206,6 @@ public class CreateAdminTimeOffRequest  implements Serializable {
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,13 +216,14 @@ public class CreateAdminTimeOffRequest  implements Serializable {
       return false;
     }
     CreateAdminTimeOffRequest createAdminTimeOffRequest = (CreateAdminTimeOffRequest) o;
+
     return Objects.equals(this.status, createAdminTimeOffRequest.status) &&
-        Objects.equals(this.users, createAdminTimeOffRequest.users) &&
-        Objects.equals(this.activityCodeId, createAdminTimeOffRequest.activityCodeId) &&
-        Objects.equals(this.notes, createAdminTimeOffRequest.notes) &&
-        Objects.equals(this.fullDayManagementUnitDates, createAdminTimeOffRequest.fullDayManagementUnitDates) &&
-        Objects.equals(this.partialDayStartDateTimes, createAdminTimeOffRequest.partialDayStartDateTimes) &&
-        Objects.equals(this.dailyDurationMinutes, createAdminTimeOffRequest.dailyDurationMinutes);
+            Objects.equals(this.users, createAdminTimeOffRequest.users) &&
+            Objects.equals(this.activityCodeId, createAdminTimeOffRequest.activityCodeId) &&
+            Objects.equals(this.notes, createAdminTimeOffRequest.notes) &&
+            Objects.equals(this.fullDayManagementUnitDates, createAdminTimeOffRequest.fullDayManagementUnitDates) &&
+            Objects.equals(this.partialDayStartDateTimes, createAdminTimeOffRequest.partialDayStartDateTimes) &&
+            Objects.equals(this.dailyDurationMinutes, createAdminTimeOffRequest.dailyDurationMinutes);
   }
 
   @Override

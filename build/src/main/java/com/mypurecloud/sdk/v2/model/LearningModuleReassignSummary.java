@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class LearningModuleReassignSummary  implements Serializable {
     this.totalReassigned = totalReassigned;
   }
 
-  
+
   /**
    * The total number of users who have the assignment in Completed state
    **/
@@ -63,7 +64,7 @@ public class LearningModuleReassignSummary  implements Serializable {
     this.completedCount = completedCount;
   }
 
-  
+
   /**
    * The total number of users who have the assignment in InProgress state
    **/
@@ -81,7 +82,7 @@ public class LearningModuleReassignSummary  implements Serializable {
     this.inProgressCount = inProgressCount;
   }
 
-  
+
   /**
    * The total number of users who have the assignment in Assigned state
    **/
@@ -99,7 +100,7 @@ public class LearningModuleReassignSummary  implements Serializable {
     this.assignedCount = assignedCount;
   }
 
-  
+
   /**
    * The total number of users who have their assignment overdue
    **/
@@ -117,7 +118,6 @@ public class LearningModuleReassignSummary  implements Serializable {
     this.notCompletedCount = notCompletedCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class LearningModuleReassignSummary  implements Serializable {
       return false;
     }
     LearningModuleReassignSummary learningModuleReassignSummary = (LearningModuleReassignSummary) o;
+
     return Objects.equals(this.totalReassigned, learningModuleReassignSummary.totalReassigned) &&
-        Objects.equals(this.completedCount, learningModuleReassignSummary.completedCount) &&
-        Objects.equals(this.inProgressCount, learningModuleReassignSummary.inProgressCount) &&
-        Objects.equals(this.assignedCount, learningModuleReassignSummary.assignedCount) &&
-        Objects.equals(this.notCompletedCount, learningModuleReassignSummary.notCompletedCount);
+            Objects.equals(this.completedCount, learningModuleReassignSummary.completedCount) &&
+            Objects.equals(this.inProgressCount, learningModuleReassignSummary.inProgressCount) &&
+            Objects.equals(this.assignedCount, learningModuleReassignSummary.assignedCount) &&
+            Objects.equals(this.notCompletedCount, learningModuleReassignSummary.notCompletedCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class PlanningPeriodSettings  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -60,7 +61,6 @@ public class PlanningPeriodSettings  implements Serializable {
     this.startDate = startDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class PlanningPeriodSettings  implements Serializable {
       return false;
     }
     PlanningPeriodSettings planningPeriodSettings = (PlanningPeriodSettings) o;
+
     return Objects.equals(this.weekCount, planningPeriodSettings.weekCount) &&
-        Objects.equals(this.startDate, planningPeriodSettings.startDate);
+            Objects.equals(this.startDate, planningPeriodSettings.startDate);
   }
 
   @Override

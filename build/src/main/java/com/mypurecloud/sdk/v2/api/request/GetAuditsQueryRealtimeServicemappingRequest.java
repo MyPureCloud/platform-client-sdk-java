@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuditsQueryRealtimeServicemappingRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -53,7 +53,7 @@ public class GetAuditsQueryRealtimeServicemappingRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/audits/query/realtime/servicemapping")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -64,7 +64,7 @@ public class GetAuditsQueryRealtimeServicemappingRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAuditsQueryRealtimeServicemappingRequest request;
@@ -73,9 +73,9 @@ public class GetAuditsQueryRealtimeServicemappingRequest {
 			request = new GetAuditsQueryRealtimeServicemappingRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetAuditsQueryRealtimeServicemappingRequest build() {
             

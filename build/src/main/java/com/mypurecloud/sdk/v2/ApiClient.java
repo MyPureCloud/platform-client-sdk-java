@@ -42,7 +42,6 @@ import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.Logger;
 import com.mypurecloud.sdk.v2.LocalDateSerializer;
 
-
 public class ApiClient implements AutoCloseable {
     private static final String DEFAULT_BASE_PATH = "https://api.mypurecloud.com";
     private static final String DEFAULT_USER_AGENT = "PureCloud SDK/java";
@@ -50,8 +49,8 @@ public class ApiClient implements AutoCloseable {
 
     private static Map<String, Authentication> buildAuthentications() {
         Map<String, Authentication> authentications = new HashMap<>();
-        authentications.put("PureCloud OAuth", new OAuth());
         authentications.put("Guest Chat JWT", new ApiKeyAuth("header", "Authorization"));
+        authentications.put("PureCloud OAuth", new OAuth());
 
         return Collections.unmodifiableMap(authentications);
     }
@@ -963,7 +962,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "148.0.0");
+            withDefaultHeader("purecloud-sdk", "149.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

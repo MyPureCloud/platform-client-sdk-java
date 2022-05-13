@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -139,63 +140,62 @@ public class HistoricalImportStatus  implements Serializable {
     return requestId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateImportEnded")
   public Date getDateImportEnded() {
     return dateImportEnded;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The first day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateImportStarted")
   public Date getDateImportStarted() {
     return dateImportStarted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of the historical import in the organization.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error occured if the status of the import is failed")
   @JsonProperty("error")
   public String getError() {
     return error;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date in which the historical import is initiated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date in which the historical import is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether this historical import is active or not")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether this historical import is of type csv or json")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,15 +206,16 @@ public class HistoricalImportStatus  implements Serializable {
       return false;
     }
     HistoricalImportStatus historicalImportStatus = (HistoricalImportStatus) o;
+
     return Objects.equals(this.requestId, historicalImportStatus.requestId) &&
-        Objects.equals(this.dateImportEnded, historicalImportStatus.dateImportEnded) &&
-        Objects.equals(this.dateImportStarted, historicalImportStatus.dateImportStarted) &&
-        Objects.equals(this.status, historicalImportStatus.status) &&
-        Objects.equals(this.error, historicalImportStatus.error) &&
-        Objects.equals(this.dateCreated, historicalImportStatus.dateCreated) &&
-        Objects.equals(this.dateModified, historicalImportStatus.dateModified) &&
-        Objects.equals(this.active, historicalImportStatus.active) &&
-        Objects.equals(this.type, historicalImportStatus.type);
+            Objects.equals(this.dateImportEnded, historicalImportStatus.dateImportEnded) &&
+            Objects.equals(this.dateImportStarted, historicalImportStatus.dateImportStarted) &&
+            Objects.equals(this.status, historicalImportStatus.status) &&
+            Objects.equals(this.error, historicalImportStatus.error) &&
+            Objects.equals(this.dateCreated, historicalImportStatus.dateCreated) &&
+            Objects.equals(this.dateModified, historicalImportStatus.dateModified) &&
+            Objects.equals(this.active, historicalImportStatus.active) &&
+            Objects.equals(this.type, historicalImportStatus.type);
   }
 
   @Override

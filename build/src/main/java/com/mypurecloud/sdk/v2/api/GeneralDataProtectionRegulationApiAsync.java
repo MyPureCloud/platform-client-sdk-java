@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class GeneralDataProtectionRegulationApiAsync {
   private final ApiClient pcapiClient;
 
@@ -43,7 +42,6 @@ public class GeneralDataProtectionRegulationApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get an existing GDPR request
    * 
@@ -119,7 +117,6 @@ public class GeneralDataProtectionRegulationApiAsync {
     }
   }
 
-  
   /**
    * Get all GDPR requests
    * 
@@ -195,7 +192,6 @@ public class GeneralDataProtectionRegulationApiAsync {
     }
   }
 
-  
   /**
    * Get GDPR subjects
    * 
@@ -271,7 +267,6 @@ public class GeneralDataProtectionRegulationApiAsync {
     }
   }
 
-  
   /**
    * Submit a new GDPR request
    * 
@@ -347,7 +342,6 @@ public class GeneralDataProtectionRegulationApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

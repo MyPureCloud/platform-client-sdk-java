@@ -24,9 +24,9 @@ title: SupportCenterSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HASH | &quot;Hash&quot; |
-| BROWSER | &quot;Browser&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HASH | &quot;Hash&quot; | 
+| BROWSER | &quot;Browser&quot; | 
 {: class="table table-striped"}
 
 

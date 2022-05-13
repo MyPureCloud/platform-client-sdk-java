@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationContentCardAction;
@@ -48,7 +49,7 @@ public class ConversationContentCard  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the description.
    **/
@@ -66,7 +67,7 @@ public class ConversationContentCard  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * URL of an image.
    **/
@@ -84,7 +85,7 @@ public class ConversationContentCard  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * URL of a video.
    **/
@@ -102,7 +103,7 @@ public class ConversationContentCard  implements Serializable {
     this.video = video;
   }
 
-  
+
   /**
    * The default button action.
    **/
@@ -120,7 +121,7 @@ public class ConversationContentCard  implements Serializable {
     this.defaultAction = defaultAction;
   }
 
-  
+
   /**
    * An array of action objects.
    **/
@@ -138,7 +139,6 @@ public class ConversationContentCard  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +149,13 @@ public class ConversationContentCard  implements Serializable {
       return false;
     }
     ConversationContentCard conversationContentCard = (ConversationContentCard) o;
+
     return Objects.equals(this.title, conversationContentCard.title) &&
-        Objects.equals(this.description, conversationContentCard.description) &&
-        Objects.equals(this.image, conversationContentCard.image) &&
-        Objects.equals(this.video, conversationContentCard.video) &&
-        Objects.equals(this.defaultAction, conversationContentCard.defaultAction) &&
-        Objects.equals(this.actions, conversationContentCard.actions);
+            Objects.equals(this.description, conversationContentCard.description) &&
+            Objects.equals(this.image, conversationContentCard.image) &&
+            Objects.equals(this.video, conversationContentCard.video) &&
+            Objects.equals(this.defaultAction, conversationContentCard.defaultAction) &&
+            Objects.equals(this.actions, conversationContentCard.actions);
   }
 
   @Override

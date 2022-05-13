@@ -8,8 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainPermission;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -36,7 +38,7 @@ public class DomainPermissionCollection  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DomainPermissionCollection name(String name) {
@@ -53,7 +55,7 @@ public class DomainPermissionCollection  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public DomainPermissionCollection domain(String domain) {
@@ -70,7 +72,7 @@ public class DomainPermissionCollection  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public DomainPermissionCollection permissionMap(Map<String, List<DomainPermission>> permissionMap) {
@@ -87,14 +89,13 @@ public class DomainPermissionCollection  implements Serializable {
     this.permissionMap = permissionMap;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,11 +106,12 @@ public class DomainPermissionCollection  implements Serializable {
       return false;
     }
     DomainPermissionCollection domainPermissionCollection = (DomainPermissionCollection) o;
+
     return Objects.equals(this.id, domainPermissionCollection.id) &&
-        Objects.equals(this.name, domainPermissionCollection.name) &&
-        Objects.equals(this.domain, domainPermissionCollection.domain) &&
-        Objects.equals(this.permissionMap, domainPermissionCollection.permissionMap) &&
-        Objects.equals(this.selfUri, domainPermissionCollection.selfUri);
+            Objects.equals(this.name, domainPermissionCollection.name) &&
+            Objects.equals(this.domain, domainPermissionCollection.domain) &&
+            Objects.equals(this.permissionMap, domainPermissionCollection.permissionMap) &&
+            Objects.equals(this.selfUri, domainPermissionCollection.selfUri);
   }
 
   @Override

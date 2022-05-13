@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class CampaignRuleCondition  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The parameters for the CampaignRuleCondition.
    **/
@@ -108,7 +109,7 @@ public class CampaignRuleCondition  implements Serializable {
     this.parameters = parameters;
   }
 
-  
+
   /**
    * The type of condition to evaluate.
    **/
@@ -126,7 +127,6 @@ public class CampaignRuleCondition  implements Serializable {
     this.conditionType = conditionType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class CampaignRuleCondition  implements Serializable {
       return false;
     }
     CampaignRuleCondition campaignRuleCondition = (CampaignRuleCondition) o;
+
     return Objects.equals(this.id, campaignRuleCondition.id) &&
-        Objects.equals(this.parameters, campaignRuleCondition.parameters) &&
-        Objects.equals(this.conditionType, campaignRuleCondition.conditionType);
+            Objects.equals(this.parameters, campaignRuleCondition.parameters) &&
+            Objects.equals(this.conditionType, campaignRuleCondition.conditionType);
   }
 
   @Override

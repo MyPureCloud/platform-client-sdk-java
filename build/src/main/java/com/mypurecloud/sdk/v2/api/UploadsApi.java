@@ -13,7 +13,6 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
-import com.mypurecloud.sdk.v2.model.Empty;
 
 
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
@@ -28,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class UploadsApi {
   private final ApiClient pcapiClient;
 
@@ -40,7 +38,6 @@ public class UploadsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Creates a presigned URL for uploading a knowledge import file with a set of documents
    * 
@@ -67,7 +64,7 @@ public class UploadsApi {
   private PostKnowledgeDocumentuploadsRequest createPostKnowledgeDocumentuploadsRequest(UploadUrlRequest body) {
     return PostKnowledgeDocumentuploadsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -119,7 +116,6 @@ public class UploadsApi {
     }
   }
 
-  
   /**
    * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
    * 
@@ -129,7 +125,7 @@ public class UploadsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UploadUrlResponse postLanguageunderstandingMinerUploads(String minerId, Empty body) throws IOException, ApiException {
+  public UploadUrlResponse postLanguageunderstandingMinerUploads(String minerId, Object body) throws IOException, ApiException {
     return  postLanguageunderstandingMinerUploads(createPostLanguageunderstandingMinerUploadsRequest(minerId, body));
   }
 
@@ -141,16 +137,16 @@ public class UploadsApi {
    * @return UploadUrlResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploadsWithHttpInfo(String minerId, Empty body) throws IOException {
+  public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploadsWithHttpInfo(String minerId, Object body) throws IOException {
     return postLanguageunderstandingMinerUploads(createPostLanguageunderstandingMinerUploadsRequest(minerId, body).withHttpInfo());
   }
 
-  private PostLanguageunderstandingMinerUploadsRequest createPostLanguageunderstandingMinerUploadsRequest(String minerId, Empty body) {
+  private PostLanguageunderstandingMinerUploadsRequest createPostLanguageunderstandingMinerUploadsRequest(String minerId, Object body) {
     return PostLanguageunderstandingMinerUploadsRequest.builder()
             .withMinerId(minerId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -180,7 +176,7 @@ public class UploadsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploads(ApiRequest<Empty> request) throws IOException {
+  public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploads(ApiRequest<Object> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
     }
@@ -202,7 +198,6 @@ public class UploadsApi {
     }
   }
 
-  
   /**
    * Creates presigned url for uploading a public asset image
    * 
@@ -229,7 +224,7 @@ public class UploadsApi {
   private PostUploadsPublicassetsImagesRequest createPostUploadsPublicassetsImagesRequest(UploadUrlRequest body) {
     return PostUploadsPublicassetsImagesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -281,7 +276,6 @@ public class UploadsApi {
     }
   }
 
-  
   /**
    * Creates presigned url for uploading a recording file
    * 
@@ -308,7 +302,7 @@ public class UploadsApi {
   private PostUploadsRecordingsRequest createPostUploadsRecordingsRequest(UploadUrlRequest body) {
     return PostUploadsRecordingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -360,7 +354,6 @@ public class UploadsApi {
     }
   }
 
-  
   /**
    * Creates presigned url for uploading WFM historical data file. Requires data in csv format.
    * 
@@ -387,7 +380,7 @@ public class UploadsApi {
   private PostUploadsWorkforcemanagementHistoricaldataCsvRequest createPostUploadsWorkforcemanagementHistoricaldataCsvRequest(UploadUrlRequest body) {
     return PostUploadsWorkforcemanagementHistoricaldataCsvRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -439,5 +432,4 @@ public class UploadsApi {
     }
   }
 
-  
 }

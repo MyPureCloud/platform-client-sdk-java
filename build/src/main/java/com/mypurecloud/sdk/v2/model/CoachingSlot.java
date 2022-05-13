@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,35 +85,34 @@ public class CoachingSlot  implements Serializable {
     return dateStart;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Length of coaching appointment slot in minutes")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Difference between scheduled and forecast headcount for this slot after scheduling the coaching appointment")
   @JsonProperty("staffingDifference")
   public Double getStaffingDifference() {
     return staffingDifference;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Rating based on the staffing difference for scheduled slot")
   @JsonProperty("differenceRating")
   public DifferenceRatingEnum getDifferenceRating() {
     return differenceRating;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Workforce Management schedule information associated with the slot")
   @JsonProperty("wfmSchedule")
   public WfmScheduleReference getWfmSchedule() {
     return wfmSchedule;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,11 +123,12 @@ public class CoachingSlot  implements Serializable {
       return false;
     }
     CoachingSlot coachingSlot = (CoachingSlot) o;
+
     return Objects.equals(this.dateStart, coachingSlot.dateStart) &&
-        Objects.equals(this.lengthInMinutes, coachingSlot.lengthInMinutes) &&
-        Objects.equals(this.staffingDifference, coachingSlot.staffingDifference) &&
-        Objects.equals(this.differenceRating, coachingSlot.differenceRating) &&
-        Objects.equals(this.wfmSchedule, coachingSlot.wfmSchedule);
+            Objects.equals(this.lengthInMinutes, coachingSlot.lengthInMinutes) &&
+            Objects.equals(this.staffingDifference, coachingSlot.staffingDifference) &&
+            Objects.equals(this.differenceRating, coachingSlot.differenceRating) &&
+            Objects.equals(this.wfmSchedule, coachingSlot.wfmSchedule);
   }
 
   @Override

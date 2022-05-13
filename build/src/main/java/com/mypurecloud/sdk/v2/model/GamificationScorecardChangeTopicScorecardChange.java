@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicPerformanceMetric;
@@ -47,7 +48,7 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     this.workday = workday;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicScorecardChange divisionId(String divisionId) {
@@ -64,7 +65,7 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicScorecardChange teamId(String teamId) {
@@ -81,7 +82,7 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     this.teamId = teamId;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicScorecardChange performanceProfileId(String performanceProfileId) {
@@ -98,7 +99,7 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     this.performanceProfileId = performanceProfileId;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicScorecardChange userId(String userId) {
@@ -115,7 +116,7 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicScorecardChange performanceMetrics(List<GamificationScorecardChangeTopicPerformanceMetric> performanceMetrics) {
@@ -132,7 +133,6 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
     this.performanceMetrics = performanceMetrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class GamificationScorecardChangeTopicScorecardChange  implements Seriali
       return false;
     }
     GamificationScorecardChangeTopicScorecardChange gamificationScorecardChangeTopicScorecardChange = (GamificationScorecardChangeTopicScorecardChange) o;
+
     return Objects.equals(this.workday, gamificationScorecardChangeTopicScorecardChange.workday) &&
-        Objects.equals(this.divisionId, gamificationScorecardChangeTopicScorecardChange.divisionId) &&
-        Objects.equals(this.teamId, gamificationScorecardChangeTopicScorecardChange.teamId) &&
-        Objects.equals(this.performanceProfileId, gamificationScorecardChangeTopicScorecardChange.performanceProfileId) &&
-        Objects.equals(this.userId, gamificationScorecardChangeTopicScorecardChange.userId) &&
-        Objects.equals(this.performanceMetrics, gamificationScorecardChangeTopicScorecardChange.performanceMetrics);
+            Objects.equals(this.divisionId, gamificationScorecardChangeTopicScorecardChange.divisionId) &&
+            Objects.equals(this.teamId, gamificationScorecardChangeTopicScorecardChange.teamId) &&
+            Objects.equals(this.performanceProfileId, gamificationScorecardChangeTopicScorecardChange.performanceProfileId) &&
+            Objects.equals(this.userId, gamificationScorecardChangeTopicScorecardChange.userId) &&
+            Objects.equals(this.performanceMetrics, gamificationScorecardChangeTopicScorecardChange.performanceMetrics);
   }
 
   @Override

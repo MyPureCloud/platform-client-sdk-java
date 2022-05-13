@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
@@ -48,14 +49,14 @@ public class Location  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Unique identifier for the location floorplan image")
   @JsonProperty("floorplanId")
   public String getFloorplanId() {
     return floorplanId;
   }
 
-  
+
   /**
    * Users coordinates on the floorplan. Only used when floorplanImage is set
    **/
@@ -73,7 +74,7 @@ public class Location  implements Serializable {
     this.coordinates = coordinates;
   }
 
-  
+
   /**
    * Optional description on the users location
    **/
@@ -91,7 +92,7 @@ public class Location  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    **/
   public Location locationDefinition(LocationDefinition locationDefinition) {
@@ -108,7 +109,6 @@ public class Location  implements Serializable {
     this.locationDefinition = locationDefinition;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,11 +119,12 @@ public class Location  implements Serializable {
       return false;
     }
     Location location = (Location) o;
+
     return Objects.equals(this.id, location.id) &&
-        Objects.equals(this.floorplanId, location.floorplanId) &&
-        Objects.equals(this.coordinates, location.coordinates) &&
-        Objects.equals(this.notes, location.notes) &&
-        Objects.equals(this.locationDefinition, location.locationDefinition);
+            Objects.equals(this.floorplanId, location.floorplanId) &&
+            Objects.equals(this.coordinates, location.coordinates) &&
+            Objects.equals(this.notes, location.notes) &&
+            Objects.equals(this.locationDefinition, location.locationDefinition);
   }
 
   @Override

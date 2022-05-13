@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the conversation in the provider clock.
    **/
@@ -162,7 +163,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this participant disconnected from the conversation in the provider clock.
    **/
@@ -180,7 +181,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * If this participant represents a user, then this will be the globally unique identifier for the user.
    **/
@@ -198,7 +199,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
    **/
@@ -216,7 +217,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the globally unique identifier for the external org.
    **/
@@ -234,7 +235,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant.
    **/
@@ -252,7 +253,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * If present, the queue id that the communication channel came in on.
    **/
@@ -270,7 +271,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * If present, the group id that the participant represents.
    **/
@@ -288,7 +289,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.groupId = groupId;
   }
 
-  
+
   /**
    * The team id that this participant is a member of when added to the conversation.
    **/
@@ -306,7 +307,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.teamId = teamId;
   }
 
-  
+
   /**
    * A well known string that specifies the purpose or type of this participant.
    **/
@@ -324,7 +325,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
    **/
@@ -342,7 +343,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
-  
+
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -360,7 +361,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * True iff this participant is required to enter wrapup for this conversation.
    **/
@@ -378,7 +379,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * True when a participant is expected to enter a wrapup code once the call connects.
    **/
@@ -396,7 +397,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.wrapupExpected = wrapupExpected;
   }
 
-  
+
   /**
    * This field controls how the UI prompts the agent for a wrapup.
    **/
@@ -414,7 +415,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * Specifies how long a timed ACW session will last.
    **/
@@ -432,7 +433,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant wrapup(ConversationEventTopicWrapup wrapup) {
@@ -449,7 +450,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work.
    **/
@@ -467,7 +468,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work.
    **/
@@ -485,7 +486,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant conversationRoutingData(ConversationEventTopicConversationRoutingData conversationRoutingData) {
@@ -502,7 +503,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -520,7 +521,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
@@ -538,7 +539,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    * If this participant is a coach, then this will be the id of the participant that is being coached.
    **/
@@ -556,7 +557,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    * If this participant created a barge in conference, then this will be the id of the participant that is barged in.
    **/
@@ -574,7 +575,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.bargedParticipantId = bargedParticipantId;
   }
 
-  
+
   /**
    * The current screen recording state for this participant.
    **/
@@ -592,7 +593,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    * If this participant has flagged the conversation, the reason code given.
    **/
@@ -610,7 +611,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Additional participant attributes
    **/
@@ -628,7 +629,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant calls(List<ConversationEventTopicCall> calls) {
@@ -645,7 +646,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.calls = calls;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant callbacks(List<ConversationEventTopicCallback> callbacks) {
@@ -662,7 +663,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.callbacks = callbacks;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant chats(List<ConversationEventTopicChat> chats) {
@@ -679,7 +680,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.chats = chats;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant cobrowsesessions(List<ConversationEventTopicCobrowse> cobrowsesessions) {
@@ -696,7 +697,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.cobrowsesessions = cobrowsesessions;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant emails(List<ConversationEventTopicEmail> emails) {
@@ -713,7 +714,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.emails = emails;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant messages(List<ConversationEventTopicMessage> messages) {
@@ -730,7 +731,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.messages = messages;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant screenshares(List<ConversationEventTopicScreenshare> screenshares) {
@@ -747,7 +748,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.screenshares = screenshares;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant socialExpressions(List<ConversationEventTopicSocialExpression> socialExpressions) {
@@ -764,7 +765,7 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.socialExpressions = socialExpressions;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicParticipant videos(List<ConversationEventTopicVideo> videos) {
@@ -781,7 +782,6 @@ public class ConversationEventTopicParticipant  implements Serializable {
     this.videos = videos;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -792,43 +792,44 @@ public class ConversationEventTopicParticipant  implements Serializable {
       return false;
     }
     ConversationEventTopicParticipant conversationEventTopicParticipant = (ConversationEventTopicParticipant) o;
+
     return Objects.equals(this.id, conversationEventTopicParticipant.id) &&
-        Objects.equals(this.connectedTime, conversationEventTopicParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationEventTopicParticipant.endTime) &&
-        Objects.equals(this.userId, conversationEventTopicParticipant.userId) &&
-        Objects.equals(this.externalContactId, conversationEventTopicParticipant.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, conversationEventTopicParticipant.externalOrganizationId) &&
-        Objects.equals(this.name, conversationEventTopicParticipant.name) &&
-        Objects.equals(this.queueId, conversationEventTopicParticipant.queueId) &&
-        Objects.equals(this.groupId, conversationEventTopicParticipant.groupId) &&
-        Objects.equals(this.teamId, conversationEventTopicParticipant.teamId) &&
-        Objects.equals(this.purpose, conversationEventTopicParticipant.purpose) &&
-        Objects.equals(this.consultParticipantId, conversationEventTopicParticipant.consultParticipantId) &&
-        Objects.equals(this.address, conversationEventTopicParticipant.address) &&
-        Objects.equals(this.wrapupRequired, conversationEventTopicParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupExpected, conversationEventTopicParticipant.wrapupExpected) &&
-        Objects.equals(this.wrapupPrompt, conversationEventTopicParticipant.wrapupPrompt) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationEventTopicParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapup, conversationEventTopicParticipant.wrapup) &&
-        Objects.equals(this.startAcwTime, conversationEventTopicParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationEventTopicParticipant.endAcwTime) &&
-        Objects.equals(this.conversationRoutingData, conversationEventTopicParticipant.conversationRoutingData) &&
-        Objects.equals(this.alertingTimeoutMs, conversationEventTopicParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.monitoredParticipantId, conversationEventTopicParticipant.monitoredParticipantId) &&
-        Objects.equals(this.coachedParticipantId, conversationEventTopicParticipant.coachedParticipantId) &&
-        Objects.equals(this.bargedParticipantId, conversationEventTopicParticipant.bargedParticipantId) &&
-        Objects.equals(this.screenRecordingState, conversationEventTopicParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationEventTopicParticipant.flaggedReason) &&
-        Objects.equals(this.attributes, conversationEventTopicParticipant.attributes) &&
-        Objects.equals(this.calls, conversationEventTopicParticipant.calls) &&
-        Objects.equals(this.callbacks, conversationEventTopicParticipant.callbacks) &&
-        Objects.equals(this.chats, conversationEventTopicParticipant.chats) &&
-        Objects.equals(this.cobrowsesessions, conversationEventTopicParticipant.cobrowsesessions) &&
-        Objects.equals(this.emails, conversationEventTopicParticipant.emails) &&
-        Objects.equals(this.messages, conversationEventTopicParticipant.messages) &&
-        Objects.equals(this.screenshares, conversationEventTopicParticipant.screenshares) &&
-        Objects.equals(this.socialExpressions, conversationEventTopicParticipant.socialExpressions) &&
-        Objects.equals(this.videos, conversationEventTopicParticipant.videos);
+            Objects.equals(this.connectedTime, conversationEventTopicParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationEventTopicParticipant.endTime) &&
+            Objects.equals(this.userId, conversationEventTopicParticipant.userId) &&
+            Objects.equals(this.externalContactId, conversationEventTopicParticipant.externalContactId) &&
+            Objects.equals(this.externalOrganizationId, conversationEventTopicParticipant.externalOrganizationId) &&
+            Objects.equals(this.name, conversationEventTopicParticipant.name) &&
+            Objects.equals(this.queueId, conversationEventTopicParticipant.queueId) &&
+            Objects.equals(this.groupId, conversationEventTopicParticipant.groupId) &&
+            Objects.equals(this.teamId, conversationEventTopicParticipant.teamId) &&
+            Objects.equals(this.purpose, conversationEventTopicParticipant.purpose) &&
+            Objects.equals(this.consultParticipantId, conversationEventTopicParticipant.consultParticipantId) &&
+            Objects.equals(this.address, conversationEventTopicParticipant.address) &&
+            Objects.equals(this.wrapupRequired, conversationEventTopicParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupExpected, conversationEventTopicParticipant.wrapupExpected) &&
+            Objects.equals(this.wrapupPrompt, conversationEventTopicParticipant.wrapupPrompt) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationEventTopicParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapup, conversationEventTopicParticipant.wrapup) &&
+            Objects.equals(this.startAcwTime, conversationEventTopicParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationEventTopicParticipant.endAcwTime) &&
+            Objects.equals(this.conversationRoutingData, conversationEventTopicParticipant.conversationRoutingData) &&
+            Objects.equals(this.alertingTimeoutMs, conversationEventTopicParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.monitoredParticipantId, conversationEventTopicParticipant.monitoredParticipantId) &&
+            Objects.equals(this.coachedParticipantId, conversationEventTopicParticipant.coachedParticipantId) &&
+            Objects.equals(this.bargedParticipantId, conversationEventTopicParticipant.bargedParticipantId) &&
+            Objects.equals(this.screenRecordingState, conversationEventTopicParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationEventTopicParticipant.flaggedReason) &&
+            Objects.equals(this.attributes, conversationEventTopicParticipant.attributes) &&
+            Objects.equals(this.calls, conversationEventTopicParticipant.calls) &&
+            Objects.equals(this.callbacks, conversationEventTopicParticipant.callbacks) &&
+            Objects.equals(this.chats, conversationEventTopicParticipant.chats) &&
+            Objects.equals(this.cobrowsesessions, conversationEventTopicParticipant.cobrowsesessions) &&
+            Objects.equals(this.emails, conversationEventTopicParticipant.emails) &&
+            Objects.equals(this.messages, conversationEventTopicParticipant.messages) &&
+            Objects.equals(this.screenshares, conversationEventTopicParticipant.screenshares) &&
+            Objects.equals(this.socialExpressions, conversationEventTopicParticipant.socialExpressions) &&
+            Objects.equals(this.videos, conversationEventTopicParticipant.videos);
   }
 
   @Override

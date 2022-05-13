@@ -21,10 +21,10 @@ title: ConversationContentCardAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LINK | &quot;Link&quot; |
-| POSTBACK | &quot;Postback&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LINK | &quot;Link&quot; | 
+| POSTBACK | &quot;Postback&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

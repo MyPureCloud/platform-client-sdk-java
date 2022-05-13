@@ -24,9 +24,9 @@ title: ContentList
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SELECTION | &quot;Selection&quot; |
-| VERTICAL | &quot;Vertical&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SELECTION | &quot;Selection&quot; | 
+| VERTICAL | &quot;Vertical&quot; | 
 {: class="table table-striped"}
 
 

@@ -10,25 +10,25 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.KnowledgeBase;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeImport;
-import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
-import com.mypurecloud.sdk.v2.model.TrainingListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
+import com.mypurecloud.sdk.v2.model.TrainingListing;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseRequest;
@@ -64,7 +64,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class KnowledgeApi {
   private final ApiClient pcapiClient;
 
@@ -76,7 +75,6 @@ public class KnowledgeApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete knowledge base
    * 
@@ -103,7 +101,7 @@ public class KnowledgeApi {
   private DeleteKnowledgeKnowledgebaseRequest createDeleteKnowledgeKnowledgebaseRequest(String knowledgeBaseId) {
     return DeleteKnowledgeKnowledgebaseRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .build();
   }
 
@@ -155,7 +153,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Delete category
    * 
@@ -186,11 +183,11 @@ public class KnowledgeApi {
   private DeleteKnowledgeKnowledgebaseLanguageCategoryRequest createDeleteKnowledgeKnowledgebaseLanguageCategoryRequest(String categoryId, String knowledgeBaseId, String languageCode) {
     return DeleteKnowledgeKnowledgebaseLanguageCategoryRequest.builder()
             .withCategoryId(categoryId)
-    
+
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -242,7 +239,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Delete document
    * 
@@ -273,11 +269,11 @@ public class KnowledgeApi {
   private DeleteKnowledgeKnowledgebaseLanguageDocumentRequest createDeleteKnowledgeKnowledgebaseLanguageDocumentRequest(String documentId, String knowledgeBaseId, String languageCode) {
     return DeleteKnowledgeKnowledgebaseLanguageDocumentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -329,7 +325,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Delete import operation
    * 
@@ -358,11 +353,11 @@ public class KnowledgeApi {
   private DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest createDeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest(String knowledgeBaseId, String languageCode, String importId) {
     return DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withImportId(importId)
-    
+
             .build();
   }
 
@@ -413,7 +408,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get knowledge base
    * 
@@ -440,7 +434,7 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseRequest createGetKnowledgeKnowledgebaseRequest(String knowledgeBaseId) {
     return GetKnowledgeKnowledgebaseRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .build();
   }
 
@@ -492,7 +486,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get categories
    * 
@@ -531,19 +524,19 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageCategoriesRequest createGetKnowledgeKnowledgebaseLanguageCategoriesRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String name) {
     return GetKnowledgeKnowledgebaseLanguageCategoriesRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBefore(before)
-    
+
             .withAfter(after)
-    
+
             .withLimit(limit)
-    
+
             .withPageSize(pageSize)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -595,7 +588,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get category
    * 
@@ -626,11 +618,11 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageCategoryRequest createGetKnowledgeKnowledgebaseLanguageCategoryRequest(String categoryId, String knowledgeBaseId, String languageCode) {
     return GetKnowledgeKnowledgebaseLanguageCategoryRequest.builder()
             .withCategoryId(categoryId)
-    
+
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -682,7 +674,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get document
    * 
@@ -713,11 +704,11 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageDocumentRequest createGetKnowledgeKnowledgebaseLanguageDocumentRequest(String documentId, String knowledgeBaseId, String languageCode) {
     return GetKnowledgeKnowledgebaseLanguageDocumentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -769,7 +760,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get documents
    * 
@@ -816,27 +806,27 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageDocumentsRequest createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title, String sortBy, String sortOrder, List<String> documentIds) {
     return GetKnowledgeKnowledgebaseLanguageDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBefore(before)
-    
+
             .withAfter(after)
-    
+
             .withLimit(limit)
-    
+
             .withPageSize(pageSize)
-    
+
             .withCategories(categories)
-    
+
             .withTitle(title)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withDocumentIds(documentIds)
-    
+
             .build();
   }
 
@@ -888,7 +878,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get import operation report
    * 
@@ -919,11 +908,11 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest createGetKnowledgeKnowledgebaseLanguageDocumentsImportRequest(String knowledgeBaseId, String languageCode, String importId) {
     return GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withImportId(importId)
-    
+
             .build();
   }
 
@@ -975,7 +964,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get training detail
    * 
@@ -1006,11 +994,11 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageTrainingRequest createGetKnowledgeKnowledgebaseLanguageTrainingRequest(String knowledgeBaseId, String languageCode, String trainingId) {
     return GetKnowledgeKnowledgebaseLanguageTrainingRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withTrainingId(trainingId)
-    
+
             .build();
   }
 
@@ -1062,7 +1050,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get all trainings information for a knowledgebase
    * 
@@ -1101,19 +1088,19 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebaseLanguageTrainingsRequest createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String knowledgeDocumentsState) {
     return GetKnowledgeKnowledgebaseLanguageTrainingsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBefore(before)
-    
+
             .withAfter(after)
-    
+
             .withLimit(limit)
-    
+
             .withPageSize(pageSize)
-    
+
             .withKnowledgeDocumentsState(knowledgeDocumentsState)
-    
+
             .build();
   }
 
@@ -1165,7 +1152,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Get knowledge bases
    * 
@@ -1208,23 +1194,23 @@ public class KnowledgeApi {
   private GetKnowledgeKnowledgebasesRequest createGetKnowledgeKnowledgebasesRequest(String before, String after, String limit, String pageSize, String name, String coreLanguage, Boolean published, String sortBy, String sortOrder) {
     return GetKnowledgeKnowledgebasesRequest.builder()
             .withBefore(before)
-    
+
             .withAfter(after)
-    
+
             .withLimit(limit)
-    
+
             .withPageSize(pageSize)
-    
+
             .withName(name)
-    
+
             .withCoreLanguage(coreLanguage)
-    
+
             .withPublished(published)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -1276,7 +1262,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Update knowledge base
    * 
@@ -1305,9 +1290,9 @@ public class KnowledgeApi {
   private PatchKnowledgeKnowledgebaseRequest createPatchKnowledgeKnowledgebaseRequest(String knowledgeBaseId, KnowledgeBase body) {
     return PatchKnowledgeKnowledgebaseRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1359,7 +1344,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Update category
    * 
@@ -1392,13 +1376,13 @@ public class KnowledgeApi {
   private PatchKnowledgeKnowledgebaseLanguageCategoryRequest createPatchKnowledgeKnowledgebaseLanguageCategoryRequest(String categoryId, String knowledgeBaseId, String languageCode, KnowledgeCategoryRequest body) {
     return PatchKnowledgeKnowledgebaseLanguageCategoryRequest.builder()
             .withCategoryId(categoryId)
-    
+
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1450,7 +1434,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Update document
    * 
@@ -1483,13 +1466,13 @@ public class KnowledgeApi {
   private PatchKnowledgeKnowledgebaseLanguageDocumentRequest createPatchKnowledgeKnowledgebaseLanguageDocumentRequest(String documentId, String knowledgeBaseId, String languageCode, KnowledgeDocumentRequest body) {
     return PatchKnowledgeKnowledgebaseLanguageDocumentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1541,7 +1524,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Update documents collection
    * 
@@ -1572,11 +1554,11 @@ public class KnowledgeApi {
   private PatchKnowledgeKnowledgebaseLanguageDocumentsRequest createPatchKnowledgeKnowledgebaseLanguageDocumentsRequest(String knowledgeBaseId, String languageCode, List<KnowledgeDocumentBulkRequest> body) {
     return PatchKnowledgeKnowledgebaseLanguageDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1628,7 +1610,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Start import operation
    * 
@@ -1661,13 +1642,13 @@ public class KnowledgeApi {
   private PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest createPatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest(String knowledgeBaseId, String languageCode, String importId, ImportStatusRequest body) {
     return PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withImportId(importId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1719,7 +1700,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Creates a presigned URL for uploading a knowledge import file with a set of documents
    * 
@@ -1746,7 +1726,7 @@ public class KnowledgeApi {
   private PostKnowledgeDocumentuploadsRequest createPostKnowledgeDocumentuploadsRequest(UploadUrlRequest body) {
     return PostKnowledgeDocumentuploadsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1798,7 +1778,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Create new category
    * 
@@ -1829,11 +1808,11 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebaseLanguageCategoriesRequest createPostKnowledgeKnowledgebaseLanguageCategoriesRequest(String knowledgeBaseId, String languageCode, KnowledgeCategoryRequest body) {
     return PostKnowledgeKnowledgebaseLanguageCategoriesRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1885,7 +1864,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Create document
    * 
@@ -1916,11 +1894,11 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebaseLanguageDocumentsRequest createPostKnowledgeKnowledgebaseLanguageDocumentsRequest(String knowledgeBaseId, String languageCode, KnowledgeDocumentRequest body) {
     return PostKnowledgeKnowledgebaseLanguageDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1972,7 +1950,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Create import operation
    * 
@@ -2003,11 +1980,11 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest createPostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest(String knowledgeBaseId, String languageCode, KnowledgeImport body) {
     return PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2059,7 +2036,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Promote trained documents from draft state to active.
    * 
@@ -2090,11 +2066,11 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest createPostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest(String knowledgeBaseId, String languageCode, String trainingId) {
     return PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withTrainingId(trainingId)
-    
+
             .build();
   }
 
@@ -2146,7 +2122,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Trigger training
    * 
@@ -2175,9 +2150,9 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebaseLanguageTrainingsRequest createPostKnowledgeKnowledgebaseLanguageTrainingsRequest(String knowledgeBaseId, String languageCode) {
     return PostKnowledgeKnowledgebaseLanguageTrainingsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -2229,7 +2204,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Search Documents
    * 
@@ -2258,9 +2232,9 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebaseSearchRequest createPostKnowledgeKnowledgebaseSearchRequest(String knowledgeBaseId, KnowledgeSearchRequest body) {
     return PostKnowledgeKnowledgebaseSearchRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2312,7 +2286,6 @@ public class KnowledgeApi {
     }
   }
 
-  
   /**
    * Create new knowledge base
    * 
@@ -2339,7 +2312,7 @@ public class KnowledgeApi {
   private PostKnowledgeKnowledgebasesRequest createPostKnowledgeKnowledgebasesRequest(KnowledgeBase body) {
     return PostKnowledgeKnowledgebasesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2391,5 +2364,4 @@ public class KnowledgeApi {
     }
   }
 
-  
 }

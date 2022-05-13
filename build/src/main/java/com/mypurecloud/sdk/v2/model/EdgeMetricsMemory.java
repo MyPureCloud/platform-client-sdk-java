@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class EdgeMetricsMemory  implements Serializable {
     this.availableBytes = availableBytes;
   }
 
-  
+
   /**
    * Type of memory. Virtual or physical.
    **/
@@ -60,7 +61,7 @@ public class EdgeMetricsMemory  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Total memory in bytes.
    **/
@@ -78,7 +79,6 @@ public class EdgeMetricsMemory  implements Serializable {
     this.totalBytes = totalBytes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class EdgeMetricsMemory  implements Serializable {
       return false;
     }
     EdgeMetricsMemory edgeMetricsMemory = (EdgeMetricsMemory) o;
+
     return Objects.equals(this.availableBytes, edgeMetricsMemory.availableBytes) &&
-        Objects.equals(this.type, edgeMetricsMemory.type) &&
-        Objects.equals(this.totalBytes, edgeMetricsMemory.totalBytes);
+            Objects.equals(this.type, edgeMetricsMemory.type) &&
+            Objects.equals(this.totalBytes, edgeMetricsMemory.totalBytes);
   }
 
   @Override

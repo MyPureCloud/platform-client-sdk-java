@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class UserRoutingStatusRoutingStatus  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The timestamp when the agent went into this state.
    **/
@@ -111,7 +112,6 @@ public class UserRoutingStatusRoutingStatus  implements Serializable {
     this.startTime = startTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,8 +122,9 @@ public class UserRoutingStatusRoutingStatus  implements Serializable {
       return false;
     }
     UserRoutingStatusRoutingStatus userRoutingStatusRoutingStatus = (UserRoutingStatusRoutingStatus) o;
+
     return Objects.equals(this.status, userRoutingStatusRoutingStatus.status) &&
-        Objects.equals(this.startTime, userRoutingStatusRoutingStatus.startTime);
+            Objects.equals(this.startTime, userRoutingStatusRoutingStatus.startTime);
   }
 
   @Override

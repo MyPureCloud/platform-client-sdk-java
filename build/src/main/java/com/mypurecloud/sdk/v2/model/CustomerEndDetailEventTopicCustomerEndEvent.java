@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -279,7 +280,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent conversationId(String conversationId) {
@@ -296,7 +297,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent participantId(String participantId) {
@@ -313,7 +314,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent sessionId(String sessionId) {
@@ -330,7 +331,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent disconnectType(DisconnectTypeEnum disconnectType) {
@@ -347,7 +348,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent mediaType(MediaTypeEnum mediaType) {
@@ -364,7 +365,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent externalOrganizationId(String externalOrganizationId) {
@@ -381,7 +382,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent externalContactId(String externalContactId) {
@@ -398,7 +399,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent provider(String provider) {
@@ -415,7 +416,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent direction(DirectionEnum direction) {
@@ -432,7 +433,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent ani(String ani) {
@@ -449,7 +450,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent dnis(String dnis) {
@@ -466,7 +467,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent addressTo(String addressTo) {
@@ -483,7 +484,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent addressFrom(String addressFrom) {
@@ -500,7 +501,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent callbackUserName(String callbackUserName) {
@@ -517,7 +518,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent callbackNumbers(List<String> callbackNumbers) {
@@ -534,7 +535,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -551,7 +552,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent subject(String subject) {
@@ -568,7 +569,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent messageType(MessageTypeEnum messageType) {
@@ -585,7 +586,7 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public CustomerEndDetailEventTopicCustomerEndEvent interactingDurationMs(Integer interactingDurationMs) {
@@ -602,7 +603,6 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     this.interactingDurationMs = interactingDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -613,26 +613,27 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
       return false;
     }
     CustomerEndDetailEventTopicCustomerEndEvent customerEndDetailEventTopicCustomerEndEvent = (CustomerEndDetailEventTopicCustomerEndEvent) o;
+
     return Objects.equals(this.eventTime, customerEndDetailEventTopicCustomerEndEvent.eventTime) &&
-        Objects.equals(this.conversationId, customerEndDetailEventTopicCustomerEndEvent.conversationId) &&
-        Objects.equals(this.participantId, customerEndDetailEventTopicCustomerEndEvent.participantId) &&
-        Objects.equals(this.sessionId, customerEndDetailEventTopicCustomerEndEvent.sessionId) &&
-        Objects.equals(this.disconnectType, customerEndDetailEventTopicCustomerEndEvent.disconnectType) &&
-        Objects.equals(this.mediaType, customerEndDetailEventTopicCustomerEndEvent.mediaType) &&
-        Objects.equals(this.externalOrganizationId, customerEndDetailEventTopicCustomerEndEvent.externalOrganizationId) &&
-        Objects.equals(this.externalContactId, customerEndDetailEventTopicCustomerEndEvent.externalContactId) &&
-        Objects.equals(this.provider, customerEndDetailEventTopicCustomerEndEvent.provider) &&
-        Objects.equals(this.direction, customerEndDetailEventTopicCustomerEndEvent.direction) &&
-        Objects.equals(this.ani, customerEndDetailEventTopicCustomerEndEvent.ani) &&
-        Objects.equals(this.dnis, customerEndDetailEventTopicCustomerEndEvent.dnis) &&
-        Objects.equals(this.addressTo, customerEndDetailEventTopicCustomerEndEvent.addressTo) &&
-        Objects.equals(this.addressFrom, customerEndDetailEventTopicCustomerEndEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, customerEndDetailEventTopicCustomerEndEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, customerEndDetailEventTopicCustomerEndEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, customerEndDetailEventTopicCustomerEndEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, customerEndDetailEventTopicCustomerEndEvent.subject) &&
-        Objects.equals(this.messageType, customerEndDetailEventTopicCustomerEndEvent.messageType) &&
-        Objects.equals(this.interactingDurationMs, customerEndDetailEventTopicCustomerEndEvent.interactingDurationMs);
+            Objects.equals(this.conversationId, customerEndDetailEventTopicCustomerEndEvent.conversationId) &&
+            Objects.equals(this.participantId, customerEndDetailEventTopicCustomerEndEvent.participantId) &&
+            Objects.equals(this.sessionId, customerEndDetailEventTopicCustomerEndEvent.sessionId) &&
+            Objects.equals(this.disconnectType, customerEndDetailEventTopicCustomerEndEvent.disconnectType) &&
+            Objects.equals(this.mediaType, customerEndDetailEventTopicCustomerEndEvent.mediaType) &&
+            Objects.equals(this.externalOrganizationId, customerEndDetailEventTopicCustomerEndEvent.externalOrganizationId) &&
+            Objects.equals(this.externalContactId, customerEndDetailEventTopicCustomerEndEvent.externalContactId) &&
+            Objects.equals(this.provider, customerEndDetailEventTopicCustomerEndEvent.provider) &&
+            Objects.equals(this.direction, customerEndDetailEventTopicCustomerEndEvent.direction) &&
+            Objects.equals(this.ani, customerEndDetailEventTopicCustomerEndEvent.ani) &&
+            Objects.equals(this.dnis, customerEndDetailEventTopicCustomerEndEvent.dnis) &&
+            Objects.equals(this.addressTo, customerEndDetailEventTopicCustomerEndEvent.addressTo) &&
+            Objects.equals(this.addressFrom, customerEndDetailEventTopicCustomerEndEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, customerEndDetailEventTopicCustomerEndEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, customerEndDetailEventTopicCustomerEndEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, customerEndDetailEventTopicCustomerEndEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, customerEndDetailEventTopicCustomerEndEvent.subject) &&
+            Objects.equals(this.messageType, customerEndDetailEventTopicCustomerEndEvent.messageType) &&
+            Objects.equals(this.interactingDurationMs, customerEndDetailEventTopicCustomerEndEvent.interactingDurationMs);
   }
 
   @Override

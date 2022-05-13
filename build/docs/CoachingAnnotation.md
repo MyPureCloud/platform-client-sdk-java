@@ -26,9 +26,9 @@ title: CoachingAnnotation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PUBLIC | &quot;Public&quot; |
-| PRIVATE | &quot;Private&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLIC | &quot;Public&quot; | 
+| PRIVATE | &quot;Private&quot; | 
 {: class="table table-striped"}
 
 

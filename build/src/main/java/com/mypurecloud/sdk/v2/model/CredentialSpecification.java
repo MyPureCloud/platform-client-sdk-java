@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -34,21 +35,20 @@ public class CredentialSpecification  implements Serializable {
     return required;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Title describing the usage for this credential.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of acceptable credential types that can be provided for this credential.")
   @JsonProperty("credentialTypes")
   public List<String> getCredentialTypes() {
     return credentialTypes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,9 +59,10 @@ public class CredentialSpecification  implements Serializable {
       return false;
     }
     CredentialSpecification credentialSpecification = (CredentialSpecification) o;
+
     return Objects.equals(this.required, credentialSpecification.required) &&
-        Objects.equals(this.title, credentialSpecification.title) &&
-        Objects.equals(this.credentialTypes, credentialSpecification.credentialTypes);
+            Objects.equals(this.title, credentialSpecification.title) &&
+            Objects.equals(this.credentialTypes, credentialSpecification.credentialTypes);
   }
 
   @Override

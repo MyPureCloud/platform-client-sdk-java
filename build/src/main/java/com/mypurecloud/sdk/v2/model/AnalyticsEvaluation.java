@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -54,7 +55,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.calibrationId = calibrationId;
   }
 
-  
+
   /**
    * A unique identifier for an evaluation form, regardless of version
    **/
@@ -72,7 +73,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    * Whether the evaluation has been deleted
    **/
@@ -90,7 +91,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.deleted = deleted;
   }
 
-  
+
   /**
    * Unique identifier for the evaluation
    **/
@@ -108,7 +109,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.evaluationId = evaluationId;
   }
 
-  
+
   /**
    * A unique identifier of the user who evaluated the interaction
    **/
@@ -126,7 +127,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.evaluatorId = evaluatorId;
   }
 
-  
+
   /**
    * Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -144,7 +145,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    * ID of the evaluation form used
    **/
@@ -162,7 +163,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.formId = formId;
   }
 
-  
+
   /**
    * Name of the evaluation form used
    **/
@@ -180,7 +181,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.formName = formName;
   }
 
-  
+
   /**
    * The ID of the associated queue
    **/
@@ -198,7 +199,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * Whether the evaluation has been released
    **/
@@ -216,7 +217,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.released = released;
   }
 
-  
+
   /**
    * Whether the evaluation has been rescored at least once
    **/
@@ -234,7 +235,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.rescored = rescored;
   }
 
-  
+
   /**
    * ID of the agent the evaluation was performed against
    **/
@@ -252,7 +253,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
@@ -269,7 +270,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.oTotalCriticalScore = oTotalCriticalScore;
   }
 
-  
+
   /**
    **/
   public AnalyticsEvaluation oTotalScore(Long oTotalScore) {
@@ -286,7 +287,6 @@ public class AnalyticsEvaluation  implements Serializable {
     this.oTotalScore = oTotalScore;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -297,20 +297,21 @@ public class AnalyticsEvaluation  implements Serializable {
       return false;
     }
     AnalyticsEvaluation analyticsEvaluation = (AnalyticsEvaluation) o;
+
     return Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
-        Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
-        Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
-        Objects.equals(this.evaluationId, analyticsEvaluation.evaluationId) &&
-        Objects.equals(this.evaluatorId, analyticsEvaluation.evaluatorId) &&
-        Objects.equals(this.eventTime, analyticsEvaluation.eventTime) &&
-        Objects.equals(this.formId, analyticsEvaluation.formId) &&
-        Objects.equals(this.formName, analyticsEvaluation.formName) &&
-        Objects.equals(this.queueId, analyticsEvaluation.queueId) &&
-        Objects.equals(this.released, analyticsEvaluation.released) &&
-        Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
-        Objects.equals(this.userId, analyticsEvaluation.userId) &&
-        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
-        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore);
+            Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
+            Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
+            Objects.equals(this.evaluationId, analyticsEvaluation.evaluationId) &&
+            Objects.equals(this.evaluatorId, analyticsEvaluation.evaluatorId) &&
+            Objects.equals(this.eventTime, analyticsEvaluation.eventTime) &&
+            Objects.equals(this.formId, analyticsEvaluation.formId) &&
+            Objects.equals(this.formName, analyticsEvaluation.formName) &&
+            Objects.equals(this.queueId, analyticsEvaluation.queueId) &&
+            Objects.equals(this.released, analyticsEvaluation.released) &&
+            Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
+            Objects.equals(this.userId, analyticsEvaluation.userId) &&
+            Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
+            Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore);
   }
 
   @Override

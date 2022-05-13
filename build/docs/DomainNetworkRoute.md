@@ -22,9 +22,9 @@ title: DomainNetworkRoute
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | -1 |
-| NUMBER_2 | 2 |
-| NUMBER_23 | 23 |
+| OUTDATEDSDKVERSION | -1 | 
+| NUMBER_2 | 2 | 
+| NUMBER_23 | 23 | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MemberGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -145,7 +145,7 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The queue metric being evaluated
    **/
@@ -163,7 +163,7 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * The operator that compares the actual value against the condition value
    **/
@@ -181,7 +181,7 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * The limit value, beyond which a rule evaluates as true
    **/
@@ -199,7 +199,7 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     this.conditionValue = conditionValue;
   }
 
-  
+
   /**
    * The group(s) to activate if the rule evaluates as true
    **/
@@ -217,7 +217,7 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     this.groups = groups;
   }
 
-  
+
   /**
    * The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule
    **/
@@ -235,7 +235,6 @@ public class ConditionalGroupRoutingRule  implements Serializable {
     this.waitSeconds = waitSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -246,12 +245,13 @@ public class ConditionalGroupRoutingRule  implements Serializable {
       return false;
     }
     ConditionalGroupRoutingRule conditionalGroupRoutingRule = (ConditionalGroupRoutingRule) o;
+
     return Objects.equals(this.queue, conditionalGroupRoutingRule.queue) &&
-        Objects.equals(this.metric, conditionalGroupRoutingRule.metric) &&
-        Objects.equals(this.operator, conditionalGroupRoutingRule.operator) &&
-        Objects.equals(this.conditionValue, conditionalGroupRoutingRule.conditionValue) &&
-        Objects.equals(this.groups, conditionalGroupRoutingRule.groups) &&
-        Objects.equals(this.waitSeconds, conditionalGroupRoutingRule.waitSeconds);
+            Objects.equals(this.metric, conditionalGroupRoutingRule.metric) &&
+            Objects.equals(this.operator, conditionalGroupRoutingRule.operator) &&
+            Objects.equals(this.conditionValue, conditionalGroupRoutingRule.conditionValue) &&
+            Objects.equals(this.groups, conditionalGroupRoutingRule.groups) &&
+            Objects.equals(this.waitSeconds, conditionalGroupRoutingRule.waitSeconds);
   }
 
   @Override

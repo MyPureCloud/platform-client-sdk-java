@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class FacetStatistics  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    **/
   public FacetStatistics min(Double min) {
@@ -63,7 +64,7 @@ public class FacetStatistics  implements Serializable {
     this.min = min;
   }
 
-  
+
   /**
    **/
   public FacetStatistics max(Double max) {
@@ -80,7 +81,7 @@ public class FacetStatistics  implements Serializable {
     this.max = max;
   }
 
-  
+
   /**
    **/
   public FacetStatistics mean(Double mean) {
@@ -97,7 +98,7 @@ public class FacetStatistics  implements Serializable {
     this.mean = mean;
   }
 
-  
+
   /**
    **/
   public FacetStatistics stdDeviation(Double stdDeviation) {
@@ -114,7 +115,7 @@ public class FacetStatistics  implements Serializable {
     this.stdDeviation = stdDeviation;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -132,7 +133,7 @@ public class FacetStatistics  implements Serializable {
     this.dateMin = dateMin;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -150,7 +151,6 @@ public class FacetStatistics  implements Serializable {
     this.dateMax = dateMax;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,13 +161,14 @@ public class FacetStatistics  implements Serializable {
       return false;
     }
     FacetStatistics facetStatistics = (FacetStatistics) o;
+
     return Objects.equals(this.count, facetStatistics.count) &&
-        Objects.equals(this.min, facetStatistics.min) &&
-        Objects.equals(this.max, facetStatistics.max) &&
-        Objects.equals(this.mean, facetStatistics.mean) &&
-        Objects.equals(this.stdDeviation, facetStatistics.stdDeviation) &&
-        Objects.equals(this.dateMin, facetStatistics.dateMin) &&
-        Objects.equals(this.dateMax, facetStatistics.dateMax);
+            Objects.equals(this.min, facetStatistics.min) &&
+            Objects.equals(this.max, facetStatistics.max) &&
+            Objects.equals(this.mean, facetStatistics.mean) &&
+            Objects.equals(this.stdDeviation, facetStatistics.stdDeviation) &&
+            Objects.equals(this.dateMin, facetStatistics.dateMin) &&
+            Objects.equals(this.dateMax, facetStatistics.dateMax);
   }
 
   @Override

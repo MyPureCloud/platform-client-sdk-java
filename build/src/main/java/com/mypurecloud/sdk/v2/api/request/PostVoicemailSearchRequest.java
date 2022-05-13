@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class PostVoicemailSearchRequest {
-    
+
 	private VoicemailSearchRequest body;
 	public VoicemailSearchRequest getBody() {
 		return this.body;
@@ -47,7 +47,7 @@ public class PostVoicemailSearchRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,8 +77,8 @@ public class PostVoicemailSearchRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/voicemail/search")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -89,12 +89,12 @@ public class PostVoicemailSearchRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(VoicemailSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostVoicemailSearchRequest request;
@@ -103,20 +103,20 @@ public class PostVoicemailSearchRequest {
 			request = new PostVoicemailSearchRequest();
 		}
 
-		
+
 		public Builder withBody(VoicemailSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(VoicemailSearchRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostVoicemailSearchRequest build() {
             

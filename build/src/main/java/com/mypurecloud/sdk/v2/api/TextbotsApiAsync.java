@@ -13,14 +13,14 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
-import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetTextbotsBotsSearchRequest;
@@ -35,7 +35,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class TextbotsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -47,7 +46,6 @@ public class TextbotsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Find bots using the currently configured friendly name or ID.
    * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
@@ -123,7 +121,6 @@ public class TextbotsApiAsync {
     }
   }
 
-  
   /**
    * Issue a bot flow turn event
    * Send a turn event to an executing bot flow and produce the next action to take.
@@ -199,10 +196,9 @@ public class TextbotsApiAsync {
     }
   }
 
-  
   /**
    * Create an execution instance of a bot flow definition.
-   * The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+   * The launch is asynchronous; use the returned instance ID to post turns to it using 'POST /api/v2/textbots/botflows/sessions/{sessionId}/turns'.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -236,7 +232,7 @@ public class TextbotsApiAsync {
 
   /**
    * Create an execution instance of a bot flow definition.
-   * The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+   * The launch is asynchronous; use the returned instance ID to post turns to it using 'POST /api/v2/textbots/botflows/sessions/{sessionId}/turns'.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -275,7 +271,6 @@ public class TextbotsApiAsync {
     }
   }
 
-  
   /**
    * Send an intent to a bot to start a dialog/interact with it via text
    * This will either start a bot with the given id or relay a communication to an existing bot session.
@@ -351,7 +346,6 @@ public class TextbotsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

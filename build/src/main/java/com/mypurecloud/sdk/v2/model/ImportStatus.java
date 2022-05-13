@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -81,35 +82,34 @@ public class ImportStatus  implements Serializable {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "total number of records to be imported")
   @JsonProperty("totalRecords")
   public Long getTotalRecords() {
     return totalRecords;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "number of records finished importing")
   @JsonProperty("completedRecords")
   public Long getCompletedRecords() {
     return completedRecords;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "percentage of records finished importing")
   @JsonProperty("percentComplete")
   public Integer getPercentComplete() {
     return percentComplete;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "if the import has failed, the reason for the failure")
   @JsonProperty("failureReason")
   public String getFailureReason() {
     return failureReason;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,11 +120,12 @@ public class ImportStatus  implements Serializable {
       return false;
     }
     ImportStatus importStatus = (ImportStatus) o;
+
     return Objects.equals(this.state, importStatus.state) &&
-        Objects.equals(this.totalRecords, importStatus.totalRecords) &&
-        Objects.equals(this.completedRecords, importStatus.completedRecords) &&
-        Objects.equals(this.percentComplete, importStatus.percentComplete) &&
-        Objects.equals(this.failureReason, importStatus.failureReason);
+            Objects.equals(this.totalRecords, importStatus.totalRecords) &&
+            Objects.equals(this.completedRecords, importStatus.completedRecords) &&
+            Objects.equals(this.percentComplete, importStatus.percentComplete) &&
+            Objects.equals(this.failureReason, importStatus.failureReason);
   }
 
   @Override

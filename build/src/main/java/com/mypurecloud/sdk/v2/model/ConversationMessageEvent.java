@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class ConversationMessageEvent  implements Serializable {
     this.eventType = eventType;
   }
 
-  
+
   /**
    * CoBrowse event.
    **/
@@ -115,7 +116,7 @@ public class ConversationMessageEvent  implements Serializable {
     this.coBrowse = coBrowse;
   }
 
-  
+
   /**
    * Typing event.
    **/
@@ -133,7 +134,7 @@ public class ConversationMessageEvent  implements Serializable {
     this.typing = typing;
   }
 
-  
+
   /**
    * Presence event.
    **/
@@ -151,7 +152,6 @@ public class ConversationMessageEvent  implements Serializable {
     this.presence = presence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,10 +162,11 @@ public class ConversationMessageEvent  implements Serializable {
       return false;
     }
     ConversationMessageEvent conversationMessageEvent = (ConversationMessageEvent) o;
+
     return Objects.equals(this.eventType, conversationMessageEvent.eventType) &&
-        Objects.equals(this.coBrowse, conversationMessageEvent.coBrowse) &&
-        Objects.equals(this.typing, conversationMessageEvent.typing) &&
-        Objects.equals(this.presence, conversationMessageEvent.presence);
+            Objects.equals(this.coBrowse, conversationMessageEvent.coBrowse) &&
+            Objects.equals(this.typing, conversationMessageEvent.typing) &&
+            Objects.equals(this.presence, conversationMessageEvent.presence);
   }
 
   @Override

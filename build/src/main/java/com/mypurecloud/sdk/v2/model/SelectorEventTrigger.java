@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class SelectorEventTrigger  implements Serializable {
     this.selector = selector;
   }
 
-  
+
   /**
    * Name of event triggered when element matching selector is interacted with.
    **/
@@ -60,7 +61,6 @@ public class SelectorEventTrigger  implements Serializable {
     this.eventName = eventName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class SelectorEventTrigger  implements Serializable {
       return false;
     }
     SelectorEventTrigger selectorEventTrigger = (SelectorEventTrigger) o;
+
     return Objects.equals(this.selector, selectorEventTrigger.selector) &&
-        Objects.equals(this.eventName, selectorEventTrigger.eventName);
+            Objects.equals(this.eventName, selectorEventTrigger.eventName);
   }
 
   @Override

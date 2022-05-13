@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -43,7 +44,7 @@ public class MatchShiftTradeRequest  implements Serializable {
     this.receivingScheduleId = receivingScheduleId;
   }
 
-  
+
   /**
    * The ID of the shift the receiving user is giving up in trade, if applicable
    **/
@@ -61,7 +62,7 @@ public class MatchShiftTradeRequest  implements Serializable {
     this.receivingShiftId = receivingShiftId;
   }
 
-  
+
   /**
    * Version metadata for the shift trade
    **/
@@ -79,7 +80,6 @@ public class MatchShiftTradeRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class MatchShiftTradeRequest  implements Serializable {
       return false;
     }
     MatchShiftTradeRequest matchShiftTradeRequest = (MatchShiftTradeRequest) o;
+
     return Objects.equals(this.receivingScheduleId, matchShiftTradeRequest.receivingScheduleId) &&
-        Objects.equals(this.receivingShiftId, matchShiftTradeRequest.receivingShiftId) &&
-        Objects.equals(this.metadata, matchShiftTradeRequest.metadata);
+            Objects.equals(this.receivingShiftId, matchShiftTradeRequest.receivingShiftId) &&
+            Objects.equals(this.metadata, matchShiftTradeRequest.metadata);
   }
 
   @Override

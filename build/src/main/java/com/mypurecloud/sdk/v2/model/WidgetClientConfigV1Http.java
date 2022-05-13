@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -88,7 +89,7 @@ public class WidgetClientConfigV1Http  implements Serializable {
     this.webChatSkin = webChatSkin;
   }
 
-  
+
   /**
    **/
   public WidgetClientConfigV1Http authenticationUrl(String authenticationUrl) {
@@ -105,7 +106,6 @@ public class WidgetClientConfigV1Http  implements Serializable {
     this.authenticationUrl = authenticationUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,8 +116,9 @@ public class WidgetClientConfigV1Http  implements Serializable {
       return false;
     }
     WidgetClientConfigV1Http widgetClientConfigV1Http = (WidgetClientConfigV1Http) o;
+
     return Objects.equals(this.webChatSkin, widgetClientConfigV1Http.webChatSkin) &&
-        Objects.equals(this.authenticationUrl, widgetClientConfigV1Http.authenticationUrl);
+            Objects.equals(this.authenticationUrl, widgetClientConfigV1Http.authenticationUrl);
   }
 
   @Override

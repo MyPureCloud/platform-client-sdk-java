@@ -10,66 +10,65 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Campaign;
-import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
-import com.mypurecloud.sdk.v2.model.ResponseSet;
-import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
+import com.mypurecloud.sdk.v2.model.Campaign;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
-import com.mypurecloud.sdk.v2.model.CampaignInteractions;
-import com.mypurecloud.sdk.v2.model.CampaignProgress;
-import com.mypurecloud.sdk.v2.model.CampaignStats;
-import com.mypurecloud.sdk.v2.model.CampaignRule;
-import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
-import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.ContactList;
-import com.mypurecloud.sdk.v2.model.DialerContact;
-import com.mypurecloud.sdk.v2.model.ExportUri;
-import com.mypurecloud.sdk.v2.model.ImportStatus;
-import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
-import com.mypurecloud.sdk.v2.model.ContactListFilter;
-import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.DncList;
-import com.mypurecloud.sdk.v2.model.DncListEntityListing;
-import com.mypurecloud.sdk.v2.model.DncListDivisionView;
-import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.EventLog;
-import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.RuleSet;
-import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignInteractions;
+import com.mypurecloud.sdk.v2.model.CampaignProgress;
+import com.mypurecloud.sdk.v2.model.CampaignRule;
+import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
-import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.CampaignSequence;
 import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundSettings;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
-import com.mypurecloud.sdk.v2.model.AuditSearchResult;
-import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
-import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.CampaignStats;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
-import com.mypurecloud.sdk.v2.model.WritableDialerContact;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ContactList;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
+import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
+import com.mypurecloud.sdk.v2.model.DialerContact;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
-import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.DncListDivisionView;
+import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.ExportUri;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.ResponseSet;
+import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
+import com.mypurecloud.sdk.v2.model.RuleSet;
+import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.SequenceSchedule;
+import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
+import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundAttemptlimitRequest;
@@ -198,7 +197,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class OutboundApi {
   private final ApiClient pcapiClient;
 
@@ -210,7 +208,6 @@ public class OutboundApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete attempt limits
    * 
@@ -235,7 +232,7 @@ public class OutboundApi {
   private DeleteOutboundAttemptlimitRequest createDeleteOutboundAttemptlimitRequest(String attemptLimitsId) {
     return DeleteOutboundAttemptlimitRequest.builder()
             .withAttemptLimitsId(attemptLimitsId)
-    
+
             .build();
   }
 
@@ -286,7 +283,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete callable time set
    * 
@@ -311,7 +307,7 @@ public class OutboundApi {
   private DeleteOutboundCallabletimesetRequest createDeleteOutboundCallabletimesetRequest(String callableTimeSetId) {
     return DeleteOutboundCallabletimesetRequest.builder()
             .withCallableTimeSetId(callableTimeSetId)
-    
+
             .build();
   }
 
@@ -362,7 +358,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a dialer call analysis response set.
    * 
@@ -387,7 +382,7 @@ public class OutboundApi {
   private DeleteOutboundCallanalysisresponsesetRequest createDeleteOutboundCallanalysisresponsesetRequest(String callAnalysisSetId) {
     return DeleteOutboundCallanalysisresponsesetRequest.builder()
             .withCallAnalysisSetId(callAnalysisSetId)
-    
+
             .build();
   }
 
@@ -438,7 +433,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a campaign.
    * 
@@ -465,7 +459,7 @@ public class OutboundApi {
   private DeleteOutboundCampaignRequest createDeleteOutboundCampaignRequest(String campaignId) {
     return DeleteOutboundCampaignRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -517,7 +511,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Reset campaign progress and recycle the campaign
    * 
@@ -542,7 +535,7 @@ public class OutboundApi {
   private DeleteOutboundCampaignProgressRequest createDeleteOutboundCampaignProgressRequest(String campaignId) {
     return DeleteOutboundCampaignProgressRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -593,7 +586,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete Campaign Rule
    * 
@@ -618,7 +610,7 @@ public class OutboundApi {
   private DeleteOutboundCampaignruleRequest createDeleteOutboundCampaignruleRequest(String campaignRuleId) {
     return DeleteOutboundCampaignruleRequest.builder()
             .withCampaignRuleId(campaignRuleId)
-    
+
             .build();
   }
 
@@ -669,7 +661,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a contact list.
    * 
@@ -694,7 +685,7 @@ public class OutboundApi {
   private DeleteOutboundContactlistRequest createDeleteOutboundContactlistRequest(String contactListId) {
     return DeleteOutboundContactlistRequest.builder()
             .withContactListId(contactListId)
-    
+
             .build();
   }
 
@@ -745,7 +736,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a contact.
    * 
@@ -772,9 +762,9 @@ public class OutboundApi {
   private DeleteOutboundContactlistContactRequest createDeleteOutboundContactlistContactRequest(String contactListId, String contactId) {
     return DeleteOutboundContactlistContactRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withContactId(contactId)
-    
+
             .build();
   }
 
@@ -825,7 +815,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete contacts from a contact list.
    * 
@@ -852,9 +841,9 @@ public class OutboundApi {
   private DeleteOutboundContactlistContactsRequest createDeleteOutboundContactlistContactsRequest(String contactListId, List<String> contactIds) {
     return DeleteOutboundContactlistContactsRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withContactIds(contactIds)
-    
+
             .build();
   }
 
@@ -905,7 +894,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete Contact List Filter
    * 
@@ -930,7 +918,7 @@ public class OutboundApi {
   private DeleteOutboundContactlistfilterRequest createDeleteOutboundContactlistfilterRequest(String contactListFilterId) {
     return DeleteOutboundContactlistfilterRequest.builder()
             .withContactListFilterId(contactListFilterId)
-    
+
             .build();
   }
 
@@ -981,7 +969,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete multiple contact lists.
    * 
@@ -1006,7 +993,7 @@ public class OutboundApi {
   private DeleteOutboundContactlistsRequest createDeleteOutboundContactlistsRequest(List<String> id) {
     return DeleteOutboundContactlistsRequest.builder()
             .withId(id)
-    
+
             .build();
   }
 
@@ -1057,7 +1044,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete dialer DNC list
    * 
@@ -1082,7 +1068,7 @@ public class OutboundApi {
   private DeleteOutboundDnclistRequest createDeleteOutboundDnclistRequest(String dncListId) {
     return DeleteOutboundDnclistRequest.builder()
             .withDncListId(dncListId)
-    
+
             .build();
   }
 
@@ -1133,7 +1119,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete an Outbound Messaging Campaign
    * 
@@ -1160,7 +1145,7 @@ public class OutboundApi {
   private DeleteOutboundMessagingcampaignRequest createDeleteOutboundMessagingcampaignRequest(String messagingCampaignId) {
     return DeleteOutboundMessagingcampaignRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
@@ -1212,7 +1197,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Reset messaging campaign progress and recycle the messaging campaign
    * 
@@ -1237,7 +1221,7 @@ public class OutboundApi {
   private DeleteOutboundMessagingcampaignProgressRequest createDeleteOutboundMessagingcampaignProgressRequest(String messagingCampaignId) {
     return DeleteOutboundMessagingcampaignProgressRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
@@ -1288,7 +1272,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a Rule Set.
    * 
@@ -1313,7 +1296,7 @@ public class OutboundApi {
   private DeleteOutboundRulesetRequest createDeleteOutboundRulesetRequest(String ruleSetId) {
     return DeleteOutboundRulesetRequest.builder()
             .withRuleSetId(ruleSetId)
-    
+
             .build();
   }
 
@@ -1364,7 +1347,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a dialer campaign schedule.
    * 
@@ -1389,7 +1371,7 @@ public class OutboundApi {
   private DeleteOutboundSchedulesCampaignRequest createDeleteOutboundSchedulesCampaignRequest(String campaignId) {
     return DeleteOutboundSchedulesCampaignRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -1440,7 +1422,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete an email campaign schedule.
    * 
@@ -1465,7 +1446,7 @@ public class OutboundApi {
   private DeleteOutboundSchedulesEmailcampaignRequest createDeleteOutboundSchedulesEmailcampaignRequest(String emailCampaignId) {
     return DeleteOutboundSchedulesEmailcampaignRequest.builder()
             .withEmailCampaignId(emailCampaignId)
-    
+
             .build();
   }
 
@@ -1516,7 +1497,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a messaging campaign schedule.
    * 
@@ -1541,7 +1521,7 @@ public class OutboundApi {
   private DeleteOutboundSchedulesMessagingcampaignRequest createDeleteOutboundSchedulesMessagingcampaignRequest(String messagingCampaignId) {
     return DeleteOutboundSchedulesMessagingcampaignRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
@@ -1592,7 +1572,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a dialer sequence schedule.
    * 
@@ -1617,7 +1596,7 @@ public class OutboundApi {
   private DeleteOutboundSchedulesSequenceRequest createDeleteOutboundSchedulesSequenceRequest(String sequenceId) {
     return DeleteOutboundSchedulesSequenceRequest.builder()
             .withSequenceId(sequenceId)
-    
+
             .build();
   }
 
@@ -1668,7 +1647,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Delete a dialer campaign sequence.
    * 
@@ -1693,7 +1671,7 @@ public class OutboundApi {
   private DeleteOutboundSequenceRequest createDeleteOutboundSequenceRequest(String sequenceId) {
     return DeleteOutboundSequenceRequest.builder()
             .withSequenceId(sequenceId)
-    
+
             .build();
   }
 
@@ -1744,7 +1722,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get attempt limits
    * 
@@ -1771,7 +1748,7 @@ public class OutboundApi {
   private GetOutboundAttemptlimitRequest createGetOutboundAttemptlimitRequest(String attemptLimitsId) {
     return GetOutboundAttemptlimitRequest.builder()
             .withAttemptLimitsId(attemptLimitsId)
-    
+
             .build();
   }
 
@@ -1823,7 +1800,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query attempt limits list
    * 
@@ -1862,19 +1838,19 @@ public class OutboundApi {
   private GetOutboundAttemptlimitsRequest createGetOutboundAttemptlimitsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundAttemptlimitsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -1926,7 +1902,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get callable time set
    * 
@@ -1953,7 +1928,7 @@ public class OutboundApi {
   private GetOutboundCallabletimesetRequest createGetOutboundCallabletimesetRequest(String callableTimeSetId) {
     return GetOutboundCallabletimesetRequest.builder()
             .withCallableTimeSetId(callableTimeSetId)
-    
+
             .build();
   }
 
@@ -2005,7 +1980,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query callable time set list
    * 
@@ -2044,19 +2018,19 @@ public class OutboundApi {
   private GetOutboundCallabletimesetsRequest createGetOutboundCallabletimesetsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundCallabletimesetsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2108,7 +2082,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a dialer call analysis response set.
    * 
@@ -2135,7 +2108,7 @@ public class OutboundApi {
   private GetOutboundCallanalysisresponsesetRequest createGetOutboundCallanalysisresponsesetRequest(String callAnalysisSetId) {
     return GetOutboundCallanalysisresponsesetRequest.builder()
             .withCallAnalysisSetId(callAnalysisSetId)
-    
+
             .build();
   }
 
@@ -2187,7 +2160,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of dialer call analysis response sets.
    * 
@@ -2226,19 +2198,19 @@ public class OutboundApi {
   private GetOutboundCallanalysisresponsesetsRequest createGetOutboundCallanalysisresponsesetsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundCallanalysisresponsesetsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2290,7 +2262,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get dialer campaign.
    * 
@@ -2317,7 +2288,7 @@ public class OutboundApi {
   private GetOutboundCampaignRequest createGetOutboundCampaignRequest(String campaignId) {
     return GetOutboundCampaignRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -2369,9 +2340,8 @@ public class OutboundApi {
     }
   }
 
-  
   /**
-   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Get a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param campaignId Campaign ID (required)
    * @return AgentOwnedMappingPreviewListing
@@ -2383,7 +2353,7 @@ public class OutboundApi {
   }
 
   /**
-   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Get a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param campaignId Campaign ID (required)
    * @return AgentOwnedMappingPreviewListing
@@ -2396,12 +2366,12 @@ public class OutboundApi {
   private GetOutboundCampaignAgentownedmappingpreviewResultsRequest createGetOutboundCampaignAgentownedmappingpreviewResultsRequest(String campaignId) {
     return GetOutboundCampaignAgentownedmappingpreviewResultsRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
   /**
-   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Get a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request The request object
    * @return AgentOwnedMappingPreviewListing
@@ -2420,7 +2390,7 @@ public class OutboundApi {
   }
 
   /**
-   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Get a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request The request object
    * @return the response
@@ -2448,7 +2418,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get campaign diagnostics
    * 
@@ -2475,7 +2444,7 @@ public class OutboundApi {
   private GetOutboundCampaignDiagnosticsRequest createGetOutboundCampaignDiagnosticsRequest(String campaignId) {
     return GetOutboundCampaignDiagnosticsRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -2527,7 +2496,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get dialer campaign interactions.
    * 
@@ -2554,7 +2522,7 @@ public class OutboundApi {
   private GetOutboundCampaignInteractionsRequest createGetOutboundCampaignInteractionsRequest(String campaignId) {
     return GetOutboundCampaignInteractionsRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -2606,7 +2574,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get campaign progress
    * 
@@ -2633,7 +2600,7 @@ public class OutboundApi {
   private GetOutboundCampaignProgressRequest createGetOutboundCampaignProgressRequest(String campaignId) {
     return GetOutboundCampaignProgressRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -2685,7 +2652,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get statistics about a Dialer Campaign
    * 
@@ -2712,7 +2678,7 @@ public class OutboundApi {
   private GetOutboundCampaignStatsRequest createGetOutboundCampaignStatsRequest(String campaignId) {
     return GetOutboundCampaignStatsRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -2764,7 +2730,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get Campaign Rule
    * 
@@ -2791,7 +2756,7 @@ public class OutboundApi {
   private GetOutboundCampaignruleRequest createGetOutboundCampaignruleRequest(String campaignRuleId) {
     return GetOutboundCampaignruleRequest.builder()
             .withCampaignRuleId(campaignRuleId)
-    
+
             .build();
   }
 
@@ -2843,7 +2808,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query Campaign Rule list
    * 
@@ -2882,19 +2846,19 @@ public class OutboundApi {
   private GetOutboundCampaignrulesRequest createGetOutboundCampaignrulesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundCampaignrulesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2946,7 +2910,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of dialer campaigns.
    * 
@@ -2997,31 +2960,31 @@ public class OutboundApi {
   private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListIds, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundCampaignsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .withContactListId(contactListId)
-    
+
             .withDncListIds(dncListIds)
-    
+
             .withDistributionQueueId(distributionQueueId)
-    
+
             .withEdgeGroupId(edgeGroupId)
-    
+
             .withCallAnalysisResponseSetId(callAnalysisResponseSetId)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3073,7 +3036,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query across all types of campaigns by division
    * 
@@ -3112,19 +3074,19 @@ public class OutboundApi {
   private GetOutboundCampaignsAllRequest createGetOutboundCampaignsAllRequest(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) {
     return GetOutboundCampaignsAllRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withMediaType(mediaType)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3176,7 +3138,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query across all types of campaigns
    * 
@@ -3215,19 +3176,19 @@ public class OutboundApi {
   private GetOutboundCampaignsAllDivisionviewsRequest createGetOutboundCampaignsAllDivisionviewsRequest(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) {
     return GetOutboundCampaignsAllDivisionviewsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withMediaType(mediaType)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3279,7 +3240,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a basic Campaign information object
    * This returns a simplified version of a Campaign, consisting of name and division.
@@ -3306,7 +3266,7 @@ public class OutboundApi {
   private GetOutboundCampaignsDivisionviewRequest createGetOutboundCampaignsDivisionviewRequest(String campaignId) {
     return GetOutboundCampaignsDivisionviewRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -3358,7 +3318,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of basic Campaign information objects
    * This returns a simplified version of a Campaign, consisting of name and division.
@@ -3397,19 +3356,19 @@ public class OutboundApi {
   private GetOutboundCampaignsDivisionviewsRequest createGetOutboundCampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
     return GetOutboundCampaignsDivisionviewsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3461,7 +3420,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a dialer contact list.
    * 
@@ -3492,11 +3450,11 @@ public class OutboundApi {
   private GetOutboundContactlistRequest createGetOutboundContactlistRequest(String contactListId, Boolean includeImportStatus, Boolean includeSize) {
     return GetOutboundContactlistRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .build();
   }
 
@@ -3548,7 +3506,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a contact.
    * 
@@ -3577,9 +3534,9 @@ public class OutboundApi {
   private GetOutboundContactlistContactRequest createGetOutboundContactlistContactRequest(String contactListId, String contactId) {
     return GetOutboundContactlistContactRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withContactId(contactId)
-    
+
             .build();
   }
 
@@ -3631,7 +3588,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get the URI of a contact list export.
    * 
@@ -3660,9 +3616,9 @@ public class OutboundApi {
   private GetOutboundContactlistExportRequest createGetOutboundContactlistExportRequest(String contactListId, String download) {
     return GetOutboundContactlistExportRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withDownload(download)
-    
+
             .build();
   }
 
@@ -3714,7 +3670,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get dialer contactList import status.
    * 
@@ -3741,7 +3696,7 @@ public class OutboundApi {
   private GetOutboundContactlistImportstatusRequest createGetOutboundContactlistImportstatusRequest(String contactListId) {
     return GetOutboundContactlistImportstatusRequest.builder()
             .withContactListId(contactListId)
-    
+
             .build();
   }
 
@@ -3793,7 +3748,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Preview the result of applying Automatic Time Zone Mapping to a contact list
    * 
@@ -3820,7 +3774,7 @@ public class OutboundApi {
   private GetOutboundContactlistTimezonemappingpreviewRequest createGetOutboundContactlistTimezonemappingpreviewRequest(String contactListId) {
     return GetOutboundContactlistTimezonemappingpreviewRequest.builder()
             .withContactListId(contactListId)
-    
+
             .build();
   }
 
@@ -3872,7 +3826,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get Contact list filter
    * 
@@ -3899,7 +3852,7 @@ public class OutboundApi {
   private GetOutboundContactlistfilterRequest createGetOutboundContactlistfilterRequest(String contactListFilterId) {
     return GetOutboundContactlistfilterRequest.builder()
             .withContactListFilterId(contactListFilterId)
-    
+
             .build();
   }
 
@@ -3951,7 +3904,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query Contact list filters
    * 
@@ -3992,21 +3944,21 @@ public class OutboundApi {
   private GetOutboundContactlistfiltersRequest createGetOutboundContactlistfiltersRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListId) {
     return GetOutboundContactlistfiltersRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withContactListId(contactListId)
-    
+
             .build();
   }
 
@@ -4058,7 +4010,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of contact lists.
    * 
@@ -4105,27 +4056,27 @@ public class OutboundApi {
   private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundContactlistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -4177,7 +4128,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a basic ContactList information object
    * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
@@ -4208,11 +4158,11 @@ public class OutboundApi {
   private GetOutboundContactlistsDivisionviewRequest createGetOutboundContactlistsDivisionviewRequest(String contactListId, Boolean includeImportStatus, Boolean includeSize) {
     return GetOutboundContactlistsDivisionviewRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .build();
   }
 
@@ -4264,7 +4214,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of simplified contact list objects.
    * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
@@ -4307,23 +4256,23 @@ public class OutboundApi {
   private GetOutboundContactlistsDivisionviewsRequest createGetOutboundContactlistsDivisionviewsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
     return GetOutboundContactlistsDivisionviewsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withId(id)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -4375,7 +4324,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get dialer DNC list
    * 
@@ -4406,11 +4354,11 @@ public class OutboundApi {
   private GetOutboundDnclistRequest createGetOutboundDnclistRequest(String dncListId, Boolean includeImportStatus, Boolean includeSize) {
     return GetOutboundDnclistRequest.builder()
             .withDncListId(dncListId)
-    
+
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .build();
   }
 
@@ -4462,7 +4410,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get the URI of a DNC list export.
    * 
@@ -4491,9 +4438,9 @@ public class OutboundApi {
   private GetOutboundDnclistExportRequest createGetOutboundDnclistExportRequest(String dncListId, String download) {
     return GetOutboundDnclistExportRequest.builder()
             .withDncListId(dncListId)
-    
+
             .withDownload(download)
-    
+
             .build();
   }
 
@@ -4545,7 +4492,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get dialer dncList import status.
    * 
@@ -4572,7 +4518,7 @@ public class OutboundApi {
   private GetOutboundDnclistImportstatusRequest createGetOutboundDnclistImportstatusRequest(String dncListId) {
     return GetOutboundDnclistImportstatusRequest.builder()
             .withDncListId(dncListId)
-    
+
             .build();
   }
 
@@ -4624,7 +4570,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query dialer DNC lists
    * 
@@ -4671,27 +4616,27 @@ public class OutboundApi {
   private GetOutboundDnclistsRequest createGetOutboundDnclistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundDnclistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withDncSourceType(dncSourceType)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -4743,7 +4688,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a basic DncList information object
    * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
@@ -4774,11 +4718,11 @@ public class OutboundApi {
   private GetOutboundDnclistsDivisionviewRequest createGetOutboundDnclistsDivisionviewRequest(String dncListId, Boolean includeImportStatus, Boolean includeSize) {
     return GetOutboundDnclistsDivisionviewRequest.builder()
             .withDncListId(dncListId)
-    
+
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .build();
   }
 
@@ -4830,7 +4774,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of simplified dnc list objects.
    * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
@@ -4875,25 +4818,25 @@ public class OutboundApi {
   private GetOutboundDnclistsDivisionviewsRequest createGetOutboundDnclistsDivisionviewsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> id, String sortBy, String sortOrder) {
     return GetOutboundDnclistsDivisionviewsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
-    
+
             .withIncludeSize(includeSize)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withDncSourceType(dncSourceType)
-    
+
             .withId(id)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -4945,7 +4888,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get Dialer Event
    * 
@@ -4972,7 +4914,7 @@ public class OutboundApi {
   private GetOutboundEventRequest createGetOutboundEventRequest(String eventId) {
     return GetOutboundEventRequest.builder()
             .withEventId(eventId)
-    
+
             .build();
   }
 
@@ -5024,7 +4966,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query Event Logs
    * 
@@ -5063,19 +5004,19 @@ public class OutboundApi {
   private GetOutboundEventsRequest createGetOutboundEventsRequest(Integer pageSize, Integer pageNumber, String filterType, String category, String level, String sortBy, String sortOrder) {
     return GetOutboundEventsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withFilterType(filterType)
-    
+
             .withCategory(category)
-    
+
             .withLevel(level)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -5127,7 +5068,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get an Outbound Messaging Campaign
    * 
@@ -5154,7 +5094,7 @@ public class OutboundApi {
   private GetOutboundMessagingcampaignRequest createGetOutboundMessagingcampaignRequest(String messagingCampaignId) {
     return GetOutboundMessagingcampaignRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
@@ -5206,9 +5146,8 @@ public class OutboundApi {
     }
   }
 
-  
   /**
-   * Get messaging campaign&#39;s progress
+   * Get messaging campaign's progress
    * 
    * @param messagingCampaignId The Messaging Campaign ID (required)
    * @return CampaignProgress
@@ -5220,7 +5159,7 @@ public class OutboundApi {
   }
 
   /**
-   * Get messaging campaign&#39;s progress
+   * Get messaging campaign's progress
    * 
    * @param messagingCampaignId The Messaging Campaign ID (required)
    * @return CampaignProgress
@@ -5233,12 +5172,12 @@ public class OutboundApi {
   private GetOutboundMessagingcampaignProgressRequest createGetOutboundMessagingcampaignProgressRequest(String messagingCampaignId) {
     return GetOutboundMessagingcampaignProgressRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
   /**
-   * Get messaging campaign&#39;s progress
+   * Get messaging campaign's progress
    * 
    * @param request The request object
    * @return CampaignProgress
@@ -5257,7 +5196,7 @@ public class OutboundApi {
   }
 
   /**
-   * Get messaging campaign&#39;s progress
+   * Get messaging campaign's progress
    * 
    * @param request The request object
    * @return the response
@@ -5285,7 +5224,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of Messaging Campaigns
    * 
@@ -5330,25 +5268,25 @@ public class OutboundApi {
   private GetOutboundMessagingcampaignsRequest createGetOutboundMessagingcampaignsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id) {
     return GetOutboundMessagingcampaignsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withContactListId(contactListId)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withType(type)
-    
+
             .withSenderSmsPhoneNumber(senderSmsPhoneNumber)
-    
+
             .withId(id)
-    
+
             .build();
   }
 
@@ -5400,7 +5338,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a basic Messaging Campaign information object
    * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
@@ -5427,7 +5364,7 @@ public class OutboundApi {
   private GetOutboundMessagingcampaignsDivisionviewRequest createGetOutboundMessagingcampaignsDivisionviewRequest(String messagingCampaignId) {
     return GetOutboundMessagingcampaignsDivisionviewRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
@@ -5479,7 +5416,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of basic Messaging Campaign information objects
    * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
@@ -5518,19 +5454,19 @@ public class OutboundApi {
   private GetOutboundMessagingcampaignsDivisionviewsRequest createGetOutboundMessagingcampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name, String type, List<String> id, String senderSmsPhoneNumber) {
     return GetOutboundMessagingcampaignsDivisionviewsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withType(type)
-    
+
             .withId(id)
-    
+
             .withSenderSmsPhoneNumber(senderSmsPhoneNumber)
-    
+
             .build();
   }
 
@@ -5582,7 +5518,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a Rule Set by ID.
    * 
@@ -5609,7 +5544,7 @@ public class OutboundApi {
   private GetOutboundRulesetRequest createGetOutboundRulesetRequest(String ruleSetId) {
     return GetOutboundRulesetRequest.builder()
             .withRuleSetId(ruleSetId)
-    
+
             .build();
   }
 
@@ -5661,7 +5596,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of Rule Sets.
    * 
@@ -5700,19 +5634,19 @@ public class OutboundApi {
   private GetOutboundRulesetsRequest createGetOutboundRulesetsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundRulesetsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -5764,7 +5698,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a dialer campaign schedule.
    * 
@@ -5791,7 +5724,7 @@ public class OutboundApi {
   private GetOutboundSchedulesCampaignRequest createGetOutboundSchedulesCampaignRequest(String campaignId) {
     return GetOutboundSchedulesCampaignRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
@@ -5843,7 +5776,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query for a list of dialer campaign schedules.
    * 
@@ -5918,7 +5850,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get an email campaign schedule.
    * 
@@ -5945,7 +5876,7 @@ public class OutboundApi {
   private GetOutboundSchedulesEmailcampaignRequest createGetOutboundSchedulesEmailcampaignRequest(String emailCampaignId) {
     return GetOutboundSchedulesEmailcampaignRequest.builder()
             .withEmailCampaignId(emailCampaignId)
-    
+
             .build();
   }
 
@@ -5997,7 +5928,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query for a list of email campaign schedules.
    * 
@@ -6072,7 +6002,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a messaging campaign schedule.
    * 
@@ -6099,7 +6028,7 @@ public class OutboundApi {
   private GetOutboundSchedulesMessagingcampaignRequest createGetOutboundSchedulesMessagingcampaignRequest(String messagingCampaignId) {
     return GetOutboundSchedulesMessagingcampaignRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .build();
   }
 
@@ -6151,7 +6080,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query for a list of messaging campaign schedules.
    * 
@@ -6226,7 +6154,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a dialer sequence schedule.
    * 
@@ -6253,7 +6180,7 @@ public class OutboundApi {
   private GetOutboundSchedulesSequenceRequest createGetOutboundSchedulesSequenceRequest(String sequenceId) {
     return GetOutboundSchedulesSequenceRequest.builder()
             .withSequenceId(sequenceId)
-    
+
             .build();
   }
 
@@ -6305,7 +6232,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query for a list of dialer sequence schedules.
    * 
@@ -6380,7 +6306,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a dialer campaign sequence.
    * 
@@ -6407,7 +6332,7 @@ public class OutboundApi {
   private GetOutboundSequenceRequest createGetOutboundSequenceRequest(String sequenceId) {
     return GetOutboundSequenceRequest.builder()
             .withSequenceId(sequenceId)
-    
+
             .build();
   }
 
@@ -6459,7 +6384,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Query a list of dialer campaign sequences.
    * 
@@ -6498,19 +6422,19 @@ public class OutboundApi {
   private GetOutboundSequencesRequest createGetOutboundSequencesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundSequencesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withAllowEmptyResult(allowEmptyResult)
-    
+
             .withFilterType(filterType)
-    
+
             .withName(name)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -6562,7 +6486,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get the outbound settings for this organization
    * 
@@ -6637,7 +6560,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get the Dialer wrap up code mapping.
    * 
@@ -6712,7 +6634,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update the outbound settings for this organization
    * 
@@ -6737,7 +6658,7 @@ public class OutboundApi {
   private PatchOutboundSettingsRequest createPatchOutboundSettingsRequest(OutboundSettings body) {
     return PatchOutboundSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6788,7 +6709,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create attempt limits
    * 
@@ -6815,7 +6735,7 @@ public class OutboundApi {
   private PostOutboundAttemptlimitsRequest createPostOutboundAttemptlimitsRequest(AttemptLimits body) {
     return PostOutboundAttemptlimitsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6867,7 +6787,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Retrieves audits for dialer.
    * 
@@ -6904,17 +6823,17 @@ public class OutboundApi {
   private PostOutboundAuditsRequest createPostOutboundAuditsRequest(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) {
     return PostOutboundAuditsRequest.builder()
             .withBody(body)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withFacetsOnly(facetsOnly)
-    
+
             .build();
   }
 
@@ -6966,7 +6885,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create callable time set
    * 
@@ -6993,7 +6911,7 @@ public class OutboundApi {
   private PostOutboundCallabletimesetsRequest createPostOutboundCallabletimesetsRequest(CallableTimeSet body) {
     return PostOutboundCallabletimesetsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7045,7 +6963,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create a dialer call analysis response set.
    * 
@@ -7072,7 +6989,7 @@ public class OutboundApi {
   private PostOutboundCallanalysisresponsesetsRequest createPostOutboundCallanalysisresponsesetsRequest(ResponseSet body) {
     return PostOutboundCallanalysisresponsesetsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7124,9 +7041,8 @@ public class OutboundApi {
     }
   }
 
-  
   /**
-   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param campaignId Campaign ID (required)
    * @return Empty
@@ -7138,7 +7054,7 @@ public class OutboundApi {
   }
 
   /**
-   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param campaignId Campaign ID (required)
    * @return Empty
@@ -7151,12 +7067,12 @@ public class OutboundApi {
   private PostOutboundCampaignAgentownedmappingpreviewRequest createPostOutboundCampaignAgentownedmappingpreviewRequest(String campaignId) {
     return PostOutboundCampaignAgentownedmappingpreviewRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .build();
   }
 
   /**
-   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request The request object
    * @return Empty
@@ -7175,7 +7091,7 @@ public class OutboundApi {
   }
 
   /**
-   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
    * 
    * @param request The request object
    * @return the response
@@ -7203,10 +7119,9 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
-   * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+   * This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
    * @param campaignId Campaign ID (required)
    * @param body ContactCallbackRequest (required)
    * @return ContactCallbackRequest
@@ -7219,7 +7134,7 @@ public class OutboundApi {
 
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
-   * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+   * This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
    * @param campaignId Campaign ID (required)
    * @param body ContactCallbackRequest (required)
    * @return ContactCallbackRequest
@@ -7232,15 +7147,15 @@ public class OutboundApi {
   private PostOutboundCampaignCallbackScheduleRequest createPostOutboundCampaignCallbackScheduleRequest(String campaignId, ContactCallbackRequest body) {
     return PostOutboundCampaignCallbackScheduleRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
-   * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+   * This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
    * @param request The request object
    * @return ContactCallbackRequest
    * @throws ApiException if the request fails on the server
@@ -7259,7 +7174,7 @@ public class OutboundApi {
 
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
-   * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+   * This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7286,7 +7201,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create Campaign Rule
    * 
@@ -7313,7 +7227,7 @@ public class OutboundApi {
   private PostOutboundCampaignrulesRequest createPostOutboundCampaignrulesRequest(CampaignRule body) {
     return PostOutboundCampaignrulesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7365,7 +7279,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create a campaign.
    * 
@@ -7392,7 +7305,7 @@ public class OutboundApi {
   private PostOutboundCampaignsRequest createPostOutboundCampaignsRequest(Campaign body) {
     return PostOutboundCampaignsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7444,7 +7357,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get progress for a list of campaigns
    * 
@@ -7471,7 +7383,7 @@ public class OutboundApi {
   private PostOutboundCampaignsProgressRequest createPostOutboundCampaignsProgressRequest(List<String> body) {
     return PostOutboundCampaignsProgressRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7523,7 +7435,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
    * 
@@ -7548,7 +7459,7 @@ public class OutboundApi {
   private PostOutboundContactlistClearRequest createPostOutboundContactlistClearRequest(String contactListId) {
     return PostOutboundContactlistClearRequest.builder()
             .withContactListId(contactListId)
-    
+
             .build();
   }
 
@@ -7599,15 +7510,14 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Add contacts to a contact list.
    * 
    * @param contactListId Contact List ID (required)
    * @param body Contact (required)
    * @param priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
-   * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. (optional)
-   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. (optional)
+   * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. (optional)
+   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. (optional)
    * @return List<DialerContact>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -7622,8 +7532,8 @@ public class OutboundApi {
    * @param contactListId Contact List ID (required)
    * @param body Contact (required)
    * @param priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
-   * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. (optional)
-   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. (optional)
+   * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. (optional)
+   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. (optional)
    * @return List<DialerContact>
    * @throws IOException if the request fails to be processed
    */
@@ -7634,15 +7544,15 @@ public class OutboundApi {
   private PostOutboundContactlistContactsRequest createPostOutboundContactlistContactsRequest(String contactListId, List<WritableDialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) {
     return PostOutboundContactlistContactsRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withBody(body)
-    
+
             .withPriority(priority)
-    
+
             .withClearSystemData(clearSystemData)
-    
+
             .withDoNotQueue(doNotQueue)
-    
+
             .build();
   }
 
@@ -7694,7 +7604,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get contacts from a contact list.
    * 
@@ -7723,9 +7632,9 @@ public class OutboundApi {
   private PostOutboundContactlistContactsBulkRequest createPostOutboundContactlistContactsBulkRequest(String contactListId, List<String> body) {
     return PostOutboundContactlistContactsBulkRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7777,7 +7686,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
@@ -7804,7 +7712,7 @@ public class OutboundApi {
   private PostOutboundContactlistExportRequest createPostOutboundContactlistExportRequest(String contactListId) {
     return PostOutboundContactlistExportRequest.builder()
             .withContactListId(contactListId)
-    
+
             .build();
   }
 
@@ -7856,7 +7764,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create Contact List Filter
    * 
@@ -7883,7 +7790,7 @@ public class OutboundApi {
   private PostOutboundContactlistfiltersRequest createPostOutboundContactlistfiltersRequest(ContactListFilter body) {
     return PostOutboundContactlistfiltersRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7935,7 +7842,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get a preview of the output of a contact list filter
    * 
@@ -7962,7 +7868,7 @@ public class OutboundApi {
   private PostOutboundContactlistfiltersPreviewRequest createPostOutboundContactlistfiltersPreviewRequest(ContactListFilter body) {
     return PostOutboundContactlistfiltersPreviewRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8014,7 +7920,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create a contact List.
    * 
@@ -8041,7 +7946,7 @@ public class OutboundApi {
   private PostOutboundContactlistsRequest createPostOutboundContactlistsRequest(ContactList body) {
     return PostOutboundContactlistsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8093,7 +7998,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Add phone numbers to a Dialer DNC list.
    * 
@@ -8118,7 +8022,7 @@ public class OutboundApi {
   private PostOutboundConversationDncRequest createPostOutboundConversationDncRequest(String conversationId) {
     return PostOutboundConversationDncRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -8169,7 +8073,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
@@ -8196,7 +8099,7 @@ public class OutboundApi {
   private PostOutboundDnclistExportRequest createPostOutboundDnclistExportRequest(String dncListId) {
     return PostOutboundDnclistExportRequest.builder()
             .withDncListId(dncListId)
-    
+
             .build();
   }
 
@@ -8248,7 +8151,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Add phone numbers to a DNC list.
    * Only Internal DNC lists may be appended to
@@ -8277,11 +8179,11 @@ public class OutboundApi {
   private PostOutboundDnclistPhonenumbersRequest createPostOutboundDnclistPhonenumbersRequest(String dncListId, List<String> body, String expirationDateTime) {
     return PostOutboundDnclistPhonenumbersRequest.builder()
             .withDncListId(dncListId)
-    
+
             .withBody(body)
-    
+
             .withExpirationDateTime(expirationDateTime)
-    
+
             .build();
   }
 
@@ -8332,7 +8234,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create dialer DNC list
    * 
@@ -8359,7 +8260,7 @@ public class OutboundApi {
   private PostOutboundDnclistsRequest createPostOutboundDnclistsRequest(DncListCreate body) {
     return PostOutboundDnclistsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8411,7 +8312,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create a Messaging Campaign
    * 
@@ -8438,7 +8338,7 @@ public class OutboundApi {
   private PostOutboundMessagingcampaignsRequest createPostOutboundMessagingcampaignsRequest(MessagingCampaign body) {
     return PostOutboundMessagingcampaignsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8490,7 +8390,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Get progress for a list of messaging campaigns
    * 
@@ -8517,7 +8416,7 @@ public class OutboundApi {
   private PostOutboundMessagingcampaignsProgressRequest createPostOutboundMessagingcampaignsProgressRequest(List<String> body) {
     return PostOutboundMessagingcampaignsProgressRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8569,7 +8468,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create a Rule Set.
    * 
@@ -8596,7 +8494,7 @@ public class OutboundApi {
   private PostOutboundRulesetsRequest createPostOutboundRulesetsRequest(RuleSet body) {
     return PostOutboundRulesetsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8648,7 +8546,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Create a new campaign sequence.
    * 
@@ -8675,7 +8572,7 @@ public class OutboundApi {
   private PostOutboundSequencesRequest createPostOutboundSequencesRequest(CampaignSequence body) {
     return PostOutboundSequencesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8727,7 +8624,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update attempt limits
    * 
@@ -8756,9 +8652,9 @@ public class OutboundApi {
   private PutOutboundAttemptlimitRequest createPutOutboundAttemptlimitRequest(String attemptLimitsId, AttemptLimits body) {
     return PutOutboundAttemptlimitRequest.builder()
             .withAttemptLimitsId(attemptLimitsId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8810,7 +8706,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update callable time set
    * 
@@ -8839,9 +8734,9 @@ public class OutboundApi {
   private PutOutboundCallabletimesetRequest createPutOutboundCallabletimesetRequest(String callableTimeSetId, CallableTimeSet body) {
     return PutOutboundCallabletimesetRequest.builder()
             .withCallableTimeSetId(callableTimeSetId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8893,7 +8788,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a dialer call analysis response set.
    * 
@@ -8922,9 +8816,9 @@ public class OutboundApi {
   private PutOutboundCallanalysisresponsesetRequest createPutOutboundCallanalysisresponsesetRequest(String callAnalysisSetId, ResponseSet body) {
     return PutOutboundCallanalysisresponsesetRequest.builder()
             .withCallAnalysisSetId(callAnalysisSetId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8976,7 +8870,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a campaign.
    * 
@@ -9005,9 +8898,9 @@ public class OutboundApi {
   private PutOutboundCampaignRequest createPutOutboundCampaignRequest(String campaignId, Campaign body) {
     return PutOutboundCampaignRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9059,12 +8952,11 @@ public class OutboundApi {
     }
   }
 
-  
   /**
-   * Send notification that an agent&#39;s state changed 
+   * Send notification that an agent's state changed 
    * New agent state.
    * @param campaignId Campaign ID (required)
-   * @param userId Agent&#39;s user ID (required)
+   * @param userId Agent's user ID (required)
    * @param body agent (required)
    * @return String
    * @throws ApiException if the request fails on the server
@@ -9075,10 +8967,10 @@ public class OutboundApi {
   }
 
   /**
-   * Send notification that an agent&#39;s state changed 
+   * Send notification that an agent's state changed 
    * New agent state.
    * @param campaignId Campaign ID (required)
-   * @param userId Agent&#39;s user ID (required)
+   * @param userId Agent's user ID (required)
    * @param body agent (required)
    * @return String
    * @throws IOException if the request fails to be processed
@@ -9090,16 +8982,16 @@ public class OutboundApi {
   private PutOutboundCampaignAgentRequest createPutOutboundCampaignAgentRequest(String campaignId, String userId, Agent body) {
     return PutOutboundCampaignAgentRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Send notification that an agent&#39;s state changed 
+   * Send notification that an agent's state changed 
    * New agent state.
    * @param request The request object
    * @return String
@@ -9118,7 +9010,7 @@ public class OutboundApi {
   }
 
   /**
-   * Send notification that an agent&#39;s state changed 
+   * Send notification that an agent's state changed 
    * New agent state.
    * @param request The request object
    * @return the response
@@ -9146,7 +9038,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update Campaign Rule
    * 
@@ -9175,9 +9066,9 @@ public class OutboundApi {
   private PutOutboundCampaignruleRequest createPutOutboundCampaignruleRequest(String campaignRuleId, CampaignRule body) {
     return PutOutboundCampaignruleRequest.builder()
             .withCampaignRuleId(campaignRuleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9229,7 +9120,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a contact list.
    * 
@@ -9258,9 +9148,9 @@ public class OutboundApi {
   private PutOutboundContactlistRequest createPutOutboundContactlistRequest(String contactListId, ContactList body) {
     return PutOutboundContactlistRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9312,7 +9202,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a contact.
    * 
@@ -9343,11 +9232,11 @@ public class OutboundApi {
   private PutOutboundContactlistContactRequest createPutOutboundContactlistContactRequest(String contactListId, String contactId, DialerContact body) {
     return PutOutboundContactlistContactRequest.builder()
             .withContactListId(contactListId)
-    
+
             .withContactId(contactId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9399,7 +9288,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update Contact List Filter
    * 
@@ -9428,9 +9316,9 @@ public class OutboundApi {
   private PutOutboundContactlistfilterRequest createPutOutboundContactlistfilterRequest(String contactListFilterId, ContactListFilter body) {
     return PutOutboundContactlistfilterRequest.builder()
             .withContactListFilterId(contactListFilterId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9482,7 +9370,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update dialer DNC list
    * 
@@ -9511,9 +9398,9 @@ public class OutboundApi {
   private PutOutboundDnclistRequest createPutOutboundDnclistRequest(String dncListId, DncList body) {
     return PutOutboundDnclistRequest.builder()
             .withDncListId(dncListId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9565,7 +9452,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update an Outbound Messaging Campaign
    * 
@@ -9594,9 +9480,9 @@ public class OutboundApi {
   private PutOutboundMessagingcampaignRequest createPutOutboundMessagingcampaignRequest(String messagingCampaignId, MessagingCampaign body) {
     return PutOutboundMessagingcampaignRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9648,7 +9534,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a Rule Set.
    * 
@@ -9677,9 +9562,9 @@ public class OutboundApi {
   private PutOutboundRulesetRequest createPutOutboundRulesetRequest(String ruleSetId, RuleSet body) {
     return PutOutboundRulesetRequest.builder()
             .withRuleSetId(ruleSetId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9731,7 +9616,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a new campaign schedule.
    * 
@@ -9760,9 +9644,9 @@ public class OutboundApi {
   private PutOutboundSchedulesCampaignRequest createPutOutboundSchedulesCampaignRequest(String campaignId, CampaignSchedule body) {
     return PutOutboundSchedulesCampaignRequest.builder()
             .withCampaignId(campaignId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9814,7 +9698,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update an email campaign schedule.
    * 
@@ -9843,9 +9726,9 @@ public class OutboundApi {
   private PutOutboundSchedulesEmailcampaignRequest createPutOutboundSchedulesEmailcampaignRequest(String emailCampaignId, EmailCampaignSchedule body) {
     return PutOutboundSchedulesEmailcampaignRequest.builder()
             .withEmailCampaignId(emailCampaignId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9897,7 +9780,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a new messaging campaign schedule.
    * 
@@ -9926,9 +9808,9 @@ public class OutboundApi {
   private PutOutboundSchedulesMessagingcampaignRequest createPutOutboundSchedulesMessagingcampaignRequest(String messagingCampaignId, MessagingCampaignSchedule body) {
     return PutOutboundSchedulesMessagingcampaignRequest.builder()
             .withMessagingCampaignId(messagingCampaignId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9980,7 +9862,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a new sequence schedule.
    * 
@@ -10009,9 +9890,9 @@ public class OutboundApi {
   private PutOutboundSchedulesSequenceRequest createPutOutboundSchedulesSequenceRequest(String sequenceId, SequenceSchedule body) {
     return PutOutboundSchedulesSequenceRequest.builder()
             .withSequenceId(sequenceId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10063,7 +9944,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update a new campaign sequence.
    * 
@@ -10092,9 +9972,9 @@ public class OutboundApi {
   private PutOutboundSequenceRequest createPutOutboundSequenceRequest(String sequenceId, CampaignSequence body) {
     return PutOutboundSequenceRequest.builder()
             .withSequenceId(sequenceId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10146,7 +10026,6 @@ public class OutboundApi {
     }
   }
 
-  
   /**
    * Update the Dialer wrap up code mapping.
    * 
@@ -10173,7 +10052,7 @@ public class OutboundApi {
   private PutOutboundWrapupcodemappingsRequest createPutOutboundWrapupcodemappingsRequest(WrapUpCodeMapping body) {
     return PutOutboundWrapupcodemappingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -10225,5 +10104,4 @@ public class OutboundApi {
     }
   }
 
-  
 }

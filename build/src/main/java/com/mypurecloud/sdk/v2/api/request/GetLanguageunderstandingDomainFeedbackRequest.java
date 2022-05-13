@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class GetLanguageunderstandingDomainFeedbackRequest {
-    
+
 	private String domainId;
 	public String getDomainId() {
 		return this.domainId;
@@ -57,7 +57,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setDomainId(domainId);
 	    return this;
 	} 
-	
+
 	private String intentName;
 	public String getIntentName() {
 		return this.intentName;
@@ -71,7 +71,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setIntentName(intentName);
 	    return this;
 	} 
-	
+
 	private String assessment;
 	public String getAssessment() {
 		return this.assessment;
@@ -87,9 +87,9 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	} 
 
 	public enum assessmentValues { 
-		INCORRECT("Incorrect"), 
-		CORRECT("Correct"), 
-		UNKNOWN("Unknown"), 
+		INCORRECT("Incorrect"),
+		CORRECT("Correct"),
+		UNKNOWN("Unknown"),
 		DISABLED("Disabled");
 
 		private String value;
@@ -117,7 +117,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private LocalDate dateStart;
 	public LocalDate getDateStart() {
 		return this.dateStart;
@@ -131,7 +131,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setDateStart(dateStart);
 	    return this;
 	} 
-	
+
 	private LocalDate dateEnd;
 	public LocalDate getDateEnd() {
 		return this.dateEnd;
@@ -145,7 +145,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setDateEnd(dateEnd);
 	    return this;
 	} 
-	
+
 	private Boolean includeDeleted;
 	public Boolean getIncludeDeleted() {
 		return this.includeDeleted;
@@ -159,7 +159,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setIncludeDeleted(includeDeleted);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -173,7 +173,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -187,7 +187,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Boolean enableCursorPagination;
 	public Boolean getEnableCursorPagination() {
 		return this.enableCursorPagination;
@@ -201,7 +201,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setEnableCursorPagination(enableCursorPagination);
 	    return this;
 	} 
-	
+
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -215,7 +215,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    this.setAfter(after);
 	    return this;
 	} 
-	
+
 	private List<String> fields;
 	public List<String> getFields() {
 		return this.fields;
@@ -231,9 +231,9 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	} 
 
 	public enum fieldsValues { 
-		VERSION("version"), 
-		DATECREATED("dateCreated"), 
-		TEXT("text"), 
+		VERSION("version"),
+		DATECREATED("dateCreated"),
+		TEXT("text"),
 		INTENTS("intents");
 
 		private String value;
@@ -261,7 +261,7 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -292,27 +292,37 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback")
                 .withPathParameter("domainId", domainId)
         
+
                 .withQueryParameters("intentName", "", intentName)
         
+
                 .withQueryParameters("assessment", "", assessment)
         
+
                 .withQueryParameters("dateStart", "", dateStart)
         
+
                 .withQueryParameters("dateEnd", "", dateEnd)
         
+
                 .withQueryParameters("includeDeleted", "", includeDeleted)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("enableCursorPagination", "", enableCursorPagination)
         
+
                 .withQueryParameters("after", "", after)
         
+
                 .withQueryParameters("fields", "multi", fields)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -323,12 +333,12 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String domainId) {
 	    return new Builder()
 	            .withRequiredParams(domainId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguageunderstandingDomainFeedbackRequest request;
@@ -337,66 +347,72 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 			request = new GetLanguageunderstandingDomainFeedbackRequest();
 		}
 
-		
+
 		public Builder withDomainId(String domainId) {
 			request.setDomainId(domainId);
 			return this;
 		}
-		
+
 		public Builder withIntentName(String intentName) {
 			request.setIntentName(intentName);
 			return this;
 		}
-		
+
 		public Builder withAssessment(String assessment) {
 			request.setAssessment(assessment);
 			return this;
 		}
 
+
+
+		
 		public Builder withAssessment(assessmentValues assessment) {
 		    request.setAssessment(assessment.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withDateStart(LocalDate dateStart) {
 			request.setDateStart(dateStart);
 			return this;
 		}
-		
+
 		public Builder withDateEnd(LocalDate dateEnd) {
 			request.setDateEnd(dateEnd);
 			return this;
 		}
-		
+
 		public Builder withIncludeDeleted(Boolean includeDeleted) {
 			request.setIncludeDeleted(includeDeleted);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withEnableCursorPagination(Boolean enableCursorPagination) {
 			request.setEnableCursorPagination(enableCursorPagination);
 			return this;
 		}
-		
+
 		public Builder withAfter(String after) {
 			request.setAfter(after);
 			return this;
 		}
-		
+
 		public Builder withFields(List<String> fields) {
 			request.setFields(fields);
 			return this;
 		}
+
+
 
 		public Builder withFieldsEnumValues(List<fieldsValues> fields) {
 		    List<String> stringList = new ArrayList<>();
@@ -406,15 +422,15 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	      request.setFields(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String domainId) {
 			request.setDomainId(domainId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLanguageunderstandingDomainFeedbackRequest build() {
             

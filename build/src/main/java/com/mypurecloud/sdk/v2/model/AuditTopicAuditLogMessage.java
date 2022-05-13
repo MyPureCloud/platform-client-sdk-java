@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -373,7 +374,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage userId(String userId) {
@@ -390,7 +391,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage userHomeOrgId(String userHomeOrgId) {
@@ -407,7 +408,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.userHomeOrgId = userHomeOrgId;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage username(AuditTopicDomainEntityRef username) {
@@ -424,7 +425,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.username = username;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage userDisplay(String userDisplay) {
@@ -441,7 +442,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.userDisplay = userDisplay;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage clientId(AuditTopicAddressableEntityRef clientId) {
@@ -458,7 +459,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.clientId = clientId;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage remoteIp(List<String> remoteIp) {
@@ -475,7 +476,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.remoteIp = remoteIp;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage serviceName(ServiceNameEnum serviceName) {
@@ -492,7 +493,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage eventTime(Date eventTime) {
@@ -509,7 +510,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage message(AuditTopicMessageInfo message) {
@@ -526,7 +527,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage action(ActionEnum action) {
@@ -543,7 +544,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage entityType(EntityTypeEnum entityType) {
@@ -560,7 +561,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage entity(AuditTopicDomainEntityRef entity) {
@@ -577,7 +578,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage propertyChanges(List<AuditTopicPropertyChange> propertyChanges) {
@@ -594,7 +595,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.propertyChanges = propertyChanges;
   }
 
-  
+
   /**
    **/
   public AuditTopicAuditLogMessage context(Map<String, String> context) {
@@ -611,7 +612,6 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     this.context = context;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -622,21 +622,22 @@ public class AuditTopicAuditLogMessage  implements Serializable {
       return false;
     }
     AuditTopicAuditLogMessage auditTopicAuditLogMessage = (AuditTopicAuditLogMessage) o;
+
     return Objects.equals(this.id, auditTopicAuditLogMessage.id) &&
-        Objects.equals(this.userId, auditTopicAuditLogMessage.userId) &&
-        Objects.equals(this.userHomeOrgId, auditTopicAuditLogMessage.userHomeOrgId) &&
-        Objects.equals(this.username, auditTopicAuditLogMessage.username) &&
-        Objects.equals(this.userDisplay, auditTopicAuditLogMessage.userDisplay) &&
-        Objects.equals(this.clientId, auditTopicAuditLogMessage.clientId) &&
-        Objects.equals(this.remoteIp, auditTopicAuditLogMessage.remoteIp) &&
-        Objects.equals(this.serviceName, auditTopicAuditLogMessage.serviceName) &&
-        Objects.equals(this.eventTime, auditTopicAuditLogMessage.eventTime) &&
-        Objects.equals(this.message, auditTopicAuditLogMessage.message) &&
-        Objects.equals(this.action, auditTopicAuditLogMessage.action) &&
-        Objects.equals(this.entityType, auditTopicAuditLogMessage.entityType) &&
-        Objects.equals(this.entity, auditTopicAuditLogMessage.entity) &&
-        Objects.equals(this.propertyChanges, auditTopicAuditLogMessage.propertyChanges) &&
-        Objects.equals(this.context, auditTopicAuditLogMessage.context);
+            Objects.equals(this.userId, auditTopicAuditLogMessage.userId) &&
+            Objects.equals(this.userHomeOrgId, auditTopicAuditLogMessage.userHomeOrgId) &&
+            Objects.equals(this.username, auditTopicAuditLogMessage.username) &&
+            Objects.equals(this.userDisplay, auditTopicAuditLogMessage.userDisplay) &&
+            Objects.equals(this.clientId, auditTopicAuditLogMessage.clientId) &&
+            Objects.equals(this.remoteIp, auditTopicAuditLogMessage.remoteIp) &&
+            Objects.equals(this.serviceName, auditTopicAuditLogMessage.serviceName) &&
+            Objects.equals(this.eventTime, auditTopicAuditLogMessage.eventTime) &&
+            Objects.equals(this.message, auditTopicAuditLogMessage.message) &&
+            Objects.equals(this.action, auditTopicAuditLogMessage.action) &&
+            Objects.equals(this.entityType, auditTopicAuditLogMessage.entityType) &&
+            Objects.equals(this.entity, auditTopicAuditLogMessage.entity) &&
+            Objects.equals(this.propertyChanges, auditTopicAuditLogMessage.propertyChanges) &&
+            Objects.equals(this.context, auditTopicAuditLogMessage.context);
   }
 
   @Override

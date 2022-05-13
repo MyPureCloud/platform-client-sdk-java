@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryChange;
@@ -48,7 +49,7 @@ public class BuAgentScheduleHistoryResponse  implements Serializable {
     this.priorPublishedSchedules = priorPublishedSchedules;
   }
 
-  
+
   /**
    * The originally published agent schedules
    **/
@@ -66,7 +67,7 @@ public class BuAgentScheduleHistoryResponse  implements Serializable {
     this.basePublishedSchedule = basePublishedSchedule;
   }
 
-  
+
   /**
    * The changes dropped from the schedule history. This will happen if the schedule history is too large
    **/
@@ -84,7 +85,7 @@ public class BuAgentScheduleHistoryResponse  implements Serializable {
     this.droppedChanges = droppedChanges;
   }
 
-  
+
   /**
    * The list of changes for the schedule history
    **/
@@ -102,7 +103,6 @@ public class BuAgentScheduleHistoryResponse  implements Serializable {
     this.changes = changes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +113,11 @@ public class BuAgentScheduleHistoryResponse  implements Serializable {
       return false;
     }
     BuAgentScheduleHistoryResponse buAgentScheduleHistoryResponse = (BuAgentScheduleHistoryResponse) o;
+
     return Objects.equals(this.priorPublishedSchedules, buAgentScheduleHistoryResponse.priorPublishedSchedules) &&
-        Objects.equals(this.basePublishedSchedule, buAgentScheduleHistoryResponse.basePublishedSchedule) &&
-        Objects.equals(this.droppedChanges, buAgentScheduleHistoryResponse.droppedChanges) &&
-        Objects.equals(this.changes, buAgentScheduleHistoryResponse.changes);
+            Objects.equals(this.basePublishedSchedule, buAgentScheduleHistoryResponse.basePublishedSchedule) &&
+            Objects.equals(this.droppedChanges, buAgentScheduleHistoryResponse.droppedChanges) &&
+            Objects.equals(this.changes, buAgentScheduleHistoryResponse.changes);
   }
 
   @Override

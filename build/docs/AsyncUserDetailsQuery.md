@@ -23,9 +23,9 @@ title: AsyncUserDetailsQuery
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASC | &quot;asc&quot; |
-| DESC | &quot;desc&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASC | &quot;asc&quot; | 
+| DESC | &quot;desc&quot; | 
 {: class="table table-striped"}
 
 

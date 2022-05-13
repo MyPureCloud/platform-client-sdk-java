@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentActions;
@@ -43,7 +44,7 @@ public class ButtonComponent  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * The button actions (Deprecated).
    **/
@@ -61,7 +62,6 @@ public class ButtonComponent  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class ButtonComponent  implements Serializable {
       return false;
     }
     ButtonComponent buttonComponent = (ButtonComponent) o;
+
     return Objects.equals(this.title, buttonComponent.title) &&
-        Objects.equals(this.actions, buttonComponent.actions);
+            Objects.equals(this.actions, buttonComponent.actions);
   }
 
   @Override

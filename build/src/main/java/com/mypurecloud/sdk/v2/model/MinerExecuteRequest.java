@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class MinerExecuteRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "2020-04-01", value = "Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Wed Apr 01 00:00:00 UTC 2020", value = "Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStart")
   public LocalDate getDateStart() {
     return dateStart;
@@ -96,7 +97,7 @@ public class MinerExecuteRequest  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -105,7 +106,7 @@ public class MinerExecuteRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "2020-04-01", value = "End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "Wed Apr 01 00:00:00 UTC 2020", value = "End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEnd")
   public LocalDate getDateEnd() {
     return dateEnd;
@@ -114,7 +115,7 @@ public class MinerExecuteRequest  implements Serializable {
     this.dateEnd = dateEnd;
   }
 
-  
+
   /**
    * Location of input conversations.
    **/
@@ -132,7 +133,7 @@ public class MinerExecuteRequest  implements Serializable {
     this.uploadKey = uploadKey;
   }
 
-  
+
   /**
    * Media type for filtering conversations.
    **/
@@ -150,7 +151,7 @@ public class MinerExecuteRequest  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * List of queue IDs for filtering conversations.
    **/
@@ -159,7 +160,7 @@ public class MinerExecuteRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "[ \"7fe8a4ce-7435-4c78-a83f-47c3943e53eb\", \"18c744bf-34d5-452a-b6d6-9af95628aa50\"]", value = "List of queue IDs for filtering conversations.")
+  @ApiModelProperty(example = "[ &quot;7fe8a4ce-7435-4c78-a83f-47c3943e53eb&quot;, &quot;18c744bf-34d5-452a-b6d6-9af95628aa50&quot;]", value = "List of queue IDs for filtering conversations.")
   @JsonProperty("queueIds")
   public List<String> getQueueIds() {
     return queueIds;
@@ -168,7 +169,6 @@ public class MinerExecuteRequest  implements Serializable {
     this.queueIds = queueIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,11 +179,12 @@ public class MinerExecuteRequest  implements Serializable {
       return false;
     }
     MinerExecuteRequest minerExecuteRequest = (MinerExecuteRequest) o;
+
     return Objects.equals(this.dateStart, minerExecuteRequest.dateStart) &&
-        Objects.equals(this.dateEnd, minerExecuteRequest.dateEnd) &&
-        Objects.equals(this.uploadKey, minerExecuteRequest.uploadKey) &&
-        Objects.equals(this.mediaType, minerExecuteRequest.mediaType) &&
-        Objects.equals(this.queueIds, minerExecuteRequest.queueIds);
+            Objects.equals(this.dateEnd, minerExecuteRequest.dateEnd) &&
+            Objects.equals(this.uploadKey, minerExecuteRequest.uploadKey) &&
+            Objects.equals(this.mediaType, minerExecuteRequest.mediaType) &&
+            Objects.equals(this.queueIds, minerExecuteRequest.queueIds);
   }
 
   @Override

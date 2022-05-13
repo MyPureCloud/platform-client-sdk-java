@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -118,7 +119,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The user's system presence
    **/
@@ -136,7 +137,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-  
+
   /**
    * The identifier for the user's organization presence
    **/
@@ -154,7 +155,6 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.organizationPresenceId = organizationPresenceId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,10 +165,11 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
       return false;
     }
     AnalyticsUserPresenceRecord analyticsUserPresenceRecord = (AnalyticsUserPresenceRecord) o;
+
     return Objects.equals(this.startTime, analyticsUserPresenceRecord.startTime) &&
-        Objects.equals(this.endTime, analyticsUserPresenceRecord.endTime) &&
-        Objects.equals(this.systemPresence, analyticsUserPresenceRecord.systemPresence) &&
-        Objects.equals(this.organizationPresenceId, analyticsUserPresenceRecord.organizationPresenceId);
+            Objects.equals(this.endTime, analyticsUserPresenceRecord.endTime) &&
+            Objects.equals(this.systemPresence, analyticsUserPresenceRecord.systemPresence) &&
+            Objects.equals(this.organizationPresenceId, analyticsUserPresenceRecord.organizationPresenceId);
   }
 
   @Override

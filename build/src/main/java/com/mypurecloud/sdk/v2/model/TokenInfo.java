@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
@@ -38,28 +39,28 @@ public class TokenInfo  implements Serializable {
     return organization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The token's home organization")
   @JsonProperty("homeOrganization")
   public NamedEntity getHomeOrganization() {
     return homeOrganization;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of scopes authorized for the OAuth client")
   @JsonProperty("authorizedScope")
   public List<String> getAuthorizedScope() {
     return authorizedScope;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Only present when a user is a clone of trustee user in the trustor org.")
   @JsonProperty("clonedUser")
   public TokenInfoClonedUser getClonedUser() {
     return clonedUser;
   }
 
-  
+
   /**
    **/
   public TokenInfo oAuthClient(OrgOAuthClient oAuthClient) {
@@ -76,7 +77,6 @@ public class TokenInfo  implements Serializable {
     this.oAuthClient = oAuthClient;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,11 +87,12 @@ public class TokenInfo  implements Serializable {
       return false;
     }
     TokenInfo tokenInfo = (TokenInfo) o;
+
     return Objects.equals(this.organization, tokenInfo.organization) &&
-        Objects.equals(this.homeOrganization, tokenInfo.homeOrganization) &&
-        Objects.equals(this.authorizedScope, tokenInfo.authorizedScope) &&
-        Objects.equals(this.clonedUser, tokenInfo.clonedUser) &&
-        Objects.equals(this.oAuthClient, tokenInfo.oAuthClient);
+            Objects.equals(this.homeOrganization, tokenInfo.homeOrganization) &&
+            Objects.equals(this.authorizedScope, tokenInfo.authorizedScope) &&
+            Objects.equals(this.clonedUser, tokenInfo.clonedUser) &&
+            Objects.equals(this.oAuthClient, tokenInfo.oAuthClient);
   }
 
   @Override

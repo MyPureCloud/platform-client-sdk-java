@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -41,49 +42,48 @@ public class Leaderboard  implements Serializable {
     return division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metric id if the leaderboard is about a specific metric")
   @JsonProperty("metric")
   public AddressableEntityRef getMetric() {
     return metric;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStartWorkday")
   public LocalDate getDateStartWorkday() {
     return dateStartWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEndWorkday")
   public LocalDate getDateEndWorkday() {
     return dateEndWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of leaders generated.")
   @JsonProperty("leaders")
   public List<LeaderboardItem> getLeaders() {
     return leaders;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The requesting user's rank")
   @JsonProperty("userRank")
   public LeaderboardItem getUserRank() {
     return userRank;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
   @JsonProperty("performanceProfile")
   public AddressableEntityRef getPerformanceProfile() {
     return performanceProfile;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,13 +94,14 @@ public class Leaderboard  implements Serializable {
       return false;
     }
     Leaderboard leaderboard = (Leaderboard) o;
+
     return Objects.equals(this.division, leaderboard.division) &&
-        Objects.equals(this.metric, leaderboard.metric) &&
-        Objects.equals(this.dateStartWorkday, leaderboard.dateStartWorkday) &&
-        Objects.equals(this.dateEndWorkday, leaderboard.dateEndWorkday) &&
-        Objects.equals(this.leaders, leaderboard.leaders) &&
-        Objects.equals(this.userRank, leaderboard.userRank) &&
-        Objects.equals(this.performanceProfile, leaderboard.performanceProfile);
+            Objects.equals(this.metric, leaderboard.metric) &&
+            Objects.equals(this.dateStartWorkday, leaderboard.dateStartWorkday) &&
+            Objects.equals(this.dateEndWorkday, leaderboard.dateEndWorkday) &&
+            Objects.equals(this.leaders, leaderboard.leaders) &&
+            Objects.equals(this.userRank, leaderboard.userRank) &&
+            Objects.equals(this.performanceProfile, leaderboard.performanceProfile);
   }
 
   @Override

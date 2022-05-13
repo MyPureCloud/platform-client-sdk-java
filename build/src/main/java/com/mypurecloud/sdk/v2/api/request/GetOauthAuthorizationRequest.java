@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetOauthAuthorizationRequest {
-    
+
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -47,7 +47,7 @@ public class GetOauthAuthorizationRequest {
 	    this.setClientId(clientId);
 	    return this;
 	} 
-	
+
 	private String acceptLanguage;
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
@@ -61,7 +61,7 @@ public class GetOauthAuthorizationRequest {
 	    this.setAcceptLanguage(acceptLanguage);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -94,7 +94,7 @@ public class GetOauthAuthorizationRequest {
         
                 .withHeaderParameter("Accept-Language", acceptLanguage)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class GetOauthAuthorizationRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String clientId) {
 	    return new Builder()
 	            .withRequiredParams(clientId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOauthAuthorizationRequest request;
@@ -119,25 +119,25 @@ public class GetOauthAuthorizationRequest {
 			request = new GetOauthAuthorizationRequest();
 		}
 
-		
+
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
-		
+
 		public Builder withAcceptLanguage(String acceptLanguage) {
 			request.setAcceptLanguage(acceptLanguage);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String clientId) {
 			request.setClientId(clientId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetOauthAuthorizationRequest build() {
             

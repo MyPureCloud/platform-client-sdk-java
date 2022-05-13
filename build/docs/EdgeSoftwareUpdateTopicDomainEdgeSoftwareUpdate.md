@@ -22,16 +22,16 @@ title: EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;NONE&quot; |
-| INIT | &quot;INIT&quot; |
-| IN_PROGRESS | &quot;IN_PROGRESS&quot; |
-| EXPIRED | &quot;EXPIRED&quot; |
-| EXCEPTION | &quot;EXCEPTION&quot; |
-| ABORTED | &quot;ABORTED&quot; |
-| FAILED | &quot;FAILED&quot; |
-| SUCCEEDED | &quot;SUCCEEDED&quot; |
-| DELETE | &quot;DELETE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;NONE&quot; | 
+| INIT | &quot;INIT&quot; | 
+| IN_PROGRESS | &quot;IN_PROGRESS&quot; | 
+| EXPIRED | &quot;EXPIRED&quot; | 
+| EXCEPTION | &quot;EXCEPTION&quot; | 
+| ABORTED | &quot;ABORTED&quot; | 
+| FAILED | &quot;FAILED&quot; | 
+| SUCCEEDED | &quot;SUCCEEDED&quot; | 
+| DELETE | &quot;DELETE&quot; | 
 {: class="table table-striped"}
 
 

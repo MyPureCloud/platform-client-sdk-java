@@ -21,12 +21,12 @@ title: KeyRotationSchedule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DISABLED | &quot;DISABLED&quot; |
-| DAILY | &quot;DAILY&quot; |
-| WEEKLY | &quot;WEEKLY&quot; |
-| MONTHLY | &quot;MONTHLY&quot; |
-| YEARLY | &quot;YEARLY&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DISABLED | &quot;DISABLED&quot; | 
+| DAILY | &quot;DAILY&quot; | 
+| WEEKLY | &quot;WEEKLY&quot; | 
+| MONTHLY | &quot;MONTHLY&quot; | 
+| YEARLY | &quot;YEARLY&quot; | 
 {: class="table table-striped"}
 
 

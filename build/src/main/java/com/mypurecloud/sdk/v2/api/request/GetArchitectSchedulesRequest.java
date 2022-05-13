@@ -20,59 +20,58 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Operation;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
-import com.mypurecloud.sdk.v2.model.DependencyStatus;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableExportJob;
+import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
+import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
+import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Flow;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowMilestone;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowVersion;
+import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
+import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
-import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
+import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroup;
 import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
-import com.mypurecloud.sdk.v2.model.Flow;
-import com.mypurecloud.sdk.v2.model.FlowVersion;
-import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTable;
-import com.mypurecloud.sdk.v2.model.DataTableExportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
-import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
-import com.mypurecloud.sdk.v2.model.FlowMilestone;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcome;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
-import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 public class GetArchitectSchedulesRequest {
-    
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -86,7 +85,7 @@ public class GetArchitectSchedulesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -100,7 +99,7 @@ public class GetArchitectSchedulesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -114,7 +113,7 @@ public class GetArchitectSchedulesRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -128,7 +127,7 @@ public class GetArchitectSchedulesRequest {
 	    this.setSortOrder(sortOrder);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -142,7 +141,7 @@ public class GetArchitectSchedulesRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private List<String> divisionId;
 	public List<String> getDivisionId() {
 		return this.divisionId;
@@ -156,7 +155,7 @@ public class GetArchitectSchedulesRequest {
 	    this.setDivisionId(divisionId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -180,19 +179,25 @@ public class GetArchitectSchedulesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/architect/schedules")
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("divisionId", "multi", divisionId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -203,7 +208,7 @@ public class GetArchitectSchedulesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetArchitectSchedulesRequest request;
@@ -212,39 +217,39 @@ public class GetArchitectSchedulesRequest {
 			request = new GetArchitectSchedulesRequest();
 		}
 
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withDivisionId(List<String> divisionId) {
 			request.setDivisionId(divisionId);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetArchitectSchedulesRequest build() {
             

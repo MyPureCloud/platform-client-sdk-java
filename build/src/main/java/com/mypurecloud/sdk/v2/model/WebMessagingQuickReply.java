@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class WebMessagingQuickReply  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.
    **/
@@ -109,7 +110,7 @@ public class WebMessagingQuickReply  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * URL of an image associated with the quick reply.
    **/
@@ -127,7 +128,7 @@ public class WebMessagingQuickReply  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * Specifies the type of action that is triggered upon clicking the quick reply.
    **/
@@ -145,7 +146,6 @@ public class WebMessagingQuickReply  implements Serializable {
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -156,10 +156,11 @@ public class WebMessagingQuickReply  implements Serializable {
       return false;
     }
     WebMessagingQuickReply webMessagingQuickReply = (WebMessagingQuickReply) o;
+
     return Objects.equals(this.text, webMessagingQuickReply.text) &&
-        Objects.equals(this.payload, webMessagingQuickReply.payload) &&
-        Objects.equals(this.image, webMessagingQuickReply.image) &&
-        Objects.equals(this.action, webMessagingQuickReply.action);
+            Objects.equals(this.payload, webMessagingQuickReply.payload) &&
+            Objects.equals(this.image, webMessagingQuickReply.image) &&
+            Objects.equals(this.action, webMessagingQuickReply.action);
   }
 
   @Override

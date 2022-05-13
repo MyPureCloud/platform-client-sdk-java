@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class DataTableExportJob  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DataTableExportJob name(String name) {
@@ -108,7 +109,7 @@ public class DataTableExportJob  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The PureCloud user who started the export job
    **/
@@ -126,7 +127,7 @@ public class DataTableExportJob  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    * The status of the export job
    **/
@@ -144,7 +145,7 @@ public class DataTableExportJob  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -162,7 +163,7 @@ public class DataTableExportJob  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The timestamp of when the export stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -180,7 +181,7 @@ public class DataTableExportJob  implements Serializable {
     this.dateCompleted = dateCompleted;
   }
 
-  
+
   /**
    * The URL of the location at which the caller can download the export file, when available
    **/
@@ -198,7 +199,7 @@ public class DataTableExportJob  implements Serializable {
     this.downloadURI = downloadURI;
   }
 
-  
+
   /**
    * Any error information, or null of the processing is not in an error state
    **/
@@ -216,7 +217,7 @@ public class DataTableExportJob  implements Serializable {
     this.errorInformation = errorInformation;
   }
 
-  
+
   /**
    * The current count of the number of records processed
    **/
@@ -234,14 +235,13 @@ public class DataTableExportJob  implements Serializable {
     this.countRecordsProcessed = countRecordsProcessed;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -252,16 +252,17 @@ public class DataTableExportJob  implements Serializable {
       return false;
     }
     DataTableExportJob dataTableExportJob = (DataTableExportJob) o;
+
     return Objects.equals(this.id, dataTableExportJob.id) &&
-        Objects.equals(this.name, dataTableExportJob.name) &&
-        Objects.equals(this.owner, dataTableExportJob.owner) &&
-        Objects.equals(this.status, dataTableExportJob.status) &&
-        Objects.equals(this.dateCreated, dataTableExportJob.dateCreated) &&
-        Objects.equals(this.dateCompleted, dataTableExportJob.dateCompleted) &&
-        Objects.equals(this.downloadURI, dataTableExportJob.downloadURI) &&
-        Objects.equals(this.errorInformation, dataTableExportJob.errorInformation) &&
-        Objects.equals(this.countRecordsProcessed, dataTableExportJob.countRecordsProcessed) &&
-        Objects.equals(this.selfUri, dataTableExportJob.selfUri);
+            Objects.equals(this.name, dataTableExportJob.name) &&
+            Objects.equals(this.owner, dataTableExportJob.owner) &&
+            Objects.equals(this.status, dataTableExportJob.status) &&
+            Objects.equals(this.dateCreated, dataTableExportJob.dateCreated) &&
+            Objects.equals(this.dateCompleted, dataTableExportJob.dateCompleted) &&
+            Objects.equals(this.downloadURI, dataTableExportJob.downloadURI) &&
+            Objects.equals(this.errorInformation, dataTableExportJob.errorInformation) &&
+            Objects.equals(this.countRecordsProcessed, dataTableExportJob.countRecordsProcessed) &&
+            Objects.equals(this.selfUri, dataTableExportJob.selfUri);
   }
 
   @Override

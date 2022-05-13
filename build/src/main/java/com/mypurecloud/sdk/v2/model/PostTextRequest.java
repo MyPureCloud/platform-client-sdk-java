@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -169,7 +170,7 @@ public class PostTextRequest  implements Serializable {
     this.botId = botId;
   }
 
-  
+
   /**
    * Alias/Version of the bot
    **/
@@ -187,7 +188,7 @@ public class PostTextRequest  implements Serializable {
     this.botAlias = botAlias;
   }
 
-  
+
   /**
    * the integration service id for the bot's credentials
    **/
@@ -205,7 +206,7 @@ public class PostTextRequest  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
+
   /**
    * GUID for this bot's session
    **/
@@ -223,7 +224,7 @@ public class PostTextRequest  implements Serializable {
     this.botSessionId = botSessionId;
   }
 
-  
+
   /**
    * Message to send to the bot
    **/
@@ -241,7 +242,7 @@ public class PostTextRequest  implements Serializable {
     this.postTextMessage = postTextMessage;
   }
 
-  
+
   /**
    * The launguage code the bot will run under
    **/
@@ -259,7 +260,7 @@ public class PostTextRequest  implements Serializable {
     this.languageCode = languageCode;
   }
 
-  
+
   /**
    * Override timeout for the bot session. This should be greater than 10 minutes.
    **/
@@ -277,7 +278,7 @@ public class PostTextRequest  implements Serializable {
     this.botSessionTimeoutMinutes = botSessionTimeoutMinutes;
   }
 
-  
+
   /**
    * The channels this bot is utilizing
    **/
@@ -295,7 +296,7 @@ public class PostTextRequest  implements Serializable {
     this.botChannels = botChannels;
   }
 
-  
+
   /**
    * Id for tracking the activity - this will be returned in the response
    **/
@@ -313,7 +314,7 @@ public class PostTextRequest  implements Serializable {
     this.botCorrelationId = botCorrelationId;
   }
 
-  
+
   /**
    * If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
    **/
@@ -331,7 +332,7 @@ public class PostTextRequest  implements Serializable {
     this.messagingPlatformType = messagingPlatformType;
   }
 
-  
+
   /**
    * Provider specific settings, if any
    **/
@@ -349,7 +350,7 @@ public class PostTextRequest  implements Serializable {
     this.amazonLexRequest = amazonLexRequest;
   }
 
-  
+
   /**
    * Provider specific settings, if any
    **/
@@ -367,7 +368,7 @@ public class PostTextRequest  implements Serializable {
     this.googleDialogflow = googleDialogflow;
   }
 
-  
+
   /**
    * Provider specific settings, if any
    **/
@@ -385,7 +386,7 @@ public class PostTextRequest  implements Serializable {
     this.genesysBotConnector = genesysBotConnector;
   }
 
-  
+
   /**
    * Provider specific settings, if any
    **/
@@ -403,7 +404,6 @@ public class PostTextRequest  implements Serializable {
     this.nuanceMixDlg = nuanceMixDlg;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -414,20 +414,21 @@ public class PostTextRequest  implements Serializable {
       return false;
     }
     PostTextRequest postTextRequest = (PostTextRequest) o;
+
     return Objects.equals(this.botId, postTextRequest.botId) &&
-        Objects.equals(this.botAlias, postTextRequest.botAlias) &&
-        Objects.equals(this.integrationId, postTextRequest.integrationId) &&
-        Objects.equals(this.botSessionId, postTextRequest.botSessionId) &&
-        Objects.equals(this.postTextMessage, postTextRequest.postTextMessage) &&
-        Objects.equals(this.languageCode, postTextRequest.languageCode) &&
-        Objects.equals(this.botSessionTimeoutMinutes, postTextRequest.botSessionTimeoutMinutes) &&
-        Objects.equals(this.botChannels, postTextRequest.botChannels) &&
-        Objects.equals(this.botCorrelationId, postTextRequest.botCorrelationId) &&
-        Objects.equals(this.messagingPlatformType, postTextRequest.messagingPlatformType) &&
-        Objects.equals(this.amazonLexRequest, postTextRequest.amazonLexRequest) &&
-        Objects.equals(this.googleDialogflow, postTextRequest.googleDialogflow) &&
-        Objects.equals(this.genesysBotConnector, postTextRequest.genesysBotConnector) &&
-        Objects.equals(this.nuanceMixDlg, postTextRequest.nuanceMixDlg);
+            Objects.equals(this.botAlias, postTextRequest.botAlias) &&
+            Objects.equals(this.integrationId, postTextRequest.integrationId) &&
+            Objects.equals(this.botSessionId, postTextRequest.botSessionId) &&
+            Objects.equals(this.postTextMessage, postTextRequest.postTextMessage) &&
+            Objects.equals(this.languageCode, postTextRequest.languageCode) &&
+            Objects.equals(this.botSessionTimeoutMinutes, postTextRequest.botSessionTimeoutMinutes) &&
+            Objects.equals(this.botChannels, postTextRequest.botChannels) &&
+            Objects.equals(this.botCorrelationId, postTextRequest.botCorrelationId) &&
+            Objects.equals(this.messagingPlatformType, postTextRequest.messagingPlatformType) &&
+            Objects.equals(this.amazonLexRequest, postTextRequest.amazonLexRequest) &&
+            Objects.equals(this.googleDialogflow, postTextRequest.googleDialogflow) &&
+            Objects.equals(this.genesysBotConnector, postTextRequest.genesysBotConnector) &&
+            Objects.equals(this.nuanceMixDlg, postTextRequest.nuanceMixDlg);
   }
 
   @Override

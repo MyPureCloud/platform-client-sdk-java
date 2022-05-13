@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -34,7 +34,7 @@ public class SecurityProfile  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SecurityProfile name(String name) {
@@ -51,7 +51,7 @@ public class SecurityProfile  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SecurityProfile permissions(List<String> permissions) {
@@ -68,14 +68,13 @@ public class SecurityProfile  implements Serializable {
     this.permissions = permissions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,10 +85,11 @@ public class SecurityProfile  implements Serializable {
       return false;
     }
     SecurityProfile securityProfile = (SecurityProfile) o;
+
     return Objects.equals(this.id, securityProfile.id) &&
-        Objects.equals(this.name, securityProfile.name) &&
-        Objects.equals(this.permissions, securityProfile.permissions) &&
-        Objects.equals(this.selfUri, securityProfile.selfUri);
+            Objects.equals(this.name, securityProfile.name) &&
+            Objects.equals(this.permissions, securityProfile.permissions) &&
+            Objects.equals(this.selfUri, securityProfile.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,7 +151,7 @@ public class RecordingMetadata  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public RecordingMetadata name(String name) {
@@ -167,7 +168,7 @@ public class RecordingMetadata  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public RecordingMetadata conversationId(String conversationId) {
@@ -184,7 +185,7 @@ public class RecordingMetadata  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public RecordingMetadata path(String path) {
@@ -201,7 +202,7 @@ public class RecordingMetadata  implements Serializable {
     this.path = path;
   }
 
-  
+
   /**
    * The start time of the recording for screen recordings. Null for other types.
    **/
@@ -219,7 +220,7 @@ public class RecordingMetadata  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public RecordingMetadata endTime(String endTime) {
@@ -236,7 +237,7 @@ public class RecordingMetadata  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The type of media that the recording is. At the moment that could be audio, chat, email, or message.
    **/
@@ -254,7 +255,7 @@ public class RecordingMetadata  implements Serializable {
     this.media = media;
   }
 
-  
+
   /**
    * Annotations that belong to the recording. Populated when recording filestate is AVAILABLE.
    **/
@@ -272,7 +273,7 @@ public class RecordingMetadata  implements Serializable {
     this.annotations = annotations;
   }
 
-  
+
   /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
    **/
@@ -290,7 +291,7 @@ public class RecordingMetadata  implements Serializable {
     this.fileState = fileState;
   }
 
-  
+
   /**
    * The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -308,7 +309,7 @@ public class RecordingMetadata  implements Serializable {
     this.restoreExpirationTime = restoreExpirationTime;
   }
 
-  
+
   /**
    * The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -326,7 +327,7 @@ public class RecordingMetadata  implements Serializable {
     this.archiveDate = archiveDate;
   }
 
-  
+
   /**
    * The type of archive medium used. Example: CloudArchive
    **/
@@ -344,7 +345,7 @@ public class RecordingMetadata  implements Serializable {
     this.archiveMedium = archiveMedium;
   }
 
-  
+
   /**
    * The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -362,7 +363,7 @@ public class RecordingMetadata  implements Serializable {
     this.deleteDate = deleteDate;
   }
 
-  
+
   /**
    * The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -380,7 +381,7 @@ public class RecordingMetadata  implements Serializable {
     this.exportDate = exportDate;
   }
 
-  
+
   /**
    * The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -398,7 +399,7 @@ public class RecordingMetadata  implements Serializable {
     this.exportedDate = exportedDate;
   }
 
-  
+
   /**
    * How many archive restorations the organization is allowed to have.
    **/
@@ -416,7 +417,7 @@ public class RecordingMetadata  implements Serializable {
     this.maxAllowedRestorationsForOrg = maxAllowedRestorationsForOrg;
   }
 
-  
+
   /**
    * The remaining archive restorations the organization has.
    **/
@@ -434,7 +435,7 @@ public class RecordingMetadata  implements Serializable {
     this.remainingRestorationsAllowedForOrg = remainingRestorationsAllowedForOrg;
   }
 
-  
+
   /**
    * The session id represents an external resource id, such as email, call, chat, etc
    **/
@@ -452,14 +453,13 @@ public class RecordingMetadata  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -470,25 +470,26 @@ public class RecordingMetadata  implements Serializable {
       return false;
     }
     RecordingMetadata recordingMetadata = (RecordingMetadata) o;
+
     return Objects.equals(this.id, recordingMetadata.id) &&
-        Objects.equals(this.name, recordingMetadata.name) &&
-        Objects.equals(this.conversationId, recordingMetadata.conversationId) &&
-        Objects.equals(this.path, recordingMetadata.path) &&
-        Objects.equals(this.startTime, recordingMetadata.startTime) &&
-        Objects.equals(this.endTime, recordingMetadata.endTime) &&
-        Objects.equals(this.media, recordingMetadata.media) &&
-        Objects.equals(this.annotations, recordingMetadata.annotations) &&
-        Objects.equals(this.fileState, recordingMetadata.fileState) &&
-        Objects.equals(this.restoreExpirationTime, recordingMetadata.restoreExpirationTime) &&
-        Objects.equals(this.archiveDate, recordingMetadata.archiveDate) &&
-        Objects.equals(this.archiveMedium, recordingMetadata.archiveMedium) &&
-        Objects.equals(this.deleteDate, recordingMetadata.deleteDate) &&
-        Objects.equals(this.exportDate, recordingMetadata.exportDate) &&
-        Objects.equals(this.exportedDate, recordingMetadata.exportedDate) &&
-        Objects.equals(this.maxAllowedRestorationsForOrg, recordingMetadata.maxAllowedRestorationsForOrg) &&
-        Objects.equals(this.remainingRestorationsAllowedForOrg, recordingMetadata.remainingRestorationsAllowedForOrg) &&
-        Objects.equals(this.sessionId, recordingMetadata.sessionId) &&
-        Objects.equals(this.selfUri, recordingMetadata.selfUri);
+            Objects.equals(this.name, recordingMetadata.name) &&
+            Objects.equals(this.conversationId, recordingMetadata.conversationId) &&
+            Objects.equals(this.path, recordingMetadata.path) &&
+            Objects.equals(this.startTime, recordingMetadata.startTime) &&
+            Objects.equals(this.endTime, recordingMetadata.endTime) &&
+            Objects.equals(this.media, recordingMetadata.media) &&
+            Objects.equals(this.annotations, recordingMetadata.annotations) &&
+            Objects.equals(this.fileState, recordingMetadata.fileState) &&
+            Objects.equals(this.restoreExpirationTime, recordingMetadata.restoreExpirationTime) &&
+            Objects.equals(this.archiveDate, recordingMetadata.archiveDate) &&
+            Objects.equals(this.archiveMedium, recordingMetadata.archiveMedium) &&
+            Objects.equals(this.deleteDate, recordingMetadata.deleteDate) &&
+            Objects.equals(this.exportDate, recordingMetadata.exportDate) &&
+            Objects.equals(this.exportedDate, recordingMetadata.exportedDate) &&
+            Objects.equals(this.maxAllowedRestorationsForOrg, recordingMetadata.maxAllowedRestorationsForOrg) &&
+            Objects.equals(this.remainingRestorationsAllowedForOrg, recordingMetadata.remainingRestorationsAllowedForOrg) &&
+            Objects.equals(this.sessionId, recordingMetadata.sessionId) &&
+            Objects.equals(this.selfUri, recordingMetadata.selfUri);
   }
 
   @Override

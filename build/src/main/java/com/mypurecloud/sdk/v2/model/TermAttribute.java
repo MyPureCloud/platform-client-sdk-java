@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class TermAttribute  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public TermAttribute name(String name) {
@@ -109,7 +110,7 @@ public class TermAttribute  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public TermAttribute type(TypeEnum type) {
@@ -126,7 +127,6 @@ public class TermAttribute  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class TermAttribute  implements Serializable {
       return false;
     }
     TermAttribute termAttribute = (TermAttribute) o;
+
     return Objects.equals(this.id, termAttribute.id) &&
-        Objects.equals(this.name, termAttribute.name) &&
-        Objects.equals(this.type, termAttribute.type);
+            Objects.equals(this.name, termAttribute.name) &&
+            Objects.equals(this.type, termAttribute.type);
   }
 
   @Override

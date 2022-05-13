@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.entities = entities;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -70,7 +71,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -88,7 +89,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -106,7 +107,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.total = total;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -124,7 +125,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -142,7 +143,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -160,7 +161,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -178,7 +179,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    * Deprecated, paging is not supported
    **/
@@ -196,7 +197,7 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    **/
   public ManagementUnitListing selfUri(String selfUri) {
@@ -213,7 +214,6 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,16 +224,17 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
       return false;
     }
     ManagementUnitListing managementUnitListing = (ManagementUnitListing) o;
+
     return Objects.equals(this.entities, managementUnitListing.entities) &&
-        Objects.equals(this.pageSize, managementUnitListing.pageSize) &&
-        Objects.equals(this.pageNumber, managementUnitListing.pageNumber) &&
-        Objects.equals(this.total, managementUnitListing.total) &&
-        Objects.equals(this.lastUri, managementUnitListing.lastUri) &&
-        Objects.equals(this.firstUri, managementUnitListing.firstUri) &&
-        Objects.equals(this.previousUri, managementUnitListing.previousUri) &&
-        Objects.equals(this.nextUri, managementUnitListing.nextUri) &&
-        Objects.equals(this.pageCount, managementUnitListing.pageCount) &&
-        Objects.equals(this.selfUri, managementUnitListing.selfUri);
+            Objects.equals(this.pageSize, managementUnitListing.pageSize) &&
+            Objects.equals(this.pageNumber, managementUnitListing.pageNumber) &&
+            Objects.equals(this.total, managementUnitListing.total) &&
+            Objects.equals(this.lastUri, managementUnitListing.lastUri) &&
+            Objects.equals(this.firstUri, managementUnitListing.firstUri) &&
+            Objects.equals(this.previousUri, managementUnitListing.previousUri) &&
+            Objects.equals(this.nextUri, managementUnitListing.nextUri) &&
+            Objects.equals(this.pageCount, managementUnitListing.pageCount) &&
+            Objects.equals(this.selfUri, managementUnitListing.selfUri);
   }
 
   @Override

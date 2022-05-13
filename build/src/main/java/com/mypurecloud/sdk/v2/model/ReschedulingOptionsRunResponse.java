@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
@@ -54,7 +55,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.existingSchedule = existingSchedule;
   }
 
-  
+
   /**
    * The start date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -72,7 +73,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The end date of the period to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -90,7 +91,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * Per-management unit rescheduling options
    **/
@@ -108,7 +109,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.managementUnits = managementUnits;
   }
 
-  
+
   /**
    * The number of agents to be considered in the reschedule
    **/
@@ -126,7 +127,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.agentCount = agentCount;
   }
 
-  
+
   /**
    * The IDs of the activity codes being considered for reschedule
    **/
@@ -144,7 +145,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.activityCodeIds = activityCodeIds;
   }
 
-  
+
   /**
    * Whether weekly paid time is allowed to be changed
    **/
@@ -162,7 +163,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.doNotChangeWeeklyPaidTime = doNotChangeWeeklyPaidTime;
   }
 
-  
+
   /**
    * Whether daily paid time is allowed to be changed
    **/
@@ -180,7 +181,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.doNotChangeDailyPaidTime = doNotChangeDailyPaidTime;
   }
 
-  
+
   /**
    * Whether shift start times are allowed to be changed
    **/
@@ -198,7 +199,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.doNotChangeShiftStartTimes = doNotChangeShiftStartTimes;
   }
 
-  
+
   /**
    * Whether manually edited shifts are allowed to be changed
    **/
@@ -216,7 +217,6 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     this.doNotChangeManuallyEditedShifts = doNotChangeManuallyEditedShifts;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,16 +227,17 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
       return false;
     }
     ReschedulingOptionsRunResponse reschedulingOptionsRunResponse = (ReschedulingOptionsRunResponse) o;
+
     return Objects.equals(this.existingSchedule, reschedulingOptionsRunResponse.existingSchedule) &&
-        Objects.equals(this.startDate, reschedulingOptionsRunResponse.startDate) &&
-        Objects.equals(this.endDate, reschedulingOptionsRunResponse.endDate) &&
-        Objects.equals(this.managementUnits, reschedulingOptionsRunResponse.managementUnits) &&
-        Objects.equals(this.agentCount, reschedulingOptionsRunResponse.agentCount) &&
-        Objects.equals(this.activityCodeIds, reschedulingOptionsRunResponse.activityCodeIds) &&
-        Objects.equals(this.doNotChangeWeeklyPaidTime, reschedulingOptionsRunResponse.doNotChangeWeeklyPaidTime) &&
-        Objects.equals(this.doNotChangeDailyPaidTime, reschedulingOptionsRunResponse.doNotChangeDailyPaidTime) &&
-        Objects.equals(this.doNotChangeShiftStartTimes, reschedulingOptionsRunResponse.doNotChangeShiftStartTimes) &&
-        Objects.equals(this.doNotChangeManuallyEditedShifts, reschedulingOptionsRunResponse.doNotChangeManuallyEditedShifts);
+            Objects.equals(this.startDate, reschedulingOptionsRunResponse.startDate) &&
+            Objects.equals(this.endDate, reschedulingOptionsRunResponse.endDate) &&
+            Objects.equals(this.managementUnits, reschedulingOptionsRunResponse.managementUnits) &&
+            Objects.equals(this.agentCount, reschedulingOptionsRunResponse.agentCount) &&
+            Objects.equals(this.activityCodeIds, reschedulingOptionsRunResponse.activityCodeIds) &&
+            Objects.equals(this.doNotChangeWeeklyPaidTime, reschedulingOptionsRunResponse.doNotChangeWeeklyPaidTime) &&
+            Objects.equals(this.doNotChangeDailyPaidTime, reschedulingOptionsRunResponse.doNotChangeDailyPaidTime) &&
+            Objects.equals(this.doNotChangeShiftStartTimes, reschedulingOptionsRunResponse.doNotChangeShiftStartTimes) &&
+            Objects.equals(this.doNotChangeManuallyEditedShifts, reschedulingOptionsRunResponse.doNotChangeManuallyEditedShifts);
   }
 
   @Override

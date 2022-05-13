@@ -18,10 +18,10 @@ title: LauncherButtonSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;On&quot; |
-| OFF | &quot;Off&quot; |
-| ONDEMAND | &quot;OnDemand&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;On&quot; | 
+| OFF | &quot;Off&quot; | 
+| ONDEMAND | &quot;OnDemand&quot; | 
 {: class="table table-striped"}
 
 

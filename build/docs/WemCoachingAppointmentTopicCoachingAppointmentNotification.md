@@ -33,11 +33,11 @@ title: WemCoachingAppointmentTopicCoachingAppointmentNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SCHEDULED | &quot;Scheduled&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SCHEDULED | &quot;Scheduled&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
 {: class="table table-striped"}
 
 
@@ -47,11 +47,11 @@ title: WemCoachingAppointmentTopicCoachingAppointmentNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CREATE | &quot;Create&quot; |
-| UPDATE | &quot;Update&quot; |
-| DELETE | &quot;Delete&quot; |
-| INVALIDATE | &quot;Invalidate&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CREATE | &quot;Create&quot; | 
+| UPDATE | &quot;Update&quot; | 
+| DELETE | &quot;Delete&quot; | 
+| INVALIDATE | &quot;Invalidate&quot; | 
 {: class="table table-striped"}
 
 

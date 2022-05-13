@@ -20,11 +20,11 @@ title: WebMessagingEventCoBrowse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OFFERING | &quot;Offering&quot; |
-| OFFERINGEXPIRED | &quot;OfferingExpired&quot; |
-| OFFERINGACCEPTED | &quot;OfferingAccepted&quot; |
-| OFFERINGREJECTED | &quot;OfferingRejected&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OFFERING | &quot;Offering&quot; | 
+| OFFERINGEXPIRED | &quot;OfferingExpired&quot; | 
+| OFFERINGACCEPTED | &quot;OfferingAccepted&quot; | 
+| OFFERINGREJECTED | &quot;OfferingRejected&quot; | 
 {: class="table table-striped"}
 
 

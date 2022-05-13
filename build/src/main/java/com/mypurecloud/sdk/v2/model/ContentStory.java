@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class ContentStory  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * URL to the ephemeral story.
    **/
@@ -109,7 +110,7 @@ public class ContentStory  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * ID of the ephemeral story being replied to.
    **/
@@ -127,7 +128,6 @@ public class ContentStory  implements Serializable {
     this.replyToId = replyToId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,9 +138,10 @@ public class ContentStory  implements Serializable {
       return false;
     }
     ContentStory contentStory = (ContentStory) o;
+
     return Objects.equals(this.type, contentStory.type) &&
-        Objects.equals(this.url, contentStory.url) &&
-        Objects.equals(this.replyToId, contentStory.replyToId);
+            Objects.equals(this.url, contentStory.url) &&
+            Objects.equals(this.replyToId, contentStory.replyToId);
   }
 
   @Override

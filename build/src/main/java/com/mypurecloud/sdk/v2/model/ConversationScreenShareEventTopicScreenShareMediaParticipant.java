@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -296,7 +297,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant name(String name) {
@@ -313,7 +314,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant address(String address) {
@@ -330,7 +331,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant startTime(Date startTime) {
@@ -347,7 +348,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant connectedTime(Date connectedTime) {
@@ -364,7 +365,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant endTime(Date endTime) {
@@ -381,7 +382,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant startHoldTime(Date startHoldTime) {
@@ -398,7 +399,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant purpose(String purpose) {
@@ -415,7 +416,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant state(StateEnum state) {
@@ -432,7 +433,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant direction(DirectionEnum direction) {
@@ -449,7 +450,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -466,7 +467,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant held(Boolean held) {
@@ -483,7 +484,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -500,7 +501,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -517,7 +518,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant user(ConversationScreenShareEventTopicUriReference user) {
@@ -534,7 +535,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant queue(ConversationScreenShareEventTopicUriReference queue) {
@@ -551,7 +552,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant team(ConversationScreenShareEventTopicUriReference team) {
@@ -568,7 +569,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant attributes(Map<String, String> attributes) {
@@ -585,7 +586,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant errorInfo(ConversationScreenShareEventTopicErrorBody errorInfo) {
@@ -602,7 +603,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant script(ConversationScreenShareEventTopicUriReference script) {
@@ -619,7 +620,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -636,7 +637,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -653,7 +654,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -670,7 +671,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant provider(String provider) {
@@ -687,7 +688,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant externalContact(ConversationScreenShareEventTopicUriReference externalContact) {
@@ -704,7 +705,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant externalOrganization(ConversationScreenShareEventTopicUriReference externalOrganization) {
@@ -721,7 +722,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant wrapup(ConversationScreenShareEventTopicWrapup wrapup) {
@@ -738,7 +739,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant conversationRoutingData(ConversationScreenShareEventTopicConversationRoutingData conversationRoutingData) {
@@ -755,7 +756,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant peer(String peer) {
@@ -772,7 +773,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -789,7 +790,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -806,7 +807,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant journeyContext(ConversationScreenShareEventTopicJourneyContext journeyContext) {
@@ -823,7 +824,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant startAcwTime(Date startAcwTime) {
@@ -840,7 +841,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant endAcwTime(Date endAcwTime) {
@@ -857,7 +858,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
@@ -874,7 +875,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.context = context;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant peerCount(Integer peerCount) {
@@ -891,7 +892,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant sharing(Boolean sharing) {
@@ -908,7 +909,6 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     this.sharing = sharing;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -919,43 +919,44 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
       return false;
     }
     ConversationScreenShareEventTopicScreenShareMediaParticipant conversationScreenShareEventTopicScreenShareMediaParticipant = (ConversationScreenShareEventTopicScreenShareMediaParticipant) o;
+
     return Objects.equals(this.id, conversationScreenShareEventTopicScreenShareMediaParticipant.id) &&
-        Objects.equals(this.name, conversationScreenShareEventTopicScreenShareMediaParticipant.name) &&
-        Objects.equals(this.address, conversationScreenShareEventTopicScreenShareMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationScreenShareEventTopicScreenShareMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationScreenShareEventTopicScreenShareMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationScreenShareEventTopicScreenShareMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationScreenShareEventTopicScreenShareMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationScreenShareEventTopicScreenShareMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationScreenShareEventTopicScreenShareMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationScreenShareEventTopicScreenShareMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationScreenShareEventTopicScreenShareMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationScreenShareEventTopicScreenShareMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationScreenShareEventTopicScreenShareMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationScreenShareEventTopicScreenShareMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationScreenShareEventTopicScreenShareMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationScreenShareEventTopicScreenShareMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationScreenShareEventTopicScreenShareMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
-        Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
-        Objects.equals(this.peerCount, conversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
-        Objects.equals(this.sharing, conversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
+            Objects.equals(this.name, conversationScreenShareEventTopicScreenShareMediaParticipant.name) &&
+            Objects.equals(this.address, conversationScreenShareEventTopicScreenShareMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationScreenShareEventTopicScreenShareMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationScreenShareEventTopicScreenShareMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationScreenShareEventTopicScreenShareMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationScreenShareEventTopicScreenShareMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationScreenShareEventTopicScreenShareMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationScreenShareEventTopicScreenShareMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationScreenShareEventTopicScreenShareMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationScreenShareEventTopicScreenShareMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationScreenShareEventTopicScreenShareMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationScreenShareEventTopicScreenShareMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationScreenShareEventTopicScreenShareMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationScreenShareEventTopicScreenShareMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationScreenShareEventTopicScreenShareMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationScreenShareEventTopicScreenShareMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
+            Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
+            Objects.equals(this.peerCount, conversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
+            Objects.equals(this.sharing, conversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
   }
 
   @Override

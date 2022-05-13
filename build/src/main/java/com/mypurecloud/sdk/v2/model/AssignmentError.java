@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -42,7 +43,7 @@ public class AssignmentError  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Error message from membership assignment
    **/
@@ -60,7 +61,6 @@ public class AssignmentError  implements Serializable {
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class AssignmentError  implements Serializable {
       return false;
     }
     AssignmentError assignmentError = (AssignmentError) o;
+
     return Objects.equals(this.user, assignmentError.user) &&
-        Objects.equals(this.message, assignmentError.message);
+            Objects.equals(this.message, assignmentError.message);
   }
 
   @Override

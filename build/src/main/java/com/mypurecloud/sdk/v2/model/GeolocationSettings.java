@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -33,7 +34,7 @@ public class GeolocationSettings  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GeolocationSettings name(String name) {
@@ -50,7 +51,7 @@ public class GeolocationSettings  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public GeolocationSettings enabled(Boolean enabled) {
@@ -67,7 +68,7 @@ public class GeolocationSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public GeolocationSettings mapboxKey(String mapboxKey) {
@@ -84,14 +85,13 @@ public class GeolocationSettings  implements Serializable {
     this.mapboxKey = mapboxKey;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,11 +102,12 @@ public class GeolocationSettings  implements Serializable {
       return false;
     }
     GeolocationSettings geolocationSettings = (GeolocationSettings) o;
+
     return Objects.equals(this.id, geolocationSettings.id) &&
-        Objects.equals(this.name, geolocationSettings.name) &&
-        Objects.equals(this.enabled, geolocationSettings.enabled) &&
-        Objects.equals(this.mapboxKey, geolocationSettings.mapboxKey) &&
-        Objects.equals(this.selfUri, geolocationSettings.selfUri);
+            Objects.equals(this.name, geolocationSettings.name) &&
+            Objects.equals(this.enabled, geolocationSettings.enabled) &&
+            Objects.equals(this.mapboxKey, geolocationSettings.mapboxKey) &&
+            Objects.equals(this.selfUri, geolocationSettings.selfUri);
   }
 
   @Override

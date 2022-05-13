@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserDevice;
-import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 
 public class DeleteMobiledeviceRequest {
-    
+
 	private String deviceId;
 	public String getDeviceId() {
 		return this.deviceId;
@@ -39,7 +39,7 @@ public class DeleteMobiledeviceRequest {
 	    this.setDeviceId(deviceId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,7 +70,7 @@ public class DeleteMobiledeviceRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/mobiledevices/{deviceId}")
                 .withPathParameter("deviceId", deviceId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class DeleteMobiledeviceRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String deviceId) {
 	    return new Builder()
 	            .withRequiredParams(deviceId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteMobiledeviceRequest request;
@@ -95,20 +95,20 @@ public class DeleteMobiledeviceRequest {
 			request = new DeleteMobiledeviceRequest();
 		}
 
-		
+
 		public Builder withDeviceId(String deviceId) {
 			request.setDeviceId(deviceId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String deviceId) {
 			request.setDeviceId(deviceId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteMobiledeviceRequest build() {
             

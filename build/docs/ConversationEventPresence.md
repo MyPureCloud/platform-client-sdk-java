@@ -18,8 +18,8 @@ title: ConversationEventPresence
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| JOIN | &quot;Join&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| JOIN | &quot;Join&quot; | 
 {: class="table table-striped"}
 
 

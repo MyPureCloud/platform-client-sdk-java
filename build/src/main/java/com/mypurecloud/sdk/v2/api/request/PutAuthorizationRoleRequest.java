@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class PutAuthorizationRoleRequest {
-    
+
 	private String roleId;
 	public String getRoleId() {
 		return this.roleId;
@@ -54,7 +54,7 @@ public class PutAuthorizationRoleRequest {
 	    this.setRoleId(roleId);
 	    return this;
 	} 
-	
+
 	private DomainOrganizationRoleUpdate body;
 	public DomainOrganizationRoleUpdate getBody() {
 		return this.body;
@@ -68,7 +68,7 @@ public class PutAuthorizationRoleRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -105,8 +105,8 @@ public class PutAuthorizationRoleRequest {
                 .withPathParameter("roleId", roleId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -117,12 +117,12 @@ public class PutAuthorizationRoleRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String roleId, DomainOrganizationRoleUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(roleId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutAuthorizationRoleRequest request;
@@ -131,26 +131,26 @@ public class PutAuthorizationRoleRequest {
 			request = new PutAuthorizationRoleRequest();
 		}
 
-		
+
 		public Builder withRoleId(String roleId) {
 			request.setRoleId(roleId);
 			return this;
 		}
-		
+
 		public Builder withBody(DomainOrganizationRoleUpdate body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String roleId, DomainOrganizationRoleUpdate body) {
 			request.setRoleId(roleId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutAuthorizationRoleRequest build() {
             

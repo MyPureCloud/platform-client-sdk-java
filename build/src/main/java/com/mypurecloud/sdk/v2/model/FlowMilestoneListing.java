@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing total(Long total) {
@@ -103,7 +104,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FlowMilestoneListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FlowMilestoneListing  implements Serializable, PagedResource<FlowMi
       return false;
     }
     FlowMilestoneListing flowMilestoneListing = (FlowMilestoneListing) o;
+
     return Objects.equals(this.entities, flowMilestoneListing.entities) &&
-        Objects.equals(this.pageSize, flowMilestoneListing.pageSize) &&
-        Objects.equals(this.pageNumber, flowMilestoneListing.pageNumber) &&
-        Objects.equals(this.total, flowMilestoneListing.total) &&
-        Objects.equals(this.lastUri, flowMilestoneListing.lastUri) &&
-        Objects.equals(this.firstUri, flowMilestoneListing.firstUri) &&
-        Objects.equals(this.selfUri, flowMilestoneListing.selfUri) &&
-        Objects.equals(this.previousUri, flowMilestoneListing.previousUri) &&
-        Objects.equals(this.nextUri, flowMilestoneListing.nextUri) &&
-        Objects.equals(this.pageCount, flowMilestoneListing.pageCount);
+            Objects.equals(this.pageSize, flowMilestoneListing.pageSize) &&
+            Objects.equals(this.pageNumber, flowMilestoneListing.pageNumber) &&
+            Objects.equals(this.total, flowMilestoneListing.total) &&
+            Objects.equals(this.lastUri, flowMilestoneListing.lastUri) &&
+            Objects.equals(this.firstUri, flowMilestoneListing.firstUri) &&
+            Objects.equals(this.selfUri, flowMilestoneListing.selfUri) &&
+            Objects.equals(this.previousUri, flowMilestoneListing.previousUri) &&
+            Objects.equals(this.nextUri, flowMilestoneListing.nextUri) &&
+            Objects.equals(this.pageCount, flowMilestoneListing.pageCount);
   }
 
   @Override

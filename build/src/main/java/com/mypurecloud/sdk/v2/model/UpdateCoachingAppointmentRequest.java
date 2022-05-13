@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The description of coaching appointment.
    **/
@@ -120,7 +121,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -138,7 +139,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * The duration of coaching appointment in minutes.
    **/
@@ -156,7 +157,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * IDs of conversations associated with this coaching appointment.
    **/
@@ -174,7 +175,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.conversationIds = conversationIds;
   }
 
-  
+
   /**
    * IDs of documents associated with this coaching appointment.
    **/
@@ -192,7 +193,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.documentIds = documentIds;
   }
 
-  
+
   /**
    * The status of the coaching appointment.
    **/
@@ -210,7 +211,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The Workforce Management schedule the appointment is associated with.
    **/
@@ -228,7 +229,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.wfmSchedule = wfmSchedule;
   }
 
-  
+
   /**
    * The list of external links related to the appointment
    **/
@@ -246,7 +247,6 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     this.externalLinks = externalLinks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -257,15 +257,16 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
       return false;
     }
     UpdateCoachingAppointmentRequest updateCoachingAppointmentRequest = (UpdateCoachingAppointmentRequest) o;
+
     return Objects.equals(this.name, updateCoachingAppointmentRequest.name) &&
-        Objects.equals(this.description, updateCoachingAppointmentRequest.description) &&
-        Objects.equals(this.dateStart, updateCoachingAppointmentRequest.dateStart) &&
-        Objects.equals(this.lengthInMinutes, updateCoachingAppointmentRequest.lengthInMinutes) &&
-        Objects.equals(this.conversationIds, updateCoachingAppointmentRequest.conversationIds) &&
-        Objects.equals(this.documentIds, updateCoachingAppointmentRequest.documentIds) &&
-        Objects.equals(this.status, updateCoachingAppointmentRequest.status) &&
-        Objects.equals(this.wfmSchedule, updateCoachingAppointmentRequest.wfmSchedule) &&
-        Objects.equals(this.externalLinks, updateCoachingAppointmentRequest.externalLinks);
+            Objects.equals(this.description, updateCoachingAppointmentRequest.description) &&
+            Objects.equals(this.dateStart, updateCoachingAppointmentRequest.dateStart) &&
+            Objects.equals(this.lengthInMinutes, updateCoachingAppointmentRequest.lengthInMinutes) &&
+            Objects.equals(this.conversationIds, updateCoachingAppointmentRequest.conversationIds) &&
+            Objects.equals(this.documentIds, updateCoachingAppointmentRequest.documentIds) &&
+            Objects.equals(this.status, updateCoachingAppointmentRequest.status) &&
+            Objects.equals(this.wfmSchedule, updateCoachingAppointmentRequest.wfmSchedule) &&
+            Objects.equals(this.externalLinks, updateCoachingAppointmentRequest.externalLinks);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.nickname = nickname;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient id(String id) {
@@ -115,7 +116,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient idType(IdTypeEnum idType) {
@@ -132,7 +133,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.idType = idType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient image(String image) {
@@ -149,7 +150,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.image = image;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient firstName(String firstName) {
@@ -166,7 +167,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.firstName = firstName;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient lastName(String lastName) {
@@ -183,7 +184,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.lastName = lastName;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient email(String email) {
@@ -200,7 +201,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.email = email;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient additionalIds(List<V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier> additionalIds) {
@@ -217,7 +218,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
     this.additionalIds = additionalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -228,14 +228,15 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingTo
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient = (V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient) o;
+
     return Objects.equals(this.nickname, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.nickname) &&
-        Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.id) &&
-        Objects.equals(this.idType, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.idType) &&
-        Objects.equals(this.image, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.image) &&
-        Objects.equals(this.firstName, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.firstName) &&
-        Objects.equals(this.lastName, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.lastName) &&
-        Objects.equals(this.email, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.email) &&
-        Objects.equals(this.additionalIds, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.additionalIds);
+            Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.id) &&
+            Objects.equals(this.idType, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.idType) &&
+            Objects.equals(this.image, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.image) &&
+            Objects.equals(this.firstName, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.firstName) &&
+            Objects.equals(this.lastName, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.lastName) &&
+            Objects.equals(this.email, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.email) &&
+            Objects.equals(this.additionalIds, v2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.additionalIds);
   }
 
   @Override

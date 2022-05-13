@@ -20,23 +20,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ScimError;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimError;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
+import com.mypurecloud.sdk.v2.model.ScimV2Group;
+import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
-import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
-import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
-import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 public class PatchScimV2GroupRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -50,7 +49,7 @@ public class PatchScimV2GroupRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private ScimV2PatchRequest body;
 	public ScimV2PatchRequest getBody() {
 		return this.body;
@@ -64,7 +63,7 @@ public class PatchScimV2GroupRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private String ifMatch;
 	public String getIfMatch() {
 		return this.ifMatch;
@@ -78,7 +77,7 @@ public class PatchScimV2GroupRequest {
 	    this.setIfMatch(ifMatch);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -117,9 +116,9 @@ public class PatchScimV2GroupRequest {
                 .withHeaderParameter("If-Match", ifMatch)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
-                .withContentTypes("application/scim+json", "application/json")
+
+		.withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
                 .withAccepts("application/scim+json", "application/json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
@@ -129,12 +128,12 @@ public class PatchScimV2GroupRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId, ScimV2PatchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(groupId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchScimV2GroupRequest request;
@@ -143,31 +142,31 @@ public class PatchScimV2GroupRequest {
 			request = new PatchScimV2GroupRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withBody(ScimV2PatchRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withIfMatch(String ifMatch) {
 			request.setIfMatch(ifMatch);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId, ScimV2PatchRequest body) {
 			request.setGroupId(groupId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PatchScimV2GroupRequest build() {
             

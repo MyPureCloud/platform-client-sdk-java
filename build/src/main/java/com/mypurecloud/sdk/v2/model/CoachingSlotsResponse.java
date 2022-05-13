@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CoachingSlot;
@@ -37,28 +38,27 @@ public class CoachingSlotsResponse  implements Serializable {
     return suggestedSlots;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Periods of availability for attendees to schedule coaching appointment")
   @JsonProperty("attendeeSchedules")
   public List<UserAvailableTimes> getAttendeeSchedules() {
     return attendeeSchedules;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Periods of availability for facilitators to schedule coaching appointment")
   @JsonProperty("facilitatorSchedules")
   public List<UserAvailableTimes> getFacilitatorSchedules() {
     return facilitatorSchedules;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Detailed data for WFM scheduled activities")
   @JsonProperty("wfmScheduleActivities")
   public List<WfmScheduleActivity> getWfmScheduleActivities() {
     return wfmScheduleActivities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,10 +69,11 @@ public class CoachingSlotsResponse  implements Serializable {
       return false;
     }
     CoachingSlotsResponse coachingSlotsResponse = (CoachingSlotsResponse) o;
+
     return Objects.equals(this.suggestedSlots, coachingSlotsResponse.suggestedSlots) &&
-        Objects.equals(this.attendeeSchedules, coachingSlotsResponse.attendeeSchedules) &&
-        Objects.equals(this.facilitatorSchedules, coachingSlotsResponse.facilitatorSchedules) &&
-        Objects.equals(this.wfmScheduleActivities, coachingSlotsResponse.wfmScheduleActivities);
+            Objects.equals(this.attendeeSchedules, coachingSlotsResponse.attendeeSchedules) &&
+            Objects.equals(this.facilitatorSchedules, coachingSlotsResponse.facilitatorSchedules) &&
+            Objects.equals(this.wfmScheduleActivities, coachingSlotsResponse.wfmScheduleActivities);
   }
 
   @Override

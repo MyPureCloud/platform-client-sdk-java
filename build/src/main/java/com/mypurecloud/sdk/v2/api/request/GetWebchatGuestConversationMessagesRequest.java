@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebChatDeployment;
 import com.mypurecloud.sdk.v2.model.WebChatDeploymentEntityListing;
@@ -30,13 +33,10 @@ import com.mypurecloud.sdk.v2.model.WebChatMemberInfoEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatSettings;
-import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
 
 public class GetWebchatGuestConversationMessagesRequest {
-    
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -50,7 +50,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -64,7 +64,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 	    this.setAfter(after);
 	    return this;
 	} 
-	
+
 	private String before;
 	public String getBefore() {
 		return this.before;
@@ -78,7 +78,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 	    this.setBefore(before);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -94,7 +94,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -122,7 +122,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Integer maxResults;
 	public Integer getMaxResults() {
 		return this.maxResults;
@@ -136,7 +136,7 @@ public class GetWebchatGuestConversationMessagesRequest {
 	    this.setMaxResults(maxResults);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -167,15 +167,19 @@ public class GetWebchatGuestConversationMessagesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/webchat/guest/conversations/{conversationId}/messages")
                 .withPathParameter("conversationId", conversationId)
         
+
                 .withQueryParameters("after", "", after)
         
+
                 .withQueryParameters("before", "", before)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("maxResults", "", maxResults)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("Guest Chat JWT")
@@ -186,12 +190,12 @@ public class GetWebchatGuestConversationMessagesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String conversationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetWebchatGuestConversationMessagesRequest request;
@@ -200,45 +204,49 @@ public class GetWebchatGuestConversationMessagesRequest {
 			request = new GetWebchatGuestConversationMessagesRequest();
 		}
 
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
+
 		public Builder withAfter(String after) {
 			request.setAfter(after);
 			return this;
 		}
-		
+
 		public Builder withBefore(String before) {
 			request.setBefore(before);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withMaxResults(Integer maxResults) {
 			request.setMaxResults(maxResults);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String conversationId) {
 			request.setConversationId(conversationId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetWebchatGuestConversationMessagesRequest build() {
             

@@ -42,24 +42,24 @@ title: UserEndDetailEventTopicUserEndEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| ENDPOINT | &quot;ENDPOINT&quot; |
-| CLIENT | &quot;CLIENT&quot; |
-| SYSTEM | &quot;SYSTEM&quot; |
-| TRANSFER | &quot;TRANSFER&quot; |
-| ERROR | &quot;ERROR&quot; |
-| PEER | &quot;PEER&quot; |
-| OTHER | &quot;OTHER&quot; |
-| SPAM | &quot;SPAM&quot; |
-| TIMEOUT | &quot;TIMEOUT&quot; |
-| TRANSPORT_FAILURE | &quot;TRANSPORT_FAILURE&quot; |
-| CONFERENCE_TRANSFER | &quot;CONFERENCE_TRANSFER&quot; |
-| CONSULT_TRANSFER | &quot;CONSULT_TRANSFER&quot; |
-| FORWARD_TRANSFER | &quot;FORWARD_TRANSFER&quot; |
-| NO_ANSWER_TRANSFER | &quot;NO_ANSWER_TRANSFER&quot; |
-| NOT_AVAILABLE_TRANSFER | &quot;NOT_AVAILABLE_TRANSFER&quot; |
-| UNCALLABLE | &quot;UNCALLABLE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| ENDPOINT | &quot;ENDPOINT&quot; | 
+| CLIENT | &quot;CLIENT&quot; | 
+| SYSTEM | &quot;SYSTEM&quot; | 
+| TRANSFER | &quot;TRANSFER&quot; | 
+| ERROR | &quot;ERROR&quot; | 
+| PEER | &quot;PEER&quot; | 
+| OTHER | &quot;OTHER&quot; | 
+| SPAM | &quot;SPAM&quot; | 
+| TIMEOUT | &quot;TIMEOUT&quot; | 
+| TRANSPORT_FAILURE | &quot;TRANSPORT_FAILURE&quot; | 
+| CONFERENCE_TRANSFER | &quot;CONFERENCE_TRANSFER&quot; | 
+| CONSULT_TRANSFER | &quot;CONSULT_TRANSFER&quot; | 
+| FORWARD_TRANSFER | &quot;FORWARD_TRANSFER&quot; | 
+| NO_ANSWER_TRANSFER | &quot;NO_ANSWER_TRANSFER&quot; | 
+| NOT_AVAILABLE_TRANSFER | &quot;NOT_AVAILABLE_TRANSFER&quot; | 
+| UNCALLABLE | &quot;UNCALLABLE&quot; | 
 {: class="table table-striped"}
 
 
@@ -69,16 +69,16 @@ title: UserEndDetailEventTopicUserEndEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| VOICE | &quot;VOICE&quot; |
-| CHAT | &quot;CHAT&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| CALLBACK | &quot;CALLBACK&quot; |
-| COBROWSE | &quot;COBROWSE&quot; |
-| VIDEO | &quot;VIDEO&quot; |
-| SCREENSHARE | &quot;SCREENSHARE&quot; |
-| MESSAGE | &quot;MESSAGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| VOICE | &quot;VOICE&quot; | 
+| CHAT | &quot;CHAT&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| CALLBACK | &quot;CALLBACK&quot; | 
+| COBROWSE | &quot;COBROWSE&quot; | 
+| VIDEO | &quot;VIDEO&quot; | 
+| SCREENSHARE | &quot;SCREENSHARE&quot; | 
+| MESSAGE | &quot;MESSAGE&quot; | 
 {: class="table table-striped"}
 
 
@@ -88,10 +88,10 @@ title: UserEndDetailEventTopicUserEndEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| INBOUND | &quot;INBOUND&quot; |
-| OUTBOUND | &quot;OUTBOUND&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| INBOUND | &quot;INBOUND&quot; | 
+| OUTBOUND | &quot;OUTBOUND&quot; | 
 {: class="table table-striped"}
 
 
@@ -101,16 +101,16 @@ title: UserEndDetailEventTopicUserEndEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| SMS | &quot;SMS&quot; |
-| TWITTER | &quot;TWITTER&quot; |
-| FACEBOOK | &quot;FACEBOOK&quot; |
-| LINE | &quot;LINE&quot; |
-| WHATSAPP | &quot;WHATSAPP&quot; |
-| WEBMESSAGING | &quot;WEBMESSAGING&quot; |
-| OPEN | &quot;OPEN&quot; |
-| INSTAGRAM | &quot;INSTAGRAM&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| SMS | &quot;SMS&quot; | 
+| TWITTER | &quot;TWITTER&quot; | 
+| FACEBOOK | &quot;FACEBOOK&quot; | 
+| LINE | &quot;LINE&quot; | 
+| WHATSAPP | &quot;WHATSAPP&quot; | 
+| WEBMESSAGING | &quot;WEBMESSAGING&quot; | 
+| OPEN | &quot;OPEN&quot; | 
+| INSTAGRAM | &quot;INSTAGRAM&quot; | 
 {: class="table table-striped"}
 
 

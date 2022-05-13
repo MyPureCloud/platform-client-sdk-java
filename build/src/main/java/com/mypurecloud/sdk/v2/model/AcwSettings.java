@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class AcwSettings  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * The amount of time the agent can stay in ACW (Min: 1 sec, Max: 1 day).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
    **/
@@ -110,7 +111,6 @@ public class AcwSettings  implements Serializable {
     this.timeoutMs = timeoutMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class AcwSettings  implements Serializable {
       return false;
     }
     AcwSettings acwSettings = (AcwSettings) o;
+
     return Objects.equals(this.wrapupPrompt, acwSettings.wrapupPrompt) &&
-        Objects.equals(this.timeoutMs, acwSettings.timeoutMs);
+            Objects.equals(this.timeoutMs, acwSettings.timeoutMs);
   }
 
   @Override

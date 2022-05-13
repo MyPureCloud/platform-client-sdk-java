@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -88,7 +89,7 @@ public class SubjectDivisionGrants  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SubjectDivisionGrants name(String name) {
@@ -105,7 +106,7 @@ public class SubjectDivisionGrants  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SubjectDivisionGrants divisions(List<Division> divisions) {
@@ -122,7 +123,7 @@ public class SubjectDivisionGrants  implements Serializable {
     this.divisions = divisions;
   }
 
-  
+
   /**
    **/
   public SubjectDivisionGrants type(TypeEnum type) {
@@ -139,14 +140,13 @@ public class SubjectDivisionGrants  implements Serializable {
     this.type = type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,11 +157,12 @@ public class SubjectDivisionGrants  implements Serializable {
       return false;
     }
     SubjectDivisionGrants subjectDivisionGrants = (SubjectDivisionGrants) o;
+
     return Objects.equals(this.id, subjectDivisionGrants.id) &&
-        Objects.equals(this.name, subjectDivisionGrants.name) &&
-        Objects.equals(this.divisions, subjectDivisionGrants.divisions) &&
-        Objects.equals(this.type, subjectDivisionGrants.type) &&
-        Objects.equals(this.selfUri, subjectDivisionGrants.selfUri);
+            Objects.equals(this.name, subjectDivisionGrants.name) &&
+            Objects.equals(this.divisions, subjectDivisionGrants.divisions) &&
+            Objects.equals(this.type, subjectDivisionGrants.type) &&
+            Objects.equals(this.selfUri, subjectDivisionGrants.selfUri);
   }
 
   @Override

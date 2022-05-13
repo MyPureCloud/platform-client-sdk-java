@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,21 +33,20 @@ public class HelpLink  implements Serializable {
     return uri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Link text of the resource")
   @JsonProperty("title")
   public String getTitle() {
     return title;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Description of the document or resource")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -57,9 +57,10 @@ public class HelpLink  implements Serializable {
       return false;
     }
     HelpLink helpLink = (HelpLink) o;
+
     return Objects.equals(this.uri, helpLink.uri) &&
-        Objects.equals(this.title, helpLink.title) &&
-        Objects.equals(this.description, helpLink.description);
+            Objects.equals(this.title, helpLink.title) &&
+            Objects.equals(this.description, helpLink.description);
   }
 
   @Override

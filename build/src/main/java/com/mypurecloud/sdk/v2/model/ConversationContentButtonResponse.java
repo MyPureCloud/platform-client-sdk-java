@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class ConversationContentButtonResponse  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The response text from the button click.
    **/
@@ -109,7 +110,7 @@ public class ConversationContentButtonResponse  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * The response payload associated with the clicked button.
    **/
@@ -127,7 +128,6 @@ public class ConversationContentButtonResponse  implements Serializable {
     this.payload = payload;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,9 +138,10 @@ public class ConversationContentButtonResponse  implements Serializable {
       return false;
     }
     ConversationContentButtonResponse conversationContentButtonResponse = (ConversationContentButtonResponse) o;
+
     return Objects.equals(this.type, conversationContentButtonResponse.type) &&
-        Objects.equals(this.text, conversationContentButtonResponse.text) &&
-        Objects.equals(this.payload, conversationContentButtonResponse.payload);
+            Objects.equals(this.text, conversationContentButtonResponse.text) &&
+            Objects.equals(this.payload, conversationContentButtonResponse.payload);
   }
 
   @Override

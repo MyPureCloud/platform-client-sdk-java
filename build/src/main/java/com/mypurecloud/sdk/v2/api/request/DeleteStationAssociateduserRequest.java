@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.StationEntityListing;
 import com.mypurecloud.sdk.v2.model.StationSettings;
 
 public class DeleteStationAssociateduserRequest {
-    
+
 	private String stationId;
 	public String getStationId() {
 		return this.stationId;
@@ -40,7 +40,7 @@ public class DeleteStationAssociateduserRequest {
 	    this.setStationId(stationId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,7 +71,7 @@ public class DeleteStationAssociateduserRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/stations/{stationId}/associateduser")
                 .withPathParameter("stationId", stationId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class DeleteStationAssociateduserRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String stationId) {
 	    return new Builder()
 	            .withRequiredParams(stationId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteStationAssociateduserRequest request;
@@ -96,20 +96,20 @@ public class DeleteStationAssociateduserRequest {
 			request = new DeleteStationAssociateduserRequest();
 		}
 
-		
+
 		public Builder withStationId(String stationId) {
 			request.setStationId(stationId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String stationId) {
 			request.setStationId(stationId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteStationAssociateduserRequest build() {
             

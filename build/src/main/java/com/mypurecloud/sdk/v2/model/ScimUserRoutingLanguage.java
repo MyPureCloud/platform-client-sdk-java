@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ScimUserRoutingLanguage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
    **/
@@ -60,7 +61,6 @@ public class ScimUserRoutingLanguage  implements Serializable {
     this.proficiency = proficiency;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ScimUserRoutingLanguage  implements Serializable {
       return false;
     }
     ScimUserRoutingLanguage scimUserRoutingLanguage = (ScimUserRoutingLanguage) o;
+
     return Objects.equals(this.name, scimUserRoutingLanguage.name) &&
-        Objects.equals(this.proficiency, scimUserRoutingLanguage.proficiency);
+            Objects.equals(this.proficiency, scimUserRoutingLanguage.proficiency);
   }
 
   @Override

@@ -20,39 +20,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CommandStatus;
+import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
+import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
 import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
+import com.mypurecloud.sdk.v2.model.DocumentUpdate;
+import com.mypurecloud.sdk.v2.model.DocumentUpload;
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.QueryRequest;
 import com.mypurecloud.sdk.v2.model.QueryResults;
+import com.mypurecloud.sdk.v2.model.ReplaceRequest;
+import com.mypurecloud.sdk.v2.model.ReplaceResponse;
 import com.mypurecloud.sdk.v2.model.SecurityProfile;
 import com.mypurecloud.sdk.v2.model.SecurityProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.Share;
-import com.mypurecloud.sdk.v2.model.SharedResponse;
 import com.mypurecloud.sdk.v2.model.ShareEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatus;
-import com.mypurecloud.sdk.v2.model.Usage;
-import com.mypurecloud.sdk.v2.model.Workspace;
-import com.mypurecloud.sdk.v2.model.WorkspaceMember;
-import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SharedResponse;
+import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.TagValue;
 import com.mypurecloud.sdk.v2.model.TagValueEntityListing;
-import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
-import com.mypurecloud.sdk.v2.model.DocumentUpdate;
-import com.mypurecloud.sdk.v2.model.ReplaceRequest;
-import com.mypurecloud.sdk.v2.model.ReplaceResponse;
-import com.mypurecloud.sdk.v2.model.DocumentUpload;
-import com.mypurecloud.sdk.v2.model.QueryRequest;
-import com.mypurecloud.sdk.v2.model.CreateShareResponse;
-import com.mypurecloud.sdk.v2.model.CreateShareRequest;
-import com.mypurecloud.sdk.v2.model.TagQueryRequest;
+import com.mypurecloud.sdk.v2.model.Usage;
+import com.mypurecloud.sdk.v2.model.Workspace;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
+import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkspaceMember;
+import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
 
 public class PutContentmanagementWorkspaceTagvalueRequest {
-    
+
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -66,7 +66,7 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
 	    this.setWorkspaceId(workspaceId);
 	    return this;
 	} 
-	
+
 	private String tagId;
 	public String getTagId() {
 		return this.tagId;
@@ -80,7 +80,7 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
 	    this.setTagId(tagId);
 	    return this;
 	} 
-	
+
 	private TagValue body;
 	public TagValue getBody() {
 		return this.body;
@@ -94,7 +94,7 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -138,8 +138,8 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
                 .withPathParameter("tagId", tagId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -150,12 +150,12 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String workspaceId, String tagId, TagValue body) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, tagId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutContentmanagementWorkspaceTagvalueRequest request;
@@ -164,32 +164,32 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
 			request = new PutContentmanagementWorkspaceTagvalueRequest();
 		}
 
-		
+
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
-		
+
 		public Builder withTagId(String tagId) {
 			request.setTagId(tagId);
 			return this;
 		}
-		
+
 		public Builder withBody(TagValue body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String workspaceId, String tagId, TagValue body) {
 			request.setWorkspaceId(workspaceId);
-						request.setTagId(tagId);
-						request.setBody(body);
-			
+			request.setTagId(tagId);
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutContentmanagementWorkspaceTagvalueRequest build() {
             

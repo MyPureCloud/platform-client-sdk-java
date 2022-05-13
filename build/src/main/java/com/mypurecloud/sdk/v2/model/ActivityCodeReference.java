@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SecondaryPresence;
@@ -46,7 +47,7 @@ public class ActivityCodeReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ActivityCodeReference name(String name) {
@@ -63,7 +64,7 @@ public class ActivityCodeReference  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The secondary presences of this activity code.
    **/
@@ -81,14 +82,13 @@ public class ActivityCodeReference  implements Serializable {
     this.secondaryPresences = secondaryPresences;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,10 +99,11 @@ public class ActivityCodeReference  implements Serializable {
       return false;
     }
     ActivityCodeReference activityCodeReference = (ActivityCodeReference) o;
+
     return Objects.equals(this.id, activityCodeReference.id) &&
-        Objects.equals(this.name, activityCodeReference.name) &&
-        Objects.equals(this.secondaryPresences, activityCodeReference.secondaryPresences) &&
-        Objects.equals(this.selfUri, activityCodeReference.selfUri);
+            Objects.equals(this.name, activityCodeReference.name) &&
+            Objects.equals(this.secondaryPresences, activityCodeReference.secondaryPresences) &&
+            Objects.equals(this.selfUri, activityCodeReference.selfUri);
   }
 
   @Override

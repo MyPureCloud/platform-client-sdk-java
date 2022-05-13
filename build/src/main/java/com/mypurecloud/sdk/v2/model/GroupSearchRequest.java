@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class GroupSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -116,7 +117,7 @@ public class GroupSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -134,7 +135,7 @@ public class GroupSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -152,7 +153,7 @@ public class GroupSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -170,7 +171,7 @@ public class GroupSearchRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    **/
   public GroupSearchRequest query(List<GroupSearchCriteria> query) {
@@ -187,7 +188,6 @@ public class GroupSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,12 +198,13 @@ public class GroupSearchRequest  implements Serializable {
       return false;
     }
     GroupSearchRequest groupSearchRequest = (GroupSearchRequest) o;
+
     return Objects.equals(this.sortOrder, groupSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, groupSearchRequest.sortBy) &&
-        Objects.equals(this.pageSize, groupSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, groupSearchRequest.pageNumber) &&
-        Objects.equals(this.sort, groupSearchRequest.sort) &&
-        Objects.equals(this.query, groupSearchRequest.query);
+            Objects.equals(this.sortBy, groupSearchRequest.sortBy) &&
+            Objects.equals(this.pageSize, groupSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, groupSearchRequest.pageNumber) &&
+            Objects.equals(this.sort, groupSearchRequest.sort) &&
+            Objects.equals(this.query, groupSearchRequest.query);
   }
 
   @Override

@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -90,7 +90,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
     this.userIds = userIds;
   }
 
-  
+
   /**
    * The set of statuses to filter time off requests
    **/
@@ -108,7 +108,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
     this.statuses = statuses;
   }
 
-  
+
   /**
    * The inclusive range of dates to filter time off requests
    **/
@@ -126,7 +126,6 @@ public class TimeOffRequestQueryBody  implements Serializable {
     this.dateRange = dateRange;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +136,10 @@ public class TimeOffRequestQueryBody  implements Serializable {
       return false;
     }
     TimeOffRequestQueryBody timeOffRequestQueryBody = (TimeOffRequestQueryBody) o;
+
     return Objects.equals(this.userIds, timeOffRequestQueryBody.userIds) &&
-        Objects.equals(this.statuses, timeOffRequestQueryBody.statuses) &&
-        Objects.equals(this.dateRange, timeOffRequestQueryBody.dateRange);
+            Objects.equals(this.statuses, timeOffRequestQueryBody.statuses) &&
+            Objects.equals(this.dateRange, timeOffRequestQueryBody.dateRange);
   }
 
   @Override

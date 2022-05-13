@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallbackIdentifier;
@@ -45,7 +46,7 @@ public class CreateCallbackResponse  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * The list of communication identifiers for the callback participants
    **/
@@ -63,7 +64,6 @@ public class CreateCallbackResponse  implements Serializable {
     this.callbackIdentifiers = callbackIdentifiers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class CreateCallbackResponse  implements Serializable {
       return false;
     }
     CreateCallbackResponse createCallbackResponse = (CreateCallbackResponse) o;
+
     return Objects.equals(this.conversation, createCallbackResponse.conversation) &&
-        Objects.equals(this.callbackIdentifiers, createCallbackResponse.callbackIdentifiers);
+            Objects.equals(this.callbackIdentifiers, createCallbackResponse.callbackIdentifiers);
   }
 
   @Override

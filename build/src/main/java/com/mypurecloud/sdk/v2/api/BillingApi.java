@@ -11,8 +11,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 
@@ -25,7 +25,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class BillingApi {
   private final ApiClient pcapiClient;
 
@@ -37,10 +36,9 @@ public class BillingApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get a report of the billable license usages
-   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
    * @param startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
    * @param endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
    * @return BillingUsageReport
@@ -53,7 +51,7 @@ public class BillingApi {
 
   /**
    * Get a report of the billable license usages
-   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
    * @param startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
    * @param endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required)
    * @return BillingUsageReport
@@ -66,15 +64,15 @@ public class BillingApi {
   private GetBillingReportsBillableusageRequest createGetBillingReportsBillableusageRequest(Date startDate, Date endDate) {
     return GetBillingReportsBillableusageRequest.builder()
             .withStartDate(startDate)
-    
+
             .withEndDate(endDate)
-    
+
             .build();
   }
 
   /**
    * Get a report of the billable license usages
-   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
    * @param request The request object
    * @return BillingUsageReport
    * @throws ApiException if the request fails on the server
@@ -93,7 +91,7 @@ public class BillingApi {
 
   /**
    * Get a report of the billable license usages
-   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -120,7 +118,6 @@ public class BillingApi {
     }
   }
 
-  
   /**
    * Get the billing overview for an organization that is managed by a partner.
    * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
@@ -149,9 +146,9 @@ public class BillingApi {
   private GetBillingTrusteebillingoverviewTrustorOrgIdRequest createGetBillingTrusteebillingoverviewTrustorOrgIdRequest(String trustorOrgId, Integer billingPeriodIndex) {
     return GetBillingTrusteebillingoverviewTrustorOrgIdRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withBillingPeriodIndex(billingPeriodIndex)
-    
+
             .build();
   }
 
@@ -203,5 +200,4 @@ public class BillingApi {
     }
   }
 
-  
 }

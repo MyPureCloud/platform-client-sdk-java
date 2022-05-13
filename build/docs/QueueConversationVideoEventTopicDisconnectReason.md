@@ -20,9 +20,9 @@ title: QueueConversationVideoEventTopicDisconnectReason
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| Q850 | &quot;q850&quot; |
-| SIP | &quot;sip&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| Q850 | &quot;q850&quot; | 
+| SIP | &quot;sip&quot; | 
 {: class="table table-striped"}
 
 

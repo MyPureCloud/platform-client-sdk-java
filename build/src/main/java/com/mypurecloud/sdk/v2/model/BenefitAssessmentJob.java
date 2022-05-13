@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -82,35 +83,34 @@ public class BenefitAssessmentJob  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "State of the benefit assessment job.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation Date of the benefit assessment job. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Modified Date of the benefit assessment job. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,11 +121,12 @@ public class BenefitAssessmentJob  implements Serializable {
       return false;
     }
     BenefitAssessmentJob benefitAssessmentJob = (BenefitAssessmentJob) o;
+
     return Objects.equals(this.id, benefitAssessmentJob.id) &&
-        Objects.equals(this.state, benefitAssessmentJob.state) &&
-        Objects.equals(this.dateCreated, benefitAssessmentJob.dateCreated) &&
-        Objects.equals(this.dateModified, benefitAssessmentJob.dateModified) &&
-        Objects.equals(this.selfUri, benefitAssessmentJob.selfUri);
+            Objects.equals(this.state, benefitAssessmentJob.state) &&
+            Objects.equals(this.dateCreated, benefitAssessmentJob.dateCreated) &&
+            Objects.equals(this.dateModified, benefitAssessmentJob.dateModified) &&
+            Objects.equals(this.selfUri, benefitAssessmentJob.selfUri);
   }
 
   @Override

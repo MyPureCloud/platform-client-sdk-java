@@ -19,9 +19,9 @@ title: PublishProgramTopicsDefinitionsJob
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 

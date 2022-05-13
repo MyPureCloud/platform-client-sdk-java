@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RequestScoredAgent;
@@ -48,7 +49,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
    **/
@@ -66,7 +67,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
    **/
@@ -84,7 +85,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    **/
   public RoutingConversationAttributesRequest requestScoredAgents(List<RequestScoredAgent> requestScoredAgents) {
@@ -101,7 +102,6 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     this.requestScoredAgents = requestScoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class RoutingConversationAttributesRequest  implements Serializable {
       return false;
     }
     RoutingConversationAttributesRequest routingConversationAttributesRequest = (RoutingConversationAttributesRequest) o;
+
     return Objects.equals(this.priority, routingConversationAttributesRequest.priority) &&
-        Objects.equals(this.skillIds, routingConversationAttributesRequest.skillIds) &&
-        Objects.equals(this.languageId, routingConversationAttributesRequest.languageId) &&
-        Objects.equals(this.requestScoredAgents, routingConversationAttributesRequest.requestScoredAgents);
+            Objects.equals(this.skillIds, routingConversationAttributesRequest.skillIds) &&
+            Objects.equals(this.languageId, routingConversationAttributesRequest.languageId) &&
+            Objects.equals(this.requestScoredAgents, routingConversationAttributesRequest.requestScoredAgents);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HeadcountForecast;
@@ -48,14 +49,14 @@ public class WeekSchedule  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * First day of this week schedule in yyyy-MM-dd format
    **/
@@ -73,7 +74,7 @@ public class WeekSchedule  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * Description of the week schedule
    **/
@@ -91,7 +92,7 @@ public class WeekSchedule  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Whether the week schedule is published
    **/
@@ -109,7 +110,7 @@ public class WeekSchedule  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    * Summary of the results from the schedule run
    **/
@@ -127,7 +128,7 @@ public class WeekSchedule  implements Serializable {
     this.generationResults = generationResults;
   }
 
-  
+
   /**
    * Short term forecast associated with this schedule
    **/
@@ -145,7 +146,7 @@ public class WeekSchedule  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * Version metadata for this work plan
    **/
@@ -163,7 +164,7 @@ public class WeekSchedule  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * User schedules in the week
    **/
@@ -181,7 +182,7 @@ public class WeekSchedule  implements Serializable {
     this.userSchedules = userSchedules;
   }
 
-  
+
   /**
    * Headcount information for the week schedule
    **/
@@ -199,7 +200,7 @@ public class WeekSchedule  implements Serializable {
     this.headcountForecast = headcountForecast;
   }
 
-  
+
   /**
    * Version of agent schedules in the week schedule
    **/
@@ -217,7 +218,6 @@ public class WeekSchedule  implements Serializable {
     this.agentSchedulesVersion = agentSchedulesVersion;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -228,17 +228,18 @@ public class WeekSchedule  implements Serializable {
       return false;
     }
     WeekSchedule weekSchedule = (WeekSchedule) o;
+
     return Objects.equals(this.id, weekSchedule.id) &&
-        Objects.equals(this.selfUri, weekSchedule.selfUri) &&
-        Objects.equals(this.weekDate, weekSchedule.weekDate) &&
-        Objects.equals(this.description, weekSchedule.description) &&
-        Objects.equals(this.published, weekSchedule.published) &&
-        Objects.equals(this.generationResults, weekSchedule.generationResults) &&
-        Objects.equals(this.shortTermForecast, weekSchedule.shortTermForecast) &&
-        Objects.equals(this.metadata, weekSchedule.metadata) &&
-        Objects.equals(this.userSchedules, weekSchedule.userSchedules) &&
-        Objects.equals(this.headcountForecast, weekSchedule.headcountForecast) &&
-        Objects.equals(this.agentSchedulesVersion, weekSchedule.agentSchedulesVersion);
+            Objects.equals(this.selfUri, weekSchedule.selfUri) &&
+            Objects.equals(this.weekDate, weekSchedule.weekDate) &&
+            Objects.equals(this.description, weekSchedule.description) &&
+            Objects.equals(this.published, weekSchedule.published) &&
+            Objects.equals(this.generationResults, weekSchedule.generationResults) &&
+            Objects.equals(this.shortTermForecast, weekSchedule.shortTermForecast) &&
+            Objects.equals(this.metadata, weekSchedule.metadata) &&
+            Objects.equals(this.userSchedules, weekSchedule.userSchedules) &&
+            Objects.equals(this.headcountForecast, weekSchedule.headcountForecast) &&
+            Objects.equals(this.agentSchedulesVersion, weekSchedule.agentSchedulesVersion);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
@@ -39,7 +40,7 @@ public class TtsEngineEntity  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public TtsEngineEntity name(String name) {
@@ -56,7 +57,7 @@ public class TtsEngineEntity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The set of languages the TTS engine supports
    **/
@@ -74,7 +75,7 @@ public class TtsEngineEntity  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    * The set of output formats the TTS engine can produce
    **/
@@ -92,7 +93,7 @@ public class TtsEngineEntity  implements Serializable {
     this.outputFormats = outputFormats;
   }
 
-  
+
   /**
    * The set of voices the TTS engine supports
    **/
@@ -110,7 +111,7 @@ public class TtsEngineEntity  implements Serializable {
     this.voices = voices;
   }
 
-  
+
   /**
    * The TTS engine is the global default engine
    **/
@@ -128,7 +129,7 @@ public class TtsEngineEntity  implements Serializable {
     this.isDefault = isDefault;
   }
 
-  
+
   /**
    * The TTS engine can be used in a secure call flow
    **/
@@ -146,14 +147,13 @@ public class TtsEngineEntity  implements Serializable {
     this.isSecure = isSecure;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,14 +164,15 @@ public class TtsEngineEntity  implements Serializable {
       return false;
     }
     TtsEngineEntity ttsEngineEntity = (TtsEngineEntity) o;
+
     return Objects.equals(this.id, ttsEngineEntity.id) &&
-        Objects.equals(this.name, ttsEngineEntity.name) &&
-        Objects.equals(this.languages, ttsEngineEntity.languages) &&
-        Objects.equals(this.outputFormats, ttsEngineEntity.outputFormats) &&
-        Objects.equals(this.voices, ttsEngineEntity.voices) &&
-        Objects.equals(this.isDefault, ttsEngineEntity.isDefault) &&
-        Objects.equals(this.isSecure, ttsEngineEntity.isSecure) &&
-        Objects.equals(this.selfUri, ttsEngineEntity.selfUri);
+            Objects.equals(this.name, ttsEngineEntity.name) &&
+            Objects.equals(this.languages, ttsEngineEntity.languages) &&
+            Objects.equals(this.outputFormats, ttsEngineEntity.outputFormats) &&
+            Objects.equals(this.voices, ttsEngineEntity.voices) &&
+            Objects.equals(this.isDefault, ttsEngineEntity.isDefault) &&
+            Objects.equals(this.isSecure, ttsEngineEntity.isSecure) &&
+            Objects.equals(this.selfUri, ttsEngineEntity.selfUri);
   }
 
   @Override

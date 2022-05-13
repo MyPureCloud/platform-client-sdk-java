@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -49,7 +50,7 @@ public class MeteredAssignmentByAgent  implements Serializable {
     this.evaluationContextId = evaluationContextId;
   }
 
-  
+
   /**
    **/
   public MeteredAssignmentByAgent evaluators(List<User> evaluators) {
@@ -66,7 +67,7 @@ public class MeteredAssignmentByAgent  implements Serializable {
     this.evaluators = evaluators;
   }
 
-  
+
   /**
    **/
   public MeteredAssignmentByAgent maxNumberEvaluations(Integer maxNumberEvaluations) {
@@ -83,7 +84,7 @@ public class MeteredAssignmentByAgent  implements Serializable {
     this.maxNumberEvaluations = maxNumberEvaluations;
   }
 
-  
+
   /**
    **/
   public MeteredAssignmentByAgent evaluationForm(EvaluationForm evaluationForm) {
@@ -100,7 +101,7 @@ public class MeteredAssignmentByAgent  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-  
+
   /**
    **/
   public MeteredAssignmentByAgent timeInterval(TimeInterval timeInterval) {
@@ -117,7 +118,7 @@ public class MeteredAssignmentByAgent  implements Serializable {
     this.timeInterval = timeInterval;
   }
 
-  
+
   /**
    **/
   public MeteredAssignmentByAgent timeZone(String timeZone) {
@@ -134,7 +135,6 @@ public class MeteredAssignmentByAgent  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,12 +145,13 @@ public class MeteredAssignmentByAgent  implements Serializable {
       return false;
     }
     MeteredAssignmentByAgent meteredAssignmentByAgent = (MeteredAssignmentByAgent) o;
+
     return Objects.equals(this.evaluationContextId, meteredAssignmentByAgent.evaluationContextId) &&
-        Objects.equals(this.evaluators, meteredAssignmentByAgent.evaluators) &&
-        Objects.equals(this.maxNumberEvaluations, meteredAssignmentByAgent.maxNumberEvaluations) &&
-        Objects.equals(this.evaluationForm, meteredAssignmentByAgent.evaluationForm) &&
-        Objects.equals(this.timeInterval, meteredAssignmentByAgent.timeInterval) &&
-        Objects.equals(this.timeZone, meteredAssignmentByAgent.timeZone);
+            Objects.equals(this.evaluators, meteredAssignmentByAgent.evaluators) &&
+            Objects.equals(this.maxNumberEvaluations, meteredAssignmentByAgent.maxNumberEvaluations) &&
+            Objects.equals(this.evaluationForm, meteredAssignmentByAgent.evaluationForm) &&
+            Objects.equals(this.timeInterval, meteredAssignmentByAgent.timeInterval) &&
+            Objects.equals(this.timeZone, meteredAssignmentByAgent.timeZone);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotific
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification result(WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast result) {
@@ -109,7 +110,7 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotific
     this.result = result;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification operationId(String operationId) {
@@ -126,7 +127,6 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotific
     this.operationId = operationId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotific
       return false;
     }
     WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification = (WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification) o;
+
     return Objects.equals(this.status, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification.status) &&
-        Objects.equals(this.result, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification.result) &&
-        Objects.equals(this.operationId, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification.operationId);
+            Objects.equals(this.result, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification.result) &&
+            Objects.equals(this.operationId, wfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification.operationId);
   }
 
   @Override

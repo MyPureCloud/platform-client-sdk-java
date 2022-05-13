@@ -8,9 +8,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.ErrorDetails;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -50,7 +50,7 @@ public class ErrorDetails  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ErrorDetails message(String message) {
@@ -67,7 +67,7 @@ public class ErrorDetails  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ErrorDetails messageWithParams(String messageWithParams) {
@@ -84,7 +84,7 @@ public class ErrorDetails  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ErrorDetails messageParams(Map<String, String> messageParams) {
@@ -101,7 +101,7 @@ public class ErrorDetails  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ErrorDetails code(String code) {
@@ -118,7 +118,7 @@ public class ErrorDetails  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ErrorDetails contextId(String contextId) {
@@ -135,7 +135,7 @@ public class ErrorDetails  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ErrorDetails nested(ErrorDetails nested) {
@@ -152,7 +152,7 @@ public class ErrorDetails  implements Serializable {
     this.nested = nested;
   }
 
-  
+
   /**
    **/
   public ErrorDetails details(String details) {
@@ -169,7 +169,6 @@ public class ErrorDetails  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,14 +179,15 @@ public class ErrorDetails  implements Serializable {
       return false;
     }
     ErrorDetails errorDetails = (ErrorDetails) o;
+
     return Objects.equals(this.status, errorDetails.status) &&
-        Objects.equals(this.message, errorDetails.message) &&
-        Objects.equals(this.messageWithParams, errorDetails.messageWithParams) &&
-        Objects.equals(this.messageParams, errorDetails.messageParams) &&
-        Objects.equals(this.code, errorDetails.code) &&
-        Objects.equals(this.contextId, errorDetails.contextId) &&
-        Objects.equals(this.nested, errorDetails.nested) &&
-        Objects.equals(this.details, errorDetails.details);
+            Objects.equals(this.message, errorDetails.message) &&
+            Objects.equals(this.messageWithParams, errorDetails.messageWithParams) &&
+            Objects.equals(this.messageParams, errorDetails.messageParams) &&
+            Objects.equals(this.code, errorDetails.code) &&
+            Objects.equals(this.contextId, errorDetails.contextId) &&
+            Objects.equals(this.nested, errorDetails.nested) &&
+            Objects.equals(this.details, errorDetails.details);
   }
 
   @Override

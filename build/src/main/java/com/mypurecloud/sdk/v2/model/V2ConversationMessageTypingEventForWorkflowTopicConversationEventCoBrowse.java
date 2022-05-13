@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCo
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse sessionId(String sessionId) {
@@ -108,7 +109,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCo
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse sessionJoinToken(String sessionJoinToken) {
@@ -125,7 +126,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCo
     this.sessionJoinToken = sessionJoinToken;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationEventCo
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse v2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse = (V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse.type) &&
-        Objects.equals(this.sessionId, v2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse.sessionId) &&
-        Objects.equals(this.sessionJoinToken, v2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse.sessionJoinToken);
+            Objects.equals(this.sessionId, v2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse.sessionId) &&
+            Objects.equals(this.sessionJoinToken, v2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse.sessionJoinToken);
   }
 
   @Override

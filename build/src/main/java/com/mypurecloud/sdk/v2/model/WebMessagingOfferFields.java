@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -42,7 +43,7 @@ public class WebMessagingOfferFields  implements Serializable {
     this.offerText = offerText;
   }
 
-  
+
   /**
    * Flow to be invoked, overrides default flow when specified.
    **/
@@ -60,7 +61,6 @@ public class WebMessagingOfferFields  implements Serializable {
     this.architectFlow = architectFlow;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class WebMessagingOfferFields  implements Serializable {
       return false;
     }
     WebMessagingOfferFields webMessagingOfferFields = (WebMessagingOfferFields) o;
+
     return Objects.equals(this.offerText, webMessagingOfferFields.offerText) &&
-        Objects.equals(this.architectFlow, webMessagingOfferFields.architectFlow);
+            Objects.equals(this.architectFlow, webMessagingOfferFields.architectFlow);
   }
 
   @Override

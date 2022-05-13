@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class BotSummary  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The id of the bot.
    **/
@@ -62,7 +63,7 @@ public class BotSummary  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * An optional description of the bot.
    **/
@@ -80,14 +81,13 @@ public class BotSummary  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A system-generated string that contains metadata about this bot.")
   @JsonProperty("botCompositeTag")
   public String getBotCompositeTag() {
     return botCompositeTag;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -98,10 +98,11 @@ public class BotSummary  implements Serializable {
       return false;
     }
     BotSummary botSummary = (BotSummary) o;
+
     return Objects.equals(this.name, botSummary.name) &&
-        Objects.equals(this.id, botSummary.id) &&
-        Objects.equals(this.description, botSummary.description) &&
-        Objects.equals(this.botCompositeTag, botSummary.botCompositeTag);
+            Objects.equals(this.id, botSummary.id) &&
+            Objects.equals(this.description, botSummary.description) &&
+            Objects.equals(this.botCompositeTag, botSummary.botCompositeTag);
   }
 
   @Override

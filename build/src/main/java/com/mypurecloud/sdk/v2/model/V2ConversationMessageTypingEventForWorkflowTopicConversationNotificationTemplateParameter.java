@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.name = name;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter text(String text) {
@@ -57,7 +58,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.text = text;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter = (V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter) o;
+
     return Objects.equals(this.name, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter.name) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter.text);
+            Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter.text);
   }
 
   @Override

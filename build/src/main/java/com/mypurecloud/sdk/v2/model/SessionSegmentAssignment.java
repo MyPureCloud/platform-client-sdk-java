@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssignedSegment;
@@ -43,7 +44,7 @@ public class SessionSegmentAssignment  implements Serializable {
     this.segment = segment;
   }
 
-  
+
   /**
    * Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -61,7 +62,6 @@ public class SessionSegmentAssignment  implements Serializable {
     this.assignedDate = assignedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class SessionSegmentAssignment  implements Serializable {
       return false;
     }
     SessionSegmentAssignment sessionSegmentAssignment = (SessionSegmentAssignment) o;
+
     return Objects.equals(this.segment, sessionSegmentAssignment.segment) &&
-        Objects.equals(this.assignedDate, sessionSegmentAssignment.assignedDate);
+            Objects.equals(this.assignedDate, sessionSegmentAssignment.assignedDate);
   }
 
   @Override

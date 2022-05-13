@@ -31,9 +31,9 @@ title: AvailableTopic
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PUBLIC | &quot;Public&quot; |
-| PREVIEW | &quot;Preview&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLIC | &quot;Public&quot; | 
+| PREVIEW | &quot;Preview&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetGroupGreetingsDefaultsRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -42,7 +42,7 @@ public class GetGroupGreetingsDefaultsRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +73,7 @@ public class GetGroupGreetingsDefaultsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/groups/{groupId}/greetings/defaults")
                 .withPathParameter("groupId", groupId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class GetGroupGreetingsDefaultsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGroupGreetingsDefaultsRequest request;
@@ -98,20 +98,20 @@ public class GetGroupGreetingsDefaultsRequest {
 			request = new GetGroupGreetingsDefaultsRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGroupGreetingsDefaultsRequest build() {
             

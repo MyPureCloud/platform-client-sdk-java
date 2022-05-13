@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class ArchiveRetention  implements Serializable {
     this.days = days;
   }
 
-  
+
   /**
    **/
   public ArchiveRetention storageMedium(StorageMediumEnum storageMedium) {
@@ -104,7 +105,6 @@ public class ArchiveRetention  implements Serializable {
     this.storageMedium = storageMedium;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,8 +115,9 @@ public class ArchiveRetention  implements Serializable {
       return false;
     }
     ArchiveRetention archiveRetention = (ArchiveRetention) o;
+
     return Objects.equals(this.days, archiveRetention.days) &&
-        Objects.equals(this.storageMedium, archiveRetention.storageMedium);
+            Objects.equals(this.storageMedium, archiveRetention.storageMedium);
   }
 
   @Override

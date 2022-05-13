@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -217,7 +218,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent conversationId(String conversationId) {
@@ -234,7 +235,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent participantId(String participantId) {
@@ -251,7 +252,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent sessionId(String sessionId) {
@@ -268,7 +269,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent mediaType(MediaTypeEnum mediaType) {
@@ -285,7 +286,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent provider(String provider) {
@@ -302,7 +303,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent direction(DirectionEnum direction) {
@@ -319,7 +320,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent ani(String ani) {
@@ -336,7 +337,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent dnis(String dnis) {
@@ -353,7 +354,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent addressTo(String addressTo) {
@@ -370,7 +371,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent addressFrom(String addressFrom) {
@@ -387,7 +388,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent callbackUserName(String callbackUserName) {
@@ -404,7 +405,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent callbackNumbers(List<String> callbackNumbers) {
@@ -421,7 +422,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -438,7 +439,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent subject(String subject) {
@@ -455,7 +456,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent messageType(MessageTypeEnum messageType) {
@@ -472,7 +473,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent queueId(String queueId) {
@@ -489,7 +490,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent wrapupCode(String wrapupCode) {
@@ -506,7 +507,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.wrapupCode = wrapupCode;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent wrapupNotes(String wrapupNotes) {
@@ -523,7 +524,7 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.wrapupNotes = wrapupNotes;
   }
 
-  
+
   /**
    **/
   public WrapupDetailEventTopicWrapupEvent wrapupDurationMs(Integer wrapupDurationMs) {
@@ -540,7 +541,6 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     this.wrapupDurationMs = wrapupDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -551,26 +551,27 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
       return false;
     }
     WrapupDetailEventTopicWrapupEvent wrapupDetailEventTopicWrapupEvent = (WrapupDetailEventTopicWrapupEvent) o;
+
     return Objects.equals(this.eventTime, wrapupDetailEventTopicWrapupEvent.eventTime) &&
-        Objects.equals(this.conversationId, wrapupDetailEventTopicWrapupEvent.conversationId) &&
-        Objects.equals(this.participantId, wrapupDetailEventTopicWrapupEvent.participantId) &&
-        Objects.equals(this.sessionId, wrapupDetailEventTopicWrapupEvent.sessionId) &&
-        Objects.equals(this.mediaType, wrapupDetailEventTopicWrapupEvent.mediaType) &&
-        Objects.equals(this.provider, wrapupDetailEventTopicWrapupEvent.provider) &&
-        Objects.equals(this.direction, wrapupDetailEventTopicWrapupEvent.direction) &&
-        Objects.equals(this.ani, wrapupDetailEventTopicWrapupEvent.ani) &&
-        Objects.equals(this.dnis, wrapupDetailEventTopicWrapupEvent.dnis) &&
-        Objects.equals(this.addressTo, wrapupDetailEventTopicWrapupEvent.addressTo) &&
-        Objects.equals(this.addressFrom, wrapupDetailEventTopicWrapupEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, wrapupDetailEventTopicWrapupEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, wrapupDetailEventTopicWrapupEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, wrapupDetailEventTopicWrapupEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, wrapupDetailEventTopicWrapupEvent.subject) &&
-        Objects.equals(this.messageType, wrapupDetailEventTopicWrapupEvent.messageType) &&
-        Objects.equals(this.queueId, wrapupDetailEventTopicWrapupEvent.queueId) &&
-        Objects.equals(this.wrapupCode, wrapupDetailEventTopicWrapupEvent.wrapupCode) &&
-        Objects.equals(this.wrapupNotes, wrapupDetailEventTopicWrapupEvent.wrapupNotes) &&
-        Objects.equals(this.wrapupDurationMs, wrapupDetailEventTopicWrapupEvent.wrapupDurationMs);
+            Objects.equals(this.conversationId, wrapupDetailEventTopicWrapupEvent.conversationId) &&
+            Objects.equals(this.participantId, wrapupDetailEventTopicWrapupEvent.participantId) &&
+            Objects.equals(this.sessionId, wrapupDetailEventTopicWrapupEvent.sessionId) &&
+            Objects.equals(this.mediaType, wrapupDetailEventTopicWrapupEvent.mediaType) &&
+            Objects.equals(this.provider, wrapupDetailEventTopicWrapupEvent.provider) &&
+            Objects.equals(this.direction, wrapupDetailEventTopicWrapupEvent.direction) &&
+            Objects.equals(this.ani, wrapupDetailEventTopicWrapupEvent.ani) &&
+            Objects.equals(this.dnis, wrapupDetailEventTopicWrapupEvent.dnis) &&
+            Objects.equals(this.addressTo, wrapupDetailEventTopicWrapupEvent.addressTo) &&
+            Objects.equals(this.addressFrom, wrapupDetailEventTopicWrapupEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, wrapupDetailEventTopicWrapupEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, wrapupDetailEventTopicWrapupEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, wrapupDetailEventTopicWrapupEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, wrapupDetailEventTopicWrapupEvent.subject) &&
+            Objects.equals(this.messageType, wrapupDetailEventTopicWrapupEvent.messageType) &&
+            Objects.equals(this.queueId, wrapupDetailEventTopicWrapupEvent.queueId) &&
+            Objects.equals(this.wrapupCode, wrapupDetailEventTopicWrapupEvent.wrapupCode) &&
+            Objects.equals(this.wrapupNotes, wrapupDetailEventTopicWrapupEvent.wrapupNotes) &&
+            Objects.equals(this.wrapupDurationMs, wrapupDetailEventTopicWrapupEvent.wrapupDurationMs);
   }
 
   @Override

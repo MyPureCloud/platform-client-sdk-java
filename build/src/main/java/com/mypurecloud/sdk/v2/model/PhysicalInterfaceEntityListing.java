@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public PhysicalInterfaceEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
       return false;
     }
     PhysicalInterfaceEntityListing physicalInterfaceEntityListing = (PhysicalInterfaceEntityListing) o;
+
     return Objects.equals(this.entities, physicalInterfaceEntityListing.entities) &&
-        Objects.equals(this.pageSize, physicalInterfaceEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, physicalInterfaceEntityListing.pageNumber) &&
-        Objects.equals(this.total, physicalInterfaceEntityListing.total) &&
-        Objects.equals(this.lastUri, physicalInterfaceEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, physicalInterfaceEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, physicalInterfaceEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, physicalInterfaceEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, physicalInterfaceEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, physicalInterfaceEntityListing.pageCount);
+            Objects.equals(this.pageSize, physicalInterfaceEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, physicalInterfaceEntityListing.pageNumber) &&
+            Objects.equals(this.total, physicalInterfaceEntityListing.total) &&
+            Objects.equals(this.lastUri, physicalInterfaceEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, physicalInterfaceEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, physicalInterfaceEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, physicalInterfaceEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, physicalInterfaceEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, physicalInterfaceEntityListing.pageCount);
   }
 
   @Override

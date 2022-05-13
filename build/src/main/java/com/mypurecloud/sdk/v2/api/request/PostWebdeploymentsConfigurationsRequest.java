@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class PostWebdeploymentsConfigurationsRequest {
-    
+
 	private WebDeploymentConfigurationVersion configurationVersion;
 	public WebDeploymentConfigurationVersion getConfigurationVersion() {
 		return this.configurationVersion;
@@ -41,7 +41,7 @@ public class PostWebdeploymentsConfigurationsRequest {
 	    this.setConfigurationVersion(configurationVersion);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,8 +71,8 @@ public class PostWebdeploymentsConfigurationsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/webdeployments/configurations")
                 .withBody(configurationVersion)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class PostWebdeploymentsConfigurationsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(WebDeploymentConfigurationVersion configurationVersion) {
 	    return new Builder()
 	            .withRequiredParams(configurationVersion);
 	}
-	
+
 
 	public static class Builder {
 		private final PostWebdeploymentsConfigurationsRequest request;
@@ -97,20 +97,20 @@ public class PostWebdeploymentsConfigurationsRequest {
 			request = new PostWebdeploymentsConfigurationsRequest();
 		}
 
-		
+
 		public Builder withConfigurationVersion(WebDeploymentConfigurationVersion configurationVersion) {
 			request.setConfigurationVersion(configurationVersion);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(WebDeploymentConfigurationVersion configurationVersion) {
 			request.setConfigurationVersion(configurationVersion);
-			
+
 			return this;
 		}
-		
+
 
 		public PostWebdeploymentsConfigurationsRequest build() {
             

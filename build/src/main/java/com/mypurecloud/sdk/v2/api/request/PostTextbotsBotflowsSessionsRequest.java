@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
-import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 
 public class PostTextbotsBotflowsSessionsRequest {
-    
+
 	private TextBotFlowLaunchRequest launchRequest;
 	public TextBotFlowLaunchRequest getLaunchRequest() {
 		return this.launchRequest;
@@ -44,7 +44,7 @@ public class PostTextbotsBotflowsSessionsRequest {
 	    this.setLaunchRequest(launchRequest);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,8 +74,8 @@ public class PostTextbotsBotflowsSessionsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/textbots/botflows/sessions")
                 .withBody(launchRequest)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -86,12 +86,12 @@ public class PostTextbotsBotflowsSessionsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(TextBotFlowLaunchRequest launchRequest) {
 	    return new Builder()
 	            .withRequiredParams(launchRequest);
 	}
-	
+
 
 	public static class Builder {
 		private final PostTextbotsBotflowsSessionsRequest request;
@@ -100,20 +100,20 @@ public class PostTextbotsBotflowsSessionsRequest {
 			request = new PostTextbotsBotflowsSessionsRequest();
 		}
 
-		
+
 		public Builder withLaunchRequest(TextBotFlowLaunchRequest launchRequest) {
 			request.setLaunchRequest(launchRequest);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(TextBotFlowLaunchRequest launchRequest) {
 			request.setLaunchRequest(launchRequest);
-			
+
 			return this;
 		}
-		
+
 
 		public PostTextbotsBotflowsSessionsRequest build() {
             

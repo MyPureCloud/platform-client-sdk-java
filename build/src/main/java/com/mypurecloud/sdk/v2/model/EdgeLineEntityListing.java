@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.total = total;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public EdgeLineEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
       return false;
     }
     EdgeLineEntityListing edgeLineEntityListing = (EdgeLineEntityListing) o;
+
     return Objects.equals(this.entities, edgeLineEntityListing.entities) &&
-        Objects.equals(this.pageSize, edgeLineEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, edgeLineEntityListing.pageNumber) &&
-        Objects.equals(this.total, edgeLineEntityListing.total) &&
-        Objects.equals(this.lastUri, edgeLineEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, edgeLineEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, edgeLineEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, edgeLineEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, edgeLineEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, edgeLineEntityListing.pageCount);
+            Objects.equals(this.pageSize, edgeLineEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, edgeLineEntityListing.pageNumber) &&
+            Objects.equals(this.total, edgeLineEntityListing.total) &&
+            Objects.equals(this.lastUri, edgeLineEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, edgeLineEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, edgeLineEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, edgeLineEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, edgeLineEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, edgeLineEntityListing.pageCount);
   }
 
   @Override

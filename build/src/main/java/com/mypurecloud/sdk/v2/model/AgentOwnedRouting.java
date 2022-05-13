@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class AgentOwnedRouting  implements Serializable {
     this.enableAgentOwnedCallbacks = enableAgentOwnedCallbacks;
   }
 
-  
+
   /**
    * The max amount of time a callback can be owned (in hours); Allowable range 1 - 168 hour(s) (inclusive)
    **/
@@ -60,7 +61,7 @@ public class AgentOwnedRouting  implements Serializable {
     this.maxOwnedCallbackHours = maxOwnedCallbackHours;
   }
 
-  
+
   /**
    * The max amount of time a callback can be scheduled out into the future (in hours); Allowable range 1 - 720 hour(s) (inclusive)
    **/
@@ -78,7 +79,6 @@ public class AgentOwnedRouting  implements Serializable {
     this.maxOwnedCallbackDelayHours = maxOwnedCallbackDelayHours;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class AgentOwnedRouting  implements Serializable {
       return false;
     }
     AgentOwnedRouting agentOwnedRouting = (AgentOwnedRouting) o;
+
     return Objects.equals(this.enableAgentOwnedCallbacks, agentOwnedRouting.enableAgentOwnedCallbacks) &&
-        Objects.equals(this.maxOwnedCallbackHours, agentOwnedRouting.maxOwnedCallbackHours) &&
-        Objects.equals(this.maxOwnedCallbackDelayHours, agentOwnedRouting.maxOwnedCallbackDelayHours);
+            Objects.equals(this.maxOwnedCallbackHours, agentOwnedRouting.maxOwnedCallbackHours) &&
+            Objects.equals(this.maxOwnedCallbackDelayHours, agentOwnedRouting.maxOwnedCallbackDelayHours);
   }
 
   @Override

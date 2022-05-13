@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.total = total;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public PolicyEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
       return false;
     }
     PolicyEntityListing policyEntityListing = (PolicyEntityListing) o;
+
     return Objects.equals(this.entities, policyEntityListing.entities) &&
-        Objects.equals(this.pageSize, policyEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, policyEntityListing.pageNumber) &&
-        Objects.equals(this.total, policyEntityListing.total) &&
-        Objects.equals(this.lastUri, policyEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, policyEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, policyEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, policyEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, policyEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, policyEntityListing.pageCount);
+            Objects.equals(this.pageSize, policyEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, policyEntityListing.pageNumber) &&
+            Objects.equals(this.total, policyEntityListing.total) &&
+            Objects.equals(this.lastUri, policyEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, policyEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, policyEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, policyEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, policyEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, policyEntityListing.pageCount);
   }
 
   @Override

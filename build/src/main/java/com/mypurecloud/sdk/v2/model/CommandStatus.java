@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class CommandStatus  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CommandStatus name(String name) {
@@ -161,7 +162,7 @@ public class CommandStatus  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -179,7 +180,7 @@ public class CommandStatus  implements Serializable {
     this.expiration = expiration;
   }
 
-  
+
   /**
    **/
   public CommandStatus userId(String userId) {
@@ -196,7 +197,7 @@ public class CommandStatus  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public CommandStatus statusCode(StatusCodeEnum statusCode) {
@@ -213,7 +214,7 @@ public class CommandStatus  implements Serializable {
     this.statusCode = statusCode;
   }
 
-  
+
   /**
    **/
   public CommandStatus commandType(CommandTypeEnum commandType) {
@@ -230,7 +231,7 @@ public class CommandStatus  implements Serializable {
     this.commandType = commandType;
   }
 
-  
+
   /**
    **/
   public CommandStatus document(Document document) {
@@ -247,14 +248,13 @@ public class CommandStatus  implements Serializable {
     this.document = document;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,14 +265,15 @@ public class CommandStatus  implements Serializable {
       return false;
     }
     CommandStatus commandStatus = (CommandStatus) o;
+
     return Objects.equals(this.id, commandStatus.id) &&
-        Objects.equals(this.name, commandStatus.name) &&
-        Objects.equals(this.expiration, commandStatus.expiration) &&
-        Objects.equals(this.userId, commandStatus.userId) &&
-        Objects.equals(this.statusCode, commandStatus.statusCode) &&
-        Objects.equals(this.commandType, commandStatus.commandType) &&
-        Objects.equals(this.document, commandStatus.document) &&
-        Objects.equals(this.selfUri, commandStatus.selfUri);
+            Objects.equals(this.name, commandStatus.name) &&
+            Objects.equals(this.expiration, commandStatus.expiration) &&
+            Objects.equals(this.userId, commandStatus.userId) &&
+            Objects.equals(this.statusCode, commandStatus.statusCode) &&
+            Objects.equals(this.commandType, commandStatus.commandType) &&
+            Objects.equals(this.document, commandStatus.document) &&
+            Objects.equals(this.selfUri, commandStatus.selfUri);
   }
 
   @Override

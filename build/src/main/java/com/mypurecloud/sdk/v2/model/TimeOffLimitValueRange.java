@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.timeOffLimit = timeOffLimit;
   }
 
-  
+
   /**
    * Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists
    **/
@@ -118,7 +119,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Granularity choice for time off limit
    **/
@@ -136,7 +137,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * A list of time off limit values in minutes per granularity interval
    **/
@@ -154,7 +155,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.limitMinutesPerInterval = limitMinutesPerInterval;
   }
 
-  
+
   /**
    * A list of allocated time off minutes per granularity interval
    **/
@@ -172,7 +173,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.allocatedMinutesPerInterval = allocatedMinutesPerInterval;
   }
 
-  
+
   /**
    * A list of waitlisted time off minutes per granularity interval
    **/
@@ -190,7 +191,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.waitlistedMinutesPerInterval = waitlistedMinutesPerInterval;
   }
 
-  
+
   /**
    * The current number of waitlisted time off requests for every interval per granularity
    **/
@@ -208,7 +209,7 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.waitlistedRequestsPerInterval = waitlistedRequestsPerInterval;
   }
 
-  
+
   /**
    * Version metadata for the time off limit
    **/
@@ -226,7 +227,6 @@ public class TimeOffLimitValueRange  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -237,14 +237,15 @@ public class TimeOffLimitValueRange  implements Serializable {
       return false;
     }
     TimeOffLimitValueRange timeOffLimitValueRange = (TimeOffLimitValueRange) o;
+
     return Objects.equals(this.timeOffLimit, timeOffLimitValueRange.timeOffLimit) &&
-        Objects.equals(this.startDate, timeOffLimitValueRange.startDate) &&
-        Objects.equals(this.granularity, timeOffLimitValueRange.granularity) &&
-        Objects.equals(this.limitMinutesPerInterval, timeOffLimitValueRange.limitMinutesPerInterval) &&
-        Objects.equals(this.allocatedMinutesPerInterval, timeOffLimitValueRange.allocatedMinutesPerInterval) &&
-        Objects.equals(this.waitlistedMinutesPerInterval, timeOffLimitValueRange.waitlistedMinutesPerInterval) &&
-        Objects.equals(this.waitlistedRequestsPerInterval, timeOffLimitValueRange.waitlistedRequestsPerInterval) &&
-        Objects.equals(this.metadata, timeOffLimitValueRange.metadata);
+            Objects.equals(this.startDate, timeOffLimitValueRange.startDate) &&
+            Objects.equals(this.granularity, timeOffLimitValueRange.granularity) &&
+            Objects.equals(this.limitMinutesPerInterval, timeOffLimitValueRange.limitMinutesPerInterval) &&
+            Objects.equals(this.allocatedMinutesPerInterval, timeOffLimitValueRange.allocatedMinutesPerInterval) &&
+            Objects.equals(this.waitlistedMinutesPerInterval, timeOffLimitValueRange.waitlistedMinutesPerInterval) &&
+            Objects.equals(this.waitlistedRequestsPerInterval, timeOffLimitValueRange.waitlistedRequestsPerInterval) &&
+            Objects.equals(this.metadata, timeOffLimitValueRange.metadata);
   }
 
   @Override

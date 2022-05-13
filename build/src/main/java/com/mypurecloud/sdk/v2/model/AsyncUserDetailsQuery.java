@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class AsyncUserDetailsQuery  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Filters that target the users to retrieve data for
    **/
@@ -116,7 +117,7 @@ public class AsyncUserDetailsQuery  implements Serializable {
     this.userFilters = userFilters;
   }
 
-  
+
   /**
    * Filters that target system and organization presence-level data
    **/
@@ -134,7 +135,7 @@ public class AsyncUserDetailsQuery  implements Serializable {
     this.presenceFilters = presenceFilters;
   }
 
-  
+
   /**
    * Filters that target agent routing status-level data
    **/
@@ -152,7 +153,7 @@ public class AsyncUserDetailsQuery  implements Serializable {
     this.routingStatusFilters = routingStatusFilters;
   }
 
-  
+
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
@@ -170,7 +171,7 @@ public class AsyncUserDetailsQuery  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * Specify number of results to be returned
    **/
@@ -188,7 +189,6 @@ public class AsyncUserDetailsQuery  implements Serializable {
     this.limit = limit;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,12 +199,13 @@ public class AsyncUserDetailsQuery  implements Serializable {
       return false;
     }
     AsyncUserDetailsQuery asyncUserDetailsQuery = (AsyncUserDetailsQuery) o;
+
     return Objects.equals(this.interval, asyncUserDetailsQuery.interval) &&
-        Objects.equals(this.userFilters, asyncUserDetailsQuery.userFilters) &&
-        Objects.equals(this.presenceFilters, asyncUserDetailsQuery.presenceFilters) &&
-        Objects.equals(this.routingStatusFilters, asyncUserDetailsQuery.routingStatusFilters) &&
-        Objects.equals(this.order, asyncUserDetailsQuery.order) &&
-        Objects.equals(this.limit, asyncUserDetailsQuery.limit);
+            Objects.equals(this.userFilters, asyncUserDetailsQuery.userFilters) &&
+            Objects.equals(this.presenceFilters, asyncUserDetailsQuery.presenceFilters) &&
+            Objects.equals(this.routingStatusFilters, asyncUserDetailsQuery.routingStatusFilters) &&
+            Objects.equals(this.order, asyncUserDetailsQuery.order) &&
+            Objects.equals(this.limit, asyncUserDetailsQuery.limit);
   }
 
   @Override

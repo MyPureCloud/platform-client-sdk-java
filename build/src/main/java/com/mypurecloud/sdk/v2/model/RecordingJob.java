@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class RecordingJob  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The current state of the job.
    **/
@@ -115,91 +116,90 @@ public class RecordingJob  implements Serializable {
     this.state = state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Original query of the job.")
   @JsonProperty("recordingJobsQuery")
   public RecordingJobsQuery getRecordingJobsQuery() {
     return recordingJobsQuery;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of conversations affected.")
   @JsonProperty("totalConversations")
   public Integer getTotalConversations() {
     return totalConversations;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of recordings affected.")
   @JsonProperty("totalRecordings")
   public Integer getTotalRecordings() {
     return totalRecordings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of recordings that have been skipped.")
   @JsonProperty("totalSkippedRecordings")
   public Integer getTotalSkippedRecordings() {
     return totalSkippedRecordings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of recordings that the bulk job failed to process.")
   @JsonProperty("totalFailedRecordings")
   public Integer getTotalFailedRecordings() {
     return totalFailedRecordings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of recordings have been processed.")
   @JsonProperty("totalProcessedRecordings")
   public Integer getTotalProcessedRecordings() {
     return totalProcessedRecordings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Progress in percentage based on the number of recordings")
   @JsonProperty("percentProgress")
   public Integer getPercentProgress() {
     return percentProgress;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error occurred during the job execution")
   @JsonProperty("errorMessage")
   public String getErrorMessage() {
     return errorMessage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Get IDs of recordings that the bulk job failed for")
   @JsonProperty("failedRecordings")
   public String getFailedRecordings() {
     return failedRecordings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Details of the user created the job")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -210,20 +210,21 @@ public class RecordingJob  implements Serializable {
       return false;
     }
     RecordingJob recordingJob = (RecordingJob) o;
+
     return Objects.equals(this.id, recordingJob.id) &&
-        Objects.equals(this.state, recordingJob.state) &&
-        Objects.equals(this.recordingJobsQuery, recordingJob.recordingJobsQuery) &&
-        Objects.equals(this.dateCreated, recordingJob.dateCreated) &&
-        Objects.equals(this.totalConversations, recordingJob.totalConversations) &&
-        Objects.equals(this.totalRecordings, recordingJob.totalRecordings) &&
-        Objects.equals(this.totalSkippedRecordings, recordingJob.totalSkippedRecordings) &&
-        Objects.equals(this.totalFailedRecordings, recordingJob.totalFailedRecordings) &&
-        Objects.equals(this.totalProcessedRecordings, recordingJob.totalProcessedRecordings) &&
-        Objects.equals(this.percentProgress, recordingJob.percentProgress) &&
-        Objects.equals(this.errorMessage, recordingJob.errorMessage) &&
-        Objects.equals(this.failedRecordings, recordingJob.failedRecordings) &&
-        Objects.equals(this.selfUri, recordingJob.selfUri) &&
-        Objects.equals(this.user, recordingJob.user);
+            Objects.equals(this.state, recordingJob.state) &&
+            Objects.equals(this.recordingJobsQuery, recordingJob.recordingJobsQuery) &&
+            Objects.equals(this.dateCreated, recordingJob.dateCreated) &&
+            Objects.equals(this.totalConversations, recordingJob.totalConversations) &&
+            Objects.equals(this.totalRecordings, recordingJob.totalRecordings) &&
+            Objects.equals(this.totalSkippedRecordings, recordingJob.totalSkippedRecordings) &&
+            Objects.equals(this.totalFailedRecordings, recordingJob.totalFailedRecordings) &&
+            Objects.equals(this.totalProcessedRecordings, recordingJob.totalProcessedRecordings) &&
+            Objects.equals(this.percentProgress, recordingJob.percentProgress) &&
+            Objects.equals(this.errorMessage, recordingJob.errorMessage) &&
+            Objects.equals(this.failedRecordings, recordingJob.failedRecordings) &&
+            Objects.equals(this.selfUri, recordingJob.selfUri) &&
+            Objects.equals(this.user, recordingJob.user);
   }
 
   @Override

@@ -20,46 +20,46 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OrphanRecording;
-import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Annotation;
-import com.mypurecloud.sdk.v2.model.RecordingMetadata;
-import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
-import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
-import com.mypurecloud.sdk.v2.model.RecordingJob;
-import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.Policy;
-import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
-import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
-import com.mypurecloud.sdk.v2.model.RecordingSettings;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
-import com.mypurecloud.sdk.v2.model.PolicyUpdate;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
-import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
-import com.mypurecloud.sdk.v2.model.EncryptionKey;
-import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.EncryptionKey;
+import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.OrphanRecording;
+import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
+import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.Policy;
+import com.mypurecloud.sdk.v2.model.PolicyCreate;
+import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
+import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.RecordingMetadata;
+import com.mypurecloud.sdk.v2.model.RecordingSettings;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 
 public class GetRecordingJobFailedrecordingsRequest {
-    
+
 	private String jobId;
 	public String getJobId() {
 		return this.jobId;
@@ -73,7 +73,7 @@ public class GetRecordingJobFailedrecordingsRequest {
 	    this.setJobId(jobId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -87,7 +87,7 @@ public class GetRecordingJobFailedrecordingsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -101,7 +101,7 @@ public class GetRecordingJobFailedrecordingsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Boolean includeTotal;
 	public Boolean getIncludeTotal() {
 		return this.includeTotal;
@@ -115,7 +115,7 @@ public class GetRecordingJobFailedrecordingsRequest {
 	    this.setIncludeTotal(includeTotal);
 	    return this;
 	} 
-	
+
 	private String cursor;
 	public String getCursor() {
 		return this.cursor;
@@ -129,7 +129,7 @@ public class GetRecordingJobFailedrecordingsRequest {
 	    this.setCursor(cursor);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -160,15 +160,19 @@ public class GetRecordingJobFailedrecordingsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/recording/jobs/{jobId}/failedrecordings")
                 .withPathParameter("jobId", jobId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("includeTotal", "", includeTotal)
         
+
                 .withQueryParameters("cursor", "", cursor)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -179,12 +183,12 @@ public class GetRecordingJobFailedrecordingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String jobId) {
 	    return new Builder()
 	            .withRequiredParams(jobId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetRecordingJobFailedrecordingsRequest request;
@@ -193,40 +197,40 @@ public class GetRecordingJobFailedrecordingsRequest {
 			request = new GetRecordingJobFailedrecordingsRequest();
 		}
 
-		
+
 		public Builder withJobId(String jobId) {
 			request.setJobId(jobId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withIncludeTotal(Boolean includeTotal) {
 			request.setIncludeTotal(includeTotal);
 			return this;
 		}
-		
+
 		public Builder withCursor(String cursor) {
 			request.setCursor(cursor);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String jobId) {
 			request.setJobId(jobId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetRecordingJobFailedrecordingsRequest build() {
             

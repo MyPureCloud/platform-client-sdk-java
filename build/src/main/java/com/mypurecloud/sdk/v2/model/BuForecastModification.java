@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -203,7 +204,7 @@ public class BuForecastModification  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The number of 15 minute intervals past referenceStartDate representing the first interval to which to apply this modification. Must be null if values is populated
    **/
@@ -221,7 +222,7 @@ public class BuForecastModification  implements Serializable {
     this.startIntervalIndex = startIntervalIndex;
   }
 
-  
+
   /**
    * The number of 15 minute intervals past referenceStartDate representing the last interval to which to apply this modification.  Must be null if values is populated
    **/
@@ -239,7 +240,7 @@ public class BuForecastModification  implements Serializable {
     this.endIntervalIndex = endIntervalIndex;
   }
 
-  
+
   /**
    * The metric to which this modification applies
    **/
@@ -257,14 +258,14 @@ public class BuForecastModification  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The legacy metric to which this modification applies if applicable")
   @JsonProperty("legacyMetric")
   public LegacyMetricEnum getLegacyMetric() {
     return legacyMetric;
   }
 
-  
+
   /**
    * The value of the modification.  Must be null if \"values\" is populated
    **/
@@ -282,7 +283,7 @@ public class BuForecastModification  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The list of values to update.  Only applicable for grid-type modifications. Must be null if \"value\" is populated
    **/
@@ -300,7 +301,7 @@ public class BuForecastModification  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The client side display granularity of the modification, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
@@ -318,7 +319,7 @@ public class BuForecastModification  implements Serializable {
     this.displayGranularity = displayGranularity;
   }
 
-  
+
   /**
    * The actual granularity of the modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
@@ -336,7 +337,7 @@ public class BuForecastModification  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * Whether the modification is enabled for the forecast
    **/
@@ -354,7 +355,7 @@ public class BuForecastModification  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The IDs of the planning groups to which this forecast modification applies.  Leave empty to apply to all
    **/
@@ -372,7 +373,6 @@ public class BuForecastModification  implements Serializable {
     this.planningGroupIds = planningGroupIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -383,17 +383,18 @@ public class BuForecastModification  implements Serializable {
       return false;
     }
     BuForecastModification buForecastModification = (BuForecastModification) o;
+
     return Objects.equals(this.type, buForecastModification.type) &&
-        Objects.equals(this.startIntervalIndex, buForecastModification.startIntervalIndex) &&
-        Objects.equals(this.endIntervalIndex, buForecastModification.endIntervalIndex) &&
-        Objects.equals(this.metric, buForecastModification.metric) &&
-        Objects.equals(this.legacyMetric, buForecastModification.legacyMetric) &&
-        Objects.equals(this.value, buForecastModification.value) &&
-        Objects.equals(this.values, buForecastModification.values) &&
-        Objects.equals(this.displayGranularity, buForecastModification.displayGranularity) &&
-        Objects.equals(this.granularity, buForecastModification.granularity) &&
-        Objects.equals(this.enabled, buForecastModification.enabled) &&
-        Objects.equals(this.planningGroupIds, buForecastModification.planningGroupIds);
+            Objects.equals(this.startIntervalIndex, buForecastModification.startIntervalIndex) &&
+            Objects.equals(this.endIntervalIndex, buForecastModification.endIntervalIndex) &&
+            Objects.equals(this.metric, buForecastModification.metric) &&
+            Objects.equals(this.legacyMetric, buForecastModification.legacyMetric) &&
+            Objects.equals(this.value, buForecastModification.value) &&
+            Objects.equals(this.values, buForecastModification.values) &&
+            Objects.equals(this.displayGranularity, buForecastModification.displayGranularity) &&
+            Objects.equals(this.granularity, buForecastModification.granularity) &&
+            Objects.equals(this.enabled, buForecastModification.enabled) &&
+            Objects.equals(this.planningGroupIds, buForecastModification.planningGroupIds);
   }
 
   @Override

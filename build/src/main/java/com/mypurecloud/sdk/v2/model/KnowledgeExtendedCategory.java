@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class KnowledgeExtendedCategory  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Category name
    **/
@@ -117,7 +118,7 @@ public class KnowledgeExtendedCategory  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Category description
    **/
@@ -135,56 +136,55 @@ public class KnowledgeExtendedCategory  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base which category does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Actual language of the category")
   @JsonProperty("languageCode")
   public LanguageCodeEnum getLanguageCode() {
     return languageCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category parent")
   @JsonProperty("parent")
   public KnowledgeCategory getParent() {
     return parent;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category children")
   @JsonProperty("children")
   public List<KnowledgeCategory> getChildren() {
     return children;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -195,16 +195,17 @@ public class KnowledgeExtendedCategory  implements Serializable {
       return false;
     }
     KnowledgeExtendedCategory knowledgeExtendedCategory = (KnowledgeExtendedCategory) o;
+
     return Objects.equals(this.id, knowledgeExtendedCategory.id) &&
-        Objects.equals(this.name, knowledgeExtendedCategory.name) &&
-        Objects.equals(this.description, knowledgeExtendedCategory.description) &&
-        Objects.equals(this.knowledgeBase, knowledgeExtendedCategory.knowledgeBase) &&
-        Objects.equals(this.languageCode, knowledgeExtendedCategory.languageCode) &&
-        Objects.equals(this.dateCreated, knowledgeExtendedCategory.dateCreated) &&
-        Objects.equals(this.dateModified, knowledgeExtendedCategory.dateModified) &&
-        Objects.equals(this.parent, knowledgeExtendedCategory.parent) &&
-        Objects.equals(this.children, knowledgeExtendedCategory.children) &&
-        Objects.equals(this.selfUri, knowledgeExtendedCategory.selfUri);
+            Objects.equals(this.name, knowledgeExtendedCategory.name) &&
+            Objects.equals(this.description, knowledgeExtendedCategory.description) &&
+            Objects.equals(this.knowledgeBase, knowledgeExtendedCategory.knowledgeBase) &&
+            Objects.equals(this.languageCode, knowledgeExtendedCategory.languageCode) &&
+            Objects.equals(this.dateCreated, knowledgeExtendedCategory.dateCreated) &&
+            Objects.equals(this.dateModified, knowledgeExtendedCategory.dateModified) &&
+            Objects.equals(this.parent, knowledgeExtendedCategory.parent) &&
+            Objects.equals(this.children, knowledgeExtendedCategory.children) &&
+            Objects.equals(this.selfUri, knowledgeExtendedCategory.selfUri);
   }
 
   @Override

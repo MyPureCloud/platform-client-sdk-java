@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PostAuthorizationDivisionsRequest {
-    
+
 	private AuthzDivision body;
 	public AuthzDivision getBody() {
 		return this.body;
@@ -39,7 +39,7 @@ public class PostAuthorizationDivisionsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,8 +69,8 @@ public class PostAuthorizationDivisionsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/authorization/divisions")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class PostAuthorizationDivisionsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(AuthzDivision body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAuthorizationDivisionsRequest request;
@@ -95,20 +95,20 @@ public class PostAuthorizationDivisionsRequest {
 			request = new PostAuthorizationDivisionsRequest();
 		}
 
-		
+
 		public Builder withBody(AuthzDivision body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(AuthzDivision body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostAuthorizationDivisionsRequest build() {
             

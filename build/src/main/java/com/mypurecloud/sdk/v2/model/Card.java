@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CardAction;
@@ -47,7 +48,7 @@ public class Card  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the description.
    **/
@@ -65,7 +66,7 @@ public class Card  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * URL of an image.
    **/
@@ -83,7 +84,7 @@ public class Card  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The default action to be taken.
    **/
@@ -101,7 +102,7 @@ public class Card  implements Serializable {
     this.defaultAction = defaultAction;
   }
 
-  
+
   /**
    * List of possible action objects.
    **/
@@ -119,7 +120,6 @@ public class Card  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class Card  implements Serializable {
       return false;
     }
     Card card = (Card) o;
+
     return Objects.equals(this.title, card.title) &&
-        Objects.equals(this.description, card.description) &&
-        Objects.equals(this.url, card.url) &&
-        Objects.equals(this.defaultAction, card.defaultAction) &&
-        Objects.equals(this.actions, card.actions);
+            Objects.equals(this.description, card.description) &&
+            Objects.equals(this.url, card.url) &&
+            Objects.equals(this.defaultAction, card.defaultAction) &&
+            Objects.equals(this.actions, card.actions);
   }
 
   @Override

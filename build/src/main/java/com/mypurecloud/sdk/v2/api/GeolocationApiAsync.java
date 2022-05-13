@@ -14,8 +14,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 import com.mypurecloud.sdk.v2.model.Geolocation;
+import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetGeolocationsSettingsRequest;
@@ -30,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class GeolocationApiAsync {
   private final ApiClient pcapiClient;
 
@@ -42,9 +41,8 @@ public class GeolocationApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
-   * Get a organization&#39;s GeolocationSettings
+   * Get a organization's GeolocationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -78,7 +76,7 @@ public class GeolocationApiAsync {
   }
 
   /**
-   * Get a organization&#39;s GeolocationSettings
+   * Get a organization's GeolocationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -118,9 +116,8 @@ public class GeolocationApiAsync {
     }
   }
 
-  
   /**
-   * Get a user&#39;s Geolocation
+   * Get a user's Geolocation
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -154,7 +151,7 @@ public class GeolocationApiAsync {
   }
 
   /**
-   * Get a user&#39;s Geolocation
+   * Get a user's Geolocation
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -194,9 +191,8 @@ public class GeolocationApiAsync {
     }
   }
 
-  
   /**
-   * Patch a organization&#39;s GeolocationSettings
+   * Patch a organization's GeolocationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -230,7 +226,7 @@ public class GeolocationApiAsync {
   }
 
   /**
-   * Patch a organization&#39;s GeolocationSettings
+   * Patch a organization's GeolocationSettings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -270,10 +266,9 @@ public class GeolocationApiAsync {
     }
   }
 
-  
   /**
-   * Patch a user&#39;s Geolocation
-   * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+   * Patch a user's Geolocation
+   * The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -306,8 +301,8 @@ public class GeolocationApiAsync {
   }
 
   /**
-   * Patch a user&#39;s Geolocation
-   * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+   * Patch a user's Geolocation
+   * The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -346,7 +341,6 @@ public class GeolocationApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HistoricalAdherenceQueryResult;
@@ -47,7 +48,7 @@ public class WfmHistoricalAdherenceResultWrapper  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    * The list of historical adherence query results
    **/
@@ -65,7 +66,7 @@ public class WfmHistoricalAdherenceResultWrapper  implements Serializable {
     this.data = data;
   }
 
-  
+
   /**
    * Map of secondary presence lookup ID to corresponding secondary presence ID
    **/
@@ -83,7 +84,6 @@ public class WfmHistoricalAdherenceResultWrapper  implements Serializable {
     this.lookupIdToSecondaryPresenceId = lookupIdToSecondaryPresenceId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,9 +94,10 @@ public class WfmHistoricalAdherenceResultWrapper  implements Serializable {
       return false;
     }
     WfmHistoricalAdherenceResultWrapper wfmHistoricalAdherenceResultWrapper = (WfmHistoricalAdherenceResultWrapper) o;
+
     return Objects.equals(this.entityId, wfmHistoricalAdherenceResultWrapper.entityId) &&
-        Objects.equals(this.data, wfmHistoricalAdherenceResultWrapper.data) &&
-        Objects.equals(this.lookupIdToSecondaryPresenceId, wfmHistoricalAdherenceResultWrapper.lookupIdToSecondaryPresenceId);
+            Objects.equals(this.data, wfmHistoricalAdherenceResultWrapper.data) &&
+            Objects.equals(this.lookupIdToSecondaryPresenceId, wfmHistoricalAdherenceResultWrapper.lookupIdToSecondaryPresenceId);
   }
 
   @Override

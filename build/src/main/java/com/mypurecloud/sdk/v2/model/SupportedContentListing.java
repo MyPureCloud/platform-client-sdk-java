@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing total(Long total) {
@@ -103,7 +104,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.total = total;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public SupportedContentListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class SupportedContentListing  implements Serializable, PagedResource<Sup
       return false;
     }
     SupportedContentListing supportedContentListing = (SupportedContentListing) o;
+
     return Objects.equals(this.entities, supportedContentListing.entities) &&
-        Objects.equals(this.pageSize, supportedContentListing.pageSize) &&
-        Objects.equals(this.pageNumber, supportedContentListing.pageNumber) &&
-        Objects.equals(this.total, supportedContentListing.total) &&
-        Objects.equals(this.lastUri, supportedContentListing.lastUri) &&
-        Objects.equals(this.firstUri, supportedContentListing.firstUri) &&
-        Objects.equals(this.selfUri, supportedContentListing.selfUri) &&
-        Objects.equals(this.previousUri, supportedContentListing.previousUri) &&
-        Objects.equals(this.nextUri, supportedContentListing.nextUri) &&
-        Objects.equals(this.pageCount, supportedContentListing.pageCount);
+            Objects.equals(this.pageSize, supportedContentListing.pageSize) &&
+            Objects.equals(this.pageNumber, supportedContentListing.pageNumber) &&
+            Objects.equals(this.total, supportedContentListing.total) &&
+            Objects.equals(this.lastUri, supportedContentListing.lastUri) &&
+            Objects.equals(this.firstUri, supportedContentListing.firstUri) &&
+            Objects.equals(this.selfUri, supportedContentListing.selfUri) &&
+            Objects.equals(this.previousUri, supportedContentListing.previousUri) &&
+            Objects.equals(this.nextUri, supportedContentListing.nextUri) &&
+            Objects.equals(this.pageCount, supportedContentListing.pageCount);
   }
 
   @Override

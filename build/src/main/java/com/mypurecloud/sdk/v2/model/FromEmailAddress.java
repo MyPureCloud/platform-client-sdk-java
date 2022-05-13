@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -43,7 +44,7 @@ public class FromEmailAddress  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    * The friendly name of the email address.
    **/
@@ -61,7 +62,7 @@ public class FromEmailAddress  implements Serializable {
     this.friendlyName = friendlyName;
   }
 
-  
+
   /**
    * The local part of the email address.
    **/
@@ -79,7 +80,6 @@ public class FromEmailAddress  implements Serializable {
     this.localPart = localPart;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class FromEmailAddress  implements Serializable {
       return false;
     }
     FromEmailAddress fromEmailAddress = (FromEmailAddress) o;
+
     return Objects.equals(this.domain, fromEmailAddress.domain) &&
-        Objects.equals(this.friendlyName, fromEmailAddress.friendlyName) &&
-        Objects.equals(this.localPart, fromEmailAddress.localPart);
+            Objects.equals(this.friendlyName, fromEmailAddress.friendlyName) &&
+            Objects.equals(this.localPart, fromEmailAddress.localPart);
   }
 
   @Override

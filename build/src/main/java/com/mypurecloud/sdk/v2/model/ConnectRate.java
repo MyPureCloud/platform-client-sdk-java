@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,21 +32,20 @@ public class ConnectRate  implements Serializable {
     return attempts;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of calls with a live voice detected")
   @JsonProperty("connects")
   public Long getConnects() {
     return connects;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Ratio of connects to attempts")
   @JsonProperty("connectRatio")
   public Double getConnectRatio() {
     return connectRatio;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -56,9 +56,10 @@ public class ConnectRate  implements Serializable {
       return false;
     }
     ConnectRate connectRate = (ConnectRate) o;
+
     return Objects.equals(this.attempts, connectRate.attempts) &&
-        Objects.equals(this.connects, connectRate.connects) &&
-        Objects.equals(this.connectRatio, connectRate.connectRatio);
+            Objects.equals(this.connects, connectRate.connects) &&
+            Objects.equals(this.connectRatio, connectRate.connectRatio);
   }
 
   @Override

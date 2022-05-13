@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.GDPRRequestEntityListing;
 import com.mypurecloud.sdk.v2.model.GDPRSubjectEntityListing;
 
 public class GetGdprSubjectsRequest {
-    
+
 	private String searchType;
 	public String getSearchType() {
 		return this.searchType;
@@ -42,10 +42,10 @@ public class GetGdprSubjectsRequest {
 	} 
 
 	public enum searchTypeValues { 
-		NAME("NAME"), 
-		ADDRESS("ADDRESS"), 
-		PHONE("PHONE"), 
-		EMAIL("EMAIL"), 
+		NAME("NAME"),
+		ADDRESS("ADDRESS"),
+		PHONE("PHONE"),
+		EMAIL("EMAIL"),
 		TWITTER("TWITTER");
 
 		private String value;
@@ -73,7 +73,7 @@ public class GetGdprSubjectsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String searchValue;
 	public String getSearchValue() {
 		return this.searchValue;
@@ -87,7 +87,7 @@ public class GetGdprSubjectsRequest {
 	    this.setSearchValue(searchValue);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -121,11 +121,13 @@ public class GetGdprSubjectsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/gdpr/subjects")
+
                 .withQueryParameters("searchType", "", searchType)
         
+
                 .withQueryParameters("searchValue", "", searchValue)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -136,12 +138,12 @@ public class GetGdprSubjectsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String searchType, String searchValue) {
 	    return new Builder()
 	            .withRequiredParams(searchType, searchValue);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGdprSubjectsRequest request;
@@ -150,31 +152,35 @@ public class GetGdprSubjectsRequest {
 			request = new GetGdprSubjectsRequest();
 		}
 
-		
+
 		public Builder withSearchType(String searchType) {
 			request.setSearchType(searchType);
 			return this;
 		}
 
+
+
+		
 		public Builder withSearchType(searchTypeValues searchType) {
 		    request.setSearchType(searchType.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSearchValue(String searchValue) {
 			request.setSearchValue(searchValue);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String searchType, String searchValue) {
 			request.setSearchType(searchType);
-						request.setSearchValue(searchValue);
-			
+			request.setSearchValue(searchValue);
+
 			return this;
 		}
-		
+
 
 		public GetGdprSubjectsRequest build() {
             

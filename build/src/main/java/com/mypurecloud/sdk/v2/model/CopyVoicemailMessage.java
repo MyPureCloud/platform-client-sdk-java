@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class CopyVoicemailMessage  implements Serializable {
     this.voicemailMessageId = voicemailMessageId;
   }
 
-  
+
   /**
    * The id of the User to copy the VoicemailMessage to
    **/
@@ -61,7 +62,7 @@ public class CopyVoicemailMessage  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The id of the Group to copy the VoicemailMessage to
    **/
@@ -79,7 +80,6 @@ public class CopyVoicemailMessage  implements Serializable {
     this.groupId = groupId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class CopyVoicemailMessage  implements Serializable {
       return false;
     }
     CopyVoicemailMessage copyVoicemailMessage = (CopyVoicemailMessage) o;
+
     return Objects.equals(this.voicemailMessageId, copyVoicemailMessage.voicemailMessageId) &&
-        Objects.equals(this.userId, copyVoicemailMessage.userId) &&
-        Objects.equals(this.groupId, copyVoicemailMessage.groupId);
+            Objects.equals(this.userId, copyVoicemailMessage.userId) &&
+            Objects.equals(this.groupId, copyVoicemailMessage.groupId);
   }
 
   @Override

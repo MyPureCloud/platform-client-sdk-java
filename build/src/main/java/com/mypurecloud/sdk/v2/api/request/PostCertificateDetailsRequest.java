@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.Certificate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
-import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
-import com.mypurecloud.sdk.v2.model.Certificate;
+import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 
 public class PostCertificateDetailsRequest {
-    
+
 	private Certificate body;
 	public Certificate getBody() {
 		return this.body;
@@ -42,7 +42,7 @@ public class PostCertificateDetailsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,8 +72,8 @@ public class PostCertificateDetailsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/certificate/details")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class PostCertificateDetailsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Certificate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostCertificateDetailsRequest request;
@@ -98,20 +98,20 @@ public class PostCertificateDetailsRequest {
 			request = new PostCertificateDetailsRequest();
 		}
 
-		
+
 		public Builder withBody(Certificate body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Certificate body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostCertificateDetailsRequest build() {
             

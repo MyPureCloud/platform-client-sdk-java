@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypeSchemaExtension;
@@ -41,56 +42,55 @@ public class ScimConfigResourceType  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of the resource type.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The description of the resource type.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI of the primary or base schema for the resource type.")
   @JsonProperty("schema")
   public String getSchema() {
     return schema;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of schema extensions for the resource type.")
   @JsonProperty("schemaExtensions")
   public List<ScimConfigResourceTypeSchemaExtension> getSchemaExtensions() {
     return schemaExtensions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The HTTP-addressable endpoint of the resource type. Appears after the base URL.")
   @JsonProperty("endpoint")
   public String getEndpoint() {
     return endpoint;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"ResourceType\" resources.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,14 +101,15 @@ public class ScimConfigResourceType  implements Serializable {
       return false;
     }
     ScimConfigResourceType scimConfigResourceType = (ScimConfigResourceType) o;
+
     return Objects.equals(this.id, scimConfigResourceType.id) &&
-        Objects.equals(this.schemas, scimConfigResourceType.schemas) &&
-        Objects.equals(this.name, scimConfigResourceType.name) &&
-        Objects.equals(this.description, scimConfigResourceType.description) &&
-        Objects.equals(this.schema, scimConfigResourceType.schema) &&
-        Objects.equals(this.schemaExtensions, scimConfigResourceType.schemaExtensions) &&
-        Objects.equals(this.endpoint, scimConfigResourceType.endpoint) &&
-        Objects.equals(this.meta, scimConfigResourceType.meta);
+            Objects.equals(this.schemas, scimConfigResourceType.schemas) &&
+            Objects.equals(this.name, scimConfigResourceType.name) &&
+            Objects.equals(this.description, scimConfigResourceType.description) &&
+            Objects.equals(this.schema, scimConfigResourceType.schema) &&
+            Objects.equals(this.schemaExtensions, scimConfigResourceType.schemaExtensions) &&
+            Objects.equals(this.endpoint, scimConfigResourceType.endpoint) &&
+            Objects.equals(this.meta, scimConfigResourceType.meta);
   }
 
   @Override

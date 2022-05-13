@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastAbandonRateResponse;
@@ -45,7 +46,7 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
-  
+
   /**
    * The average speed of answer goal for this forecast
    **/
@@ -63,7 +64,7 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
     this.averageSpeedOfAnswer = averageSpeedOfAnswer;
   }
 
-  
+
   /**
    * The abandon rate goal for this forecast
    **/
@@ -81,7 +82,6 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class ForecastServiceGoalTemplateResponse  implements Serializable {
       return false;
     }
     ForecastServiceGoalTemplateResponse forecastServiceGoalTemplateResponse = (ForecastServiceGoalTemplateResponse) o;
+
     return Objects.equals(this.serviceLevel, forecastServiceGoalTemplateResponse.serviceLevel) &&
-        Objects.equals(this.averageSpeedOfAnswer, forecastServiceGoalTemplateResponse.averageSpeedOfAnswer) &&
-        Objects.equals(this.abandonRate, forecastServiceGoalTemplateResponse.abandonRate);
+            Objects.equals(this.averageSpeedOfAnswer, forecastServiceGoalTemplateResponse.averageSpeedOfAnswer) &&
+            Objects.equals(this.abandonRate, forecastServiceGoalTemplateResponse.abandonRate);
   }
 
   @Override

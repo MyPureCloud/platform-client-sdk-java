@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicUriReference;
@@ -42,7 +43,7 @@ public class QueueConversationCallbackEventTopicScoredAgent  implements Serializ
     this.agent = agent;
   }
 
-  
+
   /**
    * Agent's score for the current conversation, from 0 - 100, higher being better
    **/
@@ -60,7 +61,6 @@ public class QueueConversationCallbackEventTopicScoredAgent  implements Serializ
     this.score = score;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class QueueConversationCallbackEventTopicScoredAgent  implements Serializ
       return false;
     }
     QueueConversationCallbackEventTopicScoredAgent queueConversationCallbackEventTopicScoredAgent = (QueueConversationCallbackEventTopicScoredAgent) o;
+
     return Objects.equals(this.agent, queueConversationCallbackEventTopicScoredAgent.agent) &&
-        Objects.equals(this.score, queueConversationCallbackEventTopicScoredAgent.score);
+            Objects.equals(this.score, queueConversationCallbackEventTopicScoredAgent.score);
   }
 
   @Override

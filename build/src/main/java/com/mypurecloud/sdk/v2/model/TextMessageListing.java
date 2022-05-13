@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TextMessageListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TextMessageListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TextMessageListing total(Long total) {
@@ -103,7 +104,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TextMessageListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public TextMessageListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public TextMessageListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TextMessageListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public TextMessageListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TextMessageListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
       return false;
     }
     TextMessageListing textMessageListing = (TextMessageListing) o;
+
     return Objects.equals(this.entities, textMessageListing.entities) &&
-        Objects.equals(this.pageSize, textMessageListing.pageSize) &&
-        Objects.equals(this.pageNumber, textMessageListing.pageNumber) &&
-        Objects.equals(this.total, textMessageListing.total) &&
-        Objects.equals(this.lastUri, textMessageListing.lastUri) &&
-        Objects.equals(this.firstUri, textMessageListing.firstUri) &&
-        Objects.equals(this.selfUri, textMessageListing.selfUri) &&
-        Objects.equals(this.previousUri, textMessageListing.previousUri) &&
-        Objects.equals(this.nextUri, textMessageListing.nextUri) &&
-        Objects.equals(this.pageCount, textMessageListing.pageCount);
+            Objects.equals(this.pageSize, textMessageListing.pageSize) &&
+            Objects.equals(this.pageNumber, textMessageListing.pageNumber) &&
+            Objects.equals(this.total, textMessageListing.total) &&
+            Objects.equals(this.lastUri, textMessageListing.lastUri) &&
+            Objects.equals(this.firstUri, textMessageListing.firstUri) &&
+            Objects.equals(this.selfUri, textMessageListing.selfUri) &&
+            Objects.equals(this.previousUri, textMessageListing.previousUri) &&
+            Objects.equals(this.nextUri, textMessageListing.nextUri) &&
+            Objects.equals(this.pageCount, textMessageListing.pageCount);
   }
 
   @Override

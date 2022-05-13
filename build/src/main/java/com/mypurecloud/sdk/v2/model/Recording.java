@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -263,7 +264,7 @@ public class Recording  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Recording name(String name) {
@@ -280,7 +281,7 @@ public class Recording  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Recording conversationId(String conversationId) {
@@ -297,7 +298,7 @@ public class Recording  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public Recording path(String path) {
@@ -314,7 +315,7 @@ public class Recording  implements Serializable {
     this.path = path;
   }
 
-  
+
   /**
    * The start time of the recording. Null when there is no playable media.
    **/
@@ -332,7 +333,7 @@ public class Recording  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The end time of the recording. Null when there is no playable media.
    **/
@@ -350,7 +351,7 @@ public class Recording  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The type of media that the recording is. At the moment that could be audio, chat, or email.
    **/
@@ -368,7 +369,7 @@ public class Recording  implements Serializable {
     this.media = media;
   }
 
-  
+
   /**
    * Annotations that belong to the recording.
    **/
@@ -386,7 +387,7 @@ public class Recording  implements Serializable {
     this.annotations = annotations;
   }
 
-  
+
   /**
    * Represents a chat transcript
    **/
@@ -404,7 +405,7 @@ public class Recording  implements Serializable {
     this.transcript = transcript;
   }
 
-  
+
   /**
    * Represents an email transcript
    **/
@@ -422,7 +423,7 @@ public class Recording  implements Serializable {
     this.emailTranscript = emailTranscript;
   }
 
-  
+
   /**
    * Represents a messaging transcript
    **/
@@ -440,7 +441,7 @@ public class Recording  implements Serializable {
     this.messagingTranscript = messagingTranscript;
   }
 
-  
+
   /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
    **/
@@ -458,7 +459,7 @@ public class Recording  implements Serializable {
     this.fileState = fileState;
   }
 
-  
+
   /**
    * The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -476,7 +477,7 @@ public class Recording  implements Serializable {
     this.restoreExpirationTime = restoreExpirationTime;
   }
 
-  
+
   /**
    * The different mediaUris for the recording. Null when there is no playable media.
    **/
@@ -494,7 +495,7 @@ public class Recording  implements Serializable {
     this.mediaUris = mediaUris;
   }
 
-  
+
   /**
    **/
   public Recording estimatedTranscodeTimeMs(Long estimatedTranscodeTimeMs) {
@@ -511,7 +512,7 @@ public class Recording  implements Serializable {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
-  
+
   /**
    **/
   public Recording actualTranscodeTimeMs(Long actualTranscodeTimeMs) {
@@ -528,7 +529,7 @@ public class Recording  implements Serializable {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 
-  
+
   /**
    * The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -546,7 +547,7 @@ public class Recording  implements Serializable {
     this.archiveDate = archiveDate;
   }
 
-  
+
   /**
    * The type of archive medium used. Example: CloudArchive
    **/
@@ -564,7 +565,7 @@ public class Recording  implements Serializable {
     this.archiveMedium = archiveMedium;
   }
 
-  
+
   /**
    * The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -582,7 +583,7 @@ public class Recording  implements Serializable {
     this.deleteDate = deleteDate;
   }
 
-  
+
   /**
    * The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -600,7 +601,7 @@ public class Recording  implements Serializable {
     this.exportDate = exportDate;
   }
 
-  
+
   /**
    * The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -618,7 +619,7 @@ public class Recording  implements Serializable {
     this.exportedDate = exportedDate;
   }
 
-  
+
   /**
    * Duration of transcoded media in milliseconds
    **/
@@ -636,7 +637,7 @@ public class Recording  implements Serializable {
     this.outputDurationMs = outputDurationMs;
   }
 
-  
+
   /**
    * Size of transcoded media in bytes. 0 if there is no transcoded media.
    **/
@@ -654,7 +655,7 @@ public class Recording  implements Serializable {
     this.outputSizeInBytes = outputSizeInBytes;
   }
 
-  
+
   /**
    * How many archive restorations the organization is allowed to have.
    **/
@@ -672,7 +673,7 @@ public class Recording  implements Serializable {
     this.maxAllowedRestorationsForOrg = maxAllowedRestorationsForOrg;
   }
 
-  
+
   /**
    * The remaining archive restorations the organization has.
    **/
@@ -690,7 +691,7 @@ public class Recording  implements Serializable {
     this.remainingRestorationsAllowedForOrg = remainingRestorationsAllowedForOrg;
   }
 
-  
+
   /**
    * The session id represents an external resource id, such as email, call, chat, etc
    **/
@@ -708,7 +709,7 @@ public class Recording  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * The users participating in the conversation
    **/
@@ -726,7 +727,7 @@ public class Recording  implements Serializable {
     this.users = users;
   }
 
-  
+
   /**
    * Role of the file recording. It can be either customer_experience or adhoc.
    **/
@@ -744,7 +745,7 @@ public class Recording  implements Serializable {
     this.recordingFileRole = recordingFileRole;
   }
 
-  
+
   /**
    * Status of a recording that cannot be returned because of an error
    **/
@@ -762,7 +763,7 @@ public class Recording  implements Serializable {
     this.recordingErrorStatus = recordingErrorStatus;
   }
 
-  
+
   /**
    * The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -780,7 +781,7 @@ public class Recording  implements Serializable {
     this.originalRecordingStartTime = originalRecordingStartTime;
   }
 
-  
+
   /**
    * The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -798,14 +799,13 @@ public class Recording  implements Serializable {
     this.creationTime = creationTime;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -816,38 +816,39 @@ public class Recording  implements Serializable {
       return false;
     }
     Recording recording = (Recording) o;
+
     return Objects.equals(this.id, recording.id) &&
-        Objects.equals(this.name, recording.name) &&
-        Objects.equals(this.conversationId, recording.conversationId) &&
-        Objects.equals(this.path, recording.path) &&
-        Objects.equals(this.startTime, recording.startTime) &&
-        Objects.equals(this.endTime, recording.endTime) &&
-        Objects.equals(this.media, recording.media) &&
-        Objects.equals(this.annotations, recording.annotations) &&
-        Objects.equals(this.transcript, recording.transcript) &&
-        Objects.equals(this.emailTranscript, recording.emailTranscript) &&
-        Objects.equals(this.messagingTranscript, recording.messagingTranscript) &&
-        Objects.equals(this.fileState, recording.fileState) &&
-        Objects.equals(this.restoreExpirationTime, recording.restoreExpirationTime) &&
-        Objects.equals(this.mediaUris, recording.mediaUris) &&
-        Objects.equals(this.estimatedTranscodeTimeMs, recording.estimatedTranscodeTimeMs) &&
-        Objects.equals(this.actualTranscodeTimeMs, recording.actualTranscodeTimeMs) &&
-        Objects.equals(this.archiveDate, recording.archiveDate) &&
-        Objects.equals(this.archiveMedium, recording.archiveMedium) &&
-        Objects.equals(this.deleteDate, recording.deleteDate) &&
-        Objects.equals(this.exportDate, recording.exportDate) &&
-        Objects.equals(this.exportedDate, recording.exportedDate) &&
-        Objects.equals(this.outputDurationMs, recording.outputDurationMs) &&
-        Objects.equals(this.outputSizeInBytes, recording.outputSizeInBytes) &&
-        Objects.equals(this.maxAllowedRestorationsForOrg, recording.maxAllowedRestorationsForOrg) &&
-        Objects.equals(this.remainingRestorationsAllowedForOrg, recording.remainingRestorationsAllowedForOrg) &&
-        Objects.equals(this.sessionId, recording.sessionId) &&
-        Objects.equals(this.users, recording.users) &&
-        Objects.equals(this.recordingFileRole, recording.recordingFileRole) &&
-        Objects.equals(this.recordingErrorStatus, recording.recordingErrorStatus) &&
-        Objects.equals(this.originalRecordingStartTime, recording.originalRecordingStartTime) &&
-        Objects.equals(this.creationTime, recording.creationTime) &&
-        Objects.equals(this.selfUri, recording.selfUri);
+            Objects.equals(this.name, recording.name) &&
+            Objects.equals(this.conversationId, recording.conversationId) &&
+            Objects.equals(this.path, recording.path) &&
+            Objects.equals(this.startTime, recording.startTime) &&
+            Objects.equals(this.endTime, recording.endTime) &&
+            Objects.equals(this.media, recording.media) &&
+            Objects.equals(this.annotations, recording.annotations) &&
+            Objects.equals(this.transcript, recording.transcript) &&
+            Objects.equals(this.emailTranscript, recording.emailTranscript) &&
+            Objects.equals(this.messagingTranscript, recording.messagingTranscript) &&
+            Objects.equals(this.fileState, recording.fileState) &&
+            Objects.equals(this.restoreExpirationTime, recording.restoreExpirationTime) &&
+            Objects.equals(this.mediaUris, recording.mediaUris) &&
+            Objects.equals(this.estimatedTranscodeTimeMs, recording.estimatedTranscodeTimeMs) &&
+            Objects.equals(this.actualTranscodeTimeMs, recording.actualTranscodeTimeMs) &&
+            Objects.equals(this.archiveDate, recording.archiveDate) &&
+            Objects.equals(this.archiveMedium, recording.archiveMedium) &&
+            Objects.equals(this.deleteDate, recording.deleteDate) &&
+            Objects.equals(this.exportDate, recording.exportDate) &&
+            Objects.equals(this.exportedDate, recording.exportedDate) &&
+            Objects.equals(this.outputDurationMs, recording.outputDurationMs) &&
+            Objects.equals(this.outputSizeInBytes, recording.outputSizeInBytes) &&
+            Objects.equals(this.maxAllowedRestorationsForOrg, recording.maxAllowedRestorationsForOrg) &&
+            Objects.equals(this.remainingRestorationsAllowedForOrg, recording.remainingRestorationsAllowedForOrg) &&
+            Objects.equals(this.sessionId, recording.sessionId) &&
+            Objects.equals(this.users, recording.users) &&
+            Objects.equals(this.recordingFileRole, recording.recordingFileRole) &&
+            Objects.equals(this.recordingErrorStatus, recording.recordingErrorStatus) &&
+            Objects.equals(this.originalRecordingStartTime, recording.originalRecordingStartTime) &&
+            Objects.equals(this.creationTime, recording.creationTime) &&
+            Objects.equals(this.selfUri, recording.selfUri);
   }
 
   @Override

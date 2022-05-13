@@ -13,9 +13,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
@@ -35,7 +35,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ObjectsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -47,7 +46,6 @@ public class ObjectsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a division.
    * 
@@ -123,7 +121,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Returns an authorization division.
    * 
@@ -199,10 +196,9 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -236,7 +232,7 @@ public class ObjectsApiAsync {
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -275,7 +271,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve the home division for the organization.
    * Will not include object counts.
@@ -351,7 +346,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Returns the maximum allowed number of divisions.
    * 
@@ -427,10 +421,9 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -464,7 +457,7 @@ public class ObjectsApiAsync {
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -503,7 +496,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Recreate a previously deleted division.
    * 
@@ -579,7 +571,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Create a division.
    * 
@@ -655,7 +646,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
   /**
    * Update a division.
    * 
@@ -731,7 +721,6 @@ public class ObjectsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

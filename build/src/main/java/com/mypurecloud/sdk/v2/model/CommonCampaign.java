@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -83,7 +84,7 @@ public class CommonCampaign  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Campaign.
    **/
@@ -101,7 +102,7 @@ public class CommonCampaign  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -119,7 +120,7 @@ public class CommonCampaign  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The media type used for this campaign.
    **/
@@ -137,14 +138,13 @@ public class CommonCampaign  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,11 +155,12 @@ public class CommonCampaign  implements Serializable {
       return false;
     }
     CommonCampaign commonCampaign = (CommonCampaign) o;
+
     return Objects.equals(this.id, commonCampaign.id) &&
-        Objects.equals(this.name, commonCampaign.name) &&
-        Objects.equals(this.division, commonCampaign.division) &&
-        Objects.equals(this.mediaType, commonCampaign.mediaType) &&
-        Objects.equals(this.selfUri, commonCampaign.selfUri);
+            Objects.equals(this.name, commonCampaign.name) &&
+            Objects.equals(this.division, commonCampaign.division) &&
+            Objects.equals(this.mediaType, commonCampaign.mediaType) &&
+            Objects.equals(this.selfUri, commonCampaign.selfUri);
   }
 
   @Override

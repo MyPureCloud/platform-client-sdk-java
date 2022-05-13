@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -136,7 +137,7 @@ public class SettingDirection  implements Serializable {
     this.inbound = inbound;
   }
 
-  
+
   /**
    * Status for the Outbound Direction
    **/
@@ -154,7 +155,6 @@ public class SettingDirection  implements Serializable {
     this.outbound = outbound;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,8 +165,9 @@ public class SettingDirection  implements Serializable {
       return false;
     }
     SettingDirection settingDirection = (SettingDirection) o;
+
     return Objects.equals(this.inbound, settingDirection.inbound) &&
-        Objects.equals(this.outbound, settingDirection.outbound);
+            Objects.equals(this.outbound, settingDirection.outbound);
   }
 
   @Override

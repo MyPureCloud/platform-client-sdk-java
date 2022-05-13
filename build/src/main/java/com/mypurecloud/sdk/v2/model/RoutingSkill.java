@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,7 +85,7 @@ public class RoutingSkill  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the skill.
    **/
@@ -102,35 +103,34 @@ public class RoutingSkill  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The current state for this skill.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Required when updating. Version must be the current version. Only the system can assign version.")
   @JsonProperty("version")
   public String getVersion() {
     return version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,12 +141,13 @@ public class RoutingSkill  implements Serializable {
       return false;
     }
     RoutingSkill routingSkill = (RoutingSkill) o;
+
     return Objects.equals(this.id, routingSkill.id) &&
-        Objects.equals(this.name, routingSkill.name) &&
-        Objects.equals(this.dateModified, routingSkill.dateModified) &&
-        Objects.equals(this.state, routingSkill.state) &&
-        Objects.equals(this.version, routingSkill.version) &&
-        Objects.equals(this.selfUri, routingSkill.selfUri);
+            Objects.equals(this.name, routingSkill.name) &&
+            Objects.equals(this.dateModified, routingSkill.dateModified) &&
+            Objects.equals(this.state, routingSkill.state) &&
+            Objects.equals(this.version, routingSkill.version) &&
+            Objects.equals(this.selfUri, routingSkill.selfUri);
   }
 
   @Override

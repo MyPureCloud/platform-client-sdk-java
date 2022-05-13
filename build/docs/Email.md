@@ -13,7 +13,7 @@ title: Email
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
 | **subject** | <!----><!---->**String**<!----> | The subject for the initial email that started this conversation. |  [optional] |
 | **messagesSent** | <!----><!---->**Integer**<!----> | The number of email messages sent by this participant. |  [optional] |
-| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant&#39;s email, divided into activity segments. |  [optional] |
+| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant's email, divided into activity segments. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the email |  [optional] |
 | **recordingId** | <!----><!---->**String**<!----> | A globally unique identifier for the recording associated with this call. |  [optional] |
 | **errorInfo** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> |  |  [optional] |
@@ -41,12 +41,12 @@ title: Email
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
-| NONE | &quot;none&quot; |
-| TRANSMITTING | &quot;transmitting&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| NONE | &quot;none&quot; | 
+| TRANSMITTING | &quot;transmitting&quot; | 
 {: class="table table-striped"}
 
 
@@ -56,9 +56,9 @@ title: Email
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -68,23 +68,23 @@ title: Email
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
-| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| SPAM | &quot;spam&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| SPAM | &quot;spam&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 

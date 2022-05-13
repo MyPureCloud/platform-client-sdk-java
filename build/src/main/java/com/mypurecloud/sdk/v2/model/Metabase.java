@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,7 +151,7 @@ public class Metabase  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -168,7 +169,7 @@ public class Metabase  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -186,7 +187,7 @@ public class Metabase  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public Metabase description(String description) {
@@ -203,7 +204,7 @@ public class Metabase  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -221,7 +222,7 @@ public class Metabase  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -239,7 +240,7 @@ public class Metabase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -257,7 +258,7 @@ public class Metabase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -275,7 +276,7 @@ public class Metabase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -293,14 +294,14 @@ public class Metabase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -318,7 +319,7 @@ public class Metabase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -336,7 +337,7 @@ public class Metabase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public Metabase type(TypeEnum type) {
@@ -353,14 +354,13 @@ public class Metabase  implements Serializable {
     this.type = type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -371,20 +371,21 @@ public class Metabase  implements Serializable {
       return false;
     }
     Metabase metabase = (Metabase) o;
+
     return Objects.equals(this.id, metabase.id) &&
-        Objects.equals(this.name, metabase.name) &&
-        Objects.equals(this.division, metabase.division) &&
-        Objects.equals(this.description, metabase.description) &&
-        Objects.equals(this.version, metabase.version) &&
-        Objects.equals(this.dateCreated, metabase.dateCreated) &&
-        Objects.equals(this.dateModified, metabase.dateModified) &&
-        Objects.equals(this.modifiedBy, metabase.modifiedBy) &&
-        Objects.equals(this.createdBy, metabase.createdBy) &&
-        Objects.equals(this.state, metabase.state) &&
-        Objects.equals(this.modifiedByApp, metabase.modifiedByApp) &&
-        Objects.equals(this.createdByApp, metabase.createdByApp) &&
-        Objects.equals(this.type, metabase.type) &&
-        Objects.equals(this.selfUri, metabase.selfUri);
+            Objects.equals(this.name, metabase.name) &&
+            Objects.equals(this.division, metabase.division) &&
+            Objects.equals(this.description, metabase.description) &&
+            Objects.equals(this.version, metabase.version) &&
+            Objects.equals(this.dateCreated, metabase.dateCreated) &&
+            Objects.equals(this.dateModified, metabase.dateModified) &&
+            Objects.equals(this.modifiedBy, metabase.modifiedBy) &&
+            Objects.equals(this.createdBy, metabase.createdBy) &&
+            Objects.equals(this.state, metabase.state) &&
+            Objects.equals(this.modifiedByApp, metabase.modifiedByApp) &&
+            Objects.equals(this.createdByApp, metabase.createdByApp) &&
+            Objects.equals(this.type, metabase.type) &&
+            Objects.equals(this.selfUri, metabase.selfUri);
   }
 
   @Override

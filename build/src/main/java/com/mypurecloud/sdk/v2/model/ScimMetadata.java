@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,28 +86,27 @@ public class ScimMetadata  implements Serializable {
     return resourceType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last time that the resource was modified. Date time is represented as an \"ISO-8601 string\", for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \"Schema\" and \"ResourceType\" resources.")
   @JsonProperty("lastModified")
   public Date getLastModified() {
     return lastModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI of the resource.")
   @JsonProperty("location")
   public String getLocation() {
     return location;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The version of the resource. Matches the ETag HTTP response header. Not included with \"Schema\" and \"ResourceType\" resources.")
   @JsonProperty("version")
   public String getVersion() {
     return version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,10 +117,11 @@ public class ScimMetadata  implements Serializable {
       return false;
     }
     ScimMetadata scimMetadata = (ScimMetadata) o;
+
     return Objects.equals(this.resourceType, scimMetadata.resourceType) &&
-        Objects.equals(this.lastModified, scimMetadata.lastModified) &&
-        Objects.equals(this.location, scimMetadata.location) &&
-        Objects.equals(this.version, scimMetadata.version);
+            Objects.equals(this.lastModified, scimMetadata.lastModified) &&
+            Objects.equals(this.location, scimMetadata.location) &&
+            Objects.equals(this.version, scimMetadata.version);
   }
 
   @Override

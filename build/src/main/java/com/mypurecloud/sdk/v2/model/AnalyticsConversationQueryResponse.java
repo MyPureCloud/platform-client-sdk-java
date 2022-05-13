@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AggregationResult;
@@ -45,7 +46,7 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     this.aggregations = aggregations;
   }
 
-  
+
   /**
    **/
   public AnalyticsConversationQueryResponse conversations(List<AnalyticsConversationWithoutAttributes> conversations) {
@@ -62,7 +63,7 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     this.conversations = conversations;
   }
 
-  
+
   /**
    **/
   public AnalyticsConversationQueryResponse totalHits(Integer totalHits) {
@@ -79,7 +80,6 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     this.totalHits = totalHits;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
       return false;
     }
     AnalyticsConversationQueryResponse analyticsConversationQueryResponse = (AnalyticsConversationQueryResponse) o;
+
     return Objects.equals(this.aggregations, analyticsConversationQueryResponse.aggregations) &&
-        Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations) &&
-        Objects.equals(this.totalHits, analyticsConversationQueryResponse.totalHits);
+            Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations) &&
+            Objects.equals(this.totalHits, analyticsConversationQueryResponse.totalHits);
   }
 
   @Override

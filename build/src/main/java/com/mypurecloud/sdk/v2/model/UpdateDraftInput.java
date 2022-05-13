@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionConfig;
@@ -48,7 +49,7 @@ public class UpdateDraftInput  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * Name of action, Can be up to 256 characters long
    **/
@@ -66,7 +67,7 @@ public class UpdateDraftInput  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Configuration to support request and response processing
    **/
@@ -84,7 +85,7 @@ public class UpdateDraftInput  implements Serializable {
     this.config = config;
   }
 
-  
+
   /**
    * Action contract
    **/
@@ -102,7 +103,7 @@ public class UpdateDraftInput  implements Serializable {
     this.contract = contract;
   }
 
-  
+
   /**
    * Indication of whether or not the action is designed to accept sensitive data
    **/
@@ -120,7 +121,7 @@ public class UpdateDraftInput  implements Serializable {
     this.secure = secure;
   }
 
-  
+
   /**
    * Version of current Draft
    **/
@@ -138,7 +139,6 @@ public class UpdateDraftInput  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +149,13 @@ public class UpdateDraftInput  implements Serializable {
       return false;
     }
     UpdateDraftInput updateDraftInput = (UpdateDraftInput) o;
+
     return Objects.equals(this.category, updateDraftInput.category) &&
-        Objects.equals(this.name, updateDraftInput.name) &&
-        Objects.equals(this.config, updateDraftInput.config) &&
-        Objects.equals(this.contract, updateDraftInput.contract) &&
-        Objects.equals(this.secure, updateDraftInput.secure) &&
-        Objects.equals(this.version, updateDraftInput.version);
+            Objects.equals(this.name, updateDraftInput.name) &&
+            Objects.equals(this.config, updateDraftInput.config) &&
+            Objects.equals(this.contract, updateDraftInput.contract) &&
+            Objects.equals(this.secure, updateDraftInput.secure) &&
+            Objects.equals(this.version, updateDraftInput.version);
   }
 
   @Override

@@ -13,39 +13,38 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ExternalContact;
-import com.mypurecloud.sdk.v2.model.Note;
-import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactListing;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
-import com.mypurecloud.sdk.v2.model.ExternalOrganization;
-import com.mypurecloud.sdk.v2.model.RelationshipListing;
-import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
-import com.mypurecloud.sdk.v2.model.Relationship;
-import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
 import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
-import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
-import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
-import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
-import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
-import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
-import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
-import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
-import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
-import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
-import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
-import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
-import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
-import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
-import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
-import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
+import com.mypurecloud.sdk.v2.model.Note;
+import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.Relationship;
+import com.mypurecloud.sdk.v2.model.RelationshipListing;
+import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
@@ -119,7 +118,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ExternalContactsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -131,7 +129,6 @@ public class ExternalContactsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an external contact
    * 
@@ -207,7 +204,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Delete a note for an external contact
    * 
@@ -283,7 +279,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Delete a schema
    * 
@@ -359,7 +354,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Delete an external organization
    * 
@@ -435,7 +429,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Delete a note for an external organization
    * 
@@ -511,7 +504,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Unlink the Trustor for this External Organization
    * 
@@ -587,7 +579,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Delete a relationship
    * 
@@ -663,7 +654,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Fetch an external contact
    * 
@@ -739,7 +729,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Fetch a note for an external contact
    * 
@@ -815,7 +804,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * List notes for an external contact
    * 
@@ -891,7 +879,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Search for external contacts
    * 
@@ -967,7 +954,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Get a schema
    * 
@@ -1043,7 +1029,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Get a specific version of a schema
    * 
@@ -1119,9 +1104,8 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
-   * Get all versions of an external contact&#39;s schema
+   * Get all versions of an external contact's schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1155,7 +1139,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Get all versions of an external contact&#39;s schema
+   * Get all versions of an external contact's schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1195,7 +1179,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of schemas.
    * 
@@ -1271,7 +1254,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Fetch an external organization
    * 
@@ -1347,7 +1329,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Search for external contacts in an external organization
    * 
@@ -1423,7 +1404,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Fetch a note for an external organization
    * 
@@ -1499,7 +1479,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * List notes for an external organization
    * 
@@ -1575,7 +1554,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Fetch a relationship for an external organization
    * 
@@ -1651,7 +1629,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Search for external organizations
    * 
@@ -1727,7 +1704,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Get a schema
    * 
@@ -1803,7 +1779,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Get a specific version of a schema
    * 
@@ -1879,9 +1854,8 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
-   * Get all versions of an external organization&#39;s schema
+   * Get all versions of an external organization's schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1915,7 +1889,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Get all versions of an external organization&#39;s schema
+   * Get all versions of an external organization's schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1955,7 +1929,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of schemas.
    * 
@@ -2031,7 +2004,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Fetch a relationship
    * 
@@ -2107,7 +2079,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
    * 
@@ -2183,7 +2154,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Scan for external contacts using paging
    * 
@@ -2259,7 +2229,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Scan for notes using paging
    * 
@@ -2335,7 +2304,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Scan for external organizations using paging
    * 
@@ -2411,7 +2379,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Scan for relationships
    * 
@@ -2487,7 +2454,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk fetch contacts
    * 
@@ -2563,7 +2529,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk add contacts
    * 
@@ -2639,7 +2604,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk remove contacts
    * 
@@ -2715,7 +2679,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk update contacts
    * 
@@ -2791,7 +2754,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk fetch notes
    * 
@@ -2867,7 +2829,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk add notes
    * 
@@ -2943,7 +2904,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk remove notes
    * 
@@ -3019,7 +2979,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk update notes
    * 
@@ -3095,7 +3054,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk fetch organizations
    * 
@@ -3171,7 +3129,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk add organizations
    * 
@@ -3247,7 +3204,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk remove organizations
    * 
@@ -3323,7 +3279,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk update organizations
    * 
@@ -3399,7 +3354,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk fetch relationships
    * 
@@ -3475,7 +3429,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk add relationships
    * 
@@ -3551,7 +3504,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk remove relationships
    * 
@@ -3627,7 +3579,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Bulk update relationships
    * 
@@ -3703,7 +3654,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create a note for an external contact
    * 
@@ -3779,7 +3729,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create an external contact
    * 
@@ -3855,7 +3804,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create a schema
    * 
@@ -3931,7 +3879,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create a note for an external organization
    * 
@@ -4007,7 +3954,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create an external organization
    * 
@@ -4083,7 +4029,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create a schema
    * 
@@ -4159,7 +4104,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Create a relationship
    * 
@@ -4235,7 +4179,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update an external contact
    * 
@@ -4311,7 +4254,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update a note for an external contact
    * 
@@ -4387,7 +4329,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update a schema
    * 
@@ -4463,7 +4404,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Associate/disassociate an external contact with a conversation
    * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
@@ -4539,7 +4479,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update an external organization
    * 
@@ -4615,7 +4554,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update a note for an external organization
    * 
@@ -4691,7 +4629,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Links a Trustor with an External Organization
    * 
@@ -4767,7 +4704,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update a schema
    * 
@@ -4843,7 +4779,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
   /**
    * Update a relationship
    * 
@@ -4919,7 +4854,6 @@ public class ExternalContactsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GuestMemberInfo;
@@ -48,7 +49,7 @@ public class CreateWebChatConversationRequest  implements Serializable {
     this.organizationId = organizationId;
   }
 
-  
+
   /**
    * The web chat Deployment ID which contains the appropriate settings for this chat conversation.
    **/
@@ -66,7 +67,7 @@ public class CreateWebChatConversationRequest  implements Serializable {
     this.deploymentId = deploymentId;
   }
 
-  
+
   /**
    * The routing information to use for the new chat conversation.
    **/
@@ -84,7 +85,7 @@ public class CreateWebChatConversationRequest  implements Serializable {
     this.routingTarget = routingTarget;
   }
 
-  
+
   /**
    * The guest member info to use for the new chat conversation.
    **/
@@ -102,7 +103,7 @@ public class CreateWebChatConversationRequest  implements Serializable {
     this.memberInfo = memberInfo;
   }
 
-  
+
   /**
    * If the guest member is an authenticated member (ie, not anonymous) his JWT is provided here. The token will have been previously generated with the \"POST /api/v2/signeddata\" resource.
    **/
@@ -120,7 +121,7 @@ public class CreateWebChatConversationRequest  implements Serializable {
     this.memberAuthToken = memberAuthToken;
   }
 
-  
+
   /**
    * A subset of the Journey System's data relevant to this conversation/session request (for external linkage and internal usage/context).
    **/
@@ -138,7 +139,6 @@ public class CreateWebChatConversationRequest  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +149,13 @@ public class CreateWebChatConversationRequest  implements Serializable {
       return false;
     }
     CreateWebChatConversationRequest createWebChatConversationRequest = (CreateWebChatConversationRequest) o;
+
     return Objects.equals(this.organizationId, createWebChatConversationRequest.organizationId) &&
-        Objects.equals(this.deploymentId, createWebChatConversationRequest.deploymentId) &&
-        Objects.equals(this.routingTarget, createWebChatConversationRequest.routingTarget) &&
-        Objects.equals(this.memberInfo, createWebChatConversationRequest.memberInfo) &&
-        Objects.equals(this.memberAuthToken, createWebChatConversationRequest.memberAuthToken) &&
-        Objects.equals(this.journeyContext, createWebChatConversationRequest.journeyContext);
+            Objects.equals(this.deploymentId, createWebChatConversationRequest.deploymentId) &&
+            Objects.equals(this.routingTarget, createWebChatConversationRequest.routingTarget) &&
+            Objects.equals(this.memberInfo, createWebChatConversationRequest.memberInfo) &&
+            Objects.equals(this.memberAuthToken, createWebChatConversationRequest.memberAuthToken) &&
+            Objects.equals(this.journeyContext, createWebChatConversationRequest.journeyContext);
   }
 
   @Override

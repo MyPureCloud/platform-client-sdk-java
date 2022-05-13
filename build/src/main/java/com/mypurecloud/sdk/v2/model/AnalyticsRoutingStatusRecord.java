@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -112,7 +113,7 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The user's ACD routing status
    **/
@@ -130,7 +131,6 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
       return false;
     }
     AnalyticsRoutingStatusRecord analyticsRoutingStatusRecord = (AnalyticsRoutingStatusRecord) o;
+
     return Objects.equals(this.startTime, analyticsRoutingStatusRecord.startTime) &&
-        Objects.equals(this.endTime, analyticsRoutingStatusRecord.endTime) &&
-        Objects.equals(this.routingStatus, analyticsRoutingStatusRecord.routingStatus);
+            Objects.equals(this.endTime, analyticsRoutingStatusRecord.endTime) &&
+            Objects.equals(this.routingStatus, analyticsRoutingStatusRecord.routingStatus);
   }
 
   @Override

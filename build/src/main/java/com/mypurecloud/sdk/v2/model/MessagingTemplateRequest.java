@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TemplateParameter;
@@ -44,7 +45,7 @@ public class MessagingTemplateRequest  implements Serializable {
     this.responseId = responseId;
   }
 
-  
+
   /**
    * A list of Response Management response substitutions for the response's messaging template
    **/
@@ -62,7 +63,6 @@ public class MessagingTemplateRequest  implements Serializable {
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class MessagingTemplateRequest  implements Serializable {
       return false;
     }
     MessagingTemplateRequest messagingTemplateRequest = (MessagingTemplateRequest) o;
+
     return Objects.equals(this.responseId, messagingTemplateRequest.responseId) &&
-        Objects.equals(this.parameters, messagingTemplateRequest.parameters);
+            Objects.equals(this.parameters, messagingTemplateRequest.parameters);
   }
 
   @Override

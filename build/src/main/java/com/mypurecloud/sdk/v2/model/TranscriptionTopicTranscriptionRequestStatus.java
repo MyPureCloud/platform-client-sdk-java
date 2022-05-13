@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class TranscriptionTopicTranscriptionRequestStatus  implements Serializab
     this.offsetMs = offsetMs;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptionRequestStatus status(StatusEnum status) {
@@ -106,7 +107,6 @@ public class TranscriptionTopicTranscriptionRequestStatus  implements Serializab
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,8 +117,9 @@ public class TranscriptionTopicTranscriptionRequestStatus  implements Serializab
       return false;
     }
     TranscriptionTopicTranscriptionRequestStatus transcriptionTopicTranscriptionRequestStatus = (TranscriptionTopicTranscriptionRequestStatus) o;
+
     return Objects.equals(this.offsetMs, transcriptionTopicTranscriptionRequestStatus.offsetMs) &&
-        Objects.equals(this.status, transcriptionTopicTranscriptionRequestStatus.status);
+            Objects.equals(this.status, transcriptionTopicTranscriptionRequestStatus.status);
   }
 
   @Override

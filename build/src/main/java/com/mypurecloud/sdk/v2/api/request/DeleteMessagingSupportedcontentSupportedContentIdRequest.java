@@ -21,11 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
 public class DeleteMessagingSupportedcontentSupportedContentIdRequest {
-    
+
 	private String supportedContentId;
 	public String getSupportedContentId() {
 		return this.supportedContentId;
@@ -39,7 +39,7 @@ public class DeleteMessagingSupportedcontentSupportedContentIdRequest {
 	    this.setSupportedContentId(supportedContentId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,7 +70,7 @@ public class DeleteMessagingSupportedcontentSupportedContentIdRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/messaging/supportedcontent/{supportedContentId}")
                 .withPathParameter("supportedContentId", supportedContentId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class DeleteMessagingSupportedcontentSupportedContentIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String supportedContentId) {
 	    return new Builder()
 	            .withRequiredParams(supportedContentId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteMessagingSupportedcontentSupportedContentIdRequest request;
@@ -95,20 +95,20 @@ public class DeleteMessagingSupportedcontentSupportedContentIdRequest {
 			request = new DeleteMessagingSupportedcontentSupportedContentIdRequest();
 		}
 
-		
+
 		public Builder withSupportedContentId(String supportedContentId) {
 			request.setSupportedContentId(supportedContentId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String supportedContentId) {
 			request.setSupportedContentId(supportedContentId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteMessagingSupportedcontentSupportedContentIdRequest build() {
             

@@ -23,9 +23,9 @@ title: DialerRule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DIALER_PRECALL | &quot;DIALER_PRECALL&quot; |
-| DIALER_WRAPUP | &quot;DIALER_WRAPUP&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DIALER_PRECALL | &quot;DIALER_PRECALL&quot; | 
+| DIALER_WRAPUP | &quot;DIALER_WRAPUP&quot; | 
 {: class="table table-striped"}
 
 

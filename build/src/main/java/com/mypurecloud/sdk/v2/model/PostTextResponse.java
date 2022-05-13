@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class PostTextResponse  implements Serializable {
     this.botState = botState;
   }
 
-  
+
   /**
    * The list of messages to respond with, if any
    **/
@@ -121,7 +122,7 @@ public class PostTextResponse  implements Serializable {
     this.replyMessages = replyMessages;
   }
 
-  
+
   /**
    * The name of the intent the bot is either processing or has processed, this will be blank if no intent could be detected.
    **/
@@ -139,7 +140,7 @@ public class PostTextResponse  implements Serializable {
     this.intentName = intentName;
   }
 
-  
+
   /**
    * Data parameters detected and filled by the bot.
    **/
@@ -157,7 +158,7 @@ public class PostTextResponse  implements Serializable {
     this.slots = slots;
   }
 
-  
+
   /**
    * The optional ID specified in the request
    **/
@@ -175,7 +176,7 @@ public class PostTextResponse  implements Serializable {
     this.botCorrelationId = botCorrelationId;
   }
 
-  
+
   /**
    * Raw data response from AWS (if called)
    **/
@@ -193,7 +194,7 @@ public class PostTextResponse  implements Serializable {
     this.amazonLex = amazonLex;
   }
 
-  
+
   /**
    * Raw data response from Google Dialogflow (if called)
    **/
@@ -211,7 +212,7 @@ public class PostTextResponse  implements Serializable {
     this.googleDialogFlow = googleDialogFlow;
   }
 
-  
+
   /**
    * Raw data response from Genesys' Dialogengine (if called)
    **/
@@ -229,7 +230,7 @@ public class PostTextResponse  implements Serializable {
     this.genesysDialogEngine = genesysDialogEngine;
   }
 
-  
+
   /**
    * Raw data response from Genesys' BotConnector (if called)
    **/
@@ -247,7 +248,7 @@ public class PostTextResponse  implements Serializable {
     this.genesysBotConnector = genesysBotConnector;
   }
 
-  
+
   /**
    * Raw data response from Nuance Mix Dlg (if called)
    **/
@@ -265,7 +266,6 @@ public class PostTextResponse  implements Serializable {
     this.nuanceMixDlg = nuanceMixDlg;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -276,16 +276,17 @@ public class PostTextResponse  implements Serializable {
       return false;
     }
     PostTextResponse postTextResponse = (PostTextResponse) o;
+
     return Objects.equals(this.botState, postTextResponse.botState) &&
-        Objects.equals(this.replyMessages, postTextResponse.replyMessages) &&
-        Objects.equals(this.intentName, postTextResponse.intentName) &&
-        Objects.equals(this.slots, postTextResponse.slots) &&
-        Objects.equals(this.botCorrelationId, postTextResponse.botCorrelationId) &&
-        Objects.equals(this.amazonLex, postTextResponse.amazonLex) &&
-        Objects.equals(this.googleDialogFlow, postTextResponse.googleDialogFlow) &&
-        Objects.equals(this.genesysDialogEngine, postTextResponse.genesysDialogEngine) &&
-        Objects.equals(this.genesysBotConnector, postTextResponse.genesysBotConnector) &&
-        Objects.equals(this.nuanceMixDlg, postTextResponse.nuanceMixDlg);
+            Objects.equals(this.replyMessages, postTextResponse.replyMessages) &&
+            Objects.equals(this.intentName, postTextResponse.intentName) &&
+            Objects.equals(this.slots, postTextResponse.slots) &&
+            Objects.equals(this.botCorrelationId, postTextResponse.botCorrelationId) &&
+            Objects.equals(this.amazonLex, postTextResponse.amazonLex) &&
+            Objects.equals(this.googleDialogFlow, postTextResponse.googleDialogFlow) &&
+            Objects.equals(this.genesysDialogEngine, postTextResponse.genesysDialogEngine) &&
+            Objects.equals(this.genesysBotConnector, postTextResponse.genesysBotConnector) &&
+            Objects.equals(this.nuanceMixDlg, postTextResponse.nuanceMixDlg);
   }
 
   @Override

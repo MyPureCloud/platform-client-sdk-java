@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class TagQueryRequest  implements Serializable {
     this.query = query;
   }
 
-  
+
   /**
    **/
   public TagQueryRequest pageNumber(Integer pageNumber) {
@@ -58,7 +59,7 @@ public class TagQueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TagQueryRequest pageSize(Integer pageSize) {
@@ -75,7 +76,6 @@ public class TagQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class TagQueryRequest  implements Serializable {
       return false;
     }
     TagQueryRequest tagQueryRequest = (TagQueryRequest) o;
+
     return Objects.equals(this.query, tagQueryRequest.query) &&
-        Objects.equals(this.pageNumber, tagQueryRequest.pageNumber) &&
-        Objects.equals(this.pageSize, tagQueryRequest.pageSize);
+            Objects.equals(this.pageNumber, tagQueryRequest.pageNumber) &&
+            Objects.equals(this.pageSize, tagQueryRequest.pageSize);
   }
 
   @Override

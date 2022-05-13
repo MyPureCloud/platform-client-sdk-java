@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class CtaButtonStyleProperties  implements Serializable {
     this.color = color;
   }
 
-  
+
   /**
    * Font of the text. (eg. Helvetica)
    **/
@@ -111,7 +112,7 @@ public class CtaButtonStyleProperties  implements Serializable {
     this.font = font;
   }
 
-  
+
   /**
    * Font size of the text. (eg. '12')
    **/
@@ -129,7 +130,7 @@ public class CtaButtonStyleProperties  implements Serializable {
     this.fontSize = fontSize;
   }
 
-  
+
   /**
    * Text alignment.
    **/
@@ -147,7 +148,7 @@ public class CtaButtonStyleProperties  implements Serializable {
     this.textAlign = textAlign;
   }
 
-  
+
   /**
    * Background color of the CTA button. (eg. #FF0000)
    **/
@@ -165,7 +166,6 @@ public class CtaButtonStyleProperties  implements Serializable {
     this.backgroundColor = backgroundColor;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,11 +176,12 @@ public class CtaButtonStyleProperties  implements Serializable {
       return false;
     }
     CtaButtonStyleProperties ctaButtonStyleProperties = (CtaButtonStyleProperties) o;
+
     return Objects.equals(this.color, ctaButtonStyleProperties.color) &&
-        Objects.equals(this.font, ctaButtonStyleProperties.font) &&
-        Objects.equals(this.fontSize, ctaButtonStyleProperties.fontSize) &&
-        Objects.equals(this.textAlign, ctaButtonStyleProperties.textAlign) &&
-        Objects.equals(this.backgroundColor, ctaButtonStyleProperties.backgroundColor);
+            Objects.equals(this.font, ctaButtonStyleProperties.font) &&
+            Objects.equals(this.fontSize, ctaButtonStyleProperties.fontSize) &&
+            Objects.equals(this.textAlign, ctaButtonStyleProperties.textAlign) &&
+            Objects.equals(this.backgroundColor, ctaButtonStyleProperties.backgroundColor);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class LearningModuleSummary  implements Serializable {
     this.assignedCount = assignedCount;
   }
 
-  
+
   /**
    * The number of assignments completed for a learning module
    **/
@@ -62,7 +63,7 @@ public class LearningModuleSummary  implements Serializable {
     this.completedCount = completedCount;
   }
 
-  
+
   /**
    * The number of assignments passed for a learning module
    **/
@@ -80,7 +81,7 @@ public class LearningModuleSummary  implements Serializable {
     this.passedCount = passedCount;
   }
 
-  
+
   /**
    * The sum of assignment scores for a learning module
    **/
@@ -98,7 +99,6 @@ public class LearningModuleSummary  implements Serializable {
     this.completedSum = completedSum;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class LearningModuleSummary  implements Serializable {
       return false;
     }
     LearningModuleSummary learningModuleSummary = (LearningModuleSummary) o;
+
     return Objects.equals(this.assignedCount, learningModuleSummary.assignedCount) &&
-        Objects.equals(this.completedCount, learningModuleSummary.completedCount) &&
-        Objects.equals(this.passedCount, learningModuleSummary.passedCount) &&
-        Objects.equals(this.completedSum, learningModuleSummary.completedSum);
+            Objects.equals(this.completedCount, learningModuleSummary.completedCount) &&
+            Objects.equals(this.passedCount, learningModuleSummary.passedCount) &&
+            Objects.equals(this.completedSum, learningModuleSummary.completedSum);
   }
 
   @Override

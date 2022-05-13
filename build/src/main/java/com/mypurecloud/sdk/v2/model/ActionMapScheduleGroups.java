@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionMapScheduleGroup;
@@ -42,7 +43,7 @@ public class ActionMapScheduleGroups  implements Serializable {
     this.actionMapScheduleGroup = actionMapScheduleGroup;
   }
 
-  
+
   /**
    * The action map's associated emergency schedule group.
    **/
@@ -60,7 +61,6 @@ public class ActionMapScheduleGroups  implements Serializable {
     this.emergencyActionMapScheduleGroup = emergencyActionMapScheduleGroup;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ActionMapScheduleGroups  implements Serializable {
       return false;
     }
     ActionMapScheduleGroups actionMapScheduleGroups = (ActionMapScheduleGroups) o;
+
     return Objects.equals(this.actionMapScheduleGroup, actionMapScheduleGroups.actionMapScheduleGroup) &&
-        Objects.equals(this.emergencyActionMapScheduleGroup, actionMapScheduleGroups.emergencyActionMapScheduleGroup);
+            Objects.equals(this.emergencyActionMapScheduleGroup, actionMapScheduleGroups.emergencyActionMapScheduleGroup);
   }
 
   @Override

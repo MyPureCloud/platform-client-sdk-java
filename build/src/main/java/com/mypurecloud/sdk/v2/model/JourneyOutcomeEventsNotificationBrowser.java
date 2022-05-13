@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -48,7 +49,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.family = family;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser version(String version) {
@@ -65,7 +66,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser lang(String lang) {
@@ -82,7 +83,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.lang = lang;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser fingerprint(String fingerprint) {
@@ -99,7 +100,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.fingerprint = fingerprint;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser viewHeight(Integer viewHeight) {
@@ -116,7 +117,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.viewHeight = viewHeight;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser viewWidth(Integer viewWidth) {
@@ -133,7 +134,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.viewWidth = viewWidth;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser featuresFlash(Boolean featuresFlash) {
@@ -150,7 +151,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.featuresFlash = featuresFlash;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser featuresJava(Boolean featuresJava) {
@@ -167,7 +168,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.featuresJava = featuresJava;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser featuresPdf(Boolean featuresPdf) {
@@ -184,7 +185,7 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.featuresPdf = featuresPdf;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationBrowser featuresWebrtc(Boolean featuresWebrtc) {
@@ -201,7 +202,6 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
     this.featuresWebrtc = featuresWebrtc;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,16 +212,17 @@ public class JourneyOutcomeEventsNotificationBrowser  implements Serializable {
       return false;
     }
     JourneyOutcomeEventsNotificationBrowser journeyOutcomeEventsNotificationBrowser = (JourneyOutcomeEventsNotificationBrowser) o;
+
     return Objects.equals(this.family, journeyOutcomeEventsNotificationBrowser.family) &&
-        Objects.equals(this.version, journeyOutcomeEventsNotificationBrowser.version) &&
-        Objects.equals(this.lang, journeyOutcomeEventsNotificationBrowser.lang) &&
-        Objects.equals(this.fingerprint, journeyOutcomeEventsNotificationBrowser.fingerprint) &&
-        Objects.equals(this.viewHeight, journeyOutcomeEventsNotificationBrowser.viewHeight) &&
-        Objects.equals(this.viewWidth, journeyOutcomeEventsNotificationBrowser.viewWidth) &&
-        Objects.equals(this.featuresFlash, journeyOutcomeEventsNotificationBrowser.featuresFlash) &&
-        Objects.equals(this.featuresJava, journeyOutcomeEventsNotificationBrowser.featuresJava) &&
-        Objects.equals(this.featuresPdf, journeyOutcomeEventsNotificationBrowser.featuresPdf) &&
-        Objects.equals(this.featuresWebrtc, journeyOutcomeEventsNotificationBrowser.featuresWebrtc);
+            Objects.equals(this.version, journeyOutcomeEventsNotificationBrowser.version) &&
+            Objects.equals(this.lang, journeyOutcomeEventsNotificationBrowser.lang) &&
+            Objects.equals(this.fingerprint, journeyOutcomeEventsNotificationBrowser.fingerprint) &&
+            Objects.equals(this.viewHeight, journeyOutcomeEventsNotificationBrowser.viewHeight) &&
+            Objects.equals(this.viewWidth, journeyOutcomeEventsNotificationBrowser.viewWidth) &&
+            Objects.equals(this.featuresFlash, journeyOutcomeEventsNotificationBrowser.featuresFlash) &&
+            Objects.equals(this.featuresJava, journeyOutcomeEventsNotificationBrowser.featuresJava) &&
+            Objects.equals(this.featuresPdf, journeyOutcomeEventsNotificationBrowser.featuresPdf) &&
+            Objects.equals(this.featuresWebrtc, journeyOutcomeEventsNotificationBrowser.featuresWebrtc);
   }
 
   @Override

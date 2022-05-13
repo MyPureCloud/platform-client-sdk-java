@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorDetail;
@@ -48,7 +49,7 @@ public class BulkErrorEntity  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public BulkErrorEntity message(String message) {
@@ -65,7 +66,7 @@ public class BulkErrorEntity  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public BulkErrorEntity status(Integer status) {
@@ -82,7 +83,7 @@ public class BulkErrorEntity  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public BulkErrorEntity retryable(Boolean retryable) {
@@ -99,7 +100,7 @@ public class BulkErrorEntity  implements Serializable {
     this.retryable = retryable;
   }
 
-  
+
   /**
    **/
   public BulkErrorEntity entity(Entity entity) {
@@ -116,7 +117,7 @@ public class BulkErrorEntity  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkErrorEntity details(List<BulkErrorDetail> details) {
@@ -133,7 +134,6 @@ public class BulkErrorEntity  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class BulkErrorEntity  implements Serializable {
       return false;
     }
     BulkErrorEntity bulkErrorEntity = (BulkErrorEntity) o;
+
     return Objects.equals(this.code, bulkErrorEntity.code) &&
-        Objects.equals(this.message, bulkErrorEntity.message) &&
-        Objects.equals(this.status, bulkErrorEntity.status) &&
-        Objects.equals(this.retryable, bulkErrorEntity.retryable) &&
-        Objects.equals(this.entity, bulkErrorEntity.entity) &&
-        Objects.equals(this.details, bulkErrorEntity.details);
+            Objects.equals(this.message, bulkErrorEntity.message) &&
+            Objects.equals(this.status, bulkErrorEntity.status) &&
+            Objects.equals(this.retryable, bulkErrorEntity.retryable) &&
+            Objects.equals(this.entity, bulkErrorEntity.entity) &&
+            Objects.equals(this.details, bulkErrorEntity.details);
   }
 
   @Override

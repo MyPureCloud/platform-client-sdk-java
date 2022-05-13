@@ -19,7 +19,7 @@ title: IntegrationType
 | **helpUri** | <!----><!---->**String**<!----> | URI of a page with more information about the integration type |  [optional] |
 | **termsOfServiceUri** | <!----><!---->**String**<!----> | URI of a page with terms and conditions for the integration type |  [optional] |
 | **vendorName** | <!----><!---->**String**<!----> | Name of the vendor of this integration type |  [optional] |
-| **vendorWebsiteUri** | <!----><!---->**String**<!----> | URI of the vendor&#39;s website |  [optional] |
+| **vendorWebsiteUri** | <!----><!---->**String**<!----> | URI of the vendor's website |  [optional] |
 | **marketplaceUri** | <!----><!---->**String**<!----> | URI of the marketplace listing for this integration type |  [optional] |
 | **faqUri** | <!----><!---->**String**<!----> | URI of frequently asked questions about the integration type |  [optional] |
 | **privacyPolicyUri** | <!----><!---->**String**<!----> | URI of a privacy policy for users of the integration type |  [optional] |

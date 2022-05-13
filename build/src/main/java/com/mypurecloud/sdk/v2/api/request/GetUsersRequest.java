@@ -20,62 +20,61 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
-import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
-import com.mypurecloud.sdk.v2.model.UserProfile;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingStatus;
-import com.mypurecloud.sdk.v2.model.UserState;
-import com.mypurecloud.sdk.v2.model.UserStations;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
-import com.mypurecloud.sdk.v2.model.UserMe;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.UpdateUser;
-import com.mypurecloud.sdk.v2.model.UserQueue;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
+import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
-import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserProfile;
+import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
+import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.CreateUser;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
-import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.UserState;
+import com.mypurecloud.sdk.v2.model.UserStations;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.Utilization;
 
 public class GetUsersRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -89,7 +88,7 @@ public class GetUsersRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -103,7 +102,7 @@ public class GetUsersRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -117,7 +116,7 @@ public class GetUsersRequest {
 	    this.setId(id);
 	    return this;
 	} 
-	
+
 	private List<String> jabberId;
 	public List<String> getJabberId() {
 		return this.jabberId;
@@ -131,7 +130,7 @@ public class GetUsersRequest {
 	    this.setJabberId(jabberId);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -147,7 +146,7 @@ public class GetUsersRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -175,7 +174,7 @@ public class GetUsersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -191,25 +190,25 @@ public class GetUsersRequest {
 	} 
 
 	public enum expandValues { 
-		ROUTINGSTATUS("routingStatus"), 
-		PRESENCE("presence"), 
-		CONVERSATIONSUMMARY("conversationSummary"), 
-		OUTOFOFFICE("outOfOffice"), 
-		GEOLOCATION("geolocation"), 
-		STATION("station"), 
-		AUTHORIZATION("authorization"), 
-		LASTTOKENISSUED("lasttokenissued"), 
-		DATELASTLOGIN("dateLastLogin"), 
-		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
-		TEAM("team"), 
-		PROFILESKILLS("profileSkills"), 
-		CERTIFICATIONS("certifications"), 
-		LOCATIONS("locations"), 
-		GROUPS("groups"), 
-		SKILLS("skills"), 
-		LANGUAGES("languages"), 
-		LANGUAGEPREFERENCE("languagePreference"), 
-		EMPLOYERINFO("employerInfo"), 
+		ROUTINGSTATUS("routingStatus"),
+		PRESENCE("presence"),
+		CONVERSATIONSUMMARY("conversationSummary"),
+		OUTOFOFFICE("outOfOffice"),
+		GEOLOCATION("geolocation"),
+		STATION("station"),
+		AUTHORIZATION("authorization"),
+		LASTTOKENISSUED("lasttokenissued"),
+		DATELASTLOGIN("dateLastLogin"),
+		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
+		TEAM("team"),
+		PROFILESKILLS("profileSkills"),
+		CERTIFICATIONS("certifications"),
+		LOCATIONS("locations"),
+		GROUPS("groups"),
+		SKILLS("skills"),
+		LANGUAGES("languages"),
+		LANGUAGEPREFERENCE("languagePreference"),
+		EMPLOYERINFO("employerInfo"),
 		BIOGRAPHY("biography");
 
 		private String value;
@@ -237,7 +236,7 @@ public class GetUsersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String integrationPresenceSource;
 	public String getIntegrationPresenceSource() {
 		return this.integrationPresenceSource;
@@ -253,8 +252,8 @@ public class GetUsersRequest {
 	} 
 
 	public enum integrationPresenceSourceValues { 
-		MICROSOFTTEAMS("MicrosoftTeams"), 
-		ZOOMPHONE("ZoomPhone"), 
+		MICROSOFTTEAMS("MicrosoftTeams"),
+		ZOOMPHONE("ZoomPhone"),
 		RINGCENTRAL("RingCentral");
 
 		private String value;
@@ -282,7 +281,7 @@ public class GetUsersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String state;
 	public String getState() {
 		return this.state;
@@ -298,9 +297,9 @@ public class GetUsersRequest {
 	} 
 
 	public enum stateValues { 
-		ACTIVE("active"), 
-		INACTIVE("inactive"), 
-		DELETED("deleted"), 
+		ACTIVE("active"),
+		INACTIVE("inactive"),
+		DELETED("deleted"),
 		ANY("any");
 
 		private String value;
@@ -328,7 +327,7 @@ public class GetUsersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -352,23 +351,31 @@ public class GetUsersRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/users")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("id", "multi", id)
         
+
                 .withQueryParameters("jabberId", "multi", jabberId)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("integrationPresenceSource", "", integrationPresenceSource)
         
+
                 .withQueryParameters("state", "", state)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -379,7 +386,7 @@ public class GetUsersRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetUsersRequest request;
@@ -388,41 +395,47 @@ public class GetUsersRequest {
 			request = new GetUsersRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
-		
+
 		public Builder withJabberId(List<String> jabberId) {
 			request.setJabberId(jabberId);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -432,29 +445,37 @@ public class GetUsersRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
+
 		public Builder withIntegrationPresenceSource(String integrationPresenceSource) {
 			request.setIntegrationPresenceSource(integrationPresenceSource);
 			return this;
 		}
 
+
+
+		
 		public Builder withIntegrationPresenceSource(integrationPresenceSourceValues integrationPresenceSource) {
 		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withState(String state) {
 			request.setState(state);
 			return this;
 		}
 
-		public Builder withState(stateValues state) {
-		    request.setState(state.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withState(stateValues state) {
+		    request.setState(state.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetUsersRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class MessageInfo  implements Serializable {
     this.localizableMessageCode = localizableMessageCode;
   }
 
-  
+
   /**
    * Description of the message.
    **/
@@ -64,7 +65,7 @@ public class MessageInfo  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    * Message with template fields for variable replacement.
    **/
@@ -82,7 +83,7 @@ public class MessageInfo  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    * Map with fields for variable replacement.
    **/
@@ -100,7 +101,6 @@ public class MessageInfo  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class MessageInfo  implements Serializable {
       return false;
     }
     MessageInfo messageInfo = (MessageInfo) o;
+
     return Objects.equals(this.localizableMessageCode, messageInfo.localizableMessageCode) &&
-        Objects.equals(this.message, messageInfo.message) &&
-        Objects.equals(this.messageWithParams, messageInfo.messageWithParams) &&
-        Objects.equals(this.messageParams, messageInfo.messageParams);
+            Objects.equals(this.message, messageInfo.message) &&
+            Objects.equals(this.messageWithParams, messageInfo.messageWithParams) &&
+            Objects.equals(this.messageParams, messageInfo.messageParams);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class BuShortTermForecast  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -121,7 +122,7 @@ public class BuShortTermForecast  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The number of weeks this forecast covers
    **/
@@ -139,7 +140,7 @@ public class BuShortTermForecast  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * The method by which this forecast was created
    **/
@@ -157,7 +158,7 @@ public class BuShortTermForecast  implements Serializable {
     this.creationMethod = creationMethod;
   }
 
-  
+
   /**
    * The description of this forecast
    **/
@@ -175,14 +176,14 @@ public class BuShortTermForecast  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether this forecast contains modifications on legacy metrics")
   @JsonProperty("legacy")
   public Boolean getLegacy() {
     return legacy;
   }
 
-  
+
   /**
    * Metadata for this forecast
    **/
@@ -200,7 +201,7 @@ public class BuShortTermForecast  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * Whether this forecast can be used for scheduling
    **/
@@ -218,7 +219,7 @@ public class BuShortTermForecast  implements Serializable {
     this.canUseForScheduling = canUseForScheduling;
   }
 
-  
+
   /**
    * The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -236,7 +237,7 @@ public class BuShortTermForecast  implements Serializable {
     this.referenceStartDate = referenceStartDate;
   }
 
-  
+
   /**
    * The source day pointers for this forecast
    **/
@@ -254,7 +255,7 @@ public class BuShortTermForecast  implements Serializable {
     this.sourceDays = sourceDays;
   }
 
-  
+
   /**
    * Any manual modifications applied to this forecast
    **/
@@ -272,7 +273,7 @@ public class BuShortTermForecast  implements Serializable {
     this.modifications = modifications;
   }
 
-  
+
   /**
    * Generation result metadata
    **/
@@ -290,7 +291,7 @@ public class BuShortTermForecast  implements Serializable {
     this.generationResults = generationResults;
   }
 
-  
+
   /**
    * The time zone for this forecast
    **/
@@ -308,7 +309,7 @@ public class BuShortTermForecast  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The version of the planning groups that was used for this forecast
    **/
@@ -326,7 +327,7 @@ public class BuShortTermForecast  implements Serializable {
     this.planningGroupsVersion = planningGroupsVersion;
   }
 
-  
+
   /**
    * A snapshot of the planning groups used for this forecast as of the version number indicated
    **/
@@ -344,14 +345,13 @@ public class BuShortTermForecast  implements Serializable {
     this.planningGroups = planningGroups;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -362,22 +362,23 @@ public class BuShortTermForecast  implements Serializable {
       return false;
     }
     BuShortTermForecast buShortTermForecast = (BuShortTermForecast) o;
+
     return Objects.equals(this.id, buShortTermForecast.id) &&
-        Objects.equals(this.weekDate, buShortTermForecast.weekDate) &&
-        Objects.equals(this.weekCount, buShortTermForecast.weekCount) &&
-        Objects.equals(this.creationMethod, buShortTermForecast.creationMethod) &&
-        Objects.equals(this.description, buShortTermForecast.description) &&
-        Objects.equals(this.legacy, buShortTermForecast.legacy) &&
-        Objects.equals(this.metadata, buShortTermForecast.metadata) &&
-        Objects.equals(this.canUseForScheduling, buShortTermForecast.canUseForScheduling) &&
-        Objects.equals(this.referenceStartDate, buShortTermForecast.referenceStartDate) &&
-        Objects.equals(this.sourceDays, buShortTermForecast.sourceDays) &&
-        Objects.equals(this.modifications, buShortTermForecast.modifications) &&
-        Objects.equals(this.generationResults, buShortTermForecast.generationResults) &&
-        Objects.equals(this.timeZone, buShortTermForecast.timeZone) &&
-        Objects.equals(this.planningGroupsVersion, buShortTermForecast.planningGroupsVersion) &&
-        Objects.equals(this.planningGroups, buShortTermForecast.planningGroups) &&
-        Objects.equals(this.selfUri, buShortTermForecast.selfUri);
+            Objects.equals(this.weekDate, buShortTermForecast.weekDate) &&
+            Objects.equals(this.weekCount, buShortTermForecast.weekCount) &&
+            Objects.equals(this.creationMethod, buShortTermForecast.creationMethod) &&
+            Objects.equals(this.description, buShortTermForecast.description) &&
+            Objects.equals(this.legacy, buShortTermForecast.legacy) &&
+            Objects.equals(this.metadata, buShortTermForecast.metadata) &&
+            Objects.equals(this.canUseForScheduling, buShortTermForecast.canUseForScheduling) &&
+            Objects.equals(this.referenceStartDate, buShortTermForecast.referenceStartDate) &&
+            Objects.equals(this.sourceDays, buShortTermForecast.sourceDays) &&
+            Objects.equals(this.modifications, buShortTermForecast.modifications) &&
+            Objects.equals(this.generationResults, buShortTermForecast.generationResults) &&
+            Objects.equals(this.timeZone, buShortTermForecast.timeZone) &&
+            Objects.equals(this.planningGroupsVersion, buShortTermForecast.planningGroupsVersion) &&
+            Objects.equals(this.planningGroups, buShortTermForecast.planningGroups) &&
+            Objects.equals(this.selfUri, buShortTermForecast.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,14 +32,14 @@ public class WeekScheduleReference  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * First day of this week schedule in yyyy-MM-dd format
    **/
@@ -56,7 +57,6 @@ public class WeekScheduleReference  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,9 +67,10 @@ public class WeekScheduleReference  implements Serializable {
       return false;
     }
     WeekScheduleReference weekScheduleReference = (WeekScheduleReference) o;
+
     return Objects.equals(this.id, weekScheduleReference.id) &&
-        Objects.equals(this.selfUri, weekScheduleReference.selfUri) &&
-        Objects.equals(this.weekDate, weekScheduleReference.weekDate);
+            Objects.equals(this.selfUri, weekScheduleReference.selfUri) &&
+            Objects.equals(this.weekDate, weekScheduleReference.weekDate);
   }
 
   @Override

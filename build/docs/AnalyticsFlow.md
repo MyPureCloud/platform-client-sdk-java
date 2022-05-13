@@ -32,12 +32,12 @@ title: AnalyticsFlow
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AGENT | &quot;agent&quot; |
-| DIRECT | &quot;direct&quot; |
-| DNIS | &quot;dnis&quot; |
-| FLOW | &quot;flow&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENT | &quot;agent&quot; | 
+| DIRECT | &quot;direct&quot; | 
+| DNIS | &quot;dnis&quot; | 
+| FLOW | &quot;flow&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -47,25 +47,25 @@ title: AnalyticsFlow
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BOT | &quot;BOT&quot; |
-| COMMONMODULE | &quot;COMMONMODULE&quot; |
-| DIGITALBOT | &quot;DIGITALBOT&quot; |
-| INBOUNDCALL | &quot;INBOUNDCALL&quot; |
-| INBOUNDCHAT | &quot;INBOUNDCHAT&quot; |
-| INBOUNDEMAIL | &quot;INBOUNDEMAIL&quot; |
-| INBOUNDSHORTMESSAGE | &quot;INBOUNDSHORTMESSAGE&quot; |
-| INQUEUECALL | &quot;INQUEUECALL&quot; |
-| INQUEUEEMAIL | &quot;INQUEUEEMAIL&quot; |
-| INQUEUESHORTMESSAGE | &quot;INQUEUESHORTMESSAGE&quot; |
-| OUTBOUNDCALL | &quot;OUTBOUNDCALL&quot; |
-| SECURECALL | &quot;SECURECALL&quot; |
-| SPEECH | &quot;SPEECH&quot; |
-| SURVEYINVITE | &quot;SURVEYINVITE&quot; |
-| VOICE | &quot;VOICE&quot; |
-| VOICEMAIL | &quot;VOICEMAIL&quot; |
-| WORKFLOW | &quot;WORKFLOW&quot; |
-| WORKITEM | &quot;WORKITEM&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BOT | &quot;BOT&quot; | 
+| COMMONMODULE | &quot;COMMONMODULE&quot; | 
+| DIGITALBOT | &quot;DIGITALBOT&quot; | 
+| INBOUNDCALL | &quot;INBOUNDCALL&quot; | 
+| INBOUNDCHAT | &quot;INBOUNDCHAT&quot; | 
+| INBOUNDEMAIL | &quot;INBOUNDEMAIL&quot; | 
+| INBOUNDSHORTMESSAGE | &quot;INBOUNDSHORTMESSAGE&quot; | 
+| INQUEUECALL | &quot;INQUEUECALL&quot; | 
+| INQUEUEEMAIL | &quot;INQUEUEEMAIL&quot; | 
+| INQUEUESHORTMESSAGE | &quot;INQUEUESHORTMESSAGE&quot; | 
+| OUTBOUNDCALL | &quot;OUTBOUNDCALL&quot; | 
+| SECURECALL | &quot;SECURECALL&quot; | 
+| SPEECH | &quot;SPEECH&quot; | 
+| SURVEYINVITE | &quot;SURVEYINVITE&quot; | 
+| VOICE | &quot;VOICE&quot; | 
+| VOICEMAIL | &quot;VOICEMAIL&quot; | 
+| WORKFLOW | &quot;WORKFLOW&quot; | 
+| WORKITEM | &quot;WORKITEM&quot; | 
 {: class="table table-striped"}
 
 

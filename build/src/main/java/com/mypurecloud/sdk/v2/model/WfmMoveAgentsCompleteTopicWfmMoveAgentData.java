@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentData  implements Serializable
     this.user = user;
   }
 
-  
+
   /**
    **/
   public WfmMoveAgentsCompleteTopicWfmMoveAgentData result(ResultEnum result) {
@@ -112,7 +113,6 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentData  implements Serializable
     this.result = result;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,8 +123,9 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentData  implements Serializable
       return false;
     }
     WfmMoveAgentsCompleteTopicWfmMoveAgentData wfmMoveAgentsCompleteTopicWfmMoveAgentData = (WfmMoveAgentsCompleteTopicWfmMoveAgentData) o;
+
     return Objects.equals(this.user, wfmMoveAgentsCompleteTopicWfmMoveAgentData.user) &&
-        Objects.equals(this.result, wfmMoveAgentsCompleteTopicWfmMoveAgentData.result);
+            Objects.equals(this.result, wfmMoveAgentsCompleteTopicWfmMoveAgentData.result);
   }
 
   @Override

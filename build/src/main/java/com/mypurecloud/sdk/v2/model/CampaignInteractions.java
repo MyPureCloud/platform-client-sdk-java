@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignInteraction;
@@ -48,7 +49,7 @@ public class CampaignInteractions  implements Serializable {
     this.campaign = campaign;
   }
 
-  
+
   /**
    **/
   public CampaignInteractions pendingInteractions(List<CampaignInteraction> pendingInteractions) {
@@ -65,7 +66,7 @@ public class CampaignInteractions  implements Serializable {
     this.pendingInteractions = pendingInteractions;
   }
 
-  
+
   /**
    **/
   public CampaignInteractions proceedingInteractions(List<CampaignInteraction> proceedingInteractions) {
@@ -82,7 +83,7 @@ public class CampaignInteractions  implements Serializable {
     this.proceedingInteractions = proceedingInteractions;
   }
 
-  
+
   /**
    **/
   public CampaignInteractions previewingInteractions(List<CampaignInteraction> previewingInteractions) {
@@ -99,7 +100,7 @@ public class CampaignInteractions  implements Serializable {
     this.previewingInteractions = previewingInteractions;
   }
 
-  
+
   /**
    **/
   public CampaignInteractions interactingInteractions(List<CampaignInteraction> interactingInteractions) {
@@ -116,7 +117,7 @@ public class CampaignInteractions  implements Serializable {
     this.interactingInteractions = interactingInteractions;
   }
 
-  
+
   /**
    **/
   public CampaignInteractions scheduledInteractions(List<CampaignInteraction> scheduledInteractions) {
@@ -133,7 +134,6 @@ public class CampaignInteractions  implements Serializable {
     this.scheduledInteractions = scheduledInteractions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class CampaignInteractions  implements Serializable {
       return false;
     }
     CampaignInteractions campaignInteractions = (CampaignInteractions) o;
+
     return Objects.equals(this.campaign, campaignInteractions.campaign) &&
-        Objects.equals(this.pendingInteractions, campaignInteractions.pendingInteractions) &&
-        Objects.equals(this.proceedingInteractions, campaignInteractions.proceedingInteractions) &&
-        Objects.equals(this.previewingInteractions, campaignInteractions.previewingInteractions) &&
-        Objects.equals(this.interactingInteractions, campaignInteractions.interactingInteractions) &&
-        Objects.equals(this.scheduledInteractions, campaignInteractions.scheduledInteractions);
+            Objects.equals(this.pendingInteractions, campaignInteractions.pendingInteractions) &&
+            Objects.equals(this.proceedingInteractions, campaignInteractions.proceedingInteractions) &&
+            Objects.equals(this.previewingInteractions, campaignInteractions.previewingInteractions) &&
+            Objects.equals(this.interactingInteractions, campaignInteractions.interactingInteractions) &&
+            Objects.equals(this.scheduledInteractions, campaignInteractions.scheduledInteractions);
   }
 
   @Override

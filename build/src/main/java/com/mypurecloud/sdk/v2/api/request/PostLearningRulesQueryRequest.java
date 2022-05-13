@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 public class PostLearningRulesQueryRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -55,7 +55,7 @@ public class PostLearningRulesQueryRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -69,7 +69,7 @@ public class PostLearningRulesQueryRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private LearningAssignmentUserQuery body;
 	public LearningAssignmentUserQuery getBody() {
 		return this.body;
@@ -83,7 +83,7 @@ public class PostLearningRulesQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,13 +122,15 @@ public class PostLearningRulesQueryRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/learning/rules/query")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -139,12 +141,12 @@ public class PostLearningRulesQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Integer pageSize, Integer pageNumber, LearningAssignmentUserQuery body) {
 	    return new Builder()
 	            .withRequiredParams(pageSize, pageNumber, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostLearningRulesQueryRequest request;
@@ -153,32 +155,32 @@ public class PostLearningRulesQueryRequest {
 			request = new PostLearningRulesQueryRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withBody(LearningAssignmentUserQuery body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Integer pageSize, Integer pageNumber, LearningAssignmentUserQuery body) {
 			request.setPageSize(pageSize);
-						request.setPageNumber(pageNumber);
-						request.setBody(body);
-			
+			request.setPageNumber(pageNumber);
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostLearningRulesQueryRequest build() {
             

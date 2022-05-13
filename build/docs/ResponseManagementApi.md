@@ -158,8 +158,6 @@ null (empty response body)
 
 Delete response asset
 
-
-
 Wraps DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}  
 
 Requires ANY permissions: 
@@ -219,8 +217,6 @@ null (empty response body)
 > [LibraryEntityListing](LibraryEntityListing.html) getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter)
 
 Gets a list of existing response libraries.
-
-
 
 Wraps GET /api/v2/responsemanagement/libraries  
 
@@ -286,8 +282,6 @@ try {
 
 Get details about an existing response library.
 
-
-
 Wraps GET /api/v2/responsemanagement/libraries/{libraryId}  
 
 Requires NO permissions: 
@@ -347,8 +341,6 @@ try {
 > [Response](Response.html) getResponsemanagementResponse(responseId, expand)
 
 Get details about an existing response.
-
-
 
 Wraps GET /api/v2/responsemanagement/responses/{responseId}  
 
@@ -412,8 +404,6 @@ try {
 
 Get response asset information
 
-
-
 Wraps GET /api/v2/responsemanagement/responseassets/{responseAssetId}  
 
 Requires ANY permissions: 
@@ -475,8 +465,6 @@ try {
 
 Get response asset upload status
 
-
-
 Wraps GET /api/v2/responsemanagement/responseassets/status/{statusId}  
 
 Requires ANY permissions: 
@@ -537,8 +525,6 @@ try {
 > [ResponseEntityListing](ResponseEntityListing.html) getResponsemanagementResponses(libraryId, pageNumber, pageSize, expand)
 
 Gets a list of existing responses.
-
-
 
 Wraps GET /api/v2/responsemanagement/responses  
 
@@ -606,8 +592,6 @@ try {
 
 Create a response library.
 
-
-
 Wraps POST /api/v2/responsemanagement/libraries  
 
 Requires NO permissions: 
@@ -668,8 +652,6 @@ try {
 
 Search response assets
 
-
-
 Wraps POST /api/v2/responsemanagement/responseassets/search  
 
 Requires ALL permissions: 
@@ -699,7 +681,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ResponseManagementApi apiInstance = new ResponseManagementApi();
 ResponseAssetSearchRequest body = new ResponseAssetSearchRequest(); // ResponseAssetSearchRequest | request
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     ResponseAssetSearchResults result = apiInstance.postResponsemanagementResponseassetsSearch(body, expand);
     System.out.println(result);
@@ -732,8 +714,6 @@ try {
 > [CreateResponseAssetResponse](CreateResponseAssetResponse.html) postResponsemanagementResponseassetsUploads(body)
 
 Creates pre-signed url for uploading response asset
-
-
 
 Wraps POST /api/v2/responsemanagement/responseassets/uploads  
 
@@ -796,8 +776,6 @@ try {
 
 Create a response.
 
-
-
 Wraps POST /api/v2/responsemanagement/responses  
 
 Requires NO permissions: 
@@ -859,8 +837,6 @@ try {
 > [ResponseQueryResults](ResponseQueryResults.html) postResponsemanagementResponsesQuery(body)
 
 Query responses
-
-
 
 Wraps POST /api/v2/responsemanagement/responses/query  
 
@@ -1051,8 +1027,6 @@ try {
 > [ResponseAsset](ResponseAsset.html) putResponsemanagementResponseasset(responseAssetId, body)
 
 Update response asset
-
-
 
 Wraps PUT /api/v2/responsemanagement/responseassets/{responseAssetId}  
 

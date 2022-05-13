@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class OpenIntegration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Open messaging integration.
    **/
@@ -119,7 +120,7 @@ public class OpenIntegration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -137,7 +138,7 @@ public class OpenIntegration  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public OpenIntegration messagingSetting(MessagingSettingReference messagingSetting) {
@@ -154,7 +155,7 @@ public class OpenIntegration  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The outbound notification webhook URL for the Open messaging integration.
    **/
@@ -172,7 +173,7 @@ public class OpenIntegration  implements Serializable {
     this.outboundNotificationWebhookUrl = outboundNotificationWebhookUrl;
   }
 
-  
+
   /**
    * The outbound notification webhook signature secret token.
    **/
@@ -190,7 +191,7 @@ public class OpenIntegration  implements Serializable {
     this.outboundNotificationWebhookSignatureSecretToken = outboundNotificationWebhookSignatureSecretToken;
   }
 
-  
+
   /**
    * The user specified headers for the Open messaging integration.
    **/
@@ -208,7 +209,7 @@ public class OpenIntegration  implements Serializable {
     this.webhookHeaders = webhookHeaders;
   }
 
-  
+
   /**
    * The status of the Open Integration
    **/
@@ -226,14 +227,14 @@ public class OpenIntegration  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient associated to the Open messaging Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
   }
 
-  
+
   /**
    * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -251,7 +252,7 @@ public class OpenIntegration  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -269,7 +270,7 @@ public class OpenIntegration  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User reference that created this Integration
    **/
@@ -287,7 +288,7 @@ public class OpenIntegration  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User reference that last modified this Integration
    **/
@@ -305,28 +306,27 @@ public class OpenIntegration  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
   @JsonProperty("createStatus")
   public CreateStatusEnum getCreateStatus() {
     return createStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -337,22 +337,23 @@ public class OpenIntegration  implements Serializable {
       return false;
     }
     OpenIntegration openIntegration = (OpenIntegration) o;
+
     return Objects.equals(this.id, openIntegration.id) &&
-        Objects.equals(this.name, openIntegration.name) &&
-        Objects.equals(this.supportedContent, openIntegration.supportedContent) &&
-        Objects.equals(this.messagingSetting, openIntegration.messagingSetting) &&
-        Objects.equals(this.outboundNotificationWebhookUrl, openIntegration.outboundNotificationWebhookUrl) &&
-        Objects.equals(this.outboundNotificationWebhookSignatureSecretToken, openIntegration.outboundNotificationWebhookSignatureSecretToken) &&
-        Objects.equals(this.webhookHeaders, openIntegration.webhookHeaders) &&
-        Objects.equals(this.status, openIntegration.status) &&
-        Objects.equals(this.recipient, openIntegration.recipient) &&
-        Objects.equals(this.dateCreated, openIntegration.dateCreated) &&
-        Objects.equals(this.dateModified, openIntegration.dateModified) &&
-        Objects.equals(this.createdBy, openIntegration.createdBy) &&
-        Objects.equals(this.modifiedBy, openIntegration.modifiedBy) &&
-        Objects.equals(this.createStatus, openIntegration.createStatus) &&
-        Objects.equals(this.createError, openIntegration.createError) &&
-        Objects.equals(this.selfUri, openIntegration.selfUri);
+            Objects.equals(this.name, openIntegration.name) &&
+            Objects.equals(this.supportedContent, openIntegration.supportedContent) &&
+            Objects.equals(this.messagingSetting, openIntegration.messagingSetting) &&
+            Objects.equals(this.outboundNotificationWebhookUrl, openIntegration.outboundNotificationWebhookUrl) &&
+            Objects.equals(this.outboundNotificationWebhookSignatureSecretToken, openIntegration.outboundNotificationWebhookSignatureSecretToken) &&
+            Objects.equals(this.webhookHeaders, openIntegration.webhookHeaders) &&
+            Objects.equals(this.status, openIntegration.status) &&
+            Objects.equals(this.recipient, openIntegration.recipient) &&
+            Objects.equals(this.dateCreated, openIntegration.dateCreated) &&
+            Objects.equals(this.dateModified, openIntegration.dateModified) &&
+            Objects.equals(this.createdBy, openIntegration.createdBy) &&
+            Objects.equals(this.modifiedBy, openIntegration.modifiedBy) &&
+            Objects.equals(this.createStatus, openIntegration.createStatus) &&
+            Objects.equals(this.createError, openIntegration.createError) &&
+            Objects.equals(this.selfUri, openIntegration.selfUri);
   }
 
   @Override

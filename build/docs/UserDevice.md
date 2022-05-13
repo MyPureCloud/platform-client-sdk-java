@@ -27,9 +27,9 @@ title: UserDevice
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ANDROID | &quot;android&quot; |
-| IOS | &quot;ios&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ANDROID | &quot;android&quot; | 
+| IOS | &quot;ios&quot; | 
 {: class="table table-striped"}
 
 

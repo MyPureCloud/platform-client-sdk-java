@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicParticipant;
@@ -47,7 +48,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicConversation maxParticipants(Integer maxParticipants) {
@@ -64,7 +65,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     this.maxParticipants = maxParticipants;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicConversation participants(List<QueueConversationVideoEventTopicParticipant> participants) {
@@ -81,7 +82,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicConversation recordingState(String recordingState) {
@@ -98,7 +99,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicConversation address(String address) {
@@ -115,7 +116,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     this.address = address;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicConversation externalTag(String externalTag) {
@@ -132,7 +133,6 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     this.externalTag = externalTag;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
       return false;
     }
     QueueConversationVideoEventTopicConversation queueConversationVideoEventTopicConversation = (QueueConversationVideoEventTopicConversation) o;
+
     return Objects.equals(this.id, queueConversationVideoEventTopicConversation.id) &&
-        Objects.equals(this.maxParticipants, queueConversationVideoEventTopicConversation.maxParticipants) &&
-        Objects.equals(this.participants, queueConversationVideoEventTopicConversation.participants) &&
-        Objects.equals(this.recordingState, queueConversationVideoEventTopicConversation.recordingState) &&
-        Objects.equals(this.address, queueConversationVideoEventTopicConversation.address) &&
-        Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag);
+            Objects.equals(this.maxParticipants, queueConversationVideoEventTopicConversation.maxParticipants) &&
+            Objects.equals(this.participants, queueConversationVideoEventTopicConversation.participants) &&
+            Objects.equals(this.recordingState, queueConversationVideoEventTopicConversation.recordingState) &&
+            Objects.equals(this.address, queueConversationVideoEventTopicConversation.address) &&
+            Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag);
   }
 
   @Override

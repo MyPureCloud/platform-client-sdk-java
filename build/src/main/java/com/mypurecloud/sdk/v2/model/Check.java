@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -132,14 +133,13 @@ public class Check  implements Serializable {
     return result;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of check executed.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,8 +150,9 @@ public class Check  implements Serializable {
       return false;
     }
     Check check = (Check) o;
+
     return Objects.equals(this.result, check.result) &&
-        Objects.equals(this.type, check.type);
+            Objects.equals(this.type, check.type);
   }
 
   @Override

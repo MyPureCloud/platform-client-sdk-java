@@ -13,12 +13,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AvailableTopicEntityListing;
-import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelEntityListing;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
-import com.mypurecloud.sdk.v2.model.Channel;
+import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteNotificationsChannelSubscriptionsRequest;
@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class NotificationsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -49,7 +48,6 @@ public class NotificationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Remove all subscriptions
    * 
@@ -125,7 +123,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * Get available notification topics.
    * 
@@ -201,7 +198,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * The list of all subscriptions for this channel
    * 
@@ -277,7 +273,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * The list of existing channels
    * 
@@ -353,10 +348,9 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * Verify a channel still exists and is valid
-   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -390,7 +384,7 @@ public class NotificationsApiAsync {
 
   /**
    * Verify a channel still exists and is valid
-   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -429,7 +423,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
@@ -505,7 +498,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * Create a new channel
    * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
@@ -581,7 +573,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
   /**
    * Replace the current list of subscriptions with a new list.
    * 
@@ -657,7 +648,6 @@ public class NotificationsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

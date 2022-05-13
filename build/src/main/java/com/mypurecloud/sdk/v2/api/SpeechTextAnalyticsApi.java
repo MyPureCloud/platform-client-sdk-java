@@ -10,33 +10,33 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
@@ -79,7 +79,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class SpeechTextAnalyticsApi {
   private final ApiClient pcapiClient;
 
@@ -91,9 +90,8 @@ public class SpeechTextAnalyticsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
-   * Delete a Speech &amp; Text Analytics program by id
+   * Delete a Speech & Text Analytics program by id
    * 
    * @param programId The id of the program (required)
    * @param forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional, default to false)
@@ -105,7 +103,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics program by id
+   * Delete a Speech & Text Analytics program by id
    * 
    * @param programId The id of the program (required)
    * @param forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional, default to false)
@@ -118,14 +116,14 @@ public class SpeechTextAnalyticsApi {
   private DeleteSpeechandtextanalyticsProgramRequest createDeleteSpeechandtextanalyticsProgramRequest(String programId, Boolean forceDelete) {
     return DeleteSpeechandtextanalyticsProgramRequest.builder()
             .withProgramId(programId)
-    
+
             .withForceDelete(forceDelete)
-    
+
             .build();
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics program by id
+   * Delete a Speech & Text Analytics program by id
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -143,7 +141,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics program by id
+   * Delete a Speech & Text Analytics program by id
    * 
    * @param request The request object
    * @return the response
@@ -171,9 +169,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * Delete All Speech & Text Analytics SentimentFeedback
    * 
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -183,7 +180,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * Delete All Speech & Text Analytics SentimentFeedback
    * 
    * @throws IOException if the request fails to be processed
    */
@@ -197,7 +194,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * Delete All Speech & Text Analytics SentimentFeedback
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -215,7 +212,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * Delete All Speech & Text Analytics SentimentFeedback
    * 
    * @param request The request object
    * @return the response
@@ -243,9 +240,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * Delete a Speech & Text Analytics SentimentFeedback by Id
    * 
    * @param sentimentFeedbackId The Id of the SentimentFeedback (required)
    * @throws ApiException if the request fails on the server
@@ -256,7 +252,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * Delete a Speech & Text Analytics SentimentFeedback by Id
    * 
    * @param sentimentFeedbackId The Id of the SentimentFeedback (required)
    * @throws IOException if the request fails to be processed
@@ -268,12 +264,12 @@ public class SpeechTextAnalyticsApi {
   private DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest createDeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest(String sentimentFeedbackId) {
     return DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest.builder()
             .withSentimentFeedbackId(sentimentFeedbackId)
-    
+
             .build();
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * Delete a Speech & Text Analytics SentimentFeedback by Id
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -291,7 +287,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * Delete a Speech & Text Analytics SentimentFeedback by Id
    * 
    * @param request The request object
    * @return the response
@@ -319,9 +315,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Delete a Speech &amp; Text Analytics topic by id
+   * Delete a Speech & Text Analytics topic by id
    * 
    * @param topicId The id of the topic (required)
    * @throws ApiException if the request fails on the server
@@ -332,7 +327,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics topic by id
+   * Delete a Speech & Text Analytics topic by id
    * 
    * @param topicId The id of the topic (required)
    * @throws IOException if the request fails to be processed
@@ -344,12 +339,12 @@ public class SpeechTextAnalyticsApi {
   private DeleteSpeechandtextanalyticsTopicRequest createDeleteSpeechandtextanalyticsTopicRequest(String topicId) {
     return DeleteSpeechandtextanalyticsTopicRequest.builder()
             .withTopicId(topicId)
-    
+
             .build();
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics topic by id
+   * Delete a Speech & Text Analytics topic by id
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -367,7 +362,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics topic by id
+   * Delete a Speech & Text Analytics topic by id
    * 
    * @param request The request object
    * @return the response
@@ -395,7 +390,6 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
    * Get Speech and Text Analytics for a specific conversation
    * 
@@ -422,7 +416,7 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsConversationRequest createGetSpeechandtextanalyticsConversationRequest(String conversationId) {
     return GetSpeechandtextanalyticsConversationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -474,7 +468,6 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
    * Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
    * 
@@ -503,9 +496,9 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest createGetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest(String conversationId, String communicationId) {
     return GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withCommunicationId(communicationId)
-    
+
             .build();
   }
 
@@ -557,9 +550,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics program by id
+   * Get a Speech & Text Analytics program by id
    * 
    * @param programId The id of the program (required)
    * @return Program
@@ -571,7 +563,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics program by id
+   * Get a Speech & Text Analytics program by id
    * 
    * @param programId The id of the program (required)
    * @return Program
@@ -584,12 +576,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramRequest createGetSpeechandtextanalyticsProgramRequest(String programId) {
     return GetSpeechandtextanalyticsProgramRequest.builder()
             .withProgramId(programId)
-    
+
             .build();
   }
 
   /**
-   * Get a Speech &amp; Text Analytics program by id
+   * Get a Speech & Text Analytics program by id
    * 
    * @param request The request object
    * @return Program
@@ -608,7 +600,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics program by id
+   * Get a Speech & Text Analytics program by id
    * 
    * @param request The request object
    * @return the response
@@ -636,9 +628,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param programId The id of the program (required)
    * @return ProgramMappings
@@ -650,7 +641,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param programId The id of the program (required)
    * @return ProgramMappings
@@ -663,12 +654,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramMappingsRequest createGetSpeechandtextanalyticsProgramMappingsRequest(String programId) {
     return GetSpeechandtextanalyticsProgramMappingsRequest.builder()
             .withProgramId(programId)
-    
+
             .build();
   }
 
   /**
-   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param request The request object
    * @return ProgramMappings
@@ -687,7 +678,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param request The request object
    * @return the response
@@ -715,9 +706,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics programs
+   * Get the list of Speech & Text Analytics programs
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -730,7 +720,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs
+   * Get the list of Speech & Text Analytics programs
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -744,14 +734,14 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize) {
     return GetSpeechandtextanalyticsProgramsRequest.builder()
             .withNextPage(nextPage)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs
+   * Get the list of Speech & Text Analytics programs
    * 
    * @param request The request object
    * @return ProgramsEntityListing
@@ -770,7 +760,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs
+   * Get the list of Speech & Text Analytics programs
    * 
    * @param request The request object
    * @return the response
@@ -798,9 +788,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics general program job by id
+   * Get a Speech & Text Analytics general program job by id
    * 
    * @param jobId The id of the publish programs job (required)
    * @return GeneralProgramJob
@@ -812,7 +801,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics general program job by id
+   * Get a Speech & Text Analytics general program job by id
    * 
    * @param jobId The id of the publish programs job (required)
    * @return GeneralProgramJob
@@ -825,12 +814,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramsGeneralJobRequest createGetSpeechandtextanalyticsProgramsGeneralJobRequest(String jobId) {
     return GetSpeechandtextanalyticsProgramsGeneralJobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
   /**
-   * Get a Speech &amp; Text Analytics general program job by id
+   * Get a Speech & Text Analytics general program job by id
    * 
    * @param request The request object
    * @return GeneralProgramJob
@@ -849,7 +838,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics general program job by id
+   * Get a Speech & Text Analytics general program job by id
    * 
    * @param request The request object
    * @return the response
@@ -877,9 +866,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -892,7 +880,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -906,14 +894,14 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramsMappingsRequest createGetSpeechandtextanalyticsProgramsMappingsRequest(String nextPage, Integer pageSize) {
     return GetSpeechandtextanalyticsProgramsMappingsRequest.builder()
             .withNextPage(nextPage)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param request The request object
    * @return ProgramsMappingsEntityListing
@@ -932,7 +920,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param request The request object
    * @return the response
@@ -960,9 +948,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics publish programs job by id
+   * Get a Speech & Text Analytics publish programs job by id
    * 
    * @param jobId The id of the publish programs job (required)
    * @return ProgramJob
@@ -974,7 +961,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish programs job by id
+   * Get a Speech & Text Analytics publish programs job by id
    * 
    * @param jobId The id of the publish programs job (required)
    * @return ProgramJob
@@ -987,12 +974,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramsPublishjobRequest createGetSpeechandtextanalyticsProgramsPublishjobRequest(String jobId) {
     return GetSpeechandtextanalyticsProgramsPublishjobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish programs job by id
+   * Get a Speech & Text Analytics publish programs job by id
    * 
    * @param request The request object
    * @return ProgramJob
@@ -1011,7 +998,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish programs job by id
+   * Get a Speech & Text Analytics publish programs job by id
    * 
    * @param request The request object
    * @return the response
@@ -1039,9 +1026,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * Get the list of Speech & Text Analytics unpublished programs
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -1054,7 +1040,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * Get the list of Speech & Text Analytics unpublished programs
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -1068,14 +1054,14 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsProgramsUnpublishedRequest createGetSpeechandtextanalyticsProgramsUnpublishedRequest(String nextPage, Integer pageSize) {
     return GetSpeechandtextanalyticsProgramsUnpublishedRequest.builder()
             .withNextPage(nextPage)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * Get the list of Speech & Text Analytics unpublished programs
    * 
    * @param request The request object
    * @return UnpublishedProgramsEntityListing
@@ -1094,7 +1080,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * Get the list of Speech & Text Analytics unpublished programs
    * 
    * @param request The request object
    * @return the response
@@ -1122,9 +1108,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+   * Get the list of Speech & Text Analytics sentiment supported dialects
    * 
    * @return EntityListing
    * @throws ApiException if the request fails on the server
@@ -1135,7 +1120,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+   * Get the list of Speech & Text Analytics sentiment supported dialects
    * 
    * @return EntityListing
    * @throws IOException if the request fails to be processed
@@ -1150,7 +1135,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+   * Get the list of Speech & Text Analytics sentiment supported dialects
    * 
    * @param request The request object
    * @return EntityListing
@@ -1169,7 +1154,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+   * Get the list of Speech & Text Analytics sentiment supported dialects
    * 
    * @param request The request object
    * @return the response
@@ -1197,11 +1182,10 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * Get the list of Speech & Text Analytics SentimentFeedback
    * 
-   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
    * @return SentimentFeedbackEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1211,9 +1195,9 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * Get the list of Speech & Text Analytics SentimentFeedback
    * 
-   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional, default to null)
    * @return SentimentFeedbackEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -1224,12 +1208,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsSentimentfeedbackRequest createGetSpeechandtextanalyticsSentimentfeedbackRequest(String dialect) {
     return GetSpeechandtextanalyticsSentimentfeedbackRequest.builder()
             .withDialect(dialect)
-    
+
             .build();
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * Get the list of Speech & Text Analytics SentimentFeedback
    * 
    * @param request The request object
    * @return SentimentFeedbackEntityListing
@@ -1248,7 +1232,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * Get the list of Speech & Text Analytics SentimentFeedback
    * 
    * @param request The request object
    * @return the response
@@ -1276,7 +1260,6 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
    * Get Speech And Text Analytics Settings
    * 
@@ -1351,9 +1334,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics topic by id
+   * Get a Speech & Text Analytics topic by id
    * 
    * @param topicId The id of the topic (required)
    * @return Topic
@@ -1365,7 +1347,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics topic by id
+   * Get a Speech & Text Analytics topic by id
    * 
    * @param topicId The id of the topic (required)
    * @return Topic
@@ -1378,12 +1360,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsTopicRequest createGetSpeechandtextanalyticsTopicRequest(String topicId) {
     return GetSpeechandtextanalyticsTopicRequest.builder()
             .withTopicId(topicId)
-    
+
             .build();
   }
 
   /**
-   * Get a Speech &amp; Text Analytics topic by id
+   * Get a Speech & Text Analytics topic by id
    * 
    * @param request The request object
    * @return Topic
@@ -1402,7 +1384,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics topic by id
+   * Get a Speech & Text Analytics topic by id
    * 
    * @param request The request object
    * @return the response
@@ -1430,9 +1412,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics topics
+   * Get the list of Speech & Text Analytics topics
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -1450,7 +1431,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics topics
+   * Get the list of Speech & Text Analytics topics
    * 
    * @param nextPage The key for listing the next page (optional)
    * @param pageSize The page size for the listing (optional, default to 20)
@@ -1469,24 +1450,24 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsTopicsRequest createGetSpeechandtextanalyticsTopicsRequest(String nextPage, Integer pageSize, String state, String name, List<String> ids, String sortBy, String sortOrder) {
     return GetSpeechandtextanalyticsTopicsRequest.builder()
             .withNextPage(nextPage)
-    
+
             .withPageSize(pageSize)
-    
+
             .withState(state)
-    
+
             .withName(name)
-    
+
             .withIds(ids)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics topics
+   * Get the list of Speech & Text Analytics topics
    * 
    * @param request The request object
    * @return TopicsEntityListing
@@ -1505,7 +1486,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics topics
+   * Get the list of Speech & Text Analytics topics
    * 
    * @param request The request object
    * @return the response
@@ -1533,9 +1514,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get list of supported Speech &amp; Text Analytics topics dialects
+   * Get list of supported Speech & Text Analytics topics dialects
    * 
    * @return EntityListing
    * @throws ApiException if the request fails on the server
@@ -1546,7 +1526,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get list of supported Speech &amp; Text Analytics topics dialects
+   * Get list of supported Speech & Text Analytics topics dialects
    * 
    * @return EntityListing
    * @throws IOException if the request fails to be processed
@@ -1561,7 +1541,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get list of supported Speech &amp; Text Analytics topics dialects
+   * Get list of supported Speech & Text Analytics topics dialects
    * 
    * @param request The request object
    * @return EntityListing
@@ -1580,7 +1560,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get list of supported Speech &amp; Text Analytics topics dialects
+   * Get list of supported Speech & Text Analytics topics dialects
    * 
    * @param request The request object
    * @return the response
@@ -1608,9 +1588,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * Get the Speech & Text Analytics general topics for a given dialect
    * 
    * @param dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
    * @return GeneralTopicsEntityListing
@@ -1622,7 +1601,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * Get the Speech & Text Analytics general topics for a given dialect
    * 
    * @param dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
    * @return GeneralTopicsEntityListing
@@ -1635,12 +1614,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsTopicsGeneralRequest createGetSpeechandtextanalyticsTopicsGeneralRequest(String dialect) {
     return GetSpeechandtextanalyticsTopicsGeneralRequest.builder()
             .withDialect(dialect)
-    
+
             .build();
   }
 
   /**
-   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * Get the Speech & Text Analytics general topics for a given dialect
    * 
    * @param request The request object
    * @return GeneralTopicsEntityListing
@@ -1659,7 +1638,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * Get the Speech & Text Analytics general topics for a given dialect
    * 
    * @param request The request object
    * @return the response
@@ -1687,9 +1666,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics publish topics job by id
+   * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param jobId The id of the publish topics job (required)
    * @return TopicJob
@@ -1701,7 +1679,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish topics job by id
+   * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param jobId The id of the publish topics job (required)
    * @return TopicJob
@@ -1714,12 +1692,12 @@ public class SpeechTextAnalyticsApi {
   private GetSpeechandtextanalyticsTopicsPublishjobRequest createGetSpeechandtextanalyticsTopicsPublishjobRequest(String jobId) {
     return GetSpeechandtextanalyticsTopicsPublishjobRequest.builder()
             .withJobId(jobId)
-    
+
             .build();
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish topics job by id
+   * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param request The request object
    * @return TopicJob
@@ -1738,7 +1716,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish topics job by id
+   * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param request The request object
    * @return the response
@@ -1766,7 +1744,6 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
    * Patch Speech And Text Analytics Settings
    * 
@@ -1793,7 +1770,7 @@ public class SpeechTextAnalyticsApi {
   private PatchSpeechandtextanalyticsSettingsRequest createPatchSpeechandtextanalyticsSettingsRequest(SpeechTextAnalyticsSettingsRequest body) {
     return PatchSpeechandtextanalyticsSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1845,9 +1822,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics program
+   * Create new Speech & Text Analytics program
    * 
    * @param body The program to create (required)
    * @return Program
@@ -1859,7 +1835,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics program
+   * Create new Speech & Text Analytics program
    * 
    * @param body The program to create (required)
    * @return Program
@@ -1872,12 +1848,12 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsProgramsRequest createPostSpeechandtextanalyticsProgramsRequest(ProgramRequest body) {
     return PostSpeechandtextanalyticsProgramsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Create new Speech &amp; Text Analytics program
+   * Create new Speech & Text Analytics program
    * 
    * @param request The request object
    * @return Program
@@ -1896,7 +1872,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics program
+   * Create new Speech & Text Analytics program
    * 
    * @param request The request object
    * @return the response
@@ -1924,9 +1900,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics general program job
+   * Create new Speech & Text Analytics general program job
    * 
    * @param body The general programs job to create (required)
    * @return GeneralProgramJob
@@ -1938,7 +1913,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics general program job
+   * Create new Speech & Text Analytics general program job
    * 
    * @param body The general programs job to create (required)
    * @return GeneralProgramJob
@@ -1951,12 +1926,12 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsProgramsGeneralJobsRequest createPostSpeechandtextanalyticsProgramsGeneralJobsRequest(GeneralProgramJobRequest body) {
     return PostSpeechandtextanalyticsProgramsGeneralJobsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Create new Speech &amp; Text Analytics general program job
+   * Create new Speech & Text Analytics general program job
    * 
    * @param request The request object
    * @return GeneralProgramJob
@@ -1975,7 +1950,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics general program job
+   * Create new Speech & Text Analytics general program job
    * 
    * @param request The request object
    * @return the response
@@ -2003,9 +1978,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics publish programs job
+   * Create new Speech & Text Analytics publish programs job
    * 
    * @param body The publish programs job to create (required)
    * @return ProgramJob
@@ -2017,7 +1991,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish programs job
+   * Create new Speech & Text Analytics publish programs job
    * 
    * @param body The publish programs job to create (required)
    * @return ProgramJob
@@ -2030,12 +2004,12 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsProgramsPublishjobsRequest createPostSpeechandtextanalyticsProgramsPublishjobsRequest(ProgramJobRequest body) {
     return PostSpeechandtextanalyticsProgramsPublishjobsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish programs job
+   * Create new Speech & Text Analytics publish programs job
    * 
    * @param request The request object
    * @return ProgramJob
@@ -2054,7 +2028,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish programs job
+   * Create new Speech & Text Analytics publish programs job
    * 
    * @param request The request object
    * @return the response
@@ -2082,9 +2056,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * Create a Speech & Text Analytics SentimentFeedback
    * 
    * @param body The SentimentFeedback to create (required)
    * @return SentimentFeedback
@@ -2096,7 +2069,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * Create a Speech & Text Analytics SentimentFeedback
    * 
    * @param body The SentimentFeedback to create (required)
    * @return SentimentFeedback
@@ -2109,12 +2082,12 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsSentimentfeedbackRequest createPostSpeechandtextanalyticsSentimentfeedbackRequest(SentimentFeedback body) {
     return PostSpeechandtextanalyticsSentimentfeedbackRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * Create a Speech & Text Analytics SentimentFeedback
    * 
    * @param request The request object
    * @return SentimentFeedback
@@ -2133,7 +2106,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * Create a Speech & Text Analytics SentimentFeedback
    * 
    * @param request The request object
    * @return the response
@@ -2161,9 +2134,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics topic
+   * Create new Speech & Text Analytics topic
    * 
    * @param body The topic to create (required)
    * @return Topic
@@ -2175,7 +2147,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics topic
+   * Create new Speech & Text Analytics topic
    * 
    * @param body The topic to create (required)
    * @return Topic
@@ -2188,12 +2160,12 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsTopicsRequest createPostSpeechandtextanalyticsTopicsRequest(TopicRequest body) {
     return PostSpeechandtextanalyticsTopicsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Create new Speech &amp; Text Analytics topic
+   * Create new Speech & Text Analytics topic
    * 
    * @param request The request object
    * @return Topic
@@ -2212,7 +2184,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics topic
+   * Create new Speech & Text Analytics topic
    * 
    * @param request The request object
    * @return the response
@@ -2240,9 +2212,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics publish topics job
+   * Create new Speech & Text Analytics publish topics job
    * 
    * @param body The publish topics job to create (required)
    * @return TopicJob
@@ -2254,7 +2225,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish topics job
+   * Create new Speech & Text Analytics publish topics job
    * 
    * @param body The publish topics job to create (required)
    * @return TopicJob
@@ -2267,12 +2238,12 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsTopicsPublishjobsRequest createPostSpeechandtextanalyticsTopicsPublishjobsRequest(TopicJobRequest body) {
     return PostSpeechandtextanalyticsTopicsPublishjobsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish topics job
+   * Create new Speech & Text Analytics publish topics job
    * 
    * @param request The request object
    * @return TopicJob
@@ -2291,7 +2262,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish topics job
+   * Create new Speech & Text Analytics publish topics job
    * 
    * @param request The request object
    * @return the response
@@ -2319,7 +2290,6 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -2346,7 +2316,7 @@ public class SpeechTextAnalyticsApi {
   private PostSpeechandtextanalyticsTranscriptsSearchRequest createPostSpeechandtextanalyticsTranscriptsSearchRequest(TranscriptSearchRequest body) {
     return PostSpeechandtextanalyticsTranscriptsSearchRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2398,9 +2368,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Update existing Speech &amp; Text Analytics program
+   * Update existing Speech & Text Analytics program
    * 
    * @param programId The id of the program (required)
    * @param body The program to update (required)
@@ -2413,7 +2382,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics program
+   * Update existing Speech & Text Analytics program
    * 
    * @param programId The id of the program (required)
    * @param body The program to update (required)
@@ -2427,14 +2396,14 @@ public class SpeechTextAnalyticsApi {
   private PutSpeechandtextanalyticsProgramRequest createPutSpeechandtextanalyticsProgramRequest(String programId, ProgramRequest body) {
     return PutSpeechandtextanalyticsProgramRequest.builder()
             .withProgramId(programId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics program
+   * Update existing Speech & Text Analytics program
    * 
    * @param request The request object
    * @return Program
@@ -2453,7 +2422,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics program
+   * Update existing Speech & Text Analytics program
    * 
    * @param request The request object
    * @return the response
@@ -2481,9 +2450,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param programId The id of the program (required)
    * @param body The program to set mappings for (required)
@@ -2496,7 +2464,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param programId The id of the program (required)
    * @param body The program to set mappings for (required)
@@ -2510,14 +2478,14 @@ public class SpeechTextAnalyticsApi {
   private PutSpeechandtextanalyticsProgramMappingsRequest createPutSpeechandtextanalyticsProgramMappingsRequest(String programId, ProgramMappingsRequest body) {
     return PutSpeechandtextanalyticsProgramMappingsRequest.builder()
             .withProgramId(programId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param request The request object
    * @return ProgramMappings
@@ -2536,7 +2504,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param request The request object
    * @return the response
@@ -2564,7 +2532,6 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
    * Update Speech And Text Analytics Settings
    * 
@@ -2591,7 +2558,7 @@ public class SpeechTextAnalyticsApi {
   private PutSpeechandtextanalyticsSettingsRequest createPutSpeechandtextanalyticsSettingsRequest(SpeechTextAnalyticsSettingsRequest body) {
     return PutSpeechandtextanalyticsSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2643,9 +2610,8 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
   /**
-   * Update existing Speech &amp; Text Analytics topic
+   * Update existing Speech & Text Analytics topic
    * 
    * @param topicId The id of the topic (required)
    * @param body The topic to update (required)
@@ -2658,7 +2624,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics topic
+   * Update existing Speech & Text Analytics topic
    * 
    * @param topicId The id of the topic (required)
    * @param body The topic to update (required)
@@ -2672,14 +2638,14 @@ public class SpeechTextAnalyticsApi {
   private PutSpeechandtextanalyticsTopicRequest createPutSpeechandtextanalyticsTopicRequest(String topicId, TopicRequest body) {
     return PutSpeechandtextanalyticsTopicRequest.builder()
             .withTopicId(topicId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics topic
+   * Update existing Speech & Text Analytics topic
    * 
    * @param request The request object
    * @return Topic
@@ -2698,7 +2664,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics topic
+   * Update existing Speech & Text Analytics topic
    * 
    * @param request The request object
    * @return the response
@@ -2726,5 +2692,4 @@ public class SpeechTextAnalyticsApi {
     }
   }
 
-  
 }

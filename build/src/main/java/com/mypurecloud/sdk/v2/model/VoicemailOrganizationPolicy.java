@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PINConfiguration;
@@ -39,7 +40,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     return enabled;
   }
 
-  
+
   /**
    * The organization's default number of seconds to ring a user's phone before a call is transferred to voicemail
    **/
@@ -57,7 +58,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
   }
 
-  
+
   /**
    * The configuration for user PINs to access their voicemail from a phone
    **/
@@ -75,7 +76,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.pinConfiguration = pinConfiguration;
   }
 
-  
+
   /**
    * The extension for voicemail retrieval.  The default value is *86.
    **/
@@ -93,7 +94,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.voicemailExtension = voicemailExtension;
   }
 
-  
+
   /**
    * If this is true, a PIN is required when accessing a user's voicemail from a phone.
    **/
@@ -111,7 +112,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.pinRequired = pinRequired;
   }
 
-  
+
   /**
    * Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
    **/
@@ -129,7 +130,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.interactiveResponseRequired = interactiveResponseRequired;
   }
 
-  
+
   /**
    * Whether email notifications are sent for new voicemails in the organization. If false, new voicemail email notifications are not be sent for the organization overriding any user or group setting.
    **/
@@ -147,7 +148,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.sendEmailNotifications = sendEmailNotifications;
   }
 
-  
+
   /**
    * Removes any PII from emails. This overrides any analogous group configuration value. This is always true if HIPAA is enabled or unknown for an organization.
    **/
@@ -165,14 +166,13 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.disableEmailPii = disableEmailPii;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,15 +183,16 @@ public class VoicemailOrganizationPolicy  implements Serializable {
       return false;
     }
     VoicemailOrganizationPolicy voicemailOrganizationPolicy = (VoicemailOrganizationPolicy) o;
+
     return Objects.equals(this.enabled, voicemailOrganizationPolicy.enabled) &&
-        Objects.equals(this.alertTimeoutSeconds, voicemailOrganizationPolicy.alertTimeoutSeconds) &&
-        Objects.equals(this.pinConfiguration, voicemailOrganizationPolicy.pinConfiguration) &&
-        Objects.equals(this.voicemailExtension, voicemailOrganizationPolicy.voicemailExtension) &&
-        Objects.equals(this.pinRequired, voicemailOrganizationPolicy.pinRequired) &&
-        Objects.equals(this.interactiveResponseRequired, voicemailOrganizationPolicy.interactiveResponseRequired) &&
-        Objects.equals(this.sendEmailNotifications, voicemailOrganizationPolicy.sendEmailNotifications) &&
-        Objects.equals(this.disableEmailPii, voicemailOrganizationPolicy.disableEmailPii) &&
-        Objects.equals(this.modifiedDate, voicemailOrganizationPolicy.modifiedDate);
+            Objects.equals(this.alertTimeoutSeconds, voicemailOrganizationPolicy.alertTimeoutSeconds) &&
+            Objects.equals(this.pinConfiguration, voicemailOrganizationPolicy.pinConfiguration) &&
+            Objects.equals(this.voicemailExtension, voicemailOrganizationPolicy.voicemailExtension) &&
+            Objects.equals(this.pinRequired, voicemailOrganizationPolicy.pinRequired) &&
+            Objects.equals(this.interactiveResponseRequired, voicemailOrganizationPolicy.interactiveResponseRequired) &&
+            Objects.equals(this.sendEmailNotifications, voicemailOrganizationPolicy.sendEmailNotifications) &&
+            Objects.equals(this.disableEmailPii, voicemailOrganizationPolicy.disableEmailPii) &&
+            Objects.equals(this.modifiedDate, voicemailOrganizationPolicy.modifiedDate);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification correlationId(String correlationId) {
@@ -118,7 +119,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification externalContact(JourneyWebActionEventsNotificationExternalContact externalContact) {
@@ -135,7 +136,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification createdDate(Date createdDate) {
@@ -152,7 +153,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification customerId(String customerId) {
@@ -169,7 +170,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.customerId = customerId;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification customerIdType(String customerIdType) {
@@ -186,7 +187,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.customerIdType = customerIdType;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification session(JourneyWebActionEventsNotificationSession session) {
@@ -203,7 +204,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.session = session;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification eventType(EventTypeEnum eventType) {
@@ -220,7 +221,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.eventType = eventType;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification webActionEvent(JourneyWebActionEventsNotificationWebActionMessage webActionEvent) {
@@ -237,7 +238,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.webActionEvent = webActionEvent;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification blockedWebActionOfferEvent(JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockedWebActionOfferEvent) {
@@ -254,7 +255,6 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     this.blockedWebActionOfferEvent = blockedWebActionOfferEvent;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,16 +265,17 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
       return false;
     }
     JourneyWebActionEventsNotificationWebActionEventsNotification journeyWebActionEventsNotificationWebActionEventsNotification = (JourneyWebActionEventsNotificationWebActionEventsNotification) o;
+
     return Objects.equals(this.id, journeyWebActionEventsNotificationWebActionEventsNotification.id) &&
-        Objects.equals(this.correlationId, journeyWebActionEventsNotificationWebActionEventsNotification.correlationId) &&
-        Objects.equals(this.externalContact, journeyWebActionEventsNotificationWebActionEventsNotification.externalContact) &&
-        Objects.equals(this.createdDate, journeyWebActionEventsNotificationWebActionEventsNotification.createdDate) &&
-        Objects.equals(this.customerId, journeyWebActionEventsNotificationWebActionEventsNotification.customerId) &&
-        Objects.equals(this.customerIdType, journeyWebActionEventsNotificationWebActionEventsNotification.customerIdType) &&
-        Objects.equals(this.session, journeyWebActionEventsNotificationWebActionEventsNotification.session) &&
-        Objects.equals(this.eventType, journeyWebActionEventsNotificationWebActionEventsNotification.eventType) &&
-        Objects.equals(this.webActionEvent, journeyWebActionEventsNotificationWebActionEventsNotification.webActionEvent) &&
-        Objects.equals(this.blockedWebActionOfferEvent, journeyWebActionEventsNotificationWebActionEventsNotification.blockedWebActionOfferEvent);
+            Objects.equals(this.correlationId, journeyWebActionEventsNotificationWebActionEventsNotification.correlationId) &&
+            Objects.equals(this.externalContact, journeyWebActionEventsNotificationWebActionEventsNotification.externalContact) &&
+            Objects.equals(this.createdDate, journeyWebActionEventsNotificationWebActionEventsNotification.createdDate) &&
+            Objects.equals(this.customerId, journeyWebActionEventsNotificationWebActionEventsNotification.customerId) &&
+            Objects.equals(this.customerIdType, journeyWebActionEventsNotificationWebActionEventsNotification.customerIdType) &&
+            Objects.equals(this.session, journeyWebActionEventsNotificationWebActionEventsNotification.session) &&
+            Objects.equals(this.eventType, journeyWebActionEventsNotificationWebActionEventsNotification.eventType) &&
+            Objects.equals(this.webActionEvent, journeyWebActionEventsNotificationWebActionEventsNotification.webActionEvent) &&
+            Objects.equals(this.blockedWebActionOfferEvent, journeyWebActionEventsNotificationWebActionEventsNotification.blockedWebActionOfferEvent);
   }
 
   @Override

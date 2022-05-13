@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +32,7 @@ public class Division  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Division name(String name) {
@@ -48,14 +49,13 @@ public class Division  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -66,9 +66,10 @@ public class Division  implements Serializable {
       return false;
     }
     Division division = (Division) o;
+
     return Objects.equals(this.id, division.id) &&
-        Objects.equals(this.name, division.name) &&
-        Objects.equals(this.selfUri, division.selfUri);
+            Objects.equals(this.name, division.name) &&
+            Objects.equals(this.selfUri, division.selfUri);
   }
 
   @Override

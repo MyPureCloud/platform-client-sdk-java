@@ -28,10 +28,10 @@ title: Predictor
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CREATED | &quot;Created&quot; |
-| ERROR | &quot;Error&quot; |
-| ACTIVE | &quot;Active&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CREATED | &quot;Created&quot; | 
+| ERROR | &quot;Error&quot; | 
+| ACTIVE | &quot;Active&quot; | 
 {: class="table table-striped"}
 
 

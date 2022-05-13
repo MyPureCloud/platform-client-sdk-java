@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The activity code's category. Attempting to change the category of a default activity code will return an error
    **/
@@ -121,7 +122,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * The default length of the activity in minutes
    **/
@@ -139,7 +140,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * Whether an agent is paid while performing this activity
    **/
@@ -157,7 +158,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-  
+
   /**
    * Indicates whether or not the activity should be counted as work time
    **/
@@ -175,7 +176,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.countsAsWorkTime = countsAsWorkTime;
   }
 
-  
+
   /**
    * Whether an agent can select this activity code when creating or editing a time off request
    **/
@@ -193,7 +194,7 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.agentTimeOffSelectable = agentTimeOffSelectable;
   }
 
-  
+
   /**
    * Version metadata for the associated business unit's list of activity codes
    **/
@@ -211,7 +212,6 @@ public class UpdateActivityCodeRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -222,13 +222,14 @@ public class UpdateActivityCodeRequest  implements Serializable {
       return false;
     }
     UpdateActivityCodeRequest updateActivityCodeRequest = (UpdateActivityCodeRequest) o;
+
     return Objects.equals(this.name, updateActivityCodeRequest.name) &&
-        Objects.equals(this.category, updateActivityCodeRequest.category) &&
-        Objects.equals(this.lengthInMinutes, updateActivityCodeRequest.lengthInMinutes) &&
-        Objects.equals(this.countsAsPaidTime, updateActivityCodeRequest.countsAsPaidTime) &&
-        Objects.equals(this.countsAsWorkTime, updateActivityCodeRequest.countsAsWorkTime) &&
-        Objects.equals(this.agentTimeOffSelectable, updateActivityCodeRequest.agentTimeOffSelectable) &&
-        Objects.equals(this.metadata, updateActivityCodeRequest.metadata);
+            Objects.equals(this.category, updateActivityCodeRequest.category) &&
+            Objects.equals(this.lengthInMinutes, updateActivityCodeRequest.lengthInMinutes) &&
+            Objects.equals(this.countsAsPaidTime, updateActivityCodeRequest.countsAsPaidTime) &&
+            Objects.equals(this.countsAsWorkTime, updateActivityCodeRequest.countsAsWorkTime) &&
+            Objects.equals(this.agentTimeOffSelectable, updateActivityCodeRequest.agentTimeOffSelectable) &&
+            Objects.equals(this.metadata, updateActivityCodeRequest.metadata);
   }
 
   @Override

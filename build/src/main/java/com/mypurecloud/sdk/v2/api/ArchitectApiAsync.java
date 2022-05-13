@@ -13,56 +13,55 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Operation;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
-import com.mypurecloud.sdk.v2.model.DependencyStatus;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableExportJob;
+import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
+import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
+import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Flow;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowMilestone;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowVersion;
+import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
+import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
-import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
+import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroup;
 import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
-import com.mypurecloud.sdk.v2.model.Flow;
-import com.mypurecloud.sdk.v2.model.FlowVersion;
-import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTable;
-import com.mypurecloud.sdk.v2.model.DataTableExportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
-import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
-import com.mypurecloud.sdk.v2.model.FlowMilestone;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcome;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
-import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
@@ -178,7 +177,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ArchitectApiAsync {
   private final ApiClient pcapiClient;
 
@@ -190,7 +188,6 @@ public class ArchitectApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Deletes a emergency group by ID
    * 
@@ -266,7 +263,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete an IVR Config.
    * 
@@ -342,7 +338,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete specified user prompt
    * 
@@ -418,7 +413,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete specified user prompt resource
    * 
@@ -494,7 +488,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete specified user prompt resource audio
    * 
@@ -570,7 +563,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Batch-delete a list of prompts
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -646,7 +638,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete a schedule by id
    * 
@@ -722,7 +713,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Deletes a schedule group by ID
    * 
@@ -798,7 +788,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete a system prompt resource override.
    * 
@@ -874,7 +863,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete flow
    * 
@@ -950,7 +938,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Batch-delete a list of flows
    * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -1026,7 +1013,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * deletes a specific datatable by id
    * Deletes an entire datatable (including the schema and data) with a given datatableId
@@ -1102,7 +1088,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete a row entry
    * Deletes a row with a given rowId (the value of the key field).
@@ -1178,7 +1163,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Delete a flow milestone.
    * 
@@ -1254,7 +1238,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get Dependency Tracking objects that have a given display name
    * 
@@ -1330,7 +1313,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get Dependency Tracking build status for an organization
    * 
@@ -1406,7 +1388,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get resources that are consumed by a given Dependency Tracking object
    * 
@@ -1482,7 +1463,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get resources that consume a given Dependency Tracking object
    * 
@@ -1558,7 +1538,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get Dependency Tracking objects that consume deleted resources
    * 
@@ -1634,7 +1613,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a Dependency Tracking object
    * 
@@ -1710,7 +1688,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a Dependency Tracking type.
    * 
@@ -1786,7 +1763,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get Dependency Tracking types.
    * 
@@ -1862,7 +1838,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get Dependency Tracking objects that depend on updated resources
    * 
@@ -1938,7 +1913,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Gets a emergency group by ID
    * 
@@ -2014,7 +1988,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a list of emergency groups.
    * 
@@ -2090,7 +2063,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get an IVR config.
    * 
@@ -2166,7 +2138,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get IVR configs.
    * 
@@ -2242,7 +2213,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get specified user prompt
    * 
@@ -2318,7 +2288,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get generated prompt history
    * 
@@ -2394,7 +2363,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get specified user prompt resource
    * 
@@ -2470,7 +2438,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of user prompt resources
    * The returned list is pageable, and query parameters can be used for filtering.
@@ -2546,7 +2513,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of user prompts
    * The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
@@ -2622,7 +2588,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a schedule by ID
    * 
@@ -2698,7 +2663,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Gets a schedule group by ID
    * 
@@ -2774,7 +2738,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a list of schedule groups.
    * 
@@ -2850,7 +2813,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a list of schedules.
    * 
@@ -2926,7 +2888,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a system prompt
    * 
@@ -3002,7 +2963,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get generated prompt history
    * 
@@ -3078,7 +3038,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a system prompt resource.
    * 
@@ -3154,7 +3113,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get system prompt resources.
    * 
@@ -3230,7 +3188,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get System Prompts
    * 
@@ -3306,7 +3263,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get flow
    * 
@@ -3382,7 +3338,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get generated flow history
    * 
@@ -3458,7 +3413,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get the latest configuration for flow
    * 
@@ -3534,7 +3488,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get flow version
    * 
@@ -3610,7 +3563,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create flow version configuration
    * 
@@ -3686,7 +3638,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get flow version list
    * 
@@ -3762,7 +3713,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of flows, filtered by query parameters
    * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -3838,7 +3788,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Returns a specific datatable by id
    * Given a datatableId returns the datatable object and schema associated with it.
@@ -3914,7 +3863,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Returns the state information about an export job
    * Returns the state information about an export job.
@@ -3990,7 +3938,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Returns the state information about an import job
    * Returns the state information about an import job.
@@ -4066,7 +4013,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get all recent import jobs
    * Get all recent import jobs
@@ -4142,7 +4088,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Returns a specific row for the datatable
    * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
@@ -4218,7 +4163,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Returns the rows for the datatable with the given id
    * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
@@ -4294,7 +4238,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
@@ -4370,7 +4313,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Returns a specific datatable by id
    * Given a datatableId returns the datatable object and schema associated with it.
@@ -4446,7 +4388,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
@@ -4522,7 +4463,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
    * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -4598,9 +4538,8 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
-   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4634,7 +4573,7 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4674,7 +4613,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Fetch Architect Job Status
    * 
@@ -4750,7 +4688,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a flow milestone
    * Returns a specified flow milestone
@@ -4826,7 +4763,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of flow milestones, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
@@ -4902,7 +4838,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of basic flow milestone information objects filterable by query parameters.
    * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -4978,7 +4913,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a flow outcome
    * Returns a specified flow outcome
@@ -5054,7 +4988,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of flow outcomes, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
@@ -5130,7 +5063,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Get a pageable list of basic flow outcome information objects filterable by query parameters.
    * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -5206,7 +5138,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
@@ -5282,7 +5213,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Creates a new emergency group
    * 
@@ -5358,7 +5288,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create IVR config.
    * 
@@ -5434,7 +5363,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Generate prompt history
    * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -5510,7 +5438,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a new user prompt resource
    * 
@@ -5586,7 +5513,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a new user prompt
    * 
@@ -5662,7 +5588,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Creates a new schedule group
    * 
@@ -5738,7 +5663,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a new schedule.
    * 
@@ -5814,7 +5738,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Generate system prompt history
    * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
@@ -5890,7 +5813,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create system prompt resource override.
    * 
@@ -5966,7 +5888,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Generate flow history
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -6042,7 +5963,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create flow version
    * 
@@ -6118,7 +6038,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create flow
    * 
@@ -6194,7 +6113,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -6270,7 +6188,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Check-out flow
    * 
@@ -6346,7 +6263,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Deactivate flow
    * 
@@ -6422,7 +6338,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Publish flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -6498,7 +6413,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Revert flow
    * 
@@ -6574,7 +6488,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Unlock flow
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
@@ -6650,7 +6563,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Begin an export process for exporting all rows from a datatable
    * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
@@ -6726,7 +6638,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Begin an import process for importing rows into a datatable
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
@@ -6802,10 +6713,9 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a new row entry for the datatable.
-   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6839,7 +6749,7 @@ public class ArchitectApiAsync {
 
   /**
    * Create a new row entry for the datatable.
-   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6878,10 +6788,9 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6915,7 +6824,7 @@ public class ArchitectApiAsync {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6954,9 +6863,8 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
-   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
    * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6990,7 +6898,7 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
    * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7030,7 +6938,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
    * 
@@ -7106,7 +7013,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a flow milestone
    * 
@@ -7182,7 +7088,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Create a flow outcome
    * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
@@ -7258,7 +7163,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Updates a emergency group by ID
    * 
@@ -7334,7 +7238,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Update an IVR Config.
    * 
@@ -7410,7 +7313,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Update specified user prompt
    * 
@@ -7486,7 +7388,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Update specified user prompt resource
    * 
@@ -7562,7 +7463,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Update schedule by ID
    * 
@@ -7638,7 +7538,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Updates a schedule group by ID
    * 
@@ -7714,7 +7613,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Updates a system prompt resource override.
    * 
@@ -7790,7 +7688,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Update flow
    * 
@@ -7866,7 +7763,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Updates a specific datatable by id
    * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
@@ -7942,10 +7838,9 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Update a row entry
-   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7979,7 +7874,7 @@ public class ArchitectApiAsync {
 
   /**
    * Update a row entry
-   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8018,7 +7913,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Updates a flow milestone
    * 
@@ -8094,7 +7988,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
   /**
    * Updates a flow outcome
    * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
@@ -8170,7 +8063,6 @@ public class ArchitectApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

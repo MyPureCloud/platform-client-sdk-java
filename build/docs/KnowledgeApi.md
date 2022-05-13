@@ -45,8 +45,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete knowledge base
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}  
 
 Requires ALL permissions: 
@@ -108,8 +106,6 @@ try {
 
 Delete category
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}  
 
 Requires ALL permissions: 
@@ -140,7 +136,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String categoryId = "categoryId_example"; // String | Category ID
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 try {
     KnowledgeCategory result = apiInstance.deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode);
     System.out.println(result);
@@ -157,7 +153,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -174,8 +170,6 @@ try {
 > [KnowledgeDocument](KnowledgeDocument.html) deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
 Delete document
-
-
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}  
 
@@ -207,7 +201,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String documentId = "documentId_example"; // String | Document ID
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 try {
     KnowledgeDocument result = apiInstance.deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode);
     System.out.println(result);
@@ -224,7 +218,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -241,8 +235,6 @@ try {
 > Void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
 Delete import operation
-
-
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}  
 
@@ -273,7 +265,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String importId = "importId_example"; // String | Import ID
 try {
     apiInstance.deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId);
@@ -289,7 +281,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **importId** | **String**| Import ID | 
 {: class="table-striped"}
 
@@ -307,8 +299,6 @@ null (empty response body)
 > [KnowledgeBase](KnowledgeBase.html) getKnowledgeKnowledgebase(knowledgeBaseId)
 
 Get knowledge base
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}  
 
@@ -371,8 +361,6 @@ try {
 
 Get categories
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories  
 
 Requires ALL permissions: 
@@ -402,7 +390,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
@@ -423,7 +411,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -445,8 +433,6 @@ try {
 > [KnowledgeExtendedCategory](KnowledgeExtendedCategory.html) getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
 Get category
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}  
 
@@ -478,7 +464,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String categoryId = "categoryId_example"; // String | Category ID
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 try {
     KnowledgeExtendedCategory result = apiInstance.getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode);
     System.out.println(result);
@@ -495,7 +481,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -512,8 +498,6 @@ try {
 > [KnowledgeDocument](KnowledgeDocument.html) getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
 Get document
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}  
 
@@ -545,7 +529,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String documentId = "documentId_example"; // String | Document ID
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 try {
     KnowledgeDocument result = apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode);
     System.out.println(result);
@@ -562,7 +546,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -579,8 +563,6 @@ try {
 > [DocumentListing](DocumentListing.html) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)
 
 Get documents
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents  
 
@@ -611,7 +593,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
@@ -620,7 +602,7 @@ String categories = "categories_example"; // String | Filter by categories ids, 
 String title = "title_example"; // String | Filter by document title.
 String sortBy = "sortBy_example"; // String | Sort by.
 String sortOrder = "sortOrder_example"; // String | Sort Order.
-List<String> documentIds = Arrays.asList("documentIds_example"); // List<String> | Comma-separated list of document identifiers to fetch by.
+List<String> documentIds = Arrays.asList(null); // List<String> | Comma-separated list of document identifiers to fetch by.
 try {
     DocumentListing result = apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds);
     System.out.println(result);
@@ -636,7 +618,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -662,8 +644,6 @@ try {
 > [KnowledgeImport](KnowledgeImport.html) getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
 Get import operation report
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}  
 
@@ -694,7 +674,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String importId = "importId_example"; // String | Import ID
 try {
     KnowledgeImport result = apiInstance.getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId);
@@ -711,7 +691,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **importId** | **String**| Import ID | 
 {: class="table-striped"}
 
@@ -729,8 +709,6 @@ try {
 > [KnowledgeTraining](KnowledgeTraining.html) getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)
 
 Get training detail
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}  
 
@@ -761,7 +739,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String trainingId = "trainingId_example"; // String | Training ID
 try {
     KnowledgeTraining result = apiInstance.getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId);
@@ -778,7 +756,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **trainingId** | **String**| Training ID | 
 {: class="table-striped"}
 
@@ -796,8 +774,6 @@ try {
 > [TrainingListing](TrainingListing.html) getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)
 
 Get all trainings information for a knowledgebase
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings  
 
@@ -828,7 +804,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
@@ -849,7 +825,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -871,8 +847,6 @@ try {
 > [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)
 
 Get knowledge bases
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases  
 
@@ -951,8 +925,6 @@ try {
 
 Update knowledge base
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}  
 
 Requires ALL permissions: 
@@ -1016,8 +988,6 @@ try {
 
 Update category
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}  
 
 Requires ALL permissions: 
@@ -1048,7 +1018,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String categoryId = "categoryId_example"; // String | Category ID
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 KnowledgeCategoryRequest body = new KnowledgeCategoryRequest(); // KnowledgeCategoryRequest | 
 try {
     KnowledgeExtendedCategory result = apiInstance.patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body);
@@ -1066,7 +1036,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1084,8 +1054,6 @@ try {
 > [KnowledgeDocument](KnowledgeDocument.html) patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)
 
 Update document
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}  
 
@@ -1117,7 +1085,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String documentId = "documentId_example"; // String | Document ID
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 KnowledgeDocumentRequest body = new KnowledgeDocumentRequest(); // KnowledgeDocumentRequest | 
 try {
     KnowledgeDocument result = apiInstance.patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body);
@@ -1135,7 +1103,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1153,8 +1121,6 @@ try {
 > [DocumentListing](DocumentListing.html) patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
 Update documents collection
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents  
 
@@ -1185,7 +1151,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 List<KnowledgeDocumentBulkRequest> body = Arrays.asList(new KnowledgeDocumentBulkRequest()); // List<KnowledgeDocumentBulkRequest> | 
 try {
     DocumentListing result = apiInstance.patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body);
@@ -1202,7 +1168,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**List&lt;KnowledgeDocumentBulkRequest&gt;**](KnowledgeDocumentBulkRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1220,8 +1186,6 @@ try {
 > [KnowledgeImport](KnowledgeImport.html) patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)
 
 Start import operation
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}  
 
@@ -1253,7 +1217,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String importId = "importId_example"; // String | Import ID
 ImportStatusRequest body = new ImportStatusRequest(); // ImportStatusRequest | 
 try {
@@ -1271,7 +1235,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **importId** | **String**| Import ID | 
 | **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  | 
 {: class="table-striped"}
@@ -1290,8 +1254,6 @@ try {
 > [UploadUrlResponse](UploadUrlResponse.html) postKnowledgeDocumentuploads(body)
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
-
-
 
 Wraps POST /api/v2/knowledge/documentuploads  
 
@@ -1354,8 +1316,6 @@ try {
 
 Create new category
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories  
 
 Requires ALL permissions: 
@@ -1385,7 +1345,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 KnowledgeCategoryRequest body = new KnowledgeCategoryRequest(); // KnowledgeCategoryRequest | 
 try {
     KnowledgeExtendedCategory result = apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body);
@@ -1402,7 +1362,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1420,8 +1380,6 @@ try {
 > [KnowledgeDocument](KnowledgeDocument.html) postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
 Create document
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents  
 
@@ -1452,7 +1410,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 KnowledgeDocumentRequest body = new KnowledgeDocumentRequest(); // KnowledgeDocumentRequest | 
 try {
     KnowledgeDocument result = apiInstance.postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body);
@@ -1469,7 +1427,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1487,8 +1445,6 @@ try {
 > [KnowledgeImport](KnowledgeImport.html) postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)
 
 Create import operation
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports  
 
@@ -1519,7 +1475,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 KnowledgeImport body = new KnowledgeImport(); // KnowledgeImport | 
 try {
     KnowledgeImport result = apiInstance.postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body);
@@ -1536,7 +1492,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeImport**](KnowledgeImport.html)|  | 
 {: class="table-striped"}
 
@@ -1554,8 +1510,6 @@ try {
 > [KnowledgeTraining](KnowledgeTraining.html) postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)
 
 Promote trained documents from draft state to active.
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote  
 
@@ -1586,7 +1540,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 String trainingId = "trainingId_example"; // String | Training ID
 try {
     KnowledgeTraining result = apiInstance.postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId);
@@ -1603,7 +1557,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **trainingId** | **String**| Training ID | 
 {: class="table-striped"}
 
@@ -1621,8 +1575,6 @@ try {
 > [KnowledgeTraining](KnowledgeTraining.html) postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)
 
 Trigger training
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings  
 
@@ -1653,7 +1605,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+String languageCode = en-US; // String | Language code, format: iso2-LOCALE
 try {
     KnowledgeTraining result = apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode);
     System.out.println(result);
@@ -1669,7 +1621,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -1686,8 +1638,6 @@ try {
 > [KnowledgeSearchResponse](KnowledgeSearchResponse.html) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
 
 Search Documents
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search  
 
@@ -1751,8 +1701,6 @@ try {
 > [KnowledgeBase](KnowledgeBase.html) postKnowledgeKnowledgebases(body)
 
 Create new knowledge base
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases  
 

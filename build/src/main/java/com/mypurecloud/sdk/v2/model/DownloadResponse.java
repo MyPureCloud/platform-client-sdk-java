@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
@@ -44,7 +45,7 @@ public class DownloadResponse  implements Serializable {
     this.contentLocationUri = contentLocationUri;
   }
 
-  
+
   /**
    **/
   public DownloadResponse imageUri(String imageUri) {
@@ -61,7 +62,7 @@ public class DownloadResponse  implements Serializable {
     this.imageUri = imageUri;
   }
 
-  
+
   /**
    **/
   public DownloadResponse thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -78,7 +79,6 @@ public class DownloadResponse  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class DownloadResponse  implements Serializable {
       return false;
     }
     DownloadResponse downloadResponse = (DownloadResponse) o;
+
     return Objects.equals(this.contentLocationUri, downloadResponse.contentLocationUri) &&
-        Objects.equals(this.imageUri, downloadResponse.imageUri) &&
-        Objects.equals(this.thumbnails, downloadResponse.thumbnails);
+            Objects.equals(this.imageUri, downloadResponse.imageUri) &&
+            Objects.equals(this.thumbnails, downloadResponse.thumbnails);
   }
 
   @Override

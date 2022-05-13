@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody  impleme
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody version(String version) {
@@ -109,7 +110,7 @@ public class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody  impleme
     this.version = version;
   }
 
-  
+
   /**
    **/
   public WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody status(StatusEnum status) {
@@ -126,7 +127,6 @@ public class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody  impleme
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody  impleme
       return false;
     }
     WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody webDeploymentsConfigTopicWebMessagingConfigChangeEventBody = (WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody) o;
+
     return Objects.equals(this.id, webDeploymentsConfigTopicWebMessagingConfigChangeEventBody.id) &&
-        Objects.equals(this.version, webDeploymentsConfigTopicWebMessagingConfigChangeEventBody.version) &&
-        Objects.equals(this.status, webDeploymentsConfigTopicWebMessagingConfigChangeEventBody.status);
+            Objects.equals(this.version, webDeploymentsConfigTopicWebMessagingConfigChangeEventBody.version) &&
+            Objects.equals(this.status, webDeploymentsConfigTopicWebMessagingConfigChangeEventBody.status);
   }
 
   @Override

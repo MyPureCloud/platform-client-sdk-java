@@ -20,9 +20,9 @@ title: CampaignRuleCondition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CAMPAIGNPROGRESS | &quot;campaignProgress&quot; |
-| CAMPAIGNAGENTS | &quot;campaignAgents&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CAMPAIGNPROGRESS | &quot;campaignProgress&quot; | 
+| CAMPAIGNAGENTS | &quot;campaignAgents&quot; | 
 {: class="table table-striped"}
 
 

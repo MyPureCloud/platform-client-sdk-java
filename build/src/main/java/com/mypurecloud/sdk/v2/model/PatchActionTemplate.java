@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -145,7 +146,7 @@ public class PatchActionTemplate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Description of the action template's functionality.
    **/
@@ -163,7 +164,7 @@ public class PatchActionTemplate  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Media type of action described by the action template.
    **/
@@ -181,7 +182,7 @@ public class PatchActionTemplate  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Whether the action template is currently active, inactive or deleted.
    **/
@@ -199,7 +200,7 @@ public class PatchActionTemplate  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Properties used to configure an action of type content offer
    **/
@@ -217,7 +218,6 @@ public class PatchActionTemplate  implements Serializable {
     this.contentOffer = contentOffer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -228,11 +228,12 @@ public class PatchActionTemplate  implements Serializable {
       return false;
     }
     PatchActionTemplate patchActionTemplate = (PatchActionTemplate) o;
+
     return Objects.equals(this.name, patchActionTemplate.name) &&
-        Objects.equals(this.description, patchActionTemplate.description) &&
-        Objects.equals(this.mediaType, patchActionTemplate.mediaType) &&
-        Objects.equals(this.state, patchActionTemplate.state) &&
-        Objects.equals(this.contentOffer, patchActionTemplate.contentOffer);
+            Objects.equals(this.description, patchActionTemplate.description) &&
+            Objects.equals(this.mediaType, patchActionTemplate.mediaType) &&
+            Objects.equals(this.state, patchActionTemplate.state) &&
+            Objects.equals(this.contentOffer, patchActionTemplate.contentOffer);
   }
 
   @Override

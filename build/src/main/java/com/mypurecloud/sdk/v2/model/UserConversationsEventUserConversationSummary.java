@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserConversationsEventMediaSummary;
@@ -47,7 +48,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary call(UserConversationsEventMediaSummary call) {
@@ -64,7 +65,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.call = call;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary callback(UserConversationsEventMediaSummary callback) {
@@ -81,7 +82,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.callback = callback;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary email(UserConversationsEventMediaSummary email) {
@@ -98,7 +99,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.email = email;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary message(UserConversationsEventMediaSummary message) {
@@ -115,7 +116,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.message = message;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary chat(UserConversationsEventMediaSummary chat) {
@@ -132,7 +133,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.chat = chat;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary socialExpression(UserConversationsEventMediaSummary socialExpression) {
@@ -149,7 +150,7 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.socialExpression = socialExpression;
   }
 
-  
+
   /**
    **/
   public UserConversationsEventUserConversationSummary video(UserConversationsEventMediaSummary video) {
@@ -166,7 +167,6 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
     this.video = video;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,14 +177,15 @@ public class UserConversationsEventUserConversationSummary  implements Serializa
       return false;
     }
     UserConversationsEventUserConversationSummary userConversationsEventUserConversationSummary = (UserConversationsEventUserConversationSummary) o;
+
     return Objects.equals(this.userId, userConversationsEventUserConversationSummary.userId) &&
-        Objects.equals(this.call, userConversationsEventUserConversationSummary.call) &&
-        Objects.equals(this.callback, userConversationsEventUserConversationSummary.callback) &&
-        Objects.equals(this.email, userConversationsEventUserConversationSummary.email) &&
-        Objects.equals(this.message, userConversationsEventUserConversationSummary.message) &&
-        Objects.equals(this.chat, userConversationsEventUserConversationSummary.chat) &&
-        Objects.equals(this.socialExpression, userConversationsEventUserConversationSummary.socialExpression) &&
-        Objects.equals(this.video, userConversationsEventUserConversationSummary.video);
+            Objects.equals(this.call, userConversationsEventUserConversationSummary.call) &&
+            Objects.equals(this.callback, userConversationsEventUserConversationSummary.callback) &&
+            Objects.equals(this.email, userConversationsEventUserConversationSummary.email) &&
+            Objects.equals(this.message, userConversationsEventUserConversationSummary.message) &&
+            Objects.equals(this.chat, userConversationsEventUserConversationSummary.chat) &&
+            Objects.equals(this.socialExpression, userConversationsEventUserConversationSummary.socialExpression) &&
+            Objects.equals(this.video, userConversationsEventUserConversationSummary.video);
   }
 
   @Override

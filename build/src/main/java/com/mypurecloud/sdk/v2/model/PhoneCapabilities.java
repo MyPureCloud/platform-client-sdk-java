@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -98,7 +99,7 @@ public class PhoneCapabilities  implements Serializable {
     this.provisions = provisions;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities registers(Boolean registers) {
@@ -115,7 +116,7 @@ public class PhoneCapabilities  implements Serializable {
     this.registers = registers;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities dualRegisters(Boolean dualRegisters) {
@@ -132,7 +133,7 @@ public class PhoneCapabilities  implements Serializable {
     this.dualRegisters = dualRegisters;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities hardwareIdType(String hardwareIdType) {
@@ -149,7 +150,7 @@ public class PhoneCapabilities  implements Serializable {
     this.hardwareIdType = hardwareIdType;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities allowReboot(Boolean allowReboot) {
@@ -166,7 +167,7 @@ public class PhoneCapabilities  implements Serializable {
     this.allowReboot = allowReboot;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities noRebalance(Boolean noRebalance) {
@@ -183,7 +184,7 @@ public class PhoneCapabilities  implements Serializable {
     this.noRebalance = noRebalance;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities noCloudProvisioning(Boolean noCloudProvisioning) {
@@ -200,7 +201,7 @@ public class PhoneCapabilities  implements Serializable {
     this.noCloudProvisioning = noCloudProvisioning;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities mediaCodecs(List<MediaCodecsEnum> mediaCodecs) {
@@ -217,7 +218,7 @@ public class PhoneCapabilities  implements Serializable {
     this.mediaCodecs = mediaCodecs;
   }
 
-  
+
   /**
    **/
   public PhoneCapabilities cdm(Boolean cdm) {
@@ -234,7 +235,6 @@ public class PhoneCapabilities  implements Serializable {
     this.cdm = cdm;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -245,15 +245,16 @@ public class PhoneCapabilities  implements Serializable {
       return false;
     }
     PhoneCapabilities phoneCapabilities = (PhoneCapabilities) o;
+
     return Objects.equals(this.provisions, phoneCapabilities.provisions) &&
-        Objects.equals(this.registers, phoneCapabilities.registers) &&
-        Objects.equals(this.dualRegisters, phoneCapabilities.dualRegisters) &&
-        Objects.equals(this.hardwareIdType, phoneCapabilities.hardwareIdType) &&
-        Objects.equals(this.allowReboot, phoneCapabilities.allowReboot) &&
-        Objects.equals(this.noRebalance, phoneCapabilities.noRebalance) &&
-        Objects.equals(this.noCloudProvisioning, phoneCapabilities.noCloudProvisioning) &&
-        Objects.equals(this.mediaCodecs, phoneCapabilities.mediaCodecs) &&
-        Objects.equals(this.cdm, phoneCapabilities.cdm);
+            Objects.equals(this.registers, phoneCapabilities.registers) &&
+            Objects.equals(this.dualRegisters, phoneCapabilities.dualRegisters) &&
+            Objects.equals(this.hardwareIdType, phoneCapabilities.hardwareIdType) &&
+            Objects.equals(this.allowReboot, phoneCapabilities.allowReboot) &&
+            Objects.equals(this.noRebalance, phoneCapabilities.noRebalance) &&
+            Objects.equals(this.noCloudProvisioning, phoneCapabilities.noCloudProvisioning) &&
+            Objects.equals(this.mediaCodecs, phoneCapabilities.mediaCodecs) &&
+            Objects.equals(this.cdm, phoneCapabilities.cdm);
   }
 
   @Override

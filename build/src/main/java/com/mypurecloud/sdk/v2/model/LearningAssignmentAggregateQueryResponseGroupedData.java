@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateQueryResponseData;
@@ -46,7 +47,7 @@ public class LearningAssignmentAggregateQueryResponseGroupedData  implements Ser
     this.group = group;
   }
 
-  
+
   /**
    * The metrics in this group
    **/
@@ -64,7 +65,6 @@ public class LearningAssignmentAggregateQueryResponseGroupedData  implements Ser
     this.data = data;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -75,8 +75,9 @@ public class LearningAssignmentAggregateQueryResponseGroupedData  implements Ser
       return false;
     }
     LearningAssignmentAggregateQueryResponseGroupedData learningAssignmentAggregateQueryResponseGroupedData = (LearningAssignmentAggregateQueryResponseGroupedData) o;
+
     return Objects.equals(this.group, learningAssignmentAggregateQueryResponseGroupedData.group) &&
-        Objects.equals(this.data, learningAssignmentAggregateQueryResponseGroupedData.data);
+            Objects.equals(this.data, learningAssignmentAggregateQueryResponseGroupedData.data);
   }
 
   @Override

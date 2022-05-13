@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class PostAuthorizationDivisionObjectRequest {
-    
+
 	private String divisionId;
 	public String getDivisionId() {
 		return this.divisionId;
@@ -39,7 +39,7 @@ public class PostAuthorizationDivisionObjectRequest {
 	    this.setDivisionId(divisionId);
 	    return this;
 	} 
-	
+
 	private String objectType;
 	public String getObjectType() {
 		return this.objectType;
@@ -55,28 +55,28 @@ public class PostAuthorizationDivisionObjectRequest {
 	} 
 
 	public enum objectTypeValues { 
-		QUEUE("QUEUE"), 
-		CAMPAIGN("CAMPAIGN"), 
-		CONTACTLIST("CONTACTLIST"), 
-		DNCLIST("DNCLIST"), 
-		EMAILCAMPAIGN("EMAILCAMPAIGN"), 
-		MESSAGINGCAMPAIGN("MESSAGINGCAMPAIGN"), 
-		MANAGEMENTUNIT("MANAGEMENTUNIT"), 
-		BUSINESSUNIT("BUSINESSUNIT"), 
-		FLOW("FLOW"), 
-		FLOWMILESTONE("FLOWMILESTONE"), 
-		FLOWOUTCOME("FLOWOUTCOME"), 
-		USER("USER"), 
-		CALLROUTE("CALLROUTE"), 
-		EMERGENCYGROUPS("EMERGENCYGROUPS"), 
-		ROUTINGSCHEDULES("ROUTINGSCHEDULES"), 
-		ROUTINGSCHEDULEGROUPS("ROUTINGSCHEDULEGROUPS"), 
-		DATATABLES("DATATABLES"), 
-		TEAM("TEAM"), 
-		WORKBIN("WORKBIN"), 
-		WORKTYPE("WORKTYPE"), 
-		EXTENSIONPOOL("EXTENSIONPOOL"), 
-		SKILLGROUP("SKILLGROUP"), 
+		QUEUE("QUEUE"),
+		CAMPAIGN("CAMPAIGN"),
+		CONTACTLIST("CONTACTLIST"),
+		DNCLIST("DNCLIST"),
+		EMAILCAMPAIGN("EMAILCAMPAIGN"),
+		MESSAGINGCAMPAIGN("MESSAGINGCAMPAIGN"),
+		MANAGEMENTUNIT("MANAGEMENTUNIT"),
+		BUSINESSUNIT("BUSINESSUNIT"),
+		FLOW("FLOW"),
+		FLOWMILESTONE("FLOWMILESTONE"),
+		FLOWOUTCOME("FLOWOUTCOME"),
+		USER("USER"),
+		CALLROUTE("CALLROUTE"),
+		EMERGENCYGROUPS("EMERGENCYGROUPS"),
+		ROUTINGSCHEDULES("ROUTINGSCHEDULES"),
+		ROUTINGSCHEDULEGROUPS("ROUTINGSCHEDULEGROUPS"),
+		DATATABLES("DATATABLES"),
+		TEAM("TEAM"),
+		WORKBIN("WORKBIN"),
+		WORKTYPE("WORKTYPE"),
+		EXTENSIONPOOL("EXTENSIONPOOL"),
+		SKILLGROUP("SKILLGROUP"),
 		SCRIPT("SCRIPT");
 
 		private String value;
@@ -104,7 +104,7 @@ public class PostAuthorizationDivisionObjectRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> body;
 	public List<String> getBody() {
 		return this.body;
@@ -118,7 +118,7 @@ public class PostAuthorizationDivisionObjectRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -162,8 +162,8 @@ public class PostAuthorizationDivisionObjectRequest {
                 .withPathParameter("objectType", objectType)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -174,12 +174,12 @@ public class PostAuthorizationDivisionObjectRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String divisionId, String objectType, List<String> body) {
 	    return new Builder()
 	            .withRequiredParams(divisionId, objectType, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAuthorizationDivisionObjectRequest request;
@@ -188,37 +188,41 @@ public class PostAuthorizationDivisionObjectRequest {
 			request = new PostAuthorizationDivisionObjectRequest();
 		}
 
-		
+
 		public Builder withDivisionId(String divisionId) {
 			request.setDivisionId(divisionId);
 			return this;
 		}
-		
+
 		public Builder withObjectType(String objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
 
+
+
+		
 		public Builder withObjectType(objectTypeValues objectType) {
 		    request.setObjectType(objectType.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withBody(List<String> body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String divisionId, String objectType, List<String> body) {
 			request.setDivisionId(divisionId);
-						request.setObjectType(objectType);
-						request.setBody(body);
-			
+			request.setObjectType(objectType);
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostAuthorizationDivisionObjectRequest build() {
             

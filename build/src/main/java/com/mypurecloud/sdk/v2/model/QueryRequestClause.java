@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class QueryRequestClause  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The list of predicates used to filter the data
    **/
@@ -110,7 +111,6 @@ public class QueryRequestClause  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class QueryRequestClause  implements Serializable {
       return false;
     }
     QueryRequestClause queryRequestClause = (QueryRequestClause) o;
+
     return Objects.equals(this.type, queryRequestClause.type) &&
-        Objects.equals(this.predicates, queryRequestClause.predicates);
+            Objects.equals(this.predicates, queryRequestClause.predicates);
   }
 
   @Override

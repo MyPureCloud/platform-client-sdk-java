@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,7 +87,7 @@ public class DialerRule  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the rule.
    **/
@@ -104,7 +105,7 @@ public class DialerRule  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The ranked order of the rule. Rules are processed from lowest number to highest.
    **/
@@ -122,7 +123,7 @@ public class DialerRule  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * The category of the rule.
    **/
@@ -140,7 +141,7 @@ public class DialerRule  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * A list of Conditions. All of the Conditions must evaluate to true to trigger the actions.
    **/
@@ -158,7 +159,7 @@ public class DialerRule  implements Serializable {
     this.conditions = conditions;
   }
 
-  
+
   /**
    * The list of actions to be taken if the conditions are true.
    **/
@@ -176,7 +177,6 @@ public class DialerRule  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -187,12 +187,13 @@ public class DialerRule  implements Serializable {
       return false;
     }
     DialerRule dialerRule = (DialerRule) o;
+
     return Objects.equals(this.id, dialerRule.id) &&
-        Objects.equals(this.name, dialerRule.name) &&
-        Objects.equals(this.order, dialerRule.order) &&
-        Objects.equals(this.category, dialerRule.category) &&
-        Objects.equals(this.conditions, dialerRule.conditions) &&
-        Objects.equals(this.actions, dialerRule.actions);
+            Objects.equals(this.name, dialerRule.name) &&
+            Objects.equals(this.order, dialerRule.order) &&
+            Objects.equals(this.category, dialerRule.category) &&
+            Objects.equals(this.conditions, dialerRule.conditions) &&
+            Objects.equals(this.actions, dialerRule.actions);
   }
 
   @Override

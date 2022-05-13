@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody details(List<ConversationScreenShareEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.details = details;
   }
 
-  
+
   /**
    **/
   public ConversationScreenShareEventTopicErrorBody errors(List<ConversationScreenShareEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
       return false;
     }
     ConversationScreenShareEventTopicErrorBody conversationScreenShareEventTopicErrorBody = (ConversationScreenShareEventTopicErrorBody) o;
+
     return Objects.equals(this.message, conversationScreenShareEventTopicErrorBody.message) &&
-        Objects.equals(this.code, conversationScreenShareEventTopicErrorBody.code) &&
-        Objects.equals(this.status, conversationScreenShareEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, conversationScreenShareEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, conversationScreenShareEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, conversationScreenShareEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, conversationScreenShareEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, conversationScreenShareEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, conversationScreenShareEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, conversationScreenShareEventTopicErrorBody.errors);
+            Objects.equals(this.code, conversationScreenShareEventTopicErrorBody.code) &&
+            Objects.equals(this.status, conversationScreenShareEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, conversationScreenShareEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, conversationScreenShareEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, conversationScreenShareEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, conversationScreenShareEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, conversationScreenShareEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, conversationScreenShareEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, conversationScreenShareEventTopicErrorBody.errors);
   }
 
   @Override

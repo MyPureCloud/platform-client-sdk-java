@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class VendorConnectionRequest  implements Serializable {
     this.publisher = publisher;
   }
 
-  
+
   /**
    * Integration or connector type that registered the new connection. Example, wfm-rta-integration
    **/
@@ -60,7 +61,7 @@ public class VendorConnectionRequest  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Name of the integration or connector instance that registered the new connection. Example, my-wfm
    **/
@@ -78,7 +79,6 @@ public class VendorConnectionRequest  implements Serializable {
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class VendorConnectionRequest  implements Serializable {
       return false;
     }
     VendorConnectionRequest vendorConnectionRequest = (VendorConnectionRequest) o;
+
     return Objects.equals(this.publisher, vendorConnectionRequest.publisher) &&
-        Objects.equals(this.type, vendorConnectionRequest.type) &&
-        Objects.equals(this.name, vendorConnectionRequest.name);
+            Objects.equals(this.type, vendorConnectionRequest.type) &&
+            Objects.equals(this.name, vendorConnectionRequest.name);
   }
 
   @Override

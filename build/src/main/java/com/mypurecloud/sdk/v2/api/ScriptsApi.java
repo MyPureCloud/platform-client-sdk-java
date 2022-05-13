@@ -10,13 +10,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
@@ -39,7 +39,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ScriptsApi {
   private final ApiClient pcapiClient;
 
@@ -51,7 +50,6 @@ public class ScriptsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get a script
    * 
@@ -78,7 +76,7 @@ public class ScriptsApi {
   private GetScriptRequest createGetScriptRequest(String scriptId) {
     return GetScriptRequest.builder()
             .withScriptId(scriptId)
-    
+
             .build();
   }
 
@@ -130,7 +128,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get a page
    * 
@@ -161,11 +158,11 @@ public class ScriptsApi {
   private GetScriptPageRequest createGetScriptPageRequest(String scriptId, String pageId, String scriptDataVersion) {
     return GetScriptPageRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withPageId(pageId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .build();
   }
 
@@ -217,7 +214,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the list of pages
    * 
@@ -246,9 +242,9 @@ public class ScriptsApi {
   private GetScriptPagesRequest createGetScriptPagesRequest(String scriptId, String scriptDataVersion) {
     return GetScriptPagesRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .build();
   }
 
@@ -300,7 +296,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the list of scripts
    * 
@@ -345,25 +340,25 @@ public class ScriptsApi {
   private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) {
     return GetScriptsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withFeature(feature)
-    
+
             .withFlowId(flowId)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .withDivisionIds(divisionIds)
-    
+
             .build();
   }
 
@@ -415,7 +410,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the metadata for a list of scripts
    * 
@@ -460,25 +454,25 @@ public class ScriptsApi {
   private GetScriptsDivisionviewsRequest createGetScriptsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) {
     return GetScriptsDivisionviewsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withFeature(feature)
-    
+
             .withFlowId(flowId)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .withDivisionIds(divisionIds)
-    
+
             .build();
   }
 
@@ -530,7 +524,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the published scripts.
    * 
@@ -571,21 +564,21 @@ public class ScriptsApi {
   private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) {
     return GetScriptsPublishedRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withFeature(feature)
-    
+
             .withFlowId(flowId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .withDivisionIds(divisionIds)
-    
+
             .build();
   }
 
@@ -637,7 +630,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the published scripts metadata.
    * 
@@ -678,21 +670,21 @@ public class ScriptsApi {
   private GetScriptsPublishedDivisionviewsRequest createGetScriptsPublishedDivisionviewsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) {
     return GetScriptsPublishedDivisionviewsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withFeature(feature)
-    
+
             .withFlowId(flowId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .withDivisionIds(divisionIds)
-    
+
             .build();
   }
 
@@ -744,7 +736,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the published script.
    * 
@@ -773,9 +764,9 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdRequest createGetScriptsPublishedScriptIdRequest(String scriptId, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .build();
   }
 
@@ -827,7 +818,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the published page.
    * 
@@ -858,11 +848,11 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdPageRequest createGetScriptsPublishedScriptIdPageRequest(String scriptId, String pageId, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdPageRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withPageId(pageId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .build();
   }
 
@@ -914,7 +904,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the list of published pages
    * 
@@ -943,9 +932,9 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdPagesRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .build();
   }
 
@@ -997,7 +986,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the published variables
    * 
@@ -1032,15 +1020,15 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdVariablesRequest createGetScriptsPublishedScriptIdVariablesRequest(String scriptId, String input, String output, String type, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdVariablesRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withInput(input)
-    
+
             .withOutput(output)
-    
+
             .withType(type)
-    
+
             .withScriptDataVersion(scriptDataVersion)
-    
+
             .build();
   }
 
@@ -1092,7 +1080,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Get the upload status of an imported script
    * 
@@ -1121,9 +1108,9 @@ public class ScriptsApi {
   private GetScriptsUploadStatusRequest createGetScriptsUploadStatusRequest(String uploadId, Boolean longPoll) {
     return GetScriptsUploadStatusRequest.builder()
             .withUploadId(uploadId)
-    
+
             .withLongPoll(longPoll)
-    
+
             .build();
   }
 
@@ -1175,7 +1162,6 @@ public class ScriptsApi {
     }
   }
 
-  
   /**
    * Export a script via download service.
    * 
@@ -1204,9 +1190,9 @@ public class ScriptsApi {
   private PostScriptExportRequest createPostScriptExportRequest(String scriptId, ExportScriptRequest body) {
     return PostScriptExportRequest.builder()
             .withScriptId(scriptId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1258,5 +1244,4 @@ public class ScriptsApi {
     }
   }
 
-  
 }

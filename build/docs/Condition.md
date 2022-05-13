@@ -33,14 +33,14 @@ title: Condition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WRAPUPCONDITION | &quot;wrapupCondition&quot; |
-| CONTACTATTRIBUTECONDITION | &quot;contactAttributeCondition&quot; |
-| PHONENUMBERCONDITION | &quot;phoneNumberCondition&quot; |
-| PHONENUMBERTYPECONDITION | &quot;phoneNumberTypeCondition&quot; |
-| CALLANALYSISCONDITION | &quot;callAnalysisCondition&quot; |
-| CONTACTPROPERTYCONDITION | &quot;contactPropertyCondition&quot; |
-| DATAACTIONCONDITION | &quot;dataActionCondition&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WRAPUPCONDITION | &quot;wrapupCondition&quot; | 
+| CONTACTATTRIBUTECONDITION | &quot;contactAttributeCondition&quot; | 
+| PHONENUMBERCONDITION | &quot;phoneNumberCondition&quot; | 
+| PHONENUMBERTYPECONDITION | &quot;phoneNumberTypeCondition&quot; | 
+| CALLANALYSISCONDITION | &quot;callAnalysisCondition&quot; | 
+| CONTACTPROPERTYCONDITION | &quot;contactPropertyCondition&quot; | 
+| DATAACTIONCONDITION | &quot;dataActionCondition&quot; | 
 {: class="table table-striped"}
 
 
@@ -50,11 +50,11 @@ title: Condition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STRING | &quot;STRING&quot; |
-| NUMERIC | &quot;NUMERIC&quot; |
-| DATETIME | &quot;DATETIME&quot; |
-| PERIOD | &quot;PERIOD&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STRING | &quot;STRING&quot; | 
+| NUMERIC | &quot;NUMERIC&quot; | 
+| DATETIME | &quot;DATETIME&quot; | 
+| PERIOD | &quot;PERIOD&quot; | 
 {: class="table table-striped"}
 
 
@@ -64,18 +64,18 @@ title: Condition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EQUALS | &quot;EQUALS&quot; |
-| LESS_THAN | &quot;LESS_THAN&quot; |
-| LESS_THAN_EQUALS | &quot;LESS_THAN_EQUALS&quot; |
-| GREATER_THAN | &quot;GREATER_THAN&quot; |
-| GREATER_THAN_EQUALS | &quot;GREATER_THAN_EQUALS&quot; |
-| CONTAINS | &quot;CONTAINS&quot; |
-| BEGINS_WITH | &quot;BEGINS_WITH&quot; |
-| ENDS_WITH | &quot;ENDS_WITH&quot; |
-| BEFORE | &quot;BEFORE&quot; |
-| AFTER | &quot;AFTER&quot; |
-| IN | &quot;IN&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EQUALS | &quot;EQUALS&quot; | 
+| LESS_THAN | &quot;LESS_THAN&quot; | 
+| LESS_THAN_EQUALS | &quot;LESS_THAN_EQUALS&quot; | 
+| GREATER_THAN | &quot;GREATER_THAN&quot; | 
+| GREATER_THAN_EQUALS | &quot;GREATER_THAN_EQUALS&quot; | 
+| CONTAINS | &quot;CONTAINS&quot; | 
+| BEGINS_WITH | &quot;BEGINS_WITH&quot; | 
+| ENDS_WITH | &quot;ENDS_WITH&quot; | 
+| BEFORE | &quot;BEFORE&quot; | 
+| AFTER | &quot;AFTER&quot; | 
+| IN | &quot;IN&quot; | 
 {: class="table table-striped"}
 
 
@@ -85,11 +85,11 @@ title: Condition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LAST_ATTEMPT_BY_COLUMN | &quot;LAST_ATTEMPT_BY_COLUMN&quot; |
-| LAST_ATTEMPT_OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; |
-| LAST_WRAPUP_BY_COLUMN | &quot;LAST_WRAPUP_BY_COLUMN&quot; |
-| LAST_WRAPUP_OVERALL | &quot;LAST_WRAPUP_OVERALL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LAST_ATTEMPT_BY_COLUMN | &quot;LAST_ATTEMPT_BY_COLUMN&quot; | 
+| LAST_ATTEMPT_OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; | 
+| LAST_WRAPUP_BY_COLUMN | &quot;LAST_WRAPUP_BY_COLUMN&quot; | 
+| LAST_WRAPUP_OVERALL | &quot;LAST_WRAPUP_OVERALL&quot; | 
 {: class="table table-striped"}
 
 

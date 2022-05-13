@@ -45,8 +45,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete single action map.
 
-
-
 Wraps DELETE /api/v2/journey/actionmaps/{actionMapId}  
 
 Requires ANY permissions: 
@@ -106,8 +104,6 @@ null (empty response body)
 > Void deleteJourneyActiontemplate(actionTemplateId, hardDelete)
 
 Delete a single action template.
-
-
 
 Wraps DELETE /api/v2/journey/actiontemplates/{actionTemplateId}  
 
@@ -171,8 +167,6 @@ null (empty response body)
 
 Delete an outcome.
 
-
-
 Wraps DELETE /api/v2/journey/outcomes/{outcomeId}  
 
 Requires ANY permissions: 
@@ -233,8 +227,6 @@ null (empty response body)
 
 Delete a segment.
 
-
-
 Wraps DELETE /api/v2/journey/segments/{segmentId}  
 
 Requires ANY permissions: 
@@ -294,8 +286,6 @@ null (empty response body)
 > [ActionMap](ActionMap.html) getJourneyActionmap(actionMapId)
 
 Retrieve a single action map.
-
-
 
 Wraps GET /api/v2/journey/actionmaps/{actionMapId}  
 
@@ -358,8 +348,6 @@ try {
 
 Retrieve all action maps.
 
-
-
 Wraps GET /api/v2/journey/actionmaps  
 
 Requires ANY permissions: 
@@ -393,8 +381,8 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
 String filterField = "filterField_example"; // String | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
 String filterValue = "filterValue_example"; // String | Value to filter by. Requires 'filterValue' to also be set.
-List<String> actionMapIds = Arrays.asList("actionMapIds_example"); // List<String> | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
-List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | Action Map field(s) to query on. Requires 'queryValue' to also be set.
+List<String> actionMapIds = Arrays.asList(null); // List<String> | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
+List<String> queryFields = Arrays.asList(null); // List<String> | Action Map field(s) to query on. Requires 'queryValue' to also be set.
 String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
     ActionMapListing result = apiInstance.getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue);
@@ -412,8 +400,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
-| **filterField** | **String**| Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional] 
+| **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional] 
+| **filterField** | **String**| Field to filter by (e.g. filterField&#x3D;weight or filterField&#x3D;action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional] 
 | **filterValue** | **String**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional] 
 | **actionMapIds** | [**List&lt;String&gt;**](String.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional] 
 | **queryFields** | [**List&lt;String&gt;**](String.html)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
@@ -434,8 +422,6 @@ try {
 > [ActionTarget](ActionTarget.html) getJourneyActiontarget(actionTargetId)
 
 Retrieve a single action target.
-
-
 
 Wraps GET /api/v2/journey/actiontargets/{actionTargetId}  
 
@@ -497,8 +483,6 @@ try {
 > [ActionTargetListing](ActionTargetListing.html) getJourneyActiontargets(pageNumber, pageSize)
 
 Retrieve all action targets.
-
-
 
 Wraps GET /api/v2/journey/actiontargets  
 
@@ -563,8 +547,6 @@ try {
 
 Retrieve a single action template.
 
-
-
 Wraps GET /api/v2/journey/actiontemplates/{actionTemplateId}  
 
 Requires ANY permissions: 
@@ -626,8 +608,6 @@ try {
 
 Retrieve all action templates.
 
-
-
 Wraps GET /api/v2/journey/actiontemplates  
 
 Requires ANY permissions: 
@@ -661,7 +641,7 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
 String mediaType = "mediaType_example"; // String | Media type
 String state = "state_example"; // String | Action template state.
-List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
+List<String> queryFields = Arrays.asList(null); // List<String> | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
 String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
     ActionTemplateListing result = apiInstance.getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue);
@@ -679,7 +659,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional] 
+| **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;name,-createdDate). | [optional] 
 | **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction 
 | **state** | **String**| Action template state. | [optional]<br />**Values**: Active, Inactive, Deleted 
 | **queryFields** | [**List&lt;String&gt;**](String.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
@@ -700,8 +680,6 @@ try {
 > [Outcome](Outcome.html) getJourneyOutcome(outcomeId)
 
 Retrieve a single outcome.
-
-
 
 Wraps GET /api/v2/journey/outcomes/{outcomeId}  
 
@@ -764,8 +742,6 @@ try {
 
 Retrieve all outcomes.
 
-
-
 Wraps GET /api/v2/journey/outcomes  
 
 Requires ANY permissions: 
@@ -797,8 +773,8 @@ JourneyApi apiInstance = new JourneyApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
-List<String> outcomeIds = Arrays.asList("outcomeIds_example"); // List<String> | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
-List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | Outcome field(s) to query on. Requires 'queryValue' to also be set.
+List<String> outcomeIds = Arrays.asList(null); // List<String> | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
+List<String> queryFields = Arrays.asList(null); // List<String> | Outcome field(s) to query on. Requires 'queryValue' to also be set.
 String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
     OutcomeListing result = apiInstance.getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue);
@@ -816,7 +792,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
+| **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional] 
 | **outcomeIds** | [**List&lt;String&gt;**](String.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional] 
 | **queryFields** | [**List&lt;String&gt;**](String.html)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
 | **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
@@ -836,8 +812,6 @@ try {
 > [JourneySegment](JourneySegment.html) getJourneySegment(segmentId)
 
 Retrieve a single segment.
-
-
 
 Wraps GET /api/v2/journey/segments/{segmentId}  
 
@@ -900,8 +874,6 @@ try {
 
 Retrieve all segments.
 
-
-
 Wraps GET /api/v2/journey/segments  
 
 Requires ANY permissions: 
@@ -934,8 +906,8 @@ String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response 
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean isActive = true; // Boolean | Determines whether or not to show only active segments.
-List<String> segmentIds = Arrays.asList("segmentIds_example"); // List<String> | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
-List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | Segment field(s) to query on. Requires 'queryValue' to also be set.
+List<String> segmentIds = Arrays.asList(null); // List<String> | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
+List<String> queryFields = Arrays.asList(null); // List<String> | Segment field(s) to query on. Requires 'queryValue' to also be set.
 String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
     SegmentListing result = apiInstance.getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue);
@@ -951,7 +923,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
+| **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **isActive** | **Boolean**| Determines whether or not to show only active segments. | [optional] 
@@ -974,8 +946,6 @@ try {
 > [Session](Session.html) getJourneySession(sessionId)
 
 Retrieve a single session.
-
-
 
 Wraps GET /api/v2/journey/sessions/{sessionId}  
 
@@ -1038,8 +1008,6 @@ try {
 
 Retrieve latest outcome score associated with a session for all outcomes.
 
-
-
 Wraps GET /api/v2/journey/sessions/{sessionId}/outcomescores  
 
 Requires ANY permissions: 
@@ -1100,8 +1068,6 @@ try {
 > [ActionMap](ActionMap.html) patchJourneyActionmap(actionMapId, body)
 
 Update single action map.
-
-
 
 Wraps PATCH /api/v2/journey/actionmaps/{actionMapId}  
 
@@ -1166,8 +1132,6 @@ try {
 
 Update a single action target.
 
-
-
 Wraps PATCH /api/v2/journey/actiontargets/{actionTargetId}  
 
 Requires ANY permissions: 
@@ -1230,8 +1194,6 @@ try {
 > [ActionTemplate](ActionTemplate.html) patchJourneyActiontemplate(actionTemplateId, body)
 
 Update a single action template.
-
-
 
 Wraps PATCH /api/v2/journey/actiontemplates/{actionTemplateId}  
 
@@ -1296,8 +1258,6 @@ try {
 
 Update an outcome.
 
-
-
 Wraps PATCH /api/v2/journey/outcomes/{outcomeId}  
 
 Requires ANY permissions: 
@@ -1360,8 +1320,6 @@ try {
 > [JourneySegment](JourneySegment.html) patchJourneySegment(segmentId, body)
 
 Update a segment.
-
-
 
 Wraps PATCH /api/v2/journey/segments/{segmentId}  
 
@@ -1426,8 +1384,6 @@ try {
 
 Query for journey aggregates
 
-
-
 Wraps POST /api/v2/analytics/journeys/aggregates/query  
 
 Requires ANY permissions: 
@@ -1488,8 +1444,6 @@ try {
 > [ActionMap](ActionMap.html) postJourneyActionmaps(body)
 
 Create an action map.
-
-
 
 Wraps POST /api/v2/journey/actionmaps  
 
@@ -1552,8 +1506,6 @@ try {
 
 Create a single action template.
 
-
-
 Wraps POST /api/v2/journey/actiontemplates  
 
 Requires ANY permissions: 
@@ -1615,8 +1567,6 @@ try {
 
 Create an outcome.
 
-
-
 Wraps POST /api/v2/journey/outcomes  
 
 Requires ANY permissions: 
@@ -1677,8 +1627,6 @@ try {
 > [JourneySegment](JourneySegment.html) postJourneySegments(body)
 
 Create a segment.
-
-
 
 Wraps POST /api/v2/journey/segments  
 

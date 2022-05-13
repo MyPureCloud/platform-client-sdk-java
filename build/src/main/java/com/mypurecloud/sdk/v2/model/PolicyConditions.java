@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
@@ -145,7 +146,7 @@ public class PolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-  
+
   /**
    **/
   public PolicyConditions directions(List<DirectionsEnum> directions) {
@@ -162,7 +163,7 @@ public class PolicyConditions  implements Serializable {
     this.directions = directions;
   }
 
-  
+
   /**
    **/
   public PolicyConditions dateRanges(List<String> dateRanges) {
@@ -179,7 +180,7 @@ public class PolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
+
   /**
    **/
   public PolicyConditions mediaTypes(List<MediaTypesEnum> mediaTypes) {
@@ -196,7 +197,7 @@ public class PolicyConditions  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
-  
+
   /**
    **/
   public PolicyConditions forQueues(List<Queue> forQueues) {
@@ -213,7 +214,7 @@ public class PolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-  
+
   /**
    **/
   public PolicyConditions duration(DurationCondition duration) {
@@ -230,7 +231,7 @@ public class PolicyConditions  implements Serializable {
     this.duration = duration;
   }
 
-  
+
   /**
    **/
   public PolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -247,7 +248,7 @@ public class PolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-  
+
   /**
    **/
   public PolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -264,7 +265,6 @@ public class PolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -275,14 +275,15 @@ public class PolicyConditions  implements Serializable {
       return false;
     }
     PolicyConditions policyConditions = (PolicyConditions) o;
+
     return Objects.equals(this.forUsers, policyConditions.forUsers) &&
-        Objects.equals(this.directions, policyConditions.directions) &&
-        Objects.equals(this.dateRanges, policyConditions.dateRanges) &&
-        Objects.equals(this.mediaTypes, policyConditions.mediaTypes) &&
-        Objects.equals(this.forQueues, policyConditions.forQueues) &&
-        Objects.equals(this.duration, policyConditions.duration) &&
-        Objects.equals(this.wrapupCodes, policyConditions.wrapupCodes) &&
-        Objects.equals(this.timeAllowed, policyConditions.timeAllowed);
+            Objects.equals(this.directions, policyConditions.directions) &&
+            Objects.equals(this.dateRanges, policyConditions.dateRanges) &&
+            Objects.equals(this.mediaTypes, policyConditions.mediaTypes) &&
+            Objects.equals(this.forQueues, policyConditions.forQueues) &&
+            Objects.equals(this.duration, policyConditions.duration) &&
+            Objects.equals(this.wrapupCodes, policyConditions.wrapupCodes) &&
+            Objects.equals(this.timeAllowed, policyConditions.timeAllowed);
   }
 
   @Override

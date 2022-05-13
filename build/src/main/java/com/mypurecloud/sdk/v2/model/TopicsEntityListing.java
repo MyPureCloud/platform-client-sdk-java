@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListedTopic;
@@ -47,7 +48,7 @@ public class TopicsEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TopicsEntityListing pageSize(Integer pageSize) {
@@ -64,7 +65,7 @@ public class TopicsEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TopicsEntityListing total(Integer total) {
@@ -81,7 +82,7 @@ public class TopicsEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TopicsEntityListing selfUri(String selfUri) {
@@ -98,7 +99,7 @@ public class TopicsEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TopicsEntityListing nextUri(String nextUri) {
@@ -115,7 +116,7 @@ public class TopicsEntityListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TopicsEntityListing pageCount(Integer pageCount) {
@@ -132,7 +133,6 @@ public class TopicsEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class TopicsEntityListing  implements Serializable {
       return false;
     }
     TopicsEntityListing topicsEntityListing = (TopicsEntityListing) o;
+
     return Objects.equals(this.entities, topicsEntityListing.entities) &&
-        Objects.equals(this.pageSize, topicsEntityListing.pageSize) &&
-        Objects.equals(this.total, topicsEntityListing.total) &&
-        Objects.equals(this.selfUri, topicsEntityListing.selfUri) &&
-        Objects.equals(this.nextUri, topicsEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, topicsEntityListing.pageCount);
+            Objects.equals(this.pageSize, topicsEntityListing.pageSize) &&
+            Objects.equals(this.total, topicsEntityListing.total) &&
+            Objects.equals(this.selfUri, topicsEntityListing.selfUri) &&
+            Objects.equals(this.nextUri, topicsEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, topicsEntityListing.pageCount);
   }
 
   @Override

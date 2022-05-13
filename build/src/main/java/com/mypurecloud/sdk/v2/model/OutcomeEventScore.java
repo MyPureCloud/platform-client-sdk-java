@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -43,7 +44,7 @@ public class OutcomeEventScore  implements Serializable {
     this.outcome = outcome;
   }
 
-  
+
   /**
    * Represents the max probability reached in the session.
    **/
@@ -61,7 +62,7 @@ public class OutcomeEventScore  implements Serializable {
     this.sessionMaxProbability = sessionMaxProbability;
   }
 
-  
+
   /**
    * Represents the likelihood of a customer reaching or achieving a given outcome.
    **/
@@ -79,7 +80,6 @@ public class OutcomeEventScore  implements Serializable {
     this.probability = probability;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class OutcomeEventScore  implements Serializable {
       return false;
     }
     OutcomeEventScore outcomeEventScore = (OutcomeEventScore) o;
+
     return Objects.equals(this.outcome, outcomeEventScore.outcome) &&
-        Objects.equals(this.sessionMaxProbability, outcomeEventScore.sessionMaxProbability) &&
-        Objects.equals(this.probability, outcomeEventScore.probability);
+            Objects.equals(this.sessionMaxProbability, outcomeEventScore.sessionMaxProbability) &&
+            Objects.equals(this.probability, outcomeEventScore.probability);
   }
 
   @Override

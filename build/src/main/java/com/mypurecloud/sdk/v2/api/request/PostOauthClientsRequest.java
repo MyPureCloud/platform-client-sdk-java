@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class PostOauthClientsRequest {
-    
+
 	private OAuthClientRequest body;
 	public OAuthClientRequest getBody() {
 		return this.body;
@@ -47,7 +47,7 @@ public class PostOauthClientsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,8 +77,8 @@ public class PostOauthClientsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/oauth/clients")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -89,12 +89,12 @@ public class PostOauthClientsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(OAuthClientRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostOauthClientsRequest request;
@@ -103,20 +103,20 @@ public class PostOauthClientsRequest {
 			request = new PostOauthClientsRequest();
 		}
 
-		
+
 		public Builder withBody(OAuthClientRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(OAuthClientRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostOauthClientsRequest build() {
             

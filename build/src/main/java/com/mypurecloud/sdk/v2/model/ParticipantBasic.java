@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -250,7 +251,7 @@ public class ParticipantBasic  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -268,7 +269,7 @@ public class ParticipantBasic  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -286,7 +287,7 @@ public class ParticipantBasic  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -304,7 +305,7 @@ public class ParticipantBasic  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * A human readable name identifying the participant.
    **/
@@ -322,7 +323,7 @@ public class ParticipantBasic  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * If this participant represents a user, then this will be an URI that can be used to fetch the user.
    **/
@@ -340,7 +341,7 @@ public class ParticipantBasic  implements Serializable {
     this.userUri = userUri;
   }
 
-  
+
   /**
    * If this participant represents a user, then this will be the globally unique identifier for the user.
    **/
@@ -358,7 +359,7 @@ public class ParticipantBasic  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
    **/
@@ -376,7 +377,7 @@ public class ParticipantBasic  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the globally unique identifier for the external org.
    **/
@@ -394,7 +395,7 @@ public class ParticipantBasic  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * If present, the queue id that the communication channel came in on.
    **/
@@ -412,7 +413,7 @@ public class ParticipantBasic  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * If present, group of users the participant represents.
    **/
@@ -430,7 +431,7 @@ public class ParticipantBasic  implements Serializable {
     this.groupId = groupId;
   }
 
-  
+
   /**
    * The team id that this participant is a member of when added to the conversation.
    **/
@@ -448,7 +449,7 @@ public class ParticipantBasic  implements Serializable {
     this.teamId = teamId;
   }
 
-  
+
   /**
    * If present, the queue name that the communication channel came in on.
    **/
@@ -466,7 +467,7 @@ public class ParticipantBasic  implements Serializable {
     this.queueName = queueName;
   }
 
-  
+
   /**
    * A well known string that specifies the purpose of this participant.
    **/
@@ -484,7 +485,7 @@ public class ParticipantBasic  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * A well known string that specifies the type of this participant.
    **/
@@ -502,7 +503,7 @@ public class ParticipantBasic  implements Serializable {
     this.participantType = participantType;
   }
 
-  
+
   /**
    * If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
    **/
@@ -520,7 +521,7 @@ public class ParticipantBasic  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
-  
+
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -538,7 +539,7 @@ public class ParticipantBasic  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -556,7 +557,7 @@ public class ParticipantBasic  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    * The ani-based name for this participant.
    **/
@@ -574,7 +575,7 @@ public class ParticipantBasic  implements Serializable {
     this.aniName = aniName;
   }
 
-  
+
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -592,7 +593,7 @@ public class ParticipantBasic  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * An ISO 639 language code specifying the locale for this participant
    **/
@@ -610,7 +611,7 @@ public class ParticipantBasic  implements Serializable {
     this.locale = locale;
   }
 
-  
+
   /**
    * True iff this participant is required to enter wrapup for this conversation.
    **/
@@ -628,7 +629,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * This field controls how the UI prompts the agent for a wrapup.
    **/
@@ -646,7 +647,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * Specifies how long a timed ACW session will last.
    **/
@@ -664,7 +665,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    * The UI sets this field when the agent chooses to skip entering a wrapup for this participant.
    **/
@@ -682,7 +683,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -700,7 +701,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * Information on how a communication should be routed to an agent.
    **/
@@ -718,7 +719,7 @@ public class ParticipantBasic  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -736,7 +737,7 @@ public class ParticipantBasic  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
@@ -754,7 +755,7 @@ public class ParticipantBasic  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    * If this participant is a coach, then this will be the id of the participant that is being coached.
    **/
@@ -772,7 +773,7 @@ public class ParticipantBasic  implements Serializable {
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    * Additional participant attributes
    **/
@@ -790,7 +791,7 @@ public class ParticipantBasic  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic calls(List<CallBasic> calls) {
@@ -807,7 +808,7 @@ public class ParticipantBasic  implements Serializable {
     this.calls = calls;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic callbacks(List<CallbackBasic> callbacks) {
@@ -824,7 +825,7 @@ public class ParticipantBasic  implements Serializable {
     this.callbacks = callbacks;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic chats(List<ConversationChat> chats) {
@@ -841,7 +842,7 @@ public class ParticipantBasic  implements Serializable {
     this.chats = chats;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic cobrowsesessions(List<Cobrowsesession> cobrowsesessions) {
@@ -858,7 +859,7 @@ public class ParticipantBasic  implements Serializable {
     this.cobrowsesessions = cobrowsesessions;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic emails(List<Email> emails) {
@@ -875,7 +876,7 @@ public class ParticipantBasic  implements Serializable {
     this.emails = emails;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic messages(List<Message> messages) {
@@ -892,7 +893,7 @@ public class ParticipantBasic  implements Serializable {
     this.messages = messages;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic screenshares(List<Screenshare> screenshares) {
@@ -909,7 +910,7 @@ public class ParticipantBasic  implements Serializable {
     this.screenshares = screenshares;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic socialExpressions(List<SocialExpression> socialExpressions) {
@@ -926,7 +927,7 @@ public class ParticipantBasic  implements Serializable {
     this.socialExpressions = socialExpressions;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic videos(List<Video> videos) {
@@ -943,7 +944,7 @@ public class ParticipantBasic  implements Serializable {
     this.videos = videos;
   }
 
-  
+
   /**
    **/
   public ParticipantBasic evaluations(List<Evaluation> evaluations) {
@@ -960,7 +961,7 @@ public class ParticipantBasic  implements Serializable {
     this.evaluations = evaluations;
   }
 
-  
+
   /**
    * The current screen recording state for this participant.
    **/
@@ -978,7 +979,7 @@ public class ParticipantBasic  implements Serializable {
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -996,7 +997,7 @@ public class ParticipantBasic  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -1014,7 +1015,7 @@ public class ParticipantBasic  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -1032,7 +1033,7 @@ public class ParticipantBasic  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    * If this participant barged in a participant's call, then this will be the id of the targeted participant.
    **/
@@ -1050,7 +1051,6 @@ public class ParticipantBasic  implements Serializable {
     this.bargedParticipantId = bargedParticipantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1061,52 +1061,53 @@ public class ParticipantBasic  implements Serializable {
       return false;
     }
     ParticipantBasic participantBasic = (ParticipantBasic) o;
+
     return Objects.equals(this.id, participantBasic.id) &&
-        Objects.equals(this.startTime, participantBasic.startTime) &&
-        Objects.equals(this.endTime, participantBasic.endTime) &&
-        Objects.equals(this.connectedTime, participantBasic.connectedTime) &&
-        Objects.equals(this.name, participantBasic.name) &&
-        Objects.equals(this.userUri, participantBasic.userUri) &&
-        Objects.equals(this.userId, participantBasic.userId) &&
-        Objects.equals(this.externalContactId, participantBasic.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, participantBasic.externalOrganizationId) &&
-        Objects.equals(this.queueId, participantBasic.queueId) &&
-        Objects.equals(this.groupId, participantBasic.groupId) &&
-        Objects.equals(this.teamId, participantBasic.teamId) &&
-        Objects.equals(this.queueName, participantBasic.queueName) &&
-        Objects.equals(this.purpose, participantBasic.purpose) &&
-        Objects.equals(this.participantType, participantBasic.participantType) &&
-        Objects.equals(this.consultParticipantId, participantBasic.consultParticipantId) &&
-        Objects.equals(this.address, participantBasic.address) &&
-        Objects.equals(this.ani, participantBasic.ani) &&
-        Objects.equals(this.aniName, participantBasic.aniName) &&
-        Objects.equals(this.dnis, participantBasic.dnis) &&
-        Objects.equals(this.locale, participantBasic.locale) &&
-        Objects.equals(this.wrapupRequired, participantBasic.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, participantBasic.wrapupPrompt) &&
-        Objects.equals(this.wrapupTimeoutMs, participantBasic.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, participantBasic.wrapupSkipped) &&
-        Objects.equals(this.wrapup, participantBasic.wrapup) &&
-        Objects.equals(this.conversationRoutingData, participantBasic.conversationRoutingData) &&
-        Objects.equals(this.alertingTimeoutMs, participantBasic.alertingTimeoutMs) &&
-        Objects.equals(this.monitoredParticipantId, participantBasic.monitoredParticipantId) &&
-        Objects.equals(this.coachedParticipantId, participantBasic.coachedParticipantId) &&
-        Objects.equals(this.attributes, participantBasic.attributes) &&
-        Objects.equals(this.calls, participantBasic.calls) &&
-        Objects.equals(this.callbacks, participantBasic.callbacks) &&
-        Objects.equals(this.chats, participantBasic.chats) &&
-        Objects.equals(this.cobrowsesessions, participantBasic.cobrowsesessions) &&
-        Objects.equals(this.emails, participantBasic.emails) &&
-        Objects.equals(this.messages, participantBasic.messages) &&
-        Objects.equals(this.screenshares, participantBasic.screenshares) &&
-        Objects.equals(this.socialExpressions, participantBasic.socialExpressions) &&
-        Objects.equals(this.videos, participantBasic.videos) &&
-        Objects.equals(this.evaluations, participantBasic.evaluations) &&
-        Objects.equals(this.screenRecordingState, participantBasic.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, participantBasic.flaggedReason) &&
-        Objects.equals(this.startAcwTime, participantBasic.startAcwTime) &&
-        Objects.equals(this.endAcwTime, participantBasic.endAcwTime) &&
-        Objects.equals(this.bargedParticipantId, participantBasic.bargedParticipantId);
+            Objects.equals(this.startTime, participantBasic.startTime) &&
+            Objects.equals(this.endTime, participantBasic.endTime) &&
+            Objects.equals(this.connectedTime, participantBasic.connectedTime) &&
+            Objects.equals(this.name, participantBasic.name) &&
+            Objects.equals(this.userUri, participantBasic.userUri) &&
+            Objects.equals(this.userId, participantBasic.userId) &&
+            Objects.equals(this.externalContactId, participantBasic.externalContactId) &&
+            Objects.equals(this.externalOrganizationId, participantBasic.externalOrganizationId) &&
+            Objects.equals(this.queueId, participantBasic.queueId) &&
+            Objects.equals(this.groupId, participantBasic.groupId) &&
+            Objects.equals(this.teamId, participantBasic.teamId) &&
+            Objects.equals(this.queueName, participantBasic.queueName) &&
+            Objects.equals(this.purpose, participantBasic.purpose) &&
+            Objects.equals(this.participantType, participantBasic.participantType) &&
+            Objects.equals(this.consultParticipantId, participantBasic.consultParticipantId) &&
+            Objects.equals(this.address, participantBasic.address) &&
+            Objects.equals(this.ani, participantBasic.ani) &&
+            Objects.equals(this.aniName, participantBasic.aniName) &&
+            Objects.equals(this.dnis, participantBasic.dnis) &&
+            Objects.equals(this.locale, participantBasic.locale) &&
+            Objects.equals(this.wrapupRequired, participantBasic.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, participantBasic.wrapupPrompt) &&
+            Objects.equals(this.wrapupTimeoutMs, participantBasic.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, participantBasic.wrapupSkipped) &&
+            Objects.equals(this.wrapup, participantBasic.wrapup) &&
+            Objects.equals(this.conversationRoutingData, participantBasic.conversationRoutingData) &&
+            Objects.equals(this.alertingTimeoutMs, participantBasic.alertingTimeoutMs) &&
+            Objects.equals(this.monitoredParticipantId, participantBasic.monitoredParticipantId) &&
+            Objects.equals(this.coachedParticipantId, participantBasic.coachedParticipantId) &&
+            Objects.equals(this.attributes, participantBasic.attributes) &&
+            Objects.equals(this.calls, participantBasic.calls) &&
+            Objects.equals(this.callbacks, participantBasic.callbacks) &&
+            Objects.equals(this.chats, participantBasic.chats) &&
+            Objects.equals(this.cobrowsesessions, participantBasic.cobrowsesessions) &&
+            Objects.equals(this.emails, participantBasic.emails) &&
+            Objects.equals(this.messages, participantBasic.messages) &&
+            Objects.equals(this.screenshares, participantBasic.screenshares) &&
+            Objects.equals(this.socialExpressions, participantBasic.socialExpressions) &&
+            Objects.equals(this.videos, participantBasic.videos) &&
+            Objects.equals(this.evaluations, participantBasic.evaluations) &&
+            Objects.equals(this.screenRecordingState, participantBasic.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, participantBasic.flaggedReason) &&
+            Objects.equals(this.startAcwTime, participantBasic.startAcwTime) &&
+            Objects.equals(this.endAcwTime, participantBasic.endAcwTime) &&
+            Objects.equals(this.bargedParticipantId, participantBasic.bargedParticipantId);
   }
 
   @Override

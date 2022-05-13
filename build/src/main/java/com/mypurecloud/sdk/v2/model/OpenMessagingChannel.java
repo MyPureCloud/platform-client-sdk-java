@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ChannelMetadata;
 import com.mypurecloud.sdk.v2.model.OpenMessagingFromRecipient;
 import com.mypurecloud.sdk.v2.model.OpenMessagingToRecipient;
 import io.swagger.annotations.ApiModel;
@@ -125,7 +125,7 @@ public class OpenMessagingChannel  implements Serializable {
   private OpenMessagingToRecipient to = null;
   private OpenMessagingFromRecipient from = null;
   private Date time = null;
-  private ChannelMetadata metadata = null;
+  private Object metadata = null;
 
   
   @ApiModelProperty(example = "null", value = "The Messaging Platform integration ID.")
@@ -134,14 +134,14 @@ public class OpenMessagingChannel  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The provider type.")
   @JsonProperty("platform")
   public PlatformEnum getPlatform() {
     return platform;
   }
 
-  
+
   /**
    * Specifies if this message is part of a private or public conversation.
    **/
@@ -159,7 +159,7 @@ public class OpenMessagingChannel  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Unique provider ID of the message such as a Facebook message ID.
    **/
@@ -177,7 +177,7 @@ public class OpenMessagingChannel  implements Serializable {
     this.messageId = messageId;
   }
 
-  
+
   /**
    * Information about the recipient the message is sent to.
    **/
@@ -195,7 +195,7 @@ public class OpenMessagingChannel  implements Serializable {
     this.to = to;
   }
 
-  
+
   /**
    * Information about the recipient the message is received from.
    **/
@@ -213,7 +213,7 @@ public class OpenMessagingChannel  implements Serializable {
     this.from = from;
   }
 
-  
+
   /**
    * Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -231,25 +231,24 @@ public class OpenMessagingChannel  implements Serializable {
     this.time = time;
   }
 
-  
+
   /**
    * Information about the channel.
    **/
-  public OpenMessagingChannel metadata(ChannelMetadata metadata) {
+  public OpenMessagingChannel metadata(Object metadata) {
     this.metadata = metadata;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Information about the channel.")
   @JsonProperty("metadata")
-  public ChannelMetadata getMetadata() {
+  public Object getMetadata() {
     return metadata;
   }
-  public void setMetadata(ChannelMetadata metadata) {
+  public void setMetadata(Object metadata) {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,14 +259,15 @@ public class OpenMessagingChannel  implements Serializable {
       return false;
     }
     OpenMessagingChannel openMessagingChannel = (OpenMessagingChannel) o;
+
     return Objects.equals(this.id, openMessagingChannel.id) &&
-        Objects.equals(this.platform, openMessagingChannel.platform) &&
-        Objects.equals(this.type, openMessagingChannel.type) &&
-        Objects.equals(this.messageId, openMessagingChannel.messageId) &&
-        Objects.equals(this.to, openMessagingChannel.to) &&
-        Objects.equals(this.from, openMessagingChannel.from) &&
-        Objects.equals(this.time, openMessagingChannel.time) &&
-        Objects.equals(this.metadata, openMessagingChannel.metadata);
+            Objects.equals(this.platform, openMessagingChannel.platform) &&
+            Objects.equals(this.type, openMessagingChannel.type) &&
+            Objects.equals(this.messageId, openMessagingChannel.messageId) &&
+            Objects.equals(this.to, openMessagingChannel.to) &&
+            Objects.equals(this.from, openMessagingChannel.from) &&
+            Objects.equals(this.time, openMessagingChannel.time) &&
+            Objects.equals(this.metadata, openMessagingChannel.metadata);
   }
 
   @Override

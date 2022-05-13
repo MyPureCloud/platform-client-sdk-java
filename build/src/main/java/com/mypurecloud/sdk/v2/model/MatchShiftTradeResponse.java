@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchViolation;
@@ -46,7 +47,7 @@ public class MatchShiftTradeResponse  implements Serializable {
     this.trade = trade;
   }
 
-  
+
   /**
    * Constraint violations which disallow this shift trade
    **/
@@ -64,7 +65,7 @@ public class MatchShiftTradeResponse  implements Serializable {
     this.violations = violations;
   }
 
-  
+
   /**
    * Constraint violations for this shift trade which require shift trade administrator review
    **/
@@ -82,7 +83,6 @@ public class MatchShiftTradeResponse  implements Serializable {
     this.adminReviewViolations = adminReviewViolations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class MatchShiftTradeResponse  implements Serializable {
       return false;
     }
     MatchShiftTradeResponse matchShiftTradeResponse = (MatchShiftTradeResponse) o;
+
     return Objects.equals(this.trade, matchShiftTradeResponse.trade) &&
-        Objects.equals(this.violations, matchShiftTradeResponse.violations) &&
-        Objects.equals(this.adminReviewViolations, matchShiftTradeResponse.adminReviewViolations);
+            Objects.equals(this.violations, matchShiftTradeResponse.violations) &&
+            Objects.equals(this.adminReviewViolations, matchShiftTradeResponse.adminReviewViolations);
   }
 
   @Override

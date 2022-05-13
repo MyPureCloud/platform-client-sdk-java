@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetAuthorizationDivisionGrantsRequest {
-    
+
 	private String divisionId;
 	public String getDivisionId() {
 		return this.divisionId;
@@ -54,7 +54,7 @@ public class GetAuthorizationDivisionGrantsRequest {
 	    this.setDivisionId(divisionId);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -68,7 +68,7 @@ public class GetAuthorizationDivisionGrantsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -82,7 +82,7 @@ public class GetAuthorizationDivisionGrantsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -113,11 +113,13 @@ public class GetAuthorizationDivisionGrantsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/divisions/{divisionId}/grants")
                 .withPathParameter("divisionId", divisionId)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -128,12 +130,12 @@ public class GetAuthorizationDivisionGrantsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String divisionId) {
 	    return new Builder()
 	            .withRequiredParams(divisionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationDivisionGrantsRequest request;
@@ -142,30 +144,30 @@ public class GetAuthorizationDivisionGrantsRequest {
 			request = new GetAuthorizationDivisionGrantsRequest();
 		}
 
-		
+
 		public Builder withDivisionId(String divisionId) {
 			request.setDivisionId(divisionId);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String divisionId) {
 			request.setDivisionId(divisionId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAuthorizationDivisionGrantsRequest build() {
             

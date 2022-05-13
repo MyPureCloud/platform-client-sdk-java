@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class SipDownloadResponse  implements Serializable {
     this.downloadId = downloadId;
   }
 
-  
+
   /**
    * Document id of pcap file
    **/
@@ -59,7 +60,6 @@ public class SipDownloadResponse  implements Serializable {
     this.documentId = documentId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class SipDownloadResponse  implements Serializable {
       return false;
     }
     SipDownloadResponse sipDownloadResponse = (SipDownloadResponse) o;
+
     return Objects.equals(this.downloadId, sipDownloadResponse.downloadId) &&
-        Objects.equals(this.documentId, sipDownloadResponse.documentId);
+            Objects.equals(this.documentId, sipDownloadResponse.documentId);
   }
 
   @Override

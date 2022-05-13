@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.SystemMessageObject;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -128,7 +128,7 @@ public class SystemMessageSystemMessage  implements Serializable {
   }
   private ReasonEnum reason = null;
   private String message = null;
-  private Map<String, SystemMessageObject> data = null;
+  private Map<String, Object> data = null;
 
   
   /**
@@ -147,7 +147,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.channelId = channelId;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage systemTopicType(SystemTopicTypeEnum systemTopicType) {
@@ -164,7 +164,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.systemTopicType = systemTopicType;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage correlationId(String correlationId) {
@@ -181,7 +181,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage organizationId(String organizationId) {
@@ -198,7 +198,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.organizationId = organizationId;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage userId(String userId) {
@@ -215,7 +215,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage oauthClientId(String oauthClientId) {
@@ -232,7 +232,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.oauthClientId = oauthClientId;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage reason(ReasonEnum reason) {
@@ -249,7 +249,7 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.reason = reason;
   }
 
-  
+
   /**
    **/
   public SystemMessageSystemMessage message(String message) {
@@ -266,24 +266,23 @@ public class SystemMessageSystemMessage  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
-  public SystemMessageSystemMessage data(Map<String, SystemMessageObject> data) {
+  public SystemMessageSystemMessage data(Map<String, Object> data) {
     this.data = data;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("data")
-  public Map<String, SystemMessageObject> getData() {
+  public Map<String, Object> getData() {
     return data;
   }
-  public void setData(Map<String, SystemMessageObject> data) {
+  public void setData(Map<String, Object> data) {
     this.data = data;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -294,15 +293,16 @@ public class SystemMessageSystemMessage  implements Serializable {
       return false;
     }
     SystemMessageSystemMessage systemMessageSystemMessage = (SystemMessageSystemMessage) o;
+
     return Objects.equals(this.channelId, systemMessageSystemMessage.channelId) &&
-        Objects.equals(this.systemTopicType, systemMessageSystemMessage.systemTopicType) &&
-        Objects.equals(this.correlationId, systemMessageSystemMessage.correlationId) &&
-        Objects.equals(this.organizationId, systemMessageSystemMessage.organizationId) &&
-        Objects.equals(this.userId, systemMessageSystemMessage.userId) &&
-        Objects.equals(this.oauthClientId, systemMessageSystemMessage.oauthClientId) &&
-        Objects.equals(this.reason, systemMessageSystemMessage.reason) &&
-        Objects.equals(this.message, systemMessageSystemMessage.message) &&
-        Objects.equals(this.data, systemMessageSystemMessage.data);
+            Objects.equals(this.systemTopicType, systemMessageSystemMessage.systemTopicType) &&
+            Objects.equals(this.correlationId, systemMessageSystemMessage.correlationId) &&
+            Objects.equals(this.organizationId, systemMessageSystemMessage.organizationId) &&
+            Objects.equals(this.userId, systemMessageSystemMessage.userId) &&
+            Objects.equals(this.oauthClientId, systemMessageSystemMessage.oauthClientId) &&
+            Objects.equals(this.reason, systemMessageSystemMessage.reason) &&
+            Objects.equals(this.message, systemMessageSystemMessage.message) &&
+            Objects.equals(this.data, systemMessageSystemMessage.data);
   }
 
   @Override

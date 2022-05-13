@@ -28,9 +28,9 @@ title: TwitterIntegrationRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PREMIUM | &quot;premium&quot; |
-| ENTERPRISE | &quot;enterprise&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PREMIUM | &quot;premium&quot; | 
+| ENTERPRISE | &quot;enterprise&quot; | 
 {: class="table table-striped"}
 
 

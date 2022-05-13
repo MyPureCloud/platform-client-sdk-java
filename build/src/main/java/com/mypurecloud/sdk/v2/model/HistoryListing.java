@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -174,7 +175,7 @@ public class HistoryListing  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public HistoryListing complete(Boolean complete) {
@@ -191,7 +192,7 @@ public class HistoryListing  implements Serializable {
     this.complete = complete;
   }
 
-  
+
   /**
    **/
   public HistoryListing user(User user) {
@@ -208,7 +209,7 @@ public class HistoryListing  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public HistoryListing client(DomainEntityRef client) {
@@ -225,7 +226,7 @@ public class HistoryListing  implements Serializable {
     this.client = client;
   }
 
-  
+
   /**
    **/
   public HistoryListing errorMessage(String errorMessage) {
@@ -242,7 +243,7 @@ public class HistoryListing  implements Serializable {
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    **/
   public HistoryListing errorCode(String errorCode) {
@@ -259,7 +260,7 @@ public class HistoryListing  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public HistoryListing errorDetails(List<Detail> errorDetails) {
@@ -276,7 +277,7 @@ public class HistoryListing  implements Serializable {
     this.errorDetails = errorDetails;
   }
 
-  
+
   /**
    **/
   public HistoryListing errorMessageParams(Map<String, String> errorMessageParams) {
@@ -293,7 +294,7 @@ public class HistoryListing  implements Serializable {
     this.errorMessageParams = errorMessageParams;
   }
 
-  
+
   /**
    * Action name
    **/
@@ -311,7 +312,7 @@ public class HistoryListing  implements Serializable {
     this.actionName = actionName;
   }
 
-  
+
   /**
    * Action status
    **/
@@ -329,7 +330,7 @@ public class HistoryListing  implements Serializable {
     this.actionStatus = actionStatus;
   }
 
-  
+
   /**
    **/
   public HistoryListing name(String name) {
@@ -346,7 +347,7 @@ public class HistoryListing  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public HistoryListing description(String description) {
@@ -363,7 +364,7 @@ public class HistoryListing  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public HistoryListing system(Boolean system) {
@@ -380,7 +381,7 @@ public class HistoryListing  implements Serializable {
     this.system = system;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -398,7 +399,7 @@ public class HistoryListing  implements Serializable {
     this.started = started;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -416,7 +417,7 @@ public class HistoryListing  implements Serializable {
     this.completed = completed;
   }
 
-  
+
   /**
    **/
   public HistoryListing pageSize(Integer pageSize) {
@@ -433,7 +434,7 @@ public class HistoryListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public HistoryListing pageNumber(Integer pageNumber) {
@@ -450,7 +451,7 @@ public class HistoryListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public HistoryListing total(Long total) {
@@ -467,7 +468,7 @@ public class HistoryListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public HistoryListing entities(List<HistoryEntry> entities) {
@@ -484,7 +485,7 @@ public class HistoryListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public HistoryListing pageCount(Integer pageCount) {
@@ -501,7 +502,6 @@ public class HistoryListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -512,26 +512,27 @@ public class HistoryListing  implements Serializable {
       return false;
     }
     HistoryListing historyListing = (HistoryListing) o;
+
     return Objects.equals(this.id, historyListing.id) &&
-        Objects.equals(this.complete, historyListing.complete) &&
-        Objects.equals(this.user, historyListing.user) &&
-        Objects.equals(this.client, historyListing.client) &&
-        Objects.equals(this.errorMessage, historyListing.errorMessage) &&
-        Objects.equals(this.errorCode, historyListing.errorCode) &&
-        Objects.equals(this.errorDetails, historyListing.errorDetails) &&
-        Objects.equals(this.errorMessageParams, historyListing.errorMessageParams) &&
-        Objects.equals(this.actionName, historyListing.actionName) &&
-        Objects.equals(this.actionStatus, historyListing.actionStatus) &&
-        Objects.equals(this.name, historyListing.name) &&
-        Objects.equals(this.description, historyListing.description) &&
-        Objects.equals(this.system, historyListing.system) &&
-        Objects.equals(this.started, historyListing.started) &&
-        Objects.equals(this.completed, historyListing.completed) &&
-        Objects.equals(this.pageSize, historyListing.pageSize) &&
-        Objects.equals(this.pageNumber, historyListing.pageNumber) &&
-        Objects.equals(this.total, historyListing.total) &&
-        Objects.equals(this.entities, historyListing.entities) &&
-        Objects.equals(this.pageCount, historyListing.pageCount);
+            Objects.equals(this.complete, historyListing.complete) &&
+            Objects.equals(this.user, historyListing.user) &&
+            Objects.equals(this.client, historyListing.client) &&
+            Objects.equals(this.errorMessage, historyListing.errorMessage) &&
+            Objects.equals(this.errorCode, historyListing.errorCode) &&
+            Objects.equals(this.errorDetails, historyListing.errorDetails) &&
+            Objects.equals(this.errorMessageParams, historyListing.errorMessageParams) &&
+            Objects.equals(this.actionName, historyListing.actionName) &&
+            Objects.equals(this.actionStatus, historyListing.actionStatus) &&
+            Objects.equals(this.name, historyListing.name) &&
+            Objects.equals(this.description, historyListing.description) &&
+            Objects.equals(this.system, historyListing.system) &&
+            Objects.equals(this.started, historyListing.started) &&
+            Objects.equals(this.completed, historyListing.completed) &&
+            Objects.equals(this.pageSize, historyListing.pageSize) &&
+            Objects.equals(this.pageNumber, historyListing.pageNumber) &&
+            Objects.equals(this.total, historyListing.total) &&
+            Objects.equals(this.entities, historyListing.entities) &&
+            Objects.equals(this.pageCount, historyListing.pageCount);
   }
 
   @Override

@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 public class GetJourneySegmentsRequest {
-    
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -56,7 +56,7 @@ public class GetJourneySegmentsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -70,7 +70,7 @@ public class GetJourneySegmentsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -84,7 +84,7 @@ public class GetJourneySegmentsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Boolean isActive;
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -98,7 +98,7 @@ public class GetJourneySegmentsRequest {
 	    this.setIsActive(isActive);
 	    return this;
 	} 
-	
+
 	private List<String> segmentIds;
 	public List<String> getSegmentIds() {
 		return this.segmentIds;
@@ -112,7 +112,7 @@ public class GetJourneySegmentsRequest {
 	    this.setSegmentIds(segmentIds);
 	    return this;
 	} 
-	
+
 	private List<String> queryFields;
 	public List<String> getQueryFields() {
 		return this.queryFields;
@@ -126,7 +126,7 @@ public class GetJourneySegmentsRequest {
 	    this.setQueryFields(queryFields);
 	    return this;
 	} 
-	
+
 	private String queryValue;
 	public String getQueryValue() {
 		return this.queryValue;
@@ -140,7 +140,7 @@ public class GetJourneySegmentsRequest {
 	    this.setQueryValue(queryValue);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -164,21 +164,28 @@ public class GetJourneySegmentsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/journey/segments")
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("isActive", "", isActive)
         
+
                 .withQueryParameters("segmentIds", "multi", segmentIds)
         
+
                 .withQueryParameters("queryFields", "multi", queryFields)
         
+
                 .withQueryParameters("queryValue", "", queryValue)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -189,7 +196,7 @@ public class GetJourneySegmentsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetJourneySegmentsRequest request;
@@ -198,44 +205,44 @@ public class GetJourneySegmentsRequest {
 			request = new GetJourneySegmentsRequest();
 		}
 
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withIsActive(Boolean isActive) {
 			request.setIsActive(isActive);
 			return this;
 		}
-		
+
 		public Builder withSegmentIds(List<String> segmentIds) {
 			request.setSegmentIds(segmentIds);
 			return this;
 		}
-		
+
 		public Builder withQueryFields(List<String> queryFields) {
 			request.setQueryFields(queryFields);
 			return this;
 		}
-		
+
 		public Builder withQueryValue(String queryValue) {
 			request.setQueryValue(queryValue);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetJourneySegmentsRequest build() {
             

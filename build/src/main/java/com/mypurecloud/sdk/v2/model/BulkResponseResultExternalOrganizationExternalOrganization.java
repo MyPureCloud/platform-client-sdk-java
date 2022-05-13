@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorExternalOrganization;
@@ -44,7 +45,7 @@ public class BulkResponseResultExternalOrganizationExternalOrganization  impleme
     this.id = id;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultExternalOrganizationExternalOrganization success(Boolean success) {
@@ -61,7 +62,7 @@ public class BulkResponseResultExternalOrganizationExternalOrganization  impleme
     this.success = success;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultExternalOrganizationExternalOrganization entity(ExternalOrganization entity) {
@@ -78,7 +79,7 @@ public class BulkResponseResultExternalOrganizationExternalOrganization  impleme
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultExternalOrganizationExternalOrganization error(BulkErrorExternalOrganization error) {
@@ -95,7 +96,6 @@ public class BulkResponseResultExternalOrganizationExternalOrganization  impleme
     this.error = error;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class BulkResponseResultExternalOrganizationExternalOrganization  impleme
       return false;
     }
     BulkResponseResultExternalOrganizationExternalOrganization bulkResponseResultExternalOrganizationExternalOrganization = (BulkResponseResultExternalOrganizationExternalOrganization) o;
+
     return Objects.equals(this.id, bulkResponseResultExternalOrganizationExternalOrganization.id) &&
-        Objects.equals(this.success, bulkResponseResultExternalOrganizationExternalOrganization.success) &&
-        Objects.equals(this.entity, bulkResponseResultExternalOrganizationExternalOrganization.entity) &&
-        Objects.equals(this.error, bulkResponseResultExternalOrganizationExternalOrganization.error);
+            Objects.equals(this.success, bulkResponseResultExternalOrganizationExternalOrganization.success) &&
+            Objects.equals(this.entity, bulkResponseResultExternalOrganizationExternalOrganization.entity) &&
+            Objects.equals(this.error, bulkResponseResultExternalOrganizationExternalOrganization.error);
   }
 
   @Override

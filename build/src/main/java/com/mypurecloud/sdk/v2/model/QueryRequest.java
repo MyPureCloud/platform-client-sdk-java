@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AttributeFilterItem;
@@ -51,7 +52,7 @@ public class QueryRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-  
+
   /**
    **/
   public QueryRequest pageNumber(Integer pageNumber) {
@@ -68,7 +69,7 @@ public class QueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public QueryRequest pageSize(Integer pageSize) {
@@ -85,7 +86,7 @@ public class QueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public QueryRequest facetNameRequests(List<String> facetNameRequests) {
@@ -102,7 +103,7 @@ public class QueryRequest  implements Serializable {
     this.facetNameRequests = facetNameRequests;
   }
 
-  
+
   /**
    **/
   public QueryRequest sort(List<SortItem> sort) {
@@ -119,7 +120,7 @@ public class QueryRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    **/
   public QueryRequest filters(List<ContentFilterItem> filters) {
@@ -136,7 +137,7 @@ public class QueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    **/
   public QueryRequest attributeFilters(List<AttributeFilterItem> attributeFilters) {
@@ -153,7 +154,7 @@ public class QueryRequest  implements Serializable {
     this.attributeFilters = attributeFilters;
   }
 
-  
+
   /**
    **/
   public QueryRequest includeShares(Boolean includeShares) {
@@ -170,7 +171,6 @@ public class QueryRequest  implements Serializable {
     this.includeShares = includeShares;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,14 +181,15 @@ public class QueryRequest  implements Serializable {
       return false;
     }
     QueryRequest queryRequest = (QueryRequest) o;
+
     return Objects.equals(this.queryPhrase, queryRequest.queryPhrase) &&
-        Objects.equals(this.pageNumber, queryRequest.pageNumber) &&
-        Objects.equals(this.pageSize, queryRequest.pageSize) &&
-        Objects.equals(this.facetNameRequests, queryRequest.facetNameRequests) &&
-        Objects.equals(this.sort, queryRequest.sort) &&
-        Objects.equals(this.filters, queryRequest.filters) &&
-        Objects.equals(this.attributeFilters, queryRequest.attributeFilters) &&
-        Objects.equals(this.includeShares, queryRequest.includeShares);
+            Objects.equals(this.pageNumber, queryRequest.pageNumber) &&
+            Objects.equals(this.pageSize, queryRequest.pageSize) &&
+            Objects.equals(this.facetNameRequests, queryRequest.facetNameRequests) &&
+            Objects.equals(this.sort, queryRequest.sort) &&
+            Objects.equals(this.filters, queryRequest.filters) &&
+            Objects.equals(this.attributeFilters, queryRequest.attributeFilters) &&
+            Objects.equals(this.includeShares, queryRequest.includeShares);
   }
 
   @Override

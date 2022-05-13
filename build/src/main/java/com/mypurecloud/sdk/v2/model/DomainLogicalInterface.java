@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -226,7 +227,7 @@ public class DomainLogicalInterface  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -244,7 +245,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -262,7 +263,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -280,7 +281,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -298,7 +299,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -316,7 +317,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -334,7 +335,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -352,7 +353,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -370,14 +371,14 @@ public class DomainLogicalInterface  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -395,7 +396,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -413,7 +414,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface edgeUri(String edgeUri) {
@@ -430,7 +431,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface edgeAssignedId(String edgeAssignedId) {
@@ -447,7 +448,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.edgeAssignedId = edgeAssignedId;
   }
 
-  
+
   /**
    * Friendly Name
    **/
@@ -465,7 +466,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.friendlyName = friendlyName;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface vlanTagId(Integer vlanTagId) {
@@ -482,7 +483,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.vlanTagId = vlanTagId;
   }
 
-  
+
   /**
    * Hardware Address
    **/
@@ -500,7 +501,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.hardwareAddress = hardwareAddress;
   }
 
-  
+
   /**
    * Physical Adapter Id
    **/
@@ -518,7 +519,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.physicalAdapterId = physicalAdapterId;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface ifStatus(String ifStatus) {
@@ -535,14 +536,14 @@ public class DomainLogicalInterface  implements Serializable {
     this.ifStatus = ifStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of this network interface.")
   @JsonProperty("interfaceType")
   public InterfaceTypeEnum getInterfaceType() {
     return interfaceType;
   }
 
-  
+
   /**
    * IPv4 NENT IP Address
    **/
@@ -560,7 +561,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.publicNatAddressIpV4 = publicNatAddressIpV4;
   }
 
-  
+
   /**
    * IPv6 NENT IP Address
    **/
@@ -578,7 +579,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.publicNatAddressIpV6 = publicNatAddressIpV6;
   }
 
-  
+
   /**
    * The list of routes assigned to this interface.
    **/
@@ -596,7 +597,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.routes = routes;
   }
 
-  
+
   /**
    * The list of IP addresses on this interface.  Priority of dns addresses are based on order in the list.
    **/
@@ -614,7 +615,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    * IPv4 interface settings.
    **/
@@ -632,7 +633,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.ipv4Capabilities = ipv4Capabilities;
   }
 
-  
+
   /**
    * IPv6 interface settings.
    **/
@@ -650,7 +651,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.ipv6Capabilities = ipv6Capabilities;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface currentState(CurrentStateEnum currentState) {
@@ -667,7 +668,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.currentState = currentState;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface lastModifiedUserId(String lastModifiedUserId) {
@@ -684,7 +685,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.lastModifiedUserId = lastModifiedUserId;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface lastModifiedCorrelationId(String lastModifiedCorrelationId) {
@@ -701,7 +702,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.lastModifiedCorrelationId = lastModifiedCorrelationId;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface commandResponses(List<DomainNetworkCommandResponse> commandResponses) {
@@ -718,7 +719,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.commandResponses = commandResponses;
   }
 
-  
+
   /**
    * The IPv4 phone trunk base assignment will be inherited from the Edge Group.
    **/
@@ -736,7 +737,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.inheritPhoneTrunkBasesIPv4 = inheritPhoneTrunkBasesIPv4;
   }
 
-  
+
   /**
    * The IPv6 phone trunk base assignment will be inherited from the Edge Group.
    **/
@@ -754,7 +755,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.inheritPhoneTrunkBasesIPv6 = inheritPhoneTrunkBasesIPv6;
   }
 
-  
+
   /**
    * This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group.
    **/
@@ -772,7 +773,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.useForInternalEdgeCommunication = useForInternalEdgeCommunication;
   }
 
-  
+
   /**
    * Site Interconnects using the \"Indirect\" method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.
    **/
@@ -790,7 +791,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.useForIndirectEdgeCommunication = useForIndirectEdgeCommunication;
   }
 
-  
+
   /**
    * Site Interconnects using the \"Cloud Proxy\" method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.
    **/
@@ -808,14 +809,14 @@ public class DomainLogicalInterface  implements Serializable {
     this.useForCloudProxyEdgeCommunication = useForCloudProxyEdgeCommunication;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "This interface will be used for all communication with the internet.")
   @JsonProperty("useForWanInterface")
   public Boolean getUseForWanInterface() {
     return useForWanInterface;
   }
 
-  
+
   /**
    * External trunk base settings to use for external communication from this interface.
    **/
@@ -833,7 +834,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.externalTrunkBaseAssignments = externalTrunkBaseAssignments;
   }
 
-  
+
   /**
    * Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \"inheritPhoneTrunkBases\" is true.
    **/
@@ -851,7 +852,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.phoneTrunkBaseAssignments = phoneTrunkBaseAssignments;
   }
 
-  
+
   /**
    **/
   public DomainLogicalInterface traceEnabled(Boolean traceEnabled) {
@@ -868,7 +869,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.traceEnabled = traceEnabled;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -886,7 +887,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -904,14 +905,13 @@ public class DomainLogicalInterface  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -922,48 +922,49 @@ public class DomainLogicalInterface  implements Serializable {
       return false;
     }
     DomainLogicalInterface domainLogicalInterface = (DomainLogicalInterface) o;
+
     return Objects.equals(this.id, domainLogicalInterface.id) &&
-        Objects.equals(this.name, domainLogicalInterface.name) &&
-        Objects.equals(this.division, domainLogicalInterface.division) &&
-        Objects.equals(this.description, domainLogicalInterface.description) &&
-        Objects.equals(this.version, domainLogicalInterface.version) &&
-        Objects.equals(this.dateCreated, domainLogicalInterface.dateCreated) &&
-        Objects.equals(this.dateModified, domainLogicalInterface.dateModified) &&
-        Objects.equals(this.modifiedBy, domainLogicalInterface.modifiedBy) &&
-        Objects.equals(this.createdBy, domainLogicalInterface.createdBy) &&
-        Objects.equals(this.state, domainLogicalInterface.state) &&
-        Objects.equals(this.modifiedByApp, domainLogicalInterface.modifiedByApp) &&
-        Objects.equals(this.createdByApp, domainLogicalInterface.createdByApp) &&
-        Objects.equals(this.edgeUri, domainLogicalInterface.edgeUri) &&
-        Objects.equals(this.edgeAssignedId, domainLogicalInterface.edgeAssignedId) &&
-        Objects.equals(this.friendlyName, domainLogicalInterface.friendlyName) &&
-        Objects.equals(this.vlanTagId, domainLogicalInterface.vlanTagId) &&
-        Objects.equals(this.hardwareAddress, domainLogicalInterface.hardwareAddress) &&
-        Objects.equals(this.physicalAdapterId, domainLogicalInterface.physicalAdapterId) &&
-        Objects.equals(this.ifStatus, domainLogicalInterface.ifStatus) &&
-        Objects.equals(this.interfaceType, domainLogicalInterface.interfaceType) &&
-        Objects.equals(this.publicNatAddressIpV4, domainLogicalInterface.publicNatAddressIpV4) &&
-        Objects.equals(this.publicNatAddressIpV6, domainLogicalInterface.publicNatAddressIpV6) &&
-        Objects.equals(this.routes, domainLogicalInterface.routes) &&
-        Objects.equals(this.addresses, domainLogicalInterface.addresses) &&
-        Objects.equals(this.ipv4Capabilities, domainLogicalInterface.ipv4Capabilities) &&
-        Objects.equals(this.ipv6Capabilities, domainLogicalInterface.ipv6Capabilities) &&
-        Objects.equals(this.currentState, domainLogicalInterface.currentState) &&
-        Objects.equals(this.lastModifiedUserId, domainLogicalInterface.lastModifiedUserId) &&
-        Objects.equals(this.lastModifiedCorrelationId, domainLogicalInterface.lastModifiedCorrelationId) &&
-        Objects.equals(this.commandResponses, domainLogicalInterface.commandResponses) &&
-        Objects.equals(this.inheritPhoneTrunkBasesIPv4, domainLogicalInterface.inheritPhoneTrunkBasesIPv4) &&
-        Objects.equals(this.inheritPhoneTrunkBasesIPv6, domainLogicalInterface.inheritPhoneTrunkBasesIPv6) &&
-        Objects.equals(this.useForInternalEdgeCommunication, domainLogicalInterface.useForInternalEdgeCommunication) &&
-        Objects.equals(this.useForIndirectEdgeCommunication, domainLogicalInterface.useForIndirectEdgeCommunication) &&
-        Objects.equals(this.useForCloudProxyEdgeCommunication, domainLogicalInterface.useForCloudProxyEdgeCommunication) &&
-        Objects.equals(this.useForWanInterface, domainLogicalInterface.useForWanInterface) &&
-        Objects.equals(this.externalTrunkBaseAssignments, domainLogicalInterface.externalTrunkBaseAssignments) &&
-        Objects.equals(this.phoneTrunkBaseAssignments, domainLogicalInterface.phoneTrunkBaseAssignments) &&
-        Objects.equals(this.traceEnabled, domainLogicalInterface.traceEnabled) &&
-        Objects.equals(this.startDate, domainLogicalInterface.startDate) &&
-        Objects.equals(this.endDate, domainLogicalInterface.endDate) &&
-        Objects.equals(this.selfUri, domainLogicalInterface.selfUri);
+            Objects.equals(this.name, domainLogicalInterface.name) &&
+            Objects.equals(this.division, domainLogicalInterface.division) &&
+            Objects.equals(this.description, domainLogicalInterface.description) &&
+            Objects.equals(this.version, domainLogicalInterface.version) &&
+            Objects.equals(this.dateCreated, domainLogicalInterface.dateCreated) &&
+            Objects.equals(this.dateModified, domainLogicalInterface.dateModified) &&
+            Objects.equals(this.modifiedBy, domainLogicalInterface.modifiedBy) &&
+            Objects.equals(this.createdBy, domainLogicalInterface.createdBy) &&
+            Objects.equals(this.state, domainLogicalInterface.state) &&
+            Objects.equals(this.modifiedByApp, domainLogicalInterface.modifiedByApp) &&
+            Objects.equals(this.createdByApp, domainLogicalInterface.createdByApp) &&
+            Objects.equals(this.edgeUri, domainLogicalInterface.edgeUri) &&
+            Objects.equals(this.edgeAssignedId, domainLogicalInterface.edgeAssignedId) &&
+            Objects.equals(this.friendlyName, domainLogicalInterface.friendlyName) &&
+            Objects.equals(this.vlanTagId, domainLogicalInterface.vlanTagId) &&
+            Objects.equals(this.hardwareAddress, domainLogicalInterface.hardwareAddress) &&
+            Objects.equals(this.physicalAdapterId, domainLogicalInterface.physicalAdapterId) &&
+            Objects.equals(this.ifStatus, domainLogicalInterface.ifStatus) &&
+            Objects.equals(this.interfaceType, domainLogicalInterface.interfaceType) &&
+            Objects.equals(this.publicNatAddressIpV4, domainLogicalInterface.publicNatAddressIpV4) &&
+            Objects.equals(this.publicNatAddressIpV6, domainLogicalInterface.publicNatAddressIpV6) &&
+            Objects.equals(this.routes, domainLogicalInterface.routes) &&
+            Objects.equals(this.addresses, domainLogicalInterface.addresses) &&
+            Objects.equals(this.ipv4Capabilities, domainLogicalInterface.ipv4Capabilities) &&
+            Objects.equals(this.ipv6Capabilities, domainLogicalInterface.ipv6Capabilities) &&
+            Objects.equals(this.currentState, domainLogicalInterface.currentState) &&
+            Objects.equals(this.lastModifiedUserId, domainLogicalInterface.lastModifiedUserId) &&
+            Objects.equals(this.lastModifiedCorrelationId, domainLogicalInterface.lastModifiedCorrelationId) &&
+            Objects.equals(this.commandResponses, domainLogicalInterface.commandResponses) &&
+            Objects.equals(this.inheritPhoneTrunkBasesIPv4, domainLogicalInterface.inheritPhoneTrunkBasesIPv4) &&
+            Objects.equals(this.inheritPhoneTrunkBasesIPv6, domainLogicalInterface.inheritPhoneTrunkBasesIPv6) &&
+            Objects.equals(this.useForInternalEdgeCommunication, domainLogicalInterface.useForInternalEdgeCommunication) &&
+            Objects.equals(this.useForIndirectEdgeCommunication, domainLogicalInterface.useForIndirectEdgeCommunication) &&
+            Objects.equals(this.useForCloudProxyEdgeCommunication, domainLogicalInterface.useForCloudProxyEdgeCommunication) &&
+            Objects.equals(this.useForWanInterface, domainLogicalInterface.useForWanInterface) &&
+            Objects.equals(this.externalTrunkBaseAssignments, domainLogicalInterface.externalTrunkBaseAssignments) &&
+            Objects.equals(this.phoneTrunkBaseAssignments, domainLogicalInterface.phoneTrunkBaseAssignments) &&
+            Objects.equals(this.traceEnabled, domainLogicalInterface.traceEnabled) &&
+            Objects.equals(this.startDate, domainLogicalInterface.startDate) &&
+            Objects.equals(this.endDate, domainLogicalInterface.endDate) &&
+            Objects.equals(this.selfUri, domainLogicalInterface.selfUri);
   }
 
   @Override

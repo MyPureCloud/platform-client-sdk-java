@@ -13,8 +13,8 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
@@ -30,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class FlowsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -42,7 +41,6 @@ public class FlowsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Query for flow aggregates
    * 
@@ -118,7 +116,6 @@ public class FlowsApiAsync {
     }
   }
 
-  
   /**
    * Query for flow observations
    * 
@@ -194,7 +191,6 @@ public class FlowsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

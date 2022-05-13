@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionScore;
@@ -56,7 +57,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.questionGroupId = questionGroupId;
   }
 
-  
+
   /**
    * Score of all questions in the group
    **/
@@ -74,7 +75,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.totalScore = totalScore;
   }
 
-  
+
   /**
    * Maximum possible score of all questions in the group
    **/
@@ -92,7 +93,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.maxTotalScore = maxTotalScore;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroupScore markedNA(Boolean markedNA) {
@@ -109,7 +110,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-  
+
   /**
    * Score of only the critical questions in the group
    **/
@@ -127,7 +128,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.totalCriticalScore = totalCriticalScore;
   }
 
-  
+
   /**
    * Maximum possible score of only the critical questions in the group
    **/
@@ -145,7 +146,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.maxTotalCriticalScore = maxTotalCriticalScore;
   }
 
-  
+
   /**
    * Score of only the non critical questions in the group
    **/
@@ -163,7 +164,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.totalNonCriticalScore = totalNonCriticalScore;
   }
 
-  
+
   /**
    * Maximum possible score of only the non critical questions in the group
    **/
@@ -181,7 +182,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.maxTotalNonCriticalScore = maxTotalNonCriticalScore;
   }
 
-  
+
   /**
    * Unweighted score of all questions in the group
    **/
@@ -199,7 +200,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.totalScoreUnweighted = totalScoreUnweighted;
   }
 
-  
+
   /**
    * Maximum possible unweighted score of all questions in the group
    **/
@@ -217,7 +218,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.maxTotalScoreUnweighted = maxTotalScoreUnweighted;
   }
 
-  
+
   /**
    * Unweighted score of only the critical questions in the group
    **/
@@ -235,7 +236,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.totalCriticalScoreUnweighted = totalCriticalScoreUnweighted;
   }
 
-  
+
   /**
    * Maximum possible unweighted score of only the critical questions in the group
    **/
@@ -253,7 +254,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.maxTotalCriticalScoreUnweighted = maxTotalCriticalScoreUnweighted;
   }
 
-  
+
   /**
    * Unweighted score of only the non critical questions in the group
    **/
@@ -271,7 +272,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.totalNonCriticalScoreUnweighted = totalNonCriticalScoreUnweighted;
   }
 
-  
+
   /**
    * Maximum possible unweighted score of only the non critical questions in the group
    **/
@@ -289,7 +290,7 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.maxTotalNonCriticalScoreUnweighted = maxTotalNonCriticalScoreUnweighted;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroupScore questionScores(List<EvaluationQuestionScore> questionScores) {
@@ -306,7 +307,6 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     this.questionScores = questionScores;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -317,21 +317,22 @@ public class EvaluationQuestionGroupScore  implements Serializable {
       return false;
     }
     EvaluationQuestionGroupScore evaluationQuestionGroupScore = (EvaluationQuestionGroupScore) o;
+
     return Objects.equals(this.questionGroupId, evaluationQuestionGroupScore.questionGroupId) &&
-        Objects.equals(this.totalScore, evaluationQuestionGroupScore.totalScore) &&
-        Objects.equals(this.maxTotalScore, evaluationQuestionGroupScore.maxTotalScore) &&
-        Objects.equals(this.markedNA, evaluationQuestionGroupScore.markedNA) &&
-        Objects.equals(this.totalCriticalScore, evaluationQuestionGroupScore.totalCriticalScore) &&
-        Objects.equals(this.maxTotalCriticalScore, evaluationQuestionGroupScore.maxTotalCriticalScore) &&
-        Objects.equals(this.totalNonCriticalScore, evaluationQuestionGroupScore.totalNonCriticalScore) &&
-        Objects.equals(this.maxTotalNonCriticalScore, evaluationQuestionGroupScore.maxTotalNonCriticalScore) &&
-        Objects.equals(this.totalScoreUnweighted, evaluationQuestionGroupScore.totalScoreUnweighted) &&
-        Objects.equals(this.maxTotalScoreUnweighted, evaluationQuestionGroupScore.maxTotalScoreUnweighted) &&
-        Objects.equals(this.totalCriticalScoreUnweighted, evaluationQuestionGroupScore.totalCriticalScoreUnweighted) &&
-        Objects.equals(this.maxTotalCriticalScoreUnweighted, evaluationQuestionGroupScore.maxTotalCriticalScoreUnweighted) &&
-        Objects.equals(this.totalNonCriticalScoreUnweighted, evaluationQuestionGroupScore.totalNonCriticalScoreUnweighted) &&
-        Objects.equals(this.maxTotalNonCriticalScoreUnweighted, evaluationQuestionGroupScore.maxTotalNonCriticalScoreUnweighted) &&
-        Objects.equals(this.questionScores, evaluationQuestionGroupScore.questionScores);
+            Objects.equals(this.totalScore, evaluationQuestionGroupScore.totalScore) &&
+            Objects.equals(this.maxTotalScore, evaluationQuestionGroupScore.maxTotalScore) &&
+            Objects.equals(this.markedNA, evaluationQuestionGroupScore.markedNA) &&
+            Objects.equals(this.totalCriticalScore, evaluationQuestionGroupScore.totalCriticalScore) &&
+            Objects.equals(this.maxTotalCriticalScore, evaluationQuestionGroupScore.maxTotalCriticalScore) &&
+            Objects.equals(this.totalNonCriticalScore, evaluationQuestionGroupScore.totalNonCriticalScore) &&
+            Objects.equals(this.maxTotalNonCriticalScore, evaluationQuestionGroupScore.maxTotalNonCriticalScore) &&
+            Objects.equals(this.totalScoreUnweighted, evaluationQuestionGroupScore.totalScoreUnweighted) &&
+            Objects.equals(this.maxTotalScoreUnweighted, evaluationQuestionGroupScore.maxTotalScoreUnweighted) &&
+            Objects.equals(this.totalCriticalScoreUnweighted, evaluationQuestionGroupScore.totalCriticalScoreUnweighted) &&
+            Objects.equals(this.maxTotalCriticalScoreUnweighted, evaluationQuestionGroupScore.maxTotalCriticalScoreUnweighted) &&
+            Objects.equals(this.totalNonCriticalScoreUnweighted, evaluationQuestionGroupScore.totalNonCriticalScoreUnweighted) &&
+            Objects.equals(this.maxTotalNonCriticalScoreUnweighted, evaluationQuestionGroupScore.maxTotalNonCriticalScoreUnweighted) &&
+            Objects.equals(this.questionScores, evaluationQuestionGroupScore.questionScores);
   }
 
   @Override

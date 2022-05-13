@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class AfterCallWork  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -112,7 +113,7 @@ public class AfterCallWork  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public AfterCallWork state(StateEnum state) {
@@ -129,7 +130,6 @@ public class AfterCallWork  implements Serializable {
     this.state = state;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class AfterCallWork  implements Serializable {
       return false;
     }
     AfterCallWork afterCallWork = (AfterCallWork) o;
+
     return Objects.equals(this.startTime, afterCallWork.startTime) &&
-        Objects.equals(this.endTime, afterCallWork.endTime) &&
-        Objects.equals(this.state, afterCallWork.state);
+            Objects.equals(this.endTime, afterCallWork.endTime) &&
+            Objects.equals(this.state, afterCallWork.state);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class AsyncForecastOperationResult  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The ID for the operation
    **/
@@ -112,7 +113,7 @@ public class AsyncForecastOperationResult  implements Serializable {
     this.operationId = operationId;
   }
 
-  
+
   /**
    * The result of the operation.  Null unless status == Complete
    **/
@@ -130,7 +131,7 @@ public class AsyncForecastOperationResult  implements Serializable {
     this.result = result;
   }
 
-  
+
   /**
    * Percent progress for the operation
    **/
@@ -148,7 +149,6 @@ public class AsyncForecastOperationResult  implements Serializable {
     this.progress = progress;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -159,10 +159,11 @@ public class AsyncForecastOperationResult  implements Serializable {
       return false;
     }
     AsyncForecastOperationResult asyncForecastOperationResult = (AsyncForecastOperationResult) o;
+
     return Objects.equals(this.status, asyncForecastOperationResult.status) &&
-        Objects.equals(this.operationId, asyncForecastOperationResult.operationId) &&
-        Objects.equals(this.result, asyncForecastOperationResult.result) &&
-        Objects.equals(this.progress, asyncForecastOperationResult.progress);
+            Objects.equals(this.operationId, asyncForecastOperationResult.operationId) &&
+            Objects.equals(this.result, asyncForecastOperationResult.result) &&
+            Objects.equals(this.progress, asyncForecastOperationResult.progress);
   }
 
   @Override

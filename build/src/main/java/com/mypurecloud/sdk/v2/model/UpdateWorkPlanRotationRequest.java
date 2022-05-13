@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
@@ -51,7 +52,7 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Whether the work plan rotation is enabled for scheduling
    **/
@@ -69,7 +70,7 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The date range to which this work plan rotation applies
    **/
@@ -87,7 +88,7 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     this.dateRange = dateRange;
   }
 
-  
+
   /**
    * Agents in this work plan rotation
    **/
@@ -105,7 +106,7 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     this.agents = agents;
   }
 
-  
+
   /**
    * Pattern with list of work plan IDs that rotate on a weekly basis
    **/
@@ -123,7 +124,7 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     this.pattern = pattern;
   }
 
-  
+
   /**
    * Version metadata for this work plan rotation
    **/
@@ -141,7 +142,6 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +152,13 @@ public class UpdateWorkPlanRotationRequest  implements Serializable {
       return false;
     }
     UpdateWorkPlanRotationRequest updateWorkPlanRotationRequest = (UpdateWorkPlanRotationRequest) o;
+
     return Objects.equals(this.name, updateWorkPlanRotationRequest.name) &&
-        Objects.equals(this.enabled, updateWorkPlanRotationRequest.enabled) &&
-        Objects.equals(this.dateRange, updateWorkPlanRotationRequest.dateRange) &&
-        Objects.equals(this.agents, updateWorkPlanRotationRequest.agents) &&
-        Objects.equals(this.pattern, updateWorkPlanRotationRequest.pattern) &&
-        Objects.equals(this.metadata, updateWorkPlanRotationRequest.metadata);
+            Objects.equals(this.enabled, updateWorkPlanRotationRequest.enabled) &&
+            Objects.equals(this.dateRange, updateWorkPlanRotationRequest.dateRange) &&
+            Objects.equals(this.agents, updateWorkPlanRotationRequest.agents) &&
+            Objects.equals(this.pattern, updateWorkPlanRotationRequest.pattern) &&
+            Objects.equals(this.metadata, updateWorkPlanRotationRequest.metadata);
   }
 
   @Override

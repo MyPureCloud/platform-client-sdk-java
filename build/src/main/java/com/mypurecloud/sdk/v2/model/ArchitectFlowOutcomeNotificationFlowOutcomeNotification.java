@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationArchitectOperation;
@@ -44,7 +45,7 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
     this.id = id;
   }
 
-  
+
   /**
    * The flow outcome name
    **/
@@ -62,7 +63,7 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
     this.name = name;
   }
 
-  
+
   /**
    * The flow outcome description
    **/
@@ -80,7 +81,7 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
     this.description = description;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowOutcomeNotificationFlowOutcomeNotification currentOperation(ArchitectFlowOutcomeNotificationArchitectOperation currentOperation) {
@@ -97,7 +98,6 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
     this.currentOperation = currentOperation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
       return false;
     }
     ArchitectFlowOutcomeNotificationFlowOutcomeNotification architectFlowOutcomeNotificationFlowOutcomeNotification = (ArchitectFlowOutcomeNotificationFlowOutcomeNotification) o;
+
     return Objects.equals(this.id, architectFlowOutcomeNotificationFlowOutcomeNotification.id) &&
-        Objects.equals(this.name, architectFlowOutcomeNotificationFlowOutcomeNotification.name) &&
-        Objects.equals(this.description, architectFlowOutcomeNotificationFlowOutcomeNotification.description) &&
-        Objects.equals(this.currentOperation, architectFlowOutcomeNotificationFlowOutcomeNotification.currentOperation);
+            Objects.equals(this.name, architectFlowOutcomeNotificationFlowOutcomeNotification.name) &&
+            Objects.equals(this.description, architectFlowOutcomeNotificationFlowOutcomeNotification.description) &&
+            Objects.equals(this.currentOperation, architectFlowOutcomeNotificationFlowOutcomeNotification.currentOperation);
   }
 
   @Override

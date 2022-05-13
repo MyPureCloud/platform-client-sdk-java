@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -135,7 +136,7 @@ public class ExternalContact  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The first name of the contact.
    **/
@@ -153,7 +154,7 @@ public class ExternalContact  implements Serializable {
     this.firstName = firstName;
   }
 
-  
+
   /**
    **/
   public ExternalContact middleName(String middleName) {
@@ -170,7 +171,7 @@ public class ExternalContact  implements Serializable {
     this.middleName = middleName;
   }
 
-  
+
   /**
    * The last name of the contact.
    **/
@@ -188,7 +189,7 @@ public class ExternalContact  implements Serializable {
     this.lastName = lastName;
   }
 
-  
+
   /**
    **/
   public ExternalContact salutation(String salutation) {
@@ -205,7 +206,7 @@ public class ExternalContact  implements Serializable {
     this.salutation = salutation;
   }
 
-  
+
   /**
    **/
   public ExternalContact title(String title) {
@@ -222,7 +223,7 @@ public class ExternalContact  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    **/
   public ExternalContact workPhone(PhoneNumber workPhone) {
@@ -239,7 +240,7 @@ public class ExternalContact  implements Serializable {
     this.workPhone = workPhone;
   }
 
-  
+
   /**
    **/
   public ExternalContact cellPhone(PhoneNumber cellPhone) {
@@ -256,7 +257,7 @@ public class ExternalContact  implements Serializable {
     this.cellPhone = cellPhone;
   }
 
-  
+
   /**
    **/
   public ExternalContact homePhone(PhoneNumber homePhone) {
@@ -273,7 +274,7 @@ public class ExternalContact  implements Serializable {
     this.homePhone = homePhone;
   }
 
-  
+
   /**
    **/
   public ExternalContact otherPhone(PhoneNumber otherPhone) {
@@ -290,7 +291,7 @@ public class ExternalContact  implements Serializable {
     this.otherPhone = otherPhone;
   }
 
-  
+
   /**
    **/
   public ExternalContact workEmail(String workEmail) {
@@ -307,7 +308,7 @@ public class ExternalContact  implements Serializable {
     this.workEmail = workEmail;
   }
 
-  
+
   /**
    **/
   public ExternalContact personalEmail(String personalEmail) {
@@ -324,7 +325,7 @@ public class ExternalContact  implements Serializable {
     this.personalEmail = personalEmail;
   }
 
-  
+
   /**
    **/
   public ExternalContact otherEmail(String otherEmail) {
@@ -341,7 +342,7 @@ public class ExternalContact  implements Serializable {
     this.otherEmail = otherEmail;
   }
 
-  
+
   /**
    **/
   public ExternalContact address(ContactAddress address) {
@@ -358,7 +359,7 @@ public class ExternalContact  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ExternalContact twitterId(TwitterId twitterId) {
@@ -375,7 +376,7 @@ public class ExternalContact  implements Serializable {
     this.twitterId = twitterId;
   }
 
-  
+
   /**
    **/
   public ExternalContact lineId(LineId lineId) {
@@ -392,7 +393,7 @@ public class ExternalContact  implements Serializable {
     this.lineId = lineId;
   }
 
-  
+
   /**
    **/
   public ExternalContact whatsAppId(WhatsAppId whatsAppId) {
@@ -409,7 +410,7 @@ public class ExternalContact  implements Serializable {
     this.whatsAppId = whatsAppId;
   }
 
-  
+
   /**
    **/
   public ExternalContact facebookId(FacebookId facebookId) {
@@ -426,7 +427,7 @@ public class ExternalContact  implements Serializable {
     this.facebookId = facebookId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -444,7 +445,7 @@ public class ExternalContact  implements Serializable {
     this.modifyDate = modifyDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -462,7 +463,7 @@ public class ExternalContact  implements Serializable {
     this.createDate = createDate;
   }
 
-  
+
   /**
    **/
   public ExternalContact externalOrganization(ExternalOrganization externalOrganization) {
@@ -479,7 +480,7 @@ public class ExternalContact  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ExternalContact surveyOptOut(Boolean surveyOptOut) {
@@ -496,7 +497,7 @@ public class ExternalContact  implements Serializable {
     this.surveyOptOut = surveyOptOut;
   }
 
-  
+
   /**
    * A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
    **/
@@ -514,7 +515,7 @@ public class ExternalContact  implements Serializable {
     this.externalSystemUrl = externalSystemUrl;
   }
 
-  
+
   /**
    * The schema defining custom fields for this contact
    **/
@@ -532,7 +533,7 @@ public class ExternalContact  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    * Custom fields defined in the schema referenced by schemaId and schemaVersion.
    **/
@@ -550,49 +551,48 @@ public class ExternalContact  implements Serializable {
     this.customFields = customFields;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.")
   @JsonProperty("externalDataSources")
   public List<ExternalDataSource> getExternalDataSources() {
     return externalDataSources;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of contact")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The contact at the head of the merge tree. If null, this contact is not a part of any merge.")
   @JsonProperty("canonicalContact")
   public ContactAddressableEntityRef getCanonicalContact() {
     return canonicalContact;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.")
   @JsonProperty("mergeSet")
   public List<ContactAddressableEntityRef> getMergeSet() {
     return mergeSet;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information about the merge history of this contact. If null, this contact is not a part of any merge.")
   @JsonProperty("mergeOperation")
   public MergeOperation getMergeOperation() {
     return mergeOperation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -603,37 +603,38 @@ public class ExternalContact  implements Serializable {
       return false;
     }
     ExternalContact externalContact = (ExternalContact) o;
+
     return Objects.equals(this.id, externalContact.id) &&
-        Objects.equals(this.firstName, externalContact.firstName) &&
-        Objects.equals(this.middleName, externalContact.middleName) &&
-        Objects.equals(this.lastName, externalContact.lastName) &&
-        Objects.equals(this.salutation, externalContact.salutation) &&
-        Objects.equals(this.title, externalContact.title) &&
-        Objects.equals(this.workPhone, externalContact.workPhone) &&
-        Objects.equals(this.cellPhone, externalContact.cellPhone) &&
-        Objects.equals(this.homePhone, externalContact.homePhone) &&
-        Objects.equals(this.otherPhone, externalContact.otherPhone) &&
-        Objects.equals(this.workEmail, externalContact.workEmail) &&
-        Objects.equals(this.personalEmail, externalContact.personalEmail) &&
-        Objects.equals(this.otherEmail, externalContact.otherEmail) &&
-        Objects.equals(this.address, externalContact.address) &&
-        Objects.equals(this.twitterId, externalContact.twitterId) &&
-        Objects.equals(this.lineId, externalContact.lineId) &&
-        Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
-        Objects.equals(this.facebookId, externalContact.facebookId) &&
-        Objects.equals(this.modifyDate, externalContact.modifyDate) &&
-        Objects.equals(this.createDate, externalContact.createDate) &&
-        Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
-        Objects.equals(this.surveyOptOut, externalContact.surveyOptOut) &&
-        Objects.equals(this.externalSystemUrl, externalContact.externalSystemUrl) &&
-        Objects.equals(this.schema, externalContact.schema) &&
-        Objects.equals(this.customFields, externalContact.customFields) &&
-        Objects.equals(this.externalDataSources, externalContact.externalDataSources) &&
-        Objects.equals(this.type, externalContact.type) &&
-        Objects.equals(this.canonicalContact, externalContact.canonicalContact) &&
-        Objects.equals(this.mergeSet, externalContact.mergeSet) &&
-        Objects.equals(this.mergeOperation, externalContact.mergeOperation) &&
-        Objects.equals(this.selfUri, externalContact.selfUri);
+            Objects.equals(this.firstName, externalContact.firstName) &&
+            Objects.equals(this.middleName, externalContact.middleName) &&
+            Objects.equals(this.lastName, externalContact.lastName) &&
+            Objects.equals(this.salutation, externalContact.salutation) &&
+            Objects.equals(this.title, externalContact.title) &&
+            Objects.equals(this.workPhone, externalContact.workPhone) &&
+            Objects.equals(this.cellPhone, externalContact.cellPhone) &&
+            Objects.equals(this.homePhone, externalContact.homePhone) &&
+            Objects.equals(this.otherPhone, externalContact.otherPhone) &&
+            Objects.equals(this.workEmail, externalContact.workEmail) &&
+            Objects.equals(this.personalEmail, externalContact.personalEmail) &&
+            Objects.equals(this.otherEmail, externalContact.otherEmail) &&
+            Objects.equals(this.address, externalContact.address) &&
+            Objects.equals(this.twitterId, externalContact.twitterId) &&
+            Objects.equals(this.lineId, externalContact.lineId) &&
+            Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
+            Objects.equals(this.facebookId, externalContact.facebookId) &&
+            Objects.equals(this.modifyDate, externalContact.modifyDate) &&
+            Objects.equals(this.createDate, externalContact.createDate) &&
+            Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
+            Objects.equals(this.surveyOptOut, externalContact.surveyOptOut) &&
+            Objects.equals(this.externalSystemUrl, externalContact.externalSystemUrl) &&
+            Objects.equals(this.schema, externalContact.schema) &&
+            Objects.equals(this.customFields, externalContact.customFields) &&
+            Objects.equals(this.externalDataSources, externalContact.externalDataSources) &&
+            Objects.equals(this.type, externalContact.type) &&
+            Objects.equals(this.canonicalContact, externalContact.canonicalContact) &&
+            Objects.equals(this.mergeSet, externalContact.mergeSet) &&
+            Objects.equals(this.mergeOperation, externalContact.mergeOperation) &&
+            Objects.equals(this.selfUri, externalContact.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -117,7 +118,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WorkPlanListItemResponse name(String name) {
@@ -134,7 +135,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Whether the work plan is enabled for scheduling
    **/
@@ -152,14 +153,14 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether the work plan is valid or not")
   @JsonProperty("valid")
   public Boolean getValid() {
     return valid;
   }
 
-  
+
   /**
    * Whether the weekly paid time constraint is enabled for this work plan
    **/
@@ -177,7 +178,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.constrainWeeklyPaidTime = constrainWeeklyPaidTime;
   }
 
-  
+
   /**
    * Whether the weekly paid time constraint is flexible for this work plan
    **/
@@ -195,7 +196,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.flexibleWeeklyPaidTime = flexibleWeeklyPaidTime;
   }
 
-  
+
   /**
    * Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == false
    **/
@@ -213,7 +214,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.weeklyExactPaidMinutes = weeklyExactPaidMinutes;
   }
 
-  
+
   /**
    * Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == true
    **/
@@ -231,7 +232,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.weeklyMinimumPaidMinutes = weeklyMinimumPaidMinutes;
   }
 
-  
+
   /**
    * Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime == true
    **/
@@ -249,7 +250,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.weeklyMaximumPaidMinutes = weeklyMaximumPaidMinutes;
   }
 
-  
+
   /**
    * Whether paid time granularity is constrained for this work plan
    **/
@@ -267,7 +268,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.constrainPaidTimeGranularity = constrainPaidTimeGranularity;
   }
 
-  
+
   /**
    * Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true
    **/
@@ -285,7 +286,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.paidTimeGranularityMinutes = paidTimeGranularityMinutes;
   }
 
-  
+
   /**
    * Whether the minimum time between shifts constraint is enabled for this work plan
    **/
@@ -303,7 +304,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.constrainMinimumTimeBetweenShifts = constrainMinimumTimeBetweenShifts;
   }
 
-  
+
   /**
    * Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts == true
    **/
@@ -321,7 +322,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.minimumTimeBetweenShiftsMinutes = minimumTimeBetweenShiftsMinutes;
   }
 
-  
+
   /**
    * Maximum number days in a week allowed to be scheduled for this work plan
    **/
@@ -339,7 +340,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.maximumDays = maximumDays;
   }
 
-  
+
   /**
    * Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off
    **/
@@ -357,7 +358,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.minimumConsecutiveNonWorkingMinutesPerWeek = minimumConsecutiveNonWorkingMinutesPerWeek;
   }
 
-  
+
   /**
    * Whether to constrain the maximum consecutive working weekends
    **/
@@ -375,7 +376,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.constrainMaximumConsecutiveWorkingWeekends = constrainMaximumConsecutiveWorkingWeekends;
   }
 
-  
+
   /**
    * The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
    **/
@@ -393,7 +394,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.maximumConsecutiveWorkingWeekends = maximumConsecutiveWorkingWeekends;
   }
 
-  
+
   /**
    * The minimum number of days that agents assigned to a work plan must work per week
    **/
@@ -411,7 +412,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.minimumWorkingDaysPerWeek = minimumWorkingDaysPerWeek;
   }
 
-  
+
   /**
    * Whether to constrain the maximum consecutive working days
    **/
@@ -429,7 +430,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.constrainMaximumConsecutiveWorkingDays = constrainMaximumConsecutiveWorkingDays;
   }
 
-  
+
   /**
    * The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays == true
    **/
@@ -447,7 +448,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.maximumConsecutiveWorkingDays = maximumConsecutiveWorkingDays;
   }
 
-  
+
   /**
    * The time period in minutes for the duration between the start times of two consecutive working days
    **/
@@ -465,7 +466,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.minimumShiftStartDistanceMinutes = minimumShiftStartDistanceMinutes;
   }
 
-  
+
   /**
    * Minimum days off in the planning period
    **/
@@ -483,7 +484,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.minimumDaysOffPerPlanningPeriod = minimumDaysOffPerPlanningPeriod;
   }
 
-  
+
   /**
    * Maximum days off in the planning period
    **/
@@ -501,7 +502,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.maximumDaysOffPerPlanningPeriod = maximumDaysOffPerPlanningPeriod;
   }
 
-  
+
   /**
    * Minimum paid minutes in the planning period
    **/
@@ -519,7 +520,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.minimumPaidMinutesPerPlanningPeriod = minimumPaidMinutesPerPlanningPeriod;
   }
 
-  
+
   /**
    * Maximum paid minutes in the planning period
    **/
@@ -537,7 +538,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.maximumPaidMinutesPerPlanningPeriod = maximumPaidMinutesPerPlanningPeriod;
   }
 
-  
+
   /**
    * Optional days to schedule for this work plan. Populate with expand=details
    **/
@@ -555,7 +556,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.optionalDays = optionalDays;
   }
 
-  
+
   /**
    * This constraint ensures that an agent starts each workday within a user-defined time threshold
    **/
@@ -573,7 +574,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.shiftStartVarianceType = shiftStartVarianceType;
   }
 
-  
+
   /**
    * Variance in minutes among start times of shifts in this work plan. Populate with expand=details
    **/
@@ -591,7 +592,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.shiftStartVariances = shiftStartVariances;
   }
 
-  
+
   /**
    * Shifts in this work plan. Populate with expand=details (defaults to empty list)
    **/
@@ -609,7 +610,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * Agents in this work plan. Populate with expand=details (defaults to empty list)
    **/
@@ -627,7 +628,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.agents = agents;
   }
 
-  
+
   /**
    * Number of agents in this work plan.  Populate with expand=agentCount
    **/
@@ -645,7 +646,7 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.agentCount = agentCount;
   }
 
-  
+
   /**
    * Version metadata for this work plan
    **/
@@ -663,14 +664,13 @@ public class WorkPlanListItemResponse  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -681,39 +681,40 @@ public class WorkPlanListItemResponse  implements Serializable {
       return false;
     }
     WorkPlanListItemResponse workPlanListItemResponse = (WorkPlanListItemResponse) o;
+
     return Objects.equals(this.id, workPlanListItemResponse.id) &&
-        Objects.equals(this.name, workPlanListItemResponse.name) &&
-        Objects.equals(this.enabled, workPlanListItemResponse.enabled) &&
-        Objects.equals(this.valid, workPlanListItemResponse.valid) &&
-        Objects.equals(this.constrainWeeklyPaidTime, workPlanListItemResponse.constrainWeeklyPaidTime) &&
-        Objects.equals(this.flexibleWeeklyPaidTime, workPlanListItemResponse.flexibleWeeklyPaidTime) &&
-        Objects.equals(this.weeklyExactPaidMinutes, workPlanListItemResponse.weeklyExactPaidMinutes) &&
-        Objects.equals(this.weeklyMinimumPaidMinutes, workPlanListItemResponse.weeklyMinimumPaidMinutes) &&
-        Objects.equals(this.weeklyMaximumPaidMinutes, workPlanListItemResponse.weeklyMaximumPaidMinutes) &&
-        Objects.equals(this.constrainPaidTimeGranularity, workPlanListItemResponse.constrainPaidTimeGranularity) &&
-        Objects.equals(this.paidTimeGranularityMinutes, workPlanListItemResponse.paidTimeGranularityMinutes) &&
-        Objects.equals(this.constrainMinimumTimeBetweenShifts, workPlanListItemResponse.constrainMinimumTimeBetweenShifts) &&
-        Objects.equals(this.minimumTimeBetweenShiftsMinutes, workPlanListItemResponse.minimumTimeBetweenShiftsMinutes) &&
-        Objects.equals(this.maximumDays, workPlanListItemResponse.maximumDays) &&
-        Objects.equals(this.minimumConsecutiveNonWorkingMinutesPerWeek, workPlanListItemResponse.minimumConsecutiveNonWorkingMinutesPerWeek) &&
-        Objects.equals(this.constrainMaximumConsecutiveWorkingWeekends, workPlanListItemResponse.constrainMaximumConsecutiveWorkingWeekends) &&
-        Objects.equals(this.maximumConsecutiveWorkingWeekends, workPlanListItemResponse.maximumConsecutiveWorkingWeekends) &&
-        Objects.equals(this.minimumWorkingDaysPerWeek, workPlanListItemResponse.minimumWorkingDaysPerWeek) &&
-        Objects.equals(this.constrainMaximumConsecutiveWorkingDays, workPlanListItemResponse.constrainMaximumConsecutiveWorkingDays) &&
-        Objects.equals(this.maximumConsecutiveWorkingDays, workPlanListItemResponse.maximumConsecutiveWorkingDays) &&
-        Objects.equals(this.minimumShiftStartDistanceMinutes, workPlanListItemResponse.minimumShiftStartDistanceMinutes) &&
-        Objects.equals(this.minimumDaysOffPerPlanningPeriod, workPlanListItemResponse.minimumDaysOffPerPlanningPeriod) &&
-        Objects.equals(this.maximumDaysOffPerPlanningPeriod, workPlanListItemResponse.maximumDaysOffPerPlanningPeriod) &&
-        Objects.equals(this.minimumPaidMinutesPerPlanningPeriod, workPlanListItemResponse.minimumPaidMinutesPerPlanningPeriod) &&
-        Objects.equals(this.maximumPaidMinutesPerPlanningPeriod, workPlanListItemResponse.maximumPaidMinutesPerPlanningPeriod) &&
-        Objects.equals(this.optionalDays, workPlanListItemResponse.optionalDays) &&
-        Objects.equals(this.shiftStartVarianceType, workPlanListItemResponse.shiftStartVarianceType) &&
-        Objects.equals(this.shiftStartVariances, workPlanListItemResponse.shiftStartVariances) &&
-        Objects.equals(this.shifts, workPlanListItemResponse.shifts) &&
-        Objects.equals(this.agents, workPlanListItemResponse.agents) &&
-        Objects.equals(this.agentCount, workPlanListItemResponse.agentCount) &&
-        Objects.equals(this.metadata, workPlanListItemResponse.metadata) &&
-        Objects.equals(this.selfUri, workPlanListItemResponse.selfUri);
+            Objects.equals(this.name, workPlanListItemResponse.name) &&
+            Objects.equals(this.enabled, workPlanListItemResponse.enabled) &&
+            Objects.equals(this.valid, workPlanListItemResponse.valid) &&
+            Objects.equals(this.constrainWeeklyPaidTime, workPlanListItemResponse.constrainWeeklyPaidTime) &&
+            Objects.equals(this.flexibleWeeklyPaidTime, workPlanListItemResponse.flexibleWeeklyPaidTime) &&
+            Objects.equals(this.weeklyExactPaidMinutes, workPlanListItemResponse.weeklyExactPaidMinutes) &&
+            Objects.equals(this.weeklyMinimumPaidMinutes, workPlanListItemResponse.weeklyMinimumPaidMinutes) &&
+            Objects.equals(this.weeklyMaximumPaidMinutes, workPlanListItemResponse.weeklyMaximumPaidMinutes) &&
+            Objects.equals(this.constrainPaidTimeGranularity, workPlanListItemResponse.constrainPaidTimeGranularity) &&
+            Objects.equals(this.paidTimeGranularityMinutes, workPlanListItemResponse.paidTimeGranularityMinutes) &&
+            Objects.equals(this.constrainMinimumTimeBetweenShifts, workPlanListItemResponse.constrainMinimumTimeBetweenShifts) &&
+            Objects.equals(this.minimumTimeBetweenShiftsMinutes, workPlanListItemResponse.minimumTimeBetweenShiftsMinutes) &&
+            Objects.equals(this.maximumDays, workPlanListItemResponse.maximumDays) &&
+            Objects.equals(this.minimumConsecutiveNonWorkingMinutesPerWeek, workPlanListItemResponse.minimumConsecutiveNonWorkingMinutesPerWeek) &&
+            Objects.equals(this.constrainMaximumConsecutiveWorkingWeekends, workPlanListItemResponse.constrainMaximumConsecutiveWorkingWeekends) &&
+            Objects.equals(this.maximumConsecutiveWorkingWeekends, workPlanListItemResponse.maximumConsecutiveWorkingWeekends) &&
+            Objects.equals(this.minimumWorkingDaysPerWeek, workPlanListItemResponse.minimumWorkingDaysPerWeek) &&
+            Objects.equals(this.constrainMaximumConsecutiveWorkingDays, workPlanListItemResponse.constrainMaximumConsecutiveWorkingDays) &&
+            Objects.equals(this.maximumConsecutiveWorkingDays, workPlanListItemResponse.maximumConsecutiveWorkingDays) &&
+            Objects.equals(this.minimumShiftStartDistanceMinutes, workPlanListItemResponse.minimumShiftStartDistanceMinutes) &&
+            Objects.equals(this.minimumDaysOffPerPlanningPeriod, workPlanListItemResponse.minimumDaysOffPerPlanningPeriod) &&
+            Objects.equals(this.maximumDaysOffPerPlanningPeriod, workPlanListItemResponse.maximumDaysOffPerPlanningPeriod) &&
+            Objects.equals(this.minimumPaidMinutesPerPlanningPeriod, workPlanListItemResponse.minimumPaidMinutesPerPlanningPeriod) &&
+            Objects.equals(this.maximumPaidMinutesPerPlanningPeriod, workPlanListItemResponse.maximumPaidMinutesPerPlanningPeriod) &&
+            Objects.equals(this.optionalDays, workPlanListItemResponse.optionalDays) &&
+            Objects.equals(this.shiftStartVarianceType, workPlanListItemResponse.shiftStartVarianceType) &&
+            Objects.equals(this.shiftStartVariances, workPlanListItemResponse.shiftStartVariances) &&
+            Objects.equals(this.shifts, workPlanListItemResponse.shifts) &&
+            Objects.equals(this.agents, workPlanListItemResponse.agents) &&
+            Objects.equals(this.agentCount, workPlanListItemResponse.agentCount) &&
+            Objects.equals(this.metadata, workPlanListItemResponse.metadata) &&
+            Objects.equals(this.selfUri, workPlanListItemResponse.selfUri);
   }
 
   @Override

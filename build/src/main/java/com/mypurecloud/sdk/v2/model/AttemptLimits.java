@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class AttemptLimits  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public AttemptLimits name(String name) {
@@ -109,21 +110,21 @@ public class AttemptLimits  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -141,7 +142,7 @@ public class AttemptLimits  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.
    **/
@@ -159,7 +160,7 @@ public class AttemptLimits  implements Serializable {
     this.maxAttemptsPerContact = maxAttemptsPerContact;
   }
 
-  
+
   /**
    * The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.
    **/
@@ -177,7 +178,7 @@ public class AttemptLimits  implements Serializable {
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
   }
 
-  
+
   /**
    * If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
    **/
@@ -195,7 +196,7 @@ public class AttemptLimits  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-  
+
   /**
    * After how long the number of attempts will be set back to 0. Defaults to NEVER.
    **/
@@ -213,7 +214,7 @@ public class AttemptLimits  implements Serializable {
     this.resetPeriod = resetPeriod;
   }
 
-  
+
   /**
    * Configuration for recall attempts.
    **/
@@ -231,14 +232,13 @@ public class AttemptLimits  implements Serializable {
     this.recallEntries = recallEntries;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -249,17 +249,18 @@ public class AttemptLimits  implements Serializable {
       return false;
     }
     AttemptLimits attemptLimits = (AttemptLimits) o;
+
     return Objects.equals(this.id, attemptLimits.id) &&
-        Objects.equals(this.name, attemptLimits.name) &&
-        Objects.equals(this.dateCreated, attemptLimits.dateCreated) &&
-        Objects.equals(this.dateModified, attemptLimits.dateModified) &&
-        Objects.equals(this.version, attemptLimits.version) &&
-        Objects.equals(this.maxAttemptsPerContact, attemptLimits.maxAttemptsPerContact) &&
-        Objects.equals(this.maxAttemptsPerNumber, attemptLimits.maxAttemptsPerNumber) &&
-        Objects.equals(this.timeZoneId, attemptLimits.timeZoneId) &&
-        Objects.equals(this.resetPeriod, attemptLimits.resetPeriod) &&
-        Objects.equals(this.recallEntries, attemptLimits.recallEntries) &&
-        Objects.equals(this.selfUri, attemptLimits.selfUri);
+            Objects.equals(this.name, attemptLimits.name) &&
+            Objects.equals(this.dateCreated, attemptLimits.dateCreated) &&
+            Objects.equals(this.dateModified, attemptLimits.dateModified) &&
+            Objects.equals(this.version, attemptLimits.version) &&
+            Objects.equals(this.maxAttemptsPerContact, attemptLimits.maxAttemptsPerContact) &&
+            Objects.equals(this.maxAttemptsPerNumber, attemptLimits.maxAttemptsPerNumber) &&
+            Objects.equals(this.timeZoneId, attemptLimits.timeZoneId) &&
+            Objects.equals(this.resetPeriod, attemptLimits.resetPeriod) &&
+            Objects.equals(this.recallEntries, attemptLimits.recallEntries) &&
+            Objects.equals(this.selfUri, attemptLimits.selfUri);
   }
 
   @Override

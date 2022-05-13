@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,21 +86,21 @@ public class IntentFeedback  implements Serializable {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The probability of the detected intent.")
   @JsonProperty("probability")
   public Double getProbability() {
     return probability;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The collection of named entities detected.")
   @JsonProperty("entities")
   public List<DetectedNamedEntity> getEntities() {
     return entities;
   }
 
-  
+
   /**
    * The assessment on the detection for feedback text.
    **/
@@ -117,7 +118,6 @@ public class IntentFeedback  implements Serializable {
     this.assessment = assessment;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,10 +128,11 @@ public class IntentFeedback  implements Serializable {
       return false;
     }
     IntentFeedback intentFeedback = (IntentFeedback) o;
+
     return Objects.equals(this.name, intentFeedback.name) &&
-        Objects.equals(this.probability, intentFeedback.probability) &&
-        Objects.equals(this.entities, intentFeedback.entities) &&
-        Objects.equals(this.assessment, intentFeedback.assessment);
+            Objects.equals(this.probability, intentFeedback.probability) &&
+            Objects.equals(this.entities, intentFeedback.entities) &&
+            Objects.equals(this.assessment, intentFeedback.assessment);
   }
 
   @Override

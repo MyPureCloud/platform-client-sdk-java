@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ExtensionPoolEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ExtensionPoolEntityListing  implements Serializable, PagedResource<
       return false;
     }
     ExtensionPoolEntityListing extensionPoolEntityListing = (ExtensionPoolEntityListing) o;
+
     return Objects.equals(this.entities, extensionPoolEntityListing.entities) &&
-        Objects.equals(this.pageSize, extensionPoolEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, extensionPoolEntityListing.pageNumber) &&
-        Objects.equals(this.total, extensionPoolEntityListing.total) &&
-        Objects.equals(this.lastUri, extensionPoolEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, extensionPoolEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, extensionPoolEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, extensionPoolEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, extensionPoolEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, extensionPoolEntityListing.pageCount);
+            Objects.equals(this.pageSize, extensionPoolEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, extensionPoolEntityListing.pageNumber) &&
+            Objects.equals(this.total, extensionPoolEntityListing.total) &&
+            Objects.equals(this.lastUri, extensionPoolEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, extensionPoolEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, extensionPoolEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, extensionPoolEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, extensionPoolEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, extensionPoolEntityListing.pageCount);
   }
 
   @Override

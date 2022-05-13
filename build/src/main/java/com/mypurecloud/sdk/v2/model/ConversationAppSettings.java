@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class ConversationAppSettings  implements Serializable {
     this.showAgentTypingIndicator = showAgentTypingIndicator;
   }
 
-  
+
   /**
    * The toggle to enable or disable typing indicator for messenger
    **/
@@ -113,7 +114,7 @@ public class ConversationAppSettings  implements Serializable {
     this.showUserTypingIndicator = showUserTypingIndicator;
   }
 
-  
+
   /**
    * Deprecated. The auto start type for the messenger conversation
    **/
@@ -131,7 +132,7 @@ public class ConversationAppSettings  implements Serializable {
     this.autoStartType = autoStartType;
   }
 
-  
+
   /**
    * The auto start for the messenger conversation
    **/
@@ -149,7 +150,7 @@ public class ConversationAppSettings  implements Serializable {
     this.autoStart = autoStart;
   }
 
-  
+
   /**
    * The markdown for the messenger app
    **/
@@ -167,7 +168,6 @@ public class ConversationAppSettings  implements Serializable {
     this.markdown = markdown;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,11 +178,12 @@ public class ConversationAppSettings  implements Serializable {
       return false;
     }
     ConversationAppSettings conversationAppSettings = (ConversationAppSettings) o;
+
     return Objects.equals(this.showAgentTypingIndicator, conversationAppSettings.showAgentTypingIndicator) &&
-        Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator) &&
-        Objects.equals(this.autoStartType, conversationAppSettings.autoStartType) &&
-        Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
-        Objects.equals(this.markdown, conversationAppSettings.markdown);
+            Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator) &&
+            Objects.equals(this.autoStartType, conversationAppSettings.autoStartType) &&
+            Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
+            Objects.equals(this.markdown, conversationAppSettings.markdown);
   }
 
   @Override

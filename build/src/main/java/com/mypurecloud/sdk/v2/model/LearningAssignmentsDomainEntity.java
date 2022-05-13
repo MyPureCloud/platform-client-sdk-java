@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity total(Long total) {
@@ -103,7 +104,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.total = total;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentsDomainEntity pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class LearningAssignmentsDomainEntity  implements Serializable, PagedReso
       return false;
     }
     LearningAssignmentsDomainEntity learningAssignmentsDomainEntity = (LearningAssignmentsDomainEntity) o;
+
     return Objects.equals(this.entities, learningAssignmentsDomainEntity.entities) &&
-        Objects.equals(this.pageSize, learningAssignmentsDomainEntity.pageSize) &&
-        Objects.equals(this.pageNumber, learningAssignmentsDomainEntity.pageNumber) &&
-        Objects.equals(this.total, learningAssignmentsDomainEntity.total) &&
-        Objects.equals(this.lastUri, learningAssignmentsDomainEntity.lastUri) &&
-        Objects.equals(this.firstUri, learningAssignmentsDomainEntity.firstUri) &&
-        Objects.equals(this.selfUri, learningAssignmentsDomainEntity.selfUri) &&
-        Objects.equals(this.previousUri, learningAssignmentsDomainEntity.previousUri) &&
-        Objects.equals(this.nextUri, learningAssignmentsDomainEntity.nextUri) &&
-        Objects.equals(this.pageCount, learningAssignmentsDomainEntity.pageCount);
+            Objects.equals(this.pageSize, learningAssignmentsDomainEntity.pageSize) &&
+            Objects.equals(this.pageNumber, learningAssignmentsDomainEntity.pageNumber) &&
+            Objects.equals(this.total, learningAssignmentsDomainEntity.total) &&
+            Objects.equals(this.lastUri, learningAssignmentsDomainEntity.lastUri) &&
+            Objects.equals(this.firstUri, learningAssignmentsDomainEntity.firstUri) &&
+            Objects.equals(this.selfUri, learningAssignmentsDomainEntity.selfUri) &&
+            Objects.equals(this.previousUri, learningAssignmentsDomainEntity.previousUri) &&
+            Objects.equals(this.nextUri, learningAssignmentsDomainEntity.nextUri) &&
+            Objects.equals(this.pageCount, learningAssignmentsDomainEntity.pageCount);
   }
 
   @Override

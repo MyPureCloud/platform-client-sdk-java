@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffLimitRange;
@@ -45,7 +46,7 @@ public class SetTimeOffLimitValuesRequest  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * Version metadata for the time off limit
    **/
@@ -63,7 +64,6 @@ public class SetTimeOffLimitValuesRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class SetTimeOffLimitValuesRequest  implements Serializable {
       return false;
     }
     SetTimeOffLimitValuesRequest setTimeOffLimitValuesRequest = (SetTimeOffLimitValuesRequest) o;
+
     return Objects.equals(this.values, setTimeOffLimitValuesRequest.values) &&
-        Objects.equals(this.metadata, setTimeOffLimitValuesRequest.metadata);
+            Objects.equals(this.metadata, setTimeOffLimitValuesRequest.metadata);
   }
 
   @Override

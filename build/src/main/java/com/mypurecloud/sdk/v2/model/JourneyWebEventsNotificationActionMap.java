@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class JourneyWebEventsNotificationActionMap  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationActionMap selfUri(String selfUri) {
@@ -59,7 +60,7 @@ public class JourneyWebEventsNotificationActionMap  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationActionMap displayName(String displayName) {
@@ -76,7 +77,7 @@ public class JourneyWebEventsNotificationActionMap  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationActionMap version(Integer version) {
@@ -93,7 +94,6 @@ public class JourneyWebEventsNotificationActionMap  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class JourneyWebEventsNotificationActionMap  implements Serializable {
       return false;
     }
     JourneyWebEventsNotificationActionMap journeyWebEventsNotificationActionMap = (JourneyWebEventsNotificationActionMap) o;
+
     return Objects.equals(this.id, journeyWebEventsNotificationActionMap.id) &&
-        Objects.equals(this.selfUri, journeyWebEventsNotificationActionMap.selfUri) &&
-        Objects.equals(this.displayName, journeyWebEventsNotificationActionMap.displayName) &&
-        Objects.equals(this.version, journeyWebEventsNotificationActionMap.version);
+            Objects.equals(this.selfUri, journeyWebEventsNotificationActionMap.selfUri) &&
+            Objects.equals(this.displayName, journeyWebEventsNotificationActionMap.displayName) &&
+            Objects.equals(this.version, journeyWebEventsNotificationActionMap.version);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Category;
@@ -46,7 +47,7 @@ public class CategoryEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CategoryEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class CategoryEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CategoryEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class CategoryEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CategoryEntityListing total(Long total) {
@@ -97,7 +98,7 @@ public class CategoryEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CategoryEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class CategoryEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class CategoryEntityListing  implements Serializable {
       return false;
     }
     CategoryEntityListing categoryEntityListing = (CategoryEntityListing) o;
+
     return Objects.equals(this.entities, categoryEntityListing.entities) &&
-        Objects.equals(this.pageSize, categoryEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, categoryEntityListing.pageNumber) &&
-        Objects.equals(this.total, categoryEntityListing.total) &&
-        Objects.equals(this.pageCount, categoryEntityListing.pageCount);
+            Objects.equals(this.pageSize, categoryEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, categoryEntityListing.pageNumber) &&
+            Objects.equals(this.total, categoryEntityListing.total) &&
+            Objects.equals(this.pageCount, categoryEntityListing.pageCount);
   }
 
   @Override

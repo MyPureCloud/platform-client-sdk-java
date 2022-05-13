@@ -48,10 +48,10 @@ title: CreateQueueRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;NONE&quot; |
-| BEST | &quot;BEST&quot; |
-| ALL | &quot;ALL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;NONE&quot; | 
+| BEST | &quot;BEST&quot; | 
+| ALL | &quot;ALL&quot; | 
 {: class="table table-striped"}
 
 

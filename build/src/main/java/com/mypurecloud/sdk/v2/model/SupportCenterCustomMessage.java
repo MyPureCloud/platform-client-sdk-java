@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class SupportCenterCustomMessage  implements Serializable {
     this.defaultValue = defaultValue;
   }
 
-  
+
   /**
    * Type of the message
    **/
@@ -107,7 +108,6 @@ public class SupportCenterCustomMessage  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class SupportCenterCustomMessage  implements Serializable {
       return false;
     }
     SupportCenterCustomMessage supportCenterCustomMessage = (SupportCenterCustomMessage) o;
+
     return Objects.equals(this.defaultValue, supportCenterCustomMessage.defaultValue) &&
-        Objects.equals(this.type, supportCenterCustomMessage.type);
+            Objects.equals(this.type, supportCenterCustomMessage.type);
   }
 
   @Override

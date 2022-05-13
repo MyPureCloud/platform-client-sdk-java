@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindowSetting;
@@ -34,7 +35,7 @@ public class ConversationThreadingWindow  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The conversation threading window timeout (Minutes) for each messaging type
    **/
@@ -52,14 +53,13 @@ public class ConversationThreadingWindow  implements Serializable {
     this.settings = settings;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The default conversation threading window timeout (Minutes)")
   @JsonProperty("defaultTimeoutMinutes")
   public Long getDefaultTimeoutMinutes() {
     return defaultTimeoutMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,9 +70,10 @@ public class ConversationThreadingWindow  implements Serializable {
       return false;
     }
     ConversationThreadingWindow conversationThreadingWindow = (ConversationThreadingWindow) o;
+
     return Objects.equals(this.id, conversationThreadingWindow.id) &&
-        Objects.equals(this.settings, conversationThreadingWindow.settings) &&
-        Objects.equals(this.defaultTimeoutMinutes, conversationThreadingWindow.defaultTimeoutMinutes);
+            Objects.equals(this.settings, conversationThreadingWindow.settings) &&
+            Objects.equals(this.defaultTimeoutMinutes, conversationThreadingWindow.defaultTimeoutMinutes);
   }
 
   @Override

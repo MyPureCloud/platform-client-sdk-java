@@ -22,13 +22,13 @@ title: AsyncQueryStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;QUEUED&quot; |
-| PENDING | &quot;PENDING&quot; |
-| FAILED | &quot;FAILED&quot; |
-| CANCELLED | &quot;CANCELLED&quot; |
-| FULFILLED | &quot;FULFILLED&quot; |
-| EXPIRED | &quot;EXPIRED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUEUED | &quot;QUEUED&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| FAILED | &quot;FAILED&quot; | 
+| CANCELLED | &quot;CANCELLED&quot; | 
+| FULFILLED | &quot;FULFILLED&quot; | 
+| EXPIRED | &quot;EXPIRED&quot; | 
 {: class="table table-striped"}
 
 

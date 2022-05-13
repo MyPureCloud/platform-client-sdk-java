@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicCobrowseMediaParticipant;
@@ -45,7 +46,7 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationCobrowseEventTopicCobrowseConversation name(String name) {
@@ -62,7 +63,7 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueueConversationCobrowseEventTopicCobrowseConversation participants(List<QueueConversationCobrowseEventTopicCobrowseMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public QueueConversationCobrowseEventTopicCobrowseConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class QueueConversationCobrowseEventTopicCobrowseConversation  implements
       return false;
     }
     QueueConversationCobrowseEventTopicCobrowseConversation queueConversationCobrowseEventTopicCobrowseConversation = (QueueConversationCobrowseEventTopicCobrowseConversation) o;
+
     return Objects.equals(this.id, queueConversationCobrowseEventTopicCobrowseConversation.id) &&
-        Objects.equals(this.name, queueConversationCobrowseEventTopicCobrowseConversation.name) &&
-        Objects.equals(this.participants, queueConversationCobrowseEventTopicCobrowseConversation.participants) &&
-        Objects.equals(this.otherMediaUris, queueConversationCobrowseEventTopicCobrowseConversation.otherMediaUris);
+            Objects.equals(this.name, queueConversationCobrowseEventTopicCobrowseConversation.name) &&
+            Objects.equals(this.participants, queueConversationCobrowseEventTopicCobrowseConversation.participants) &&
+            Objects.equals(this.otherMediaUris, queueConversationCobrowseEventTopicCobrowseConversation.otherMediaUris);
   }
 
   @Override

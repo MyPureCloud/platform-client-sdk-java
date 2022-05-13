@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingEventMediaResult;
@@ -47,7 +48,7 @@ public class RecordingEventRecording  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public RecordingEventRecording conversationId(String conversationId) {
@@ -64,7 +65,7 @@ public class RecordingEventRecording  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public RecordingEventRecording fileState(String fileState) {
@@ -81,7 +82,7 @@ public class RecordingEventRecording  implements Serializable {
     this.fileState = fileState;
   }
 
-  
+
   /**
    **/
   public RecordingEventRecording mediaUris(List<RecordingEventMediaResult> mediaUris) {
@@ -98,7 +99,7 @@ public class RecordingEventRecording  implements Serializable {
     this.mediaUris = mediaUris;
   }
 
-  
+
   /**
    **/
   public RecordingEventRecording estimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
@@ -115,7 +116,7 @@ public class RecordingEventRecording  implements Serializable {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
-  
+
   /**
    **/
   public RecordingEventRecording actualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
@@ -132,7 +133,6 @@ public class RecordingEventRecording  implements Serializable {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class RecordingEventRecording  implements Serializable {
       return false;
     }
     RecordingEventRecording recordingEventRecording = (RecordingEventRecording) o;
+
     return Objects.equals(this.id, recordingEventRecording.id) &&
-        Objects.equals(this.conversationId, recordingEventRecording.conversationId) &&
-        Objects.equals(this.fileState, recordingEventRecording.fileState) &&
-        Objects.equals(this.mediaUris, recordingEventRecording.mediaUris) &&
-        Objects.equals(this.estimatedTranscodeTimeMs, recordingEventRecording.estimatedTranscodeTimeMs) &&
-        Objects.equals(this.actualTranscodeTimeMs, recordingEventRecording.actualTranscodeTimeMs);
+            Objects.equals(this.conversationId, recordingEventRecording.conversationId) &&
+            Objects.equals(this.fileState, recordingEventRecording.fileState) &&
+            Objects.equals(this.mediaUris, recordingEventRecording.mediaUris) &&
+            Objects.equals(this.estimatedTranscodeTimeMs, recordingEventRecording.estimatedTranscodeTimeMs) &&
+            Objects.equals(this.actualTranscodeTimeMs, recordingEventRecording.actualTranscodeTimeMs);
   }
 
   @Override

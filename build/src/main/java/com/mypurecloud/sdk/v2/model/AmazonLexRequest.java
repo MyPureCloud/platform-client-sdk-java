@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class AmazonLexRequest  implements Serializable {
     this.requestAttributes = requestAttributes;
   }
 
-  
+
   /**
    * AttributeName/AttributeValue pairs of Session Attributes to be sent to the amazon bot. See - https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs
    **/
@@ -62,7 +63,6 @@ public class AmazonLexRequest  implements Serializable {
     this.sessionAttributes = sessionAttributes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class AmazonLexRequest  implements Serializable {
       return false;
     }
     AmazonLexRequest amazonLexRequest = (AmazonLexRequest) o;
+
     return Objects.equals(this.requestAttributes, amazonLexRequest.requestAttributes) &&
-        Objects.equals(this.sessionAttributes, amazonLexRequest.sessionAttributes);
+            Objects.equals(this.sessionAttributes, amazonLexRequest.sessionAttributes);
   }
 
   @Override

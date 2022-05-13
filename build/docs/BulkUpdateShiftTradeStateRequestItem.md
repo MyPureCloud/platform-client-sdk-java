@@ -20,13 +20,13 @@ title: BulkUpdateShiftTradeStateRequestItem
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNMATCHED | &quot;Unmatched&quot; |
-| MATCHED | &quot;Matched&quot; |
-| APPROVED | &quot;Approved&quot; |
-| DENIED | &quot;Denied&quot; |
-| EXPIRED | &quot;Expired&quot; |
-| CANCELED | &quot;Canceled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNMATCHED | &quot;Unmatched&quot; | 
+| MATCHED | &quot;Matched&quot; | 
+| APPROVED | &quot;Approved&quot; | 
+| DENIED | &quot;Denied&quot; | 
+| EXPIRED | &quot;Expired&quot; | 
+| CANCELED | &quot;Canceled&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class PutGreetingRequest {
-    
+
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -42,7 +42,7 @@ public class PutGreetingRequest {
 	    this.setGreetingId(greetingId);
 	    return this;
 	} 
-	
+
 	private Greeting body;
 	public Greeting getBody() {
 		return this.body;
@@ -56,7 +56,7 @@ public class PutGreetingRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,8 +93,8 @@ public class PutGreetingRequest {
                 .withPathParameter("greetingId", greetingId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class PutGreetingRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String greetingId, Greeting body) {
 	    return new Builder()
 	            .withRequiredParams(greetingId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutGreetingRequest request;
@@ -119,26 +119,26 @@ public class PutGreetingRequest {
 			request = new PutGreetingRequest();
 		}
 
-		
+
 		public Builder withGreetingId(String greetingId) {
 			request.setGreetingId(greetingId);
 			return this;
 		}
-		
+
 		public Builder withBody(Greeting body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String greetingId, Greeting body) {
 			request.setGreetingId(greetingId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutGreetingRequest build() {
             

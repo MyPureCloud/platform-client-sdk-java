@@ -39,7 +39,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class PresenceApiAsync {
   private final ApiClient pcapiClient;
 
@@ -51,7 +50,6 @@ public class PresenceApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a Presence Definition
    * 
@@ -127,7 +125,6 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
    * Get a Presence Definition
    * 
@@ -203,9 +200,8 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
-   * Get an Organization&#39;s list of Presence Definitions
+   * Get an Organization's list of Presence Definitions
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -239,7 +235,7 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get an Organization&#39;s list of Presence Definitions
+   * Get an Organization's list of Presence Definitions
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -279,7 +275,6 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
    * Get the list of SystemPresences
    * 
@@ -355,10 +350,9 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
-   * Get a user&#39;s Presence
-   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+   * Get a user's Presence
+   * Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -391,8 +385,8 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a user&#39;s Presence
-   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+   * Get a user's Presence
+   * Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -431,9 +425,8 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
-   * Get a user&#39;s Genesys Cloud presence.
+   * Get a user's Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -467,7 +460,7 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a user&#39;s Genesys Cloud presence.
+   * Get a user's Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -507,10 +500,9 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
-   * Patch a user&#39;s Presence
-   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user's Presence
+   * Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -543,8 +535,8 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Patch a user&#39;s Presence
-   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user's Presence
+   * Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -583,10 +575,9 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
-   * Patch a Genesys Cloud user&#39;s presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a Genesys Cloud user's presence
+   * The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -619,8 +610,8 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Patch a Genesys Cloud user&#39;s presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a Genesys Cloud user's presence
+   * The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -659,7 +650,6 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
    * Create a Presence Definition
    * 
@@ -735,7 +725,6 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
    * Update a Presence Definition
    * 
@@ -811,7 +800,6 @@ public class PresenceApiAsync {
     }
   }
 
-  
   /**
    * Update bulk user Presences
    * 
@@ -887,7 +875,6 @@ public class PresenceApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

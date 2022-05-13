@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ChatBadgeTopicBadgeEntity;
@@ -43,7 +44,7 @@ public class ChatBadgeTopicChatBadge  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public ChatBadgeTopicChatBadge unreadCount(Integer unreadCount) {
@@ -60,7 +61,7 @@ public class ChatBadgeTopicChatBadge  implements Serializable {
     this.unreadCount = unreadCount;
   }
 
-  
+
   /**
    **/
   public ChatBadgeTopicChatBadge lastUnreadNotificationDate(Date lastUnreadNotificationDate) {
@@ -77,7 +78,6 @@ public class ChatBadgeTopicChatBadge  implements Serializable {
     this.lastUnreadNotificationDate = lastUnreadNotificationDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class ChatBadgeTopicChatBadge  implements Serializable {
       return false;
     }
     ChatBadgeTopicChatBadge chatBadgeTopicChatBadge = (ChatBadgeTopicChatBadge) o;
+
     return Objects.equals(this.entity, chatBadgeTopicChatBadge.entity) &&
-        Objects.equals(this.unreadCount, chatBadgeTopicChatBadge.unreadCount) &&
-        Objects.equals(this.lastUnreadNotificationDate, chatBadgeTopicChatBadge.lastUnreadNotificationDate);
+            Objects.equals(this.unreadCount, chatBadgeTopicChatBadge.unreadCount) &&
+            Objects.equals(this.lastUnreadNotificationDate, chatBadgeTopicChatBadge.lastUnreadNotificationDate);
   }
 
   @Override

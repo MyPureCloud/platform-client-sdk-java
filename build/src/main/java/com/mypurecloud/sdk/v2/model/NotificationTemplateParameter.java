@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class NotificationTemplateParameter  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Parameter text value.
    **/
@@ -60,7 +61,6 @@ public class NotificationTemplateParameter  implements Serializable {
     this.text = text;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class NotificationTemplateParameter  implements Serializable {
       return false;
     }
     NotificationTemplateParameter notificationTemplateParameter = (NotificationTemplateParameter) o;
+
     return Objects.equals(this.name, notificationTemplateParameter.name) &&
-        Objects.equals(this.text, notificationTemplateParameter.text);
+            Objects.equals(this.text, notificationTemplateParameter.text);
   }
 
   @Override

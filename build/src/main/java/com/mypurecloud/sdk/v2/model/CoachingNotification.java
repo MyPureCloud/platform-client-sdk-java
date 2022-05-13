@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -189,14 +190,14 @@ public class CoachingNotification  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of the appointment for this notification.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   /**
    * Indicates if notification is read or unread
    **/
@@ -214,63 +215,62 @@ public class CoachingNotification  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Action causing the notification.")
   @JsonProperty("actionType")
   public ActionTypeEnum getActionType() {
     return actionType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The relationship of this user to this notification's appointment")
   @JsonProperty("relationship")
   public RelationshipEnum getRelationship() {
     return relationship;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The start time of the appointment relating to this notification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStart")
   public Date getDateStart() {
     return dateStart;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The duration of the appointment on this notification")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the appointment for this notification")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user of this notification")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The appointment")
   @JsonProperty("appointment")
   public CoachingAppointmentResponse getAppointment() {
     return appointment;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -281,17 +281,18 @@ public class CoachingNotification  implements Serializable {
       return false;
     }
     CoachingNotification coachingNotification = (CoachingNotification) o;
+
     return Objects.equals(this.id, coachingNotification.id) &&
-        Objects.equals(this.name, coachingNotification.name) &&
-        Objects.equals(this.markedAsRead, coachingNotification.markedAsRead) &&
-        Objects.equals(this.actionType, coachingNotification.actionType) &&
-        Objects.equals(this.relationship, coachingNotification.relationship) &&
-        Objects.equals(this.dateStart, coachingNotification.dateStart) &&
-        Objects.equals(this.lengthInMinutes, coachingNotification.lengthInMinutes) &&
-        Objects.equals(this.status, coachingNotification.status) &&
-        Objects.equals(this.user, coachingNotification.user) &&
-        Objects.equals(this.appointment, coachingNotification.appointment) &&
-        Objects.equals(this.selfUri, coachingNotification.selfUri);
+            Objects.equals(this.name, coachingNotification.name) &&
+            Objects.equals(this.markedAsRead, coachingNotification.markedAsRead) &&
+            Objects.equals(this.actionType, coachingNotification.actionType) &&
+            Objects.equals(this.relationship, coachingNotification.relationship) &&
+            Objects.equals(this.dateStart, coachingNotification.dateStart) &&
+            Objects.equals(this.lengthInMinutes, coachingNotification.lengthInMinutes) &&
+            Objects.equals(this.status, coachingNotification.status) &&
+            Objects.equals(this.user, coachingNotification.user) &&
+            Objects.equals(this.appointment, coachingNotification.appointment) &&
+            Objects.equals(this.selfUri, coachingNotification.selfUri);
   }
 
   @Override

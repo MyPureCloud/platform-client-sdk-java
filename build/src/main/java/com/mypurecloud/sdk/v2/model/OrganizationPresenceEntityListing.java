@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public OrganizationPresenceEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
       return false;
     }
     OrganizationPresenceEntityListing organizationPresenceEntityListing = (OrganizationPresenceEntityListing) o;
+
     return Objects.equals(this.entities, organizationPresenceEntityListing.entities) &&
-        Objects.equals(this.pageSize, organizationPresenceEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, organizationPresenceEntityListing.pageNumber) &&
-        Objects.equals(this.total, organizationPresenceEntityListing.total) &&
-        Objects.equals(this.lastUri, organizationPresenceEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, organizationPresenceEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, organizationPresenceEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, organizationPresenceEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, organizationPresenceEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, organizationPresenceEntityListing.pageCount);
+            Objects.equals(this.pageSize, organizationPresenceEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, organizationPresenceEntityListing.pageNumber) &&
+            Objects.equals(this.total, organizationPresenceEntityListing.total) &&
+            Objects.equals(this.lastUri, organizationPresenceEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, organizationPresenceEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, organizationPresenceEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, organizationPresenceEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, organizationPresenceEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, organizationPresenceEntityListing.pageCount);
   }
 
   @Override

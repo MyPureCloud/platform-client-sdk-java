@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class DeleteWebdeploymentsDeploymentRequest {
-    
+
 	private String deploymentId;
 	public String getDeploymentId() {
 		return this.deploymentId;
@@ -41,7 +41,7 @@ public class DeleteWebdeploymentsDeploymentRequest {
 	    this.setDeploymentId(deploymentId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,7 +72,7 @@ public class DeleteWebdeploymentsDeploymentRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/webdeployments/deployments/{deploymentId}")
                 .withPathParameter("deploymentId", deploymentId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class DeleteWebdeploymentsDeploymentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String deploymentId) {
 	    return new Builder()
 	            .withRequiredParams(deploymentId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteWebdeploymentsDeploymentRequest request;
@@ -97,20 +97,20 @@ public class DeleteWebdeploymentsDeploymentRequest {
 			request = new DeleteWebdeploymentsDeploymentRequest();
 		}
 
-		
+
 		public Builder withDeploymentId(String deploymentId) {
 			request.setDeploymentId(deploymentId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String deploymentId) {
 			request.setDeploymentId(deploymentId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteWebdeploymentsDeploymentRequest build() {
             

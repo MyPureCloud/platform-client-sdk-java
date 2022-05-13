@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -212,7 +213,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent conversationId(String conversationId) {
@@ -229,7 +230,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent participantId(String participantId) {
@@ -246,7 +247,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent sessionId(String sessionId) {
@@ -263,7 +264,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent mediaType(MediaTypeEnum mediaType) {
@@ -280,7 +281,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent provider(String provider) {
@@ -297,7 +298,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent direction(DirectionEnum direction) {
@@ -314,7 +315,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent ani(String ani) {
@@ -331,7 +332,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent dnis(String dnis) {
@@ -348,7 +349,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent addressTo(String addressTo) {
@@ -365,7 +366,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent addressFrom(String addressFrom) {
@@ -382,7 +383,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent subject(String subject) {
@@ -399,7 +400,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent messageType(MessageTypeEnum messageType) {
@@ -416,7 +417,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent outboundCampaignId(String outboundCampaignId) {
@@ -433,7 +434,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.outboundCampaignId = outboundCampaignId;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent divisionId(String divisionId) {
@@ -450,7 +451,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent outboundContactListId(String outboundContactListId) {
@@ -467,7 +468,7 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.outboundContactListId = outboundContactListId;
   }
 
-  
+
   /**
    **/
   public OutboundDetailEventTopicOutboundInitEvent outboundContactId(String outboundContactId) {
@@ -484,7 +485,6 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
     this.outboundContactId = outboundContactId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -495,23 +495,24 @@ public class OutboundDetailEventTopicOutboundInitEvent  implements Serializable 
       return false;
     }
     OutboundDetailEventTopicOutboundInitEvent outboundDetailEventTopicOutboundInitEvent = (OutboundDetailEventTopicOutboundInitEvent) o;
+
     return Objects.equals(this.eventTime, outboundDetailEventTopicOutboundInitEvent.eventTime) &&
-        Objects.equals(this.conversationId, outboundDetailEventTopicOutboundInitEvent.conversationId) &&
-        Objects.equals(this.participantId, outboundDetailEventTopicOutboundInitEvent.participantId) &&
-        Objects.equals(this.sessionId, outboundDetailEventTopicOutboundInitEvent.sessionId) &&
-        Objects.equals(this.mediaType, outboundDetailEventTopicOutboundInitEvent.mediaType) &&
-        Objects.equals(this.provider, outboundDetailEventTopicOutboundInitEvent.provider) &&
-        Objects.equals(this.direction, outboundDetailEventTopicOutboundInitEvent.direction) &&
-        Objects.equals(this.ani, outboundDetailEventTopicOutboundInitEvent.ani) &&
-        Objects.equals(this.dnis, outboundDetailEventTopicOutboundInitEvent.dnis) &&
-        Objects.equals(this.addressTo, outboundDetailEventTopicOutboundInitEvent.addressTo) &&
-        Objects.equals(this.addressFrom, outboundDetailEventTopicOutboundInitEvent.addressFrom) &&
-        Objects.equals(this.subject, outboundDetailEventTopicOutboundInitEvent.subject) &&
-        Objects.equals(this.messageType, outboundDetailEventTopicOutboundInitEvent.messageType) &&
-        Objects.equals(this.outboundCampaignId, outboundDetailEventTopicOutboundInitEvent.outboundCampaignId) &&
-        Objects.equals(this.divisionId, outboundDetailEventTopicOutboundInitEvent.divisionId) &&
-        Objects.equals(this.outboundContactListId, outboundDetailEventTopicOutboundInitEvent.outboundContactListId) &&
-        Objects.equals(this.outboundContactId, outboundDetailEventTopicOutboundInitEvent.outboundContactId);
+            Objects.equals(this.conversationId, outboundDetailEventTopicOutboundInitEvent.conversationId) &&
+            Objects.equals(this.participantId, outboundDetailEventTopicOutboundInitEvent.participantId) &&
+            Objects.equals(this.sessionId, outboundDetailEventTopicOutboundInitEvent.sessionId) &&
+            Objects.equals(this.mediaType, outboundDetailEventTopicOutboundInitEvent.mediaType) &&
+            Objects.equals(this.provider, outboundDetailEventTopicOutboundInitEvent.provider) &&
+            Objects.equals(this.direction, outboundDetailEventTopicOutboundInitEvent.direction) &&
+            Objects.equals(this.ani, outboundDetailEventTopicOutboundInitEvent.ani) &&
+            Objects.equals(this.dnis, outboundDetailEventTopicOutboundInitEvent.dnis) &&
+            Objects.equals(this.addressTo, outboundDetailEventTopicOutboundInitEvent.addressTo) &&
+            Objects.equals(this.addressFrom, outboundDetailEventTopicOutboundInitEvent.addressFrom) &&
+            Objects.equals(this.subject, outboundDetailEventTopicOutboundInitEvent.subject) &&
+            Objects.equals(this.messageType, outboundDetailEventTopicOutboundInitEvent.messageType) &&
+            Objects.equals(this.outboundCampaignId, outboundDetailEventTopicOutboundInitEvent.outboundCampaignId) &&
+            Objects.equals(this.divisionId, outboundDetailEventTopicOutboundInitEvent.divisionId) &&
+            Objects.equals(this.outboundContactListId, outboundDetailEventTopicOutboundInitEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, outboundDetailEventTopicOutboundInitEvent.outboundContactId);
   }
 
   @Override

@@ -23,9 +23,9 @@ title: ReplaceResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SINGLE_PUT | &quot;SINGLE_PUT&quot; |
-| MULTIPART_POST | &quot;MULTIPART_POST&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SINGLE_PUT | &quot;SINGLE_PUT&quot; | 
+| MULTIPART_POST | &quot;MULTIPART_POST&quot; | 
 {: class="table table-striped"}
 
 

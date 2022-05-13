@@ -22,9 +22,9 @@ title: MessageEvaluation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SMS | &quot;Sms&quot; |
-| EMAIL | &quot;Email&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SMS | &quot;Sms&quot; | 
+| EMAIL | &quot;Email&quot; | 
 {: class="table table-striped"}
 
 

@@ -21,16 +21,16 @@ title: BotAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NBOTSESSIONS | &quot;nBotSessions&quot; |
-| OBOTINTENT | &quot;oBotIntent&quot; |
-| OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; |
-| OBOTSESSIONTURN | &quot;oBotSessionTurn&quot; |
-| OBOTSLOT | &quot;oBotSlot&quot; |
-| TBOTDISCONNECT | &quot;tBotDisconnect&quot; |
-| TBOTEXIT | &quot;tBotExit&quot; |
-| TBOTRECOGNITIONFAILURE | &quot;tBotRecognitionFailure&quot; |
-| TBOTSESSION | &quot;tBotSession&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NBOTSESSIONS | &quot;nBotSessions&quot; | 
+| OBOTINTENT | &quot;oBotIntent&quot; | 
+| OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; | 
+| OBOTSESSIONTURN | &quot;oBotSessionTurn&quot; | 
+| OBOTSLOT | &quot;oBotSlot&quot; | 
+| TBOTDISCONNECT | &quot;tBotDisconnect&quot; | 
+| TBOTEXIT | &quot;tBotExit&quot; | 
+| TBOTRECOGNITIONFAILURE | &quot;tBotRecognitionFailure&quot; | 
+| TBOTSESSION | &quot;tBotSession&quot; | 
 {: class="table table-striped"}
 
 
@@ -40,8 +40,8 @@ title: BotAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANGEBOUND | &quot;rangeBound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANGEBOUND | &quot;rangeBound&quot; | 
 {: class="table table-striped"}
 
 

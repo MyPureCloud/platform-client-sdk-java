@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class SupportCenterScreen  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Module settings for the screen
    **/
@@ -112,7 +113,6 @@ public class SupportCenterScreen  implements Serializable {
     this.moduleSettings = moduleSettings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,8 +123,9 @@ public class SupportCenterScreen  implements Serializable {
       return false;
     }
     SupportCenterScreen supportCenterScreen = (SupportCenterScreen) o;
+
     return Objects.equals(this.type, supportCenterScreen.type) &&
-        Objects.equals(this.moduleSettings, supportCenterScreen.moduleSettings);
+            Objects.equals(this.moduleSettings, supportCenterScreen.moduleSettings);
   }
 
   @Override

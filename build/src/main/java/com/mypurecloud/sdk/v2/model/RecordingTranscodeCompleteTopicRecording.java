@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingTranscodeCompleteTopicMediaResult;
@@ -47,7 +48,7 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public RecordingTranscodeCompleteTopicRecording conversationId(String conversationId) {
@@ -64,7 +65,7 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public RecordingTranscodeCompleteTopicRecording fileState(String fileState) {
@@ -81,7 +82,7 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     this.fileState = fileState;
   }
 
-  
+
   /**
    **/
   public RecordingTranscodeCompleteTopicRecording mediaUris(List<RecordingTranscodeCompleteTopicMediaResult> mediaUris) {
@@ -98,7 +99,7 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     this.mediaUris = mediaUris;
   }
 
-  
+
   /**
    **/
   public RecordingTranscodeCompleteTopicRecording estimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
@@ -115,7 +116,7 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
-  
+
   /**
    **/
   public RecordingTranscodeCompleteTopicRecording actualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
@@ -132,7 +133,6 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
       return false;
     }
     RecordingTranscodeCompleteTopicRecording recordingTranscodeCompleteTopicRecording = (RecordingTranscodeCompleteTopicRecording) o;
+
     return Objects.equals(this.id, recordingTranscodeCompleteTopicRecording.id) &&
-        Objects.equals(this.conversationId, recordingTranscodeCompleteTopicRecording.conversationId) &&
-        Objects.equals(this.fileState, recordingTranscodeCompleteTopicRecording.fileState) &&
-        Objects.equals(this.mediaUris, recordingTranscodeCompleteTopicRecording.mediaUris) &&
-        Objects.equals(this.estimatedTranscodeTimeMs, recordingTranscodeCompleteTopicRecording.estimatedTranscodeTimeMs) &&
-        Objects.equals(this.actualTranscodeTimeMs, recordingTranscodeCompleteTopicRecording.actualTranscodeTimeMs);
+            Objects.equals(this.conversationId, recordingTranscodeCompleteTopicRecording.conversationId) &&
+            Objects.equals(this.fileState, recordingTranscodeCompleteTopicRecording.fileState) &&
+            Objects.equals(this.mediaUris, recordingTranscodeCompleteTopicRecording.mediaUris) &&
+            Objects.equals(this.estimatedTranscodeTimeMs, recordingTranscodeCompleteTopicRecording.estimatedTranscodeTimeMs) &&
+            Objects.equals(this.actualTranscodeTimeMs, recordingTranscodeCompleteTopicRecording.actualTranscodeTimeMs);
   }
 
   @Override

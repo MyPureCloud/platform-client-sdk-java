@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EmailMediaPolicyConditions;
@@ -43,7 +44,7 @@ public class EmailMediaPolicy  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    * Conditions for when actions should be applied
    **/
@@ -61,7 +62,6 @@ public class EmailMediaPolicy  implements Serializable {
     this.conditions = conditions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class EmailMediaPolicy  implements Serializable {
       return false;
     }
     EmailMediaPolicy emailMediaPolicy = (EmailMediaPolicy) o;
+
     return Objects.equals(this.actions, emailMediaPolicy.actions) &&
-        Objects.equals(this.conditions, emailMediaPolicy.conditions);
+            Objects.equals(this.conditions, emailMediaPolicy.conditions);
   }
 
   @Override

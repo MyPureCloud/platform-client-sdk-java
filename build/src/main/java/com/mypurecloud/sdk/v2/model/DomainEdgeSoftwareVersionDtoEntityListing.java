@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
       return false;
     }
     DomainEdgeSoftwareVersionDtoEntityListing domainEdgeSoftwareVersionDtoEntityListing = (DomainEdgeSoftwareVersionDtoEntityListing) o;
+
     return Objects.equals(this.entities, domainEdgeSoftwareVersionDtoEntityListing.entities) &&
-        Objects.equals(this.pageSize, domainEdgeSoftwareVersionDtoEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, domainEdgeSoftwareVersionDtoEntityListing.pageNumber) &&
-        Objects.equals(this.total, domainEdgeSoftwareVersionDtoEntityListing.total) &&
-        Objects.equals(this.lastUri, domainEdgeSoftwareVersionDtoEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, domainEdgeSoftwareVersionDtoEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, domainEdgeSoftwareVersionDtoEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, domainEdgeSoftwareVersionDtoEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, domainEdgeSoftwareVersionDtoEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, domainEdgeSoftwareVersionDtoEntityListing.pageCount);
+            Objects.equals(this.pageSize, domainEdgeSoftwareVersionDtoEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, domainEdgeSoftwareVersionDtoEntityListing.pageNumber) &&
+            Objects.equals(this.total, domainEdgeSoftwareVersionDtoEntityListing.total) &&
+            Objects.equals(this.lastUri, domainEdgeSoftwareVersionDtoEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, domainEdgeSoftwareVersionDtoEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, domainEdgeSoftwareVersionDtoEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, domainEdgeSoftwareVersionDtoEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, domainEdgeSoftwareVersionDtoEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, domainEdgeSoftwareVersionDtoEntityListing.pageCount);
   }
 
   @Override

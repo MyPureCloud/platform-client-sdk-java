@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaType;
@@ -45,7 +46,7 @@ public class MediaTypeAccess  implements Serializable {
     this.inbound = inbound;
   }
 
-  
+
   /**
    * List of media types allowed for outbound messages to customers. If an outbound message is sent that contains media that is not in this list, the message will not be sent.
    **/
@@ -63,7 +64,6 @@ public class MediaTypeAccess  implements Serializable {
     this.outbound = outbound;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class MediaTypeAccess  implements Serializable {
       return false;
     }
     MediaTypeAccess mediaTypeAccess = (MediaTypeAccess) o;
+
     return Objects.equals(this.inbound, mediaTypeAccess.inbound) &&
-        Objects.equals(this.outbound, mediaTypeAccess.outbound);
+            Objects.equals(this.outbound, mediaTypeAccess.outbound);
   }
 
   @Override

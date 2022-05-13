@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
     this.importState = importState;
   }
 
-  
+
   /**
    * total number of records to be imported
    **/
@@ -110,7 +111,7 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
     this.totalRecords = totalRecords;
   }
 
-  
+
   /**
    * number of records finished importing
    **/
@@ -128,7 +129,7 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
     this.completedRecords = completedRecords;
   }
 
-  
+
   /**
    * percentage of records finished importing
    **/
@@ -146,7 +147,7 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
     this.percentageComplete = percentageComplete;
   }
 
-  
+
   /**
    * if the import has failed, the reason for the failure
    **/
@@ -164,7 +165,6 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
     this.failureReason = failureReason;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,11 +175,12 @@ public class DialerDnclistConfigChangeImportStatus  implements Serializable {
       return false;
     }
     DialerDnclistConfigChangeImportStatus dialerDnclistConfigChangeImportStatus = (DialerDnclistConfigChangeImportStatus) o;
+
     return Objects.equals(this.importState, dialerDnclistConfigChangeImportStatus.importState) &&
-        Objects.equals(this.totalRecords, dialerDnclistConfigChangeImportStatus.totalRecords) &&
-        Objects.equals(this.completedRecords, dialerDnclistConfigChangeImportStatus.completedRecords) &&
-        Objects.equals(this.percentageComplete, dialerDnclistConfigChangeImportStatus.percentageComplete) &&
-        Objects.equals(this.failureReason, dialerDnclistConfigChangeImportStatus.failureReason);
+            Objects.equals(this.totalRecords, dialerDnclistConfigChangeImportStatus.totalRecords) &&
+            Objects.equals(this.completedRecords, dialerDnclistConfigChangeImportStatus.completedRecords) &&
+            Objects.equals(this.percentageComplete, dialerDnclistConfigChangeImportStatus.percentageComplete) &&
+            Objects.equals(this.failureReason, dialerDnclistConfigChangeImportStatus.failureReason);
   }
 
   @Override

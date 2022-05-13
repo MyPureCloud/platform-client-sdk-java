@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -318,7 +319,7 @@ public class DocumentAudit  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DocumentAudit name(String name) {
@@ -335,7 +336,7 @@ public class DocumentAudit  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public DocumentAudit user(DomainEntityRef user) {
@@ -352,7 +353,7 @@ public class DocumentAudit  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public DocumentAudit workspace(DomainEntityRef workspace) {
@@ -369,7 +370,7 @@ public class DocumentAudit  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public DocumentAudit transactionId(String transactionId) {
@@ -386,7 +387,7 @@ public class DocumentAudit  implements Serializable {
     this.transactionId = transactionId;
   }
 
-  
+
   /**
    **/
   public DocumentAudit transactionInitiator(Boolean transactionInitiator) {
@@ -403,7 +404,7 @@ public class DocumentAudit  implements Serializable {
     this.transactionInitiator = transactionInitiator;
   }
 
-  
+
   /**
    **/
   public DocumentAudit application(String application) {
@@ -420,7 +421,7 @@ public class DocumentAudit  implements Serializable {
     this.application = application;
   }
 
-  
+
   /**
    **/
   public DocumentAudit serviceName(String serviceName) {
@@ -437,7 +438,7 @@ public class DocumentAudit  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    **/
   public DocumentAudit level(LevelEnum level) {
@@ -454,7 +455,7 @@ public class DocumentAudit  implements Serializable {
     this.level = level;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -472,7 +473,7 @@ public class DocumentAudit  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   /**
    **/
   public DocumentAudit status(StatusEnum status) {
@@ -489,7 +490,7 @@ public class DocumentAudit  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public DocumentAudit actionContext(ActionContextEnum actionContext) {
@@ -506,7 +507,7 @@ public class DocumentAudit  implements Serializable {
     this.actionContext = actionContext;
   }
 
-  
+
   /**
    **/
   public DocumentAudit action(ActionEnum action) {
@@ -523,7 +524,7 @@ public class DocumentAudit  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    **/
   public DocumentAudit entity(AuditEntityReference entity) {
@@ -540,7 +541,7 @@ public class DocumentAudit  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public DocumentAudit changes(List<AuditChange> changes) {
@@ -557,14 +558,13 @@ public class DocumentAudit  implements Serializable {
     this.changes = changes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -575,22 +575,23 @@ public class DocumentAudit  implements Serializable {
       return false;
     }
     DocumentAudit documentAudit = (DocumentAudit) o;
+
     return Objects.equals(this.id, documentAudit.id) &&
-        Objects.equals(this.name, documentAudit.name) &&
-        Objects.equals(this.user, documentAudit.user) &&
-        Objects.equals(this.workspace, documentAudit.workspace) &&
-        Objects.equals(this.transactionId, documentAudit.transactionId) &&
-        Objects.equals(this.transactionInitiator, documentAudit.transactionInitiator) &&
-        Objects.equals(this.application, documentAudit.application) &&
-        Objects.equals(this.serviceName, documentAudit.serviceName) &&
-        Objects.equals(this.level, documentAudit.level) &&
-        Objects.equals(this.timestamp, documentAudit.timestamp) &&
-        Objects.equals(this.status, documentAudit.status) &&
-        Objects.equals(this.actionContext, documentAudit.actionContext) &&
-        Objects.equals(this.action, documentAudit.action) &&
-        Objects.equals(this.entity, documentAudit.entity) &&
-        Objects.equals(this.changes, documentAudit.changes) &&
-        Objects.equals(this.selfUri, documentAudit.selfUri);
+            Objects.equals(this.name, documentAudit.name) &&
+            Objects.equals(this.user, documentAudit.user) &&
+            Objects.equals(this.workspace, documentAudit.workspace) &&
+            Objects.equals(this.transactionId, documentAudit.transactionId) &&
+            Objects.equals(this.transactionInitiator, documentAudit.transactionInitiator) &&
+            Objects.equals(this.application, documentAudit.application) &&
+            Objects.equals(this.serviceName, documentAudit.serviceName) &&
+            Objects.equals(this.level, documentAudit.level) &&
+            Objects.equals(this.timestamp, documentAudit.timestamp) &&
+            Objects.equals(this.status, documentAudit.status) &&
+            Objects.equals(this.actionContext, documentAudit.actionContext) &&
+            Objects.equals(this.action, documentAudit.action) &&
+            Objects.equals(this.entity, documentAudit.entity) &&
+            Objects.equals(this.changes, documentAudit.changes) &&
+            Objects.equals(this.selfUri, documentAudit.selfUri);
   }
 
   @Override

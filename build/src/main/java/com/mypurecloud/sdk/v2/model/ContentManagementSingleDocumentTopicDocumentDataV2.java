@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentManagementSingleDocumentTopicLockData;
@@ -56,7 +57,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 name(String name) {
@@ -73,7 +74,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 dateCreated(Date dateCreated) {
@@ -90,7 +91,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 dateModified(Date dateModified) {
@@ -107,7 +108,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 workspace(ContentManagementSingleDocumentTopicWorkspaceData workspace) {
@@ -124,7 +125,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 createdBy(ContentManagementSingleDocumentTopicUserData createdBy) {
@@ -141,7 +142,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 contentType(String contentType) {
@@ -158,7 +159,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 contentLength(Integer contentLength) {
@@ -175,7 +176,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 filename(String filename) {
@@ -192,7 +193,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.filename = filename;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 changeNumber(Integer changeNumber) {
@@ -209,7 +210,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 dateUploaded(Date dateUploaded) {
@@ -226,7 +227,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.dateUploaded = dateUploaded;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 uploadedBy(ContentManagementSingleDocumentTopicUserData uploadedBy) {
@@ -243,7 +244,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.uploadedBy = uploadedBy;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 lockInfo(ContentManagementSingleDocumentTopicLockData lockInfo) {
@@ -260,7 +261,7 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.lockInfo = lockInfo;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicDocumentDataV2 selfUri(String selfUri) {
@@ -277,7 +278,6 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -288,20 +288,21 @@ public class ContentManagementSingleDocumentTopicDocumentDataV2  implements Seri
       return false;
     }
     ContentManagementSingleDocumentTopicDocumentDataV2 contentManagementSingleDocumentTopicDocumentDataV2 = (ContentManagementSingleDocumentTopicDocumentDataV2) o;
+
     return Objects.equals(this.id, contentManagementSingleDocumentTopicDocumentDataV2.id) &&
-        Objects.equals(this.name, contentManagementSingleDocumentTopicDocumentDataV2.name) &&
-        Objects.equals(this.dateCreated, contentManagementSingleDocumentTopicDocumentDataV2.dateCreated) &&
-        Objects.equals(this.dateModified, contentManagementSingleDocumentTopicDocumentDataV2.dateModified) &&
-        Objects.equals(this.workspace, contentManagementSingleDocumentTopicDocumentDataV2.workspace) &&
-        Objects.equals(this.createdBy, contentManagementSingleDocumentTopicDocumentDataV2.createdBy) &&
-        Objects.equals(this.contentType, contentManagementSingleDocumentTopicDocumentDataV2.contentType) &&
-        Objects.equals(this.contentLength, contentManagementSingleDocumentTopicDocumentDataV2.contentLength) &&
-        Objects.equals(this.filename, contentManagementSingleDocumentTopicDocumentDataV2.filename) &&
-        Objects.equals(this.changeNumber, contentManagementSingleDocumentTopicDocumentDataV2.changeNumber) &&
-        Objects.equals(this.dateUploaded, contentManagementSingleDocumentTopicDocumentDataV2.dateUploaded) &&
-        Objects.equals(this.uploadedBy, contentManagementSingleDocumentTopicDocumentDataV2.uploadedBy) &&
-        Objects.equals(this.lockInfo, contentManagementSingleDocumentTopicDocumentDataV2.lockInfo) &&
-        Objects.equals(this.selfUri, contentManagementSingleDocumentTopicDocumentDataV2.selfUri);
+            Objects.equals(this.name, contentManagementSingleDocumentTopicDocumentDataV2.name) &&
+            Objects.equals(this.dateCreated, contentManagementSingleDocumentTopicDocumentDataV2.dateCreated) &&
+            Objects.equals(this.dateModified, contentManagementSingleDocumentTopicDocumentDataV2.dateModified) &&
+            Objects.equals(this.workspace, contentManagementSingleDocumentTopicDocumentDataV2.workspace) &&
+            Objects.equals(this.createdBy, contentManagementSingleDocumentTopicDocumentDataV2.createdBy) &&
+            Objects.equals(this.contentType, contentManagementSingleDocumentTopicDocumentDataV2.contentType) &&
+            Objects.equals(this.contentLength, contentManagementSingleDocumentTopicDocumentDataV2.contentLength) &&
+            Objects.equals(this.filename, contentManagementSingleDocumentTopicDocumentDataV2.filename) &&
+            Objects.equals(this.changeNumber, contentManagementSingleDocumentTopicDocumentDataV2.changeNumber) &&
+            Objects.equals(this.dateUploaded, contentManagementSingleDocumentTopicDocumentDataV2.dateUploaded) &&
+            Objects.equals(this.uploadedBy, contentManagementSingleDocumentTopicDocumentDataV2.uploadedBy) &&
+            Objects.equals(this.lockInfo, contentManagementSingleDocumentTopicDocumentDataV2.lockInfo) &&
+            Objects.equals(this.selfUri, contentManagementSingleDocumentTopicDocumentDataV2.selfUri);
   }
 
   @Override

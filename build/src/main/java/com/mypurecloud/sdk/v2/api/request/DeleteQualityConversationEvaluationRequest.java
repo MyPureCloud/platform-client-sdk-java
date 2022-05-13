@@ -20,37 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 public class DeleteQualityConversationEvaluationRequest {
-    
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -64,7 +64,7 @@ public class DeleteQualityConversationEvaluationRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private String evaluationId;
 	public String getEvaluationId() {
 		return this.evaluationId;
@@ -78,7 +78,7 @@ public class DeleteQualityConversationEvaluationRequest {
 	    this.setEvaluationId(evaluationId);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -92,7 +92,7 @@ public class DeleteQualityConversationEvaluationRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -130,9 +130,10 @@ public class DeleteQualityConversationEvaluationRequest {
         
                 .withPathParameter("evaluationId", evaluationId)
         
+
                 .withQueryParameters("expand", "", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -143,12 +144,12 @@ public class DeleteQualityConversationEvaluationRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String conversationId, String evaluationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, evaluationId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteQualityConversationEvaluationRequest request;
@@ -157,31 +158,31 @@ public class DeleteQualityConversationEvaluationRequest {
 			request = new DeleteQualityConversationEvaluationRequest();
 		}
 
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
+
 		public Builder withEvaluationId(String evaluationId) {
 			request.setEvaluationId(evaluationId);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String conversationId, String evaluationId) {
 			request.setConversationId(conversationId);
-						request.setEvaluationId(evaluationId);
-			
+			request.setEvaluationId(evaluationId);
+
 			return this;
 		}
-		
+
 
 		public DeleteQualityConversationEvaluationRequest build() {
             

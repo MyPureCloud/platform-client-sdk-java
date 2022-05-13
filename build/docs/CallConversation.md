@@ -24,10 +24,10 @@ title: CallConversation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;none&quot; |
-| ACTIVE | &quot;active&quot; |
-| PAUSED | &quot;paused&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;none&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| PAUSED | &quot;paused&quot; | 
 {: class="table table-striped"}
 
 

@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.StationEntityListing;
 import com.mypurecloud.sdk.v2.model.StationSettings;
 
 public class PatchStationsSettingsRequest {
-    
+
 	private StationSettings body;
 	public StationSettings getBody() {
 		return this.body;
@@ -40,7 +40,7 @@ public class PatchStationsSettingsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,8 +70,8 @@ public class PatchStationsSettingsRequest {
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/stations/settings")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class PatchStationsSettingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(StationSettings body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchStationsSettingsRequest request;
@@ -96,20 +96,20 @@ public class PatchStationsSettingsRequest {
 			request = new PatchStationsSettingsRequest();
 		}
 
-		
+
 		public Builder withBody(StationSettings body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(StationSettings body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PatchStationsSettingsRequest build() {
             

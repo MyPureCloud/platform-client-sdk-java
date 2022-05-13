@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallbackDisconnectIdentifier;
@@ -43,7 +44,6 @@ public class BulkCallbackDisconnectRequest  implements Serializable {
     this.callbackDisconnectIdentifiers = callbackDisconnectIdentifiers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,6 +54,7 @@ public class BulkCallbackDisconnectRequest  implements Serializable {
       return false;
     }
     BulkCallbackDisconnectRequest bulkCallbackDisconnectRequest = (BulkCallbackDisconnectRequest) o;
+
     return Objects.equals(this.callbackDisconnectIdentifiers, bulkCallbackDisconnectRequest.callbackDisconnectIdentifiers);
   }
 

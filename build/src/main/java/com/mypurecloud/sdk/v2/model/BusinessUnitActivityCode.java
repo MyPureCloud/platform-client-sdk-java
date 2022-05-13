@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public BusinessUnitActivityCode name(String name) {
@@ -113,7 +114,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Whether this activity code is active or has been deleted
    **/
@@ -131,7 +132,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    * Whether this is a default activity code
    **/
@@ -149,7 +150,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.defaultCode = defaultCode;
   }
 
-  
+
   /**
    * The category of the activity code
    **/
@@ -167,7 +168,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * The default length of the activity in minutes
    **/
@@ -185,7 +186,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * Whether an agent is paid while performing this activity
    **/
@@ -203,7 +204,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-  
+
   /**
    * Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints
    **/
@@ -221,7 +222,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.countsAsWorkTime = countsAsWorkTime;
   }
 
-  
+
   /**
    * Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off.
    **/
@@ -239,7 +240,7 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.agentTimeOffSelectable = agentTimeOffSelectable;
   }
 
-  
+
   /**
    * Version metadata of this activity code
    **/
@@ -257,14 +258,13 @@ public class BusinessUnitActivityCode  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -275,17 +275,18 @@ public class BusinessUnitActivityCode  implements Serializable {
       return false;
     }
     BusinessUnitActivityCode businessUnitActivityCode = (BusinessUnitActivityCode) o;
+
     return Objects.equals(this.id, businessUnitActivityCode.id) &&
-        Objects.equals(this.name, businessUnitActivityCode.name) &&
-        Objects.equals(this.active, businessUnitActivityCode.active) &&
-        Objects.equals(this.defaultCode, businessUnitActivityCode.defaultCode) &&
-        Objects.equals(this.category, businessUnitActivityCode.category) &&
-        Objects.equals(this.lengthInMinutes, businessUnitActivityCode.lengthInMinutes) &&
-        Objects.equals(this.countsAsPaidTime, businessUnitActivityCode.countsAsPaidTime) &&
-        Objects.equals(this.countsAsWorkTime, businessUnitActivityCode.countsAsWorkTime) &&
-        Objects.equals(this.agentTimeOffSelectable, businessUnitActivityCode.agentTimeOffSelectable) &&
-        Objects.equals(this.metadata, businessUnitActivityCode.metadata) &&
-        Objects.equals(this.selfUri, businessUnitActivityCode.selfUri);
+            Objects.equals(this.name, businessUnitActivityCode.name) &&
+            Objects.equals(this.active, businessUnitActivityCode.active) &&
+            Objects.equals(this.defaultCode, businessUnitActivityCode.defaultCode) &&
+            Objects.equals(this.category, businessUnitActivityCode.category) &&
+            Objects.equals(this.lengthInMinutes, businessUnitActivityCode.lengthInMinutes) &&
+            Objects.equals(this.countsAsPaidTime, businessUnitActivityCode.countsAsPaidTime) &&
+            Objects.equals(this.countsAsWorkTime, businessUnitActivityCode.countsAsWorkTime) &&
+            Objects.equals(this.agentTimeOffSelectable, businessUnitActivityCode.agentTimeOffSelectable) &&
+            Objects.equals(this.metadata, businessUnitActivityCode.metadata) &&
+            Objects.equals(this.selfUri, businessUnitActivityCode.selfUri);
   }
 
   @Override

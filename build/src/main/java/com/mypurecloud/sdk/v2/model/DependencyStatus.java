@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class DependencyStatus  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DependencyStatus name(String name) {
@@ -112,7 +113,7 @@ public class DependencyStatus  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * User that initiated the build.
    **/
@@ -130,7 +131,7 @@ public class DependencyStatus  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * OAuth client that initiated the build.
    **/
@@ -148,7 +149,7 @@ public class DependencyStatus  implements Serializable {
     this.client = client;
   }
 
-  
+
   /**
    **/
   public DependencyStatus buildId(String buildId) {
@@ -165,7 +166,7 @@ public class DependencyStatus  implements Serializable {
     this.buildId = buildId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -183,7 +184,7 @@ public class DependencyStatus  implements Serializable {
     this.dateStarted = dateStarted;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -201,7 +202,7 @@ public class DependencyStatus  implements Serializable {
     this.dateCompleted = dateCompleted;
   }
 
-  
+
   /**
    **/
   public DependencyStatus status(StatusEnum status) {
@@ -218,7 +219,7 @@ public class DependencyStatus  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public DependencyStatus failedObjects(List<FailedObject> failedObjects) {
@@ -235,14 +236,13 @@ public class DependencyStatus  implements Serializable {
     this.failedObjects = failedObjects;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -253,16 +253,17 @@ public class DependencyStatus  implements Serializable {
       return false;
     }
     DependencyStatus dependencyStatus = (DependencyStatus) o;
+
     return Objects.equals(this.id, dependencyStatus.id) &&
-        Objects.equals(this.name, dependencyStatus.name) &&
-        Objects.equals(this.user, dependencyStatus.user) &&
-        Objects.equals(this.client, dependencyStatus.client) &&
-        Objects.equals(this.buildId, dependencyStatus.buildId) &&
-        Objects.equals(this.dateStarted, dependencyStatus.dateStarted) &&
-        Objects.equals(this.dateCompleted, dependencyStatus.dateCompleted) &&
-        Objects.equals(this.status, dependencyStatus.status) &&
-        Objects.equals(this.failedObjects, dependencyStatus.failedObjects) &&
-        Objects.equals(this.selfUri, dependencyStatus.selfUri);
+            Objects.equals(this.name, dependencyStatus.name) &&
+            Objects.equals(this.user, dependencyStatus.user) &&
+            Objects.equals(this.client, dependencyStatus.client) &&
+            Objects.equals(this.buildId, dependencyStatus.buildId) &&
+            Objects.equals(this.dateStarted, dependencyStatus.dateStarted) &&
+            Objects.equals(this.dateCompleted, dependencyStatus.dateCompleted) &&
+            Objects.equals(this.status, dependencyStatus.status) &&
+            Objects.equals(this.failedObjects, dependencyStatus.failedObjects) &&
+            Objects.equals(this.selfUri, dependencyStatus.selfUri);
   }
 
   @Override

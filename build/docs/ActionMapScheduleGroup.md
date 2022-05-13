@@ -8,7 +8,7 @@ title: ActionMapScheduleGroup
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The ID of the action maps&#39;s associated schedule group. |  |
+| **id** | <!----><!---->**String**<!----> | The ID of the action maps's associated schedule group. |  |
 {: class="table table-striped"}
 
 

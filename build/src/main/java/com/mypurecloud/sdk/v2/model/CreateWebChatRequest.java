@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The name of the provider that is sourcing the web chat.
    **/
@@ -68,7 +69,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The list of skill ID's to use for routing.
    **/
@@ -86,7 +87,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * The ID of the langauge to use for routing.
    **/
@@ -104,7 +105,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    * The priority to assign to the conversation for routing.
    **/
@@ -122,7 +123,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * The list of attributes to associate with the customer participant.
    **/
@@ -140,7 +141,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * The name of the customer participating in the web chat.
    **/
@@ -158,7 +159,6 @@ public class CreateWebChatRequest  implements Serializable {
     this.customerName = customerName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,13 +169,14 @@ public class CreateWebChatRequest  implements Serializable {
       return false;
     }
     CreateWebChatRequest createWebChatRequest = (CreateWebChatRequest) o;
+
     return Objects.equals(this.queueId, createWebChatRequest.queueId) &&
-        Objects.equals(this.provider, createWebChatRequest.provider) &&
-        Objects.equals(this.skillIds, createWebChatRequest.skillIds) &&
-        Objects.equals(this.languageId, createWebChatRequest.languageId) &&
-        Objects.equals(this.priority, createWebChatRequest.priority) &&
-        Objects.equals(this.attributes, createWebChatRequest.attributes) &&
-        Objects.equals(this.customerName, createWebChatRequest.customerName);
+            Objects.equals(this.provider, createWebChatRequest.provider) &&
+            Objects.equals(this.skillIds, createWebChatRequest.skillIds) &&
+            Objects.equals(this.languageId, createWebChatRequest.languageId) &&
+            Objects.equals(this.priority, createWebChatRequest.priority) &&
+            Objects.equals(this.attributes, createWebChatRequest.attributes) &&
+            Objects.equals(this.customerName, createWebChatRequest.customerName);
   }
 
   @Override

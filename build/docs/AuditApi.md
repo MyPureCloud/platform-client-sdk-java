@@ -25,8 +25,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get service mapping information used in realtime audits.
 
-
-
 Wraps GET /api/v2/audits/query/realtime/servicemapping  
 
 Requires ALL permissions: 
@@ -84,8 +82,6 @@ This endpoint does not require any parameters.
 
 Get service mapping information used in audits.
 
-
-
 Wraps GET /api/v2/audits/query/servicemapping  
 
 Requires ALL permissions: 
@@ -142,8 +138,6 @@ This endpoint does not require any parameters.
 > [AuditQueryExecutionStatusResponse](AuditQueryExecutionStatusResponse.html) getAuditsQueryTransactionId(transactionId)
 
 Get status of audit query execution
-
-
 
 Wraps GET /api/v2/audits/query/{transactionId}  
 
@@ -206,8 +200,6 @@ try {
 
 Get results of audit query
 
-
-
 Wraps GET /api/v2/audits/query/{transactionId}/results  
 
 Requires ALL permissions: 
@@ -239,7 +231,7 @@ AuditApi apiInstance = new AuditApi();
 String transactionId = "transactionId_example"; // String | Transaction ID
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 Integer pageSize = 25; // Integer | Page size
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand);
     System.out.println(result);
@@ -274,8 +266,6 @@ try {
 > [AuditQueryExecutionStatusResponse](AuditQueryExecutionStatusResponse.html) postAuditsQuery(body)
 
 Create audit query execution
-
-
 
 Wraps POST /api/v2/audits/query  
 
@@ -338,8 +328,6 @@ try {
 
 This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 
-
-
 Wraps POST /api/v2/audits/query/realtime  
 
 Requires ALL permissions: 
@@ -369,7 +357,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuditApi apiInstance = new AuditApi();
 AuditRealtimeQueryRequest body = new AuditRealtimeQueryRequest(); // AuditRealtimeQueryRequest | query
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     AuditRealtimeQueryResultsResponse result = apiInstance.postAuditsQueryRealtime(body, expand);
     System.out.println(result);

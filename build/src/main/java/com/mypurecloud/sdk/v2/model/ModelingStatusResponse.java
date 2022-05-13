@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,28 +87,27 @@ public class ModelingStatusResponse  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the modeling job.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If the request could not be properly processed, error details will be given here.")
   @JsonProperty("errorDetails")
   public List<ModelingProcessingError> getErrorDetails() {
     return errorDetails;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The uri of the modeling result. It has a value if the status is either 'Success', 'PartialFailure', or 'Failed'.")
   @JsonProperty("modelingResultUri")
   public String getModelingResultUri() {
     return modelingResultUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,10 +118,11 @@ public class ModelingStatusResponse  implements Serializable {
       return false;
     }
     ModelingStatusResponse modelingStatusResponse = (ModelingStatusResponse) o;
+
     return Objects.equals(this.id, modelingStatusResponse.id) &&
-        Objects.equals(this.status, modelingStatusResponse.status) &&
-        Objects.equals(this.errorDetails, modelingStatusResponse.errorDetails) &&
-        Objects.equals(this.modelingResultUri, modelingStatusResponse.modelingResultUri);
+            Objects.equals(this.status, modelingStatusResponse.status) &&
+            Objects.equals(this.errorDetails, modelingStatusResponse.errorDetails) &&
+            Objects.equals(this.modelingResultUri, modelingStatusResponse.modelingResultUri);
   }
 
   @Override

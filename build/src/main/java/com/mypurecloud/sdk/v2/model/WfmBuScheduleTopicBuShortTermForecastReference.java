@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class WfmBuScheduleTopicBuShortTermForecastReference  implements Serializ
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuShortTermForecastReference weekDate(String weekDate) {
@@ -58,7 +59,7 @@ public class WfmBuScheduleTopicBuShortTermForecastReference  implements Serializ
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuShortTermForecastReference description(String description) {
@@ -75,7 +76,6 @@ public class WfmBuScheduleTopicBuShortTermForecastReference  implements Serializ
     this.description = description;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class WfmBuScheduleTopicBuShortTermForecastReference  implements Serializ
       return false;
     }
     WfmBuScheduleTopicBuShortTermForecastReference wfmBuScheduleTopicBuShortTermForecastReference = (WfmBuScheduleTopicBuShortTermForecastReference) o;
+
     return Objects.equals(this.id, wfmBuScheduleTopicBuShortTermForecastReference.id) &&
-        Objects.equals(this.weekDate, wfmBuScheduleTopicBuShortTermForecastReference.weekDate) &&
-        Objects.equals(this.description, wfmBuScheduleTopicBuShortTermForecastReference.description);
+            Objects.equals(this.weekDate, wfmBuScheduleTopicBuShortTermForecastReference.weekDate) &&
+            Objects.equals(this.description, wfmBuScheduleTopicBuShortTermForecastReference.description);
   }
 
   @Override

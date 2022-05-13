@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsProperty;
@@ -46,7 +47,7 @@ public class PropertyIndexRequest  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -64,7 +65,7 @@ public class PropertyIndexRequest  implements Serializable {
     this.targetDate = targetDate;
   }
 
-  
+
   /**
    * The list of properties to index
    **/
@@ -82,7 +83,6 @@ public class PropertyIndexRequest  implements Serializable {
     this.properties = properties;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class PropertyIndexRequest  implements Serializable {
       return false;
     }
     PropertyIndexRequest propertyIndexRequest = (PropertyIndexRequest) o;
+
     return Objects.equals(this.sessionId, propertyIndexRequest.sessionId) &&
-        Objects.equals(this.targetDate, propertyIndexRequest.targetDate) &&
-        Objects.equals(this.properties, propertyIndexRequest.properties);
+            Objects.equals(this.targetDate, propertyIndexRequest.targetDate) &&
+            Objects.equals(this.properties, propertyIndexRequest.properties);
   }
 
   @Override

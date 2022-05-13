@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification operationId(String operationId) {
@@ -109,7 +110,7 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification result(WfmBuScheduleRunTopicBuScheduleRun result) {
@@ -126,7 +127,6 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
     this.result = result;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
       return false;
     }
     WfmBuScheduleRunTopicBuSchedulingRunProgressNotification wfmBuScheduleRunTopicBuSchedulingRunProgressNotification = (WfmBuScheduleRunTopicBuSchedulingRunProgressNotification) o;
+
     return Objects.equals(this.status, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.status) &&
-        Objects.equals(this.operationId, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.operationId) &&
-        Objects.equals(this.result, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.result);
+            Objects.equals(this.operationId, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.operationId) &&
+            Objects.equals(this.result, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.result);
   }
 
   @Override

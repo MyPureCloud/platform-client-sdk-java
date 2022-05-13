@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,28 +92,27 @@ public class ScimError  implements Serializable {
     return schemas;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The HTTP status code returned for the SCIM error.")
   @JsonProperty("status")
   public String getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of SCIM error when httpStatus is a \"400\" error.")
   @JsonProperty("scimType")
   public ScimTypeEnum getScimType() {
     return scimType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The detailed description of the SCIM error.")
   @JsonProperty("detail")
   public String getDetail() {
     return detail;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,10 +123,11 @@ public class ScimError  implements Serializable {
       return false;
     }
     ScimError scimError = (ScimError) o;
+
     return Objects.equals(this.schemas, scimError.schemas) &&
-        Objects.equals(this.status, scimError.status) &&
-        Objects.equals(this.scimType, scimError.scimType) &&
-        Objects.equals(this.detail, scimError.detail);
+            Objects.equals(this.status, scimError.status) &&
+            Objects.equals(this.scimType, scimError.scimType) &&
+            Objects.equals(this.detail, scimError.detail);
   }
 
   @Override

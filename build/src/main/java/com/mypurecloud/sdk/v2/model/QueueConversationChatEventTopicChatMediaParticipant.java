@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -295,7 +296,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant name(String name) {
@@ -312,7 +313,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant address(String address) {
@@ -329,7 +330,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.address = address;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant startTime(Date startTime) {
@@ -346,7 +347,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant connectedTime(Date connectedTime) {
@@ -363,7 +364,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant endTime(Date endTime) {
@@ -380,7 +381,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant startHoldTime(Date startHoldTime) {
@@ -397,7 +398,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant purpose(String purpose) {
@@ -414,7 +415,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant state(StateEnum state) {
@@ -431,7 +432,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.state = state;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant direction(DirectionEnum direction) {
@@ -448,7 +449,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -465,7 +466,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant held(Boolean held) {
@@ -482,7 +483,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.held = held;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -499,7 +500,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -516,7 +517,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant user(QueueConversationChatEventTopicUriReference user) {
@@ -533,7 +534,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.user = user;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant queue(QueueConversationChatEventTopicUriReference queue) {
@@ -550,7 +551,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant team(QueueConversationChatEventTopicUriReference team) {
@@ -567,7 +568,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.team = team;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant attributes(Map<String, String> attributes) {
@@ -584,7 +585,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant errorInfo(QueueConversationChatEventTopicErrorBody errorInfo) {
@@ -601,7 +602,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant script(QueueConversationChatEventTopicUriReference script) {
@@ -618,7 +619,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.script = script;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -635,7 +636,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -652,7 +653,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -669,7 +670,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant provider(String provider) {
@@ -686,7 +687,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant externalContact(QueueConversationChatEventTopicUriReference externalContact) {
@@ -703,7 +704,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant externalOrganization(QueueConversationChatEventTopicUriReference externalOrganization) {
@@ -720,7 +721,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant wrapup(QueueConversationChatEventTopicWrapup wrapup) {
@@ -737,7 +738,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant conversationRoutingData(QueueConversationChatEventTopicConversationRoutingData conversationRoutingData) {
@@ -754,7 +755,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant peer(String peer) {
@@ -771,7 +772,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -788,7 +789,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -805,7 +806,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant journeyContext(QueueConversationChatEventTopicJourneyContext journeyContext) {
@@ -822,7 +823,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant startAcwTime(Date startAcwTime) {
@@ -839,7 +840,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant endAcwTime(Date endAcwTime) {
@@ -856,7 +857,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant roomId(String roomId) {
@@ -873,7 +874,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.roomId = roomId;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicChatMediaParticipant avatarImageUrl(String avatarImageUrl) {
@@ -890,7 +891,6 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     this.avatarImageUrl = avatarImageUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -901,42 +901,43 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
       return false;
     }
     QueueConversationChatEventTopicChatMediaParticipant queueConversationChatEventTopicChatMediaParticipant = (QueueConversationChatEventTopicChatMediaParticipant) o;
+
     return Objects.equals(this.id, queueConversationChatEventTopicChatMediaParticipant.id) &&
-        Objects.equals(this.name, queueConversationChatEventTopicChatMediaParticipant.name) &&
-        Objects.equals(this.address, queueConversationChatEventTopicChatMediaParticipant.address) &&
-        Objects.equals(this.startTime, queueConversationChatEventTopicChatMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, queueConversationChatEventTopicChatMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, queueConversationChatEventTopicChatMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, queueConversationChatEventTopicChatMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, queueConversationChatEventTopicChatMediaParticipant.purpose) &&
-        Objects.equals(this.state, queueConversationChatEventTopicChatMediaParticipant.state) &&
-        Objects.equals(this.direction, queueConversationChatEventTopicChatMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, queueConversationChatEventTopicChatMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, queueConversationChatEventTopicChatMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, queueConversationChatEventTopicChatMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, queueConversationChatEventTopicChatMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, queueConversationChatEventTopicChatMediaParticipant.user) &&
-        Objects.equals(this.queue, queueConversationChatEventTopicChatMediaParticipant.queue) &&
-        Objects.equals(this.team, queueConversationChatEventTopicChatMediaParticipant.team) &&
-        Objects.equals(this.attributes, queueConversationChatEventTopicChatMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, queueConversationChatEventTopicChatMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, queueConversationChatEventTopicChatMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, queueConversationChatEventTopicChatMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, queueConversationChatEventTopicChatMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, queueConversationChatEventTopicChatMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, queueConversationChatEventTopicChatMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, queueConversationChatEventTopicChatMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, queueConversationChatEventTopicChatMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, queueConversationChatEventTopicChatMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, queueConversationChatEventTopicChatMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, queueConversationChatEventTopicChatMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, queueConversationChatEventTopicChatMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, queueConversationChatEventTopicChatMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, queueConversationChatEventTopicChatMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, queueConversationChatEventTopicChatMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, queueConversationChatEventTopicChatMediaParticipant.endAcwTime) &&
-        Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
-        Objects.equals(this.avatarImageUrl, queueConversationChatEventTopicChatMediaParticipant.avatarImageUrl);
+            Objects.equals(this.name, queueConversationChatEventTopicChatMediaParticipant.name) &&
+            Objects.equals(this.address, queueConversationChatEventTopicChatMediaParticipant.address) &&
+            Objects.equals(this.startTime, queueConversationChatEventTopicChatMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, queueConversationChatEventTopicChatMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, queueConversationChatEventTopicChatMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, queueConversationChatEventTopicChatMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, queueConversationChatEventTopicChatMediaParticipant.purpose) &&
+            Objects.equals(this.state, queueConversationChatEventTopicChatMediaParticipant.state) &&
+            Objects.equals(this.direction, queueConversationChatEventTopicChatMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, queueConversationChatEventTopicChatMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, queueConversationChatEventTopicChatMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, queueConversationChatEventTopicChatMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, queueConversationChatEventTopicChatMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, queueConversationChatEventTopicChatMediaParticipant.user) &&
+            Objects.equals(this.queue, queueConversationChatEventTopicChatMediaParticipant.queue) &&
+            Objects.equals(this.team, queueConversationChatEventTopicChatMediaParticipant.team) &&
+            Objects.equals(this.attributes, queueConversationChatEventTopicChatMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, queueConversationChatEventTopicChatMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, queueConversationChatEventTopicChatMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, queueConversationChatEventTopicChatMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, queueConversationChatEventTopicChatMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, queueConversationChatEventTopicChatMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, queueConversationChatEventTopicChatMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, queueConversationChatEventTopicChatMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, queueConversationChatEventTopicChatMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, queueConversationChatEventTopicChatMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, queueConversationChatEventTopicChatMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, queueConversationChatEventTopicChatMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, queueConversationChatEventTopicChatMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, queueConversationChatEventTopicChatMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, queueConversationChatEventTopicChatMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, queueConversationChatEventTopicChatMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, queueConversationChatEventTopicChatMediaParticipant.endAcwTime) &&
+            Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
+            Objects.equals(this.avatarImageUrl, queueConversationChatEventTopicChatMediaParticipant.avatarImageUrl);
   }
 
   @Override

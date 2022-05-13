@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
     this.ifname = ifname;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricNetworks sentBytesPerSec(Integer sentBytesPerSec) {
@@ -61,7 +62,7 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
     this.sentBytesPerSec = sentBytesPerSec;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricNetworks receivedBytesPerSec(Integer receivedBytesPerSec) {
@@ -78,7 +79,7 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
     this.receivedBytesPerSec = receivedBytesPerSec;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricNetworks bandwidthBitsPerSec(Integer bandwidthBitsPerSec) {
@@ -95,7 +96,7 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
     this.bandwidthBitsPerSec = bandwidthBitsPerSec;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricNetworks utilizationPct(BigDecimal utilizationPct) {
@@ -112,7 +113,6 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
     this.utilizationPct = utilizationPct;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,11 +123,12 @@ public class EdgeMetricsTopicEdgeMetricNetworks  implements Serializable {
       return false;
     }
     EdgeMetricsTopicEdgeMetricNetworks edgeMetricsTopicEdgeMetricNetworks = (EdgeMetricsTopicEdgeMetricNetworks) o;
+
     return Objects.equals(this.ifname, edgeMetricsTopicEdgeMetricNetworks.ifname) &&
-        Objects.equals(this.sentBytesPerSec, edgeMetricsTopicEdgeMetricNetworks.sentBytesPerSec) &&
-        Objects.equals(this.receivedBytesPerSec, edgeMetricsTopicEdgeMetricNetworks.receivedBytesPerSec) &&
-        Objects.equals(this.bandwidthBitsPerSec, edgeMetricsTopicEdgeMetricNetworks.bandwidthBitsPerSec) &&
-        Objects.equals(this.utilizationPct, edgeMetricsTopicEdgeMetricNetworks.utilizationPct);
+            Objects.equals(this.sentBytesPerSec, edgeMetricsTopicEdgeMetricNetworks.sentBytesPerSec) &&
+            Objects.equals(this.receivedBytesPerSec, edgeMetricsTopicEdgeMetricNetworks.receivedBytesPerSec) &&
+            Objects.equals(this.bandwidthBitsPerSec, edgeMetricsTopicEdgeMetricNetworks.bandwidthBitsPerSec) &&
+            Objects.equals(this.utilizationPct, edgeMetricsTopicEdgeMetricNetworks.utilizationPct);
   }
 
   @Override

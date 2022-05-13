@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -30,14 +31,13 @@ public class Limit  implements Serializable {
     return key;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The limit value")
   @JsonProperty("value")
   public Double getValue() {
     return value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -48,8 +48,9 @@ public class Limit  implements Serializable {
       return false;
     }
     Limit limit = (Limit) o;
+
     return Objects.equals(this.key, limit.key) &&
-        Objects.equals(this.value, limit.value);
+            Objects.equals(this.value, limit.value);
   }
 
   @Override

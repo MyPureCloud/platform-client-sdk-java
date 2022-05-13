@@ -27,7 +27,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class PutPresencedefinitionRequest {
-    
+
 	private String presenceId;
 	public String getPresenceId() {
 		return this.presenceId;
@@ -41,7 +41,7 @@ public class PutPresencedefinitionRequest {
 	    this.setPresenceId(presenceId);
 	    return this;
 	} 
-	
+
 	private OrganizationPresence body;
 	public OrganizationPresence getBody() {
 		return this.body;
@@ -55,7 +55,7 @@ public class PutPresencedefinitionRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -92,8 +92,8 @@ public class PutPresencedefinitionRequest {
                 .withPathParameter("presenceId", presenceId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -104,12 +104,12 @@ public class PutPresencedefinitionRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String presenceId, OrganizationPresence body) {
 	    return new Builder()
 	            .withRequiredParams(presenceId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutPresencedefinitionRequest request;
@@ -118,26 +118,26 @@ public class PutPresencedefinitionRequest {
 			request = new PutPresencedefinitionRequest();
 		}
 
-		
+
 		public Builder withPresenceId(String presenceId) {
 			request.setPresenceId(presenceId);
 			return this;
 		}
-		
+
 		public Builder withBody(OrganizationPresence body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String presenceId, OrganizationPresence body) {
 			request.setPresenceId(presenceId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutPresencedefinitionRequest build() {
             

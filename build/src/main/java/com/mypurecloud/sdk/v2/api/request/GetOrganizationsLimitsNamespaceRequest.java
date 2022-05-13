@@ -20,22 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 public class GetOrganizationsLimitsNamespaceRequest {
-    
+
 	private String namespaceName;
 	public String getNamespaceName() {
 		return this.namespaceName;
@@ -49,7 +48,7 @@ public class GetOrganizationsLimitsNamespaceRequest {
 	    this.setNamespaceName(namespaceName);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -80,7 +79,7 @@ public class GetOrganizationsLimitsNamespaceRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/organizations/limits/namespaces/{namespaceName}")
                 .withPathParameter("namespaceName", namespaceName)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -91,12 +90,12 @@ public class GetOrganizationsLimitsNamespaceRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String namespaceName) {
 	    return new Builder()
 	            .withRequiredParams(namespaceName);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOrganizationsLimitsNamespaceRequest request;
@@ -105,20 +104,20 @@ public class GetOrganizationsLimitsNamespaceRequest {
 			request = new GetOrganizationsLimitsNamespaceRequest();
 		}
 
-		
+
 		public Builder withNamespaceName(String namespaceName) {
 			request.setNamespaceName(namespaceName);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String namespaceName) {
 			request.setNamespaceName(namespaceName);
-			
+
 			return this;
 		}
-		
+
 
 		public GetOrganizationsLimitsNamespaceRequest build() {
             

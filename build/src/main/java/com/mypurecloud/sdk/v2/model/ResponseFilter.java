@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class ResponseFilter  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Filter operation: IN, EQUALS, NOTEQUALS.
    **/
@@ -112,7 +113,7 @@ public class ResponseFilter  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Values to filter on.
    **/
@@ -130,7 +131,6 @@ public class ResponseFilter  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class ResponseFilter  implements Serializable {
       return false;
     }
     ResponseFilter responseFilter = (ResponseFilter) o;
+
     return Objects.equals(this.name, responseFilter.name) &&
-        Objects.equals(this.operator, responseFilter.operator) &&
-        Objects.equals(this.values, responseFilter.values);
+            Objects.equals(this.operator, responseFilter.operator) &&
+            Objects.equals(this.values, responseFilter.values);
   }
 
   @Override

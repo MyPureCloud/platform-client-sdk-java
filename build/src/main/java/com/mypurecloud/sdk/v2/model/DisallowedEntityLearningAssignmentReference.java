@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReference;
@@ -42,7 +43,7 @@ public class DisallowedEntityLearningAssignmentReference  implements Serializabl
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    * The entity that was disallowed
    **/
@@ -60,7 +61,6 @@ public class DisallowedEntityLearningAssignmentReference  implements Serializabl
     this.entity = entity;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class DisallowedEntityLearningAssignmentReference  implements Serializabl
       return false;
     }
     DisallowedEntityLearningAssignmentReference disallowedEntityLearningAssignmentReference = (DisallowedEntityLearningAssignmentReference) o;
+
     return Objects.equals(this.errorCode, disallowedEntityLearningAssignmentReference.errorCode) &&
-        Objects.equals(this.entity, disallowedEntityLearningAssignmentReference.entity);
+            Objects.equals(this.entity, disallowedEntityLearningAssignmentReference.entity);
   }
 
   @Override

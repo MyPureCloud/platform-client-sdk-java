@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -145,7 +146,7 @@ public class ShiftTradeActivityRule  implements Serializable {
     this.activityCategory = activityCategory;
   }
 
-  
+
   /**
    * The action this rule invokes
    **/
@@ -163,7 +164,7 @@ public class ShiftTradeActivityRule  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
    **/
@@ -181,7 +182,6 @@ public class ShiftTradeActivityRule  implements Serializable {
     this.activityCodeIdReplacement = activityCodeIdReplacement;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,9 +192,10 @@ public class ShiftTradeActivityRule  implements Serializable {
       return false;
     }
     ShiftTradeActivityRule shiftTradeActivityRule = (ShiftTradeActivityRule) o;
+
     return Objects.equals(this.activityCategory, shiftTradeActivityRule.activityCategory) &&
-        Objects.equals(this.action, shiftTradeActivityRule.action) &&
-        Objects.equals(this.activityCodeIdReplacement, shiftTradeActivityRule.activityCodeIdReplacement);
+            Objects.equals(this.action, shiftTradeActivityRule.action) &&
+            Objects.equals(this.activityCodeIdReplacement, shiftTradeActivityRule.activityCodeIdReplacement);
   }
 
   @Override

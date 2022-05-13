@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ConversationMessageEventTopicJourneyCustomerSession  implements Ser
     this.id = id;
   }
 
-  
+
   /**
    * The type of the Customer/User's session within the Journey System (e.g. web, app)
    **/
@@ -60,7 +61,6 @@ public class ConversationMessageEventTopicJourneyCustomerSession  implements Ser
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ConversationMessageEventTopicJourneyCustomerSession  implements Ser
       return false;
     }
     ConversationMessageEventTopicJourneyCustomerSession conversationMessageEventTopicJourneyCustomerSession = (ConversationMessageEventTopicJourneyCustomerSession) o;
+
     return Objects.equals(this.id, conversationMessageEventTopicJourneyCustomerSession.id) &&
-        Objects.equals(this.type, conversationMessageEventTopicJourneyCustomerSession.type);
+            Objects.equals(this.type, conversationMessageEventTopicJourneyCustomerSession.type);
   }
 
   @Override

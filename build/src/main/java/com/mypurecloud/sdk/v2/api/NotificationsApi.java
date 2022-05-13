@@ -10,12 +10,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AvailableTopicEntityListing;
-import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelEntityListing;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
-import com.mypurecloud.sdk.v2.model.Channel;
+import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteNotificationsChannelSubscriptionsRequest;
@@ -33,7 +33,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class NotificationsApi {
   private final ApiClient pcapiClient;
 
@@ -45,7 +44,6 @@ public class NotificationsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Remove all subscriptions
    * 
@@ -70,7 +68,7 @@ public class NotificationsApi {
   private DeleteNotificationsChannelSubscriptionsRequest createDeleteNotificationsChannelSubscriptionsRequest(String channelId) {
     return DeleteNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
-    
+
             .build();
   }
 
@@ -121,7 +119,6 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * Get available notification topics.
    * 
@@ -150,9 +147,9 @@ public class NotificationsApi {
   private GetNotificationsAvailabletopicsRequest createGetNotificationsAvailabletopicsRequest(List<String> expand, Boolean includePreview) {
     return GetNotificationsAvailabletopicsRequest.builder()
             .withExpand(expand)
-    
+
             .withIncludePreview(includePreview)
-    
+
             .build();
   }
 
@@ -204,7 +201,6 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * The list of all subscriptions for this channel
    * 
@@ -231,7 +227,7 @@ public class NotificationsApi {
   private GetNotificationsChannelSubscriptionsRequest createGetNotificationsChannelSubscriptionsRequest(String channelId) {
     return GetNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
-    
+
             .build();
   }
 
@@ -283,11 +279,10 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * The list of existing channels
    * 
-   * @param includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional, default to token)
+   * @param includechannels Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional, default to token)
    * @return ChannelEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -299,7 +294,7 @@ public class NotificationsApi {
   /**
    * The list of existing channels
    * 
-   * @param includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional, default to token)
+   * @param includechannels Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional, default to token)
    * @return ChannelEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -310,7 +305,7 @@ public class NotificationsApi {
   private GetNotificationsChannelsRequest createGetNotificationsChannelsRequest(String includechannels) {
     return GetNotificationsChannelsRequest.builder()
             .withIncludechannels(includechannels)
-    
+
             .build();
   }
 
@@ -362,10 +357,9 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * Verify a channel still exists and is valid
-   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
    * @param channelId Channel ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -376,7 +370,7 @@ public class NotificationsApi {
 
   /**
    * Verify a channel still exists and is valid
-   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
    * @param channelId Channel ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -387,13 +381,13 @@ public class NotificationsApi {
   private HeadNotificationsChannelRequest createHeadNotificationsChannelRequest(String channelId) {
     return HeadNotificationsChannelRequest.builder()
             .withChannelId(channelId)
-    
+
             .build();
   }
 
   /**
    * Verify a channel still exists and is valid
-   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -411,7 +405,7 @@ public class NotificationsApi {
 
   /**
    * Verify a channel still exists and is valid
-   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -438,7 +432,6 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
@@ -467,9 +460,9 @@ public class NotificationsApi {
   private PostNotificationsChannelSubscriptionsRequest createPostNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
     return PostNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -521,7 +514,6 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * Create a new channel
    * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
@@ -596,7 +588,6 @@ public class NotificationsApi {
     }
   }
 
-  
   /**
    * Replace the current list of subscriptions with a new list.
    * 
@@ -625,9 +616,9 @@ public class NotificationsApi {
   private PutNotificationsChannelSubscriptionsRequest createPutNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
     return PutNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -679,5 +670,4 @@ public class NotificationsApi {
     }
   }
 
-  
 }

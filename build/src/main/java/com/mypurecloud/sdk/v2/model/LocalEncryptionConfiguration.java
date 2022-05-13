@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -34,7 +35,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public LocalEncryptionConfiguration name(String name) {
@@ -51,7 +52,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The url for decryption. This must specify the path to where Purecloud can requests decryption
    **/
@@ -69,7 +70,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The api id for Hawk Authentication.
    **/
@@ -87,7 +88,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.apiId = apiId;
   }
 
-  
+
   /**
    * The api shared symmetric key used for hawk authentication
    **/
@@ -105,14 +106,13 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.apiKey = apiKey;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,12 +123,13 @@ public class LocalEncryptionConfiguration  implements Serializable {
       return false;
     }
     LocalEncryptionConfiguration localEncryptionConfiguration = (LocalEncryptionConfiguration) o;
+
     return Objects.equals(this.id, localEncryptionConfiguration.id) &&
-        Objects.equals(this.name, localEncryptionConfiguration.name) &&
-        Objects.equals(this.url, localEncryptionConfiguration.url) &&
-        Objects.equals(this.apiId, localEncryptionConfiguration.apiId) &&
-        Objects.equals(this.apiKey, localEncryptionConfiguration.apiKey) &&
-        Objects.equals(this.selfUri, localEncryptionConfiguration.selfUri);
+            Objects.equals(this.name, localEncryptionConfiguration.name) &&
+            Objects.equals(this.url, localEncryptionConfiguration.url) &&
+            Objects.equals(this.apiId, localEncryptionConfiguration.apiId) &&
+            Objects.equals(this.apiKey, localEncryptionConfiguration.apiKey) &&
+            Objects.equals(this.selfUri, localEncryptionConfiguration.selfUri);
   }
 
   @Override

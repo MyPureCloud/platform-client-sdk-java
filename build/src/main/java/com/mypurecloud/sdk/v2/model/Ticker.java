@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class Ticker  implements Serializable {
     this.symbol = symbol;
   }
 
-  
+
   /**
    * The exchange for this ticker symbol. Examples: NYSE, FTSE, NASDAQ, etc.
    **/
@@ -59,7 +60,6 @@ public class Ticker  implements Serializable {
     this.exchange = exchange;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class Ticker  implements Serializable {
       return false;
     }
     Ticker ticker = (Ticker) o;
+
     return Objects.equals(this.symbol, ticker.symbol) &&
-        Objects.equals(this.exchange, ticker.exchange);
+            Objects.equals(this.exchange, ticker.exchange);
   }
 
   @Override

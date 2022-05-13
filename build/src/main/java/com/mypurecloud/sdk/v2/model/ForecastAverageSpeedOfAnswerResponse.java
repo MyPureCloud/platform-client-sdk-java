@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,6 @@ public class ForecastAverageSpeedOfAnswerResponse  implements Serializable {
     this.seconds = seconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -51,6 +51,7 @@ public class ForecastAverageSpeedOfAnswerResponse  implements Serializable {
       return false;
     }
     ForecastAverageSpeedOfAnswerResponse forecastAverageSpeedOfAnswerResponse = (ForecastAverageSpeedOfAnswerResponse) o;
+
     return Objects.equals(this.seconds, forecastAverageSpeedOfAnswerResponse.seconds);
   }
 

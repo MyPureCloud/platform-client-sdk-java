@@ -35,13 +35,13 @@ title: WebChatGuestMediaRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| ACCEPTED | &quot;ACCEPTED&quot; |
-| DECLINED | &quot;DECLINED&quot; |
-| TIMEDOUT | &quot;TIMEDOUT&quot; |
-| CANCELLED | &quot;CANCELLED&quot; |
-| ERRORED | &quot;ERRORED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| ACCEPTED | &quot;ACCEPTED&quot; | 
+| DECLINED | &quot;DECLINED&quot; | 
+| TIMEDOUT | &quot;TIMEDOUT&quot; | 
+| CANCELLED | &quot;CANCELLED&quot; | 
+| ERRORED | &quot;ERRORED&quot; | 
 {: class="table table-striped"}
 
 

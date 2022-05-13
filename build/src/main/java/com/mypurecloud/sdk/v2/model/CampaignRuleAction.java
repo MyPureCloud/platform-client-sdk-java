@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class CampaignRuleAction  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The parameters for the CampaignRuleAction. Required for certain actionTypes.
    **/
@@ -115,7 +116,7 @@ public class CampaignRuleAction  implements Serializable {
     this.parameters = parameters;
   }
 
-  
+
   /**
    * The action to take on the campaignRuleActionEntities.
    **/
@@ -133,7 +134,7 @@ public class CampaignRuleAction  implements Serializable {
     this.actionType = actionType;
   }
 
-  
+
   /**
    * The list of entities that this action will apply to.
    **/
@@ -151,7 +152,6 @@ public class CampaignRuleAction  implements Serializable {
     this.campaignRuleActionEntities = campaignRuleActionEntities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,10 +162,11 @@ public class CampaignRuleAction  implements Serializable {
       return false;
     }
     CampaignRuleAction campaignRuleAction = (CampaignRuleAction) o;
+
     return Objects.equals(this.id, campaignRuleAction.id) &&
-        Objects.equals(this.parameters, campaignRuleAction.parameters) &&
-        Objects.equals(this.actionType, campaignRuleAction.actionType) &&
-        Objects.equals(this.campaignRuleActionEntities, campaignRuleAction.campaignRuleActionEntities);
+            Objects.equals(this.parameters, campaignRuleAction.parameters) &&
+            Objects.equals(this.actionType, campaignRuleAction.actionType) &&
+            Objects.equals(this.campaignRuleActionEntities, campaignRuleAction.campaignRuleActionEntities);
   }
 
   @Override

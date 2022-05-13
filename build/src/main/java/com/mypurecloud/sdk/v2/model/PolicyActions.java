@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
@@ -62,7 +63,7 @@ public class PolicyActions  implements Serializable {
     this.retainRecording = retainRecording;
   }
 
-  
+
   /**
    * true to delete the recording associated with the conversation. If retainRecording = true, this will be ignored. Default = false
    **/
@@ -80,7 +81,7 @@ public class PolicyActions  implements Serializable {
     this.deleteRecording = deleteRecording;
   }
 
-  
+
   /**
    * true to delete the recording associated with the conversation regardless of the values of retainRecording or deleteRecording. Default = false
    **/
@@ -98,7 +99,7 @@ public class PolicyActions  implements Serializable {
     this.alwaysDelete = alwaysDelete;
   }
 
-  
+
   /**
    **/
   public PolicyActions assignEvaluations(List<EvaluationAssignment> assignEvaluations) {
@@ -115,7 +116,7 @@ public class PolicyActions  implements Serializable {
     this.assignEvaluations = assignEvaluations;
   }
 
-  
+
   /**
    **/
   public PolicyActions assignMeteredEvaluations(List<MeteredEvaluationAssignment> assignMeteredEvaluations) {
@@ -132,7 +133,7 @@ public class PolicyActions  implements Serializable {
     this.assignMeteredEvaluations = assignMeteredEvaluations;
   }
 
-  
+
   /**
    **/
   public PolicyActions assignMeteredAssignmentByAgent(List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent) {
@@ -149,7 +150,7 @@ public class PolicyActions  implements Serializable {
     this.assignMeteredAssignmentByAgent = assignMeteredAssignmentByAgent;
   }
 
-  
+
   /**
    **/
   public PolicyActions assignCalibrations(List<CalibrationAssignment> assignCalibrations) {
@@ -166,7 +167,7 @@ public class PolicyActions  implements Serializable {
     this.assignCalibrations = assignCalibrations;
   }
 
-  
+
   /**
    **/
   public PolicyActions assignSurveys(List<SurveyAssignment> assignSurveys) {
@@ -183,7 +184,7 @@ public class PolicyActions  implements Serializable {
     this.assignSurveys = assignSurveys;
   }
 
-  
+
   /**
    **/
   public PolicyActions retentionDuration(RetentionDuration retentionDuration) {
@@ -200,7 +201,7 @@ public class PolicyActions  implements Serializable {
     this.retentionDuration = retentionDuration;
   }
 
-  
+
   /**
    **/
   public PolicyActions initiateScreenRecording(InitiateScreenRecording initiateScreenRecording) {
@@ -217,7 +218,7 @@ public class PolicyActions  implements Serializable {
     this.initiateScreenRecording = initiateScreenRecording;
   }
 
-  
+
   /**
    **/
   public PolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
@@ -234,7 +235,7 @@ public class PolicyActions  implements Serializable {
     this.mediaTranscriptions = mediaTranscriptions;
   }
 
-  
+
   /**
    * Policy action for exporting recordings using an integration to 3rd party s3.
    **/
@@ -252,7 +253,6 @@ public class PolicyActions  implements Serializable {
     this.integrationExport = integrationExport;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -263,18 +263,19 @@ public class PolicyActions  implements Serializable {
       return false;
     }
     PolicyActions policyActions = (PolicyActions) o;
+
     return Objects.equals(this.retainRecording, policyActions.retainRecording) &&
-        Objects.equals(this.deleteRecording, policyActions.deleteRecording) &&
-        Objects.equals(this.alwaysDelete, policyActions.alwaysDelete) &&
-        Objects.equals(this.assignEvaluations, policyActions.assignEvaluations) &&
-        Objects.equals(this.assignMeteredEvaluations, policyActions.assignMeteredEvaluations) &&
-        Objects.equals(this.assignMeteredAssignmentByAgent, policyActions.assignMeteredAssignmentByAgent) &&
-        Objects.equals(this.assignCalibrations, policyActions.assignCalibrations) &&
-        Objects.equals(this.assignSurveys, policyActions.assignSurveys) &&
-        Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
-        Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording) &&
-        Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions) &&
-        Objects.equals(this.integrationExport, policyActions.integrationExport);
+            Objects.equals(this.deleteRecording, policyActions.deleteRecording) &&
+            Objects.equals(this.alwaysDelete, policyActions.alwaysDelete) &&
+            Objects.equals(this.assignEvaluations, policyActions.assignEvaluations) &&
+            Objects.equals(this.assignMeteredEvaluations, policyActions.assignMeteredEvaluations) &&
+            Objects.equals(this.assignMeteredAssignmentByAgent, policyActions.assignMeteredAssignmentByAgent) &&
+            Objects.equals(this.assignCalibrations, policyActions.assignCalibrations) &&
+            Objects.equals(this.assignSurveys, policyActions.assignSurveys) &&
+            Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
+            Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording) &&
+            Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions) &&
+            Objects.equals(this.integrationExport, policyActions.integrationExport);
   }
 
   @Override

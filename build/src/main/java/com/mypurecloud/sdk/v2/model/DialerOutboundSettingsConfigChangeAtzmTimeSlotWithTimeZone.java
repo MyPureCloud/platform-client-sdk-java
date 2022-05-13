@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
     this.timeZoneId = timeZoneId;
   }
 
-  
+
   /**
    * The earliest time to dial a contact
    **/
@@ -61,7 +62,7 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
     this.earliestCallableTime = earliestCallableTime;
   }
 
-  
+
   /**
    * The latest time to dial a contact
    **/
@@ -79,7 +80,6 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
     this.latestCallableTime = latestCallableTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
       return false;
     }
     DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone = (DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone) o;
+
     return Objects.equals(this.timeZoneId, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.timeZoneId) &&
-        Objects.equals(this.earliestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.earliestCallableTime) &&
-        Objects.equals(this.latestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.latestCallableTime);
+            Objects.equals(this.earliestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.earliestCallableTime) &&
+            Objects.equals(this.latestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.latestCallableTime);
   }
 
   @Override

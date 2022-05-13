@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -235,7 +236,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -253,7 +254,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.id = id;
   }
 
-  
+
   /**
    * The direction of the call
    **/
@@ -271,7 +272,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.direction = direction;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -289,7 +290,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.held = held;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -307,7 +308,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.
    **/
@@ -325,7 +326,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicCallback dialerPreview(QueueConversationSocialExpressionEventTopicDialerPreview dialerPreview) {
@@ -342,7 +343,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.dialerPreview = dialerPreview;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicCallback voicemail(QueueConversationSocialExpressionEventTopicVoicemail voicemail) {
@@ -359,7 +360,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.voicemail = voicemail;
   }
 
-  
+
   /**
    * The phone number(s) to use to place the callback.
    **/
@@ -377,7 +378,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    * The name of the user requesting a callback.
    **/
@@ -395,7 +396,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -413,7 +414,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -431,7 +432,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.peerId = peerId;
   }
 
-  
+
   /**
    * True if the call for the callback uses external dialing.
    **/
@@ -449,7 +450,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.externalCampaign = externalCampaign;
   }
 
-  
+
   /**
    * True if the ability to skip a callback should be enabled.
    **/
@@ -467,7 +468,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.skipEnabled = skipEnabled;
   }
 
-  
+
   /**
    * The source provider of the callback.
    **/
@@ -485,7 +486,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.provider = provider;
   }
 
-  
+
   /**
    * The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
    **/
@@ -503,7 +504,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.timeoutSeconds = timeoutSeconds;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -521,7 +522,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -539,7 +540,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.
    **/
@@ -557,7 +558,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    * The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
    **/
@@ -575,7 +576,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -593,7 +594,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -611,7 +612,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -629,7 +630,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
    **/
@@ -647,7 +648,7 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.callerId = callerId;
   }
 
-  
+
   /**
    * The name displayed to recipients of the phone call.
    **/
@@ -665,7 +666,6 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     this.callerIdName = callerIdName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -676,31 +676,32 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
       return false;
     }
     QueueConversationSocialExpressionEventTopicCallback queueConversationSocialExpressionEventTopicCallback = (QueueConversationSocialExpressionEventTopicCallback) o;
+
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicCallback.state) &&
-        Objects.equals(this.id, queueConversationSocialExpressionEventTopicCallback.id) &&
-        Objects.equals(this.direction, queueConversationSocialExpressionEventTopicCallback.direction) &&
-        Objects.equals(this.held, queueConversationSocialExpressionEventTopicCallback.held) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicCallback.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicCallback.startHoldTime) &&
-        Objects.equals(this.dialerPreview, queueConversationSocialExpressionEventTopicCallback.dialerPreview) &&
-        Objects.equals(this.voicemail, queueConversationSocialExpressionEventTopicCallback.voicemail) &&
-        Objects.equals(this.callbackNumbers, queueConversationSocialExpressionEventTopicCallback.callbackNumbers) &&
-        Objects.equals(this.callbackUserName, queueConversationSocialExpressionEventTopicCallback.callbackUserName) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicCallback.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicCallback.peerId) &&
-        Objects.equals(this.externalCampaign, queueConversationSocialExpressionEventTopicCallback.externalCampaign) &&
-        Objects.equals(this.skipEnabled, queueConversationSocialExpressionEventTopicCallback.skipEnabled) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicCallback.provider) &&
-        Objects.equals(this.timeoutSeconds, queueConversationSocialExpressionEventTopicCallback.timeoutSeconds) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicCallback.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCallback.disconnectedTime) &&
-        Objects.equals(this.callbackScheduledTime, queueConversationSocialExpressionEventTopicCallback.callbackScheduledTime) &&
-        Objects.equals(this.automatedCallbackConfigId, queueConversationSocialExpressionEventTopicCallback.automatedCallbackConfigId) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCallback.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCallback.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCallback.afterCallWorkRequired) &&
-        Objects.equals(this.callerId, queueConversationSocialExpressionEventTopicCallback.callerId) &&
-        Objects.equals(this.callerIdName, queueConversationSocialExpressionEventTopicCallback.callerIdName);
+            Objects.equals(this.id, queueConversationSocialExpressionEventTopicCallback.id) &&
+            Objects.equals(this.direction, queueConversationSocialExpressionEventTopicCallback.direction) &&
+            Objects.equals(this.held, queueConversationSocialExpressionEventTopicCallback.held) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicCallback.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationSocialExpressionEventTopicCallback.startHoldTime) &&
+            Objects.equals(this.dialerPreview, queueConversationSocialExpressionEventTopicCallback.dialerPreview) &&
+            Objects.equals(this.voicemail, queueConversationSocialExpressionEventTopicCallback.voicemail) &&
+            Objects.equals(this.callbackNumbers, queueConversationSocialExpressionEventTopicCallback.callbackNumbers) &&
+            Objects.equals(this.callbackUserName, queueConversationSocialExpressionEventTopicCallback.callbackUserName) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicCallback.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicCallback.peerId) &&
+            Objects.equals(this.externalCampaign, queueConversationSocialExpressionEventTopicCallback.externalCampaign) &&
+            Objects.equals(this.skipEnabled, queueConversationSocialExpressionEventTopicCallback.skipEnabled) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicCallback.provider) &&
+            Objects.equals(this.timeoutSeconds, queueConversationSocialExpressionEventTopicCallback.timeoutSeconds) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicCallback.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCallback.disconnectedTime) &&
+            Objects.equals(this.callbackScheduledTime, queueConversationSocialExpressionEventTopicCallback.callbackScheduledTime) &&
+            Objects.equals(this.automatedCallbackConfigId, queueConversationSocialExpressionEventTopicCallback.automatedCallbackConfigId) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCallback.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCallback.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCallback.afterCallWorkRequired) &&
+            Objects.equals(this.callerId, queueConversationSocialExpressionEventTopicCallback.callerId) &&
+            Objects.equals(this.callerIdName, queueConversationSocialExpressionEventTopicCallback.callerIdName);
   }
 
   @Override

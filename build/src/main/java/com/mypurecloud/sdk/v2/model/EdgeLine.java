@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -156,7 +157,7 @@ public class EdgeLine  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -174,7 +175,7 @@ public class EdgeLine  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -192,7 +193,7 @@ public class EdgeLine  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -210,7 +211,7 @@ public class EdgeLine  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -228,7 +229,7 @@ public class EdgeLine  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -246,7 +247,7 @@ public class EdgeLine  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -264,7 +265,7 @@ public class EdgeLine  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -282,7 +283,7 @@ public class EdgeLine  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -300,14 +301,14 @@ public class EdgeLine  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -325,7 +326,7 @@ public class EdgeLine  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -343,7 +344,7 @@ public class EdgeLine  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public EdgeLine schema(DomainEntityRef schema) {
@@ -360,7 +361,7 @@ public class EdgeLine  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    **/
   public EdgeLine properties(Map<String, Object> properties) {
@@ -377,7 +378,7 @@ public class EdgeLine  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    **/
   public EdgeLine edge(Edge edge) {
@@ -394,7 +395,7 @@ public class EdgeLine  implements Serializable {
     this.edge = edge;
   }
 
-  
+
   /**
    **/
   public EdgeLine edgeGroup(EdgeGroup edgeGroup) {
@@ -411,7 +412,7 @@ public class EdgeLine  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-  
+
   /**
    **/
   public EdgeLine lineType(LineTypeEnum lineType) {
@@ -428,7 +429,7 @@ public class EdgeLine  implements Serializable {
     this.lineType = lineType;
   }
 
-  
+
   /**
    **/
   public EdgeLine endpoint(Endpoint endpoint) {
@@ -445,7 +446,7 @@ public class EdgeLine  implements Serializable {
     this.endpoint = endpoint;
   }
 
-  
+
   /**
    **/
   public EdgeLine ipAddress(String ipAddress) {
@@ -462,7 +463,7 @@ public class EdgeLine  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public EdgeLine logicalInterfaceId(String logicalInterfaceId) {
@@ -479,14 +480,13 @@ public class EdgeLine  implements Serializable {
     this.logicalInterfaceId = logicalInterfaceId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -497,27 +497,28 @@ public class EdgeLine  implements Serializable {
       return false;
     }
     EdgeLine edgeLine = (EdgeLine) o;
+
     return Objects.equals(this.id, edgeLine.id) &&
-        Objects.equals(this.name, edgeLine.name) &&
-        Objects.equals(this.division, edgeLine.division) &&
-        Objects.equals(this.description, edgeLine.description) &&
-        Objects.equals(this.version, edgeLine.version) &&
-        Objects.equals(this.dateCreated, edgeLine.dateCreated) &&
-        Objects.equals(this.dateModified, edgeLine.dateModified) &&
-        Objects.equals(this.modifiedBy, edgeLine.modifiedBy) &&
-        Objects.equals(this.createdBy, edgeLine.createdBy) &&
-        Objects.equals(this.state, edgeLine.state) &&
-        Objects.equals(this.modifiedByApp, edgeLine.modifiedByApp) &&
-        Objects.equals(this.createdByApp, edgeLine.createdByApp) &&
-        Objects.equals(this.schema, edgeLine.schema) &&
-        Objects.equals(this.properties, edgeLine.properties) &&
-        Objects.equals(this.edge, edgeLine.edge) &&
-        Objects.equals(this.edgeGroup, edgeLine.edgeGroup) &&
-        Objects.equals(this.lineType, edgeLine.lineType) &&
-        Objects.equals(this.endpoint, edgeLine.endpoint) &&
-        Objects.equals(this.ipAddress, edgeLine.ipAddress) &&
-        Objects.equals(this.logicalInterfaceId, edgeLine.logicalInterfaceId) &&
-        Objects.equals(this.selfUri, edgeLine.selfUri);
+            Objects.equals(this.name, edgeLine.name) &&
+            Objects.equals(this.division, edgeLine.division) &&
+            Objects.equals(this.description, edgeLine.description) &&
+            Objects.equals(this.version, edgeLine.version) &&
+            Objects.equals(this.dateCreated, edgeLine.dateCreated) &&
+            Objects.equals(this.dateModified, edgeLine.dateModified) &&
+            Objects.equals(this.modifiedBy, edgeLine.modifiedBy) &&
+            Objects.equals(this.createdBy, edgeLine.createdBy) &&
+            Objects.equals(this.state, edgeLine.state) &&
+            Objects.equals(this.modifiedByApp, edgeLine.modifiedByApp) &&
+            Objects.equals(this.createdByApp, edgeLine.createdByApp) &&
+            Objects.equals(this.schema, edgeLine.schema) &&
+            Objects.equals(this.properties, edgeLine.properties) &&
+            Objects.equals(this.edge, edgeLine.edge) &&
+            Objects.equals(this.edgeGroup, edgeLine.edgeGroup) &&
+            Objects.equals(this.lineType, edgeLine.lineType) &&
+            Objects.equals(this.endpoint, edgeLine.endpoint) &&
+            Objects.equals(this.ipAddress, edgeLine.ipAddress) &&
+            Objects.equals(this.logicalInterfaceId, edgeLine.logicalInterfaceId) &&
+            Objects.equals(this.selfUri, edgeLine.selfUri);
   }
 
   @Override

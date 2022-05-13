@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -35,28 +36,27 @@ public class SingleWorkdayAveragePoints  implements Serializable {
     return dateWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted division for the average points")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The average points per agent earned within the division")
   @JsonProperty("averagePoints")
   public Double getAveragePoints() {
     return averagePoints;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
   @JsonProperty("performanceProfile")
   public AddressableEntityRef getPerformanceProfile() {
     return performanceProfile;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,10 +67,11 @@ public class SingleWorkdayAveragePoints  implements Serializable {
       return false;
     }
     SingleWorkdayAveragePoints singleWorkdayAveragePoints = (SingleWorkdayAveragePoints) o;
+
     return Objects.equals(this.dateWorkday, singleWorkdayAveragePoints.dateWorkday) &&
-        Objects.equals(this.division, singleWorkdayAveragePoints.division) &&
-        Objects.equals(this.averagePoints, singleWorkdayAveragePoints.averagePoints) &&
-        Objects.equals(this.performanceProfile, singleWorkdayAveragePoints.performanceProfile);
+            Objects.equals(this.division, singleWorkdayAveragePoints.division) &&
+            Objects.equals(this.averagePoints, singleWorkdayAveragePoints.averagePoints) &&
+            Objects.equals(this.performanceProfile, singleWorkdayAveragePoints.performanceProfile);
   }
 
   @Override

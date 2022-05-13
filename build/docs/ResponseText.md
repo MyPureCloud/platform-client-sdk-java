@@ -19,9 +19,9 @@ title: ResponseText
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXT_PLAIN | &quot;text/plain&quot; |
-| TEXT_HTML | &quot;text/html&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXT_PLAIN | &quot;text/plain&quot; | 
+| TEXT_HTML | &quot;text/html&quot; | 
 {: class="table table-striped"}
 
 

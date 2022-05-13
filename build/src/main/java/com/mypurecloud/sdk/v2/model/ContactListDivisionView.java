@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
@@ -41,7 +42,7 @@ public class ContactListDivisionView  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionView name(String name) {
@@ -58,7 +59,7 @@ public class ContactListDivisionView  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -76,7 +77,7 @@ public class ContactListDivisionView  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The names of the contact data columns.
    **/
@@ -94,7 +95,7 @@ public class ContactListDivisionView  implements Serializable {
     this.columnNames = columnNames;
   }
 
-  
+
   /**
    * Indicates which columns are phone numbers.
    **/
@@ -112,28 +113,27 @@ public class ContactListDivisionView  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the import process.")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of contacts in the ContactList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,14 +144,15 @@ public class ContactListDivisionView  implements Serializable {
       return false;
     }
     ContactListDivisionView contactListDivisionView = (ContactListDivisionView) o;
+
     return Objects.equals(this.id, contactListDivisionView.id) &&
-        Objects.equals(this.name, contactListDivisionView.name) &&
-        Objects.equals(this.division, contactListDivisionView.division) &&
-        Objects.equals(this.columnNames, contactListDivisionView.columnNames) &&
-        Objects.equals(this.phoneColumns, contactListDivisionView.phoneColumns) &&
-        Objects.equals(this.importStatus, contactListDivisionView.importStatus) &&
-        Objects.equals(this.size, contactListDivisionView.size) &&
-        Objects.equals(this.selfUri, contactListDivisionView.selfUri);
+            Objects.equals(this.name, contactListDivisionView.name) &&
+            Objects.equals(this.division, contactListDivisionView.division) &&
+            Objects.equals(this.columnNames, contactListDivisionView.columnNames) &&
+            Objects.equals(this.phoneColumns, contactListDivisionView.phoneColumns) &&
+            Objects.equals(this.importStatus, contactListDivisionView.importStatus) &&
+            Objects.equals(this.size, contactListDivisionView.size) &&
+            Objects.equals(this.selfUri, contactListDivisionView.selfUri);
   }
 
   @Override

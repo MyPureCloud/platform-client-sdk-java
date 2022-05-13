@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
-import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 public class GetLicenseDefinitionsRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -53,7 +53,7 @@ public class GetLicenseDefinitionsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/license/definitions")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -64,7 +64,7 @@ public class GetLicenseDefinitionsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLicenseDefinitionsRequest request;
@@ -73,9 +73,9 @@ public class GetLicenseDefinitionsRequest {
 			request = new GetLicenseDefinitionsRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetLicenseDefinitionsRequest build() {
             

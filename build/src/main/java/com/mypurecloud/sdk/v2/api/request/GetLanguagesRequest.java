@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -40,7 +40,7 @@ public class GetLanguagesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -54,7 +54,7 @@ public class GetLanguagesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -70,7 +70,7 @@ public class GetLanguagesRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -98,7 +98,7 @@ public class GetLanguagesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -112,7 +112,7 @@ public class GetLanguagesRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -136,15 +136,19 @@ public class GetLanguagesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/languages")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("name", "", name)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -155,7 +159,7 @@ public class GetLanguagesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLanguagesRequest request;
@@ -164,34 +168,38 @@ public class GetLanguagesRequest {
 			request = new GetLanguagesRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetLanguagesRequest build() {
             

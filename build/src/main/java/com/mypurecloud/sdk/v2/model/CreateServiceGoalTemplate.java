@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAbandonRate;
@@ -46,7 +47,7 @@ public class CreateServiceGoalTemplate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Service level targets for this service goal template
    **/
@@ -64,7 +65,7 @@ public class CreateServiceGoalTemplate  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
-  
+
   /**
    * Average speed of answer targets for this service goal template
    **/
@@ -82,7 +83,7 @@ public class CreateServiceGoalTemplate  implements Serializable {
     this.averageSpeedOfAnswer = averageSpeedOfAnswer;
   }
 
-  
+
   /**
    * Abandon rate targets for this service goal template
    **/
@@ -100,7 +101,6 @@ public class CreateServiceGoalTemplate  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class CreateServiceGoalTemplate  implements Serializable {
       return false;
     }
     CreateServiceGoalTemplate createServiceGoalTemplate = (CreateServiceGoalTemplate) o;
+
     return Objects.equals(this.name, createServiceGoalTemplate.name) &&
-        Objects.equals(this.serviceLevel, createServiceGoalTemplate.serviceLevel) &&
-        Objects.equals(this.averageSpeedOfAnswer, createServiceGoalTemplate.averageSpeedOfAnswer) &&
-        Objects.equals(this.abandonRate, createServiceGoalTemplate.abandonRate);
+            Objects.equals(this.serviceLevel, createServiceGoalTemplate.serviceLevel) &&
+            Objects.equals(this.averageSpeedOfAnswer, createServiceGoalTemplate.averageSpeedOfAnswer) &&
+            Objects.equals(this.abandonRate, createServiceGoalTemplate.abandonRate);
   }
 
   @Override

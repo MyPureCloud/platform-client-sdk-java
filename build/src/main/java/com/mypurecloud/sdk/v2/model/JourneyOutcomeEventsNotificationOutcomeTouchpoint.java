@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationActionMap;
@@ -47,7 +48,7 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Seria
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeTouchpoint channels(List<JourneyOutcomeEventsNotificationOutcomeTouchpointChannel> channels) {
@@ -64,7 +65,7 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Seria
     this.channels = channels;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeTouchpoint createdDate(Date createdDate) {
@@ -81,7 +82,7 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Seria
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeTouchpoint actionMap(JourneyOutcomeEventsNotificationActionMap actionMap) {
@@ -98,7 +99,6 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Seria
     this.actionMap = actionMap;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class JourneyOutcomeEventsNotificationOutcomeTouchpoint  implements Seria
       return false;
     }
     JourneyOutcomeEventsNotificationOutcomeTouchpoint journeyOutcomeEventsNotificationOutcomeTouchpoint = (JourneyOutcomeEventsNotificationOutcomeTouchpoint) o;
+
     return Objects.equals(this.id, journeyOutcomeEventsNotificationOutcomeTouchpoint.id) &&
-        Objects.equals(this.channels, journeyOutcomeEventsNotificationOutcomeTouchpoint.channels) &&
-        Objects.equals(this.createdDate, journeyOutcomeEventsNotificationOutcomeTouchpoint.createdDate) &&
-        Objects.equals(this.actionMap, journeyOutcomeEventsNotificationOutcomeTouchpoint.actionMap);
+            Objects.equals(this.channels, journeyOutcomeEventsNotificationOutcomeTouchpoint.channels) &&
+            Objects.equals(this.createdDate, journeyOutcomeEventsNotificationOutcomeTouchpoint.createdDate) &&
+            Objects.equals(this.actionMap, journeyOutcomeEventsNotificationOutcomeTouchpoint.actionMap);
   }
 
   @Override

@@ -22,9 +22,9 @@ title: AggregationResult
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TERMFREQUENCY | &quot;termFrequency&quot; |
-| NUMERICRANGE | &quot;numericRange&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TERMFREQUENCY | &quot;termFrequency&quot; | 
+| NUMERICRANGE | &quot;numericRange&quot; | 
 {: class="table table-striped"}
 
 

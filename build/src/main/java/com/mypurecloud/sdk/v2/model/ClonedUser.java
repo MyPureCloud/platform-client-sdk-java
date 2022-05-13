@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -34,7 +35,7 @@ public class ClonedUser  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ClonedUser name(String name) {
@@ -51,21 +52,20 @@ public class ClonedUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The ID of the trustor organization this clone exists in.")
   @JsonProperty("trustor")
   public DomainEntityRef getTrustor() {
     return trustor;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -76,10 +76,11 @@ public class ClonedUser  implements Serializable {
       return false;
     }
     ClonedUser clonedUser = (ClonedUser) o;
+
     return Objects.equals(this.id, clonedUser.id) &&
-        Objects.equals(this.name, clonedUser.name) &&
-        Objects.equals(this.trustor, clonedUser.trustor) &&
-        Objects.equals(this.selfUri, clonedUser.selfUri);
+            Objects.equals(this.name, clonedUser.name) &&
+            Objects.equals(this.trustor, clonedUser.trustor) &&
+            Objects.equals(this.selfUri, clonedUser.selfUri);
   }
 
   @Override

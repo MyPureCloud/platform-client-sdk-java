@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicUserReference;
@@ -43,7 +44,7 @@ public class WfmBuScheduleTopicWfmVersionedEntityMetadata  implements Serializab
     this.version = version;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicWfmVersionedEntityMetadata modifiedBy(WfmBuScheduleTopicUserReference modifiedBy) {
@@ -60,7 +61,7 @@ public class WfmBuScheduleTopicWfmVersionedEntityMetadata  implements Serializab
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicWfmVersionedEntityMetadata dateModified(Date dateModified) {
@@ -77,7 +78,6 @@ public class WfmBuScheduleTopicWfmVersionedEntityMetadata  implements Serializab
     this.dateModified = dateModified;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class WfmBuScheduleTopicWfmVersionedEntityMetadata  implements Serializab
       return false;
     }
     WfmBuScheduleTopicWfmVersionedEntityMetadata wfmBuScheduleTopicWfmVersionedEntityMetadata = (WfmBuScheduleTopicWfmVersionedEntityMetadata) o;
+
     return Objects.equals(this.version, wfmBuScheduleTopicWfmVersionedEntityMetadata.version) &&
-        Objects.equals(this.modifiedBy, wfmBuScheduleTopicWfmVersionedEntityMetadata.modifiedBy) &&
-        Objects.equals(this.dateModified, wfmBuScheduleTopicWfmVersionedEntityMetadata.dateModified);
+            Objects.equals(this.modifiedBy, wfmBuScheduleTopicWfmVersionedEntityMetadata.modifiedBy) &&
+            Objects.equals(this.dateModified, wfmBuScheduleTopicWfmVersionedEntityMetadata.dateModified);
   }
 
   @Override

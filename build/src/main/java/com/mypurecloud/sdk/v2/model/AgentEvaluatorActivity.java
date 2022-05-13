@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -37,7 +38,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public AgentEvaluatorActivity name(String name) {
@@ -54,7 +55,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public AgentEvaluatorActivity agent(User agent) {
@@ -71,7 +72,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public AgentEvaluatorActivity evaluator(User evaluator) {
@@ -88,7 +89,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     this.evaluator = evaluator;
   }
 
-  
+
   /**
    **/
   public AgentEvaluatorActivity numEvaluations(Integer numEvaluations) {
@@ -105,7 +106,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     this.numEvaluations = numEvaluations;
   }
 
-  
+
   /**
    **/
   public AgentEvaluatorActivity averageEvaluationScore(Integer averageEvaluationScore) {
@@ -122,7 +123,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     this.averageEvaluationScore = averageEvaluationScore;
   }
 
-  
+
   /**
    **/
   public AgentEvaluatorActivity numEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
@@ -139,14 +140,13 @@ public class AgentEvaluatorActivity  implements Serializable {
     this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,14 +157,15 @@ public class AgentEvaluatorActivity  implements Serializable {
       return false;
     }
     AgentEvaluatorActivity agentEvaluatorActivity = (AgentEvaluatorActivity) o;
+
     return Objects.equals(this.id, agentEvaluatorActivity.id) &&
-        Objects.equals(this.name, agentEvaluatorActivity.name) &&
-        Objects.equals(this.agent, agentEvaluatorActivity.agent) &&
-        Objects.equals(this.evaluator, agentEvaluatorActivity.evaluator) &&
-        Objects.equals(this.numEvaluations, agentEvaluatorActivity.numEvaluations) &&
-        Objects.equals(this.averageEvaluationScore, agentEvaluatorActivity.averageEvaluationScore) &&
-        Objects.equals(this.numEvaluationsWithoutViewPermission, agentEvaluatorActivity.numEvaluationsWithoutViewPermission) &&
-        Objects.equals(this.selfUri, agentEvaluatorActivity.selfUri);
+            Objects.equals(this.name, agentEvaluatorActivity.name) &&
+            Objects.equals(this.agent, agentEvaluatorActivity.agent) &&
+            Objects.equals(this.evaluator, agentEvaluatorActivity.evaluator) &&
+            Objects.equals(this.numEvaluations, agentEvaluatorActivity.numEvaluations) &&
+            Objects.equals(this.averageEvaluationScore, agentEvaluatorActivity.averageEvaluationScore) &&
+            Objects.equals(this.numEvaluationsWithoutViewPermission, agentEvaluatorActivity.numEvaluationsWithoutViewPermission) &&
+            Objects.equals(this.selfUri, agentEvaluatorActivity.selfUri);
   }
 
   @Override

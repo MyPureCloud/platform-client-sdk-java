@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class ReplacementTerm  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public ReplacementTerm existingValue(String existingValue) {
@@ -109,7 +110,7 @@ public class ReplacementTerm  implements Serializable {
     this.existingValue = existingValue;
   }
 
-  
+
   /**
    **/
   public ReplacementTerm updatedValue(String updatedValue) {
@@ -126,7 +127,6 @@ public class ReplacementTerm  implements Serializable {
     this.updatedValue = updatedValue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class ReplacementTerm  implements Serializable {
       return false;
     }
     ReplacementTerm replacementTerm = (ReplacementTerm) o;
+
     return Objects.equals(this.type, replacementTerm.type) &&
-        Objects.equals(this.existingValue, replacementTerm.existingValue) &&
-        Objects.equals(this.updatedValue, replacementTerm.updatedValue);
+            Objects.equals(this.existingValue, replacementTerm.existingValue) &&
+            Objects.equals(this.updatedValue, replacementTerm.updatedValue);
   }
 
   @Override

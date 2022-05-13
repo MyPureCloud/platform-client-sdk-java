@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetGroupGreetingsRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -42,7 +42,7 @@ public class GetGroupGreetingsRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -56,7 +56,7 @@ public class GetGroupGreetingsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,7 +70,7 @@ public class GetGroupGreetingsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,11 +101,13 @@ public class GetGroupGreetingsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/groups/{groupId}/greetings")
                 .withPathParameter("groupId", groupId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -116,12 +118,12 @@ public class GetGroupGreetingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGroupGreetingsRequest request;
@@ -130,30 +132,30 @@ public class GetGroupGreetingsRequest {
 			request = new GetGroupGreetingsRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGroupGreetingsRequest build() {
             

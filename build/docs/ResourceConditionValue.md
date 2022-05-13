@@ -19,11 +19,11 @@ title: ResourceConditionValue
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SCALAR | &quot;SCALAR&quot; |
-| VARIABLE | &quot;VARIABLE&quot; |
-| USER | &quot;USER&quot; |
-| QUEUE | &quot;QUEUE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SCALAR | &quot;SCALAR&quot; | 
+| VARIABLE | &quot;VARIABLE&quot; | 
+| USER | &quot;USER&quot; | 
+| QUEUE | &quot;QUEUE&quot; | 
 {: class="table table-striped"}
 
 

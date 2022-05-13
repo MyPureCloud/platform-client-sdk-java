@@ -11,9 +11,9 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 
@@ -37,7 +37,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class WebDeploymentsApi {
   private final ApiClient pcapiClient;
 
@@ -49,7 +48,6 @@ public class WebDeploymentsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete all versions of a configuration
    * 
@@ -74,7 +72,7 @@ public class WebDeploymentsApi {
   private DeleteWebdeploymentsConfigurationRequest createDeleteWebdeploymentsConfigurationRequest(String configurationId) {
     return DeleteWebdeploymentsConfigurationRequest.builder()
             .withConfigurationId(configurationId)
-    
+
             .build();
   }
 
@@ -125,7 +123,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Delete a deployment
    * 
@@ -150,7 +147,7 @@ public class WebDeploymentsApi {
   private DeleteWebdeploymentsDeploymentRequest createDeleteWebdeploymentsDeploymentRequest(String deploymentId) {
     return DeleteWebdeploymentsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
-    
+
             .build();
   }
 
@@ -201,7 +198,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Get a configuration version
    * 
@@ -230,9 +226,9 @@ public class WebDeploymentsApi {
   private GetWebdeploymentsConfigurationVersionRequest createGetWebdeploymentsConfigurationVersionRequest(String configurationId, String versionId) {
     return GetWebdeploymentsConfigurationVersionRequest.builder()
             .withConfigurationId(configurationId)
-    
+
             .withVersionId(versionId)
-    
+
             .build();
   }
 
@@ -284,7 +280,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Get the versions of a configuration
    * This returns the 50 most recent versions for this configuration
@@ -311,7 +306,7 @@ public class WebDeploymentsApi {
   private GetWebdeploymentsConfigurationVersionsRequest createGetWebdeploymentsConfigurationVersionsRequest(String configurationId) {
     return GetWebdeploymentsConfigurationVersionsRequest.builder()
             .withConfigurationId(configurationId)
-    
+
             .build();
   }
 
@@ -363,7 +358,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Get the configuration draft
    * 
@@ -390,7 +384,7 @@ public class WebDeploymentsApi {
   private GetWebdeploymentsConfigurationVersionsDraftRequest createGetWebdeploymentsConfigurationVersionsDraftRequest(String configurationId) {
     return GetWebdeploymentsConfigurationVersionsDraftRequest.builder()
             .withConfigurationId(configurationId)
-    
+
             .build();
   }
 
@@ -442,7 +436,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * View configuration drafts
    * 
@@ -469,7 +462,7 @@ public class WebDeploymentsApi {
   private GetWebdeploymentsConfigurationsRequest createGetWebdeploymentsConfigurationsRequest(Boolean showOnlyPublished) {
     return GetWebdeploymentsConfigurationsRequest.builder()
             .withShowOnlyPublished(showOnlyPublished)
-    
+
             .build();
   }
 
@@ -521,7 +514,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Get a deployment
    * 
@@ -548,7 +540,7 @@ public class WebDeploymentsApi {
   private GetWebdeploymentsDeploymentRequest createGetWebdeploymentsDeploymentRequest(String deploymentId) {
     return GetWebdeploymentsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
-    
+
             .build();
   }
 
@@ -600,7 +592,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Get deployments
    * 
@@ -675,7 +666,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Publish the configuration draft and create a new version
    * 
@@ -702,7 +692,7 @@ public class WebDeploymentsApi {
   private PostWebdeploymentsConfigurationVersionsDraftPublishRequest createPostWebdeploymentsConfigurationVersionsDraftPublishRequest(String configurationId) {
     return PostWebdeploymentsConfigurationVersionsDraftPublishRequest.builder()
             .withConfigurationId(configurationId)
-    
+
             .build();
   }
 
@@ -754,7 +744,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Create a configuration draft
    * 
@@ -781,7 +770,7 @@ public class WebDeploymentsApi {
   private PostWebdeploymentsConfigurationsRequest createPostWebdeploymentsConfigurationsRequest(WebDeploymentConfigurationVersion configurationVersion) {
     return PostWebdeploymentsConfigurationsRequest.builder()
             .withConfigurationVersion(configurationVersion)
-    
+
             .build();
   }
 
@@ -833,7 +822,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Create a deployment
    * 
@@ -860,7 +848,7 @@ public class WebDeploymentsApi {
   private PostWebdeploymentsDeploymentsRequest createPostWebdeploymentsDeploymentsRequest(WebDeployment deployment) {
     return PostWebdeploymentsDeploymentsRequest.builder()
             .withDeployment(deployment)
-    
+
             .build();
   }
 
@@ -912,7 +900,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Update the configuration draft
    * 
@@ -941,9 +928,9 @@ public class WebDeploymentsApi {
   private PutWebdeploymentsConfigurationVersionsDraftRequest createPutWebdeploymentsConfigurationVersionsDraftRequest(String configurationId, WebDeploymentConfigurationVersion configurationVersion) {
     return PutWebdeploymentsConfigurationVersionsDraftRequest.builder()
             .withConfigurationId(configurationId)
-    
+
             .withConfigurationVersion(configurationVersion)
-    
+
             .build();
   }
 
@@ -995,7 +982,6 @@ public class WebDeploymentsApi {
     }
   }
 
-  
   /**
    * Update a deployment
    * 
@@ -1024,9 +1010,9 @@ public class WebDeploymentsApi {
   private PutWebdeploymentsDeploymentRequest createPutWebdeploymentsDeploymentRequest(String deploymentId, WebDeployment deployment) {
     return PutWebdeploymentsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
-    
+
             .withDeployment(deployment)
-    
+
             .build();
   }
 
@@ -1078,5 +1064,4 @@ public class WebDeploymentsApi {
     }
   }
 
-  
 }

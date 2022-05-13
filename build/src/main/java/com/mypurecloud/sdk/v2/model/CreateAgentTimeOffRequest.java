@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Notes about the time off request
    **/
@@ -65,7 +65,7 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
    **/
@@ -83,7 +83,7 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-  
+
   /**
    * A set of start date-times in ISO-8601 format for partial day requests.
    **/
@@ -101,7 +101,7 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-  
+
   /**
    * The daily duration of this time off request in minutes
    **/
@@ -119,7 +119,6 @@ public class CreateAgentTimeOffRequest  implements Serializable {
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +129,12 @@ public class CreateAgentTimeOffRequest  implements Serializable {
       return false;
     }
     CreateAgentTimeOffRequest createAgentTimeOffRequest = (CreateAgentTimeOffRequest) o;
+
     return Objects.equals(this.activityCodeId, createAgentTimeOffRequest.activityCodeId) &&
-        Objects.equals(this.notes, createAgentTimeOffRequest.notes) &&
-        Objects.equals(this.fullDayManagementUnitDates, createAgentTimeOffRequest.fullDayManagementUnitDates) &&
-        Objects.equals(this.partialDayStartDateTimes, createAgentTimeOffRequest.partialDayStartDateTimes) &&
-        Objects.equals(this.dailyDurationMinutes, createAgentTimeOffRequest.dailyDurationMinutes);
+            Objects.equals(this.notes, createAgentTimeOffRequest.notes) &&
+            Objects.equals(this.fullDayManagementUnitDates, createAgentTimeOffRequest.fullDayManagementUnitDates) &&
+            Objects.equals(this.partialDayStartDateTimes, createAgentTimeOffRequest.partialDayStartDateTimes) &&
+            Objects.equals(this.dailyDurationMinutes, createAgentTimeOffRequest.dailyDurationMinutes);
   }
 
   @Override

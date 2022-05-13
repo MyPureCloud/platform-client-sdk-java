@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MaxLength;
@@ -46,7 +47,7 @@ public class ValidationLimits  implements Serializable {
     this.minLength = minLength;
   }
 
-  
+
   /**
    **/
   public ValidationLimits maxLength(MaxLength maxLength) {
@@ -63,7 +64,7 @@ public class ValidationLimits  implements Serializable {
     this.maxLength = maxLength;
   }
 
-  
+
   /**
    **/
   public ValidationLimits minItems(MinLength minItems) {
@@ -80,7 +81,7 @@ public class ValidationLimits  implements Serializable {
     this.minItems = minItems;
   }
 
-  
+
   /**
    **/
   public ValidationLimits maxItems(MaxLength maxItems) {
@@ -97,7 +98,7 @@ public class ValidationLimits  implements Serializable {
     this.maxItems = maxItems;
   }
 
-  
+
   /**
    **/
   public ValidationLimits minimum(MinLength minimum) {
@@ -114,7 +115,7 @@ public class ValidationLimits  implements Serializable {
     this.minimum = minimum;
   }
 
-  
+
   /**
    **/
   public ValidationLimits maximum(MaxLength maximum) {
@@ -131,7 +132,6 @@ public class ValidationLimits  implements Serializable {
     this.maximum = maximum;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,12 +142,13 @@ public class ValidationLimits  implements Serializable {
       return false;
     }
     ValidationLimits validationLimits = (ValidationLimits) o;
+
     return Objects.equals(this.minLength, validationLimits.minLength) &&
-        Objects.equals(this.maxLength, validationLimits.maxLength) &&
-        Objects.equals(this.minItems, validationLimits.minItems) &&
-        Objects.equals(this.maxItems, validationLimits.maxItems) &&
-        Objects.equals(this.minimum, validationLimits.minimum) &&
-        Objects.equals(this.maximum, validationLimits.maximum);
+            Objects.equals(this.maxLength, validationLimits.maxLength) &&
+            Objects.equals(this.minItems, validationLimits.minItems) &&
+            Objects.equals(this.maxItems, validationLimits.maxItems) &&
+            Objects.equals(this.minimum, validationLimits.minimum) &&
+            Objects.equals(this.maximum, validationLimits.maximum);
   }
 
   @Override

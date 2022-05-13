@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FlowDiagnosticInfo;
@@ -42,7 +43,7 @@ public class SurveyErrorDetails  implements Serializable {
     this.flowDiagnosticInfo = flowDiagnosticInfo;
   }
 
-  
+
   /**
    * An error code indicating the reason for the survey failure.
    **/
@@ -60,7 +61,6 @@ public class SurveyErrorDetails  implements Serializable {
     this.surveyErrorReason = surveyErrorReason;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class SurveyErrorDetails  implements Serializable {
       return false;
     }
     SurveyErrorDetails surveyErrorDetails = (SurveyErrorDetails) o;
+
     return Objects.equals(this.flowDiagnosticInfo, surveyErrorDetails.flowDiagnosticInfo) &&
-        Objects.equals(this.surveyErrorReason, surveyErrorDetails.surveyErrorReason);
+            Objects.equals(this.surveyErrorReason, surveyErrorDetails.surveyErrorReason);
   }
 
   @Override

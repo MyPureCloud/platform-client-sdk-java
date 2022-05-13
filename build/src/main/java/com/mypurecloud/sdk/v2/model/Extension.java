@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -146,7 +147,7 @@ public class Extension  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -164,7 +165,7 @@ public class Extension  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -182,7 +183,7 @@ public class Extension  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -200,7 +201,7 @@ public class Extension  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -218,7 +219,7 @@ public class Extension  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -236,7 +237,7 @@ public class Extension  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -254,7 +255,7 @@ public class Extension  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -272,7 +273,7 @@ public class Extension  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -290,14 +291,14 @@ public class Extension  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -315,7 +316,7 @@ public class Extension  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -333,7 +334,7 @@ public class Extension  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public Extension number(String number) {
@@ -350,7 +351,7 @@ public class Extension  implements Serializable {
     this.number = number;
   }
 
-  
+
   /**
    * A Uri reference to the owner of this extension, which is either a User or an IVR
    **/
@@ -368,7 +369,7 @@ public class Extension  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    **/
   public Extension extensionPool(DomainEntityRef extensionPool) {
@@ -385,7 +386,7 @@ public class Extension  implements Serializable {
     this.extensionPool = extensionPool;
   }
 
-  
+
   /**
    **/
   public Extension ownerType(OwnerTypeEnum ownerType) {
@@ -402,14 +403,13 @@ public class Extension  implements Serializable {
     this.ownerType = ownerType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -420,23 +420,24 @@ public class Extension  implements Serializable {
       return false;
     }
     Extension extension = (Extension) o;
+
     return Objects.equals(this.id, extension.id) &&
-        Objects.equals(this.name, extension.name) &&
-        Objects.equals(this.division, extension.division) &&
-        Objects.equals(this.description, extension.description) &&
-        Objects.equals(this.version, extension.version) &&
-        Objects.equals(this.dateCreated, extension.dateCreated) &&
-        Objects.equals(this.dateModified, extension.dateModified) &&
-        Objects.equals(this.modifiedBy, extension.modifiedBy) &&
-        Objects.equals(this.createdBy, extension.createdBy) &&
-        Objects.equals(this.state, extension.state) &&
-        Objects.equals(this.modifiedByApp, extension.modifiedByApp) &&
-        Objects.equals(this.createdByApp, extension.createdByApp) &&
-        Objects.equals(this.number, extension.number) &&
-        Objects.equals(this.owner, extension.owner) &&
-        Objects.equals(this.extensionPool, extension.extensionPool) &&
-        Objects.equals(this.ownerType, extension.ownerType) &&
-        Objects.equals(this.selfUri, extension.selfUri);
+            Objects.equals(this.name, extension.name) &&
+            Objects.equals(this.division, extension.division) &&
+            Objects.equals(this.description, extension.description) &&
+            Objects.equals(this.version, extension.version) &&
+            Objects.equals(this.dateCreated, extension.dateCreated) &&
+            Objects.equals(this.dateModified, extension.dateModified) &&
+            Objects.equals(this.modifiedBy, extension.modifiedBy) &&
+            Objects.equals(this.createdBy, extension.createdBy) &&
+            Objects.equals(this.state, extension.state) &&
+            Objects.equals(this.modifiedByApp, extension.modifiedByApp) &&
+            Objects.equals(this.createdByApp, extension.createdByApp) &&
+            Objects.equals(this.number, extension.number) &&
+            Objects.equals(this.owner, extension.owner) &&
+            Objects.equals(this.extensionPool, extension.extensionPool) &&
+            Objects.equals(this.ownerType, extension.ownerType) &&
+            Objects.equals(this.selfUri, extension.selfUri);
   }
 
   @Override

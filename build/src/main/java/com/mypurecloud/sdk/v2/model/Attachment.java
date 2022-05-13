@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class Attachment  implements Serializable {
     this.attachmentId = attachmentId;
   }
 
-  
+
   /**
    * The name of the attachment.
    **/
@@ -63,7 +64,7 @@ public class Attachment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The content uri of the attachment. If set, this is commonly a public api download location.
    **/
@@ -81,7 +82,7 @@ public class Attachment  implements Serializable {
     this.contentUri = contentUri;
   }
 
-  
+
   /**
    * The type of file the attachment is.
    **/
@@ -99,7 +100,7 @@ public class Attachment  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * The length of the attachment file.
    **/
@@ -117,7 +118,7 @@ public class Attachment  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    * Whether or not the attachment was attached inline.,
    **/
@@ -135,7 +136,6 @@ public class Attachment  implements Serializable {
     this.inlineImage = inlineImage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,12 +146,13 @@ public class Attachment  implements Serializable {
       return false;
     }
     Attachment attachment = (Attachment) o;
+
     return Objects.equals(this.attachmentId, attachment.attachmentId) &&
-        Objects.equals(this.name, attachment.name) &&
-        Objects.equals(this.contentUri, attachment.contentUri) &&
-        Objects.equals(this.contentType, attachment.contentType) &&
-        Objects.equals(this.contentLength, attachment.contentLength) &&
-        Objects.equals(this.inlineImage, attachment.inlineImage);
+            Objects.equals(this.name, attachment.name) &&
+            Objects.equals(this.contentUri, attachment.contentUri) &&
+            Objects.equals(this.contentType, attachment.contentType) &&
+            Objects.equals(this.contentLength, attachment.contentLength) &&
+            Objects.equals(this.inlineImage, attachment.inlineImage);
   }
 
   @Override

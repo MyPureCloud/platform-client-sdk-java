@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class FacebookIntegration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Facebook Integration
    **/
@@ -118,7 +119,7 @@ public class FacebookIntegration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -136,7 +137,7 @@ public class FacebookIntegration  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public FacebookIntegration messagingSetting(MessagingSettingReference messagingSetting) {
@@ -153,7 +154,7 @@ public class FacebookIntegration  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The App Id from Facebook messenger
    **/
@@ -171,7 +172,7 @@ public class FacebookIntegration  implements Serializable {
     this.appId = appId;
   }
 
-  
+
   /**
    * The Page Id from Facebook messenger
    **/
@@ -189,21 +190,21 @@ public class FacebookIntegration  implements Serializable {
     this.pageId = pageId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of the Facebook page")
   @JsonProperty("pageName")
   public String getPageName() {
     return pageName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The url of the profile image of the Facebook page")
   @JsonProperty("pageProfileImageUrl")
   public String getPageProfileImageUrl() {
     return pageProfileImageUrl;
   }
 
-  
+
   /**
    * The status of the Facebook Integration
    **/
@@ -221,14 +222,14 @@ public class FacebookIntegration  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
   }
 
-  
+
   /**
    * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -246,7 +247,7 @@ public class FacebookIntegration  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -264,7 +265,7 @@ public class FacebookIntegration  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User reference that created this Integration
    **/
@@ -282,7 +283,7 @@ public class FacebookIntegration  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User reference that last modified this Integration
    **/
@@ -300,7 +301,7 @@ public class FacebookIntegration  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -318,28 +319,27 @@ public class FacebookIntegration  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
   @JsonProperty("createStatus")
   public CreateStatusEnum getCreateStatus() {
     return createStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -350,24 +350,25 @@ public class FacebookIntegration  implements Serializable {
       return false;
     }
     FacebookIntegration facebookIntegration = (FacebookIntegration) o;
+
     return Objects.equals(this.id, facebookIntegration.id) &&
-        Objects.equals(this.name, facebookIntegration.name) &&
-        Objects.equals(this.supportedContent, facebookIntegration.supportedContent) &&
-        Objects.equals(this.messagingSetting, facebookIntegration.messagingSetting) &&
-        Objects.equals(this.appId, facebookIntegration.appId) &&
-        Objects.equals(this.pageId, facebookIntegration.pageId) &&
-        Objects.equals(this.pageName, facebookIntegration.pageName) &&
-        Objects.equals(this.pageProfileImageUrl, facebookIntegration.pageProfileImageUrl) &&
-        Objects.equals(this.status, facebookIntegration.status) &&
-        Objects.equals(this.recipient, facebookIntegration.recipient) &&
-        Objects.equals(this.dateCreated, facebookIntegration.dateCreated) &&
-        Objects.equals(this.dateModified, facebookIntegration.dateModified) &&
-        Objects.equals(this.createdBy, facebookIntegration.createdBy) &&
-        Objects.equals(this.modifiedBy, facebookIntegration.modifiedBy) &&
-        Objects.equals(this.version, facebookIntegration.version) &&
-        Objects.equals(this.createStatus, facebookIntegration.createStatus) &&
-        Objects.equals(this.createError, facebookIntegration.createError) &&
-        Objects.equals(this.selfUri, facebookIntegration.selfUri);
+            Objects.equals(this.name, facebookIntegration.name) &&
+            Objects.equals(this.supportedContent, facebookIntegration.supportedContent) &&
+            Objects.equals(this.messagingSetting, facebookIntegration.messagingSetting) &&
+            Objects.equals(this.appId, facebookIntegration.appId) &&
+            Objects.equals(this.pageId, facebookIntegration.pageId) &&
+            Objects.equals(this.pageName, facebookIntegration.pageName) &&
+            Objects.equals(this.pageProfileImageUrl, facebookIntegration.pageProfileImageUrl) &&
+            Objects.equals(this.status, facebookIntegration.status) &&
+            Objects.equals(this.recipient, facebookIntegration.recipient) &&
+            Objects.equals(this.dateCreated, facebookIntegration.dateCreated) &&
+            Objects.equals(this.dateModified, facebookIntegration.dateModified) &&
+            Objects.equals(this.createdBy, facebookIntegration.createdBy) &&
+            Objects.equals(this.modifiedBy, facebookIntegration.modifiedBy) &&
+            Objects.equals(this.version, facebookIntegration.version) &&
+            Objects.equals(this.createStatus, facebookIntegration.createStatus) &&
+            Objects.equals(this.createError, facebookIntegration.createError) &&
+            Objects.equals(this.selfUri, facebookIntegration.selfUri);
   }
 
   @Override

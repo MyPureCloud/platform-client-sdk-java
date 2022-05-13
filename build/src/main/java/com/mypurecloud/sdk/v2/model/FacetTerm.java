@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class FacetTerm  implements Serializable {
     this.term = term;
   }
 
-  
+
   /**
    **/
   public FacetTerm key(Long key) {
@@ -62,7 +63,7 @@ public class FacetTerm  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    **/
   public FacetTerm id(String id) {
@@ -79,7 +80,7 @@ public class FacetTerm  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public FacetTerm name(String name) {
@@ -96,7 +97,7 @@ public class FacetTerm  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public FacetTerm count(Long count) {
@@ -113,7 +114,7 @@ public class FacetTerm  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -131,7 +132,6 @@ public class FacetTerm  implements Serializable {
     this.time = time;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,12 +142,13 @@ public class FacetTerm  implements Serializable {
       return false;
     }
     FacetTerm facetTerm = (FacetTerm) o;
+
     return Objects.equals(this.term, facetTerm.term) &&
-        Objects.equals(this.key, facetTerm.key) &&
-        Objects.equals(this.id, facetTerm.id) &&
-        Objects.equals(this.name, facetTerm.name) &&
-        Objects.equals(this.count, facetTerm.count) &&
-        Objects.equals(this.time, facetTerm.time);
+            Objects.equals(this.key, facetTerm.key) &&
+            Objects.equals(this.id, facetTerm.id) &&
+            Objects.equals(this.name, facetTerm.name) &&
+            Objects.equals(this.count, facetTerm.count) &&
+            Objects.equals(this.time, facetTerm.time);
   }
 
   @Override

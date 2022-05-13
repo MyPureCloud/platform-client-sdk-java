@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.StationEntityListing;
 import com.mypurecloud.sdk.v2.model.StationSettings;
 
 public class GetStationsSettingsRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -50,7 +50,7 @@ public class GetStationsSettingsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/stations/settings")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -61,7 +61,7 @@ public class GetStationsSettingsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetStationsSettingsRequest request;
@@ -70,9 +70,9 @@ public class GetStationsSettingsRequest {
 			request = new GetStationsSettingsRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetStationsSettingsRequest build() {
             

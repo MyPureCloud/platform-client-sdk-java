@@ -24,7 +24,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 public class HeadTokensMeRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -48,7 +48,7 @@ public class HeadTokensMeRequest {
         
 
         return ApiRequestBuilder.create("HEAD", "/api/v2/tokens/me")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -59,7 +59,7 @@ public class HeadTokensMeRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final HeadTokensMeRequest request;
@@ -68,9 +68,9 @@ public class HeadTokensMeRequest {
 			request = new HeadTokensMeRequest();
 		}
 
-		
 
-		
+
+
 
 		public HeadTokensMeRequest build() {
             

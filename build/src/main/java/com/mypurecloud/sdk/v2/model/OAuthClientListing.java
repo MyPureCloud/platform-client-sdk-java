@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class OAuthClientListing  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the OAuth client.
    **/
@@ -116,7 +117,7 @@ public class OAuthClientListing  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The number of seconds, between 5mins and 48hrs, until tokens created with this client expire. If this field is omitted, a default of 24 hours will be applied.
    **/
@@ -134,7 +135,7 @@ public class OAuthClientListing  implements Serializable {
     this.accessTokenValiditySeconds = accessTokenValiditySeconds;
   }
 
-  
+
   /**
    **/
   public OAuthClientListing description(String description) {
@@ -151,7 +152,7 @@ public class OAuthClientListing  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback
    **/
@@ -169,7 +170,7 @@ public class OAuthClientListing  implements Serializable {
     this.registeredRedirectUri = registeredRedirectUri;
   }
 
-  
+
   /**
    * System created secret assigned to this client. Secrets are required for code authorization and client credential grants.
    **/
@@ -187,7 +188,7 @@ public class OAuthClientListing  implements Serializable {
     this.secret = secret;
   }
 
-  
+
   /**
    * Deprecated. Use roleDivisions instead.
    **/
@@ -205,7 +206,7 @@ public class OAuthClientListing  implements Serializable {
     this.roleIds = roleIds;
   }
 
-  
+
   /**
    * Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -223,7 +224,7 @@ public class OAuthClientListing  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -241,7 +242,7 @@ public class OAuthClientListing  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User that created this client
    **/
@@ -259,7 +260,7 @@ public class OAuthClientListing  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User that last modified this client
    **/
@@ -277,7 +278,7 @@ public class OAuthClientListing  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The scope requested by this client. Scopes only apply to clients not using the client_credential grant
    **/
@@ -295,7 +296,7 @@ public class OAuthClientListing  implements Serializable {
     this.scope = scope;
   }
 
-  
+
   /**
    * Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
    **/
@@ -313,7 +314,7 @@ public class OAuthClientListing  implements Serializable {
     this.roleDivisions = roleDivisions;
   }
 
-  
+
   /**
    * The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
    **/
@@ -331,7 +332,7 @@ public class OAuthClientListing  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -349,14 +350,13 @@ public class OAuthClientListing  implements Serializable {
     this.dateToDelete = dateToDelete;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -367,22 +367,23 @@ public class OAuthClientListing  implements Serializable {
       return false;
     }
     OAuthClientListing oAuthClientListing = (OAuthClientListing) o;
+
     return Objects.equals(this.id, oAuthClientListing.id) &&
-        Objects.equals(this.name, oAuthClientListing.name) &&
-        Objects.equals(this.accessTokenValiditySeconds, oAuthClientListing.accessTokenValiditySeconds) &&
-        Objects.equals(this.description, oAuthClientListing.description) &&
-        Objects.equals(this.registeredRedirectUri, oAuthClientListing.registeredRedirectUri) &&
-        Objects.equals(this.secret, oAuthClientListing.secret) &&
-        Objects.equals(this.roleIds, oAuthClientListing.roleIds) &&
-        Objects.equals(this.dateCreated, oAuthClientListing.dateCreated) &&
-        Objects.equals(this.dateModified, oAuthClientListing.dateModified) &&
-        Objects.equals(this.createdBy, oAuthClientListing.createdBy) &&
-        Objects.equals(this.modifiedBy, oAuthClientListing.modifiedBy) &&
-        Objects.equals(this.scope, oAuthClientListing.scope) &&
-        Objects.equals(this.roleDivisions, oAuthClientListing.roleDivisions) &&
-        Objects.equals(this.state, oAuthClientListing.state) &&
-        Objects.equals(this.dateToDelete, oAuthClientListing.dateToDelete) &&
-        Objects.equals(this.selfUri, oAuthClientListing.selfUri);
+            Objects.equals(this.name, oAuthClientListing.name) &&
+            Objects.equals(this.accessTokenValiditySeconds, oAuthClientListing.accessTokenValiditySeconds) &&
+            Objects.equals(this.description, oAuthClientListing.description) &&
+            Objects.equals(this.registeredRedirectUri, oAuthClientListing.registeredRedirectUri) &&
+            Objects.equals(this.secret, oAuthClientListing.secret) &&
+            Objects.equals(this.roleIds, oAuthClientListing.roleIds) &&
+            Objects.equals(this.dateCreated, oAuthClientListing.dateCreated) &&
+            Objects.equals(this.dateModified, oAuthClientListing.dateModified) &&
+            Objects.equals(this.createdBy, oAuthClientListing.createdBy) &&
+            Objects.equals(this.modifiedBy, oAuthClientListing.modifiedBy) &&
+            Objects.equals(this.scope, oAuthClientListing.scope) &&
+            Objects.equals(this.roleDivisions, oAuthClientListing.roleDivisions) &&
+            Objects.equals(this.state, oAuthClientListing.state) &&
+            Objects.equals(this.dateToDelete, oAuthClientListing.dateToDelete) &&
+            Objects.equals(this.selfUri, oAuthClientListing.selfUri);
   }
 
   @Override

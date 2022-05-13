@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesTranslationsUserRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -40,7 +40,7 @@ public class GetLanguagesTranslationsUserRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,7 +71,7 @@ public class GetLanguagesTranslationsUserRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/languages/translations/users/{userId}")
                 .withPathParameter("userId", userId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class GetLanguagesTranslationsUserRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguagesTranslationsUserRequest request;
@@ -96,20 +96,20 @@ public class GetLanguagesTranslationsUserRequest {
 			request = new GetLanguagesTranslationsUserRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLanguagesTranslationsUserRequest build() {
             

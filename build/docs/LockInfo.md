@@ -21,14 +21,14 @@ title: LockInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UPDATE | &quot;UPDATE&quot; |
-| DELETE | &quot;DELETE&quot; |
-| COPY | &quot;COPY&quot; |
-| MOVE | &quot;MOVE&quot; |
-| REPLACE | &quot;REPLACE&quot; |
-| THUMBNAIL | &quot;THUMBNAIL&quot; |
-| TEXT_EXTRACTION | &quot;TEXT_EXTRACTION&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UPDATE | &quot;UPDATE&quot; | 
+| DELETE | &quot;DELETE&quot; | 
+| COPY | &quot;COPY&quot; | 
+| MOVE | &quot;MOVE&quot; | 
+| REPLACE | &quot;REPLACE&quot; | 
+| THUMBNAIL | &quot;THUMBNAIL&quot; | 
+| TEXT_EXTRACTION | &quot;TEXT_EXTRACTION&quot; | 
 {: class="table table-striped"}
 
 

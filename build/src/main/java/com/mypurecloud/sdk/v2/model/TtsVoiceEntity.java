@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
@@ -36,7 +37,7 @@ public class TtsVoiceEntity  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public TtsVoiceEntity name(String name) {
@@ -53,7 +54,7 @@ public class TtsVoiceEntity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The gender of the TTS voice
    **/
@@ -71,7 +72,7 @@ public class TtsVoiceEntity  implements Serializable {
     this.gender = gender;
   }
 
-  
+
   /**
    * The language supported by the TTS voice
    **/
@@ -89,7 +90,7 @@ public class TtsVoiceEntity  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * Ths TTS engine this voice belongs to
    **/
@@ -107,7 +108,7 @@ public class TtsVoiceEntity  implements Serializable {
     this.engine = engine;
   }
 
-  
+
   /**
    * The voice is the default voice for its language
    **/
@@ -125,14 +126,13 @@ public class TtsVoiceEntity  implements Serializable {
     this.isDefault = isDefault;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,13 +143,14 @@ public class TtsVoiceEntity  implements Serializable {
       return false;
     }
     TtsVoiceEntity ttsVoiceEntity = (TtsVoiceEntity) o;
+
     return Objects.equals(this.id, ttsVoiceEntity.id) &&
-        Objects.equals(this.name, ttsVoiceEntity.name) &&
-        Objects.equals(this.gender, ttsVoiceEntity.gender) &&
-        Objects.equals(this.language, ttsVoiceEntity.language) &&
-        Objects.equals(this.engine, ttsVoiceEntity.engine) &&
-        Objects.equals(this.isDefault, ttsVoiceEntity.isDefault) &&
-        Objects.equals(this.selfUri, ttsVoiceEntity.selfUri);
+            Objects.equals(this.name, ttsVoiceEntity.name) &&
+            Objects.equals(this.gender, ttsVoiceEntity.gender) &&
+            Objects.equals(this.language, ttsVoiceEntity.language) &&
+            Objects.equals(this.engine, ttsVoiceEntity.engine) &&
+            Objects.equals(this.isDefault, ttsVoiceEntity.isDefault) &&
+            Objects.equals(this.selfUri, ttsVoiceEntity.selfUri);
   }
 
   @Override

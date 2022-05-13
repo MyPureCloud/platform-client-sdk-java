@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class QueueConversationMessageEventTopicJourneyContext  implements Serial
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicJourneyContext customerSession(QueueConversationMessageEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class QueueConversationMessageEventTopicJourneyContext  implements Serial
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationMessageEventTopicJourneyContext triggeringAction(QueueConversationMessageEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class QueueConversationMessageEventTopicJourneyContext  implements Serial
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class QueueConversationMessageEventTopicJourneyContext  implements Serial
       return false;
     }
     QueueConversationMessageEventTopicJourneyContext queueConversationMessageEventTopicJourneyContext = (QueueConversationMessageEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationMessageEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationMessageEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationMessageEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationMessageEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationMessageEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

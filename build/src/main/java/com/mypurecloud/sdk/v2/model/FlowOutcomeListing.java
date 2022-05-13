@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing total(Long total) {
@@ -103,7 +104,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FlowOutcomeListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FlowOutcomeListing  implements Serializable, PagedResource<FlowOutc
       return false;
     }
     FlowOutcomeListing flowOutcomeListing = (FlowOutcomeListing) o;
+
     return Objects.equals(this.entities, flowOutcomeListing.entities) &&
-        Objects.equals(this.pageSize, flowOutcomeListing.pageSize) &&
-        Objects.equals(this.pageNumber, flowOutcomeListing.pageNumber) &&
-        Objects.equals(this.total, flowOutcomeListing.total) &&
-        Objects.equals(this.lastUri, flowOutcomeListing.lastUri) &&
-        Objects.equals(this.firstUri, flowOutcomeListing.firstUri) &&
-        Objects.equals(this.selfUri, flowOutcomeListing.selfUri) &&
-        Objects.equals(this.previousUri, flowOutcomeListing.previousUri) &&
-        Objects.equals(this.nextUri, flowOutcomeListing.nextUri) &&
-        Objects.equals(this.pageCount, flowOutcomeListing.pageCount);
+            Objects.equals(this.pageSize, flowOutcomeListing.pageSize) &&
+            Objects.equals(this.pageNumber, flowOutcomeListing.pageNumber) &&
+            Objects.equals(this.total, flowOutcomeListing.total) &&
+            Objects.equals(this.lastUri, flowOutcomeListing.lastUri) &&
+            Objects.equals(this.firstUri, flowOutcomeListing.firstUri) &&
+            Objects.equals(this.selfUri, flowOutcomeListing.selfUri) &&
+            Objects.equals(this.previousUri, flowOutcomeListing.previousUri) &&
+            Objects.equals(this.nextUri, flowOutcomeListing.nextUri) &&
+            Objects.equals(this.pageCount, flowOutcomeListing.pageCount);
   }
 
   @Override

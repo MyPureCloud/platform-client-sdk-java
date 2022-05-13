@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicSocialMediaParticipant;
@@ -45,7 +46,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialConversation name(String name) {
@@ -62,7 +63,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialConversation participants(List<ConversationSocialExpressionEventTopicSocialMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
       return false;
     }
     ConversationSocialExpressionEventTopicSocialConversation conversationSocialExpressionEventTopicSocialConversation = (ConversationSocialExpressionEventTopicSocialConversation) o;
+
     return Objects.equals(this.id, conversationSocialExpressionEventTopicSocialConversation.id) &&
-        Objects.equals(this.name, conversationSocialExpressionEventTopicSocialConversation.name) &&
-        Objects.equals(this.participants, conversationSocialExpressionEventTopicSocialConversation.participants) &&
-        Objects.equals(this.otherMediaUris, conversationSocialExpressionEventTopicSocialConversation.otherMediaUris);
+            Objects.equals(this.name, conversationSocialExpressionEventTopicSocialConversation.name) &&
+            Objects.equals(this.participants, conversationSocialExpressionEventTopicSocialConversation.participants) &&
+            Objects.equals(this.otherMediaUris, conversationSocialExpressionEventTopicSocialConversation.otherMediaUris);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Miner;
@@ -51,7 +52,7 @@ public class DraftTopics  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Topic name.
    **/
@@ -69,42 +70,42 @@ public class DraftTopics  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The miner to which the topic belongs.")
   @JsonProperty("miner")
   public Miner getMiner() {
     return miner;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of conversations where a topic has occurred.")
   @JsonProperty("conversationCount")
   public Integer getConversationCount() {
     return conversationCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Percentage of conversations where a topic has occurred.")
   @JsonProperty("conversationPercent")
   public Float getConversationPercent() {
     return conversationPercent;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of unique utterances where a topic has occurred.")
   @JsonProperty("utteranceCount")
   public Integer getUtteranceCount() {
     return utteranceCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of unique phrases (sub-utterances) where a topic has occurred.")
   @JsonProperty("phraseCount")
   public Integer getPhraseCount() {
     return phraseCount;
   }
 
-  
+
   /**
    * The phrases that are extracted for a topic.
    **/
@@ -122,14 +123,13 @@ public class DraftTopics  implements Serializable {
     this.phrases = phrases;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,15 +140,16 @@ public class DraftTopics  implements Serializable {
       return false;
     }
     DraftTopics draftTopics = (DraftTopics) o;
+
     return Objects.equals(this.id, draftTopics.id) &&
-        Objects.equals(this.name, draftTopics.name) &&
-        Objects.equals(this.miner, draftTopics.miner) &&
-        Objects.equals(this.conversationCount, draftTopics.conversationCount) &&
-        Objects.equals(this.conversationPercent, draftTopics.conversationPercent) &&
-        Objects.equals(this.utteranceCount, draftTopics.utteranceCount) &&
-        Objects.equals(this.phraseCount, draftTopics.phraseCount) &&
-        Objects.equals(this.phrases, draftTopics.phrases) &&
-        Objects.equals(this.selfUri, draftTopics.selfUri);
+            Objects.equals(this.name, draftTopics.name) &&
+            Objects.equals(this.miner, draftTopics.miner) &&
+            Objects.equals(this.conversationCount, draftTopics.conversationCount) &&
+            Objects.equals(this.conversationPercent, draftTopics.conversationPercent) &&
+            Objects.equals(this.utteranceCount, draftTopics.utteranceCount) &&
+            Objects.equals(this.phraseCount, draftTopics.phraseCount) &&
+            Objects.equals(this.phrases, draftTopics.phrases) &&
+            Objects.equals(this.selfUri, draftTopics.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -168,7 +169,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.user = user;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate managementUnitId(String managementUnitId) {
@@ -185,7 +186,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.managementUnitId = managementUnitId;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate team(WfmUserScheduleAdherenceUpdatedTopicUriReference team) {
@@ -202,7 +203,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.team = team;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate scheduledActivityCategory(String scheduledActivityCategory) {
@@ -219,7 +220,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.scheduledActivityCategory = scheduledActivityCategory;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate scheduledActivityCode(WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference scheduledActivityCode) {
@@ -236,7 +237,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.scheduledActivityCode = scheduledActivityCode;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate systemPresence(String systemPresence) {
@@ -253,7 +254,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.systemPresence = systemPresence;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate organizationSecondaryPresenceId(String organizationSecondaryPresenceId) {
@@ -270,7 +271,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.organizationSecondaryPresenceId = organizationSecondaryPresenceId;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate routingStatus(RoutingStatusEnum routingStatus) {
@@ -287,7 +288,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.routingStatus = routingStatus;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate actualActivityCategory(String actualActivityCategory) {
@@ -304,7 +305,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.actualActivityCategory = actualActivityCategory;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate isOutOfOffice(Boolean isOutOfOffice) {
@@ -321,7 +322,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.isOutOfOffice = isOutOfOffice;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate adherenceState(AdherenceStateEnum adherenceState) {
@@ -338,7 +339,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.adherenceState = adherenceState;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate impact(String impact) {
@@ -355,7 +356,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.impact = impact;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate adherenceExplanation(WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation adherenceExplanation) {
@@ -372,7 +373,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.adherenceExplanation = adherenceExplanation;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate adherenceChangeTime(Date adherenceChangeTime) {
@@ -389,7 +390,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.adherenceChangeTime = adherenceChangeTime;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate presenceUpdateTime(Date presenceUpdateTime) {
@@ -406,7 +407,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.presenceUpdateTime = presenceUpdateTime;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate activeQueues(List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> activeQueues) {
@@ -423,7 +424,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.activeQueues = activeQueues;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate activeQueuesModifiedTime(Date activeQueuesModifiedTime) {
@@ -440,7 +441,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.activeQueuesModifiedTime = activeQueuesModifiedTime;
   }
 
-  
+
   /**
    **/
   public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate removedFromManagementUnit(Boolean removedFromManagementUnit) {
@@ -457,7 +458,6 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     this.removedFromManagementUnit = removedFromManagementUnit;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -468,24 +468,25 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
       return false;
     }
     WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate = (WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate) o;
+
     return Objects.equals(this.user, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.user) &&
-        Objects.equals(this.managementUnitId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.managementUnitId) &&
-        Objects.equals(this.team, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.team) &&
-        Objects.equals(this.scheduledActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCategory) &&
-        Objects.equals(this.scheduledActivityCode, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCode) &&
-        Objects.equals(this.systemPresence, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.systemPresence) &&
-        Objects.equals(this.organizationSecondaryPresenceId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.organizationSecondaryPresenceId) &&
-        Objects.equals(this.routingStatus, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.routingStatus) &&
-        Objects.equals(this.actualActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.actualActivityCategory) &&
-        Objects.equals(this.isOutOfOffice, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.isOutOfOffice) &&
-        Objects.equals(this.adherenceState, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceState) &&
-        Objects.equals(this.impact, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.impact) &&
-        Objects.equals(this.adherenceExplanation, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceExplanation) &&
-        Objects.equals(this.adherenceChangeTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceChangeTime) &&
-        Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.presenceUpdateTime) &&
-        Objects.equals(this.activeQueues, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueues) &&
-        Objects.equals(this.activeQueuesModifiedTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueuesModifiedTime) &&
-        Objects.equals(this.removedFromManagementUnit, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.removedFromManagementUnit);
+            Objects.equals(this.managementUnitId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.managementUnitId) &&
+            Objects.equals(this.team, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.team) &&
+            Objects.equals(this.scheduledActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCategory) &&
+            Objects.equals(this.scheduledActivityCode, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCode) &&
+            Objects.equals(this.systemPresence, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.systemPresence) &&
+            Objects.equals(this.organizationSecondaryPresenceId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.organizationSecondaryPresenceId) &&
+            Objects.equals(this.routingStatus, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.routingStatus) &&
+            Objects.equals(this.actualActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.actualActivityCategory) &&
+            Objects.equals(this.isOutOfOffice, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.isOutOfOffice) &&
+            Objects.equals(this.adherenceState, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceState) &&
+            Objects.equals(this.impact, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.impact) &&
+            Objects.equals(this.adherenceExplanation, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceExplanation) &&
+            Objects.equals(this.adherenceChangeTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceChangeTime) &&
+            Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.presenceUpdateTime) &&
+            Objects.equals(this.activeQueues, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueues) &&
+            Objects.equals(this.activeQueuesModifiedTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueuesModifiedTime) &&
+            Objects.equals(this.removedFromManagementUnit, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.removedFromManagementUnit);
   }
 
   @Override

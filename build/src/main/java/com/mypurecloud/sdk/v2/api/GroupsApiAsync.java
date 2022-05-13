@@ -14,18 +14,17 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupRequest;
@@ -50,7 +49,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class GroupsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -62,7 +60,6 @@ public class GroupsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete group
    * 
@@ -138,7 +135,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Remove members
    * 
@@ -214,7 +210,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Fetch field config for an entity type
    * 
@@ -290,7 +285,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Get group
    * 
@@ -366,7 +360,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Get all individuals associated with the group
    * 
@@ -442,7 +435,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Get group members, includes individuals, owners, and dynamically included people
    * 
@@ -518,7 +510,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Get group profile
    * This api is deprecated. Use /api/v2/groups instead
@@ -594,7 +585,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Get a group list
    * 
@@ -670,7 +660,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -746,7 +735,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Get group profile listing
    * This api is deprecated. Use /api/v2/groups instead.
@@ -822,7 +810,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Add members
    * 
@@ -898,7 +885,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Create a group
    * 
@@ -974,7 +960,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Search groups
    * 
@@ -1050,7 +1035,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
   /**
    * Update group
    * 
@@ -1126,7 +1110,6 @@ public class GroupsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

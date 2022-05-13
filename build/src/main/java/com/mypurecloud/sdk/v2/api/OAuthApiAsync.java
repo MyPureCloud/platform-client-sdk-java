@@ -13,17 +13,17 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
@@ -47,7 +47,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class OAuthApiAsync {
   private final ApiClient pcapiClient;
 
@@ -59,7 +58,6 @@ public class OAuthApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete OAuth Client
    * 
@@ -135,7 +133,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Get a client that is authorized by the resource owner
    * 
@@ -211,7 +208,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * List clients that have been authorized, requested, or revoked by the resource owner
    * 
@@ -287,7 +283,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Get OAuth Client
    * 
@@ -363,7 +358,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Get the results of a usage query
    * 
@@ -439,7 +433,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Get a summary of OAuth client API usage
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -515,7 +508,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * The list of OAuth clients
    * 
@@ -591,7 +583,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * An OAuth scope
    * 
@@ -667,7 +658,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * The list of OAuth scopes
    * 
@@ -743,7 +733,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Regenerate Client Secret
    * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
@@ -819,7 +808,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Query for OAuth client API usage
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -895,10 +883,9 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Create OAuth client
-   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -932,7 +919,7 @@ public class OAuthApiAsync {
 
   /**
    * Create OAuth client
-   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -971,7 +958,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
   /**
    * Update OAuth Client
    * 
@@ -1047,7 +1033,6 @@ public class OAuthApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

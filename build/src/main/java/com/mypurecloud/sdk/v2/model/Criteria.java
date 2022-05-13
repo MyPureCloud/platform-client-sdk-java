@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class Criteria  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    * The criteria values.
    **/
@@ -121,7 +122,7 @@ public class Criteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * Should criteria be case insensitive.
    **/
@@ -139,7 +140,7 @@ public class Criteria  implements Serializable {
     this.shouldIgnoreCase = shouldIgnoreCase;
   }
 
-  
+
   /**
    * The comparison operator.
    **/
@@ -157,7 +158,6 @@ public class Criteria  implements Serializable {
     this.operator = operator;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,10 +168,11 @@ public class Criteria  implements Serializable {
       return false;
     }
     Criteria criteria = (Criteria) o;
+
     return Objects.equals(this.key, criteria.key) &&
-        Objects.equals(this.values, criteria.values) &&
-        Objects.equals(this.shouldIgnoreCase, criteria.shouldIgnoreCase) &&
-        Objects.equals(this.operator, criteria.operator);
+            Objects.equals(this.values, criteria.values) &&
+            Objects.equals(this.shouldIgnoreCase, criteria.shouldIgnoreCase) &&
+            Objects.equals(this.operator, criteria.operator);
   }
 
   @Override

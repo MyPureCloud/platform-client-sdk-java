@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicCallbackMediaParticipant;
@@ -45,7 +46,7 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallbackEventTopicCallbackConversation name(String name) {
@@ -62,7 +63,7 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallbackEventTopicCallbackConversation participants(List<QueueConversationCallbackEventTopicCallbackMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallbackEventTopicCallbackConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
       return false;
     }
     QueueConversationCallbackEventTopicCallbackConversation queueConversationCallbackEventTopicCallbackConversation = (QueueConversationCallbackEventTopicCallbackConversation) o;
+
     return Objects.equals(this.id, queueConversationCallbackEventTopicCallbackConversation.id) &&
-        Objects.equals(this.name, queueConversationCallbackEventTopicCallbackConversation.name) &&
-        Objects.equals(this.participants, queueConversationCallbackEventTopicCallbackConversation.participants) &&
-        Objects.equals(this.otherMediaUris, queueConversationCallbackEventTopicCallbackConversation.otherMediaUris);
+            Objects.equals(this.name, queueConversationCallbackEventTopicCallbackConversation.name) &&
+            Objects.equals(this.participants, queueConversationCallbackEventTopicCallbackConversation.participants) &&
+            Objects.equals(this.otherMediaUris, queueConversationCallbackEventTopicCallbackConversation.otherMediaUris);
   }
 
   @Override

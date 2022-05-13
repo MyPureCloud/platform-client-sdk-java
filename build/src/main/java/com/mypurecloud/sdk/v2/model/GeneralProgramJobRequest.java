@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -148,7 +149,7 @@ public class GeneralProgramJobRequest  implements Serializable {
     this.dialect = dialect;
   }
 
-  
+
   /**
    * The mode to use for the general program job, default value is Skip
    **/
@@ -166,7 +167,6 @@ public class GeneralProgramJobRequest  implements Serializable {
     this.mode = mode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,8 +177,9 @@ public class GeneralProgramJobRequest  implements Serializable {
       return false;
     }
     GeneralProgramJobRequest generalProgramJobRequest = (GeneralProgramJobRequest) o;
+
     return Objects.equals(this.dialect, generalProgramJobRequest.dialect) &&
-        Objects.equals(this.mode, generalProgramJobRequest.mode);
+            Objects.equals(this.mode, generalProgramJobRequest.mode);
   }
 
   @Override

@@ -20,22 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 public class PatchOrganizationsFeatureRequest {
-    
+
 	private String featureName;
 	public String getFeatureName() {
 		return this.featureName;
@@ -51,18 +50,18 @@ public class PatchOrganizationsFeatureRequest {
 	} 
 
 	public enum featureNameValues { 
-		REALTIMECIC("realtimeCIC"), 
-		PURECLOUD("purecloud"), 
-		HIPAA("hipaa"), 
-		UCENABLED("ucEnabled"), 
-		PCI("pci"), 
-		PURECLOUDVOICE("purecloudVoice"), 
-		XMPPFEDERATION("xmppFederation"), 
-		CHAT("chat"), 
-		INFORMALPHOTOS("informalPhotos"), 
-		DIRECTORY("directory"), 
-		CONTACTCENTER("contactCenter"), 
-		UNIFIEDCOMMUNICATIONS("unifiedCommunications"), 
+		REALTIMECIC("realtimeCIC"),
+		PURECLOUD("purecloud"),
+		HIPAA("hipaa"),
+		UCENABLED("ucEnabled"),
+		PCI("pci"),
+		PURECLOUDVOICE("purecloudVoice"),
+		XMPPFEDERATION("xmppFederation"),
+		CHAT("chat"),
+		INFORMALPHOTOS("informalPhotos"),
+		DIRECTORY("directory"),
+		CONTACTCENTER("contactCenter"),
+		UNIFIEDCOMMUNICATIONS("unifiedCommunications"),
 		CUSTSERV("custserv");
 
 		private String value;
@@ -90,7 +89,7 @@ public class PatchOrganizationsFeatureRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private FeatureState enabled;
 	public FeatureState getEnabled() {
 		return this.enabled;
@@ -104,7 +103,7 @@ public class PatchOrganizationsFeatureRequest {
 	    this.setEnabled(enabled);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -141,8 +140,8 @@ public class PatchOrganizationsFeatureRequest {
                 .withPathParameter("featureName", featureName)
         
                 .withBody(enabled)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -153,12 +152,12 @@ public class PatchOrganizationsFeatureRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String featureName, FeatureState enabled) {
 	    return new Builder()
 	            .withRequiredParams(featureName, enabled);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchOrganizationsFeatureRequest request;
@@ -167,31 +166,35 @@ public class PatchOrganizationsFeatureRequest {
 			request = new PatchOrganizationsFeatureRequest();
 		}
 
-		
+
 		public Builder withFeatureName(String featureName) {
 			request.setFeatureName(featureName);
 			return this;
 		}
 
+
+
+		
 		public Builder withFeatureName(featureNameValues featureName) {
 		    request.setFeatureName(featureName.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withEnabled(FeatureState enabled) {
 			request.setEnabled(enabled);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String featureName, FeatureState enabled) {
 			request.setFeatureName(featureName);
-						request.setEnabled(enabled);
-			
+			request.setEnabled(enabled);
+
 			return this;
 		}
-		
+
 
 		public PatchOrganizationsFeatureRequest build() {
             

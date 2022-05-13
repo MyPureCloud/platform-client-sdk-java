@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class AuditUser  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The full username of the user who initiated the action of this AuditMessage.
    **/
@@ -60,7 +61,7 @@ public class AuditUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The display name of the user who initiated the action of this AuditMessage.
    **/
@@ -78,7 +79,6 @@ public class AuditUser  implements Serializable {
     this.display = display;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class AuditUser  implements Serializable {
       return false;
     }
     AuditUser auditUser = (AuditUser) o;
+
     return Objects.equals(this.id, auditUser.id) &&
-        Objects.equals(this.name, auditUser.name) &&
-        Objects.equals(this.display, auditUser.display);
+            Objects.equals(this.name, auditUser.name) &&
+            Objects.equals(this.display, auditUser.display);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -298,7 +299,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display friendly name of the participant.
    **/
@@ -316,7 +317,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The participant address.
    **/
@@ -334,7 +335,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -352,7 +353,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -370,7 +371,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -388,7 +389,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -406,7 +407,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -424,7 +425,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -442,7 +443,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -460,7 +461,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -478,7 +479,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Value is true when the participant is on hold.
    **/
@@ -496,7 +497,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -514,7 +515,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -532,7 +533,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * The PureCloud user for this participant.
    **/
@@ -550,7 +551,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The PureCloud queue for this participant.
    **/
@@ -568,7 +569,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The PureCloud team for this participant.
    **/
@@ -586,7 +587,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.team = team;
   }
 
-  
+
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -604,7 +605,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -622,7 +623,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -640,7 +641,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -658,7 +659,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -676,7 +677,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -694,7 +695,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -712,7 +713,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -730,7 +731,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -748,7 +749,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -766,7 +767,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -784,7 +785,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -802,7 +803,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
    **/
@@ -820,7 +821,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Information on how a communication should be routed to an agent.
    **/
@@ -838,7 +839,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -856,7 +857,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -874,7 +875,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    * The subject of the email.
    **/
@@ -892,7 +893,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    * The number of messages that have been sent in this email conversation.
    **/
@@ -910,7 +911,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.messagesSent = messagesSent;
   }
 
-  
+
   /**
    * Indicates that the email was auto-generated like an Out of Office reply.
    **/
@@ -928,7 +929,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.autoGenerated = autoGenerated;
   }
 
-  
+
   /**
    * A list of uploaded attachments on the email draft.
    **/
@@ -946,7 +947,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.draftAttachments = draftAttachments;
   }
 
-  
+
   /**
    * Indicates if the inbound email was marked as spam.
    **/
@@ -964,7 +965,7 @@ public class EmailMediaParticipant  implements Serializable {
     this.spam = spam;
   }
 
-  
+
   /**
    * A globally unique identifier for the stored content of this communication.
    **/
@@ -982,7 +983,6 @@ public class EmailMediaParticipant  implements Serializable {
     this.messageId = messageId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -993,45 +993,46 @@ public class EmailMediaParticipant  implements Serializable {
       return false;
     }
     EmailMediaParticipant emailMediaParticipant = (EmailMediaParticipant) o;
+
     return Objects.equals(this.id, emailMediaParticipant.id) &&
-        Objects.equals(this.name, emailMediaParticipant.name) &&
-        Objects.equals(this.address, emailMediaParticipant.address) &&
-        Objects.equals(this.startTime, emailMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, emailMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, emailMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, emailMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, emailMediaParticipant.purpose) &&
-        Objects.equals(this.state, emailMediaParticipant.state) &&
-        Objects.equals(this.direction, emailMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, emailMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, emailMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, emailMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, emailMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, emailMediaParticipant.user) &&
-        Objects.equals(this.queue, emailMediaParticipant.queue) &&
-        Objects.equals(this.team, emailMediaParticipant.team) &&
-        Objects.equals(this.attributes, emailMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, emailMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, emailMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, emailMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, emailMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, emailMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, emailMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, emailMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, emailMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, emailMediaParticipant.wrapup) &&
-        Objects.equals(this.peer, emailMediaParticipant.peer) &&
-        Objects.equals(this.flaggedReason, emailMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, emailMediaParticipant.journeyContext) &&
-        Objects.equals(this.conversationRoutingData, emailMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.startAcwTime, emailMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, emailMediaParticipant.endAcwTime) &&
-        Objects.equals(this.subject, emailMediaParticipant.subject) &&
-        Objects.equals(this.messagesSent, emailMediaParticipant.messagesSent) &&
-        Objects.equals(this.autoGenerated, emailMediaParticipant.autoGenerated) &&
-        Objects.equals(this.draftAttachments, emailMediaParticipant.draftAttachments) &&
-        Objects.equals(this.spam, emailMediaParticipant.spam) &&
-        Objects.equals(this.messageId, emailMediaParticipant.messageId);
+            Objects.equals(this.name, emailMediaParticipant.name) &&
+            Objects.equals(this.address, emailMediaParticipant.address) &&
+            Objects.equals(this.startTime, emailMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, emailMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, emailMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, emailMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, emailMediaParticipant.purpose) &&
+            Objects.equals(this.state, emailMediaParticipant.state) &&
+            Objects.equals(this.direction, emailMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, emailMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, emailMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, emailMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, emailMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, emailMediaParticipant.user) &&
+            Objects.equals(this.queue, emailMediaParticipant.queue) &&
+            Objects.equals(this.team, emailMediaParticipant.team) &&
+            Objects.equals(this.attributes, emailMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, emailMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, emailMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, emailMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, emailMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, emailMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, emailMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, emailMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, emailMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, emailMediaParticipant.wrapup) &&
+            Objects.equals(this.peer, emailMediaParticipant.peer) &&
+            Objects.equals(this.flaggedReason, emailMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, emailMediaParticipant.journeyContext) &&
+            Objects.equals(this.conversationRoutingData, emailMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.startAcwTime, emailMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, emailMediaParticipant.endAcwTime) &&
+            Objects.equals(this.subject, emailMediaParticipant.subject) &&
+            Objects.equals(this.messagesSent, emailMediaParticipant.messagesSent) &&
+            Objects.equals(this.autoGenerated, emailMediaParticipant.autoGenerated) &&
+            Objects.equals(this.draftAttachments, emailMediaParticipant.draftAttachments) &&
+            Objects.equals(this.spam, emailMediaParticipant.spam) &&
+            Objects.equals(this.messageId, emailMediaParticipant.messageId);
   }
 
   @Override

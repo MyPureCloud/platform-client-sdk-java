@@ -20,39 +20,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Leaderboard;
+import com.mypurecloud.sdk.v2.model.AllTimePoints;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GamificationStatus;
+import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
+import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Leaderboard;
 import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.OverallBestPoints;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
-import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
-import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
+import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
-import com.mypurecloud.sdk.v2.model.MemberListing;
-import com.mypurecloud.sdk.v2.model.GetMetricResponse;
-import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
-import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
-import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
-import com.mypurecloud.sdk.v2.model.UserBestPoints;
-import com.mypurecloud.sdk.v2.model.AllTimePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
+import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
+import com.mypurecloud.sdk.v2.model.UserBestPoints;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
-import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
-import com.mypurecloud.sdk.v2.model.GamificationStatus;
-import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
-import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
-import com.mypurecloud.sdk.v2.model.CreateMetric;
-import com.mypurecloud.sdk.v2.model.Assignment;
-import com.mypurecloud.sdk.v2.model.AssignUsers;
-import com.mypurecloud.sdk.v2.model.AssignmentValidation;
-import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
-import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
-import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 public class PostGamificationProfilesRequest {
-    
+
 	private CreatePerformanceProfile body;
 	public CreatePerformanceProfile getBody() {
 		return this.body;
@@ -66,7 +66,7 @@ public class PostGamificationProfilesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private Boolean copyMetrics;
 	public Boolean getCopyMetrics() {
 		return this.copyMetrics;
@@ -80,7 +80,7 @@ public class PostGamificationProfilesRequest {
 	    this.setCopyMetrics(copyMetrics);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,11 +109,12 @@ public class PostGamificationProfilesRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/gamification/profiles")
+
                 .withQueryParameters("copyMetrics", "", copyMetrics)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -124,12 +125,12 @@ public class PostGamificationProfilesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(CreatePerformanceProfile body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostGamificationProfilesRequest request;
@@ -138,25 +139,25 @@ public class PostGamificationProfilesRequest {
 			request = new PostGamificationProfilesRequest();
 		}
 
-		
+
 		public Builder withBody(CreatePerformanceProfile body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withCopyMetrics(Boolean copyMetrics) {
 			request.setCopyMetrics(copyMetrics);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(CreatePerformanceProfile body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostGamificationProfilesRequest build() {
             

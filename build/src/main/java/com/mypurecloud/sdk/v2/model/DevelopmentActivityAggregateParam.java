@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateQueryRequestFilter;
@@ -145,7 +146,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * The list of metrics to be returned. If omitted, all metrics are returned.
    **/
@@ -163,7 +164,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * Specifies if the aggregated data is combined into a single set of metrics (groupBy is empty or not specified), or contains an element per attendeeId (groupBy is \"attendeeId\")
    **/
@@ -181,7 +182,7 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
     this.groupBy = groupBy;
   }
 
-  
+
   /**
    * The filter applied to the data. This is ANDed with the interval parameter.
    **/
@@ -199,7 +200,6 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
     this.filter = filter;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -210,10 +210,11 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
       return false;
     }
     DevelopmentActivityAggregateParam developmentActivityAggregateParam = (DevelopmentActivityAggregateParam) o;
+
     return Objects.equals(this.interval, developmentActivityAggregateParam.interval) &&
-        Objects.equals(this.metrics, developmentActivityAggregateParam.metrics) &&
-        Objects.equals(this.groupBy, developmentActivityAggregateParam.groupBy) &&
-        Objects.equals(this.filter, developmentActivityAggregateParam.filter);
+            Objects.equals(this.metrics, developmentActivityAggregateParam.metrics) &&
+            Objects.equals(this.groupBy, developmentActivityAggregateParam.groupBy) &&
+            Objects.equals(this.filter, developmentActivityAggregateParam.filter);
   }
 
   @Override

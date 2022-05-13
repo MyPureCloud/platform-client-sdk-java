@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class ResponseText  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * Response text content type.
    **/
@@ -108,7 +109,6 @@ public class ResponseText  implements Serializable {
     this.contentType = contentType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class ResponseText  implements Serializable {
       return false;
     }
     ResponseText responseText = (ResponseText) o;
+
     return Objects.equals(this.content, responseText.content) &&
-        Objects.equals(this.contentType, responseText.contentType);
+            Objects.equals(this.contentType, responseText.contentType);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class InboundDomain  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public InboundDomain name(String name) {
@@ -114,7 +115,7 @@ public class InboundDomain  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Mx Record Status
    **/
@@ -132,7 +133,7 @@ public class InboundDomain  implements Serializable {
     this.mxRecordStatus = mxRecordStatus;
   }
 
-  
+
   /**
    * Indicates if this a PureCloud sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.
    **/
@@ -150,7 +151,7 @@ public class InboundDomain  implements Serializable {
     this.subDomain = subDomain;
   }
 
-  
+
   /**
    * The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.
    **/
@@ -168,7 +169,7 @@ public class InboundDomain  implements Serializable {
     this.mailFromSettings = mailFromSettings;
   }
 
-  
+
   /**
    * The custom SMTP server integration to use when sending outbound emails from this domain.
    **/
@@ -186,14 +187,13 @@ public class InboundDomain  implements Serializable {
     this.customSMTPServer = customSMTPServer;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -204,13 +204,14 @@ public class InboundDomain  implements Serializable {
       return false;
     }
     InboundDomain inboundDomain = (InboundDomain) o;
+
     return Objects.equals(this.id, inboundDomain.id) &&
-        Objects.equals(this.name, inboundDomain.name) &&
-        Objects.equals(this.mxRecordStatus, inboundDomain.mxRecordStatus) &&
-        Objects.equals(this.subDomain, inboundDomain.subDomain) &&
-        Objects.equals(this.mailFromSettings, inboundDomain.mailFromSettings) &&
-        Objects.equals(this.customSMTPServer, inboundDomain.customSMTPServer) &&
-        Objects.equals(this.selfUri, inboundDomain.selfUri);
+            Objects.equals(this.name, inboundDomain.name) &&
+            Objects.equals(this.mxRecordStatus, inboundDomain.mxRecordStatus) &&
+            Objects.equals(this.subDomain, inboundDomain.subDomain) &&
+            Objects.equals(this.mailFromSettings, inboundDomain.mailFromSettings) &&
+            Objects.equals(this.customSMTPServer, inboundDomain.customSMTPServer) &&
+            Objects.equals(this.selfUri, inboundDomain.selfUri);
   }
 
   @Override

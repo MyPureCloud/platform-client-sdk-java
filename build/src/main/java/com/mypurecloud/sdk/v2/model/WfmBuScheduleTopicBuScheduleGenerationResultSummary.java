@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicSchedulerMessageSeverityCount;
@@ -45,7 +46,7 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     this.failed = failed;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleGenerationResultSummary runId(String runId) {
@@ -62,7 +63,7 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     this.runId = runId;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleGenerationResultSummary messageCount(Integer messageCount) {
@@ -79,7 +80,7 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     this.messageCount = messageCount;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleGenerationResultSummary messageSeverityCounts(List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts) {
@@ -96,7 +97,6 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     this.messageSeverityCounts = messageSeverityCounts;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
       return false;
     }
     WfmBuScheduleTopicBuScheduleGenerationResultSummary wfmBuScheduleTopicBuScheduleGenerationResultSummary = (WfmBuScheduleTopicBuScheduleGenerationResultSummary) o;
+
     return Objects.equals(this.failed, wfmBuScheduleTopicBuScheduleGenerationResultSummary.failed) &&
-        Objects.equals(this.runId, wfmBuScheduleTopicBuScheduleGenerationResultSummary.runId) &&
-        Objects.equals(this.messageCount, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageCount) &&
-        Objects.equals(this.messageSeverityCounts, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageSeverityCounts);
+            Objects.equals(this.runId, wfmBuScheduleTopicBuScheduleGenerationResultSummary.runId) &&
+            Objects.equals(this.messageCount, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageCount) &&
+            Objects.equals(this.messageSeverityCounts, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageSeverityCounts);
   }
 
   @Override

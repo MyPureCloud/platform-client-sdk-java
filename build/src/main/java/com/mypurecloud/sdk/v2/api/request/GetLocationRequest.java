@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 public class GetLocationRequest {
-    
+
 	private String locationId;
 	public String getLocationId() {
 		return this.locationId;
@@ -43,7 +43,7 @@ public class GetLocationRequest {
 	    this.setLocationId(locationId);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -59,7 +59,7 @@ public class GetLocationRequest {
 	} 
 
 	public enum expandValues { 
-		IMAGES("images"), 
+		IMAGES("images"),
 		ADDRESSVERIFICATIONDETAILS("addressVerificationDetails");
 
 		private String value;
@@ -87,7 +87,7 @@ public class GetLocationRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,9 +118,10 @@ public class GetLocationRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/locations/{locationId}")
                 .withPathParameter("locationId", locationId)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -131,12 +132,12 @@ public class GetLocationRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String locationId) {
 	    return new Builder()
 	            .withRequiredParams(locationId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLocationRequest request;
@@ -145,16 +146,18 @@ public class GetLocationRequest {
 			request = new GetLocationRequest();
 		}
 
-		
+
 		public Builder withLocationId(String locationId) {
 			request.setLocationId(locationId);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -164,15 +167,15 @@ public class GetLocationRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String locationId) {
 			request.setLocationId(locationId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLocationRequest build() {
             

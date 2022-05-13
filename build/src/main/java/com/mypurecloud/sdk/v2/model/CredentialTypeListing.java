@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing total(Long total) {
@@ -103,7 +104,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CredentialTypeListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CredentialTypeListing  implements Serializable, PagedResource<Crede
       return false;
     }
     CredentialTypeListing credentialTypeListing = (CredentialTypeListing) o;
+
     return Objects.equals(this.entities, credentialTypeListing.entities) &&
-        Objects.equals(this.pageSize, credentialTypeListing.pageSize) &&
-        Objects.equals(this.pageNumber, credentialTypeListing.pageNumber) &&
-        Objects.equals(this.total, credentialTypeListing.total) &&
-        Objects.equals(this.lastUri, credentialTypeListing.lastUri) &&
-        Objects.equals(this.firstUri, credentialTypeListing.firstUri) &&
-        Objects.equals(this.selfUri, credentialTypeListing.selfUri) &&
-        Objects.equals(this.previousUri, credentialTypeListing.previousUri) &&
-        Objects.equals(this.nextUri, credentialTypeListing.nextUri) &&
-        Objects.equals(this.pageCount, credentialTypeListing.pageCount);
+            Objects.equals(this.pageSize, credentialTypeListing.pageSize) &&
+            Objects.equals(this.pageNumber, credentialTypeListing.pageNumber) &&
+            Objects.equals(this.total, credentialTypeListing.total) &&
+            Objects.equals(this.lastUri, credentialTypeListing.lastUri) &&
+            Objects.equals(this.firstUri, credentialTypeListing.firstUri) &&
+            Objects.equals(this.selfUri, credentialTypeListing.selfUri) &&
+            Objects.equals(this.previousUri, credentialTypeListing.previousUri) &&
+            Objects.equals(this.nextUri, credentialTypeListing.nextUri) &&
+            Objects.equals(this.pageCount, credentialTypeListing.pageCount);
   }
 
   @Override

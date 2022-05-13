@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
@@ -73,7 +74,7 @@ public class ExternalOrganization  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The name of the company.
    **/
@@ -91,7 +92,7 @@ public class ExternalOrganization  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization companyType(String companyType) {
@@ -108,7 +109,7 @@ public class ExternalOrganization  implements Serializable {
     this.companyType = companyType;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization industry(String industry) {
@@ -125,7 +126,7 @@ public class ExternalOrganization  implements Serializable {
     this.industry = industry;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization primaryContactId(String primaryContactId) {
@@ -142,7 +143,7 @@ public class ExternalOrganization  implements Serializable {
     this.primaryContactId = primaryContactId;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization address(ContactAddress address) {
@@ -159,7 +160,7 @@ public class ExternalOrganization  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization phoneNumber(PhoneNumber phoneNumber) {
@@ -176,7 +177,7 @@ public class ExternalOrganization  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization faxNumber(PhoneNumber faxNumber) {
@@ -193,7 +194,7 @@ public class ExternalOrganization  implements Serializable {
     this.faxNumber = faxNumber;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization employeeCount(Long employeeCount) {
@@ -210,7 +211,7 @@ public class ExternalOrganization  implements Serializable {
     this.employeeCount = employeeCount;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization revenue(Long revenue) {
@@ -227,7 +228,7 @@ public class ExternalOrganization  implements Serializable {
     this.revenue = revenue;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization tags(List<String> tags) {
@@ -244,7 +245,7 @@ public class ExternalOrganization  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization websites(List<String> websites) {
@@ -261,7 +262,7 @@ public class ExternalOrganization  implements Serializable {
     this.websites = websites;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization tickers(List<Ticker> tickers) {
@@ -278,7 +279,7 @@ public class ExternalOrganization  implements Serializable {
     this.tickers = tickers;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization twitterId(TwitterId twitterId) {
@@ -295,7 +296,7 @@ public class ExternalOrganization  implements Serializable {
     this.twitterId = twitterId;
   }
 
-  
+
   /**
    * A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
    **/
@@ -313,7 +314,7 @@ public class ExternalOrganization  implements Serializable {
     this.externalSystemUrl = externalSystemUrl;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -331,7 +332,7 @@ public class ExternalOrganization  implements Serializable {
     this.modifyDate = modifyDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -349,7 +350,7 @@ public class ExternalOrganization  implements Serializable {
     this.createDate = createDate;
   }
 
-  
+
   /**
    **/
   public ExternalOrganization trustor(Trustor trustor) {
@@ -366,7 +367,7 @@ public class ExternalOrganization  implements Serializable {
     this.trustor = trustor;
   }
 
-  
+
   /**
    * The schema defining custom fields for this contact
    **/
@@ -384,7 +385,7 @@ public class ExternalOrganization  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    * Custom fields defined in the schema referenced by schemaId and schemaVersion.
    **/
@@ -402,21 +403,20 @@ public class ExternalOrganization  implements Serializable {
     this.customFields = customFields;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.")
   @JsonProperty("externalDataSources")
   public List<ExternalDataSource> getExternalDataSources() {
     return externalDataSources;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -427,28 +427,29 @@ public class ExternalOrganization  implements Serializable {
       return false;
     }
     ExternalOrganization externalOrganization = (ExternalOrganization) o;
+
     return Objects.equals(this.id, externalOrganization.id) &&
-        Objects.equals(this.name, externalOrganization.name) &&
-        Objects.equals(this.companyType, externalOrganization.companyType) &&
-        Objects.equals(this.industry, externalOrganization.industry) &&
-        Objects.equals(this.primaryContactId, externalOrganization.primaryContactId) &&
-        Objects.equals(this.address, externalOrganization.address) &&
-        Objects.equals(this.phoneNumber, externalOrganization.phoneNumber) &&
-        Objects.equals(this.faxNumber, externalOrganization.faxNumber) &&
-        Objects.equals(this.employeeCount, externalOrganization.employeeCount) &&
-        Objects.equals(this.revenue, externalOrganization.revenue) &&
-        Objects.equals(this.tags, externalOrganization.tags) &&
-        Objects.equals(this.websites, externalOrganization.websites) &&
-        Objects.equals(this.tickers, externalOrganization.tickers) &&
-        Objects.equals(this.twitterId, externalOrganization.twitterId) &&
-        Objects.equals(this.externalSystemUrl, externalOrganization.externalSystemUrl) &&
-        Objects.equals(this.modifyDate, externalOrganization.modifyDate) &&
-        Objects.equals(this.createDate, externalOrganization.createDate) &&
-        Objects.equals(this.trustor, externalOrganization.trustor) &&
-        Objects.equals(this.schema, externalOrganization.schema) &&
-        Objects.equals(this.customFields, externalOrganization.customFields) &&
-        Objects.equals(this.externalDataSources, externalOrganization.externalDataSources) &&
-        Objects.equals(this.selfUri, externalOrganization.selfUri);
+            Objects.equals(this.name, externalOrganization.name) &&
+            Objects.equals(this.companyType, externalOrganization.companyType) &&
+            Objects.equals(this.industry, externalOrganization.industry) &&
+            Objects.equals(this.primaryContactId, externalOrganization.primaryContactId) &&
+            Objects.equals(this.address, externalOrganization.address) &&
+            Objects.equals(this.phoneNumber, externalOrganization.phoneNumber) &&
+            Objects.equals(this.faxNumber, externalOrganization.faxNumber) &&
+            Objects.equals(this.employeeCount, externalOrganization.employeeCount) &&
+            Objects.equals(this.revenue, externalOrganization.revenue) &&
+            Objects.equals(this.tags, externalOrganization.tags) &&
+            Objects.equals(this.websites, externalOrganization.websites) &&
+            Objects.equals(this.tickers, externalOrganization.tickers) &&
+            Objects.equals(this.twitterId, externalOrganization.twitterId) &&
+            Objects.equals(this.externalSystemUrl, externalOrganization.externalSystemUrl) &&
+            Objects.equals(this.modifyDate, externalOrganization.modifyDate) &&
+            Objects.equals(this.createDate, externalOrganization.createDate) &&
+            Objects.equals(this.trustor, externalOrganization.trustor) &&
+            Objects.equals(this.schema, externalOrganization.schema) &&
+            Objects.equals(this.customFields, externalOrganization.customFields) &&
+            Objects.equals(this.externalDataSources, externalOrganization.externalDataSources) &&
+            Objects.equals(this.selfUri, externalOrganization.selfUri);
   }
 
   @Override

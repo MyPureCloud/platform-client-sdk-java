@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification result(WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast result) {
@@ -110,7 +111,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
     this.result = result;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification operationId(String operationId) {
@@ -127,7 +128,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification progress(Integer progress) {
@@ -144,7 +145,6 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
     this.progress = progress;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,10 +155,11 @@ public class WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForec
       return false;
     }
     WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification = (WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification) o;
+
     return Objects.equals(this.status, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.status) &&
-        Objects.equals(this.result, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.result) &&
-        Objects.equals(this.operationId, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.operationId) &&
-        Objects.equals(this.progress, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.progress);
+            Objects.equals(this.result, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.result) &&
+            Objects.equals(this.operationId, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.operationId) &&
+            Objects.equals(this.progress, wfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification.progress);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
     this.count = count;
   }
 
-  
+
   /**
    * The minimum value in this metric
    **/
@@ -62,7 +63,7 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
     this.min = min;
   }
 
-  
+
   /**
    * The maximum value in this metric
    **/
@@ -80,7 +81,7 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
     this.max = max;
   }
 
-  
+
   /**
    * The total of the values for this metric
    **/
@@ -98,7 +99,6 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
     this.sum = sum;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
       return false;
     }
     DevelopmentActivityAggregateQueryResponseStatistics developmentActivityAggregateQueryResponseStatistics = (DevelopmentActivityAggregateQueryResponseStatistics) o;
+
     return Objects.equals(this.count, developmentActivityAggregateQueryResponseStatistics.count) &&
-        Objects.equals(this.min, developmentActivityAggregateQueryResponseStatistics.min) &&
-        Objects.equals(this.max, developmentActivityAggregateQueryResponseStatistics.max) &&
-        Objects.equals(this.sum, developmentActivityAggregateQueryResponseStatistics.sum);
+            Objects.equals(this.min, developmentActivityAggregateQueryResponseStatistics.min) &&
+            Objects.equals(this.max, developmentActivityAggregateQueryResponseStatistics.max) &&
+            Objects.equals(this.sum, developmentActivityAggregateQueryResponseStatistics.sum);
   }
 
   @Override

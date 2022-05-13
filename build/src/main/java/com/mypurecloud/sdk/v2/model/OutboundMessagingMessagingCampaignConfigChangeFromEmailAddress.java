@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeUriReference;
@@ -44,7 +45,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
     this.friendlyName = friendlyName;
   }
 
-  
+
   /**
    * The local part of the email address.
    **/
@@ -62,7 +63,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
     this.localPart = localPart;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -80,7 +81,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
     this.domain = domain;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress outboundMessagingMessagingCampaignConfigChangeFromEmailAddress = (OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress) o;
+
     return Objects.equals(this.friendlyName, outboundMessagingMessagingCampaignConfigChangeFromEmailAddress.friendlyName) &&
-        Objects.equals(this.localPart, outboundMessagingMessagingCampaignConfigChangeFromEmailAddress.localPart) &&
-        Objects.equals(this.domain, outboundMessagingMessagingCampaignConfigChangeFromEmailAddress.domain);
+            Objects.equals(this.localPart, outboundMessagingMessagingCampaignConfigChangeFromEmailAddress.localPart) &&
+            Objects.equals(this.domain, outboundMessagingMessagingCampaignConfigChangeFromEmailAddress.domain);
   }
 
   @Override

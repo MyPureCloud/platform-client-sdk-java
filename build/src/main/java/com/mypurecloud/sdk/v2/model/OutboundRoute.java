@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class OutboundRoute  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -167,7 +168,7 @@ public class OutboundRoute  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -185,7 +186,7 @@ public class OutboundRoute  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -203,7 +204,7 @@ public class OutboundRoute  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -221,7 +222,7 @@ public class OutboundRoute  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -239,7 +240,7 @@ public class OutboundRoute  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -257,7 +258,7 @@ public class OutboundRoute  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -275,7 +276,7 @@ public class OutboundRoute  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -293,14 +294,14 @@ public class OutboundRoute  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -318,7 +319,7 @@ public class OutboundRoute  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -336,7 +337,7 @@ public class OutboundRoute  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The site associated to the outbound route.
    **/
@@ -354,7 +355,7 @@ public class OutboundRoute  implements Serializable {
     this.classificationTypes = classificationTypes;
   }
 
-  
+
   /**
    **/
   public OutboundRoute enabled(Boolean enabled) {
@@ -371,7 +372,7 @@ public class OutboundRoute  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public OutboundRoute distribution(DistributionEnum distribution) {
@@ -388,7 +389,7 @@ public class OutboundRoute  implements Serializable {
     this.distribution = distribution;
   }
 
-  
+
   /**
    * Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing.
    **/
@@ -406,28 +407,27 @@ public class OutboundRoute  implements Serializable {
     this.externalTrunkBases = externalTrunkBases;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The site associated to the outbound route.")
   @JsonProperty("site")
   public Site getSite() {
     return site;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Is this outbound route being managed remotely.")
   @JsonProperty("managed")
   public Boolean getManaged() {
     return managed;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -438,25 +438,26 @@ public class OutboundRoute  implements Serializable {
       return false;
     }
     OutboundRoute outboundRoute = (OutboundRoute) o;
+
     return Objects.equals(this.id, outboundRoute.id) &&
-        Objects.equals(this.name, outboundRoute.name) &&
-        Objects.equals(this.division, outboundRoute.division) &&
-        Objects.equals(this.description, outboundRoute.description) &&
-        Objects.equals(this.version, outboundRoute.version) &&
-        Objects.equals(this.dateCreated, outboundRoute.dateCreated) &&
-        Objects.equals(this.dateModified, outboundRoute.dateModified) &&
-        Objects.equals(this.modifiedBy, outboundRoute.modifiedBy) &&
-        Objects.equals(this.createdBy, outboundRoute.createdBy) &&
-        Objects.equals(this.state, outboundRoute.state) &&
-        Objects.equals(this.modifiedByApp, outboundRoute.modifiedByApp) &&
-        Objects.equals(this.createdByApp, outboundRoute.createdByApp) &&
-        Objects.equals(this.classificationTypes, outboundRoute.classificationTypes) &&
-        Objects.equals(this.enabled, outboundRoute.enabled) &&
-        Objects.equals(this.distribution, outboundRoute.distribution) &&
-        Objects.equals(this.externalTrunkBases, outboundRoute.externalTrunkBases) &&
-        Objects.equals(this.site, outboundRoute.site) &&
-        Objects.equals(this.managed, outboundRoute.managed) &&
-        Objects.equals(this.selfUri, outboundRoute.selfUri);
+            Objects.equals(this.name, outboundRoute.name) &&
+            Objects.equals(this.division, outboundRoute.division) &&
+            Objects.equals(this.description, outboundRoute.description) &&
+            Objects.equals(this.version, outboundRoute.version) &&
+            Objects.equals(this.dateCreated, outboundRoute.dateCreated) &&
+            Objects.equals(this.dateModified, outboundRoute.dateModified) &&
+            Objects.equals(this.modifiedBy, outboundRoute.modifiedBy) &&
+            Objects.equals(this.createdBy, outboundRoute.createdBy) &&
+            Objects.equals(this.state, outboundRoute.state) &&
+            Objects.equals(this.modifiedByApp, outboundRoute.modifiedByApp) &&
+            Objects.equals(this.createdByApp, outboundRoute.createdByApp) &&
+            Objects.equals(this.classificationTypes, outboundRoute.classificationTypes) &&
+            Objects.equals(this.enabled, outboundRoute.enabled) &&
+            Objects.equals(this.distribution, outboundRoute.distribution) &&
+            Objects.equals(this.externalTrunkBases, outboundRoute.externalTrunkBases) &&
+            Objects.equals(this.site, outboundRoute.site) &&
+            Objects.equals(this.managed, outboundRoute.managed) &&
+            Objects.equals(this.selfUri, outboundRoute.selfUri);
   }
 
   @Override

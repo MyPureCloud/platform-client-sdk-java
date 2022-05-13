@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class GetVoicemailUserpolicyRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -47,7 +47,7 @@ public class GetVoicemailUserpolicyRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -78,7 +78,7 @@ public class GetVoicemailUserpolicyRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/userpolicies/{userId}")
                 .withPathParameter("userId", userId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -89,12 +89,12 @@ public class GetVoicemailUserpolicyRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetVoicemailUserpolicyRequest request;
@@ -103,20 +103,20 @@ public class GetVoicemailUserpolicyRequest {
 			request = new GetVoicemailUserpolicyRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetVoicemailUserpolicyRequest build() {
             

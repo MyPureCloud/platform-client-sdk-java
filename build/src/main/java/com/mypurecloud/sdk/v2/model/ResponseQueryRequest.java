@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ResponseFilter;
@@ -46,7 +47,7 @@ public class ResponseQueryRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-  
+
   /**
    * The maximum number of hits to return. Default: 25, Maximum: 500.
    **/
@@ -64,7 +65,7 @@ public class ResponseQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * Filter the query results.
    **/
@@ -82,7 +83,6 @@ public class ResponseQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class ResponseQueryRequest  implements Serializable {
       return false;
     }
     ResponseQueryRequest responseQueryRequest = (ResponseQueryRequest) o;
+
     return Objects.equals(this.queryPhrase, responseQueryRequest.queryPhrase) &&
-        Objects.equals(this.pageSize, responseQueryRequest.pageSize) &&
-        Objects.equals(this.filters, responseQueryRequest.filters);
+            Objects.equals(this.pageSize, responseQueryRequest.pageSize) &&
+            Objects.equals(this.filters, responseQueryRequest.filters);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.total = total;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public IntegrationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class IntegrationEntityListing  implements Serializable, PagedResource<In
       return false;
     }
     IntegrationEntityListing integrationEntityListing = (IntegrationEntityListing) o;
+
     return Objects.equals(this.entities, integrationEntityListing.entities) &&
-        Objects.equals(this.pageSize, integrationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, integrationEntityListing.pageNumber) &&
-        Objects.equals(this.total, integrationEntityListing.total) &&
-        Objects.equals(this.lastUri, integrationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, integrationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, integrationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, integrationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, integrationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, integrationEntityListing.pageCount);
+            Objects.equals(this.pageSize, integrationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, integrationEntityListing.pageNumber) &&
+            Objects.equals(this.total, integrationEntityListing.total) &&
+            Objects.equals(this.lastUri, integrationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, integrationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, integrationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, integrationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, integrationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, integrationEntityListing.pageCount);
   }
 
   @Override

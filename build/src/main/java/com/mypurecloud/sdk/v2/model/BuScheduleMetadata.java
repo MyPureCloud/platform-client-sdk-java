@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuManagementUnitScheduleSummary;
@@ -45,7 +46,7 @@ public class BuScheduleMetadata  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -63,7 +64,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The number of weeks spanned by this schedule
    **/
@@ -81,7 +82,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * The description of this schedule
    **/
@@ -99,7 +100,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Whether this schedule is published
    **/
@@ -117,7 +118,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    * The forecast used for this schedule, if applicable
    **/
@@ -135,7 +136,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * Generation result summary for this schedule, if applicable
    **/
@@ -153,7 +154,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.generationResults = generationResults;
   }
 
-  
+
   /**
    * Version metadata for this schedule
    **/
@@ -171,7 +172,7 @@ public class BuScheduleMetadata  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * High level per-management unit schedule metadata
    **/
@@ -189,14 +190,13 @@ public class BuScheduleMetadata  implements Serializable {
     this.managementUnits = managementUnits;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -207,16 +207,17 @@ public class BuScheduleMetadata  implements Serializable {
       return false;
     }
     BuScheduleMetadata buScheduleMetadata = (BuScheduleMetadata) o;
+
     return Objects.equals(this.id, buScheduleMetadata.id) &&
-        Objects.equals(this.weekDate, buScheduleMetadata.weekDate) &&
-        Objects.equals(this.weekCount, buScheduleMetadata.weekCount) &&
-        Objects.equals(this.description, buScheduleMetadata.description) &&
-        Objects.equals(this.published, buScheduleMetadata.published) &&
-        Objects.equals(this.shortTermForecast, buScheduleMetadata.shortTermForecast) &&
-        Objects.equals(this.generationResults, buScheduleMetadata.generationResults) &&
-        Objects.equals(this.metadata, buScheduleMetadata.metadata) &&
-        Objects.equals(this.managementUnits, buScheduleMetadata.managementUnits) &&
-        Objects.equals(this.selfUri, buScheduleMetadata.selfUri);
+            Objects.equals(this.weekDate, buScheduleMetadata.weekDate) &&
+            Objects.equals(this.weekCount, buScheduleMetadata.weekCount) &&
+            Objects.equals(this.description, buScheduleMetadata.description) &&
+            Objects.equals(this.published, buScheduleMetadata.published) &&
+            Objects.equals(this.shortTermForecast, buScheduleMetadata.shortTermForecast) &&
+            Objects.equals(this.generationResults, buScheduleMetadata.generationResults) &&
+            Objects.equals(this.metadata, buScheduleMetadata.metadata) &&
+            Objects.equals(this.managementUnits, buScheduleMetadata.managementUnits) &&
+            Objects.equals(this.selfUri, buScheduleMetadata.selfUri);
   }
 
   @Override

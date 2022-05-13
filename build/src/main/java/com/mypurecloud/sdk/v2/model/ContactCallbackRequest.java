@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.campaignId = campaignId;
   }
 
-  
+
   /**
    * Contact list identifier
    **/
@@ -62,7 +63,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.contactListId = contactListId;
   }
 
-  
+
   /**
    * Contact identifier
    **/
@@ -80,7 +81,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.contactId = contactId;
   }
 
-  
+
   /**
    * Name of the phone column containing the number to be called
    **/
@@ -98,7 +99,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.phoneColumn = phoneColumn;
   }
 
-  
+
   /**
    * The scheduled time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ\", example = \"2016-01-02T16:59:59\"
    **/
@@ -116,7 +117,6 @@ public class ContactCallbackRequest  implements Serializable {
     this.schedule = schedule;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class ContactCallbackRequest  implements Serializable {
       return false;
     }
     ContactCallbackRequest contactCallbackRequest = (ContactCallbackRequest) o;
+
     return Objects.equals(this.campaignId, contactCallbackRequest.campaignId) &&
-        Objects.equals(this.contactListId, contactCallbackRequest.contactListId) &&
-        Objects.equals(this.contactId, contactCallbackRequest.contactId) &&
-        Objects.equals(this.phoneColumn, contactCallbackRequest.phoneColumn) &&
-        Objects.equals(this.schedule, contactCallbackRequest.schedule);
+            Objects.equals(this.contactListId, contactCallbackRequest.contactListId) &&
+            Objects.equals(this.contactId, contactCallbackRequest.contactId) &&
+            Objects.equals(this.phoneColumn, contactCallbackRequest.phoneColumn) &&
+            Objects.equals(this.schedule, contactCallbackRequest.schedule);
   }
 
   @Override

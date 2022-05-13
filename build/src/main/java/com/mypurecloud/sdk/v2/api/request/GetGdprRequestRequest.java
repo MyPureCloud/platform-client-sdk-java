@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.GDPRRequestEntityListing;
 import com.mypurecloud.sdk.v2.model.GDPRSubjectEntityListing;
 
 public class GetGdprRequestRequest {
-    
+
 	private String requestId;
 	public String getRequestId() {
 		return this.requestId;
@@ -40,7 +40,7 @@ public class GetGdprRequestRequest {
 	    this.setRequestId(requestId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,7 +71,7 @@ public class GetGdprRequestRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/gdpr/requests/{requestId}")
                 .withPathParameter("requestId", requestId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class GetGdprRequestRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String requestId) {
 	    return new Builder()
 	            .withRequiredParams(requestId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGdprRequestRequest request;
@@ -96,20 +96,20 @@ public class GetGdprRequestRequest {
 			request = new GetGdprRequestRequest();
 		}
 
-		
+
 		public Builder withRequestId(String requestId) {
 			request.setRequestId(requestId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String requestId) {
 			request.setRequestId(requestId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGdprRequestRequest build() {
             

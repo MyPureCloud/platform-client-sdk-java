@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class EmployerInfo  implements Serializable {
     this.officialName = officialName;
   }
 
-  
+
   /**
    **/
   public EmployerInfo employeeId(String employeeId) {
@@ -59,7 +60,7 @@ public class EmployerInfo  implements Serializable {
     this.employeeId = employeeId;
   }
 
-  
+
   /**
    **/
   public EmployerInfo employeeType(String employeeType) {
@@ -76,7 +77,7 @@ public class EmployerInfo  implements Serializable {
     this.employeeType = employeeType;
   }
 
-  
+
   /**
    **/
   public EmployerInfo dateHire(String dateHire) {
@@ -93,7 +94,6 @@ public class EmployerInfo  implements Serializable {
     this.dateHire = dateHire;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class EmployerInfo  implements Serializable {
       return false;
     }
     EmployerInfo employerInfo = (EmployerInfo) o;
+
     return Objects.equals(this.officialName, employerInfo.officialName) &&
-        Objects.equals(this.employeeId, employerInfo.employeeId) &&
-        Objects.equals(this.employeeType, employerInfo.employeeType) &&
-        Objects.equals(this.dateHire, employerInfo.dateHire);
+            Objects.equals(this.employeeId, employerInfo.employeeId) &&
+            Objects.equals(this.employeeType, employerInfo.employeeType) &&
+            Objects.equals(this.dateHire, employerInfo.dateHire);
   }
 
   @Override

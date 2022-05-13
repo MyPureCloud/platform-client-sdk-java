@@ -21,12 +21,12 @@ title: IntegrationStatusInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;ACTIVE&quot; |
-| ACTIVATING | &quot;ACTIVATING&quot; |
-| INACTIVE | &quot;INACTIVE&quot; |
-| DEACTIVATING | &quot;DEACTIVATING&quot; |
-| ERROR | &quot;ERROR&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;ACTIVE&quot; | 
+| ACTIVATING | &quot;ACTIVATING&quot; | 
+| INACTIVE | &quot;INACTIVE&quot; | 
+| DEACTIVATING | &quot;DEACTIVATING&quot; | 
+| ERROR | &quot;ERROR&quot; | 
 {: class="table table-striped"}
 
 

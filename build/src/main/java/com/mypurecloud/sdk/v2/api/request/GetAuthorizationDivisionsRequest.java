@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuthorizationDivisionsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -39,7 +39,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -53,7 +53,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -67,7 +67,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -81,7 +81,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -95,7 +95,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setNextPage(nextPage);
 	    return this;
 	} 
-	
+
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -109,7 +109,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setPreviousPage(previousPage);
 	    return this;
 	} 
-	
+
 	private Boolean objectCount;
 	public Boolean getObjectCount() {
 		return this.objectCount;
@@ -123,7 +123,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setObjectCount(objectCount);
 	    return this;
 	} 
-	
+
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -137,7 +137,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setId(id);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -151,7 +151,7 @@ public class GetAuthorizationDivisionsRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -175,25 +175,34 @@ public class GetAuthorizationDivisionsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/divisions")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("nextPage", "", nextPage)
         
+
                 .withQueryParameters("previousPage", "", previousPage)
         
+
                 .withQueryParameters("objectCount", "", objectCount)
         
+
                 .withQueryParameters("id", "multi", id)
         
+
                 .withQueryParameters("name", "", name)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -204,7 +213,7 @@ public class GetAuthorizationDivisionsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationDivisionsRequest request;
@@ -213,54 +222,54 @@ public class GetAuthorizationDivisionsRequest {
 			request = new GetAuthorizationDivisionsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
+
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
-		
+
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
-		
+
 		public Builder withObjectCount(Boolean objectCount) {
 			request.setObjectCount(objectCount);
 			return this;
 		}
-		
+
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetAuthorizationDivisionsRequest build() {
             

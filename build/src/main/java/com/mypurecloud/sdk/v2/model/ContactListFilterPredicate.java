@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,7 +152,7 @@ public class ContactListFilterPredicate  implements Serializable {
     this.column = column;
   }
 
-  
+
   /**
    * The type of data in the contact column.
    **/
@@ -169,7 +170,7 @@ public class ContactListFilterPredicate  implements Serializable {
     this.columnType = columnType;
   }
 
-  
+
   /**
    * The operator for this ContactListFilterPredicate.
    **/
@@ -187,7 +188,7 @@ public class ContactListFilterPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Value with which to compare the contact's data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
    **/
@@ -205,7 +206,7 @@ public class ContactListFilterPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * A range of values. Required for operators BETWEEN and IN.
    **/
@@ -223,7 +224,7 @@ public class ContactListFilterPredicate  implements Serializable {
     this.range = range;
   }
 
-  
+
   /**
    * Inverts the result of the predicate (i.e., if the predicate returns true, inverting it will return false).
    **/
@@ -241,7 +242,6 @@ public class ContactListFilterPredicate  implements Serializable {
     this.inverted = inverted;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -252,12 +252,13 @@ public class ContactListFilterPredicate  implements Serializable {
       return false;
     }
     ContactListFilterPredicate contactListFilterPredicate = (ContactListFilterPredicate) o;
+
     return Objects.equals(this.column, contactListFilterPredicate.column) &&
-        Objects.equals(this.columnType, contactListFilterPredicate.columnType) &&
-        Objects.equals(this.operator, contactListFilterPredicate.operator) &&
-        Objects.equals(this.value, contactListFilterPredicate.value) &&
-        Objects.equals(this.range, contactListFilterPredicate.range) &&
-        Objects.equals(this.inverted, contactListFilterPredicate.inverted);
+            Objects.equals(this.columnType, contactListFilterPredicate.columnType) &&
+            Objects.equals(this.operator, contactListFilterPredicate.operator) &&
+            Objects.equals(this.value, contactListFilterPredicate.value) &&
+            Objects.equals(this.range, contactListFilterPredicate.range) &&
+            Objects.equals(this.inverted, contactListFilterPredicate.inverted);
   }
 
   @Override

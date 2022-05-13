@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class Education  implements Serializable {
     this.school = school;
   }
 
-  
+
   /**
    **/
   public Education fieldOfStudy(String fieldOfStudy) {
@@ -61,7 +62,7 @@ public class Education  implements Serializable {
     this.fieldOfStudy = fieldOfStudy;
   }
 
-  
+
   /**
    * Notes about education has a 2000 character limit
    **/
@@ -79,7 +80,7 @@ public class Education  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -97,7 +98,7 @@ public class Education  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -115,7 +116,6 @@ public class Education  implements Serializable {
     this.dateEnd = dateEnd;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,11 +126,12 @@ public class Education  implements Serializable {
       return false;
     }
     Education education = (Education) o;
+
     return Objects.equals(this.school, education.school) &&
-        Objects.equals(this.fieldOfStudy, education.fieldOfStudy) &&
-        Objects.equals(this.notes, education.notes) &&
-        Objects.equals(this.dateStart, education.dateStart) &&
-        Objects.equals(this.dateEnd, education.dateEnd);
+            Objects.equals(this.fieldOfStudy, education.fieldOfStudy) &&
+            Objects.equals(this.notes, education.notes) &&
+            Objects.equals(this.dateStart, education.dateStart) &&
+            Objects.equals(this.dateEnd, education.dateEnd);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationMessageEventTopicMessageMediaParticipant;
@@ -45,7 +46,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageConversation name(String name) {
@@ -62,7 +63,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageConversation participants(List<ConversationMessageEventTopicMessageMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class ConversationMessageEventTopicMessageConversation  implements Serial
       return false;
     }
     ConversationMessageEventTopicMessageConversation conversationMessageEventTopicMessageConversation = (ConversationMessageEventTopicMessageConversation) o;
+
     return Objects.equals(this.id, conversationMessageEventTopicMessageConversation.id) &&
-        Objects.equals(this.name, conversationMessageEventTopicMessageConversation.name) &&
-        Objects.equals(this.participants, conversationMessageEventTopicMessageConversation.participants) &&
-        Objects.equals(this.otherMediaUris, conversationMessageEventTopicMessageConversation.otherMediaUris);
+            Objects.equals(this.name, conversationMessageEventTopicMessageConversation.name) &&
+            Objects.equals(this.participants, conversationMessageEventTopicMessageConversation.participants) &&
+            Objects.equals(this.otherMediaUris, conversationMessageEventTopicMessageConversation.otherMediaUris);
   }
 
   @Override

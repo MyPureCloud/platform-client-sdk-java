@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -164,7 +165,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * External organization identifier
    **/
@@ -182,7 +183,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * Reason for which participant flagged conversation
    **/
@@ -200,7 +201,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Unique identifier for the participant
    **/
@@ -218,7 +219,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant
    **/
@@ -236,7 +237,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.participantName = participantName;
   }
 
-  
+
   /**
    * The participant's purpose
    **/
@@ -254,7 +255,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The team ID the user is a member of
    **/
@@ -272,7 +273,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.teamId = teamId;
   }
 
-  
+
   /**
    * Unique identifier for the user
    **/
@@ -290,7 +291,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * List of sessions associated to this participant
    **/
@@ -308,7 +309,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.sessions = sessions;
   }
 
-  
+
   /**
    * List of attributes associated to this participant
    **/
@@ -326,7 +327,6 @@ public class AnalyticsParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -337,16 +337,17 @@ public class AnalyticsParticipant  implements Serializable {
       return false;
     }
     AnalyticsParticipant analyticsParticipant = (AnalyticsParticipant) o;
+
     return Objects.equals(this.externalContactId, analyticsParticipant.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, analyticsParticipant.externalOrganizationId) &&
-        Objects.equals(this.flaggedReason, analyticsParticipant.flaggedReason) &&
-        Objects.equals(this.participantId, analyticsParticipant.participantId) &&
-        Objects.equals(this.participantName, analyticsParticipant.participantName) &&
-        Objects.equals(this.purpose, analyticsParticipant.purpose) &&
-        Objects.equals(this.teamId, analyticsParticipant.teamId) &&
-        Objects.equals(this.userId, analyticsParticipant.userId) &&
-        Objects.equals(this.sessions, analyticsParticipant.sessions) &&
-        Objects.equals(this.attributes, analyticsParticipant.attributes);
+            Objects.equals(this.externalOrganizationId, analyticsParticipant.externalOrganizationId) &&
+            Objects.equals(this.flaggedReason, analyticsParticipant.flaggedReason) &&
+            Objects.equals(this.participantId, analyticsParticipant.participantId) &&
+            Objects.equals(this.participantName, analyticsParticipant.participantName) &&
+            Objects.equals(this.purpose, analyticsParticipant.purpose) &&
+            Objects.equals(this.teamId, analyticsParticipant.teamId) &&
+            Objects.equals(this.userId, analyticsParticipant.userId) &&
+            Objects.equals(this.sessions, analyticsParticipant.sessions) &&
+            Objects.equals(this.attributes, analyticsParticipant.attributes);
   }
 
   @Override

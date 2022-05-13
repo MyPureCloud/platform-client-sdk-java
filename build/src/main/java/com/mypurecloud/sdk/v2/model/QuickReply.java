@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class QuickReply  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Content of the textback payload after clicking a quick reply
    **/
@@ -109,7 +110,7 @@ public class QuickReply  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * The location of the image file associated with quick reply
    **/
@@ -127,7 +128,7 @@ public class QuickReply  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
    **/
@@ -145,7 +146,7 @@ public class QuickReply  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * Indicates if the quick reply option is selected by end customer
    **/
@@ -163,7 +164,6 @@ public class QuickReply  implements Serializable {
     this.isSelected = isSelected;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -174,11 +174,12 @@ public class QuickReply  implements Serializable {
       return false;
     }
     QuickReply quickReply = (QuickReply) o;
+
     return Objects.equals(this.text, quickReply.text) &&
-        Objects.equals(this.payload, quickReply.payload) &&
-        Objects.equals(this.url, quickReply.url) &&
-        Objects.equals(this.action, quickReply.action) &&
-        Objects.equals(this.isSelected, quickReply.isSelected);
+            Objects.equals(this.payload, quickReply.payload) &&
+            Objects.equals(this.url, quickReply.url) &&
+            Objects.equals(this.action, quickReply.action) &&
+            Objects.equals(this.isSelected, quickReply.isSelected);
   }
 
   @Override

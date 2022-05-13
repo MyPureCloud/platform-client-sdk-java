@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class Endpoint  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Name
    **/
@@ -121,7 +122,7 @@ public class Endpoint  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -139,7 +140,7 @@ public class Endpoint  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -157,7 +158,7 @@ public class Endpoint  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -175,7 +176,7 @@ public class Endpoint  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -193,7 +194,7 @@ public class Endpoint  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -211,7 +212,7 @@ public class Endpoint  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -229,7 +230,7 @@ public class Endpoint  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -247,14 +248,14 @@ public class Endpoint  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -272,7 +273,7 @@ public class Endpoint  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -290,7 +291,7 @@ public class Endpoint  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public Endpoint count(Integer count) {
@@ -307,7 +308,7 @@ public class Endpoint  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    **/
   public Endpoint properties(Map<String, Object> properties) {
@@ -324,7 +325,7 @@ public class Endpoint  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    * Schema
    **/
@@ -342,7 +343,7 @@ public class Endpoint  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   /**
    **/
   public Endpoint enabled(Boolean enabled) {
@@ -359,7 +360,7 @@ public class Endpoint  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public Endpoint site(DomainEntityRef site) {
@@ -376,7 +377,7 @@ public class Endpoint  implements Serializable {
     this.site = site;
   }
 
-  
+
   /**
    **/
   public Endpoint dids(List<String> dids) {
@@ -393,14 +394,13 @@ public class Endpoint  implements Serializable {
     this.dids = dids;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -411,25 +411,26 @@ public class Endpoint  implements Serializable {
       return false;
     }
     Endpoint endpoint = (Endpoint) o;
+
     return Objects.equals(this.id, endpoint.id) &&
-        Objects.equals(this.name, endpoint.name) &&
-        Objects.equals(this.division, endpoint.division) &&
-        Objects.equals(this.description, endpoint.description) &&
-        Objects.equals(this.version, endpoint.version) &&
-        Objects.equals(this.dateCreated, endpoint.dateCreated) &&
-        Objects.equals(this.dateModified, endpoint.dateModified) &&
-        Objects.equals(this.modifiedBy, endpoint.modifiedBy) &&
-        Objects.equals(this.createdBy, endpoint.createdBy) &&
-        Objects.equals(this.state, endpoint.state) &&
-        Objects.equals(this.modifiedByApp, endpoint.modifiedByApp) &&
-        Objects.equals(this.createdByApp, endpoint.createdByApp) &&
-        Objects.equals(this.count, endpoint.count) &&
-        Objects.equals(this.properties, endpoint.properties) &&
-        Objects.equals(this.schema, endpoint.schema) &&
-        Objects.equals(this.enabled, endpoint.enabled) &&
-        Objects.equals(this.site, endpoint.site) &&
-        Objects.equals(this.dids, endpoint.dids) &&
-        Objects.equals(this.selfUri, endpoint.selfUri);
+            Objects.equals(this.name, endpoint.name) &&
+            Objects.equals(this.division, endpoint.division) &&
+            Objects.equals(this.description, endpoint.description) &&
+            Objects.equals(this.version, endpoint.version) &&
+            Objects.equals(this.dateCreated, endpoint.dateCreated) &&
+            Objects.equals(this.dateModified, endpoint.dateModified) &&
+            Objects.equals(this.modifiedBy, endpoint.modifiedBy) &&
+            Objects.equals(this.createdBy, endpoint.createdBy) &&
+            Objects.equals(this.state, endpoint.state) &&
+            Objects.equals(this.modifiedByApp, endpoint.modifiedByApp) &&
+            Objects.equals(this.createdByApp, endpoint.createdByApp) &&
+            Objects.equals(this.count, endpoint.count) &&
+            Objects.equals(this.properties, endpoint.properties) &&
+            Objects.equals(this.schema, endpoint.schema) &&
+            Objects.equals(this.enabled, endpoint.enabled) &&
+            Objects.equals(this.site, endpoint.site) &&
+            Objects.equals(this.dids, endpoint.dids) &&
+            Objects.equals(this.selfUri, endpoint.selfUri);
   }
 
   @Override

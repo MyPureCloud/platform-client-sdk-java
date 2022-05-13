@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class KnowledgeBase  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public KnowledgeBase name(String name) {
@@ -113,7 +114,7 @@ public class KnowledgeBase  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Knowledge base description
    **/
@@ -131,7 +132,7 @@ public class KnowledgeBase  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes
    **/
@@ -149,56 +150,55 @@ public class KnowledgeBase  implements Serializable {
     this.coreLanguage = coreLanguage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The count representing the number of documents of type FAQ in the KnowledgeBase")
   @JsonProperty("faqCount")
   public Integer getFaqCount() {
     return faqCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateDocumentLastModified")
   public Date getDateDocumentLastModified() {
     return dateDocumentLastModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The count representing the number of documents of type Article in the KnowledgeBase")
   @JsonProperty("articleCount")
   public Integer getArticleCount() {
     return articleCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Flag that indicates the knowledge base is published")
   @JsonProperty("published")
   public Boolean getPublished() {
     return published;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,17 +209,18 @@ public class KnowledgeBase  implements Serializable {
       return false;
     }
     KnowledgeBase knowledgeBase = (KnowledgeBase) o;
+
     return Objects.equals(this.id, knowledgeBase.id) &&
-        Objects.equals(this.name, knowledgeBase.name) &&
-        Objects.equals(this.description, knowledgeBase.description) &&
-        Objects.equals(this.coreLanguage, knowledgeBase.coreLanguage) &&
-        Objects.equals(this.dateCreated, knowledgeBase.dateCreated) &&
-        Objects.equals(this.dateModified, knowledgeBase.dateModified) &&
-        Objects.equals(this.faqCount, knowledgeBase.faqCount) &&
-        Objects.equals(this.dateDocumentLastModified, knowledgeBase.dateDocumentLastModified) &&
-        Objects.equals(this.articleCount, knowledgeBase.articleCount) &&
-        Objects.equals(this.published, knowledgeBase.published) &&
-        Objects.equals(this.selfUri, knowledgeBase.selfUri);
+            Objects.equals(this.name, knowledgeBase.name) &&
+            Objects.equals(this.description, knowledgeBase.description) &&
+            Objects.equals(this.coreLanguage, knowledgeBase.coreLanguage) &&
+            Objects.equals(this.dateCreated, knowledgeBase.dateCreated) &&
+            Objects.equals(this.dateModified, knowledgeBase.dateModified) &&
+            Objects.equals(this.faqCount, knowledgeBase.faqCount) &&
+            Objects.equals(this.dateDocumentLastModified, knowledgeBase.dateDocumentLastModified) &&
+            Objects.equals(this.articleCount, knowledgeBase.articleCount) &&
+            Objects.equals(this.published, knowledgeBase.published) &&
+            Objects.equals(this.selfUri, knowledgeBase.selfUri);
   }
 
   @Override

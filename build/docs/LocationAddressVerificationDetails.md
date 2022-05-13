@@ -21,12 +21,12 @@ title: LocationAddressVerificationDetails
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;Pending&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| RETRY | &quot;Retry&quot; |
-| COMPLETE | &quot;Complete&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| RETRY | &quot;Retry&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 

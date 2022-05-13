@@ -11,12 +11,12 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLocationRequest;
@@ -34,7 +34,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class LocationsApi {
   private final ApiClient pcapiClient;
 
@@ -46,7 +45,6 @@ public class LocationsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a location
    * 
@@ -71,7 +69,7 @@ public class LocationsApi {
   private DeleteLocationRequest createDeleteLocationRequest(String locationId) {
     return DeleteLocationRequest.builder()
             .withLocationId(locationId)
-    
+
             .build();
   }
 
@@ -122,7 +120,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Get Location by ID.
    * 
@@ -151,9 +148,9 @@ public class LocationsApi {
   private GetLocationRequest createGetLocationRequest(String locationId, List<String> expand) {
     return GetLocationRequest.builder()
             .withLocationId(locationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -205,7 +202,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Get sublocations for location ID.
    * 
@@ -232,7 +228,7 @@ public class LocationsApi {
   private GetLocationSublocationsRequest createGetLocationSublocationsRequest(String locationId) {
     return GetLocationSublocationsRequest.builder()
             .withLocationId(locationId)
-    
+
             .build();
   }
 
@@ -284,7 +280,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Get a list of all locations.
    * 
@@ -317,13 +312,13 @@ public class LocationsApi {
   private GetLocationsRequest createGetLocationsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
     return GetLocationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withId(id)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -375,7 +370,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -404,9 +398,9 @@ public class LocationsApi {
   private GetLocationsSearchRequest createGetLocationsSearchRequest(String q64, List<String> expand) {
     return GetLocationsSearchRequest.builder()
             .withQ64(q64)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -458,7 +452,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Update a location
    * 
@@ -487,9 +480,9 @@ public class LocationsApi {
   private PatchLocationRequest createPatchLocationRequest(String locationId, LocationUpdateDefinition body) {
     return PatchLocationRequest.builder()
             .withLocationId(locationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -541,7 +534,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Create a location
    * 
@@ -568,7 +560,7 @@ public class LocationsApi {
   private PostLocationsRequest createPostLocationsRequest(LocationCreateDefinition body) {
     return PostLocationsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -620,7 +612,6 @@ public class LocationsApi {
     }
   }
 
-  
   /**
    * Search locations
    * 
@@ -647,7 +638,7 @@ public class LocationsApi {
   private PostLocationsSearchRequest createPostLocationsSearchRequest(LocationSearchRequest body) {
     return PostLocationsSearchRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -699,5 +690,4 @@ public class LocationsApi {
     }
   }
 
-  
 }

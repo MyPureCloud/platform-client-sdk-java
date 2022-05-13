@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class WebMessagingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -38,7 +37,6 @@ public class WebMessagingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get the messages for a web messaging session.
    * 
@@ -114,7 +112,6 @@ public class WebMessagingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

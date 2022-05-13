@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -106,7 +107,7 @@ public class Line  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -124,7 +125,7 @@ public class Line  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -142,7 +143,7 @@ public class Line  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -160,7 +161,7 @@ public class Line  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -178,7 +179,7 @@ public class Line  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -196,7 +197,7 @@ public class Line  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -214,7 +215,7 @@ public class Line  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -232,7 +233,7 @@ public class Line  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -250,14 +251,14 @@ public class Line  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -275,7 +276,7 @@ public class Line  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -293,7 +294,7 @@ public class Line  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public Line properties(Map<String, Object> properties) {
@@ -310,7 +311,7 @@ public class Line  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    **/
   public Line edgeGroup(DomainEntityRef edgeGroup) {
@@ -327,7 +328,7 @@ public class Line  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-  
+
   /**
    **/
   public Line template(DomainEntityRef template) {
@@ -344,7 +345,7 @@ public class Line  implements Serializable {
     this.template = template;
   }
 
-  
+
   /**
    **/
   public Line site(DomainEntityRef site) {
@@ -361,7 +362,7 @@ public class Line  implements Serializable {
     this.site = site;
   }
 
-  
+
   /**
    **/
   public Line lineBaseSettings(DomainEntityRef lineBaseSettings) {
@@ -378,7 +379,7 @@ public class Line  implements Serializable {
     this.lineBaseSettings = lineBaseSettings;
   }
 
-  
+
   /**
    * The primary edge associated to the line. (Deprecated)
    **/
@@ -396,7 +397,7 @@ public class Line  implements Serializable {
     this.primaryEdge = primaryEdge;
   }
 
-  
+
   /**
    * The secondary edge associated to the line. (Deprecated)
    **/
@@ -414,7 +415,7 @@ public class Line  implements Serializable {
     this.secondaryEdge = secondaryEdge;
   }
 
-  
+
   /**
    **/
   public Line loggedInUser(DomainEntityRef loggedInUser) {
@@ -431,7 +432,7 @@ public class Line  implements Serializable {
     this.loggedInUser = loggedInUser;
   }
 
-  
+
   /**
    **/
   public Line defaultForUser(DomainEntityRef defaultForUser) {
@@ -448,14 +449,13 @@ public class Line  implements Serializable {
     this.defaultForUser = defaultForUser;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -466,28 +466,29 @@ public class Line  implements Serializable {
       return false;
     }
     Line line = (Line) o;
+
     return Objects.equals(this.id, line.id) &&
-        Objects.equals(this.name, line.name) &&
-        Objects.equals(this.division, line.division) &&
-        Objects.equals(this.description, line.description) &&
-        Objects.equals(this.version, line.version) &&
-        Objects.equals(this.dateCreated, line.dateCreated) &&
-        Objects.equals(this.dateModified, line.dateModified) &&
-        Objects.equals(this.modifiedBy, line.modifiedBy) &&
-        Objects.equals(this.createdBy, line.createdBy) &&
-        Objects.equals(this.state, line.state) &&
-        Objects.equals(this.modifiedByApp, line.modifiedByApp) &&
-        Objects.equals(this.createdByApp, line.createdByApp) &&
-        Objects.equals(this.properties, line.properties) &&
-        Objects.equals(this.edgeGroup, line.edgeGroup) &&
-        Objects.equals(this.template, line.template) &&
-        Objects.equals(this.site, line.site) &&
-        Objects.equals(this.lineBaseSettings, line.lineBaseSettings) &&
-        Objects.equals(this.primaryEdge, line.primaryEdge) &&
-        Objects.equals(this.secondaryEdge, line.secondaryEdge) &&
-        Objects.equals(this.loggedInUser, line.loggedInUser) &&
-        Objects.equals(this.defaultForUser, line.defaultForUser) &&
-        Objects.equals(this.selfUri, line.selfUri);
+            Objects.equals(this.name, line.name) &&
+            Objects.equals(this.division, line.division) &&
+            Objects.equals(this.description, line.description) &&
+            Objects.equals(this.version, line.version) &&
+            Objects.equals(this.dateCreated, line.dateCreated) &&
+            Objects.equals(this.dateModified, line.dateModified) &&
+            Objects.equals(this.modifiedBy, line.modifiedBy) &&
+            Objects.equals(this.createdBy, line.createdBy) &&
+            Objects.equals(this.state, line.state) &&
+            Objects.equals(this.modifiedByApp, line.modifiedByApp) &&
+            Objects.equals(this.createdByApp, line.createdByApp) &&
+            Objects.equals(this.properties, line.properties) &&
+            Objects.equals(this.edgeGroup, line.edgeGroup) &&
+            Objects.equals(this.template, line.template) &&
+            Objects.equals(this.site, line.site) &&
+            Objects.equals(this.lineBaseSettings, line.lineBaseSettings) &&
+            Objects.equals(this.primaryEdge, line.primaryEdge) &&
+            Objects.equals(this.secondaryEdge, line.secondaryEdge) &&
+            Objects.equals(this.loggedInUser, line.loggedInUser) &&
+            Objects.equals(this.defaultForUser, line.defaultForUser) &&
+            Objects.equals(this.selfUri, line.selfUri);
   }
 
   @Override

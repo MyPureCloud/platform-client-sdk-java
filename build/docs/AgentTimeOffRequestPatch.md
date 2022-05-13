@@ -20,8 +20,8 @@ title: AgentTimeOffRequestPatch
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CANCELED | &quot;CANCELED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CANCELED | &quot;CANCELED&quot; | 
 {: class="table table-striped"}
 
 

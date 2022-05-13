@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SentimentFeedback;
@@ -42,7 +43,6 @@ public class SentimentFeedbackEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -53,6 +53,7 @@ public class SentimentFeedbackEntityListing  implements Serializable {
       return false;
     }
     SentimentFeedbackEntityListing sentimentFeedbackEntityListing = (SentimentFeedbackEntityListing) o;
+
     return Objects.equals(this.entities, sentimentFeedbackEntityListing.entities);
   }
 

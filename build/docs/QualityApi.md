@@ -74,8 +74,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a calibration by id.
 
-
-
 Wraps DELETE /api/v2/quality/calibrations/{calibrationId}  
 
 Requires ANY permissions: 
@@ -138,8 +136,6 @@ try {
 > [Evaluation](Evaluation.html) deleteQualityConversationEvaluation(conversationId, evaluationId, expand)
 
 Delete an evaluation
-
-
 
 Wraps DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
 
@@ -206,8 +202,6 @@ try {
 
 Delete an evaluation form.
 
-
-
 Wraps DELETE /api/v2/quality/forms/{formId}  
 
 Requires ANY permissions: 
@@ -267,8 +261,6 @@ null (empty response body)
 > Void deleteQualityFormsEvaluation(formId)
 
 Delete an evaluation form.
-
-
 
 Wraps DELETE /api/v2/quality/forms/evaluations/{formId}  
 
@@ -330,8 +322,6 @@ null (empty response body)
 
 Delete a survey form.
 
-
-
 Wraps DELETE /api/v2/quality/forms/surveys/{formId}  
 
 Requires ALL permissions: 
@@ -392,7 +382,7 @@ null (empty response body)
 
 Gets a list of Agent Activities
 
-Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 
 Wraps GET /api/v2/quality/agents/activity  
 
@@ -425,12 +415,12 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Date startTime = new Date(); // Date | Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 Date endTime = new Date(); // Date | End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-List<String> agentUserId = Arrays.asList("agentUserId_example"); // List<String> | user id of agent requested
+List<String> agentUserId = Arrays.asList(null); // List<String> | user id of agent requested
 String evaluatorUserId = "evaluatorUserId_example"; // String | user id of the evaluator
 String name = "name_example"; // String | name
 String group = "group_example"; // String | group id
@@ -476,8 +466,6 @@ try {
 > [Calibration](Calibration.html) getQualityCalibration(calibrationId, calibratorId, conversationId)
 
 Get a calibration by id.  Requires either calibrator id or conversation id
-
-
 
 Wraps GET /api/v2/quality/calibrations/{calibrationId}  
 
@@ -544,8 +532,6 @@ try {
 
 Get the list of calibrations
 
-
-
 Wraps GET /api/v2/quality/calibrations  
 
 Requires ANY permissions: 
@@ -578,7 +564,7 @@ String calibratorId = "calibratorId_example"; // String | user id of calibrator
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversation id
@@ -624,8 +610,6 @@ try {
 > [Evaluation](Evaluation.html) getQualityConversationEvaluation(conversationId, evaluationId, expand)
 
 Get an evaluation
-
-
 
 Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
 
@@ -692,8 +676,6 @@ try {
 
 Get the surveys for a conversation
 
-
-
 Wraps GET /api/v2/quality/conversations/{conversationId}/surveys  
 
 Requires ANY permissions: 
@@ -754,8 +736,6 @@ try {
 > [QualityAuditQueryExecutionStatusResponse](QualityAuditQueryExecutionStatusResponse.html) getQualityConversationsAuditsQueryTransactionId(transactionId)
 
 Get status of audit query execution
-
-
 
 Wraps GET /api/v2/quality/conversations/audits/query/{transactionId}  
 
@@ -818,8 +798,6 @@ try {
 
 Get results of audit query
 
-
-
 Wraps GET /api/v2/quality/conversations/audits/query/{transactionId}/results  
 
 Requires ALL permissions: 
@@ -851,7 +829,7 @@ QualityApi apiInstance = new QualityApi();
 String transactionId = "transactionId_example"; // String | Transaction ID
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 Integer pageSize = 25; // Integer | Page size
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     QualityAuditQueryExecutionResultsResponse result = apiInstance.getQualityConversationsAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand);
     System.out.println(result);
@@ -887,7 +865,7 @@ try {
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
 Wraps GET /api/v2/quality/evaluations/query  
 
@@ -920,7 +898,7 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversationId specified
@@ -929,7 +907,7 @@ String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user i
 String queueId = "queueId_example"; // String | queue id
 String startTime = "startTime_example"; // String | start time of the evaluation query
 String endTime = "endTime_example"; // String | end time of the evaluation query
-List<String> evaluationState = Arrays.asList("evaluationState_example"); // List<String> | 
+List<String> evaluationState = Arrays.asList(null); // List<String> | 
 Boolean isReleased = true; // Boolean | the evaluation has been released
 Boolean agentHasRead = true; // Boolean | agent has the evaluation
 Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
@@ -984,8 +962,6 @@ try {
 
 Get an evaluator activity
 
-
-
 Wraps GET /api/v2/quality/evaluators/activity  
 
 Requires ANY permissions: 
@@ -1017,13 +993,13 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Date startTime = new Date(); // Date | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 Date endTime = new Date(); // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 String name = "name_example"; // String | Evaluator name
-List<String> permission = Arrays.asList("permission_example"); // List<String> | permission strings
+List<String> permission = Arrays.asList(null); // List<String> | permission strings
 String group = "group_example"; // String | group id
 try {
     EvaluatorActivityEntityListing result = apiInstance.getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group);
@@ -1066,8 +1042,6 @@ try {
 > [EvaluationForm](EvaluationForm.html) getQualityForm(formId)
 
 Get an evaluation form
-
-
 
 Wraps GET /api/v2/quality/forms/{formId}  
 
@@ -1129,8 +1103,6 @@ try {
 > [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormVersions(formId, pageSize, pageNumber)
 
 Gets all the revisions for a specific evaluation.
-
-
 
 Wraps GET /api/v2/quality/forms/{formId}/versions  
 
@@ -1196,8 +1168,6 @@ try {
 > [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of evaluation forms
-
-
 
 Wraps GET /api/v2/quality/forms  
 
@@ -1274,8 +1244,6 @@ try {
 
 Get an evaluation form
 
-
-
 Wraps GET /api/v2/quality/forms/evaluations/{formId}  
 
 Requires ANY permissions: 
@@ -1336,8 +1304,6 @@ try {
 > [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder)
 
 Gets all the revisions for a specific evaluation.
-
-
 
 Wraps GET /api/v2/quality/forms/evaluations/{formId}/versions  
 
@@ -1405,8 +1371,6 @@ try {
 > [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of evaluation forms
-
-
 
 Wraps GET /api/v2/quality/forms/evaluations  
 
@@ -1483,8 +1447,6 @@ try {
 
 Retrieve a list of the latest published evaluation form versions by context ids
 
-
-
 Wraps GET /api/v2/quality/forms/evaluations/bulk/contexts  
 
 Requires ALL permissions: 
@@ -1513,7 +1475,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
-List<String> contextId = Arrays.asList("contextId_example"); // List<String> | A comma-delimited list of valid evaluation form context ids
+List<String> contextId = Arrays.asList(null); // List<String> | A comma-delimited list of valid evaluation form context ids
 try {
     List<EvaluationForm> result = apiInstance.getQualityFormsEvaluationsBulkContexts(contextId);
     System.out.println(result);
@@ -1545,8 +1507,6 @@ try {
 > [SurveyForm](SurveyForm.html) getQualityFormsSurvey(formId)
 
 Get a survey form
-
-
 
 Wraps GET /api/v2/quality/forms/surveys/{formId}  
 
@@ -1608,8 +1568,6 @@ try {
 > [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveyVersions(formId, pageSize, pageNumber)
 
 Gets all the revisions for a specific survey.
-
-
 
 Wraps GET /api/v2/quality/forms/surveys/{formId}/versions  
 
@@ -1675,8 +1633,6 @@ try {
 > [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of survey forms
-
-
 
 Wraps GET /api/v2/quality/forms/surveys  
 
@@ -1753,8 +1709,6 @@ try {
 
 Retrieve a list of survey forms by their ids
 
-
-
 Wraps GET /api/v2/quality/forms/surveys/bulk  
 
 Requires ALL permissions: 
@@ -1783,7 +1737,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
-List<String> id = Arrays.asList("id_example"); // List<String> | A comma-delimited list of valid survey form ids
+List<String> id = Arrays.asList(null); // List<String> | A comma-delimited list of valid survey form ids
 try {
     SurveyFormEntityListing result = apiInstance.getQualityFormsSurveysBulk(id);
     System.out.println(result);
@@ -1816,8 +1770,6 @@ try {
 
 Retrieve a list of the latest form versions by context ids
 
-
-
 Wraps GET /api/v2/quality/forms/surveys/bulk/contexts  
 
 Requires ALL permissions: 
@@ -1846,7 +1798,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
-List<String> contextId = Arrays.asList("contextId_example"); // List<String> | A comma-delimited list of valid survey form context ids
+List<String> contextId = Arrays.asList(null); // List<String> | A comma-delimited list of valid survey form context ids
 Boolean published = true; // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
 try {
     List<SurveyForm> result = apiInstance.getQualityFormsSurveysBulkContexts(contextId, published);
@@ -1880,8 +1832,6 @@ try {
 > [EvaluationForm](EvaluationForm.html) getQualityPublishedform(formId)
 
 Get the published evaluation forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms/{formId}  
 
@@ -1943,8 +1893,6 @@ try {
 > [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext)
 
 Get the published evaluation forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms  
 
@@ -2013,8 +1961,6 @@ try {
 
 Get the most recent published version of an evaluation form.
 
-
-
 Wraps GET /api/v2/quality/publishedforms/evaluations/{formId}  
 
 Requires ANY permissions: 
@@ -2075,8 +2021,6 @@ try {
 > [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext)
 
 Get the published evaluation forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms/evaluations  
 
@@ -2145,8 +2089,6 @@ try {
 
 Get the most recent published version of a survey form.
 
-
-
 Wraps GET /api/v2/quality/publishedforms/surveys/{formId}  
 
 Requires ALL permissions: 
@@ -2207,8 +2149,6 @@ try {
 > [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityPublishedformsSurveys(pageSize, pageNumber, name, onlyLatestEnabledPerContext)
 
 Get the published survey forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms/surveys  
 
@@ -2277,8 +2217,6 @@ try {
 
 Get a survey for a conversation
 
-
-
 Wraps GET /api/v2/quality/surveys/{surveyId}  
 
 Requires ANY permissions: 
@@ -2340,8 +2278,6 @@ try {
 
 Get a survey as an end-customer, for the purposes of scoring it.
 
-
-
 Wraps GET /api/v2/quality/surveys/scorable  
 
 Requires NO permissions: 
@@ -2388,8 +2324,6 @@ try {
 > [SurveyForm](SurveyForm.html) patchQualityFormsSurvey(formId, body)
 
 Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
-
-
 
 Wraps PATCH /api/v2/quality/forms/surveys/{formId}  
 
@@ -2454,8 +2388,6 @@ try {
 
 Query for evaluation aggregates
 
-
-
 Wraps POST /api/v2/analytics/evaluations/aggregates/query  
 
 Requires ANY permissions: 
@@ -2517,8 +2449,6 @@ try {
 
 Query for survey aggregates
 
-
-
 Wraps POST /api/v2/analytics/surveys/aggregates/query  
 
 Requires ANY permissions: 
@@ -2579,8 +2509,6 @@ try {
 > [Calibration](Calibration.html) postQualityCalibrations(body, expand)
 
 Create a calibration
-
-
 
 Wraps POST /api/v2/quality/calibrations  
 
@@ -2644,8 +2572,6 @@ try {
 > [Evaluation](Evaluation.html) postQualityConversationEvaluations(conversationId, body, expand)
 
 Create an evaluation
-
-
 
 Wraps POST /api/v2/quality/conversations/{conversationId}/evaluations  
 
@@ -2712,8 +2638,6 @@ try {
 
 Create audit query execution
 
-
-
 Wraps POST /api/v2/quality/conversations/audits/query  
 
 Requires ALL permissions: 
@@ -2775,8 +2699,6 @@ try {
 
 Query for evaluation aggregates for the current user
 
-
-
 Wraps POST /api/v2/quality/evaluations/aggregates/query/me  
 
 Requires NO permissions: 
@@ -2837,8 +2759,6 @@ try {
 
 Score evaluation
 
-
-
 Wraps POST /api/v2/quality/evaluations/scoring  
 
 Requires NO permissions: 
@@ -2898,8 +2818,6 @@ try {
 > [EvaluationForm](EvaluationForm.html) postQualityForms(body)
 
 Create an evaluation form.
-
-
 
 Wraps POST /api/v2/quality/forms  
 
@@ -2962,8 +2880,6 @@ try {
 
 Create an evaluation form.
 
-
-
 Wraps POST /api/v2/quality/forms/evaluations  
 
 Requires ANY permissions: 
@@ -3024,8 +2940,6 @@ try {
 > [SurveyForm](SurveyForm.html) postQualityFormsSurveys(body)
 
 Create a survey form.
-
-
 
 Wraps POST /api/v2/quality/forms/surveys  
 
@@ -3088,8 +3002,6 @@ try {
 
 Publish an evaluation form.
 
-
-
 Wraps POST /api/v2/quality/publishedforms  
 
 Requires ANY permissions: 
@@ -3150,8 +3062,6 @@ try {
 > [EvaluationForm](EvaluationForm.html) postQualityPublishedformsEvaluations(body)
 
 Publish an evaluation form.
-
-
 
 Wraps POST /api/v2/quality/publishedforms/evaluations  
 
@@ -3214,8 +3124,6 @@ try {
 
 Publish a survey form.
 
-
-
 Wraps POST /api/v2/quality/publishedforms/surveys  
 
 Requires ALL permissions: 
@@ -3277,8 +3185,6 @@ try {
 
 Score survey
 
-
-
 Wraps POST /api/v2/quality/surveys/scoring  
 
 Requires NO permissions: 
@@ -3338,8 +3244,6 @@ try {
 > [Calibration](Calibration.html) putQualityCalibration(calibrationId, body)
 
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
-
-
 
 Wraps PUT /api/v2/quality/calibrations/{calibrationId}  
 
@@ -3475,8 +3379,6 @@ try {
 
 Update an evaluation form.
 
-
-
 Wraps PUT /api/v2/quality/forms/{formId}  
 
 Requires ANY permissions: 
@@ -3539,8 +3441,6 @@ try {
 > [EvaluationForm](EvaluationForm.html) putQualityFormsEvaluation(formId, body)
 
 Update an evaluation form.
-
-
 
 Wraps PUT /api/v2/quality/forms/evaluations/{formId}  
 
@@ -3605,8 +3505,6 @@ try {
 
 Update a survey form.
 
-
-
 Wraps PUT /api/v2/quality/forms/surveys/{formId}  
 
 Requires ALL permissions: 
@@ -3666,11 +3564,9 @@ try {
 
 
 
-> [ScorableSurvey](ScorableSurvey.html) putQualitySurveysScorable(body, customerSurveyUrl)
+> [ScorableSurvey](ScorableSurvey.html) putQualitySurveysScorable(customerSurveyUrl, body)
 
 Update a survey as an end-customer, for the purposes of scoring it.
-
-
 
 Wraps PUT /api/v2/quality/surveys/scorable  
 
@@ -3686,10 +3582,10 @@ import com.mypurecloud.sdk.v2.api.QualityApi;
 
 
 QualityApi apiInstance = new QualityApi();
-ScorableSurvey body = new ScorableSurvey(); // ScorableSurvey | survey
 String customerSurveyUrl = "customerSurveyUrl_example"; // String | customerSurveyUrl
+ScorableSurvey body = new ScorableSurvey(); // ScorableSurvey | survey
 try {
-    ScorableSurvey result = apiInstance.putQualitySurveysScorable(body, customerSurveyUrl);
+    ScorableSurvey result = apiInstance.putQualitySurveysScorable(customerSurveyUrl, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#putQualitySurveysScorable");
@@ -3702,8 +3598,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey | 
 | **customerSurveyUrl** | **String**| customerSurveyUrl | 
+| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey | 
 {: class="table-striped"}
 
 

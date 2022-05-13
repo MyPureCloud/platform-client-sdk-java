@@ -20,9 +20,9 @@ title: WebMessagingEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COBROWSE | &quot;CoBrowse&quot; |
-| PRESENCE | &quot;Presence&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| COBROWSE | &quot;CoBrowse&quot; | 
+| PRESENCE | &quot;Presence&quot; | 
 {: class="table table-striped"}
 
 

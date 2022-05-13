@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkErrorInfo;
@@ -42,7 +43,7 @@ public class TrunkMetricsNetworkTypeIp  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * Information about the error.
    **/
@@ -60,7 +61,6 @@ public class TrunkMetricsNetworkTypeIp  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class TrunkMetricsNetworkTypeIp  implements Serializable {
       return false;
     }
     TrunkMetricsNetworkTypeIp trunkMetricsNetworkTypeIp = (TrunkMetricsNetworkTypeIp) o;
+
     return Objects.equals(this.address, trunkMetricsNetworkTypeIp.address) &&
-        Objects.equals(this.errorInfo, trunkMetricsNetworkTypeIp.errorInfo);
+            Objects.equals(this.errorInfo, trunkMetricsNetworkTypeIp.errorInfo);
   }
 
   @Override

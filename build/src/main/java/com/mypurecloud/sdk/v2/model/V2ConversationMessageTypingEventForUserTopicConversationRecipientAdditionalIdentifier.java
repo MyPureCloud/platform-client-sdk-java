@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationRecipientAd
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier value(String value) {
@@ -106,7 +107,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationRecipientAd
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,8 +117,9 @@ public class V2ConversationMessageTypingEventForUserTopicConversationRecipientAd
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier v2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier = (V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier.type) &&
-        Objects.equals(this.value, v2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier.value);
+            Objects.equals(this.value, v2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier.value);
   }
 
   @Override

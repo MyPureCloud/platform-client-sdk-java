@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Deprecated. Use downloadUrls instead.
    **/
@@ -115,7 +116,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
+
   /**
    * Result will always come via downloadUrls; however the schema is included for documentation
    **/
@@ -133,7 +134,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     this.downloadResult = downloadResult;
   }
 
-  
+
   /**
    * The uri list to GET the results of the Historical Adherence query. For notification purposes only
    **/
@@ -151,7 +152,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     this.downloadUrls = downloadUrls;
   }
 
-  
+
   /**
    * The state of the adherence query
    **/
@@ -169,7 +170,6 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     this.queryState = queryState;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,11 +180,12 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
       return false;
     }
     WfmHistoricalAdherenceResponse wfmHistoricalAdherenceResponse = (WfmHistoricalAdherenceResponse) o;
+
     return Objects.equals(this.id, wfmHistoricalAdherenceResponse.id) &&
-        Objects.equals(this.downloadUrl, wfmHistoricalAdherenceResponse.downloadUrl) &&
-        Objects.equals(this.downloadResult, wfmHistoricalAdherenceResponse.downloadResult) &&
-        Objects.equals(this.downloadUrls, wfmHistoricalAdherenceResponse.downloadUrls) &&
-        Objects.equals(this.queryState, wfmHistoricalAdherenceResponse.queryState);
+            Objects.equals(this.downloadUrl, wfmHistoricalAdherenceResponse.downloadUrl) &&
+            Objects.equals(this.downloadResult, wfmHistoricalAdherenceResponse.downloadResult) &&
+            Objects.equals(this.downloadUrls, wfmHistoricalAdherenceResponse.downloadUrls) &&
+            Objects.equals(this.queryState, wfmHistoricalAdherenceResponse.queryState);
   }
 
   @Override

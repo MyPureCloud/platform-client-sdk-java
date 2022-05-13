@@ -13,57 +13,57 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
-import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
-import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
-import com.mypurecloud.sdk.v2.model.ReportMetaData;
-import com.mypurecloud.sdk.v2.model.ReportSchedule;
-import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
-import com.mypurecloud.sdk.v2.model.ReportRunEntry;
-import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.AnalyticsReportingSettings;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
-import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
-import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
+import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.ReportMetaData;
+import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
+import com.mypurecloud.sdk.v2.model.ReportRunEntry;
+import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
+import com.mypurecloud.sdk.v2.model.ReportSchedule;
+import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
+import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
+import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
@@ -120,7 +120,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class AnalyticsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -132,7 +131,6 @@ public class AnalyticsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete/cancel an async request
    * 
@@ -208,7 +206,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Delete a scheduled report job.
    * 
@@ -284,7 +281,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Delete/cancel an async request
    * 
@@ -360,7 +356,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get Reporting Turns.
    * 
@@ -436,7 +431,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get a conversation by id
    * 
@@ -512,7 +506,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Gets multiple conversations by id
    * 
@@ -588,7 +581,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get status for async query for conversation details
    * 
@@ -664,7 +656,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Fetch a page of results for an async query
    * 
@@ -740,7 +731,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Lookup the datalake availability date and time
    * 
@@ -816,7 +806,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get all view export requests for a user
    * 
@@ -892,7 +881,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get all export metadata
    * 
@@ -968,7 +956,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get list of reporting metadata.
    * 
@@ -1044,7 +1031,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get a reporting metadata.
    * 
@@ -1120,7 +1106,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of report formats
    * Get a list of report formats.
@@ -1196,7 +1181,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get a scheduled report job.
    * 
@@ -1272,7 +1256,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get list of completed scheduled report jobs.
    * 
@@ -1348,7 +1331,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get most recently completed scheduled report job.
    * 
@@ -1424,7 +1406,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * A completed scheduled report job
    * A completed scheduled report job.
@@ -1500,7 +1481,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of scheduled report jobs
    * Get a list of scheduled report jobs.
@@ -1576,7 +1556,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get AnalyticsReportingSettings for an organization
    * 
@@ -1652,7 +1631,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of report time periods.
    * 
@@ -1728,7 +1706,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get status for async query for user details
    * 
@@ -1804,7 +1781,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Fetch a page of results for an async query
    * 
@@ -1880,7 +1856,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Lookup the datalake availability date and time
    * 
@@ -1956,7 +1931,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Patch AnalyticsReportingSettings values for an organization
    * 
@@ -2032,7 +2006,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for bot aggregates
    * 
@@ -2108,7 +2081,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Index conversation properties
    * 
@@ -2184,7 +2156,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for conversation aggregates
    * 
@@ -2260,7 +2231,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for conversation details asynchronously
    * 
@@ -2336,7 +2306,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for conversation details
    * 
@@ -2412,7 +2381,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -2488,7 +2456,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for evaluation aggregates
    * 
@@ -2564,7 +2531,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for flow aggregates
    * 
@@ -2640,7 +2606,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for flow observations
    * 
@@ -2716,7 +2681,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for journey aggregates
    * 
@@ -2792,7 +2756,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for queue observations
    * 
@@ -2868,7 +2831,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Generate a view export request
    * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
@@ -2944,7 +2906,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Place a scheduled report immediately into the reporting queue
    * 
@@ -3020,7 +2981,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Create a scheduled report job
    * Create a scheduled report job.
@@ -3096,7 +3056,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for survey aggregates
    * 
@@ -3172,7 +3131,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for transcript aggregates
    * 
@@ -3248,7 +3206,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for user aggregates
    * 
@@ -3324,7 +3281,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for user details asynchronously
    * 
@@ -3400,7 +3356,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for user details
    * 
@@ -3476,7 +3431,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Query for user observations
    * 
@@ -3552,7 +3506,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Update a scheduled report job.
    * 
@@ -3628,7 +3581,6 @@ public class AnalyticsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

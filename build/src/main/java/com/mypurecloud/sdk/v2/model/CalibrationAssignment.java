@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -46,7 +47,7 @@ public class CalibrationAssignment  implements Serializable {
     this.calibrator = calibrator;
   }
 
-  
+
   /**
    **/
   public CalibrationAssignment evaluators(List<User> evaluators) {
@@ -63,7 +64,7 @@ public class CalibrationAssignment  implements Serializable {
     this.evaluators = evaluators;
   }
 
-  
+
   /**
    **/
   public CalibrationAssignment evaluationForm(EvaluationForm evaluationForm) {
@@ -80,7 +81,7 @@ public class CalibrationAssignment  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-  
+
   /**
    **/
   public CalibrationAssignment expertEvaluator(User expertEvaluator) {
@@ -97,7 +98,6 @@ public class CalibrationAssignment  implements Serializable {
     this.expertEvaluator = expertEvaluator;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class CalibrationAssignment  implements Serializable {
       return false;
     }
     CalibrationAssignment calibrationAssignment = (CalibrationAssignment) o;
+
     return Objects.equals(this.calibrator, calibrationAssignment.calibrator) &&
-        Objects.equals(this.evaluators, calibrationAssignment.evaluators) &&
-        Objects.equals(this.evaluationForm, calibrationAssignment.evaluationForm) &&
-        Objects.equals(this.expertEvaluator, calibrationAssignment.expertEvaluator);
+            Objects.equals(this.evaluators, calibrationAssignment.evaluators) &&
+            Objects.equals(this.evaluationForm, calibrationAssignment.evaluationForm) &&
+            Objects.equals(this.expertEvaluator, calibrationAssignment.expertEvaluator);
   }
 
   @Override

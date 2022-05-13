@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.VoicemailMessagesTopicVoicemailCopyRecord;
@@ -56,7 +57,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage read(Boolean read) {
@@ -73,7 +74,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.read = read;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage audioRecordingDurationSeconds(Integer audioRecordingDurationSeconds) {
@@ -90,7 +91,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.audioRecordingDurationSeconds = audioRecordingDurationSeconds;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage audioRecordingSizeBytes(Integer audioRecordingSizeBytes) {
@@ -107,7 +108,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.audioRecordingSizeBytes = audioRecordingSizeBytes;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage createdDate(Date createdDate) {
@@ -124,7 +125,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage modifiedDate(Date modifiedDate) {
@@ -141,7 +142,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage callerAddress(String callerAddress) {
@@ -158,7 +159,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage callerName(String callerName) {
@@ -175,7 +176,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.callerName = callerName;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage action(String action) {
@@ -192,7 +193,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage note(String note) {
@@ -209,7 +210,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.note = note;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage deleted(Boolean deleted) {
@@ -226,7 +227,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.deleted = deleted;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage modifiedByUserId(String modifiedByUserId) {
@@ -243,7 +244,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.modifiedByUserId = modifiedByUserId;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage copiedTo(List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo) {
@@ -260,7 +261,7 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.copiedTo = copiedTo;
   }
 
-  
+
   /**
    **/
   public VoicemailMessagesTopicVoicemailMessage copiedFrom(VoicemailMessagesTopicVoicemailCopyRecord copiedFrom) {
@@ -277,7 +278,6 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     this.copiedFrom = copiedFrom;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -288,20 +288,21 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
       return false;
     }
     VoicemailMessagesTopicVoicemailMessage voicemailMessagesTopicVoicemailMessage = (VoicemailMessagesTopicVoicemailMessage) o;
+
     return Objects.equals(this.id, voicemailMessagesTopicVoicemailMessage.id) &&
-        Objects.equals(this.read, voicemailMessagesTopicVoicemailMessage.read) &&
-        Objects.equals(this.audioRecordingDurationSeconds, voicemailMessagesTopicVoicemailMessage.audioRecordingDurationSeconds) &&
-        Objects.equals(this.audioRecordingSizeBytes, voicemailMessagesTopicVoicemailMessage.audioRecordingSizeBytes) &&
-        Objects.equals(this.createdDate, voicemailMessagesTopicVoicemailMessage.createdDate) &&
-        Objects.equals(this.modifiedDate, voicemailMessagesTopicVoicemailMessage.modifiedDate) &&
-        Objects.equals(this.callerAddress, voicemailMessagesTopicVoicemailMessage.callerAddress) &&
-        Objects.equals(this.callerName, voicemailMessagesTopicVoicemailMessage.callerName) &&
-        Objects.equals(this.action, voicemailMessagesTopicVoicemailMessage.action) &&
-        Objects.equals(this.note, voicemailMessagesTopicVoicemailMessage.note) &&
-        Objects.equals(this.deleted, voicemailMessagesTopicVoicemailMessage.deleted) &&
-        Objects.equals(this.modifiedByUserId, voicemailMessagesTopicVoicemailMessage.modifiedByUserId) &&
-        Objects.equals(this.copiedTo, voicemailMessagesTopicVoicemailMessage.copiedTo) &&
-        Objects.equals(this.copiedFrom, voicemailMessagesTopicVoicemailMessage.copiedFrom);
+            Objects.equals(this.read, voicemailMessagesTopicVoicemailMessage.read) &&
+            Objects.equals(this.audioRecordingDurationSeconds, voicemailMessagesTopicVoicemailMessage.audioRecordingDurationSeconds) &&
+            Objects.equals(this.audioRecordingSizeBytes, voicemailMessagesTopicVoicemailMessage.audioRecordingSizeBytes) &&
+            Objects.equals(this.createdDate, voicemailMessagesTopicVoicemailMessage.createdDate) &&
+            Objects.equals(this.modifiedDate, voicemailMessagesTopicVoicemailMessage.modifiedDate) &&
+            Objects.equals(this.callerAddress, voicemailMessagesTopicVoicemailMessage.callerAddress) &&
+            Objects.equals(this.callerName, voicemailMessagesTopicVoicemailMessage.callerName) &&
+            Objects.equals(this.action, voicemailMessagesTopicVoicemailMessage.action) &&
+            Objects.equals(this.note, voicemailMessagesTopicVoicemailMessage.note) &&
+            Objects.equals(this.deleted, voicemailMessagesTopicVoicemailMessage.deleted) &&
+            Objects.equals(this.modifiedByUserId, voicemailMessagesTopicVoicemailMessage.modifiedByUserId) &&
+            Objects.equals(this.copiedTo, voicemailMessagesTopicVoicemailMessage.copiedTo) &&
+            Objects.equals(this.copiedFrom, voicemailMessagesTopicVoicemailMessage.copiedFrom);
   }
 
   @Override

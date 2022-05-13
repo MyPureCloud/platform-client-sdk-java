@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class BatchDownloadRequest  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Recording id requested, optional.  Leave null for all recordings on the conversation
    **/
@@ -59,7 +60,6 @@ public class BatchDownloadRequest  implements Serializable {
     this.recordingId = recordingId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class BatchDownloadRequest  implements Serializable {
       return false;
     }
     BatchDownloadRequest batchDownloadRequest = (BatchDownloadRequest) o;
+
     return Objects.equals(this.conversationId, batchDownloadRequest.conversationId) &&
-        Objects.equals(this.recordingId, batchDownloadRequest.recordingId);
+            Objects.equals(this.recordingId, batchDownloadRequest.recordingId);
   }
 
   @Override

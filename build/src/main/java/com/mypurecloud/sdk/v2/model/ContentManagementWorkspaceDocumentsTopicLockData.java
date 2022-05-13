@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentManagementWorkspaceDocumentsTopicUserData;
@@ -43,7 +44,7 @@ public class ContentManagementWorkspaceDocumentsTopicLockData  implements Serial
     this.lockedBy = lockedBy;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicLockData dateCreated(Date dateCreated) {
@@ -60,7 +61,7 @@ public class ContentManagementWorkspaceDocumentsTopicLockData  implements Serial
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicLockData dateExpires(Date dateExpires) {
@@ -77,7 +78,6 @@ public class ContentManagementWorkspaceDocumentsTopicLockData  implements Serial
     this.dateExpires = dateExpires;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class ContentManagementWorkspaceDocumentsTopicLockData  implements Serial
       return false;
     }
     ContentManagementWorkspaceDocumentsTopicLockData contentManagementWorkspaceDocumentsTopicLockData = (ContentManagementWorkspaceDocumentsTopicLockData) o;
+
     return Objects.equals(this.lockedBy, contentManagementWorkspaceDocumentsTopicLockData.lockedBy) &&
-        Objects.equals(this.dateCreated, contentManagementWorkspaceDocumentsTopicLockData.dateCreated) &&
-        Objects.equals(this.dateExpires, contentManagementWorkspaceDocumentsTopicLockData.dateExpires);
+            Objects.equals(this.dateCreated, contentManagementWorkspaceDocumentsTopicLockData.dateCreated) &&
+            Objects.equals(this.dateExpires, contentManagementWorkspaceDocumentsTopicLockData.dateExpires);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EmailMediaParticipant;
@@ -36,7 +37,7 @@ public class EmailConversation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public EmailConversation name(String name) {
@@ -53,7 +54,7 @@ public class EmailConversation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The list of participants involved in the conversation.
    **/
@@ -71,7 +72,7 @@ public class EmailConversation  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    * The list of other media channels involved in the conversation.
    **/
@@ -89,14 +90,13 @@ public class EmailConversation  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,11 +107,12 @@ public class EmailConversation  implements Serializable {
       return false;
     }
     EmailConversation emailConversation = (EmailConversation) o;
+
     return Objects.equals(this.id, emailConversation.id) &&
-        Objects.equals(this.name, emailConversation.name) &&
-        Objects.equals(this.participants, emailConversation.participants) &&
-        Objects.equals(this.otherMediaUris, emailConversation.otherMediaUris) &&
-        Objects.equals(this.selfUri, emailConversation.selfUri);
+            Objects.equals(this.name, emailConversation.name) &&
+            Objects.equals(this.participants, emailConversation.participants) &&
+            Objects.equals(this.otherMediaUris, emailConversation.otherMediaUris) &&
+            Objects.equals(this.selfUri, emailConversation.selfUri);
   }
 
   @Override

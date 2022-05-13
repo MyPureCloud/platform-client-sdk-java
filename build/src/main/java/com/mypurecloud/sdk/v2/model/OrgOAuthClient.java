@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -54,7 +55,7 @@ public class OrgOAuthClient  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CODE("CODE"),
     TOKEN("TOKEN"),
-    SAML2_BEARER("SAML2-BEARER"),
+    SAML_2_BEARER("SAML2-BEARER"),
     PASSWORD("PASSWORD"),
     CLIENT_CREDENTIALS("CLIENT-CREDENTIALS");
 
@@ -145,7 +146,7 @@ public class OrgOAuthClient  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the OAuth client.
    **/
@@ -163,7 +164,7 @@ public class OrgOAuthClient  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -181,7 +182,7 @@ public class OrgOAuthClient  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -199,7 +200,7 @@ public class OrgOAuthClient  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User that created this client
    **/
@@ -217,7 +218,7 @@ public class OrgOAuthClient  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User that last modified this client
    **/
@@ -235,7 +236,7 @@ public class OrgOAuthClient  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. PKCE-Enabled Code Authorization grant type - Code grant type which requires PKCE challenge and verifier to create tokens. Used in public clients for increased security. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
    **/
@@ -253,7 +254,7 @@ public class OrgOAuthClient  implements Serializable {
     this.authorizedGrantType = authorizedGrantType;
   }
 
-  
+
   /**
    * The scope requested by this client. Scopes only apply to clients not using the client_credential grant
    **/
@@ -271,7 +272,7 @@ public class OrgOAuthClient  implements Serializable {
     this.scope = scope;
   }
 
-  
+
   /**
    * Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
    **/
@@ -289,7 +290,7 @@ public class OrgOAuthClient  implements Serializable {
     this.roleDivisions = roleDivisions;
   }
 
-  
+
   /**
    * The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
    **/
@@ -307,7 +308,7 @@ public class OrgOAuthClient  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -325,14 +326,13 @@ public class OrgOAuthClient  implements Serializable {
     this.dateToDelete = dateToDelete;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The  oauth client's organization.")
   @JsonProperty("organization")
   public NamedEntity getOrganization() {
     return organization;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -343,18 +343,19 @@ public class OrgOAuthClient  implements Serializable {
       return false;
     }
     OrgOAuthClient orgOAuthClient = (OrgOAuthClient) o;
+
     return Objects.equals(this.id, orgOAuthClient.id) &&
-        Objects.equals(this.name, orgOAuthClient.name) &&
-        Objects.equals(this.dateCreated, orgOAuthClient.dateCreated) &&
-        Objects.equals(this.dateModified, orgOAuthClient.dateModified) &&
-        Objects.equals(this.createdBy, orgOAuthClient.createdBy) &&
-        Objects.equals(this.modifiedBy, orgOAuthClient.modifiedBy) &&
-        Objects.equals(this.authorizedGrantType, orgOAuthClient.authorizedGrantType) &&
-        Objects.equals(this.scope, orgOAuthClient.scope) &&
-        Objects.equals(this.roleDivisions, orgOAuthClient.roleDivisions) &&
-        Objects.equals(this.state, orgOAuthClient.state) &&
-        Objects.equals(this.dateToDelete, orgOAuthClient.dateToDelete) &&
-        Objects.equals(this.organization, orgOAuthClient.organization);
+            Objects.equals(this.name, orgOAuthClient.name) &&
+            Objects.equals(this.dateCreated, orgOAuthClient.dateCreated) &&
+            Objects.equals(this.dateModified, orgOAuthClient.dateModified) &&
+            Objects.equals(this.createdBy, orgOAuthClient.createdBy) &&
+            Objects.equals(this.modifiedBy, orgOAuthClient.modifiedBy) &&
+            Objects.equals(this.authorizedGrantType, orgOAuthClient.authorizedGrantType) &&
+            Objects.equals(this.scope, orgOAuthClient.scope) &&
+            Objects.equals(this.roleDivisions, orgOAuthClient.roleDivisions) &&
+            Objects.equals(this.state, orgOAuthClient.state) &&
+            Objects.equals(this.dateToDelete, orgOAuthClient.dateToDelete) &&
+            Objects.equals(this.organization, orgOAuthClient.organization);
   }
 
   @Override

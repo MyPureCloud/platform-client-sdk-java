@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -104,7 +105,7 @@ public class OAuthAuthorization  implements Serializable {
     this.client = client;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization scope(List<String> scope) {
@@ -121,7 +122,7 @@ public class OAuthAuthorization  implements Serializable {
     this.scope = scope;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization roles(List<String> roles) {
@@ -138,7 +139,7 @@ public class OAuthAuthorization  implements Serializable {
     this.roles = roles;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization resourceOwner(DomainEntityRef resourceOwner) {
@@ -155,7 +156,7 @@ public class OAuthAuthorization  implements Serializable {
     this.resourceOwner = resourceOwner;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -173,7 +174,7 @@ public class OAuthAuthorization  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -191,7 +192,7 @@ public class OAuthAuthorization  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization createdBy(DomainEntityRef createdBy) {
@@ -208,7 +209,7 @@ public class OAuthAuthorization  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization modifiedBy(DomainEntityRef modifiedBy) {
@@ -225,7 +226,7 @@ public class OAuthAuthorization  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization pending(Boolean pending) {
@@ -242,7 +243,7 @@ public class OAuthAuthorization  implements Serializable {
     this.pending = pending;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorization state(StateEnum state) {
@@ -259,14 +260,13 @@ public class OAuthAuthorization  implements Serializable {
     this.state = state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -277,17 +277,18 @@ public class OAuthAuthorization  implements Serializable {
       return false;
     }
     OAuthAuthorization oAuthAuthorization = (OAuthAuthorization) o;
+
     return Objects.equals(this.client, oAuthAuthorization.client) &&
-        Objects.equals(this.scope, oAuthAuthorization.scope) &&
-        Objects.equals(this.roles, oAuthAuthorization.roles) &&
-        Objects.equals(this.resourceOwner, oAuthAuthorization.resourceOwner) &&
-        Objects.equals(this.dateCreated, oAuthAuthorization.dateCreated) &&
-        Objects.equals(this.dateModified, oAuthAuthorization.dateModified) &&
-        Objects.equals(this.createdBy, oAuthAuthorization.createdBy) &&
-        Objects.equals(this.modifiedBy, oAuthAuthorization.modifiedBy) &&
-        Objects.equals(this.pending, oAuthAuthorization.pending) &&
-        Objects.equals(this.state, oAuthAuthorization.state) &&
-        Objects.equals(this.selfUri, oAuthAuthorization.selfUri);
+            Objects.equals(this.scope, oAuthAuthorization.scope) &&
+            Objects.equals(this.roles, oAuthAuthorization.roles) &&
+            Objects.equals(this.resourceOwner, oAuthAuthorization.resourceOwner) &&
+            Objects.equals(this.dateCreated, oAuthAuthorization.dateCreated) &&
+            Objects.equals(this.dateModified, oAuthAuthorization.dateModified) &&
+            Objects.equals(this.createdBy, oAuthAuthorization.createdBy) &&
+            Objects.equals(this.modifiedBy, oAuthAuthorization.modifiedBy) &&
+            Objects.equals(this.pending, oAuthAuthorization.pending) &&
+            Objects.equals(this.state, oAuthAuthorization.state) &&
+            Objects.equals(this.selfUri, oAuthAuthorization.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class MetaData  implements Serializable {
     this.pairingToken = pairingToken;
   }
 
-  
+
   /**
    **/
   public MetaData pairingTrust(List<String> pairingTrust) {
@@ -60,7 +61,7 @@ public class MetaData  implements Serializable {
     this.pairingTrust = pairingTrust;
   }
 
-  
+
   /**
    **/
   public MetaData pairingUrl(String pairingUrl) {
@@ -77,7 +78,6 @@ public class MetaData  implements Serializable {
     this.pairingUrl = pairingUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class MetaData  implements Serializable {
       return false;
     }
     MetaData metaData = (MetaData) o;
+
     return Objects.equals(this.pairingToken, metaData.pairingToken) &&
-        Objects.equals(this.pairingTrust, metaData.pairingTrust) &&
-        Objects.equals(this.pairingUrl, metaData.pairingUrl);
+            Objects.equals(this.pairingTrust, metaData.pairingTrust) &&
+            Objects.equals(this.pairingUrl, metaData.pairingUrl);
   }
 
   @Override

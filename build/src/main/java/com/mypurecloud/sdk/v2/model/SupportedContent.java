@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -41,7 +42,7 @@ public class SupportedContent  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the supported content profile
    **/
@@ -59,42 +60,42 @@ public class SupportedContent  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date this supported content profile was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date this supported content profile was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User reference that created this supported content profile")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User reference that modified this supported content profile")
   @JsonProperty("modifiedBy")
   public DomainEntityRef getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Version number")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   /**
    * Defines the allowable media that may be accepted for an inbound message or to be sent in an outbound message. The following is an example of allowing all inbound media, and for outbound all images and only mpeg video: {   \"mediaTypes\": {     \"allow\": {       \"inbound\": [{\"type\": \"*\\/\\*\"}],       \"outbound\": [{\"type\": \"image/*\"}, {\"type\": \"video/mpeg\"}]     }   } }
    **/
@@ -112,14 +113,13 @@ public class SupportedContent  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,15 +130,16 @@ public class SupportedContent  implements Serializable {
       return false;
     }
     SupportedContent supportedContent = (SupportedContent) o;
+
     return Objects.equals(this.id, supportedContent.id) &&
-        Objects.equals(this.name, supportedContent.name) &&
-        Objects.equals(this.dateCreated, supportedContent.dateCreated) &&
-        Objects.equals(this.dateModified, supportedContent.dateModified) &&
-        Objects.equals(this.createdBy, supportedContent.createdBy) &&
-        Objects.equals(this.modifiedBy, supportedContent.modifiedBy) &&
-        Objects.equals(this.version, supportedContent.version) &&
-        Objects.equals(this.mediaTypes, supportedContent.mediaTypes) &&
-        Objects.equals(this.selfUri, supportedContent.selfUri);
+            Objects.equals(this.name, supportedContent.name) &&
+            Objects.equals(this.dateCreated, supportedContent.dateCreated) &&
+            Objects.equals(this.dateModified, supportedContent.dateModified) &&
+            Objects.equals(this.createdBy, supportedContent.createdBy) &&
+            Objects.equals(this.modifiedBy, supportedContent.modifiedBy) &&
+            Objects.equals(this.version, supportedContent.version) &&
+            Objects.equals(this.mediaTypes, supportedContent.mediaTypes) &&
+            Objects.equals(this.selfUri, supportedContent.selfUri);
   }
 
   @Override

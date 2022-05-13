@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,28 +88,28 @@ public class LearningAssessment  implements Serializable {
     return assessmentId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The context Id of the related assessment form")
   @JsonProperty("contextId")
   public String getContextId() {
     return contextId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The Id of the related assessment form")
   @JsonProperty("assessmentFormId")
   public String getAssessmentFormId() {
     return assessmentFormId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of the assessment")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   /**
    * Answers for the assessment
    **/
@@ -126,28 +127,27 @@ public class LearningAssessment  implements Serializable {
     this.answers = answers;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date the assessment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date the assessment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date the assessment was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateSubmitted")
   public Date getDateSubmitted() {
     return dateSubmitted;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,14 +158,15 @@ public class LearningAssessment  implements Serializable {
       return false;
     }
     LearningAssessment learningAssessment = (LearningAssessment) o;
+
     return Objects.equals(this.assessmentId, learningAssessment.assessmentId) &&
-        Objects.equals(this.contextId, learningAssessment.contextId) &&
-        Objects.equals(this.assessmentFormId, learningAssessment.assessmentFormId) &&
-        Objects.equals(this.status, learningAssessment.status) &&
-        Objects.equals(this.answers, learningAssessment.answers) &&
-        Objects.equals(this.dateCreated, learningAssessment.dateCreated) &&
-        Objects.equals(this.dateModified, learningAssessment.dateModified) &&
-        Objects.equals(this.dateSubmitted, learningAssessment.dateSubmitted);
+            Objects.equals(this.contextId, learningAssessment.contextId) &&
+            Objects.equals(this.assessmentFormId, learningAssessment.assessmentFormId) &&
+            Objects.equals(this.status, learningAssessment.status) &&
+            Objects.equals(this.answers, learningAssessment.answers) &&
+            Objects.equals(this.dateCreated, learningAssessment.dateCreated) &&
+            Objects.equals(this.dateModified, learningAssessment.dateModified) &&
+            Objects.equals(this.dateSubmitted, learningAssessment.dateSubmitted);
   }
 
   @Override

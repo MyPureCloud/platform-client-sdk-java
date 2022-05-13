@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class ForecastSourceDayPointer  implements Serializable {
     this.dayOfWeek = dayOfWeek;
   }
 
-  
+
   /**
    * The relative weight to apply to this source data item for weighted averages
    **/
@@ -117,7 +118,7 @@ public class ForecastSourceDayPointer  implements Serializable {
     this.weight = weight;
   }
 
-  
+
   /**
    * The date this source data represents, in yyyy-MM-dd format
    **/
@@ -135,7 +136,7 @@ public class ForecastSourceDayPointer  implements Serializable {
     this.date = date;
   }
 
-  
+
   /**
    * The name of the source file this data came from if it originated from a data import
    **/
@@ -153,7 +154,7 @@ public class ForecastSourceDayPointer  implements Serializable {
     this.fileName = fileName;
   }
 
-  
+
   /**
    * The key to look up the forecast source data for this source day
    **/
@@ -171,7 +172,6 @@ public class ForecastSourceDayPointer  implements Serializable {
     this.dataKey = dataKey;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,11 +182,12 @@ public class ForecastSourceDayPointer  implements Serializable {
       return false;
     }
     ForecastSourceDayPointer forecastSourceDayPointer = (ForecastSourceDayPointer) o;
+
     return Objects.equals(this.dayOfWeek, forecastSourceDayPointer.dayOfWeek) &&
-        Objects.equals(this.weight, forecastSourceDayPointer.weight) &&
-        Objects.equals(this.date, forecastSourceDayPointer.date) &&
-        Objects.equals(this.fileName, forecastSourceDayPointer.fileName) &&
-        Objects.equals(this.dataKey, forecastSourceDayPointer.dataKey);
+            Objects.equals(this.weight, forecastSourceDayPointer.weight) &&
+            Objects.equals(this.date, forecastSourceDayPointer.date) &&
+            Objects.equals(this.fileName, forecastSourceDayPointer.fileName) &&
+            Objects.equals(this.dataKey, forecastSourceDayPointer.dataKey);
   }
 
   @Override

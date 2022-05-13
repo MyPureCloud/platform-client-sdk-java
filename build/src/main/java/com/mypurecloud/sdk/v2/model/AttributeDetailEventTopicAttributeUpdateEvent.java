@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public AttributeDetailEventTopicAttributeUpdateEvent conversationId(String conversationId) {
@@ -62,7 +63,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public AttributeDetailEventTopicAttributeUpdateEvent participantId(String participantId) {
@@ -79,7 +80,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public AttributeDetailEventTopicAttributeUpdateEvent attributes(Map<String, String> attributes) {
@@ -96,7 +97,6 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     this.attributes = attributes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
       return false;
     }
     AttributeDetailEventTopicAttributeUpdateEvent attributeDetailEventTopicAttributeUpdateEvent = (AttributeDetailEventTopicAttributeUpdateEvent) o;
+
     return Objects.equals(this.eventTime, attributeDetailEventTopicAttributeUpdateEvent.eventTime) &&
-        Objects.equals(this.conversationId, attributeDetailEventTopicAttributeUpdateEvent.conversationId) &&
-        Objects.equals(this.participantId, attributeDetailEventTopicAttributeUpdateEvent.participantId) &&
-        Objects.equals(this.attributes, attributeDetailEventTopicAttributeUpdateEvent.attributes);
+            Objects.equals(this.conversationId, attributeDetailEventTopicAttributeUpdateEvent.conversationId) &&
+            Objects.equals(this.participantId, attributeDetailEventTopicAttributeUpdateEvent.participantId) &&
+            Objects.equals(this.attributes, attributeDetailEventTopicAttributeUpdateEvent.attributes);
   }
 
   @Override

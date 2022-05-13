@@ -10,8 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteStationAssociateduser**](StationsApi.html#deleteStationAssociateduser) | Unassigns the user assigned to this station |
 | [**getStation**](StationsApi.html#getStation) | Get station. |
 | [**getStations**](StationsApi.html#getStations) | Get the list of available stations. |
-| [**getStationsSettings**](StationsApi.html#getStationsSettings) | Get an organization&#39;s StationSettings |
-| [**patchStationsSettings**](StationsApi.html#patchStationsSettings) | Patch an organization&#39;s StationSettings |
+| [**getStationsSettings**](StationsApi.html#getStationsSettings) | Get an organization's StationSettings |
+| [**patchStationsSettings**](StationsApi.html#patchStationsSettings) | Patch an organization's StationSettings |
 {: class="table-striped"}
 
 <a name="deleteStationAssociateduser"></a>
@@ -23,8 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteStationAssociateduser(stationId)
 
 Unassigns the user assigned to this station
-
-
 
 Wraps DELETE /api/v2/stations/{stationId}/associateduser  
 
@@ -85,8 +83,6 @@ null (empty response body)
 
 Get station.
 
-
-
 Wraps GET /api/v2/stations/{stationId}  
 
 Requires NO permissions: 
@@ -146,8 +142,6 @@ try {
 > [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)
 
 Get the list of available stations.
-
-
 
 Wraps GET /api/v2/stations  
 
@@ -221,9 +215,7 @@ try {
 
 > [StationSettings](StationSettings.html) getStationsSettings()
 
-Get an organization&#39;s StationSettings
-
-
+Get an organization's StationSettings
 
 Wraps GET /api/v2/stations/settings  
 
@@ -279,9 +271,7 @@ This endpoint does not require any parameters.
 
 > [StationSettings](StationSettings.html) patchStationsSettings(body)
 
-Patch an organization&#39;s StationSettings
-
-
+Patch an organization's StationSettings
 
 Wraps PATCH /api/v2/stations/settings  
 

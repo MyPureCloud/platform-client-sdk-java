@@ -13,10 +13,10 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageRequest;
@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class LanguagesApiAsync {
   private final ApiClient pcapiClient;
 
@@ -49,7 +48,6 @@ public class LanguagesApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete Language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
@@ -125,7 +123,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Delete Language
    * 
@@ -201,7 +198,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
@@ -277,7 +273,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get the list of supported languages. (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages
@@ -353,7 +348,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get all available languages for translation
    * 
@@ -429,7 +423,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get the builtin translation for a language
    * 
@@ -505,7 +498,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get effective translation for an organization by language
    * 
@@ -581,7 +573,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get effective language translation for a user
    * 
@@ -657,7 +648,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Get language
    * 
@@ -733,7 +723,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
   /**
    * Create Language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages
@@ -809,7 +798,6 @@ public class LanguagesApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

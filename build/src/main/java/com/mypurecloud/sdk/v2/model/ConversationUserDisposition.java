@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -43,7 +44,7 @@ public class ConversationUserDisposition  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * Text entered by the user to describe the call or disposition.
    **/
@@ -61,14 +62,13 @@ public class ConversationUserDisposition  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user that wrapped up the conversation.")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,9 +79,10 @@ public class ConversationUserDisposition  implements Serializable {
       return false;
     }
     ConversationUserDisposition conversationUserDisposition = (ConversationUserDisposition) o;
+
     return Objects.equals(this.code, conversationUserDisposition.code) &&
-        Objects.equals(this.notes, conversationUserDisposition.notes) &&
-        Objects.equals(this.user, conversationUserDisposition.user);
+            Objects.equals(this.notes, conversationUserDisposition.notes) &&
+            Objects.equals(this.user, conversationUserDisposition.user);
   }
 
   @Override

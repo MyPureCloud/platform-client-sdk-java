@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class AssignUsers  implements Serializable {
     this.membersToAssign = membersToAssign;
   }
 
-  
+
   /**
    * List of user ids to remove from a performance profile
    **/
@@ -61,7 +62,6 @@ public class AssignUsers  implements Serializable {
     this.membersToRemove = membersToRemove;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class AssignUsers  implements Serializable {
       return false;
     }
     AssignUsers assignUsers = (AssignUsers) o;
+
     return Objects.equals(this.membersToAssign, assignUsers.membersToAssign) &&
-        Objects.equals(this.membersToRemove, assignUsers.membersToRemove);
+            Objects.equals(this.membersToRemove, assignUsers.membersToRemove);
   }
 
   @Override

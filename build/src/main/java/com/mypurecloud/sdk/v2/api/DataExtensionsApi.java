@@ -10,9 +10,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Coretype;
 import com.mypurecloud.sdk.v2.model.CoretypeListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SchemaQuantityLimits;
 
 
@@ -26,7 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class DataExtensionsApi {
   private final ApiClient pcapiClient;
 
@@ -38,11 +37,10 @@ public class DataExtensionsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get a specific named core type.
    * 
-   * @param coretypeName The core type&#39;s name (required)
+   * @param coretypeName The core type's name (required)
    * @return Coretype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -54,7 +52,7 @@ public class DataExtensionsApi {
   /**
    * Get a specific named core type.
    * 
-   * @param coretypeName The core type&#39;s name (required)
+   * @param coretypeName The core type's name (required)
    * @return Coretype
    * @throws IOException if the request fails to be processed
    */
@@ -65,7 +63,7 @@ public class DataExtensionsApi {
   private GetDataextensionsCoretypeRequest createGetDataextensionsCoretypeRequest(String coretypeName) {
     return GetDataextensionsCoretypeRequest.builder()
             .withCoretypeName(coretypeName)
-    
+
             .build();
   }
 
@@ -117,7 +115,6 @@ public class DataExtensionsApi {
     }
   }
 
-  
   /**
    * Get the core types from which all schemas are built.
    * 
@@ -192,7 +189,6 @@ public class DataExtensionsApi {
     }
   }
 
-  
   /**
    * Get quantitative limits on schemas
    * 
@@ -267,5 +263,4 @@ public class DataExtensionsApi {
     }
   }
 
-  
 }

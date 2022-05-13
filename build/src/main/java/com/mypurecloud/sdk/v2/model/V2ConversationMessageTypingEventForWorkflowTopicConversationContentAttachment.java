@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment mediaType(MediaTypeEnum mediaType) {
@@ -113,7 +114,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment url(String url) {
@@ -130,7 +131,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment mime(String mime) {
@@ -147,7 +148,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.mime = mime;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment text(String text) {
@@ -164,7 +165,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment sha256(String sha256) {
@@ -181,7 +182,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.sha256 = sha256;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment filename(String filename) {
@@ -198,7 +199,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.filename = filename;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,13 +209,14 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.id) &&
-        Objects.equals(this.mediaType, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.mediaType) &&
-        Objects.equals(this.url, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.url) &&
-        Objects.equals(this.mime, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.mime) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.text) &&
-        Objects.equals(this.sha256, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.sha256) &&
-        Objects.equals(this.filename, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.filename);
+            Objects.equals(this.mediaType, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.mediaType) &&
+            Objects.equals(this.url, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.url) &&
+            Objects.equals(this.mime, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.mime) &&
+            Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.text) &&
+            Objects.equals(this.sha256, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.sha256) &&
+            Objects.equals(this.filename, v2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment.filename);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluDomainVersion;
@@ -39,7 +40,7 @@ public class NluDomain  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the NLU domain.
    **/
@@ -57,7 +58,7 @@ public class NluDomain  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The language culture of the NLU domain, e.g. `en-us`, `de-de`.
    **/
@@ -75,35 +76,35 @@ public class NluDomain  implements Serializable {
     this.language = language;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The draft version of that NLU domain.")
   @JsonProperty("draftVersion")
   public NluDomainVersion getDraftVersion() {
     return draftVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last published version of that NLU domain.")
   @JsonProperty("lastPublishedVersion")
   public NluDomainVersion getLastPublishedVersion() {
     return lastPublishedVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the NLU domain was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the NLU domain was updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * The version of the NLU engine to use.
    **/
@@ -121,14 +122,13 @@ public class NluDomain  implements Serializable {
     this.engineVersion = engineVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -139,15 +139,16 @@ public class NluDomain  implements Serializable {
       return false;
     }
     NluDomain nluDomain = (NluDomain) o;
+
     return Objects.equals(this.id, nluDomain.id) &&
-        Objects.equals(this.name, nluDomain.name) &&
-        Objects.equals(this.language, nluDomain.language) &&
-        Objects.equals(this.draftVersion, nluDomain.draftVersion) &&
-        Objects.equals(this.lastPublishedVersion, nluDomain.lastPublishedVersion) &&
-        Objects.equals(this.dateCreated, nluDomain.dateCreated) &&
-        Objects.equals(this.dateModified, nluDomain.dateModified) &&
-        Objects.equals(this.engineVersion, nluDomain.engineVersion) &&
-        Objects.equals(this.selfUri, nluDomain.selfUri);
+            Objects.equals(this.name, nluDomain.name) &&
+            Objects.equals(this.language, nluDomain.language) &&
+            Objects.equals(this.draftVersion, nluDomain.draftVersion) &&
+            Objects.equals(this.lastPublishedVersion, nluDomain.lastPublishedVersion) &&
+            Objects.equals(this.dateCreated, nluDomain.dateCreated) &&
+            Objects.equals(this.dateModified, nluDomain.dateModified) &&
+            Objects.equals(this.engineVersion, nluDomain.engineVersion) &&
+            Objects.equals(this.selfUri, nluDomain.selfUri);
   }
 
   @Override

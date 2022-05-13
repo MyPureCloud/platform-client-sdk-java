@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EffectiveConfiguration;
@@ -33,14 +34,13 @@ public class ClientAppConfigurationInfo  implements Serializable {
     return current;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type.")
   @JsonProperty("effective")
   public EffectiveConfiguration getEffective() {
     return effective;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -51,8 +51,9 @@ public class ClientAppConfigurationInfo  implements Serializable {
       return false;
     }
     ClientAppConfigurationInfo clientAppConfigurationInfo = (ClientAppConfigurationInfo) o;
+
     return Objects.equals(this.current, clientAppConfigurationInfo.current) &&
-        Objects.equals(this.effective, clientAppConfigurationInfo.effective);
+            Objects.equals(this.effective, clientAppConfigurationInfo.effective);
   }
 
   @Override

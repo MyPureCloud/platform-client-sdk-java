@@ -8,7 +8,7 @@ title: Format
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **flags** | <!---->[**List&lt;FlagsEnum&gt;**](#FlagsEnum)<!----> | The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \&quot;format\&quot;: { \&quot;flags\&quot;: [StringPlayChars] } |  [optional] |
+| **flags** | <!---->[**List&lt;FlagsEnum&gt;**](#FlagsEnum)<!----> | The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \"format\": { \"flags\": [StringPlayChars] } |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentManagementSingleDocumentTopicUserData;
@@ -43,7 +44,7 @@ public class ContentManagementSingleDocumentTopicLockData  implements Serializab
     this.lockedBy = lockedBy;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicLockData dateCreated(Date dateCreated) {
@@ -60,7 +61,7 @@ public class ContentManagementSingleDocumentTopicLockData  implements Serializab
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public ContentManagementSingleDocumentTopicLockData dateExpires(Date dateExpires) {
@@ -77,7 +78,6 @@ public class ContentManagementSingleDocumentTopicLockData  implements Serializab
     this.dateExpires = dateExpires;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class ContentManagementSingleDocumentTopicLockData  implements Serializab
       return false;
     }
     ContentManagementSingleDocumentTopicLockData contentManagementSingleDocumentTopicLockData = (ContentManagementSingleDocumentTopicLockData) o;
+
     return Objects.equals(this.lockedBy, contentManagementSingleDocumentTopicLockData.lockedBy) &&
-        Objects.equals(this.dateCreated, contentManagementSingleDocumentTopicLockData.dateCreated) &&
-        Objects.equals(this.dateExpires, contentManagementSingleDocumentTopicLockData.dateExpires);
+            Objects.equals(this.dateCreated, contentManagementSingleDocumentTopicLockData.dateCreated) &&
+            Objects.equals(this.dateExpires, contentManagementSingleDocumentTopicLockData.dateExpires);
   }
 
   @Override

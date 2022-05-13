@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class TrunkErrorInfoDetails  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public TrunkErrorInfoDetails message(String message) {
@@ -58,7 +59,7 @@ public class TrunkErrorInfoDetails  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public TrunkErrorInfoDetails hostname(String hostname) {
@@ -75,7 +76,6 @@ public class TrunkErrorInfoDetails  implements Serializable {
     this.hostname = hostname;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class TrunkErrorInfoDetails  implements Serializable {
       return false;
     }
     TrunkErrorInfoDetails trunkErrorInfoDetails = (TrunkErrorInfoDetails) o;
+
     return Objects.equals(this.code, trunkErrorInfoDetails.code) &&
-        Objects.equals(this.message, trunkErrorInfoDetails.message) &&
-        Objects.equals(this.hostname, trunkErrorInfoDetails.hostname);
+            Objects.equals(this.message, trunkErrorInfoDetails.message) &&
+            Objects.equals(this.hostname, trunkErrorInfoDetails.hostname);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -356,7 +357,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display friendly name of the participant.
    **/
@@ -374,7 +375,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The participant address.
    **/
@@ -392,7 +393,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -410,7 +411,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -428,7 +429,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -446,7 +447,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -464,7 +465,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -482,7 +483,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -500,7 +501,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -518,7 +519,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -536,7 +537,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Value is true when the participant is on hold.
    **/
@@ -554,7 +555,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -572,7 +573,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -590,7 +591,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * The PureCloud user for this participant.
    **/
@@ -608,7 +609,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The PureCloud queue for this participant.
    **/
@@ -626,7 +627,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The PureCloud team for this participant.
    **/
@@ -644,7 +645,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.team = team;
   }
 
-  
+
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -662,7 +663,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -680,7 +681,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -698,7 +699,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -716,7 +717,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -734,7 +735,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -752,7 +753,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -770,7 +771,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -788,7 +789,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -806,7 +807,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -824,7 +825,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -842,7 +843,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -860,7 +861,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
    **/
@@ -878,7 +879,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Information on how a communication should be routed to an agent.
    **/
@@ -896,7 +897,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -914,7 +915,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -932,7 +933,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    * Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
    **/
@@ -950,7 +951,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * Address for the participant on the sending side of the message conversation. If the address is a phone number, E.164 format is recommended.
    **/
@@ -968,7 +969,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * Message instance details on the communication.
    **/
@@ -986,7 +987,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.messages = messages;
   }
 
-  
+
   /**
    * Indicates the type of message platform from which the message originated.
    **/
@@ -1004,7 +1005,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
    **/
@@ -1022,7 +1023,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.recipientCountry = recipientCountry;
   }
 
-  
+
   /**
    * The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
    **/
@@ -1040,7 +1041,7 @@ public class MessageMediaParticipant  implements Serializable {
     this.recipientType = recipientType;
   }
 
-  
+
   /**
    * If true, the participant member is authenticated.
    **/
@@ -1058,7 +1059,6 @@ public class MessageMediaParticipant  implements Serializable {
     this.authenticated = authenticated;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1069,46 +1069,47 @@ public class MessageMediaParticipant  implements Serializable {
       return false;
     }
     MessageMediaParticipant messageMediaParticipant = (MessageMediaParticipant) o;
+
     return Objects.equals(this.id, messageMediaParticipant.id) &&
-        Objects.equals(this.name, messageMediaParticipant.name) &&
-        Objects.equals(this.address, messageMediaParticipant.address) &&
-        Objects.equals(this.startTime, messageMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, messageMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, messageMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, messageMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, messageMediaParticipant.purpose) &&
-        Objects.equals(this.state, messageMediaParticipant.state) &&
-        Objects.equals(this.direction, messageMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, messageMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, messageMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, messageMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, messageMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, messageMediaParticipant.user) &&
-        Objects.equals(this.queue, messageMediaParticipant.queue) &&
-        Objects.equals(this.team, messageMediaParticipant.team) &&
-        Objects.equals(this.attributes, messageMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, messageMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, messageMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, messageMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, messageMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, messageMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, messageMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, messageMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, messageMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, messageMediaParticipant.wrapup) &&
-        Objects.equals(this.peer, messageMediaParticipant.peer) &&
-        Objects.equals(this.flaggedReason, messageMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, messageMediaParticipant.journeyContext) &&
-        Objects.equals(this.conversationRoutingData, messageMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.startAcwTime, messageMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, messageMediaParticipant.endAcwTime) &&
-        Objects.equals(this.toAddress, messageMediaParticipant.toAddress) &&
-        Objects.equals(this.fromAddress, messageMediaParticipant.fromAddress) &&
-        Objects.equals(this.messages, messageMediaParticipant.messages) &&
-        Objects.equals(this.type, messageMediaParticipant.type) &&
-        Objects.equals(this.recipientCountry, messageMediaParticipant.recipientCountry) &&
-        Objects.equals(this.recipientType, messageMediaParticipant.recipientType) &&
-        Objects.equals(this.authenticated, messageMediaParticipant.authenticated);
+            Objects.equals(this.name, messageMediaParticipant.name) &&
+            Objects.equals(this.address, messageMediaParticipant.address) &&
+            Objects.equals(this.startTime, messageMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, messageMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, messageMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, messageMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, messageMediaParticipant.purpose) &&
+            Objects.equals(this.state, messageMediaParticipant.state) &&
+            Objects.equals(this.direction, messageMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, messageMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, messageMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, messageMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, messageMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, messageMediaParticipant.user) &&
+            Objects.equals(this.queue, messageMediaParticipant.queue) &&
+            Objects.equals(this.team, messageMediaParticipant.team) &&
+            Objects.equals(this.attributes, messageMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, messageMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, messageMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, messageMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, messageMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, messageMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, messageMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, messageMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, messageMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, messageMediaParticipant.wrapup) &&
+            Objects.equals(this.peer, messageMediaParticipant.peer) &&
+            Objects.equals(this.flaggedReason, messageMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, messageMediaParticipant.journeyContext) &&
+            Objects.equals(this.conversationRoutingData, messageMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.startAcwTime, messageMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, messageMediaParticipant.endAcwTime) &&
+            Objects.equals(this.toAddress, messageMediaParticipant.toAddress) &&
+            Objects.equals(this.fromAddress, messageMediaParticipant.fromAddress) &&
+            Objects.equals(this.messages, messageMediaParticipant.messages) &&
+            Objects.equals(this.type, messageMediaParticipant.type) &&
+            Objects.equals(this.recipientCountry, messageMediaParticipant.recipientCountry) &&
+            Objects.equals(this.recipientType, messageMediaParticipant.recipientType) &&
+            Objects.equals(this.authenticated, messageMediaParticipant.authenticated);
   }
 
   @Override

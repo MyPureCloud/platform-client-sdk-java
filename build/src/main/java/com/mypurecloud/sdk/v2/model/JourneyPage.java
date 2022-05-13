@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -51,7 +52,7 @@ public class JourneyPage  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Title of the page.
    **/
@@ -69,7 +70,7 @@ public class JourneyPage  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Domain of the page's URL.
    **/
@@ -87,7 +88,7 @@ public class JourneyPage  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    * Fragment or hash of the page's URL.
    **/
@@ -105,7 +106,7 @@ public class JourneyPage  implements Serializable {
     this.fragment = fragment;
   }
 
-  
+
   /**
    * Hostname of the page's URL.
    **/
@@ -123,7 +124,7 @@ public class JourneyPage  implements Serializable {
     this.hostname = hostname;
   }
 
-  
+
   /**
    * Keywords from the HTML {@code <meta>} tag of the page.
    **/
@@ -141,7 +142,7 @@ public class JourneyPage  implements Serializable {
     this.keywords = keywords;
   }
 
-  
+
   /**
    * ISO 639-1 language code for the page as defined in the {@code <html>} tag.
    **/
@@ -159,7 +160,7 @@ public class JourneyPage  implements Serializable {
     this.lang = lang;
   }
 
-  
+
   /**
    * Path name of the page for the event.
    **/
@@ -177,7 +178,7 @@ public class JourneyPage  implements Serializable {
     this.pathname = pathname;
   }
 
-  
+
   /**
    * Query string that is passed to the page in the current event.
    **/
@@ -195,7 +196,7 @@ public class JourneyPage  implements Serializable {
     this.queryString = queryString;
   }
 
-  
+
   /**
    * Hierarchy of the current page in relation to the website's structure.
    **/
@@ -213,7 +214,6 @@ public class JourneyPage  implements Serializable {
     this.breadcrumb = breadcrumb;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,16 +224,17 @@ public class JourneyPage  implements Serializable {
       return false;
     }
     JourneyPage journeyPage = (JourneyPage) o;
+
     return Objects.equals(this.url, journeyPage.url) &&
-        Objects.equals(this.title, journeyPage.title) &&
-        Objects.equals(this.domain, journeyPage.domain) &&
-        Objects.equals(this.fragment, journeyPage.fragment) &&
-        Objects.equals(this.hostname, journeyPage.hostname) &&
-        Objects.equals(this.keywords, journeyPage.keywords) &&
-        Objects.equals(this.lang, journeyPage.lang) &&
-        Objects.equals(this.pathname, journeyPage.pathname) &&
-        Objects.equals(this.queryString, journeyPage.queryString) &&
-        Objects.equals(this.breadcrumb, journeyPage.breadcrumb);
+            Objects.equals(this.title, journeyPage.title) &&
+            Objects.equals(this.domain, journeyPage.domain) &&
+            Objects.equals(this.fragment, journeyPage.fragment) &&
+            Objects.equals(this.hostname, journeyPage.hostname) &&
+            Objects.equals(this.keywords, journeyPage.keywords) &&
+            Objects.equals(this.lang, journeyPage.lang) &&
+            Objects.equals(this.pathname, journeyPage.pathname) &&
+            Objects.equals(this.queryString, journeyPage.queryString) &&
+            Objects.equals(this.breadcrumb, journeyPage.breadcrumb);
   }
 
   @Override

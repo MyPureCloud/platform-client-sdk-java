@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.TimeOffLimitReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -90,7 +90,7 @@ public class TimeOffPlan  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of this time off plan.
    **/
@@ -108,7 +108,7 @@ public class TimeOffPlan  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The set of activity code IDs associated with this time off plan.
    **/
@@ -126,7 +126,7 @@ public class TimeOffPlan  implements Serializable {
     this.activityCodeIds = activityCodeIds;
   }
 
-  
+
   /**
    * The set of time off limit IDs associated with this time off plan.
    **/
@@ -144,7 +144,7 @@ public class TimeOffPlan  implements Serializable {
     this.timeOffLimits = timeOffLimits;
   }
 
-  
+
   /**
    * Auto approval rule for this time off plan
    **/
@@ -162,7 +162,7 @@ public class TimeOffPlan  implements Serializable {
     this.autoApprovalRule = autoApprovalRule;
   }
 
-  
+
   /**
    * The number of days before the time off request start date for when the request will be expired from the waitlist.
    **/
@@ -180,7 +180,7 @@ public class TimeOffPlan  implements Serializable {
     this.daysBeforeStartToExpireFromWaitlist = daysBeforeStartToExpireFromWaitlist;
   }
 
-  
+
   /**
    * Whether this time off plan is currently being used by agents.
    **/
@@ -198,7 +198,7 @@ public class TimeOffPlan  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    * Version metadata for the time off plan.
    **/
@@ -216,14 +216,13 @@ public class TimeOffPlan  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -234,15 +233,16 @@ public class TimeOffPlan  implements Serializable {
       return false;
     }
     TimeOffPlan timeOffPlan = (TimeOffPlan) o;
+
     return Objects.equals(this.id, timeOffPlan.id) &&
-        Objects.equals(this.name, timeOffPlan.name) &&
-        Objects.equals(this.activityCodeIds, timeOffPlan.activityCodeIds) &&
-        Objects.equals(this.timeOffLimits, timeOffPlan.timeOffLimits) &&
-        Objects.equals(this.autoApprovalRule, timeOffPlan.autoApprovalRule) &&
-        Objects.equals(this.daysBeforeStartToExpireFromWaitlist, timeOffPlan.daysBeforeStartToExpireFromWaitlist) &&
-        Objects.equals(this.active, timeOffPlan.active) &&
-        Objects.equals(this.metadata, timeOffPlan.metadata) &&
-        Objects.equals(this.selfUri, timeOffPlan.selfUri);
+            Objects.equals(this.name, timeOffPlan.name) &&
+            Objects.equals(this.activityCodeIds, timeOffPlan.activityCodeIds) &&
+            Objects.equals(this.timeOffLimits, timeOffPlan.timeOffLimits) &&
+            Objects.equals(this.autoApprovalRule, timeOffPlan.autoApprovalRule) &&
+            Objects.equals(this.daysBeforeStartToExpireFromWaitlist, timeOffPlan.daysBeforeStartToExpireFromWaitlist) &&
+            Objects.equals(this.active, timeOffPlan.active) &&
+            Objects.equals(this.metadata, timeOffPlan.metadata) &&
+            Objects.equals(this.selfUri, timeOffPlan.selfUri);
   }
 
   @Override

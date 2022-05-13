@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AvailableTopicEntityListing;
-import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelEntityListing;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
-import com.mypurecloud.sdk.v2.model.Channel;
+import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class HeadNotificationsChannelRequest {
-    
+
 	private String channelId;
 	public String getChannelId() {
 		return this.channelId;
@@ -42,7 +42,7 @@ public class HeadNotificationsChannelRequest {
 	    this.setChannelId(channelId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +73,7 @@ public class HeadNotificationsChannelRequest {
         return ApiRequestBuilder.create("HEAD", "/api/v2/notifications/channels/{channelId}")
                 .withPathParameter("channelId", channelId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class HeadNotificationsChannelRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String channelId) {
 	    return new Builder()
 	            .withRequiredParams(channelId);
 	}
-	
+
 
 	public static class Builder {
 		private final HeadNotificationsChannelRequest request;
@@ -98,20 +98,20 @@ public class HeadNotificationsChannelRequest {
 			request = new HeadNotificationsChannelRequest();
 		}
 
-		
+
 		public Builder withChannelId(String channelId) {
 			request.setChannelId(channelId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String channelId) {
 			request.setChannelId(channelId);
-			
+
 			return this;
 		}
-		
+
 
 		public HeadNotificationsChannelRequest build() {
             

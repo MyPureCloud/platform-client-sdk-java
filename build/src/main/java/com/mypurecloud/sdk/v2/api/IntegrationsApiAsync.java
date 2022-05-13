@@ -13,47 +13,47 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Integration;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
-import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.Action;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
-import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
-import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
+import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotList;
-import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEvent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.DraftValidationResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Integration;
+import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
+import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsSettings;
-import com.mypurecloud.sdk.v2.model.IntegrationType;
-import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UpdateActionInput;
-import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
-import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
-import com.mypurecloud.sdk.v2.model.PostActionInput;
-import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsSettings;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
+import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UpdateActionInput;
+import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
 import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 
@@ -124,7 +124,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class IntegrationsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -136,7 +135,6 @@ public class IntegrationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete integration.
    * 
@@ -212,7 +210,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Delete an Action
    * 
@@ -288,7 +285,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Delete a Draft
    * 
@@ -364,7 +360,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Delete a set of credentials
    * 
@@ -440,7 +435,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get integration.
    * 
@@ -516,7 +510,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get integration configuration.
    * 
@@ -592,7 +585,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List integrations
    * 
@@ -668,7 +660,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieves a single Action matching id.
    * 
@@ -744,7 +735,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a Draft
    * 
@@ -820,7 +810,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve schema for a Draft based on filename.
    * 
@@ -896,7 +885,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve templates for a Draft based on filename.
    * 
@@ -972,7 +960,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Validate current Draft configuration.
    * 
@@ -1048,7 +1035,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve schema for an action based on filename.
    * 
@@ -1124,7 +1110,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieve text of templates for an action based on filename.
    * 
@@ -1200,7 +1185,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieves all actions associated with filters passed in via query param.
    * 
@@ -1276,7 +1260,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieves all categories of available Actions
    * 
@@ -1352,7 +1335,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Retrieves all action drafts associated with the filters passed in via query param.
    * 
@@ -1428,7 +1410,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a specific botConnector bot, plus versions, for this integration
    * 
@@ -1504,7 +1485,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of bot versions for a bot
    * 
@@ -1580,7 +1560,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of botConnector bots for this integration
    * 
@@ -1656,7 +1635,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a summary list of botConnector bots for this integration
    * 
@@ -1732,7 +1710,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List permitted client app integrations for the logged in user
    * 
@@ -1808,7 +1785,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * UC integration client application configuration.
    * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
@@ -1884,7 +1860,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a single credential with sensitive fields redacted
    * 
@@ -1960,7 +1935,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List multiple sets of credentials
    * 
@@ -2036,7 +2010,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List all credential types
    * 
@@ -2112,7 +2085,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List all events
    * 
@@ -2188,7 +2160,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a single event
    * 
@@ -2264,7 +2235,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get details about a Dialogflow agent
    * 
@@ -2340,9 +2310,8 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
-   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * Get a list of Dialogflow agents in the customers' Google accounts
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2376,7 +2345,7 @@ public class IntegrationsApiAsync {
   }
 
   /**
-   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * Get a list of Dialogflow agents in the customers' Google accounts
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2416,7 +2385,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get details about a Lex bot alias
    * 
@@ -2492,9 +2460,8 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
-   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * Get a list of aliases for a bot in the customer's AWS accounts
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2528,7 +2495,7 @@ public class IntegrationsApiAsync {
   }
 
   /**
-   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * Get a list of aliases for a bot in the customer's AWS accounts
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2568,9 +2535,8 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
-   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * Get a list of Lex bots in the customers' AWS accounts
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2604,7 +2570,7 @@ public class IntegrationsApiAsync {
   }
 
   /**
-   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * Get a list of Lex bots in the customers' AWS accounts
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2644,7 +2610,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get details about a TTS engine
    * 
@@ -2720,7 +2685,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get details about a specific voice for a TTS engine
    * 
@@ -2796,7 +2760,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of voices for a TTS engine
    * 
@@ -2872,7 +2835,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of TTS engines enabled for org
    * 
@@ -2948,7 +2910,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get TTS settings for an org
    * 
@@ -3024,7 +2985,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get integration type.
    * 
@@ -3100,7 +3060,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Get properties config schema for an integration type.
    * 
@@ -3176,7 +3135,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List integration types
    * 
@@ -3252,7 +3210,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * List permitted user app integrations for the logged in user
    * 
@@ -3328,7 +3285,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Update an integration.
    * 
@@ -3404,7 +3360,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Patch an Action
    * 
@@ -3480,7 +3435,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Update an existing Draft
    * 
@@ -3556,7 +3510,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Create an integration.
    * 
@@ -3632,7 +3585,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Create a new Draft from existing Action
    * 
@@ -3708,7 +3660,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Publish a Draft and make it the active Action configuration
    * 
@@ -3784,7 +3735,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
    * 
@@ -3860,7 +3810,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
    * 
@@ -3936,7 +3885,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
    * 
@@ -4012,7 +3960,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Create a new Action
    * 
@@ -4088,7 +4035,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Create a new Draft
    * 
@@ -4164,7 +4110,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Create a set of credentials
    * 
@@ -4240,7 +4185,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Add a vendor connection
    * 
@@ -4316,7 +4260,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Update integration configuration.
    * 
@@ -4392,7 +4335,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Set a list of botConnector bots plus versions for this integration
    * 
@@ -4468,7 +4410,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Update a set of credentials
    * 
@@ -4544,7 +4485,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
   /**
    * Update TTS settings for an org
    * 
@@ -4620,7 +4560,6 @@ public class IntegrationsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class TextBotFlowOutcome  implements Serializable {
     this.outcomeId = outcomeId;
   }
 
-  
+
   /**
    * The value of the FlowOutcome.
    **/
@@ -115,7 +116,7 @@ public class TextBotFlowOutcome  implements Serializable {
     this.outcomeValue = outcomeValue;
   }
 
-  
+
   /**
    * The timestamp for when the Flow Outcome began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -133,7 +134,7 @@ public class TextBotFlowOutcome  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * The timestamp for when the Flow Outcome finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -151,7 +152,7 @@ public class TextBotFlowOutcome  implements Serializable {
     this.dateEnd = dateEnd;
   }
 
-  
+
   /**
    * The Flow Milestones for the Flow Outcome.
    **/
@@ -169,7 +170,6 @@ public class TextBotFlowOutcome  implements Serializable {
     this.milestones = milestones;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,11 +180,12 @@ public class TextBotFlowOutcome  implements Serializable {
       return false;
     }
     TextBotFlowOutcome textBotFlowOutcome = (TextBotFlowOutcome) o;
+
     return Objects.equals(this.outcomeId, textBotFlowOutcome.outcomeId) &&
-        Objects.equals(this.outcomeValue, textBotFlowOutcome.outcomeValue) &&
-        Objects.equals(this.dateStart, textBotFlowOutcome.dateStart) &&
-        Objects.equals(this.dateEnd, textBotFlowOutcome.dateEnd) &&
-        Objects.equals(this.milestones, textBotFlowOutcome.milestones);
+            Objects.equals(this.outcomeValue, textBotFlowOutcome.outcomeValue) &&
+            Objects.equals(this.dateStart, textBotFlowOutcome.dateStart) &&
+            Objects.equals(this.dateEnd, textBotFlowOutcome.dateEnd) &&
+            Objects.equals(this.milestones, textBotFlowOutcome.milestones);
   }
 
   @Override

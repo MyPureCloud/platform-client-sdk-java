@@ -8,12 +8,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -74,6 +76,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
   private StatusEnum status = null;
   private String operationId = null;
   private WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing result = null;
+  private Date weekDate = null;
 
   
   /**
@@ -92,7 +95,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification operationId(String operationId) {
@@ -109,7 +112,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification result(WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing result) {
@@ -126,7 +129,23 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.result = result;
   }
 
+
+  /**
+   **/
+  public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification weekDate(Date weekDate) {
+    this.weekDate = weekDate;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("weekDate")
+  public Date getWeekDate() {
+    return weekDate;
+  }
+  public void setWeekDate(Date weekDate) {
+    this.weekDate = weekDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,14 +156,16 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
       return false;
     }
     WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification = (WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification) o;
+
     return Objects.equals(this.status, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.status) &&
-        Objects.equals(this.operationId, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.operationId) &&
-        Objects.equals(this.result, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.result);
+            Objects.equals(this.operationId, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.operationId) &&
+            Objects.equals(this.result, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.result) &&
+            Objects.equals(this.weekDate, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification.weekDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, operationId, result);
+    return Objects.hash(status, operationId, result, weekDate);
   }
 
   @Override
@@ -155,6 +176,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

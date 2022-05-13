@@ -10,24 +10,24 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
@@ -77,7 +77,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class AuthorizationApi {
   private final ApiClient pcapiClient;
 
@@ -89,7 +88,6 @@ public class AuthorizationApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a division.
    * 
@@ -116,9 +114,9 @@ public class AuthorizationApi {
   private DeleteAuthorizationDivisionRequest createDeleteAuthorizationDivisionRequest(String divisionId, Boolean force) {
     return DeleteAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withForce(force)
-    
+
             .build();
   }
 
@@ -169,7 +167,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Delete an organization role.
    * 
@@ -194,7 +191,7 @@ public class AuthorizationApi {
   private DeleteAuthorizationRoleRequest createDeleteAuthorizationRoleRequest(String roleId) {
     return DeleteAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-    
+
             .build();
   }
 
@@ -245,7 +242,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Delete a grant of a role in a division
    * 
@@ -274,11 +270,11 @@ public class AuthorizationApi {
   private DeleteAuthorizationSubjectDivisionRoleRequest createDeleteAuthorizationSubjectDivisionRoleRequest(String subjectId, String divisionId, String roleId) {
     return DeleteAuthorizationSubjectDivisionRoleRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withRoleId(roleId)
-    
+
             .build();
   }
 
@@ -329,7 +325,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns an authorization division.
    * 
@@ -358,9 +353,9 @@ public class AuthorizationApi {
   private GetAuthorizationDivisionRequest createGetAuthorizationDivisionRequest(String divisionId, Boolean objectCount) {
     return GetAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withObjectCount(objectCount)
-    
+
             .build();
   }
 
@@ -412,7 +407,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Gets all grants for a given division.
    * Returns all grants assigned to a given division. Maximum page size is 500.
@@ -443,11 +437,11 @@ public class AuthorizationApi {
   private GetAuthorizationDivisionGrantsRequest createGetAuthorizationDivisionGrantsRequest(String divisionId, Integer pageNumber, Integer pageSize) {
     return GetAuthorizationDivisionGrantsRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -499,10 +493,9 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -522,7 +515,7 @@ public class AuthorizationApi {
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -542,29 +535,29 @@ public class AuthorizationApi {
   private GetAuthorizationDivisionsRequest createGetAuthorizationDivisionsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, List<String> id, String name) {
     return GetAuthorizationDivisionsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withObjectCount(objectCount)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request The request object
    * @return AuthzDivisionEntityListing
    * @throws ApiException if the request fails on the server
@@ -583,7 +576,7 @@ public class AuthorizationApi {
 
   /**
    * Retrieve a list of all divisions defined for the organization
-   * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+   * Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -610,7 +603,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Retrieve the home division for the organization.
    * Will not include object counts.
@@ -685,7 +677,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns the maximum allowed number of divisions.
    * 
@@ -760,7 +751,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns which divisions the current user has the given permission in.
    * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -789,9 +779,9 @@ public class AuthorizationApi {
   private GetAuthorizationDivisionspermittedMeRequest createGetAuthorizationDivisionspermittedMeRequest(String permission, String name) {
     return GetAuthorizationDivisionspermittedMeRequest.builder()
             .withPermission(permission)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -843,7 +833,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns which divisions the current user has the given permission in.
    * 
@@ -874,11 +863,11 @@ public class AuthorizationApi {
   private GetAuthorizationDivisionspermittedPagedMeRequest createGetAuthorizationDivisionspermittedPagedMeRequest(String permission, Integer pageNumber, Integer pageSize) {
     return GetAuthorizationDivisionspermittedPagedMeRequest.builder()
             .withPermission(permission)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -930,7 +919,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns which divisions the specified user has the given permission in.
    * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -963,13 +951,13 @@ public class AuthorizationApi {
   private GetAuthorizationDivisionspermittedPagedSubjectIdRequest createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(String subjectId, String permission, Integer pageNumber, Integer pageSize) {
     return GetAuthorizationDivisionspermittedPagedSubjectIdRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .withPermission(permission)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1021,7 +1009,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
@@ -1054,13 +1041,13 @@ public class AuthorizationApi {
   private GetAuthorizationPermissionsRequest createGetAuthorizationPermissionsRequest(Integer pageSize, Integer pageNumber, String queryType, String query) {
     return GetAuthorizationPermissionsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withQueryType(queryType)
-    
+
             .withQuery(query)
-    
+
             .build();
   }
 
@@ -1112,7 +1099,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
@@ -1187,12 +1173,11 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
-   * @param expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role (optional)
+   * @param expand Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1205,7 +1190,7 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
-   * @param expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role (optional)
+   * @param expand Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws IOException if the request fails to be processed
    */
@@ -1216,9 +1201,9 @@ public class AuthorizationApi {
   private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId, List<String> expand) {
     return GetAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1270,7 +1255,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
@@ -1299,9 +1283,9 @@ public class AuthorizationApi {
   private GetAuthorizationRoleComparedefaultRightRoleIdRequest createGetAuthorizationRoleComparedefaultRightRoleIdRequest(String leftRoleId, String rightRoleId) {
     return GetAuthorizationRoleComparedefaultRightRoleIdRequest.builder()
             .withLeftRoleId(leftRoleId)
-    
+
             .withRightRoleId(rightRoleId)
-    
+
             .build();
   }
 
@@ -1353,9 +1337,8 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
-   * Get the subjects&#39; granted divisions in the specified role.
+   * Get the subjects' granted divisions in the specified role.
    * Includes the divisions for which the subject has a grant.
    * @param roleId Role ID (required)
    * @param pageSize The total page size requested (optional, default to 25)
@@ -1373,7 +1356,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Get the subjects&#39; granted divisions in the specified role.
+   * Get the subjects' granted divisions in the specified role.
    * Includes the divisions for which the subject has a grant.
    * @param roleId Role ID (required)
    * @param pageSize The total page size requested (optional, default to 25)
@@ -1392,24 +1375,24 @@ public class AuthorizationApi {
   private GetAuthorizationRoleSubjectgrantsRequest createGetAuthorizationRoleSubjectgrantsRequest(String roleId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetAuthorizationRoleSubjectgrantsRequest.builder()
             .withRoleId(roleId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .build();
   }
 
   /**
-   * Get the subjects&#39; granted divisions in the specified role.
+   * Get the subjects' granted divisions in the specified role.
    * Includes the divisions for which the subject has a grant.
    * @param request The request object
    * @return SubjectDivisionGrantsEntityListing
@@ -1428,7 +1411,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Get the subjects&#39; granted divisions in the specified role.
+   * Get the subjects' granted divisions in the specified role.
    * Includes the divisions for which the subject has a grant.
    * @param request The request object
    * @return the response
@@ -1456,7 +1439,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get a list of the users in a specified role.
    * Get an array of the UUIDs of the users in the specified role.
@@ -1487,11 +1469,11 @@ public class AuthorizationApi {
   private GetAuthorizationRoleUsersRequest createGetAuthorizationRoleUsersRequest(String roleId, Integer pageSize, Integer pageNumber) {
     return GetAuthorizationRoleUsersRequest.builder()
             .withRoleId(roleId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1543,7 +1525,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Retrieve a list of all roles defined for the organization
    * 
@@ -1590,27 +1571,27 @@ public class AuthorizationApi {
   private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, List<String> permission, List<String> defaultRoleId, Boolean userCount, List<String> id) {
     return GetAuthorizationRolesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withName(name)
-    
+
             .withPermission(permission)
-    
+
             .withDefaultRoleId(defaultRoleId)
-    
+
             .withUserCount(userCount)
-    
+
             .withId(id)
-    
+
             .build();
   }
 
@@ -1662,7 +1643,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1689,7 +1669,7 @@ public class AuthorizationApi {
   private GetAuthorizationSubjectRequest createGetAuthorizationSubjectRequest(String subjectId) {
     return GetAuthorizationSubjectRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .build();
   }
 
@@ -1741,7 +1721,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
@@ -1816,7 +1795,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get the count of roles granted to a list of subjects
    * 
@@ -1843,7 +1821,7 @@ public class AuthorizationApi {
   private GetAuthorizationSubjectsRolecountsRequest createGetAuthorizationSubjectsRolecountsRequest(List<String> id) {
     return GetAuthorizationSubjectsRolecountsRequest.builder()
             .withId(id)
-    
+
             .build();
   }
 
@@ -1895,7 +1873,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1922,7 +1899,7 @@ public class AuthorizationApi {
   private GetUserRolesRequest createGetUserRolesRequest(String userId) {
     return GetUserRolesRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
@@ -1974,7 +1951,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Patch Organization Role for needsUpdate Field
    * Patch Organization Role for needsUpdate Field
@@ -2003,9 +1979,9 @@ public class AuthorizationApi {
   private PatchAuthorizationRoleRequest createPatchAuthorizationRoleRequest(String roleId, DomainOrganizationRole body) {
     return PatchAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2057,10 +2033,9 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param divisionId Division ID (required)
    * @param objectType The type of the objects. Must be one of the valid object types (required)
    * @param body Object Id List (required)
@@ -2073,7 +2048,7 @@ public class AuthorizationApi {
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param divisionId Division ID (required)
    * @param objectType The type of the objects. Must be one of the valid object types (required)
    * @param body Object Id List (required)
@@ -2086,17 +2061,17 @@ public class AuthorizationApi {
   private PostAuthorizationDivisionObjectRequest createPostAuthorizationDivisionObjectRequest(String divisionId, String objectType, List<String> body) {
     return PostAuthorizationDivisionObjectRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withObjectType(objectType)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2114,7 +2089,7 @@ public class AuthorizationApi {
 
   /**
    * Assign a list of objects to a division
-   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2141,7 +2116,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Recreate a previously deleted division.
    * 
@@ -2170,9 +2144,9 @@ public class AuthorizationApi {
   private PostAuthorizationDivisionRestoreRequest createPostAuthorizationDivisionRestoreRequest(String divisionId, AuthzDivision body) {
     return PostAuthorizationDivisionRestoreRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2224,7 +2198,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Create a division.
    * 
@@ -2251,7 +2224,7 @@ public class AuthorizationApi {
   private PostAuthorizationDivisionsRequest createPostAuthorizationDivisionsRequest(AuthzDivision body) {
     return PostAuthorizationDivisionsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2303,7 +2276,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Bulk-grant subjects and divisions with an organization role.
    * 
@@ -2332,11 +2304,11 @@ public class AuthorizationApi {
   private PostAuthorizationRoleRequest createPostAuthorizationRoleRequest(String roleId, SubjectDivisions body, String subjectType) {
     return PostAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-    
+
             .withBody(body)
-    
+
             .withSubjectType(subjectType)
-    
+
             .build();
   }
 
@@ -2387,7 +2359,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Get an unsaved org role to default role comparison
    * Allows users to compare their existing roles in an unsaved state to its default role
@@ -2418,11 +2389,11 @@ public class AuthorizationApi {
   private PostAuthorizationRoleComparedefaultRightRoleIdRequest createPostAuthorizationRoleComparedefaultRightRoleIdRequest(String leftRoleId, String rightRoleId, DomainOrganizationRole body) {
     return PostAuthorizationRoleComparedefaultRightRoleIdRequest.builder()
             .withLeftRoleId(leftRoleId)
-    
+
             .withRightRoleId(rightRoleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2474,7 +2445,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Create an organization role.
    * 
@@ -2501,7 +2471,7 @@ public class AuthorizationApi {
   private PostAuthorizationRolesRequest createPostAuthorizationRolesRequest(DomainOrganizationRoleCreate body) {
     return PostAuthorizationRolesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2553,7 +2523,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Restores all default roles
    * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
@@ -2580,7 +2549,7 @@ public class AuthorizationApi {
   private PostAuthorizationRolesDefaultRequest createPostAuthorizationRolesDefaultRequest(Boolean force) {
     return PostAuthorizationRolesDefaultRequest.builder()
             .withForce(force)
-    
+
             .build();
   }
 
@@ -2632,7 +2601,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Bulk-grant roles and divisions to a subject.
    * 
@@ -2661,11 +2629,11 @@ public class AuthorizationApi {
   private PostAuthorizationSubjectBulkaddRequest createPostAuthorizationSubjectBulkaddRequest(String subjectId, RoleDivisionGrants body, String subjectType) {
     return PostAuthorizationSubjectBulkaddRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .withBody(body)
-    
+
             .withSubjectType(subjectType)
-    
+
             .build();
   }
 
@@ -2716,7 +2684,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Bulk-remove grants from a subject.
    * 
@@ -2743,9 +2710,9 @@ public class AuthorizationApi {
   private PostAuthorizationSubjectBulkremoveRequest createPostAuthorizationSubjectBulkremoveRequest(String subjectId, RoleDivisionGrants body) {
     return PostAuthorizationSubjectBulkremoveRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2796,9 +2763,8 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param subjectId Subject ID (user or group) (required)
    * @param body Pairs of role and division IDs (required)
@@ -2811,7 +2777,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param subjectId Subject ID (user or group) (required)
    * @param body Pairs of role and division IDs (required)
@@ -2825,16 +2791,16 @@ public class AuthorizationApi {
   private PostAuthorizationSubjectBulkreplaceRequest createPostAuthorizationSubjectBulkreplaceRequest(String subjectId, RoleDivisionGrants body, String subjectType) {
     return PostAuthorizationSubjectBulkreplaceRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .withBody(body)
-    
+
             .withSubjectType(subjectType)
-    
+
             .build();
   }
 
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -2852,7 +2818,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param request The request object
    * @return the response
@@ -2880,7 +2846,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Make a grant of a role in a division
    * 
@@ -2911,13 +2876,13 @@ public class AuthorizationApi {
   private PostAuthorizationSubjectDivisionRoleRequest createPostAuthorizationSubjectDivisionRoleRequest(String subjectId, String divisionId, String roleId, String subjectType) {
     return PostAuthorizationSubjectDivisionRoleRequest.builder()
             .withSubjectId(subjectId)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withRoleId(roleId)
-    
+
             .withSubjectType(subjectType)
-    
+
             .build();
   }
 
@@ -2968,7 +2933,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Update a division.
    * 
@@ -2997,9 +2961,9 @@ public class AuthorizationApi {
   private PutAuthorizationDivisionRequest createPutAuthorizationDivisionRequest(String divisionId, AuthzDivision body) {
     return PutAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3051,7 +3015,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Update an organization role.
    * Update
@@ -3080,9 +3043,9 @@ public class AuthorizationApi {
   private PutAuthorizationRoleRequest createPutAuthorizationRoleRequest(String roleId, DomainOrganizationRoleUpdate body) {
     return PutAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3134,7 +3097,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Sets the users for the role
    * 
@@ -3163,9 +3125,9 @@ public class AuthorizationApi {
   private PutAuthorizationRoleUsersAddRequest createPutAuthorizationRoleUsersAddRequest(String roleId, List<String> body) {
     return PutAuthorizationRoleUsersAddRequest.builder()
             .withRoleId(roleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3217,7 +3179,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Removes the users from the role
    * 
@@ -3246,9 +3207,9 @@ public class AuthorizationApi {
   private PutAuthorizationRoleUsersRemoveRequest createPutAuthorizationRoleUsersRemoveRequest(String roleId, List<String> body) {
     return PutAuthorizationRoleUsersRemoveRequest.builder()
             .withRoleId(roleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3300,7 +3261,6 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
    * Restore specified default roles
    * 
@@ -3327,7 +3287,7 @@ public class AuthorizationApi {
   private PutAuthorizationRolesDefaultRequest createPutAuthorizationRolesDefaultRequest(List<DomainOrganizationRole> body) {
     return PutAuthorizationRolesDefaultRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3379,9 +3339,8 @@ public class AuthorizationApi {
     }
   }
 
-  
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param userId User ID (required)
    * @param body List of roles (required)
@@ -3394,7 +3353,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param userId User ID (required)
    * @param body List of roles (required)
@@ -3408,14 +3367,14 @@ public class AuthorizationApi {
   private PutUserRolesRequest createPutUserRolesRequest(String userId, List<String> body) {
     return PutUserRolesRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param request The request object
    * @return UserAuthorization
@@ -3434,7 +3393,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param request The request object
    * @return the response
@@ -3462,5 +3421,4 @@ public class AuthorizationApi {
     }
   }
 
-  
 }

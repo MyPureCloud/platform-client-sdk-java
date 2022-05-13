@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class WfmBuScheduleRunTopicSchedulerMessageSeverityCount  implements Seri
     this.severity = severity;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleRunTopicSchedulerMessageSeverityCount count(Integer count) {
@@ -107,7 +108,6 @@ public class WfmBuScheduleRunTopicSchedulerMessageSeverityCount  implements Seri
     this.count = count;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class WfmBuScheduleRunTopicSchedulerMessageSeverityCount  implements Seri
       return false;
     }
     WfmBuScheduleRunTopicSchedulerMessageSeverityCount wfmBuScheduleRunTopicSchedulerMessageSeverityCount = (WfmBuScheduleRunTopicSchedulerMessageSeverityCount) o;
+
     return Objects.equals(this.severity, wfmBuScheduleRunTopicSchedulerMessageSeverityCount.severity) &&
-        Objects.equals(this.count, wfmBuScheduleRunTopicSchedulerMessageSeverityCount.count);
+            Objects.equals(this.count, wfmBuScheduleRunTopicSchedulerMessageSeverityCount.count);
   }
 
   @Override

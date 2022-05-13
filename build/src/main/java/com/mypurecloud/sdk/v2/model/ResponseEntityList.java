@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -53,7 +54,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList pageSize(Integer pageSize) {
@@ -70,7 +71,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList pageNumber(Integer pageNumber) {
@@ -87,7 +88,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList total(Long total) {
@@ -104,7 +105,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList lastUri(String lastUri) {
@@ -121,7 +122,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList firstUri(String firstUri) {
@@ -138,7 +139,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList selfUri(String selfUri) {
@@ -155,7 +156,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList previousUri(String previousUri) {
@@ -172,7 +173,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList nextUri(String nextUri) {
@@ -189,7 +190,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ResponseEntityList pageCount(Integer pageCount) {
@@ -206,7 +207,6 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,16 +217,17 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
       return false;
     }
     ResponseEntityList responseEntityList = (ResponseEntityList) o;
+
     return Objects.equals(this.entities, responseEntityList.entities) &&
-        Objects.equals(this.pageSize, responseEntityList.pageSize) &&
-        Objects.equals(this.pageNumber, responseEntityList.pageNumber) &&
-        Objects.equals(this.total, responseEntityList.total) &&
-        Objects.equals(this.lastUri, responseEntityList.lastUri) &&
-        Objects.equals(this.firstUri, responseEntityList.firstUri) &&
-        Objects.equals(this.selfUri, responseEntityList.selfUri) &&
-        Objects.equals(this.previousUri, responseEntityList.previousUri) &&
-        Objects.equals(this.nextUri, responseEntityList.nextUri) &&
-        Objects.equals(this.pageCount, responseEntityList.pageCount);
+            Objects.equals(this.pageSize, responseEntityList.pageSize) &&
+            Objects.equals(this.pageNumber, responseEntityList.pageNumber) &&
+            Objects.equals(this.total, responseEntityList.total) &&
+            Objects.equals(this.lastUri, responseEntityList.lastUri) &&
+            Objects.equals(this.firstUri, responseEntityList.firstUri) &&
+            Objects.equals(this.selfUri, responseEntityList.selfUri) &&
+            Objects.equals(this.previousUri, responseEntityList.previousUri) &&
+            Objects.equals(this.nextUri, responseEntityList.nextUri) &&
+            Objects.equals(this.pageCount, responseEntityList.pageCount);
   }
 
   @Override

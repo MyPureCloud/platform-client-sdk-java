@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationArchitectOperation;
@@ -49,7 +50,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.id = id;
   }
 
-  
+
   /**
    * The flow name
    **/
@@ -67,7 +68,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.name = name;
   }
 
-  
+
   /**
    * The flow description
    **/
@@ -85,7 +86,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.description = description;
   }
 
-  
+
   /**
    * The flow deleted state
    **/
@@ -103,7 +104,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.deleted = deleted;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationFlowNotification checkedInVersion(ArchitectFlowNotificationFlowVersion checkedInVersion) {
@@ -120,7 +121,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.checkedInVersion = checkedInVersion;
   }
 
-  
+
   /**
    * A bare-bones flow version object
    **/
@@ -138,7 +139,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.savedVersion = savedVersion;
   }
 
-  
+
   /**
    * A bare-bones flow version object
    **/
@@ -156,7 +157,7 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.publishedVersion = publishedVersion;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationFlowNotification currentOperation(ArchitectFlowNotificationArchitectOperation currentOperation) {
@@ -173,7 +174,6 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
     this.currentOperation = currentOperation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -184,14 +184,15 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
       return false;
     }
     ArchitectFlowNotificationFlowNotification architectFlowNotificationFlowNotification = (ArchitectFlowNotificationFlowNotification) o;
+
     return Objects.equals(this.id, architectFlowNotificationFlowNotification.id) &&
-        Objects.equals(this.name, architectFlowNotificationFlowNotification.name) &&
-        Objects.equals(this.description, architectFlowNotificationFlowNotification.description) &&
-        Objects.equals(this.deleted, architectFlowNotificationFlowNotification.deleted) &&
-        Objects.equals(this.checkedInVersion, architectFlowNotificationFlowNotification.checkedInVersion) &&
-        Objects.equals(this.savedVersion, architectFlowNotificationFlowNotification.savedVersion) &&
-        Objects.equals(this.publishedVersion, architectFlowNotificationFlowNotification.publishedVersion) &&
-        Objects.equals(this.currentOperation, architectFlowNotificationFlowNotification.currentOperation);
+            Objects.equals(this.name, architectFlowNotificationFlowNotification.name) &&
+            Objects.equals(this.description, architectFlowNotificationFlowNotification.description) &&
+            Objects.equals(this.deleted, architectFlowNotificationFlowNotification.deleted) &&
+            Objects.equals(this.checkedInVersion, architectFlowNotificationFlowNotification.checkedInVersion) &&
+            Objects.equals(this.savedVersion, architectFlowNotificationFlowNotification.savedVersion) &&
+            Objects.equals(this.publishedVersion, architectFlowNotificationFlowNotification.publishedVersion) &&
+            Objects.equals(this.currentOperation, architectFlowNotificationFlowNotification.currentOperation);
   }
 
   @Override

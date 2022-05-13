@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HeadcountInterval;
@@ -45,7 +46,7 @@ public class HeadcountForecast  implements Serializable {
     this.required = required;
   }
 
-  
+
   /**
    * Headcount information without shrinkage
    **/
@@ -63,7 +64,6 @@ public class HeadcountForecast  implements Serializable {
     this.requiredWithoutShrinkage = requiredWithoutShrinkage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class HeadcountForecast  implements Serializable {
       return false;
     }
     HeadcountForecast headcountForecast = (HeadcountForecast) o;
+
     return Objects.equals(this.required, headcountForecast.required) &&
-        Objects.equals(this.requiredWithoutShrinkage, headcountForecast.requiredWithoutShrinkage);
+            Objects.equals(this.requiredWithoutShrinkage, headcountForecast.requiredWithoutShrinkage);
   }
 
   @Override

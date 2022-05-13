@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
@@ -44,7 +45,7 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     this.contacts = contacts;
   }
 
-  
+
   /**
    **/
   public ReverseWhitepagesLookupResult externalOrganizations(List<ExternalOrganization> externalOrganizations) {
@@ -61,7 +62,6 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     this.externalOrganizations = externalOrganizations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
       return false;
     }
     ReverseWhitepagesLookupResult reverseWhitepagesLookupResult = (ReverseWhitepagesLookupResult) o;
+
     return Objects.equals(this.contacts, reverseWhitepagesLookupResult.contacts) &&
-        Objects.equals(this.externalOrganizations, reverseWhitepagesLookupResult.externalOrganizations);
+            Objects.equals(this.externalOrganizations, reverseWhitepagesLookupResult.externalOrganizations);
   }
 
   @Override

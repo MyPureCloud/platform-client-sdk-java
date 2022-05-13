@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class Salesforce  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Salesforce name(String name) {
@@ -58,7 +59,7 @@ public class Salesforce  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Salesforce disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class Salesforce  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public Salesforce issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class Salesforce  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public Salesforce ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class Salesforce  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public Salesforce sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class Salesforce  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public Salesforce sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class Salesforce  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public Salesforce relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class Salesforce  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public Salesforce certificate(String certificate) {
@@ -177,7 +178,7 @@ public class Salesforce  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public Salesforce certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class Salesforce  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class Salesforce  implements Serializable {
       return false;
     }
     Salesforce salesforce = (Salesforce) o;
+
     return Objects.equals(this.id, salesforce.id) &&
-        Objects.equals(this.name, salesforce.name) &&
-        Objects.equals(this.disabled, salesforce.disabled) &&
-        Objects.equals(this.issuerURI, salesforce.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, salesforce.ssoTargetURI) &&
-        Objects.equals(this.sloURI, salesforce.sloURI) &&
-        Objects.equals(this.sloBinding, salesforce.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, salesforce.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, salesforce.certificate) &&
-        Objects.equals(this.certificates, salesforce.certificates) &&
-        Objects.equals(this.selfUri, salesforce.selfUri);
+            Objects.equals(this.name, salesforce.name) &&
+            Objects.equals(this.disabled, salesforce.disabled) &&
+            Objects.equals(this.issuerURI, salesforce.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, salesforce.ssoTargetURI) &&
+            Objects.equals(this.sloURI, salesforce.sloURI) &&
+            Objects.equals(this.sloBinding, salesforce.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, salesforce.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, salesforce.certificate) &&
+            Objects.equals(this.certificates, salesforce.certificates) &&
+            Objects.equals(this.selfUri, salesforce.selfUri);
   }
 
   @Override

@@ -13,69 +13,69 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.BenefitAssessment;
-import com.mypurecloud.sdk.v2.model.AssessmentListing;
-import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
-import com.mypurecloud.sdk.v2.model.InboundDomain;
-import com.mypurecloud.sdk.v2.model.InboundRoute;
-import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
-import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.EmailSetup;
-import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.Recipient;
-import com.mypurecloud.sdk.v2.model.RecipientListing;
-import com.mypurecloud.sdk.v2.model.Predictor;
-import com.mypurecloud.sdk.v2.model.PredictorListing;
-import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
-import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.BenefitAssessment;
+import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
+import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
+import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.EmailSetup;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.InboundRoute;
+import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
+import com.mypurecloud.sdk.v2.model.Predictor;
+import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.QueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
-import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
-import com.mypurecloud.sdk.v2.model.QueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.RoutingSettings;
-import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
-import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
-import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.Utilization;
-import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
+import com.mypurecloud.sdk.v2.model.TestMessage;
+import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
-import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
-import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
-import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
-import com.mypurecloud.sdk.v2.model.TestMessage;
-import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
-import com.mypurecloud.sdk.v2.model.WritableEntity;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
-import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
-import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
-import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
+import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingAssessmentRequest;
@@ -190,7 +190,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class RoutingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -202,7 +201,6 @@ public class RoutingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete single benefit assessment.
    * 
@@ -278,7 +276,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete a domain
    * 
@@ -354,7 +351,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete a route
    * 
@@ -430,7 +426,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete single predictor.
    * 
@@ -506,7 +501,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete a queue
    * 
@@ -582,7 +576,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete a queue member.
    * 
@@ -658,7 +651,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
@@ -734,7 +726,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete a wrap-up code from a queue
    * 
@@ -810,9 +801,8 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
-   * Delete an organization&#39;s routing settings
+   * Delete an organization's routing settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -846,7 +836,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Delete an organization&#39;s routing settings
+   * Delete an organization's routing settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -886,7 +876,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete Routing Skill
    * 
@@ -962,7 +951,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete an Address by Id for SMS
    * 
@@ -1038,7 +1026,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete a phone number provisioned for SMS.
    * 
@@ -1114,9 +1101,8 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1150,7 +1136,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1190,7 +1176,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete the organization-wide max utilization settings and revert to the system default.
    * 
@@ -1266,7 +1251,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Delete wrap-up code
    * 
@@ -1342,7 +1326,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Remove routing language from user
    * 
@@ -1418,7 +1401,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Remove routing skill from user
    * 
@@ -1494,7 +1476,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single benefit assessment.
    * 
@@ -1570,7 +1551,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all benefit assessments.
    * 
@@ -1646,7 +1626,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single benefit assessments job.
    * 
@@ -1722,7 +1701,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all benefit assessment jobs.
    * 
@@ -1798,7 +1776,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get domain
    * 
@@ -1874,7 +1851,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a route
    * 
@@ -1950,7 +1926,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get routes
    * 
@@ -2026,7 +2001,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get domains
    * 
@@ -2102,7 +2076,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get email setup
    * 
@@ -2178,7 +2151,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get the list of supported languages.
    * 
@@ -2254,7 +2226,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a recipient
    * 
@@ -2330,7 +2301,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get recipients
    * 
@@ -2406,7 +2376,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single predictor.
    * 
@@ -2482,7 +2451,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all predictors.
    * 
@@ -2558,7 +2526,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of Key Performance Indicators available for the predictors.
    * 
@@ -2634,7 +2601,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get details about this queue.
    * 
@@ -2710,7 +2676,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a Comparison Period.
    * 
@@ -2786,7 +2751,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get list of comparison periods
    * 
@@ -2862,7 +2826,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get Estimated Wait Time
    * 
@@ -2938,7 +2901,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get Estimated Wait Time
    * 
@@ -3014,7 +2976,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get the members of this queue.
    * 
@@ -3090,7 +3051,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
@@ -3166,7 +3126,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get the wrap-up codes for a queue
    * 
@@ -3242,7 +3201,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get list of queues.
    * 
@@ -3318,7 +3276,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
@@ -3394,7 +3351,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
@@ -3470,7 +3426,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a paged listing of queues the user is a member of.
    * 
@@ -3546,9 +3501,8 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
-   * Get an organization&#39;s routing settings
+   * Get an organization's routing settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3582,7 +3536,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get an organization&#39;s routing settings
+   * Get an organization's routing settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3622,7 +3576,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get Contact Center Settings
    * 
@@ -3698,7 +3651,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get Transcription Settings
    * 
@@ -3774,7 +3726,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get Routing Skill
    * 
@@ -3850,7 +3801,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get the list of routing skills.
    * 
@@ -3926,7 +3876,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get an Address by Id for SMS
    * 
@@ -4002,7 +3951,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of Addresses for SMS
    * 
@@ -4078,7 +4026,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of available phone numbers for SMS provisioning.
    * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
@@ -4154,7 +4101,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a phone number provisioned for SMS.
    * 
@@ -4230,7 +4176,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of provisioned phone numbers.
    * 
@@ -4306,9 +4251,8 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4342,7 +4286,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4382,7 +4326,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get the organization-wide max utilization settings.
    * 
@@ -4458,7 +4401,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get details about this wrap-up code.
    * 
@@ -4534,7 +4476,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get list of wrapup codes.
    * 
@@ -4610,7 +4551,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Get queues for user
    * 
@@ -4686,7 +4626,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * List routing language for user
    * 
@@ -4762,7 +4701,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * List routing skills for user
    * 
@@ -4838,7 +4776,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update attributes of an in-queue conversation
    * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
@@ -4914,7 +4851,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update domain settings
    * 
@@ -4990,7 +4926,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Validate domain settings
    * 
@@ -5066,7 +5001,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update single predictor.
    * 
@@ -5142,7 +5076,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update the ring number OR joined status for a queue member.
    * 
@@ -5218,7 +5151,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Join or unjoin a set of users for a queue
    * 
@@ -5294,7 +5226,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
@@ -5370,7 +5301,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
@@ -5446,7 +5376,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update Contact Center Settings
    * 
@@ -5522,7 +5451,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Join or unjoin a queue for a user
    * 
@@ -5598,7 +5526,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Join or unjoin a set of queues for a user
    * 
@@ -5674,7 +5601,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update routing language proficiency or state.
    * 
@@ -5750,7 +5676,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Add bulk routing language to user. Max limit 50 languages
    * 
@@ -5826,7 +5751,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Bulk add routing skills to user
    * 
@@ -5902,7 +5826,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Query for queue observations
    * 
@@ -5978,7 +5901,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a benefit assessment.
    * 
@@ -6054,7 +5976,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a benefit assessment job.
    * 
@@ -6130,7 +6051,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a route
    * 
@@ -6206,7 +6126,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Tests the custom SMTP server integration connection set on this domain
    * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
@@ -6282,7 +6201,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a domain
    * 
@@ -6358,7 +6276,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create Language
    * 
@@ -6434,7 +6351,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a predictor.
    * 
@@ -6510,7 +6426,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Bulk add or delete up to 100 queue members
    * 
@@ -6586,7 +6501,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
@@ -6662,7 +6576,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Add up to 100 wrap-up codes to a queue
    * 
@@ -6738,7 +6651,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a queue
    * 
@@ -6814,7 +6726,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create Skill
    * 
@@ -6890,7 +6801,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Provision an Address for SMS
    * 
@@ -6966,7 +6876,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Provision a phone number for SMS
    * 
@@ -7042,7 +6951,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Create a wrap-up code
    * 
@@ -7118,7 +7026,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Add routing language to user
    * 
@@ -7194,7 +7101,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Add routing skill to user
    * 
@@ -7270,7 +7176,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update a route
    * 
@@ -7346,7 +7251,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update a recipient
    * 
@@ -7422,7 +7326,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update a queue
    * 
@@ -7498,9 +7401,8 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
-   * Update an organization&#39;s routing settings
+   * Update an organization's routing settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7534,7 +7436,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update an organization&#39;s routing settings
+   * Update an organization's routing settings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7574,7 +7476,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update Transcription Settings
    * 
@@ -7650,7 +7551,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update a phone number provisioned for SMS.
    * 
@@ -7726,9 +7626,8 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7762,7 +7661,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7802,7 +7701,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
@@ -7878,7 +7776,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update wrap-up code
    * 
@@ -7954,7 +7851,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Update routing skill proficiency or state.
    * 
@@ -8030,7 +7926,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
   /**
    * Replace all routing skills assigned to a user
    * 
@@ -8106,7 +8001,6 @@ public class RoutingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

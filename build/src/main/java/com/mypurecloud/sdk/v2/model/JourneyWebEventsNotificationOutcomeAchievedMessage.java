@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationBrowser;
@@ -55,7 +56,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.outcome = outcome;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage browser(JourneyWebEventsNotificationBrowser browser) {
@@ -72,7 +73,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.browser = browser;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage visitCreatedDate(Date visitCreatedDate) {
@@ -89,7 +90,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.visitCreatedDate = visitCreatedDate;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage ipAddress(String ipAddress) {
@@ -106,7 +107,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage ipOrganization(String ipOrganization) {
@@ -123,7 +124,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.ipOrganization = ipOrganization;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage userAgentString(String userAgentString) {
@@ -140,7 +141,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.userAgentString = userAgentString;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage device(JourneyWebEventsNotificationDevice device) {
@@ -157,7 +158,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.device = device;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage geolocation(JourneyWebEventsNotificationGeoLocation geolocation) {
@@ -174,7 +175,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.geolocation = geolocation;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage mktCampaign(JourneyWebEventsNotificationMktCampaign mktCampaign) {
@@ -191,7 +192,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.mktCampaign = mktCampaign;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationOutcomeAchievedMessage visitReferrer(JourneyWebEventsNotificationReferrer visitReferrer) {
@@ -208,7 +209,6 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     this.visitReferrer = visitReferrer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -219,16 +219,17 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
       return false;
     }
     JourneyWebEventsNotificationOutcomeAchievedMessage journeyWebEventsNotificationOutcomeAchievedMessage = (JourneyWebEventsNotificationOutcomeAchievedMessage) o;
+
     return Objects.equals(this.outcome, journeyWebEventsNotificationOutcomeAchievedMessage.outcome) &&
-        Objects.equals(this.browser, journeyWebEventsNotificationOutcomeAchievedMessage.browser) &&
-        Objects.equals(this.visitCreatedDate, journeyWebEventsNotificationOutcomeAchievedMessage.visitCreatedDate) &&
-        Objects.equals(this.ipAddress, journeyWebEventsNotificationOutcomeAchievedMessage.ipAddress) &&
-        Objects.equals(this.ipOrganization, journeyWebEventsNotificationOutcomeAchievedMessage.ipOrganization) &&
-        Objects.equals(this.userAgentString, journeyWebEventsNotificationOutcomeAchievedMessage.userAgentString) &&
-        Objects.equals(this.device, journeyWebEventsNotificationOutcomeAchievedMessage.device) &&
-        Objects.equals(this.geolocation, journeyWebEventsNotificationOutcomeAchievedMessage.geolocation) &&
-        Objects.equals(this.mktCampaign, journeyWebEventsNotificationOutcomeAchievedMessage.mktCampaign) &&
-        Objects.equals(this.visitReferrer, journeyWebEventsNotificationOutcomeAchievedMessage.visitReferrer);
+            Objects.equals(this.browser, journeyWebEventsNotificationOutcomeAchievedMessage.browser) &&
+            Objects.equals(this.visitCreatedDate, journeyWebEventsNotificationOutcomeAchievedMessage.visitCreatedDate) &&
+            Objects.equals(this.ipAddress, journeyWebEventsNotificationOutcomeAchievedMessage.ipAddress) &&
+            Objects.equals(this.ipOrganization, journeyWebEventsNotificationOutcomeAchievedMessage.ipOrganization) &&
+            Objects.equals(this.userAgentString, journeyWebEventsNotificationOutcomeAchievedMessage.userAgentString) &&
+            Objects.equals(this.device, journeyWebEventsNotificationOutcomeAchievedMessage.device) &&
+            Objects.equals(this.geolocation, journeyWebEventsNotificationOutcomeAchievedMessage.geolocation) &&
+            Objects.equals(this.mktCampaign, journeyWebEventsNotificationOutcomeAchievedMessage.mktCampaign) &&
+            Objects.equals(this.visitReferrer, journeyWebEventsNotificationOutcomeAchievedMessage.visitReferrer);
   }
 
   @Override

@@ -9,12 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition |
 | [**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | Get a Presence Definition |
-| [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization&#39;s list of Presence Definitions |
+| [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization's list of Presence Definitions |
 | [**getSystempresences**](PresenceApi.html#getSystempresences) | Get the list of SystemPresences |
-| [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user&#39;s Presence |
-| [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user&#39;s Genesys Cloud presence. |
-| [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user&#39;s Presence |
-| [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user&#39;s presence |
+| [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user's Presence |
+| [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
+| [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user's Presence |
+| [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
 | [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
@@ -29,8 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deletePresencedefinition(presenceId)
 
 Delete a Presence Definition
-
-
 
 Wraps DELETE /api/v2/presencedefinitions/{presenceId}  
 
@@ -92,8 +90,6 @@ null (empty response body)
 
 Get a Presence Definition
 
-
-
 Wraps GET /api/v2/presencedefinitions/{presenceId}  
 
 Requires NO permissions: 
@@ -154,9 +150,7 @@ try {
 
 > [OrganizationPresenceEntityListing](OrganizationPresenceEntityListing.html) getPresencedefinitions(pageNumber, pageSize, deleted, localeCode)
 
-Get an Organization&#39;s list of Presence Definitions
-
-
+Get an Organization's list of Presence Definitions
 
 Wraps GET /api/v2/presencedefinitions  
 
@@ -224,8 +218,6 @@ try {
 
 Get the list of SystemPresences
 
-
-
 Wraps GET /api/v2/systempresences  
 
 Requires NO permissions: 
@@ -280,9 +272,9 @@ This endpoint does not require any parameters.
 
 > [UserPresence](UserPresence.html) getUserPresence(userId, sourceId)
 
-Get a user&#39;s Presence
+Get a user's Presence
 
-Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 
 Wraps GET /api/v2/users/{userId}/presences/{sourceId}  
 
@@ -344,7 +336,7 @@ try {
 
 > [UserPresence](UserPresence.html) getUserPresencesPurecloud(userId)
 
-Get a user&#39;s Genesys Cloud presence.
+Get a user's Genesys Cloud presence.
 
 Get the default Genesys Cloud user presence source PURECLOUD
 
@@ -406,9 +398,9 @@ try {
 
 > [UserPresence](UserPresence.html) patchUserPresence(userId, sourceId, body)
 
-Patch a user&#39;s Presence
+Patch a user's Presence
 
-Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId}  
 
@@ -472,9 +464,9 @@ try {
 
 > [UserPresence](UserPresence.html) patchUserPresencesPurecloud(userId, body)
 
-Patch a Genesys Cloud user&#39;s presence
+Patch a Genesys Cloud user's presence
 
-The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Wraps PATCH /api/v2/users/{userId}/presences/purecloud  
 
@@ -538,8 +530,6 @@ try {
 
 Create a Presence Definition
 
-
-
 Wraps POST /api/v2/presencedefinitions  
 
 Requires ALL permissions: 
@@ -600,8 +590,6 @@ try {
 > [OrganizationPresence](OrganizationPresence.html) putPresencedefinition(presenceId, body)
 
 Update a Presence Definition
-
-
 
 Wraps PUT /api/v2/presencedefinitions/{presenceId}  
 
@@ -665,8 +653,6 @@ try {
 > [List&lt;UserPresence&gt;](UserPresence.html) putUsersPresencesBulk(body)
 
 Update bulk user Presences
-
-
 
 Wraps PUT /api/v2/users/presences/bulk  
 

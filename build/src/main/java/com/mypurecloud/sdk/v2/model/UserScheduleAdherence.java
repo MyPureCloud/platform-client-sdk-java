@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -370,7 +371,7 @@ public class UserScheduleAdherence  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserScheduleAdherence name(String name) {
@@ -387,133 +388,132 @@ public class UserScheduleAdherence  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user for whom this status applies")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The business unit to which this user belongs")
   @JsonProperty("businessUnit")
   public BusinessUnit getBusinessUnit() {
     return businessUnit;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The management unit to which this user belongs")
   @JsonProperty("managementUnit")
   public ManagementUnit getManagementUnit() {
     return managementUnit;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The team to which this user belongs")
   @JsonProperty("team")
   public Team getTeam() {
     return team;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Activity for which the user is scheduled")
   @JsonProperty("scheduledActivityCategory")
   public ScheduledActivityCategoryEnum getScheduledActivityCategory() {
     return scheduledActivityCategory;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Actual underlying system presence value")
   @JsonProperty("systemPresence")
   public SystemPresenceEnum getSystemPresence() {
     return systemPresence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Organization Secondary Presence Id.")
   @JsonProperty("organizationSecondaryPresenceId")
   public String getOrganizationSecondaryPresenceId() {
     return organizationSecondaryPresenceId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue")
   @JsonProperty("routingStatus")
   public RoutingStatusEnum getRoutingStatus() {
     return routingStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Activity in which the user is actually engaged")
   @JsonProperty("actualActivityCategory")
   public ActualActivityCategoryEnum getActualActivityCategory() {
     return actualActivityCategory;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether the user is marked OutOfOffice")
   @JsonProperty("isOutOfOffice")
   public Boolean getIsOutOfOffice() {
     return isOutOfOffice;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user's current adherence state")
   @JsonProperty("adherenceState")
   public AdherenceStateEnum getAdherenceState() {
     return adherenceState;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The impact of the user's current adherenceState")
   @JsonProperty("impact")
   public ImpactEnum getImpact() {
     return impact;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Time when the user entered the current adherenceState in ISO-8601 format")
   @JsonProperty("timeOfAdherenceChange")
   public Date getTimeOfAdherenceChange() {
     return timeOfAdherenceChange;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("presenceUpdateTime")
   public Date getPresenceUpdateTime() {
     return presenceUpdateTime;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of queues to which this user is joined")
   @JsonProperty("activeQueues")
   public List<QueueReference> getActiveQueues() {
     return activeQueues;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("activeQueuesModifiedTime")
   public Date getActiveQueuesModifiedTime() {
     return activeQueuesModifiedTime;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "For notification purposes. Used to indicate that a user was removed from the management unit")
   @JsonProperty("removedFromManagementUnit")
   public Boolean getRemovedFromManagementUnit() {
     return removedFromManagementUnit;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -524,26 +524,27 @@ public class UserScheduleAdherence  implements Serializable {
       return false;
     }
     UserScheduleAdherence userScheduleAdherence = (UserScheduleAdherence) o;
+
     return Objects.equals(this.id, userScheduleAdherence.id) &&
-        Objects.equals(this.name, userScheduleAdherence.name) &&
-        Objects.equals(this.user, userScheduleAdherence.user) &&
-        Objects.equals(this.businessUnit, userScheduleAdherence.businessUnit) &&
-        Objects.equals(this.managementUnit, userScheduleAdherence.managementUnit) &&
-        Objects.equals(this.team, userScheduleAdherence.team) &&
-        Objects.equals(this.scheduledActivityCategory, userScheduleAdherence.scheduledActivityCategory) &&
-        Objects.equals(this.systemPresence, userScheduleAdherence.systemPresence) &&
-        Objects.equals(this.organizationSecondaryPresenceId, userScheduleAdherence.organizationSecondaryPresenceId) &&
-        Objects.equals(this.routingStatus, userScheduleAdherence.routingStatus) &&
-        Objects.equals(this.actualActivityCategory, userScheduleAdherence.actualActivityCategory) &&
-        Objects.equals(this.isOutOfOffice, userScheduleAdherence.isOutOfOffice) &&
-        Objects.equals(this.adherenceState, userScheduleAdherence.adherenceState) &&
-        Objects.equals(this.impact, userScheduleAdherence.impact) &&
-        Objects.equals(this.timeOfAdherenceChange, userScheduleAdherence.timeOfAdherenceChange) &&
-        Objects.equals(this.presenceUpdateTime, userScheduleAdherence.presenceUpdateTime) &&
-        Objects.equals(this.activeQueues, userScheduleAdherence.activeQueues) &&
-        Objects.equals(this.activeQueuesModifiedTime, userScheduleAdherence.activeQueuesModifiedTime) &&
-        Objects.equals(this.removedFromManagementUnit, userScheduleAdherence.removedFromManagementUnit) &&
-        Objects.equals(this.selfUri, userScheduleAdherence.selfUri);
+            Objects.equals(this.name, userScheduleAdherence.name) &&
+            Objects.equals(this.user, userScheduleAdherence.user) &&
+            Objects.equals(this.businessUnit, userScheduleAdherence.businessUnit) &&
+            Objects.equals(this.managementUnit, userScheduleAdherence.managementUnit) &&
+            Objects.equals(this.team, userScheduleAdherence.team) &&
+            Objects.equals(this.scheduledActivityCategory, userScheduleAdherence.scheduledActivityCategory) &&
+            Objects.equals(this.systemPresence, userScheduleAdherence.systemPresence) &&
+            Objects.equals(this.organizationSecondaryPresenceId, userScheduleAdherence.organizationSecondaryPresenceId) &&
+            Objects.equals(this.routingStatus, userScheduleAdherence.routingStatus) &&
+            Objects.equals(this.actualActivityCategory, userScheduleAdherence.actualActivityCategory) &&
+            Objects.equals(this.isOutOfOffice, userScheduleAdherence.isOutOfOffice) &&
+            Objects.equals(this.adherenceState, userScheduleAdherence.adherenceState) &&
+            Objects.equals(this.impact, userScheduleAdherence.impact) &&
+            Objects.equals(this.timeOfAdherenceChange, userScheduleAdherence.timeOfAdherenceChange) &&
+            Objects.equals(this.presenceUpdateTime, userScheduleAdherence.presenceUpdateTime) &&
+            Objects.equals(this.activeQueues, userScheduleAdherence.activeQueues) &&
+            Objects.equals(this.activeQueuesModifiedTime, userScheduleAdherence.activeQueuesModifiedTime) &&
+            Objects.equals(this.removedFromManagementUnit, userScheduleAdherence.removedFromManagementUnit) &&
+            Objects.equals(this.selfUri, userScheduleAdherence.selfUri);
   }
 
   @Override

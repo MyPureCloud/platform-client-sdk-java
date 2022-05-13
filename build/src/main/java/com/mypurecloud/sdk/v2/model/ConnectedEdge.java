@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EdgeConnectionInfo;
@@ -37,7 +38,7 @@ public class ConnectedEdge  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ConnectedEdge name(String name) {
@@ -54,21 +55,21 @@ public class ConnectedEdge  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Edge interface name used for the connection")
   @JsonProperty("interfaceName")
   public String getInterfaceName() {
     return interfaceName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Edge interface IP address")
   @JsonProperty("interfaceIpAddress")
   public String getInterfaceIpAddress() {
     return interfaceIpAddress;
   }
 
-  
+
   /**
    **/
   public ConnectedEdge edgeConnectionList(List<EdgeConnectionInfo> edgeConnectionList) {
@@ -85,14 +86,13 @@ public class ConnectedEdge  implements Serializable {
     this.edgeConnectionList = edgeConnectionList;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +103,13 @@ public class ConnectedEdge  implements Serializable {
       return false;
     }
     ConnectedEdge connectedEdge = (ConnectedEdge) o;
+
     return Objects.equals(this.id, connectedEdge.id) &&
-        Objects.equals(this.name, connectedEdge.name) &&
-        Objects.equals(this.interfaceName, connectedEdge.interfaceName) &&
-        Objects.equals(this.interfaceIpAddress, connectedEdge.interfaceIpAddress) &&
-        Objects.equals(this.edgeConnectionList, connectedEdge.edgeConnectionList) &&
-        Objects.equals(this.selfUri, connectedEdge.selfUri);
+            Objects.equals(this.name, connectedEdge.name) &&
+            Objects.equals(this.interfaceName, connectedEdge.interfaceName) &&
+            Objects.equals(this.interfaceIpAddress, connectedEdge.interfaceIpAddress) &&
+            Objects.equals(this.edgeConnectionList, connectedEdge.edgeConnectionList) &&
+            Objects.equals(this.selfUri, connectedEdge.selfUri);
   }
 
   @Override

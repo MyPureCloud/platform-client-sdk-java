@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class FieldConfig  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public FieldConfig name(String name) {
@@ -106,7 +107,7 @@ public class FieldConfig  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public FieldConfig entityType(EntityTypeEnum entityType) {
@@ -123,7 +124,7 @@ public class FieldConfig  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    **/
   public FieldConfig state(String state) {
@@ -140,7 +141,7 @@ public class FieldConfig  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public FieldConfig sections(List<Section> sections) {
@@ -157,7 +158,7 @@ public class FieldConfig  implements Serializable {
     this.sections = sections;
   }
 
-  
+
   /**
    **/
   public FieldConfig version(String version) {
@@ -174,7 +175,7 @@ public class FieldConfig  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public FieldConfig schemaVersion(String schemaVersion) {
@@ -191,14 +192,13 @@ public class FieldConfig  implements Serializable {
     this.schemaVersion = schemaVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,14 +209,15 @@ public class FieldConfig  implements Serializable {
       return false;
     }
     FieldConfig fieldConfig = (FieldConfig) o;
+
     return Objects.equals(this.id, fieldConfig.id) &&
-        Objects.equals(this.name, fieldConfig.name) &&
-        Objects.equals(this.entityType, fieldConfig.entityType) &&
-        Objects.equals(this.state, fieldConfig.state) &&
-        Objects.equals(this.sections, fieldConfig.sections) &&
-        Objects.equals(this.version, fieldConfig.version) &&
-        Objects.equals(this.schemaVersion, fieldConfig.schemaVersion) &&
-        Objects.equals(this.selfUri, fieldConfig.selfUri);
+            Objects.equals(this.name, fieldConfig.name) &&
+            Objects.equals(this.entityType, fieldConfig.entityType) &&
+            Objects.equals(this.state, fieldConfig.state) &&
+            Objects.equals(this.sections, fieldConfig.sections) &&
+            Objects.equals(this.version, fieldConfig.version) &&
+            Objects.equals(this.schemaVersion, fieldConfig.schemaVersion) &&
+            Objects.equals(this.selfUri, fieldConfig.selfUri);
   }
 
   @Override

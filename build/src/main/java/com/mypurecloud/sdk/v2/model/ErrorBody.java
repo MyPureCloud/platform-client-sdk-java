@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Detail;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ErrorBody  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class ErrorBody  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class ErrorBody  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class ErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class ErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class ErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class ErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class ErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ErrorBody details(List<Detail> details) {
@@ -190,7 +190,7 @@ public class ErrorBody  implements Serializable {
     this.details = details;
   }
 
-  
+
   /**
    **/
   public ErrorBody errors(List<ErrorBody> errors) {
@@ -207,7 +207,6 @@ public class ErrorBody  implements Serializable {
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class ErrorBody  implements Serializable {
       return false;
     }
     ErrorBody errorBody = (ErrorBody) o;
+
     return Objects.equals(this.message, errorBody.message) &&
-        Objects.equals(this.code, errorBody.code) &&
-        Objects.equals(this.status, errorBody.status) &&
-        Objects.equals(this.entityId, errorBody.entityId) &&
-        Objects.equals(this.entityName, errorBody.entityName) &&
-        Objects.equals(this.messageWithParams, errorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, errorBody.messageParams) &&
-        Objects.equals(this.contextId, errorBody.contextId) &&
-        Objects.equals(this.details, errorBody.details) &&
-        Objects.equals(this.errors, errorBody.errors);
+            Objects.equals(this.code, errorBody.code) &&
+            Objects.equals(this.status, errorBody.status) &&
+            Objects.equals(this.entityId, errorBody.entityId) &&
+            Objects.equals(this.entityName, errorBody.entityName) &&
+            Objects.equals(this.messageWithParams, errorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, errorBody.messageParams) &&
+            Objects.equals(this.contextId, errorBody.contextId) &&
+            Objects.equals(this.details, errorBody.details) &&
+            Objects.equals(this.errors, errorBody.errors);
   }
 
   @Override

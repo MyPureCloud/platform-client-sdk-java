@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -167,7 +168,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ReportingExportMetadataJobResponse name(String name) {
@@ -184,7 +185,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The view type of the export metadata
    **/
@@ -202,7 +203,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.viewType = viewType;
   }
 
-  
+
   /**
    * The date limitations of the export metadata
    **/
@@ -220,7 +221,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.dateLimitations = dateLimitations;
   }
 
-  
+
   /**
    * The list of required filters for the export metadata
    **/
@@ -238,7 +239,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.requiredFilters = requiredFilters;
   }
 
-  
+
   /**
    * The list of supported filters for the export metadata
    **/
@@ -256,7 +257,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.supportedFilters = supportedFilters;
   }
 
-  
+
   /**
    * The list of required column ids for the export metadata
    **/
@@ -274,7 +275,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.requiredColumnIds = requiredColumnIds;
   }
 
-  
+
   /**
    * The list of dependent column ids for the export metadata
    **/
@@ -292,7 +293,7 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.dependentColumnIds = dependentColumnIds;
   }
 
-  
+
   /**
    * The list of available column ids for the export metadata
    **/
@@ -310,14 +311,13 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
     this.availableColumnIds = availableColumnIds;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -328,16 +328,17 @@ public class ReportingExportMetadataJobResponse  implements Serializable {
       return false;
     }
     ReportingExportMetadataJobResponse reportingExportMetadataJobResponse = (ReportingExportMetadataJobResponse) o;
+
     return Objects.equals(this.id, reportingExportMetadataJobResponse.id) &&
-        Objects.equals(this.name, reportingExportMetadataJobResponse.name) &&
-        Objects.equals(this.viewType, reportingExportMetadataJobResponse.viewType) &&
-        Objects.equals(this.dateLimitations, reportingExportMetadataJobResponse.dateLimitations) &&
-        Objects.equals(this.requiredFilters, reportingExportMetadataJobResponse.requiredFilters) &&
-        Objects.equals(this.supportedFilters, reportingExportMetadataJobResponse.supportedFilters) &&
-        Objects.equals(this.requiredColumnIds, reportingExportMetadataJobResponse.requiredColumnIds) &&
-        Objects.equals(this.dependentColumnIds, reportingExportMetadataJobResponse.dependentColumnIds) &&
-        Objects.equals(this.availableColumnIds, reportingExportMetadataJobResponse.availableColumnIds) &&
-        Objects.equals(this.selfUri, reportingExportMetadataJobResponse.selfUri);
+            Objects.equals(this.name, reportingExportMetadataJobResponse.name) &&
+            Objects.equals(this.viewType, reportingExportMetadataJobResponse.viewType) &&
+            Objects.equals(this.dateLimitations, reportingExportMetadataJobResponse.dateLimitations) &&
+            Objects.equals(this.requiredFilters, reportingExportMetadataJobResponse.requiredFilters) &&
+            Objects.equals(this.supportedFilters, reportingExportMetadataJobResponse.supportedFilters) &&
+            Objects.equals(this.requiredColumnIds, reportingExportMetadataJobResponse.requiredColumnIds) &&
+            Objects.equals(this.dependentColumnIds, reportingExportMetadataJobResponse.dependentColumnIds) &&
+            Objects.equals(this.availableColumnIds, reportingExportMetadataJobResponse.availableColumnIds) &&
+            Objects.equals(this.selfUri, reportingExportMetadataJobResponse.selfUri);
   }
 
   @Override

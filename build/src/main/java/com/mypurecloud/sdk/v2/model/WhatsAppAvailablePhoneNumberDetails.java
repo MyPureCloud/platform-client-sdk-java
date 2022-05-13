@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,21 +32,20 @@ public class WhatsAppAvailablePhoneNumberDetails  implements Serializable {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The display name associated with this phone number. It's typically the E.164 representation of the number.")
   @JsonProperty("phoneNumber")
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The status of this phone number.")
   @JsonProperty("status")
   public String getStatus() {
     return status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -56,9 +56,10 @@ public class WhatsAppAvailablePhoneNumberDetails  implements Serializable {
       return false;
     }
     WhatsAppAvailablePhoneNumberDetails whatsAppAvailablePhoneNumberDetails = (WhatsAppAvailablePhoneNumberDetails) o;
+
     return Objects.equals(this.name, whatsAppAvailablePhoneNumberDetails.name) &&
-        Objects.equals(this.phoneNumber, whatsAppAvailablePhoneNumberDetails.phoneNumber) &&
-        Objects.equals(this.status, whatsAppAvailablePhoneNumberDetails.status);
+            Objects.equals(this.phoneNumber, whatsAppAvailablePhoneNumberDetails.phoneNumber) &&
+            Objects.equals(this.status, whatsAppAvailablePhoneNumberDetails.status);
   }
 
   @Override

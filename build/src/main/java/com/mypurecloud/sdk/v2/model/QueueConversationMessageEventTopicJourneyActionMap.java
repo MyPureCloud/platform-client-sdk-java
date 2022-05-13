@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class QueueConversationMessageEventTopicJourneyActionMap  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    * The version number of the actionMap in the Journey System at the time this action was triggered
    **/
@@ -60,7 +61,6 @@ public class QueueConversationMessageEventTopicJourneyActionMap  implements Seri
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class QueueConversationMessageEventTopicJourneyActionMap  implements Seri
       return false;
     }
     QueueConversationMessageEventTopicJourneyActionMap queueConversationMessageEventTopicJourneyActionMap = (QueueConversationMessageEventTopicJourneyActionMap) o;
+
     return Objects.equals(this.id, queueConversationMessageEventTopicJourneyActionMap.id) &&
-        Objects.equals(this.version, queueConversationMessageEventTopicJourneyActionMap.version);
+            Objects.equals(this.version, queueConversationMessageEventTopicJourneyActionMap.version);
   }
 
   @Override

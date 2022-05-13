@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,14 +91,13 @@ public class PredictorSchedule  implements Serializable {
     this.scheduleType = scheduleType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "DateTime indicating when the predictor schedule was started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStarted")
   public Date getDateStarted() {
     return dateStarted;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,8 +108,9 @@ public class PredictorSchedule  implements Serializable {
       return false;
     }
     PredictorSchedule predictorSchedule = (PredictorSchedule) o;
+
     return Objects.equals(this.scheduleType, predictorSchedule.scheduleType) &&
-        Objects.equals(this.dateStarted, predictorSchedule.dateStarted);
+            Objects.equals(this.dateStarted, predictorSchedule.dateStarted);
   }
 
   @Override

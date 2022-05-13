@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 public class GetJourneyOutcomesRequest {
-    
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -56,7 +56,7 @@ public class GetJourneyOutcomesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -70,7 +70,7 @@ public class GetJourneyOutcomesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -84,7 +84,7 @@ public class GetJourneyOutcomesRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private List<String> outcomeIds;
 	public List<String> getOutcomeIds() {
 		return this.outcomeIds;
@@ -98,7 +98,7 @@ public class GetJourneyOutcomesRequest {
 	    this.setOutcomeIds(outcomeIds);
 	    return this;
 	} 
-	
+
 	private List<String> queryFields;
 	public List<String> getQueryFields() {
 		return this.queryFields;
@@ -112,7 +112,7 @@ public class GetJourneyOutcomesRequest {
 	    this.setQueryFields(queryFields);
 	    return this;
 	} 
-	
+
 	private String queryValue;
 	public String getQueryValue() {
 		return this.queryValue;
@@ -126,7 +126,7 @@ public class GetJourneyOutcomesRequest {
 	    this.setQueryValue(queryValue);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -150,19 +150,25 @@ public class GetJourneyOutcomesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/journey/outcomes")
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("outcomeIds", "multi", outcomeIds)
         
+
                 .withQueryParameters("queryFields", "multi", queryFields)
         
+
                 .withQueryParameters("queryValue", "", queryValue)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -173,7 +179,7 @@ public class GetJourneyOutcomesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetJourneyOutcomesRequest request;
@@ -182,39 +188,39 @@ public class GetJourneyOutcomesRequest {
 			request = new GetJourneyOutcomesRequest();
 		}
 
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withOutcomeIds(List<String> outcomeIds) {
 			request.setOutcomeIds(outcomeIds);
 			return this;
 		}
-		
+
 		public Builder withQueryFields(List<String> queryFields) {
 			request.setQueryFields(queryFields);
 			return this;
 		}
-		
+
 		public Builder withQueryValue(String queryValue) {
 			request.setQueryValue(queryValue);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetJourneyOutcomesRequest build() {
             

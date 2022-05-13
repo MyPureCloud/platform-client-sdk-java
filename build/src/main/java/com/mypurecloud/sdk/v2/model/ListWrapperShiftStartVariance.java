@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftStartVariance;
@@ -42,7 +43,6 @@ public class ListWrapperShiftStartVariance  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -53,6 +53,7 @@ public class ListWrapperShiftStartVariance  implements Serializable {
       return false;
     }
     ListWrapperShiftStartVariance listWrapperShiftStartVariance = (ListWrapperShiftStartVariance) o;
+
     return Objects.equals(this.values, listWrapperShiftStartVariance.values);
   }
 

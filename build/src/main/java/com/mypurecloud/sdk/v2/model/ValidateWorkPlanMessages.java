@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConstraintConflictMessage;
@@ -45,7 +46,7 @@ public class ValidateWorkPlanMessages  implements Serializable {
     this.violationMessages = violationMessages;
   }
 
-  
+
   /**
    * This field is not null when there is a set of work plan constraints that conflict thus agent schedules cannot be generated
    **/
@@ -63,7 +64,6 @@ public class ValidateWorkPlanMessages  implements Serializable {
     this.constraintConflictMessage = constraintConflictMessage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class ValidateWorkPlanMessages  implements Serializable {
       return false;
     }
     ValidateWorkPlanMessages validateWorkPlanMessages = (ValidateWorkPlanMessages) o;
+
     return Objects.equals(this.violationMessages, validateWorkPlanMessages.violationMessages) &&
-        Objects.equals(this.constraintConflictMessage, validateWorkPlanMessages.constraintConflictMessage);
+            Objects.equals(this.constraintConflictMessage, validateWorkPlanMessages.constraintConflictMessage);
   }
 
   @Override

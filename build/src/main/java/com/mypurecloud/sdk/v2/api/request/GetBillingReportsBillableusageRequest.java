@@ -21,12 +21,12 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 public class GetBillingReportsBillableusageRequest {
-    
+
 	private Date startDate;
 	public Date getStartDate() {
 		return this.startDate;
@@ -40,7 +40,7 @@ public class GetBillingReportsBillableusageRequest {
 	    this.setStartDate(startDate);
 	    return this;
 	} 
-	
+
 	private Date endDate;
 	public Date getEndDate() {
 		return this.endDate;
@@ -54,7 +54,7 @@ public class GetBillingReportsBillableusageRequest {
 	    this.setEndDate(endDate);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,11 +88,13 @@ public class GetBillingReportsBillableusageRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/billing/reports/billableusage")
+
                 .withQueryParameters("startDate", "", startDate)
         
+
                 .withQueryParameters("endDate", "", endDate)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -103,12 +105,12 @@ public class GetBillingReportsBillableusageRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Date startDate, Date endDate) {
 	    return new Builder()
 	            .withRequiredParams(startDate, endDate);
 	}
-	
+
 
 	public static class Builder {
 		private final GetBillingReportsBillableusageRequest request;
@@ -117,26 +119,26 @@ public class GetBillingReportsBillableusageRequest {
 			request = new GetBillingReportsBillableusageRequest();
 		}
 
-		
+
 		public Builder withStartDate(Date startDate) {
 			request.setStartDate(startDate);
 			return this;
 		}
-		
+
 		public Builder withEndDate(Date endDate) {
 			request.setEndDate(endDate);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Date startDate, Date endDate) {
 			request.setStartDate(startDate);
-						request.setEndDate(endDate);
-			
+			request.setEndDate(endDate);
+
 			return this;
 		}
-		
+
 
 		public GetBillingReportsBillableusageRequest build() {
             

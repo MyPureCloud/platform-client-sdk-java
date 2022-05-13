@@ -10,47 +10,47 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Integration;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
-import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.Action;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
-import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
-import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
+import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotList;
-import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEvent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.DraftValidationResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Integration;
+import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
+import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsSettings;
-import com.mypurecloud.sdk.v2.model.IntegrationType;
-import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UpdateActionInput;
-import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
-import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
-import com.mypurecloud.sdk.v2.model.PostActionInput;
-import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsSettings;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
+import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UpdateActionInput;
+import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
 import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 
@@ -120,7 +120,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class IntegrationsApi {
   private final ApiClient pcapiClient;
 
@@ -132,7 +131,6 @@ public class IntegrationsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete integration.
    * 
@@ -159,7 +157,7 @@ public class IntegrationsApi {
   private DeleteIntegrationRequest createDeleteIntegrationRequest(String integrationId) {
     return DeleteIntegrationRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -211,7 +209,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Delete an Action
    * 
@@ -236,7 +233,7 @@ public class IntegrationsApi {
   private DeleteIntegrationsActionRequest createDeleteIntegrationsActionRequest(String actionId) {
     return DeleteIntegrationsActionRequest.builder()
             .withActionId(actionId)
-    
+
             .build();
   }
 
@@ -287,7 +284,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Delete a Draft
    * 
@@ -312,7 +308,7 @@ public class IntegrationsApi {
   private DeleteIntegrationsActionDraftRequest createDeleteIntegrationsActionDraftRequest(String actionId) {
     return DeleteIntegrationsActionDraftRequest.builder()
             .withActionId(actionId)
-    
+
             .build();
   }
 
@@ -363,7 +359,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Delete a set of credentials
    * 
@@ -388,7 +383,7 @@ public class IntegrationsApi {
   private DeleteIntegrationsCredentialRequest createDeleteIntegrationsCredentialRequest(String credentialId) {
     return DeleteIntegrationsCredentialRequest.builder()
             .withCredentialId(credentialId)
-    
+
             .build();
   }
 
@@ -439,7 +434,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get integration.
    * 
@@ -478,19 +472,19 @@ public class IntegrationsApi {
   private GetIntegrationRequest createGetIntegrationRequest(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .build();
   }
 
@@ -542,7 +536,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get integration configuration.
    * 
@@ -569,7 +562,7 @@ public class IntegrationsApi {
   private GetIntegrationConfigCurrentRequest createGetIntegrationConfigCurrentRequest(String integrationId) {
     return GetIntegrationConfigCurrentRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -621,7 +614,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List integrations
    * 
@@ -658,17 +650,17 @@ public class IntegrationsApi {
   private GetIntegrationsRequest createGetIntegrationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .build();
   }
 
@@ -720,7 +712,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieves a single Action matching id.
    * 
@@ -751,11 +742,11 @@ public class IntegrationsApi {
   private GetIntegrationsActionRequest createGetIntegrationsActionRequest(String actionId, String expand, Boolean includeConfig) {
     return GetIntegrationsActionRequest.builder()
             .withActionId(actionId)
-    
+
             .withExpand(expand)
-    
+
             .withIncludeConfig(includeConfig)
-    
+
             .build();
   }
 
@@ -807,7 +798,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieve a Draft
    * 
@@ -838,11 +828,11 @@ public class IntegrationsApi {
   private GetIntegrationsActionDraftRequest createGetIntegrationsActionDraftRequest(String actionId, String expand, Boolean includeConfig) {
     return GetIntegrationsActionDraftRequest.builder()
             .withActionId(actionId)
-    
+
             .withExpand(expand)
-    
+
             .withIncludeConfig(includeConfig)
-    
+
             .build();
   }
 
@@ -894,7 +884,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieve schema for a Draft based on filename.
    * 
@@ -923,9 +912,9 @@ public class IntegrationsApi {
   private GetIntegrationsActionDraftSchemaRequest createGetIntegrationsActionDraftSchemaRequest(String actionId, String fileName) {
     return GetIntegrationsActionDraftSchemaRequest.builder()
             .withActionId(actionId)
-    
+
             .withFileName(fileName)
-    
+
             .build();
   }
 
@@ -977,7 +966,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieve templates for a Draft based on filename.
    * 
@@ -1006,9 +994,9 @@ public class IntegrationsApi {
   private GetIntegrationsActionDraftTemplateRequest createGetIntegrationsActionDraftTemplateRequest(String actionId, String fileName) {
     return GetIntegrationsActionDraftTemplateRequest.builder()
             .withActionId(actionId)
-    
+
             .withFileName(fileName)
-    
+
             .build();
   }
 
@@ -1060,7 +1048,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Validate current Draft configuration.
    * 
@@ -1087,7 +1074,7 @@ public class IntegrationsApi {
   private GetIntegrationsActionDraftValidationRequest createGetIntegrationsActionDraftValidationRequest(String actionId) {
     return GetIntegrationsActionDraftValidationRequest.builder()
             .withActionId(actionId)
-    
+
             .build();
   }
 
@@ -1139,7 +1126,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieve schema for an action based on filename.
    * 
@@ -1168,9 +1154,9 @@ public class IntegrationsApi {
   private GetIntegrationsActionSchemaRequest createGetIntegrationsActionSchemaRequest(String actionId, String fileName) {
     return GetIntegrationsActionSchemaRequest.builder()
             .withActionId(actionId)
-    
+
             .withFileName(fileName)
-    
+
             .build();
   }
 
@@ -1222,7 +1208,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieve text of templates for an action based on filename.
    * 
@@ -1251,9 +1236,9 @@ public class IntegrationsApi {
   private GetIntegrationsActionTemplateRequest createGetIntegrationsActionTemplateRequest(String actionId, String fileName) {
     return GetIntegrationsActionTemplateRequest.builder()
             .withActionId(actionId)
-    
+
             .withFileName(fileName)
-    
+
             .build();
   }
 
@@ -1305,7 +1290,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieves all actions associated with filters passed in via query param.
    * 
@@ -1314,11 +1298,11 @@ public class IntegrationsApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param sortBy Root level field name to sort on. (optional)
-   * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
+   * @param sortOrder Direction to sort 'sortBy' field. (optional, default to asc)
    * @param category Filter by category name. (optional)
    * @param name Filter by partial or complete action name. (optional)
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
-   * @param secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
+   * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
    * @return ActionEntityListing
    * @throws ApiException if the request fails on the server
@@ -1336,11 +1320,11 @@ public class IntegrationsApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param sortBy Root level field name to sort on. (optional)
-   * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
+   * @param sortOrder Direction to sort 'sortBy' field. (optional, default to asc)
    * @param category Filter by category name. (optional)
    * @param name Filter by partial or complete action name. (optional)
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
-   * @param secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
+   * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
    * @return ActionEntityListing
    * @throws IOException if the request fails to be processed
@@ -1352,27 +1336,27 @@ public class IntegrationsApi {
   private GetIntegrationsActionsRequest createGetIntegrationsActionsRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) {
     return GetIntegrationsActionsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withCategory(category)
-    
+
             .withName(name)
-    
+
             .withIds(ids)
-    
+
             .withSecure(secure)
-    
+
             .withIncludeAuthActions(includeAuthActions)
-    
+
             .build();
   }
 
@@ -1424,7 +1408,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieves all categories of available Actions
    * 
@@ -1432,8 +1415,8 @@ public class IntegrationsApi {
    * @param pageNumber The page number requested (optional, default to 1)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. (optional)
-   * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
+   * @param sortBy Root level field name to sort on.  Only 'name' is supported on this endpoint. (optional)
+   * @param sortOrder Direction to sort 'sortBy' field. (optional, default to asc)
    * @param secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
    * @return CategoryEntityListing
    * @throws ApiException if the request fails on the server
@@ -1450,8 +1433,8 @@ public class IntegrationsApi {
    * @param pageNumber The page number requested (optional, default to 1)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. (optional)
-   * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
+   * @param sortBy Root level field name to sort on.  Only 'name' is supported on this endpoint. (optional)
+   * @param sortOrder Direction to sort 'sortBy' field. (optional, default to asc)
    * @param secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
    * @return CategoryEntityListing
    * @throws IOException if the request fails to be processed
@@ -1463,19 +1446,19 @@ public class IntegrationsApi {
   private GetIntegrationsActionsCategoriesRequest createGetIntegrationsActionsCategoriesRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String secure) {
     return GetIntegrationsActionsCategoriesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSecure(secure)
-    
+
             .build();
   }
 
@@ -1527,7 +1510,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Retrieves all action drafts associated with the filters passed in via query param.
    * 
@@ -1536,11 +1518,11 @@ public class IntegrationsApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param sortBy Root level field name to sort on. (optional)
-   * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
+   * @param sortOrder Direction to sort 'sortBy' field. (optional, default to asc)
    * @param category Filter by category name. (optional)
    * @param name Filter by partial or complete action name. (optional)
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
-   * @param secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
+   * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
    * @return ActionEntityListing
    * @throws ApiException if the request fails on the server
@@ -1558,11 +1540,11 @@ public class IntegrationsApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param sortBy Root level field name to sort on. (optional)
-   * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
+   * @param sortOrder Direction to sort 'sortBy' field. (optional, default to asc)
    * @param category Filter by category name. (optional)
    * @param name Filter by partial or complete action name. (optional)
    * @param ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
-   * @param secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
+   * @param secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
    * @param includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional, default to false)
    * @return ActionEntityListing
    * @throws IOException if the request fails to be processed
@@ -1574,27 +1556,27 @@ public class IntegrationsApi {
   private GetIntegrationsActionsDraftsRequest createGetIntegrationsActionsDraftsRequest(Integer pageSize, Integer pageNumber, String nextPage, String previousPage, String sortBy, String sortOrder, String category, String name, String ids, String secure, String includeAuthActions) {
     return GetIntegrationsActionsDraftsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withCategory(category)
-    
+
             .withName(name)
-    
+
             .withIds(ids)
-    
+
             .withSecure(secure)
-    
+
             .withIncludeAuthActions(includeAuthActions)
-    
+
             .build();
   }
 
@@ -1646,7 +1628,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a specific botConnector bot, plus versions, for this integration
    * 
@@ -1677,11 +1658,11 @@ public class IntegrationsApi {
   private GetIntegrationsBotconnectorIntegrationIdBotRequest createGetIntegrationsBotconnectorIntegrationIdBotRequest(String integrationId, String botId, String version) {
     return GetIntegrationsBotconnectorIntegrationIdBotRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBotId(botId)
-    
+
             .withVersion(version)
-    
+
             .build();
   }
 
@@ -1733,7 +1714,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a list of bot versions for a bot
    * 
@@ -1766,13 +1746,13 @@ public class IntegrationsApi {
   private GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest createGetIntegrationsBotconnectorIntegrationIdBotVersionsRequest(String integrationId, String botId, Integer pageNumber, Integer pageSize) {
     return GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBotId(botId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1824,7 +1804,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a list of botConnector bots for this integration
    * 
@@ -1851,7 +1830,7 @@ public class IntegrationsApi {
   private GetIntegrationsBotconnectorIntegrationIdBotsRequest createGetIntegrationsBotconnectorIntegrationIdBotsRequest(String integrationId) {
     return GetIntegrationsBotconnectorIntegrationIdBotsRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .build();
   }
 
@@ -1903,7 +1882,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a summary list of botConnector bots for this integration
    * 
@@ -1934,11 +1912,11 @@ public class IntegrationsApi {
   private GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest createGetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest(String integrationId, Integer pageNumber, Integer pageSize) {
     return GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1990,7 +1968,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List permitted client app integrations for the logged in user
    * 
@@ -2027,17 +2004,17 @@ public class IntegrationsApi {
   private GetIntegrationsClientappsRequest createGetIntegrationsClientappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsClientappsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .build();
   }
 
@@ -2089,7 +2066,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * UC integration client application configuration.
    * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
@@ -2126,17 +2102,17 @@ public class IntegrationsApi {
   private GetIntegrationsClientappsUnifiedcommunicationsRequest createGetIntegrationsClientappsUnifiedcommunicationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsClientappsUnifiedcommunicationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .build();
   }
 
@@ -2188,7 +2164,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a single credential with sensitive fields redacted
    * 
@@ -2215,7 +2190,7 @@ public class IntegrationsApi {
   private GetIntegrationsCredentialRequest createGetIntegrationsCredentialRequest(String credentialId) {
     return GetIntegrationsCredentialRequest.builder()
             .withCredentialId(credentialId)
-    
+
             .build();
   }
 
@@ -2267,7 +2242,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List multiple sets of credentials
    * 
@@ -2296,9 +2270,9 @@ public class IntegrationsApi {
   private GetIntegrationsCredentialsRequest createGetIntegrationsCredentialsRequest(Integer pageNumber, Integer pageSize) {
     return GetIntegrationsCredentialsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -2350,7 +2324,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List all credential types
    * 
@@ -2425,7 +2398,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List all events
    * 
@@ -2460,15 +2432,15 @@ public class IntegrationsApi {
   private GetIntegrationsEventlogRequest createGetIntegrationsEventlogRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String entityId) {
     return GetIntegrationsEventlogRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withEntityId(entityId)
-    
+
             .build();
   }
 
@@ -2520,7 +2492,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a single event
    * 
@@ -2547,7 +2518,7 @@ public class IntegrationsApi {
   private GetIntegrationsEventlogEventIdRequest createGetIntegrationsEventlogEventIdRequest(String eventId) {
     return GetIntegrationsEventlogEventIdRequest.builder()
             .withEventId(eventId)
-    
+
             .build();
   }
 
@@ -2599,7 +2570,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get details about a Dialogflow agent
    * 
@@ -2626,7 +2596,7 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechDialogflowAgentRequest createGetIntegrationsSpeechDialogflowAgentRequest(String agentId) {
     return GetIntegrationsSpeechDialogflowAgentRequest.builder()
             .withAgentId(agentId)
-    
+
             .build();
   }
 
@@ -2678,9 +2648,8 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
-   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * Get a list of Dialogflow agents in the customers' Google accounts
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -2694,7 +2663,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * Get a list of Dialogflow agents in the customers' Google accounts
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -2709,16 +2678,16 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechDialogflowAgentsRequest createGetIntegrationsSpeechDialogflowAgentsRequest(Integer pageNumber, Integer pageSize, String name) {
     return GetIntegrationsSpeechDialogflowAgentsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
   /**
-   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * Get a list of Dialogflow agents in the customers' Google accounts
    * 
    * @param request The request object
    * @return DialogflowAgentSummaryEntityListing
@@ -2737,7 +2706,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * Get a list of Dialogflow agents in the customers' Google accounts
    * 
    * @param request The request object
    * @return the response
@@ -2765,7 +2734,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get details about a Lex bot alias
    * 
@@ -2792,7 +2760,7 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechLexBotAliasRequest createGetIntegrationsSpeechLexBotAliasRequest(String aliasId) {
     return GetIntegrationsSpeechLexBotAliasRequest.builder()
             .withAliasId(aliasId)
-    
+
             .build();
   }
 
@@ -2844,9 +2812,8 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
-   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * Get a list of aliases for a bot in the customer's AWS accounts
    * 
    * @param botId The bot ID (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -2862,7 +2829,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * Get a list of aliases for a bot in the customer's AWS accounts
    * 
    * @param botId The bot ID (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -2879,20 +2846,20 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechLexBotBotIdAliasesRequest createGetIntegrationsSpeechLexBotBotIdAliasesRequest(String botId, Integer pageNumber, Integer pageSize, String status, String name) {
     return GetIntegrationsSpeechLexBotBotIdAliasesRequest.builder()
             .withBotId(botId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withStatus(status)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
   /**
-   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * Get a list of aliases for a bot in the customer's AWS accounts
    * 
    * @param request The request object
    * @return LexBotAliasEntityListing
@@ -2911,7 +2878,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * Get a list of aliases for a bot in the customer's AWS accounts
    * 
    * @param request The request object
    * @return the response
@@ -2939,9 +2906,8 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
-   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * Get a list of Lex bots in the customers' AWS accounts
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -2955,7 +2921,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * Get a list of Lex bots in the customers' AWS accounts
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -2970,16 +2936,16 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechLexBotsRequest createGetIntegrationsSpeechLexBotsRequest(Integer pageNumber, Integer pageSize, String name) {
     return GetIntegrationsSpeechLexBotsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
   /**
-   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * Get a list of Lex bots in the customers' AWS accounts
    * 
    * @param request The request object
    * @return LexBotEntityListing
@@ -2998,7 +2964,7 @@ public class IntegrationsApi {
   }
 
   /**
-   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * Get a list of Lex bots in the customers' AWS accounts
    * 
    * @param request The request object
    * @return the response
@@ -3026,7 +2992,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get details about a TTS engine
    * 
@@ -3055,9 +3020,9 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechTtsEngineRequest createGetIntegrationsSpeechTtsEngineRequest(String engineId, Boolean includeVoices) {
     return GetIntegrationsSpeechTtsEngineRequest.builder()
             .withEngineId(engineId)
-    
+
             .withIncludeVoices(includeVoices)
-    
+
             .build();
   }
 
@@ -3109,7 +3074,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get details about a specific voice for a TTS engine
    * 
@@ -3138,9 +3102,9 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechTtsEngineVoiceRequest createGetIntegrationsSpeechTtsEngineVoiceRequest(String engineId, String voiceId) {
     return GetIntegrationsSpeechTtsEngineVoiceRequest.builder()
             .withEngineId(engineId)
-    
+
             .withVoiceId(voiceId)
-    
+
             .build();
   }
 
@@ -3192,7 +3156,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a list of voices for a TTS engine
    * 
@@ -3223,11 +3186,11 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechTtsEngineVoicesRequest createGetIntegrationsSpeechTtsEngineVoicesRequest(String engineId, Integer pageNumber, Integer pageSize) {
     return GetIntegrationsSpeechTtsEngineVoicesRequest.builder()
             .withEngineId(engineId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -3279,7 +3242,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get a list of TTS engines enabled for org
    * 
@@ -3314,15 +3276,15 @@ public class IntegrationsApi {
   private GetIntegrationsSpeechTtsEnginesRequest createGetIntegrationsSpeechTtsEnginesRequest(Integer pageNumber, Integer pageSize, Boolean includeVoices, String name, String language) {
     return GetIntegrationsSpeechTtsEnginesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withIncludeVoices(includeVoices)
-    
+
             .withName(name)
-    
+
             .withLanguage(language)
-    
+
             .build();
   }
 
@@ -3374,7 +3336,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get TTS settings for an org
    * 
@@ -3449,7 +3410,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get integration type.
    * 
@@ -3476,7 +3436,7 @@ public class IntegrationsApi {
   private GetIntegrationsTypeRequest createGetIntegrationsTypeRequest(String typeId) {
     return GetIntegrationsTypeRequest.builder()
             .withTypeId(typeId)
-    
+
             .build();
   }
 
@@ -3528,7 +3488,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Get properties config schema for an integration type.
    * 
@@ -3557,9 +3516,9 @@ public class IntegrationsApi {
   private GetIntegrationsTypeConfigschemaRequest createGetIntegrationsTypeConfigschemaRequest(String typeId, String configType) {
     return GetIntegrationsTypeConfigschemaRequest.builder()
             .withTypeId(typeId)
-    
+
             .withConfigType(configType)
-    
+
             .build();
   }
 
@@ -3611,7 +3570,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List integration types
    * 
@@ -3648,17 +3606,17 @@ public class IntegrationsApi {
   private GetIntegrationsTypesRequest createGetIntegrationsTypesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsTypesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .build();
   }
 
@@ -3710,7 +3668,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * List permitted user app integrations for the logged in user
    * 
@@ -3749,19 +3706,19 @@ public class IntegrationsApi {
   private GetIntegrationsUserappsRequest createGetIntegrationsUserappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) {
     return GetIntegrationsUserappsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withAppHost(appHost)
-    
+
             .build();
   }
 
@@ -3813,62 +3770,61 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Update an integration.
    * 
    * @param integrationId Integration Id (required)
-   * @param body Integration Update (optional)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
+   * @param body Integration Update (optional)
    * @return Integration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Integration patchIntegration(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
-    return  patchIntegration(createPatchIntegrationRequest(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
+  public Integration patchIntegration(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Integration body) throws IOException, ApiException {
+    return  patchIntegration(createPatchIntegrationRequest(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, body));
   }
 
   /**
    * Update an integration.
    * 
    * @param integrationId Integration Id (required)
-   * @param body Integration Update (optional)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
+   * @param body Integration Update (optional)
    * @return Integration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Integration> patchIntegrationWithHttpInfo(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
-    return patchIntegration(createPatchIntegrationRequest(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
+  public ApiResponse<Integration> patchIntegrationWithHttpInfo(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Integration body) throws IOException {
+    return patchIntegration(createPatchIntegrationRequest(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, body).withHttpInfo());
   }
 
-  private PatchIntegrationRequest createPatchIntegrationRequest(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
+  private PatchIntegrationRequest createPatchIntegrationRequest(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Integration body) {
     return PatchIntegrationRequest.builder()
             .withIntegrationId(integrationId)
-    
-            .withBody(body)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -3920,7 +3876,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Patch an Action
    * 
@@ -3949,9 +3904,9 @@ public class IntegrationsApi {
   private PatchIntegrationsActionRequest createPatchIntegrationsActionRequest(String actionId, UpdateActionInput body) {
     return PatchIntegrationsActionRequest.builder()
             .withActionId(actionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4003,7 +3958,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Update an existing Draft
    * 
@@ -4032,9 +3986,9 @@ public class IntegrationsApi {
   private PatchIntegrationsActionDraftRequest createPatchIntegrationsActionDraftRequest(String actionId, UpdateDraftInput body) {
     return PatchIntegrationsActionDraftRequest.builder()
             .withActionId(actionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4086,7 +4040,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Create an integration.
    * 
@@ -4113,7 +4066,7 @@ public class IntegrationsApi {
   private PostIntegrationsRequest createPostIntegrationsRequest(CreateIntegrationRequest body) {
     return PostIntegrationsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4165,7 +4118,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Create a new Draft from existing Action
    * 
@@ -4192,7 +4144,7 @@ public class IntegrationsApi {
   private PostIntegrationsActionDraftRequest createPostIntegrationsActionDraftRequest(String actionId) {
     return PostIntegrationsActionDraftRequest.builder()
             .withActionId(actionId)
-    
+
             .build();
   }
 
@@ -4244,7 +4196,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Publish a Draft and make it the active Action configuration
    * 
@@ -4273,9 +4224,9 @@ public class IntegrationsApi {
   private PostIntegrationsActionDraftPublishRequest createPostIntegrationsActionDraftPublishRequest(String actionId, PublishDraftInput body) {
     return PostIntegrationsActionDraftPublishRequest.builder()
             .withActionId(actionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4327,7 +4278,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
    * 
@@ -4356,9 +4306,9 @@ public class IntegrationsApi {
   private PostIntegrationsActionDraftTestRequest createPostIntegrationsActionDraftTestRequest(String actionId, Object body) {
     return PostIntegrationsActionDraftTestRequest.builder()
             .withActionId(actionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4410,7 +4360,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
    * 
@@ -4439,9 +4388,9 @@ public class IntegrationsApi {
   private PostIntegrationsActionExecuteRequest createPostIntegrationsActionExecuteRequest(String actionId, Object body) {
     return PostIntegrationsActionExecuteRequest.builder()
             .withActionId(actionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4493,7 +4442,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
    * 
@@ -4522,9 +4470,9 @@ public class IntegrationsApi {
   private PostIntegrationsActionTestRequest createPostIntegrationsActionTestRequest(String actionId, Object body) {
     return PostIntegrationsActionTestRequest.builder()
             .withActionId(actionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4576,7 +4524,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Create a new Action
    * 
@@ -4603,7 +4550,7 @@ public class IntegrationsApi {
   private PostIntegrationsActionsRequest createPostIntegrationsActionsRequest(PostActionInput body) {
     return PostIntegrationsActionsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4655,7 +4602,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Create a new Draft
    * 
@@ -4682,7 +4628,7 @@ public class IntegrationsApi {
   private PostIntegrationsActionsDraftsRequest createPostIntegrationsActionsDraftsRequest(PostActionInput body) {
     return PostIntegrationsActionsDraftsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4734,7 +4680,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Create a set of credentials
    * 
@@ -4761,7 +4706,7 @@ public class IntegrationsApi {
   private PostIntegrationsCredentialsRequest createPostIntegrationsCredentialsRequest(Credential body) {
     return PostIntegrationsCredentialsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4813,7 +4758,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Add a vendor connection
    * 
@@ -4840,7 +4784,7 @@ public class IntegrationsApi {
   private PostIntegrationsWorkforcemanagementVendorconnectionRequest createPostIntegrationsWorkforcemanagementVendorconnectionRequest(VendorConnectionRequest body) {
     return PostIntegrationsWorkforcemanagementVendorconnectionRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4892,7 +4836,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Update integration configuration.
    * 
@@ -4921,9 +4864,9 @@ public class IntegrationsApi {
   private PutIntegrationConfigCurrentRequest createPutIntegrationConfigCurrentRequest(String integrationId, IntegrationConfiguration body) {
     return PutIntegrationConfigCurrentRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4975,7 +4918,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Set a list of botConnector bots plus versions for this integration
    * 
@@ -5002,9 +4944,9 @@ public class IntegrationsApi {
   private PutIntegrationsBotconnectorIntegrationIdBotsRequest createPutIntegrationsBotconnectorIntegrationIdBotsRequest(String integrationId, BotList botList) {
     return PutIntegrationsBotconnectorIntegrationIdBotsRequest.builder()
             .withIntegrationId(integrationId)
-    
+
             .withBotList(botList)
-    
+
             .build();
   }
 
@@ -5055,7 +4997,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Update a set of credentials
    * 
@@ -5084,9 +5025,9 @@ public class IntegrationsApi {
   private PutIntegrationsCredentialRequest createPutIntegrationsCredentialRequest(String credentialId, Credential body) {
     return PutIntegrationsCredentialRequest.builder()
             .withCredentialId(credentialId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5138,7 +5079,6 @@ public class IntegrationsApi {
     }
   }
 
-  
   /**
    * Update TTS settings for an org
    * 
@@ -5165,7 +5105,7 @@ public class IntegrationsApi {
   private PutIntegrationsSpeechTtsSettingsRequest createPutIntegrationsSpeechTtsSettingsRequest(TtsSettings body) {
     return PutIntegrationsSpeechTtsSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5217,5 +5157,4 @@ public class IntegrationsApi {
     }
   }
 
-  
 }

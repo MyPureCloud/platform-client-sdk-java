@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ImportError;
@@ -46,7 +47,7 @@ public class ImportReport  implements Serializable {
     this.errors = errors;
   }
 
-  
+
   /**
    **/
   public ImportReport validated(ResultCounters validated) {
@@ -63,7 +64,7 @@ public class ImportReport  implements Serializable {
     this.validated = validated;
   }
 
-  
+
   /**
    **/
   public ImportReport imported(ResultCounters imported) {
@@ -80,7 +81,7 @@ public class ImportReport  implements Serializable {
     this.imported = imported;
   }
 
-  
+
   /**
    **/
   public ImportReport totalDocuments(Integer totalDocuments) {
@@ -97,7 +98,6 @@ public class ImportReport  implements Serializable {
     this.totalDocuments = totalDocuments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class ImportReport  implements Serializable {
       return false;
     }
     ImportReport importReport = (ImportReport) o;
+
     return Objects.equals(this.errors, importReport.errors) &&
-        Objects.equals(this.validated, importReport.validated) &&
-        Objects.equals(this.imported, importReport.imported) &&
-        Objects.equals(this.totalDocuments, importReport.totalDocuments);
+            Objects.equals(this.validated, importReport.validated) &&
+            Objects.equals(this.imported, importReport.imported) &&
+            Objects.equals(this.totalDocuments, importReport.totalDocuments);
   }
 
   @Override

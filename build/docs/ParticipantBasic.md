@@ -53,7 +53,7 @@ title: ParticipantBasic
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | The reason specifying why participant flagged the conversation. |  [optional] |
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **bargedParticipantId** | <!----><!---->**String**<!----> | If this participant barged in a participant&#39;s call, then this will be the id of the targeted participant. |  [optional] |
+| **bargedParticipantId** | <!----><!---->**String**<!----> | If this participant barged in a participant's call, then this will be the id of the targeted participant. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -63,12 +63,12 @@ title: ParticipantBasic
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MANDATORY | &quot;mandatory&quot; |
-| OPTIONAL | &quot;optional&quot; |
-| AGENTREQUESTED | &quot;agentRequested&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| FORCEDTIMEOUT | &quot;forcedTimeout&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MANDATORY | &quot;mandatory&quot; | 
+| OPTIONAL | &quot;optional&quot; | 
+| AGENTREQUESTED | &quot;agentRequested&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| FORCEDTIMEOUT | &quot;forcedTimeout&quot; | 
 {: class="table table-striped"}
 
 
@@ -78,13 +78,13 @@ title: ParticipantBasic
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| REQUESTED | &quot;requested&quot; |
-| ACTIVE | &quot;active&quot; |
-| PAUSED | &quot;paused&quot; |
-| STOPPED | &quot;stopped&quot; |
-| ERROR | &quot;error&quot; |
-| TIMEOUT | &quot;timeout&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REQUESTED | &quot;requested&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| PAUSED | &quot;paused&quot; | 
+| STOPPED | &quot;stopped&quot; | 
+| ERROR | &quot;error&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
 {: class="table table-striped"}
 
 
@@ -94,8 +94,8 @@ title: ParticipantBasic
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GENERAL | &quot;general&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GENERAL | &quot;general&quot; | 
 {: class="table table-striped"}
 
 

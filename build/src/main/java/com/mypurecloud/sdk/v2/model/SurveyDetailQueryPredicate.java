@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -243,7 +244,7 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -261,7 +262,7 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Left hand side for metric predicates
    **/
@@ -279,7 +280,7 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -297,7 +298,7 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension or metric predicates
    **/
@@ -315,7 +316,7 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension or metric predicates
    **/
@@ -333,7 +334,6 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -344,12 +344,13 @@ public class SurveyDetailQueryPredicate  implements Serializable {
       return false;
     }
     SurveyDetailQueryPredicate surveyDetailQueryPredicate = (SurveyDetailQueryPredicate) o;
+
     return Objects.equals(this.type, surveyDetailQueryPredicate.type) &&
-        Objects.equals(this.dimension, surveyDetailQueryPredicate.dimension) &&
-        Objects.equals(this.metric, surveyDetailQueryPredicate.metric) &&
-        Objects.equals(this.operator, surveyDetailQueryPredicate.operator) &&
-        Objects.equals(this.value, surveyDetailQueryPredicate.value) &&
-        Objects.equals(this.range, surveyDetailQueryPredicate.range);
+            Objects.equals(this.dimension, surveyDetailQueryPredicate.dimension) &&
+            Objects.equals(this.metric, surveyDetailQueryPredicate.metric) &&
+            Objects.equals(this.operator, surveyDetailQueryPredicate.operator) &&
+            Objects.equals(this.value, surveyDetailQueryPredicate.value) &&
+            Objects.equals(this.range, surveyDetailQueryPredicate.range);
   }
 
   @Override

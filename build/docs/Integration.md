@@ -26,10 +26,10 @@ title: Integration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENABLED | &quot;ENABLED&quot; |
-| DISABLED | &quot;DISABLED&quot; |
-| DELETED | &quot;DELETED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENABLED | &quot;ENABLED&quot; | 
+| DISABLED | &quot;DISABLED&quot; | 
+| DELETED | &quot;DELETED&quot; | 
 {: class="table table-striped"}
 
 

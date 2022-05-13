@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsRoutingStatusRecord;
@@ -46,7 +47,7 @@ public class AnalyticsUserDetail  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The presence records for the user
    **/
@@ -64,7 +65,7 @@ public class AnalyticsUserDetail  implements Serializable {
     this.primaryPresence = primaryPresence;
   }
 
-  
+
   /**
    * The ACD routing status records for the user
    **/
@@ -82,7 +83,6 @@ public class AnalyticsUserDetail  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class AnalyticsUserDetail  implements Serializable {
       return false;
     }
     AnalyticsUserDetail analyticsUserDetail = (AnalyticsUserDetail) o;
+
     return Objects.equals(this.userId, analyticsUserDetail.userId) &&
-        Objects.equals(this.primaryPresence, analyticsUserDetail.primaryPresence) &&
-        Objects.equals(this.routingStatus, analyticsUserDetail.routingStatus);
+            Objects.equals(this.primaryPresence, analyticsUserDetail.primaryPresence) &&
+            Objects.equals(this.routingStatus, analyticsUserDetail.routingStatus);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusErrorInfo;
@@ -44,7 +45,7 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public UserRoutingStatusUserRoutingStatus routingStatus(UserRoutingStatusRoutingStatus routingStatus) {
@@ -61,7 +62,7 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-  
+
   /**
    **/
   public UserRoutingStatusUserRoutingStatus errorInfo(UserRoutingStatusErrorInfo errorInfo) {
@@ -78,7 +79,6 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
       return false;
     }
     UserRoutingStatusUserRoutingStatus userRoutingStatusUserRoutingStatus = (UserRoutingStatusUserRoutingStatus) o;
+
     return Objects.equals(this.id, userRoutingStatusUserRoutingStatus.id) &&
-        Objects.equals(this.routingStatus, userRoutingStatusUserRoutingStatus.routingStatus) &&
-        Objects.equals(this.errorInfo, userRoutingStatusUserRoutingStatus.errorInfo);
+            Objects.equals(this.routingStatus, userRoutingStatusUserRoutingStatus.routingStatus) &&
+            Objects.equals(this.errorInfo, userRoutingStatusUserRoutingStatus.errorInfo);
   }
 
   @Override

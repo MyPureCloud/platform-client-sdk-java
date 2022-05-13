@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class PhoneNumber  implements Serializable {
     this.display = display;
   }
 
-  
+
   /**
    **/
   public PhoneNumber extension(Long extension) {
@@ -61,7 +62,7 @@ public class PhoneNumber  implements Serializable {
     this.extension = extension;
   }
 
-  
+
   /**
    **/
   public PhoneNumber acceptsSMS(Boolean acceptsSMS) {
@@ -78,7 +79,7 @@ public class PhoneNumber  implements Serializable {
     this.acceptsSMS = acceptsSMS;
   }
 
-  
+
   /**
    **/
   public PhoneNumber userInput(String userInput) {
@@ -95,7 +96,7 @@ public class PhoneNumber  implements Serializable {
     this.userInput = userInput;
   }
 
-  
+
   /**
    **/
   public PhoneNumber e164(String e164) {
@@ -112,7 +113,7 @@ public class PhoneNumber  implements Serializable {
     this.e164 = e164;
   }
 
-  
+
   /**
    **/
   public PhoneNumber countryCode(String countryCode) {
@@ -129,7 +130,6 @@ public class PhoneNumber  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +140,13 @@ public class PhoneNumber  implements Serializable {
       return false;
     }
     PhoneNumber phoneNumber = (PhoneNumber) o;
+
     return Objects.equals(this.display, phoneNumber.display) &&
-        Objects.equals(this.extension, phoneNumber.extension) &&
-        Objects.equals(this.acceptsSMS, phoneNumber.acceptsSMS) &&
-        Objects.equals(this.userInput, phoneNumber.userInput) &&
-        Objects.equals(this.e164, phoneNumber.e164) &&
-        Objects.equals(this.countryCode, phoneNumber.countryCode);
+            Objects.equals(this.extension, phoneNumber.extension) &&
+            Objects.equals(this.acceptsSMS, phoneNumber.acceptsSMS) &&
+            Objects.equals(this.userInput, phoneNumber.userInput) &&
+            Objects.equals(this.e164, phoneNumber.e164) &&
+            Objects.equals(this.countryCode, phoneNumber.countryCode);
   }
 
   @Override

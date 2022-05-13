@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class AddShiftTradeRequest  implements Serializable {
     this.scheduleId = scheduleId;
   }
 
-  
+
   /**
    * The ID of the shift that the initiating user wants to give up
    **/
@@ -65,7 +66,7 @@ public class AddShiftTradeRequest  implements Serializable {
     this.initiatingShiftId = initiatingShiftId;
   }
 
-  
+
   /**
    * The ID of the user to whom to send the request (for use in direct trade requests)
    **/
@@ -83,7 +84,7 @@ public class AddShiftTradeRequest  implements Serializable {
     this.receivingUserId = receivingUserId;
   }
 
-  
+
   /**
    * When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -101,7 +102,7 @@ public class AddShiftTradeRequest  implements Serializable {
     this.expiration = expiration;
   }
 
-  
+
   /**
    **/
   public AddShiftTradeRequest acceptableIntervals(List<String> acceptableIntervals) {
@@ -118,7 +119,6 @@ public class AddShiftTradeRequest  implements Serializable {
     this.acceptableIntervals = acceptableIntervals;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,11 +129,12 @@ public class AddShiftTradeRequest  implements Serializable {
       return false;
     }
     AddShiftTradeRequest addShiftTradeRequest = (AddShiftTradeRequest) o;
+
     return Objects.equals(this.scheduleId, addShiftTradeRequest.scheduleId) &&
-        Objects.equals(this.initiatingShiftId, addShiftTradeRequest.initiatingShiftId) &&
-        Objects.equals(this.receivingUserId, addShiftTradeRequest.receivingUserId) &&
-        Objects.equals(this.expiration, addShiftTradeRequest.expiration) &&
-        Objects.equals(this.acceptableIntervals, addShiftTradeRequest.acceptableIntervals);
+            Objects.equals(this.initiatingShiftId, addShiftTradeRequest.initiatingShiftId) &&
+            Objects.equals(this.receivingUserId, addShiftTradeRequest.receivingUserId) &&
+            Objects.equals(this.expiration, addShiftTradeRequest.expiration) &&
+            Objects.equals(this.acceptableIntervals, addShiftTradeRequest.acceptableIntervals);
   }
 
   @Override

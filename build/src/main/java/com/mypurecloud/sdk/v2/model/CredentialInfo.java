@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialType;
@@ -36,7 +37,7 @@ public class CredentialInfo  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CredentialInfo name(String name) {
@@ -53,21 +54,21 @@ public class CredentialInfo  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date the credentials were created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date credentials were last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
+
   /**
    * Type of the credentials.
    **/
@@ -85,14 +86,13 @@ public class CredentialInfo  implements Serializable {
     this.type = type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +103,13 @@ public class CredentialInfo  implements Serializable {
       return false;
     }
     CredentialInfo credentialInfo = (CredentialInfo) o;
+
     return Objects.equals(this.id, credentialInfo.id) &&
-        Objects.equals(this.name, credentialInfo.name) &&
-        Objects.equals(this.createdDate, credentialInfo.createdDate) &&
-        Objects.equals(this.modifiedDate, credentialInfo.modifiedDate) &&
-        Objects.equals(this.type, credentialInfo.type) &&
-        Objects.equals(this.selfUri, credentialInfo.selfUri);
+            Objects.equals(this.name, credentialInfo.name) &&
+            Objects.equals(this.createdDate, credentialInfo.createdDate) &&
+            Objects.equals(this.modifiedDate, credentialInfo.modifiedDate) &&
+            Objects.equals(this.type, credentialInfo.type) &&
+            Objects.equals(this.selfUri, credentialInfo.selfUri);
   }
 
   @Override

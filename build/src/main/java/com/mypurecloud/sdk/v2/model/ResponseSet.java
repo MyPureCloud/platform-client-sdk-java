@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Reaction;
@@ -41,7 +42,7 @@ public class ResponseSet  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the ResponseSet.
    **/
@@ -59,21 +60,21 @@ public class ResponseSet  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -91,7 +92,7 @@ public class ResponseSet  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}.
    **/
@@ -109,7 +110,7 @@ public class ResponseSet  implements Serializable {
     this.responses = responses;
   }
 
-  
+
   /**
    * Whether to enable answering machine beep detection
    **/
@@ -127,14 +128,13 @@ public class ResponseSet  implements Serializable {
     this.beepDetectionEnabled = beepDetectionEnabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,14 +145,15 @@ public class ResponseSet  implements Serializable {
       return false;
     }
     ResponseSet responseSet = (ResponseSet) o;
+
     return Objects.equals(this.id, responseSet.id) &&
-        Objects.equals(this.name, responseSet.name) &&
-        Objects.equals(this.dateCreated, responseSet.dateCreated) &&
-        Objects.equals(this.dateModified, responseSet.dateModified) &&
-        Objects.equals(this.version, responseSet.version) &&
-        Objects.equals(this.responses, responseSet.responses) &&
-        Objects.equals(this.beepDetectionEnabled, responseSet.beepDetectionEnabled) &&
-        Objects.equals(this.selfUri, responseSet.selfUri);
+            Objects.equals(this.name, responseSet.name) &&
+            Objects.equals(this.dateCreated, responseSet.dateCreated) &&
+            Objects.equals(this.dateModified, responseSet.dateModified) &&
+            Objects.equals(this.version, responseSet.version) &&
+            Objects.equals(this.responses, responseSet.responses) &&
+            Objects.equals(this.beepDetectionEnabled, responseSet.beepDetectionEnabled) &&
+            Objects.equals(this.selfUri, responseSet.selfUri);
   }
 
   @Override

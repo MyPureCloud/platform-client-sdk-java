@@ -25,10 +25,10 @@ title: UCIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; |
-| ZOOMPHONE | &quot;ZoomPhone&quot; |
-| RINGCENTRAL | &quot;RingCentral&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
+| ZOOMPHONE | &quot;ZoomPhone&quot; | 
+| RINGCENTRAL | &quot;RingCentral&quot; | 
 {: class="table table-striped"}
 
 

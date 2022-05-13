@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -218,7 +219,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent conversationId(String conversationId) {
@@ -235,7 +236,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent participantId(String participantId) {
@@ -252,7 +253,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent sessionId(String sessionId) {
@@ -269,7 +270,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent mediaType(MediaTypeEnum mediaType) {
@@ -286,7 +287,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent provider(String provider) {
@@ -303,7 +304,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent direction(DirectionEnum direction) {
@@ -320,7 +321,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent ani(String ani) {
@@ -337,7 +338,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent dnis(String dnis) {
@@ -354,7 +355,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent addressTo(String addressTo) {
@@ -371,7 +372,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent addressFrom(String addressFrom) {
@@ -388,7 +389,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent callbackUserName(String callbackUserName) {
@@ -405,7 +406,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent callbackNumbers(List<String> callbackNumbers) {
@@ -422,7 +423,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -439,7 +440,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent subject(String subject) {
@@ -456,7 +457,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent messageType(MessageTypeEnum messageType) {
@@ -473,7 +474,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent userId(String userId) {
@@ -490,7 +491,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent queueId(String queueId) {
@@ -507,7 +508,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent wrapupCode(String wrapupCode) {
@@ -524,7 +525,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.wrapupCode = wrapupCode;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent wrapupNotes(String wrapupNotes) {
@@ -541,7 +542,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.wrapupNotes = wrapupNotes;
   }
 
-  
+
   /**
    **/
   public AcwDetailEventTopicAfterCallWorkEvent wrapupDurationMs(Integer wrapupDurationMs) {
@@ -558,7 +559,6 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     this.wrapupDurationMs = wrapupDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -569,27 +569,28 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
       return false;
     }
     AcwDetailEventTopicAfterCallWorkEvent acwDetailEventTopicAfterCallWorkEvent = (AcwDetailEventTopicAfterCallWorkEvent) o;
+
     return Objects.equals(this.eventTime, acwDetailEventTopicAfterCallWorkEvent.eventTime) &&
-        Objects.equals(this.conversationId, acwDetailEventTopicAfterCallWorkEvent.conversationId) &&
-        Objects.equals(this.participantId, acwDetailEventTopicAfterCallWorkEvent.participantId) &&
-        Objects.equals(this.sessionId, acwDetailEventTopicAfterCallWorkEvent.sessionId) &&
-        Objects.equals(this.mediaType, acwDetailEventTopicAfterCallWorkEvent.mediaType) &&
-        Objects.equals(this.provider, acwDetailEventTopicAfterCallWorkEvent.provider) &&
-        Objects.equals(this.direction, acwDetailEventTopicAfterCallWorkEvent.direction) &&
-        Objects.equals(this.ani, acwDetailEventTopicAfterCallWorkEvent.ani) &&
-        Objects.equals(this.dnis, acwDetailEventTopicAfterCallWorkEvent.dnis) &&
-        Objects.equals(this.addressTo, acwDetailEventTopicAfterCallWorkEvent.addressTo) &&
-        Objects.equals(this.addressFrom, acwDetailEventTopicAfterCallWorkEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, acwDetailEventTopicAfterCallWorkEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, acwDetailEventTopicAfterCallWorkEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, acwDetailEventTopicAfterCallWorkEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, acwDetailEventTopicAfterCallWorkEvent.subject) &&
-        Objects.equals(this.messageType, acwDetailEventTopicAfterCallWorkEvent.messageType) &&
-        Objects.equals(this.userId, acwDetailEventTopicAfterCallWorkEvent.userId) &&
-        Objects.equals(this.queueId, acwDetailEventTopicAfterCallWorkEvent.queueId) &&
-        Objects.equals(this.wrapupCode, acwDetailEventTopicAfterCallWorkEvent.wrapupCode) &&
-        Objects.equals(this.wrapupNotes, acwDetailEventTopicAfterCallWorkEvent.wrapupNotes) &&
-        Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs);
+            Objects.equals(this.conversationId, acwDetailEventTopicAfterCallWorkEvent.conversationId) &&
+            Objects.equals(this.participantId, acwDetailEventTopicAfterCallWorkEvent.participantId) &&
+            Objects.equals(this.sessionId, acwDetailEventTopicAfterCallWorkEvent.sessionId) &&
+            Objects.equals(this.mediaType, acwDetailEventTopicAfterCallWorkEvent.mediaType) &&
+            Objects.equals(this.provider, acwDetailEventTopicAfterCallWorkEvent.provider) &&
+            Objects.equals(this.direction, acwDetailEventTopicAfterCallWorkEvent.direction) &&
+            Objects.equals(this.ani, acwDetailEventTopicAfterCallWorkEvent.ani) &&
+            Objects.equals(this.dnis, acwDetailEventTopicAfterCallWorkEvent.dnis) &&
+            Objects.equals(this.addressTo, acwDetailEventTopicAfterCallWorkEvent.addressTo) &&
+            Objects.equals(this.addressFrom, acwDetailEventTopicAfterCallWorkEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, acwDetailEventTopicAfterCallWorkEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, acwDetailEventTopicAfterCallWorkEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, acwDetailEventTopicAfterCallWorkEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, acwDetailEventTopicAfterCallWorkEvent.subject) &&
+            Objects.equals(this.messageType, acwDetailEventTopicAfterCallWorkEvent.messageType) &&
+            Objects.equals(this.userId, acwDetailEventTopicAfterCallWorkEvent.userId) &&
+            Objects.equals(this.queueId, acwDetailEventTopicAfterCallWorkEvent.queueId) &&
+            Objects.equals(this.wrapupCode, acwDetailEventTopicAfterCallWorkEvent.wrapupCode) &&
+            Objects.equals(this.wrapupNotes, acwDetailEventTopicAfterCallWorkEvent.wrapupNotes) &&
+            Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs);
   }
 
   @Override

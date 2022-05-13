@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class AttributeFilterItem  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AttributeFilterItem operator(OperatorEnum operator) {
@@ -115,7 +116,7 @@ public class AttributeFilterItem  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    **/
   public AttributeFilterItem values(List<String> values) {
@@ -132,7 +133,6 @@ public class AttributeFilterItem  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,9 +143,10 @@ public class AttributeFilterItem  implements Serializable {
       return false;
     }
     AttributeFilterItem attributeFilterItem = (AttributeFilterItem) o;
+
     return Objects.equals(this.id, attributeFilterItem.id) &&
-        Objects.equals(this.operator, attributeFilterItem.operator) &&
-        Objects.equals(this.values, attributeFilterItem.values);
+            Objects.equals(this.operator, attributeFilterItem.operator) &&
+            Objects.equals(this.values, attributeFilterItem.values);
   }
 
   @Override

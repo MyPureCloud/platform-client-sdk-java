@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -746,7 +747,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.metric = metric;
   }
 
-  
+
   /**
    * The date and time of metric creation
    **/
@@ -764,7 +765,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.metricDate = metricDate;
   }
 
-  
+
   /**
    * Metric value
    **/
@@ -782,7 +783,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.value = value;
   }
 
-  
+
   /**
    * Record identifier
    **/
@@ -800,7 +801,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.recordId = recordId;
   }
 
-  
+
   /**
    * ID(s) of Skill(s) that are active on the conversation
    **/
@@ -818,7 +819,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.activeSkillIds = activeSkillIds;
   }
 
-  
+
   /**
    * The address that initiated an action
    **/
@@ -836,7 +837,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    * The address receiving an action
    **/
@@ -854,7 +855,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    * Unique identifier of the active virtual agent assistant
    **/
@@ -872,7 +873,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.agentAssistantId = agentAssistantId;
   }
 
-  
+
   /**
    * Bullseye ring of the targeted agent
    **/
@@ -890,7 +891,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.agentBullseyeRing = agentBullseyeRing;
   }
 
-  
+
   /**
    * Flag indicating an agent-owned callback
    **/
@@ -908,7 +909,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.agentOwned = agentOwned;
   }
 
-  
+
   /**
    * Automatic Number Identification (caller's number)
    **/
@@ -926,7 +927,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.ani = ani;
   }
 
-  
+
   /**
    * ID of the user that manually assigned a conversation
    **/
@@ -944,7 +945,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.assignerId = assignerId;
   }
 
-  
+
   /**
    * Flag that indicates that the identity of the customer has been asserted as verified by the provider.
    **/
@@ -962,7 +963,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.authenticated = authenticated;
   }
 
-  
+
   /**
    * Unique identifier for the conversation
    **/
@@ -980,7 +981,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Indicates the participant purpose of the participant initiating a message conversation
    **/
@@ -998,7 +999,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.conversationInitiator = conversationInitiator;
   }
 
-  
+
   /**
    * Session media type that was converted from in case of a media type conversion
    **/
@@ -1016,7 +1017,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.convertedFrom = convertedFrom;
   }
 
-  
+
   /**
    * Session media type that was converted to in case of a media type conversion
    **/
@@ -1034,7 +1035,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.convertedTo = convertedTo;
   }
 
-  
+
   /**
    * Indicates a messaging conversation in which the customer participated by sending at least one message
    **/
@@ -1052,7 +1053,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.customerParticipation = customerParticipation;
   }
 
-  
+
   /**
    * The email or SMS delivery status
    **/
@@ -1070,7 +1071,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.deliveryStatus = deliveryStatus;
   }
 
-  
+
   /**
    * Destination address(es) of transfers or consults
    **/
@@ -1088,7 +1089,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.destinationAddresses = destinationAddresses;
   }
 
-  
+
   /**
    * The direction of the communication
    **/
@@ -1106,7 +1107,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.direction = direction;
   }
 
-  
+
   /**
    * The session disconnect type
    **/
@@ -1124,7 +1125,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Identifier(s) of division(s) associated with a conversation
    **/
@@ -1142,7 +1143,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.divisionIds = divisionIds;
   }
 
-  
+
   /**
    * Dialed number identification service (number dialed by the calling party)
    **/
@@ -1160,7 +1161,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.dnis = dnis;
   }
 
-  
+
   /**
    * Unique identifier of the edge device
    **/
@@ -1178,7 +1179,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.edgeId = edgeId;
   }
 
-  
+
   /**
    * Number of eligible agents for each predictive routing attempt
    **/
@@ -1196,7 +1197,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.eligibleAgentCounts = eligibleAgentCounts;
   }
 
-  
+
   /**
    * Extended delivery status
    **/
@@ -1214,7 +1215,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.extendedDeliveryStatus = extendedDeliveryStatus;
   }
 
-  
+
   /**
    * External contact identifier
    **/
@@ -1232,7 +1233,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * Count of any media (images, files, etc) included on the external session
    **/
@@ -1250,7 +1251,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.externalMediaCount = externalMediaCount;
   }
 
-  
+
   /**
    * External organization identifier
    **/
@@ -1268,7 +1269,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * External tag for the conversation
    **/
@@ -1286,7 +1287,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.externalTag = externalTag;
   }
 
-  
+
   /**
    * Marker that is set if the current queue is the first queue in a conversation
    **/
@@ -1304,7 +1305,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.firstQueue = firstQueue;
   }
 
-  
+
   /**
    * Reason for which participant flagged conversation
    **/
@@ -1322,7 +1323,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Type of flow in that occurred when entering ACD.
    **/
@@ -1340,7 +1341,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.flowInType = flowInType;
   }
 
-  
+
   /**
    * Type of flow out that occurred when emitting tFlowOut.
    **/
@@ -1358,7 +1359,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.flowOutType = flowOutType;
   }
 
-  
+
   /**
    * Unique identifier for a PureCloud group
    **/
@@ -1376,7 +1377,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.groupId = groupId;
   }
 
-  
+
   /**
    * The interaction type (enterprise or contactCenter)
    **/
@@ -1394,7 +1395,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.interactionType = interactionType;
   }
 
-  
+
   /**
    * Identifier of the journey action.
    **/
@@ -1412,7 +1413,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyActionId = journeyActionId;
   }
 
-  
+
   /**
    * Identifier of the journey action map that triggered the action.
    **/
@@ -1430,7 +1431,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyActionMapId = journeyActionMapId;
   }
 
-  
+
   /**
    * Version of the journey action map that triggered the action.
    **/
@@ -1448,7 +1449,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyActionMapVersion = journeyActionMapVersion;
   }
 
-  
+
   /**
    * Primary identifier of the journey customer in the source where the activities originate from.
    **/
@@ -1466,7 +1467,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyCustomerId = journeyCustomerId;
   }
 
-  
+
   /**
    * Type of primary identifier of the journey customer (e.g. cookie).
    **/
@@ -1484,7 +1485,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyCustomerIdType = journeyCustomerIdType;
   }
 
-  
+
   /**
    * Unique identifier of the journey session.
    **/
@@ -1502,7 +1503,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyCustomerSessionId = journeyCustomerSessionId;
   }
 
-  
+
   /**
    * Type or category of journey sessions (e.g. web, ticket, delivery, atm).
    **/
@@ -1520,7 +1521,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.journeyCustomerSessionIdType = journeyCustomerSessionIdType;
   }
 
-  
+
   /**
    * The unique identifier(s) of the knowledge base(s) used
    **/
@@ -1538,7 +1539,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.knowledgeBaseIds = knowledgeBaseIds;
   }
 
-  
+
   /**
    * Count of any media (images, files, etc) included in this session
    **/
@@ -1556,7 +1557,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.mediaCount = mediaCount;
   }
 
-  
+
   /**
    * The session media type
    **/
@@ -1574,7 +1575,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Message type for messaging services. E.g.: sms, facebook, twitter, line
    **/
@@ -1592,7 +1593,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.messageType = messageType;
   }
 
-  
+
   /**
    * The original direction of the conversation
    **/
@@ -1610,7 +1611,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.originatingDirection = originatingDirection;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the outbound campaign
    **/
@@ -1628,7 +1629,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.outboundCampaignId = outboundCampaignId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the contact
    **/
@@ -1646,7 +1647,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.outboundContactId = outboundContactId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the contact list that this contact belongs to
    **/
@@ -1664,7 +1665,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.outboundContactListId = outboundContactListId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant
    **/
@@ -1682,7 +1683,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.participantName = participantName;
   }
 
-  
+
   /**
    * This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.
    **/
@@ -1700,7 +1701,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -1718,7 +1719,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.provider = provider;
   }
 
-  
+
   /**
    * The participant's purpose
    **/
@@ -1736,7 +1737,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.purpose = purpose;
   }
 
-  
+
   /**
    * Queue identifier
    **/
@@ -1754,7 +1755,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.queueId = queueId;
   }
 
-  
+
   /**
    * Name, phone number, or email address of the remote party.
    **/
@@ -1772,7 +1773,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.remote = remote;
   }
 
-  
+
   /**
    * ID(s) of Skill(s) that have been removed by bullseye routing
    **/
@@ -1790,7 +1791,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.removedSkillIds = removedSkillIds;
   }
 
-  
+
   /**
    * Marker for an interaction that got reoffered to the same queue by an in-queue flow
    **/
@@ -1808,7 +1809,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.reoffered = reoffered;
   }
 
-  
+
   /**
    * Unique identifier for the language requested for an interaction
    **/
@@ -1826,7 +1827,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.requestedLanguageId = requestedLanguageId;
   }
 
-  
+
   /**
    * Unique identifier(s) for skill(s) requested for an interaction
    **/
@@ -1844,7 +1845,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.requestedRoutingSkillIds = requestedRoutingSkillIds;
   }
 
-  
+
   /**
    * Routing type(s) for requested/attempted routing methods.
    **/
@@ -1862,7 +1863,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.requestedRoutings = requestedRoutings;
   }
 
-  
+
   /**
    * Unique identifier for the room
    **/
@@ -1880,7 +1881,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.roomId = roomId;
   }
 
-  
+
   /**
    * Routing priority for the current interaction
    **/
@@ -1898,7 +1899,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.routingPriority = routingPriority;
   }
 
-  
+
   /**
    * Routing ring for bullseye or preferred agent routing
    **/
@@ -1916,7 +1917,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.routingRing = routingRing;
   }
 
-  
+
   /**
    * Selected agent ID
    **/
@@ -1934,7 +1935,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.selectedAgentId = selectedAgentId;
   }
 
-  
+
   /**
    * Selected agent GPR rank
    **/
@@ -1952,7 +1953,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.selectedAgentRank = selectedAgentRank;
   }
 
-  
+
   /**
    * Indicates whether all flow sessions were self serviced
    **/
@@ -1970,7 +1971,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.selfServed = selfServed;
   }
 
-  
+
   /**
    * Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
    **/
@@ -1988,7 +1989,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.sessionDnis = sessionDnis;
   }
 
-  
+
   /**
    * The unique identifier of this session
    **/
@@ -2006,7 +2007,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * Unique identifier for a phone
    **/
@@ -2024,7 +2025,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.stationId = stationId;
   }
 
-  
+
   /**
    * The team ID the user is a member of
    **/
@@ -2042,7 +2043,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.teamId = teamId;
   }
 
-  
+
   /**
    * Complete routing method
    **/
@@ -2060,7 +2061,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.usedRouting = usedRouting;
   }
 
-  
+
   /**
    * Unique identifier for the user
    **/
@@ -2078,7 +2079,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.userId = userId;
   }
 
-  
+
   /**
    * Number of waiting interactions for each predictive routing attempt
    **/
@@ -2096,7 +2097,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.waitingInteractionCounts = waitingInteractionCounts;
   }
 
-  
+
   /**
    * Wrap up code
    **/
@@ -2114,7 +2115,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.wrapUpCode = wrapUpCode;
   }
 
-  
+
   /**
    * Proposed agents
    **/
@@ -2132,7 +2133,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.proposedAgents = proposedAgents;
   }
 
-  
+
   /**
    * Scored agents
    **/
@@ -2150,7 +2151,6 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2161,85 +2161,86 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
       return false;
     }
     ConversationMetricsTopicConversationMetricRecord conversationMetricsTopicConversationMetricRecord = (ConversationMetricsTopicConversationMetricRecord) o;
+
     return Objects.equals(this.metric, conversationMetricsTopicConversationMetricRecord.metric) &&
-        Objects.equals(this.metricDate, conversationMetricsTopicConversationMetricRecord.metricDate) &&
-        Objects.equals(this.value, conversationMetricsTopicConversationMetricRecord.value) &&
-        Objects.equals(this.recordId, conversationMetricsTopicConversationMetricRecord.recordId) &&
-        Objects.equals(this.activeSkillIds, conversationMetricsTopicConversationMetricRecord.activeSkillIds) &&
-        Objects.equals(this.addressFrom, conversationMetricsTopicConversationMetricRecord.addressFrom) &&
-        Objects.equals(this.addressTo, conversationMetricsTopicConversationMetricRecord.addressTo) &&
-        Objects.equals(this.agentAssistantId, conversationMetricsTopicConversationMetricRecord.agentAssistantId) &&
-        Objects.equals(this.agentBullseyeRing, conversationMetricsTopicConversationMetricRecord.agentBullseyeRing) &&
-        Objects.equals(this.agentOwned, conversationMetricsTopicConversationMetricRecord.agentOwned) &&
-        Objects.equals(this.ani, conversationMetricsTopicConversationMetricRecord.ani) &&
-        Objects.equals(this.assignerId, conversationMetricsTopicConversationMetricRecord.assignerId) &&
-        Objects.equals(this.authenticated, conversationMetricsTopicConversationMetricRecord.authenticated) &&
-        Objects.equals(this.conversationId, conversationMetricsTopicConversationMetricRecord.conversationId) &&
-        Objects.equals(this.conversationInitiator, conversationMetricsTopicConversationMetricRecord.conversationInitiator) &&
-        Objects.equals(this.convertedFrom, conversationMetricsTopicConversationMetricRecord.convertedFrom) &&
-        Objects.equals(this.convertedTo, conversationMetricsTopicConversationMetricRecord.convertedTo) &&
-        Objects.equals(this.customerParticipation, conversationMetricsTopicConversationMetricRecord.customerParticipation) &&
-        Objects.equals(this.deliveryStatus, conversationMetricsTopicConversationMetricRecord.deliveryStatus) &&
-        Objects.equals(this.destinationAddresses, conversationMetricsTopicConversationMetricRecord.destinationAddresses) &&
-        Objects.equals(this.direction, conversationMetricsTopicConversationMetricRecord.direction) &&
-        Objects.equals(this.disconnectType, conversationMetricsTopicConversationMetricRecord.disconnectType) &&
-        Objects.equals(this.divisionIds, conversationMetricsTopicConversationMetricRecord.divisionIds) &&
-        Objects.equals(this.dnis, conversationMetricsTopicConversationMetricRecord.dnis) &&
-        Objects.equals(this.edgeId, conversationMetricsTopicConversationMetricRecord.edgeId) &&
-        Objects.equals(this.eligibleAgentCounts, conversationMetricsTopicConversationMetricRecord.eligibleAgentCounts) &&
-        Objects.equals(this.extendedDeliveryStatus, conversationMetricsTopicConversationMetricRecord.extendedDeliveryStatus) &&
-        Objects.equals(this.externalContactId, conversationMetricsTopicConversationMetricRecord.externalContactId) &&
-        Objects.equals(this.externalMediaCount, conversationMetricsTopicConversationMetricRecord.externalMediaCount) &&
-        Objects.equals(this.externalOrganizationId, conversationMetricsTopicConversationMetricRecord.externalOrganizationId) &&
-        Objects.equals(this.externalTag, conversationMetricsTopicConversationMetricRecord.externalTag) &&
-        Objects.equals(this.firstQueue, conversationMetricsTopicConversationMetricRecord.firstQueue) &&
-        Objects.equals(this.flaggedReason, conversationMetricsTopicConversationMetricRecord.flaggedReason) &&
-        Objects.equals(this.flowInType, conversationMetricsTopicConversationMetricRecord.flowInType) &&
-        Objects.equals(this.flowOutType, conversationMetricsTopicConversationMetricRecord.flowOutType) &&
-        Objects.equals(this.groupId, conversationMetricsTopicConversationMetricRecord.groupId) &&
-        Objects.equals(this.interactionType, conversationMetricsTopicConversationMetricRecord.interactionType) &&
-        Objects.equals(this.journeyActionId, conversationMetricsTopicConversationMetricRecord.journeyActionId) &&
-        Objects.equals(this.journeyActionMapId, conversationMetricsTopicConversationMetricRecord.journeyActionMapId) &&
-        Objects.equals(this.journeyActionMapVersion, conversationMetricsTopicConversationMetricRecord.journeyActionMapVersion) &&
-        Objects.equals(this.journeyCustomerId, conversationMetricsTopicConversationMetricRecord.journeyCustomerId) &&
-        Objects.equals(this.journeyCustomerIdType, conversationMetricsTopicConversationMetricRecord.journeyCustomerIdType) &&
-        Objects.equals(this.journeyCustomerSessionId, conversationMetricsTopicConversationMetricRecord.journeyCustomerSessionId) &&
-        Objects.equals(this.journeyCustomerSessionIdType, conversationMetricsTopicConversationMetricRecord.journeyCustomerSessionIdType) &&
-        Objects.equals(this.knowledgeBaseIds, conversationMetricsTopicConversationMetricRecord.knowledgeBaseIds) &&
-        Objects.equals(this.mediaCount, conversationMetricsTopicConversationMetricRecord.mediaCount) &&
-        Objects.equals(this.mediaType, conversationMetricsTopicConversationMetricRecord.mediaType) &&
-        Objects.equals(this.messageType, conversationMetricsTopicConversationMetricRecord.messageType) &&
-        Objects.equals(this.originatingDirection, conversationMetricsTopicConversationMetricRecord.originatingDirection) &&
-        Objects.equals(this.outboundCampaignId, conversationMetricsTopicConversationMetricRecord.outboundCampaignId) &&
-        Objects.equals(this.outboundContactId, conversationMetricsTopicConversationMetricRecord.outboundContactId) &&
-        Objects.equals(this.outboundContactListId, conversationMetricsTopicConversationMetricRecord.outboundContactListId) &&
-        Objects.equals(this.participantName, conversationMetricsTopicConversationMetricRecord.participantName) &&
-        Objects.equals(this.peerId, conversationMetricsTopicConversationMetricRecord.peerId) &&
-        Objects.equals(this.provider, conversationMetricsTopicConversationMetricRecord.provider) &&
-        Objects.equals(this.purpose, conversationMetricsTopicConversationMetricRecord.purpose) &&
-        Objects.equals(this.queueId, conversationMetricsTopicConversationMetricRecord.queueId) &&
-        Objects.equals(this.remote, conversationMetricsTopicConversationMetricRecord.remote) &&
-        Objects.equals(this.removedSkillIds, conversationMetricsTopicConversationMetricRecord.removedSkillIds) &&
-        Objects.equals(this.reoffered, conversationMetricsTopicConversationMetricRecord.reoffered) &&
-        Objects.equals(this.requestedLanguageId, conversationMetricsTopicConversationMetricRecord.requestedLanguageId) &&
-        Objects.equals(this.requestedRoutingSkillIds, conversationMetricsTopicConversationMetricRecord.requestedRoutingSkillIds) &&
-        Objects.equals(this.requestedRoutings, conversationMetricsTopicConversationMetricRecord.requestedRoutings) &&
-        Objects.equals(this.roomId, conversationMetricsTopicConversationMetricRecord.roomId) &&
-        Objects.equals(this.routingPriority, conversationMetricsTopicConversationMetricRecord.routingPriority) &&
-        Objects.equals(this.routingRing, conversationMetricsTopicConversationMetricRecord.routingRing) &&
-        Objects.equals(this.selectedAgentId, conversationMetricsTopicConversationMetricRecord.selectedAgentId) &&
-        Objects.equals(this.selectedAgentRank, conversationMetricsTopicConversationMetricRecord.selectedAgentRank) &&
-        Objects.equals(this.selfServed, conversationMetricsTopicConversationMetricRecord.selfServed) &&
-        Objects.equals(this.sessionDnis, conversationMetricsTopicConversationMetricRecord.sessionDnis) &&
-        Objects.equals(this.sessionId, conversationMetricsTopicConversationMetricRecord.sessionId) &&
-        Objects.equals(this.stationId, conversationMetricsTopicConversationMetricRecord.stationId) &&
-        Objects.equals(this.teamId, conversationMetricsTopicConversationMetricRecord.teamId) &&
-        Objects.equals(this.usedRouting, conversationMetricsTopicConversationMetricRecord.usedRouting) &&
-        Objects.equals(this.userId, conversationMetricsTopicConversationMetricRecord.userId) &&
-        Objects.equals(this.waitingInteractionCounts, conversationMetricsTopicConversationMetricRecord.waitingInteractionCounts) &&
-        Objects.equals(this.wrapUpCode, conversationMetricsTopicConversationMetricRecord.wrapUpCode) &&
-        Objects.equals(this.proposedAgents, conversationMetricsTopicConversationMetricRecord.proposedAgents) &&
-        Objects.equals(this.scoredAgents, conversationMetricsTopicConversationMetricRecord.scoredAgents);
+            Objects.equals(this.metricDate, conversationMetricsTopicConversationMetricRecord.metricDate) &&
+            Objects.equals(this.value, conversationMetricsTopicConversationMetricRecord.value) &&
+            Objects.equals(this.recordId, conversationMetricsTopicConversationMetricRecord.recordId) &&
+            Objects.equals(this.activeSkillIds, conversationMetricsTopicConversationMetricRecord.activeSkillIds) &&
+            Objects.equals(this.addressFrom, conversationMetricsTopicConversationMetricRecord.addressFrom) &&
+            Objects.equals(this.addressTo, conversationMetricsTopicConversationMetricRecord.addressTo) &&
+            Objects.equals(this.agentAssistantId, conversationMetricsTopicConversationMetricRecord.agentAssistantId) &&
+            Objects.equals(this.agentBullseyeRing, conversationMetricsTopicConversationMetricRecord.agentBullseyeRing) &&
+            Objects.equals(this.agentOwned, conversationMetricsTopicConversationMetricRecord.agentOwned) &&
+            Objects.equals(this.ani, conversationMetricsTopicConversationMetricRecord.ani) &&
+            Objects.equals(this.assignerId, conversationMetricsTopicConversationMetricRecord.assignerId) &&
+            Objects.equals(this.authenticated, conversationMetricsTopicConversationMetricRecord.authenticated) &&
+            Objects.equals(this.conversationId, conversationMetricsTopicConversationMetricRecord.conversationId) &&
+            Objects.equals(this.conversationInitiator, conversationMetricsTopicConversationMetricRecord.conversationInitiator) &&
+            Objects.equals(this.convertedFrom, conversationMetricsTopicConversationMetricRecord.convertedFrom) &&
+            Objects.equals(this.convertedTo, conversationMetricsTopicConversationMetricRecord.convertedTo) &&
+            Objects.equals(this.customerParticipation, conversationMetricsTopicConversationMetricRecord.customerParticipation) &&
+            Objects.equals(this.deliveryStatus, conversationMetricsTopicConversationMetricRecord.deliveryStatus) &&
+            Objects.equals(this.destinationAddresses, conversationMetricsTopicConversationMetricRecord.destinationAddresses) &&
+            Objects.equals(this.direction, conversationMetricsTopicConversationMetricRecord.direction) &&
+            Objects.equals(this.disconnectType, conversationMetricsTopicConversationMetricRecord.disconnectType) &&
+            Objects.equals(this.divisionIds, conversationMetricsTopicConversationMetricRecord.divisionIds) &&
+            Objects.equals(this.dnis, conversationMetricsTopicConversationMetricRecord.dnis) &&
+            Objects.equals(this.edgeId, conversationMetricsTopicConversationMetricRecord.edgeId) &&
+            Objects.equals(this.eligibleAgentCounts, conversationMetricsTopicConversationMetricRecord.eligibleAgentCounts) &&
+            Objects.equals(this.extendedDeliveryStatus, conversationMetricsTopicConversationMetricRecord.extendedDeliveryStatus) &&
+            Objects.equals(this.externalContactId, conversationMetricsTopicConversationMetricRecord.externalContactId) &&
+            Objects.equals(this.externalMediaCount, conversationMetricsTopicConversationMetricRecord.externalMediaCount) &&
+            Objects.equals(this.externalOrganizationId, conversationMetricsTopicConversationMetricRecord.externalOrganizationId) &&
+            Objects.equals(this.externalTag, conversationMetricsTopicConversationMetricRecord.externalTag) &&
+            Objects.equals(this.firstQueue, conversationMetricsTopicConversationMetricRecord.firstQueue) &&
+            Objects.equals(this.flaggedReason, conversationMetricsTopicConversationMetricRecord.flaggedReason) &&
+            Objects.equals(this.flowInType, conversationMetricsTopicConversationMetricRecord.flowInType) &&
+            Objects.equals(this.flowOutType, conversationMetricsTopicConversationMetricRecord.flowOutType) &&
+            Objects.equals(this.groupId, conversationMetricsTopicConversationMetricRecord.groupId) &&
+            Objects.equals(this.interactionType, conversationMetricsTopicConversationMetricRecord.interactionType) &&
+            Objects.equals(this.journeyActionId, conversationMetricsTopicConversationMetricRecord.journeyActionId) &&
+            Objects.equals(this.journeyActionMapId, conversationMetricsTopicConversationMetricRecord.journeyActionMapId) &&
+            Objects.equals(this.journeyActionMapVersion, conversationMetricsTopicConversationMetricRecord.journeyActionMapVersion) &&
+            Objects.equals(this.journeyCustomerId, conversationMetricsTopicConversationMetricRecord.journeyCustomerId) &&
+            Objects.equals(this.journeyCustomerIdType, conversationMetricsTopicConversationMetricRecord.journeyCustomerIdType) &&
+            Objects.equals(this.journeyCustomerSessionId, conversationMetricsTopicConversationMetricRecord.journeyCustomerSessionId) &&
+            Objects.equals(this.journeyCustomerSessionIdType, conversationMetricsTopicConversationMetricRecord.journeyCustomerSessionIdType) &&
+            Objects.equals(this.knowledgeBaseIds, conversationMetricsTopicConversationMetricRecord.knowledgeBaseIds) &&
+            Objects.equals(this.mediaCount, conversationMetricsTopicConversationMetricRecord.mediaCount) &&
+            Objects.equals(this.mediaType, conversationMetricsTopicConversationMetricRecord.mediaType) &&
+            Objects.equals(this.messageType, conversationMetricsTopicConversationMetricRecord.messageType) &&
+            Objects.equals(this.originatingDirection, conversationMetricsTopicConversationMetricRecord.originatingDirection) &&
+            Objects.equals(this.outboundCampaignId, conversationMetricsTopicConversationMetricRecord.outboundCampaignId) &&
+            Objects.equals(this.outboundContactId, conversationMetricsTopicConversationMetricRecord.outboundContactId) &&
+            Objects.equals(this.outboundContactListId, conversationMetricsTopicConversationMetricRecord.outboundContactListId) &&
+            Objects.equals(this.participantName, conversationMetricsTopicConversationMetricRecord.participantName) &&
+            Objects.equals(this.peerId, conversationMetricsTopicConversationMetricRecord.peerId) &&
+            Objects.equals(this.provider, conversationMetricsTopicConversationMetricRecord.provider) &&
+            Objects.equals(this.purpose, conversationMetricsTopicConversationMetricRecord.purpose) &&
+            Objects.equals(this.queueId, conversationMetricsTopicConversationMetricRecord.queueId) &&
+            Objects.equals(this.remote, conversationMetricsTopicConversationMetricRecord.remote) &&
+            Objects.equals(this.removedSkillIds, conversationMetricsTopicConversationMetricRecord.removedSkillIds) &&
+            Objects.equals(this.reoffered, conversationMetricsTopicConversationMetricRecord.reoffered) &&
+            Objects.equals(this.requestedLanguageId, conversationMetricsTopicConversationMetricRecord.requestedLanguageId) &&
+            Objects.equals(this.requestedRoutingSkillIds, conversationMetricsTopicConversationMetricRecord.requestedRoutingSkillIds) &&
+            Objects.equals(this.requestedRoutings, conversationMetricsTopicConversationMetricRecord.requestedRoutings) &&
+            Objects.equals(this.roomId, conversationMetricsTopicConversationMetricRecord.roomId) &&
+            Objects.equals(this.routingPriority, conversationMetricsTopicConversationMetricRecord.routingPriority) &&
+            Objects.equals(this.routingRing, conversationMetricsTopicConversationMetricRecord.routingRing) &&
+            Objects.equals(this.selectedAgentId, conversationMetricsTopicConversationMetricRecord.selectedAgentId) &&
+            Objects.equals(this.selectedAgentRank, conversationMetricsTopicConversationMetricRecord.selectedAgentRank) &&
+            Objects.equals(this.selfServed, conversationMetricsTopicConversationMetricRecord.selfServed) &&
+            Objects.equals(this.sessionDnis, conversationMetricsTopicConversationMetricRecord.sessionDnis) &&
+            Objects.equals(this.sessionId, conversationMetricsTopicConversationMetricRecord.sessionId) &&
+            Objects.equals(this.stationId, conversationMetricsTopicConversationMetricRecord.stationId) &&
+            Objects.equals(this.teamId, conversationMetricsTopicConversationMetricRecord.teamId) &&
+            Objects.equals(this.usedRouting, conversationMetricsTopicConversationMetricRecord.usedRouting) &&
+            Objects.equals(this.userId, conversationMetricsTopicConversationMetricRecord.userId) &&
+            Objects.equals(this.waitingInteractionCounts, conversationMetricsTopicConversationMetricRecord.waitingInteractionCounts) &&
+            Objects.equals(this.wrapUpCode, conversationMetricsTopicConversationMetricRecord.wrapUpCode) &&
+            Objects.equals(this.proposedAgents, conversationMetricsTopicConversationMetricRecord.proposedAgents) &&
+            Objects.equals(this.scoredAgents, conversationMetricsTopicConversationMetricRecord.scoredAgents);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -36,21 +37,20 @@ public class OverallBestPoints  implements Serializable {
     return division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of gamification best point items")
   @JsonProperty("bestPoints")
   public List<OverallBestPointsItem> getBestPoints() {
     return bestPoints;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
   @JsonProperty("performanceProfile")
   public AddressableEntityRef getPerformanceProfile() {
     return performanceProfile;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,9 +61,10 @@ public class OverallBestPoints  implements Serializable {
       return false;
     }
     OverallBestPoints overallBestPoints = (OverallBestPoints) o;
+
     return Objects.equals(this.division, overallBestPoints.division) &&
-        Objects.equals(this.bestPoints, overallBestPoints.bestPoints) &&
-        Objects.equals(this.performanceProfile, overallBestPoints.performanceProfile);
+            Objects.equals(this.bestPoints, overallBestPoints.bestPoints) &&
+            Objects.equals(this.performanceProfile, overallBestPoints.performanceProfile);
   }
 
   @Override

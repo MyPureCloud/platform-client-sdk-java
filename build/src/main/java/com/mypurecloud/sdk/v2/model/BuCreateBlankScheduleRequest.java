@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
@@ -43,7 +44,7 @@ public class BuCreateBlankScheduleRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule's start week + week count
    **/
@@ -61,7 +62,7 @@ public class BuCreateBlankScheduleRequest  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * The number of weeks in the schedule. One extra day is added at the end
    **/
@@ -79,7 +80,6 @@ public class BuCreateBlankScheduleRequest  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class BuCreateBlankScheduleRequest  implements Serializable {
       return false;
     }
     BuCreateBlankScheduleRequest buCreateBlankScheduleRequest = (BuCreateBlankScheduleRequest) o;
+
     return Objects.equals(this.description, buCreateBlankScheduleRequest.description) &&
-        Objects.equals(this.shortTermForecast, buCreateBlankScheduleRequest.shortTermForecast) &&
-        Objects.equals(this.weekCount, buCreateBlankScheduleRequest.weekCount);
+            Objects.equals(this.shortTermForecast, buCreateBlankScheduleRequest.shortTermForecast) &&
+            Objects.equals(this.weekCount, buCreateBlankScheduleRequest.weekCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FlowAggregateDataContainer;
@@ -42,7 +43,6 @@ public class FlowAggregateQueryResponse  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -53,6 +53,7 @@ public class FlowAggregateQueryResponse  implements Serializable {
       return false;
     }
     FlowAggregateQueryResponse flowAggregateQueryResponse = (FlowAggregateQueryResponse) o;
+
     return Objects.equals(this.results, flowAggregateQueryResponse.results);
   }
 

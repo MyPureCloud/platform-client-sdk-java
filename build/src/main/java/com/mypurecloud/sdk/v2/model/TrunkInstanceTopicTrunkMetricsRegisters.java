@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceTopicTrunkErrorInfo;
@@ -44,7 +45,7 @@ public class TrunkInstanceTopicTrunkMetricsRegisters  implements Serializable {
     this.proxyAddress = proxyAddress;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkMetricsRegisters registerState(Boolean registerState) {
@@ -61,7 +62,7 @@ public class TrunkInstanceTopicTrunkMetricsRegisters  implements Serializable {
     this.registerState = registerState;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkMetricsRegisters registerStateTime(Date registerStateTime) {
@@ -78,7 +79,7 @@ public class TrunkInstanceTopicTrunkMetricsRegisters  implements Serializable {
     this.registerStateTime = registerStateTime;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkMetricsRegisters errorInfo(TrunkInstanceTopicTrunkErrorInfo errorInfo) {
@@ -95,7 +96,6 @@ public class TrunkInstanceTopicTrunkMetricsRegisters  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class TrunkInstanceTopicTrunkMetricsRegisters  implements Serializable {
       return false;
     }
     TrunkInstanceTopicTrunkMetricsRegisters trunkInstanceTopicTrunkMetricsRegisters = (TrunkInstanceTopicTrunkMetricsRegisters) o;
+
     return Objects.equals(this.proxyAddress, trunkInstanceTopicTrunkMetricsRegisters.proxyAddress) &&
-        Objects.equals(this.registerState, trunkInstanceTopicTrunkMetricsRegisters.registerState) &&
-        Objects.equals(this.registerStateTime, trunkInstanceTopicTrunkMetricsRegisters.registerStateTime) &&
-        Objects.equals(this.errorInfo, trunkInstanceTopicTrunkMetricsRegisters.errorInfo);
+            Objects.equals(this.registerState, trunkInstanceTopicTrunkMetricsRegisters.registerState) &&
+            Objects.equals(this.registerStateTime, trunkInstanceTopicTrunkMetricsRegisters.registerStateTime) &&
+            Objects.equals(this.errorInfo, trunkInstanceTopicTrunkMetricsRegisters.errorInfo);
   }
 
   @Override

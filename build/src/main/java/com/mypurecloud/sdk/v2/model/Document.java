@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -211,7 +212,7 @@ public class Document  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Document name(String name) {
@@ -228,7 +229,7 @@ public class Document  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Document changeNumber(Integer changeNumber) {
@@ -245,7 +246,7 @@ public class Document  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -263,7 +264,7 @@ public class Document  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -281,7 +282,7 @@ public class Document  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -299,7 +300,7 @@ public class Document  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-  
+
   /**
    **/
   public Document contentUri(String contentUri) {
@@ -316,7 +317,7 @@ public class Document  implements Serializable {
     this.contentUri = contentUri;
   }
 
-  
+
   /**
    **/
   public Document workspace(DomainEntityRef workspace) {
@@ -333,7 +334,7 @@ public class Document  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public Document createdBy(DomainEntityRef createdBy) {
@@ -350,7 +351,7 @@ public class Document  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public Document uploadedBy(DomainEntityRef uploadedBy) {
@@ -367,7 +368,7 @@ public class Document  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-  
+
   /**
    **/
   public Document sharingUri(String sharingUri) {
@@ -384,7 +385,7 @@ public class Document  implements Serializable {
     this.sharingUri = sharingUri;
   }
 
-  
+
   /**
    **/
   public Document contentType(String contentType) {
@@ -401,7 +402,7 @@ public class Document  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public Document contentLength(Long contentLength) {
@@ -418,7 +419,7 @@ public class Document  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    **/
   public Document systemType(SystemTypeEnum systemType) {
@@ -435,7 +436,7 @@ public class Document  implements Serializable {
     this.systemType = systemType;
   }
 
-  
+
   /**
    **/
   public Document filename(String filename) {
@@ -452,7 +453,7 @@ public class Document  implements Serializable {
     this.filename = filename;
   }
 
-  
+
   /**
    **/
   public Document pageCount(Long pageCount) {
@@ -469,7 +470,7 @@ public class Document  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    **/
   public Document read(Boolean read) {
@@ -486,7 +487,7 @@ public class Document  implements Serializable {
     this.read = read;
   }
 
-  
+
   /**
    **/
   public Document callerAddress(String callerAddress) {
@@ -503,7 +504,7 @@ public class Document  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    **/
   public Document receiverAddress(String receiverAddress) {
@@ -520,7 +521,7 @@ public class Document  implements Serializable {
     this.receiverAddress = receiverAddress;
   }
 
-  
+
   /**
    **/
   public Document tags(List<String> tags) {
@@ -537,7 +538,7 @@ public class Document  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public Document tagValues(List<TagValue> tagValues) {
@@ -554,7 +555,7 @@ public class Document  implements Serializable {
     this.tagValues = tagValues;
   }
 
-  
+
   /**
    **/
   public Document attributes(List<DocumentAttribute> attributes) {
@@ -571,7 +572,7 @@ public class Document  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public Document thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -588,7 +589,7 @@ public class Document  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
-  
+
   /**
    **/
   public Document uploadStatus(DomainEntityRef uploadStatus) {
@@ -605,7 +606,7 @@ public class Document  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-  
+
   /**
    **/
   public Document uploadDestinationUri(String uploadDestinationUri) {
@@ -622,7 +623,7 @@ public class Document  implements Serializable {
     this.uploadDestinationUri = uploadDestinationUri;
   }
 
-  
+
   /**
    **/
   public Document uploadMethod(UploadMethodEnum uploadMethod) {
@@ -639,7 +640,7 @@ public class Document  implements Serializable {
     this.uploadMethod = uploadMethod;
   }
 
-  
+
   /**
    **/
   public Document lockInfo(LockInfo lockInfo) {
@@ -656,7 +657,7 @@ public class Document  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-  
+
   /**
    * A list of permitted action rights for the user making the request
    **/
@@ -674,7 +675,7 @@ public class Document  implements Serializable {
     this.acl = acl;
   }
 
-  
+
   /**
    **/
   public Document sharingStatus(SharingStatusEnum sharingStatus) {
@@ -691,7 +692,7 @@ public class Document  implements Serializable {
     this.sharingStatus = sharingStatus;
   }
 
-  
+
   /**
    **/
   public Document downloadSharingUri(String downloadSharingUri) {
@@ -708,14 +709,13 @@ public class Document  implements Serializable {
     this.downloadSharingUri = downloadSharingUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -726,37 +726,38 @@ public class Document  implements Serializable {
       return false;
     }
     Document document = (Document) o;
+
     return Objects.equals(this.id, document.id) &&
-        Objects.equals(this.name, document.name) &&
-        Objects.equals(this.changeNumber, document.changeNumber) &&
-        Objects.equals(this.dateCreated, document.dateCreated) &&
-        Objects.equals(this.dateModified, document.dateModified) &&
-        Objects.equals(this.dateUploaded, document.dateUploaded) &&
-        Objects.equals(this.contentUri, document.contentUri) &&
-        Objects.equals(this.workspace, document.workspace) &&
-        Objects.equals(this.createdBy, document.createdBy) &&
-        Objects.equals(this.uploadedBy, document.uploadedBy) &&
-        Objects.equals(this.sharingUri, document.sharingUri) &&
-        Objects.equals(this.contentType, document.contentType) &&
-        Objects.equals(this.contentLength, document.contentLength) &&
-        Objects.equals(this.systemType, document.systemType) &&
-        Objects.equals(this.filename, document.filename) &&
-        Objects.equals(this.pageCount, document.pageCount) &&
-        Objects.equals(this.read, document.read) &&
-        Objects.equals(this.callerAddress, document.callerAddress) &&
-        Objects.equals(this.receiverAddress, document.receiverAddress) &&
-        Objects.equals(this.tags, document.tags) &&
-        Objects.equals(this.tagValues, document.tagValues) &&
-        Objects.equals(this.attributes, document.attributes) &&
-        Objects.equals(this.thumbnails, document.thumbnails) &&
-        Objects.equals(this.uploadStatus, document.uploadStatus) &&
-        Objects.equals(this.uploadDestinationUri, document.uploadDestinationUri) &&
-        Objects.equals(this.uploadMethod, document.uploadMethod) &&
-        Objects.equals(this.lockInfo, document.lockInfo) &&
-        Objects.equals(this.acl, document.acl) &&
-        Objects.equals(this.sharingStatus, document.sharingStatus) &&
-        Objects.equals(this.downloadSharingUri, document.downloadSharingUri) &&
-        Objects.equals(this.selfUri, document.selfUri);
+            Objects.equals(this.name, document.name) &&
+            Objects.equals(this.changeNumber, document.changeNumber) &&
+            Objects.equals(this.dateCreated, document.dateCreated) &&
+            Objects.equals(this.dateModified, document.dateModified) &&
+            Objects.equals(this.dateUploaded, document.dateUploaded) &&
+            Objects.equals(this.contentUri, document.contentUri) &&
+            Objects.equals(this.workspace, document.workspace) &&
+            Objects.equals(this.createdBy, document.createdBy) &&
+            Objects.equals(this.uploadedBy, document.uploadedBy) &&
+            Objects.equals(this.sharingUri, document.sharingUri) &&
+            Objects.equals(this.contentType, document.contentType) &&
+            Objects.equals(this.contentLength, document.contentLength) &&
+            Objects.equals(this.systemType, document.systemType) &&
+            Objects.equals(this.filename, document.filename) &&
+            Objects.equals(this.pageCount, document.pageCount) &&
+            Objects.equals(this.read, document.read) &&
+            Objects.equals(this.callerAddress, document.callerAddress) &&
+            Objects.equals(this.receiverAddress, document.receiverAddress) &&
+            Objects.equals(this.tags, document.tags) &&
+            Objects.equals(this.tagValues, document.tagValues) &&
+            Objects.equals(this.attributes, document.attributes) &&
+            Objects.equals(this.thumbnails, document.thumbnails) &&
+            Objects.equals(this.uploadStatus, document.uploadStatus) &&
+            Objects.equals(this.uploadDestinationUri, document.uploadDestinationUri) &&
+            Objects.equals(this.uploadMethod, document.uploadMethod) &&
+            Objects.equals(this.lockInfo, document.lockInfo) &&
+            Objects.equals(this.acl, document.acl) &&
+            Objects.equals(this.sharingStatus, document.sharingStatus) &&
+            Objects.equals(this.downloadSharingUri, document.downloadSharingUri) &&
+            Objects.equals(this.selfUri, document.selfUri);
   }
 
   @Override

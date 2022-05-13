@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class JourneyWebActionEventsNotificationScheduleGroup  implements Seriali
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationScheduleGroup selfUri(String selfUri) {
@@ -57,7 +58,6 @@ public class JourneyWebActionEventsNotificationScheduleGroup  implements Seriali
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class JourneyWebActionEventsNotificationScheduleGroup  implements Seriali
       return false;
     }
     JourneyWebActionEventsNotificationScheduleGroup journeyWebActionEventsNotificationScheduleGroup = (JourneyWebActionEventsNotificationScheduleGroup) o;
+
     return Objects.equals(this.id, journeyWebActionEventsNotificationScheduleGroup.id) &&
-        Objects.equals(this.selfUri, journeyWebActionEventsNotificationScheduleGroup.selfUri);
+            Objects.equals(this.selfUri, journeyWebActionEventsNotificationScheduleGroup.selfUri);
   }
 
   @Override

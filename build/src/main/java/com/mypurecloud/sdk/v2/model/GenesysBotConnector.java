@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,6 @@ public class GenesysBotConnector  implements Serializable {
     this.queryParameters = queryParameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,6 +54,7 @@ public class GenesysBotConnector  implements Serializable {
       return false;
     }
     GenesysBotConnector genesysBotConnector = (GenesysBotConnector) o;
+
     return Objects.equals(this.queryParameters, genesysBotConnector.queryParameters);
   }
 

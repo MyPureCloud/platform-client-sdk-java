@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class JourneyOutcomeEventsNotificationSession  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationSession selfUri(String selfUri) {
@@ -58,7 +59,7 @@ public class JourneyOutcomeEventsNotificationSession  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationSession type(String type) {
@@ -75,7 +76,6 @@ public class JourneyOutcomeEventsNotificationSession  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class JourneyOutcomeEventsNotificationSession  implements Serializable {
       return false;
     }
     JourneyOutcomeEventsNotificationSession journeyOutcomeEventsNotificationSession = (JourneyOutcomeEventsNotificationSession) o;
+
     return Objects.equals(this.id, journeyOutcomeEventsNotificationSession.id) &&
-        Objects.equals(this.selfUri, journeyOutcomeEventsNotificationSession.selfUri) &&
-        Objects.equals(this.type, journeyOutcomeEventsNotificationSession.type);
+            Objects.equals(this.selfUri, journeyOutcomeEventsNotificationSession.selfUri) &&
+            Objects.equals(this.type, journeyOutcomeEventsNotificationSession.type);
   }
 
   @Override

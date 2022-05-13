@@ -10,7 +10,7 @@ title: PatchCtaButtonStyleProperties
 | ------------ | ------------- | ------------- | ------------- |
 | **color** | <!----><!---->**String**<!----> | Color of the text. (eg. #FFFFFF) |  [optional] |
 | **font** | <!----><!---->**String**<!----> | Font of the text. (eg. Helvetica) |  [optional] |
-| **fontSize** | <!----><!---->**String**<!----> | Font size of the text. (eg. &#39;12&#39;) |  [optional] |
+| **fontSize** | <!----><!---->**String**<!----> | Font size of the text. (eg. '12') |  [optional] |
 | **textAlign** | [**TextAlignEnum**](#TextAlignEnum)<!----> | Text alignment. |  [optional] |
 | **backgroundColor** | <!----><!---->**String**<!----> | Background color of the CTA button. (eg. #A04033) |  [optional] |
 {: class="table table-striped"}
@@ -22,10 +22,10 @@ title: PatchCtaButtonStyleProperties
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LEFT | &quot;Left&quot; |
-| RIGHT | &quot;Right&quot; |
-| CENTER | &quot;Center&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LEFT | &quot;Left&quot; | 
+| RIGHT | &quot;Right&quot; | 
+| CENTER | &quot;Center&quot; | 
 {: class="table table-striped"}
 
 

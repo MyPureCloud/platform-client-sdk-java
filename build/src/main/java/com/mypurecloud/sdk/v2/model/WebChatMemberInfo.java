@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -154,7 +155,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display name of the member.
    **/
@@ -172,7 +173,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * The first name of the member.
    **/
@@ -190,7 +191,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.firstName = firstName;
   }
 
-  
+
   /**
    * The last name of the member.
    **/
@@ -208,7 +209,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.lastName = lastName;
   }
 
-  
+
   /**
    * The email address of the member.
    **/
@@ -226,7 +227,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.email = email;
   }
 
-  
+
   /**
    * The phone number of the member.
    **/
@@ -244,7 +245,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * The url to the avatar image of the member.
    **/
@@ -262,7 +263,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.avatarImageUrl = avatarImageUrl;
   }
 
-  
+
   /**
    * The role of the member, one of [agent, customer, acd, workflow]
    **/
@@ -280,7 +281,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.role = role;
   }
 
-  
+
   /**
    * The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -298,7 +299,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.joinDate = joinDate;
   }
 
-  
+
   /**
    * The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -316,7 +317,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.leaveDate = leaveDate;
   }
 
-  
+
   /**
    * If true, the guest member is an authenticated guest.
    **/
@@ -334,7 +335,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.authenticatedGuest = authenticatedGuest;
   }
 
-  
+
   /**
    * Any custom fields of information pertaining to this member.
    **/
@@ -352,7 +353,7 @@ public class WebChatMemberInfo  implements Serializable {
     this.customFields = customFields;
   }
 
-  
+
   /**
    * The connection state of this member.
    **/
@@ -370,7 +371,6 @@ public class WebChatMemberInfo  implements Serializable {
     this.state = state;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -381,19 +381,20 @@ public class WebChatMemberInfo  implements Serializable {
       return false;
     }
     WebChatMemberInfo webChatMemberInfo = (WebChatMemberInfo) o;
+
     return Objects.equals(this.id, webChatMemberInfo.id) &&
-        Objects.equals(this.displayName, webChatMemberInfo.displayName) &&
-        Objects.equals(this.firstName, webChatMemberInfo.firstName) &&
-        Objects.equals(this.lastName, webChatMemberInfo.lastName) &&
-        Objects.equals(this.email, webChatMemberInfo.email) &&
-        Objects.equals(this.phoneNumber, webChatMemberInfo.phoneNumber) &&
-        Objects.equals(this.avatarImageUrl, webChatMemberInfo.avatarImageUrl) &&
-        Objects.equals(this.role, webChatMemberInfo.role) &&
-        Objects.equals(this.joinDate, webChatMemberInfo.joinDate) &&
-        Objects.equals(this.leaveDate, webChatMemberInfo.leaveDate) &&
-        Objects.equals(this.authenticatedGuest, webChatMemberInfo.authenticatedGuest) &&
-        Objects.equals(this.customFields, webChatMemberInfo.customFields) &&
-        Objects.equals(this.state, webChatMemberInfo.state);
+            Objects.equals(this.displayName, webChatMemberInfo.displayName) &&
+            Objects.equals(this.firstName, webChatMemberInfo.firstName) &&
+            Objects.equals(this.lastName, webChatMemberInfo.lastName) &&
+            Objects.equals(this.email, webChatMemberInfo.email) &&
+            Objects.equals(this.phoneNumber, webChatMemberInfo.phoneNumber) &&
+            Objects.equals(this.avatarImageUrl, webChatMemberInfo.avatarImageUrl) &&
+            Objects.equals(this.role, webChatMemberInfo.role) &&
+            Objects.equals(this.joinDate, webChatMemberInfo.joinDate) &&
+            Objects.equals(this.leaveDate, webChatMemberInfo.leaveDate) &&
+            Objects.equals(this.authenticatedGuest, webChatMemberInfo.authenticatedGuest) &&
+            Objects.equals(this.customFields, webChatMemberInfo.customFields) &&
+            Objects.equals(this.state, webChatMemberInfo.state);
   }
 
   @Override

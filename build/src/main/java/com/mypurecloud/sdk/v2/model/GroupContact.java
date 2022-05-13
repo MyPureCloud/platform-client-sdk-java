@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -138,7 +139,7 @@ public class GroupContact  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * Extension is set if the number is e164 valid
    **/
@@ -156,14 +157,14 @@ public class GroupContact  implements Serializable {
     this.extension = extension;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Formatted version of the address property")
   @JsonProperty("display")
   public String getDisplay() {
     return display;
   }
 
-  
+
   /**
    * Contact type of the address
    **/
@@ -181,7 +182,7 @@ public class GroupContact  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Media type of the address
    **/
@@ -199,7 +200,6 @@ public class GroupContact  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -210,11 +210,12 @@ public class GroupContact  implements Serializable {
       return false;
     }
     GroupContact groupContact = (GroupContact) o;
+
     return Objects.equals(this.address, groupContact.address) &&
-        Objects.equals(this.extension, groupContact.extension) &&
-        Objects.equals(this.display, groupContact.display) &&
-        Objects.equals(this.type, groupContact.type) &&
-        Objects.equals(this.mediaType, groupContact.mediaType);
+            Objects.equals(this.extension, groupContact.extension) &&
+            Objects.equals(this.display, groupContact.display) &&
+            Objects.equals(this.type, groupContact.type) &&
+            Objects.equals(this.mediaType, groupContact.mediaType);
   }
 
   @Override

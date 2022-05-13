@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Miner;
@@ -38,7 +39,7 @@ public class MinerIntent  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Intent name.
    **/
@@ -56,7 +57,7 @@ public class MinerIntent  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The miner to which the intent belongs.
    **/
@@ -74,7 +75,7 @@ public class MinerIntent  implements Serializable {
     this.miner = miner;
   }
 
-  
+
   /**
    * The utterances that are extracted for an Intent.
    **/
@@ -92,7 +93,7 @@ public class MinerIntent  implements Serializable {
     this.utterances = utterances;
   }
 
-  
+
   /**
    * Percentage of conversations belonging to the intent.
    **/
@@ -110,14 +111,13 @@ public class MinerIntent  implements Serializable {
     this.analyticVolumePercent = analyticVolumePercent;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +128,13 @@ public class MinerIntent  implements Serializable {
       return false;
     }
     MinerIntent minerIntent = (MinerIntent) o;
+
     return Objects.equals(this.id, minerIntent.id) &&
-        Objects.equals(this.name, minerIntent.name) &&
-        Objects.equals(this.miner, minerIntent.miner) &&
-        Objects.equals(this.utterances, minerIntent.utterances) &&
-        Objects.equals(this.analyticVolumePercent, minerIntent.analyticVolumePercent) &&
-        Objects.equals(this.selfUri, minerIntent.selfUri);
+            Objects.equals(this.name, minerIntent.name) &&
+            Objects.equals(this.miner, minerIntent.miner) &&
+            Objects.equals(this.utterances, minerIntent.utterances) &&
+            Objects.equals(this.analyticVolumePercent, minerIntent.analyticVolumePercent) &&
+            Objects.equals(this.selfUri, minerIntent.selfUri);
   }
 
   @Override

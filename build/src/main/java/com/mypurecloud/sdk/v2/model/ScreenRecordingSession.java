@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Conversation;
@@ -38,7 +39,7 @@ public class ScreenRecordingSession  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSession name(String name) {
@@ -55,7 +56,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSession user(User user) {
@@ -72,7 +73,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The id of the communication that is being recorded on the conversation
    **/
@@ -90,7 +91,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.communicationId = communicationId;
   }
 
-  
+
   /**
    **/
   public ScreenRecordingSession conversation(Conversation conversation) {
@@ -107,7 +108,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -125,14 +126,13 @@ public class ScreenRecordingSession  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,13 +143,14 @@ public class ScreenRecordingSession  implements Serializable {
       return false;
     }
     ScreenRecordingSession screenRecordingSession = (ScreenRecordingSession) o;
+
     return Objects.equals(this.id, screenRecordingSession.id) &&
-        Objects.equals(this.name, screenRecordingSession.name) &&
-        Objects.equals(this.user, screenRecordingSession.user) &&
-        Objects.equals(this.communicationId, screenRecordingSession.communicationId) &&
-        Objects.equals(this.conversation, screenRecordingSession.conversation) &&
-        Objects.equals(this.startTime, screenRecordingSession.startTime) &&
-        Objects.equals(this.selfUri, screenRecordingSession.selfUri);
+            Objects.equals(this.name, screenRecordingSession.name) &&
+            Objects.equals(this.user, screenRecordingSession.user) &&
+            Objects.equals(this.communicationId, screenRecordingSession.communicationId) &&
+            Objects.equals(this.conversation, screenRecordingSession.conversation) &&
+            Objects.equals(this.startTime, screenRecordingSession.startTime) &&
+            Objects.equals(this.selfUri, screenRecordingSession.selfUri);
   }
 
   @Override

@@ -20,37 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 public class GetQualityConversationsAuditsQueryTransactionIdRequest {
-    
+
 	private String transactionId;
 	public String getTransactionId() {
 		return this.transactionId;
@@ -64,7 +64,7 @@ public class GetQualityConversationsAuditsQueryTransactionIdRequest {
 	    this.setTransactionId(transactionId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,7 +95,7 @@ public class GetQualityConversationsAuditsQueryTransactionIdRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/quality/conversations/audits/query/{transactionId}")
                 .withPathParameter("transactionId", transactionId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -106,12 +106,12 @@ public class GetQualityConversationsAuditsQueryTransactionIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String transactionId) {
 	    return new Builder()
 	            .withRequiredParams(transactionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetQualityConversationsAuditsQueryTransactionIdRequest request;
@@ -120,20 +120,20 @@ public class GetQualityConversationsAuditsQueryTransactionIdRequest {
 			request = new GetQualityConversationsAuditsQueryTransactionIdRequest();
 		}
 
-		
+
 		public Builder withTransactionId(String transactionId) {
 			request.setTransactionId(transactionId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String transactionId) {
 			request.setTransactionId(transactionId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetQualityConversationsAuditsQueryTransactionIdRequest build() {
             

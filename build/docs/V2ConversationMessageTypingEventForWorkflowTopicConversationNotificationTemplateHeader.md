@@ -21,9 +21,9 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationT
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXT | &quot;Text&quot; |
-| MEDIA | &quot;Media&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXT | &quot;Text&quot; | 
+| MEDIA | &quot;Media&quot; | 
 {: class="table table-striped"}
 
 

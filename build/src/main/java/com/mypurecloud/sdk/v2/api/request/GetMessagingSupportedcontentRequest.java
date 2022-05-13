@@ -21,11 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
 public class GetMessagingSupportedcontentRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -39,7 +39,7 @@ public class GetMessagingSupportedcontentRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -53,7 +53,7 @@ public class GetMessagingSupportedcontentRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,11 +77,13 @@ public class GetMessagingSupportedcontentRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/messaging/supportedcontent")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -92,7 +94,7 @@ public class GetMessagingSupportedcontentRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetMessagingSupportedcontentRequest request;
@@ -101,19 +103,19 @@ public class GetMessagingSupportedcontentRequest {
 			request = new GetMessagingSupportedcontentRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetMessagingSupportedcontentRequest build() {
             

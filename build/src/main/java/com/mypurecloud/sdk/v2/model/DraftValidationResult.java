@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -45,7 +46,7 @@ public class DraftValidationResult  implements Serializable {
     this.valid = valid;
   }
 
-  
+
   /**
    * List of errors causing validation failure
    **/
@@ -63,7 +64,6 @@ public class DraftValidationResult  implements Serializable {
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class DraftValidationResult  implements Serializable {
       return false;
     }
     DraftValidationResult draftValidationResult = (DraftValidationResult) o;
+
     return Objects.equals(this.valid, draftValidationResult.valid) &&
-        Objects.equals(this.errors, draftValidationResult.errors);
+            Objects.equals(this.errors, draftValidationResult.errors);
   }
 
   @Override

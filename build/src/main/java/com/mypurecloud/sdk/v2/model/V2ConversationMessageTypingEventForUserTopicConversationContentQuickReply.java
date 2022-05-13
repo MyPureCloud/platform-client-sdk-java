@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentQuic
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply payload(String payload) {
@@ -106,7 +107,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentQuic
     this.payload = payload;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply image(String image) {
@@ -123,7 +124,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentQuic
     this.image = image;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply action(ActionEnum action) {
@@ -140,7 +141,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentQuic
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,10 +151,11 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentQuic
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply = (V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply) o;
+
     return Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.text) &&
-        Objects.equals(this.payload, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.payload) &&
-        Objects.equals(this.image, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.image) &&
-        Objects.equals(this.action, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.action);
+            Objects.equals(this.payload, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.payload) &&
+            Objects.equals(this.image, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.image) &&
+            Objects.equals(this.action, v2ConversationMessageTypingEventForUserTopicConversationContentQuickReply.action);
   }
 
   @Override

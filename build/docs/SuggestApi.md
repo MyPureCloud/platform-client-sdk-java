@@ -23,8 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Search using the q64 value returned from a previous search.
 
-
-
 Wraps GET /api/v2/search  
 
 Requires ANY permissions: 
@@ -54,7 +52,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SuggestApi apiInstance = new SuggestApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 Boolean profile = true; // Boolean | profile
 try {
     JsonNodeSearchResponse result = apiInstance.getSearch(q64, expand, profile);
@@ -90,8 +88,6 @@ try {
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
-
-
 Wraps GET /api/v2/search/suggest  
 
 Requires ANY permissions: 
@@ -121,7 +117,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SuggestApi apiInstance = new SuggestApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 Boolean profile = true; // Boolean | profile
 try {
     JsonNodeSearchResponse result = apiInstance.getSearchSuggest(q64, expand, profile);
@@ -156,8 +152,6 @@ try {
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearch(body, profile)
 
 Search resources.
-
-
 
 Wraps POST /api/v2/search  
 
@@ -221,8 +215,6 @@ try {
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearchSuggest(body, profile)
 
 Suggest resources.
-
-
 
 Wraps POST /api/v2/search/suggest  
 

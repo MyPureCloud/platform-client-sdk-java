@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -48,7 +49,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Total number of expected pages, if known.
    **/
@@ -66,7 +67,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.expectedPages = expectedPages;
   }
 
-  
+
   /**
    * Active page of the transmission.
    **/
@@ -84,7 +85,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.activePage = activePage;
   }
 
-  
+
   /**
    * Number of lines that have completed transmission.
    **/
@@ -102,7 +103,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.linesTransmitted = linesTransmitted;
   }
 
-  
+
   /**
    * Number of bytes that have competed transmission.
    **/
@@ -120,7 +121,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.bytesTransmitted = bytesTransmitted;
   }
 
-  
+
   /**
    * Current signaling rate of transmission, baud rate.
    **/
@@ -138,7 +139,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.baudRate = baudRate;
   }
 
-  
+
   /**
    * Number of page errors.
    **/
@@ -156,7 +157,7 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.pageErrors = pageErrors;
   }
 
-  
+
   /**
    * Number of line errors.
    **/
@@ -174,7 +175,6 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
     this.lineErrors = lineErrors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,14 +185,15 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
       return false;
     }
     QueueConversationEventTopicFaxStatus queueConversationEventTopicFaxStatus = (QueueConversationEventTopicFaxStatus) o;
+
     return Objects.equals(this.direction, queueConversationEventTopicFaxStatus.direction) &&
-        Objects.equals(this.expectedPages, queueConversationEventTopicFaxStatus.expectedPages) &&
-        Objects.equals(this.activePage, queueConversationEventTopicFaxStatus.activePage) &&
-        Objects.equals(this.linesTransmitted, queueConversationEventTopicFaxStatus.linesTransmitted) &&
-        Objects.equals(this.bytesTransmitted, queueConversationEventTopicFaxStatus.bytesTransmitted) &&
-        Objects.equals(this.baudRate, queueConversationEventTopicFaxStatus.baudRate) &&
-        Objects.equals(this.pageErrors, queueConversationEventTopicFaxStatus.pageErrors) &&
-        Objects.equals(this.lineErrors, queueConversationEventTopicFaxStatus.lineErrors);
+            Objects.equals(this.expectedPages, queueConversationEventTopicFaxStatus.expectedPages) &&
+            Objects.equals(this.activePage, queueConversationEventTopicFaxStatus.activePage) &&
+            Objects.equals(this.linesTransmitted, queueConversationEventTopicFaxStatus.linesTransmitted) &&
+            Objects.equals(this.bytesTransmitted, queueConversationEventTopicFaxStatus.bytesTransmitted) &&
+            Objects.equals(this.baudRate, queueConversationEventTopicFaxStatus.baudRate) &&
+            Objects.equals(this.pageErrors, queueConversationEventTopicFaxStatus.pageErrors) &&
+            Objects.equals(this.lineErrors, queueConversationEventTopicFaxStatus.lineErrors);
   }
 
   @Override

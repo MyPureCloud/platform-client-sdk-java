@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class StatisticalSummary  implements Serializable {
     this.max = max;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary min(BigDecimal min) {
@@ -67,7 +68,7 @@ public class StatisticalSummary  implements Serializable {
     this.min = min;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary count(Long count) {
@@ -84,7 +85,7 @@ public class StatisticalSummary  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary countNegative(Long countNegative) {
@@ -101,7 +102,7 @@ public class StatisticalSummary  implements Serializable {
     this.countNegative = countNegative;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary countPositive(Long countPositive) {
@@ -118,7 +119,7 @@ public class StatisticalSummary  implements Serializable {
     this.countPositive = countPositive;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary sum(BigDecimal sum) {
@@ -135,7 +136,7 @@ public class StatisticalSummary  implements Serializable {
     this.sum = sum;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary current(BigDecimal current) {
@@ -152,7 +153,7 @@ public class StatisticalSummary  implements Serializable {
     this.current = current;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary ratio(BigDecimal ratio) {
@@ -169,7 +170,7 @@ public class StatisticalSummary  implements Serializable {
     this.ratio = ratio;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary numerator(BigDecimal numerator) {
@@ -186,7 +187,7 @@ public class StatisticalSummary  implements Serializable {
     this.numerator = numerator;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary denominator(BigDecimal denominator) {
@@ -203,7 +204,7 @@ public class StatisticalSummary  implements Serializable {
     this.denominator = denominator;
   }
 
-  
+
   /**
    **/
   public StatisticalSummary target(BigDecimal target) {
@@ -220,7 +221,6 @@ public class StatisticalSummary  implements Serializable {
     this.target = target;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -231,17 +231,18 @@ public class StatisticalSummary  implements Serializable {
       return false;
     }
     StatisticalSummary statisticalSummary = (StatisticalSummary) o;
+
     return Objects.equals(this.max, statisticalSummary.max) &&
-        Objects.equals(this.min, statisticalSummary.min) &&
-        Objects.equals(this.count, statisticalSummary.count) &&
-        Objects.equals(this.countNegative, statisticalSummary.countNegative) &&
-        Objects.equals(this.countPositive, statisticalSummary.countPositive) &&
-        Objects.equals(this.sum, statisticalSummary.sum) &&
-        Objects.equals(this.current, statisticalSummary.current) &&
-        Objects.equals(this.ratio, statisticalSummary.ratio) &&
-        Objects.equals(this.numerator, statisticalSummary.numerator) &&
-        Objects.equals(this.denominator, statisticalSummary.denominator) &&
-        Objects.equals(this.target, statisticalSummary.target);
+            Objects.equals(this.min, statisticalSummary.min) &&
+            Objects.equals(this.count, statisticalSummary.count) &&
+            Objects.equals(this.countNegative, statisticalSummary.countNegative) &&
+            Objects.equals(this.countPositive, statisticalSummary.countPositive) &&
+            Objects.equals(this.sum, statisticalSummary.sum) &&
+            Objects.equals(this.current, statisticalSummary.current) &&
+            Objects.equals(this.ratio, statisticalSummary.ratio) &&
+            Objects.equals(this.numerator, statisticalSummary.numerator) &&
+            Objects.equals(this.denominator, statisticalSummary.denominator) &&
+            Objects.equals(this.target, statisticalSummary.target);
   }
 
   @Override

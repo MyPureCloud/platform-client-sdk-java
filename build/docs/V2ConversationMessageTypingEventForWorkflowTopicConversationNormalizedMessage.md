@@ -29,11 +29,11 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMes
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXT | &quot;Text&quot; |
-| STRUCTURED | &quot;Structured&quot; |
-| RECEIPT | &quot;Receipt&quot; |
-| EVENT | &quot;Event&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXT | &quot;Text&quot; | 
+| STRUCTURED | &quot;Structured&quot; | 
+| RECEIPT | &quot;Receipt&quot; | 
+| EVENT | &quot;Event&quot; | 
 {: class="table table-striped"}
 
 
@@ -43,13 +43,13 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMes
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SENT | &quot;Sent&quot; |
-| DELIVERED | &quot;Delivered&quot; |
-| READ | &quot;Read&quot; |
-| FAILED | &quot;Failed&quot; |
-| PUBLISHED | &quot;Published&quot; |
-| REMOVED | &quot;Removed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SENT | &quot;Sent&quot; | 
+| DELIVERED | &quot;Delivered&quot; | 
+| READ | &quot;Read&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| PUBLISHED | &quot;Published&quot; | 
+| REMOVED | &quot;Removed&quot; | 
 {: class="table table-striped"}
 
 
@@ -59,9 +59,9 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMes
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HUMAN | &quot;Human&quot; |
-| BOT | &quot;Bot&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HUMAN | &quot;Human&quot; | 
+| BOT | &quot;Bot&quot; | 
 {: class="table table-striped"}
 
 
@@ -71,9 +71,9 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMes
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;Inbound&quot; |
-| OUTBOUND | &quot;Outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;Inbound&quot; | 
+| OUTBOUND | &quot;Outbound&quot; | 
 {: class="table table-striped"}
 
 

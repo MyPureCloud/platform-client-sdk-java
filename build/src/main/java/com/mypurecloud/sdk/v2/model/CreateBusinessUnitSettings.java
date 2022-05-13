@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class CreateBusinessUnitSettings  implements Serializable {
     this.startDayOfWeek = startDayOfWeek;
   }
 
-  
+
   /**
    * The time zone for this business unit, using the Olsen tz database format
    **/
@@ -116,7 +117,7 @@ public class CreateBusinessUnitSettings  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * Short term forecasting settings
    **/
@@ -134,7 +135,7 @@ public class CreateBusinessUnitSettings  implements Serializable {
     this.shortTermForecasting = shortTermForecasting;
   }
 
-  
+
   /**
    * Scheduling settings
    **/
@@ -152,7 +153,6 @@ public class CreateBusinessUnitSettings  implements Serializable {
     this.scheduling = scheduling;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,10 +163,11 @@ public class CreateBusinessUnitSettings  implements Serializable {
       return false;
     }
     CreateBusinessUnitSettings createBusinessUnitSettings = (CreateBusinessUnitSettings) o;
+
     return Objects.equals(this.startDayOfWeek, createBusinessUnitSettings.startDayOfWeek) &&
-        Objects.equals(this.timeZone, createBusinessUnitSettings.timeZone) &&
-        Objects.equals(this.shortTermForecasting, createBusinessUnitSettings.shortTermForecasting) &&
-        Objects.equals(this.scheduling, createBusinessUnitSettings.scheduling);
+            Objects.equals(this.timeZone, createBusinessUnitSettings.timeZone) &&
+            Objects.equals(this.shortTermForecasting, createBusinessUnitSettings.shortTermForecasting) &&
+            Objects.equals(this.scheduling, createBusinessUnitSettings.scheduling);
   }
 
   @Override

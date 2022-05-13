@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FlowDivisionViewEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FlowDivisionViewEntityListing  implements Serializable, PagedResour
       return false;
     }
     FlowDivisionViewEntityListing flowDivisionViewEntityListing = (FlowDivisionViewEntityListing) o;
+
     return Objects.equals(this.entities, flowDivisionViewEntityListing.entities) &&
-        Objects.equals(this.pageSize, flowDivisionViewEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, flowDivisionViewEntityListing.pageNumber) &&
-        Objects.equals(this.total, flowDivisionViewEntityListing.total) &&
-        Objects.equals(this.lastUri, flowDivisionViewEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, flowDivisionViewEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, flowDivisionViewEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, flowDivisionViewEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, flowDivisionViewEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, flowDivisionViewEntityListing.pageCount);
+            Objects.equals(this.pageSize, flowDivisionViewEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, flowDivisionViewEntityListing.pageNumber) &&
+            Objects.equals(this.total, flowDivisionViewEntityListing.total) &&
+            Objects.equals(this.lastUri, flowDivisionViewEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, flowDivisionViewEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, flowDivisionViewEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, flowDivisionViewEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, flowDivisionViewEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, flowDivisionViewEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class TimeOffLimitRange  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Granularity choice for the time off limit
    **/
@@ -111,7 +112,7 @@ public class TimeOffLimitRange  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
    **/
@@ -129,7 +130,6 @@ public class TimeOffLimitRange  implements Serializable {
     this.limitMinutesPerInterval = limitMinutesPerInterval;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class TimeOffLimitRange  implements Serializable {
       return false;
     }
     TimeOffLimitRange timeOffLimitRange = (TimeOffLimitRange) o;
+
     return Objects.equals(this.startDate, timeOffLimitRange.startDate) &&
-        Objects.equals(this.granularity, timeOffLimitRange.granularity) &&
-        Objects.equals(this.limitMinutesPerInterval, timeOffLimitRange.limitMinutesPerInterval);
+            Objects.equals(this.granularity, timeOffLimitRange.granularity) &&
+            Objects.equals(this.limitMinutesPerInterval, timeOffLimitRange.limitMinutesPerInterval);
   }
 
   @Override

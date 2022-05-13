@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
@@ -32,14 +33,13 @@ public class AddConversationResponse  implements Serializable {
     return conversation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The appointment reference")
   @JsonProperty("appointment")
   public CoachingAppointmentReference getAppointment() {
     return appointment;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -50,8 +50,9 @@ public class AddConversationResponse  implements Serializable {
       return false;
     }
     AddConversationResponse addConversationResponse = (AddConversationResponse) o;
+
     return Objects.equals(this.conversation, addConversationResponse.conversation) &&
-        Objects.equals(this.appointment, addConversationResponse.appointment);
+            Objects.equals(this.appointment, addConversationResponse.appointment);
   }
 
   @Override

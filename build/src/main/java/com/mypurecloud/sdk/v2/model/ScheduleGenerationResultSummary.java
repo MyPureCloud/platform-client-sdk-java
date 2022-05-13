@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SchedulerMessageSeverityCount;
@@ -46,7 +47,7 @@ public class ScheduleGenerationResultSummary  implements Serializable {
     this.failed = failed;
   }
 
-  
+
   /**
    * The ID of the schedule generation run. Reference this when requesting support
    **/
@@ -64,7 +65,7 @@ public class ScheduleGenerationResultSummary  implements Serializable {
     this.runId = runId;
   }
 
-  
+
   /**
    * The number of schedule generation messages for this schedule generation run
    **/
@@ -82,7 +83,7 @@ public class ScheduleGenerationResultSummary  implements Serializable {
     this.messageCount = messageCount;
   }
 
-  
+
   /**
    * The list of schedule generation message counts by severity for this schedule generation run
    **/
@@ -100,7 +101,6 @@ public class ScheduleGenerationResultSummary  implements Serializable {
     this.messageSeverityCounts = messageSeverityCounts;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class ScheduleGenerationResultSummary  implements Serializable {
       return false;
     }
     ScheduleGenerationResultSummary scheduleGenerationResultSummary = (ScheduleGenerationResultSummary) o;
+
     return Objects.equals(this.failed, scheduleGenerationResultSummary.failed) &&
-        Objects.equals(this.runId, scheduleGenerationResultSummary.runId) &&
-        Objects.equals(this.messageCount, scheduleGenerationResultSummary.messageCount) &&
-        Objects.equals(this.messageSeverityCounts, scheduleGenerationResultSummary.messageSeverityCounts);
+            Objects.equals(this.runId, scheduleGenerationResultSummary.runId) &&
+            Objects.equals(this.messageCount, scheduleGenerationResultSummary.messageCount) &&
+            Objects.equals(this.messageSeverityCounts, scheduleGenerationResultSummary.messageSeverityCounts);
   }
 
   @Override

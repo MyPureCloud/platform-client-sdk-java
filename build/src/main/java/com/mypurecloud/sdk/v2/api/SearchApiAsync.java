@@ -13,28 +13,28 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
-import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
-import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
+import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetDocumentationGknSearchRequest;
@@ -64,7 +64,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class SearchApiAsync {
   private final ApiClient pcapiClient;
 
@@ -76,7 +75,6 @@ public class SearchApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Search gkn documentation using the q64 value returned from a previous search
    * 
@@ -152,7 +150,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search documentation using the q64 value returned from a previous search
    * 
@@ -228,7 +225,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -304,7 +300,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -380,7 +375,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search using the q64 value returned from a previous search.
    * 
@@ -456,7 +450,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
@@ -532,7 +525,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search users using the q64 value returned from a previous search
    * 
@@ -608,7 +600,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
@@ -684,7 +675,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -760,7 +750,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search gkn documentation
    * 
@@ -836,7 +825,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search documentation
    * 
@@ -912,7 +900,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search groups
    * 
@@ -988,7 +975,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search Documents
    * 
@@ -1064,7 +1050,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search locations
    * 
@@ -1140,7 +1125,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -1216,7 +1200,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Suggest resources.
    * 
@@ -1292,7 +1275,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -1368,7 +1350,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search users
    * 
@@ -1444,7 +1425,6 @@ public class SearchApiAsync {
     }
   }
 
-  
   /**
    * Search voicemails
    * 
@@ -1520,7 +1500,6 @@ public class SearchApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

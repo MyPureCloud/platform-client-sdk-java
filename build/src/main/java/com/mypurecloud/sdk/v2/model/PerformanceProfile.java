@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -44,7 +45,7 @@ public class PerformanceProfile  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * A name for this performance profile
    **/
@@ -62,14 +63,14 @@ public class PerformanceProfile  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The division for this performance profile associate to")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
 
-  
+
   /**
    * A description about this performance profile
    **/
@@ -87,7 +88,7 @@ public class PerformanceProfile  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Order of the associated metrics. The list should contain valid ids for metrics
    **/
@@ -105,14 +106,14 @@ public class PerformanceProfile  implements Serializable {
     this.metricOrders = metricOrders;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   /**
    * The reporting interval periods for this performance profile
    **/
@@ -130,21 +131,21 @@ public class PerformanceProfile  implements Serializable {
     this.reportingIntervals = reportingIntervals;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The flag for active profiles")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of members in this performance profile")
   @JsonProperty("memberCount")
   public Integer getMemberCount() {
     return memberCount;
   }
 
-  
+
   /**
    * The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries
    **/
@@ -162,14 +163,13 @@ public class PerformanceProfile  implements Serializable {
     this.maxLeaderboardRankSize = maxLeaderboardRankSize;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,17 +180,18 @@ public class PerformanceProfile  implements Serializable {
       return false;
     }
     PerformanceProfile performanceProfile = (PerformanceProfile) o;
+
     return Objects.equals(this.id, performanceProfile.id) &&
-        Objects.equals(this.name, performanceProfile.name) &&
-        Objects.equals(this.division, performanceProfile.division) &&
-        Objects.equals(this.description, performanceProfile.description) &&
-        Objects.equals(this.metricOrders, performanceProfile.metricOrders) &&
-        Objects.equals(this.dateCreated, performanceProfile.dateCreated) &&
-        Objects.equals(this.reportingIntervals, performanceProfile.reportingIntervals) &&
-        Objects.equals(this.active, performanceProfile.active) &&
-        Objects.equals(this.memberCount, performanceProfile.memberCount) &&
-        Objects.equals(this.maxLeaderboardRankSize, performanceProfile.maxLeaderboardRankSize) &&
-        Objects.equals(this.selfUri, performanceProfile.selfUri);
+            Objects.equals(this.name, performanceProfile.name) &&
+            Objects.equals(this.division, performanceProfile.division) &&
+            Objects.equals(this.description, performanceProfile.description) &&
+            Objects.equals(this.metricOrders, performanceProfile.metricOrders) &&
+            Objects.equals(this.dateCreated, performanceProfile.dateCreated) &&
+            Objects.equals(this.reportingIntervals, performanceProfile.reportingIntervals) &&
+            Objects.equals(this.active, performanceProfile.active) &&
+            Objects.equals(this.memberCount, performanceProfile.memberCount) &&
+            Objects.equals(this.maxLeaderboardRankSize, performanceProfile.maxLeaderboardRankSize) &&
+            Objects.equals(this.selfUri, performanceProfile.selfUri);
   }
 
   @Override

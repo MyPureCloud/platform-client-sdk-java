@@ -33,9 +33,9 @@ title: LocationDefinition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 

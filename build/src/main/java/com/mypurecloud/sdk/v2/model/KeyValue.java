@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class KeyValue  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    * Value for free-form data.
    **/
@@ -59,7 +60,6 @@ public class KeyValue  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class KeyValue  implements Serializable {
       return false;
     }
     KeyValue keyValue = (KeyValue) o;
+
     return Objects.equals(this.key, keyValue.key) &&
-        Objects.equals(this.value, keyValue.value);
+            Objects.equals(this.value, keyValue.value);
   }
 
   @Override

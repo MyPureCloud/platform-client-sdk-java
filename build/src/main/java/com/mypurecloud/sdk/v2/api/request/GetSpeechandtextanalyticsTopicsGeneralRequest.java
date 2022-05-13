@@ -20,36 +20,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 public class GetSpeechandtextanalyticsTopicsGeneralRequest {
-    
+
 	private String dialect;
 	public String getDialect() {
 		return this.dialect;
@@ -65,19 +65,19 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 	} 
 
 	public enum dialectValues { 
-		EN_US("en-US"), 
-		ES_US("es-US"), 
-		EN_AU("en-AU"), 
-		EN_GB("en-GB"), 
-		EN_ZA("en-ZA"), 
-		ES_ES("es-ES"), 
-		EN_IN("en-IN"), 
-		FR_FR("fr-FR"), 
-		FR_CA("fr-CA"), 
-		IT_IT("it-IT"), 
-		DE_DE("de-DE"), 
-		PT_BR("pt-BR"), 
-		PL_PL("pl-PL"), 
+		EN_US("en-US"),
+		ES_US("es-US"),
+		EN_AU("en-AU"),
+		EN_GB("en-GB"),
+		EN_ZA("en-ZA"),
+		ES_ES("es-ES"),
+		EN_IN("en-IN"),
+		FR_FR("fr-FR"),
+		FR_CA("fr-CA"),
+		IT_IT("it-IT"),
+		DE_DE("de-DE"),
+		PT_BR("pt-BR"),
+		PL_PL("pl-PL"),
 		PT_PT("pt-PT");
 
 		private String value;
@@ -105,7 +105,7 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -129,9 +129,10 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/speechandtextanalytics/topics/general")
+
                 .withQueryParameters("dialect", "", dialect)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -142,7 +143,7 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetSpeechandtextanalyticsTopicsGeneralRequest request;
@@ -151,19 +152,23 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 			request = new GetSpeechandtextanalyticsTopicsGeneralRequest();
 		}
 
-		
+
 		public Builder withDialect(String dialect) {
 			request.setDialect(dialect);
 			return this;
 		}
 
-		public Builder withDialect(dialectValues dialect) {
-		    request.setDialect(dialect.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withDialect(dialectValues dialect) {
+		    request.setDialect(dialect.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetSpeechandtextanalyticsTopicsGeneralRequest build() {
             

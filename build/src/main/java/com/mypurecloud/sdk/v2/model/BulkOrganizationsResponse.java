@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkResponseResultExternalOrganizationExternalOrganization;
@@ -44,7 +45,7 @@ public class BulkOrganizationsResponse  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    **/
   public BulkOrganizationsResponse errorCount(Integer errorCount) {
@@ -61,7 +62,7 @@ public class BulkOrganizationsResponse  implements Serializable {
     this.errorCount = errorCount;
   }
 
-  
+
   /**
    **/
   public BulkOrganizationsResponse errorIndexes(List<Integer> errorIndexes) {
@@ -78,7 +79,6 @@ public class BulkOrganizationsResponse  implements Serializable {
     this.errorIndexes = errorIndexes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class BulkOrganizationsResponse  implements Serializable {
       return false;
     }
     BulkOrganizationsResponse bulkOrganizationsResponse = (BulkOrganizationsResponse) o;
+
     return Objects.equals(this.results, bulkOrganizationsResponse.results) &&
-        Objects.equals(this.errorCount, bulkOrganizationsResponse.errorCount) &&
-        Objects.equals(this.errorIndexes, bulkOrganizationsResponse.errorIndexes);
+            Objects.equals(this.errorCount, bulkOrganizationsResponse.errorCount) &&
+            Objects.equals(this.errorIndexes, bulkOrganizationsResponse.errorIndexes);
   }
 
   @Override

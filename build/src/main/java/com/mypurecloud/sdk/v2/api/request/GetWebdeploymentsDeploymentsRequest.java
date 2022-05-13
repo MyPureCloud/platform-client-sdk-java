@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class GetWebdeploymentsDeploymentsRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -51,7 +51,7 @@ public class GetWebdeploymentsDeploymentsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/webdeployments/deployments")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -62,7 +62,7 @@ public class GetWebdeploymentsDeploymentsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetWebdeploymentsDeploymentsRequest request;
@@ -71,9 +71,9 @@ public class GetWebdeploymentsDeploymentsRequest {
 			request = new GetWebdeploymentsDeploymentsRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetWebdeploymentsDeploymentsRequest build() {
             

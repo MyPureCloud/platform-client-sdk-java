@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.maxAttemptsPerContact = maxAttemptsPerContact;
   }
 
-  
+
   /**
    **/
   public DialerAttemptLimitsConfigChangeAttemptLimits maxAttemptsPerNumber(Integer maxAttemptsPerNumber) {
@@ -119,7 +120,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
   }
 
-  
+
   /**
    * The timezone is necessary to define when \"today\" starts and ends
    **/
@@ -137,7 +138,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.timeZoneId = timeZoneId;
   }
 
-  
+
   /**
    * After how long the number of attempts will be set back to 0
    **/
@@ -155,7 +156,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.resetPeriod = resetPeriod;
   }
 
-  
+
   /**
    * Configuration for recall attempts
    **/
@@ -173,7 +174,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.recallEntries = recallEntries;
   }
 
-  
+
   /**
    * Whether recalls are performed before considering other numbers (true) or after (false)
    **/
@@ -191,7 +192,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.breadthFirstRecalls = breadthFirstRecalls;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -209,7 +210,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -227,7 +228,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -245,7 +246,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -263,7 +264,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -281,7 +282,6 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -292,17 +292,18 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
       return false;
     }
     DialerAttemptLimitsConfigChangeAttemptLimits dialerAttemptLimitsConfigChangeAttemptLimits = (DialerAttemptLimitsConfigChangeAttemptLimits) o;
+
     return Objects.equals(this.maxAttemptsPerContact, dialerAttemptLimitsConfigChangeAttemptLimits.maxAttemptsPerContact) &&
-        Objects.equals(this.maxAttemptsPerNumber, dialerAttemptLimitsConfigChangeAttemptLimits.maxAttemptsPerNumber) &&
-        Objects.equals(this.timeZoneId, dialerAttemptLimitsConfigChangeAttemptLimits.timeZoneId) &&
-        Objects.equals(this.resetPeriod, dialerAttemptLimitsConfigChangeAttemptLimits.resetPeriod) &&
-        Objects.equals(this.recallEntries, dialerAttemptLimitsConfigChangeAttemptLimits.recallEntries) &&
-        Objects.equals(this.breadthFirstRecalls, dialerAttemptLimitsConfigChangeAttemptLimits.breadthFirstRecalls) &&
-        Objects.equals(this.id, dialerAttemptLimitsConfigChangeAttemptLimits.id) &&
-        Objects.equals(this.name, dialerAttemptLimitsConfigChangeAttemptLimits.name) &&
-        Objects.equals(this.dateCreated, dialerAttemptLimitsConfigChangeAttemptLimits.dateCreated) &&
-        Objects.equals(this.dateModified, dialerAttemptLimitsConfigChangeAttemptLimits.dateModified) &&
-        Objects.equals(this.version, dialerAttemptLimitsConfigChangeAttemptLimits.version);
+            Objects.equals(this.maxAttemptsPerNumber, dialerAttemptLimitsConfigChangeAttemptLimits.maxAttemptsPerNumber) &&
+            Objects.equals(this.timeZoneId, dialerAttemptLimitsConfigChangeAttemptLimits.timeZoneId) &&
+            Objects.equals(this.resetPeriod, dialerAttemptLimitsConfigChangeAttemptLimits.resetPeriod) &&
+            Objects.equals(this.recallEntries, dialerAttemptLimitsConfigChangeAttemptLimits.recallEntries) &&
+            Objects.equals(this.breadthFirstRecalls, dialerAttemptLimitsConfigChangeAttemptLimits.breadthFirstRecalls) &&
+            Objects.equals(this.id, dialerAttemptLimitsConfigChangeAttemptLimits.id) &&
+            Objects.equals(this.name, dialerAttemptLimitsConfigChangeAttemptLimits.name) &&
+            Objects.equals(this.dateCreated, dialerAttemptLimitsConfigChangeAttemptLimits.dateCreated) &&
+            Objects.equals(this.dateModified, dialerAttemptLimitsConfigChangeAttemptLimits.dateModified) &&
+            Objects.equals(this.version, dialerAttemptLimitsConfigChangeAttemptLimits.version);
   }
 
   @Override

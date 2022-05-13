@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerRule;
@@ -42,7 +43,7 @@ public class RuleSet  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the RuleSet.
    **/
@@ -60,21 +61,21 @@ public class RuleSet  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -92,7 +93,7 @@ public class RuleSet  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
    **/
@@ -110,7 +111,7 @@ public class RuleSet  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
    **/
@@ -128,7 +129,7 @@ public class RuleSet  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The list of rules.
    **/
@@ -146,14 +147,13 @@ public class RuleSet  implements Serializable {
     this.rules = rules;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,15 +164,16 @@ public class RuleSet  implements Serializable {
       return false;
     }
     RuleSet ruleSet = (RuleSet) o;
+
     return Objects.equals(this.id, ruleSet.id) &&
-        Objects.equals(this.name, ruleSet.name) &&
-        Objects.equals(this.dateCreated, ruleSet.dateCreated) &&
-        Objects.equals(this.dateModified, ruleSet.dateModified) &&
-        Objects.equals(this.version, ruleSet.version) &&
-        Objects.equals(this.contactList, ruleSet.contactList) &&
-        Objects.equals(this.queue, ruleSet.queue) &&
-        Objects.equals(this.rules, ruleSet.rules) &&
-        Objects.equals(this.selfUri, ruleSet.selfUri);
+            Objects.equals(this.name, ruleSet.name) &&
+            Objects.equals(this.dateCreated, ruleSet.dateCreated) &&
+            Objects.equals(this.dateModified, ruleSet.dateModified) &&
+            Objects.equals(this.version, ruleSet.version) &&
+            Objects.equals(this.contactList, ruleSet.contactList) &&
+            Objects.equals(this.queue, ruleSet.queue) &&
+            Objects.equals(this.rules, ruleSet.rules) &&
+            Objects.equals(this.selfUri, ruleSet.selfUri);
   }
 
   @Override

@@ -19,13 +19,13 @@ title: QueryResponseMetric
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NACTIVITIES | &quot;nActivities&quot; |
-| NPLANNEDACTIVITIES | &quot;nPlannedActivities&quot; |
-| NINPROGRESSACTIVITIES | &quot;nInProgressActivities&quot; |
-| NCOMPLETEACTIVITIES | &quot;nCompleteActivities&quot; |
-| NOVERDUEACTIVITIES | &quot;nOverdueActivities&quot; |
-| NINVALIDSCHEDULEACTIVITIES | &quot;nInvalidScheduleActivities&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NACTIVITIES | &quot;nActivities&quot; | 
+| NPLANNEDACTIVITIES | &quot;nPlannedActivities&quot; | 
+| NINPROGRESSACTIVITIES | &quot;nInProgressActivities&quot; | 
+| NCOMPLETEACTIVITIES | &quot;nCompleteActivities&quot; | 
+| NOVERDUEACTIVITIES | &quot;nOverdueActivities&quot; | 
+| NINVALIDSCHEDULEACTIVITIES | &quot;nInvalidScheduleActivities&quot; | 
 {: class="table table-striped"}
 
 

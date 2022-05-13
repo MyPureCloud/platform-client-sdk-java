@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
@@ -47,7 +48,7 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The shift definitions for this agent schedule
    **/
@@ -65,7 +66,7 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * Full day time off markers which apply to this agent schedule
    **/
@@ -83,7 +84,6 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,9 +94,10 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
       return false;
     }
     BuAgentScheduleSearchResponse buAgentScheduleSearchResponse = (BuAgentScheduleSearchResponse) o;
+
     return Objects.equals(this.user, buAgentScheduleSearchResponse.user) &&
-        Objects.equals(this.shifts, buAgentScheduleSearchResponse.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleSearchResponse.fullDayTimeOffMarkers);
+            Objects.equals(this.shifts, buAgentScheduleSearchResponse.shifts) &&
+            Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleSearchResponse.fullDayTimeOffMarkers);
   }
 
   @Override

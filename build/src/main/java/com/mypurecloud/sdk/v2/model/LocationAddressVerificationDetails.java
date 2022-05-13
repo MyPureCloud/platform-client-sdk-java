@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class LocationAddressVerificationDetails  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -113,7 +114,7 @@ public class LocationAddressVerificationDetails  implements Serializable {
     this.dateFinished = dateFinished;
   }
 
-  
+
   /**
    * Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -131,7 +132,7 @@ public class LocationAddressVerificationDetails  implements Serializable {
     this.dateStarted = dateStarted;
   }
 
-  
+
   /**
    * Third party service used for address verification
    **/
@@ -149,7 +150,6 @@ public class LocationAddressVerificationDetails  implements Serializable {
     this.service = service;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -160,10 +160,11 @@ public class LocationAddressVerificationDetails  implements Serializable {
       return false;
     }
     LocationAddressVerificationDetails locationAddressVerificationDetails = (LocationAddressVerificationDetails) o;
+
     return Objects.equals(this.status, locationAddressVerificationDetails.status) &&
-        Objects.equals(this.dateFinished, locationAddressVerificationDetails.dateFinished) &&
-        Objects.equals(this.dateStarted, locationAddressVerificationDetails.dateStarted) &&
-        Objects.equals(this.service, locationAddressVerificationDetails.service);
+            Objects.equals(this.dateFinished, locationAddressVerificationDetails.dateFinished) &&
+            Objects.equals(this.dateStarted, locationAddressVerificationDetails.dateStarted) &&
+            Objects.equals(this.service, locationAddressVerificationDetails.service);
   }
 
   @Override

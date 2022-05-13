@@ -10,20 +10,20 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementLibraryRequest;
@@ -50,7 +50,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ResponseManagementApi {
   private final ApiClient pcapiClient;
 
@@ -62,7 +61,6 @@ public class ResponseManagementApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
@@ -87,7 +85,7 @@ public class ResponseManagementApi {
   private DeleteResponsemanagementLibraryRequest createDeleteResponsemanagementLibraryRequest(String libraryId) {
     return DeleteResponsemanagementLibraryRequest.builder()
             .withLibraryId(libraryId)
-    
+
             .build();
   }
 
@@ -138,7 +136,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
@@ -163,7 +160,7 @@ public class ResponseManagementApi {
   private DeleteResponsemanagementResponseRequest createDeleteResponsemanagementResponseRequest(String responseId) {
     return DeleteResponsemanagementResponseRequest.builder()
             .withResponseId(responseId)
-    
+
             .build();
   }
 
@@ -214,7 +211,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Delete response asset
    * 
@@ -239,7 +235,7 @@ public class ResponseManagementApi {
   private DeleteResponsemanagementResponseassetRequest createDeleteResponsemanagementResponseassetRequest(String responseAssetId) {
     return DeleteResponsemanagementResponseassetRequest.builder()
             .withResponseAssetId(responseAssetId)
-    
+
             .build();
   }
 
@@ -290,7 +286,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Gets a list of existing response libraries.
    * 
@@ -321,11 +316,11 @@ public class ResponseManagementApi {
   private GetResponsemanagementLibrariesRequest createGetResponsemanagementLibrariesRequest(Integer pageNumber, Integer pageSize, String messagingTemplateFilter) {
     return GetResponsemanagementLibrariesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withMessagingTemplateFilter(messagingTemplateFilter)
-    
+
             .build();
   }
 
@@ -377,7 +372,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Get details about an existing response library.
    * 
@@ -404,7 +398,7 @@ public class ResponseManagementApi {
   private GetResponsemanagementLibraryRequest createGetResponsemanagementLibraryRequest(String libraryId) {
     return GetResponsemanagementLibraryRequest.builder()
             .withLibraryId(libraryId)
-    
+
             .build();
   }
 
@@ -456,7 +450,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Get details about an existing response.
    * 
@@ -485,9 +478,9 @@ public class ResponseManagementApi {
   private GetResponsemanagementResponseRequest createGetResponsemanagementResponseRequest(String responseId, String expand) {
     return GetResponsemanagementResponseRequest.builder()
             .withResponseId(responseId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -539,7 +532,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Get response asset information
    * 
@@ -566,7 +558,7 @@ public class ResponseManagementApi {
   private GetResponsemanagementResponseassetRequest createGetResponsemanagementResponseassetRequest(String responseAssetId) {
     return GetResponsemanagementResponseassetRequest.builder()
             .withResponseAssetId(responseAssetId)
-    
+
             .build();
   }
 
@@ -618,7 +610,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Get response asset upload status
    * 
@@ -645,7 +636,7 @@ public class ResponseManagementApi {
   private GetResponsemanagementResponseassetsStatusStatusIdRequest createGetResponsemanagementResponseassetsStatusStatusIdRequest(String statusId) {
     return GetResponsemanagementResponseassetsStatusStatusIdRequest.builder()
             .withStatusId(statusId)
-    
+
             .build();
   }
 
@@ -697,7 +688,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Gets a list of existing responses.
    * 
@@ -730,13 +720,13 @@ public class ResponseManagementApi {
   private GetResponsemanagementResponsesRequest createGetResponsemanagementResponsesRequest(String libraryId, Integer pageNumber, Integer pageSize, String expand) {
     return GetResponsemanagementResponsesRequest.builder()
             .withLibraryId(libraryId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -788,7 +778,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Create a response library.
    * 
@@ -815,7 +804,7 @@ public class ResponseManagementApi {
   private PostResponsemanagementLibrariesRequest createPostResponsemanagementLibrariesRequest(Library body) {
     return PostResponsemanagementLibrariesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -867,7 +856,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Search response assets
    * 
@@ -896,9 +884,9 @@ public class ResponseManagementApi {
   private PostResponsemanagementResponseassetsSearchRequest createPostResponsemanagementResponseassetsSearchRequest(ResponseAssetSearchRequest body, List<String> expand) {
     return PostResponsemanagementResponseassetsSearchRequest.builder()
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -950,7 +938,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Creates pre-signed url for uploading response asset
    * 
@@ -977,7 +964,7 @@ public class ResponseManagementApi {
   private PostResponsemanagementResponseassetsUploadsRequest createPostResponsemanagementResponseassetsUploadsRequest(CreateResponseAssetRequest body) {
     return PostResponsemanagementResponseassetsUploadsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1029,7 +1016,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Create a response.
    * 
@@ -1058,9 +1044,9 @@ public class ResponseManagementApi {
   private PostResponsemanagementResponsesRequest createPostResponsemanagementResponsesRequest(Response body, String expand) {
     return PostResponsemanagementResponsesRequest.builder()
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1112,7 +1098,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Query responses
    * 
@@ -1139,7 +1124,7 @@ public class ResponseManagementApi {
   private PostResponsemanagementResponsesQueryRequest createPostResponsemanagementResponsesQueryRequest(ResponseQueryRequest body) {
     return PostResponsemanagementResponsesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1191,7 +1176,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Update an existing response library.
    * Fields that can be updated: name. The most recent version is required for updates.
@@ -1220,9 +1204,9 @@ public class ResponseManagementApi {
   private PutResponsemanagementLibraryRequest createPutResponsemanagementLibraryRequest(String libraryId, Library body) {
     return PutResponsemanagementLibraryRequest.builder()
             .withLibraryId(libraryId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1274,7 +1258,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Update an existing response.
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
@@ -1305,11 +1288,11 @@ public class ResponseManagementApi {
   private PutResponsemanagementResponseRequest createPutResponsemanagementResponseRequest(String responseId, Response body, String expand) {
     return PutResponsemanagementResponseRequest.builder()
             .withResponseId(responseId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1361,7 +1344,6 @@ public class ResponseManagementApi {
     }
   }
 
-  
   /**
    * Update response asset
    * 
@@ -1390,9 +1372,9 @@ public class ResponseManagementApi {
   private PutResponsemanagementResponseassetRequest createPutResponsemanagementResponseassetRequest(String responseAssetId, ResponseAssetRequest body) {
     return PutResponsemanagementResponseassetRequest.builder()
             .withResponseAssetId(responseAssetId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1444,5 +1426,4 @@ public class ResponseManagementApi {
     }
   }
 
-  
 }

@@ -25,10 +25,10 @@ title: PatchContentOffer
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MODAL | &quot;Modal&quot; |
-| OVERLAY | &quot;Overlay&quot; |
-| TOAST | &quot;Toast&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MODAL | &quot;Modal&quot; | 
+| OVERLAY | &quot;Overlay&quot; | 
+| TOAST | &quot;Toast&quot; | 
 {: class="table table-striped"}
 
 
@@ -38,13 +38,13 @@ title: PatchContentOffer
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXTONLY | &quot;TextOnly&quot; |
-| IMAGEONLY | &quot;ImageOnly&quot; |
-| LEFTTEXT | &quot;LeftText&quot; |
-| RIGHTTEXT | &quot;RightText&quot; |
-| TOPTEXT | &quot;TopText&quot; |
-| BOTTOMTEXT | &quot;BottomText&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXTONLY | &quot;TextOnly&quot; | 
+| IMAGEONLY | &quot;ImageOnly&quot; | 
+| LEFTTEXT | &quot;LeftText&quot; | 
+| RIGHTTEXT | &quot;RightText&quot; | 
+| TOPTEXT | &quot;TopText&quot; | 
+| BOTTOMTEXT | &quot;BottomText&quot; | 
 {: class="table table-striped"}
 
 

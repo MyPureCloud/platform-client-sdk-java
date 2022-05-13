@@ -8,7 +8,7 @@ title: QueueMember
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The queue member&#39;s id. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The queue member's id. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
 | **ringNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |

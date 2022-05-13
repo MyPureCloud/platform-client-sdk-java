@@ -25,14 +25,14 @@ title: V2ConversationMessageTypingEventForUserTopicConversationMessageContent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ATTACHMENT | &quot;Attachment&quot; |
-| LOCATION | &quot;Location&quot; |
-| STORY | &quot;Story&quot; |
-| QUICKREPLY | &quot;QuickReply&quot; |
-| NOTIFICATION | &quot;Notification&quot; |
-| BUTTONRESPONSE | &quot;ButtonResponse&quot; |
-| GENERICTEMPLATE | &quot;GenericTemplate&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ATTACHMENT | &quot;Attachment&quot; | 
+| LOCATION | &quot;Location&quot; | 
+| STORY | &quot;Story&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
+| NOTIFICATION | &quot;Notification&quot; | 
+| BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
+| GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
 {: class="table table-striped"}
 
 

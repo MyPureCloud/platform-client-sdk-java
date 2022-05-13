@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingInteractionstatsRuleRequest {
-    
+
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -44,7 +44,7 @@ public class GetAlertingInteractionstatsRuleRequest {
 	    this.setRuleId(ruleId);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -87,7 +87,7 @@ public class GetAlertingInteractionstatsRuleRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,9 +118,10 @@ public class GetAlertingInteractionstatsRuleRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/alerting/interactionstats/rules/{ruleId}")
                 .withPathParameter("ruleId", ruleId)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -131,12 +132,12 @@ public class GetAlertingInteractionstatsRuleRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String ruleId) {
 	    return new Builder()
 	            .withRequiredParams(ruleId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAlertingInteractionstatsRuleRequest request;
@@ -145,16 +146,18 @@ public class GetAlertingInteractionstatsRuleRequest {
 			request = new GetAlertingInteractionstatsRuleRequest();
 		}
 
-		
+
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -164,15 +167,15 @@ public class GetAlertingInteractionstatsRuleRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String ruleId) {
 			request.setRuleId(ruleId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAlertingInteractionstatsRuleRequest build() {
             

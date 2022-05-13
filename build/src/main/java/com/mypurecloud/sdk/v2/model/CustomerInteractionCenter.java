@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class CustomerInteractionCenter  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter name(String name) {
@@ -58,7 +59,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter certificate(String certificate) {
@@ -177,7 +178,7 @@ public class CustomerInteractionCenter  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public CustomerInteractionCenter certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class CustomerInteractionCenter  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class CustomerInteractionCenter  implements Serializable {
       return false;
     }
     CustomerInteractionCenter customerInteractionCenter = (CustomerInteractionCenter) o;
+
     return Objects.equals(this.id, customerInteractionCenter.id) &&
-        Objects.equals(this.name, customerInteractionCenter.name) &&
-        Objects.equals(this.disabled, customerInteractionCenter.disabled) &&
-        Objects.equals(this.issuerURI, customerInteractionCenter.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, customerInteractionCenter.ssoTargetURI) &&
-        Objects.equals(this.sloURI, customerInteractionCenter.sloURI) &&
-        Objects.equals(this.sloBinding, customerInteractionCenter.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, customerInteractionCenter.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, customerInteractionCenter.certificate) &&
-        Objects.equals(this.certificates, customerInteractionCenter.certificates) &&
-        Objects.equals(this.selfUri, customerInteractionCenter.selfUri);
+            Objects.equals(this.name, customerInteractionCenter.name) &&
+            Objects.equals(this.disabled, customerInteractionCenter.disabled) &&
+            Objects.equals(this.issuerURI, customerInteractionCenter.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, customerInteractionCenter.ssoTargetURI) &&
+            Objects.equals(this.sloURI, customerInteractionCenter.sloURI) &&
+            Objects.equals(this.sloBinding, customerInteractionCenter.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, customerInteractionCenter.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, customerInteractionCenter.certificate) &&
+            Objects.equals(this.certificates, customerInteractionCenter.certificates) &&
+            Objects.equals(this.selfUri, customerInteractionCenter.selfUri);
   }
 
   @Override

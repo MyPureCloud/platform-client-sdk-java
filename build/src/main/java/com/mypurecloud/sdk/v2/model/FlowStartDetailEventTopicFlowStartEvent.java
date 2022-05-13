@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -268,7 +269,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent conversationId(String conversationId) {
@@ -285,7 +286,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent participantId(String participantId) {
@@ -302,7 +303,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent sessionId(String sessionId) {
@@ -319,7 +320,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent mediaType(MediaTypeEnum mediaType) {
@@ -336,7 +337,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent provider(String provider) {
@@ -353,7 +354,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent direction(DirectionEnum direction) {
@@ -370,7 +371,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent ani(String ani) {
@@ -387,7 +388,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent dnis(String dnis) {
@@ -404,7 +405,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent addressTo(String addressTo) {
@@ -421,7 +422,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent addressFrom(String addressFrom) {
@@ -438,7 +439,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent subject(String subject) {
@@ -455,7 +456,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent messageType(MessageTypeEnum messageType) {
@@ -472,7 +473,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent flowType(FlowTypeEnum flowType) {
@@ -489,7 +490,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.flowType = flowType;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent flowId(String flowId) {
@@ -506,7 +507,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent divisionId(String divisionId) {
@@ -523,7 +524,7 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public FlowStartDetailEventTopicFlowStartEvent flowVersion(String flowVersion) {
@@ -540,7 +541,6 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -551,23 +551,24 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
       return false;
     }
     FlowStartDetailEventTopicFlowStartEvent flowStartDetailEventTopicFlowStartEvent = (FlowStartDetailEventTopicFlowStartEvent) o;
+
     return Objects.equals(this.eventTime, flowStartDetailEventTopicFlowStartEvent.eventTime) &&
-        Objects.equals(this.conversationId, flowStartDetailEventTopicFlowStartEvent.conversationId) &&
-        Objects.equals(this.participantId, flowStartDetailEventTopicFlowStartEvent.participantId) &&
-        Objects.equals(this.sessionId, flowStartDetailEventTopicFlowStartEvent.sessionId) &&
-        Objects.equals(this.mediaType, flowStartDetailEventTopicFlowStartEvent.mediaType) &&
-        Objects.equals(this.provider, flowStartDetailEventTopicFlowStartEvent.provider) &&
-        Objects.equals(this.direction, flowStartDetailEventTopicFlowStartEvent.direction) &&
-        Objects.equals(this.ani, flowStartDetailEventTopicFlowStartEvent.ani) &&
-        Objects.equals(this.dnis, flowStartDetailEventTopicFlowStartEvent.dnis) &&
-        Objects.equals(this.addressTo, flowStartDetailEventTopicFlowStartEvent.addressTo) &&
-        Objects.equals(this.addressFrom, flowStartDetailEventTopicFlowStartEvent.addressFrom) &&
-        Objects.equals(this.subject, flowStartDetailEventTopicFlowStartEvent.subject) &&
-        Objects.equals(this.messageType, flowStartDetailEventTopicFlowStartEvent.messageType) &&
-        Objects.equals(this.flowType, flowStartDetailEventTopicFlowStartEvent.flowType) &&
-        Objects.equals(this.flowId, flowStartDetailEventTopicFlowStartEvent.flowId) &&
-        Objects.equals(this.divisionId, flowStartDetailEventTopicFlowStartEvent.divisionId) &&
-        Objects.equals(this.flowVersion, flowStartDetailEventTopicFlowStartEvent.flowVersion);
+            Objects.equals(this.conversationId, flowStartDetailEventTopicFlowStartEvent.conversationId) &&
+            Objects.equals(this.participantId, flowStartDetailEventTopicFlowStartEvent.participantId) &&
+            Objects.equals(this.sessionId, flowStartDetailEventTopicFlowStartEvent.sessionId) &&
+            Objects.equals(this.mediaType, flowStartDetailEventTopicFlowStartEvent.mediaType) &&
+            Objects.equals(this.provider, flowStartDetailEventTopicFlowStartEvent.provider) &&
+            Objects.equals(this.direction, flowStartDetailEventTopicFlowStartEvent.direction) &&
+            Objects.equals(this.ani, flowStartDetailEventTopicFlowStartEvent.ani) &&
+            Objects.equals(this.dnis, flowStartDetailEventTopicFlowStartEvent.dnis) &&
+            Objects.equals(this.addressTo, flowStartDetailEventTopicFlowStartEvent.addressTo) &&
+            Objects.equals(this.addressFrom, flowStartDetailEventTopicFlowStartEvent.addressFrom) &&
+            Objects.equals(this.subject, flowStartDetailEventTopicFlowStartEvent.subject) &&
+            Objects.equals(this.messageType, flowStartDetailEventTopicFlowStartEvent.messageType) &&
+            Objects.equals(this.flowType, flowStartDetailEventTopicFlowStartEvent.flowType) &&
+            Objects.equals(this.flowId, flowStartDetailEventTopicFlowStartEvent.flowId) &&
+            Objects.equals(this.divisionId, flowStartDetailEventTopicFlowStartEvent.divisionId) &&
+            Objects.equals(this.flowVersion, flowStartDetailEventTopicFlowStartEvent.flowVersion);
   }
 
   @Override

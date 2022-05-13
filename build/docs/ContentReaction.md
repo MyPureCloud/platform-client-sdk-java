@@ -19,16 +19,16 @@ title: ContentReaction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LIKE | &quot;Like&quot; |
-| LOVE | &quot;Love&quot; |
-| WOW | &quot;Wow&quot; |
-| HAHA | &quot;Haha&quot; |
-| SAD | &quot;Sad&quot; |
-| ANGRY | &quot;Angry&quot; |
-| THANKFUL | &quot;Thankful&quot; |
-| PRIDE | &quot;Pride&quot; |
-| CARE | &quot;Care&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LIKE | &quot;Like&quot; | 
+| LOVE | &quot;Love&quot; | 
+| WOW | &quot;Wow&quot; | 
+| HAHA | &quot;Haha&quot; | 
+| SAD | &quot;Sad&quot; | 
+| ANGRY | &quot;Angry&quot; | 
+| THANKFUL | &quot;Thankful&quot; | 
+| PRIDE | &quot;Pride&quot; | 
+| CARE | &quot;Care&quot; | 
 {: class="table table-striped"}
 
 

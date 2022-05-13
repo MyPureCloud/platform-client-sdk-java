@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntentFeedback;
@@ -39,7 +40,7 @@ public class NluFeedbackResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The feedback text.
    **/
@@ -57,7 +58,7 @@ public class NluFeedbackResponse  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Detected intent of the utterance
    **/
@@ -75,28 +76,27 @@ public class NluFeedbackResponse  implements Serializable {
     this.intents = intents;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The domain version of the feedback.")
   @JsonProperty("version")
   public NluDomainVersion getVersion() {
     return version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the feedback was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +107,13 @@ public class NluFeedbackResponse  implements Serializable {
       return false;
     }
     NluFeedbackResponse nluFeedbackResponse = (NluFeedbackResponse) o;
+
     return Objects.equals(this.id, nluFeedbackResponse.id) &&
-        Objects.equals(this.text, nluFeedbackResponse.text) &&
-        Objects.equals(this.intents, nluFeedbackResponse.intents) &&
-        Objects.equals(this.version, nluFeedbackResponse.version) &&
-        Objects.equals(this.dateCreated, nluFeedbackResponse.dateCreated) &&
-        Objects.equals(this.selfUri, nluFeedbackResponse.selfUri);
+            Objects.equals(this.text, nluFeedbackResponse.text) &&
+            Objects.equals(this.intents, nluFeedbackResponse.intents) &&
+            Objects.equals(this.version, nluFeedbackResponse.version) &&
+            Objects.equals(this.dateCreated, nluFeedbackResponse.dateCreated) &&
+            Objects.equals(this.selfUri, nluFeedbackResponse.selfUri);
   }
 
   @Override

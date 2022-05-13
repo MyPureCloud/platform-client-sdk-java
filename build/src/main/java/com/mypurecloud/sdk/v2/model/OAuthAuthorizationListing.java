@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
@@ -44,7 +45,7 @@ public class OAuthAuthorizationListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorizationListing entities(List<OAuthAuthorization> entities) {
@@ -61,7 +62,7 @@ public class OAuthAuthorizationListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public OAuthAuthorizationListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class OAuthAuthorizationListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class OAuthAuthorizationListing  implements Serializable {
       return false;
     }
     OAuthAuthorizationListing oAuthAuthorizationListing = (OAuthAuthorizationListing) o;
+
     return Objects.equals(this.total, oAuthAuthorizationListing.total) &&
-        Objects.equals(this.entities, oAuthAuthorizationListing.entities) &&
-        Objects.equals(this.selfUri, oAuthAuthorizationListing.selfUri);
+            Objects.equals(this.entities, oAuthAuthorizationListing.entities) &&
+            Objects.equals(this.selfUri, oAuthAuthorizationListing.selfUri);
   }
 
   @Override

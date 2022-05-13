@@ -23,15 +23,15 @@ title: StatusChange
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OPEN | &quot;Open&quot; |
-| APPROVED | &quot;Approved&quot; |
-| IMPLEMENTINGCHANGE | &quot;ImplementingChange&quot; |
-| CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; |
-| REJECTED | &quot;Rejected&quot; |
-| ROLLBACK | &quot;Rollback&quot; |
-| IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; |
-| ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OPEN | &quot;Open&quot; | 
+| APPROVED | &quot;Approved&quot; | 
+| IMPLEMENTINGCHANGE | &quot;ImplementingChange&quot; | 
+| CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
+| REJECTED | &quot;Rejected&quot; | 
+| ROLLBACK | &quot;Rollback&quot; | 
+| IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
+| ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
 {: class="table table-striped"}
 
 
@@ -41,15 +41,15 @@ title: StatusChange
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OPEN | &quot;Open&quot; |
-| APPROVED | &quot;Approved&quot; |
-| IMPLEMENTINGCHANGE | &quot;ImplementingChange&quot; |
-| CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; |
-| REJECTED | &quot;Rejected&quot; |
-| ROLLBACK | &quot;Rollback&quot; |
-| IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; |
-| ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OPEN | &quot;Open&quot; | 
+| APPROVED | &quot;Approved&quot; | 
+| IMPLEMENTINGCHANGE | &quot;ImplementingChange&quot; | 
+| CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
+| REJECTED | &quot;Rejected&quot; | 
+| ROLLBACK | &quot;Rollback&quot; | 
+| IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
+| ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
 {: class="table table-striped"}
 
 
@@ -59,12 +59,12 @@ title: StatusChange
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALTERNATIVEEXISTS | &quot;AlternativeExists&quot; |
-| INCREASENOTREQUIRED | &quot;IncreaseNotRequired&quot; |
-| PLATFORMMISUSE | &quot;PlatformMisuse&quot; |
-| PLATFORMSTABILITY | &quot;PlatformStability&quot; |
-| OTHERREASON | &quot;OtherReason&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALTERNATIVEEXISTS | &quot;AlternativeExists&quot; | 
+| INCREASENOTREQUIRED | &quot;IncreaseNotRequired&quot; | 
+| PLATFORMMISUSE | &quot;PlatformMisuse&quot; | 
+| PLATFORMSTABILITY | &quot;PlatformStability&quot; | 
+| OTHERREASON | &quot;OtherReason&quot; | 
 {: class="table table-striped"}
 
 

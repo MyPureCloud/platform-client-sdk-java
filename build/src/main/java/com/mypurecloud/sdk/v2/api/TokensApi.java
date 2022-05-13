@@ -25,7 +25,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class TokensApi {
   private final ApiClient pcapiClient;
 
@@ -37,7 +36,6 @@ public class TokensApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete all auth tokens for the specified user.
    * 
@@ -62,7 +60,7 @@ public class TokensApi {
   private DeleteTokenRequest createDeleteTokenRequest(String userId) {
     return DeleteTokenRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
@@ -113,7 +111,6 @@ public class TokensApi {
     }
   }
 
-  
   /**
    * Delete auth token used to make the request.
    * 
@@ -185,7 +182,6 @@ public class TokensApi {
     }
   }
 
-  
   /**
    * Fetch information about the current token
    * 
@@ -260,7 +256,6 @@ public class TokensApi {
     }
   }
 
-  
   /**
    * Verify user token
    * 
@@ -332,5 +327,4 @@ public class TokensApi {
     }
   }
 
-  
 }

@@ -20,22 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
-import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
+import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.FeatureState;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 public class GetOrganizationsLimitsChangerequestsRequest {
-    
+
 	private Long after;
 	public Long getAfter() {
 		return this.after;
@@ -49,7 +48,7 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 	    this.setAfter(after);
 	    return this;
 	} 
-	
+
 	private Long before;
 	public Long getBefore() {
 		return this.before;
@@ -63,7 +62,7 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 	    this.setBefore(before);
 	    return this;
 	} 
-	
+
 	private String status;
 	public String getStatus() {
 		return this.status;
@@ -79,13 +78,13 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 	} 
 
 	public enum statusValues { 
-		OPEN("Open"), 
-		APPROVED("Approved"), 
-		IMPLEMENTINGCHANGE("ImplementingChange"), 
-		CHANGEIMPLEMENTED("ChangeImplemented"), 
-		REJECTED("Rejected"), 
-		ROLLBACK("Rollback"), 
-		IMPLEMENTINGROLLBACK("ImplementingRollback"), 
+		OPEN("Open"),
+		APPROVED("Approved"),
+		IMPLEMENTINGCHANGE("ImplementingChange"),
+		CHANGEIMPLEMENTED("ChangeImplemented"),
+		REJECTED("Rejected"),
+		ROLLBACK("Rollback"),
+		IMPLEMENTINGROLLBACK("ImplementingRollback"),
 		ROLLBACKIMPLEMENTED("RollbackImplemented");
 
 		private String value;
@@ -113,7 +112,7 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -127,7 +126,7 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -170,7 +169,7 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -194,17 +193,22 @@ public class GetOrganizationsLimitsChangerequestsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/organizations/limits/changerequests")
+
                 .withQueryParameters("after", "", after)
         
+
                 .withQueryParameters("before", "", before)
         
+
                 .withQueryParameters("status", "", status)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -215,7 +219,7 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetOrganizationsLimitsChangerequestsRequest request;
@@ -224,36 +228,42 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 			request = new GetOrganizationsLimitsChangerequestsRequest();
 		}
 
-		
+
 		public Builder withAfter(Long after) {
 			request.setAfter(after);
 			return this;
 		}
-		
+
 		public Builder withBefore(Long before) {
 			request.setBefore(before);
 			return this;
 		}
-		
+
 		public Builder withStatus(String status) {
 			request.setStatus(status);
 			return this;
 		}
 
+
+
+		
 		public Builder withStatus(statusValues status) {
 		    request.setStatus(status.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -263,9 +273,9 @@ public class GetOrganizationsLimitsChangerequestsRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 
 		public GetOrganizationsLimitsChangerequestsRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleActivity;
@@ -41,7 +42,7 @@ public class UserScheduleShift  implements Serializable {
     return weekSchedule;
   }
 
-  
+
   /**
    * ID of the schedule shift. This is only for the case of updating and deleting an existing shift
    **/
@@ -59,21 +60,21 @@ public class UserScheduleShift  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Length of this shift in minutes")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;
   }
 
-  
+
   /**
    * List of activities in this shift
    **/
@@ -91,7 +92,7 @@ public class UserScheduleShift  implements Serializable {
     this.activities = activities;
   }
 
-  
+
   /**
    * If marked true for updating this schedule shift, it will be deleted
    **/
@@ -109,7 +110,7 @@ public class UserScheduleShift  implements Serializable {
     this.delete = delete;
   }
 
-  
+
   /**
    * Whether the shift was set as manually edited
    **/
@@ -127,7 +128,6 @@ public class UserScheduleShift  implements Serializable {
     this.manuallyEdited = manuallyEdited;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,13 +138,14 @@ public class UserScheduleShift  implements Serializable {
       return false;
     }
     UserScheduleShift userScheduleShift = (UserScheduleShift) o;
+
     return Objects.equals(this.weekSchedule, userScheduleShift.weekSchedule) &&
-        Objects.equals(this.id, userScheduleShift.id) &&
-        Objects.equals(this.startDate, userScheduleShift.startDate) &&
-        Objects.equals(this.lengthInMinutes, userScheduleShift.lengthInMinutes) &&
-        Objects.equals(this.activities, userScheduleShift.activities) &&
-        Objects.equals(this.delete, userScheduleShift.delete) &&
-        Objects.equals(this.manuallyEdited, userScheduleShift.manuallyEdited);
+            Objects.equals(this.id, userScheduleShift.id) &&
+            Objects.equals(this.startDate, userScheduleShift.startDate) &&
+            Objects.equals(this.lengthInMinutes, userScheduleShift.lengthInMinutes) &&
+            Objects.equals(this.activities, userScheduleShift.activities) &&
+            Objects.equals(this.delete, userScheduleShift.delete) &&
+            Objects.equals(this.manuallyEdited, userScheduleShift.manuallyEdited);
   }
 
   @Override

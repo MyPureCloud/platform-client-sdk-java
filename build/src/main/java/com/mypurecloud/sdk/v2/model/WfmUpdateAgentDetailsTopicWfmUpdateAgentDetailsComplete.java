@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,6 @@ public class WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete  implements
     this.status = status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -100,6 +100,7 @@ public class WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete  implements
       return false;
     }
     WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete wfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete = (WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete) o;
+
     return Objects.equals(this.status, wfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete.status);
   }
 

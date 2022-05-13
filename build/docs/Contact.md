@@ -24,10 +24,10 @@ title: Contact
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PHONE | &quot;PHONE&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| SMS | &quot;SMS&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PHONE | &quot;PHONE&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| SMS | &quot;SMS&quot; | 
 {: class="table table-striped"}
 
 
@@ -37,16 +37,16 @@ title: Contact
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PRIMARY | &quot;PRIMARY&quot; |
-| WORK | &quot;WORK&quot; |
-| WORK2 | &quot;WORK2&quot; |
-| WORK3 | &quot;WORK3&quot; |
-| WORK4 | &quot;WORK4&quot; |
-| HOME | &quot;HOME&quot; |
-| MOBILE | &quot;MOBILE&quot; |
-| MAIN | &quot;MAIN&quot; |
-| OTHER | &quot;OTHER&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PRIMARY | &quot;PRIMARY&quot; | 
+| WORK | &quot;WORK&quot; | 
+| WORK2 | &quot;WORK2&quot; | 
+| WORK3 | &quot;WORK3&quot; | 
+| WORK4 | &quot;WORK4&quot; | 
+| HOME | &quot;HOME&quot; | 
+| MOBILE | &quot;MOBILE&quot; | 
+| MAIN | &quot;MAIN&quot; | 
+| OTHER | &quot;OTHER&quot; | 
 {: class="table table-striped"}
 
 

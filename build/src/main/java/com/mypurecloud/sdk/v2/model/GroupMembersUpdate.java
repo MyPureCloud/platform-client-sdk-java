@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class GroupMembersUpdate  implements Serializable {
     this.memberIds = memberIds;
   }
 
-  
+
   /**
    * The current group version.
    **/
@@ -61,7 +62,6 @@ public class GroupMembersUpdate  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class GroupMembersUpdate  implements Serializable {
       return false;
     }
     GroupMembersUpdate groupMembersUpdate = (GroupMembersUpdate) o;
+
     return Objects.equals(this.memberIds, groupMembersUpdate.memberIds) &&
-        Objects.equals(this.version, groupMembersUpdate.version);
+            Objects.equals(this.version, groupMembersUpdate.version);
   }
 
   @Override

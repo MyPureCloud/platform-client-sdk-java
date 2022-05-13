@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LongTermForecastPlanningGroupData;
@@ -46,7 +47,7 @@ public class LongTermForecastResult  implements Serializable {
     this.planningGroups = planningGroups;
   }
 
-  
+
   /**
    * The reference start date relative to the business unit time zone in this forecast. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -64,7 +65,7 @@ public class LongTermForecastResult  implements Serializable {
     this.referenceStartDate = referenceStartDate;
   }
 
-  
+
   /**
    * The number of weeks in this forecast
    **/
@@ -82,7 +83,6 @@ public class LongTermForecastResult  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class LongTermForecastResult  implements Serializable {
       return false;
     }
     LongTermForecastResult longTermForecastResult = (LongTermForecastResult) o;
+
     return Objects.equals(this.planningGroups, longTermForecastResult.planningGroups) &&
-        Objects.equals(this.referenceStartDate, longTermForecastResult.referenceStartDate) &&
-        Objects.equals(this.weekCount, longTermForecastResult.weekCount);
+            Objects.equals(this.referenceStartDate, longTermForecastResult.referenceStartDate) &&
+            Objects.equals(this.weekCount, longTermForecastResult.weekCount);
   }
 
   @Override

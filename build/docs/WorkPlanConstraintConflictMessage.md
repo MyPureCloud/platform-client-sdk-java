@@ -19,9 +19,9 @@ title: WorkPlanConstraintConflictMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWNFIX | &quot;UnknownFix&quot; |
-| WITHPOTENTIALFIXES | &quot;WithPotentialFixes&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWNFIX | &quot;UnknownFix&quot; | 
+| WITHPOTENTIALFIXES | &quot;WithPotentialFixes&quot; | 
 {: class="table table-striped"}
 
 

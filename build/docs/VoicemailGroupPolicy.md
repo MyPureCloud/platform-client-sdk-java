@@ -27,10 +27,10 @@ title: VoicemailGroupPolicy
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANDOM | &quot;RANDOM&quot; |
-| ROUND_ROBIN | &quot;ROUND_ROBIN&quot; |
-| SEQUENTIAL | &quot;SEQUENTIAL&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANDOM | &quot;RANDOM&quot; | 
+| ROUND_ROBIN | &quot;ROUND_ROBIN&quot; | 
+| SEQUENTIAL | &quot;SEQUENTIAL&quot; | 
 {: class="table table-striped"}
 
 

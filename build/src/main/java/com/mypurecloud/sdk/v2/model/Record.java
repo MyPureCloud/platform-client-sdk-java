@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class Record  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of the record. (Example values:  MX, TXT, CNAME)
    **/
@@ -60,7 +61,7 @@ public class Record  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The value of the record.
    **/
@@ -78,7 +79,6 @@ public class Record  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class Record  implements Serializable {
       return false;
     }
     Record record = (Record) o;
+
     return Objects.equals(this.name, record.name) &&
-        Objects.equals(this.type, record.type) &&
-        Objects.equals(this.value, record.value);
+            Objects.equals(this.type, record.type) &&
+            Objects.equals(this.value, record.value);
   }
 
   @Override

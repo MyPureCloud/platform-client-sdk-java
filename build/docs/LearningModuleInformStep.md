@@ -23,11 +23,11 @@ title: LearningModuleInformStep
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| URL | &quot;Url&quot; |
-| CONTENT | &quot;Content&quot; |
-| GENESYSBUILTINCOURSE | &quot;GenesysBuiltInCourse&quot; |
-| RICHTEXT | &quot;RichText&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| URL | &quot;Url&quot; | 
+| CONTENT | &quot;Content&quot; | 
+| GENESYSBUILTINCOURSE | &quot;GenesysBuiltInCourse&quot; | 
+| RICHTEXT | &quot;RichText&quot; | 
 {: class="table table-striped"}
 
 

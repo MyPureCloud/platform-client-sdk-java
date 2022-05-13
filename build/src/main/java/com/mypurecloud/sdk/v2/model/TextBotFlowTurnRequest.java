@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class TextBotFlowTurnRequest  implements Serializable {
     this.previousTurn = previousTurn;
   }
 
-  
+
   /**
    * Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request.
    **/
@@ -117,7 +118,7 @@ public class TextBotFlowTurnRequest  implements Serializable {
     this.inputEventType = inputEventType;
   }
 
-  
+
   /**
    * The data for the input event of this turn if it is a user input event. Only one inputEvent may be set.
    **/
@@ -135,7 +136,7 @@ public class TextBotFlowTurnRequest  implements Serializable {
     this.inputEventUserInput = inputEventUserInput;
   }
 
-  
+
   /**
    * The data for the input event of this turn if it is an error event. Only one inputEvent may be set.
    **/
@@ -153,7 +154,6 @@ public class TextBotFlowTurnRequest  implements Serializable {
     this.inputEventError = inputEventError;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,10 +164,11 @@ public class TextBotFlowTurnRequest  implements Serializable {
       return false;
     }
     TextBotFlowTurnRequest textBotFlowTurnRequest = (TextBotFlowTurnRequest) o;
+
     return Objects.equals(this.previousTurn, textBotFlowTurnRequest.previousTurn) &&
-        Objects.equals(this.inputEventType, textBotFlowTurnRequest.inputEventType) &&
-        Objects.equals(this.inputEventUserInput, textBotFlowTurnRequest.inputEventUserInput) &&
-        Objects.equals(this.inputEventError, textBotFlowTurnRequest.inputEventError);
+            Objects.equals(this.inputEventType, textBotFlowTurnRequest.inputEventType) &&
+            Objects.equals(this.inputEventUserInput, textBotFlowTurnRequest.inputEventUserInput) &&
+            Objects.equals(this.inputEventError, textBotFlowTurnRequest.inputEventError);
   }
 
   @Override

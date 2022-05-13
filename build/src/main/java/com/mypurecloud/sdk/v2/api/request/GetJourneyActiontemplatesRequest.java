@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 public class GetJourneyActiontemplatesRequest {
-    
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -56,7 +56,7 @@ public class GetJourneyActiontemplatesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -70,7 +70,7 @@ public class GetJourneyActiontemplatesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -84,7 +84,7 @@ public class GetJourneyActiontemplatesRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private String mediaType;
 	public String getMediaType() {
 		return this.mediaType;
@@ -100,11 +100,11 @@ public class GetJourneyActiontemplatesRequest {
 	} 
 
 	public enum mediaTypeValues { 
-		WEBCHAT("webchat"), 
-		WEBMESSAGINGOFFER("webMessagingOffer"), 
-		CONTENTOFFER("contentOffer"), 
-		INTEGRATIONACTION("integrationAction"), 
-		ARCHITECTFLOW("architectFlow"), 
+		WEBCHAT("webchat"),
+		WEBMESSAGINGOFFER("webMessagingOffer"),
+		CONTENTOFFER("contentOffer"),
+		INTEGRATIONACTION("integrationAction"),
+		ARCHITECTFLOW("architectFlow"),
 		OPENACTION("openAction");
 
 		private String value;
@@ -132,7 +132,7 @@ public class GetJourneyActiontemplatesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String state;
 	public String getState() {
 		return this.state;
@@ -148,8 +148,8 @@ public class GetJourneyActiontemplatesRequest {
 	} 
 
 	public enum stateValues { 
-		ACTIVE("Active"), 
-		INACTIVE("Inactive"), 
+		ACTIVE("Active"),
+		INACTIVE("Inactive"),
 		DELETED("Deleted");
 
 		private String value;
@@ -177,7 +177,7 @@ public class GetJourneyActiontemplatesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> queryFields;
 	public List<String> getQueryFields() {
 		return this.queryFields;
@@ -191,7 +191,7 @@ public class GetJourneyActiontemplatesRequest {
 	    this.setQueryFields(queryFields);
 	    return this;
 	} 
-	
+
 	private String queryValue;
 	public String getQueryValue() {
 		return this.queryValue;
@@ -205,7 +205,7 @@ public class GetJourneyActiontemplatesRequest {
 	    this.setQueryValue(queryValue);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -229,21 +229,28 @@ public class GetJourneyActiontemplatesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/journey/actiontemplates")
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("mediaType", "", mediaType)
         
+
                 .withQueryParameters("state", "", state)
         
+
                 .withQueryParameters("queryFields", "multi", queryFields)
         
+
                 .withQueryParameters("queryValue", "", queryValue)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -254,7 +261,7 @@ public class GetJourneyActiontemplatesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetJourneyActiontemplatesRequest request;
@@ -263,54 +270,62 @@ public class GetJourneyActiontemplatesRequest {
 			request = new GetJourneyActiontemplatesRequest();
 		}
 
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withMediaType(String mediaType) {
 			request.setMediaType(mediaType);
 			return this;
 		}
 
+
+
+		
 		public Builder withMediaType(mediaTypeValues mediaType) {
 		    request.setMediaType(mediaType.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withState(String state) {
 			request.setState(state);
 			return this;
 		}
 
+
+
+		
 		public Builder withState(stateValues state) {
 		    request.setState(state.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withQueryFields(List<String> queryFields) {
 			request.setQueryFields(queryFields);
 			return this;
 		}
-		
+
 		public Builder withQueryValue(String queryValue) {
 			request.setQueryValue(queryValue);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetJourneyActiontemplatesRequest build() {
             

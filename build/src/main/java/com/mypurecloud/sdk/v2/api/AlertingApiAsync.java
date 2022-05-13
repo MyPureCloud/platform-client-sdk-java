@@ -13,13 +13,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 
@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class AlertingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -54,7 +53,6 @@ public class AlertingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an interaction stats alert
    * 
@@ -130,7 +128,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Delete an interaction stats rule.
    * 
@@ -206,7 +203,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Gets active alert count for a user.
    * 
@@ -282,7 +278,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Get an interaction stats alert
    * 
@@ -358,7 +353,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Get interaction stats alert list.
    * 
@@ -434,7 +428,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Gets user unread count of interaction stats alerts.
    * 
@@ -510,7 +503,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Get an interaction stats rule.
    * 
@@ -586,7 +578,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Get an interaction stats rule list.
    * 
@@ -662,7 +653,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Create an interaction stats rule.
    * 
@@ -738,7 +728,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Update an interaction stats alert read status
    * 
@@ -814,7 +803,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
   /**
    * Update an interaction stats rule
    * 
@@ -890,7 +878,6 @@ public class AlertingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FlowVersionEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FlowVersionEntityListing  implements Serializable, PagedResource<Fl
       return false;
     }
     FlowVersionEntityListing flowVersionEntityListing = (FlowVersionEntityListing) o;
+
     return Objects.equals(this.entities, flowVersionEntityListing.entities) &&
-        Objects.equals(this.pageSize, flowVersionEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, flowVersionEntityListing.pageNumber) &&
-        Objects.equals(this.total, flowVersionEntityListing.total) &&
-        Objects.equals(this.lastUri, flowVersionEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, flowVersionEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, flowVersionEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, flowVersionEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, flowVersionEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, flowVersionEntityListing.pageCount);
+            Objects.equals(this.pageSize, flowVersionEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, flowVersionEntityListing.pageNumber) &&
+            Objects.equals(this.total, flowVersionEntityListing.total) &&
+            Objects.equals(this.lastUri, flowVersionEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, flowVersionEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, flowVersionEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, flowVersionEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, flowVersionEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, flowVersionEntityListing.pageCount);
   }
 
   @Override

@@ -19,9 +19,9 @@ title: QueryRequestFilter
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AND | &quot;And&quot; |
-| OR | &quot;Or&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AND | &quot;And&quot; | 
+| OR | &quot;Or&quot; | 
 {: class="table table-striped"}
 
 

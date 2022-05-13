@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
@@ -47,7 +48,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.removedPermissionPolicies = removedPermissionPolicies;
   }
 
-  
+
   /**
    **/
   public DomainOrgRoleDifference addedPermissionPolicies(List<DomainPermissionPolicy> addedPermissionPolicies) {
@@ -64,7 +65,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.addedPermissionPolicies = addedPermissionPolicies;
   }
 
-  
+
   /**
    **/
   public DomainOrgRoleDifference samePermissionPolicies(List<DomainPermissionPolicy> samePermissionPolicies) {
@@ -81,7 +82,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.samePermissionPolicies = samePermissionPolicies;
   }
 
-  
+
   /**
    **/
   public DomainOrgRoleDifference userOrgRole(DomainOrganizationRole userOrgRole) {
@@ -98,7 +99,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.userOrgRole = userOrgRole;
   }
 
-  
+
   /**
    **/
   public DomainOrgRoleDifference roleFromDefault(DomainOrganizationRole roleFromDefault) {
@@ -115,7 +116,6 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.roleFromDefault = roleFromDefault;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,11 +126,12 @@ public class DomainOrgRoleDifference  implements Serializable {
       return false;
     }
     DomainOrgRoleDifference domainOrgRoleDifference = (DomainOrgRoleDifference) o;
+
     return Objects.equals(this.removedPermissionPolicies, domainOrgRoleDifference.removedPermissionPolicies) &&
-        Objects.equals(this.addedPermissionPolicies, domainOrgRoleDifference.addedPermissionPolicies) &&
-        Objects.equals(this.samePermissionPolicies, domainOrgRoleDifference.samePermissionPolicies) &&
-        Objects.equals(this.userOrgRole, domainOrgRoleDifference.userOrgRole) &&
-        Objects.equals(this.roleFromDefault, domainOrgRoleDifference.roleFromDefault);
+            Objects.equals(this.addedPermissionPolicies, domainOrgRoleDifference.addedPermissionPolicies) &&
+            Objects.equals(this.samePermissionPolicies, domainOrgRoleDifference.samePermissionPolicies) &&
+            Objects.equals(this.userOrgRole, domainOrgRoleDifference.userOrgRole) &&
+            Objects.equals(this.roleFromDefault, domainOrgRoleDifference.roleFromDefault);
   }
 
   @Override

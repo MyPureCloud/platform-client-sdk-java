@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
@@ -37,7 +38,7 @@ public class DataTable  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DataTable name(String name) {
@@ -54,7 +55,7 @@ public class DataTable  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -72,7 +73,7 @@ public class DataTable  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The description from the JSON schema (equates to the Description field on the JSON schema.)
    **/
@@ -90,7 +91,7 @@ public class DataTable  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * the schema as stored in the system.
    **/
@@ -108,14 +109,13 @@ public class DataTable  implements Serializable {
     this.schema = schema;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +126,13 @@ public class DataTable  implements Serializable {
       return false;
     }
     DataTable dataTable = (DataTable) o;
+
     return Objects.equals(this.id, dataTable.id) &&
-        Objects.equals(this.name, dataTable.name) &&
-        Objects.equals(this.division, dataTable.division) &&
-        Objects.equals(this.description, dataTable.description) &&
-        Objects.equals(this.schema, dataTable.schema) &&
-        Objects.equals(this.selfUri, dataTable.selfUri);
+            Objects.equals(this.name, dataTable.name) &&
+            Objects.equals(this.division, dataTable.division) &&
+            Objects.equals(this.description, dataTable.description) &&
+            Objects.equals(this.schema, dataTable.schema) &&
+            Objects.equals(this.selfUri, dataTable.selfUri);
   }
 
   @Override

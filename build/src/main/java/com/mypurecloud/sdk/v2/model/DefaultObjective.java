@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -141,7 +142,7 @@ public class DefaultObjective  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The id of this objective's base template
    **/
@@ -159,7 +160,7 @@ public class DefaultObjective  implements Serializable {
     this.templateId = templateId;
   }
 
-  
+
   /**
    * Objective zone specifies min,max points and values for the associated metric
    **/
@@ -177,7 +178,7 @@ public class DefaultObjective  implements Serializable {
     this.zones = zones;
   }
 
-  
+
   /**
    * A flag for whether this objective is enabled for the related metric
    **/
@@ -195,7 +196,7 @@ public class DefaultObjective  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * A list of media types for the metric
    **/
@@ -213,7 +214,7 @@ public class DefaultObjective  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
-  
+
   /**
    * A list of queues for the metric
    **/
@@ -231,7 +232,7 @@ public class DefaultObjective  implements Serializable {
     this.queues = queues;
   }
 
-  
+
   /**
    * A list of topic ids for detected topic metrics
    **/
@@ -249,7 +250,7 @@ public class DefaultObjective  implements Serializable {
     this.topics = topics;
   }
 
-  
+
   /**
    * A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
    **/
@@ -267,7 +268,6 @@ public class DefaultObjective  implements Serializable {
     this.topicIdsFilterType = topicIdsFilterType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -278,14 +278,15 @@ public class DefaultObjective  implements Serializable {
       return false;
     }
     DefaultObjective defaultObjective = (DefaultObjective) o;
+
     return Objects.equals(this.id, defaultObjective.id) &&
-        Objects.equals(this.templateId, defaultObjective.templateId) &&
-        Objects.equals(this.zones, defaultObjective.zones) &&
-        Objects.equals(this.enabled, defaultObjective.enabled) &&
-        Objects.equals(this.mediaTypes, defaultObjective.mediaTypes) &&
-        Objects.equals(this.queues, defaultObjective.queues) &&
-        Objects.equals(this.topics, defaultObjective.topics) &&
-        Objects.equals(this.topicIdsFilterType, defaultObjective.topicIdsFilterType);
+            Objects.equals(this.templateId, defaultObjective.templateId) &&
+            Objects.equals(this.zones, defaultObjective.zones) &&
+            Objects.equals(this.enabled, defaultObjective.enabled) &&
+            Objects.equals(this.mediaTypes, defaultObjective.mediaTypes) &&
+            Objects.equals(this.queues, defaultObjective.queues) &&
+            Objects.equals(this.topics, defaultObjective.topics) &&
+            Objects.equals(this.topicIdsFilterType, defaultObjective.topicIdsFilterType);
   }
 
   @Override

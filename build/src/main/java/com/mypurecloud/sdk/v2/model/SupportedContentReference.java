@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaTypes;
@@ -45,28 +46,27 @@ public class SupportedContentReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The SupportedContent profile name")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The SupportedContent profile URI")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Media types definition for the supported content")
   @JsonProperty("mediaTypes")
   public MediaTypes getMediaTypes() {
     return mediaTypes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,10 +77,11 @@ public class SupportedContentReference  implements Serializable {
       return false;
     }
     SupportedContentReference supportedContentReference = (SupportedContentReference) o;
+
     return Objects.equals(this.id, supportedContentReference.id) &&
-        Objects.equals(this.name, supportedContentReference.name) &&
-        Objects.equals(this.selfUri, supportedContentReference.selfUri) &&
-        Objects.equals(this.mediaTypes, supportedContentReference.mediaTypes);
+            Objects.equals(this.name, supportedContentReference.name) &&
+            Objects.equals(this.selfUri, supportedContentReference.selfUri) &&
+            Objects.equals(this.mediaTypes, supportedContentReference.mediaTypes);
   }
 
   @Override

@@ -21,12 +21,12 @@ title: TextBotDisconnectAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TRIGGEREDBYUSER | &quot;TriggeredByUser&quot; |
-| TRIGGEREDBYFLOW | &quot;TriggeredByFlow&quot; |
-| SESSIONEXPIRED | &quot;SessionExpired&quot; |
-| ERROR | &quot;Error&quot; |
-| RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TRIGGEREDBYUSER | &quot;TriggeredByUser&quot; | 
+| TRIGGEREDBYFLOW | &quot;TriggeredByFlow&quot; | 
+| SESSIONEXPIRED | &quot;SessionExpired&quot; | 
+| ERROR | &quot;Error&quot; | 
+| RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; | 
 {: class="table table-striped"}
 
 

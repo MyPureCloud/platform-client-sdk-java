@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CloseButtonStyleProperties;
@@ -51,7 +52,7 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.position = position;
   }
 
-  
+
   /**
    * Properties for customizing the appearance of the content offer.
    **/
@@ -69,7 +70,7 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.offer = offer;
   }
 
-  
+
   /**
    * Properties for customizing the appearance of the close button.
    **/
@@ -87,7 +88,7 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.closeButton = closeButton;
   }
 
-  
+
   /**
    * Properties for customizing the appearance of the CTA button.
    **/
@@ -105,7 +106,7 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.ctaButton = ctaButton;
   }
 
-  
+
   /**
    * Properties for customizing the appearance of the title text.
    **/
@@ -123,7 +124,7 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Properties for customizing the appearance of the headline text.
    **/
@@ -141,7 +142,7 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.headline = headline;
   }
 
-  
+
   /**
    * Properties for customizing the appearance of the body text.
    **/
@@ -159,7 +160,6 @@ public class ContentOfferStylingConfiguration  implements Serializable {
     this.body = body;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,13 +170,14 @@ public class ContentOfferStylingConfiguration  implements Serializable {
       return false;
     }
     ContentOfferStylingConfiguration contentOfferStylingConfiguration = (ContentOfferStylingConfiguration) o;
+
     return Objects.equals(this.position, contentOfferStylingConfiguration.position) &&
-        Objects.equals(this.offer, contentOfferStylingConfiguration.offer) &&
-        Objects.equals(this.closeButton, contentOfferStylingConfiguration.closeButton) &&
-        Objects.equals(this.ctaButton, contentOfferStylingConfiguration.ctaButton) &&
-        Objects.equals(this.title, contentOfferStylingConfiguration.title) &&
-        Objects.equals(this.headline, contentOfferStylingConfiguration.headline) &&
-        Objects.equals(this.body, contentOfferStylingConfiguration.body);
+            Objects.equals(this.offer, contentOfferStylingConfiguration.offer) &&
+            Objects.equals(this.closeButton, contentOfferStylingConfiguration.closeButton) &&
+            Objects.equals(this.ctaButton, contentOfferStylingConfiguration.ctaButton) &&
+            Objects.equals(this.title, contentOfferStylingConfiguration.title) &&
+            Objects.equals(this.headline, contentOfferStylingConfiguration.headline) &&
+            Objects.equals(this.body, contentOfferStylingConfiguration.body);
   }
 
   @Override

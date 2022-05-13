@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class ScimEmail  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
    **/
@@ -109,7 +110,7 @@ public class ScimEmail  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates whether the email address is the primary email address.
    **/
@@ -127,7 +128,6 @@ public class ScimEmail  implements Serializable {
     this.primary = primary;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,9 +138,10 @@ public class ScimEmail  implements Serializable {
       return false;
     }
     ScimEmail scimEmail = (ScimEmail) o;
+
     return Objects.equals(this.value, scimEmail.value) &&
-        Objects.equals(this.type, scimEmail.type) &&
-        Objects.equals(this.primary, scimEmail.primary);
+            Objects.equals(this.type, scimEmail.type) &&
+            Objects.equals(this.primary, scimEmail.primary);
   }
 
   @Override

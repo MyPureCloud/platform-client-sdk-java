@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyActionMap;
@@ -42,7 +43,7 @@ public class JourneyAction  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Details about the action map from the Journey System which triggered this action
    **/
@@ -60,7 +61,6 @@ public class JourneyAction  implements Serializable {
     this.actionMap = actionMap;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class JourneyAction  implements Serializable {
       return false;
     }
     JourneyAction journeyAction = (JourneyAction) o;
+
     return Objects.equals(this.id, journeyAction.id) &&
-        Objects.equals(this.actionMap, journeyAction.actionMap);
+            Objects.equals(this.actionMap, journeyAction.actionMap);
   }
 
   @Override

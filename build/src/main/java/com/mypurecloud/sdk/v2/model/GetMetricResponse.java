@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Metric;
@@ -44,7 +45,7 @@ public class GetMetricResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public GetMetricResponse entities(List<Metric> entities) {
@@ -61,7 +62,7 @@ public class GetMetricResponse  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public GetMetricResponse selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class GetMetricResponse  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class GetMetricResponse  implements Serializable {
       return false;
     }
     GetMetricResponse getMetricResponse = (GetMetricResponse) o;
+
     return Objects.equals(this.total, getMetricResponse.total) &&
-        Objects.equals(this.entities, getMetricResponse.entities) &&
-        Objects.equals(this.selfUri, getMetricResponse.selfUri);
+            Objects.equals(this.entities, getMetricResponse.entities) &&
+            Objects.equals(this.selfUri, getMetricResponse.selfUri);
   }
 
   @Override

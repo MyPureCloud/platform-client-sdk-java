@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuForecastTimeSeriesResult;
@@ -44,7 +45,7 @@ public class BuForecastGenerationPlanningGroupResult  implements Serializable {
     this.planningGroupId = planningGroupId;
   }
 
-  
+
   /**
    * The generation results for the associated planning group
    **/
@@ -62,7 +63,6 @@ public class BuForecastGenerationPlanningGroupResult  implements Serializable {
     this.metricResults = metricResults;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class BuForecastGenerationPlanningGroupResult  implements Serializable {
       return false;
     }
     BuForecastGenerationPlanningGroupResult buForecastGenerationPlanningGroupResult = (BuForecastGenerationPlanningGroupResult) o;
+
     return Objects.equals(this.planningGroupId, buForecastGenerationPlanningGroupResult.planningGroupId) &&
-        Objects.equals(this.metricResults, buForecastGenerationPlanningGroupResult.metricResults);
+            Objects.equals(this.metricResults, buForecastGenerationPlanningGroupResult.metricResults);
   }
 
   @Override

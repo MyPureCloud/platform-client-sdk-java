@@ -22,11 +22,11 @@ title: WfmScheduleTopicWfmScheduleNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PROCESSING | &quot;Processing&quot; |
-| COMPLETE | &quot;Complete&quot; |
-| CANCELED | &quot;Canceled&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PROCESSING | &quot;Processing&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
+| CANCELED | &quot;Canceled&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 
@@ -36,12 +36,12 @@ title: WfmScheduleTopicWfmScheduleNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UPDATE | &quot;Update&quot; |
-| IMPORT | &quot;Import&quot; |
-| COPY | &quot;Copy&quot; |
-| GENERATE | &quot;Generate&quot; |
-| RESCHEDULE | &quot;Reschedule&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UPDATE | &quot;Update&quot; | 
+| IMPORT | &quot;Import&quot; | 
+| COPY | &quot;Copy&quot; | 
+| GENERATE | &quot;Generate&quot; | 
+| RESCHEDULE | &quot;Reschedule&quot; | 
 {: class="table table-striped"}
 
 

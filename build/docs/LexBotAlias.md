@@ -26,11 +26,11 @@ title: LexBotAlias
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BUILDING | &quot;BUILDING&quot; |
-| READY | &quot;READY&quot; |
-| FAILED | &quot;FAILED&quot; |
-| NOT_BUILT | &quot;NOT_BUILT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BUILDING | &quot;BUILDING&quot; | 
+| READY | &quot;READY&quot; | 
+| FAILED | &quot;FAILED&quot; | 
+| NOT_BUILT | &quot;NOT_BUILT&quot; | 
 {: class="table table-striped"}
 
 
@@ -40,8 +40,8 @@ title: LexBotAlias
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EN_US | &quot;en-US&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EN_US | &quot;en-US&quot; | 
 {: class="table table-striped"}
 
 

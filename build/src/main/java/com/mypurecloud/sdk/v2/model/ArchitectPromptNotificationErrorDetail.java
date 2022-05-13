@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ArchitectPromptNotificationErrorDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public ArchitectPromptNotificationErrorDetail entityId(String entityId) {
@@ -59,7 +60,7 @@ public class ArchitectPromptNotificationErrorDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ArchitectPromptNotificationErrorDetail entityName(String entityName) {
@@ -76,7 +77,7 @@ public class ArchitectPromptNotificationErrorDetail  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ArchitectPromptNotificationErrorDetail fieldName(String fieldName) {
@@ -93,7 +94,6 @@ public class ArchitectPromptNotificationErrorDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class ArchitectPromptNotificationErrorDetail  implements Serializable {
       return false;
     }
     ArchitectPromptNotificationErrorDetail architectPromptNotificationErrorDetail = (ArchitectPromptNotificationErrorDetail) o;
+
     return Objects.equals(this.errorCode, architectPromptNotificationErrorDetail.errorCode) &&
-        Objects.equals(this.entityId, architectPromptNotificationErrorDetail.entityId) &&
-        Objects.equals(this.entityName, architectPromptNotificationErrorDetail.entityName) &&
-        Objects.equals(this.fieldName, architectPromptNotificationErrorDetail.fieldName);
+            Objects.equals(this.entityId, architectPromptNotificationErrorDetail.entityId) &&
+            Objects.equals(this.entityName, architectPromptNotificationErrorDetail.entityName) &&
+            Objects.equals(this.fieldName, architectPromptNotificationErrorDetail.fieldName);
   }
 
   @Override

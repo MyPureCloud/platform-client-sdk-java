@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
     this.uri = uri;
   }
 
-  
+
   /**
    **/
   public DnclistDownloadReadyExportUri exportTimestamp(String exportTimestamp) {
@@ -57,7 +58,6 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
     this.exportTimestamp = exportTimestamp;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
       return false;
     }
     DnclistDownloadReadyExportUri dnclistDownloadReadyExportUri = (DnclistDownloadReadyExportUri) o;
+
     return Objects.equals(this.uri, dnclistDownloadReadyExportUri.uri) &&
-        Objects.equals(this.exportTimestamp, dnclistDownloadReadyExportUri.exportTimestamp);
+            Objects.equals(this.exportTimestamp, dnclistDownloadReadyExportUri.exportTimestamp);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
@@ -48,7 +49,7 @@ public class TrustCreate  implements Serializable {
     this.pairingId = pairingId;
   }
 
-  
+
   /**
    * If disabled no trustee user will have access, even if they were previously added.
    **/
@@ -66,7 +67,7 @@ public class TrustCreate  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.
    **/
@@ -84,7 +85,7 @@ public class TrustCreate  implements Serializable {
     this.users = users;
   }
 
-  
+
   /**
    * The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.
    **/
@@ -102,7 +103,7 @@ public class TrustCreate  implements Serializable {
     this.groups = groups;
   }
 
-  
+
   /**
    * The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -120,7 +121,6 @@ public class TrustCreate  implements Serializable {
     this.dateExpired = dateExpired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class TrustCreate  implements Serializable {
       return false;
     }
     TrustCreate trustCreate = (TrustCreate) o;
+
     return Objects.equals(this.pairingId, trustCreate.pairingId) &&
-        Objects.equals(this.enabled, trustCreate.enabled) &&
-        Objects.equals(this.users, trustCreate.users) &&
-        Objects.equals(this.groups, trustCreate.groups) &&
-        Objects.equals(this.dateExpired, trustCreate.dateExpired);
+            Objects.equals(this.enabled, trustCreate.enabled) &&
+            Objects.equals(this.users, trustCreate.users) &&
+            Objects.equals(this.groups, trustCreate.groups) &&
+            Objects.equals(this.dateExpired, trustCreate.dateExpired);
   }
 
   @Override

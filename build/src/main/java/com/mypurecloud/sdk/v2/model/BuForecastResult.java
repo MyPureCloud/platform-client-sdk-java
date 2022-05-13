@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupData;
@@ -47,7 +48,7 @@ public class BuForecastResult  implements Serializable {
     this.referenceStartDate = referenceStartDate;
   }
 
-  
+
   /**
    * The forecast data broken up by planning group
    **/
@@ -65,7 +66,7 @@ public class BuForecastResult  implements Serializable {
     this.planningGroups = planningGroups;
   }
 
-  
+
   /**
    * The week number represented by this response
    **/
@@ -83,7 +84,7 @@ public class BuForecastResult  implements Serializable {
     this.weekNumber = weekNumber;
   }
 
-  
+
   /**
    * The number of weeks in this forecast
    **/
@@ -101,7 +102,6 @@ public class BuForecastResult  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class BuForecastResult  implements Serializable {
       return false;
     }
     BuForecastResult buForecastResult = (BuForecastResult) o;
+
     return Objects.equals(this.referenceStartDate, buForecastResult.referenceStartDate) &&
-        Objects.equals(this.planningGroups, buForecastResult.planningGroups) &&
-        Objects.equals(this.weekNumber, buForecastResult.weekNumber) &&
-        Objects.equals(this.weekCount, buForecastResult.weekCount);
+            Objects.equals(this.planningGroups, buForecastResult.planningGroups) &&
+            Objects.equals(this.weekNumber, buForecastResult.weekNumber) &&
+            Objects.equals(this.weekCount, buForecastResult.weekCount);
   }
 
   @Override

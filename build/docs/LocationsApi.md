@@ -27,8 +27,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a location
 
-
-
 Wraps DELETE /api/v2/locations/{locationId}  
 
 Requires ALL permissions: 
@@ -89,8 +87,6 @@ null (empty response body)
 
 Get Location by ID.
 
-
-
 Wraps GET /api/v2/locations/{locationId}  
 
 Requires NO permissions: 
@@ -119,7 +115,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LocationsApi apiInstance = new LocationsApi();
 String locationId = "locationId_example"; // String | Location ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     LocationDefinition result = apiInstance.getLocation(locationId, expand);
     System.out.println(result);
@@ -152,8 +148,6 @@ try {
 > [LocationEntityListing](LocationEntityListing.html) getLocationSublocations(locationId)
 
 Get sublocations for location ID.
-
-
 
 Wraps GET /api/v2/locations/{locationId}/sublocations  
 
@@ -215,8 +209,6 @@ try {
 
 Get a list of all locations.
 
-
-
 Wraps GET /api/v2/locations  
 
 Requires NO permissions: 
@@ -246,7 +238,7 @@ Configuration.setDefaultApiClient(apiClient);
 LocationsApi apiInstance = new LocationsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String sortOrder = "sortOrder_example"; // String | Sort order
 try {
     LocationEntityListing result = apiInstance.getLocations(pageSize, pageNumber, id, sortOrder);
@@ -283,8 +275,6 @@ try {
 
 Search locations using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/locations/search  
 
 Requires NO permissions: 
@@ -313,7 +303,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LocationsApi apiInstance = new LocationsApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Provides more details about a specified resource
+List<String> expand = Arrays.asList(null); // List<String> | Provides more details about a specified resource
 try {
     LocationsSearchResponse result = apiInstance.getLocationsSearch(q64, expand);
     System.out.println(result);
@@ -346,8 +336,6 @@ try {
 > [LocationDefinition](LocationDefinition.html) patchLocation(locationId, body)
 
 Update a location
-
-
 
 Wraps PATCH /api/v2/locations/{locationId}  
 
@@ -412,8 +400,6 @@ try {
 
 Create a location
 
-
-
 Wraps POST /api/v2/locations  
 
 Requires ALL permissions: 
@@ -474,8 +460,6 @@ try {
 > [LocationsSearchResponse](LocationsSearchResponse.html) postLocationsSearch(body)
 
 Search locations
-
-
 
 Wraps POST /api/v2/locations/search  
 

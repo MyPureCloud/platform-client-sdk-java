@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     this.conditions = conditions;
   }
 
-  
+
   /**
    * The identifier of the rule
    **/
@@ -115,7 +116,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The name of the rule
    **/
@@ -133,7 +134,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The ranked order of the rule; rules are processed from lowest number to highest
    **/
@@ -151,7 +152,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * The category of the rule
    **/
@@ -169,7 +170,7 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * The list of rule actions to be taken if the conditions are true
    **/
@@ -187,7 +188,6 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     this.actions = actions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,12 +198,13 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
       return false;
     }
     DialerRulesetConfigChangeRule dialerRulesetConfigChangeRule = (DialerRulesetConfigChangeRule) o;
+
     return Objects.equals(this.conditions, dialerRulesetConfigChangeRule.conditions) &&
-        Objects.equals(this.id, dialerRulesetConfigChangeRule.id) &&
-        Objects.equals(this.name, dialerRulesetConfigChangeRule.name) &&
-        Objects.equals(this.order, dialerRulesetConfigChangeRule.order) &&
-        Objects.equals(this.category, dialerRulesetConfigChangeRule.category) &&
-        Objects.equals(this.actions, dialerRulesetConfigChangeRule.actions);
+            Objects.equals(this.id, dialerRulesetConfigChangeRule.id) &&
+            Objects.equals(this.name, dialerRulesetConfigChangeRule.name) &&
+            Objects.equals(this.order, dialerRulesetConfigChangeRule.order) &&
+            Objects.equals(this.category, dialerRulesetConfigChangeRule.category) &&
+            Objects.equals(this.actions, dialerRulesetConfigChangeRule.actions);
   }
 
   @Override

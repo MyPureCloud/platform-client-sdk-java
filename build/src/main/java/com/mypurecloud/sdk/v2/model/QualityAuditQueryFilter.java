@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class QualityAuditQueryFilter  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * Value of the property to filter.
    **/
@@ -114,7 +115,6 @@ public class QualityAuditQueryFilter  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,8 +125,9 @@ public class QualityAuditQueryFilter  implements Serializable {
       return false;
     }
     QualityAuditQueryFilter qualityAuditQueryFilter = (QualityAuditQueryFilter) o;
+
     return Objects.equals(this.property, qualityAuditQueryFilter.property) &&
-        Objects.equals(this.value, qualityAuditQueryFilter.value);
+            Objects.equals(this.value, qualityAuditQueryFilter.value);
   }
 
   @Override

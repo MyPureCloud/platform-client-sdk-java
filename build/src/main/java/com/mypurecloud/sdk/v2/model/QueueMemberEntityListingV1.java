@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 total(Long total) {
@@ -103,7 +104,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListingV1 pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class QueueMemberEntityListingV1  implements Serializable, PagedResource<
       return false;
     }
     QueueMemberEntityListingV1 queueMemberEntityListingV1 = (QueueMemberEntityListingV1) o;
+
     return Objects.equals(this.entities, queueMemberEntityListingV1.entities) &&
-        Objects.equals(this.pageSize, queueMemberEntityListingV1.pageSize) &&
-        Objects.equals(this.pageNumber, queueMemberEntityListingV1.pageNumber) &&
-        Objects.equals(this.total, queueMemberEntityListingV1.total) &&
-        Objects.equals(this.lastUri, queueMemberEntityListingV1.lastUri) &&
-        Objects.equals(this.firstUri, queueMemberEntityListingV1.firstUri) &&
-        Objects.equals(this.selfUri, queueMemberEntityListingV1.selfUri) &&
-        Objects.equals(this.previousUri, queueMemberEntityListingV1.previousUri) &&
-        Objects.equals(this.nextUri, queueMemberEntityListingV1.nextUri) &&
-        Objects.equals(this.pageCount, queueMemberEntityListingV1.pageCount);
+            Objects.equals(this.pageSize, queueMemberEntityListingV1.pageSize) &&
+            Objects.equals(this.pageNumber, queueMemberEntityListingV1.pageNumber) &&
+            Objects.equals(this.total, queueMemberEntityListingV1.total) &&
+            Objects.equals(this.lastUri, queueMemberEntityListingV1.lastUri) &&
+            Objects.equals(this.firstUri, queueMemberEntityListingV1.firstUri) &&
+            Objects.equals(this.selfUri, queueMemberEntityListingV1.selfUri) &&
+            Objects.equals(this.previousUri, queueMemberEntityListingV1.previousUri) &&
+            Objects.equals(this.nextUri, queueMemberEntityListingV1.nextUri) &&
+            Objects.equals(this.pageCount, queueMemberEntityListingV1.pageCount);
   }
 
   @Override

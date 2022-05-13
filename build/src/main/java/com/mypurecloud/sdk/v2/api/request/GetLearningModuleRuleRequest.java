@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 public class GetLearningModuleRuleRequest {
-    
+
 	private String moduleId;
 	public String getModuleId() {
 		return this.moduleId;
@@ -55,7 +55,7 @@ public class GetLearningModuleRuleRequest {
 	    this.setModuleId(moduleId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,7 +86,7 @@ public class GetLearningModuleRuleRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/learning/modules/{moduleId}/rule")
                 .withPathParameter("moduleId", moduleId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -97,12 +97,12 @@ public class GetLearningModuleRuleRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String moduleId) {
 	    return new Builder()
 	            .withRequiredParams(moduleId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLearningModuleRuleRequest request;
@@ -111,20 +111,20 @@ public class GetLearningModuleRuleRequest {
 			request = new GetLearningModuleRuleRequest();
 		}
 
-		
+
 		public Builder withModuleId(String moduleId) {
 			request.setModuleId(moduleId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String moduleId) {
 			request.setModuleId(moduleId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLearningModuleRuleRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * current state of the voicemail upload
    **/
@@ -110,7 +111,6 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
       return false;
     }
     ConversationCallbackEventTopicVoicemail conversationCallbackEventTopicVoicemail = (ConversationCallbackEventTopicVoicemail) o;
+
     return Objects.equals(this.id, conversationCallbackEventTopicVoicemail.id) &&
-        Objects.equals(this.uploadStatus, conversationCallbackEventTopicVoicemail.uploadStatus);
+            Objects.equals(this.uploadStatus, conversationCallbackEventTopicVoicemail.uploadStatus);
   }
 
   @Override

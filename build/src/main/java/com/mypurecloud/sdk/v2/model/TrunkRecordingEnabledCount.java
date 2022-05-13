@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class TrunkRecordingEnabledCount  implements Serializable {
     this.enabledCount = enabledCount;
   }
 
-  
+
   /**
    * The amount of trunks that do not have recording enabled
    **/
@@ -59,7 +60,6 @@ public class TrunkRecordingEnabledCount  implements Serializable {
     this.disabledCount = disabledCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class TrunkRecordingEnabledCount  implements Serializable {
       return false;
     }
     TrunkRecordingEnabledCount trunkRecordingEnabledCount = (TrunkRecordingEnabledCount) o;
+
     return Objects.equals(this.enabledCount, trunkRecordingEnabledCount.enabledCount) &&
-        Objects.equals(this.disabledCount, trunkRecordingEnabledCount.disabledCount);
+            Objects.equals(this.disabledCount, trunkRecordingEnabledCount.disabledCount);
   }
 
   @Override

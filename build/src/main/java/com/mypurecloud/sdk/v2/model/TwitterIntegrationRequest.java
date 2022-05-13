@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Twitter Integration
    **/
@@ -107,7 +108,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -125,7 +126,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public TwitterIntegrationRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -142,7 +143,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The Access Token Key from Twitter messenger
    **/
@@ -160,7 +161,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.accessTokenKey = accessTokenKey;
   }
 
-  
+
   /**
    * The Access Token Secret from Twitter messenger
    **/
@@ -178,7 +179,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.accessTokenSecret = accessTokenSecret;
   }
 
-  
+
   /**
    * The Consumer Key from Twitter messenger
    **/
@@ -196,7 +197,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.consumerKey = consumerKey;
   }
 
-  
+
   /**
    * The Consumer Secret from Twitter messenger
    **/
@@ -214,7 +215,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.consumerSecret = consumerSecret;
   }
 
-  
+
   /**
    * The type of twitter account to be used for the integration
    **/
@@ -232,7 +233,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.tier = tier;
   }
 
-  
+
   /**
    * The Twitter environment name, e.g.: env-beta (required for premium tier)
    **/
@@ -250,14 +251,13 @@ public class TwitterIntegrationRequest  implements Serializable {
     this.envName = envName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -268,17 +268,18 @@ public class TwitterIntegrationRequest  implements Serializable {
       return false;
     }
     TwitterIntegrationRequest twitterIntegrationRequest = (TwitterIntegrationRequest) o;
+
     return Objects.equals(this.id, twitterIntegrationRequest.id) &&
-        Objects.equals(this.name, twitterIntegrationRequest.name) &&
-        Objects.equals(this.supportedContent, twitterIntegrationRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, twitterIntegrationRequest.messagingSetting) &&
-        Objects.equals(this.accessTokenKey, twitterIntegrationRequest.accessTokenKey) &&
-        Objects.equals(this.accessTokenSecret, twitterIntegrationRequest.accessTokenSecret) &&
-        Objects.equals(this.consumerKey, twitterIntegrationRequest.consumerKey) &&
-        Objects.equals(this.consumerSecret, twitterIntegrationRequest.consumerSecret) &&
-        Objects.equals(this.tier, twitterIntegrationRequest.tier) &&
-        Objects.equals(this.envName, twitterIntegrationRequest.envName) &&
-        Objects.equals(this.selfUri, twitterIntegrationRequest.selfUri);
+            Objects.equals(this.name, twitterIntegrationRequest.name) &&
+            Objects.equals(this.supportedContent, twitterIntegrationRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, twitterIntegrationRequest.messagingSetting) &&
+            Objects.equals(this.accessTokenKey, twitterIntegrationRequest.accessTokenKey) &&
+            Objects.equals(this.accessTokenSecret, twitterIntegrationRequest.accessTokenSecret) &&
+            Objects.equals(this.consumerKey, twitterIntegrationRequest.consumerKey) &&
+            Objects.equals(this.consumerSecret, twitterIntegrationRequest.consumerSecret) &&
+            Objects.equals(this.tier, twitterIntegrationRequest.tier) &&
+            Objects.equals(this.envName, twitterIntegrationRequest.envName) &&
+            Objects.equals(this.selfUri, twitterIntegrationRequest.selfUri);
   }
 
   @Override

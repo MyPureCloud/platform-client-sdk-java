@@ -25,13 +25,13 @@ title: FacetEntry
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TERM | &quot;TERM&quot; |
-| NUMBERRANGE | &quot;NUMBERRANGE&quot; |
-| NUMBERHISTOGRAM | &quot;NUMBERHISTOGRAM&quot; |
-| DATERANGE | &quot;DATERANGE&quot; |
-| DATEHISTOGRAM | &quot;DATEHISTOGRAM&quot; |
-| ID | &quot;ID&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TERM | &quot;TERM&quot; | 
+| NUMBERRANGE | &quot;NUMBERRANGE&quot; | 
+| NUMBERHISTOGRAM | &quot;NUMBERHISTOGRAM&quot; | 
+| DATERANGE | &quot;DATERANGE&quot; | 
+| DATEHISTOGRAM | &quot;DATEHISTOGRAM&quot; | 
+| ID | &quot;ID&quot; | 
 {: class="table table-striped"}
 
 

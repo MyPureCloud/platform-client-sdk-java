@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class ScheduleActivity  implements Serializable {
     this.dateStart = dateStart;
   }
 
-  
+
   /**
    * The length of this activity in minutes
    **/
@@ -113,7 +114,7 @@ public class ScheduleActivity  implements Serializable {
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    * The description of this activity
    **/
@@ -131,7 +132,7 @@ public class ScheduleActivity  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The ID of the activity code associated with this activity
    **/
@@ -149,7 +150,7 @@ public class ScheduleActivity  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Whether this activity is paid
    **/
@@ -167,7 +168,7 @@ public class ScheduleActivity  implements Serializable {
     this.paid = paid;
   }
 
-  
+
   /**
    * The ID of the time off request associated with this activity, if applicable
    **/
@@ -185,7 +186,7 @@ public class ScheduleActivity  implements Serializable {
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
+
   /**
    * The ID of the external activity associated with this activity, if applicable
    **/
@@ -203,7 +204,7 @@ public class ScheduleActivity  implements Serializable {
     this.externalActivityId = externalActivityId;
   }
 
-  
+
   /**
    * The type of the external activity associated with this activity, if applicable
    **/
@@ -221,7 +222,6 @@ public class ScheduleActivity  implements Serializable {
     this.externalActivityType = externalActivityType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -232,14 +232,15 @@ public class ScheduleActivity  implements Serializable {
       return false;
     }
     ScheduleActivity scheduleActivity = (ScheduleActivity) o;
+
     return Objects.equals(this.dateStart, scheduleActivity.dateStart) &&
-        Objects.equals(this.lengthMinutes, scheduleActivity.lengthMinutes) &&
-        Objects.equals(this.description, scheduleActivity.description) &&
-        Objects.equals(this.activityCodeId, scheduleActivity.activityCodeId) &&
-        Objects.equals(this.paid, scheduleActivity.paid) &&
-        Objects.equals(this.timeOffRequestId, scheduleActivity.timeOffRequestId) &&
-        Objects.equals(this.externalActivityId, scheduleActivity.externalActivityId) &&
-        Objects.equals(this.externalActivityType, scheduleActivity.externalActivityType);
+            Objects.equals(this.lengthMinutes, scheduleActivity.lengthMinutes) &&
+            Objects.equals(this.description, scheduleActivity.description) &&
+            Objects.equals(this.activityCodeId, scheduleActivity.activityCodeId) &&
+            Objects.equals(this.paid, scheduleActivity.paid) &&
+            Objects.equals(this.timeOffRequestId, scheduleActivity.timeOffRequestId) &&
+            Objects.equals(this.externalActivityId, scheduleActivity.externalActivityId) &&
+            Objects.equals(this.externalActivityType, scheduleActivity.externalActivityType);
   }
 
   @Override

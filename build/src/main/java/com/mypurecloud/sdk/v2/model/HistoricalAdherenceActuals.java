@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class HistoricalAdherenceActuals  implements Serializable {
     this.actualActivityCategory = actualActivityCategory;
   }
 
-  
+
   /**
    * Actual start offset in seconds relative to query start time
    **/
@@ -115,7 +116,7 @@ public class HistoricalAdherenceActuals  implements Serializable {
     this.startOffsetSeconds = startOffsetSeconds;
   }
 
-  
+
   /**
    * Actual end offset in seconds relative to query start time
    **/
@@ -133,7 +134,6 @@ public class HistoricalAdherenceActuals  implements Serializable {
     this.endOffsetSeconds = endOffsetSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,9 +144,10 @@ public class HistoricalAdherenceActuals  implements Serializable {
       return false;
     }
     HistoricalAdherenceActuals historicalAdherenceActuals = (HistoricalAdherenceActuals) o;
+
     return Objects.equals(this.actualActivityCategory, historicalAdherenceActuals.actualActivityCategory) &&
-        Objects.equals(this.startOffsetSeconds, historicalAdherenceActuals.startOffsetSeconds) &&
-        Objects.equals(this.endOffsetSeconds, historicalAdherenceActuals.endOffsetSeconds);
+            Objects.equals(this.startOffsetSeconds, historicalAdherenceActuals.startOffsetSeconds) &&
+            Objects.equals(this.endOffsetSeconds, historicalAdherenceActuals.endOffsetSeconds);
   }
 
   @Override

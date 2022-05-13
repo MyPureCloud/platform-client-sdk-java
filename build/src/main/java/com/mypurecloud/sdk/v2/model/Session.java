@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -251,7 +252,7 @@ public class Session  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Primary identifier of the customer in the source where the events for the session originate from.
    **/
@@ -269,7 +270,7 @@ public class Session  implements Serializable {
     this.customerId = customerId;
   }
 
-  
+
   /**
    * Type of source customer identifier (e.g. cookie, email, phone).
    **/
@@ -287,7 +288,7 @@ public class Session  implements Serializable {
     this.customerIdType = customerIdType;
   }
 
-  
+
   /**
    * Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm).
    **/
@@ -305,7 +306,7 @@ public class Session  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Unique identifier in the external system where the events for the session originate from.
    **/
@@ -323,7 +324,7 @@ public class Session  implements Serializable {
     this.externalId = externalId;
   }
 
-  
+
   /**
    * A URL that identifies an external system-of-record resource that may have more detailed information on the session.
    **/
@@ -341,7 +342,7 @@ public class Session  implements Serializable {
     this.externalUrl = externalUrl;
   }
 
-  
+
   /**
    * Shortened numeric identifier of 4-6 digits.
    **/
@@ -359,7 +360,7 @@ public class Session  implements Serializable {
     this.shortId = shortId;
   }
 
-  
+
   /**
    * List of the outcome achievements by the customer in this session.
    **/
@@ -377,7 +378,7 @@ public class Session  implements Serializable {
     this.outcomeAchievements = outcomeAchievements;
   }
 
-  
+
   /**
    * List of the segment assignments to the customer in this session.
    **/
@@ -395,7 +396,7 @@ public class Session  implements Serializable {
     this.segmentAssignments = segmentAssignments;
   }
 
-  
+
   /**
    * Attributes projected from the session's event stream.
    **/
@@ -413,7 +414,7 @@ public class Session  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * List-type attributes projected from the session's event stream.
    **/
@@ -431,7 +432,7 @@ public class Session  implements Serializable {
     this.attributeLists = attributeLists;
   }
 
-  
+
   /**
    * Customer's browser.
    **/
@@ -449,7 +450,7 @@ public class Session  implements Serializable {
     this.browser = browser;
   }
 
-  
+
   /**
    * Customer's device.
    **/
@@ -467,7 +468,7 @@ public class Session  implements Serializable {
     this.device = device;
   }
 
-  
+
   /**
    * Customer's geolocation.
    **/
@@ -485,7 +486,7 @@ public class Session  implements Serializable {
     this.geolocation = geolocation;
   }
 
-  
+
   /**
    * Customer's IP address.
    **/
@@ -503,7 +504,7 @@ public class Session  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    * Customer's IP-based organization or ISP name.
    **/
@@ -521,7 +522,7 @@ public class Session  implements Serializable {
     this.ipOrganization = ipOrganization;
   }
 
-  
+
   /**
    * The webpage where the customer's last web interaction occurred.
    **/
@@ -539,7 +540,7 @@ public class Session  implements Serializable {
     this.lastPage = lastPage;
   }
 
-  
+
   /**
    * Marketing / traffic source information.
    **/
@@ -557,7 +558,7 @@ public class Session  implements Serializable {
     this.mktCampaign = mktCampaign;
   }
 
-  
+
   /**
    * Identifies the page URL that originally generated the request for the current page being viewed.
    **/
@@ -575,7 +576,7 @@ public class Session  implements Serializable {
     this.referrer = referrer;
   }
 
-  
+
   /**
    * Search terms associated with the session.
    **/
@@ -593,7 +594,7 @@ public class Session  implements Serializable {
     this.searchTerms = searchTerms;
   }
 
-  
+
   /**
    * String identifying the user agent.
    **/
@@ -611,7 +612,7 @@ public class Session  implements Serializable {
     this.userAgentString = userAgentString;
   }
 
-  
+
   /**
    * Indicates how long the session has been active (valid for an individual device).
    **/
@@ -629,7 +630,7 @@ public class Session  implements Serializable {
     this.durationInSeconds = durationInSeconds;
   }
 
-  
+
   /**
    * The count of all events performed during the session.
    **/
@@ -647,7 +648,7 @@ public class Session  implements Serializable {
     this.eventCount = eventCount;
   }
 
-  
+
   /**
    * The count of all pageviews performed during the session.
    **/
@@ -665,7 +666,7 @@ public class Session  implements Serializable {
     this.pageviewCount = pageviewCount;
   }
 
-  
+
   /**
    * The count of all screenviews performed during the session.
    **/
@@ -683,7 +684,7 @@ public class Session  implements Serializable {
     this.screenviewCount = screenviewCount;
   }
 
-  
+
   /**
    * Information about the most recent event in this session.
    **/
@@ -701,7 +702,7 @@ public class Session  implements Serializable {
     this.lastEvent = lastEvent;
   }
 
-  
+
   /**
    * The last queue connected to this session.
    **/
@@ -719,7 +720,7 @@ public class Session  implements Serializable {
     this.lastConnectedQueue = lastConnectedQueue;
   }
 
-  
+
   /**
    * The last user connected to this session.
    **/
@@ -737,7 +738,7 @@ public class Session  implements Serializable {
     this.lastConnectedUser = lastConnectedUser;
   }
 
-  
+
   /**
    * The last user disposition connected to this session.
    **/
@@ -755,7 +756,7 @@ public class Session  implements Serializable {
     this.lastUserDisposition = lastUserDisposition;
   }
 
-  
+
   /**
    * Represents the channels used for this conversation.
    **/
@@ -773,7 +774,7 @@ public class Session  implements Serializable {
     this.conversationChannels = conversationChannels;
   }
 
-  
+
   /**
    * The original direction of the conversation.
    **/
@@ -791,7 +792,7 @@ public class Session  implements Serializable {
     this.originatingDirection = originatingDirection;
   }
 
-  
+
   /**
    * The subject for the conversation, for example an email subject.
    **/
@@ -809,7 +810,7 @@ public class Session  implements Serializable {
     this.conversationSubject = conversationSubject;
   }
 
-  
+
   /**
    * Disconnect reason for the last user connected to the conversation.
    **/
@@ -827,7 +828,7 @@ public class Session  implements Serializable {
     this.lastUserDisconnectType = lastUserDisconnectType;
   }
 
-  
+
   /**
    * Last ACD outcome for the conversation.
    **/
@@ -845,7 +846,7 @@ public class Session  implements Serializable {
     this.lastAcdOutcome = lastAcdOutcome;
   }
 
-  
+
   /**
    * Indicates whether or not the session is authenticated.
    **/
@@ -863,14 +864,14 @@ public class Session  implements Serializable {
     this.authenticated = authenticated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -888,7 +889,7 @@ public class Session  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -906,14 +907,14 @@ public class Session  implements Serializable {
     this.endedDate = endedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The external contact associated with this session.")
   @JsonProperty("externalContact")
   public AddressableEntityRef getExternalContact() {
     return externalContact;
   }
 
-  
+
   /**
    * Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -931,7 +932,7 @@ public class Session  implements Serializable {
     this.awayDate = awayDate;
   }
 
-  
+
   /**
    * Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -949,14 +950,13 @@ public class Session  implements Serializable {
     this.idleDate = idleDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The conversation for this session.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
     return conversation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -967,48 +967,49 @@ public class Session  implements Serializable {
       return false;
     }
     Session session = (Session) o;
+
     return Objects.equals(this.id, session.id) &&
-        Objects.equals(this.customerId, session.customerId) &&
-        Objects.equals(this.customerIdType, session.customerIdType) &&
-        Objects.equals(this.type, session.type) &&
-        Objects.equals(this.externalId, session.externalId) &&
-        Objects.equals(this.externalUrl, session.externalUrl) &&
-        Objects.equals(this.shortId, session.shortId) &&
-        Objects.equals(this.outcomeAchievements, session.outcomeAchievements) &&
-        Objects.equals(this.segmentAssignments, session.segmentAssignments) &&
-        Objects.equals(this.attributes, session.attributes) &&
-        Objects.equals(this.attributeLists, session.attributeLists) &&
-        Objects.equals(this.browser, session.browser) &&
-        Objects.equals(this.device, session.device) &&
-        Objects.equals(this.geolocation, session.geolocation) &&
-        Objects.equals(this.ipAddress, session.ipAddress) &&
-        Objects.equals(this.ipOrganization, session.ipOrganization) &&
-        Objects.equals(this.lastPage, session.lastPage) &&
-        Objects.equals(this.mktCampaign, session.mktCampaign) &&
-        Objects.equals(this.referrer, session.referrer) &&
-        Objects.equals(this.searchTerms, session.searchTerms) &&
-        Objects.equals(this.userAgentString, session.userAgentString) &&
-        Objects.equals(this.durationInSeconds, session.durationInSeconds) &&
-        Objects.equals(this.eventCount, session.eventCount) &&
-        Objects.equals(this.pageviewCount, session.pageviewCount) &&
-        Objects.equals(this.screenviewCount, session.screenviewCount) &&
-        Objects.equals(this.lastEvent, session.lastEvent) &&
-        Objects.equals(this.lastConnectedQueue, session.lastConnectedQueue) &&
-        Objects.equals(this.lastConnectedUser, session.lastConnectedUser) &&
-        Objects.equals(this.lastUserDisposition, session.lastUserDisposition) &&
-        Objects.equals(this.conversationChannels, session.conversationChannels) &&
-        Objects.equals(this.originatingDirection, session.originatingDirection) &&
-        Objects.equals(this.conversationSubject, session.conversationSubject) &&
-        Objects.equals(this.lastUserDisconnectType, session.lastUserDisconnectType) &&
-        Objects.equals(this.lastAcdOutcome, session.lastAcdOutcome) &&
-        Objects.equals(this.authenticated, session.authenticated) &&
-        Objects.equals(this.selfUri, session.selfUri) &&
-        Objects.equals(this.createdDate, session.createdDate) &&
-        Objects.equals(this.endedDate, session.endedDate) &&
-        Objects.equals(this.externalContact, session.externalContact) &&
-        Objects.equals(this.awayDate, session.awayDate) &&
-        Objects.equals(this.idleDate, session.idleDate) &&
-        Objects.equals(this.conversation, session.conversation);
+            Objects.equals(this.customerId, session.customerId) &&
+            Objects.equals(this.customerIdType, session.customerIdType) &&
+            Objects.equals(this.type, session.type) &&
+            Objects.equals(this.externalId, session.externalId) &&
+            Objects.equals(this.externalUrl, session.externalUrl) &&
+            Objects.equals(this.shortId, session.shortId) &&
+            Objects.equals(this.outcomeAchievements, session.outcomeAchievements) &&
+            Objects.equals(this.segmentAssignments, session.segmentAssignments) &&
+            Objects.equals(this.attributes, session.attributes) &&
+            Objects.equals(this.attributeLists, session.attributeLists) &&
+            Objects.equals(this.browser, session.browser) &&
+            Objects.equals(this.device, session.device) &&
+            Objects.equals(this.geolocation, session.geolocation) &&
+            Objects.equals(this.ipAddress, session.ipAddress) &&
+            Objects.equals(this.ipOrganization, session.ipOrganization) &&
+            Objects.equals(this.lastPage, session.lastPage) &&
+            Objects.equals(this.mktCampaign, session.mktCampaign) &&
+            Objects.equals(this.referrer, session.referrer) &&
+            Objects.equals(this.searchTerms, session.searchTerms) &&
+            Objects.equals(this.userAgentString, session.userAgentString) &&
+            Objects.equals(this.durationInSeconds, session.durationInSeconds) &&
+            Objects.equals(this.eventCount, session.eventCount) &&
+            Objects.equals(this.pageviewCount, session.pageviewCount) &&
+            Objects.equals(this.screenviewCount, session.screenviewCount) &&
+            Objects.equals(this.lastEvent, session.lastEvent) &&
+            Objects.equals(this.lastConnectedQueue, session.lastConnectedQueue) &&
+            Objects.equals(this.lastConnectedUser, session.lastConnectedUser) &&
+            Objects.equals(this.lastUserDisposition, session.lastUserDisposition) &&
+            Objects.equals(this.conversationChannels, session.conversationChannels) &&
+            Objects.equals(this.originatingDirection, session.originatingDirection) &&
+            Objects.equals(this.conversationSubject, session.conversationSubject) &&
+            Objects.equals(this.lastUserDisconnectType, session.lastUserDisconnectType) &&
+            Objects.equals(this.lastAcdOutcome, session.lastAcdOutcome) &&
+            Objects.equals(this.authenticated, session.authenticated) &&
+            Objects.equals(this.selfUri, session.selfUri) &&
+            Objects.equals(this.createdDate, session.createdDate) &&
+            Objects.equals(this.endedDate, session.endedDate) &&
+            Objects.equals(this.externalContact, session.externalContact) &&
+            Objects.equals(this.awayDate, session.awayDate) &&
+            Objects.equals(this.idleDate, session.idleDate) &&
+            Objects.equals(this.conversation, session.conversation);
   }
 
   @Override

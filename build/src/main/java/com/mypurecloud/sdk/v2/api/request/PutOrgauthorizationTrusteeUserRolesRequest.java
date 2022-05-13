@@ -20,28 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.TrustRequest;
-import com.mypurecloud.sdk.v2.model.Trustee;
-import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustUser;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustEntityListing;
-import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
-import com.mypurecloud.sdk.v2.model.TrustCreate;
-import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
-import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.TrustCreate;
+import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
+import com.mypurecloud.sdk.v2.model.TrustRequest;
+import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.TrustUser;
+import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
+import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 public class PutOrgauthorizationTrusteeUserRolesRequest {
-    
+
 	private String trusteeOrgId;
 	public String getTrusteeOrgId() {
 		return this.trusteeOrgId;
@@ -55,7 +54,7 @@ public class PutOrgauthorizationTrusteeUserRolesRequest {
 	    this.setTrusteeOrgId(trusteeOrgId);
 	    return this;
 	} 
-	
+
 	private String trusteeUserId;
 	public String getTrusteeUserId() {
 		return this.trusteeUserId;
@@ -69,7 +68,7 @@ public class PutOrgauthorizationTrusteeUserRolesRequest {
 	    this.setTrusteeUserId(trusteeUserId);
 	    return this;
 	} 
-	
+
 	private List<String> body;
 	public List<String> getBody() {
 		return this.body;
@@ -83,7 +82,7 @@ public class PutOrgauthorizationTrusteeUserRolesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,8 +126,8 @@ public class PutOrgauthorizationTrusteeUserRolesRequest {
                 .withPathParameter("trusteeUserId", trusteeUserId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -139,12 +138,12 @@ public class PutOrgauthorizationTrusteeUserRolesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String trusteeOrgId, String trusteeUserId, List<String> body) {
 	    return new Builder()
 	            .withRequiredParams(trusteeOrgId, trusteeUserId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutOrgauthorizationTrusteeUserRolesRequest request;
@@ -153,32 +152,32 @@ public class PutOrgauthorizationTrusteeUserRolesRequest {
 			request = new PutOrgauthorizationTrusteeUserRolesRequest();
 		}
 
-		
+
 		public Builder withTrusteeOrgId(String trusteeOrgId) {
 			request.setTrusteeOrgId(trusteeOrgId);
 			return this;
 		}
-		
+
 		public Builder withTrusteeUserId(String trusteeUserId) {
 			request.setTrusteeUserId(trusteeUserId);
 			return this;
 		}
-		
+
 		public Builder withBody(List<String> body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String trusteeOrgId, String trusteeUserId, List<String> body) {
 			request.setTrusteeOrgId(trusteeOrgId);
-						request.setTrusteeUserId(trusteeUserId);
-						request.setBody(body);
-			
+			request.setTrusteeUserId(trusteeUserId);
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutOrgauthorizationTrusteeUserRolesRequest build() {
             

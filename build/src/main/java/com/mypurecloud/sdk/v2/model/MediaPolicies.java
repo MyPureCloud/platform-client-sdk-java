@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallMediaPolicy;
@@ -47,7 +48,7 @@ public class MediaPolicies  implements Serializable {
     this.callPolicy = callPolicy;
   }
 
-  
+
   /**
    * Conditions and actions for chats
    **/
@@ -65,7 +66,7 @@ public class MediaPolicies  implements Serializable {
     this.chatPolicy = chatPolicy;
   }
 
-  
+
   /**
    * Conditions and actions for emails
    **/
@@ -83,7 +84,7 @@ public class MediaPolicies  implements Serializable {
     this.emailPolicy = emailPolicy;
   }
 
-  
+
   /**
    * Conditions and actions for messages
    **/
@@ -101,7 +102,6 @@ public class MediaPolicies  implements Serializable {
     this.messagePolicy = messagePolicy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class MediaPolicies  implements Serializable {
       return false;
     }
     MediaPolicies mediaPolicies = (MediaPolicies) o;
+
     return Objects.equals(this.callPolicy, mediaPolicies.callPolicy) &&
-        Objects.equals(this.chatPolicy, mediaPolicies.chatPolicy) &&
-        Objects.equals(this.emailPolicy, mediaPolicies.emailPolicy) &&
-        Objects.equals(this.messagePolicy, mediaPolicies.messagePolicy);
+            Objects.equals(this.chatPolicy, mediaPolicies.chatPolicy) &&
+            Objects.equals(this.emailPolicy, mediaPolicies.emailPolicy) &&
+            Objects.equals(this.messagePolicy, mediaPolicies.messagePolicy);
   }
 
   @Override

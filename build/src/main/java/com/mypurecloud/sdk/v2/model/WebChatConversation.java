@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebChatMemberInfo;
@@ -33,7 +34,7 @@ public class WebChatConversation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WebChatConversation name(String name) {
@@ -50,7 +51,7 @@ public class WebChatConversation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Chat Member
    **/
@@ -68,14 +69,13 @@ public class WebChatConversation  implements Serializable {
     this.member = member;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,10 +86,11 @@ public class WebChatConversation  implements Serializable {
       return false;
     }
     WebChatConversation webChatConversation = (WebChatConversation) o;
+
     return Objects.equals(this.id, webChatConversation.id) &&
-        Objects.equals(this.name, webChatConversation.name) &&
-        Objects.equals(this.member, webChatConversation.member) &&
-        Objects.equals(this.selfUri, webChatConversation.selfUri);
+            Objects.equals(this.name, webChatConversation.name) &&
+            Objects.equals(this.member, webChatConversation.member) &&
+            Objects.equals(this.selfUri, webChatConversation.selfUri);
   }
 
   @Override

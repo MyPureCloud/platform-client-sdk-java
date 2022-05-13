@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -188,7 +189,7 @@ public class UserAggregateQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -206,7 +207,7 @@ public class UserAggregateQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -224,7 +225,7 @@ public class UserAggregateQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -242,7 +243,7 @@ public class UserAggregateQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -260,7 +261,6 @@ public class UserAggregateQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -271,11 +271,12 @@ public class UserAggregateQueryPredicate  implements Serializable {
       return false;
     }
     UserAggregateQueryPredicate userAggregateQueryPredicate = (UserAggregateQueryPredicate) o;
+
     return Objects.equals(this.type, userAggregateQueryPredicate.type) &&
-        Objects.equals(this.dimension, userAggregateQueryPredicate.dimension) &&
-        Objects.equals(this.operator, userAggregateQueryPredicate.operator) &&
-        Objects.equals(this.value, userAggregateQueryPredicate.value) &&
-        Objects.equals(this.range, userAggregateQueryPredicate.range);
+            Objects.equals(this.dimension, userAggregateQueryPredicate.dimension) &&
+            Objects.equals(this.operator, userAggregateQueryPredicate.operator) &&
+            Objects.equals(this.value, userAggregateQueryPredicate.value) &&
+            Objects.equals(this.range, userAggregateQueryPredicate.range);
   }
 
   @Override

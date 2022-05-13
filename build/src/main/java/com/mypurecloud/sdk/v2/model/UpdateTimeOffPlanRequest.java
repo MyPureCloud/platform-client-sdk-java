@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The set of activity code IDs to associate with this time off plan.
    **/
@@ -115,7 +116,7 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.activityCodeIds = activityCodeIds;
   }
 
-  
+
   /**
    * The set of time off limit IDs to associate with this time off plan.
    **/
@@ -133,7 +134,7 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.timeOffLimitIds = timeOffLimitIds;
   }
 
-  
+
   /**
    * Auto approval rule for the time off plan.
    **/
@@ -151,7 +152,7 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.autoApprovalRule = autoApprovalRule;
   }
 
-  
+
   /**
    * The number of days before the time off request start date for when the request will be expired from the waitlist.
    **/
@@ -169,7 +170,7 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.daysBeforeStartToExpireFromWaitlist = daysBeforeStartToExpireFromWaitlist;
   }
 
-  
+
   /**
    * Whether this time off plan should be used by agents.
    **/
@@ -187,7 +188,7 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    * Version metadata for the time off plan
    **/
@@ -205,7 +206,6 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,13 +216,14 @@ public class UpdateTimeOffPlanRequest  implements Serializable {
       return false;
     }
     UpdateTimeOffPlanRequest updateTimeOffPlanRequest = (UpdateTimeOffPlanRequest) o;
+
     return Objects.equals(this.name, updateTimeOffPlanRequest.name) &&
-        Objects.equals(this.activityCodeIds, updateTimeOffPlanRequest.activityCodeIds) &&
-        Objects.equals(this.timeOffLimitIds, updateTimeOffPlanRequest.timeOffLimitIds) &&
-        Objects.equals(this.autoApprovalRule, updateTimeOffPlanRequest.autoApprovalRule) &&
-        Objects.equals(this.daysBeforeStartToExpireFromWaitlist, updateTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
-        Objects.equals(this.active, updateTimeOffPlanRequest.active) &&
-        Objects.equals(this.metadata, updateTimeOffPlanRequest.metadata);
+            Objects.equals(this.activityCodeIds, updateTimeOffPlanRequest.activityCodeIds) &&
+            Objects.equals(this.timeOffLimitIds, updateTimeOffPlanRequest.timeOffLimitIds) &&
+            Objects.equals(this.autoApprovalRule, updateTimeOffPlanRequest.autoApprovalRule) &&
+            Objects.equals(this.daysBeforeStartToExpireFromWaitlist, updateTimeOffPlanRequest.daysBeforeStartToExpireFromWaitlist) &&
+            Objects.equals(this.active, updateTimeOffPlanRequest.active) &&
+            Objects.equals(this.metadata, updateTimeOffPlanRequest.metadata);
   }
 
   @Override

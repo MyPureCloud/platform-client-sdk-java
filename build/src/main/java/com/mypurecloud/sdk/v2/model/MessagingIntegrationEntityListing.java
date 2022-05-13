@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public MessagingIntegrationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class MessagingIntegrationEntityListing  implements Serializable, PagedRe
       return false;
     }
     MessagingIntegrationEntityListing messagingIntegrationEntityListing = (MessagingIntegrationEntityListing) o;
+
     return Objects.equals(this.entities, messagingIntegrationEntityListing.entities) &&
-        Objects.equals(this.pageSize, messagingIntegrationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, messagingIntegrationEntityListing.pageNumber) &&
-        Objects.equals(this.total, messagingIntegrationEntityListing.total) &&
-        Objects.equals(this.lastUri, messagingIntegrationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, messagingIntegrationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, messagingIntegrationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, messagingIntegrationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, messagingIntegrationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, messagingIntegrationEntityListing.pageCount);
+            Objects.equals(this.pageSize, messagingIntegrationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, messagingIntegrationEntityListing.pageNumber) &&
+            Objects.equals(this.total, messagingIntegrationEntityListing.total) &&
+            Objects.equals(this.lastUri, messagingIntegrationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, messagingIntegrationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, messagingIntegrationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, messagingIntegrationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, messagingIntegrationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, messagingIntegrationEntityListing.pageCount);
   }
 
   @Override

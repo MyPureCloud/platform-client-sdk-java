@@ -27,9 +27,9 @@ title: OpenNormalizedMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXT | &quot;Text&quot; |
-| RECEIPT | &quot;Receipt&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXT | &quot;Text&quot; | 
+| RECEIPT | &quot;Receipt&quot; | 
 {: class="table table-striped"}
 
 
@@ -39,13 +39,13 @@ title: OpenNormalizedMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SENT | &quot;Sent&quot; |
-| DELIVERED | &quot;Delivered&quot; |
-| READ | &quot;Read&quot; |
-| FAILED | &quot;Failed&quot; |
-| PUBLISHED | &quot;Published&quot; |
-| REMOVED | &quot;Removed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SENT | &quot;Sent&quot; | 
+| DELIVERED | &quot;Delivered&quot; | 
+| READ | &quot;Read&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| PUBLISHED | &quot;Published&quot; | 
+| REMOVED | &quot;Removed&quot; | 
 {: class="table table-striped"}
 
 
@@ -55,9 +55,9 @@ title: OpenNormalizedMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;Inbound&quot; |
-| OUTBOUND | &quot;Outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;Inbound&quot; | 
+| OUTBOUND | &quot;Outbound&quot; | 
 {: class="table table-striped"}
 
 

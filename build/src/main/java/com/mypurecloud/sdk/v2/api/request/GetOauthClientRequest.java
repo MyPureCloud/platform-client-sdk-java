@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetOauthClientRequest {
-    
+
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -47,7 +47,7 @@ public class GetOauthClientRequest {
 	    this.setClientId(clientId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -78,7 +78,7 @@ public class GetOauthClientRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/oauth/clients/{clientId}")
                 .withPathParameter("clientId", clientId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -89,12 +89,12 @@ public class GetOauthClientRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String clientId) {
 	    return new Builder()
 	            .withRequiredParams(clientId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOauthClientRequest request;
@@ -103,20 +103,20 @@ public class GetOauthClientRequest {
 			request = new GetOauthClientRequest();
 		}
 
-		
+
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String clientId) {
 			request.setClientId(clientId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetOauthClientRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -147,7 +148,7 @@ public class Organization  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Organization name(String name) {
@@ -164,7 +165,7 @@ public class Organization  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The default language for this organization. Example: 'en'
    **/
@@ -182,7 +183,7 @@ public class Organization  implements Serializable {
     this.defaultLanguage = defaultLanguage;
   }
 
-  
+
   /**
    * The default country code for this organization. Example: 'US'
    **/
@@ -200,14 +201,14 @@ public class Organization  implements Serializable {
     this.defaultCountryCode = defaultCountryCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The short name for the organization. This field is globally unique and cannot be changed.")
   @JsonProperty("thirdPartyOrgName")
   public String getThirdPartyOrgName() {
     return thirdPartyOrgName;
   }
 
-  
+
   /**
    **/
   public Organization thirdPartyURI(String thirdPartyURI) {
@@ -224,7 +225,7 @@ public class Organization  implements Serializable {
     this.thirdPartyURI = thirdPartyURI;
   }
 
-  
+
   /**
    **/
   public Organization domain(String domain) {
@@ -241,7 +242,7 @@ public class Organization  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    * The current version of the organization.
    **/
@@ -259,7 +260,7 @@ public class Organization  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The current state. Examples are active, inactive, deleted.
    **/
@@ -277,7 +278,7 @@ public class Organization  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public Organization defaultSiteId(String defaultSiteId) {
@@ -294,7 +295,7 @@ public class Organization  implements Serializable {
     this.defaultSiteId = defaultSiteId;
   }
 
-  
+
   /**
    * Email address where support tickets are sent to.
    **/
@@ -312,7 +313,7 @@ public class Organization  implements Serializable {
     this.supportURI = supportURI;
   }
 
-  
+
   /**
    **/
   public Organization voicemailEnabled(Boolean voicemailEnabled) {
@@ -329,28 +330,27 @@ public class Organization  implements Serializable {
     this.voicemailEnabled = voicemailEnabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Organizations Originating Platform.")
   @JsonProperty("productPlatform")
   public ProductPlatformEnum getProductPlatform() {
     return productPlatform;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The state of features available for the organization.")
   @JsonProperty("features")
   public Map<String, Boolean> getFeatures() {
     return features;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -361,21 +361,22 @@ public class Organization  implements Serializable {
       return false;
     }
     Organization organization = (Organization) o;
+
     return Objects.equals(this.id, organization.id) &&
-        Objects.equals(this.name, organization.name) &&
-        Objects.equals(this.defaultLanguage, organization.defaultLanguage) &&
-        Objects.equals(this.defaultCountryCode, organization.defaultCountryCode) &&
-        Objects.equals(this.thirdPartyOrgName, organization.thirdPartyOrgName) &&
-        Objects.equals(this.thirdPartyURI, organization.thirdPartyURI) &&
-        Objects.equals(this.domain, organization.domain) &&
-        Objects.equals(this.version, organization.version) &&
-        Objects.equals(this.state, organization.state) &&
-        Objects.equals(this.defaultSiteId, organization.defaultSiteId) &&
-        Objects.equals(this.supportURI, organization.supportURI) &&
-        Objects.equals(this.voicemailEnabled, organization.voicemailEnabled) &&
-        Objects.equals(this.productPlatform, organization.productPlatform) &&
-        Objects.equals(this.selfUri, organization.selfUri) &&
-        Objects.equals(this.features, organization.features);
+            Objects.equals(this.name, organization.name) &&
+            Objects.equals(this.defaultLanguage, organization.defaultLanguage) &&
+            Objects.equals(this.defaultCountryCode, organization.defaultCountryCode) &&
+            Objects.equals(this.thirdPartyOrgName, organization.thirdPartyOrgName) &&
+            Objects.equals(this.thirdPartyURI, organization.thirdPartyURI) &&
+            Objects.equals(this.domain, organization.domain) &&
+            Objects.equals(this.version, organization.version) &&
+            Objects.equals(this.state, organization.state) &&
+            Objects.equals(this.defaultSiteId, organization.defaultSiteId) &&
+            Objects.equals(this.supportURI, organization.supportURI) &&
+            Objects.equals(this.voicemailEnabled, organization.voicemailEnabled) &&
+            Objects.equals(this.productPlatform, organization.productPlatform) &&
+            Objects.equals(this.selfUri, organization.selfUri) &&
+            Objects.equals(this.features, organization.features);
   }
 
   @Override

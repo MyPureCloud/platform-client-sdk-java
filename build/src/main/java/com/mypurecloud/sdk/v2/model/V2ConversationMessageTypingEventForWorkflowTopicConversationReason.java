@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationReason 
     this.code = code;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationReason message(String message) {
@@ -115,7 +116,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationReason 
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,8 +126,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationReason 
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationReason v2ConversationMessageTypingEventForWorkflowTopicConversationReason = (V2ConversationMessageTypingEventForWorkflowTopicConversationReason) o;
+
     return Objects.equals(this.code, v2ConversationMessageTypingEventForWorkflowTopicConversationReason.code) &&
-        Objects.equals(this.message, v2ConversationMessageTypingEventForWorkflowTopicConversationReason.message);
+            Objects.equals(this.message, v2ConversationMessageTypingEventForWorkflowTopicConversationReason.message);
   }
 
   @Override

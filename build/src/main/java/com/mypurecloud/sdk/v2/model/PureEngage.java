@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class PureEngage  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public PureEngage name(String name) {
@@ -59,7 +60,7 @@ public class PureEngage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public PureEngage disabled(Boolean disabled) {
@@ -76,7 +77,7 @@ public class PureEngage  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public PureEngage issuerURI(String issuerURI) {
@@ -93,7 +94,7 @@ public class PureEngage  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public PureEngage ssoTargetURI(String ssoTargetURI) {
@@ -110,7 +111,7 @@ public class PureEngage  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public PureEngage sloURI(String sloURI) {
@@ -127,7 +128,7 @@ public class PureEngage  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public PureEngage sloBinding(String sloBinding) {
@@ -144,7 +145,7 @@ public class PureEngage  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public PureEngage relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -161,7 +162,7 @@ public class PureEngage  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public PureEngage certificate(String certificate) {
@@ -178,7 +179,7 @@ public class PureEngage  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public PureEngage certificates(List<String> certificates) {
@@ -195,7 +196,7 @@ public class PureEngage  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   /**
    **/
   public PureEngage autoProvisionUsers(Boolean autoProvisionUsers) {
@@ -212,14 +213,13 @@ public class PureEngage  implements Serializable {
     this.autoProvisionUsers = autoProvisionUsers;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -230,18 +230,19 @@ public class PureEngage  implements Serializable {
       return false;
     }
     PureEngage pureEngage = (PureEngage) o;
+
     return Objects.equals(this.id, pureEngage.id) &&
-        Objects.equals(this.name, pureEngage.name) &&
-        Objects.equals(this.disabled, pureEngage.disabled) &&
-        Objects.equals(this.issuerURI, pureEngage.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, pureEngage.ssoTargetURI) &&
-        Objects.equals(this.sloURI, pureEngage.sloURI) &&
-        Objects.equals(this.sloBinding, pureEngage.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, pureEngage.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, pureEngage.certificate) &&
-        Objects.equals(this.certificates, pureEngage.certificates) &&
-        Objects.equals(this.autoProvisionUsers, pureEngage.autoProvisionUsers) &&
-        Objects.equals(this.selfUri, pureEngage.selfUri);
+            Objects.equals(this.name, pureEngage.name) &&
+            Objects.equals(this.disabled, pureEngage.disabled) &&
+            Objects.equals(this.issuerURI, pureEngage.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, pureEngage.ssoTargetURI) &&
+            Objects.equals(this.sloURI, pureEngage.sloURI) &&
+            Objects.equals(this.sloBinding, pureEngage.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, pureEngage.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, pureEngage.certificate) &&
+            Objects.equals(this.certificates, pureEngage.certificates) &&
+            Objects.equals(this.autoProvisionUsers, pureEngage.autoProvisionUsers) &&
+            Objects.equals(this.selfUri, pureEngage.selfUri);
   }
 
   @Override

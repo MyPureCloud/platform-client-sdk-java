@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class DeleteGroupMembersRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -49,7 +48,7 @@ public class DeleteGroupMembersRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -63,7 +62,7 @@ public class DeleteGroupMembersRequest {
 	    this.setIds(ids);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -99,9 +98,10 @@ public class DeleteGroupMembersRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/groups/{groupId}/members")
                 .withPathParameter("groupId", groupId)
         
+
                 .withQueryParameters("ids", "", ids)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -112,12 +112,12 @@ public class DeleteGroupMembersRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId, String ids) {
 	    return new Builder()
 	            .withRequiredParams(groupId, ids);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteGroupMembersRequest request;
@@ -126,26 +126,26 @@ public class DeleteGroupMembersRequest {
 			request = new DeleteGroupMembersRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withIds(String ids) {
 			request.setIds(ids);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId, String ids) {
 			request.setGroupId(groupId);
-						request.setIds(ids);
-			
+			request.setIds(ids);
+
 			return this;
 		}
-		
+
 
 		public DeleteGroupMembersRequest build() {
             

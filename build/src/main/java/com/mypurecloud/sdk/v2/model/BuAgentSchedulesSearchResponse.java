@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentSchedulePublishedScheduleReference;
@@ -46,7 +47,7 @@ public class BuAgentSchedulesSearchResponse  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
+
   /**
    * The time zone configured for the business unit to which this schedule applies
    **/
@@ -64,7 +65,7 @@ public class BuAgentSchedulesSearchResponse  implements Serializable {
     this.businessUnitTimeZone = businessUnitTimeZone;
   }
 
-  
+
   /**
    * References to all published week schedules overlapping the start/end date query parameters
    **/
@@ -82,7 +83,6 @@ public class BuAgentSchedulesSearchResponse  implements Serializable {
     this.publishedSchedules = publishedSchedules;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class BuAgentSchedulesSearchResponse  implements Serializable {
       return false;
     }
     BuAgentSchedulesSearchResponse buAgentSchedulesSearchResponse = (BuAgentSchedulesSearchResponse) o;
+
     return Objects.equals(this.agentSchedules, buAgentSchedulesSearchResponse.agentSchedules) &&
-        Objects.equals(this.businessUnitTimeZone, buAgentSchedulesSearchResponse.businessUnitTimeZone) &&
-        Objects.equals(this.publishedSchedules, buAgentSchedulesSearchResponse.publishedSchedules);
+            Objects.equals(this.businessUnitTimeZone, buAgentSchedulesSearchResponse.businessUnitTimeZone) &&
+            Objects.equals(this.publishedSchedules, buAgentSchedulesSearchResponse.publishedSchedules);
   }
 
   @Override

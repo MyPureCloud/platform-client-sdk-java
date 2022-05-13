@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,14 +42,13 @@ public class CalendarUrlResponse  implements Serializable {
     this.calendarUrl = calendarUrl;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,8 +59,9 @@ public class CalendarUrlResponse  implements Serializable {
       return false;
     }
     CalendarUrlResponse calendarUrlResponse = (CalendarUrlResponse) o;
+
     return Objects.equals(this.calendarUrl, calendarUrlResponse.calendarUrl) &&
-        Objects.equals(this.selfUri, calendarUrlResponse.selfUri);
+            Objects.equals(this.selfUri, calendarUrlResponse.selfUri);
   }
 
   @Override

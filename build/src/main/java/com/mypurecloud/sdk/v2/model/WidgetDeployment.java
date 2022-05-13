@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -53,7 +54,7 @@ public class WidgetDeployment  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     V1("v1"),
     V2("v2"),
-    V1_HTTP("v1-http"),
+    V_1_HTTP("v1-http"),
     THIRD_PARTY("third-party");
 
     private String value;
@@ -92,7 +93,7 @@ public class WidgetDeployment  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WidgetDeployment name(String name) {
@@ -109,7 +110,7 @@ public class WidgetDeployment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A human-readable description of this Deployment.
    **/
@@ -127,7 +128,7 @@ public class WidgetDeployment  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * When true, the customer members starting a chat must be authenticated by supplying their JWT to the create operation.
    **/
@@ -145,7 +146,7 @@ public class WidgetDeployment  implements Serializable {
     this.authenticationRequired = authenticationRequired;
   }
 
-  
+
   /**
    * When true, all create chat operations using this Deployment will be rejected.
    **/
@@ -163,7 +164,7 @@ public class WidgetDeployment  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    * The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
    **/
@@ -181,7 +182,7 @@ public class WidgetDeployment  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * The list of domains that are approved to use this Deployment; the list will be added to CORS headers for ease of web use.
    **/
@@ -199,7 +200,7 @@ public class WidgetDeployment  implements Serializable {
     this.allowedDomains = allowedDomains;
   }
 
-  
+
   /**
    * The type of display widget for which this Deployment is configured, which controls the administrator settings shown.
    **/
@@ -217,7 +218,7 @@ public class WidgetDeployment  implements Serializable {
     this.clientType = clientType;
   }
 
-  
+
   /**
    * The client configuration options that should be made available to the clients of this Deployment.
    **/
@@ -235,14 +236,13 @@ public class WidgetDeployment  implements Serializable {
     this.clientConfig = clientConfig;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -253,16 +253,17 @@ public class WidgetDeployment  implements Serializable {
       return false;
     }
     WidgetDeployment widgetDeployment = (WidgetDeployment) o;
+
     return Objects.equals(this.id, widgetDeployment.id) &&
-        Objects.equals(this.name, widgetDeployment.name) &&
-        Objects.equals(this.description, widgetDeployment.description) &&
-        Objects.equals(this.authenticationRequired, widgetDeployment.authenticationRequired) &&
-        Objects.equals(this.disabled, widgetDeployment.disabled) &&
-        Objects.equals(this.flow, widgetDeployment.flow) &&
-        Objects.equals(this.allowedDomains, widgetDeployment.allowedDomains) &&
-        Objects.equals(this.clientType, widgetDeployment.clientType) &&
-        Objects.equals(this.clientConfig, widgetDeployment.clientConfig) &&
-        Objects.equals(this.selfUri, widgetDeployment.selfUri);
+            Objects.equals(this.name, widgetDeployment.name) &&
+            Objects.equals(this.description, widgetDeployment.description) &&
+            Objects.equals(this.authenticationRequired, widgetDeployment.authenticationRequired) &&
+            Objects.equals(this.disabled, widgetDeployment.disabled) &&
+            Objects.equals(this.flow, widgetDeployment.flow) &&
+            Objects.equals(this.allowedDomains, widgetDeployment.allowedDomains) &&
+            Objects.equals(this.clientType, widgetDeployment.clientType) &&
+            Objects.equals(this.clientConfig, widgetDeployment.clientConfig) &&
+            Objects.equals(this.selfUri, widgetDeployment.selfUri);
   }
 
   @Override

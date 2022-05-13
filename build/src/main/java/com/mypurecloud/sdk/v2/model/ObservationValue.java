@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -213,7 +214,7 @@ public class ObservationValue  implements Serializable {
     this.observationDate = observationDate;
   }
 
-  
+
   /**
    * Unique identifier for the conversation
    **/
@@ -231,7 +232,7 @@ public class ObservationValue  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * The unique identifier of this session
    **/
@@ -249,7 +250,7 @@ public class ObservationValue  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * Unique identifier for a skill requested for an interaction
    **/
@@ -267,7 +268,7 @@ public class ObservationValue  implements Serializable {
     this.requestedRoutingSkillIds = requestedRoutingSkillIds;
   }
 
-  
+
   /**
    * Unique identifier for the language requested for an interaction
    **/
@@ -285,7 +286,7 @@ public class ObservationValue  implements Serializable {
     this.requestedLanguageId = requestedLanguageId;
   }
 
-  
+
   /**
    * Routing priority for the current interaction
    **/
@@ -303,7 +304,7 @@ public class ObservationValue  implements Serializable {
     this.routingPriority = routingPriority;
   }
 
-  
+
   /**
    * A human readable name identifying the participant
    **/
@@ -321,7 +322,7 @@ public class ObservationValue  implements Serializable {
     this.participantName = participantName;
   }
 
-  
+
   /**
    * Unique identifier for the user
    **/
@@ -339,7 +340,7 @@ public class ObservationValue  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The direction of the communication
    **/
@@ -357,7 +358,7 @@ public class ObservationValue  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Session media type that was converted from in case of a media type conversion
    **/
@@ -375,7 +376,7 @@ public class ObservationValue  implements Serializable {
     this.convertedFrom = convertedFrom;
   }
 
-  
+
   /**
    * Session media type that was converted to in case of a media type conversion
    **/
@@ -393,7 +394,7 @@ public class ObservationValue  implements Serializable {
     this.convertedTo = convertedTo;
   }
 
-  
+
   /**
    * The address that initiated an action
    **/
@@ -411,7 +412,7 @@ public class ObservationValue  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    * The address receiving an action
    **/
@@ -429,7 +430,7 @@ public class ObservationValue  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    * Automatic Number Identification (caller's number)
    **/
@@ -447,7 +448,7 @@ public class ObservationValue  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    * Dialed number identification service (number dialed by the calling party)
    **/
@@ -465,7 +466,7 @@ public class ObservationValue  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * The team id the user is a member of
    **/
@@ -483,7 +484,7 @@ public class ObservationValue  implements Serializable {
     this.teamId = teamId;
   }
 
-  
+
   /**
    * All routing types for requested/attempted routing methods
    **/
@@ -501,7 +502,7 @@ public class ObservationValue  implements Serializable {
     this.requestedRoutings = requestedRoutings;
   }
 
-  
+
   /**
    * Complete routing method
    **/
@@ -519,7 +520,7 @@ public class ObservationValue  implements Serializable {
     this.usedRouting = usedRouting;
   }
 
-  
+
   /**
    **/
   public ObservationValue scoredAgents(List<AnalyticsScoredAgent> scoredAgents) {
@@ -536,7 +537,6 @@ public class ObservationValue  implements Serializable {
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -547,25 +547,26 @@ public class ObservationValue  implements Serializable {
       return false;
     }
     ObservationValue observationValue = (ObservationValue) o;
+
     return Objects.equals(this.observationDate, observationValue.observationDate) &&
-        Objects.equals(this.conversationId, observationValue.conversationId) &&
-        Objects.equals(this.sessionId, observationValue.sessionId) &&
-        Objects.equals(this.requestedRoutingSkillIds, observationValue.requestedRoutingSkillIds) &&
-        Objects.equals(this.requestedLanguageId, observationValue.requestedLanguageId) &&
-        Objects.equals(this.routingPriority, observationValue.routingPriority) &&
-        Objects.equals(this.participantName, observationValue.participantName) &&
-        Objects.equals(this.userId, observationValue.userId) &&
-        Objects.equals(this.direction, observationValue.direction) &&
-        Objects.equals(this.convertedFrom, observationValue.convertedFrom) &&
-        Objects.equals(this.convertedTo, observationValue.convertedTo) &&
-        Objects.equals(this.addressFrom, observationValue.addressFrom) &&
-        Objects.equals(this.addressTo, observationValue.addressTo) &&
-        Objects.equals(this.ani, observationValue.ani) &&
-        Objects.equals(this.dnis, observationValue.dnis) &&
-        Objects.equals(this.teamId, observationValue.teamId) &&
-        Objects.equals(this.requestedRoutings, observationValue.requestedRoutings) &&
-        Objects.equals(this.usedRouting, observationValue.usedRouting) &&
-        Objects.equals(this.scoredAgents, observationValue.scoredAgents);
+            Objects.equals(this.conversationId, observationValue.conversationId) &&
+            Objects.equals(this.sessionId, observationValue.sessionId) &&
+            Objects.equals(this.requestedRoutingSkillIds, observationValue.requestedRoutingSkillIds) &&
+            Objects.equals(this.requestedLanguageId, observationValue.requestedLanguageId) &&
+            Objects.equals(this.routingPriority, observationValue.routingPriority) &&
+            Objects.equals(this.participantName, observationValue.participantName) &&
+            Objects.equals(this.userId, observationValue.userId) &&
+            Objects.equals(this.direction, observationValue.direction) &&
+            Objects.equals(this.convertedFrom, observationValue.convertedFrom) &&
+            Objects.equals(this.convertedTo, observationValue.convertedTo) &&
+            Objects.equals(this.addressFrom, observationValue.addressFrom) &&
+            Objects.equals(this.addressTo, observationValue.addressTo) &&
+            Objects.equals(this.ani, observationValue.ani) &&
+            Objects.equals(this.dnis, observationValue.dnis) &&
+            Objects.equals(this.teamId, observationValue.teamId) &&
+            Objects.equals(this.requestedRoutings, observationValue.requestedRoutings) &&
+            Objects.equals(this.usedRouting, observationValue.usedRouting) &&
+            Objects.equals(this.scoredAgents, observationValue.scoredAgents);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -215,7 +216,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent conversationId(String conversationId) {
@@ -232,7 +233,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent participantId(String participantId) {
@@ -249,7 +250,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent sessionId(String sessionId) {
@@ -266,7 +267,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent mediaType(MediaTypeEnum mediaType) {
@@ -283,7 +284,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent externalOrganizationId(String externalOrganizationId) {
@@ -300,7 +301,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent externalContactId(String externalContactId) {
@@ -317,7 +318,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent provider(String provider) {
@@ -334,7 +335,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent direction(DirectionEnum direction) {
@@ -351,7 +352,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent ani(String ani) {
@@ -368,7 +369,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent dnis(String dnis) {
@@ -385,7 +386,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent addressTo(String addressTo) {
@@ -402,7 +403,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent addressFrom(String addressFrom) {
@@ -419,7 +420,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent callbackUserName(String callbackUserName) {
@@ -436,7 +437,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent callbackNumbers(List<String> callbackNumbers) {
@@ -453,7 +454,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -470,7 +471,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent subject(String subject) {
@@ -487,7 +488,7 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public CustomerStartDetailEventTopicCustomerStartEvent messageType(MessageTypeEnum messageType) {
@@ -504,7 +505,6 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     this.messageType = messageType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -515,24 +515,25 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
       return false;
     }
     CustomerStartDetailEventTopicCustomerStartEvent customerStartDetailEventTopicCustomerStartEvent = (CustomerStartDetailEventTopicCustomerStartEvent) o;
+
     return Objects.equals(this.eventTime, customerStartDetailEventTopicCustomerStartEvent.eventTime) &&
-        Objects.equals(this.conversationId, customerStartDetailEventTopicCustomerStartEvent.conversationId) &&
-        Objects.equals(this.participantId, customerStartDetailEventTopicCustomerStartEvent.participantId) &&
-        Objects.equals(this.sessionId, customerStartDetailEventTopicCustomerStartEvent.sessionId) &&
-        Objects.equals(this.mediaType, customerStartDetailEventTopicCustomerStartEvent.mediaType) &&
-        Objects.equals(this.externalOrganizationId, customerStartDetailEventTopicCustomerStartEvent.externalOrganizationId) &&
-        Objects.equals(this.externalContactId, customerStartDetailEventTopicCustomerStartEvent.externalContactId) &&
-        Objects.equals(this.provider, customerStartDetailEventTopicCustomerStartEvent.provider) &&
-        Objects.equals(this.direction, customerStartDetailEventTopicCustomerStartEvent.direction) &&
-        Objects.equals(this.ani, customerStartDetailEventTopicCustomerStartEvent.ani) &&
-        Objects.equals(this.dnis, customerStartDetailEventTopicCustomerStartEvent.dnis) &&
-        Objects.equals(this.addressTo, customerStartDetailEventTopicCustomerStartEvent.addressTo) &&
-        Objects.equals(this.addressFrom, customerStartDetailEventTopicCustomerStartEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, customerStartDetailEventTopicCustomerStartEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, customerStartDetailEventTopicCustomerStartEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, customerStartDetailEventTopicCustomerStartEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, customerStartDetailEventTopicCustomerStartEvent.subject) &&
-        Objects.equals(this.messageType, customerStartDetailEventTopicCustomerStartEvent.messageType);
+            Objects.equals(this.conversationId, customerStartDetailEventTopicCustomerStartEvent.conversationId) &&
+            Objects.equals(this.participantId, customerStartDetailEventTopicCustomerStartEvent.participantId) &&
+            Objects.equals(this.sessionId, customerStartDetailEventTopicCustomerStartEvent.sessionId) &&
+            Objects.equals(this.mediaType, customerStartDetailEventTopicCustomerStartEvent.mediaType) &&
+            Objects.equals(this.externalOrganizationId, customerStartDetailEventTopicCustomerStartEvent.externalOrganizationId) &&
+            Objects.equals(this.externalContactId, customerStartDetailEventTopicCustomerStartEvent.externalContactId) &&
+            Objects.equals(this.provider, customerStartDetailEventTopicCustomerStartEvent.provider) &&
+            Objects.equals(this.direction, customerStartDetailEventTopicCustomerStartEvent.direction) &&
+            Objects.equals(this.ani, customerStartDetailEventTopicCustomerStartEvent.ani) &&
+            Objects.equals(this.dnis, customerStartDetailEventTopicCustomerStartEvent.dnis) &&
+            Objects.equals(this.addressTo, customerStartDetailEventTopicCustomerStartEvent.addressTo) &&
+            Objects.equals(this.addressFrom, customerStartDetailEventTopicCustomerStartEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, customerStartDetailEventTopicCustomerStartEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, customerStartDetailEventTopicCustomerStartEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, customerStartDetailEventTopicCustomerStartEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, customerStartDetailEventTopicCustomerStartEvent.subject) &&
+            Objects.equals(this.messageType, customerStartDetailEventTopicCustomerStartEvent.messageType);
   }
 
   @Override

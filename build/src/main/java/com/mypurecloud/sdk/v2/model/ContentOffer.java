@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class ContentOffer  implements Serializable {
     this.imageUrl = imageUrl;
   }
 
-  
+
   /**
    * The display mode of Genesys Widgets when displaying content offer.
    **/
@@ -167,7 +168,7 @@ public class ContentOffer  implements Serializable {
     this.displayMode = displayMode;
   }
 
-  
+
   /**
    * The layout mode of the text shown to the user when displaying content offer.
    **/
@@ -185,7 +186,7 @@ public class ContentOffer  implements Serializable {
     this.layoutMode = layoutMode;
   }
 
-  
+
   /**
    * Title used in the header of the content offer.
    **/
@@ -203,7 +204,7 @@ public class ContentOffer  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Headline displayed above the body text of the content offer.
    **/
@@ -221,7 +222,7 @@ public class ContentOffer  implements Serializable {
     this.headline = headline;
   }
 
-  
+
   /**
    * Body text of the content offer.
    **/
@@ -239,7 +240,7 @@ public class ContentOffer  implements Serializable {
     this.body = body;
   }
 
-  
+
   /**
    * Properties customizing the call to action button on the content offer.
    **/
@@ -257,7 +258,7 @@ public class ContentOffer  implements Serializable {
     this.callToAction = callToAction;
   }
 
-  
+
   /**
    * Properties customizing the styling of the content offer.
    **/
@@ -275,7 +276,6 @@ public class ContentOffer  implements Serializable {
     this.style = style;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -286,14 +286,15 @@ public class ContentOffer  implements Serializable {
       return false;
     }
     ContentOffer contentOffer = (ContentOffer) o;
+
     return Objects.equals(this.imageUrl, contentOffer.imageUrl) &&
-        Objects.equals(this.displayMode, contentOffer.displayMode) &&
-        Objects.equals(this.layoutMode, contentOffer.layoutMode) &&
-        Objects.equals(this.title, contentOffer.title) &&
-        Objects.equals(this.headline, contentOffer.headline) &&
-        Objects.equals(this.body, contentOffer.body) &&
-        Objects.equals(this.callToAction, contentOffer.callToAction) &&
-        Objects.equals(this.style, contentOffer.style);
+            Objects.equals(this.displayMode, contentOffer.displayMode) &&
+            Objects.equals(this.layoutMode, contentOffer.layoutMode) &&
+            Objects.equals(this.title, contentOffer.title) &&
+            Objects.equals(this.headline, contentOffer.headline) &&
+            Objects.equals(this.body, contentOffer.body) &&
+            Objects.equals(this.callToAction, contentOffer.callToAction) &&
+            Objects.equals(this.style, contentOffer.style);
   }
 
   @Override

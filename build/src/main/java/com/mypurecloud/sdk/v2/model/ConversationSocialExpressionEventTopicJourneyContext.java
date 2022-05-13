@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class ConversationSocialExpressionEventTopicJourneyContext  implements Se
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicJourneyContext customerSession(ConversationSocialExpressionEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class ConversationSocialExpressionEventTopicJourneyContext  implements Se
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicJourneyContext triggeringAction(ConversationSocialExpressionEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class ConversationSocialExpressionEventTopicJourneyContext  implements Se
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ConversationSocialExpressionEventTopicJourneyContext  implements Se
       return false;
     }
     ConversationSocialExpressionEventTopicJourneyContext conversationSocialExpressionEventTopicJourneyContext = (ConversationSocialExpressionEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, conversationSocialExpressionEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, conversationSocialExpressionEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, conversationSocialExpressionEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, conversationSocialExpressionEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, conversationSocialExpressionEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

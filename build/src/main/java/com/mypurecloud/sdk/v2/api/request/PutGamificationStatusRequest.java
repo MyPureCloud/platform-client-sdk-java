@@ -20,39 +20,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Leaderboard;
+import com.mypurecloud.sdk.v2.model.AllTimePoints;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GamificationStatus;
+import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
+import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Leaderboard;
 import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.OverallBestPoints;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
-import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
-import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
+import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
-import com.mypurecloud.sdk.v2.model.MemberListing;
-import com.mypurecloud.sdk.v2.model.GetMetricResponse;
-import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
-import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
-import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
-import com.mypurecloud.sdk.v2.model.UserBestPoints;
-import com.mypurecloud.sdk.v2.model.AllTimePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
+import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
+import com.mypurecloud.sdk.v2.model.UserBestPoints;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
-import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
-import com.mypurecloud.sdk.v2.model.GamificationStatus;
-import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
-import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
-import com.mypurecloud.sdk.v2.model.CreateMetric;
-import com.mypurecloud.sdk.v2.model.Assignment;
-import com.mypurecloud.sdk.v2.model.AssignUsers;
-import com.mypurecloud.sdk.v2.model.AssignmentValidation;
-import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
-import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
-import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 public class PutGamificationStatusRequest {
-    
+
 	private GamificationStatus status;
 	public GamificationStatus getStatus() {
 		return this.status;
@@ -66,7 +66,7 @@ public class PutGamificationStatusRequest {
 	    this.setStatus(status);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -96,8 +96,8 @@ public class PutGamificationStatusRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/gamification/status")
                 .withBody(status)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -108,12 +108,12 @@ public class PutGamificationStatusRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(GamificationStatus status) {
 	    return new Builder()
 	            .withRequiredParams(status);
 	}
-	
+
 
 	public static class Builder {
 		private final PutGamificationStatusRequest request;
@@ -122,20 +122,20 @@ public class PutGamificationStatusRequest {
 			request = new PutGamificationStatusRequest();
 		}
 
-		
+
 		public Builder withStatus(GamificationStatus status) {
 			request.setStatus(status);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(GamificationStatus status) {
 			request.setStatus(status);
-			
+
 			return this;
 		}
-		
+
 
 		public PutGamificationStatusRequest build() {
             

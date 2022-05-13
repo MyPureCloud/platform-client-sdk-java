@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallMediaPolicyConditions;
@@ -43,7 +44,7 @@ public class CallMediaPolicy  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    * Conditions for when actions should be applied
    **/
@@ -61,7 +62,6 @@ public class CallMediaPolicy  implements Serializable {
     this.conditions = conditions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class CallMediaPolicy  implements Serializable {
       return false;
     }
     CallMediaPolicy callMediaPolicy = (CallMediaPolicy) o;
+
     return Objects.equals(this.actions, callMediaPolicy.actions) &&
-        Objects.equals(this.conditions, callMediaPolicy.conditions);
+            Objects.equals(this.conditions, callMediaPolicy.conditions);
   }
 
   @Override

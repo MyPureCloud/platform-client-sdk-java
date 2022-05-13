@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,7 +33,7 @@ public class LearningModulePublishResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The version of published learning module
    **/
@@ -50,14 +51,13 @@ public class LearningModulePublishResponse  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,9 +68,10 @@ public class LearningModulePublishResponse  implements Serializable {
       return false;
     }
     LearningModulePublishResponse learningModulePublishResponse = (LearningModulePublishResponse) o;
+
     return Objects.equals(this.id, learningModulePublishResponse.id) &&
-        Objects.equals(this.version, learningModulePublishResponse.version) &&
-        Objects.equals(this.selfUri, learningModulePublishResponse.selfUri);
+            Objects.equals(this.version, learningModulePublishResponse.version) &&
+            Objects.equals(this.selfUri, learningModulePublishResponse.selfUri);
   }
 
   @Override

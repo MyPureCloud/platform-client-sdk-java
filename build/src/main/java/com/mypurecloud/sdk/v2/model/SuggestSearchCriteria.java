@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.SuggestSearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -99,7 +99,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.endValue = endValue;
   }
 
-  
+
   /**
    * A list of values for the search to match against
    **/
@@ -117,7 +117,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -135,7 +135,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.startValue = startValue;
   }
 
-  
+
   /**
    * Field names to search against
    **/
@@ -153,7 +153,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.fields = fields;
   }
 
-  
+
   /**
    * A value for the search to match against
    **/
@@ -171,7 +171,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -189,7 +189,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Groups multiple conditions
    **/
@@ -207,7 +207,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
    **/
@@ -225,7 +225,6 @@ public class SuggestSearchCriteria  implements Serializable {
     this.dateFormat = dateFormat;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,14 +235,15 @@ public class SuggestSearchCriteria  implements Serializable {
       return false;
     }
     SuggestSearchCriteria suggestSearchCriteria = (SuggestSearchCriteria) o;
+
     return Objects.equals(this.endValue, suggestSearchCriteria.endValue) &&
-        Objects.equals(this.values, suggestSearchCriteria.values) &&
-        Objects.equals(this.startValue, suggestSearchCriteria.startValue) &&
-        Objects.equals(this.fields, suggestSearchCriteria.fields) &&
-        Objects.equals(this.value, suggestSearchCriteria.value) &&
-        Objects.equals(this.operator, suggestSearchCriteria.operator) &&
-        Objects.equals(this.group, suggestSearchCriteria.group) &&
-        Objects.equals(this.dateFormat, suggestSearchCriteria.dateFormat);
+            Objects.equals(this.values, suggestSearchCriteria.values) &&
+            Objects.equals(this.startValue, suggestSearchCriteria.startValue) &&
+            Objects.equals(this.fields, suggestSearchCriteria.fields) &&
+            Objects.equals(this.value, suggestSearchCriteria.value) &&
+            Objects.equals(this.operator, suggestSearchCriteria.operator) &&
+            Objects.equals(this.group, suggestSearchCriteria.group) &&
+            Objects.equals(this.dateFormat, suggestSearchCriteria.dateFormat);
   }
 
   @Override

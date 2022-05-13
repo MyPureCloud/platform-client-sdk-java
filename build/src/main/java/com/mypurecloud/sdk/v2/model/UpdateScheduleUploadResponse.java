@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadSchema;
@@ -47,7 +48,7 @@ public class UpdateScheduleUploadResponse  implements Serializable {
     this.uploadKey = uploadKey;
   }
 
-  
+
   /**
    * The url to which to PUT the upload body
    **/
@@ -65,7 +66,7 @@ public class UpdateScheduleUploadResponse  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Required headers for the PUT request to the url
    **/
@@ -83,7 +84,7 @@ public class UpdateScheduleUploadResponse  implements Serializable {
     this.headers = headers;
   }
 
-  
+
   /**
    * Always null. Defines the schema of the json body to be PUT to the url. The json body should be gzip encoded before uploading
    **/
@@ -101,7 +102,6 @@ public class UpdateScheduleUploadResponse  implements Serializable {
     this.uploadBodySchema = uploadBodySchema;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class UpdateScheduleUploadResponse  implements Serializable {
       return false;
     }
     UpdateScheduleUploadResponse updateScheduleUploadResponse = (UpdateScheduleUploadResponse) o;
+
     return Objects.equals(this.uploadKey, updateScheduleUploadResponse.uploadKey) &&
-        Objects.equals(this.url, updateScheduleUploadResponse.url) &&
-        Objects.equals(this.headers, updateScheduleUploadResponse.headers) &&
-        Objects.equals(this.uploadBodySchema, updateScheduleUploadResponse.uploadBodySchema);
+            Objects.equals(this.url, updateScheduleUploadResponse.url) &&
+            Objects.equals(this.headers, updateScheduleUploadResponse.headers) &&
+            Objects.equals(this.uploadBodySchema, updateScheduleUploadResponse.uploadBodySchema);
   }
 
   @Override

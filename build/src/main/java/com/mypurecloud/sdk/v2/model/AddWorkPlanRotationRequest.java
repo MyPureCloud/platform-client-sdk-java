@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationAgentRequest;
@@ -48,7 +49,7 @@ public class AddWorkPlanRotationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The date range to which this work plan rotation applies
    **/
@@ -66,7 +67,7 @@ public class AddWorkPlanRotationRequest  implements Serializable {
     this.dateRange = dateRange;
   }
 
-  
+
   /**
    * Agents in this work plan rotation
    **/
@@ -84,7 +85,7 @@ public class AddWorkPlanRotationRequest  implements Serializable {
     this.agents = agents;
   }
 
-  
+
   /**
    * Pattern with list of work plan IDs that rotate on a weekly basis
    **/
@@ -102,7 +103,6 @@ public class AddWorkPlanRotationRequest  implements Serializable {
     this.pattern = pattern;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +113,11 @@ public class AddWorkPlanRotationRequest  implements Serializable {
       return false;
     }
     AddWorkPlanRotationRequest addWorkPlanRotationRequest = (AddWorkPlanRotationRequest) o;
+
     return Objects.equals(this.name, addWorkPlanRotationRequest.name) &&
-        Objects.equals(this.dateRange, addWorkPlanRotationRequest.dateRange) &&
-        Objects.equals(this.agents, addWorkPlanRotationRequest.agents) &&
-        Objects.equals(this.pattern, addWorkPlanRotationRequest.pattern);
+            Objects.equals(this.dateRange, addWorkPlanRotationRequest.dateRange) &&
+            Objects.equals(this.agents, addWorkPlanRotationRequest.agents) &&
+            Objects.equals(this.pattern, addWorkPlanRotationRequest.pattern);
   }
 
   @Override

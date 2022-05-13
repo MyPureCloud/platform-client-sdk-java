@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -217,7 +218,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -235,7 +236,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -253,7 +254,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -271,7 +272,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -289,7 +290,6 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -300,11 +300,12 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
       return false;
     }
     JourneyAggregateQueryPredicate journeyAggregateQueryPredicate = (JourneyAggregateQueryPredicate) o;
+
     return Objects.equals(this.type, journeyAggregateQueryPredicate.type) &&
-        Objects.equals(this.dimension, journeyAggregateQueryPredicate.dimension) &&
-        Objects.equals(this.operator, journeyAggregateQueryPredicate.operator) &&
-        Objects.equals(this.value, journeyAggregateQueryPredicate.value) &&
-        Objects.equals(this.range, journeyAggregateQueryPredicate.range);
+            Objects.equals(this.dimension, journeyAggregateQueryPredicate.dimension) &&
+            Objects.equals(this.operator, journeyAggregateQueryPredicate.operator) &&
+            Objects.equals(this.value, journeyAggregateQueryPredicate.value) &&
+            Objects.equals(this.range, journeyAggregateQueryPredicate.range);
   }
 
   @Override

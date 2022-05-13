@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationTemplateBody;
@@ -48,7 +49,7 @@ public class ConversationContentNotificationTemplate  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Template language.
    **/
@@ -66,7 +67,7 @@ public class ConversationContentNotificationTemplate  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * The template header.
    **/
@@ -84,7 +85,7 @@ public class ConversationContentNotificationTemplate  implements Serializable {
     this.header = header;
   }
 
-  
+
   /**
    * The template body.
    **/
@@ -102,7 +103,7 @@ public class ConversationContentNotificationTemplate  implements Serializable {
     this.body = body;
   }
 
-  
+
   /**
    * The template footer.
    **/
@@ -120,7 +121,6 @@ public class ConversationContentNotificationTemplate  implements Serializable {
     this.footer = footer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class ConversationContentNotificationTemplate  implements Serializable {
       return false;
     }
     ConversationContentNotificationTemplate conversationContentNotificationTemplate = (ConversationContentNotificationTemplate) o;
+
     return Objects.equals(this.id, conversationContentNotificationTemplate.id) &&
-        Objects.equals(this.language, conversationContentNotificationTemplate.language) &&
-        Objects.equals(this.header, conversationContentNotificationTemplate.header) &&
-        Objects.equals(this.body, conversationContentNotificationTemplate.body) &&
-        Objects.equals(this.footer, conversationContentNotificationTemplate.footer);
+            Objects.equals(this.language, conversationContentNotificationTemplate.language) &&
+            Objects.equals(this.header, conversationContentNotificationTemplate.header) &&
+            Objects.equals(this.body, conversationContentNotificationTemplate.body) &&
+            Objects.equals(this.footer, conversationContentNotificationTemplate.footer);
   }
 
   @Override

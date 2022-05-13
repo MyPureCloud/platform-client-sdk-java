@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestion;
@@ -52,7 +53,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup name(String name) {
@@ -69,7 +70,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup type(String type) {
@@ -86,7 +87,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup defaultAnswersToHighest(Boolean defaultAnswersToHighest) {
@@ -103,7 +104,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.defaultAnswersToHighest = defaultAnswersToHighest;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup defaultAnswersToNA(Boolean defaultAnswersToNA) {
@@ -120,7 +121,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.defaultAnswersToNA = defaultAnswersToNA;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup naEnabled(Boolean naEnabled) {
@@ -137,7 +138,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup weight(Float weight) {
@@ -154,7 +155,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.weight = weight;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup manualWeight(Boolean manualWeight) {
@@ -171,7 +172,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.manualWeight = manualWeight;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup questions(List<EvaluationQuestion> questions) {
@@ -188,7 +189,7 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.questions = questions;
   }
 
-  
+
   /**
    **/
   public EvaluationQuestionGroup visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -205,7 +206,6 @@ public class EvaluationQuestionGroup  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class EvaluationQuestionGroup  implements Serializable {
       return false;
     }
     EvaluationQuestionGroup evaluationQuestionGroup = (EvaluationQuestionGroup) o;
+
     return Objects.equals(this.id, evaluationQuestionGroup.id) &&
-        Objects.equals(this.name, evaluationQuestionGroup.name) &&
-        Objects.equals(this.type, evaluationQuestionGroup.type) &&
-        Objects.equals(this.defaultAnswersToHighest, evaluationQuestionGroup.defaultAnswersToHighest) &&
-        Objects.equals(this.defaultAnswersToNA, evaluationQuestionGroup.defaultAnswersToNA) &&
-        Objects.equals(this.naEnabled, evaluationQuestionGroup.naEnabled) &&
-        Objects.equals(this.weight, evaluationQuestionGroup.weight) &&
-        Objects.equals(this.manualWeight, evaluationQuestionGroup.manualWeight) &&
-        Objects.equals(this.questions, evaluationQuestionGroup.questions) &&
-        Objects.equals(this.visibilityCondition, evaluationQuestionGroup.visibilityCondition);
+            Objects.equals(this.name, evaluationQuestionGroup.name) &&
+            Objects.equals(this.type, evaluationQuestionGroup.type) &&
+            Objects.equals(this.defaultAnswersToHighest, evaluationQuestionGroup.defaultAnswersToHighest) &&
+            Objects.equals(this.defaultAnswersToNA, evaluationQuestionGroup.defaultAnswersToNA) &&
+            Objects.equals(this.naEnabled, evaluationQuestionGroup.naEnabled) &&
+            Objects.equals(this.weight, evaluationQuestionGroup.weight) &&
+            Objects.equals(this.manualWeight, evaluationQuestionGroup.manualWeight) &&
+            Objects.equals(this.questions, evaluationQuestionGroup.questions) &&
+            Objects.equals(this.visibilityCondition, evaluationQuestionGroup.visibilityCondition);
   }
 
   @Override

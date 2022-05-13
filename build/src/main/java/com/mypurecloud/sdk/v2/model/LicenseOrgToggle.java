@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class LicenseOrgToggle  implements Serializable {
     this.featureName = featureName;
   }
 
-  
+
   /**
    **/
   public LicenseOrgToggle enabled(Boolean enabled) {
@@ -57,7 +58,6 @@ public class LicenseOrgToggle  implements Serializable {
     this.enabled = enabled;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class LicenseOrgToggle  implements Serializable {
       return false;
     }
     LicenseOrgToggle licenseOrgToggle = (LicenseOrgToggle) o;
+
     return Objects.equals(this.featureName, licenseOrgToggle.featureName) &&
-        Objects.equals(this.enabled, licenseOrgToggle.enabled);
+            Objects.equals(this.enabled, licenseOrgToggle.enabled);
   }
 
   @Override

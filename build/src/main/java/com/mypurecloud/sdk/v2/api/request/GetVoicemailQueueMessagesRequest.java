@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class GetVoicemailQueueMessagesRequest {
-    
+
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -47,7 +47,7 @@ public class GetVoicemailQueueMessagesRequest {
 	    this.setQueueId(queueId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -61,7 +61,7 @@ public class GetVoicemailQueueMessagesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -75,7 +75,7 @@ public class GetVoicemailQueueMessagesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -106,11 +106,13 @@ public class GetVoicemailQueueMessagesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/queues/{queueId}/messages")
                 .withPathParameter("queueId", queueId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -121,12 +123,12 @@ public class GetVoicemailQueueMessagesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String queueId) {
 	    return new Builder()
 	            .withRequiredParams(queueId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetVoicemailQueueMessagesRequest request;
@@ -135,30 +137,30 @@ public class GetVoicemailQueueMessagesRequest {
 			request = new GetVoicemailQueueMessagesRequest();
 		}
 
-		
+
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String queueId) {
 			request.setQueueId(queueId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetVoicemailQueueMessagesRequest build() {
             

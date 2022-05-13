@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -430,7 +431,7 @@ public class ReportingExportJobResponse  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private Map<String, String> emailStatuses = null;
+  private Map<String, InnerEnum> emailStatuses = null;
   private String emailErrorDescription = null;
   private Boolean enabled = null;
   private String selfUri = null;
@@ -442,7 +443,7 @@ public class ReportingExportJobResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobResponse name(String name) {
@@ -459,7 +460,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The unique run id of the export schedule execute
    **/
@@ -477,7 +478,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.runId = runId;
   }
 
-  
+
   /**
    * The current status of the export request
    **/
@@ -495,7 +496,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
@@ -513,7 +514,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The requested format of the exported data
    **/
@@ -531,7 +532,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.exportFormat = exportFormat;
   }
 
-  
+
   /**
    * The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -549,7 +550,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * The url to download the request if it's status is completed
    **/
@@ -567,7 +568,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
+
   /**
    * The type of view export job to be created
    **/
@@ -585,7 +586,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.viewType = viewType;
   }
 
-  
+
   /**
    * The error message in case the export request failed
    **/
@@ -603,7 +604,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.exportErrorMessagesType = exportErrorMessagesType;
   }
 
-  
+
   /**
    * The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
@@ -621,7 +622,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.period = period;
   }
 
-  
+
   /**
    * Filters to apply to create the view
    **/
@@ -639,7 +640,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.filter = filter;
   }
 
-  
+
   /**
    * Indicates if the request has been marked as read
    **/
@@ -657,7 +658,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.read = read;
   }
 
-  
+
   /**
    * The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -675,7 +676,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.createdDateTime = createdDateTime;
   }
 
-  
+
   /**
    * The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -693,7 +694,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.modifiedDateTime = modifiedDateTime;
   }
 
-  
+
   /**
    * The locale use for localization of the exported data, i.e. en-us, es-mx  
    **/
@@ -711,7 +712,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.locale = locale;
   }
 
-  
+
   /**
    * The percentage of the job that has completed processing
    **/
@@ -729,7 +730,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.percentageComplete = percentageComplete;
   }
 
-  
+
   /**
    * Indicates if durations are formatted in hh:mm:ss format instead of ms
    **/
@@ -747,7 +748,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.hasFormatDurations = hasFormatDurations;
   }
 
-  
+
   /**
    * Indicates if filters will be split in aggregate detail exports
    **/
@@ -765,7 +766,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.hasSplitFilters = hasSplitFilters;
   }
 
-  
+
   /**
    * Excludes empty rows from the exports
    **/
@@ -783,7 +784,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.excludeEmptyRows = excludeEmptyRows;
   }
 
-  
+
   /**
    * Indicates if media type will be split in aggregate detail exports
    **/
@@ -801,7 +802,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.hasSplitByMedia = hasSplitByMedia;
   }
 
-  
+
   /**
    * Indicates if summary row needs to be present in exports
    **/
@@ -819,7 +820,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.hasSummaryRow = hasSummaryRow;
   }
 
-  
+
   /**
    * The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
    **/
@@ -837,7 +838,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.csvDelimiter = csvDelimiter;
   }
 
-  
+
   /**
    * The list of ordered selected columns from the export view by the user
    **/
@@ -855,7 +856,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.selectedColumns = selectedColumns;
   }
 
-  
+
   /**
    * Indicates if custom participant attributes will be exported
    **/
@@ -873,7 +874,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.hasCustomParticipantAttributes = hasCustomParticipantAttributes;
   }
 
-  
+
   /**
    * The list of email recipients for the exports
    **/
@@ -891,25 +892,25 @@ public class ReportingExportJobResponse  implements Serializable {
     this.recipientEmails = recipientEmails;
   }
 
-  
+
   /**
    * The status of individual email addresses as a map
    **/
-  public ReportingExportJobResponse emailStatuses(Map<String, String> emailStatuses) {
+  public ReportingExportJobResponse emailStatuses(Map<String, InnerEnum> emailStatuses) {
     this.emailStatuses = emailStatuses;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The status of individual email addresses as a map")
   @JsonProperty("emailStatuses")
-  public Map<String, String> getEmailStatuses() {
+  public Map<String, InnerEnum> getEmailStatuses() {
     return emailStatuses;
   }
-  public void setEmailStatuses(Map<String, String> emailStatuses) {
+  public void setEmailStatuses(Map<String, InnerEnum> emailStatuses) {
     this.emailStatuses = emailStatuses;
   }
 
-  
+
   /**
    * The optional error message in case the export fail to email
    **/
@@ -927,7 +928,7 @@ public class ReportingExportJobResponse  implements Serializable {
     this.emailErrorDescription = emailErrorDescription;
   }
 
-  
+
   /**
    **/
   public ReportingExportJobResponse enabled(Boolean enabled) {
@@ -944,14 +945,13 @@ public class ReportingExportJobResponse  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -962,36 +962,37 @@ public class ReportingExportJobResponse  implements Serializable {
       return false;
     }
     ReportingExportJobResponse reportingExportJobResponse = (ReportingExportJobResponse) o;
+
     return Objects.equals(this.id, reportingExportJobResponse.id) &&
-        Objects.equals(this.name, reportingExportJobResponse.name) &&
-        Objects.equals(this.runId, reportingExportJobResponse.runId) &&
-        Objects.equals(this.status, reportingExportJobResponse.status) &&
-        Objects.equals(this.timeZone, reportingExportJobResponse.timeZone) &&
-        Objects.equals(this.exportFormat, reportingExportJobResponse.exportFormat) &&
-        Objects.equals(this.interval, reportingExportJobResponse.interval) &&
-        Objects.equals(this.downloadUrl, reportingExportJobResponse.downloadUrl) &&
-        Objects.equals(this.viewType, reportingExportJobResponse.viewType) &&
-        Objects.equals(this.exportErrorMessagesType, reportingExportJobResponse.exportErrorMessagesType) &&
-        Objects.equals(this.period, reportingExportJobResponse.period) &&
-        Objects.equals(this.filter, reportingExportJobResponse.filter) &&
-        Objects.equals(this.read, reportingExportJobResponse.read) &&
-        Objects.equals(this.createdDateTime, reportingExportJobResponse.createdDateTime) &&
-        Objects.equals(this.modifiedDateTime, reportingExportJobResponse.modifiedDateTime) &&
-        Objects.equals(this.locale, reportingExportJobResponse.locale) &&
-        Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
-        Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
-        Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
-        Objects.equals(this.excludeEmptyRows, reportingExportJobResponse.excludeEmptyRows) &&
-        Objects.equals(this.hasSplitByMedia, reportingExportJobResponse.hasSplitByMedia) &&
-        Objects.equals(this.hasSummaryRow, reportingExportJobResponse.hasSummaryRow) &&
-        Objects.equals(this.csvDelimiter, reportingExportJobResponse.csvDelimiter) &&
-        Objects.equals(this.selectedColumns, reportingExportJobResponse.selectedColumns) &&
-        Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobResponse.hasCustomParticipantAttributes) &&
-        Objects.equals(this.recipientEmails, reportingExportJobResponse.recipientEmails) &&
-        Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
-        Objects.equals(this.emailErrorDescription, reportingExportJobResponse.emailErrorDescription) &&
-        Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
-        Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
+            Objects.equals(this.name, reportingExportJobResponse.name) &&
+            Objects.equals(this.runId, reportingExportJobResponse.runId) &&
+            Objects.equals(this.status, reportingExportJobResponse.status) &&
+            Objects.equals(this.timeZone, reportingExportJobResponse.timeZone) &&
+            Objects.equals(this.exportFormat, reportingExportJobResponse.exportFormat) &&
+            Objects.equals(this.interval, reportingExportJobResponse.interval) &&
+            Objects.equals(this.downloadUrl, reportingExportJobResponse.downloadUrl) &&
+            Objects.equals(this.viewType, reportingExportJobResponse.viewType) &&
+            Objects.equals(this.exportErrorMessagesType, reportingExportJobResponse.exportErrorMessagesType) &&
+            Objects.equals(this.period, reportingExportJobResponse.period) &&
+            Objects.equals(this.filter, reportingExportJobResponse.filter) &&
+            Objects.equals(this.read, reportingExportJobResponse.read) &&
+            Objects.equals(this.createdDateTime, reportingExportJobResponse.createdDateTime) &&
+            Objects.equals(this.modifiedDateTime, reportingExportJobResponse.modifiedDateTime) &&
+            Objects.equals(this.locale, reportingExportJobResponse.locale) &&
+            Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
+            Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
+            Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
+            Objects.equals(this.excludeEmptyRows, reportingExportJobResponse.excludeEmptyRows) &&
+            Objects.equals(this.hasSplitByMedia, reportingExportJobResponse.hasSplitByMedia) &&
+            Objects.equals(this.hasSummaryRow, reportingExportJobResponse.hasSummaryRow) &&
+            Objects.equals(this.csvDelimiter, reportingExportJobResponse.csvDelimiter) &&
+            Objects.equals(this.selectedColumns, reportingExportJobResponse.selectedColumns) &&
+            Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobResponse.hasCustomParticipantAttributes) &&
+            Objects.equals(this.recipientEmails, reportingExportJobResponse.recipientEmails) &&
+            Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
+            Objects.equals(this.emailErrorDescription, reportingExportJobResponse.emailErrorDescription) &&
+            Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
+            Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override

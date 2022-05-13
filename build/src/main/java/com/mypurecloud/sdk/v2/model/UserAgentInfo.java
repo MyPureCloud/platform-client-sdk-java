@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class UserAgentInfo  implements Serializable {
     this.firmwareVersion = firmwareVersion;
   }
 
-  
+
   /**
    * The manufacturer of the phone.
    **/
@@ -60,7 +61,7 @@ public class UserAgentInfo  implements Serializable {
     this.manufacturer = manufacturer;
   }
 
-  
+
   /**
    * The model of the phone.
    **/
@@ -78,7 +79,6 @@ public class UserAgentInfo  implements Serializable {
     this.model = model;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class UserAgentInfo  implements Serializable {
       return false;
     }
     UserAgentInfo userAgentInfo = (UserAgentInfo) o;
+
     return Objects.equals(this.firmwareVersion, userAgentInfo.firmwareVersion) &&
-        Objects.equals(this.manufacturer, userAgentInfo.manufacturer) &&
-        Objects.equals(this.model, userAgentInfo.model);
+            Objects.equals(this.manufacturer, userAgentInfo.manufacturer) &&
+            Objects.equals(this.model, userAgentInfo.model);
   }
 
   @Override

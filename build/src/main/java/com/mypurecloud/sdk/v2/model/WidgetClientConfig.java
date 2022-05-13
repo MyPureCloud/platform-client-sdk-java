@@ -8,12 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.WidgetClientConfigThirdParty;
 import com.mypurecloud.sdk.v2.model.WidgetClientConfigV1;
 import com.mypurecloud.sdk.v2.model.WidgetClientConfigV1Http;
-import com.mypurecloud.sdk.v2.model.WidgetClientConfigV2;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -25,9 +24,9 @@ import java.io.Serializable;
 public class WidgetClientConfig  implements Serializable {
   
   private WidgetClientConfigV1 v1 = null;
-  private WidgetClientConfigV2 v2 = null;
+  private Object v2 = null;
   private WidgetClientConfigV1Http v1Http = null;
-  private WidgetClientConfigThirdParty thirdParty = null;
+  private Object thirdParty = null;
 
   
   /**
@@ -46,24 +45,24 @@ public class WidgetClientConfig  implements Serializable {
     this.v1 = v1;
   }
 
-  
+
   /**
    **/
-  public WidgetClientConfig v2(WidgetClientConfigV2 v2) {
+  public WidgetClientConfig v2(Object v2) {
     this.v2 = v2;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("v2")
-  public WidgetClientConfigV2 getV2() {
+  public Object getV2() {
     return v2;
   }
-  public void setV2(WidgetClientConfigV2 v2) {
+  public void setV2(Object v2) {
     this.v2 = v2;
   }
 
-  
+
   /**
    **/
   public WidgetClientConfig v1Http(WidgetClientConfigV1Http v1Http) {
@@ -80,24 +79,23 @@ public class WidgetClientConfig  implements Serializable {
     this.v1Http = v1Http;
   }
 
-  
+
   /**
    **/
-  public WidgetClientConfig thirdParty(WidgetClientConfigThirdParty thirdParty) {
+  public WidgetClientConfig thirdParty(Object thirdParty) {
     this.thirdParty = thirdParty;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("third-party")
-  public WidgetClientConfigThirdParty getThirdParty() {
+  public Object getThirdParty() {
     return thirdParty;
   }
-  public void setThirdParty(WidgetClientConfigThirdParty thirdParty) {
+  public void setThirdParty(Object thirdParty) {
     this.thirdParty = thirdParty;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +106,11 @@ public class WidgetClientConfig  implements Serializable {
       return false;
     }
     WidgetClientConfig widgetClientConfig = (WidgetClientConfig) o;
+
     return Objects.equals(this.v1, widgetClientConfig.v1) &&
-        Objects.equals(this.v2, widgetClientConfig.v2) &&
-        Objects.equals(this.v1Http, widgetClientConfig.v1Http) &&
-        Objects.equals(this.thirdParty, widgetClientConfig.thirdParty);
+            Objects.equals(this.v2, widgetClientConfig.v2) &&
+            Objects.equals(this.v1Http, widgetClientConfig.v1Http) &&
+            Objects.equals(this.thirdParty, widgetClientConfig.thirdParty);
   }
 
   @Override

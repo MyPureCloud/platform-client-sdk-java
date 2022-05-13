@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class TokensApiAsync {
   private final ApiClient pcapiClient;
 
@@ -41,7 +40,6 @@ public class TokensApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete all auth tokens for the specified user.
    * 
@@ -117,7 +115,6 @@ public class TokensApiAsync {
     }
   }
 
-  
   /**
    * Delete auth token used to make the request.
    * 
@@ -193,7 +190,6 @@ public class TokensApiAsync {
     }
   }
 
-  
   /**
    * Fetch information about the current token
    * 
@@ -269,7 +265,6 @@ public class TokensApiAsync {
     }
   }
 
-  
   /**
    * Verify user token
    * 
@@ -345,7 +340,6 @@ public class TokensApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

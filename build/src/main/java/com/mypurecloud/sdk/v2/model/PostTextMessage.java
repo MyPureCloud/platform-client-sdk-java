@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class PostTextMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Message text. If type is structured, used as fallback for clients that do not support particular structured content
    **/
@@ -112,7 +113,7 @@ public class PostTextMessage  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * A list of content elements in message
    **/
@@ -130,7 +131,6 @@ public class PostTextMessage  implements Serializable {
     this.content = content;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class PostTextMessage  implements Serializable {
       return false;
     }
     PostTextMessage postTextMessage = (PostTextMessage) o;
+
     return Objects.equals(this.type, postTextMessage.type) &&
-        Objects.equals(this.text, postTextMessage.text) &&
-        Objects.equals(this.content, postTextMessage.content);
+            Objects.equals(this.text, postTextMessage.text) &&
+            Objects.equals(this.content, postTextMessage.content);
   }
 
   @Override

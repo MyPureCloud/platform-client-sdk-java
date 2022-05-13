@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class EdgeMetricsTopicEdgeMetricMemory  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricMemory availableBytes(Integer availableBytes) {
@@ -58,7 +59,7 @@ public class EdgeMetricsTopicEdgeMetricMemory  implements Serializable {
     this.availableBytes = availableBytes;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetricMemory totalBytes(Integer totalBytes) {
@@ -75,7 +76,6 @@ public class EdgeMetricsTopicEdgeMetricMemory  implements Serializable {
     this.totalBytes = totalBytes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class EdgeMetricsTopicEdgeMetricMemory  implements Serializable {
       return false;
     }
     EdgeMetricsTopicEdgeMetricMemory edgeMetricsTopicEdgeMetricMemory = (EdgeMetricsTopicEdgeMetricMemory) o;
+
     return Objects.equals(this.type, edgeMetricsTopicEdgeMetricMemory.type) &&
-        Objects.equals(this.availableBytes, edgeMetricsTopicEdgeMetricMemory.availableBytes) &&
-        Objects.equals(this.totalBytes, edgeMetricsTopicEdgeMetricMemory.totalBytes);
+            Objects.equals(this.availableBytes, edgeMetricsTopicEdgeMetricMemory.availableBytes) &&
+            Objects.equals(this.totalBytes, edgeMetricsTopicEdgeMetricMemory.totalBytes);
   }
 
   @Override

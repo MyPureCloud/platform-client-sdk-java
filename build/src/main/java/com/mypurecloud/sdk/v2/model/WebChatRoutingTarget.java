@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class WebChatRoutingTarget  implements Serializable {
     this.targetType = targetType;
   }
 
-  
+
   /**
    * The target of the route, in the format appropriate given the 'targetType'.
    **/
@@ -111,7 +112,7 @@ public class WebChatRoutingTarget  implements Serializable {
     this.targetAddress = targetAddress;
   }
 
-  
+
   /**
    * The list of skill names to use for routing.
    **/
@@ -129,7 +130,7 @@ public class WebChatRoutingTarget  implements Serializable {
     this.skills = skills;
   }
 
-  
+
   /**
    * The language name to use for routing.
    **/
@@ -147,7 +148,7 @@ public class WebChatRoutingTarget  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * The priority to assign to the conversation for routing.
    **/
@@ -165,7 +166,6 @@ public class WebChatRoutingTarget  implements Serializable {
     this.priority = priority;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,11 +176,12 @@ public class WebChatRoutingTarget  implements Serializable {
       return false;
     }
     WebChatRoutingTarget webChatRoutingTarget = (WebChatRoutingTarget) o;
+
     return Objects.equals(this.targetType, webChatRoutingTarget.targetType) &&
-        Objects.equals(this.targetAddress, webChatRoutingTarget.targetAddress) &&
-        Objects.equals(this.skills, webChatRoutingTarget.skills) &&
-        Objects.equals(this.language, webChatRoutingTarget.language) &&
-        Objects.equals(this.priority, webChatRoutingTarget.priority);
+            Objects.equals(this.targetAddress, webChatRoutingTarget.targetAddress) &&
+            Objects.equals(this.skills, webChatRoutingTarget.skills) &&
+            Objects.equals(this.language, webChatRoutingTarget.language) &&
+            Objects.equals(this.priority, webChatRoutingTarget.priority);
   }
 
   @Override

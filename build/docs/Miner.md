@@ -33,14 +33,14 @@ title: Miner
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EN_US | &quot;en-us&quot; |
-| EN_GB | &quot;en-gb&quot; |
-| EN_AU | &quot;en-au&quot; |
-| EN_IN | &quot;en-in&quot; |
-| EN_ZA | &quot;en-za&quot; |
-| ES_US | &quot;es-us&quot; |
-| ES_ES | &quot;es-es&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EN_US | &quot;en-us&quot; | 
+| EN_GB | &quot;en-gb&quot; | 
+| EN_AU | &quot;en-au&quot; | 
+| EN_IN | &quot;en-in&quot; | 
+| EN_ZA | &quot;en-za&quot; | 
+| ES_US | &quot;es-us&quot; | 
+| ES_ES | &quot;es-es&quot; | 
 {: class="table table-striped"}
 
 
@@ -50,25 +50,25 @@ title: Miner
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NOTSTARTED | &quot;NotStarted&quot; |
-| FETCHINGCONVERSATIONIDS | &quot;FetchingConversationIds&quot; |
-| CONVERSATIONIDSFETCHED | &quot;ConversationIdsFetched&quot; |
-| CONVERSATIONIDSFETCHERROR | &quot;ConversationIdsFetchError&quot; |
-| FETCHINGCONVERSATIONS | &quot;FetchingConversations&quot; |
-| CONVERSATIONSFETCHED | &quot;ConversationsFetched&quot; |
-| CONVERSATIONSFETCHERROR | &quot;ConversationsFetchError&quot; |
-| QUEUED | &quot;Queued&quot; |
-| QUEUINGERROR | &quot;QueuingError&quot; |
-| MININGSTARTED | &quot;MiningStarted&quot; |
-| MASKINGUTTERANCES | &quot;MaskingUtterances&quot; |
-| MASKINGERROR | &quot;MaskingError&quot; |
-| COMPUTINGANALYTICS | &quot;ComputingAnalytics&quot; |
-| COMPUTINGANALYTICSERROR | &quot;ComputingAnalyticsError&quot; |
-| MININGCOMPLETED | &quot;MiningCompleted&quot; |
-| MININGERROR | &quot;MiningError&quot; |
-| MODELVALIDATIONERROR | &quot;ModelValidationError&quot; |
-| DELETED | &quot;Deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NOTSTARTED | &quot;NotStarted&quot; | 
+| FETCHINGCONVERSATIONIDS | &quot;FetchingConversationIds&quot; | 
+| CONVERSATIONIDSFETCHED | &quot;ConversationIdsFetched&quot; | 
+| CONVERSATIONIDSFETCHERROR | &quot;ConversationIdsFetchError&quot; | 
+| FETCHINGCONVERSATIONS | &quot;FetchingConversations&quot; | 
+| CONVERSATIONSFETCHED | &quot;ConversationsFetched&quot; | 
+| CONVERSATIONSFETCHERROR | &quot;ConversationsFetchError&quot; | 
+| QUEUED | &quot;Queued&quot; | 
+| QUEUINGERROR | &quot;QueuingError&quot; | 
+| MININGSTARTED | &quot;MiningStarted&quot; | 
+| MASKINGUTTERANCES | &quot;MaskingUtterances&quot; | 
+| MASKINGERROR | &quot;MaskingError&quot; | 
+| COMPUTINGANALYTICS | &quot;ComputingAnalytics&quot; | 
+| COMPUTINGANALYTICSERROR | &quot;ComputingAnalyticsError&quot; | 
+| MININGCOMPLETED | &quot;MiningCompleted&quot; | 
+| MININGERROR | &quot;MiningError&quot; | 
+| MODELVALIDATIONERROR | &quot;ModelValidationError&quot; | 
+| DELETED | &quot;Deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -78,10 +78,10 @@ title: Miner
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CHAT | &quot;Chat&quot; |
-| CALL | &quot;Call&quot; |
-| MESSAGE | &quot;Message&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CHAT | &quot;Chat&quot; | 
+| CALL | &quot;Call&quot; | 
+| MESSAGE | &quot;Message&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 public class GetJourneyOutcomeRequest {
-    
+
 	private String outcomeId;
 	public String getOutcomeId() {
 		return this.outcomeId;
@@ -56,7 +56,7 @@ public class GetJourneyOutcomeRequest {
 	    this.setOutcomeId(outcomeId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,7 +87,7 @@ public class GetJourneyOutcomeRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/journey/outcomes/{outcomeId}")
                 .withPathParameter("outcomeId", outcomeId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -98,12 +98,12 @@ public class GetJourneyOutcomeRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String outcomeId) {
 	    return new Builder()
 	            .withRequiredParams(outcomeId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetJourneyOutcomeRequest request;
@@ -112,20 +112,20 @@ public class GetJourneyOutcomeRequest {
 			request = new GetJourneyOutcomeRequest();
 		}
 
-		
+
 		public Builder withOutcomeId(String outcomeId) {
 			request.setOutcomeId(outcomeId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String outcomeId) {
 			request.setOutcomeId(outcomeId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetJourneyOutcomeRequest build() {
             

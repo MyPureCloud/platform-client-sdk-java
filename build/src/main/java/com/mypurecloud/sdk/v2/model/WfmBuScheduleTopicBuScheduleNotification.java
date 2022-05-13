@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -142,7 +143,7 @@ public class WfmBuScheduleTopicBuScheduleNotification  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleNotification operationId(String operationId) {
@@ -159,7 +160,7 @@ public class WfmBuScheduleTopicBuScheduleNotification  implements Serializable {
     this.operationId = operationId;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleNotification eventType(EventTypeEnum eventType) {
@@ -176,7 +177,7 @@ public class WfmBuScheduleTopicBuScheduleNotification  implements Serializable {
     this.eventType = eventType;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleNotification result(WfmBuScheduleTopicBuScheduleMetadata result) {
@@ -193,7 +194,6 @@ public class WfmBuScheduleTopicBuScheduleNotification  implements Serializable {
     this.result = result;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -204,10 +204,11 @@ public class WfmBuScheduleTopicBuScheduleNotification  implements Serializable {
       return false;
     }
     WfmBuScheduleTopicBuScheduleNotification wfmBuScheduleTopicBuScheduleNotification = (WfmBuScheduleTopicBuScheduleNotification) o;
+
     return Objects.equals(this.status, wfmBuScheduleTopicBuScheduleNotification.status) &&
-        Objects.equals(this.operationId, wfmBuScheduleTopicBuScheduleNotification.operationId) &&
-        Objects.equals(this.eventType, wfmBuScheduleTopicBuScheduleNotification.eventType) &&
-        Objects.equals(this.result, wfmBuScheduleTopicBuScheduleNotification.result);
+            Objects.equals(this.operationId, wfmBuScheduleTopicBuScheduleNotification.operationId) &&
+            Objects.equals(this.eventType, wfmBuScheduleTopicBuScheduleNotification.eventType) &&
+            Objects.equals(this.result, wfmBuScheduleTopicBuScheduleNotification.result);
   }
 
   @Override

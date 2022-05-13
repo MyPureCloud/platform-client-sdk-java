@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,28 +86,27 @@ public class CoachingAppointmentStatusResponse  implements Serializable {
     return appointment;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User who updated the status")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the coaching appointment")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,10 +117,11 @@ public class CoachingAppointmentStatusResponse  implements Serializable {
       return false;
     }
     CoachingAppointmentStatusResponse coachingAppointmentStatusResponse = (CoachingAppointmentStatusResponse) o;
+
     return Objects.equals(this.appointment, coachingAppointmentStatusResponse.appointment) &&
-        Objects.equals(this.createdBy, coachingAppointmentStatusResponse.createdBy) &&
-        Objects.equals(this.dateCreated, coachingAppointmentStatusResponse.dateCreated) &&
-        Objects.equals(this.status, coachingAppointmentStatusResponse.status);
+            Objects.equals(this.createdBy, coachingAppointmentStatusResponse.createdBy) &&
+            Objects.equals(this.dateCreated, coachingAppointmentStatusResponse.dateCreated) &&
+            Objects.equals(this.status, coachingAppointmentStatusResponse.status);
   }
 
   @Override

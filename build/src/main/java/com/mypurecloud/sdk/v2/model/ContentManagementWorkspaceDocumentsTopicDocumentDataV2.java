@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentManagementWorkspaceDocumentsTopicLockData;
@@ -56,7 +57,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 name(String name) {
@@ -73,7 +74,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 dateCreated(Date dateCreated) {
@@ -90,7 +91,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 dateModified(Date dateModified) {
@@ -107,7 +108,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 workspace(ContentManagementWorkspaceDocumentsTopicWorkspaceData workspace) {
@@ -124,7 +125,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 createdBy(ContentManagementWorkspaceDocumentsTopicUserData createdBy) {
@@ -141,7 +142,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 contentType(String contentType) {
@@ -158,7 +159,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 contentLength(Integer contentLength) {
@@ -175,7 +176,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 filename(String filename) {
@@ -192,7 +193,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.filename = filename;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 changeNumber(Integer changeNumber) {
@@ -209,7 +210,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 dateUploaded(Date dateUploaded) {
@@ -226,7 +227,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.dateUploaded = dateUploaded;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 uploadedBy(ContentManagementWorkspaceDocumentsTopicUserData uploadedBy) {
@@ -243,7 +244,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.uploadedBy = uploadedBy;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 lockInfo(ContentManagementWorkspaceDocumentsTopicLockData lockInfo) {
@@ -260,7 +261,7 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.lockInfo = lockInfo;
   }
 
-  
+
   /**
    **/
   public ContentManagementWorkspaceDocumentsTopicDocumentDataV2 selfUri(String selfUri) {
@@ -277,7 +278,6 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -288,20 +288,21 @@ public class ContentManagementWorkspaceDocumentsTopicDocumentDataV2  implements 
       return false;
     }
     ContentManagementWorkspaceDocumentsTopicDocumentDataV2 contentManagementWorkspaceDocumentsTopicDocumentDataV2 = (ContentManagementWorkspaceDocumentsTopicDocumentDataV2) o;
+
     return Objects.equals(this.id, contentManagementWorkspaceDocumentsTopicDocumentDataV2.id) &&
-        Objects.equals(this.name, contentManagementWorkspaceDocumentsTopicDocumentDataV2.name) &&
-        Objects.equals(this.dateCreated, contentManagementWorkspaceDocumentsTopicDocumentDataV2.dateCreated) &&
-        Objects.equals(this.dateModified, contentManagementWorkspaceDocumentsTopicDocumentDataV2.dateModified) &&
-        Objects.equals(this.workspace, contentManagementWorkspaceDocumentsTopicDocumentDataV2.workspace) &&
-        Objects.equals(this.createdBy, contentManagementWorkspaceDocumentsTopicDocumentDataV2.createdBy) &&
-        Objects.equals(this.contentType, contentManagementWorkspaceDocumentsTopicDocumentDataV2.contentType) &&
-        Objects.equals(this.contentLength, contentManagementWorkspaceDocumentsTopicDocumentDataV2.contentLength) &&
-        Objects.equals(this.filename, contentManagementWorkspaceDocumentsTopicDocumentDataV2.filename) &&
-        Objects.equals(this.changeNumber, contentManagementWorkspaceDocumentsTopicDocumentDataV2.changeNumber) &&
-        Objects.equals(this.dateUploaded, contentManagementWorkspaceDocumentsTopicDocumentDataV2.dateUploaded) &&
-        Objects.equals(this.uploadedBy, contentManagementWorkspaceDocumentsTopicDocumentDataV2.uploadedBy) &&
-        Objects.equals(this.lockInfo, contentManagementWorkspaceDocumentsTopicDocumentDataV2.lockInfo) &&
-        Objects.equals(this.selfUri, contentManagementWorkspaceDocumentsTopicDocumentDataV2.selfUri);
+            Objects.equals(this.name, contentManagementWorkspaceDocumentsTopicDocumentDataV2.name) &&
+            Objects.equals(this.dateCreated, contentManagementWorkspaceDocumentsTopicDocumentDataV2.dateCreated) &&
+            Objects.equals(this.dateModified, contentManagementWorkspaceDocumentsTopicDocumentDataV2.dateModified) &&
+            Objects.equals(this.workspace, contentManagementWorkspaceDocumentsTopicDocumentDataV2.workspace) &&
+            Objects.equals(this.createdBy, contentManagementWorkspaceDocumentsTopicDocumentDataV2.createdBy) &&
+            Objects.equals(this.contentType, contentManagementWorkspaceDocumentsTopicDocumentDataV2.contentType) &&
+            Objects.equals(this.contentLength, contentManagementWorkspaceDocumentsTopicDocumentDataV2.contentLength) &&
+            Objects.equals(this.filename, contentManagementWorkspaceDocumentsTopicDocumentDataV2.filename) &&
+            Objects.equals(this.changeNumber, contentManagementWorkspaceDocumentsTopicDocumentDataV2.changeNumber) &&
+            Objects.equals(this.dateUploaded, contentManagementWorkspaceDocumentsTopicDocumentDataV2.dateUploaded) &&
+            Objects.equals(this.uploadedBy, contentManagementWorkspaceDocumentsTopicDocumentDataV2.uploadedBy) &&
+            Objects.equals(this.lockInfo, contentManagementWorkspaceDocumentsTopicDocumentDataV2.lockInfo) &&
+            Objects.equals(this.selfUri, contentManagementWorkspaceDocumentsTopicDocumentDataV2.selfUri);
   }
 
   @Override

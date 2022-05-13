@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus expectedPages(Integer expectedPages) {
@@ -63,7 +64,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.expectedPages = expectedPages;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus activePage(Integer activePage) {
@@ -80,7 +81,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.activePage = activePage;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus linesTransmitted(Integer linesTransmitted) {
@@ -97,7 +98,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.linesTransmitted = linesTransmitted;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus bytesTransmitted(Integer bytesTransmitted) {
@@ -114,7 +115,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.bytesTransmitted = bytesTransmitted;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus dataRate(Integer dataRate) {
@@ -131,7 +132,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.dataRate = dataRate;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus pageErrors(Integer pageErrors) {
@@ -148,7 +149,7 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.pageErrors = pageErrors;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicFaxStatus lineErrors(Integer lineErrors) {
@@ -165,7 +166,6 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
     this.lineErrors = lineErrors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,14 +176,15 @@ public class ConversationCallEventTopicFaxStatus  implements Serializable {
       return false;
     }
     ConversationCallEventTopicFaxStatus conversationCallEventTopicFaxStatus = (ConversationCallEventTopicFaxStatus) o;
+
     return Objects.equals(this.direction, conversationCallEventTopicFaxStatus.direction) &&
-        Objects.equals(this.expectedPages, conversationCallEventTopicFaxStatus.expectedPages) &&
-        Objects.equals(this.activePage, conversationCallEventTopicFaxStatus.activePage) &&
-        Objects.equals(this.linesTransmitted, conversationCallEventTopicFaxStatus.linesTransmitted) &&
-        Objects.equals(this.bytesTransmitted, conversationCallEventTopicFaxStatus.bytesTransmitted) &&
-        Objects.equals(this.dataRate, conversationCallEventTopicFaxStatus.dataRate) &&
-        Objects.equals(this.pageErrors, conversationCallEventTopicFaxStatus.pageErrors) &&
-        Objects.equals(this.lineErrors, conversationCallEventTopicFaxStatus.lineErrors);
+            Objects.equals(this.expectedPages, conversationCallEventTopicFaxStatus.expectedPages) &&
+            Objects.equals(this.activePage, conversationCallEventTopicFaxStatus.activePage) &&
+            Objects.equals(this.linesTransmitted, conversationCallEventTopicFaxStatus.linesTransmitted) &&
+            Objects.equals(this.bytesTransmitted, conversationCallEventTopicFaxStatus.bytesTransmitted) &&
+            Objects.equals(this.dataRate, conversationCallEventTopicFaxStatus.dataRate) &&
+            Objects.equals(this.pageErrors, conversationCallEventTopicFaxStatus.pageErrors) &&
+            Objects.equals(this.lineErrors, conversationCallEventTopicFaxStatus.lineErrors);
   }
 
   @Override

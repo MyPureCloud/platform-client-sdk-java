@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserDevice;
-import com.mypurecloud.sdk.v2.model.DirectoryUserDevicesListing;
 
 public class PutMobiledeviceRequest {
-    
+
 	private String deviceId;
 	public String getDeviceId() {
 		return this.deviceId;
@@ -39,7 +39,7 @@ public class PutMobiledeviceRequest {
 	    this.setDeviceId(deviceId);
 	    return this;
 	} 
-	
+
 	private UserDevice body;
 	public UserDevice getBody() {
 		return this.body;
@@ -53,7 +53,7 @@ public class PutMobiledeviceRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,8 +85,8 @@ public class PutMobiledeviceRequest {
                 .withPathParameter("deviceId", deviceId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -97,12 +97,12 @@ public class PutMobiledeviceRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String deviceId) {
 	    return new Builder()
 	            .withRequiredParams(deviceId);
 	}
-	
+
 
 	public static class Builder {
 		private final PutMobiledeviceRequest request;
@@ -111,25 +111,25 @@ public class PutMobiledeviceRequest {
 			request = new PutMobiledeviceRequest();
 		}
 
-		
+
 		public Builder withDeviceId(String deviceId) {
 			request.setDeviceId(deviceId);
 			return this;
 		}
-		
+
 		public Builder withBody(UserDevice body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String deviceId) {
 			request.setDeviceId(deviceId);
-			
+
 			return this;
 		}
-		
+
 
 		public PutMobiledeviceRequest build() {
             

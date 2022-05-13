@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class OutboundMessagingMessagingCampaignProgressEventUriReference  implem
     this.id = id;
   }
 
-  
+
   /**
    * The name of the resource
    **/
@@ -60,7 +61,6 @@ public class OutboundMessagingMessagingCampaignProgressEventUriReference  implem
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class OutboundMessagingMessagingCampaignProgressEventUriReference  implem
       return false;
     }
     OutboundMessagingMessagingCampaignProgressEventUriReference outboundMessagingMessagingCampaignProgressEventUriReference = (OutboundMessagingMessagingCampaignProgressEventUriReference) o;
+
     return Objects.equals(this.id, outboundMessagingMessagingCampaignProgressEventUriReference.id) &&
-        Objects.equals(this.name, outboundMessagingMessagingCampaignProgressEventUriReference.name);
+            Objects.equals(this.name, outboundMessagingMessagingCampaignProgressEventUriReference.name);
   }
 
   @Override

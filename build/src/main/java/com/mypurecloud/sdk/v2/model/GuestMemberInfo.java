@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -49,7 +50,7 @@ public class GuestMemberInfo  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * The first name to use for the guest member in the conversation.
    **/
@@ -67,7 +68,7 @@ public class GuestMemberInfo  implements Serializable {
     this.firstName = firstName;
   }
 
-  
+
   /**
    * The last name to use for the guest member in the conversation.
    **/
@@ -85,7 +86,7 @@ public class GuestMemberInfo  implements Serializable {
     this.lastName = lastName;
   }
 
-  
+
   /**
    * The email address to use for the guest member in the conversation.
    **/
@@ -103,7 +104,7 @@ public class GuestMemberInfo  implements Serializable {
     this.email = email;
   }
 
-  
+
   /**
    * The phone number to use for the guest member in the conversation.
    **/
@@ -121,7 +122,7 @@ public class GuestMemberInfo  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * The URL to the avatar image to use for the guest member in the conversation, if any.
    **/
@@ -139,7 +140,7 @@ public class GuestMemberInfo  implements Serializable {
     this.avatarImageUrl = avatarImageUrl;
   }
 
-  
+
   /**
    * Any custom fields of information, in key-value format, to attach to the guest member in the conversation.
    **/
@@ -157,7 +158,6 @@ public class GuestMemberInfo  implements Serializable {
     this.customFields = customFields;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,13 +168,14 @@ public class GuestMemberInfo  implements Serializable {
       return false;
     }
     GuestMemberInfo guestMemberInfo = (GuestMemberInfo) o;
+
     return Objects.equals(this.displayName, guestMemberInfo.displayName) &&
-        Objects.equals(this.firstName, guestMemberInfo.firstName) &&
-        Objects.equals(this.lastName, guestMemberInfo.lastName) &&
-        Objects.equals(this.email, guestMemberInfo.email) &&
-        Objects.equals(this.phoneNumber, guestMemberInfo.phoneNumber) &&
-        Objects.equals(this.avatarImageUrl, guestMemberInfo.avatarImageUrl) &&
-        Objects.equals(this.customFields, guestMemberInfo.customFields);
+            Objects.equals(this.firstName, guestMemberInfo.firstName) &&
+            Objects.equals(this.lastName, guestMemberInfo.lastName) &&
+            Objects.equals(this.email, guestMemberInfo.email) &&
+            Objects.equals(this.phoneNumber, guestMemberInfo.phoneNumber) &&
+            Objects.equals(this.avatarImageUrl, guestMemberInfo.avatarImageUrl) &&
+            Objects.equals(this.customFields, guestMemberInfo.customFields);
   }
 
   @Override

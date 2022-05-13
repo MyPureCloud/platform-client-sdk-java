@@ -20,31 +20,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
-import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
-import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
+import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class PostKnowledgeKnowledgebaseSearchRequest {
-    
+
 	private String knowledgeBaseId;
 	public String getKnowledgeBaseId() {
 		return this.knowledgeBaseId;
@@ -58,7 +58,7 @@ public class PostKnowledgeKnowledgebaseSearchRequest {
 	    this.setKnowledgeBaseId(knowledgeBaseId);
 	    return this;
 	} 
-	
+
 	private KnowledgeSearchRequest body;
 	public KnowledgeSearchRequest getBody() {
 		return this.body;
@@ -72,7 +72,7 @@ public class PostKnowledgeKnowledgebaseSearchRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -104,8 +104,8 @@ public class PostKnowledgeKnowledgebaseSearchRequest {
                 .withPathParameter("knowledgeBaseId", knowledgeBaseId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -116,12 +116,12 @@ public class PostKnowledgeKnowledgebaseSearchRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String knowledgeBaseId) {
 	    return new Builder()
 	            .withRequiredParams(knowledgeBaseId);
 	}
-	
+
 
 	public static class Builder {
 		private final PostKnowledgeKnowledgebaseSearchRequest request;
@@ -130,25 +130,25 @@ public class PostKnowledgeKnowledgebaseSearchRequest {
 			request = new PostKnowledgeKnowledgebaseSearchRequest();
 		}
 
-		
+
 		public Builder withKnowledgeBaseId(String knowledgeBaseId) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			return this;
 		}
-		
+
 		public Builder withBody(KnowledgeSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String knowledgeBaseId) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
-			
+
 			return this;
 		}
-		
+
 
 		public PostKnowledgeKnowledgebaseSearchRequest build() {
             

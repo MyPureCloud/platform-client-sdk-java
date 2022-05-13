@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class GetLanguageunderstandingMinerIntentRequest {
-    
+
 	private String minerId;
 	public String getMinerId() {
 		return this.minerId;
@@ -57,7 +57,7 @@ public class GetLanguageunderstandingMinerIntentRequest {
 	    this.setMinerId(minerId);
 	    return this;
 	} 
-	
+
 	private String intentId;
 	public String getIntentId() {
 		return this.intentId;
@@ -71,7 +71,7 @@ public class GetLanguageunderstandingMinerIntentRequest {
 	    this.setIntentId(intentId);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -87,7 +87,7 @@ public class GetLanguageunderstandingMinerIntentRequest {
 	} 
 
 	public enum expandValues { 
-		PHRASES("phrases"), 
+		PHRASES("phrases"),
 		UTTERANCES("utterances");
 
 		private String value;
@@ -115,7 +115,7 @@ public class GetLanguageunderstandingMinerIntentRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -153,9 +153,10 @@ public class GetLanguageunderstandingMinerIntentRequest {
         
                 .withPathParameter("intentId", intentId)
         
+
                 .withQueryParameters("expand", "", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -166,12 +167,12 @@ public class GetLanguageunderstandingMinerIntentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String minerId, String intentId) {
 	    return new Builder()
 	            .withRequiredParams(minerId, intentId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguageunderstandingMinerIntentRequest request;
@@ -180,36 +181,40 @@ public class GetLanguageunderstandingMinerIntentRequest {
 			request = new GetLanguageunderstandingMinerIntentRequest();
 		}
 
-		
+
 		public Builder withMinerId(String minerId) {
 			request.setMinerId(minerId);
 			return this;
 		}
-		
+
 		public Builder withIntentId(String intentId) {
 			request.setIntentId(intentId);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
 
-		public Builder withExpand(expandValues expand) {
-		    request.setExpand(expand.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String minerId, String intentId) {
 			request.setMinerId(minerId);
-						request.setIntentId(intentId);
-			
+			request.setIntentId(intentId);
+
 			return this;
 		}
-		
+
 
 		public GetLanguageunderstandingMinerIntentRequest build() {
             

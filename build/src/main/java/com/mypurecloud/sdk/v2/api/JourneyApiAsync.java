@@ -13,26 +13,26 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -69,7 +69,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class JourneyApiAsync {
   private final ApiClient pcapiClient;
 
@@ -81,7 +80,6 @@ public class JourneyApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete single action map.
    * 
@@ -157,7 +155,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Delete a single action template.
    * 
@@ -233,7 +230,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Delete an outcome.
    * 
@@ -309,7 +305,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Delete a segment.
    * 
@@ -385,7 +380,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single action map.
    * 
@@ -461,7 +455,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all action maps.
    * 
@@ -537,7 +530,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single action target.
    * 
@@ -613,7 +605,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all action targets.
    * 
@@ -689,7 +680,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single action template.
    * 
@@ -765,7 +755,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all action templates.
    * 
@@ -841,7 +830,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single outcome.
    * 
@@ -917,7 +905,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all outcomes.
    * 
@@ -993,7 +980,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single segment.
    * 
@@ -1069,7 +1055,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve all segments.
    * 
@@ -1145,7 +1130,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a single session.
    * 
@@ -1221,7 +1205,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Retrieve latest outcome score associated with a session for all outcomes.
    * 
@@ -1297,7 +1280,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Update single action map.
    * 
@@ -1373,7 +1355,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Update a single action target.
    * 
@@ -1449,7 +1430,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Update a single action template.
    * 
@@ -1525,7 +1505,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Update an outcome.
    * 
@@ -1601,7 +1580,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Update a segment.
    * 
@@ -1677,7 +1655,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Query for journey aggregates
    * 
@@ -1753,7 +1730,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Create an action map.
    * 
@@ -1829,7 +1805,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Create a single action template.
    * 
@@ -1905,7 +1880,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Create an outcome.
    * 
@@ -1981,7 +1955,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
   /**
    * Create a segment.
    * 
@@ -2057,7 +2030,6 @@ public class JourneyApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

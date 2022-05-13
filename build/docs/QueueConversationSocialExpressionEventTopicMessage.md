@@ -26,9 +26,9 @@ title: QueueConversationSocialExpressionEventTopicMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Indicates the type of message platform from which the message originated. |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> | Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format. |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> | The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type. |  [optional] |
-| **journeyContext** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyContext**](QueueConversationSocialExpressionEventTopicJourneyContext.html)<!----> | A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
+| **journeyContext** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyContext**](QueueConversationSocialExpressionEventTopicJourneyContext.html)<!----> | A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
-| **afterCallWork** | <!----><!---->[**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html)<!----> | A communication&#39;s after-call work data. |  [optional] |
+| **afterCallWork** | <!----><!---->[**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html)<!----> | A communication's after-call work data. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **agentAssistantId** | <!----><!---->**String**<!----> | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 {: class="table table-striped"}
@@ -40,10 +40,10 @@ title: QueueConversationSocialExpressionEventTopicMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
 {: class="table table-striped"}
 
 
@@ -53,23 +53,23 @@ title: QueueConversationSocialExpressionEventTopicMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
-| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| SPAM | &quot;spam&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| SPAM | &quot;spam&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -79,20 +79,20 @@ title: QueueConversationSocialExpressionEventTopicMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| SMS | &quot;sms&quot; |
-| TWITTER | &quot;twitter&quot; |
-| FACEBOOK | &quot;facebook&quot; |
-| LINE | &quot;line&quot; |
-| VIBER | &quot;viber&quot; |
-| WECHAT | &quot;wechat&quot; |
-| WHATSAPP | &quot;whatsapp&quot; |
-| TELEGRAM | &quot;telegram&quot; |
-| KAKAO | &quot;kakao&quot; |
-| WEBMESSAGING | &quot;webmessaging&quot; |
-| OPEN | &quot;open&quot; |
-| INSTAGRAM | &quot;instagram&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| SMS | &quot;sms&quot; | 
+| TWITTER | &quot;twitter&quot; | 
+| FACEBOOK | &quot;facebook&quot; | 
+| LINE | &quot;line&quot; | 
+| VIBER | &quot;viber&quot; | 
+| WECHAT | &quot;wechat&quot; | 
+| WHATSAPP | &quot;whatsapp&quot; | 
+| TELEGRAM | &quot;telegram&quot; | 
+| KAKAO | &quot;kakao&quot; | 
+| WEBMESSAGING | &quot;webmessaging&quot; | 
+| OPEN | &quot;open&quot; | 
+| INSTAGRAM | &quot;instagram&quot; | 
 {: class="table table-striped"}
 
 

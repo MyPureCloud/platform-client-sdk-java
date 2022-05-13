@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
@@ -47,7 +48,7 @@ public class ActionOutput  implements Serializable {
     this.successSchema = successSchema;
   }
 
-  
+
   /**
    * URI to retrieve success schema
    **/
@@ -65,7 +66,7 @@ public class ActionOutput  implements Serializable {
     this.successSchemaUri = successSchemaUri;
   }
 
-  
+
   /**
    * JSON schema that defines the body of response when request is not successful. If the 'flatten' query parameter is omitted or false, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.
    **/
@@ -83,7 +84,7 @@ public class ActionOutput  implements Serializable {
     this.errorSchema = errorSchema;
   }
 
-  
+
   /**
    * URI to retrieve error schema
    **/
@@ -101,7 +102,7 @@ public class ActionOutput  implements Serializable {
     this.errorSchemaUri = errorSchemaUri;
   }
 
-  
+
   /**
    * JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.
    **/
@@ -119,7 +120,7 @@ public class ActionOutput  implements Serializable {
     this.successSchemaFlattened = successSchemaFlattened;
   }
 
-  
+
   /**
    * JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.
    **/
@@ -137,7 +138,6 @@ public class ActionOutput  implements Serializable {
     this.errorSchemaFlattened = errorSchemaFlattened;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +148,13 @@ public class ActionOutput  implements Serializable {
       return false;
     }
     ActionOutput actionOutput = (ActionOutput) o;
+
     return Objects.equals(this.successSchema, actionOutput.successSchema) &&
-        Objects.equals(this.successSchemaUri, actionOutput.successSchemaUri) &&
-        Objects.equals(this.errorSchema, actionOutput.errorSchema) &&
-        Objects.equals(this.errorSchemaUri, actionOutput.errorSchemaUri) &&
-        Objects.equals(this.successSchemaFlattened, actionOutput.successSchemaFlattened) &&
-        Objects.equals(this.errorSchemaFlattened, actionOutput.errorSchemaFlattened);
+            Objects.equals(this.successSchemaUri, actionOutput.successSchemaUri) &&
+            Objects.equals(this.errorSchema, actionOutput.errorSchema) &&
+            Objects.equals(this.errorSchemaUri, actionOutput.errorSchemaUri) &&
+            Objects.equals(this.successSchemaFlattened, actionOutput.successSchemaFlattened) &&
+            Objects.equals(this.errorSchemaFlattened, actionOutput.errorSchemaFlattened);
   }
 
   @Override

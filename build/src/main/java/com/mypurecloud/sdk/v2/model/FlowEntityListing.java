@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FlowEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
       return false;
     }
     FlowEntityListing flowEntityListing = (FlowEntityListing) o;
+
     return Objects.equals(this.entities, flowEntityListing.entities) &&
-        Objects.equals(this.pageSize, flowEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, flowEntityListing.pageNumber) &&
-        Objects.equals(this.total, flowEntityListing.total) &&
-        Objects.equals(this.lastUri, flowEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, flowEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, flowEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, flowEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, flowEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, flowEntityListing.pageCount);
+            Objects.equals(this.pageSize, flowEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, flowEntityListing.pageNumber) &&
+            Objects.equals(this.total, flowEntityListing.total) &&
+            Objects.equals(this.lastUri, flowEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, flowEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, flowEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, flowEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, flowEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, flowEntityListing.pageCount);
   }
 
   @Override

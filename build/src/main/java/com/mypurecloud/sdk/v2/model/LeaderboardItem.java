@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -32,21 +33,20 @@ public class LeaderboardItem  implements Serializable {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The rank of the user")
   @JsonProperty("rank")
   public Integer getRank() {
     return rank;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The points collected by the user")
   @JsonProperty("points")
   public Long getPoints() {
     return points;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -57,9 +57,10 @@ public class LeaderboardItem  implements Serializable {
       return false;
     }
     LeaderboardItem leaderboardItem = (LeaderboardItem) o;
+
     return Objects.equals(this.user, leaderboardItem.user) &&
-        Objects.equals(this.rank, leaderboardItem.rank) &&
-        Objects.equals(this.points, leaderboardItem.points);
+            Objects.equals(this.rank, leaderboardItem.rank) &&
+            Objects.equals(this.points, leaderboardItem.points);
   }
 
   @Override

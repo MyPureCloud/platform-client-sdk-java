@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
@@ -39,7 +40,7 @@ public class Relationship  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.
    **/
@@ -57,7 +58,7 @@ public class Relationship  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The external organization this relationship is attached to
    **/
@@ -75,7 +76,7 @@ public class Relationship  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
    **/
@@ -93,21 +94,20 @@ public class Relationship  implements Serializable {
     this.relationship = relationship;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.")
   @JsonProperty("externalDataSources")
   public List<ExternalDataSource> getExternalDataSources() {
     return externalDataSources;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,12 +118,13 @@ public class Relationship  implements Serializable {
       return false;
     }
     Relationship relationship = (Relationship) o;
+
     return Objects.equals(this.id, relationship.id) &&
-        Objects.equals(this.user, relationship.user) &&
-        Objects.equals(this.externalOrganization, relationship.externalOrganization) &&
-        Objects.equals(this.relationship, relationship.relationship) &&
-        Objects.equals(this.externalDataSources, relationship.externalDataSources) &&
-        Objects.equals(this.selfUri, relationship.selfUri);
+            Objects.equals(this.user, relationship.user) &&
+            Objects.equals(this.externalOrganization, relationship.externalOrganization) &&
+            Objects.equals(this.relationship, relationship.relationship) &&
+            Objects.equals(this.externalDataSources, relationship.externalDataSources) &&
+            Objects.equals(this.selfUri, relationship.selfUri);
   }
 
   @Override

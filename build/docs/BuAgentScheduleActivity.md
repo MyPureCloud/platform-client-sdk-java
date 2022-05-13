@@ -25,8 +25,8 @@ title: BuAgentScheduleActivity
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COACHING | &quot;Coaching&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| COACHING | &quot;Coaching&quot; | 
 {: class="table table-striped"}
 
 

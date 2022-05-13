@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class JourneyWebActionEventsNotificationActionMapPageUrlCondition  implem
     this.values = values;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationActionMapPageUrlCondition operator(OperatorEnum operator) {
@@ -120,7 +121,6 @@ public class JourneyWebActionEventsNotificationActionMapPageUrlCondition  implem
     this.operator = operator;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,8 +131,9 @@ public class JourneyWebActionEventsNotificationActionMapPageUrlCondition  implem
       return false;
     }
     JourneyWebActionEventsNotificationActionMapPageUrlCondition journeyWebActionEventsNotificationActionMapPageUrlCondition = (JourneyWebActionEventsNotificationActionMapPageUrlCondition) o;
+
     return Objects.equals(this.values, journeyWebActionEventsNotificationActionMapPageUrlCondition.values) &&
-        Objects.equals(this.operator, journeyWebActionEventsNotificationActionMapPageUrlCondition.operator);
+            Objects.equals(this.operator, journeyWebActionEventsNotificationActionMapPageUrlCondition.operator);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LexSlot;
@@ -47,7 +48,7 @@ public class LexIntent  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A description of the intent
    **/
@@ -65,7 +66,7 @@ public class LexIntent  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * An object mapping slot names to Slot objects
    **/
@@ -83,7 +84,7 @@ public class LexIntent  implements Serializable {
     this.slots = slots;
   }
 
-  
+
   /**
    * The intent version
    **/
@@ -101,7 +102,6 @@ public class LexIntent  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class LexIntent  implements Serializable {
       return false;
     }
     LexIntent lexIntent = (LexIntent) o;
+
     return Objects.equals(this.name, lexIntent.name) &&
-        Objects.equals(this.description, lexIntent.description) &&
-        Objects.equals(this.slots, lexIntent.slots) &&
-        Objects.equals(this.version, lexIntent.version);
+            Objects.equals(this.description, lexIntent.description) &&
+            Objects.equals(this.slots, lexIntent.slots) &&
+            Objects.equals(this.version, lexIntent.version);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TagValueEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
       return false;
     }
     TagValueEntityListing tagValueEntityListing = (TagValueEntityListing) o;
+
     return Objects.equals(this.entities, tagValueEntityListing.entities) &&
-        Objects.equals(this.pageSize, tagValueEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, tagValueEntityListing.pageNumber) &&
-        Objects.equals(this.total, tagValueEntityListing.total) &&
-        Objects.equals(this.lastUri, tagValueEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, tagValueEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, tagValueEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, tagValueEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, tagValueEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, tagValueEntityListing.pageCount);
+            Objects.equals(this.pageSize, tagValueEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, tagValueEntityListing.pageNumber) &&
+            Objects.equals(this.total, tagValueEntityListing.total) &&
+            Objects.equals(this.lastUri, tagValueEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, tagValueEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, tagValueEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, tagValueEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, tagValueEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, tagValueEntityListing.pageCount);
   }
 
   @Override

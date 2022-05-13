@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -181,7 +182,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -199,7 +200,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * dialing mode of the campaign
    **/
@@ -217,7 +218,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -235,7 +236,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -253,7 +254,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -271,7 +272,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.site = site;
   }
 
-  
+
   /**
    **/
   public DialerCampaignConfigChangeCampaign campaignStatus(CampaignStatusEnum campaignStatus) {
@@ -288,7 +289,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.campaignStatus = campaignStatus;
   }
 
-  
+
   /**
    * the contact list phone columns to be called for the campaign
    **/
@@ -306,7 +307,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-  
+
   /**
    * the targeted abandon rate percentage
    **/
@@ -324,7 +325,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-  
+
   /**
    * identifiers of the do not call lists
    **/
@@ -342,7 +343,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.dncLists = dncLists;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -360,7 +361,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.callableTimeSet = callableTimeSet;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -378,7 +379,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
   }
 
-  
+
   /**
    * caller id name to be displayed on the outbound call
    **/
@@ -396,7 +397,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.callerName = callerName;
   }
 
-  
+
   /**
    * caller id phone number to be displayed on the outbound call
    **/
@@ -414,7 +415,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    * for agentless campaigns, the number of outbound lines to be concurrently dialed
    **/
@@ -432,7 +433,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.outboundLineCount = outboundLineCount;
   }
 
-  
+
   /**
    * a list of current error conditions associated with the campaign
    **/
@@ -450,7 +451,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.errors = errors;
   }
 
-  
+
   /**
    * identifiers of the rule sets
    **/
@@ -468,7 +469,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.ruleSets = ruleSets;
   }
 
-  
+
   /**
    * for preview campaigns, indicator of whether the agent can skip a preview without placing a call
    **/
@@ -486,7 +487,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.skipPreviewDisabled = skipPreviewDisabled;
   }
 
-  
+
   /**
    * for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
    **/
@@ -504,7 +505,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
   }
 
-  
+
   /**
    * for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview
    **/
@@ -522,7 +523,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.singleNumberPreview = singleNumberPreview;
   }
 
-  
+
   /**
    **/
   public DialerCampaignConfigChangeCampaign contactSort(DialerCampaignConfigChangeContactSort contactSort) {
@@ -539,7 +540,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.contactSort = contactSort;
   }
 
-  
+
   /**
    * List of contact sort objects.
    **/
@@ -557,7 +558,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.contactSorts = contactSorts;
   }
 
-  
+
   /**
    * for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
    **/
@@ -575,7 +576,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.noAnswerTimeout = noAnswerTimeout;
   }
 
-  
+
   /**
    * The language the edge will use to analyze the call
    **/
@@ -593,7 +594,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.callAnalysisLanguage = callAnalysisLanguage;
   }
 
-  
+
   /**
    * The priority of this campaign relative to other campaigns
    **/
@@ -611,7 +612,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * List of contact filters
    **/
@@ -629,7 +630,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.contactListFilters = contactListFilters;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -647,7 +648,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.
    **/
@@ -665,7 +666,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.agentOwnedColumn = agentOwnedColumn;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -683,7 +684,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -701,7 +702,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -719,7 +720,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -737,7 +738,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -755,7 +756,6 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -766,39 +766,40 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
       return false;
     }
     DialerCampaignConfigChangeCampaign dialerCampaignConfigChangeCampaign = (DialerCampaignConfigChangeCampaign) o;
+
     return Objects.equals(this.contactList, dialerCampaignConfigChangeCampaign.contactList) &&
-        Objects.equals(this.queue, dialerCampaignConfigChangeCampaign.queue) &&
-        Objects.equals(this.dialingMode, dialerCampaignConfigChangeCampaign.dialingMode) &&
-        Objects.equals(this.script, dialerCampaignConfigChangeCampaign.script) &&
-        Objects.equals(this.edgeGroup, dialerCampaignConfigChangeCampaign.edgeGroup) &&
-        Objects.equals(this.site, dialerCampaignConfigChangeCampaign.site) &&
-        Objects.equals(this.campaignStatus, dialerCampaignConfigChangeCampaign.campaignStatus) &&
-        Objects.equals(this.phoneColumns, dialerCampaignConfigChangeCampaign.phoneColumns) &&
-        Objects.equals(this.abandonRate, dialerCampaignConfigChangeCampaign.abandonRate) &&
-        Objects.equals(this.dncLists, dialerCampaignConfigChangeCampaign.dncLists) &&
-        Objects.equals(this.callableTimeSet, dialerCampaignConfigChangeCampaign.callableTimeSet) &&
-        Objects.equals(this.callAnalysisResponseSet, dialerCampaignConfigChangeCampaign.callAnalysisResponseSet) &&
-        Objects.equals(this.callerName, dialerCampaignConfigChangeCampaign.callerName) &&
-        Objects.equals(this.callerAddress, dialerCampaignConfigChangeCampaign.callerAddress) &&
-        Objects.equals(this.outboundLineCount, dialerCampaignConfigChangeCampaign.outboundLineCount) &&
-        Objects.equals(this.errors, dialerCampaignConfigChangeCampaign.errors) &&
-        Objects.equals(this.ruleSets, dialerCampaignConfigChangeCampaign.ruleSets) &&
-        Objects.equals(this.skipPreviewDisabled, dialerCampaignConfigChangeCampaign.skipPreviewDisabled) &&
-        Objects.equals(this.previewTimeOutSeconds, dialerCampaignConfigChangeCampaign.previewTimeOutSeconds) &&
-        Objects.equals(this.singleNumberPreview, dialerCampaignConfigChangeCampaign.singleNumberPreview) &&
-        Objects.equals(this.contactSort, dialerCampaignConfigChangeCampaign.contactSort) &&
-        Objects.equals(this.contactSorts, dialerCampaignConfigChangeCampaign.contactSorts) &&
-        Objects.equals(this.noAnswerTimeout, dialerCampaignConfigChangeCampaign.noAnswerTimeout) &&
-        Objects.equals(this.callAnalysisLanguage, dialerCampaignConfigChangeCampaign.callAnalysisLanguage) &&
-        Objects.equals(this.priority, dialerCampaignConfigChangeCampaign.priority) &&
-        Objects.equals(this.contactListFilters, dialerCampaignConfigChangeCampaign.contactListFilters) &&
-        Objects.equals(this.division, dialerCampaignConfigChangeCampaign.division) &&
-        Objects.equals(this.agentOwnedColumn, dialerCampaignConfigChangeCampaign.agentOwnedColumn) &&
-        Objects.equals(this.id, dialerCampaignConfigChangeCampaign.id) &&
-        Objects.equals(this.name, dialerCampaignConfigChangeCampaign.name) &&
-        Objects.equals(this.dateCreated, dialerCampaignConfigChangeCampaign.dateCreated) &&
-        Objects.equals(this.dateModified, dialerCampaignConfigChangeCampaign.dateModified) &&
-        Objects.equals(this.version, dialerCampaignConfigChangeCampaign.version);
+            Objects.equals(this.queue, dialerCampaignConfigChangeCampaign.queue) &&
+            Objects.equals(this.dialingMode, dialerCampaignConfigChangeCampaign.dialingMode) &&
+            Objects.equals(this.script, dialerCampaignConfigChangeCampaign.script) &&
+            Objects.equals(this.edgeGroup, dialerCampaignConfigChangeCampaign.edgeGroup) &&
+            Objects.equals(this.site, dialerCampaignConfigChangeCampaign.site) &&
+            Objects.equals(this.campaignStatus, dialerCampaignConfigChangeCampaign.campaignStatus) &&
+            Objects.equals(this.phoneColumns, dialerCampaignConfigChangeCampaign.phoneColumns) &&
+            Objects.equals(this.abandonRate, dialerCampaignConfigChangeCampaign.abandonRate) &&
+            Objects.equals(this.dncLists, dialerCampaignConfigChangeCampaign.dncLists) &&
+            Objects.equals(this.callableTimeSet, dialerCampaignConfigChangeCampaign.callableTimeSet) &&
+            Objects.equals(this.callAnalysisResponseSet, dialerCampaignConfigChangeCampaign.callAnalysisResponseSet) &&
+            Objects.equals(this.callerName, dialerCampaignConfigChangeCampaign.callerName) &&
+            Objects.equals(this.callerAddress, dialerCampaignConfigChangeCampaign.callerAddress) &&
+            Objects.equals(this.outboundLineCount, dialerCampaignConfigChangeCampaign.outboundLineCount) &&
+            Objects.equals(this.errors, dialerCampaignConfigChangeCampaign.errors) &&
+            Objects.equals(this.ruleSets, dialerCampaignConfigChangeCampaign.ruleSets) &&
+            Objects.equals(this.skipPreviewDisabled, dialerCampaignConfigChangeCampaign.skipPreviewDisabled) &&
+            Objects.equals(this.previewTimeOutSeconds, dialerCampaignConfigChangeCampaign.previewTimeOutSeconds) &&
+            Objects.equals(this.singleNumberPreview, dialerCampaignConfigChangeCampaign.singleNumberPreview) &&
+            Objects.equals(this.contactSort, dialerCampaignConfigChangeCampaign.contactSort) &&
+            Objects.equals(this.contactSorts, dialerCampaignConfigChangeCampaign.contactSorts) &&
+            Objects.equals(this.noAnswerTimeout, dialerCampaignConfigChangeCampaign.noAnswerTimeout) &&
+            Objects.equals(this.callAnalysisLanguage, dialerCampaignConfigChangeCampaign.callAnalysisLanguage) &&
+            Objects.equals(this.priority, dialerCampaignConfigChangeCampaign.priority) &&
+            Objects.equals(this.contactListFilters, dialerCampaignConfigChangeCampaign.contactListFilters) &&
+            Objects.equals(this.division, dialerCampaignConfigChangeCampaign.division) &&
+            Objects.equals(this.agentOwnedColumn, dialerCampaignConfigChangeCampaign.agentOwnedColumn) &&
+            Objects.equals(this.id, dialerCampaignConfigChangeCampaign.id) &&
+            Objects.equals(this.name, dialerCampaignConfigChangeCampaign.name) &&
+            Objects.equals(this.dateCreated, dialerCampaignConfigChangeCampaign.dateCreated) &&
+            Objects.equals(this.dateModified, dialerCampaignConfigChangeCampaign.dateModified) &&
+            Objects.equals(this.version, dialerCampaignConfigChangeCampaign.version);
   }
 
   @Override

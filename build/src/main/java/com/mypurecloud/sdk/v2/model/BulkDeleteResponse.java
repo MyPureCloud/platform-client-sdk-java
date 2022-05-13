@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkResponseResultVoidEntity;
@@ -44,7 +45,7 @@ public class BulkDeleteResponse  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    **/
   public BulkDeleteResponse errorCount(Integer errorCount) {
@@ -61,7 +62,7 @@ public class BulkDeleteResponse  implements Serializable {
     this.errorCount = errorCount;
   }
 
-  
+
   /**
    **/
   public BulkDeleteResponse errorIndexes(List<Integer> errorIndexes) {
@@ -78,7 +79,6 @@ public class BulkDeleteResponse  implements Serializable {
     this.errorIndexes = errorIndexes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class BulkDeleteResponse  implements Serializable {
       return false;
     }
     BulkDeleteResponse bulkDeleteResponse = (BulkDeleteResponse) o;
+
     return Objects.equals(this.results, bulkDeleteResponse.results) &&
-        Objects.equals(this.errorCount, bulkDeleteResponse.errorCount) &&
-        Objects.equals(this.errorIndexes, bulkDeleteResponse.errorIndexes);
+            Objects.equals(this.errorCount, bulkDeleteResponse.errorCount) &&
+            Objects.equals(this.errorIndexes, bulkDeleteResponse.errorIndexes);
   }
 
   @Override

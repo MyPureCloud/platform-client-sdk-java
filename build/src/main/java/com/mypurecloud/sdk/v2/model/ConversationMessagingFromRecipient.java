@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class ConversationMessagingFromRecipient  implements Serializable {
     return nickname;
   }
 
-  
+
   /**
    * The recipient ID specific to the provider.
    **/
@@ -107,14 +108,14 @@ public class ConversationMessagingFromRecipient  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient ID type. This is used to indicate the format used for the ID.")
   @JsonProperty("idType")
   public IdTypeEnum getIdType() {
     return idType;
   }
 
-  
+
   /**
    * URL of an image that represents the recipient.
    **/
@@ -132,7 +133,7 @@ public class ConversationMessagingFromRecipient  implements Serializable {
     this.image = image;
   }
 
-  
+
   /**
    * First name of the recipient.
    **/
@@ -150,7 +151,7 @@ public class ConversationMessagingFromRecipient  implements Serializable {
     this.firstName = firstName;
   }
 
-  
+
   /**
    * Last name of the recipient.
    **/
@@ -168,21 +169,20 @@ public class ConversationMessagingFromRecipient  implements Serializable {
     this.lastName = lastName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "E-mail address of the recipient.")
   @JsonProperty("email")
   public String getEmail() {
     return email;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of recipient additional identifiers")
   @JsonProperty("additionalIds")
   public List<ConversationRecipientAdditionalIdentifier> getAdditionalIds() {
     return additionalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,14 +193,15 @@ public class ConversationMessagingFromRecipient  implements Serializable {
       return false;
     }
     ConversationMessagingFromRecipient conversationMessagingFromRecipient = (ConversationMessagingFromRecipient) o;
+
     return Objects.equals(this.nickname, conversationMessagingFromRecipient.nickname) &&
-        Objects.equals(this.id, conversationMessagingFromRecipient.id) &&
-        Objects.equals(this.idType, conversationMessagingFromRecipient.idType) &&
-        Objects.equals(this.image, conversationMessagingFromRecipient.image) &&
-        Objects.equals(this.firstName, conversationMessagingFromRecipient.firstName) &&
-        Objects.equals(this.lastName, conversationMessagingFromRecipient.lastName) &&
-        Objects.equals(this.email, conversationMessagingFromRecipient.email) &&
-        Objects.equals(this.additionalIds, conversationMessagingFromRecipient.additionalIds);
+            Objects.equals(this.id, conversationMessagingFromRecipient.id) &&
+            Objects.equals(this.idType, conversationMessagingFromRecipient.idType) &&
+            Objects.equals(this.image, conversationMessagingFromRecipient.image) &&
+            Objects.equals(this.firstName, conversationMessagingFromRecipient.firstName) &&
+            Objects.equals(this.lastName, conversationMessagingFromRecipient.lastName) &&
+            Objects.equals(this.email, conversationMessagingFromRecipient.email) &&
+            Objects.equals(this.additionalIds, conversationMessagingFromRecipient.additionalIds);
   }
 
   @Override

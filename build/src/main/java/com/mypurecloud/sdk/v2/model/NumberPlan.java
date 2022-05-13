@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class NumberPlan  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -121,7 +122,7 @@ public class NumberPlan  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -139,7 +140,7 @@ public class NumberPlan  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -157,7 +158,7 @@ public class NumberPlan  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -175,7 +176,7 @@ public class NumberPlan  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -193,7 +194,7 @@ public class NumberPlan  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -211,7 +212,7 @@ public class NumberPlan  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -229,7 +230,7 @@ public class NumberPlan  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -247,14 +248,14 @@ public class NumberPlan  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -272,7 +273,7 @@ public class NumberPlan  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -290,7 +291,7 @@ public class NumberPlan  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public NumberPlan match(String match) {
@@ -307,7 +308,7 @@ public class NumberPlan  implements Serializable {
     this.match = match;
   }
 
-  
+
   /**
    **/
   public NumberPlan normalizedFormat(String normalizedFormat) {
@@ -324,7 +325,7 @@ public class NumberPlan  implements Serializable {
     this.normalizedFormat = normalizedFormat;
   }
 
-  
+
   /**
    **/
   public NumberPlan priority(Integer priority) {
@@ -341,7 +342,7 @@ public class NumberPlan  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    **/
   public NumberPlan numbers(List<Number> numbers) {
@@ -358,7 +359,7 @@ public class NumberPlan  implements Serializable {
     this.numbers = numbers;
   }
 
-  
+
   /**
    **/
   public NumberPlan digitLength(DigitLength digitLength) {
@@ -375,7 +376,7 @@ public class NumberPlan  implements Serializable {
     this.digitLength = digitLength;
   }
 
-  
+
   /**
    **/
   public NumberPlan classification(String classification) {
@@ -392,7 +393,7 @@ public class NumberPlan  implements Serializable {
     this.classification = classification;
   }
 
-  
+
   /**
    **/
   public NumberPlan matchType(String matchType) {
@@ -409,14 +410,13 @@ public class NumberPlan  implements Serializable {
     this.matchType = matchType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -427,26 +427,27 @@ public class NumberPlan  implements Serializable {
       return false;
     }
     NumberPlan numberPlan = (NumberPlan) o;
+
     return Objects.equals(this.id, numberPlan.id) &&
-        Objects.equals(this.name, numberPlan.name) &&
-        Objects.equals(this.division, numberPlan.division) &&
-        Objects.equals(this.description, numberPlan.description) &&
-        Objects.equals(this.version, numberPlan.version) &&
-        Objects.equals(this.dateCreated, numberPlan.dateCreated) &&
-        Objects.equals(this.dateModified, numberPlan.dateModified) &&
-        Objects.equals(this.modifiedBy, numberPlan.modifiedBy) &&
-        Objects.equals(this.createdBy, numberPlan.createdBy) &&
-        Objects.equals(this.state, numberPlan.state) &&
-        Objects.equals(this.modifiedByApp, numberPlan.modifiedByApp) &&
-        Objects.equals(this.createdByApp, numberPlan.createdByApp) &&
-        Objects.equals(this.match, numberPlan.match) &&
-        Objects.equals(this.normalizedFormat, numberPlan.normalizedFormat) &&
-        Objects.equals(this.priority, numberPlan.priority) &&
-        Objects.equals(this.numbers, numberPlan.numbers) &&
-        Objects.equals(this.digitLength, numberPlan.digitLength) &&
-        Objects.equals(this.classification, numberPlan.classification) &&
-        Objects.equals(this.matchType, numberPlan.matchType) &&
-        Objects.equals(this.selfUri, numberPlan.selfUri);
+            Objects.equals(this.name, numberPlan.name) &&
+            Objects.equals(this.division, numberPlan.division) &&
+            Objects.equals(this.description, numberPlan.description) &&
+            Objects.equals(this.version, numberPlan.version) &&
+            Objects.equals(this.dateCreated, numberPlan.dateCreated) &&
+            Objects.equals(this.dateModified, numberPlan.dateModified) &&
+            Objects.equals(this.modifiedBy, numberPlan.modifiedBy) &&
+            Objects.equals(this.createdBy, numberPlan.createdBy) &&
+            Objects.equals(this.state, numberPlan.state) &&
+            Objects.equals(this.modifiedByApp, numberPlan.modifiedByApp) &&
+            Objects.equals(this.createdByApp, numberPlan.createdByApp) &&
+            Objects.equals(this.match, numberPlan.match) &&
+            Objects.equals(this.normalizedFormat, numberPlan.normalizedFormat) &&
+            Objects.equals(this.priority, numberPlan.priority) &&
+            Objects.equals(this.numbers, numberPlan.numbers) &&
+            Objects.equals(this.digitLength, numberPlan.digitLength) &&
+            Objects.equals(this.classification, numberPlan.classification) &&
+            Objects.equals(this.matchType, numberPlan.matchType) &&
+            Objects.equals(this.selfUri, numberPlan.selfUri);
   }
 
   @Override

@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorEntity;
-import com.mypurecloud.sdk.v2.model.ModelVoid;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,7 +24,7 @@ public class BulkResponseResultVoidEntity  implements Serializable {
   
   private String id = null;
   private Boolean success = null;
-  private ModelVoid entity = null;
+  private Object entity = null;
   private BulkErrorEntity error = null;
 
   
@@ -44,7 +44,7 @@ public class BulkResponseResultVoidEntity  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultVoidEntity success(Boolean success) {
@@ -61,24 +61,24 @@ public class BulkResponseResultVoidEntity  implements Serializable {
     this.success = success;
   }
 
-  
+
   /**
    **/
-  public BulkResponseResultVoidEntity entity(ModelVoid entity) {
+  public BulkResponseResultVoidEntity entity(Object entity) {
     this.entity = entity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entity")
-  public ModelVoid getEntity() {
+  public Object getEntity() {
     return entity;
   }
-  public void setEntity(ModelVoid entity) {
+  public void setEntity(Object entity) {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultVoidEntity error(BulkErrorEntity error) {
@@ -95,7 +95,6 @@ public class BulkResponseResultVoidEntity  implements Serializable {
     this.error = error;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +105,11 @@ public class BulkResponseResultVoidEntity  implements Serializable {
       return false;
     }
     BulkResponseResultVoidEntity bulkResponseResultVoidEntity = (BulkResponseResultVoidEntity) o;
+
     return Objects.equals(this.id, bulkResponseResultVoidEntity.id) &&
-        Objects.equals(this.success, bulkResponseResultVoidEntity.success) &&
-        Objects.equals(this.entity, bulkResponseResultVoidEntity.entity) &&
-        Objects.equals(this.error, bulkResponseResultVoidEntity.error);
+            Objects.equals(this.success, bulkResponseResultVoidEntity.success) &&
+            Objects.equals(this.entity, bulkResponseResultVoidEntity.entity) &&
+            Objects.equals(this.error, bulkResponseResultVoidEntity.error);
   }
 
   @Override

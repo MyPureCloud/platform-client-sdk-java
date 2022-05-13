@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobResult;
@@ -38,7 +39,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * JobId returned when job was initially submitted
    **/
@@ -56,7 +57,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     this.jobId = jobId;
   }
 
-  
+
   /**
    * Number of results expected when job is completed
    **/
@@ -74,7 +75,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     this.expectedResultCount = expectedResultCount;
   }
 
-  
+
   /**
    * Current number of results available
    **/
@@ -92,7 +93,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     this.resultCount = resultCount;
   }
 
-  
+
   /**
    * Number of error results produced so far
    **/
@@ -110,7 +111,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     this.errorCount = errorCount;
   }
 
-  
+
   /**
    * Current set of results for the job
    **/
@@ -128,14 +129,13 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     this.results = results;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,13 +146,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
       return false;
     }
     BatchDownloadJobStatusResult batchDownloadJobStatusResult = (BatchDownloadJobStatusResult) o;
+
     return Objects.equals(this.id, batchDownloadJobStatusResult.id) &&
-        Objects.equals(this.jobId, batchDownloadJobStatusResult.jobId) &&
-        Objects.equals(this.expectedResultCount, batchDownloadJobStatusResult.expectedResultCount) &&
-        Objects.equals(this.resultCount, batchDownloadJobStatusResult.resultCount) &&
-        Objects.equals(this.errorCount, batchDownloadJobStatusResult.errorCount) &&
-        Objects.equals(this.results, batchDownloadJobStatusResult.results) &&
-        Objects.equals(this.selfUri, batchDownloadJobStatusResult.selfUri);
+            Objects.equals(this.jobId, batchDownloadJobStatusResult.jobId) &&
+            Objects.equals(this.expectedResultCount, batchDownloadJobStatusResult.expectedResultCount) &&
+            Objects.equals(this.resultCount, batchDownloadJobStatusResult.resultCount) &&
+            Objects.equals(this.errorCount, batchDownloadJobStatusResult.errorCount) &&
+            Objects.equals(this.results, batchDownloadJobStatusResult.results) &&
+            Objects.equals(this.selfUri, batchDownloadJobStatusResult.selfUri);
   }
 
   @Override

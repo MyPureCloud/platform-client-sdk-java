@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class QueueConversationScreenShareEventTopicDetail  implements Serializab
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicDetail fieldName(String fieldName) {
@@ -59,7 +60,7 @@ public class QueueConversationScreenShareEventTopicDetail  implements Serializab
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicDetail entityId(String entityId) {
@@ -76,7 +77,7 @@ public class QueueConversationScreenShareEventTopicDetail  implements Serializab
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicDetail entityName(String entityName) {
@@ -93,7 +94,6 @@ public class QueueConversationScreenShareEventTopicDetail  implements Serializab
     this.entityName = entityName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class QueueConversationScreenShareEventTopicDetail  implements Serializab
       return false;
     }
     QueueConversationScreenShareEventTopicDetail queueConversationScreenShareEventTopicDetail = (QueueConversationScreenShareEventTopicDetail) o;
+
     return Objects.equals(this.errorCode, queueConversationScreenShareEventTopicDetail.errorCode) &&
-        Objects.equals(this.fieldName, queueConversationScreenShareEventTopicDetail.fieldName) &&
-        Objects.equals(this.entityId, queueConversationScreenShareEventTopicDetail.entityId) &&
-        Objects.equals(this.entityName, queueConversationScreenShareEventTopicDetail.entityName);
+            Objects.equals(this.fieldName, queueConversationScreenShareEventTopicDetail.fieldName) &&
+            Objects.equals(this.entityId, queueConversationScreenShareEventTopicDetail.entityId) &&
+            Objects.equals(this.entityName, queueConversationScreenShareEventTopicDetail.entityName);
   }
 
   @Override

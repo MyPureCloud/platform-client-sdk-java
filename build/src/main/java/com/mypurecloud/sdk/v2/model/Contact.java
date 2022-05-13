@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,14 +150,14 @@ public class Contact  implements Serializable {
     this.address = address;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Formatted version of the address property")
   @JsonProperty("display")
   public String getDisplay() {
     return display;
   }
 
-  
+
   /**
    **/
   public Contact mediaType(MediaTypeEnum mediaType) {
@@ -173,7 +174,7 @@ public class Contact  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public Contact type(TypeEnum type) {
@@ -190,7 +191,7 @@ public class Contact  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Use internal extension instead of address. Mutually exclusive with the address field.
    **/
@@ -208,7 +209,7 @@ public class Contact  implements Serializable {
     this.extension = extension;
   }
 
-  
+
   /**
    **/
   public Contact countryCode(String countryCode) {
@@ -225,7 +226,7 @@ public class Contact  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
+
   /**
    * Integration tag value if this number is associated with an external integration.
    **/
@@ -243,7 +244,6 @@ public class Contact  implements Serializable {
     this.integration = integration;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -254,13 +254,14 @@ public class Contact  implements Serializable {
       return false;
     }
     Contact contact = (Contact) o;
+
     return Objects.equals(this.address, contact.address) &&
-        Objects.equals(this.display, contact.display) &&
-        Objects.equals(this.mediaType, contact.mediaType) &&
-        Objects.equals(this.type, contact.type) &&
-        Objects.equals(this.extension, contact.extension) &&
-        Objects.equals(this.countryCode, contact.countryCode) &&
-        Objects.equals(this.integration, contact.integration);
+            Objects.equals(this.display, contact.display) &&
+            Objects.equals(this.mediaType, contact.mediaType) &&
+            Objects.equals(this.type, contact.type) &&
+            Objects.equals(this.extension, contact.extension) &&
+            Objects.equals(this.countryCode, contact.countryCode) &&
+            Objects.equals(this.integration, contact.integration);
   }
 
   @Override

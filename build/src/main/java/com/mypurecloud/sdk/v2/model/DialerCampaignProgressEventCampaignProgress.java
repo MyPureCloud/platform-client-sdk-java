@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignProgressEventUriReference;
@@ -45,7 +46,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     this.campaign = campaign;
   }
 
-  
+
   /**
    * The number of contacts that have been called so far
    **/
@@ -63,7 +64,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     this.numberOfContactsCalled = numberOfContactsCalled;
   }
 
-  
+
   /**
    * The number of contacts that have been messaged so far
    **/
@@ -81,7 +82,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     this.numberOfContactsMessaged = numberOfContactsMessaged;
   }
 
-  
+
   /**
    * The total number of contacts in the contact list
    **/
@@ -99,7 +100,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     this.totalNumberOfContacts = totalNumberOfContacts;
   }
 
-  
+
   /**
    * numberOfContactsContacted/totalNumberOfContacts*100
    **/
@@ -117,7 +118,6 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     this.percentage = percentage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
       return false;
     }
     DialerCampaignProgressEventCampaignProgress dialerCampaignProgressEventCampaignProgress = (DialerCampaignProgressEventCampaignProgress) o;
+
     return Objects.equals(this.campaign, dialerCampaignProgressEventCampaignProgress.campaign) &&
-        Objects.equals(this.numberOfContactsCalled, dialerCampaignProgressEventCampaignProgress.numberOfContactsCalled) &&
-        Objects.equals(this.numberOfContactsMessaged, dialerCampaignProgressEventCampaignProgress.numberOfContactsMessaged) &&
-        Objects.equals(this.totalNumberOfContacts, dialerCampaignProgressEventCampaignProgress.totalNumberOfContacts) &&
-        Objects.equals(this.percentage, dialerCampaignProgressEventCampaignProgress.percentage);
+            Objects.equals(this.numberOfContactsCalled, dialerCampaignProgressEventCampaignProgress.numberOfContactsCalled) &&
+            Objects.equals(this.numberOfContactsMessaged, dialerCampaignProgressEventCampaignProgress.numberOfContactsMessaged) &&
+            Objects.equals(this.totalNumberOfContacts, dialerCampaignProgressEventCampaignProgress.totalNumberOfContacts) &&
+            Objects.equals(this.percentage, dialerCampaignProgressEventCampaignProgress.percentage);
   }
 
   @Override

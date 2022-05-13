@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
@@ -44,7 +45,7 @@ public class FlowMilestoneDivisionView  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The flow milestone name
    **/
@@ -62,7 +63,7 @@ public class FlowMilestoneDivisionView  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -80,14 +81,13 @@ public class FlowMilestoneDivisionView  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -98,10 +98,11 @@ public class FlowMilestoneDivisionView  implements Serializable {
       return false;
     }
     FlowMilestoneDivisionView flowMilestoneDivisionView = (FlowMilestoneDivisionView) o;
+
     return Objects.equals(this.id, flowMilestoneDivisionView.id) &&
-        Objects.equals(this.name, flowMilestoneDivisionView.name) &&
-        Objects.equals(this.division, flowMilestoneDivisionView.division) &&
-        Objects.equals(this.selfUri, flowMilestoneDivisionView.selfUri);
+            Objects.equals(this.name, flowMilestoneDivisionView.name) &&
+            Objects.equals(this.division, flowMilestoneDivisionView.division) &&
+            Objects.equals(this.selfUri, flowMilestoneDivisionView.selfUri);
   }
 
   @Override

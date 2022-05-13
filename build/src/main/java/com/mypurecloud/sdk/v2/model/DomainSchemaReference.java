@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class DomainSchemaReference  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -110,7 +111,7 @@ public class DomainSchemaReference  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -128,7 +129,7 @@ public class DomainSchemaReference  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -146,7 +147,7 @@ public class DomainSchemaReference  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -164,7 +165,7 @@ public class DomainSchemaReference  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -182,7 +183,7 @@ public class DomainSchemaReference  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -200,7 +201,7 @@ public class DomainSchemaReference  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -218,7 +219,7 @@ public class DomainSchemaReference  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -236,14 +237,14 @@ public class DomainSchemaReference  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -261,7 +262,7 @@ public class DomainSchemaReference  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -279,14 +280,13 @@ public class DomainSchemaReference  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -297,19 +297,20 @@ public class DomainSchemaReference  implements Serializable {
       return false;
     }
     DomainSchemaReference domainSchemaReference = (DomainSchemaReference) o;
+
     return Objects.equals(this.id, domainSchemaReference.id) &&
-        Objects.equals(this.name, domainSchemaReference.name) &&
-        Objects.equals(this.division, domainSchemaReference.division) &&
-        Objects.equals(this.description, domainSchemaReference.description) &&
-        Objects.equals(this.version, domainSchemaReference.version) &&
-        Objects.equals(this.dateCreated, domainSchemaReference.dateCreated) &&
-        Objects.equals(this.dateModified, domainSchemaReference.dateModified) &&
-        Objects.equals(this.modifiedBy, domainSchemaReference.modifiedBy) &&
-        Objects.equals(this.createdBy, domainSchemaReference.createdBy) &&
-        Objects.equals(this.state, domainSchemaReference.state) &&
-        Objects.equals(this.modifiedByApp, domainSchemaReference.modifiedByApp) &&
-        Objects.equals(this.createdByApp, domainSchemaReference.createdByApp) &&
-        Objects.equals(this.selfUri, domainSchemaReference.selfUri);
+            Objects.equals(this.name, domainSchemaReference.name) &&
+            Objects.equals(this.division, domainSchemaReference.division) &&
+            Objects.equals(this.description, domainSchemaReference.description) &&
+            Objects.equals(this.version, domainSchemaReference.version) &&
+            Objects.equals(this.dateCreated, domainSchemaReference.dateCreated) &&
+            Objects.equals(this.dateModified, domainSchemaReference.dateModified) &&
+            Objects.equals(this.modifiedBy, domainSchemaReference.modifiedBy) &&
+            Objects.equals(this.createdBy, domainSchemaReference.createdBy) &&
+            Objects.equals(this.state, domainSchemaReference.state) &&
+            Objects.equals(this.modifiedByApp, domainSchemaReference.modifiedByApp) &&
+            Objects.equals(this.createdByApp, domainSchemaReference.createdByApp) &&
+            Objects.equals(this.selfUri, domainSchemaReference.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.total = total;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public GroupProfileEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class GroupProfileEntityListing  implements Serializable, PagedResource<G
       return false;
     }
     GroupProfileEntityListing groupProfileEntityListing = (GroupProfileEntityListing) o;
+
     return Objects.equals(this.entities, groupProfileEntityListing.entities) &&
-        Objects.equals(this.pageSize, groupProfileEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, groupProfileEntityListing.pageNumber) &&
-        Objects.equals(this.total, groupProfileEntityListing.total) &&
-        Objects.equals(this.lastUri, groupProfileEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, groupProfileEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, groupProfileEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, groupProfileEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, groupProfileEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, groupProfileEntityListing.pageCount);
+            Objects.equals(this.pageSize, groupProfileEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, groupProfileEntityListing.pageNumber) &&
+            Objects.equals(this.total, groupProfileEntityListing.total) &&
+            Objects.equals(this.lastUri, groupProfileEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, groupProfileEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, groupProfileEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, groupProfileEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, groupProfileEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, groupProfileEntityListing.pageCount);
   }
 
   @Override

@@ -10,7 +10,7 @@ title: Callback
 | ------------ | ------------- | ------------- | ------------- |
 | **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
-| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant&#39;s callback, divided into activity segments. |  [optional] |
+| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant's callback, divided into activity segments. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the call |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
@@ -44,16 +44,16 @@ title: Callback
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| DIALING | &quot;dialing&quot; |
-| CONTACTING | &quot;contacting&quot; |
-| OFFERING | &quot;offering&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
-| TERMINATED | &quot;terminated&quot; |
-| SCHEDULED | &quot;scheduled&quot; |
-| NONE | &quot;none&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| SCHEDULED | &quot;scheduled&quot; | 
+| NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 
 
@@ -63,9 +63,9 @@ title: Callback
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -75,23 +75,23 @@ title: Callback
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
-| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| SPAM | &quot;spam&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| SPAM | &quot;spam&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 

@@ -13,17 +13,17 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteVoicemailMessageRequest;
@@ -59,7 +59,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class VoicemailApiAsync {
   private final ApiClient pcapiClient;
 
@@ -71,7 +70,6 @@ public class VoicemailApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a voicemail message.
    * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
@@ -147,7 +145,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Delete all voicemail messages
    * 
@@ -223,9 +220,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Get the group&#39;s mailbox information
+   * Get the group's mailbox information
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -259,7 +255,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get the group&#39;s mailbox information
+   * Get the group's mailbox information
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -299,7 +295,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -375,9 +370,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Get a group&#39;s voicemail policy
+   * Get a group's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -411,7 +405,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get a group&#39;s voicemail policy
+   * Get a group's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -451,9 +445,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -487,7 +480,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -527,9 +520,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -563,7 +555,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -603,7 +595,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -679,9 +670,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Get the current user&#39;s voicemail policy
+   * Get the current user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -715,7 +705,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get the current user&#39;s voicemail policy
+   * Get the current user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -755,7 +745,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Get a voicemail message
    * 
@@ -831,7 +820,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Get media playback URI for this voicemail message
    * 
@@ -907,7 +895,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -983,7 +970,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Get a policy
    * 
@@ -1059,7 +1045,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -1135,7 +1120,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
@@ -1211,9 +1195,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Get a user&#39;s voicemail policy
+   * Get a user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1247,7 +1230,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get a user&#39;s voicemail policy
+   * Get a user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1287,9 +1270,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Update a group&#39;s voicemail policy
+   * Update a group's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1323,7 +1305,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Update a group&#39;s voicemail policy
+   * Update a group's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1363,9 +1345,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Update the current user&#39;s voicemail policy
+   * Update the current user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1399,7 +1380,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Update the current user&#39;s voicemail policy
+   * Update the current user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1439,7 +1420,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Update a voicemail message
    * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
@@ -1515,9 +1495,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1551,7 +1530,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1591,7 +1570,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Copy a voicemail message to a user or group
    * 
@@ -1667,7 +1645,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Search voicemails
    * 
@@ -1743,7 +1720,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Update a voicemail message
    * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
@@ -1819,7 +1795,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
    * Update a policy
    * 
@@ -1895,9 +1870,8 @@ public class VoicemailApiAsync {
     }
   }
 
-  
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1931,7 +1905,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1971,7 +1945,6 @@ public class VoicemailApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -21,11 +21,11 @@ title: RequestMapping
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STRING | &quot;String&quot; |
-| NUMBER | &quot;Number&quot; |
-| INTEGER | &quot;Integer&quot; |
-| BOOLEAN | &quot;Boolean&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STRING | &quot;String&quot; | 
+| NUMBER | &quot;Number&quot; | 
+| INTEGER | &quot;Integer&quot; | 
+| BOOLEAN | &quot;Boolean&quot; | 
 {: class="table table-striped"}
 
 
@@ -35,9 +35,9 @@ title: RequestMapping
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LOOKUP | &quot;Lookup&quot; |
-| HARDCODED | &quot;HardCoded&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LOOKUP | &quot;Lookup&quot; | 
+| HARDCODED | &quot;HardCoded&quot; | 
 {: class="table table-striped"}
 
 

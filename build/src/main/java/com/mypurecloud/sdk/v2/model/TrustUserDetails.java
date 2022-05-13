@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
@@ -32,14 +33,13 @@ public class TrustUserDetails  implements Serializable {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that added trusted user.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -50,8 +50,9 @@ public class TrustUserDetails  implements Serializable {
       return false;
     }
     TrustUserDetails trustUserDetails = (TrustUserDetails) o;
+
     return Objects.equals(this.dateCreated, trustUserDetails.dateCreated) &&
-        Objects.equals(this.createdBy, trustUserDetails.createdBy);
+            Objects.equals(this.createdBy, trustUserDetails.createdBy);
   }
 
   @Override

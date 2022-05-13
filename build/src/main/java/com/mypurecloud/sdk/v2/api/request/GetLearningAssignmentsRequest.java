@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 public class GetLearningAssignmentsRequest {
-    
+
 	private String moduleId;
 	public String getModuleId() {
 		return this.moduleId;
@@ -55,7 +55,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setModuleId(moduleId);
 	    return this;
 	} 
-	
+
 	private String interval;
 	public String getInterval() {
 		return this.interval;
@@ -69,7 +69,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setInterval(interval);
 	    return this;
 	} 
-	
+
 	private String completionInterval;
 	public String getCompletionInterval() {
 		return this.completionInterval;
@@ -83,7 +83,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setCompletionInterval(completionInterval);
 	    return this;
 	} 
-	
+
 	private String overdue;
 	public String getOverdue() {
 		return this.overdue;
@@ -99,8 +99,8 @@ public class GetLearningAssignmentsRequest {
 	} 
 
 	public enum overdueValues { 
-		TRUE("True"), 
-		FALSE("False"), 
+		TRUE("True"),
+		FALSE("False"),
 		ANY("Any");
 
 		private String value;
@@ -128,7 +128,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -142,7 +142,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -156,7 +156,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String pass;
 	public String getPass() {
 		return this.pass;
@@ -172,8 +172,8 @@ public class GetLearningAssignmentsRequest {
 	} 
 
 	public enum passValues { 
-		TRUE("True"), 
-		FALSE("False"), 
+		TRUE("True"),
+		FALSE("False"),
 		ANY("Any");
 
 		private String value;
@@ -201,7 +201,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Float minPercentageScore;
 	public Float getMinPercentageScore() {
 		return this.minPercentageScore;
@@ -215,7 +215,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setMinPercentageScore(minPercentageScore);
 	    return this;
 	} 
-	
+
 	private Float maxPercentageScore;
 	public Float getMaxPercentageScore() {
 		return this.maxPercentageScore;
@@ -229,7 +229,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setMaxPercentageScore(maxPercentageScore);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -245,7 +245,7 @@ public class GetLearningAssignmentsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASC("Asc"), 
+		ASC("Asc"),
 		DESC("Desc");
 
 		private String value;
@@ -273,7 +273,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -289,7 +289,7 @@ public class GetLearningAssignmentsRequest {
 	} 
 
 	public enum sortByValues { 
-		RECOMMENDEDCOMPLETIONDATE("RecommendedCompletionDate"), 
+		RECOMMENDEDCOMPLETIONDATE("RecommendedCompletionDate"),
 		DATEMODIFIED("DateModified");
 
 		private String value;
@@ -317,7 +317,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> userId;
 	public List<String> getUserId() {
 		return this.userId;
@@ -331,7 +331,7 @@ public class GetLearningAssignmentsRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private List<String> types;
 	public List<String> getTypes() {
 		return this.types;
@@ -347,8 +347,8 @@ public class GetLearningAssignmentsRequest {
 	} 
 
 	public enum typesValues { 
-		INFORMATIONAL("Informational"), 
-		ASSESSEDCONTENT("AssessedContent"), 
+		INFORMATIONAL("Informational"),
+		ASSESSEDCONTENT("AssessedContent"),
 		ASSESSMENT("Assessment");
 
 		private String value;
@@ -376,7 +376,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> states;
 	public List<String> getStates() {
 		return this.states;
@@ -392,9 +392,9 @@ public class GetLearningAssignmentsRequest {
 	} 
 
 	public enum statesValues { 
-		ASSIGNED("Assigned"), 
-		INPROGRESS("InProgress"), 
-		COMPLETED("Completed"), 
+		ASSIGNED("Assigned"),
+		INPROGRESS("InProgress"),
+		COMPLETED("Completed"),
 		NOTCOMPLETED("NotCompleted");
 
 		private String value;
@@ -422,7 +422,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -465,7 +465,7 @@ public class GetLearningAssignmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -489,37 +489,52 @@ public class GetLearningAssignmentsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/learning/assignments")
+
                 .withQueryParameters("moduleId", "", moduleId)
         
+
                 .withQueryParameters("interval", "", interval)
         
+
                 .withQueryParameters("completionInterval", "", completionInterval)
         
+
                 .withQueryParameters("overdue", "", overdue)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pass", "", pass)
         
+
                 .withQueryParameters("minPercentageScore", "", minPercentageScore)
         
+
                 .withQueryParameters("maxPercentageScore", "", maxPercentageScore)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("userId", "multi", userId)
         
+
                 .withQueryParameters("types", "multi", types)
         
+
                 .withQueryParameters("states", "multi", states)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -530,7 +545,7 @@ public class GetLearningAssignmentsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLearningAssignmentsRequest request;
@@ -539,91 +554,109 @@ public class GetLearningAssignmentsRequest {
 			request = new GetLearningAssignmentsRequest();
 		}
 
-		
+
 		public Builder withModuleId(String moduleId) {
 			request.setModuleId(moduleId);
 			return this;
 		}
-		
+
 		public Builder withInterval(String interval) {
 			request.setInterval(interval);
 			return this;
 		}
-		
+
 		public Builder withCompletionInterval(String completionInterval) {
 			request.setCompletionInterval(completionInterval);
 			return this;
 		}
-		
+
 		public Builder withOverdue(String overdue) {
 			request.setOverdue(overdue);
 			return this;
 		}
 
+
+
+		
 		public Builder withOverdue(overdueValues overdue) {
 		    request.setOverdue(overdue.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPass(String pass) {
 			request.setPass(pass);
 			return this;
 		}
 
+
+
+		
 		public Builder withPass(passValues pass) {
 		    request.setPass(pass.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withMinPercentageScore(Float minPercentageScore) {
 			request.setMinPercentageScore(minPercentageScore);
 			return this;
 		}
-		
+
 		public Builder withMaxPercentageScore(Float maxPercentageScore) {
 			request.setMaxPercentageScore(maxPercentageScore);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortBy(sortByValues sortBy) {
 		    request.setSortBy(sortBy.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withUserId(List<String> userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
+
 		public Builder withTypes(List<String> types) {
 			request.setTypes(types);
 			return this;
 		}
+
+
 
 		public Builder withTypesEnumValues(List<typesValues> types) {
 		    List<String> stringList = new ArrayList<>();
@@ -633,11 +666,13 @@ public class GetLearningAssignmentsRequest {
 	      request.setTypes(stringList);
 		    return this;
 		}
-		
+
 		public Builder withStates(List<String> states) {
 			request.setStates(states);
 			return this;
 		}
+
+
 
 		public Builder withStatesEnumValues(List<statesValues> states) {
 		    List<String> stringList = new ArrayList<>();
@@ -647,11 +682,13 @@ public class GetLearningAssignmentsRequest {
 	      request.setStates(stringList);
 		    return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -661,9 +698,9 @@ public class GetLearningAssignmentsRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 
 		public GetLearningAssignmentsRequest build() {
             

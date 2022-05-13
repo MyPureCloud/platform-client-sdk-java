@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -156,7 +157,7 @@ public class ConversationChannel  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Message type for messaging conversations.
    **/
@@ -174,7 +175,7 @@ public class ConversationChannel  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    * The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).
    **/
@@ -192,7 +193,6 @@ public class ConversationChannel  implements Serializable {
     this.platform = platform;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -203,9 +203,10 @@ public class ConversationChannel  implements Serializable {
       return false;
     }
     ConversationChannel conversationChannel = (ConversationChannel) o;
+
     return Objects.equals(this.type, conversationChannel.type) &&
-        Objects.equals(this.messageType, conversationChannel.messageType) &&
-        Objects.equals(this.platform, conversationChannel.platform);
+            Objects.equals(this.messageType, conversationChannel.messageType) &&
+            Objects.equals(this.platform, conversationChannel.platform);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class CreateResponseAssetRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Division to associate to this asset. Can only be used with this division.
    **/
@@ -60,7 +61,7 @@ public class CreateResponseAssetRequest  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    * Content MD-5 of the file to upload
    **/
@@ -78,7 +79,6 @@ public class CreateResponseAssetRequest  implements Serializable {
     this.contentMd5 = contentMd5;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class CreateResponseAssetRequest  implements Serializable {
       return false;
     }
     CreateResponseAssetRequest createResponseAssetRequest = (CreateResponseAssetRequest) o;
+
     return Objects.equals(this.name, createResponseAssetRequest.name) &&
-        Objects.equals(this.divisionId, createResponseAssetRequest.divisionId) &&
-        Objects.equals(this.contentMd5, createResponseAssetRequest.contentMd5);
+            Objects.equals(this.divisionId, createResponseAssetRequest.divisionId) &&
+            Objects.equals(this.contentMd5, createResponseAssetRequest.contentMd5);
   }
 
   @Override

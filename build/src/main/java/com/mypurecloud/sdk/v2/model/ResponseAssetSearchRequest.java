@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class ResponseAssetSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -113,7 +114,7 @@ public class ResponseAssetSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * The sort order for results
    **/
@@ -131,7 +132,7 @@ public class ResponseAssetSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -149,7 +150,7 @@ public class ResponseAssetSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * Filter the query results.
    **/
@@ -167,7 +168,6 @@ public class ResponseAssetSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,11 +178,12 @@ public class ResponseAssetSearchRequest  implements Serializable {
       return false;
     }
     ResponseAssetSearchRequest responseAssetSearchRequest = (ResponseAssetSearchRequest) o;
+
     return Objects.equals(this.pageSize, responseAssetSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, responseAssetSearchRequest.pageNumber) &&
-        Objects.equals(this.sortOrder, responseAssetSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, responseAssetSearchRequest.sortBy) &&
-        Objects.equals(this.query, responseAssetSearchRequest.query);
+            Objects.equals(this.pageNumber, responseAssetSearchRequest.pageNumber) &&
+            Objects.equals(this.sortOrder, responseAssetSearchRequest.sortOrder) &&
+            Objects.equals(this.sortBy, responseAssetSearchRequest.sortBy) &&
+            Objects.equals(this.query, responseAssetSearchRequest.query);
   }
 
   @Override

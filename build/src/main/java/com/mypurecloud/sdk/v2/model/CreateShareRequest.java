@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class CreateShareRequest  implements Serializable {
     this.sharedEntityType = sharedEntityType;
   }
 
-  
+
   /**
    * The entity that will be shared
    **/
@@ -161,7 +162,7 @@ public class CreateShareRequest  implements Serializable {
     this.sharedEntity = sharedEntity;
   }
 
-  
+
   /**
    **/
   public CreateShareRequest memberType(MemberTypeEnum memberType) {
@@ -178,7 +179,7 @@ public class CreateShareRequest  implements Serializable {
     this.memberType = memberType;
   }
 
-  
+
   /**
    * The member that will have access to this share. Only required if a list of members is not provided.
    **/
@@ -196,7 +197,7 @@ public class CreateShareRequest  implements Serializable {
     this.member = member;
   }
 
-  
+
   /**
    **/
   public CreateShareRequest members(List<CreateShareRequestMember> members) {
@@ -213,7 +214,6 @@ public class CreateShareRequest  implements Serializable {
     this.members = members;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,11 +224,12 @@ public class CreateShareRequest  implements Serializable {
       return false;
     }
     CreateShareRequest createShareRequest = (CreateShareRequest) o;
+
     return Objects.equals(this.sharedEntityType, createShareRequest.sharedEntityType) &&
-        Objects.equals(this.sharedEntity, createShareRequest.sharedEntity) &&
-        Objects.equals(this.memberType, createShareRequest.memberType) &&
-        Objects.equals(this.member, createShareRequest.member) &&
-        Objects.equals(this.members, createShareRequest.members);
+            Objects.equals(this.sharedEntity, createShareRequest.sharedEntity) &&
+            Objects.equals(this.memberType, createShareRequest.memberType) &&
+            Objects.equals(this.member, createShareRequest.member) &&
+            Objects.equals(this.members, createShareRequest.members);
   }
 
   @Override

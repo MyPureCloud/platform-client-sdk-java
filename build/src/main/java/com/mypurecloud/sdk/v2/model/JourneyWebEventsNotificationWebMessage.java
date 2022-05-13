@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationBrowser;
@@ -64,7 +65,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.eventName = eventName;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage totalEventCount(Integer totalEventCount) {
@@ -81,7 +82,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.totalEventCount = totalEventCount;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage totalPageviewCount(Integer totalPageviewCount) {
@@ -98,7 +99,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.totalPageviewCount = totalPageviewCount;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage userAgentString(String userAgentString) {
@@ -115,7 +116,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.userAgentString = userAgentString;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage ipAddress(String ipAddress) {
@@ -132,7 +133,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage ipOrganization(String ipOrganization) {
@@ -149,7 +150,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.ipOrganization = ipOrganization;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage searchQuery(String searchQuery) {
@@ -166,7 +167,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.searchQuery = searchQuery;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage authenticated(Boolean authenticated) {
@@ -183,7 +184,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.authenticated = authenticated;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage browser(JourneyWebEventsNotificationBrowser browser) {
@@ -200,7 +201,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.browser = browser;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage device(JourneyWebEventsNotificationDevice device) {
@@ -217,7 +218,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.device = device;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage geolocation(JourneyWebEventsNotificationGeoLocation geolocation) {
@@ -234,7 +235,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.geolocation = geolocation;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage mktCampaign(JourneyWebEventsNotificationMktCampaign mktCampaign) {
@@ -251,7 +252,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.mktCampaign = mktCampaign;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage page(JourneyWebEventsNotificationPage page) {
@@ -268,7 +269,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.page = page;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage referrer(JourneyWebEventsNotificationReferrer referrer) {
@@ -285,7 +286,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.referrer = referrer;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage attributes(Map<String, JourneyWebEventsNotificationCustomEventAttribute> attributes) {
@@ -302,7 +303,7 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebMessage traits(Map<String, JourneyWebEventsNotificationCustomEventAttribute> traits) {
@@ -319,7 +320,6 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
     this.traits = traits;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -330,22 +330,23 @@ public class JourneyWebEventsNotificationWebMessage  implements Serializable {
       return false;
     }
     JourneyWebEventsNotificationWebMessage journeyWebEventsNotificationWebMessage = (JourneyWebEventsNotificationWebMessage) o;
+
     return Objects.equals(this.eventName, journeyWebEventsNotificationWebMessage.eventName) &&
-        Objects.equals(this.totalEventCount, journeyWebEventsNotificationWebMessage.totalEventCount) &&
-        Objects.equals(this.totalPageviewCount, journeyWebEventsNotificationWebMessage.totalPageviewCount) &&
-        Objects.equals(this.userAgentString, journeyWebEventsNotificationWebMessage.userAgentString) &&
-        Objects.equals(this.ipAddress, journeyWebEventsNotificationWebMessage.ipAddress) &&
-        Objects.equals(this.ipOrganization, journeyWebEventsNotificationWebMessage.ipOrganization) &&
-        Objects.equals(this.searchQuery, journeyWebEventsNotificationWebMessage.searchQuery) &&
-        Objects.equals(this.authenticated, journeyWebEventsNotificationWebMessage.authenticated) &&
-        Objects.equals(this.browser, journeyWebEventsNotificationWebMessage.browser) &&
-        Objects.equals(this.device, journeyWebEventsNotificationWebMessage.device) &&
-        Objects.equals(this.geolocation, journeyWebEventsNotificationWebMessage.geolocation) &&
-        Objects.equals(this.mktCampaign, journeyWebEventsNotificationWebMessage.mktCampaign) &&
-        Objects.equals(this.page, journeyWebEventsNotificationWebMessage.page) &&
-        Objects.equals(this.referrer, journeyWebEventsNotificationWebMessage.referrer) &&
-        Objects.equals(this.attributes, journeyWebEventsNotificationWebMessage.attributes) &&
-        Objects.equals(this.traits, journeyWebEventsNotificationWebMessage.traits);
+            Objects.equals(this.totalEventCount, journeyWebEventsNotificationWebMessage.totalEventCount) &&
+            Objects.equals(this.totalPageviewCount, journeyWebEventsNotificationWebMessage.totalPageviewCount) &&
+            Objects.equals(this.userAgentString, journeyWebEventsNotificationWebMessage.userAgentString) &&
+            Objects.equals(this.ipAddress, journeyWebEventsNotificationWebMessage.ipAddress) &&
+            Objects.equals(this.ipOrganization, journeyWebEventsNotificationWebMessage.ipOrganization) &&
+            Objects.equals(this.searchQuery, journeyWebEventsNotificationWebMessage.searchQuery) &&
+            Objects.equals(this.authenticated, journeyWebEventsNotificationWebMessage.authenticated) &&
+            Objects.equals(this.browser, journeyWebEventsNotificationWebMessage.browser) &&
+            Objects.equals(this.device, journeyWebEventsNotificationWebMessage.device) &&
+            Objects.equals(this.geolocation, journeyWebEventsNotificationWebMessage.geolocation) &&
+            Objects.equals(this.mktCampaign, journeyWebEventsNotificationWebMessage.mktCampaign) &&
+            Objects.equals(this.page, journeyWebEventsNotificationWebMessage.page) &&
+            Objects.equals(this.referrer, journeyWebEventsNotificationWebMessage.referrer) &&
+            Objects.equals(this.attributes, journeyWebEventsNotificationWebMessage.attributes) &&
+            Objects.equals(this.traits, journeyWebEventsNotificationWebMessage.traits);
   }
 
   @Override

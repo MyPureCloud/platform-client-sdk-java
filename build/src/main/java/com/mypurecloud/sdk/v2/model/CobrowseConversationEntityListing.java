@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CobrowseConversationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
       return false;
     }
     CobrowseConversationEntityListing cobrowseConversationEntityListing = (CobrowseConversationEntityListing) o;
+
     return Objects.equals(this.entities, cobrowseConversationEntityListing.entities) &&
-        Objects.equals(this.pageSize, cobrowseConversationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, cobrowseConversationEntityListing.pageNumber) &&
-        Objects.equals(this.total, cobrowseConversationEntityListing.total) &&
-        Objects.equals(this.lastUri, cobrowseConversationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, cobrowseConversationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, cobrowseConversationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, cobrowseConversationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, cobrowseConversationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, cobrowseConversationEntityListing.pageCount);
+            Objects.equals(this.pageSize, cobrowseConversationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, cobrowseConversationEntityListing.pageNumber) &&
+            Objects.equals(this.total, cobrowseConversationEntityListing.total) &&
+            Objects.equals(this.lastUri, cobrowseConversationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, cobrowseConversationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, cobrowseConversationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, cobrowseConversationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, cobrowseConversationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, cobrowseConversationEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
     this.items = items;
   }
 
-  
+
   /**
    * Whether the named entity type is restricted to the items provided. Default: false
    **/
@@ -113,7 +114,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
     this.restricted = restricted;
   }
 
-  
+
   /**
    * The type of the mechanism.
    **/
@@ -131,7 +132,6 @@ public class NamedEntityTypeMechanism  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,9 +142,10 @@ public class NamedEntityTypeMechanism  implements Serializable {
       return false;
     }
     NamedEntityTypeMechanism namedEntityTypeMechanism = (NamedEntityTypeMechanism) o;
+
     return Objects.equals(this.items, namedEntityTypeMechanism.items) &&
-        Objects.equals(this.restricted, namedEntityTypeMechanism.restricted) &&
-        Objects.equals(this.type, namedEntityTypeMechanism.type);
+            Objects.equals(this.restricted, namedEntityTypeMechanism.restricted) &&
+            Objects.equals(this.type, namedEntityTypeMechanism.type);
   }
 
   @Override

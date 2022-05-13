@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ConversationSocialExpressionEventTopicJourneyCustomer  implements S
     this.id = id;
   }
 
-  
+
   /**
    * The type of the customerId within the Journey System (e.g. cookie).
    **/
@@ -60,7 +61,6 @@ public class ConversationSocialExpressionEventTopicJourneyCustomer  implements S
     this.idType = idType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ConversationSocialExpressionEventTopicJourneyCustomer  implements S
       return false;
     }
     ConversationSocialExpressionEventTopicJourneyCustomer conversationSocialExpressionEventTopicJourneyCustomer = (ConversationSocialExpressionEventTopicJourneyCustomer) o;
+
     return Objects.equals(this.id, conversationSocialExpressionEventTopicJourneyCustomer.id) &&
-        Objects.equals(this.idType, conversationSocialExpressionEventTopicJourneyCustomer.idType);
+            Objects.equals(this.idType, conversationSocialExpressionEventTopicJourneyCustomer.idType);
   }
 
   @Override

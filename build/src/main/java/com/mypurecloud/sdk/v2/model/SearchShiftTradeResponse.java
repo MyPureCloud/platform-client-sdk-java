@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradePreviewResponse;
@@ -46,7 +47,7 @@ public class SearchShiftTradeResponse  implements Serializable {
     this.trade = trade;
   }
 
-  
+
   /**
    * IDs of shifts which match the search criteria
    **/
@@ -64,7 +65,7 @@ public class SearchShiftTradeResponse  implements Serializable {
     this.matchingReceivingShiftIds = matchingReceivingShiftIds;
   }
 
-  
+
   /**
    * A preview of what the shift trade would look like if matched
    **/
@@ -82,7 +83,6 @@ public class SearchShiftTradeResponse  implements Serializable {
     this.preview = preview;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class SearchShiftTradeResponse  implements Serializable {
       return false;
     }
     SearchShiftTradeResponse searchShiftTradeResponse = (SearchShiftTradeResponse) o;
+
     return Objects.equals(this.trade, searchShiftTradeResponse.trade) &&
-        Objects.equals(this.matchingReceivingShiftIds, searchShiftTradeResponse.matchingReceivingShiftIds) &&
-        Objects.equals(this.preview, searchShiftTradeResponse.preview);
+            Objects.equals(this.matchingReceivingShiftIds, searchShiftTradeResponse.matchingReceivingShiftIds) &&
+            Objects.equals(this.preview, searchShiftTradeResponse.preview);
   }
 
   @Override

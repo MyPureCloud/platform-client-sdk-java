@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class UCIntegration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UCIntegration name(String name) {
@@ -108,49 +109,48 @@ public class UCIntegration  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "ucIntegrationKey")
   @JsonProperty("ucIntegrationKey")
   public String getUcIntegrationKey() {
     return ucIntegrationKey;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "integrationPresenceType")
   @JsonProperty("integrationPresenceSource")
   public IntegrationPresenceSourceEnum getIntegrationPresenceSource() {
     return integrationPresenceSource;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "pbxPermission")
   @JsonProperty("pbxPermission")
   public String getPbxPermission() {
     return pbxPermission;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "icon")
   @JsonProperty("icon")
   public UCIcon getIcon() {
     return icon;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "i10n")
   @JsonProperty("i10n")
   public Map<String, UCI10n> getI10n() {
     return i10n;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,14 +161,15 @@ public class UCIntegration  implements Serializable {
       return false;
     }
     UCIntegration uCIntegration = (UCIntegration) o;
+
     return Objects.equals(this.id, uCIntegration.id) &&
-        Objects.equals(this.name, uCIntegration.name) &&
-        Objects.equals(this.ucIntegrationKey, uCIntegration.ucIntegrationKey) &&
-        Objects.equals(this.integrationPresenceSource, uCIntegration.integrationPresenceSource) &&
-        Objects.equals(this.pbxPermission, uCIntegration.pbxPermission) &&
-        Objects.equals(this.icon, uCIntegration.icon) &&
-        Objects.equals(this.i10n, uCIntegration.i10n) &&
-        Objects.equals(this.selfUri, uCIntegration.selfUri);
+            Objects.equals(this.name, uCIntegration.name) &&
+            Objects.equals(this.ucIntegrationKey, uCIntegration.ucIntegrationKey) &&
+            Objects.equals(this.integrationPresenceSource, uCIntegration.integrationPresenceSource) &&
+            Objects.equals(this.pbxPermission, uCIntegration.pbxPermission) &&
+            Objects.equals(this.icon, uCIntegration.icon) &&
+            Objects.equals(this.i10n, uCIntegration.i10n) &&
+            Objects.equals(this.selfUri, uCIntegration.selfUri);
   }
 
   @Override

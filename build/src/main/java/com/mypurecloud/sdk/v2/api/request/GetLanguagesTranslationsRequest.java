@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesTranslationsRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -50,7 +50,7 @@ public class GetLanguagesTranslationsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/languages/translations")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -61,7 +61,7 @@ public class GetLanguagesTranslationsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLanguagesTranslationsRequest request;
@@ -70,9 +70,9 @@ public class GetLanguagesTranslationsRequest {
 			request = new GetLanguagesTranslationsRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetLanguagesTranslationsRequest build() {
             

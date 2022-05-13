@@ -10,25 +10,25 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningAssignmentRequest;
@@ -58,7 +58,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class LearningApi {
   private final ApiClient pcapiClient;
 
@@ -70,7 +69,6 @@ public class LearningApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a learning assignment
    * 
@@ -95,7 +93,7 @@ public class LearningApi {
   private DeleteLearningAssignmentRequest createDeleteLearningAssignmentRequest(String assignmentId) {
     return DeleteLearningAssignmentRequest.builder()
             .withAssignmentId(assignmentId)
-    
+
             .build();
   }
 
@@ -146,7 +144,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Delete a learning module
    * This will delete a learning module if it is unpublished or it will delete a published and archived learning module
@@ -171,7 +168,7 @@ public class LearningApi {
   private DeleteLearningModuleRequest createDeleteLearningModuleRequest(String moduleId) {
     return DeleteLearningModuleRequest.builder()
             .withModuleId(moduleId)
-    
+
             .build();
   }
 
@@ -222,7 +219,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Get Learning Assignment
    * Permission not required if you are the assigned user of the learning assignment
@@ -251,9 +247,9 @@ public class LearningApi {
   private GetLearningAssignmentRequest createGetLearningAssignmentRequest(String assignmentId, List<String> expand) {
     return GetLearningAssignmentRequest.builder()
             .withAssignmentId(assignmentId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -305,17 +301,16 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * List of Learning module Assignments
    * Either moduleId or user value is required
    * @param moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
    * @param interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-   * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param overdue Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -338,10 +333,10 @@ public class LearningApi {
    * @param moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
    * @param interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-   * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param overdue Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -360,35 +355,35 @@ public class LearningApi {
   private GetLearningAssignmentsRequest createGetLearningAssignmentsRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) {
     return GetLearningAssignmentsRequest.builder()
             .withModuleId(moduleId)
-    
+
             .withInterval(interval)
-    
+
             .withCompletionInterval(completionInterval)
-    
+
             .withOverdue(overdue)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPass(pass)
-    
+
             .withMinPercentageScore(minPercentageScore)
-    
+
             .withMaxPercentageScore(maxPercentageScore)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSortBy(sortBy)
-    
+
             .withUserId(userId)
-    
+
             .withTypes(types)
-    
+
             .withStates(states)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -440,17 +435,16 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * List of Learning Assignments assigned to current user
    * 
    * @param moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
    * @param interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-   * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param overdue Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -472,10 +466,10 @@ public class LearningApi {
    * @param moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
    * @param interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
-   * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param overdue Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param pass Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
@@ -493,33 +487,33 @@ public class LearningApi {
   private GetLearningAssignmentsMeRequest createGetLearningAssignmentsMeRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) {
     return GetLearningAssignmentsMeRequest.builder()
             .withModuleId(moduleId)
-    
+
             .withInterval(interval)
-    
+
             .withCompletionInterval(completionInterval)
-    
+
             .withOverdue(overdue)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPass(pass)
-    
+
             .withMinPercentageScore(minPercentageScore)
-    
+
             .withMaxPercentageScore(maxPercentageScore)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSortBy(sortBy)
-    
+
             .withTypes(types)
-    
+
             .withStates(states)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -571,7 +565,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Get a learning module
    * 
@@ -600,9 +593,9 @@ public class LearningApi {
   private GetLearningModuleRequest createGetLearningModuleRequest(String moduleId, List<String> expand) {
     return GetLearningModuleRequest.builder()
             .withModuleId(moduleId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -654,7 +647,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Get a learning module rule
    * 
@@ -681,7 +673,7 @@ public class LearningApi {
   private GetLearningModuleRuleRequest createGetLearningModuleRuleRequest(String moduleId) {
     return GetLearningModuleRuleRequest.builder()
             .withModuleId(moduleId)
-    
+
             .build();
   }
 
@@ -733,7 +725,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Get specific version of a published module
    * 
@@ -764,11 +755,11 @@ public class LearningApi {
   private GetLearningModuleVersionRequest createGetLearningModuleVersionRequest(String moduleId, String versionId, List<String> expand) {
     return GetLearningModuleVersionRequest.builder()
             .withModuleId(moduleId)
-    
+
             .withVersionId(versionId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -820,7 +811,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Get all learning modules of an organization
    * 
@@ -832,7 +822,7 @@ public class LearningApi {
    * @param sortBy Sort by (optional, default to name)
    * @param searchTerm Search Term (searchable by name) (optional)
    * @param expand Fields to expand in response(case insensitive) (optional)
-   * @param isPublished Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)
+   * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
    * @return LearningModulesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -852,7 +842,7 @@ public class LearningApi {
    * @param sortBy Sort by (optional, default to name)
    * @param searchTerm Search Term (searchable by name) (optional)
    * @param expand Fields to expand in response(case insensitive) (optional)
-   * @param isPublished Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)
+   * @param isPublished Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional, default to Any)
    * @return LearningModulesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -863,23 +853,23 @@ public class LearningApi {
   private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) {
     return GetLearningModulesRequest.builder()
             .withIsArchived(isArchived)
-    
+
             .withTypes(types)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSearchTerm(searchTerm)
-    
+
             .withExpand(expand)
-    
+
             .withIsPublished(isPublished)
-    
+
             .build();
   }
 
@@ -931,7 +921,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Update Learning Assignment
    * 
@@ -960,9 +949,9 @@ public class LearningApi {
   private PatchLearningAssignmentRequest createPatchLearningAssignmentRequest(String assignmentId, LearningAssignmentUpdate body) {
     return PatchLearningAssignmentRequest.builder()
             .withAssignmentId(assignmentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1014,7 +1003,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Score learning assessment for preview
    * 
@@ -1041,7 +1029,7 @@ public class LearningApi {
   private PostLearningAssessmentsScoringRequest createPostLearningAssessmentsScoringRequest(LearningAssessmentScoringRequest body) {
     return PostLearningAssessmentsScoringRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1093,7 +1081,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Create Learning Assignment
    * 
@@ -1120,7 +1107,7 @@ public class LearningApi {
   private PostLearningAssignmentsRequest createPostLearningAssignmentsRequest(LearningAssignmentCreate body) {
     return PostLearningAssignmentsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1172,7 +1159,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Retrieve aggregated assignment data
    * 
@@ -1199,7 +1185,7 @@ public class LearningApi {
   private PostLearningAssignmentsAggregatesQueryRequest createPostLearningAssignmentsAggregatesQueryRequest(LearningAssignmentAggregateParam body) {
     return PostLearningAssignmentsAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1251,7 +1237,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Add multiple learning assignments
    * 
@@ -1278,7 +1263,7 @@ public class LearningApi {
   private PostLearningAssignmentsBulkaddRequest createPostLearningAssignmentsBulkaddRequest(List<LearningAssignmentItem> body) {
     return PostLearningAssignmentsBulkaddRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1330,7 +1315,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Remove multiple Learning Assignments
    * 
@@ -1357,7 +1341,7 @@ public class LearningApi {
   private PostLearningAssignmentsBulkremoveRequest createPostLearningAssignmentsBulkremoveRequest(List<String> body) {
     return PostLearningAssignmentsBulkremoveRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1409,7 +1393,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Publish a Learning module
    * 
@@ -1436,7 +1419,7 @@ public class LearningApi {
   private PostLearningModulePublishRequest createPostLearningModulePublishRequest(String moduleId) {
     return PostLearningModulePublishRequest.builder()
             .withModuleId(moduleId)
-    
+
             .build();
   }
 
@@ -1488,7 +1471,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Create a new learning module
    * This will create a new unpublished learning module with the specified fields.
@@ -1515,7 +1497,7 @@ public class LearningApi {
   private PostLearningModulesRequest createPostLearningModulesRequest(LearningModuleRequest body) {
     return PostLearningModulesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1567,7 +1549,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Get users for learning module rule
    * This will get the users who matches the given rule.
@@ -1598,11 +1579,11 @@ public class LearningApi {
   private PostLearningRulesQueryRequest createPostLearningRulesQueryRequest(Integer pageSize, Integer pageNumber, LearningAssignmentUserQuery body) {
     return PostLearningRulesQueryRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1654,7 +1635,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Update a learning module
    * This will update the name, description, completion time in days and inform steps for a learning module
@@ -1683,9 +1663,9 @@ public class LearningApi {
   private PutLearningModuleRequest createPutLearningModuleRequest(String moduleId, LearningModuleRequest body) {
     return PutLearningModuleRequest.builder()
             .withModuleId(moduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1737,7 +1717,6 @@ public class LearningApi {
     }
   }
 
-  
   /**
    * Update a learning module rule
    * This will update a learning module rule with the specified fields.
@@ -1766,9 +1745,9 @@ public class LearningApi {
   private PutLearningModuleRuleRequest createPutLearningModuleRuleRequest(String moduleId, LearningModuleRule body) {
     return PutLearningModuleRuleRequest.builder()
             .withModuleId(moduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1820,5 +1799,4 @@ public class LearningApi {
     }
   }
 
-  
 }

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorDetail;
@@ -48,7 +49,7 @@ public class BulkErrorNote  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public BulkErrorNote message(String message) {
@@ -65,7 +66,7 @@ public class BulkErrorNote  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public BulkErrorNote status(Integer status) {
@@ -82,7 +83,7 @@ public class BulkErrorNote  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public BulkErrorNote retryable(Boolean retryable) {
@@ -99,7 +100,7 @@ public class BulkErrorNote  implements Serializable {
     this.retryable = retryable;
   }
 
-  
+
   /**
    **/
   public BulkErrorNote entity(Note entity) {
@@ -116,7 +117,7 @@ public class BulkErrorNote  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkErrorNote details(List<BulkErrorDetail> details) {
@@ -133,7 +134,6 @@ public class BulkErrorNote  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class BulkErrorNote  implements Serializable {
       return false;
     }
     BulkErrorNote bulkErrorNote = (BulkErrorNote) o;
+
     return Objects.equals(this.code, bulkErrorNote.code) &&
-        Objects.equals(this.message, bulkErrorNote.message) &&
-        Objects.equals(this.status, bulkErrorNote.status) &&
-        Objects.equals(this.retryable, bulkErrorNote.retryable) &&
-        Objects.equals(this.entity, bulkErrorNote.entity) &&
-        Objects.equals(this.details, bulkErrorNote.details);
+            Objects.equals(this.message, bulkErrorNote.message) &&
+            Objects.equals(this.status, bulkErrorNote.status) &&
+            Objects.equals(this.retryable, bulkErrorNote.retryable) &&
+            Objects.equals(this.entity, bulkErrorNote.entity) &&
+            Objects.equals(this.details, bulkErrorNote.details);
   }
 
   @Override

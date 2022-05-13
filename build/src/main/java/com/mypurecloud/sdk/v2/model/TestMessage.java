@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
@@ -39,7 +40,7 @@ public class TestMessage  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The recipients of the email message.
    **/
@@ -57,7 +58,7 @@ public class TestMessage  implements Serializable {
     this.to = to;
   }
 
-  
+
   /**
    * The sender of the email message.
    **/
@@ -75,7 +76,7 @@ public class TestMessage  implements Serializable {
     this.from = from;
   }
 
-  
+
   /**
    * The subject of the email message.
    **/
@@ -93,7 +94,7 @@ public class TestMessage  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    * The text body of the email message.
    **/
@@ -111,7 +112,7 @@ public class TestMessage  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The html body of the email message
    **/
@@ -129,7 +130,7 @@ public class TestMessage  implements Serializable {
     this.htmlBody = htmlBody;
   }
 
-  
+
   /**
    * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -147,7 +148,6 @@ public class TestMessage  implements Serializable {
     this.time = time;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,13 +158,14 @@ public class TestMessage  implements Serializable {
       return false;
     }
     TestMessage testMessage = (TestMessage) o;
+
     return Objects.equals(this.id, testMessage.id) &&
-        Objects.equals(this.to, testMessage.to) &&
-        Objects.equals(this.from, testMessage.from) &&
-        Objects.equals(this.subject, testMessage.subject) &&
-        Objects.equals(this.textBody, testMessage.textBody) &&
-        Objects.equals(this.htmlBody, testMessage.htmlBody) &&
-        Objects.equals(this.time, testMessage.time);
+            Objects.equals(this.to, testMessage.to) &&
+            Objects.equals(this.from, testMessage.from) &&
+            Objects.equals(this.subject, testMessage.subject) &&
+            Objects.equals(this.textBody, testMessage.textBody) &&
+            Objects.equals(this.htmlBody, testMessage.htmlBody) &&
+            Objects.equals(this.time, testMessage.time);
   }
 
   @Override

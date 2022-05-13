@@ -10,9 +10,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class FaxApi {
   private final ApiClient pcapiClient;
 
@@ -42,7 +41,6 @@ public class FaxApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a fax document.
    * 
@@ -67,7 +65,7 @@ public class FaxApi {
   private DeleteFaxDocumentRequest createDeleteFaxDocumentRequest(String documentId) {
     return DeleteFaxDocumentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .build();
   }
 
@@ -118,7 +116,6 @@ public class FaxApi {
     }
   }
 
-  
   /**
    * Get a document.
    * 
@@ -145,7 +142,7 @@ public class FaxApi {
   private GetFaxDocumentRequest createGetFaxDocumentRequest(String documentId) {
     return GetFaxDocumentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .build();
   }
 
@@ -197,7 +194,6 @@ public class FaxApi {
     }
   }
 
-  
   /**
    * Download a fax document.
    * 
@@ -224,7 +220,7 @@ public class FaxApi {
   private GetFaxDocumentContentRequest createGetFaxDocumentContentRequest(String documentId) {
     return GetFaxDocumentContentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .build();
   }
 
@@ -276,7 +272,6 @@ public class FaxApi {
     }
   }
 
-  
   /**
    * Get a list of fax documents.
    * 
@@ -305,9 +300,9 @@ public class FaxApi {
   private GetFaxDocumentsRequest createGetFaxDocumentsRequest(Integer pageSize, Integer pageNumber) {
     return GetFaxDocumentsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -359,7 +354,6 @@ public class FaxApi {
     }
   }
 
-  
   /**
    * Get fax summary
    * 
@@ -434,7 +428,6 @@ public class FaxApi {
     }
   }
 
-  
   /**
    * Update a fax document.
    * 
@@ -463,9 +456,9 @@ public class FaxApi {
   private PutFaxDocumentRequest createPutFaxDocumentRequest(String documentId, FaxDocument body) {
     return PutFaxDocumentRequest.builder()
             .withDocumentId(documentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -517,5 +510,4 @@ public class FaxApi {
     }
   }
 
-  
 }

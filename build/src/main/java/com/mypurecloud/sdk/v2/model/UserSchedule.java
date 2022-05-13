@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleFullDayTimeOffMarker;
@@ -50,7 +51,7 @@ public class UserSchedule  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * Markers to indicate a full day time off request, relative to the management unit time zone
    **/
@@ -68,7 +69,7 @@ public class UserSchedule  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
+
   /**
    * If marked true for updating an existing user schedule, it will be deleted
    **/
@@ -86,7 +87,7 @@ public class UserSchedule  implements Serializable {
     this.delete = delete;
   }
 
-  
+
   /**
    * Version metadata for this schedule
    **/
@@ -104,14 +105,13 @@ public class UserSchedule  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "ID of the work plan associated with the user during schedule creation")
   @JsonProperty("workPlanId")
   public String getWorkPlanId() {
     return workPlanId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,11 +122,12 @@ public class UserSchedule  implements Serializable {
       return false;
     }
     UserSchedule userSchedule = (UserSchedule) o;
+
     return Objects.equals(this.shifts, userSchedule.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, userSchedule.fullDayTimeOffMarkers) &&
-        Objects.equals(this.delete, userSchedule.delete) &&
-        Objects.equals(this.metadata, userSchedule.metadata) &&
-        Objects.equals(this.workPlanId, userSchedule.workPlanId);
+            Objects.equals(this.fullDayTimeOffMarkers, userSchedule.fullDayTimeOffMarkers) &&
+            Objects.equals(this.delete, userSchedule.delete) &&
+            Objects.equals(this.metadata, userSchedule.metadata) &&
+            Objects.equals(this.workPlanId, userSchedule.workPlanId);
   }
 
   @Override

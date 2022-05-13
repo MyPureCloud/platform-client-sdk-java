@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -192,7 +193,7 @@ public class Group  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The group name.
    **/
@@ -210,7 +211,7 @@ public class Group  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Group description(String description) {
@@ -227,35 +228,35 @@ public class Group  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of members.")
   @JsonProperty("memberCount")
   public Long getMemberCount() {
     return memberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active, inactive, or deleted state.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current version for this resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   /**
    * Type of group.
    **/
@@ -273,7 +274,7 @@ public class Group  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public Group images(List<UserImage> images) {
@@ -290,7 +291,7 @@ public class Group  implements Serializable {
     this.images = images;
   }
 
-  
+
   /**
    **/
   public Group addresses(List<GroupContact> addresses) {
@@ -307,7 +308,7 @@ public class Group  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    * Are membership rules visible to the person requesting to view the group
    **/
@@ -325,7 +326,7 @@ public class Group  implements Serializable {
     this.rulesVisible = rulesVisible;
   }
 
-  
+
   /**
    * Who can view this group
    **/
@@ -343,7 +344,7 @@ public class Group  implements Serializable {
     this.visibility = visibility;
   }
 
-  
+
   /**
    * Owners of the group
    **/
@@ -361,14 +362,13 @@ public class Group  implements Serializable {
     this.owners = owners;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -379,20 +379,21 @@ public class Group  implements Serializable {
       return false;
     }
     Group group = (Group) o;
+
     return Objects.equals(this.id, group.id) &&
-        Objects.equals(this.name, group.name) &&
-        Objects.equals(this.description, group.description) &&
-        Objects.equals(this.dateModified, group.dateModified) &&
-        Objects.equals(this.memberCount, group.memberCount) &&
-        Objects.equals(this.state, group.state) &&
-        Objects.equals(this.version, group.version) &&
-        Objects.equals(this.type, group.type) &&
-        Objects.equals(this.images, group.images) &&
-        Objects.equals(this.addresses, group.addresses) &&
-        Objects.equals(this.rulesVisible, group.rulesVisible) &&
-        Objects.equals(this.visibility, group.visibility) &&
-        Objects.equals(this.owners, group.owners) &&
-        Objects.equals(this.selfUri, group.selfUri);
+            Objects.equals(this.name, group.name) &&
+            Objects.equals(this.description, group.description) &&
+            Objects.equals(this.dateModified, group.dateModified) &&
+            Objects.equals(this.memberCount, group.memberCount) &&
+            Objects.equals(this.state, group.state) &&
+            Objects.equals(this.version, group.version) &&
+            Objects.equals(this.type, group.type) &&
+            Objects.equals(this.images, group.images) &&
+            Objects.equals(this.addresses, group.addresses) &&
+            Objects.equals(this.rulesVisible, group.rulesVisible) &&
+            Objects.equals(this.visibility, group.visibility) &&
+            Objects.equals(this.owners, group.owners) &&
+            Objects.equals(this.selfUri, group.selfUri);
   }
 
   @Override

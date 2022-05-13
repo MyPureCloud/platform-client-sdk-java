@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
@@ -41,7 +42,7 @@ public class ConversationBasic  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ConversationBasic name(String name) {
@@ -58,7 +59,7 @@ public class ConversationBasic  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The external tag associated with the conversation.
    **/
@@ -76,7 +77,7 @@ public class ConversationBasic  implements Serializable {
     this.externalTag = externalTag;
   }
 
-  
+
   /**
    * The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -94,7 +95,7 @@ public class ConversationBasic  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -112,7 +113,7 @@ public class ConversationBasic  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * Identifiers of divisions associated with this conversation
    **/
@@ -130,21 +131,20 @@ public class ConversationBasic  implements Serializable {
     this.divisions = divisions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("participants")
   public List<ParticipantBasic> getParticipants() {
     return participants;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,14 +155,15 @@ public class ConversationBasic  implements Serializable {
       return false;
     }
     ConversationBasic conversationBasic = (ConversationBasic) o;
+
     return Objects.equals(this.id, conversationBasic.id) &&
-        Objects.equals(this.name, conversationBasic.name) &&
-        Objects.equals(this.externalTag, conversationBasic.externalTag) &&
-        Objects.equals(this.startTime, conversationBasic.startTime) &&
-        Objects.equals(this.endTime, conversationBasic.endTime) &&
-        Objects.equals(this.divisions, conversationBasic.divisions) &&
-        Objects.equals(this.selfUri, conversationBasic.selfUri) &&
-        Objects.equals(this.participants, conversationBasic.participants);
+            Objects.equals(this.name, conversationBasic.name) &&
+            Objects.equals(this.externalTag, conversationBasic.externalTag) &&
+            Objects.equals(this.startTime, conversationBasic.startTime) &&
+            Objects.equals(this.endTime, conversationBasic.endTime) &&
+            Objects.equals(this.divisions, conversationBasic.divisions) &&
+            Objects.equals(this.selfUri, conversationBasic.selfUri) &&
+            Objects.equals(this.participants, conversationBasic.participants);
   }
 
   @Override

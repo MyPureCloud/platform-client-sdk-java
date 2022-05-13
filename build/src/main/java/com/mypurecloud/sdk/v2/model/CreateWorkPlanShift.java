@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanActivity;
@@ -64,7 +65,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Days of the week applicable for this shift
    **/
@@ -82,7 +83,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.days = days;
   }
 
-  
+
   /**
    * Whether the start time of the shift is flexible
    **/
@@ -100,7 +101,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.flexibleStartTime = flexibleStartTime;
   }
 
-  
+
   /**
    * Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == false
    **/
@@ -118,7 +119,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.exactStartTimeMinutesFromMidnight = exactStartTimeMinutesFromMidnight;
   }
 
-  
+
   /**
    * Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == true
    **/
@@ -136,7 +137,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.earliestStartTimeMinutesFromMidnight = earliestStartTimeMinutesFromMidnight;
   }
 
-  
+
   /**
    * Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == true
    **/
@@ -154,7 +155,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.latestStartTimeMinutesFromMidnight = latestStartTimeMinutesFromMidnight;
   }
 
-  
+
   /**
    * Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead
    **/
@@ -172,7 +173,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.constrainStopTime = constrainStopTime;
   }
 
-  
+
   /**
    * Whether the latest stop time constraint for the shift is enabled
    **/
@@ -190,7 +191,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.constrainLatestStopTime = constrainLatestStopTime;
   }
 
-  
+
   /**
    * Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime == true
    **/
@@ -208,7 +209,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.latestStopTimeMinutesFromMidnight = latestStopTimeMinutesFromMidnight;
   }
 
-  
+
   /**
    * Whether the earliest stop time constraint for the shift is enabled
    **/
@@ -226,7 +227,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.constrainEarliestStopTime = constrainEarliestStopTime;
   }
 
-  
+
   /**
    * This is the earliest time a shift can end
    **/
@@ -244,7 +245,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.earliestStopTimeMinutesFromMidnight = earliestStopTimeMinutesFromMidnight;
   }
 
-  
+
   /**
    * Increment in offset minutes that would contribute to different possible start times for the shift. Used if flexibleStartTime == true
    **/
@@ -262,7 +263,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.startIncrementMinutes = startIncrementMinutes;
   }
 
-  
+
   /**
    * Whether the paid time setting for the shift is flexible
    **/
@@ -280,7 +281,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.flexiblePaidTime = flexiblePaidTime;
   }
 
-  
+
   /**
    * Exact paid time in minutes configured for the shift. Used if flexiblePaidTime == false
    **/
@@ -298,7 +299,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.exactPaidTimeMinutes = exactPaidTimeMinutes;
   }
 
-  
+
   /**
    * Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime == true
    **/
@@ -316,7 +317,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.minimumPaidTimeMinutes = minimumPaidTimeMinutes;
   }
 
-  
+
   /**
    * Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime == true
    **/
@@ -334,7 +335,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.maximumPaidTimeMinutes = maximumPaidTimeMinutes;
   }
 
-  
+
   /**
    * Whether the contiguous time constraint for the shift is enabled
    **/
@@ -352,7 +353,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.constrainContiguousWorkTime = constrainContiguousWorkTime;
   }
 
-  
+
   /**
    * Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true
    **/
@@ -370,7 +371,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.minimumContiguousWorkTimeMinutes = minimumContiguousWorkTimeMinutes;
   }
 
-  
+
   /**
    * Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true
    **/
@@ -388,7 +389,7 @@ public class CreateWorkPlanShift  implements Serializable {
     this.maximumContiguousWorkTimeMinutes = maximumContiguousWorkTimeMinutes;
   }
 
-  
+
   /**
    * Activities configured for this shift
    **/
@@ -406,7 +407,6 @@ public class CreateWorkPlanShift  implements Serializable {
     this.activities = activities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -417,26 +417,27 @@ public class CreateWorkPlanShift  implements Serializable {
       return false;
     }
     CreateWorkPlanShift createWorkPlanShift = (CreateWorkPlanShift) o;
+
     return Objects.equals(this.name, createWorkPlanShift.name) &&
-        Objects.equals(this.days, createWorkPlanShift.days) &&
-        Objects.equals(this.flexibleStartTime, createWorkPlanShift.flexibleStartTime) &&
-        Objects.equals(this.exactStartTimeMinutesFromMidnight, createWorkPlanShift.exactStartTimeMinutesFromMidnight) &&
-        Objects.equals(this.earliestStartTimeMinutesFromMidnight, createWorkPlanShift.earliestStartTimeMinutesFromMidnight) &&
-        Objects.equals(this.latestStartTimeMinutesFromMidnight, createWorkPlanShift.latestStartTimeMinutesFromMidnight) &&
-        Objects.equals(this.constrainStopTime, createWorkPlanShift.constrainStopTime) &&
-        Objects.equals(this.constrainLatestStopTime, createWorkPlanShift.constrainLatestStopTime) &&
-        Objects.equals(this.latestStopTimeMinutesFromMidnight, createWorkPlanShift.latestStopTimeMinutesFromMidnight) &&
-        Objects.equals(this.constrainEarliestStopTime, createWorkPlanShift.constrainEarliestStopTime) &&
-        Objects.equals(this.earliestStopTimeMinutesFromMidnight, createWorkPlanShift.earliestStopTimeMinutesFromMidnight) &&
-        Objects.equals(this.startIncrementMinutes, createWorkPlanShift.startIncrementMinutes) &&
-        Objects.equals(this.flexiblePaidTime, createWorkPlanShift.flexiblePaidTime) &&
-        Objects.equals(this.exactPaidTimeMinutes, createWorkPlanShift.exactPaidTimeMinutes) &&
-        Objects.equals(this.minimumPaidTimeMinutes, createWorkPlanShift.minimumPaidTimeMinutes) &&
-        Objects.equals(this.maximumPaidTimeMinutes, createWorkPlanShift.maximumPaidTimeMinutes) &&
-        Objects.equals(this.constrainContiguousWorkTime, createWorkPlanShift.constrainContiguousWorkTime) &&
-        Objects.equals(this.minimumContiguousWorkTimeMinutes, createWorkPlanShift.minimumContiguousWorkTimeMinutes) &&
-        Objects.equals(this.maximumContiguousWorkTimeMinutes, createWorkPlanShift.maximumContiguousWorkTimeMinutes) &&
-        Objects.equals(this.activities, createWorkPlanShift.activities);
+            Objects.equals(this.days, createWorkPlanShift.days) &&
+            Objects.equals(this.flexibleStartTime, createWorkPlanShift.flexibleStartTime) &&
+            Objects.equals(this.exactStartTimeMinutesFromMidnight, createWorkPlanShift.exactStartTimeMinutesFromMidnight) &&
+            Objects.equals(this.earliestStartTimeMinutesFromMidnight, createWorkPlanShift.earliestStartTimeMinutesFromMidnight) &&
+            Objects.equals(this.latestStartTimeMinutesFromMidnight, createWorkPlanShift.latestStartTimeMinutesFromMidnight) &&
+            Objects.equals(this.constrainStopTime, createWorkPlanShift.constrainStopTime) &&
+            Objects.equals(this.constrainLatestStopTime, createWorkPlanShift.constrainLatestStopTime) &&
+            Objects.equals(this.latestStopTimeMinutesFromMidnight, createWorkPlanShift.latestStopTimeMinutesFromMidnight) &&
+            Objects.equals(this.constrainEarliestStopTime, createWorkPlanShift.constrainEarliestStopTime) &&
+            Objects.equals(this.earliestStopTimeMinutesFromMidnight, createWorkPlanShift.earliestStopTimeMinutesFromMidnight) &&
+            Objects.equals(this.startIncrementMinutes, createWorkPlanShift.startIncrementMinutes) &&
+            Objects.equals(this.flexiblePaidTime, createWorkPlanShift.flexiblePaidTime) &&
+            Objects.equals(this.exactPaidTimeMinutes, createWorkPlanShift.exactPaidTimeMinutes) &&
+            Objects.equals(this.minimumPaidTimeMinutes, createWorkPlanShift.minimumPaidTimeMinutes) &&
+            Objects.equals(this.maximumPaidTimeMinutes, createWorkPlanShift.maximumPaidTimeMinutes) &&
+            Objects.equals(this.constrainContiguousWorkTime, createWorkPlanShift.constrainContiguousWorkTime) &&
+            Objects.equals(this.minimumContiguousWorkTimeMinutes, createWorkPlanShift.minimumContiguousWorkTimeMinutes) &&
+            Objects.equals(this.maximumContiguousWorkTimeMinutes, createWorkPlanShift.maximumContiguousWorkTimeMinutes) &&
+            Objects.equals(this.activities, createWorkPlanShift.activities);
   }
 
   @Override

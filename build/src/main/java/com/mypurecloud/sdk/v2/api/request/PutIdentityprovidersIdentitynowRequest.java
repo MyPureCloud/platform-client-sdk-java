@@ -20,24 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
-import com.mypurecloud.sdk.v2.model.GenericSAML;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
+import com.mypurecloud.sdk.v2.model.OAuthProvider;
+import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
 import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersIdentitynowRequest {
-    
+
 	private IdentityNow body;
 	public IdentityNow getBody() {
 		return this.body;
@@ -51,7 +50,7 @@ public class PutIdentityprovidersIdentitynowRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,8 +80,8 @@ public class PutIdentityprovidersIdentitynowRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/identityproviders/identitynow")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -93,12 +92,12 @@ public class PutIdentityprovidersIdentitynowRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(IdentityNow body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutIdentityprovidersIdentitynowRequest request;
@@ -107,20 +106,20 @@ public class PutIdentityprovidersIdentitynowRequest {
 			request = new PutIdentityprovidersIdentitynowRequest();
 		}
 
-		
+
 		public Builder withBody(IdentityNow body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(IdentityNow body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PutIdentityprovidersIdentitynowRequest build() {
             

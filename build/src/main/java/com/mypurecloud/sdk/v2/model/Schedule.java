@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class Schedule  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -115,7 +116,7 @@ public class Schedule  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -133,7 +134,7 @@ public class Schedule  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -151,7 +152,7 @@ public class Schedule  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -169,7 +170,7 @@ public class Schedule  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -187,7 +188,7 @@ public class Schedule  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -205,7 +206,7 @@ public class Schedule  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -223,7 +224,7 @@ public class Schedule  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -241,14 +242,14 @@ public class Schedule  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -266,7 +267,7 @@ public class Schedule  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -284,7 +285,7 @@ public class Schedule  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
    **/
@@ -302,7 +303,7 @@ public class Schedule  implements Serializable {
     this.start = start;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
    **/
@@ -320,7 +321,7 @@ public class Schedule  implements Serializable {
     this.end = end;
   }
 
-  
+
   /**
    * An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.
    **/
@@ -338,14 +339,13 @@ public class Schedule  implements Serializable {
     this.rrule = rrule;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -356,22 +356,23 @@ public class Schedule  implements Serializable {
       return false;
     }
     Schedule schedule = (Schedule) o;
+
     return Objects.equals(this.id, schedule.id) &&
-        Objects.equals(this.name, schedule.name) &&
-        Objects.equals(this.division, schedule.division) &&
-        Objects.equals(this.description, schedule.description) &&
-        Objects.equals(this.version, schedule.version) &&
-        Objects.equals(this.dateCreated, schedule.dateCreated) &&
-        Objects.equals(this.dateModified, schedule.dateModified) &&
-        Objects.equals(this.modifiedBy, schedule.modifiedBy) &&
-        Objects.equals(this.createdBy, schedule.createdBy) &&
-        Objects.equals(this.state, schedule.state) &&
-        Objects.equals(this.modifiedByApp, schedule.modifiedByApp) &&
-        Objects.equals(this.createdByApp, schedule.createdByApp) &&
-        Objects.equals(this.start, schedule.start) &&
-        Objects.equals(this.end, schedule.end) &&
-        Objects.equals(this.rrule, schedule.rrule) &&
-        Objects.equals(this.selfUri, schedule.selfUri);
+            Objects.equals(this.name, schedule.name) &&
+            Objects.equals(this.division, schedule.division) &&
+            Objects.equals(this.description, schedule.description) &&
+            Objects.equals(this.version, schedule.version) &&
+            Objects.equals(this.dateCreated, schedule.dateCreated) &&
+            Objects.equals(this.dateModified, schedule.dateModified) &&
+            Objects.equals(this.modifiedBy, schedule.modifiedBy) &&
+            Objects.equals(this.createdBy, schedule.createdBy) &&
+            Objects.equals(this.state, schedule.state) &&
+            Objects.equals(this.modifiedByApp, schedule.modifiedByApp) &&
+            Objects.equals(this.createdByApp, schedule.createdByApp) &&
+            Objects.equals(this.start, schedule.start) &&
+            Objects.equals(this.end, schedule.end) &&
+            Objects.equals(this.rrule, schedule.rrule) &&
+            Objects.equals(this.selfUri, schedule.selfUri);
   }
 
   @Override

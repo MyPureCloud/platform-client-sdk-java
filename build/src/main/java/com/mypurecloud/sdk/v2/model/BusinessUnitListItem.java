@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DivisionReference;
@@ -34,7 +35,7 @@ public class BusinessUnitListItem  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public BusinessUnitListItem name(String name) {
@@ -51,14 +52,14 @@ public class BusinessUnitListItem  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether the user has authorization to interact with this business unit")
   @JsonProperty("authorized")
   public Boolean getAuthorized() {
     return authorized;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -76,14 +77,13 @@ public class BusinessUnitListItem  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,11 +94,12 @@ public class BusinessUnitListItem  implements Serializable {
       return false;
     }
     BusinessUnitListItem businessUnitListItem = (BusinessUnitListItem) o;
+
     return Objects.equals(this.id, businessUnitListItem.id) &&
-        Objects.equals(this.name, businessUnitListItem.name) &&
-        Objects.equals(this.authorized, businessUnitListItem.authorized) &&
-        Objects.equals(this.division, businessUnitListItem.division) &&
-        Objects.equals(this.selfUri, businessUnitListItem.selfUri);
+            Objects.equals(this.name, businessUnitListItem.name) &&
+            Objects.equals(this.authorized, businessUnitListItem.authorized) &&
+            Objects.equals(this.division, businessUnitListItem.division) &&
+            Objects.equals(this.selfUri, businessUnitListItem.selfUri);
   }
 
   @Override

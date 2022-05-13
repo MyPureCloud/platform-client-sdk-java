@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorDetail;
@@ -48,7 +49,7 @@ public class BulkErrorExternalContact  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalContact message(String message) {
@@ -65,7 +66,7 @@ public class BulkErrorExternalContact  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalContact status(Integer status) {
@@ -82,7 +83,7 @@ public class BulkErrorExternalContact  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalContact retryable(Boolean retryable) {
@@ -99,7 +100,7 @@ public class BulkErrorExternalContact  implements Serializable {
     this.retryable = retryable;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalContact entity(ExternalContact entity) {
@@ -116,7 +117,7 @@ public class BulkErrorExternalContact  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkErrorExternalContact details(List<BulkErrorDetail> details) {
@@ -133,7 +134,6 @@ public class BulkErrorExternalContact  implements Serializable {
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class BulkErrorExternalContact  implements Serializable {
       return false;
     }
     BulkErrorExternalContact bulkErrorExternalContact = (BulkErrorExternalContact) o;
+
     return Objects.equals(this.code, bulkErrorExternalContact.code) &&
-        Objects.equals(this.message, bulkErrorExternalContact.message) &&
-        Objects.equals(this.status, bulkErrorExternalContact.status) &&
-        Objects.equals(this.retryable, bulkErrorExternalContact.retryable) &&
-        Objects.equals(this.entity, bulkErrorExternalContact.entity) &&
-        Objects.equals(this.details, bulkErrorExternalContact.details);
+            Objects.equals(this.message, bulkErrorExternalContact.message) &&
+            Objects.equals(this.status, bulkErrorExternalContact.status) &&
+            Objects.equals(this.retryable, bulkErrorExternalContact.retryable) &&
+            Objects.equals(this.entity, bulkErrorExternalContact.entity) &&
+            Objects.equals(this.details, bulkErrorExternalContact.details);
   }
 
   @Override

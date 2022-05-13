@@ -20,39 +20,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CommandStatus;
+import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
+import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
 import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
+import com.mypurecloud.sdk.v2.model.DocumentUpdate;
+import com.mypurecloud.sdk.v2.model.DocumentUpload;
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.QueryRequest;
 import com.mypurecloud.sdk.v2.model.QueryResults;
+import com.mypurecloud.sdk.v2.model.ReplaceRequest;
+import com.mypurecloud.sdk.v2.model.ReplaceResponse;
 import com.mypurecloud.sdk.v2.model.SecurityProfile;
 import com.mypurecloud.sdk.v2.model.SecurityProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.Share;
-import com.mypurecloud.sdk.v2.model.SharedResponse;
 import com.mypurecloud.sdk.v2.model.ShareEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatus;
-import com.mypurecloud.sdk.v2.model.Usage;
-import com.mypurecloud.sdk.v2.model.Workspace;
-import com.mypurecloud.sdk.v2.model.WorkspaceMember;
-import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SharedResponse;
+import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.TagValue;
 import com.mypurecloud.sdk.v2.model.TagValueEntityListing;
-import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
-import com.mypurecloud.sdk.v2.model.DocumentUpdate;
-import com.mypurecloud.sdk.v2.model.ReplaceRequest;
-import com.mypurecloud.sdk.v2.model.ReplaceResponse;
-import com.mypurecloud.sdk.v2.model.DocumentUpload;
-import com.mypurecloud.sdk.v2.model.QueryRequest;
-import com.mypurecloud.sdk.v2.model.CreateShareResponse;
-import com.mypurecloud.sdk.v2.model.CreateShareRequest;
-import com.mypurecloud.sdk.v2.model.TagQueryRequest;
+import com.mypurecloud.sdk.v2.model.Usage;
+import com.mypurecloud.sdk.v2.model.Workspace;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
+import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkspaceMember;
+import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
 
 public class GetContentmanagementWorkspacesRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -66,7 +66,7 @@ public class GetContentmanagementWorkspacesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -80,7 +80,7 @@ public class GetContentmanagementWorkspacesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private List<String> access;
 	public List<String> getAccess() {
 		return this.access;
@@ -96,26 +96,26 @@ public class GetContentmanagementWorkspacesRequest {
 	} 
 
 	public enum accessValues { 
-		CONTENT("content"), 
-		ADMIN("admin"), 
-		DOCUMENT_CREATE("document:create"), 
-		DOCUMENT_VIEWCONTENT("document:viewContent"), 
-		DOCUMENT_VIEWMETADATA("document:viewMetadata"), 
-		DOCUMENT_DOWNLOAD("document:download"), 
-		DOCUMENT_DELETE("document:delete"), 
-		DOCUMENT_UPDATE("document:update"), 
-		DOCUMENT_SHARE("document:share"), 
-		DOCUMENT_SHAREVIEW("document:shareView"), 
-		DOCUMENT_EMAIL("document:email"), 
-		DOCUMENT_PRINT("document:print"), 
-		DOCUMENT_AUDITVIEW("document:auditView"), 
-		DOCUMENT_REPLACE("document:replace"), 
-		DOCUMENT_TAG("document:tag"), 
-		TAG_CREATE("tag:create"), 
-		TAG_VIEW("tag:view"), 
-		TAG_UPDATE("tag:update"), 
-		TAG_APPLY("tag:apply"), 
-		TAG_REMOVE("tag:remove"), 
+		CONTENT("content"),
+		ADMIN("admin"),
+		DOCUMENT_CREATE("document:create"),
+		DOCUMENT_VIEWCONTENT("document:viewContent"),
+		DOCUMENT_VIEWMETADATA("document:viewMetadata"),
+		DOCUMENT_DOWNLOAD("document:download"),
+		DOCUMENT_DELETE("document:delete"),
+		DOCUMENT_UPDATE("document:update"),
+		DOCUMENT_SHARE("document:share"),
+		DOCUMENT_SHAREVIEW("document:shareView"),
+		DOCUMENT_EMAIL("document:email"),
+		DOCUMENT_PRINT("document:print"),
+		DOCUMENT_AUDITVIEW("document:auditView"),
+		DOCUMENT_REPLACE("document:replace"),
+		DOCUMENT_TAG("document:tag"),
+		TAG_CREATE("tag:create"),
+		TAG_VIEW("tag:view"),
+		TAG_UPDATE("tag:update"),
+		TAG_APPLY("tag:apply"),
+		TAG_REMOVE("tag:remove"),
 		TAG_DELETE("tag:delete");
 
 		private String value;
@@ -143,7 +143,7 @@ public class GetContentmanagementWorkspacesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -159,7 +159,7 @@ public class GetContentmanagementWorkspacesRequest {
 	} 
 
 	public enum expandValues { 
-		SUMMARY("summary"), 
+		SUMMARY("summary"),
 		ACL("acl");
 
 		private String value;
@@ -187,7 +187,7 @@ public class GetContentmanagementWorkspacesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -211,15 +211,19 @@ public class GetContentmanagementWorkspacesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/contentmanagement/workspaces")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("access", "multi", access)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -230,7 +234,7 @@ public class GetContentmanagementWorkspacesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetContentmanagementWorkspacesRequest request;
@@ -239,21 +243,23 @@ public class GetContentmanagementWorkspacesRequest {
 			request = new GetContentmanagementWorkspacesRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withAccess(List<String> access) {
 			request.setAccess(access);
 			return this;
 		}
+
+
 
 		public Builder withAccessEnumValues(List<accessValues> access) {
 		    List<String> stringList = new ArrayList<>();
@@ -263,11 +269,13 @@ public class GetContentmanagementWorkspacesRequest {
 	      request.setAccess(stringList);
 		    return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -277,9 +285,9 @@ public class GetContentmanagementWorkspacesRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 
 		public GetContentmanagementWorkspacesRequest build() {
             

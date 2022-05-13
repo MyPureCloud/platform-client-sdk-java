@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -105,7 +106,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.messageId = messageId;
   }
 
-  
+
   /**
    * The time when the message was sent or received.
    **/
@@ -123,7 +124,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.messageTime = messageTime;
   }
 
-  
+
   /**
    * Indicates the delivery status of the message.
    **/
@@ -141,7 +142,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.messageStatus = messageStatus;
   }
 
-  
+
   /**
    * The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
    **/
@@ -159,7 +160,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.messageSegmentCount = messageSegmentCount;
   }
 
-  
+
   /**
    * The media (images, files, etc) associated with this message, if any
    **/
@@ -177,7 +178,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.media = media;
   }
 
-  
+
   /**
    * Detailed information about an error response.
    **/
@@ -195,7 +196,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * A list of stickers included in the message
    **/
@@ -213,7 +214,6 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     this.stickers = stickers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,13 +224,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
       return false;
     }
     QueueConversationVideoEventTopicMessageDetails queueConversationVideoEventTopicMessageDetails = (QueueConversationVideoEventTopicMessageDetails) o;
+
     return Objects.equals(this.messageId, queueConversationVideoEventTopicMessageDetails.messageId) &&
-        Objects.equals(this.messageTime, queueConversationVideoEventTopicMessageDetails.messageTime) &&
-        Objects.equals(this.messageStatus, queueConversationVideoEventTopicMessageDetails.messageStatus) &&
-        Objects.equals(this.messageSegmentCount, queueConversationVideoEventTopicMessageDetails.messageSegmentCount) &&
-        Objects.equals(this.media, queueConversationVideoEventTopicMessageDetails.media) &&
-        Objects.equals(this.errorInfo, queueConversationVideoEventTopicMessageDetails.errorInfo) &&
-        Objects.equals(this.stickers, queueConversationVideoEventTopicMessageDetails.stickers);
+            Objects.equals(this.messageTime, queueConversationVideoEventTopicMessageDetails.messageTime) &&
+            Objects.equals(this.messageStatus, queueConversationVideoEventTopicMessageDetails.messageStatus) &&
+            Objects.equals(this.messageSegmentCount, queueConversationVideoEventTopicMessageDetails.messageSegmentCount) &&
+            Objects.equals(this.media, queueConversationVideoEventTopicMessageDetails.media) &&
+            Objects.equals(this.errorInfo, queueConversationVideoEventTopicMessageDetails.errorInfo) &&
+            Objects.equals(this.stickers, queueConversationVideoEventTopicMessageDetails.stickers);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class DateRangeWithOptionalEnd  implements Serializable {
     this.startBusinessUnitDate = startBusinessUnitDate;
   }
 
-  
+
   /**
    * The end date for work plan rotation or an agent, interpreted in the business unit's time zone. Null denotes open ended date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -60,7 +61,6 @@ public class DateRangeWithOptionalEnd  implements Serializable {
     this.endBusinessUnitDate = endBusinessUnitDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class DateRangeWithOptionalEnd  implements Serializable {
       return false;
     }
     DateRangeWithOptionalEnd dateRangeWithOptionalEnd = (DateRangeWithOptionalEnd) o;
+
     return Objects.equals(this.startBusinessUnitDate, dateRangeWithOptionalEnd.startBusinessUnitDate) &&
-        Objects.equals(this.endBusinessUnitDate, dateRangeWithOptionalEnd.endBusinessUnitDate);
+            Objects.equals(this.endBusinessUnitDate, dateRangeWithOptionalEnd.endBusinessUnitDate);
   }
 
   @Override

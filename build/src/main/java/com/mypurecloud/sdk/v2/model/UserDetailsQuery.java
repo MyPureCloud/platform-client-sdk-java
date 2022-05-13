@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class UserDetailsQuery  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Filters that target the users to retrieve data for
    **/
@@ -120,7 +121,7 @@ public class UserDetailsQuery  implements Serializable {
     this.userFilters = userFilters;
   }
 
-  
+
   /**
    * Filters that target system and organization presence-level data
    **/
@@ -138,7 +139,7 @@ public class UserDetailsQuery  implements Serializable {
     this.presenceFilters = presenceFilters;
   }
 
-  
+
   /**
    * Filters that target agent routing status-level data
    **/
@@ -156,7 +157,7 @@ public class UserDetailsQuery  implements Serializable {
     this.routingStatusFilters = routingStatusFilters;
   }
 
-  
+
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
@@ -174,7 +175,7 @@ public class UserDetailsQuery  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * Include faceted search and aggregate roll-ups of presence data in your search results. This does not function as a filter, but rather, summary data about the presence results matching your filters
    **/
@@ -192,7 +193,7 @@ public class UserDetailsQuery  implements Serializable {
     this.presenceAggregations = presenceAggregations;
   }
 
-  
+
   /**
    * Include faceted search and aggregate roll-ups of agent routing status data in your search results. This does not function as a filter, but rather, summary data about the agent routing status results matching your filters
    **/
@@ -210,7 +211,7 @@ public class UserDetailsQuery  implements Serializable {
     this.routingStatusAggregations = routingStatusAggregations;
   }
 
-  
+
   /**
    * Page size and number to control iterating through large result sets. Default page size is 25
    **/
@@ -228,7 +229,6 @@ public class UserDetailsQuery  implements Serializable {
     this.paging = paging;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -239,14 +239,15 @@ public class UserDetailsQuery  implements Serializable {
       return false;
     }
     UserDetailsQuery userDetailsQuery = (UserDetailsQuery) o;
+
     return Objects.equals(this.interval, userDetailsQuery.interval) &&
-        Objects.equals(this.userFilters, userDetailsQuery.userFilters) &&
-        Objects.equals(this.presenceFilters, userDetailsQuery.presenceFilters) &&
-        Objects.equals(this.routingStatusFilters, userDetailsQuery.routingStatusFilters) &&
-        Objects.equals(this.order, userDetailsQuery.order) &&
-        Objects.equals(this.presenceAggregations, userDetailsQuery.presenceAggregations) &&
-        Objects.equals(this.routingStatusAggregations, userDetailsQuery.routingStatusAggregations) &&
-        Objects.equals(this.paging, userDetailsQuery.paging);
+            Objects.equals(this.userFilters, userDetailsQuery.userFilters) &&
+            Objects.equals(this.presenceFilters, userDetailsQuery.presenceFilters) &&
+            Objects.equals(this.routingStatusFilters, userDetailsQuery.routingStatusFilters) &&
+            Objects.equals(this.order, userDetailsQuery.order) &&
+            Objects.equals(this.presenceAggregations, userDetailsQuery.presenceAggregations) &&
+            Objects.equals(this.routingStatusAggregations, userDetailsQuery.routingStatusAggregations) &&
+            Objects.equals(this.paging, userDetailsQuery.paging);
   }
 
   @Override

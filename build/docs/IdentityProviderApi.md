@@ -49,11 +49,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersAdfs()
+> Empty deleteIdentityprovidersAdfs()
 
 Delete ADFS Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/adfs  
 
@@ -100,7 +98,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersCic"></a>
 
@@ -108,11 +106,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersCic()
+> Empty deleteIdentityprovidersCic()
 
 Delete Customer Interaction Center (CIC) Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/cic  
 
@@ -159,7 +155,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersGeneric"></a>
 
@@ -167,11 +163,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersGeneric()
+> Empty deleteIdentityprovidersGeneric()
 
 Delete Generic SAML Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/generic  
 
@@ -218,7 +212,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersGsuite"></a>
 
@@ -226,11 +220,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersGsuite()
+> Empty deleteIdentityprovidersGsuite()
 
 Delete G Suite Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/gsuite  
 
@@ -277,7 +269,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersIdentitynow"></a>
 
@@ -285,11 +277,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersIdentitynow()
+> Empty deleteIdentityprovidersIdentitynow()
 
 Delete IdentityNow Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/identitynow  
 
@@ -336,7 +326,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersOkta"></a>
 
@@ -344,11 +334,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersOkta()
+> Empty deleteIdentityprovidersOkta()
 
 Delete Okta Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/okta  
 
@@ -395,7 +383,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersOnelogin"></a>
 
@@ -403,11 +391,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersOnelogin()
+> Empty deleteIdentityprovidersOnelogin()
 
 Delete OneLogin Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/onelogin  
 
@@ -454,7 +440,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersPing"></a>
 
@@ -462,11 +448,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersPing()
+> Empty deleteIdentityprovidersPing()
 
 Delete Ping Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/ping  
 
@@ -513,7 +497,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersPurecloud"></a>
 
@@ -521,11 +505,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersPurecloud()
+> Empty deleteIdentityprovidersPurecloud()
 
 Delete PureCloud Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/purecloud  
 
@@ -572,7 +554,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersPureengage"></a>
 
@@ -580,11 +562,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersPureengage()
+> Empty deleteIdentityprovidersPureengage()
 
 Delete PureEngage Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/pureengage  
 
@@ -631,7 +611,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersSalesforce"></a>
 
@@ -639,11 +619,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Empty](Empty.html) deleteIdentityprovidersSalesforce()
+> Empty deleteIdentityprovidersSalesforce()
 
 Delete Salesforce Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/salesforce  
 
@@ -690,7 +668,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getIdentityproviders"></a>
 
@@ -701,8 +679,6 @@ This endpoint does not require any parameters.
 > [OAuthProviderEntityListing](OAuthProviderEntityListing.html) getIdentityproviders()
 
 The list of identity providers
-
-
 
 Wraps GET /api/v2/identityproviders  
 
@@ -761,8 +737,6 @@ This endpoint does not require any parameters.
 
 Get ADFS Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/adfs  
 
 Requires ANY permissions: 
@@ -819,8 +793,6 @@ This endpoint does not require any parameters.
 > [CustomerInteractionCenter](CustomerInteractionCenter.html) getIdentityprovidersCic()
 
 Get Customer Interaction Center (CIC) Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/cic  
 
@@ -879,8 +851,6 @@ This endpoint does not require any parameters.
 
 Get Generic SAML Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/generic  
 
 Requires ANY permissions: 
@@ -937,8 +907,6 @@ This endpoint does not require any parameters.
 > [GSuite](GSuite.html) getIdentityprovidersGsuite()
 
 Get G Suite Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/gsuite  
 
@@ -997,8 +965,6 @@ This endpoint does not require any parameters.
 
 Get IdentityNow Provider
 
-
-
 Wraps GET /api/v2/identityproviders/identitynow  
 
 Requires ANY permissions: 
@@ -1055,8 +1021,6 @@ This endpoint does not require any parameters.
 > [Okta](Okta.html) getIdentityprovidersOkta()
 
 Get Okta Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/okta  
 
@@ -1115,8 +1079,6 @@ This endpoint does not require any parameters.
 
 Get OneLogin Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/onelogin  
 
 Requires ANY permissions: 
@@ -1173,8 +1135,6 @@ This endpoint does not require any parameters.
 > [PingIdentity](PingIdentity.html) getIdentityprovidersPing()
 
 Get Ping Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/ping  
 
@@ -1233,8 +1193,6 @@ This endpoint does not require any parameters.
 
 Get PureCloud Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/purecloud  
 
 Requires ANY permissions: 
@@ -1291,8 +1249,6 @@ This endpoint does not require any parameters.
 > [PureEngage](PureEngage.html) getIdentityprovidersPureengage()
 
 Get PureEngage Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/pureengage  
 
@@ -1351,8 +1307,6 @@ This endpoint does not require any parameters.
 
 Get Salesforce Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/salesforce  
 
 Requires ANY permissions: 
@@ -1409,8 +1363,6 @@ This endpoint does not require any parameters.
 > [OAuthProvider](OAuthProvider.html) putIdentityprovidersAdfs(body)
 
 Update/Create ADFS Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/adfs  
 
@@ -1474,8 +1426,6 @@ try {
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/cic  
 
 Requires ANY permissions: 
@@ -1537,8 +1487,6 @@ try {
 > [OAuthProvider](OAuthProvider.html) putIdentityprovidersGeneric(body)
 
 Update/Create Generic SAML Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/generic  
 
@@ -1602,8 +1550,6 @@ try {
 
 Update/Create G Suite Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/gsuite  
 
 Requires ANY permissions: 
@@ -1665,8 +1611,6 @@ try {
 > [IdentityNow](IdentityNow.html) putIdentityprovidersIdentitynow(body)
 
 Update/Create IdentityNow Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/identitynow  
 
@@ -1730,8 +1674,6 @@ try {
 
 Update/Create Okta Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/okta  
 
 Requires ANY permissions: 
@@ -1793,8 +1735,6 @@ try {
 > [OAuthProvider](OAuthProvider.html) putIdentityprovidersOnelogin(body)
 
 Update/Create OneLogin Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/onelogin  
 
@@ -1858,8 +1798,6 @@ try {
 
 Update/Create Ping Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/ping  
 
 Requires ANY permissions: 
@@ -1921,8 +1859,6 @@ try {
 > [OAuthProvider](OAuthProvider.html) putIdentityprovidersPurecloud(body)
 
 Update/Create PureCloud Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/purecloud  
 
@@ -1986,8 +1922,6 @@ try {
 
 Update/Create PureEngage Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/pureengage  
 
 Requires ANY permissions: 
@@ -2049,8 +1983,6 @@ try {
 > [OAuthProvider](OAuthProvider.html) putIdentityprovidersSalesforce(body)
 
 Update/Create Salesforce Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/salesforce  
 

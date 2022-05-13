@@ -21,11 +21,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
 public class PostMessagingSupportedcontentRequest {
-    
+
 	private SupportedContent body;
 	public SupportedContent getBody() {
 		return this.body;
@@ -39,7 +39,7 @@ public class PostMessagingSupportedcontentRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,8 +69,8 @@ public class PostMessagingSupportedcontentRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/messaging/supportedcontent")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -81,12 +81,12 @@ public class PostMessagingSupportedcontentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(SupportedContent body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostMessagingSupportedcontentRequest request;
@@ -95,20 +95,20 @@ public class PostMessagingSupportedcontentRequest {
 			request = new PostMessagingSupportedcontentRequest();
 		}
 
-		
+
 		public Builder withBody(SupportedContent body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(SupportedContent body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostMessagingSupportedcontentRequest build() {
             

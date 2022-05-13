@@ -54,13 +54,13 @@ title: QueueConversationSocialExpressionEventTopicParticipant
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| REQUESTED | &quot;requested&quot; |
-| ACTIVE | &quot;active&quot; |
-| PAUSED | &quot;paused&quot; |
-| STOPPED | &quot;stopped&quot; |
-| ERROR | &quot;error&quot; |
-| TIMEOUT | &quot;timeout&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REQUESTED | &quot;requested&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| PAUSED | &quot;paused&quot; | 
+| STOPPED | &quot;stopped&quot; | 
+| ERROR | &quot;error&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
 {: class="table table-striped"}
 
 

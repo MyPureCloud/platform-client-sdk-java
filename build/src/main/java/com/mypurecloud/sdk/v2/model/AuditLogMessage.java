@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -526,7 +527,7 @@ public class AuditLogMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Home Organization Id associated with this audit message.
    **/
@@ -544,7 +545,7 @@ public class AuditLogMessage  implements Serializable {
     this.userHomeOrgId = userHomeOrgId;
   }
 
-  
+
   /**
    * User associated with this audit message.
    **/
@@ -562,7 +563,7 @@ public class AuditLogMessage  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Client associated with this audit message.
    **/
@@ -580,7 +581,7 @@ public class AuditLogMessage  implements Serializable {
     this.client = client;
   }
 
-  
+
   /**
    * List of IP addresses of systems that originated or handled the request.
    **/
@@ -598,7 +599,7 @@ public class AuditLogMessage  implements Serializable {
     this.remoteIp = remoteIp;
   }
 
-  
+
   /**
    * Name of the service that logged this audit message.
    **/
@@ -616,7 +617,7 @@ public class AuditLogMessage  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    * Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -634,7 +635,7 @@ public class AuditLogMessage  implements Serializable {
     this.eventDate = eventDate;
   }
 
-  
+
   /**
    * Message describing the event being audited.
    **/
@@ -652,7 +653,7 @@ public class AuditLogMessage  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    * Action that took place.
    **/
@@ -670,7 +671,7 @@ public class AuditLogMessage  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * Entity that was impacted.
    **/
@@ -688,7 +689,7 @@ public class AuditLogMessage  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    * Type of the entity that was impacted.
    **/
@@ -706,7 +707,7 @@ public class AuditLogMessage  implements Serializable {
     this.entityType = entityType;
   }
 
-  
+
   /**
    * Status of the event being audited
    **/
@@ -724,7 +725,7 @@ public class AuditLogMessage  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * List of properties that were changed and changes made to those properties.
    **/
@@ -742,7 +743,7 @@ public class AuditLogMessage  implements Serializable {
     this.propertyChanges = propertyChanges;
   }
 
-  
+
   /**
    * Additional context for this message.
    **/
@@ -760,7 +761,6 @@ public class AuditLogMessage  implements Serializable {
     this.context = context;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -771,20 +771,21 @@ public class AuditLogMessage  implements Serializable {
       return false;
     }
     AuditLogMessage auditLogMessage = (AuditLogMessage) o;
+
     return Objects.equals(this.id, auditLogMessage.id) &&
-        Objects.equals(this.userHomeOrgId, auditLogMessage.userHomeOrgId) &&
-        Objects.equals(this.user, auditLogMessage.user) &&
-        Objects.equals(this.client, auditLogMessage.client) &&
-        Objects.equals(this.remoteIp, auditLogMessage.remoteIp) &&
-        Objects.equals(this.serviceName, auditLogMessage.serviceName) &&
-        Objects.equals(this.eventDate, auditLogMessage.eventDate) &&
-        Objects.equals(this.message, auditLogMessage.message) &&
-        Objects.equals(this.action, auditLogMessage.action) &&
-        Objects.equals(this.entity, auditLogMessage.entity) &&
-        Objects.equals(this.entityType, auditLogMessage.entityType) &&
-        Objects.equals(this.status, auditLogMessage.status) &&
-        Objects.equals(this.propertyChanges, auditLogMessage.propertyChanges) &&
-        Objects.equals(this.context, auditLogMessage.context);
+            Objects.equals(this.userHomeOrgId, auditLogMessage.userHomeOrgId) &&
+            Objects.equals(this.user, auditLogMessage.user) &&
+            Objects.equals(this.client, auditLogMessage.client) &&
+            Objects.equals(this.remoteIp, auditLogMessage.remoteIp) &&
+            Objects.equals(this.serviceName, auditLogMessage.serviceName) &&
+            Objects.equals(this.eventDate, auditLogMessage.eventDate) &&
+            Objects.equals(this.message, auditLogMessage.message) &&
+            Objects.equals(this.action, auditLogMessage.action) &&
+            Objects.equals(this.entity, auditLogMessage.entity) &&
+            Objects.equals(this.entityType, auditLogMessage.entityType) &&
+            Objects.equals(this.status, auditLogMessage.status) &&
+            Objects.equals(this.propertyChanges, auditLogMessage.propertyChanges) &&
+            Objects.equals(this.context, auditLogMessage.context);
   }
 
   @Override

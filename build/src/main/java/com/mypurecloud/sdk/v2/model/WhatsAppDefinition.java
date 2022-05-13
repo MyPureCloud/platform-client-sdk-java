@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class WhatsAppDefinition  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The messaging template namespace.
    **/
@@ -61,7 +62,7 @@ public class WhatsAppDefinition  implements Serializable {
     this.namespace = namespace;
   }
 
-  
+
   /**
    * The messaging template language configured for this template. This is a WhatsApp specific value. For example, 'en_US'
    **/
@@ -79,7 +80,6 @@ public class WhatsAppDefinition  implements Serializable {
     this.language = language;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class WhatsAppDefinition  implements Serializable {
       return false;
     }
     WhatsAppDefinition whatsAppDefinition = (WhatsAppDefinition) o;
+
     return Objects.equals(this.name, whatsAppDefinition.name) &&
-        Objects.equals(this.namespace, whatsAppDefinition.namespace) &&
-        Objects.equals(this.language, whatsAppDefinition.language);
+            Objects.equals(this.namespace, whatsAppDefinition.namespace) &&
+            Objects.equals(this.language, whatsAppDefinition.language);
   }
 
   @Override

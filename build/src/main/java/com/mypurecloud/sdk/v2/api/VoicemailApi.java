@@ -10,17 +10,17 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteVoicemailMessageRequest;
@@ -55,7 +55,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class VoicemailApi {
   private final ApiClient pcapiClient;
 
@@ -67,7 +66,6 @@ public class VoicemailApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a voicemail message.
    * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
@@ -92,7 +90,7 @@ public class VoicemailApi {
   private DeleteVoicemailMessageRequest createDeleteVoicemailMessageRequest(String messageId) {
     return DeleteVoicemailMessageRequest.builder()
             .withMessageId(messageId)
-    
+
             .build();
   }
 
@@ -143,7 +141,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Delete all voicemail messages
    * 
@@ -215,9 +212,8 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Get the group&#39;s mailbox information
+   * Get the group's mailbox information
    * 
    * @param groupId groupId (required)
    * @return VoicemailMailboxInfo
@@ -229,7 +225,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the group&#39;s mailbox information
+   * Get the group's mailbox information
    * 
    * @param groupId groupId (required)
    * @return VoicemailMailboxInfo
@@ -242,12 +238,12 @@ public class VoicemailApi {
   private GetVoicemailGroupMailboxRequest createGetVoicemailGroupMailboxRequest(String groupId) {
     return GetVoicemailGroupMailboxRequest.builder()
             .withGroupId(groupId)
-    
+
             .build();
   }
 
   /**
-   * Get the group&#39;s mailbox information
+   * Get the group's mailbox information
    * 
    * @param request The request object
    * @return VoicemailMailboxInfo
@@ -266,7 +262,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the group&#39;s mailbox information
+   * Get the group's mailbox information
    * 
    * @param request The request object
    * @return the response
@@ -294,7 +290,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -325,11 +320,11 @@ public class VoicemailApi {
   private GetVoicemailGroupMessagesRequest createGetVoicemailGroupMessagesRequest(String groupId, Integer pageSize, Integer pageNumber) {
     return GetVoicemailGroupMessagesRequest.builder()
             .withGroupId(groupId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -381,9 +376,8 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Get a group&#39;s voicemail policy
+   * Get a group's voicemail policy
    * 
    * @param groupId Group ID (required)
    * @return VoicemailGroupPolicy
@@ -395,7 +389,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get a group&#39;s voicemail policy
+   * Get a group's voicemail policy
    * 
    * @param groupId Group ID (required)
    * @return VoicemailGroupPolicy
@@ -408,12 +402,12 @@ public class VoicemailApi {
   private GetVoicemailGroupPolicyRequest createGetVoicemailGroupPolicyRequest(String groupId) {
     return GetVoicemailGroupPolicyRequest.builder()
             .withGroupId(groupId)
-    
+
             .build();
   }
 
   /**
-   * Get a group&#39;s voicemail policy
+   * Get a group's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailGroupPolicy
@@ -432,7 +426,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get a group&#39;s voicemail policy
+   * Get a group's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -460,9 +454,8 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @return VoicemailMailboxInfo
    * @throws ApiException if the request fails on the server
@@ -473,7 +466,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @return VoicemailMailboxInfo
    * @throws IOException if the request fails to be processed
@@ -488,7 +481,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request The request object
    * @return VoicemailMailboxInfo
@@ -507,7 +500,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request The request object
    * @return the response
@@ -535,9 +528,8 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @return VoicemailMailboxInfo
    * @throws ApiException if the request fails on the server
@@ -548,7 +540,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @return VoicemailMailboxInfo
    * @throws IOException if the request fails to be processed
@@ -563,7 +555,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request The request object
    * @return VoicemailMailboxInfo
@@ -582,7 +574,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s mailbox information
+   * Get the current user's mailbox information
    * 
    * @param request The request object
    * @return the response
@@ -610,7 +602,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -639,9 +630,9 @@ public class VoicemailApi {
   private GetVoicemailMeMessagesRequest createGetVoicemailMeMessagesRequest(Integer pageSize, Integer pageNumber) {
     return GetVoicemailMeMessagesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -693,9 +684,8 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Get the current user&#39;s voicemail policy
+   * Get the current user's voicemail policy
    * 
    * @return VoicemailUserPolicy
    * @throws ApiException if the request fails on the server
@@ -706,7 +696,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s voicemail policy
+   * Get the current user's voicemail policy
    * 
    * @return VoicemailUserPolicy
    * @throws IOException if the request fails to be processed
@@ -721,7 +711,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s voicemail policy
+   * Get the current user's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailUserPolicy
@@ -740,7 +730,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get the current user&#39;s voicemail policy
+   * Get the current user's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -768,7 +758,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Get a voicemail message
    * 
@@ -797,9 +786,9 @@ public class VoicemailApi {
   private GetVoicemailMessageRequest createGetVoicemailMessageRequest(String messageId, List<String> expand) {
     return GetVoicemailMessageRequest.builder()
             .withMessageId(messageId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -851,7 +840,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Get media playback URI for this voicemail message
    * 
@@ -880,9 +868,9 @@ public class VoicemailApi {
   private GetVoicemailMessageMediaRequest createGetVoicemailMessageMediaRequest(String messageId, String formatId) {
     return GetVoicemailMessageMediaRequest.builder()
             .withMessageId(messageId)
-    
+
             .withFormatId(formatId)
-    
+
             .build();
   }
 
@@ -934,7 +922,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -963,9 +950,9 @@ public class VoicemailApi {
   private GetVoicemailMessagesRequest createGetVoicemailMessagesRequest(String ids, List<String> expand) {
     return GetVoicemailMessagesRequest.builder()
             .withIds(ids)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1017,7 +1004,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Get a policy
    * 
@@ -1092,7 +1078,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * List voicemail messages
    * 
@@ -1123,11 +1108,11 @@ public class VoicemailApi {
   private GetVoicemailQueueMessagesRequest createGetVoicemailQueueMessagesRequest(String queueId, Integer pageSize, Integer pageNumber) {
     return GetVoicemailQueueMessagesRequest.builder()
             .withQueueId(queueId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1179,7 +1164,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
@@ -1208,9 +1192,9 @@ public class VoicemailApi {
   private GetVoicemailSearchRequest createGetVoicemailSearchRequest(String q64, List<String> expand) {
     return GetVoicemailSearchRequest.builder()
             .withQ64(q64)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1262,9 +1246,8 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Get a user&#39;s voicemail policy
+   * Get a user's voicemail policy
    * 
    * @param userId User ID (required)
    * @return VoicemailUserPolicy
@@ -1276,7 +1259,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get a user&#39;s voicemail policy
+   * Get a user's voicemail policy
    * 
    * @param userId User ID (required)
    * @return VoicemailUserPolicy
@@ -1289,12 +1272,12 @@ public class VoicemailApi {
   private GetVoicemailUserpolicyRequest createGetVoicemailUserpolicyRequest(String userId) {
     return GetVoicemailUserpolicyRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
   /**
-   * Get a user&#39;s voicemail policy
+   * Get a user's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailUserPolicy
@@ -1313,7 +1296,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get a user&#39;s voicemail policy
+   * Get a user's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -1341,12 +1324,11 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Update a group&#39;s voicemail policy
+   * Update a group's voicemail policy
    * 
    * @param groupId Group ID (required)
-   * @param body The group&#39;s voicemail policy (required)
+   * @param body The group's voicemail policy (required)
    * @return VoicemailGroupPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1356,10 +1338,10 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a group&#39;s voicemail policy
+   * Update a group's voicemail policy
    * 
    * @param groupId Group ID (required)
-   * @param body The group&#39;s voicemail policy (required)
+   * @param body The group's voicemail policy (required)
    * @return VoicemailGroupPolicy
    * @throws IOException if the request fails to be processed
    */
@@ -1370,14 +1352,14 @@ public class VoicemailApi {
   private PatchVoicemailGroupPolicyRequest createPatchVoicemailGroupPolicyRequest(String groupId, VoicemailGroupPolicy body) {
     return PatchVoicemailGroupPolicyRequest.builder()
             .withGroupId(groupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update a group&#39;s voicemail policy
+   * Update a group's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailGroupPolicy
@@ -1396,7 +1378,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a group&#39;s voicemail policy
+   * Update a group's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -1424,11 +1406,10 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Update the current user&#39;s voicemail policy
+   * Update the current user's voicemail policy
    * 
-   * @param body The user&#39;s voicemail policy (required)
+   * @param body The user's voicemail policy (required)
    * @return VoicemailUserPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1438,9 +1419,9 @@ public class VoicemailApi {
   }
 
   /**
-   * Update the current user&#39;s voicemail policy
+   * Update the current user's voicemail policy
    * 
-   * @param body The user&#39;s voicemail policy (required)
+   * @param body The user's voicemail policy (required)
    * @return VoicemailUserPolicy
    * @throws IOException if the request fails to be processed
    */
@@ -1451,12 +1432,12 @@ public class VoicemailApi {
   private PatchVoicemailMePolicyRequest createPatchVoicemailMePolicyRequest(VoicemailUserPolicy body) {
     return PatchVoicemailMePolicyRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update the current user&#39;s voicemail policy
+   * Update the current user's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailUserPolicy
@@ -1475,7 +1456,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Update the current user&#39;s voicemail policy
+   * Update the current user's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -1503,7 +1484,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Update a voicemail message
    * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
@@ -1532,9 +1512,9 @@ public class VoicemailApi {
   private PatchVoicemailMessageRequest createPatchVoicemailMessageRequest(String messageId, VoicemailMessage body) {
     return PatchVoicemailMessageRequest.builder()
             .withMessageId(messageId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1586,12 +1566,11 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param userId User ID (required)
-   * @param body The user&#39;s voicemail policy (required)
+   * @param body The user's voicemail policy (required)
    * @return VoicemailUserPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1601,10 +1580,10 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param userId User ID (required)
-   * @param body The user&#39;s voicemail policy (required)
+   * @param body The user's voicemail policy (required)
    * @return VoicemailUserPolicy
    * @throws IOException if the request fails to be processed
    */
@@ -1615,14 +1594,14 @@ public class VoicemailApi {
   private PatchVoicemailUserpolicyRequest createPatchVoicemailUserpolicyRequest(String userId, VoicemailUserPolicy body) {
     return PatchVoicemailUserpolicyRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailUserPolicy
@@ -1641,7 +1620,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -1669,7 +1648,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Copy a voicemail message to a user or group
    * 
@@ -1696,7 +1674,7 @@ public class VoicemailApi {
   private PostVoicemailMessagesRequest createPostVoicemailMessagesRequest(CopyVoicemailMessage body) {
     return PostVoicemailMessagesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1748,7 +1726,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Search voicemails
    * 
@@ -1775,7 +1752,7 @@ public class VoicemailApi {
   private PostVoicemailSearchRequest createPostVoicemailSearchRequest(VoicemailSearchRequest body) {
     return PostVoicemailSearchRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1827,7 +1804,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Update a voicemail message
    * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
@@ -1856,9 +1832,9 @@ public class VoicemailApi {
   private PutVoicemailMessageRequest createPutVoicemailMessageRequest(String messageId, VoicemailMessage body) {
     return PutVoicemailMessageRequest.builder()
             .withMessageId(messageId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1910,7 +1886,6 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
    * Update a policy
    * 
@@ -1937,7 +1912,7 @@ public class VoicemailApi {
   private PutVoicemailPolicyRequest createPutVoicemailPolicyRequest(VoicemailOrganizationPolicy body) {
     return PutVoicemailPolicyRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1989,12 +1964,11 @@ public class VoicemailApi {
     }
   }
 
-  
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param userId User ID (required)
-   * @param body The user&#39;s voicemail policy (required)
+   * @param body The user's voicemail policy (required)
    * @return VoicemailUserPolicy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2004,10 +1978,10 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param userId User ID (required)
-   * @param body The user&#39;s voicemail policy (required)
+   * @param body The user's voicemail policy (required)
    * @return VoicemailUserPolicy
    * @throws IOException if the request fails to be processed
    */
@@ -2018,14 +1992,14 @@ public class VoicemailApi {
   private PutVoicemailUserpolicyRequest createPutVoicemailUserpolicyRequest(String userId, VoicemailUserPolicy body) {
     return PutVoicemailUserpolicyRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request The request object
    * @return VoicemailUserPolicy
@@ -2044,7 +2018,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a user&#39;s voicemail policy
+   * Update a user's voicemail policy
    * 
    * @param request The request object
    * @return the response
@@ -2072,5 +2046,4 @@ public class VoicemailApi {
     }
   }
 
-  
 }

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -39,63 +40,63 @@ public class PunctualityEvent  implements Serializable {
     return dateScheduleStart;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The time the user started the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStart")
   public Date getDateStart() {
     return dateStart;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The length of the activity in minutes")
   @JsonProperty("lengthMinutes")
   public Integer getLengthMinutes() {
     return lengthMinutes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The description of the activity")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The ID of the activity code associated with this activity")
   @JsonProperty("activityCodeId")
   public String getActivityCodeId() {
     return activityCodeId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The activity code")
   @JsonProperty("activityCode")
   public String getActivityCode() {
     return activityCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The category for the activity")
   @JsonProperty("category")
   public String getCategory() {
     return category;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The points earned for this activity")
   @JsonProperty("points")
   public Integer getPoints() {
     return points;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Difference between this activity and the last activity in seconds")
   @JsonProperty("delta")
   public Double getDelta() {
     return delta;
   }
 
-  
+
   /**
    **/
   public PunctualityEvent bullseye(Boolean bullseye) {
@@ -112,7 +113,6 @@ public class PunctualityEvent  implements Serializable {
     this.bullseye = bullseye;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,16 +123,17 @@ public class PunctualityEvent  implements Serializable {
       return false;
     }
     PunctualityEvent punctualityEvent = (PunctualityEvent) o;
+
     return Objects.equals(this.dateScheduleStart, punctualityEvent.dateScheduleStart) &&
-        Objects.equals(this.dateStart, punctualityEvent.dateStart) &&
-        Objects.equals(this.lengthMinutes, punctualityEvent.lengthMinutes) &&
-        Objects.equals(this.description, punctualityEvent.description) &&
-        Objects.equals(this.activityCodeId, punctualityEvent.activityCodeId) &&
-        Objects.equals(this.activityCode, punctualityEvent.activityCode) &&
-        Objects.equals(this.category, punctualityEvent.category) &&
-        Objects.equals(this.points, punctualityEvent.points) &&
-        Objects.equals(this.delta, punctualityEvent.delta) &&
-        Objects.equals(this.bullseye, punctualityEvent.bullseye);
+            Objects.equals(this.dateStart, punctualityEvent.dateStart) &&
+            Objects.equals(this.lengthMinutes, punctualityEvent.lengthMinutes) &&
+            Objects.equals(this.description, punctualityEvent.description) &&
+            Objects.equals(this.activityCodeId, punctualityEvent.activityCodeId) &&
+            Objects.equals(this.activityCode, punctualityEvent.activityCode) &&
+            Objects.equals(this.category, punctualityEvent.category) &&
+            Objects.equals(this.points, punctualityEvent.points) &&
+            Objects.equals(this.delta, punctualityEvent.delta) &&
+            Objects.equals(this.bullseye, punctualityEvent.bullseye);
   }
 
   @Override

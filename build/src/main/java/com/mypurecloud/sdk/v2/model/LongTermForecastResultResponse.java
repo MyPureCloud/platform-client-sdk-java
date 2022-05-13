@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LongTermForecastResult;
@@ -42,7 +43,7 @@ public class LongTermForecastResultResponse  implements Serializable {
     this.result = result;
   }
 
-  
+
   /**
    * The download url to fetch the result.  Only populated if the result is too large to pass through the api directly
    **/
@@ -60,7 +61,6 @@ public class LongTermForecastResultResponse  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class LongTermForecastResultResponse  implements Serializable {
       return false;
     }
     LongTermForecastResultResponse longTermForecastResultResponse = (LongTermForecastResultResponse) o;
+
     return Objects.equals(this.result, longTermForecastResultResponse.result) &&
-        Objects.equals(this.downloadUrl, longTermForecastResultResponse.downloadUrl);
+            Objects.equals(this.downloadUrl, longTermForecastResultResponse.downloadUrl);
   }
 
   @Override

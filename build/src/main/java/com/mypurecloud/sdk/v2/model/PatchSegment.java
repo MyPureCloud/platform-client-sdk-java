@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Context;
@@ -46,7 +47,7 @@ public class PatchSegment  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Whether or not the segment is active.
    **/
@@ -64,7 +65,7 @@ public class PatchSegment  implements Serializable {
     this.isActive = isActive;
   }
 
-  
+
   /**
    * The display name of the segment.
    **/
@@ -82,7 +83,7 @@ public class PatchSegment  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * The version of the segment.
    **/
@@ -100,7 +101,7 @@ public class PatchSegment  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * A description of the segment.
    **/
@@ -118,7 +119,7 @@ public class PatchSegment  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The hexadecimal color value of the segment.
    **/
@@ -136,7 +137,7 @@ public class PatchSegment  implements Serializable {
     this.color = color;
   }
 
-  
+
   /**
    * Whether or not the segment should be displayed to agent/supervisor users.
    **/
@@ -154,7 +155,7 @@ public class PatchSegment  implements Serializable {
     this.shouldDisplayToAgent = shouldDisplayToAgent;
   }
 
-  
+
   /**
    * The context of the segment.
    **/
@@ -172,7 +173,7 @@ public class PatchSegment  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * The pattern of rules defining the segment.
    **/
@@ -190,7 +191,7 @@ public class PatchSegment  implements Serializable {
     this.journey = journey;
   }
 
-  
+
   /**
    * Details of an entity corresponding to this segment in an external system.
    **/
@@ -208,7 +209,7 @@ public class PatchSegment  implements Serializable {
     this.externalSegment = externalSegment;
   }
 
-  
+
   /**
    * Time, in days, from when the segment is assigned until it is automatically unassigned.
    **/
@@ -226,14 +227,14 @@ public class PatchSegment  implements Serializable {
     this.assignmentExpirationDays = assignmentExpirationDays;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -251,7 +252,7 @@ public class PatchSegment  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -269,7 +270,6 @@ public class PatchSegment  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -280,20 +280,21 @@ public class PatchSegment  implements Serializable {
       return false;
     }
     PatchSegment patchSegment = (PatchSegment) o;
+
     return Objects.equals(this.id, patchSegment.id) &&
-        Objects.equals(this.isActive, patchSegment.isActive) &&
-        Objects.equals(this.displayName, patchSegment.displayName) &&
-        Objects.equals(this.version, patchSegment.version) &&
-        Objects.equals(this.description, patchSegment.description) &&
-        Objects.equals(this.color, patchSegment.color) &&
-        Objects.equals(this.shouldDisplayToAgent, patchSegment.shouldDisplayToAgent) &&
-        Objects.equals(this.context, patchSegment.context) &&
-        Objects.equals(this.journey, patchSegment.journey) &&
-        Objects.equals(this.externalSegment, patchSegment.externalSegment) &&
-        Objects.equals(this.assignmentExpirationDays, patchSegment.assignmentExpirationDays) &&
-        Objects.equals(this.selfUri, patchSegment.selfUri) &&
-        Objects.equals(this.createdDate, patchSegment.createdDate) &&
-        Objects.equals(this.modifiedDate, patchSegment.modifiedDate);
+            Objects.equals(this.isActive, patchSegment.isActive) &&
+            Objects.equals(this.displayName, patchSegment.displayName) &&
+            Objects.equals(this.version, patchSegment.version) &&
+            Objects.equals(this.description, patchSegment.description) &&
+            Objects.equals(this.color, patchSegment.color) &&
+            Objects.equals(this.shouldDisplayToAgent, patchSegment.shouldDisplayToAgent) &&
+            Objects.equals(this.context, patchSegment.context) &&
+            Objects.equals(this.journey, patchSegment.journey) &&
+            Objects.equals(this.externalSegment, patchSegment.externalSegment) &&
+            Objects.equals(this.assignmentExpirationDays, patchSegment.assignmentExpirationDays) &&
+            Objects.equals(this.selfUri, patchSegment.selfUri) &&
+            Objects.equals(this.createdDate, patchSegment.createdDate) &&
+            Objects.equals(this.modifiedDate, patchSegment.modifiedDate);
   }
 
   @Override

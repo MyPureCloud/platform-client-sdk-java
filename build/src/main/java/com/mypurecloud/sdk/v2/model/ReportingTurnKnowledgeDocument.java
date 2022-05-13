@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class ReportingTurnKnowledgeDocument  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The the question that was used to match against the search query.
    **/
@@ -61,7 +62,7 @@ public class ReportingTurnKnowledgeDocument  implements Serializable {
     this.question = question;
   }
 
-  
+
   /**
    * The corresponding answer to the question.
    **/
@@ -79,7 +80,7 @@ public class ReportingTurnKnowledgeDocument  implements Serializable {
     this.answer = answer;
   }
 
-  
+
   /**
    * The confidence score of how well the question matched the search query.
    **/
@@ -97,7 +98,6 @@ public class ReportingTurnKnowledgeDocument  implements Serializable {
     this.confidence = confidence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class ReportingTurnKnowledgeDocument  implements Serializable {
       return false;
     }
     ReportingTurnKnowledgeDocument reportingTurnKnowledgeDocument = (ReportingTurnKnowledgeDocument) o;
+
     return Objects.equals(this.id, reportingTurnKnowledgeDocument.id) &&
-        Objects.equals(this.question, reportingTurnKnowledgeDocument.question) &&
-        Objects.equals(this.answer, reportingTurnKnowledgeDocument.answer) &&
-        Objects.equals(this.confidence, reportingTurnKnowledgeDocument.confidence);
+            Objects.equals(this.question, reportingTurnKnowledgeDocument.question) &&
+            Objects.equals(this.answer, reportingTurnKnowledgeDocument.answer) &&
+            Objects.equals(this.confidence, reportingTurnKnowledgeDocument.confidence);
   }
 
   @Override

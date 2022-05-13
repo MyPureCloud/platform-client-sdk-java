@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class PromptAssetCreate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public PromptAssetCreate name(String name) {
@@ -111,14 +112,14 @@ public class PromptAssetCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Associated prompt ID")
   @JsonProperty("promptId")
   public String getPromptId() {
     return promptId;
   }
 
-  
+
   /**
    * The prompt language.
    **/
@@ -136,14 +137,14 @@ public class PromptAssetCreate  implements Serializable {
     this.language = language;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI of the resource audio")
   @JsonProperty("mediaUri")
   public String getMediaUri() {
     return mediaUri;
   }
 
-  
+
   /**
    * Text to speech of the resource
    **/
@@ -161,7 +162,7 @@ public class PromptAssetCreate  implements Serializable {
     this.ttsString = ttsString;
   }
 
-  
+
   /**
    * Text of the resource
    **/
@@ -179,28 +180,28 @@ public class PromptAssetCreate  implements Serializable {
     this.text = text;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Audio upload status")
   @JsonProperty("uploadStatus")
   public UploadStatusEnum getUploadStatus() {
     return uploadStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Upload URI for the resource audio")
   @JsonProperty("uploadUri")
   public String getUploadUri() {
     return uploadUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether or not this resource locale is the default for the language")
   @JsonProperty("languageDefault")
   public Boolean getLanguageDefault() {
     return languageDefault;
   }
 
-  
+
   /**
    **/
   public PromptAssetCreate tags(Map<String, List<String>> tags) {
@@ -217,7 +218,7 @@ public class PromptAssetCreate  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public PromptAssetCreate durationSeconds(Double durationSeconds) {
@@ -234,14 +235,13 @@ public class PromptAssetCreate  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -252,19 +252,20 @@ public class PromptAssetCreate  implements Serializable {
       return false;
     }
     PromptAssetCreate promptAssetCreate = (PromptAssetCreate) o;
+
     return Objects.equals(this.id, promptAssetCreate.id) &&
-        Objects.equals(this.name, promptAssetCreate.name) &&
-        Objects.equals(this.promptId, promptAssetCreate.promptId) &&
-        Objects.equals(this.language, promptAssetCreate.language) &&
-        Objects.equals(this.mediaUri, promptAssetCreate.mediaUri) &&
-        Objects.equals(this.ttsString, promptAssetCreate.ttsString) &&
-        Objects.equals(this.text, promptAssetCreate.text) &&
-        Objects.equals(this.uploadStatus, promptAssetCreate.uploadStatus) &&
-        Objects.equals(this.uploadUri, promptAssetCreate.uploadUri) &&
-        Objects.equals(this.languageDefault, promptAssetCreate.languageDefault) &&
-        Objects.equals(this.tags, promptAssetCreate.tags) &&
-        Objects.equals(this.durationSeconds, promptAssetCreate.durationSeconds) &&
-        Objects.equals(this.selfUri, promptAssetCreate.selfUri);
+            Objects.equals(this.name, promptAssetCreate.name) &&
+            Objects.equals(this.promptId, promptAssetCreate.promptId) &&
+            Objects.equals(this.language, promptAssetCreate.language) &&
+            Objects.equals(this.mediaUri, promptAssetCreate.mediaUri) &&
+            Objects.equals(this.ttsString, promptAssetCreate.ttsString) &&
+            Objects.equals(this.text, promptAssetCreate.text) &&
+            Objects.equals(this.uploadStatus, promptAssetCreate.uploadStatus) &&
+            Objects.equals(this.uploadUri, promptAssetCreate.uploadUri) &&
+            Objects.equals(this.languageDefault, promptAssetCreate.languageDefault) &&
+            Objects.equals(this.tags, promptAssetCreate.tags) &&
+            Objects.equals(this.durationSeconds, promptAssetCreate.durationSeconds) &&
+            Objects.equals(this.selfUri, promptAssetCreate.selfUri);
   }
 
   @Override

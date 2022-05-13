@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class CallForwarding  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CallForwarding name(String name) {
@@ -108,7 +109,7 @@ public class CallForwarding  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public CallForwarding user(User user) {
@@ -125,7 +126,7 @@ public class CallForwarding  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Whether or not CallForwarding is enabled
    **/
@@ -143,7 +144,7 @@ public class CallForwarding  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * This property is deprecated. Please use the calls property
    **/
@@ -161,7 +162,7 @@ public class CallForwarding  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * An ordered list of CallRoutes to be executed when CallForwarding is enabled
    **/
@@ -179,7 +180,7 @@ public class CallForwarding  implements Serializable {
     this.calls = calls;
   }
 
-  
+
   /**
    * The type of voicemail to use with the callForwarding configuration
    **/
@@ -197,7 +198,7 @@ public class CallForwarding  implements Serializable {
     this.voicemail = voicemail;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -215,14 +216,13 @@ public class CallForwarding  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,15 +233,16 @@ public class CallForwarding  implements Serializable {
       return false;
     }
     CallForwarding callForwarding = (CallForwarding) o;
+
     return Objects.equals(this.id, callForwarding.id) &&
-        Objects.equals(this.name, callForwarding.name) &&
-        Objects.equals(this.user, callForwarding.user) &&
-        Objects.equals(this.enabled, callForwarding.enabled) &&
-        Objects.equals(this.phoneNumber, callForwarding.phoneNumber) &&
-        Objects.equals(this.calls, callForwarding.calls) &&
-        Objects.equals(this.voicemail, callForwarding.voicemail) &&
-        Objects.equals(this.modifiedDate, callForwarding.modifiedDate) &&
-        Objects.equals(this.selfUri, callForwarding.selfUri);
+            Objects.equals(this.name, callForwarding.name) &&
+            Objects.equals(this.user, callForwarding.user) &&
+            Objects.equals(this.enabled, callForwarding.enabled) &&
+            Objects.equals(this.phoneNumber, callForwarding.phoneNumber) &&
+            Objects.equals(this.calls, callForwarding.calls) &&
+            Objects.equals(this.voicemail, callForwarding.voicemail) &&
+            Objects.equals(this.modifiedDate, callForwarding.modifiedDate) &&
+            Objects.equals(this.selfUri, callForwarding.selfUri);
   }
 
   @Override

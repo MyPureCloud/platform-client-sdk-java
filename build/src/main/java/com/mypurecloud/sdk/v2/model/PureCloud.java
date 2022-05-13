@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,7 +33,7 @@ public class PureCloud  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public PureCloud name(String name) {
@@ -49,7 +50,7 @@ public class PureCloud  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public PureCloud disabled(Boolean disabled) {
@@ -66,14 +67,13 @@ public class PureCloud  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,10 +84,11 @@ public class PureCloud  implements Serializable {
       return false;
     }
     PureCloud pureCloud = (PureCloud) o;
+
     return Objects.equals(this.id, pureCloud.id) &&
-        Objects.equals(this.name, pureCloud.name) &&
-        Objects.equals(this.disabled, pureCloud.disabled) &&
-        Objects.equals(this.selfUri, pureCloud.selfUri);
+            Objects.equals(this.name, pureCloud.name) &&
+            Objects.equals(this.disabled, pureCloud.disabled) &&
+            Objects.equals(this.selfUri, pureCloud.selfUri);
   }
 
   @Override

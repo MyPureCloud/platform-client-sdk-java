@@ -37,9 +37,9 @@ title: LearningModule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USERCREATED | &quot;UserCreated&quot; |
-| GENESYSBEYOND | &quot;GenesysBeyond&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USERCREATED | &quot;UserCreated&quot; | 
+| GENESYSBEYOND | &quot;GenesysBeyond&quot; | 
 {: class="table table-striped"}
 
 
@@ -49,10 +49,10 @@ title: LearningModule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INFORMATIONAL | &quot;Informational&quot; |
-| ASSESSEDCONTENT | &quot;AssessedContent&quot; |
-| ASSESSMENT | &quot;Assessment&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INFORMATIONAL | &quot;Informational&quot; | 
+| ASSESSEDCONTENT | &quot;AssessedContent&quot; | 
+| ASSESSMENT | &quot;Assessment&quot; | 
 {: class="table table-striped"}
 
 

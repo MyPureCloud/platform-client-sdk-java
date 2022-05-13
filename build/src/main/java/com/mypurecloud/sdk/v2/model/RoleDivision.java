@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class RoleDivision  implements Serializable {
     this.roleId = roleId;
   }
 
-  
+
   /**
    * Division associated with the given role which forms a grant
    **/
@@ -59,7 +60,6 @@ public class RoleDivision  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class RoleDivision  implements Serializable {
       return false;
     }
     RoleDivision roleDivision = (RoleDivision) o;
+
     return Objects.equals(this.roleId, roleDivision.roleId) &&
-        Objects.equals(this.divisionId, roleDivision.divisionId);
+            Objects.equals(this.divisionId, roleDivision.divisionId);
   }
 
   @Override

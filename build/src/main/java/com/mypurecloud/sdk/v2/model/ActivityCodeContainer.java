@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
@@ -47,7 +48,7 @@ public class ActivityCodeContainer  implements Serializable {
     this.activityCodes = activityCodes;
   }
 
-  
+
   /**
    * Version metadata for the associated management unit's list of activity codes
    **/
@@ -65,7 +66,6 @@ public class ActivityCodeContainer  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -76,8 +76,9 @@ public class ActivityCodeContainer  implements Serializable {
       return false;
     }
     ActivityCodeContainer activityCodeContainer = (ActivityCodeContainer) o;
+
     return Objects.equals(this.activityCodes, activityCodeContainer.activityCodes) &&
-        Objects.equals(this.metadata, activityCodeContainer.metadata);
+            Objects.equals(this.metadata, activityCodeContainer.metadata);
   }
 
   @Override

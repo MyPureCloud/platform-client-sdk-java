@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroupScore;
@@ -51,7 +52,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.totalScore = totalScore;
   }
 
-  
+
   /**
    * Score of only the critical questions
    **/
@@ -69,7 +70,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.totalCriticalScore = totalCriticalScore;
   }
 
-  
+
   /**
    * Score of only the non-critical questions
    **/
@@ -87,7 +88,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.totalNonCriticalScore = totalNonCriticalScore;
   }
 
-  
+
   /**
    **/
   public EvaluationScoringSet questionGroupScores(List<EvaluationQuestionGroupScore> questionGroupScores) {
@@ -104,7 +105,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.questionGroupScores = questionGroupScores;
   }
 
-  
+
   /**
    * Indicates that at least one fatal question was answered without having the highest score available for the question
    **/
@@ -122,7 +123,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.anyFailedKillQuestions = anyFailedKillQuestions;
   }
 
-  
+
   /**
    * Overall comments from the evaluator
    **/
@@ -140,7 +141,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.comments = comments;
   }
 
-  
+
   /**
    * Comments from the agent while reviewing evaluation results
    **/
@@ -158,7 +159,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.agentComments = agentComments;
   }
 
-  
+
   /**
    * List of topics found within the conversation's transcripts
    **/
@@ -176,7 +177,6 @@ public class EvaluationScoringSet  implements Serializable {
     this.transcriptTopics = transcriptTopics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -187,14 +187,15 @@ public class EvaluationScoringSet  implements Serializable {
       return false;
     }
     EvaluationScoringSet evaluationScoringSet = (EvaluationScoringSet) o;
+
     return Objects.equals(this.totalScore, evaluationScoringSet.totalScore) &&
-        Objects.equals(this.totalCriticalScore, evaluationScoringSet.totalCriticalScore) &&
-        Objects.equals(this.totalNonCriticalScore, evaluationScoringSet.totalNonCriticalScore) &&
-        Objects.equals(this.questionGroupScores, evaluationScoringSet.questionGroupScores) &&
-        Objects.equals(this.anyFailedKillQuestions, evaluationScoringSet.anyFailedKillQuestions) &&
-        Objects.equals(this.comments, evaluationScoringSet.comments) &&
-        Objects.equals(this.agentComments, evaluationScoringSet.agentComments) &&
-        Objects.equals(this.transcriptTopics, evaluationScoringSet.transcriptTopics);
+            Objects.equals(this.totalCriticalScore, evaluationScoringSet.totalCriticalScore) &&
+            Objects.equals(this.totalNonCriticalScore, evaluationScoringSet.totalNonCriticalScore) &&
+            Objects.equals(this.questionGroupScores, evaluationScoringSet.questionGroupScores) &&
+            Objects.equals(this.anyFailedKillQuestions, evaluationScoringSet.anyFailedKillQuestions) &&
+            Objects.equals(this.comments, evaluationScoringSet.comments) &&
+            Objects.equals(this.agentComments, evaluationScoringSet.agentComments) &&
+            Objects.equals(this.transcriptTopics, evaluationScoringSet.transcriptTopics);
   }
 
   @Override

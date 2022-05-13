@@ -20,23 +20,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ScimError;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimError;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
+import com.mypurecloud.sdk.v2.model.ScimV2Group;
+import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
-import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
-import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
-import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 public class PutScimV2UserRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -50,7 +49,7 @@ public class PutScimV2UserRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private ScimV2User body;
 	public ScimV2User getBody() {
 		return this.body;
@@ -64,7 +63,7 @@ public class PutScimV2UserRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private String ifMatch;
 	public String getIfMatch() {
 		return this.ifMatch;
@@ -78,7 +77,7 @@ public class PutScimV2UserRequest {
 	    this.setIfMatch(ifMatch);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -117,9 +116,9 @@ public class PutScimV2UserRequest {
                 .withHeaderParameter("If-Match", ifMatch)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
-                .withContentTypes("application/scim+json", "application/json")
+
+		.withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
                 .withAccepts("application/scim+json", "application/json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
@@ -129,12 +128,12 @@ public class PutScimV2UserRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId, ScimV2User body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutScimV2UserRequest request;
@@ -143,31 +142,31 @@ public class PutScimV2UserRequest {
 			request = new PutScimV2UserRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
+
 		public Builder withBody(ScimV2User body) {
 			request.setBody(body);
 			return this;
 		}
-		
+
 		public Builder withIfMatch(String ifMatch) {
 			request.setIfMatch(ifMatch);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId, ScimV2User body) {
 			request.setUserId(userId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutScimV2UserRequest build() {
             

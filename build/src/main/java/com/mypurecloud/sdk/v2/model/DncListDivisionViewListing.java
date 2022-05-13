@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing total(Long total) {
@@ -103,7 +104,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DncListDivisionViewListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
       return false;
     }
     DncListDivisionViewListing dncListDivisionViewListing = (DncListDivisionViewListing) o;
+
     return Objects.equals(this.entities, dncListDivisionViewListing.entities) &&
-        Objects.equals(this.pageSize, dncListDivisionViewListing.pageSize) &&
-        Objects.equals(this.pageNumber, dncListDivisionViewListing.pageNumber) &&
-        Objects.equals(this.total, dncListDivisionViewListing.total) &&
-        Objects.equals(this.lastUri, dncListDivisionViewListing.lastUri) &&
-        Objects.equals(this.firstUri, dncListDivisionViewListing.firstUri) &&
-        Objects.equals(this.selfUri, dncListDivisionViewListing.selfUri) &&
-        Objects.equals(this.previousUri, dncListDivisionViewListing.previousUri) &&
-        Objects.equals(this.nextUri, dncListDivisionViewListing.nextUri) &&
-        Objects.equals(this.pageCount, dncListDivisionViewListing.pageCount);
+            Objects.equals(this.pageSize, dncListDivisionViewListing.pageSize) &&
+            Objects.equals(this.pageNumber, dncListDivisionViewListing.pageNumber) &&
+            Objects.equals(this.total, dncListDivisionViewListing.total) &&
+            Objects.equals(this.lastUri, dncListDivisionViewListing.lastUri) &&
+            Objects.equals(this.firstUri, dncListDivisionViewListing.firstUri) &&
+            Objects.equals(this.selfUri, dncListDivisionViewListing.selfUri) &&
+            Objects.equals(this.previousUri, dncListDivisionViewListing.previousUri) &&
+            Objects.equals(this.nextUri, dncListDivisionViewListing.nextUri) &&
+            Objects.equals(this.pageCount, dncListDivisionViewListing.pageCount);
   }
 
   @Override

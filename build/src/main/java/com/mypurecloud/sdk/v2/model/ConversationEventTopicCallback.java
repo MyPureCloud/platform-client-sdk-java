@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -235,7 +236,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -253,7 +254,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The direction of the call
    **/
@@ -271,7 +272,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -289,7 +290,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -307,7 +308,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.
    **/
@@ -325,7 +326,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicCallback dialerPreview(ConversationEventTopicDialerPreview dialerPreview) {
@@ -342,7 +343,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.dialerPreview = dialerPreview;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicCallback voicemail(ConversationEventTopicVoicemail voicemail) {
@@ -359,7 +360,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.voicemail = voicemail;
   }
 
-  
+
   /**
    * The phone number(s) to use to place the callback.
    **/
@@ -377,7 +378,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    * The name of the user requesting a callback.
    **/
@@ -395,7 +396,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -413,7 +414,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -431,7 +432,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * True if the call for the callback uses external dialing.
    **/
@@ -449,7 +450,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.externalCampaign = externalCampaign;
   }
 
-  
+
   /**
    * True if the ability to skip a callback should be enabled.
    **/
@@ -467,7 +468,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-  
+
   /**
    * The source provider of the callback.
    **/
@@ -485,7 +486,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
    **/
@@ -503,7 +504,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -521,7 +522,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -539,7 +540,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.
    **/
@@ -557,7 +558,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    * The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
    **/
@@ -575,7 +576,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -593,7 +594,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -611,7 +612,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -629,7 +630,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
    **/
@@ -647,7 +648,7 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.callerId = callerId;
   }
 
-  
+
   /**
    * The name displayed to recipients of the phone call.
    **/
@@ -665,7 +666,6 @@ public class ConversationEventTopicCallback  implements Serializable {
     this.callerIdName = callerIdName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -676,31 +676,32 @@ public class ConversationEventTopicCallback  implements Serializable {
       return false;
     }
     ConversationEventTopicCallback conversationEventTopicCallback = (ConversationEventTopicCallback) o;
+
     return Objects.equals(this.state, conversationEventTopicCallback.state) &&
-        Objects.equals(this.id, conversationEventTopicCallback.id) &&
-        Objects.equals(this.direction, conversationEventTopicCallback.direction) &&
-        Objects.equals(this.held, conversationEventTopicCallback.held) &&
-        Objects.equals(this.disconnectType, conversationEventTopicCallback.disconnectType) &&
-        Objects.equals(this.startHoldTime, conversationEventTopicCallback.startHoldTime) &&
-        Objects.equals(this.dialerPreview, conversationEventTopicCallback.dialerPreview) &&
-        Objects.equals(this.voicemail, conversationEventTopicCallback.voicemail) &&
-        Objects.equals(this.callbackNumbers, conversationEventTopicCallback.callbackNumbers) &&
-        Objects.equals(this.callbackUserName, conversationEventTopicCallback.callbackUserName) &&
-        Objects.equals(this.scriptId, conversationEventTopicCallback.scriptId) &&
-        Objects.equals(this.peerId, conversationEventTopicCallback.peerId) &&
-        Objects.equals(this.externalCampaign, conversationEventTopicCallback.externalCampaign) &&
-        Objects.equals(this.skipEnabled, conversationEventTopicCallback.skipEnabled) &&
-        Objects.equals(this.provider, conversationEventTopicCallback.provider) &&
-        Objects.equals(this.timeoutSeconds, conversationEventTopicCallback.timeoutSeconds) &&
-        Objects.equals(this.connectedTime, conversationEventTopicCallback.connectedTime) &&
-        Objects.equals(this.disconnectedTime, conversationEventTopicCallback.disconnectedTime) &&
-        Objects.equals(this.callbackScheduledTime, conversationEventTopicCallback.callbackScheduledTime) &&
-        Objects.equals(this.automatedCallbackConfigId, conversationEventTopicCallback.automatedCallbackConfigId) &&
-        Objects.equals(this.wrapup, conversationEventTopicCallback.wrapup) &&
-        Objects.equals(this.afterCallWork, conversationEventTopicCallback.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, conversationEventTopicCallback.afterCallWorkRequired) &&
-        Objects.equals(this.callerId, conversationEventTopicCallback.callerId) &&
-        Objects.equals(this.callerIdName, conversationEventTopicCallback.callerIdName);
+            Objects.equals(this.id, conversationEventTopicCallback.id) &&
+            Objects.equals(this.direction, conversationEventTopicCallback.direction) &&
+            Objects.equals(this.held, conversationEventTopicCallback.held) &&
+            Objects.equals(this.disconnectType, conversationEventTopicCallback.disconnectType) &&
+            Objects.equals(this.startHoldTime, conversationEventTopicCallback.startHoldTime) &&
+            Objects.equals(this.dialerPreview, conversationEventTopicCallback.dialerPreview) &&
+            Objects.equals(this.voicemail, conversationEventTopicCallback.voicemail) &&
+            Objects.equals(this.callbackNumbers, conversationEventTopicCallback.callbackNumbers) &&
+            Objects.equals(this.callbackUserName, conversationEventTopicCallback.callbackUserName) &&
+            Objects.equals(this.scriptId, conversationEventTopicCallback.scriptId) &&
+            Objects.equals(this.peerId, conversationEventTopicCallback.peerId) &&
+            Objects.equals(this.externalCampaign, conversationEventTopicCallback.externalCampaign) &&
+            Objects.equals(this.skipEnabled, conversationEventTopicCallback.skipEnabled) &&
+            Objects.equals(this.provider, conversationEventTopicCallback.provider) &&
+            Objects.equals(this.timeoutSeconds, conversationEventTopicCallback.timeoutSeconds) &&
+            Objects.equals(this.connectedTime, conversationEventTopicCallback.connectedTime) &&
+            Objects.equals(this.disconnectedTime, conversationEventTopicCallback.disconnectedTime) &&
+            Objects.equals(this.callbackScheduledTime, conversationEventTopicCallback.callbackScheduledTime) &&
+            Objects.equals(this.automatedCallbackConfigId, conversationEventTopicCallback.automatedCallbackConfigId) &&
+            Objects.equals(this.wrapup, conversationEventTopicCallback.wrapup) &&
+            Objects.equals(this.afterCallWork, conversationEventTopicCallback.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, conversationEventTopicCallback.afterCallWorkRequired) &&
+            Objects.equals(this.callerId, conversationEventTopicCallback.callerId) &&
+            Objects.equals(this.callerIdName, conversationEventTopicCallback.callerIdName);
   }
 
   @Override

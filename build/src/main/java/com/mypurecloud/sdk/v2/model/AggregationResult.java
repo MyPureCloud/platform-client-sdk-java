@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class AggregationResult  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * For termFrequency aggregations
    **/
@@ -112,7 +113,7 @@ public class AggregationResult  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * For numericRange aggregations
    **/
@@ -130,7 +131,7 @@ public class AggregationResult  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public AggregationResult count(Long count) {
@@ -147,7 +148,7 @@ public class AggregationResult  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    **/
   public AggregationResult results(List<AggregationResultEntry> results) {
@@ -164,7 +165,6 @@ public class AggregationResult  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,11 +175,12 @@ public class AggregationResult  implements Serializable {
       return false;
     }
     AggregationResult aggregationResult = (AggregationResult) o;
+
     return Objects.equals(this.type, aggregationResult.type) &&
-        Objects.equals(this.dimension, aggregationResult.dimension) &&
-        Objects.equals(this.metric, aggregationResult.metric) &&
-        Objects.equals(this.count, aggregationResult.count) &&
-        Objects.equals(this.results, aggregationResult.results);
+            Objects.equals(this.dimension, aggregationResult.dimension) &&
+            Objects.equals(this.metric, aggregationResult.metric) &&
+            Objects.equals(this.count, aggregationResult.count) &&
+            Objects.equals(this.results, aggregationResult.results);
   }
 
   @Override

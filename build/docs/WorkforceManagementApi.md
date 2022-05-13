@@ -39,7 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route |
 | [**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | Get the generation results for a generated schedule |
 | [**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | Get the headcount forecast by planning group for the schedule |
-| [**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | Loads agent&#39;s schedule history. |
+| [**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | Loads agent's schedule history. |
 | [**getWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedules) | Get the list of week schedules for the specified week |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecast) | Get a short term forecast |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastData**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastData) | Get the result of a short term forecast calculation |
@@ -219,8 +219,6 @@ null (empty response body)
 
 Deletes an activity code
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}  
 
 Requires ANY permissions: 
@@ -282,8 +280,6 @@ null (empty response body)
 > Void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 Deletes the planning group
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}  
 
@@ -347,8 +343,6 @@ null (empty response body)
 
 Cancel a scheduling run
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}  
 
 Requires ANY permissions: 
@@ -411,8 +405,6 @@ null (empty response body)
 
 Delete a service goal template
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}  
 
 Requires ANY permissions: 
@@ -474,8 +466,6 @@ null (empty response body)
 > [BuAsyncScheduleResponse](BuAsyncScheduleResponse.html) deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
 
 Delete a schedule
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}  
 
@@ -608,8 +598,6 @@ null (empty response body)
 
 Disable generated calendar link for the current user
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/calendar/url/ics  
 
 Requires ALL permissions: 
@@ -665,8 +653,6 @@ null (empty response body)
 > Void deleteWorkforcemanagementManagementunit(managementUnitId)
 
 Delete management unit
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}  
 
@@ -727,8 +713,6 @@ null (empty response body)
 > Void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
 
 Deletes a time off limit object
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}  
 
@@ -792,8 +776,6 @@ null (empty response body)
 
 Deletes a time off plan
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}  
 
 Requires ANY permissions: 
@@ -855,8 +837,6 @@ null (empty response body)
 > Void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
 
 Delete a work plan
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}  
 
@@ -920,8 +900,6 @@ null (empty response body)
 
 Delete a work plan rotation
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}  
 
 Requires ANY permissions: 
@@ -984,8 +962,6 @@ null (empty response body)
 
 Get a list of UserScheduleAdherence records for the requested users
 
-
-
 Wraps GET /api/v2/workforcemanagement/adherence  
 
 Requires ANY permissions: 
@@ -1014,7 +990,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-List<String> userId = Arrays.asList("userId_example"); // List<String> | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
+List<String> userId = Arrays.asList(null); // List<String> | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
 try {
     List<UserScheduleAdherence> result = apiInstance.getWorkforcemanagementAdherence(userId);
     System.out.println(result);
@@ -1046,8 +1022,6 @@ try {
 > [ModelingStatusResponse](ModelingStatusResponse.html) getWorkforcemanagementAdhocmodelingjob(jobId)
 
 Get status of the modeling job
-
-
 
 Wraps GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}  
 
@@ -1109,8 +1083,6 @@ try {
 > [AgentManagementUnitReference](AgentManagementUnitReference.html) getWorkforcemanagementAgentManagementunit(agentId)
 
 Get the management unit to which the agent belongs
-
-
 
 Wraps GET /api/v2/workforcemanagement/agents/{agentId}/managementunit  
 
@@ -1176,8 +1148,6 @@ try {
 > [AgentManagementUnitReference](AgentManagementUnitReference.html) getWorkforcemanagementAgentsMeManagementunit()
 
 Get the management unit to which the currently logged in agent belongs
-
-
 
 Wraps GET /api/v2/workforcemanagement/agents/me/managementunit  
 
@@ -1293,7 +1263,7 @@ This endpoint does not require any parameters.
 
 Get business unit
 
-Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}  
 
@@ -1387,7 +1357,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
     BusinessUnit result = apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, expand);
     System.out.println(result);
@@ -1420,8 +1390,6 @@ try {
 > [BusinessUnitActivityCode](BusinessUnitActivityCode.html) getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 Get an activity code
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}  
 
@@ -1485,8 +1453,6 @@ try {
 > [BusinessUnitActivityCodeListing](BusinessUnitActivityCodeListing.html) getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 
 Get activity codes
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes  
 
@@ -1606,8 +1572,6 @@ try {
 
 Get intraday planning groups for the given date
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups  
 
 Requires ANY permissions: 
@@ -1670,8 +1634,6 @@ try {
 > [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementBusinessunitManagementunits(businessUnitId, feature, divisionId)
 
 Get all authorized management units in the business unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits  
 
@@ -1737,8 +1699,6 @@ try {
 
 Get a planning group
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}  
 
 Requires ANY permissions: 
@@ -1801,8 +1761,6 @@ try {
 > [PlanningGroupList](PlanningGroupList.html) getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 
 Gets list of planning groups
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups  
 
@@ -1870,8 +1828,6 @@ try {
 
 Get a scheduling run
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}  
 
 Requires ANY permissions: 
@@ -1936,8 +1892,6 @@ try {
 
 Get the result of a rescheduling operation
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result  
 
 Requires ANY permissions: 
@@ -1969,8 +1923,8 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 String runId = "runId_example"; // String | The ID of the schedule run
-List<String> managementUnitIds = Arrays.asList("managementUnitIds_example"); // List<String> | The IDs of the management units for which to fetch the reschedule results
-List<String> expand = Arrays.asList("expand_example"); // List<String> | The fields to expand. Omitting will return an empty response
+List<String> managementUnitIds = Arrays.asList(null); // List<String> | The IDs of the management units for which to fetch the reschedule results
+List<String> expand = Arrays.asList(null); // List<String> | The fields to expand. Omitting will return an empty response
 try {
     BuRescheduleResult result = apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand);
     System.out.println(result);
@@ -2005,8 +1959,6 @@ try {
 > [BuScheduleRunListing](BuScheduleRunListing.html) getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 
 Get the list of scheduling runs
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs  
 
@@ -2069,8 +2021,6 @@ try {
 > [ServiceGoalTemplate](ServiceGoalTemplate.html) getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
 
 Get a service goal template
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}  
 
@@ -2135,8 +2085,6 @@ try {
 
 Gets list of service goal templates
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates  
 
 Requires ANY permissions: 
@@ -2199,8 +2147,6 @@ try {
 > [BuScheduleMetadata](BuScheduleMetadata.html) getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, expand)
 
 Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}  
 
@@ -2270,8 +2216,6 @@ try {
 
 Get the generation results for a generated schedule
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults  
 
 Requires ANY permissions: 
@@ -2337,8 +2281,6 @@ try {
 > [BuHeadcountForecastResponse](BuHeadcountForecastResponse.html) getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, forceDownload)
 
 Get the headcount forecast by planning group for the schedule
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast  
 
@@ -2406,9 +2348,7 @@ try {
 
 > [BuAgentScheduleHistoryResponse](BuAgentScheduleHistoryResponse.html) getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
 
-Loads agent&#39;s schedule history.
-
-
+Loads agent's schedule history.
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}  
 
@@ -2478,7 +2418,7 @@ try {
 
 Get the list of week schedules for the specified week
 
-Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules  
 
@@ -2548,8 +2488,6 @@ try {
 
 Get a short term forecast
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}  
 
 Requires ANY permissions: 
@@ -2581,7 +2519,7 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
-List<String> expand = Arrays.asList("expand_example"); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
     BuShortTermForecast result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, expand);
     System.out.println(result);
@@ -2687,8 +2625,6 @@ try {
 > [BuForecastGenerationResult](BuForecastGenerationResult.html) getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
 
 Gets the forecast generation results
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults  
 
@@ -2824,8 +2760,6 @@ try {
 
 Gets the forecast planning group snapshot
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups  
 
 Requires ANY permissions: 
@@ -2893,7 +2827,7 @@ try {
 
 Get short term forecasts
 
-Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts  
 
@@ -2959,8 +2893,6 @@ try {
 
 Get business units
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits  
 
 Requires NO permissions: 
@@ -3023,8 +2955,6 @@ try {
 
 Get business units across divisions
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/divisionviews  
 
 Requires ANY permissions: 
@@ -3053,7 +2983,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | The divisionIds to filter by. If omitted, will return business units in all divisions
+List<String> divisionId = Arrays.asList(null); // List<String> | The divisionIds to filter by. If omitted, will return business units in all divisions
 try {
     BusinessUnitListing result = apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(divisionId);
     System.out.println(result);
@@ -3085,8 +3015,6 @@ try {
 > String getWorkforcemanagementCalendarDataIcs(calendarId)
 
 Get ics formatted calendar based on shareable link
-
-
 
 Wraps GET /api/v2/workforcemanagement/calendar/data/ics  
 
@@ -3134,8 +3062,6 @@ try {
 > [CalendarUrlResponse](CalendarUrlResponse.html) getWorkforcemanagementCalendarUrlIcs()
 
 Get existing calendar link for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/calendar/url/ics  
 
@@ -3195,8 +3121,6 @@ This endpoint does not require any parameters.
 
 Retrieves delete job status for historical data imports of the organization
 
-
-
 Wraps GET /api/v2/workforcemanagement/historicaldata/deletejob  
 
 Requires ALL permissions: 
@@ -3253,8 +3177,6 @@ This endpoint does not require any parameters.
 > [HistoricalImportStatusListing](HistoricalImportStatusListing.html) getWorkforcemanagementHistoricaldataImportstatus()
 
 Retrieves status of the historical data imports of the organization
-
-
 
 Wraps GET /api/v2/workforcemanagement/historicaldata/importstatus  
 
@@ -3402,7 +3324,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
     ManagementUnit result = apiInstance.getWorkforcemanagementManagementunit(managementUnitId, expand);
     System.out.println(result);
@@ -3435,8 +3357,6 @@ try {
 > [ActivityCodeContainer](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 
 Get activity codes
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes  
 
@@ -3538,8 +3458,6 @@ try {
 
 Get a list of user schedule adherence records for the requested management unit
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence  
 
 Requires ANY permissions: 
@@ -3602,8 +3520,6 @@ try {
 > [WfmAgent](WfmAgent.html) getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities)
 
 Get data for agent in the management unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}  
 
@@ -3670,8 +3586,6 @@ try {
 
 Gets all the shift trades for a given agent
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades  
 
 Requires ANY permissions: 
@@ -3736,8 +3650,6 @@ try {
 
 Gets a summary of all shift trades in the matched state
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched  
 
 Requires ANY permissions: 
@@ -3799,8 +3711,6 @@ try {
 > [WfmUserEntityListing](WfmUserEntityListing.html) getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
 
 Gets list of users available for whom you can send direct shift trade requests
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users  
 
@@ -3992,8 +3902,6 @@ try {
 
 Gets a time off plan
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}  
 
 Requires ANY permissions: 
@@ -4057,8 +3965,6 @@ try {
 
 Gets a list of time off plans
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans  
 
 Requires ANY permissions: 
@@ -4119,8 +4025,6 @@ try {
 > [TimeOffRequestResponse](TimeOffRequestResponse.html) getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
 
 Get a time off request
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
 
@@ -4186,8 +4090,6 @@ try {
 > [QueryTimeOffLimitValuesResponse](QueryTimeOffLimitValuesResponse.html) getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
 
 Retrieves time off limit, allocated and waitlisted values according to specific time off request
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits  
 
@@ -4255,8 +4157,6 @@ try {
 
 Get a list of time off requests for a given user
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests  
 
 Requires ANY permissions: 
@@ -4321,8 +4221,6 @@ try {
 > [WfmUserEntityListing](WfmUserEntityListing.html) getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 Get users in the management unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users  
 
@@ -4391,8 +4289,6 @@ try {
 > [WeekScheduleResponse](WeekScheduleResponse.html) getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, expand, forceDownloadService)
 
 Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}  
 
@@ -4464,8 +4360,6 @@ try {
 
 Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules  
 
 Requires ANY permissions: 
@@ -4536,8 +4430,6 @@ try {
 
 Gets all the shift trades for a given week
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades  
 
 Requires ANY permissions: 
@@ -4604,8 +4496,6 @@ try {
 
 Get a work plan
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}  
 
 Requires ANY permissions: 
@@ -4638,7 +4528,7 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to fetch
-List<String> includeOnly = Arrays.asList("includeOnly_example"); // List<String> | limit response to the specified fields
+List<String> includeOnly = Arrays.asList(null); // List<String> | limit response to the specified fields
 try {
     WorkPlan result = apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, includeOnly);
     System.out.println(result);
@@ -4672,8 +4562,6 @@ try {
 > [WorkPlanRotationResponse](WorkPlanRotationResponse.html) getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 Get a work plan rotation
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}  
 
@@ -4738,8 +4626,6 @@ try {
 
 Get work plan rotations
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations  
 
 Requires ANY permissions: 
@@ -4770,7 +4656,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
     WorkPlanRotationListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, expand);
     System.out.println(result);
@@ -4804,7 +4690,7 @@ try {
 
 Get work plans
 
-\&quot;expand=details\&quot; is deprecated
+\"expand=details\" is deprecated
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans  
 
@@ -4839,7 +4725,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | 
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
     WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand);
     System.out.println(result);
@@ -4872,8 +4758,6 @@ try {
 > [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId)
 
 Get management units
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits  
 
@@ -4943,8 +4827,6 @@ try {
 
 Get management units across divisions
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/divisionviews  
 
 Requires ANY permissions: 
@@ -4973,7 +4855,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | The divisionIds to filter by. If omitted, will return all divisions
+List<String> divisionId = Arrays.asList(null); // List<String> | The divisionIds to filter by. If omitted, will return all divisions
 try {
     ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunitsDivisionviews(divisionId);
     System.out.println(result);
@@ -5064,8 +4946,6 @@ This endpoint does not require any parameters.
 
 Get status of the scheduling job
 
-
-
 Wraps GET /api/v2/workforcemanagement/schedulingjobs/{jobId}  
 
 Requires ANY permissions: 
@@ -5127,8 +5007,6 @@ try {
 
 Gets all of my shift trades
 
-
-
 Wraps GET /api/v2/workforcemanagement/shifttrades  
 
 Requires ANY permissions: 
@@ -5187,8 +5065,6 @@ This endpoint does not require any parameters.
 > [TimeOffRequestResponse](TimeOffRequestResponse.html) getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 Get a time off request for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}  
 
@@ -5252,8 +5128,6 @@ try {
 
 Get the daily waitlist positions of a time off request for the current user
 
-
-
 Wraps GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions  
 
 Requires ANY permissions: 
@@ -5314,8 +5188,6 @@ try {
 > [TimeOffRequestList](TimeOffRequestList.html) getWorkforcemanagementTimeoffrequests(recentlyReviewed)
 
 Get a list of time off requests for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/timeoffrequests  
 
@@ -5379,8 +5251,6 @@ try {
 
 Update business unit
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}  
 
 Requires ALL permissions: 
@@ -5443,8 +5313,6 @@ try {
 > [BusinessUnitActivityCode](BusinessUnitActivityCode.html) patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
 
 Update an activity code
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}  
 
@@ -5511,8 +5379,6 @@ try {
 
 Updates the planning group
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}  
 
 Requires ANY permissions: 
@@ -5578,8 +5444,6 @@ try {
 
 Mark a schedule run as applied
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}  
 
 Requires ANY permissions: 
@@ -5643,8 +5507,6 @@ null (empty response body)
 > [ServiceGoalTemplate](ServiceGoalTemplate.html) patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
 
 Updates a service goal template
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}  
 
@@ -5710,8 +5572,6 @@ try {
 > [ManagementUnit](ManagementUnit.html) patchWorkforcemanagementManagementunit(managementUnitId, body)
 
 Update the requested management unit
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}  
 
@@ -5843,8 +5703,6 @@ try {
 
 Updates a time off plan
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}  
 
 Requires ANY permissions: 
@@ -5910,8 +5768,6 @@ try {
 
 Update a time off request
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
 
 Requires ANY permissions: 
@@ -5975,11 +5831,9 @@ try {
 
 
 
-> [ShiftTradeResponse](ShiftTradeResponse.html) patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, body, tradeId)
+> [ShiftTradeResponse](ShiftTradeResponse.html) patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
 
 Updates a shift trade. This route can only be called by the initiating agent
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}  
 
@@ -6011,10 +5865,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-PatchShiftTradeRequest body = new PatchShiftTradeRequest(); // PatchShiftTradeRequest | body
 String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+PatchShiftTradeRequest body = new PatchShiftTradeRequest(); // PatchShiftTradeRequest | body
 try {
-    ShiftTradeResponse result = apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, body, tradeId);
+    ShiftTradeResponse result = apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitWeekShifttrade");
@@ -6029,8 +5883,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body | 
 | **tradeId** | **String**| The ID of the shift trade to update | 
+| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body | 
 {: class="table-striped"}
 
 
@@ -6044,11 +5898,9 @@ try {
 
 
 
-> [WorkPlan](WorkPlan.html) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, validationMode)
+> [WorkPlan](WorkPlan.html) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, validationMode, body)
 
 Update a work plan
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}  
 
@@ -6080,10 +5932,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
-WorkPlan body = new WorkPlan(); // WorkPlan | body
 String validationMode = "validationMode_example"; // String | Allows to update work plan even if validation result is invalid
+WorkPlan body = new WorkPlan(); // WorkPlan | body
 try {
-    WorkPlan result = apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, validationMode);
+    WorkPlan result = apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, validationMode, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplan");
@@ -6098,8 +5950,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to update | 
-| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional] 
 | **validationMode** | **String**| Allows to update work plan even if validation result is invalid | [optional]<br />**Values**: Ignore 
+| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -6116,8 +5968,6 @@ try {
 > [WorkPlanRotationResponse](WorkPlanRotationResponse.html) patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
 
 Update a work plan rotation
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}  
 
@@ -6184,8 +6034,6 @@ try {
 
 Update a time off request for the current user
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}  
 
 Requires ANY permissions: 
@@ -6249,8 +6097,6 @@ try {
 
 Request a historical adherence report for users across management units
 
-
-
 Wraps POST /api/v2/workforcemanagement/adherence/historical  
 
 Requires ANY permissions: 
@@ -6311,8 +6157,6 @@ try {
 > [BuCurrentAgentScheduleSearchResponse](BuCurrentAgentScheduleSearchResponse.html) postWorkforcemanagementAgentschedulesMine(body)
 
 Get published schedule for the current user
-
-
 
 Wraps POST /api/v2/workforcemanagement/agentschedules/mine  
 
@@ -6375,8 +6219,6 @@ try {
 
 Create a new activity code
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes  
 
 Requires ANY permissions: 
@@ -6436,11 +6278,9 @@ try {
 
 
 
-> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, forceAsync, forceDownloadService)
+> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, forceAsync, forceDownloadService, body)
 
 Search published schedules
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search  
 
@@ -6472,11 +6312,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 try {
-    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, forceAsync, forceDownloadService);
+    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, forceAsync, forceDownloadService, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch");
@@ -6490,9 +6330,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -6509,8 +6349,6 @@ try {
 > [AsyncIntradayResponse](AsyncIntradayResponse.html) postWorkforcemanagementBusinessunitIntraday(businessUnitId, forceAsync, body)
 
 Get intraday data for the given date for the requested planningGroupIds
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday  
 
@@ -6577,8 +6415,6 @@ try {
 
 Adds a new planning group
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups  
 
 Requires ANY permissions: 
@@ -6642,8 +6478,6 @@ try {
 
 Adds a new service goal template
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates  
 
 Requires ANY permissions: 
@@ -6706,8 +6540,6 @@ try {
 > [BuAsyncAgentSchedulesQueryResponse](BuAsyncAgentSchedulesQueryResponse.html) postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService)
 
 Loads agent schedule data from the schedule. Used in combination with the metadata route
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query  
 
@@ -6781,8 +6613,6 @@ try {
 
 Copy a schedule
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy  
 
 Requires ANY permissions: 
@@ -6849,8 +6679,6 @@ try {
 > [BuAsyncScheduleRunResponse](BuAsyncScheduleRunResponse.html) postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
 
 Start a rescheduling run
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule  
 
@@ -7057,8 +6885,6 @@ try {
 
 Create a blank schedule
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules  
 
 Requires ANY permissions: 
@@ -7123,8 +6949,6 @@ try {
 > [BuAsyncScheduleRunResponse](BuAsyncScheduleRunResponse.html) postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
 
 Generate a schedule
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate  
 
@@ -7325,8 +7149,6 @@ try {
 
 Copy a short term forecast
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy  
 
 Requires ANY permissions: 
@@ -7395,8 +7217,6 @@ try {
 > [AsyncForecastOperationResult](AsyncForecastOperationResult.html) postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, forceAsync)
 
 Generate a short term forecast
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate  
 
@@ -7662,8 +7482,6 @@ try {
 
 Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
 
-
-
 Wraps POST /api/v2/workforcemanagement/calendar/url/ics  
 
 Requires ALL permissions: 
@@ -7693,7 +7511,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String language = "en-US"; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar
+String language = en-US; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar
 try {
     CalendarUrlResponse result = apiInstance.postWorkforcemanagementCalendarUrlIcs(language);
     System.out.println(result);
@@ -7708,7 +7526,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] 
+| **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to &quot;en-US&quot;] 
 {: class="table-striped"}
 
 
@@ -7725,8 +7543,6 @@ try {
 > [HistoricalImportDeleteJobResponse](HistoricalImportDeleteJobResponse.html) postWorkforcemanagementHistoricaldataDeletejob()
 
 Delete the entries of the historical data imports in the organization
-
-
 
 Wraps POST /api/v2/workforcemanagement/historicaldata/deletejob  
 
@@ -7785,8 +7601,6 @@ This endpoint does not require any parameters.
 
 Trigger validation process for historical import
 
-
-
 Wraps POST /api/v2/workforcemanagement/historicaldata/validate  
 
 Requires ALL permissions: 
@@ -7843,11 +7657,9 @@ null (empty response body)
 
 
 
-> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, forceAsync, forceDownloadService)
+> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, forceAsync, forceDownloadService, body)
 
 Query published schedules for given given time range for set of users
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search  
 
@@ -7879,11 +7691,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 try {
-    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, forceAsync, forceDownloadService);
+    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, forceAsync, forceDownloadService, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch");
@@ -7897,9 +7709,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -8047,8 +7859,6 @@ try {
 
 Query published schedules for given given time range for set of users
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search  
 
 Requires ANY permissions: 
@@ -8178,8 +7988,6 @@ try {
 
 Retrieves time off limit related values based on a given set of filters.
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query  
 
 Requires ANY permissions: 
@@ -8243,8 +8051,6 @@ try {
 
 Creates a new time off plan
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans  
 
 Requires ANY permissions: 
@@ -8307,8 +8113,6 @@ try {
 > [TimeOffRequestList](TimeOffRequestList.html) postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
 
 Create a new time off request
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests  
 
@@ -8438,8 +8242,6 @@ try {
 
 Retrieves daily waitlist position for a list of time off requests
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query  
 
 Requires ANY permissions: 
@@ -8499,11 +8301,9 @@ try {
 
 
 
-> [MatchShiftTradeResponse](MatchShiftTradeResponse.html) postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId)
+> [MatchShiftTradeResponse](MatchShiftTradeResponse.html) postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
 
 Matches a shift trade. This route can only be called by the receiving agent
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match  
 
@@ -8535,10 +8335,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-MatchShiftTradeRequest body = new MatchShiftTradeRequest(); // MatchShiftTradeRequest | body
 String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+MatchShiftTradeRequest body = new MatchShiftTradeRequest(); // MatchShiftTradeRequest | body
 try {
-    MatchShiftTradeResponse result = apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId);
+    MatchShiftTradeResponse result = apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWeekShifttradeMatch");
@@ -8553,8 +8353,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body | 
 | **tradeId** | **String**| The ID of the shift trade to update | 
+| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body | 
 {: class="table-striped"}
 
 
@@ -8571,8 +8371,6 @@ try {
 > [ShiftTradeResponse](ShiftTradeResponse.html) postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
 
 Adds a shift trade
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades  
 
@@ -8639,8 +8437,6 @@ try {
 
 Searches for potential shift trade matches for the current agent
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search  
 
 Requires ANY permissions: 
@@ -8706,7 +8502,7 @@ try {
 
 Updates the state of a batch of shift trades
 
-Admin functionality is not supported with \&quot;mine\&quot;.
+Admin functionality is not supported with \"mine\".
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk  
 
@@ -8776,8 +8572,6 @@ try {
 
 Create a copy of work plan
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy  
 
 Requires ANY permissions: 
@@ -8839,11 +8633,9 @@ try {
 
 
 
-> [ValidateWorkPlanResponse](ValidateWorkPlanResponse.html) postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, expand)
+> [ValidateWorkPlanResponse](ValidateWorkPlanResponse.html) postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, expand, body)
 
 Validate Work Plan
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate  
 
@@ -8876,10 +8668,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+List<String> expand = Arrays.asList(null); // List<String> | 
 WorkPlanValidationRequest body = new WorkPlanValidationRequest(); // WorkPlanValidationRequest | body
-List<String> expand = Arrays.asList("expand_example"); // List<String> | 
 try {
-    ValidateWorkPlanResponse result = apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, expand);
+    ValidateWorkPlanResponse result = apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, expand, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanValidate");
@@ -8894,8 +8686,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. | 
-| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: messages 
+| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -8912,8 +8704,6 @@ try {
 > [WorkPlanRotationResponse](WorkPlanRotationResponse.html) postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
 
 Create a copy of work plan rotation
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy  
 
@@ -8980,8 +8770,6 @@ try {
 
 Create a new work plan rotation
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations  
 
 Requires ANY permissions: 
@@ -9041,11 +8829,9 @@ try {
 
 
 
-> [WorkPlan](WorkPlan.html) postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, validationMode)
+> [WorkPlan](WorkPlan.html) postWorkforcemanagementManagementunitWorkplans(managementUnitId, validationMode, body)
 
 Create a new work plan
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans  
 
@@ -9076,10 +8862,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-CreateWorkPlan body = new CreateWorkPlan(); // CreateWorkPlan | body
 String validationMode = "validationMode_example"; // String | Allows to create work plan even if the validation result is invalid
+CreateWorkPlan body = new CreateWorkPlan(); // CreateWorkPlan | body
 try {
-    WorkPlan result = apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, validationMode);
+    WorkPlan result = apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, validationMode, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplans");
@@ -9093,8 +8879,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional] 
 | **validationMode** | **String**| Allows to create work plan even if the validation result is invalid | [optional]<br />**Values**: Ignore 
+| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional] 
 {: class="table-striped"}
 
 
@@ -9175,8 +8961,6 @@ try {
 
 Mark a list of notifications as read or unread
 
-
-
 Wraps POST /api/v2/workforcemanagement/notifications/update  
 
 Requires NO permissions: 
@@ -9236,8 +9020,6 @@ try {
 > [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementSchedules(body)
 
 Get published schedule for the current user
-
-
 
 Wraps POST /api/v2/workforcemanagement/schedules  
 
@@ -9300,8 +9082,6 @@ try {
 
 Queries available time off for the current user
 
-
-
 Wraps POST /api/v2/workforcemanagement/timeofflimits/available/query  
 
 Requires ANY permissions: 
@@ -9362,8 +9142,6 @@ try {
 > [TimeOffRequestResponse](TimeOffRequestResponse.html) postWorkforcemanagementTimeoffrequests(body)
 
 Create a time off request for the current user
-
-
 
 Wraps POST /api/v2/workforcemanagement/timeoffrequests  
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -45,7 +46,7 @@ public class OpenActionFields  implements Serializable {
     this.openAction = openAction;
   }
 
-  
+
   /**
    * Custom fields defined in the schema referenced by the open action type selected.
    **/
@@ -63,7 +64,6 @@ public class OpenActionFields  implements Serializable {
     this.configurationFields = configurationFields;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class OpenActionFields  implements Serializable {
       return false;
     }
     OpenActionFields openActionFields = (OpenActionFields) o;
+
     return Objects.equals(this.openAction, openActionFields.openAction) &&
-        Objects.equals(this.configurationFields, openActionFields.configurationFields);
+            Objects.equals(this.configurationFields, openActionFields.configurationFields);
   }
 
   @Override

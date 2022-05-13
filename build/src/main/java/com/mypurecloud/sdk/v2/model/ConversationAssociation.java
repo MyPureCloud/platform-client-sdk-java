@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class ConversationAssociation  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * Conversation ID
    **/
@@ -116,7 +117,7 @@ public class ConversationAssociation  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Communication ID
    **/
@@ -134,7 +135,7 @@ public class ConversationAssociation  implements Serializable {
     this.communicationId = communicationId;
   }
 
-  
+
   /**
    * Media type
    **/
@@ -152,7 +153,6 @@ public class ConversationAssociation  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,10 +163,11 @@ public class ConversationAssociation  implements Serializable {
       return false;
     }
     ConversationAssociation conversationAssociation = (ConversationAssociation) o;
+
     return Objects.equals(this.externalContactId, conversationAssociation.externalContactId) &&
-        Objects.equals(this.conversationId, conversationAssociation.conversationId) &&
-        Objects.equals(this.communicationId, conversationAssociation.communicationId) &&
-        Objects.equals(this.mediaType, conversationAssociation.mediaType);
+            Objects.equals(this.conversationId, conversationAssociation.conversationId) &&
+            Objects.equals(this.communicationId, conversationAssociation.communicationId) &&
+            Objects.equals(this.mediaType, conversationAssociation.mediaType);
   }
 
   @Override

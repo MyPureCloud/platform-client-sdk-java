@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -284,7 +285,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent conversationId(String conversationId) {
@@ -301,7 +302,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent participantId(String participantId) {
@@ -318,7 +319,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent sessionId(String sessionId) {
@@ -335,7 +336,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent disconnectType(DisconnectTypeEnum disconnectType) {
@@ -352,7 +353,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent mediaType(MediaTypeEnum mediaType) {
@@ -369,7 +370,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent provider(String provider) {
@@ -386,7 +387,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent direction(DirectionEnum direction) {
@@ -403,7 +404,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent ani(String ani) {
@@ -420,7 +421,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent dnis(String dnis) {
@@ -437,7 +438,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent addressTo(String addressTo) {
@@ -454,7 +455,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent addressFrom(String addressFrom) {
@@ -471,7 +472,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent callbackUserName(String callbackUserName) {
@@ -488,7 +489,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent callbackNumbers(List<String> callbackNumbers) {
@@ -505,7 +506,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -522,7 +523,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent subject(String subject) {
@@ -539,7 +540,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent messageType(MessageTypeEnum messageType) {
@@ -556,7 +557,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent userId(String userId) {
@@ -573,7 +574,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent divisionId(String divisionId) {
@@ -590,7 +591,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent queueId(String queueId) {
@@ -607,7 +608,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent interactingDurationMs(Integer interactingDurationMs) {
@@ -624,7 +625,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.interactingDurationMs = interactingDurationMs;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent heldDurationMs(Integer heldDurationMs) {
@@ -641,7 +642,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.heldDurationMs = heldDurationMs;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent alertingDurationMs(Integer alertingDurationMs) {
@@ -658,7 +659,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.alertingDurationMs = alertingDurationMs;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent contactingDurationMs(Integer contactingDurationMs) {
@@ -675,7 +676,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.contactingDurationMs = contactingDurationMs;
   }
 
-  
+
   /**
    **/
   public UserEndDetailEventTopicUserEndEvent dialingDurationMs(Integer dialingDurationMs) {
@@ -692,7 +693,6 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     this.dialingDurationMs = dialingDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -703,31 +703,32 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
       return false;
     }
     UserEndDetailEventTopicUserEndEvent userEndDetailEventTopicUserEndEvent = (UserEndDetailEventTopicUserEndEvent) o;
+
     return Objects.equals(this.eventTime, userEndDetailEventTopicUserEndEvent.eventTime) &&
-        Objects.equals(this.conversationId, userEndDetailEventTopicUserEndEvent.conversationId) &&
-        Objects.equals(this.participantId, userEndDetailEventTopicUserEndEvent.participantId) &&
-        Objects.equals(this.sessionId, userEndDetailEventTopicUserEndEvent.sessionId) &&
-        Objects.equals(this.disconnectType, userEndDetailEventTopicUserEndEvent.disconnectType) &&
-        Objects.equals(this.mediaType, userEndDetailEventTopicUserEndEvent.mediaType) &&
-        Objects.equals(this.provider, userEndDetailEventTopicUserEndEvent.provider) &&
-        Objects.equals(this.direction, userEndDetailEventTopicUserEndEvent.direction) &&
-        Objects.equals(this.ani, userEndDetailEventTopicUserEndEvent.ani) &&
-        Objects.equals(this.dnis, userEndDetailEventTopicUserEndEvent.dnis) &&
-        Objects.equals(this.addressTo, userEndDetailEventTopicUserEndEvent.addressTo) &&
-        Objects.equals(this.addressFrom, userEndDetailEventTopicUserEndEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, userEndDetailEventTopicUserEndEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, userEndDetailEventTopicUserEndEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, userEndDetailEventTopicUserEndEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, userEndDetailEventTopicUserEndEvent.subject) &&
-        Objects.equals(this.messageType, userEndDetailEventTopicUserEndEvent.messageType) &&
-        Objects.equals(this.userId, userEndDetailEventTopicUserEndEvent.userId) &&
-        Objects.equals(this.divisionId, userEndDetailEventTopicUserEndEvent.divisionId) &&
-        Objects.equals(this.queueId, userEndDetailEventTopicUserEndEvent.queueId) &&
-        Objects.equals(this.interactingDurationMs, userEndDetailEventTopicUserEndEvent.interactingDurationMs) &&
-        Objects.equals(this.heldDurationMs, userEndDetailEventTopicUserEndEvent.heldDurationMs) &&
-        Objects.equals(this.alertingDurationMs, userEndDetailEventTopicUserEndEvent.alertingDurationMs) &&
-        Objects.equals(this.contactingDurationMs, userEndDetailEventTopicUserEndEvent.contactingDurationMs) &&
-        Objects.equals(this.dialingDurationMs, userEndDetailEventTopicUserEndEvent.dialingDurationMs);
+            Objects.equals(this.conversationId, userEndDetailEventTopicUserEndEvent.conversationId) &&
+            Objects.equals(this.participantId, userEndDetailEventTopicUserEndEvent.participantId) &&
+            Objects.equals(this.sessionId, userEndDetailEventTopicUserEndEvent.sessionId) &&
+            Objects.equals(this.disconnectType, userEndDetailEventTopicUserEndEvent.disconnectType) &&
+            Objects.equals(this.mediaType, userEndDetailEventTopicUserEndEvent.mediaType) &&
+            Objects.equals(this.provider, userEndDetailEventTopicUserEndEvent.provider) &&
+            Objects.equals(this.direction, userEndDetailEventTopicUserEndEvent.direction) &&
+            Objects.equals(this.ani, userEndDetailEventTopicUserEndEvent.ani) &&
+            Objects.equals(this.dnis, userEndDetailEventTopicUserEndEvent.dnis) &&
+            Objects.equals(this.addressTo, userEndDetailEventTopicUserEndEvent.addressTo) &&
+            Objects.equals(this.addressFrom, userEndDetailEventTopicUserEndEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, userEndDetailEventTopicUserEndEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, userEndDetailEventTopicUserEndEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, userEndDetailEventTopicUserEndEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, userEndDetailEventTopicUserEndEvent.subject) &&
+            Objects.equals(this.messageType, userEndDetailEventTopicUserEndEvent.messageType) &&
+            Objects.equals(this.userId, userEndDetailEventTopicUserEndEvent.userId) &&
+            Objects.equals(this.divisionId, userEndDetailEventTopicUserEndEvent.divisionId) &&
+            Objects.equals(this.queueId, userEndDetailEventTopicUserEndEvent.queueId) &&
+            Objects.equals(this.interactingDurationMs, userEndDetailEventTopicUserEndEvent.interactingDurationMs) &&
+            Objects.equals(this.heldDurationMs, userEndDetailEventTopicUserEndEvent.heldDurationMs) &&
+            Objects.equals(this.alertingDurationMs, userEndDetailEventTopicUserEndEvent.alertingDurationMs) &&
+            Objects.equals(this.contactingDurationMs, userEndDetailEventTopicUserEndEvent.contactingDurationMs) &&
+            Objects.equals(this.dialingDurationMs, userEndDetailEventTopicUserEndEvent.dialingDurationMs);
   }
 
   @Override

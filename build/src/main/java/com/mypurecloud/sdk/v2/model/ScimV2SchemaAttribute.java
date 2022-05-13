@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ScimV2SchemaAttribute;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -291,84 +291,83 @@ public class ScimV2SchemaAttribute  implements Serializable {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The data type of the attribute.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".")
   @JsonProperty("subAttributes")
   public List<ScimV2SchemaAttribute> getSubAttributes() {
     return subAttributes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates whether an attribute contains multiple values.")
   @JsonProperty("multiValued")
   public Boolean getMultiValued() {
     return multiValued;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The description of the attribute.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates whether an attribute is required.")
   @JsonProperty("required")
   public Boolean getRequired() {
     return required;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of standard values that service providers may use. Service providers may ignore unsupported values.")
   @JsonProperty("canonicalValues")
   public List<String> getCanonicalValues() {
     return canonicalValues;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates whether a string attribute is case-sensitive. If set to \"true\", the server preserves case sensitivity. If set to \"false\", the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \"Filtering\" in RFC 7644 for details.")
   @JsonProperty("caseExact")
   public Boolean getCaseExact() {
     return caseExact;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".")
   @JsonProperty("mutability")
   public MutabilityEnum getMutability() {
     return mutability;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.")
   @JsonProperty("returned")
   public ReturnedEnum getReturned() {
     return returned;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".")
   @JsonProperty("uniqueness")
   public UniquenessEnum getUniqueness() {
     return uniqueness;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".")
   @JsonProperty("referenceTypes")
   public List<ReferenceTypesEnum> getReferenceTypes() {
     return referenceTypes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -379,18 +378,19 @@ public class ScimV2SchemaAttribute  implements Serializable {
       return false;
     }
     ScimV2SchemaAttribute scimV2SchemaAttribute = (ScimV2SchemaAttribute) o;
+
     return Objects.equals(this.name, scimV2SchemaAttribute.name) &&
-        Objects.equals(this.type, scimV2SchemaAttribute.type) &&
-        Objects.equals(this.subAttributes, scimV2SchemaAttribute.subAttributes) &&
-        Objects.equals(this.multiValued, scimV2SchemaAttribute.multiValued) &&
-        Objects.equals(this.description, scimV2SchemaAttribute.description) &&
-        Objects.equals(this.required, scimV2SchemaAttribute.required) &&
-        Objects.equals(this.canonicalValues, scimV2SchemaAttribute.canonicalValues) &&
-        Objects.equals(this.caseExact, scimV2SchemaAttribute.caseExact) &&
-        Objects.equals(this.mutability, scimV2SchemaAttribute.mutability) &&
-        Objects.equals(this.returned, scimV2SchemaAttribute.returned) &&
-        Objects.equals(this.uniqueness, scimV2SchemaAttribute.uniqueness) &&
-        Objects.equals(this.referenceTypes, scimV2SchemaAttribute.referenceTypes);
+            Objects.equals(this.type, scimV2SchemaAttribute.type) &&
+            Objects.equals(this.subAttributes, scimV2SchemaAttribute.subAttributes) &&
+            Objects.equals(this.multiValued, scimV2SchemaAttribute.multiValued) &&
+            Objects.equals(this.description, scimV2SchemaAttribute.description) &&
+            Objects.equals(this.required, scimV2SchemaAttribute.required) &&
+            Objects.equals(this.canonicalValues, scimV2SchemaAttribute.canonicalValues) &&
+            Objects.equals(this.caseExact, scimV2SchemaAttribute.caseExact) &&
+            Objects.equals(this.mutability, scimV2SchemaAttribute.mutability) &&
+            Objects.equals(this.returned, scimV2SchemaAttribute.returned) &&
+            Objects.equals(this.uniqueness, scimV2SchemaAttribute.uniqueness) &&
+            Objects.equals(this.referenceTypes, scimV2SchemaAttribute.referenceTypes);
   }
 
   @Override

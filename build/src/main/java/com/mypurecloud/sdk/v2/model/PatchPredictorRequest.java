@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PredictorSchedule;
@@ -44,7 +45,7 @@ public class PatchPredictorRequest  implements Serializable {
     this.routingTimeoutSeconds = routingTimeoutSeconds;
   }
 
-  
+
   /**
    * The predictor schedule that determines when the predictor is used for routing interactions.
    **/
@@ -62,7 +63,7 @@ public class PatchPredictorRequest  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   /**
    * The predictor balancing configuration to enable workload balancing
    **/
@@ -80,7 +81,6 @@ public class PatchPredictorRequest  implements Serializable {
     this.workloadBalancingConfig = workloadBalancingConfig;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class PatchPredictorRequest  implements Serializable {
       return false;
     }
     PatchPredictorRequest patchPredictorRequest = (PatchPredictorRequest) o;
+
     return Objects.equals(this.routingTimeoutSeconds, patchPredictorRequest.routingTimeoutSeconds) &&
-        Objects.equals(this.schedule, patchPredictorRequest.schedule) &&
-        Objects.equals(this.workloadBalancingConfig, patchPredictorRequest.workloadBalancingConfig);
+            Objects.equals(this.schedule, patchPredictorRequest.schedule) &&
+            Objects.equals(this.workloadBalancingConfig, patchPredictorRequest.workloadBalancingConfig);
   }
 
   @Override

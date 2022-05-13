@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -30,14 +31,13 @@ public class DetectedDialogAct  implements Serializable {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The probability of the detected dialog act.")
   @JsonProperty("probability")
   public Double getProbability() {
     return probability;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -48,8 +48,9 @@ public class DetectedDialogAct  implements Serializable {
       return false;
     }
     DetectedDialogAct detectedDialogAct = (DetectedDialogAct) o;
+
     return Objects.equals(this.name, detectedDialogAct.name) &&
-        Objects.equals(this.probability, detectedDialogAct.probability);
+            Objects.equals(this.probability, detectedDialogAct.probability);
   }
 
   @Override

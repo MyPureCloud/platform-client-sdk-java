@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Manager;
@@ -45,7 +46,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The department that the user belongs to.
    **/
@@ -63,7 +64,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
     this.department = department;
   }
 
-  
+
   /**
    * The user's manager.
    **/
@@ -81,7 +82,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
     this.manager = manager;
   }
 
-  
+
   /**
    * The user's employee number.
    **/
@@ -99,7 +100,6 @@ public class ScimV2EnterpriseUser  implements Serializable {
     this.employeeNumber = employeeNumber;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class ScimV2EnterpriseUser  implements Serializable {
       return false;
     }
     ScimV2EnterpriseUser scimV2EnterpriseUser = (ScimV2EnterpriseUser) o;
+
     return Objects.equals(this.division, scimV2EnterpriseUser.division) &&
-        Objects.equals(this.department, scimV2EnterpriseUser.department) &&
-        Objects.equals(this.manager, scimV2EnterpriseUser.manager) &&
-        Objects.equals(this.employeeNumber, scimV2EnterpriseUser.employeeNumber);
+            Objects.equals(this.department, scimV2EnterpriseUser.department) &&
+            Objects.equals(this.manager, scimV2EnterpriseUser.manager) &&
+            Objects.equals(this.employeeNumber, scimV2EnterpriseUser.employeeNumber);
   }
 
   @Override

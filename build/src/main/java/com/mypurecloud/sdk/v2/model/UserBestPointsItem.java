@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -83,35 +84,34 @@ public class UserBestPointsItem  implements Serializable {
     return granularityType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Gamification points")
   @JsonProperty("points")
   public Integer getPoints() {
     return points;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateStartWorkday")
   public LocalDate getDateStartWorkday() {
     return dateStartWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEndWorkday")
   public LocalDate getDateEndWorkday() {
     return dateEndWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The rank of this user")
   @JsonProperty("rank")
   public Integer getRank() {
     return rank;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,11 +122,12 @@ public class UserBestPointsItem  implements Serializable {
       return false;
     }
     UserBestPointsItem userBestPointsItem = (UserBestPointsItem) o;
+
     return Objects.equals(this.granularityType, userBestPointsItem.granularityType) &&
-        Objects.equals(this.points, userBestPointsItem.points) &&
-        Objects.equals(this.dateStartWorkday, userBestPointsItem.dateStartWorkday) &&
-        Objects.equals(this.dateEndWorkday, userBestPointsItem.dateEndWorkday) &&
-        Objects.equals(this.rank, userBestPointsItem.rank);
+            Objects.equals(this.points, userBestPointsItem.points) &&
+            Objects.equals(this.dateStartWorkday, userBestPointsItem.dateStartWorkday) &&
+            Objects.equals(this.dateEndWorkday, userBestPointsItem.dateEndWorkday) &&
+            Objects.equals(this.rank, userBestPointsItem.rank);
   }
 
   @Override

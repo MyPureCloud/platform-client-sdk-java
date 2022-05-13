@@ -35,11 +35,11 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| APPROVED | &quot;APPROVED&quot; |
-| DENIED | &quot;DENIED&quot; |
-| CANCELED | &quot;CANCELED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| APPROVED | &quot;APPROVED&quot; | 
+| DENIED | &quot;DENIED&quot; | 
+| CANCELED | &quot;CANCELED&quot; | 
 {: class="table table-striped"}
 
 
@@ -49,13 +49,13 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ADVANCETIMEELAPSED | &quot;AdvanceTimeElapsed&quot; |
-| AUTOAPPROVED | &quot;AutoApproved&quot; |
-| INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; |
-| OUTSIDESHIFT | &quot;OutsideShift&quot; |
-| REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; |
-| WAITLISTED | &quot;Waitlisted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ADVANCETIMEELAPSED | &quot;AdvanceTimeElapsed&quot; | 
+| AUTOAPPROVED | &quot;AutoApproved&quot; | 
+| INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; | 
+| OUTSIDESHIFT | &quot;OutsideShift&quot; | 
+| REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 
+| WAITLISTED | &quot;Waitlisted&quot; | 
 {: class="table table-striped"}
 
 

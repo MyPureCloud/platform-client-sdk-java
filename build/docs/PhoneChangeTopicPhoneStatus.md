@@ -13,6 +13,7 @@ title: PhoneChangeTopicPhoneStatus
 | **edge** | <!----><!---->[**PhoneChangeTopicEdgeReference**](PhoneChangeTopicEdgeReference.html)<!----> |  |  [optional] |
 | **provision** | <!----><!---->[**PhoneChangeTopicProvisionInfo**](PhoneChangeTopicProvisionInfo.html)<!----> |  |  [optional] |
 | **lineStatuses** | <!----><!---->[**List&lt;PhoneChangeTopicLineStatus&gt;**](PhoneChangeTopicLineStatus.html)<!----> |  |  [optional] |
+| **eventCreationTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -22,10 +23,10 @@ title: PhoneChangeTopicPhoneStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OPERATIONAL | &quot;OPERATIONAL&quot; |
-| DEGRADED | &quot;DEGRADED&quot; |
-| OFFLINE | &quot;OFFLINE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OPERATIONAL | &quot;OPERATIONAL&quot; | 
+| DEGRADED | &quot;DEGRADED&quot; | 
+| OFFLINE | &quot;OFFLINE&quot; | 
 {: class="table table-striped"}
 
 

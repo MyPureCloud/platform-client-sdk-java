@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
     this.columnName = columnName;
   }
 
-  
+
   /**
    * Indicates the type of the phone column. For example, 'cell' or 'home'.
    **/
@@ -60,7 +61,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.
    **/
@@ -78,7 +79,6 @@ public class ContactPhoneNumberColumn  implements Serializable {
     this.callableTimeColumn = callableTimeColumn;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ContactPhoneNumberColumn  implements Serializable {
       return false;
     }
     ContactPhoneNumberColumn contactPhoneNumberColumn = (ContactPhoneNumberColumn) o;
+
     return Objects.equals(this.columnName, contactPhoneNumberColumn.columnName) &&
-        Objects.equals(this.type, contactPhoneNumberColumn.type) &&
-        Objects.equals(this.callableTimeColumn, contactPhoneNumberColumn.callableTimeColumn);
+            Objects.equals(this.type, contactPhoneNumberColumn.type) &&
+            Objects.equals(this.callableTimeColumn, contactPhoneNumberColumn.callableTimeColumn);
   }
 
   @Override

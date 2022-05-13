@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationErrorDetail;
-import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -142,7 +142,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
   private ActionStatusEnum actionStatus = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private ArchitectFlowNotificationErrorMessageParams errorMessageParams = null;
+  private Object errorMessageParams = null;
   private List<ArchitectFlowNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowNotificationErrorDetail>();
 
   
@@ -163,7 +163,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.id = id;
   }
 
-  
+
   /**
    * Indicates if the operation is complete
    **/
@@ -181,7 +181,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.complete = complete;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationArchitectOperation user(ArchitectFlowNotificationUser user) {
@@ -198,7 +198,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationArchitectOperation client(ArchitectFlowNotificationClient client) {
@@ -215,7 +215,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.client = client;
   }
 
-  
+
   /**
    * The action being performed
    **/
@@ -233,7 +233,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.actionName = actionName;
   }
 
-  
+
   /**
    * The action status
    **/
@@ -251,7 +251,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.actionStatus = actionStatus;
   }
 
-  
+
   /**
    * The error message, if the action failed
    **/
@@ -269,7 +269,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    * The error code, if the action failed
    **/
@@ -287,24 +287,25 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.errorCode = errorCode;
   }
 
-  
+
   /**
+   * The error message params, if the action failed
    **/
-  public ArchitectFlowNotificationArchitectOperation errorMessageParams(ArchitectFlowNotificationErrorMessageParams errorMessageParams) {
+  public ArchitectFlowNotificationArchitectOperation errorMessageParams(Object errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The error message params, if the action failed")
   @JsonProperty("errorMessageParams")
-  public ArchitectFlowNotificationErrorMessageParams getErrorMessageParams() {
+  public Object getErrorMessageParams() {
     return errorMessageParams;
   }
-  public void setErrorMessageParams(ArchitectFlowNotificationErrorMessageParams errorMessageParams) {
+  public void setErrorMessageParams(Object errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
   }
 
-  
+
   /**
    * The error details, if the action failed
    **/
@@ -322,7 +323,6 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     this.errorDetails = errorDetails;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -333,16 +333,17 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
       return false;
     }
     ArchitectFlowNotificationArchitectOperation architectFlowNotificationArchitectOperation = (ArchitectFlowNotificationArchitectOperation) o;
+
     return Objects.equals(this.id, architectFlowNotificationArchitectOperation.id) &&
-        Objects.equals(this.complete, architectFlowNotificationArchitectOperation.complete) &&
-        Objects.equals(this.user, architectFlowNotificationArchitectOperation.user) &&
-        Objects.equals(this.client, architectFlowNotificationArchitectOperation.client) &&
-        Objects.equals(this.actionName, architectFlowNotificationArchitectOperation.actionName) &&
-        Objects.equals(this.actionStatus, architectFlowNotificationArchitectOperation.actionStatus) &&
-        Objects.equals(this.errorMessage, architectFlowNotificationArchitectOperation.errorMessage) &&
-        Objects.equals(this.errorCode, architectFlowNotificationArchitectOperation.errorCode) &&
-        Objects.equals(this.errorMessageParams, architectFlowNotificationArchitectOperation.errorMessageParams) &&
-        Objects.equals(this.errorDetails, architectFlowNotificationArchitectOperation.errorDetails);
+            Objects.equals(this.complete, architectFlowNotificationArchitectOperation.complete) &&
+            Objects.equals(this.user, architectFlowNotificationArchitectOperation.user) &&
+            Objects.equals(this.client, architectFlowNotificationArchitectOperation.client) &&
+            Objects.equals(this.actionName, architectFlowNotificationArchitectOperation.actionName) &&
+            Objects.equals(this.actionStatus, architectFlowNotificationArchitectOperation.actionStatus) &&
+            Objects.equals(this.errorMessage, architectFlowNotificationArchitectOperation.errorMessage) &&
+            Objects.equals(this.errorCode, architectFlowNotificationArchitectOperation.errorCode) &&
+            Objects.equals(this.errorMessageParams, architectFlowNotificationArchitectOperation.errorMessageParams) &&
+            Objects.equals(this.errorDetails, architectFlowNotificationArchitectOperation.errorDetails);
   }
 
   @Override

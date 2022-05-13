@@ -13,20 +13,20 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementLibraryRequest;
@@ -54,7 +54,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ResponseManagementApiAsync {
   private final ApiClient pcapiClient;
 
@@ -66,7 +65,6 @@ public class ResponseManagementApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
@@ -142,7 +140,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
@@ -218,7 +215,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Delete response asset
    * 
@@ -294,7 +290,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a list of existing response libraries.
    * 
@@ -370,7 +365,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Get details about an existing response library.
    * 
@@ -446,7 +440,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Get details about an existing response.
    * 
@@ -522,7 +515,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Get response asset information
    * 
@@ -598,7 +590,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Get response asset upload status
    * 
@@ -674,7 +665,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Gets a list of existing responses.
    * 
@@ -750,7 +740,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a response library.
    * 
@@ -826,7 +815,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Search response assets
    * 
@@ -902,7 +890,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Creates pre-signed url for uploading response asset
    * 
@@ -978,7 +965,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Create a response.
    * 
@@ -1054,7 +1040,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Query responses
    * 
@@ -1130,7 +1115,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Update an existing response library.
    * Fields that can be updated: name. The most recent version is required for updates.
@@ -1206,7 +1190,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Update an existing response.
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
@@ -1282,7 +1265,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
   /**
    * Update response asset
    * 
@@ -1358,7 +1340,6 @@ public class ResponseManagementApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -114,7 +115,7 @@ public class ConversationMessageContent  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * Location content.
    **/
@@ -132,7 +133,7 @@ public class ConversationMessageContent  implements Serializable {
     this.location = location;
   }
 
-  
+
   /**
    * Ephemeral story content.
    **/
@@ -150,7 +151,7 @@ public class ConversationMessageContent  implements Serializable {
     this.story = story;
   }
 
-  
+
   /**
    * Attachment content.
    **/
@@ -168,7 +169,7 @@ public class ConversationMessageContent  implements Serializable {
     this.attachment = attachment;
   }
 
-  
+
   /**
    * Quick reply content.
    **/
@@ -186,7 +187,7 @@ public class ConversationMessageContent  implements Serializable {
     this.quickReply = quickReply;
   }
 
-  
+
   /**
    * Template notification content.
    **/
@@ -204,7 +205,7 @@ public class ConversationMessageContent  implements Serializable {
     this.template = template;
   }
 
-  
+
   /**
    * Button response content.
    **/
@@ -222,7 +223,7 @@ public class ConversationMessageContent  implements Serializable {
     this.buttonResponse = buttonResponse;
   }
 
-  
+
   /**
    * Generic Template Object
    **/
@@ -240,7 +241,7 @@ public class ConversationMessageContent  implements Serializable {
     this.generic = generic;
   }
 
-  
+
   /**
    * Card (Generic Template) Object
    **/
@@ -258,7 +259,7 @@ public class ConversationMessageContent  implements Serializable {
     this.card = card;
   }
 
-  
+
   /**
    * Carousel (Multiple Generic Template) Object
    **/
@@ -276,7 +277,6 @@ public class ConversationMessageContent  implements Serializable {
     this.carousel = carousel;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -287,16 +287,17 @@ public class ConversationMessageContent  implements Serializable {
       return false;
     }
     ConversationMessageContent conversationMessageContent = (ConversationMessageContent) o;
+
     return Objects.equals(this.contentType, conversationMessageContent.contentType) &&
-        Objects.equals(this.location, conversationMessageContent.location) &&
-        Objects.equals(this.story, conversationMessageContent.story) &&
-        Objects.equals(this.attachment, conversationMessageContent.attachment) &&
-        Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
-        Objects.equals(this.template, conversationMessageContent.template) &&
-        Objects.equals(this.buttonResponse, conversationMessageContent.buttonResponse) &&
-        Objects.equals(this.generic, conversationMessageContent.generic) &&
-        Objects.equals(this.card, conversationMessageContent.card) &&
-        Objects.equals(this.carousel, conversationMessageContent.carousel);
+            Objects.equals(this.location, conversationMessageContent.location) &&
+            Objects.equals(this.story, conversationMessageContent.story) &&
+            Objects.equals(this.attachment, conversationMessageContent.attachment) &&
+            Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
+            Objects.equals(this.template, conversationMessageContent.template) &&
+            Objects.equals(this.buttonResponse, conversationMessageContent.buttonResponse) &&
+            Objects.equals(this.generic, conversationMessageContent.generic) &&
+            Objects.equals(this.card, conversationMessageContent.card) &&
+            Objects.equals(this.carousel, conversationMessageContent.carousel);
   }
 
   @Override

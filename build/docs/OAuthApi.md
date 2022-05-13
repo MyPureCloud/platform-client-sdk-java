@@ -32,8 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete OAuth Client
 
-
-
 Wraps DELETE /api/v2/oauth/clients/{clientId}  
 
 Requires ANY permissions: 
@@ -93,8 +91,6 @@ null (empty response body)
 > [OAuthAuthorization](OAuthAuthorization.html) getOauthAuthorization(clientId, acceptLanguage)
 
 Get a client that is authorized by the resource owner
-
-
 
 Wraps GET /api/v2/oauth/authorizations/{clientId}  
 
@@ -159,8 +155,6 @@ try {
 
 List clients that have been authorized, requested, or revoked by the resource owner
 
-
-
 Wraps GET /api/v2/oauth/authorizations  
 
 Requires ANY permissions: 
@@ -222,8 +216,6 @@ try {
 
 Get OAuth Client
 
-
-
 Wraps GET /api/v2/oauth/clients/{clientId}  
 
 Requires ANY permissions: 
@@ -284,8 +276,6 @@ try {
 > [ApiUsageQueryResult](ApiUsageQueryResult.html) getOauthClientUsageQueryResult(executionId, clientId)
 
 Get the results of a usage query
-
-
 
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}  
 
@@ -415,8 +405,6 @@ try {
 
 The list of OAuth clients
 
-
-
 Wraps GET /api/v2/oauth/clients  
 
 Requires ANY permissions: 
@@ -473,8 +461,6 @@ This endpoint does not require any parameters.
 > [OAuthScope](OAuthScope.html) getOauthScope(scopeId, acceptLanguage)
 
 An OAuth scope
-
-
 
 Wraps GET /api/v2/oauth/scopes/{scopeId}  
 
@@ -537,8 +523,6 @@ try {
 > [OAuthScopeListing](OAuthScopeListing.html) getOauthScopes(acceptLanguage)
 
 The list of OAuth scopes
-
-
 
 Wraps GET /api/v2/oauth/scopes  
 
@@ -728,7 +712,7 @@ try {
 
 Create OAuth client
 
-The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
 
 Wraps POST /api/v2/oauth/clients  
 
@@ -790,8 +774,6 @@ try {
 > [OAuthClient](OAuthClient.html) putOauthClient(clientId, body)
 
 Update OAuth Client
-
-
 
 Wraps PUT /api/v2/oauth/clients/{clientId}  
 

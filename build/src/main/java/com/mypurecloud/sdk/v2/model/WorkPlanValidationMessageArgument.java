@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -109,7 +110,7 @@ public class WorkPlanValidationMessageArgument  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The value of the argument
    **/
@@ -127,7 +128,6 @@ public class WorkPlanValidationMessageArgument  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,8 +138,9 @@ public class WorkPlanValidationMessageArgument  implements Serializable {
       return false;
     }
     WorkPlanValidationMessageArgument workPlanValidationMessageArgument = (WorkPlanValidationMessageArgument) o;
+
     return Objects.equals(this.type, workPlanValidationMessageArgument.type) &&
-        Objects.equals(this.value, workPlanValidationMessageArgument.value);
+            Objects.equals(this.value, workPlanValidationMessageArgument.value);
   }
 
   @Override

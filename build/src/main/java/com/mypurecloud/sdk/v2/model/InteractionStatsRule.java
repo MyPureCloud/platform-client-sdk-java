@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -345,7 +345,7 @@ public class InteractionStatsRule  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Name of the rule
    **/
@@ -363,7 +363,7 @@ public class InteractionStatsRule  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The dimension of concern.
    **/
@@ -381,7 +381,7 @@ public class InteractionStatsRule  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * The value of the dimension.
    **/
@@ -399,7 +399,7 @@ public class InteractionStatsRule  implements Serializable {
     this.dimensionValue = dimensionValue;
   }
 
-  
+
   /**
    * The metric to be assessed.
    **/
@@ -417,7 +417,7 @@ public class InteractionStatsRule  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * The media type.
    **/
@@ -435,7 +435,7 @@ public class InteractionStatsRule  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The comparison descriptor used against the metric's value.
    **/
@@ -453,7 +453,7 @@ public class InteractionStatsRule  implements Serializable {
     this.numericRange = numericRange;
   }
 
-  
+
   /**
    * The statistic of concern for the metric.
    **/
@@ -471,7 +471,7 @@ public class InteractionStatsRule  implements Serializable {
     this.statistic = statistic;
   }
 
-  
+
   /**
    * The threshold value.
    **/
@@ -489,7 +489,7 @@ public class InteractionStatsRule  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Indicates if the rule is enabled.
    **/
@@ -507,14 +507,14 @@ public class InteractionStatsRule  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the rule is in alarm state.")
   @JsonProperty("inAlarm")
   public Boolean getInAlarm() {
     return inAlarm;
   }
 
-  
+
   /**
    * The ids of users who will be notified of alarm state change.
    **/
@@ -532,7 +532,7 @@ public class InteractionStatsRule  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-  
+
   /**
    * A collection of notification methods.
    **/
@@ -550,14 +550,13 @@ public class InteractionStatsRule  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -568,20 +567,21 @@ public class InteractionStatsRule  implements Serializable {
       return false;
     }
     InteractionStatsRule interactionStatsRule = (InteractionStatsRule) o;
+
     return Objects.equals(this.id, interactionStatsRule.id) &&
-        Objects.equals(this.name, interactionStatsRule.name) &&
-        Objects.equals(this.dimension, interactionStatsRule.dimension) &&
-        Objects.equals(this.dimensionValue, interactionStatsRule.dimensionValue) &&
-        Objects.equals(this.metric, interactionStatsRule.metric) &&
-        Objects.equals(this.mediaType, interactionStatsRule.mediaType) &&
-        Objects.equals(this.numericRange, interactionStatsRule.numericRange) &&
-        Objects.equals(this.statistic, interactionStatsRule.statistic) &&
-        Objects.equals(this.value, interactionStatsRule.value) &&
-        Objects.equals(this.enabled, interactionStatsRule.enabled) &&
-        Objects.equals(this.inAlarm, interactionStatsRule.inAlarm) &&
-        Objects.equals(this.notificationUsers, interactionStatsRule.notificationUsers) &&
-        Objects.equals(this.alertTypes, interactionStatsRule.alertTypes) &&
-        Objects.equals(this.selfUri, interactionStatsRule.selfUri);
+            Objects.equals(this.name, interactionStatsRule.name) &&
+            Objects.equals(this.dimension, interactionStatsRule.dimension) &&
+            Objects.equals(this.dimensionValue, interactionStatsRule.dimensionValue) &&
+            Objects.equals(this.metric, interactionStatsRule.metric) &&
+            Objects.equals(this.mediaType, interactionStatsRule.mediaType) &&
+            Objects.equals(this.numericRange, interactionStatsRule.numericRange) &&
+            Objects.equals(this.statistic, interactionStatsRule.statistic) &&
+            Objects.equals(this.value, interactionStatsRule.value) &&
+            Objects.equals(this.enabled, interactionStatsRule.enabled) &&
+            Objects.equals(this.inAlarm, interactionStatsRule.inAlarm) &&
+            Objects.equals(this.notificationUsers, interactionStatsRule.notificationUsers) &&
+            Objects.equals(this.alertTypes, interactionStatsRule.alertTypes) &&
+            Objects.equals(this.selfUri, interactionStatsRule.selfUri);
   }
 
   @Override

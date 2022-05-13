@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class PhoneColumn  implements Serializable {
     this.columnName = columnName;
   }
 
-  
+
   /**
    * The type of the phone column. For example, 'cell' or 'home'.
    **/
@@ -59,7 +60,6 @@ public class PhoneColumn  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class PhoneColumn  implements Serializable {
       return false;
     }
     PhoneColumn phoneColumn = (PhoneColumn) o;
+
     return Objects.equals(this.columnName, phoneColumn.columnName) &&
-        Objects.equals(this.type, phoneColumn.type);
+            Objects.equals(this.type, phoneColumn.type);
   }
 
   @Override

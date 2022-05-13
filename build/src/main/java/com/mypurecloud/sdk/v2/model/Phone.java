@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -115,7 +116,7 @@ public class Phone  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -133,7 +134,7 @@ public class Phone  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -151,7 +152,7 @@ public class Phone  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -169,7 +170,7 @@ public class Phone  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -187,7 +188,7 @@ public class Phone  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -205,7 +206,7 @@ public class Phone  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -223,7 +224,7 @@ public class Phone  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -241,7 +242,7 @@ public class Phone  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -259,14 +260,14 @@ public class Phone  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -284,7 +285,7 @@ public class Phone  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -302,7 +303,7 @@ public class Phone  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The site associated to the phone.
    **/
@@ -320,7 +321,7 @@ public class Phone  implements Serializable {
     this.site = site;
   }
 
-  
+
   /**
    * Phone Base Settings
    **/
@@ -338,7 +339,7 @@ public class Phone  implements Serializable {
     this.phoneBaseSettings = phoneBaseSettings;
   }
 
-  
+
   /**
    **/
   public Phone lineBaseSettings(DomainEntityRef lineBaseSettings) {
@@ -355,7 +356,7 @@ public class Phone  implements Serializable {
     this.lineBaseSettings = lineBaseSettings;
   }
 
-  
+
   /**
    **/
   public Phone phoneMetaBase(DomainEntityRef phoneMetaBase) {
@@ -372,7 +373,7 @@ public class Phone  implements Serializable {
     this.phoneMetaBase = phoneMetaBase;
   }
 
-  
+
   /**
    * Lines
    **/
@@ -390,7 +391,7 @@ public class Phone  implements Serializable {
     this.lines = lines;
   }
 
-  
+
   /**
    * The status of the phone and lines from the primary Edge.
    **/
@@ -408,7 +409,7 @@ public class Phone  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The status of the phone and lines from the secondary Edge.
    **/
@@ -426,14 +427,14 @@ public class Phone  implements Serializable {
     this.secondaryStatus = secondaryStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User Agent Information for this phone. This includes model, firmware version, and manufacturer.")
   @JsonProperty("userAgentInfo")
   public UserAgentInfo getUserAgentInfo() {
     return userAgentInfo;
   }
 
-  
+
   /**
    **/
   public Phone properties(Map<String, Object> properties) {
@@ -450,7 +451,7 @@ public class Phone  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   /**
    **/
   public Phone capabilities(PhoneCapabilities capabilities) {
@@ -467,7 +468,7 @@ public class Phone  implements Serializable {
     this.capabilities = capabilities;
   }
 
-  
+
   /**
    * This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.
    **/
@@ -485,7 +486,7 @@ public class Phone  implements Serializable {
     this.webRtcUser = webRtcUser;
   }
 
-  
+
   /**
    **/
   public Phone primaryEdge(Edge primaryEdge) {
@@ -502,7 +503,7 @@ public class Phone  implements Serializable {
     this.primaryEdge = primaryEdge;
   }
 
-  
+
   /**
    **/
   public Phone secondaryEdge(Edge secondaryEdge) {
@@ -519,14 +520,13 @@ public class Phone  implements Serializable {
     this.secondaryEdge = secondaryEdge;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -537,32 +537,33 @@ public class Phone  implements Serializable {
       return false;
     }
     Phone phone = (Phone) o;
+
     return Objects.equals(this.id, phone.id) &&
-        Objects.equals(this.name, phone.name) &&
-        Objects.equals(this.division, phone.division) &&
-        Objects.equals(this.description, phone.description) &&
-        Objects.equals(this.version, phone.version) &&
-        Objects.equals(this.dateCreated, phone.dateCreated) &&
-        Objects.equals(this.dateModified, phone.dateModified) &&
-        Objects.equals(this.modifiedBy, phone.modifiedBy) &&
-        Objects.equals(this.createdBy, phone.createdBy) &&
-        Objects.equals(this.state, phone.state) &&
-        Objects.equals(this.modifiedByApp, phone.modifiedByApp) &&
-        Objects.equals(this.createdByApp, phone.createdByApp) &&
-        Objects.equals(this.site, phone.site) &&
-        Objects.equals(this.phoneBaseSettings, phone.phoneBaseSettings) &&
-        Objects.equals(this.lineBaseSettings, phone.lineBaseSettings) &&
-        Objects.equals(this.phoneMetaBase, phone.phoneMetaBase) &&
-        Objects.equals(this.lines, phone.lines) &&
-        Objects.equals(this.status, phone.status) &&
-        Objects.equals(this.secondaryStatus, phone.secondaryStatus) &&
-        Objects.equals(this.userAgentInfo, phone.userAgentInfo) &&
-        Objects.equals(this.properties, phone.properties) &&
-        Objects.equals(this.capabilities, phone.capabilities) &&
-        Objects.equals(this.webRtcUser, phone.webRtcUser) &&
-        Objects.equals(this.primaryEdge, phone.primaryEdge) &&
-        Objects.equals(this.secondaryEdge, phone.secondaryEdge) &&
-        Objects.equals(this.selfUri, phone.selfUri);
+            Objects.equals(this.name, phone.name) &&
+            Objects.equals(this.division, phone.division) &&
+            Objects.equals(this.description, phone.description) &&
+            Objects.equals(this.version, phone.version) &&
+            Objects.equals(this.dateCreated, phone.dateCreated) &&
+            Objects.equals(this.dateModified, phone.dateModified) &&
+            Objects.equals(this.modifiedBy, phone.modifiedBy) &&
+            Objects.equals(this.createdBy, phone.createdBy) &&
+            Objects.equals(this.state, phone.state) &&
+            Objects.equals(this.modifiedByApp, phone.modifiedByApp) &&
+            Objects.equals(this.createdByApp, phone.createdByApp) &&
+            Objects.equals(this.site, phone.site) &&
+            Objects.equals(this.phoneBaseSettings, phone.phoneBaseSettings) &&
+            Objects.equals(this.lineBaseSettings, phone.lineBaseSettings) &&
+            Objects.equals(this.phoneMetaBase, phone.phoneMetaBase) &&
+            Objects.equals(this.lines, phone.lines) &&
+            Objects.equals(this.status, phone.status) &&
+            Objects.equals(this.secondaryStatus, phone.secondaryStatus) &&
+            Objects.equals(this.userAgentInfo, phone.userAgentInfo) &&
+            Objects.equals(this.properties, phone.properties) &&
+            Objects.equals(this.capabilities, phone.capabilities) &&
+            Objects.equals(this.webRtcUser, phone.webRtcUser) &&
+            Objects.equals(this.primaryEdge, phone.primaryEdge) &&
+            Objects.equals(this.secondaryEdge, phone.secondaryEdge) &&
+            Objects.equals(this.selfUri, phone.selfUri);
   }
 
   @Override

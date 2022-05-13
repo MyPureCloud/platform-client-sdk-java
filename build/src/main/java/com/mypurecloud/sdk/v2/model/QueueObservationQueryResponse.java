@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueObservationDataContainer;
@@ -46,7 +47,7 @@ public class QueueObservationQueryResponse  implements Serializable {
     this.systemToOrganizationMappings = systemToOrganizationMappings;
   }
 
-  
+
   /**
    **/
   public QueueObservationQueryResponse results(List<QueueObservationDataContainer> results) {
@@ -63,7 +64,6 @@ public class QueueObservationQueryResponse  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class QueueObservationQueryResponse  implements Serializable {
       return false;
     }
     QueueObservationQueryResponse queueObservationQueryResponse = (QueueObservationQueryResponse) o;
+
     return Objects.equals(this.systemToOrganizationMappings, queueObservationQueryResponse.systemToOrganizationMappings) &&
-        Objects.equals(this.results, queueObservationQueryResponse.results);
+            Objects.equals(this.results, queueObservationQueryResponse.results);
   }
 
   @Override

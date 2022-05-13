@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class WfmIntradayDataUpdateTopicIntradayForecastData  implements Serializ
     this.offered = offered;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayForecastData averageTalkTimeSeconds(BigDecimal averageTalkTimeSeconds) {
@@ -59,7 +60,7 @@ public class WfmIntradayDataUpdateTopicIntradayForecastData  implements Serializ
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayForecastData averageAfterCallWorkSeconds(BigDecimal averageAfterCallWorkSeconds) {
@@ -76,7 +77,6 @@ public class WfmIntradayDataUpdateTopicIntradayForecastData  implements Serializ
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class WfmIntradayDataUpdateTopicIntradayForecastData  implements Serializ
       return false;
     }
     WfmIntradayDataUpdateTopicIntradayForecastData wfmIntradayDataUpdateTopicIntradayForecastData = (WfmIntradayDataUpdateTopicIntradayForecastData) o;
+
     return Objects.equals(this.offered, wfmIntradayDataUpdateTopicIntradayForecastData.offered) &&
-        Objects.equals(this.averageTalkTimeSeconds, wfmIntradayDataUpdateTopicIntradayForecastData.averageTalkTimeSeconds) &&
-        Objects.equals(this.averageAfterCallWorkSeconds, wfmIntradayDataUpdateTopicIntradayForecastData.averageAfterCallWorkSeconds);
+            Objects.equals(this.averageTalkTimeSeconds, wfmIntradayDataUpdateTopicIntradayForecastData.averageTalkTimeSeconds) &&
+            Objects.equals(this.averageAfterCallWorkSeconds, wfmIntradayDataUpdateTopicIntradayForecastData.averageAfterCallWorkSeconds);
   }
 
   @Override

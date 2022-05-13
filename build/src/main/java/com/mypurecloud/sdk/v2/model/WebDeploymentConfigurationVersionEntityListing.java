@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
@@ -44,7 +45,7 @@ public class WebDeploymentConfigurationVersionEntityListing  implements Serializ
     this.total = total;
   }
 
-  
+
   /**
    **/
   public WebDeploymentConfigurationVersionEntityListing entities(List<WebDeploymentConfigurationVersion> entities) {
@@ -61,7 +62,7 @@ public class WebDeploymentConfigurationVersionEntityListing  implements Serializ
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public WebDeploymentConfigurationVersionEntityListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class WebDeploymentConfigurationVersionEntityListing  implements Serializ
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class WebDeploymentConfigurationVersionEntityListing  implements Serializ
       return false;
     }
     WebDeploymentConfigurationVersionEntityListing webDeploymentConfigurationVersionEntityListing = (WebDeploymentConfigurationVersionEntityListing) o;
+
     return Objects.equals(this.total, webDeploymentConfigurationVersionEntityListing.total) &&
-        Objects.equals(this.entities, webDeploymentConfigurationVersionEntityListing.entities) &&
-        Objects.equals(this.selfUri, webDeploymentConfigurationVersionEntityListing.selfUri);
+            Objects.equals(this.entities, webDeploymentConfigurationVersionEntityListing.entities) &&
+            Objects.equals(this.selfUri, webDeploymentConfigurationVersionEntityListing.selfUri);
   }
 
   @Override

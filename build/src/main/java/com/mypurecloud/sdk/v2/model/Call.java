@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -291,7 +292,7 @@ public class Call  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -309,7 +310,7 @@ public class Call  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The direction of the call
    **/
@@ -327,7 +328,7 @@ public class Call  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * True if this call is being recorded.
    **/
@@ -345,7 +346,7 @@ public class Call  implements Serializable {
     this.recording = recording;
   }
 
-  
+
   /**
    * State of recording on this call.
    **/
@@ -363,7 +364,7 @@ public class Call  implements Serializable {
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    * True if this call is muted so that remote participants can't hear any audio from this end.
    **/
@@ -381,7 +382,7 @@ public class Call  implements Serializable {
     this.muted = muted;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears hold music.
    **/
@@ -399,7 +400,7 @@ public class Call  implements Serializable {
     this.confined = confined;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -417,7 +418,7 @@ public class Call  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * A globally unique identifier for the recording associated with this call.
    **/
@@ -435,7 +436,7 @@ public class Call  implements Serializable {
     this.recordingId = recordingId;
   }
 
-  
+
   /**
    * The time line of the participant's call, divided into activity segments.
    **/
@@ -453,7 +454,7 @@ public class Call  implements Serializable {
     this.segments = segments;
   }
 
-  
+
   /**
    **/
   public Call errorInfo(ErrorInfo errorInfo) {
@@ -470,7 +471,7 @@ public class Call  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -488,7 +489,7 @@ public class Call  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the call was placed on hold in the cloud clock if the call is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -506,7 +507,7 @@ public class Call  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * If call is an outbound fax of a document from content management, then this is the id in content management.
    **/
@@ -524,7 +525,7 @@ public class Call  implements Serializable {
     this.documentId = documentId;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -542,7 +543,7 @@ public class Call  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -560,7 +561,7 @@ public class Call  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -578,7 +579,7 @@ public class Call  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * List of reasons that this call was disconnected. This will be set once the call disconnects.
    **/
@@ -596,7 +597,7 @@ public class Call  implements Serializable {
     this.disconnectReasons = disconnectReasons;
   }
 
-  
+
   /**
    * Extra information on fax transmission.
    **/
@@ -614,7 +615,7 @@ public class Call  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
-  
+
   /**
    * The source provider for the call.
    **/
@@ -632,7 +633,7 @@ public class Call  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -650,7 +651,7 @@ public class Call  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -668,7 +669,7 @@ public class Call  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * User to User Information (UUI) data managed by SIP session application.
    **/
@@ -686,7 +687,7 @@ public class Call  implements Serializable {
     this.uuiData = uuiData;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -704,7 +705,7 @@ public class Call  implements Serializable {
     this.self = self;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -722,7 +723,7 @@ public class Call  implements Serializable {
     this.other = other;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -740,7 +741,7 @@ public class Call  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -758,7 +759,7 @@ public class Call  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -776,7 +777,7 @@ public class Call  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
@@ -794,7 +795,6 @@ public class Call  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -805,35 +805,36 @@ public class Call  implements Serializable {
       return false;
     }
     Call call = (Call) o;
+
     return Objects.equals(this.state, call.state) &&
-        Objects.equals(this.id, call.id) &&
-        Objects.equals(this.direction, call.direction) &&
-        Objects.equals(this.recording, call.recording) &&
-        Objects.equals(this.recordingState, call.recordingState) &&
-        Objects.equals(this.muted, call.muted) &&
-        Objects.equals(this.confined, call.confined) &&
-        Objects.equals(this.held, call.held) &&
-        Objects.equals(this.recordingId, call.recordingId) &&
-        Objects.equals(this.segments, call.segments) &&
-        Objects.equals(this.errorInfo, call.errorInfo) &&
-        Objects.equals(this.disconnectType, call.disconnectType) &&
-        Objects.equals(this.startHoldTime, call.startHoldTime) &&
-        Objects.equals(this.documentId, call.documentId) &&
-        Objects.equals(this.startAlertingTime, call.startAlertingTime) &&
-        Objects.equals(this.connectedTime, call.connectedTime) &&
-        Objects.equals(this.disconnectedTime, call.disconnectedTime) &&
-        Objects.equals(this.disconnectReasons, call.disconnectReasons) &&
-        Objects.equals(this.faxStatus, call.faxStatus) &&
-        Objects.equals(this.provider, call.provider) &&
-        Objects.equals(this.scriptId, call.scriptId) &&
-        Objects.equals(this.peerId, call.peerId) &&
-        Objects.equals(this.uuiData, call.uuiData) &&
-        Objects.equals(this.self, call.self) &&
-        Objects.equals(this.other, call.other) &&
-        Objects.equals(this.wrapup, call.wrapup) &&
-        Objects.equals(this.afterCallWork, call.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, call.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, call.agentAssistantId);
+            Objects.equals(this.id, call.id) &&
+            Objects.equals(this.direction, call.direction) &&
+            Objects.equals(this.recording, call.recording) &&
+            Objects.equals(this.recordingState, call.recordingState) &&
+            Objects.equals(this.muted, call.muted) &&
+            Objects.equals(this.confined, call.confined) &&
+            Objects.equals(this.held, call.held) &&
+            Objects.equals(this.recordingId, call.recordingId) &&
+            Objects.equals(this.segments, call.segments) &&
+            Objects.equals(this.errorInfo, call.errorInfo) &&
+            Objects.equals(this.disconnectType, call.disconnectType) &&
+            Objects.equals(this.startHoldTime, call.startHoldTime) &&
+            Objects.equals(this.documentId, call.documentId) &&
+            Objects.equals(this.startAlertingTime, call.startAlertingTime) &&
+            Objects.equals(this.connectedTime, call.connectedTime) &&
+            Objects.equals(this.disconnectedTime, call.disconnectedTime) &&
+            Objects.equals(this.disconnectReasons, call.disconnectReasons) &&
+            Objects.equals(this.faxStatus, call.faxStatus) &&
+            Objects.equals(this.provider, call.provider) &&
+            Objects.equals(this.scriptId, call.scriptId) &&
+            Objects.equals(this.peerId, call.peerId) &&
+            Objects.equals(this.uuiData, call.uuiData) &&
+            Objects.equals(this.self, call.self) &&
+            Objects.equals(this.other, call.other) &&
+            Objects.equals(this.wrapup, call.wrapup) &&
+            Objects.equals(this.afterCallWork, call.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, call.afterCallWorkRequired) &&
+            Objects.equals(this.agentAssistantId, call.agentAssistantId);
   }
 
   @Override

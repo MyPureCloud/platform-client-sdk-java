@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class CobrowseSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Whether the viewer should have option to request control
    **/
@@ -63,7 +64,7 @@ public class CobrowseSettings  implements Serializable {
     this.allowAgentControl = allowAgentControl;
   }
 
-  
+
   /**
    * Mask patterns that will apply to pages being shared
    **/
@@ -81,7 +82,6 @@ public class CobrowseSettings  implements Serializable {
     this.maskSelectors = maskSelectors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class CobrowseSettings  implements Serializable {
       return false;
     }
     CobrowseSettings cobrowseSettings = (CobrowseSettings) o;
+
     return Objects.equals(this.enabled, cobrowseSettings.enabled) &&
-        Objects.equals(this.allowAgentControl, cobrowseSettings.allowAgentControl) &&
-        Objects.equals(this.maskSelectors, cobrowseSettings.maskSelectors);
+            Objects.equals(this.allowAgentControl, cobrowseSettings.allowAgentControl) &&
+            Objects.equals(this.maskSelectors, cobrowseSettings.maskSelectors);
   }
 
   @Override

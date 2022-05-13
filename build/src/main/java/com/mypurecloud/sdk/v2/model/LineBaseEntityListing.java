@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.total = total;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public LineBaseEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class LineBaseEntityListing  implements Serializable, PagedResource<LineB
       return false;
     }
     LineBaseEntityListing lineBaseEntityListing = (LineBaseEntityListing) o;
+
     return Objects.equals(this.entities, lineBaseEntityListing.entities) &&
-        Objects.equals(this.pageSize, lineBaseEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, lineBaseEntityListing.pageNumber) &&
-        Objects.equals(this.total, lineBaseEntityListing.total) &&
-        Objects.equals(this.lastUri, lineBaseEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, lineBaseEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, lineBaseEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, lineBaseEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, lineBaseEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, lineBaseEntityListing.pageCount);
+            Objects.equals(this.pageSize, lineBaseEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, lineBaseEntityListing.pageNumber) &&
+            Objects.equals(this.total, lineBaseEntityListing.total) &&
+            Objects.equals(this.lastUri, lineBaseEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, lineBaseEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, lineBaseEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, lineBaseEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, lineBaseEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, lineBaseEntityListing.pageCount);
   }
 
   @Override

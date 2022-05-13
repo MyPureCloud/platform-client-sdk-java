@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateQueryResponseMetric;
@@ -44,7 +45,7 @@ public class LearningAssignmentAggregateQueryResponseData  implements Serializab
     this.interval = interval;
   }
 
-  
+
   /**
    * The list of aggregated metrics
    **/
@@ -62,7 +63,6 @@ public class LearningAssignmentAggregateQueryResponseData  implements Serializab
     this.metrics = metrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class LearningAssignmentAggregateQueryResponseData  implements Serializab
       return false;
     }
     LearningAssignmentAggregateQueryResponseData learningAssignmentAggregateQueryResponseData = (LearningAssignmentAggregateQueryResponseData) o;
+
     return Objects.equals(this.interval, learningAssignmentAggregateQueryResponseData.interval) &&
-        Objects.equals(this.metrics, learningAssignmentAggregateQueryResponseData.metrics);
+            Objects.equals(this.metrics, learningAssignmentAggregateQueryResponseData.metrics);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicManagementUnit;
@@ -48,7 +49,7 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuManagementUnitScheduleSummary startDate(Date startDate) {
@@ -65,7 +66,7 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuManagementUnitScheduleSummary endDate(Date endDate) {
@@ -82,7 +83,7 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuManagementUnitScheduleSummary agents(List<WfmBuScheduleTopicUserReference> agents) {
@@ -99,7 +100,7 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
     this.agents = agents;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuManagementUnitScheduleSummary agentCount(Integer agentCount) {
@@ -116,7 +117,6 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
     this.agentCount = agentCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class WfmBuScheduleTopicBuManagementUnitScheduleSummary  implements Seria
       return false;
     }
     WfmBuScheduleTopicBuManagementUnitScheduleSummary wfmBuScheduleTopicBuManagementUnitScheduleSummary = (WfmBuScheduleTopicBuManagementUnitScheduleSummary) o;
+
     return Objects.equals(this.managementUnit, wfmBuScheduleTopicBuManagementUnitScheduleSummary.managementUnit) &&
-        Objects.equals(this.startDate, wfmBuScheduleTopicBuManagementUnitScheduleSummary.startDate) &&
-        Objects.equals(this.endDate, wfmBuScheduleTopicBuManagementUnitScheduleSummary.endDate) &&
-        Objects.equals(this.agents, wfmBuScheduleTopicBuManagementUnitScheduleSummary.agents) &&
-        Objects.equals(this.agentCount, wfmBuScheduleTopicBuManagementUnitScheduleSummary.agentCount);
+            Objects.equals(this.startDate, wfmBuScheduleTopicBuManagementUnitScheduleSummary.startDate) &&
+            Objects.equals(this.endDate, wfmBuScheduleTopicBuManagementUnitScheduleSummary.endDate) &&
+            Objects.equals(this.agents, wfmBuScheduleTopicBuManagementUnitScheduleSummary.agents) &&
+            Objects.equals(this.agentCount, wfmBuScheduleTopicBuManagementUnitScheduleSummary.agentCount);
   }
 
   @Override

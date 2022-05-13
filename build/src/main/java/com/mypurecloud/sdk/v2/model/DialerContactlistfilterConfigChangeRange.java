@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
     this.min = min;
   }
 
-  
+
   /**
    * Maximum end of the range
    **/
@@ -65,7 +66,7 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
     this.max = max;
   }
 
-  
+
   /**
    * Whether or not to include the minimum in the range
    **/
@@ -83,7 +84,7 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
     this.minInclusive = minInclusive;
   }
 
-  
+
   /**
    * Whether or not to include the maximum in the range
    **/
@@ -101,7 +102,7 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
     this.maxInclusive = maxInclusive;
   }
 
-  
+
   /**
    * Elements that apply to the IN operator
    **/
@@ -119,7 +120,6 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
     this.inSet = inSet;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
       return false;
     }
     DialerContactlistfilterConfigChangeRange dialerContactlistfilterConfigChangeRange = (DialerContactlistfilterConfigChangeRange) o;
+
     return Objects.equals(this.min, dialerContactlistfilterConfigChangeRange.min) &&
-        Objects.equals(this.max, dialerContactlistfilterConfigChangeRange.max) &&
-        Objects.equals(this.minInclusive, dialerContactlistfilterConfigChangeRange.minInclusive) &&
-        Objects.equals(this.maxInclusive, dialerContactlistfilterConfigChangeRange.maxInclusive) &&
-        Objects.equals(this.inSet, dialerContactlistfilterConfigChangeRange.inSet);
+            Objects.equals(this.max, dialerContactlistfilterConfigChangeRange.max) &&
+            Objects.equals(this.minInclusive, dialerContactlistfilterConfigChangeRange.minInclusive) &&
+            Objects.equals(this.maxInclusive, dialerContactlistfilterConfigChangeRange.maxInclusive) &&
+            Objects.equals(this.inSet, dialerContactlistfilterConfigChangeRange.inSet);
   }
 
   @Override

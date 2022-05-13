@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm total(Long total) {
@@ -103,7 +104,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingEvaluationForm pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
       return false;
     }
     DomainEntityListingEvaluationForm domainEntityListingEvaluationForm = (DomainEntityListingEvaluationForm) o;
+
     return Objects.equals(this.entities, domainEntityListingEvaluationForm.entities) &&
-        Objects.equals(this.pageSize, domainEntityListingEvaluationForm.pageSize) &&
-        Objects.equals(this.pageNumber, domainEntityListingEvaluationForm.pageNumber) &&
-        Objects.equals(this.total, domainEntityListingEvaluationForm.total) &&
-        Objects.equals(this.lastUri, domainEntityListingEvaluationForm.lastUri) &&
-        Objects.equals(this.firstUri, domainEntityListingEvaluationForm.firstUri) &&
-        Objects.equals(this.selfUri, domainEntityListingEvaluationForm.selfUri) &&
-        Objects.equals(this.previousUri, domainEntityListingEvaluationForm.previousUri) &&
-        Objects.equals(this.nextUri, domainEntityListingEvaluationForm.nextUri) &&
-        Objects.equals(this.pageCount, domainEntityListingEvaluationForm.pageCount);
+            Objects.equals(this.pageSize, domainEntityListingEvaluationForm.pageSize) &&
+            Objects.equals(this.pageNumber, domainEntityListingEvaluationForm.pageNumber) &&
+            Objects.equals(this.total, domainEntityListingEvaluationForm.total) &&
+            Objects.equals(this.lastUri, domainEntityListingEvaluationForm.lastUri) &&
+            Objects.equals(this.firstUri, domainEntityListingEvaluationForm.firstUri) &&
+            Objects.equals(this.selfUri, domainEntityListingEvaluationForm.selfUri) &&
+            Objects.equals(this.previousUri, domainEntityListingEvaluationForm.previousUri) &&
+            Objects.equals(this.nextUri, domainEntityListingEvaluationForm.nextUri) &&
+            Objects.equals(this.pageCount, domainEntityListingEvaluationForm.pageCount);
   }
 
   @Override

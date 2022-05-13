@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class FlowExecutionLaunchRequest  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    * The version of the flow to launch. Omit this value (or supply null/empty) to use the latest published version.
    **/
@@ -65,7 +66,7 @@ public class FlowExecutionLaunchRequest  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
+
   /**
    * Input values to the flow. Valid values are defined by a flow's input JSON schema.
    **/
@@ -83,7 +84,7 @@ public class FlowExecutionLaunchRequest  implements Serializable {
     this.inputData = inputData;
   }
 
-  
+
   /**
    * A displayable name to assign to the new flow execution
    **/
@@ -101,7 +102,6 @@ public class FlowExecutionLaunchRequest  implements Serializable {
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class FlowExecutionLaunchRequest  implements Serializable {
       return false;
     }
     FlowExecutionLaunchRequest flowExecutionLaunchRequest = (FlowExecutionLaunchRequest) o;
+
     return Objects.equals(this.flowId, flowExecutionLaunchRequest.flowId) &&
-        Objects.equals(this.flowVersion, flowExecutionLaunchRequest.flowVersion) &&
-        Objects.equals(this.inputData, flowExecutionLaunchRequest.inputData) &&
-        Objects.equals(this.name, flowExecutionLaunchRequest.name);
+            Objects.equals(this.flowVersion, flowExecutionLaunchRequest.flowVersion) &&
+            Objects.equals(this.inputData, flowExecutionLaunchRequest.inputData) &&
+            Objects.equals(this.name, flowExecutionLaunchRequest.name);
   }
 
   @Override

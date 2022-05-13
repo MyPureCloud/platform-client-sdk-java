@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicScreenShareMediaParticipant;
@@ -45,7 +46,7 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareConversation name(String name) {
@@ -62,7 +63,7 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareConversation participants(List<QueueConversationScreenShareEventTopicScreenShareMediaParticipant> participants) {
@@ -79,7 +80,7 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareConversation otherMediaUris(List<String> otherMediaUris) {
@@ -96,7 +97,6 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     this.otherMediaUris = otherMediaUris;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
       return false;
     }
     QueueConversationScreenShareEventTopicScreenShareConversation queueConversationScreenShareEventTopicScreenShareConversation = (QueueConversationScreenShareEventTopicScreenShareConversation) o;
+
     return Objects.equals(this.id, queueConversationScreenShareEventTopicScreenShareConversation.id) &&
-        Objects.equals(this.name, queueConversationScreenShareEventTopicScreenShareConversation.name) &&
-        Objects.equals(this.participants, queueConversationScreenShareEventTopicScreenShareConversation.participants) &&
-        Objects.equals(this.otherMediaUris, queueConversationScreenShareEventTopicScreenShareConversation.otherMediaUris);
+            Objects.equals(this.name, queueConversationScreenShareEventTopicScreenShareConversation.name) &&
+            Objects.equals(this.participants, queueConversationScreenShareEventTopicScreenShareConversation.participants) &&
+            Objects.equals(this.otherMediaUris, queueConversationScreenShareEventTopicScreenShareConversation.otherMediaUris);
   }
 
   @Override

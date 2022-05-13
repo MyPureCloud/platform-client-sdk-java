@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserSchedule;
@@ -49,7 +50,7 @@ public class UserScheduleContainer  implements Serializable {
     this.managementUnitTimeZone = managementUnitTimeZone;
   }
 
-  
+
   /**
    * References to all published week schedules overlapping the start/end date query parameters
    **/
@@ -67,7 +68,7 @@ public class UserScheduleContainer  implements Serializable {
     this.publishedSchedules = publishedSchedules;
   }
 
-  
+
   /**
    * Map of user id to user schedule
    **/
@@ -85,7 +86,6 @@ public class UserScheduleContainer  implements Serializable {
     this.userSchedules = userSchedules;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -96,9 +96,10 @@ public class UserScheduleContainer  implements Serializable {
       return false;
     }
     UserScheduleContainer userScheduleContainer = (UserScheduleContainer) o;
+
     return Objects.equals(this.managementUnitTimeZone, userScheduleContainer.managementUnitTimeZone) &&
-        Objects.equals(this.publishedSchedules, userScheduleContainer.publishedSchedules) &&
-        Objects.equals(this.userSchedules, userScheduleContainer.userSchedules);
+            Objects.equals(this.publishedSchedules, userScheduleContainer.publishedSchedules) &&
+            Objects.equals(this.userSchedules, userScheduleContainer.userSchedules);
   }
 
   @Override

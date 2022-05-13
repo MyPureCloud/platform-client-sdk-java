@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -246,7 +247,7 @@ public class OrphanRecording  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public OrphanRecording name(String name) {
@@ -263,7 +264,7 @@ public class OrphanRecording  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -281,7 +282,7 @@ public class OrphanRecording  implements Serializable {
     this.createdTime = createdTime;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -299,7 +300,7 @@ public class OrphanRecording  implements Serializable {
     this.recoveredTime = recoveredTime;
   }
 
-  
+
   /**
    **/
   public OrphanRecording providerType(ProviderTypeEnum providerType) {
@@ -316,7 +317,7 @@ public class OrphanRecording  implements Serializable {
     this.providerType = providerType;
   }
 
-  
+
   /**
    **/
   public OrphanRecording mediaSizeBytes(Long mediaSizeBytes) {
@@ -333,7 +334,7 @@ public class OrphanRecording  implements Serializable {
     this.mediaSizeBytes = mediaSizeBytes;
   }
 
-  
+
   /**
    **/
   public OrphanRecording mediaType(MediaTypeEnum mediaType) {
@@ -350,7 +351,7 @@ public class OrphanRecording  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public OrphanRecording fileState(FileStateEnum fileState) {
@@ -367,7 +368,7 @@ public class OrphanRecording  implements Serializable {
     this.fileState = fileState;
   }
 
-  
+
   /**
    **/
   public OrphanRecording providerEndpoint(Endpoint providerEndpoint) {
@@ -384,7 +385,7 @@ public class OrphanRecording  implements Serializable {
     this.providerEndpoint = providerEndpoint;
   }
 
-  
+
   /**
    **/
   public OrphanRecording recording(Recording recording) {
@@ -401,7 +402,7 @@ public class OrphanRecording  implements Serializable {
     this.recording = recording;
   }
 
-  
+
   /**
    * The status of the orphaned recording's conversation.
    **/
@@ -419,7 +420,7 @@ public class OrphanRecording  implements Serializable {
     this.orphanStatus = orphanStatus;
   }
 
-  
+
   /**
    * An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with
    **/
@@ -437,14 +438,13 @@ public class OrphanRecording  implements Serializable {
     this.sourceOrphaningId = sourceOrphaningId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -455,19 +455,20 @@ public class OrphanRecording  implements Serializable {
       return false;
     }
     OrphanRecording orphanRecording = (OrphanRecording) o;
+
     return Objects.equals(this.id, orphanRecording.id) &&
-        Objects.equals(this.name, orphanRecording.name) &&
-        Objects.equals(this.createdTime, orphanRecording.createdTime) &&
-        Objects.equals(this.recoveredTime, orphanRecording.recoveredTime) &&
-        Objects.equals(this.providerType, orphanRecording.providerType) &&
-        Objects.equals(this.mediaSizeBytes, orphanRecording.mediaSizeBytes) &&
-        Objects.equals(this.mediaType, orphanRecording.mediaType) &&
-        Objects.equals(this.fileState, orphanRecording.fileState) &&
-        Objects.equals(this.providerEndpoint, orphanRecording.providerEndpoint) &&
-        Objects.equals(this.recording, orphanRecording.recording) &&
-        Objects.equals(this.orphanStatus, orphanRecording.orphanStatus) &&
-        Objects.equals(this.sourceOrphaningId, orphanRecording.sourceOrphaningId) &&
-        Objects.equals(this.selfUri, orphanRecording.selfUri);
+            Objects.equals(this.name, orphanRecording.name) &&
+            Objects.equals(this.createdTime, orphanRecording.createdTime) &&
+            Objects.equals(this.recoveredTime, orphanRecording.recoveredTime) &&
+            Objects.equals(this.providerType, orphanRecording.providerType) &&
+            Objects.equals(this.mediaSizeBytes, orphanRecording.mediaSizeBytes) &&
+            Objects.equals(this.mediaType, orphanRecording.mediaType) &&
+            Objects.equals(this.fileState, orphanRecording.fileState) &&
+            Objects.equals(this.providerEndpoint, orphanRecording.providerEndpoint) &&
+            Objects.equals(this.recording, orphanRecording.recording) &&
+            Objects.equals(this.orphanStatus, orphanRecording.orphanStatus) &&
+            Objects.equals(this.sourceOrphaningId, orphanRecording.sourceOrphaningId) &&
+            Objects.equals(this.selfUri, orphanRecording.selfUri);
   }
 
   @Override

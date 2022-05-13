@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse text(String text) {
@@ -106,7 +107,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse payload(String payload) {
@@ -123,7 +124,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.payload = payload;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,9 +134,10 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse v2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse.type) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse.text) &&
-        Objects.equals(this.payload, v2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse.payload);
+            Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse.text) &&
+            Objects.equals(this.payload, v2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse.payload);
   }
 
   @Override

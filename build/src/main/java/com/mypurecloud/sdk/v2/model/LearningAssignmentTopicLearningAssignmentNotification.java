@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.id = id;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification user(LearningAssignmentTopicUserReference user) {
@@ -120,7 +121,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.user = user;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification module(LearningAssignmentTopicLearningModuleReference module) {
@@ -137,7 +138,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.module = module;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification version(Integer version) {
@@ -154,7 +155,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.version = version;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification state(StateEnum state) {
@@ -171,7 +172,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.state = state;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification dateRecommendedForCompletion(Date dateRecommendedForCompletion) {
@@ -188,7 +189,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.dateRecommendedForCompletion = dateRecommendedForCompletion;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification createdBy(LearningAssignmentTopicUserReference createdBy) {
@@ -205,7 +206,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification dateCreated(Date dateCreated) {
@@ -222,7 +223,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification modifiedBy(LearningAssignmentTopicUserReference modifiedBy) {
@@ -239,7 +240,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification dateModified(Date dateModified) {
@@ -256,7 +257,7 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentTopicLearningAssignmentNotification isOverdue(Boolean isOverdue) {
@@ -273,7 +274,6 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     this.isOverdue = isOverdue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -284,17 +284,18 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
       return false;
     }
     LearningAssignmentTopicLearningAssignmentNotification learningAssignmentTopicLearningAssignmentNotification = (LearningAssignmentTopicLearningAssignmentNotification) o;
+
     return Objects.equals(this.id, learningAssignmentTopicLearningAssignmentNotification.id) &&
-        Objects.equals(this.user, learningAssignmentTopicLearningAssignmentNotification.user) &&
-        Objects.equals(this.module, learningAssignmentTopicLearningAssignmentNotification.module) &&
-        Objects.equals(this.version, learningAssignmentTopicLearningAssignmentNotification.version) &&
-        Objects.equals(this.state, learningAssignmentTopicLearningAssignmentNotification.state) &&
-        Objects.equals(this.dateRecommendedForCompletion, learningAssignmentTopicLearningAssignmentNotification.dateRecommendedForCompletion) &&
-        Objects.equals(this.createdBy, learningAssignmentTopicLearningAssignmentNotification.createdBy) &&
-        Objects.equals(this.dateCreated, learningAssignmentTopicLearningAssignmentNotification.dateCreated) &&
-        Objects.equals(this.modifiedBy, learningAssignmentTopicLearningAssignmentNotification.modifiedBy) &&
-        Objects.equals(this.dateModified, learningAssignmentTopicLearningAssignmentNotification.dateModified) &&
-        Objects.equals(this.isOverdue, learningAssignmentTopicLearningAssignmentNotification.isOverdue);
+            Objects.equals(this.user, learningAssignmentTopicLearningAssignmentNotification.user) &&
+            Objects.equals(this.module, learningAssignmentTopicLearningAssignmentNotification.module) &&
+            Objects.equals(this.version, learningAssignmentTopicLearningAssignmentNotification.version) &&
+            Objects.equals(this.state, learningAssignmentTopicLearningAssignmentNotification.state) &&
+            Objects.equals(this.dateRecommendedForCompletion, learningAssignmentTopicLearningAssignmentNotification.dateRecommendedForCompletion) &&
+            Objects.equals(this.createdBy, learningAssignmentTopicLearningAssignmentNotification.createdBy) &&
+            Objects.equals(this.dateCreated, learningAssignmentTopicLearningAssignmentNotification.dateCreated) &&
+            Objects.equals(this.modifiedBy, learningAssignmentTopicLearningAssignmentNotification.modifiedBy) &&
+            Objects.equals(this.dateModified, learningAssignmentTopicLearningAssignmentNotification.dateModified) &&
+            Objects.equals(this.isOverdue, learningAssignmentTopicLearningAssignmentNotification.isOverdue);
   }
 
   @Override

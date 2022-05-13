@@ -28,7 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class StationsApi {
   private final ApiClient pcapiClient;
 
@@ -40,7 +39,6 @@ public class StationsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Unassigns the user assigned to this station
    * 
@@ -65,7 +63,7 @@ public class StationsApi {
   private DeleteStationAssociateduserRequest createDeleteStationAssociateduserRequest(String stationId) {
     return DeleteStationAssociateduserRequest.builder()
             .withStationId(stationId)
-    
+
             .build();
   }
 
@@ -116,7 +114,6 @@ public class StationsApi {
     }
   }
 
-  
   /**
    * Get station.
    * 
@@ -143,7 +140,7 @@ public class StationsApi {
   private GetStationRequest createGetStationRequest(String stationId) {
     return GetStationRequest.builder()
             .withStationId(stationId)
-    
+
             .build();
   }
 
@@ -195,7 +192,6 @@ public class StationsApi {
     }
   }
 
-  
   /**
    * Get the list of available stations.
    * 
@@ -236,21 +232,21 @@ public class StationsApi {
   private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String userSelectable, String webRtcUserId, String id, String lineAppearanceId) {
     return GetStationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withName(name)
-    
+
             .withUserSelectable(userSelectable)
-    
+
             .withWebRtcUserId(webRtcUserId)
-    
+
             .withId(id)
-    
+
             .withLineAppearanceId(lineAppearanceId)
-    
+
             .build();
   }
 
@@ -302,9 +298,8 @@ public class StationsApi {
     }
   }
 
-  
   /**
-   * Get an organization&#39;s StationSettings
+   * Get an organization's StationSettings
    * 
    * @return StationSettings
    * @throws ApiException if the request fails on the server
@@ -315,7 +310,7 @@ public class StationsApi {
   }
 
   /**
-   * Get an organization&#39;s StationSettings
+   * Get an organization's StationSettings
    * 
    * @return StationSettings
    * @throws IOException if the request fails to be processed
@@ -330,7 +325,7 @@ public class StationsApi {
   }
 
   /**
-   * Get an organization&#39;s StationSettings
+   * Get an organization's StationSettings
    * 
    * @param request The request object
    * @return StationSettings
@@ -349,7 +344,7 @@ public class StationsApi {
   }
 
   /**
-   * Get an organization&#39;s StationSettings
+   * Get an organization's StationSettings
    * 
    * @param request The request object
    * @return the response
@@ -377,9 +372,8 @@ public class StationsApi {
     }
   }
 
-  
   /**
-   * Patch an organization&#39;s StationSettings
+   * Patch an organization's StationSettings
    * 
    * @param body Station settings (required)
    * @return StationSettings
@@ -391,7 +385,7 @@ public class StationsApi {
   }
 
   /**
-   * Patch an organization&#39;s StationSettings
+   * Patch an organization's StationSettings
    * 
    * @param body Station settings (required)
    * @return StationSettings
@@ -404,12 +398,12 @@ public class StationsApi {
   private PatchStationsSettingsRequest createPatchStationsSettingsRequest(StationSettings body) {
     return PatchStationsSettingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Patch an organization&#39;s StationSettings
+   * Patch an organization's StationSettings
    * 
    * @param request The request object
    * @return StationSettings
@@ -428,7 +422,7 @@ public class StationsApi {
   }
 
   /**
-   * Patch an organization&#39;s StationSettings
+   * Patch an organization's StationSettings
    * 
    * @param request The request object
    * @return the response
@@ -456,5 +450,4 @@ public class StationsApi {
     }
   }
 
-  
 }

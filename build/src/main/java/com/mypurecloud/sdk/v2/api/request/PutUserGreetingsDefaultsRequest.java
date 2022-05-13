@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class PutUserGreetingsDefaultsRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -42,7 +42,7 @@ public class PutUserGreetingsDefaultsRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private DefaultGreetingList body;
 	public DefaultGreetingList getBody() {
 		return this.body;
@@ -56,7 +56,7 @@ public class PutUserGreetingsDefaultsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,8 +93,8 @@ public class PutUserGreetingsDefaultsRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class PutUserGreetingsDefaultsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId, DefaultGreetingList body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutUserGreetingsDefaultsRequest request;
@@ -119,26 +119,26 @@ public class PutUserGreetingsDefaultsRequest {
 			request = new PutUserGreetingsDefaultsRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
+
 		public Builder withBody(DefaultGreetingList body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId, DefaultGreetingList body) {
 			request.setUserId(userId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutUserGreetingsDefaultsRequest build() {
             

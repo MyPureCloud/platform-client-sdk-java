@@ -27,10 +27,10 @@ title: GDPRRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GDPR_EXPORT | &quot;GDPR_EXPORT&quot; |
-| GDPR_UPDATE | &quot;GDPR_UPDATE&quot; |
-| GDPR_DELETE | &quot;GDPR_DELETE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GDPR_EXPORT | &quot;GDPR_EXPORT&quot; | 
+| GDPR_UPDATE | &quot;GDPR_UPDATE&quot; | 
+| GDPR_DELETE | &quot;GDPR_DELETE&quot; | 
 {: class="table table-striped"}
 
 
@@ -40,14 +40,14 @@ title: GDPRRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INITIATED | &quot;INITIATED&quot; |
-| SEARCHING | &quot;SEARCHING&quot; |
-| UPDATING | &quot;UPDATING&quot; |
-| DELETING | &quot;DELETING&quot; |
-| COMPLETED | &quot;COMPLETED&quot; |
-| ERROR | &quot;ERROR&quot; |
-| FINALIZING | &quot;FINALIZING&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INITIATED | &quot;INITIATED&quot; | 
+| SEARCHING | &quot;SEARCHING&quot; | 
+| UPDATING | &quot;UPDATING&quot; | 
+| DELETING | &quot;DELETING&quot; | 
+| COMPLETED | &quot;COMPLETED&quot; | 
+| ERROR | &quot;ERROR&quot; | 
+| FINALIZING | &quot;FINALIZING&quot; | 
 {: class="table table-striped"}
 
 

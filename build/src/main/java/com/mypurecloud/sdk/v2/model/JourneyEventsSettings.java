@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -105,7 +106,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * List of parameters to be excluded from the query string.
    **/
@@ -123,7 +124,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.excludedQueryParameters = excludedQueryParameters;
   }
 
-  
+
   /**
    * Whether or not to keep the URL fragment.
    **/
@@ -141,7 +142,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.shouldKeepUrlFragment = shouldKeepUrlFragment;
   }
 
-  
+
   /**
    * List of query parameters used for search (e.g. 'q').
    **/
@@ -159,7 +160,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.searchQueryParameters = searchQueryParameters;
   }
 
-  
+
   /**
    * Controls how the pageview events are tracked.
    **/
@@ -177,7 +178,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.pageviewConfig = pageviewConfig;
   }
 
-  
+
   /**
    * Tracks when and where a visitor clicks on a webpage.
    **/
@@ -195,7 +196,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.clickEvents = clickEvents;
   }
 
-  
+
   /**
    * Controls how the form submitted and form abandoned events are tracked after a visitor interacts with a form element.
    **/
@@ -213,7 +214,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.formsTrackEvents = formsTrackEvents;
   }
 
-  
+
   /**
    * Tracks when and where a visitor becomes inactive on a webpage.
    **/
@@ -231,7 +232,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.idleEvents = idleEvents;
   }
 
-  
+
   /**
    * Tracks when elements become visible or hidden on screen.
    **/
@@ -249,7 +250,7 @@ public class JourneyEventsSettings  implements Serializable {
     this.inViewportEvents = inViewportEvents;
   }
 
-  
+
   /**
    * Tracks when a visitor scrolls to a specific percentage of a webpage.
    **/
@@ -267,7 +268,6 @@ public class JourneyEventsSettings  implements Serializable {
     this.scrollDepthEvents = scrollDepthEvents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -278,16 +278,17 @@ public class JourneyEventsSettings  implements Serializable {
       return false;
     }
     JourneyEventsSettings journeyEventsSettings = (JourneyEventsSettings) o;
+
     return Objects.equals(this.enabled, journeyEventsSettings.enabled) &&
-        Objects.equals(this.excludedQueryParameters, journeyEventsSettings.excludedQueryParameters) &&
-        Objects.equals(this.shouldKeepUrlFragment, journeyEventsSettings.shouldKeepUrlFragment) &&
-        Objects.equals(this.searchQueryParameters, journeyEventsSettings.searchQueryParameters) &&
-        Objects.equals(this.pageviewConfig, journeyEventsSettings.pageviewConfig) &&
-        Objects.equals(this.clickEvents, journeyEventsSettings.clickEvents) &&
-        Objects.equals(this.formsTrackEvents, journeyEventsSettings.formsTrackEvents) &&
-        Objects.equals(this.idleEvents, journeyEventsSettings.idleEvents) &&
-        Objects.equals(this.inViewportEvents, journeyEventsSettings.inViewportEvents) &&
-        Objects.equals(this.scrollDepthEvents, journeyEventsSettings.scrollDepthEvents);
+            Objects.equals(this.excludedQueryParameters, journeyEventsSettings.excludedQueryParameters) &&
+            Objects.equals(this.shouldKeepUrlFragment, journeyEventsSettings.shouldKeepUrlFragment) &&
+            Objects.equals(this.searchQueryParameters, journeyEventsSettings.searchQueryParameters) &&
+            Objects.equals(this.pageviewConfig, journeyEventsSettings.pageviewConfig) &&
+            Objects.equals(this.clickEvents, journeyEventsSettings.clickEvents) &&
+            Objects.equals(this.formsTrackEvents, journeyEventsSettings.formsTrackEvents) &&
+            Objects.equals(this.idleEvents, journeyEventsSettings.idleEvents) &&
+            Objects.equals(this.inViewportEvents, journeyEventsSettings.inViewportEvents) &&
+            Objects.equals(this.scrollDepthEvents, journeyEventsSettings.scrollDepthEvents);
   }
 
   @Override

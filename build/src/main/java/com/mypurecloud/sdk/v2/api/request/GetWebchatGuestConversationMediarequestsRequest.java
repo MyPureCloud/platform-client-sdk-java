@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebChatDeployment;
 import com.mypurecloud.sdk.v2.model.WebChatDeploymentEntityListing;
@@ -30,13 +33,10 @@ import com.mypurecloud.sdk.v2.model.WebChatMemberInfoEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatSettings;
-import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
 
 public class GetWebchatGuestConversationMediarequestsRequest {
-    
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -50,7 +50,7 @@ public class GetWebchatGuestConversationMediarequestsRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +81,7 @@ public class GetWebchatGuestConversationMediarequestsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests")
                 .withPathParameter("conversationId", conversationId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("Guest Chat JWT")
@@ -92,12 +92,12 @@ public class GetWebchatGuestConversationMediarequestsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String conversationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetWebchatGuestConversationMediarequestsRequest request;
@@ -106,20 +106,20 @@ public class GetWebchatGuestConversationMediarequestsRequest {
 			request = new GetWebchatGuestConversationMediarequestsRequest();
 		}
 
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String conversationId) {
 			request.setConversationId(conversationId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetWebchatGuestConversationMediarequestsRequest build() {
             

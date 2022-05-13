@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -140,7 +141,7 @@ public class SchedulingNoForecastOptionsRequest  implements Serializable {
     this.shiftLength = shiftLength;
   }
 
-  
+
   /**
    * The shift start option to apply if no forecast is supplied
    **/
@@ -158,7 +159,6 @@ public class SchedulingNoForecastOptionsRequest  implements Serializable {
     this.shiftStart = shiftStart;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,8 +169,9 @@ public class SchedulingNoForecastOptionsRequest  implements Serializable {
       return false;
     }
     SchedulingNoForecastOptionsRequest schedulingNoForecastOptionsRequest = (SchedulingNoForecastOptionsRequest) o;
+
     return Objects.equals(this.shiftLength, schedulingNoForecastOptionsRequest.shiftLength) &&
-        Objects.equals(this.shiftStart, schedulingNoForecastOptionsRequest.shiftStart);
+            Objects.equals(this.shiftStart, schedulingNoForecastOptionsRequest.shiftStart);
   }
 
   @Override

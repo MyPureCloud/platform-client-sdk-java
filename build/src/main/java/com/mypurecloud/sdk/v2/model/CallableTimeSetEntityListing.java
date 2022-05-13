@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CallableTimeSetEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
       return false;
     }
     CallableTimeSetEntityListing callableTimeSetEntityListing = (CallableTimeSetEntityListing) o;
+
     return Objects.equals(this.entities, callableTimeSetEntityListing.entities) &&
-        Objects.equals(this.pageSize, callableTimeSetEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, callableTimeSetEntityListing.pageNumber) &&
-        Objects.equals(this.total, callableTimeSetEntityListing.total) &&
-        Objects.equals(this.lastUri, callableTimeSetEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, callableTimeSetEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, callableTimeSetEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, callableTimeSetEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, callableTimeSetEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, callableTimeSetEntityListing.pageCount);
+            Objects.equals(this.pageSize, callableTimeSetEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, callableTimeSetEntityListing.pageNumber) &&
+            Objects.equals(this.total, callableTimeSetEntityListing.total) &&
+            Objects.equals(this.lastUri, callableTimeSetEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, callableTimeSetEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, callableTimeSetEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, callableTimeSetEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, callableTimeSetEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, callableTimeSetEntityListing.pageCount);
   }
 
   @Override

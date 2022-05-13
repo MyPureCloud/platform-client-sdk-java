@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class AnalyticsFlowOutcome  implements Serializable {
     this.flowOutcome = flowOutcome;
   }
 
-  
+
   /**
    * The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.
    **/
@@ -63,7 +64,7 @@ public class AnalyticsFlowOutcome  implements Serializable {
     this.flowOutcomeEndTimestamp = flowOutcomeEndTimestamp;
   }
 
-  
+
   /**
    * Unique identifier of a flow outcome
    **/
@@ -81,7 +82,7 @@ public class AnalyticsFlowOutcome  implements Serializable {
     this.flowOutcomeId = flowOutcomeId;
   }
 
-  
+
   /**
    * The outcome starting timestamp in ISO 8601 format
    **/
@@ -99,7 +100,7 @@ public class AnalyticsFlowOutcome  implements Serializable {
     this.flowOutcomeStartTimestamp = flowOutcomeStartTimestamp;
   }
 
-  
+
   /**
    * Flow outcome value, e.g. SUCCESS
    **/
@@ -117,7 +118,6 @@ public class AnalyticsFlowOutcome  implements Serializable {
     this.flowOutcomeValue = flowOutcomeValue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class AnalyticsFlowOutcome  implements Serializable {
       return false;
     }
     AnalyticsFlowOutcome analyticsFlowOutcome = (AnalyticsFlowOutcome) o;
+
     return Objects.equals(this.flowOutcome, analyticsFlowOutcome.flowOutcome) &&
-        Objects.equals(this.flowOutcomeEndTimestamp, analyticsFlowOutcome.flowOutcomeEndTimestamp) &&
-        Objects.equals(this.flowOutcomeId, analyticsFlowOutcome.flowOutcomeId) &&
-        Objects.equals(this.flowOutcomeStartTimestamp, analyticsFlowOutcome.flowOutcomeStartTimestamp) &&
-        Objects.equals(this.flowOutcomeValue, analyticsFlowOutcome.flowOutcomeValue);
+            Objects.equals(this.flowOutcomeEndTimestamp, analyticsFlowOutcome.flowOutcomeEndTimestamp) &&
+            Objects.equals(this.flowOutcomeId, analyticsFlowOutcome.flowOutcomeId) &&
+            Objects.equals(this.flowOutcomeStartTimestamp, analyticsFlowOutcome.flowOutcomeStartTimestamp) &&
+            Objects.equals(this.flowOutcomeValue, analyticsFlowOutcome.flowOutcomeValue);
   }
 
   @Override

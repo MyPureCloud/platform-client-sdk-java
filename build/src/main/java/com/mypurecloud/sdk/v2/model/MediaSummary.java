@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MediaSummaryDetail;
@@ -41,7 +42,7 @@ public class MediaSummary  implements Serializable {
     this.contactCenter = contactCenter;
   }
 
-  
+
   /**
    **/
   public MediaSummary enterprise(MediaSummaryDetail enterprise) {
@@ -58,7 +59,6 @@ public class MediaSummary  implements Serializable {
     this.enterprise = enterprise;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class MediaSummary  implements Serializable {
       return false;
     }
     MediaSummary mediaSummary = (MediaSummary) o;
+
     return Objects.equals(this.contactCenter, mediaSummary.contactCenter) &&
-        Objects.equals(this.enterprise, mediaSummary.enterprise);
+            Objects.equals(this.enterprise, mediaSummary.enterprise);
   }
 
   @Override

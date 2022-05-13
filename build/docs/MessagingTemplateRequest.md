@@ -9,7 +9,7 @@ title: MessagingTemplateRequest
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **responseId** | <!----><!---->**String**<!----> | A Response Management response identifier for a messaging template defined response |  [optional] |
-| **parameters** | <!----><!---->[**List&lt;TemplateParameter&gt;**](TemplateParameter.html)<!----> | A list of Response Management response substitutions for the response&#39;s messaging template |  [optional] |
+| **parameters** | <!----><!---->[**List&lt;TemplateParameter&gt;**](TemplateParameter.html)<!----> | A list of Response Management response substitutions for the response's messaging template |  [optional] |
 {: class="table table-striped"}
 
 

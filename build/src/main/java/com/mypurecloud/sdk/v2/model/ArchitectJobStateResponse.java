@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -136,7 +137,7 @@ public class ArchitectJobStateResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Flow created from the Architect Job
    **/
@@ -154,7 +155,7 @@ public class ArchitectJobStateResponse  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * Status of the Architect Job
    **/
@@ -172,7 +173,7 @@ public class ArchitectJobStateResponse  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The command executed by the Architect Job
    **/
@@ -190,7 +191,7 @@ public class ArchitectJobStateResponse  implements Serializable {
     this.command = command;
   }
 
-  
+
   /**
    * Warnings and Errors messages of the Architect Job
    **/
@@ -208,14 +209,13 @@ public class ArchitectJobStateResponse  implements Serializable {
     this.messages = messages;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -226,12 +226,13 @@ public class ArchitectJobStateResponse  implements Serializable {
       return false;
     }
     ArchitectJobStateResponse architectJobStateResponse = (ArchitectJobStateResponse) o;
+
     return Objects.equals(this.id, architectJobStateResponse.id) &&
-        Objects.equals(this.flow, architectJobStateResponse.flow) &&
-        Objects.equals(this.status, architectJobStateResponse.status) &&
-        Objects.equals(this.command, architectJobStateResponse.command) &&
-        Objects.equals(this.messages, architectJobStateResponse.messages) &&
-        Objects.equals(this.selfUri, architectJobStateResponse.selfUri);
+            Objects.equals(this.flow, architectJobStateResponse.flow) &&
+            Objects.equals(this.status, architectJobStateResponse.status) &&
+            Objects.equals(this.command, architectJobStateResponse.command) &&
+            Objects.equals(this.messages, architectJobStateResponse.messages) &&
+            Objects.equals(this.selfUri, architectJobStateResponse.selfUri);
   }
 
   @Override

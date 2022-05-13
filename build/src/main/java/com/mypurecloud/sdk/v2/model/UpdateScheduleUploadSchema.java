@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
@@ -51,7 +52,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Whether to publish the schedule. Note: a schedule cannot be un-published unless another schedule is published over it
    **/
@@ -69,7 +70,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    * The short term forecast to associate with the schedule
    **/
@@ -87,7 +88,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * The headcount forecast to associate with the schedule
    **/
@@ -105,7 +106,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     this.headcountForecast = headcountForecast;
   }
 
-  
+
   /**
    * Individual agent schedules
    **/
@@ -123,7 +124,7 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
+
   /**
    * Version metadata for this schedule
    **/
@@ -141,7 +142,6 @@ public class UpdateScheduleUploadSchema  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +152,13 @@ public class UpdateScheduleUploadSchema  implements Serializable {
       return false;
     }
     UpdateScheduleUploadSchema updateScheduleUploadSchema = (UpdateScheduleUploadSchema) o;
+
     return Objects.equals(this.description, updateScheduleUploadSchema.description) &&
-        Objects.equals(this.published, updateScheduleUploadSchema.published) &&
-        Objects.equals(this.shortTermForecast, updateScheduleUploadSchema.shortTermForecast) &&
-        Objects.equals(this.headcountForecast, updateScheduleUploadSchema.headcountForecast) &&
-        Objects.equals(this.agentSchedules, updateScheduleUploadSchema.agentSchedules) &&
-        Objects.equals(this.metadata, updateScheduleUploadSchema.metadata);
+            Objects.equals(this.published, updateScheduleUploadSchema.published) &&
+            Objects.equals(this.shortTermForecast, updateScheduleUploadSchema.shortTermForecast) &&
+            Objects.equals(this.headcountForecast, updateScheduleUploadSchema.headcountForecast) &&
+            Objects.equals(this.agentSchedules, updateScheduleUploadSchema.agentSchedules) &&
+            Objects.equals(this.metadata, updateScheduleUploadSchema.metadata);
   }
 
   @Override

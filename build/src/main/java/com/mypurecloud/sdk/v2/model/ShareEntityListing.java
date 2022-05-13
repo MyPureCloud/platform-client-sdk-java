@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ShareEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
       return false;
     }
     ShareEntityListing shareEntityListing = (ShareEntityListing) o;
+
     return Objects.equals(this.entities, shareEntityListing.entities) &&
-        Objects.equals(this.pageSize, shareEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, shareEntityListing.pageNumber) &&
-        Objects.equals(this.total, shareEntityListing.total) &&
-        Objects.equals(this.lastUri, shareEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, shareEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, shareEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, shareEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, shareEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, shareEntityListing.pageCount);
+            Objects.equals(this.pageSize, shareEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, shareEntityListing.pageNumber) &&
+            Objects.equals(this.total, shareEntityListing.total) &&
+            Objects.equals(this.lastUri, shareEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, shareEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, shareEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, shareEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, shareEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, shareEntityListing.pageCount);
   }
 
   @Override

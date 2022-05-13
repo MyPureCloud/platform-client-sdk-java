@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,21 +33,20 @@ public class ScimServiceProviderConfigBulkFeature  implements Serializable {
     return supported;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The maximum number of operations for each bulk request.")
   @JsonProperty("maxOperations")
   public Integer getMaxOperations() {
     return maxOperations;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The maximum payload size.")
   @JsonProperty("maxPayloadSize")
   public Integer getMaxPayloadSize() {
     return maxPayloadSize;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -57,9 +57,10 @@ public class ScimServiceProviderConfigBulkFeature  implements Serializable {
       return false;
     }
     ScimServiceProviderConfigBulkFeature scimServiceProviderConfigBulkFeature = (ScimServiceProviderConfigBulkFeature) o;
+
     return Objects.equals(this.supported, scimServiceProviderConfigBulkFeature.supported) &&
-        Objects.equals(this.maxOperations, scimServiceProviderConfigBulkFeature.maxOperations) &&
-        Objects.equals(this.maxPayloadSize, scimServiceProviderConfigBulkFeature.maxPayloadSize);
+            Objects.equals(this.maxOperations, scimServiceProviderConfigBulkFeature.maxOperations) &&
+            Objects.equals(this.maxPayloadSize, scimServiceProviderConfigBulkFeature.maxPayloadSize);
   }
 
   @Override

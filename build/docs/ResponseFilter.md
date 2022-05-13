@@ -8,7 +8,7 @@ title: ResponseFilter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Field to filter on. Allowed values are &#39;name&#39; and &#39;libraryId. |  |
+| **name** | <!----><!---->**String**<!----> | Field to filter on. Allowed values are 'name' and 'libraryId. |  |
 | **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Filter operation: IN, EQUALS, NOTEQUALS. |  |
 | **values** | <!----><!---->**List&lt;String&gt;**<!----> | Values to filter on. |  |
 {: class="table table-striped"}
@@ -20,10 +20,10 @@ title: ResponseFilter
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| IN | &quot;IN&quot; |
-| EQUALS | &quot;EQUALS&quot; |
-| NOTEQUALS | &quot;NOTEQUALS&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| IN | &quot;IN&quot; | 
+| EQUALS | &quot;EQUALS&quot; | 
+| NOTEQUALS | &quot;NOTEQUALS&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebMessagingRecipient;
@@ -35,28 +36,27 @@ public class WebMessagingChannel  implements Serializable {
     return from;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is sent to.")
   @JsonProperty("to")
   public WebMessagingRecipient getTo() {
     return to;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "When the message was processed by Genesys Cloud. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("time")
   public Date getTime() {
     return time;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Unique provider ID of the message.")
   @JsonProperty("messageId")
   public String getMessageId() {
     return messageId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,10 +67,11 @@ public class WebMessagingChannel  implements Serializable {
       return false;
     }
     WebMessagingChannel webMessagingChannel = (WebMessagingChannel) o;
+
     return Objects.equals(this.from, webMessagingChannel.from) &&
-        Objects.equals(this.to, webMessagingChannel.to) &&
-        Objects.equals(this.time, webMessagingChannel.time) &&
-        Objects.equals(this.messageId, webMessagingChannel.messageId);
+            Objects.equals(this.to, webMessagingChannel.to) &&
+            Objects.equals(this.time, webMessagingChannel.time) &&
+            Objects.equals(this.messageId, webMessagingChannel.messageId);
   }
 
   @Override

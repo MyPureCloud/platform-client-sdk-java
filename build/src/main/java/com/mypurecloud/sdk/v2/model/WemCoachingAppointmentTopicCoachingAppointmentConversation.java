@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentConversation  impleme
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WemCoachingAppointmentTopicCoachingAppointmentConversation action(ActionEnum action) {
@@ -106,7 +107,6 @@ public class WemCoachingAppointmentTopicCoachingAppointmentConversation  impleme
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,8 +117,9 @@ public class WemCoachingAppointmentTopicCoachingAppointmentConversation  impleme
       return false;
     }
     WemCoachingAppointmentTopicCoachingAppointmentConversation wemCoachingAppointmentTopicCoachingAppointmentConversation = (WemCoachingAppointmentTopicCoachingAppointmentConversation) o;
+
     return Objects.equals(this.id, wemCoachingAppointmentTopicCoachingAppointmentConversation.id) &&
-        Objects.equals(this.action, wemCoachingAppointmentTopicCoachingAppointmentConversation.action);
+            Objects.equals(this.action, wemCoachingAppointmentTopicCoachingAppointmentConversation.action);
   }
 
   @Override

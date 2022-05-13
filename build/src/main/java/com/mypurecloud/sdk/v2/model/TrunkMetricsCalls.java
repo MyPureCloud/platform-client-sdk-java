@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class TrunkMetricsCalls  implements Serializable {
     this.inboundCallCount = inboundCallCount;
   }
 
-  
+
   /**
    **/
   public TrunkMetricsCalls outboundCallCount(Integer outboundCallCount) {
@@ -57,7 +58,6 @@ public class TrunkMetricsCalls  implements Serializable {
     this.outboundCallCount = outboundCallCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class TrunkMetricsCalls  implements Serializable {
       return false;
     }
     TrunkMetricsCalls trunkMetricsCalls = (TrunkMetricsCalls) o;
+
     return Objects.equals(this.inboundCallCount, trunkMetricsCalls.inboundCallCount) &&
-        Objects.equals(this.outboundCallCount, trunkMetricsCalls.outboundCallCount);
+            Objects.equals(this.outboundCallCount, trunkMetricsCalls.outboundCallCount);
   }
 
   @Override

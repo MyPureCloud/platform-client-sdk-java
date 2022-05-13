@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -173,7 +174,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationEnd = conversationEnd;
   }
 
-  
+
   /**
    * Unique identifier for the conversation
    **/
@@ -191,7 +192,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Indicates the participant purpose of the participant initiating a message conversation
    **/
@@ -209,7 +210,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationInitiator = conversationInitiator;
   }
 
-  
+
   /**
    * The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -227,7 +228,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationStart = conversationStart;
   }
 
-  
+
   /**
    * Indicates a messaging conversation in which the customer participated by sending at least one message
    **/
@@ -245,7 +246,7 @@ public class AnalyticsConversation  implements Serializable {
     this.customerParticipation = customerParticipation;
   }
 
-  
+
   /**
    * Identifier(s) of division(s) associated with a conversation
    **/
@@ -263,7 +264,7 @@ public class AnalyticsConversation  implements Serializable {
     this.divisionIds = divisionIds;
   }
 
-  
+
   /**
    * External tag for the conversation
    **/
@@ -281,7 +282,7 @@ public class AnalyticsConversation  implements Serializable {
     this.externalTag = externalTag;
   }
 
-  
+
   /**
    * The unique identifier(s) of the knowledge base(s) used
    **/
@@ -299,7 +300,7 @@ public class AnalyticsConversation  implements Serializable {
     this.knowledgeBaseIds = knowledgeBaseIds;
   }
 
-  
+
   /**
    * The lowest estimated average MOS among all the audio streams belonging to this conversation
    **/
@@ -317,7 +318,7 @@ public class AnalyticsConversation  implements Serializable {
     this.mediaStatsMinConversationMos = mediaStatsMinConversationMos;
   }
 
-  
+
   /**
    * The lowest R-factor value among all of the audio streams belonging to this conversation
    **/
@@ -335,7 +336,7 @@ public class AnalyticsConversation  implements Serializable {
     this.mediaStatsMinConversationRFactor = mediaStatsMinConversationRFactor;
   }
 
-  
+
   /**
    * The original direction of the conversation
    **/
@@ -353,7 +354,7 @@ public class AnalyticsConversation  implements Serializable {
     this.originatingDirection = originatingDirection;
   }
 
-  
+
   /**
    * Indicates whether all flow sessions were self serviced
    **/
@@ -371,7 +372,7 @@ public class AnalyticsConversation  implements Serializable {
     this.selfServed = selfServed;
   }
 
-  
+
   /**
    * Evaluations associated with this conversation
    **/
@@ -389,7 +390,7 @@ public class AnalyticsConversation  implements Serializable {
     this.evaluations = evaluations;
   }
 
-  
+
   /**
    * Surveys associated with this conversation
    **/
@@ -407,7 +408,7 @@ public class AnalyticsConversation  implements Serializable {
     this.surveys = surveys;
   }
 
-  
+
   /**
    * Resolutions associated with this conversation
    **/
@@ -425,7 +426,7 @@ public class AnalyticsConversation  implements Serializable {
     this.resolutions = resolutions;
   }
 
-  
+
   /**
    * Participants in the conversation
    **/
@@ -443,7 +444,6 @@ public class AnalyticsConversation  implements Serializable {
     this.participants = participants;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -454,22 +454,23 @@ public class AnalyticsConversation  implements Serializable {
       return false;
     }
     AnalyticsConversation analyticsConversation = (AnalyticsConversation) o;
+
     return Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
-        Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
-        Objects.equals(this.conversationInitiator, analyticsConversation.conversationInitiator) &&
-        Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
-        Objects.equals(this.customerParticipation, analyticsConversation.customerParticipation) &&
-        Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
-        Objects.equals(this.externalTag, analyticsConversation.externalTag) &&
-        Objects.equals(this.knowledgeBaseIds, analyticsConversation.knowledgeBaseIds) &&
-        Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
-        Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
-        Objects.equals(this.originatingDirection, analyticsConversation.originatingDirection) &&
-        Objects.equals(this.selfServed, analyticsConversation.selfServed) &&
-        Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
-        Objects.equals(this.surveys, analyticsConversation.surveys) &&
-        Objects.equals(this.resolutions, analyticsConversation.resolutions) &&
-        Objects.equals(this.participants, analyticsConversation.participants);
+            Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
+            Objects.equals(this.conversationInitiator, analyticsConversation.conversationInitiator) &&
+            Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
+            Objects.equals(this.customerParticipation, analyticsConversation.customerParticipation) &&
+            Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
+            Objects.equals(this.externalTag, analyticsConversation.externalTag) &&
+            Objects.equals(this.knowledgeBaseIds, analyticsConversation.knowledgeBaseIds) &&
+            Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
+            Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
+            Objects.equals(this.originatingDirection, analyticsConversation.originatingDirection) &&
+            Objects.equals(this.selfServed, analyticsConversation.selfServed) &&
+            Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
+            Objects.equals(this.surveys, analyticsConversation.surveys) &&
+            Objects.equals(this.resolutions, analyticsConversation.resolutions) &&
+            Objects.equals(this.participants, analyticsConversation.participants);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceTopicTrunkConnectedStatus;
@@ -49,7 +50,7 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunk connectedStatus(TrunkInstanceTopicTrunkConnectedStatus connectedStatus) {
@@ -66,7 +67,7 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
     this.connectedStatus = connectedStatus;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunk optionsStatus(List<TrunkInstanceTopicTrunkMetricsOptions> optionsStatus) {
@@ -83,7 +84,7 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
     this.optionsStatus = optionsStatus;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunk registersStatus(List<TrunkInstanceTopicTrunkMetricsRegisters> registersStatus) {
@@ -100,7 +101,7 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
     this.registersStatus = registersStatus;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunk ipStatus(TrunkInstanceTopicTrunkMetricsNetworkTypeIp ipStatus) {
@@ -117,7 +118,6 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
     this.ipStatus = ipStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class TrunkInstanceTopicTrunk  implements Serializable {
       return false;
     }
     TrunkInstanceTopicTrunk trunkInstanceTopicTrunk = (TrunkInstanceTopicTrunk) o;
+
     return Objects.equals(this.id, trunkInstanceTopicTrunk.id) &&
-        Objects.equals(this.connectedStatus, trunkInstanceTopicTrunk.connectedStatus) &&
-        Objects.equals(this.optionsStatus, trunkInstanceTopicTrunk.optionsStatus) &&
-        Objects.equals(this.registersStatus, trunkInstanceTopicTrunk.registersStatus) &&
-        Objects.equals(this.ipStatus, trunkInstanceTopicTrunk.ipStatus);
+            Objects.equals(this.connectedStatus, trunkInstanceTopicTrunk.connectedStatus) &&
+            Objects.equals(this.optionsStatus, trunkInstanceTopicTrunk.optionsStatus) &&
+            Objects.equals(this.registersStatus, trunkInstanceTopicTrunk.registersStatus) &&
+            Objects.equals(this.ipStatus, trunkInstanceTopicTrunk.ipStatus);
   }
 
   @Override

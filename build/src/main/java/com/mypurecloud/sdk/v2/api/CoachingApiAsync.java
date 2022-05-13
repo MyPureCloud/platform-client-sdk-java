@@ -13,26 +13,26 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingNotification;
-import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
-import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
-import com.mypurecloud.sdk.v2.model.AddConversationResponse;
 import com.mypurecloud.sdk.v2.model.AddConversationRequest;
-import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingNotification;
+import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
+import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCoachingAppointmentRequest;
@@ -62,7 +62,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class CoachingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -74,7 +73,6 @@ public class CoachingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an existing appointment
    * Permission not required if you are the creator of the appointment
@@ -150,7 +148,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Delete an existing annotation
    * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
@@ -226,7 +223,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve an appointment
    * Permission not required if you are the attendee, creator or facilitator of the appointment
@@ -302,7 +298,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve an annotation.
    * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
@@ -378,7 +373,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of annotations.
    * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
@@ -454,7 +448,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Get the list of status changes for a coaching appointment.
    * Permission not required if you are an attendee, creator or facilitator of the appointment
@@ -530,7 +523,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Get appointments for users and optional date range
    * 
@@ -606,7 +598,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Get my appointments for a given date range
    * 
@@ -682,7 +673,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Get an existing notification
    * Permission not required if you are the owner of the notification.
@@ -758,7 +748,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve the list of your notifications.
    * 
@@ -834,7 +823,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Update an existing appointment
    * Permission not required if you are the creator or facilitator of the appointment
@@ -910,7 +898,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Update an existing annotation.
    * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
@@ -986,7 +973,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Update the status of a coaching appointment
    * Permission not required if you are an attendee, creator or facilitator of the appointment
@@ -1062,7 +1048,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Update an existing notification.
    * Can only update your own notifications.
@@ -1138,7 +1123,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Create a new annotation.
    * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
@@ -1214,7 +1198,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Add a conversation to an appointment
    * Permission not required if you are the creator or facilitator of the appointment
@@ -1290,7 +1273,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Create a new appointment
    * 
@@ -1366,7 +1348,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Retrieve aggregated appointment data
    * 
@@ -1442,7 +1423,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
   /**
    * Get list of possible slots where a coaching appointment can be scheduled.
    * 
@@ -1518,7 +1498,6 @@ public class CoachingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

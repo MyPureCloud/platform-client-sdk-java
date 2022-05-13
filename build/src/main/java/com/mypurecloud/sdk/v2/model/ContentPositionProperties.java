@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class ContentPositionProperties  implements Serializable {
     this.top = top;
   }
 
-  
+
   /**
    * Bottom positioning offset.
    **/
@@ -61,7 +62,7 @@ public class ContentPositionProperties  implements Serializable {
     this.bottom = bottom;
   }
 
-  
+
   /**
    * Left positioning offset.
    **/
@@ -79,7 +80,7 @@ public class ContentPositionProperties  implements Serializable {
     this.left = left;
   }
 
-  
+
   /**
    * Right positioning offset.
    **/
@@ -97,7 +98,6 @@ public class ContentPositionProperties  implements Serializable {
     this.right = right;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class ContentPositionProperties  implements Serializable {
       return false;
     }
     ContentPositionProperties contentPositionProperties = (ContentPositionProperties) o;
+
     return Objects.equals(this.top, contentPositionProperties.top) &&
-        Objects.equals(this.bottom, contentPositionProperties.bottom) &&
-        Objects.equals(this.left, contentPositionProperties.left) &&
-        Objects.equals(this.right, contentPositionProperties.right);
+            Objects.equals(this.bottom, contentPositionProperties.bottom) &&
+            Objects.equals(this.left, contentPositionProperties.left) &&
+            Objects.equals(this.right, contentPositionProperties.right);
   }
 
   @Override

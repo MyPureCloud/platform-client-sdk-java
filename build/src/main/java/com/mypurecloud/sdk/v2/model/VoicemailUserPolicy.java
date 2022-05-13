@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -34,7 +35,7 @@ public class VoicemailUserPolicy  implements Serializable {
     return enabled;
   }
 
-  
+
   /**
    * The number of seconds to ring the user's phone before a call is transfered to voicemail
    **/
@@ -52,7 +53,7 @@ public class VoicemailUserPolicy  implements Serializable {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
   }
 
-  
+
   /**
    * The user's PIN to access their voicemail. This property is only used for updates and never provided otherwise to ensure security
    **/
@@ -70,14 +71,14 @@ public class VoicemailUserPolicy  implements Serializable {
     this.pin = pin;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
+
   /**
    * Whether email notifications are sent to the user when a new voicemail is received
    **/
@@ -95,7 +96,6 @@ public class VoicemailUserPolicy  implements Serializable {
     this.sendEmailNotifications = sendEmailNotifications;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,11 +106,12 @@ public class VoicemailUserPolicy  implements Serializable {
       return false;
     }
     VoicemailUserPolicy voicemailUserPolicy = (VoicemailUserPolicy) o;
+
     return Objects.equals(this.enabled, voicemailUserPolicy.enabled) &&
-        Objects.equals(this.alertTimeoutSeconds, voicemailUserPolicy.alertTimeoutSeconds) &&
-        Objects.equals(this.pin, voicemailUserPolicy.pin) &&
-        Objects.equals(this.modifiedDate, voicemailUserPolicy.modifiedDate) &&
-        Objects.equals(this.sendEmailNotifications, voicemailUserPolicy.sendEmailNotifications);
+            Objects.equals(this.alertTimeoutSeconds, voicemailUserPolicy.alertTimeoutSeconds) &&
+            Objects.equals(this.pin, voicemailUserPolicy.pin) &&
+            Objects.equals(this.modifiedDate, voicemailUserPolicy.modifiedDate) &&
+            Objects.equals(this.sendEmailNotifications, voicemailUserPolicy.sendEmailNotifications);
   }
 
   @Override

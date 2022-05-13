@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class PostGreetingsRequest {
-    
+
 	private Greeting body;
 	public Greeting getBody() {
 		return this.body;
@@ -42,7 +42,7 @@ public class PostGreetingsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,8 +72,8 @@ public class PostGreetingsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/greetings")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class PostGreetingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Greeting body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostGreetingsRequest request;
@@ -98,20 +98,20 @@ public class PostGreetingsRequest {
 			request = new PostGreetingsRequest();
 		}
 
-		
+
 		public Builder withBody(Greeting body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Greeting body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostGreetingsRequest build() {
             

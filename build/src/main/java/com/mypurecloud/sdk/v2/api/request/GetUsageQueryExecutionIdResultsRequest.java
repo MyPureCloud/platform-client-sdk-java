@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetUsageQueryExecutionIdResultsRequest {
-    
+
 	private String executionId;
 	public String getExecutionId() {
 		return this.executionId;
@@ -40,7 +40,7 @@ public class GetUsageQueryExecutionIdResultsRequest {
 	    this.setExecutionId(executionId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,7 +71,7 @@ public class GetUsageQueryExecutionIdResultsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/usage/query/{executionId}/results")
                 .withPathParameter("executionId", executionId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class GetUsageQueryExecutionIdResultsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String executionId) {
 	    return new Builder()
 	            .withRequiredParams(executionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetUsageQueryExecutionIdResultsRequest request;
@@ -96,20 +96,20 @@ public class GetUsageQueryExecutionIdResultsRequest {
 			request = new GetUsageQueryExecutionIdResultsRequest();
 		}
 
-		
+
 		public Builder withExecutionId(String executionId) {
 			request.setExecutionId(executionId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String executionId) {
 			request.setExecutionId(executionId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetUsageQueryExecutionIdResultsRequest build() {
             

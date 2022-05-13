@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
@@ -39,7 +40,7 @@ public class LineIntegrationRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the LINE Integration
    **/
@@ -57,7 +58,7 @@ public class LineIntegrationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -75,7 +76,7 @@ public class LineIntegrationRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public LineIntegrationRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -92,7 +93,7 @@ public class LineIntegrationRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory. (NOTE: ChannelId can only be updated if the integration is set to inactive)
    **/
@@ -110,7 +111,7 @@ public class LineIntegrationRequest  implements Serializable {
     this.channelId = channelId;
   }
 
-  
+
   /**
    * The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory. (NOTE: ChannelSecret can only be updated if the integration is set to inactive)
    **/
@@ -128,7 +129,7 @@ public class LineIntegrationRequest  implements Serializable {
     this.channelSecret = channelSecret;
   }
 
-  
+
   /**
    * The Switcher Secret from LINE messenger. Some line official accounts are switcher functionality enabled. If the LINE account used for this integration is switcher enabled, then switcher secret is a required field. This secret can be found in your create documentation provided by LINE
    **/
@@ -146,7 +147,7 @@ public class LineIntegrationRequest  implements Serializable {
     this.switcherSecret = switcherSecret;
   }
 
-  
+
   /**
    * The Service Code from LINE messenger. Only applicable to LINE Enterprise accounts. This service code can be found in your create documentation provided by LINE
    **/
@@ -164,14 +165,13 @@ public class LineIntegrationRequest  implements Serializable {
     this.serviceCode = serviceCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,15 +182,16 @@ public class LineIntegrationRequest  implements Serializable {
       return false;
     }
     LineIntegrationRequest lineIntegrationRequest = (LineIntegrationRequest) o;
+
     return Objects.equals(this.id, lineIntegrationRequest.id) &&
-        Objects.equals(this.name, lineIntegrationRequest.name) &&
-        Objects.equals(this.supportedContent, lineIntegrationRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, lineIntegrationRequest.messagingSetting) &&
-        Objects.equals(this.channelId, lineIntegrationRequest.channelId) &&
-        Objects.equals(this.channelSecret, lineIntegrationRequest.channelSecret) &&
-        Objects.equals(this.switcherSecret, lineIntegrationRequest.switcherSecret) &&
-        Objects.equals(this.serviceCode, lineIntegrationRequest.serviceCode) &&
-        Objects.equals(this.selfUri, lineIntegrationRequest.selfUri);
+            Objects.equals(this.name, lineIntegrationRequest.name) &&
+            Objects.equals(this.supportedContent, lineIntegrationRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, lineIntegrationRequest.messagingSetting) &&
+            Objects.equals(this.channelId, lineIntegrationRequest.channelId) &&
+            Objects.equals(this.channelSecret, lineIntegrationRequest.channelSecret) &&
+            Objects.equals(this.switcherSecret, lineIntegrationRequest.switcherSecret) &&
+            Objects.equals(this.serviceCode, lineIntegrationRequest.serviceCode) &&
+            Objects.equals(this.selfUri, lineIntegrationRequest.selfUri);
   }
 
   @Override

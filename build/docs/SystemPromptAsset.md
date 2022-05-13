@@ -31,11 +31,11 @@ title: SystemPromptAsset
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CREATED | &quot;created&quot; |
-| UPLOADED | &quot;uploaded&quot; |
-| TRANSCODED | &quot;transcoded&quot; |
-| TRANSCODEFAILED | &quot;transcodeFailed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CREATED | &quot;created&quot; | 
+| UPLOADED | &quot;uploaded&quot; | 
+| TRANSCODED | &quot;transcoded&quot; | 
+| TRANSCODEFAILED | &quot;transcodeFailed&quot; | 
 {: class="table table-striped"}
 
 

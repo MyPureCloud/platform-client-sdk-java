@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,7 +85,7 @@ public class UserRoutingLanguage  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserRoutingLanguage name(String name) {
@@ -101,7 +102,7 @@ public class UserRoutingLanguage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
    **/
@@ -119,7 +120,7 @@ public class UserRoutingLanguage  implements Serializable {
     this.proficiency = proficiency;
   }
 
-  
+
   /**
    * Activate or deactivate this routing language.
    **/
@@ -137,21 +138,20 @@ public class UserRoutingLanguage  implements Serializable {
     this.state = state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI to the organization language used by this user language.")
   @JsonProperty("languageUri")
   public String getLanguageUri() {
     return languageUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,12 +162,13 @@ public class UserRoutingLanguage  implements Serializable {
       return false;
     }
     UserRoutingLanguage userRoutingLanguage = (UserRoutingLanguage) o;
+
     return Objects.equals(this.id, userRoutingLanguage.id) &&
-        Objects.equals(this.name, userRoutingLanguage.name) &&
-        Objects.equals(this.proficiency, userRoutingLanguage.proficiency) &&
-        Objects.equals(this.state, userRoutingLanguage.state) &&
-        Objects.equals(this.languageUri, userRoutingLanguage.languageUri) &&
-        Objects.equals(this.selfUri, userRoutingLanguage.selfUri);
+            Objects.equals(this.name, userRoutingLanguage.name) &&
+            Objects.equals(this.proficiency, userRoutingLanguage.proficiency) &&
+            Objects.equals(this.state, userRoutingLanguage.state) &&
+            Objects.equals(this.languageUri, userRoutingLanguage.languageUri) &&
+            Objects.equals(this.selfUri, userRoutingLanguage.selfUri);
   }
 
   @Override

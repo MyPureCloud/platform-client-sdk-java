@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -44,7 +44,7 @@ public class AuthzGrantPolicy  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    **/
   public AuthzGrantPolicy condition(String condition) {
@@ -61,7 +61,7 @@ public class AuthzGrantPolicy  implements Serializable {
     this.condition = condition;
   }
 
-  
+
   /**
    **/
   public AuthzGrantPolicy domain(String domain) {
@@ -78,7 +78,7 @@ public class AuthzGrantPolicy  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public AuthzGrantPolicy entityName(String entityName) {
@@ -95,7 +95,6 @@ public class AuthzGrantPolicy  implements Serializable {
     this.entityName = entityName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +105,11 @@ public class AuthzGrantPolicy  implements Serializable {
       return false;
     }
     AuthzGrantPolicy authzGrantPolicy = (AuthzGrantPolicy) o;
+
     return Objects.equals(this.actions, authzGrantPolicy.actions) &&
-        Objects.equals(this.condition, authzGrantPolicy.condition) &&
-        Objects.equals(this.domain, authzGrantPolicy.domain) &&
-        Objects.equals(this.entityName, authzGrantPolicy.entityName);
+            Objects.equals(this.condition, authzGrantPolicy.condition) &&
+            Objects.equals(this.domain, authzGrantPolicy.domain) &&
+            Objects.equals(this.entityName, authzGrantPolicy.entityName);
   }
 
   @Override

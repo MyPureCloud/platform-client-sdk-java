@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableContactsDiagnostic;
@@ -38,35 +39,34 @@ public class CampaignDiagnostics  implements Serializable {
     return callableContacts;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's queue")
   @JsonProperty("queueUtilizationDiagnostic")
   public QueueUtilizationDiagnostic getQueueUtilizationDiagnostic() {
     return queueUtilizationDiagnostic;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's rule sets")
   @JsonProperty("ruleSetDiagnostics")
   public List<RuleSetDiagnostic> getRuleSetDiagnostics() {
     return ruleSetDiagnostics;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current number of outstanding interactions on the campaign")
   @JsonProperty("outstandingInteractionsCount")
   public Integer getOutstandingInteractionsCount() {
     return outstandingInteractionsCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current number of scheduled interactions on the campaign")
   @JsonProperty("scheduledInteractionsCount")
   public Integer getScheduledInteractionsCount() {
     return scheduledInteractionsCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,11 +77,12 @@ public class CampaignDiagnostics  implements Serializable {
       return false;
     }
     CampaignDiagnostics campaignDiagnostics = (CampaignDiagnostics) o;
+
     return Objects.equals(this.callableContacts, campaignDiagnostics.callableContacts) &&
-        Objects.equals(this.queueUtilizationDiagnostic, campaignDiagnostics.queueUtilizationDiagnostic) &&
-        Objects.equals(this.ruleSetDiagnostics, campaignDiagnostics.ruleSetDiagnostics) &&
-        Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount) &&
-        Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount);
+            Objects.equals(this.queueUtilizationDiagnostic, campaignDiagnostics.queueUtilizationDiagnostic) &&
+            Objects.equals(this.ruleSetDiagnostics, campaignDiagnostics.ruleSetDiagnostics) &&
+            Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount) &&
+            Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount);
   }
 
   @Override

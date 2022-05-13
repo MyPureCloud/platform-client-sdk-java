@@ -19,9 +19,9 @@ title: WfmIntradayPlanningGroupListing
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NOPUBLISHEDSCHEDULE | &quot;NoPublishedSchedule&quot; |
-| NOSOURCEFORECAST | &quot;NoSourceForecast&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NOPUBLISHEDSCHEDULE | &quot;NoPublishedSchedule&quot; | 
+| NOSOURCEFORECAST | &quot;NoSourceForecast&quot; | 
 {: class="table table-striped"}
 
 

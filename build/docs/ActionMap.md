@@ -19,7 +19,7 @@ title: ActionMap
 | **activation** | <!----><!---->[**Activation**](Activation.html)<!----> | Type of activation. |  [optional] |
 | **weight** | <!----><!---->**Integer**<!----> | Weight of the action map with higher number denoting higher weight. |  [optional] |
 | **action** | <!----><!---->[**ActionMapAction**](ActionMapAction.html)<!----> | The action that will be executed if this action map is triggered. |  [optional] |
-| **actionMapScheduleGroups** | <!----><!---->[**ActionMapScheduleGroups**](ActionMapScheduleGroups.html)<!----> | The action map&#39;s associated schedule groups. |  [optional] |
+| **actionMapScheduleGroups** | <!----><!---->[**ActionMapScheduleGroups**](ActionMapScheduleGroups.html)<!----> | The action map's associated schedule groups. |  [optional] |
 | **ignoreFrequencyCap** | <!----><!---->**Boolean**<!----> | Override organization-level frequency cap and always offer web engagements from this action map. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the action map was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

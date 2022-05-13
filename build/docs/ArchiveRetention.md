@@ -19,8 +19,8 @@ title: ArchiveRetention
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; | 
 {: class="table table-striped"}
 
 

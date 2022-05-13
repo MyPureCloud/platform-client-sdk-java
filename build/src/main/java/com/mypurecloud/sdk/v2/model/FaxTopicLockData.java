@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FaxTopicUserData;
@@ -43,7 +44,7 @@ public class FaxTopicLockData  implements Serializable {
     this.lockedBy = lockedBy;
   }
 
-  
+
   /**
    **/
   public FaxTopicLockData dateCreated(Date dateCreated) {
@@ -60,7 +61,7 @@ public class FaxTopicLockData  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public FaxTopicLockData dateExpires(Date dateExpires) {
@@ -77,7 +78,6 @@ public class FaxTopicLockData  implements Serializable {
     this.dateExpires = dateExpires;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class FaxTopicLockData  implements Serializable {
       return false;
     }
     FaxTopicLockData faxTopicLockData = (FaxTopicLockData) o;
+
     return Objects.equals(this.lockedBy, faxTopicLockData.lockedBy) &&
-        Objects.equals(this.dateCreated, faxTopicLockData.dateCreated) &&
-        Objects.equals(this.dateExpires, faxTopicLockData.dateExpires);
+            Objects.equals(this.dateCreated, faxTopicLockData.dateCreated) &&
+            Objects.equals(this.dateExpires, faxTopicLockData.dateExpires);
   }
 
   @Override

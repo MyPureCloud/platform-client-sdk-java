@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EdgeLogicalInterfacesChangeTopicErrorInfo;
@@ -41,7 +42,7 @@ public class EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange  imple
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange errorInfo(EdgeLogicalInterfacesChangeTopicErrorInfo errorInfo) {
@@ -58,7 +59,6 @@ public class EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange  imple
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange  imple
       return false;
     }
     EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange edgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange = (EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange) o;
+
     return Objects.equals(this.id, edgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.id) &&
-        Objects.equals(this.errorInfo, edgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.errorInfo);
+            Objects.equals(this.errorInfo, edgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.errorInfo);
   }
 
   @Override

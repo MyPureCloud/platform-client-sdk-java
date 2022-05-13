@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.TranscriptSearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -152,7 +152,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.endValue = endValue;
   }
 
-  
+
   /**
    * A list of values for the search to match against
    **/
@@ -170,7 +170,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -188,7 +188,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.startValue = startValue;
   }
 
-  
+
   /**
    * Field names to search against
    **/
@@ -206,7 +206,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.fields = fields;
   }
 
-  
+
   /**
    * A value for the search to match against
    **/
@@ -224,7 +224,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -242,7 +242,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Groups multiple conditions
    **/
@@ -260,7 +260,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
    **/
@@ -278,7 +278,7 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.dateFormat = dateFormat;
   }
 
-  
+
   /**
    **/
   public TranscriptSearchCriteria type(TypeEnum type) {
@@ -295,7 +295,6 @@ public class TranscriptSearchCriteria  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -306,15 +305,16 @@ public class TranscriptSearchCriteria  implements Serializable {
       return false;
     }
     TranscriptSearchCriteria transcriptSearchCriteria = (TranscriptSearchCriteria) o;
+
     return Objects.equals(this.endValue, transcriptSearchCriteria.endValue) &&
-        Objects.equals(this.values, transcriptSearchCriteria.values) &&
-        Objects.equals(this.startValue, transcriptSearchCriteria.startValue) &&
-        Objects.equals(this.fields, transcriptSearchCriteria.fields) &&
-        Objects.equals(this.value, transcriptSearchCriteria.value) &&
-        Objects.equals(this.operator, transcriptSearchCriteria.operator) &&
-        Objects.equals(this.group, transcriptSearchCriteria.group) &&
-        Objects.equals(this.dateFormat, transcriptSearchCriteria.dateFormat) &&
-        Objects.equals(this.type, transcriptSearchCriteria.type);
+            Objects.equals(this.values, transcriptSearchCriteria.values) &&
+            Objects.equals(this.startValue, transcriptSearchCriteria.startValue) &&
+            Objects.equals(this.fields, transcriptSearchCriteria.fields) &&
+            Objects.equals(this.value, transcriptSearchCriteria.value) &&
+            Objects.equals(this.operator, transcriptSearchCriteria.operator) &&
+            Objects.equals(this.group, transcriptSearchCriteria.group) &&
+            Objects.equals(this.dateFormat, transcriptSearchCriteria.dateFormat) &&
+            Objects.equals(this.type, transcriptSearchCriteria.type);
   }
 
   @Override

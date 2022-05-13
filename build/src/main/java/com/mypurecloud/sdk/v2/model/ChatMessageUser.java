@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserImage;
@@ -46,7 +47,7 @@ public class ChatMessageUser  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ChatMessageUser name(String name) {
@@ -63,7 +64,7 @@ public class ChatMessageUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ChatMessageUser displayName(String displayName) {
@@ -80,7 +81,7 @@ public class ChatMessageUser  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    **/
   public ChatMessageUser username(String username) {
@@ -97,7 +98,7 @@ public class ChatMessageUser  implements Serializable {
     this.username = username;
   }
 
-  
+
   /**
    **/
   public ChatMessageUser images(List<UserImage> images) {
@@ -114,7 +115,6 @@ public class ChatMessageUser  implements Serializable {
     this.images = images;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class ChatMessageUser  implements Serializable {
       return false;
     }
     ChatMessageUser chatMessageUser = (ChatMessageUser) o;
+
     return Objects.equals(this.id, chatMessageUser.id) &&
-        Objects.equals(this.name, chatMessageUser.name) &&
-        Objects.equals(this.displayName, chatMessageUser.displayName) &&
-        Objects.equals(this.username, chatMessageUser.username) &&
-        Objects.equals(this.images, chatMessageUser.images);
+            Objects.equals(this.name, chatMessageUser.name) &&
+            Objects.equals(this.displayName, chatMessageUser.displayName) &&
+            Objects.equals(this.username, chatMessageUser.username) &&
+            Objects.equals(this.images, chatMessageUser.images);
   }
 
   @Override

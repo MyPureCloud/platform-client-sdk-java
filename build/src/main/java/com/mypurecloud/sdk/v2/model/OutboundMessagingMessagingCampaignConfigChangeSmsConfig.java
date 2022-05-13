@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeResponseRef;
@@ -46,7 +47,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
     this.messageColumn = messageColumn;
   }
 
-  
+
   /**
    * The Contact List column specifying the phone number to send a message to.
    **/
@@ -64,7 +65,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
     this.phoneColumn = phoneColumn;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeSmsConfig senderSmsPhoneNumber(OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef senderSmsPhoneNumber) {
@@ -81,7 +82,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
     this.senderSmsPhoneNumber = senderSmsPhoneNumber;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeSmsConfig contentTemplate(OutboundMessagingMessagingCampaignConfigChangeResponseRef contentTemplate) {
@@ -98,7 +99,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
     this.contentTemplate = contentTemplate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeSmsConfig outboundMessagingMessagingCampaignConfigChangeSmsConfig = (OutboundMessagingMessagingCampaignConfigChangeSmsConfig) o;
+
     return Objects.equals(this.messageColumn, outboundMessagingMessagingCampaignConfigChangeSmsConfig.messageColumn) &&
-        Objects.equals(this.phoneColumn, outboundMessagingMessagingCampaignConfigChangeSmsConfig.phoneColumn) &&
-        Objects.equals(this.senderSmsPhoneNumber, outboundMessagingMessagingCampaignConfigChangeSmsConfig.senderSmsPhoneNumber) &&
-        Objects.equals(this.contentTemplate, outboundMessagingMessagingCampaignConfigChangeSmsConfig.contentTemplate);
+            Objects.equals(this.phoneColumn, outboundMessagingMessagingCampaignConfigChangeSmsConfig.phoneColumn) &&
+            Objects.equals(this.senderSmsPhoneNumber, outboundMessagingMessagingCampaignConfigChangeSmsConfig.senderSmsPhoneNumber) &&
+            Objects.equals(this.contentTemplate, outboundMessagingMessagingCampaignConfigChangeSmsConfig.contentTemplate);
   }
 
   @Override

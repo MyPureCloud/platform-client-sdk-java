@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class GetWebdeploymentsConfigurationVersionRequest {
-    
+
 	private String configurationId;
 	public String getConfigurationId() {
 		return this.configurationId;
@@ -41,7 +41,7 @@ public class GetWebdeploymentsConfigurationVersionRequest {
 	    this.setConfigurationId(configurationId);
 	    return this;
 	} 
-	
+
 	private String versionId;
 	public String getVersionId() {
 		return this.versionId;
@@ -55,7 +55,7 @@ public class GetWebdeploymentsConfigurationVersionRequest {
 	    this.setVersionId(versionId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +93,7 @@ public class GetWebdeploymentsConfigurationVersionRequest {
         
                 .withPathParameter("versionId", versionId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -104,12 +104,12 @@ public class GetWebdeploymentsConfigurationVersionRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String configurationId, String versionId) {
 	    return new Builder()
 	            .withRequiredParams(configurationId, versionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetWebdeploymentsConfigurationVersionRequest request;
@@ -118,26 +118,26 @@ public class GetWebdeploymentsConfigurationVersionRequest {
 			request = new GetWebdeploymentsConfigurationVersionRequest();
 		}
 
-		
+
 		public Builder withConfigurationId(String configurationId) {
 			request.setConfigurationId(configurationId);
 			return this;
 		}
-		
+
 		public Builder withVersionId(String versionId) {
 			request.setVersionId(versionId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String configurationId, String versionId) {
 			request.setConfigurationId(configurationId);
-						request.setVersionId(versionId);
-			
+			request.setVersionId(versionId);
+
 			return this;
 		}
-		
+
 
 		public GetWebdeploymentsConfigurationVersionRequest build() {
             

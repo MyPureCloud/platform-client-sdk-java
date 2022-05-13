@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -134,7 +135,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * WhatsApp Integration name
    **/
@@ -152,7 +153,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -170,7 +171,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationUpdateRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -187,7 +188,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The action used to activate and then confirm a WhatsApp Integration.
    **/
@@ -205,7 +206,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * The authentication method used to confirm a WhatsApp Integration activation. If action is set to Activate, then authenticationMethod is a required field. 
    **/
@@ -223,7 +224,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.authenticationMethod = authenticationMethod;
   }
 
-  
+
   /**
    * The confirmation code sent by Whatsapp to you during the activation step. If action is set to Confirm, then confirmationCode is a required field.
    **/
@@ -241,7 +242,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.confirmationCode = confirmationCode;
   }
 
-  
+
   /**
    * Phone number to associate with the WhatsApp integration
    **/
@@ -259,14 +260,13 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -277,15 +277,16 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
       return false;
     }
     WhatsAppIntegrationUpdateRequest whatsAppIntegrationUpdateRequest = (WhatsAppIntegrationUpdateRequest) o;
+
     return Objects.equals(this.id, whatsAppIntegrationUpdateRequest.id) &&
-        Objects.equals(this.name, whatsAppIntegrationUpdateRequest.name) &&
-        Objects.equals(this.supportedContent, whatsAppIntegrationUpdateRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, whatsAppIntegrationUpdateRequest.messagingSetting) &&
-        Objects.equals(this.action, whatsAppIntegrationUpdateRequest.action) &&
-        Objects.equals(this.authenticationMethod, whatsAppIntegrationUpdateRequest.authenticationMethod) &&
-        Objects.equals(this.confirmationCode, whatsAppIntegrationUpdateRequest.confirmationCode) &&
-        Objects.equals(this.phoneNumber, whatsAppIntegrationUpdateRequest.phoneNumber) &&
-        Objects.equals(this.selfUri, whatsAppIntegrationUpdateRequest.selfUri);
+            Objects.equals(this.name, whatsAppIntegrationUpdateRequest.name) &&
+            Objects.equals(this.supportedContent, whatsAppIntegrationUpdateRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, whatsAppIntegrationUpdateRequest.messagingSetting) &&
+            Objects.equals(this.action, whatsAppIntegrationUpdateRequest.action) &&
+            Objects.equals(this.authenticationMethod, whatsAppIntegrationUpdateRequest.authenticationMethod) &&
+            Objects.equals(this.confirmationCode, whatsAppIntegrationUpdateRequest.confirmationCode) &&
+            Objects.equals(this.phoneNumber, whatsAppIntegrationUpdateRequest.phoneNumber) &&
+            Objects.equals(this.selfUri, whatsAppIntegrationUpdateRequest.selfUri);
   }
 
   @Override

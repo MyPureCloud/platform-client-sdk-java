@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -52,7 +53,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * The number of contacts per time zone that mapped to only that time zone
    **/
@@ -70,7 +71,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsPerTimeZone = contactsPerTimeZone;
   }
 
-  
+
   /**
    * The number of contacts per time zone that mapped to only that time zone and were mapped using the zip code column
    **/
@@ -88,7 +89,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsMappedUsingZipCode = contactsMappedUsingZipCode;
   }
 
-  
+
   /**
    * The total number of contacts that mapped to a single time zone
    **/
@@ -106,7 +107,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsMappedToASingleZone = contactsMappedToASingleZone;
   }
 
-  
+
   /**
    * The total number of contacts that mapped to a single time zone and were mapped using the zip code column
    **/
@@ -124,7 +125,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsMappedToASingleZoneUsingZipCode = contactsMappedToASingleZoneUsingZipCode;
   }
 
-  
+
   /**
    * The total number of contacts that mapped to multiple time zones
    **/
@@ -142,7 +143,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsMappedToMultipleZones = contactsMappedToMultipleZones;
   }
 
-  
+
   /**
    * The total number of contacts that mapped to multiple time zones and were mapped using the zip code column
    **/
@@ -160,7 +161,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsMappedToMultipleZonesUsingZipCode = contactsMappedToMultipleZonesUsingZipCode;
   }
 
-  
+
   /**
    * The total number of contacts that will be dialed during the default window
    **/
@@ -178,7 +179,7 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactsInDefaultWindow = contactsInDefaultWindow;
   }
 
-  
+
   /**
    * The total number of contacts in the contact list
    **/
@@ -196,7 +197,6 @@ public class TimeZoneMappingPreview  implements Serializable {
     this.contactListSize = contactListSize;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -207,15 +207,16 @@ public class TimeZoneMappingPreview  implements Serializable {
       return false;
     }
     TimeZoneMappingPreview timeZoneMappingPreview = (TimeZoneMappingPreview) o;
+
     return Objects.equals(this.contactList, timeZoneMappingPreview.contactList) &&
-        Objects.equals(this.contactsPerTimeZone, timeZoneMappingPreview.contactsPerTimeZone) &&
-        Objects.equals(this.contactsMappedUsingZipCode, timeZoneMappingPreview.contactsMappedUsingZipCode) &&
-        Objects.equals(this.contactsMappedToASingleZone, timeZoneMappingPreview.contactsMappedToASingleZone) &&
-        Objects.equals(this.contactsMappedToASingleZoneUsingZipCode, timeZoneMappingPreview.contactsMappedToASingleZoneUsingZipCode) &&
-        Objects.equals(this.contactsMappedToMultipleZones, timeZoneMappingPreview.contactsMappedToMultipleZones) &&
-        Objects.equals(this.contactsMappedToMultipleZonesUsingZipCode, timeZoneMappingPreview.contactsMappedToMultipleZonesUsingZipCode) &&
-        Objects.equals(this.contactsInDefaultWindow, timeZoneMappingPreview.contactsInDefaultWindow) &&
-        Objects.equals(this.contactListSize, timeZoneMappingPreview.contactListSize);
+            Objects.equals(this.contactsPerTimeZone, timeZoneMappingPreview.contactsPerTimeZone) &&
+            Objects.equals(this.contactsMappedUsingZipCode, timeZoneMappingPreview.contactsMappedUsingZipCode) &&
+            Objects.equals(this.contactsMappedToASingleZone, timeZoneMappingPreview.contactsMappedToASingleZone) &&
+            Objects.equals(this.contactsMappedToASingleZoneUsingZipCode, timeZoneMappingPreview.contactsMappedToASingleZoneUsingZipCode) &&
+            Objects.equals(this.contactsMappedToMultipleZones, timeZoneMappingPreview.contactsMappedToMultipleZones) &&
+            Objects.equals(this.contactsMappedToMultipleZonesUsingZipCode, timeZoneMappingPreview.contactsMappedToMultipleZonesUsingZipCode) &&
+            Objects.equals(this.contactsInDefaultWindow, timeZoneMappingPreview.contactsInDefaultWindow) &&
+            Objects.equals(this.contactListSize, timeZoneMappingPreview.contactListSize);
   }
 
   @Override

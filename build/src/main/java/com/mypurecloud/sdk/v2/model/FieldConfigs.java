@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
@@ -43,7 +44,7 @@ public class FieldConfigs  implements Serializable {
     this.org = org;
   }
 
-  
+
   /**
    **/
   public FieldConfigs person(FieldConfig person) {
@@ -60,7 +61,7 @@ public class FieldConfigs  implements Serializable {
     this.person = person;
   }
 
-  
+
   /**
    **/
   public FieldConfigs group(FieldConfig group) {
@@ -77,7 +78,7 @@ public class FieldConfigs  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    **/
   public FieldConfigs externalContact(FieldConfig externalContact) {
@@ -94,7 +95,6 @@ public class FieldConfigs  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,10 +105,11 @@ public class FieldConfigs  implements Serializable {
       return false;
     }
     FieldConfigs fieldConfigs = (FieldConfigs) o;
+
     return Objects.equals(this.org, fieldConfigs.org) &&
-        Objects.equals(this.person, fieldConfigs.person) &&
-        Objects.equals(this.group, fieldConfigs.group) &&
-        Objects.equals(this.externalContact, fieldConfigs.externalContact);
+            Objects.equals(this.person, fieldConfigs.person) &&
+            Objects.equals(this.group, fieldConfigs.group) &&
+            Objects.equals(this.externalContact, fieldConfigs.externalContact);
   }
 
   @Override

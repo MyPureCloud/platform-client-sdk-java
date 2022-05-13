@@ -28,10 +28,10 @@ title: JourneyWebEventsNotificationWebEventsNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WEBEVENT | &quot;WebEvent&quot; |
-| WEBACTIONEVENT | &quot;WebActionEvent&quot; |
-| OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEBEVENT | &quot;WebEvent&quot; | 
+| WEBACTIONEVENT | &quot;WebActionEvent&quot; | 
+| OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
 {: class="table table-striped"}
 
 

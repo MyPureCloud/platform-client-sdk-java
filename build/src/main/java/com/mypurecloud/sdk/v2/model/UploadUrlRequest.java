@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class UploadUrlRequest  implements Serializable {
     this.fileName = fileName;
   }
 
-  
+
   /**
    * Content MD5 of the file to upload
    **/
@@ -108,7 +109,7 @@ public class UploadUrlRequest  implements Serializable {
     this.contentMd5 = contentMd5;
   }
 
-  
+
   /**
    * The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds
    **/
@@ -126,7 +127,7 @@ public class UploadUrlRequest  implements Serializable {
     this.signedUrlTimeoutSeconds = signedUrlTimeoutSeconds;
   }
 
-  
+
   /**
    **/
   public UploadUrlRequest serverSideEncryption(ServerSideEncryptionEnum serverSideEncryption) {
@@ -143,7 +144,6 @@ public class UploadUrlRequest  implements Serializable {
     this.serverSideEncryption = serverSideEncryption;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -154,10 +154,11 @@ public class UploadUrlRequest  implements Serializable {
       return false;
     }
     UploadUrlRequest uploadUrlRequest = (UploadUrlRequest) o;
+
     return Objects.equals(this.fileName, uploadUrlRequest.fileName) &&
-        Objects.equals(this.contentMd5, uploadUrlRequest.contentMd5) &&
-        Objects.equals(this.signedUrlTimeoutSeconds, uploadUrlRequest.signedUrlTimeoutSeconds) &&
-        Objects.equals(this.serverSideEncryption, uploadUrlRequest.serverSideEncryption);
+            Objects.equals(this.contentMd5, uploadUrlRequest.contentMd5) &&
+            Objects.equals(this.signedUrlTimeoutSeconds, uploadUrlRequest.signedUrlTimeoutSeconds) &&
+            Objects.equals(this.serverSideEncryption, uploadUrlRequest.serverSideEncryption);
   }
 
   @Override

@@ -25,12 +25,12 @@ title: CommandStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INPROGRESS | &quot;INPROGRESS&quot; |
-| COMPLETE | &quot;COMPLETE&quot; |
-| ERROR | &quot;ERROR&quot; |
-| CANCELING | &quot;CANCELING&quot; |
-| CANCELED | &quot;CANCELED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INPROGRESS | &quot;INPROGRESS&quot; | 
+| COMPLETE | &quot;COMPLETE&quot; | 
+| ERROR | &quot;ERROR&quot; | 
+| CANCELING | &quot;CANCELING&quot; | 
+| CANCELED | &quot;CANCELED&quot; | 
 {: class="table table-striped"}
 
 
@@ -40,17 +40,17 @@ title: CommandStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UPLOAD | &quot;UPLOAD&quot; |
-| COPYDOCUMENT | &quot;COPYDOCUMENT&quot; |
-| MOVEDOCUMENT | &quot;MOVEDOCUMENT&quot; |
-| DELETEWORKSPACE | &quot;DELETEWORKSPACE&quot; |
-| DELETEDOCUMENT | &quot;DELETEDOCUMENT&quot; |
-| DELETETAG | &quot;DELETETAG&quot; |
-| UPDATETAG | &quot;UPDATETAG&quot; |
-| REINDEX | &quot;REINDEX&quot; |
-| CLEANUP | &quot;CLEANUP&quot; |
-| REPLACEDOCUMENT | &quot;REPLACEDOCUMENT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UPLOAD | &quot;UPLOAD&quot; | 
+| COPYDOCUMENT | &quot;COPYDOCUMENT&quot; | 
+| MOVEDOCUMENT | &quot;MOVEDOCUMENT&quot; | 
+| DELETEWORKSPACE | &quot;DELETEWORKSPACE&quot; | 
+| DELETEDOCUMENT | &quot;DELETEDOCUMENT&quot; | 
+| DELETETAG | &quot;DELETETAG&quot; | 
+| UPDATETAG | &quot;UPDATETAG&quot; | 
+| REINDEX | &quot;REINDEX&quot; | 
+| CLEANUP | &quot;CLEANUP&quot; | 
+| REPLACEDOCUMENT | &quot;REPLACEDOCUMENT&quot; | 
 {: class="table table-striped"}
 
 

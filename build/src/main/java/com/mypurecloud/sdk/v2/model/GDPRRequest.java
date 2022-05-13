@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -145,7 +146,7 @@ public class GDPRRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GDPRRequest name(String name) {
@@ -162,14 +163,14 @@ public class GDPRRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The user that created this request")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
 
-  
+
   /**
    * The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request
    **/
@@ -178,7 +179,7 @@ public class GDPRRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "[ { \"type\": \"EMAIL\": \"existingValue\": \"personal.email@domain.com\", \"updatedValue\": \"updated.personal.email@domain.com\" } ]", value = "The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request")
+  @ApiModelProperty(example = "[ { &quot;type&quot;: &quot;EMAIL&quot;: &quot;existingValue&quot;: &quot;personal.email@domain.com&quot;, &quot;updatedValue&quot;: &quot;updated.personal.email@domain.com&quot; } ]", value = "The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request")
   @JsonProperty("replacementTerms")
   public List<ReplacementTerm> getReplacementTerms() {
     return replacementTerms;
@@ -187,7 +188,7 @@ public class GDPRRequest  implements Serializable {
     this.replacementTerms = replacementTerms;
   }
 
-  
+
   /**
    * The type of GDPR request
    **/
@@ -205,21 +206,21 @@ public class GDPRRequest  implements Serializable {
     this.requestType = requestType;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "When the request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The status of the request")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   /**
    * The subject of the GDPR request
    **/
@@ -228,7 +229,7 @@ public class GDPRRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The subject of the GDPR request")
+  @ApiModelProperty(example = "&quot;{ emailAddresses: [personal.email@domain.com], phoneNumbers: [+13115552368] }&quot;", required = true, value = "The subject of the GDPR request")
   @JsonProperty("subject")
   public GDPRSubject getSubject() {
     return subject;
@@ -237,21 +238,20 @@ public class GDPRRequest  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The location where the results of the request can be retrieved")
   @JsonProperty("resultsUrl")
   public String getResultsUrl() {
     return resultsUrl;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -262,16 +262,17 @@ public class GDPRRequest  implements Serializable {
       return false;
     }
     GDPRRequest gDPRRequest = (GDPRRequest) o;
+
     return Objects.equals(this.id, gDPRRequest.id) &&
-        Objects.equals(this.name, gDPRRequest.name) &&
-        Objects.equals(this.createdBy, gDPRRequest.createdBy) &&
-        Objects.equals(this.replacementTerms, gDPRRequest.replacementTerms) &&
-        Objects.equals(this.requestType, gDPRRequest.requestType) &&
-        Objects.equals(this.createdDate, gDPRRequest.createdDate) &&
-        Objects.equals(this.status, gDPRRequest.status) &&
-        Objects.equals(this.subject, gDPRRequest.subject) &&
-        Objects.equals(this.resultsUrl, gDPRRequest.resultsUrl) &&
-        Objects.equals(this.selfUri, gDPRRequest.selfUri);
+            Objects.equals(this.name, gDPRRequest.name) &&
+            Objects.equals(this.createdBy, gDPRRequest.createdBy) &&
+            Objects.equals(this.replacementTerms, gDPRRequest.replacementTerms) &&
+            Objects.equals(this.requestType, gDPRRequest.requestType) &&
+            Objects.equals(this.createdDate, gDPRRequest.createdDate) &&
+            Objects.equals(this.status, gDPRRequest.status) &&
+            Objects.equals(this.subject, gDPRRequest.subject) &&
+            Objects.equals(this.resultsUrl, gDPRRequest.resultsUrl) &&
+            Objects.equals(this.selfUri, gDPRRequest.selfUri);
   }
 
   @Override

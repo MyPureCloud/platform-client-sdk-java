@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.id = id;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the conversation in the provider clock.
    **/
@@ -162,7 +163,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this participant disconnected from the conversation in the provider clock.
    **/
@@ -180,7 +181,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.endTime = endTime;
   }
 
-  
+
   /**
    * If this participant represents a user, then this will be the globally unique identifier for the user.
    **/
@@ -198,7 +199,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.userId = userId;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
    **/
@@ -216,7 +217,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the globally unique identifier for the external org.
    **/
@@ -234,7 +235,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant.
    **/
@@ -252,7 +253,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.name = name;
   }
 
-  
+
   /**
    * If present, the queue id that the communication channel came in on.
    **/
@@ -270,7 +271,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.queueId = queueId;
   }
 
-  
+
   /**
    * If present, the group id that the participant represents.
    **/
@@ -288,7 +289,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.groupId = groupId;
   }
 
-  
+
   /**
    * The team id that this participant is a member of when added to the conversation.
    **/
@@ -306,7 +307,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.teamId = teamId;
   }
 
-  
+
   /**
    * A well known string that specifies the purpose or type of this participant.
    **/
@@ -324,7 +325,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.purpose = purpose;
   }
 
-  
+
   /**
    * If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
    **/
@@ -342,7 +343,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.consultParticipantId = consultParticipantId;
   }
 
-  
+
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -360,7 +361,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.address = address;
   }
 
-  
+
   /**
    * True iff this participant is required to enter wrapup for this conversation.
    **/
@@ -378,7 +379,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * True when a participant is expected to enter a wrapup code once the call connects.
    **/
@@ -396,7 +397,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.wrapupExpected = wrapupExpected;
   }
 
-  
+
   /**
    * This field controls how the UI prompts the agent for a wrapup.
    **/
@@ -414,7 +415,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * Specifies how long a timed ACW session will last.
    **/
@@ -432,7 +433,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant wrapup(QueueConversationSocialExpressionEventTopicWrapup wrapup) {
@@ -449,7 +450,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work.
    **/
@@ -467,7 +468,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work.
    **/
@@ -485,7 +486,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant conversationRoutingData(QueueConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData) {
@@ -502,7 +503,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -520,7 +521,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
@@ -538,7 +539,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    * If this participant is a coach, then this will be the id of the participant that is being coached.
    **/
@@ -556,7 +557,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    * If this participant created a barge in conference, then this will be the id of the participant that is barged in.
    **/
@@ -574,7 +575,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.bargedParticipantId = bargedParticipantId;
   }
 
-  
+
   /**
    * The current screen recording state for this participant.
    **/
@@ -592,7 +593,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    * If this participant has flagged the conversation, the reason code given.
    **/
@@ -610,7 +611,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Additional participant attributes
    **/
@@ -628,7 +629,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant calls(List<QueueConversationSocialExpressionEventTopicCall> calls) {
@@ -645,7 +646,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.calls = calls;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant callbacks(List<QueueConversationSocialExpressionEventTopicCallback> callbacks) {
@@ -662,7 +663,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.callbacks = callbacks;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant chats(List<QueueConversationSocialExpressionEventTopicChat> chats) {
@@ -679,7 +680,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.chats = chats;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant cobrowsesessions(List<QueueConversationSocialExpressionEventTopicCobrowse> cobrowsesessions) {
@@ -696,7 +697,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.cobrowsesessions = cobrowsesessions;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant emails(List<QueueConversationSocialExpressionEventTopicEmail> emails) {
@@ -713,7 +714,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.emails = emails;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant messages(List<QueueConversationSocialExpressionEventTopicMessage> messages) {
@@ -730,7 +731,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.messages = messages;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant screenshares(List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares) {
@@ -747,7 +748,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.screenshares = screenshares;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant socialExpressions(List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions) {
@@ -764,7 +765,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.socialExpressions = socialExpressions;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicParticipant videos(List<QueueConversationSocialExpressionEventTopicVideo> videos) {
@@ -781,7 +782,6 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     this.videos = videos;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -792,43 +792,44 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
       return false;
     }
     QueueConversationSocialExpressionEventTopicParticipant queueConversationSocialExpressionEventTopicParticipant = (QueueConversationSocialExpressionEventTopicParticipant) o;
+
     return Objects.equals(this.id, queueConversationSocialExpressionEventTopicParticipant.id) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicParticipant.connectedTime) &&
-        Objects.equals(this.endTime, queueConversationSocialExpressionEventTopicParticipant.endTime) &&
-        Objects.equals(this.userId, queueConversationSocialExpressionEventTopicParticipant.userId) &&
-        Objects.equals(this.externalContactId, queueConversationSocialExpressionEventTopicParticipant.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, queueConversationSocialExpressionEventTopicParticipant.externalOrganizationId) &&
-        Objects.equals(this.name, queueConversationSocialExpressionEventTopicParticipant.name) &&
-        Objects.equals(this.queueId, queueConversationSocialExpressionEventTopicParticipant.queueId) &&
-        Objects.equals(this.groupId, queueConversationSocialExpressionEventTopicParticipant.groupId) &&
-        Objects.equals(this.teamId, queueConversationSocialExpressionEventTopicParticipant.teamId) &&
-        Objects.equals(this.purpose, queueConversationSocialExpressionEventTopicParticipant.purpose) &&
-        Objects.equals(this.consultParticipantId, queueConversationSocialExpressionEventTopicParticipant.consultParticipantId) &&
-        Objects.equals(this.address, queueConversationSocialExpressionEventTopicParticipant.address) &&
-        Objects.equals(this.wrapupRequired, queueConversationSocialExpressionEventTopicParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupExpected, queueConversationSocialExpressionEventTopicParticipant.wrapupExpected) &&
-        Objects.equals(this.wrapupPrompt, queueConversationSocialExpressionEventTopicParticipant.wrapupPrompt) &&
-        Objects.equals(this.wrapupTimeoutMs, queueConversationSocialExpressionEventTopicParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicParticipant.wrapup) &&
-        Objects.equals(this.startAcwTime, queueConversationSocialExpressionEventTopicParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, queueConversationSocialExpressionEventTopicParticipant.endAcwTime) &&
-        Objects.equals(this.conversationRoutingData, queueConversationSocialExpressionEventTopicParticipant.conversationRoutingData) &&
-        Objects.equals(this.alertingTimeoutMs, queueConversationSocialExpressionEventTopicParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.monitoredParticipantId, queueConversationSocialExpressionEventTopicParticipant.monitoredParticipantId) &&
-        Objects.equals(this.coachedParticipantId, queueConversationSocialExpressionEventTopicParticipant.coachedParticipantId) &&
-        Objects.equals(this.bargedParticipantId, queueConversationSocialExpressionEventTopicParticipant.bargedParticipantId) &&
-        Objects.equals(this.screenRecordingState, queueConversationSocialExpressionEventTopicParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, queueConversationSocialExpressionEventTopicParticipant.flaggedReason) &&
-        Objects.equals(this.attributes, queueConversationSocialExpressionEventTopicParticipant.attributes) &&
-        Objects.equals(this.calls, queueConversationSocialExpressionEventTopicParticipant.calls) &&
-        Objects.equals(this.callbacks, queueConversationSocialExpressionEventTopicParticipant.callbacks) &&
-        Objects.equals(this.chats, queueConversationSocialExpressionEventTopicParticipant.chats) &&
-        Objects.equals(this.cobrowsesessions, queueConversationSocialExpressionEventTopicParticipant.cobrowsesessions) &&
-        Objects.equals(this.emails, queueConversationSocialExpressionEventTopicParticipant.emails) &&
-        Objects.equals(this.messages, queueConversationSocialExpressionEventTopicParticipant.messages) &&
-        Objects.equals(this.screenshares, queueConversationSocialExpressionEventTopicParticipant.screenshares) &&
-        Objects.equals(this.socialExpressions, queueConversationSocialExpressionEventTopicParticipant.socialExpressions) &&
-        Objects.equals(this.videos, queueConversationSocialExpressionEventTopicParticipant.videos);
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicParticipant.connectedTime) &&
+            Objects.equals(this.endTime, queueConversationSocialExpressionEventTopicParticipant.endTime) &&
+            Objects.equals(this.userId, queueConversationSocialExpressionEventTopicParticipant.userId) &&
+            Objects.equals(this.externalContactId, queueConversationSocialExpressionEventTopicParticipant.externalContactId) &&
+            Objects.equals(this.externalOrganizationId, queueConversationSocialExpressionEventTopicParticipant.externalOrganizationId) &&
+            Objects.equals(this.name, queueConversationSocialExpressionEventTopicParticipant.name) &&
+            Objects.equals(this.queueId, queueConversationSocialExpressionEventTopicParticipant.queueId) &&
+            Objects.equals(this.groupId, queueConversationSocialExpressionEventTopicParticipant.groupId) &&
+            Objects.equals(this.teamId, queueConversationSocialExpressionEventTopicParticipant.teamId) &&
+            Objects.equals(this.purpose, queueConversationSocialExpressionEventTopicParticipant.purpose) &&
+            Objects.equals(this.consultParticipantId, queueConversationSocialExpressionEventTopicParticipant.consultParticipantId) &&
+            Objects.equals(this.address, queueConversationSocialExpressionEventTopicParticipant.address) &&
+            Objects.equals(this.wrapupRequired, queueConversationSocialExpressionEventTopicParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupExpected, queueConversationSocialExpressionEventTopicParticipant.wrapupExpected) &&
+            Objects.equals(this.wrapupPrompt, queueConversationSocialExpressionEventTopicParticipant.wrapupPrompt) &&
+            Objects.equals(this.wrapupTimeoutMs, queueConversationSocialExpressionEventTopicParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicParticipant.wrapup) &&
+            Objects.equals(this.startAcwTime, queueConversationSocialExpressionEventTopicParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, queueConversationSocialExpressionEventTopicParticipant.endAcwTime) &&
+            Objects.equals(this.conversationRoutingData, queueConversationSocialExpressionEventTopicParticipant.conversationRoutingData) &&
+            Objects.equals(this.alertingTimeoutMs, queueConversationSocialExpressionEventTopicParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.monitoredParticipantId, queueConversationSocialExpressionEventTopicParticipant.monitoredParticipantId) &&
+            Objects.equals(this.coachedParticipantId, queueConversationSocialExpressionEventTopicParticipant.coachedParticipantId) &&
+            Objects.equals(this.bargedParticipantId, queueConversationSocialExpressionEventTopicParticipant.bargedParticipantId) &&
+            Objects.equals(this.screenRecordingState, queueConversationSocialExpressionEventTopicParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, queueConversationSocialExpressionEventTopicParticipant.flaggedReason) &&
+            Objects.equals(this.attributes, queueConversationSocialExpressionEventTopicParticipant.attributes) &&
+            Objects.equals(this.calls, queueConversationSocialExpressionEventTopicParticipant.calls) &&
+            Objects.equals(this.callbacks, queueConversationSocialExpressionEventTopicParticipant.callbacks) &&
+            Objects.equals(this.chats, queueConversationSocialExpressionEventTopicParticipant.chats) &&
+            Objects.equals(this.cobrowsesessions, queueConversationSocialExpressionEventTopicParticipant.cobrowsesessions) &&
+            Objects.equals(this.emails, queueConversationSocialExpressionEventTopicParticipant.emails) &&
+            Objects.equals(this.messages, queueConversationSocialExpressionEventTopicParticipant.messages) &&
+            Objects.equals(this.screenshares, queueConversationSocialExpressionEventTopicParticipant.screenshares) &&
+            Objects.equals(this.socialExpressions, queueConversationSocialExpressionEventTopicParticipant.socialExpressions) &&
+            Objects.equals(this.videos, queueConversationSocialExpressionEventTopicParticipant.videos);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DialerEventEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
       return false;
     }
     DialerEventEntityListing dialerEventEntityListing = (DialerEventEntityListing) o;
+
     return Objects.equals(this.entities, dialerEventEntityListing.entities) &&
-        Objects.equals(this.pageSize, dialerEventEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, dialerEventEntityListing.pageNumber) &&
-        Objects.equals(this.total, dialerEventEntityListing.total) &&
-        Objects.equals(this.lastUri, dialerEventEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, dialerEventEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, dialerEventEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, dialerEventEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, dialerEventEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, dialerEventEntityListing.pageCount);
+            Objects.equals(this.pageSize, dialerEventEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, dialerEventEntityListing.pageNumber) &&
+            Objects.equals(this.total, dialerEventEntityListing.total) &&
+            Objects.equals(this.lastUri, dialerEventEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, dialerEventEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, dialerEventEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, dialerEventEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, dialerEventEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, dialerEventEntityListing.pageCount);
   }
 
   @Override

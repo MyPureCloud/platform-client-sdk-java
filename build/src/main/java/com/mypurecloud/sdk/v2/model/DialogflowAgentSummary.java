@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialogflowProject;
@@ -34,7 +35,7 @@ public class DialogflowAgentSummary  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummary name(String name) {
@@ -51,7 +52,7 @@ public class DialogflowAgentSummary  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The project this Dialogflow agent belongs to
    **/
@@ -69,7 +70,7 @@ public class DialogflowAgentSummary  implements Serializable {
     this.project = project;
   }
 
-  
+
   /**
    * A description of the Dialogflow agent
    **/
@@ -87,14 +88,13 @@ public class DialogflowAgentSummary  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,11 +105,12 @@ public class DialogflowAgentSummary  implements Serializable {
       return false;
     }
     DialogflowAgentSummary dialogflowAgentSummary = (DialogflowAgentSummary) o;
+
     return Objects.equals(this.id, dialogflowAgentSummary.id) &&
-        Objects.equals(this.name, dialogflowAgentSummary.name) &&
-        Objects.equals(this.project, dialogflowAgentSummary.project) &&
-        Objects.equals(this.description, dialogflowAgentSummary.description) &&
-        Objects.equals(this.selfUri, dialogflowAgentSummary.selfUri);
+            Objects.equals(this.name, dialogflowAgentSummary.name) &&
+            Objects.equals(this.project, dialogflowAgentSummary.project) &&
+            Objects.equals(this.description, dialogflowAgentSummary.description) &&
+            Objects.equals(this.selfUri, dialogflowAgentSummary.selfUri);
   }
 
   @Override

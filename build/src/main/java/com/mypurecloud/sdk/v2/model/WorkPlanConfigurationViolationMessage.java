@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -173,7 +174,7 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Arguments of the message that provide information about the misconfigured value or the threshold that is exceeded by the misconfigured value
    **/
@@ -191,7 +192,7 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     this.arguments = arguments;
   }
 
-  
+
   /**
    * Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
    **/
@@ -209,7 +210,6 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     this.severity = severity;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -220,9 +220,10 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
       return false;
     }
     WorkPlanConfigurationViolationMessage workPlanConfigurationViolationMessage = (WorkPlanConfigurationViolationMessage) o;
+
     return Objects.equals(this.type, workPlanConfigurationViolationMessage.type) &&
-        Objects.equals(this.arguments, workPlanConfigurationViolationMessage.arguments) &&
-        Objects.equals(this.severity, workPlanConfigurationViolationMessage.severity);
+            Objects.equals(this.arguments, workPlanConfigurationViolationMessage.arguments) &&
+            Objects.equals(this.severity, workPlanConfigurationViolationMessage.severity);
   }
 
   @Override

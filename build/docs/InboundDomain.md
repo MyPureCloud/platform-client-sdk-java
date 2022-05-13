@@ -24,10 +24,10 @@ title: InboundDomain
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| VALID | &quot;VALID&quot; |
-| INVALID | &quot;INVALID&quot; |
-| NOT_AVAILABLE | &quot;NOT_AVAILABLE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| VALID | &quot;VALID&quot; | 
+| INVALID | &quot;INVALID&quot; | 
+| NOT_AVAILABLE | &quot;NOT_AVAILABLE&quot; | 
 {: class="table table-striped"}
 
 

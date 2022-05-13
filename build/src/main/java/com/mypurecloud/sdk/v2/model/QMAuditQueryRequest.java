@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditQuerySort;
@@ -46,7 +47,7 @@ public class QMAuditQueryRequest  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * List of filters for the query.
    **/
@@ -64,7 +65,7 @@ public class QMAuditQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    * Sort parameter for the query.
    **/
@@ -82,7 +83,6 @@ public class QMAuditQueryRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class QMAuditQueryRequest  implements Serializable {
       return false;
     }
     QMAuditQueryRequest qMAuditQueryRequest = (QMAuditQueryRequest) o;
+
     return Objects.equals(this.interval, qMAuditQueryRequest.interval) &&
-        Objects.equals(this.filters, qMAuditQueryRequest.filters) &&
-        Objects.equals(this.sort, qMAuditQueryRequest.sort);
+            Objects.equals(this.filters, qMAuditQueryRequest.filters) &&
+            Objects.equals(this.sort, qMAuditQueryRequest.sort);
   }
 
   @Override

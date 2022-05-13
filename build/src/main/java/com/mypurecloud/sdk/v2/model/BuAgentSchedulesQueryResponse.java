@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleQueryResponse;
@@ -44,7 +45,7 @@ public class BuAgentSchedulesQueryResponse  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
+
   /**
    * The time zone configured for the business unit to which these schedules apply
    **/
@@ -62,7 +63,6 @@ public class BuAgentSchedulesQueryResponse  implements Serializable {
     this.businessUnitTimeZone = businessUnitTimeZone;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class BuAgentSchedulesQueryResponse  implements Serializable {
       return false;
     }
     BuAgentSchedulesQueryResponse buAgentSchedulesQueryResponse = (BuAgentSchedulesQueryResponse) o;
+
     return Objects.equals(this.agentSchedules, buAgentSchedulesQueryResponse.agentSchedules) &&
-        Objects.equals(this.businessUnitTimeZone, buAgentSchedulesQueryResponse.businessUnitTimeZone);
+            Objects.equals(this.businessUnitTimeZone, buAgentSchedulesQueryResponse.businessUnitTimeZone);
   }
 
   @Override

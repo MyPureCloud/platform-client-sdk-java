@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeScheduleInterval;
@@ -52,7 +53,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.intervals = intervals;
   }
 
-  
+
   /**
    * time zone identifier to be applied to the intervals; for example Africa/Abidjan
    **/
@@ -70,7 +71,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    **/
   public DialerSequenceScheduleConfigChangeSequenceSchedule sequence(DialerSequenceScheduleConfigChangeUriReference sequence) {
@@ -87,7 +88,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.sequence = sequence;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -105,7 +106,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -123,7 +124,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -141,7 +142,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -159,7 +160,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -177,7 +178,6 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -188,14 +188,15 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
       return false;
     }
     DialerSequenceScheduleConfigChangeSequenceSchedule dialerSequenceScheduleConfigChangeSequenceSchedule = (DialerSequenceScheduleConfigChangeSequenceSchedule) o;
+
     return Objects.equals(this.intervals, dialerSequenceScheduleConfigChangeSequenceSchedule.intervals) &&
-        Objects.equals(this.timeZone, dialerSequenceScheduleConfigChangeSequenceSchedule.timeZone) &&
-        Objects.equals(this.sequence, dialerSequenceScheduleConfigChangeSequenceSchedule.sequence) &&
-        Objects.equals(this.id, dialerSequenceScheduleConfigChangeSequenceSchedule.id) &&
-        Objects.equals(this.name, dialerSequenceScheduleConfigChangeSequenceSchedule.name) &&
-        Objects.equals(this.dateCreated, dialerSequenceScheduleConfigChangeSequenceSchedule.dateCreated) &&
-        Objects.equals(this.dateModified, dialerSequenceScheduleConfigChangeSequenceSchedule.dateModified) &&
-        Objects.equals(this.version, dialerSequenceScheduleConfigChangeSequenceSchedule.version);
+            Objects.equals(this.timeZone, dialerSequenceScheduleConfigChangeSequenceSchedule.timeZone) &&
+            Objects.equals(this.sequence, dialerSequenceScheduleConfigChangeSequenceSchedule.sequence) &&
+            Objects.equals(this.id, dialerSequenceScheduleConfigChangeSequenceSchedule.id) &&
+            Objects.equals(this.name, dialerSequenceScheduleConfigChangeSequenceSchedule.name) &&
+            Objects.equals(this.dateCreated, dialerSequenceScheduleConfigChangeSequenceSchedule.dateCreated) &&
+            Objects.equals(this.dateModified, dialerSequenceScheduleConfigChangeSequenceSchedule.dateModified) &&
+            Objects.equals(this.version, dialerSequenceScheduleConfigChangeSequenceSchedule.version);
   }
 
   @Override

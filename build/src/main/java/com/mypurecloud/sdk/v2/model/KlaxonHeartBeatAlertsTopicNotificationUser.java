@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class KlaxonHeartBeatAlertsTopicNotificationUser  implements Serializable
     this.id = id;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicNotificationUser displayName(String displayName) {
@@ -57,7 +58,6 @@ public class KlaxonHeartBeatAlertsTopicNotificationUser  implements Serializable
     this.displayName = displayName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class KlaxonHeartBeatAlertsTopicNotificationUser  implements Serializable
       return false;
     }
     KlaxonHeartBeatAlertsTopicNotificationUser klaxonHeartBeatAlertsTopicNotificationUser = (KlaxonHeartBeatAlertsTopicNotificationUser) o;
+
     return Objects.equals(this.id, klaxonHeartBeatAlertsTopicNotificationUser.id) &&
-        Objects.equals(this.displayName, klaxonHeartBeatAlertsTopicNotificationUser.displayName);
+            Objects.equals(this.displayName, klaxonHeartBeatAlertsTopicNotificationUser.displayName);
   }
 
   @Override

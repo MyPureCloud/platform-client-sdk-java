@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateQueryResponseMetric;
@@ -44,7 +45,7 @@ public class DevelopmentActivityAggregateQueryResponseData  implements Serializa
     this.interval = interval;
   }
 
-  
+
   /**
    * The list of aggregated metrics
    **/
@@ -62,7 +63,6 @@ public class DevelopmentActivityAggregateQueryResponseData  implements Serializa
     this.metrics = metrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class DevelopmentActivityAggregateQueryResponseData  implements Serializa
       return false;
     }
     DevelopmentActivityAggregateQueryResponseData developmentActivityAggregateQueryResponseData = (DevelopmentActivityAggregateQueryResponseData) o;
+
     return Objects.equals(this.interval, developmentActivityAggregateQueryResponseData.interval) &&
-        Objects.equals(this.metrics, developmentActivityAggregateQueryResponseData.metrics);
+            Objects.equals(this.metrics, developmentActivityAggregateQueryResponseData.metrics);
   }
 
   @Override

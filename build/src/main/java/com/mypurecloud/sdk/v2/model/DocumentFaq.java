@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class DocumentFaq  implements Serializable {
     this.question = question;
   }
 
-  
+
   /**
    * The answer for this FAQ
    **/
@@ -62,7 +63,7 @@ public class DocumentFaq  implements Serializable {
     this.answer = answer;
   }
 
-  
+
   /**
    * List of Alternative questions related to the answer which helps in improving the likelihood of a match to user query
    **/
@@ -80,7 +81,6 @@ public class DocumentFaq  implements Serializable {
     this.alternatives = alternatives;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class DocumentFaq  implements Serializable {
       return false;
     }
     DocumentFaq documentFaq = (DocumentFaq) o;
+
     return Objects.equals(this.question, documentFaq.question) &&
-        Objects.equals(this.answer, documentFaq.answer) &&
-        Objects.equals(this.alternatives, documentFaq.alternatives);
+            Objects.equals(this.answer, documentFaq.answer) &&
+            Objects.equals(this.alternatives, documentFaq.alternatives);
   }
 
   @Override

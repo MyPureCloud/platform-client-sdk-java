@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuIntradayDataGroup;
@@ -99,7 +100,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult endDate(Date endDate) {
@@ -116,7 +117,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult intervalLengthMinutes(Integer intervalLengthMinutes) {
@@ -133,7 +134,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult intradayDataGroupings(List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> intradayDataGroupings) {
@@ -150,7 +151,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.intradayDataGroupings = intradayDataGroupings;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult categories(List<CategoriesEnum> categories) {
@@ -167,7 +168,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.categories = categories;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult noDataReason(String noDataReason) {
@@ -184,7 +185,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.noDataReason = noDataReason;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult schedule(WfmBuIntradayDataUpdateTopicBuScheduleReference schedule) {
@@ -201,7 +202,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.schedule = schedule;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayResult shortTermForecast(WfmBuIntradayDataUpdateTopicBuShortTermForecastReference shortTermForecast) {
@@ -218,7 +219,6 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
     this.shortTermForecast = shortTermForecast;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -229,14 +229,15 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
       return false;
     }
     WfmBuIntradayDataUpdateTopicBuIntradayResult wfmBuIntradayDataUpdateTopicBuIntradayResult = (WfmBuIntradayDataUpdateTopicBuIntradayResult) o;
+
     return Objects.equals(this.startDate, wfmBuIntradayDataUpdateTopicBuIntradayResult.startDate) &&
-        Objects.equals(this.endDate, wfmBuIntradayDataUpdateTopicBuIntradayResult.endDate) &&
-        Objects.equals(this.intervalLengthMinutes, wfmBuIntradayDataUpdateTopicBuIntradayResult.intervalLengthMinutes) &&
-        Objects.equals(this.intradayDataGroupings, wfmBuIntradayDataUpdateTopicBuIntradayResult.intradayDataGroupings) &&
-        Objects.equals(this.categories, wfmBuIntradayDataUpdateTopicBuIntradayResult.categories) &&
-        Objects.equals(this.noDataReason, wfmBuIntradayDataUpdateTopicBuIntradayResult.noDataReason) &&
-        Objects.equals(this.schedule, wfmBuIntradayDataUpdateTopicBuIntradayResult.schedule) &&
-        Objects.equals(this.shortTermForecast, wfmBuIntradayDataUpdateTopicBuIntradayResult.shortTermForecast);
+            Objects.equals(this.endDate, wfmBuIntradayDataUpdateTopicBuIntradayResult.endDate) &&
+            Objects.equals(this.intervalLengthMinutes, wfmBuIntradayDataUpdateTopicBuIntradayResult.intervalLengthMinutes) &&
+            Objects.equals(this.intradayDataGroupings, wfmBuIntradayDataUpdateTopicBuIntradayResult.intradayDataGroupings) &&
+            Objects.equals(this.categories, wfmBuIntradayDataUpdateTopicBuIntradayResult.categories) &&
+            Objects.equals(this.noDataReason, wfmBuIntradayDataUpdateTopicBuIntradayResult.noDataReason) &&
+            Objects.equals(this.schedule, wfmBuIntradayDataUpdateTopicBuIntradayResult.schedule) &&
+            Objects.equals(this.shortTermForecast, wfmBuIntradayDataUpdateTopicBuIntradayResult.shortTermForecast);
   }
 
   @Override

@@ -20,28 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.TrustRequest;
-import com.mypurecloud.sdk.v2.model.Trustee;
-import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustUser;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustEntityListing;
-import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
-import com.mypurecloud.sdk.v2.model.TrustCreate;
-import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
-import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.TrustCreate;
+import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
+import com.mypurecloud.sdk.v2.model.TrustRequest;
+import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.TrustUser;
+import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
+import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 public class GetOrgauthorizationTrustorClonedusersRequest {
-    
+
 	private String trustorOrgId;
 	public String getTrustorOrgId() {
 		return this.trustorOrgId;
@@ -55,7 +54,7 @@ public class GetOrgauthorizationTrustorClonedusersRequest {
 	    this.setTrustorOrgId(trustorOrgId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,7 +85,7 @@ public class GetOrgauthorizationTrustorClonedusersRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers")
                 .withPathParameter("trustorOrgId", trustorOrgId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -97,12 +96,12 @@ public class GetOrgauthorizationTrustorClonedusersRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String trustorOrgId) {
 	    return new Builder()
 	            .withRequiredParams(trustorOrgId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOrgauthorizationTrustorClonedusersRequest request;
@@ -111,20 +110,20 @@ public class GetOrgauthorizationTrustorClonedusersRequest {
 			request = new GetOrgauthorizationTrustorClonedusersRequest();
 		}
 
-		
+
 		public Builder withTrustorOrgId(String trustorOrgId) {
 			request.setTrustorOrgId(trustorOrgId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String trustorOrgId) {
 			request.setTrustorOrgId(trustorOrgId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetOrgauthorizationTrustorClonedusersRequest build() {
             

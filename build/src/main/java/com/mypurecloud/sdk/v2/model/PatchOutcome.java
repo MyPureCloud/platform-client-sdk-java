@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssociatedValueField;
@@ -44,7 +45,7 @@ public class PatchOutcome  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Whether or not the outcome is active.
    **/
@@ -62,7 +63,7 @@ public class PatchOutcome  implements Serializable {
     this.isActive = isActive;
   }
 
-  
+
   /**
    * The display name of the outcome.
    **/
@@ -80,7 +81,7 @@ public class PatchOutcome  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * The version of the outcome.
    **/
@@ -98,7 +99,7 @@ public class PatchOutcome  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * A description of the outcome.
    **/
@@ -116,7 +117,7 @@ public class PatchOutcome  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Whether or not the outcome is positive.
    **/
@@ -134,7 +135,7 @@ public class PatchOutcome  implements Serializable {
     this.isPositive = isPositive;
   }
 
-  
+
   /**
    * The context of the outcome.
    **/
@@ -152,7 +153,7 @@ public class PatchOutcome  implements Serializable {
     this.context = context;
   }
 
-  
+
   /**
    * The pattern of rules defining the filter of the outcome.
    **/
@@ -170,7 +171,7 @@ public class PatchOutcome  implements Serializable {
     this.journey = journey;
   }
 
-  
+
   /**
    * The field from the event indicating the associated value.
    **/
@@ -188,14 +189,14 @@ public class PatchOutcome  implements Serializable {
     this.associatedValueField = associatedValueField;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -213,7 +214,7 @@ public class PatchOutcome  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -231,7 +232,6 @@ public class PatchOutcome  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -242,18 +242,19 @@ public class PatchOutcome  implements Serializable {
       return false;
     }
     PatchOutcome patchOutcome = (PatchOutcome) o;
+
     return Objects.equals(this.id, patchOutcome.id) &&
-        Objects.equals(this.isActive, patchOutcome.isActive) &&
-        Objects.equals(this.displayName, patchOutcome.displayName) &&
-        Objects.equals(this.version, patchOutcome.version) &&
-        Objects.equals(this.description, patchOutcome.description) &&
-        Objects.equals(this.isPositive, patchOutcome.isPositive) &&
-        Objects.equals(this.context, patchOutcome.context) &&
-        Objects.equals(this.journey, patchOutcome.journey) &&
-        Objects.equals(this.associatedValueField, patchOutcome.associatedValueField) &&
-        Objects.equals(this.selfUri, patchOutcome.selfUri) &&
-        Objects.equals(this.createdDate, patchOutcome.createdDate) &&
-        Objects.equals(this.modifiedDate, patchOutcome.modifiedDate);
+            Objects.equals(this.isActive, patchOutcome.isActive) &&
+            Objects.equals(this.displayName, patchOutcome.displayName) &&
+            Objects.equals(this.version, patchOutcome.version) &&
+            Objects.equals(this.description, patchOutcome.description) &&
+            Objects.equals(this.isPositive, patchOutcome.isPositive) &&
+            Objects.equals(this.context, patchOutcome.context) &&
+            Objects.equals(this.journey, patchOutcome.journey) &&
+            Objects.equals(this.associatedValueField, patchOutcome.associatedValueField) &&
+            Objects.equals(this.selfUri, patchOutcome.selfUri) &&
+            Objects.equals(this.createdDate, patchOutcome.createdDate) &&
+            Objects.equals(this.modifiedDate, patchOutcome.modifiedDate);
   }
 
   @Override

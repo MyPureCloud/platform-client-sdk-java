@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -79,14 +80,13 @@ public class RecipientAdditionalIdentifier  implements Serializable {
     return type;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The Identifier value.")
   @JsonProperty("value")
   public String getValue() {
     return value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -97,8 +97,9 @@ public class RecipientAdditionalIdentifier  implements Serializable {
       return false;
     }
     RecipientAdditionalIdentifier recipientAdditionalIdentifier = (RecipientAdditionalIdentifier) o;
+
     return Objects.equals(this.type, recipientAdditionalIdentifier.type) &&
-        Objects.equals(this.value, recipientAdditionalIdentifier.value);
+            Objects.equals(this.value, recipientAdditionalIdentifier.value);
   }
 
   @Override

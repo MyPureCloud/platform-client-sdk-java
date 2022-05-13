@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusUserParam;
@@ -49,7 +50,7 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    * The HTTP status code for this message. If left blank the status code from the HTTP response is used.
    **/
@@ -67,7 +68,7 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
    **/
@@ -85,7 +86,7 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    * A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id
    **/
@@ -103,7 +104,7 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     this.userMessage = userMessage;
   }
 
-  
+
   /**
    * This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found'
    **/
@@ -121,7 +122,7 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     this.userParamsMessage = userParamsMessage;
   }
 
-  
+
   /**
    * Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'chuck.pulfer'
    **/
@@ -139,7 +140,6 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
     this.userParams = userParams;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,12 +150,13 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
       return false;
     }
     UserRoutingStatusErrorInfo userRoutingStatusErrorInfo = (UserRoutingStatusErrorInfo) o;
+
     return Objects.equals(this.errorCode, userRoutingStatusErrorInfo.errorCode) &&
-        Objects.equals(this.status, userRoutingStatusErrorInfo.status) &&
-        Objects.equals(this.correlationId, userRoutingStatusErrorInfo.correlationId) &&
-        Objects.equals(this.userMessage, userRoutingStatusErrorInfo.userMessage) &&
-        Objects.equals(this.userParamsMessage, userRoutingStatusErrorInfo.userParamsMessage) &&
-        Objects.equals(this.userParams, userRoutingStatusErrorInfo.userParams);
+            Objects.equals(this.status, userRoutingStatusErrorInfo.status) &&
+            Objects.equals(this.correlationId, userRoutingStatusErrorInfo.correlationId) &&
+            Objects.equals(this.userMessage, userRoutingStatusErrorInfo.userMessage) &&
+            Objects.equals(this.userParamsMessage, userRoutingStatusErrorInfo.userParamsMessage) &&
+            Objects.equals(this.userParams, userRoutingStatusErrorInfo.userParams);
   }
 
   @Override

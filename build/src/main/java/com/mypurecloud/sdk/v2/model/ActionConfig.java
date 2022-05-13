@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RequestConfig;
@@ -44,7 +45,7 @@ public class ActionConfig  implements Serializable {
     this._request = _request;
   }
 
-  
+
   /**
    * Configuration of response processing.
    **/
@@ -62,7 +63,6 @@ public class ActionConfig  implements Serializable {
     this.response = response;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class ActionConfig  implements Serializable {
       return false;
     }
     ActionConfig actionConfig = (ActionConfig) o;
+
     return Objects.equals(this._request, actionConfig._request) &&
-        Objects.equals(this.response, actionConfig.response);
+            Objects.equals(this.response, actionConfig.response);
   }
 
   @Override

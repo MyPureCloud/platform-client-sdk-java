@@ -11,7 +11,7 @@ title: Message
 | **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
-| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant&#39;s message, divided into activity segments. |  [optional] |
+| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant's message, divided into activity segments. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the message. |  [optional] |
 | **recordingId** | <!----><!---->**String**<!----> | A globally unique identifier for the recording associated with this message. |  [optional] |
 | **errorInfo** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> |  |  [optional] |
@@ -30,7 +30,7 @@ title: Message
 | **toAddress** | <!----><!---->[**Address**](Address.html)<!----> | Address and name data for a call endpoint. |  [optional] |
 | **fromAddress** | <!----><!---->[**Address**](Address.html)<!----> | Address and name data for a call endpoint. |  [optional] |
 | **messages** | <!----><!---->[**List&lt;MessageDetails&gt;**](MessageDetails.html)<!----> | The messages sent on this communication channel. |  [optional] |
-| **journeyContext** | <!----><!---->[**JourneyContext**](JourneyContext.html)<!----> | A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
+| **journeyContext** | <!----><!---->[**JourneyContext**](JourneyContext.html)<!----> | A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
 | **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
@@ -44,10 +44,10 @@ title: Message
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
 {: class="table table-striped"}
 
 
@@ -57,9 +57,9 @@ title: Message
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -69,23 +69,23 @@ title: Message
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
-| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| SPAM | &quot;spam&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| SPAM | &quot;spam&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -95,18 +95,18 @@ title: Message
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| SMS | &quot;sms&quot; |
-| TWITTER | &quot;twitter&quot; |
-| FACEBOOK | &quot;facebook&quot; |
-| LINE | &quot;line&quot; |
-| WHATSAPP | &quot;whatsapp&quot; |
-| TELEGRAM | &quot;telegram&quot; |
-| KAKAO | &quot;kakao&quot; |
-| WEBMESSAGING | &quot;webmessaging&quot; |
-| OPEN | &quot;open&quot; |
-| INSTAGRAM | &quot;instagram&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| SMS | &quot;sms&quot; | 
+| TWITTER | &quot;twitter&quot; | 
+| FACEBOOK | &quot;facebook&quot; | 
+| LINE | &quot;line&quot; | 
+| WHATSAPP | &quot;whatsapp&quot; | 
+| TELEGRAM | &quot;telegram&quot; | 
+| KAKAO | &quot;kakao&quot; | 
+| WEBMESSAGING | &quot;webmessaging&quot; | 
+| OPEN | &quot;open&quot; | 
+| INSTAGRAM | &quot;instagram&quot; | 
 {: class="table table-striped"}
 
 

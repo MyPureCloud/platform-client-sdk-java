@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.userIds = userIds;
   }
 
-  
+
   /**
    * Beginning of the range of schedules to fetch, in ISO-8601 format
    **/
@@ -65,7 +66,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * End of the range of schedules to fetch, in ISO-8601 format
    **/
@@ -83,7 +84,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * Whether to load the full week's schedule (for the requested users) of any week overlapping the start/end date query parameters, defaults to false
    **/
@@ -101,7 +102,6 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.loadFullWeeks = loadFullWeeks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class UserListScheduleRequestBody  implements Serializable {
       return false;
     }
     UserListScheduleRequestBody userListScheduleRequestBody = (UserListScheduleRequestBody) o;
+
     return Objects.equals(this.userIds, userListScheduleRequestBody.userIds) &&
-        Objects.equals(this.startDate, userListScheduleRequestBody.startDate) &&
-        Objects.equals(this.endDate, userListScheduleRequestBody.endDate) &&
-        Objects.equals(this.loadFullWeeks, userListScheduleRequestBody.loadFullWeeks);
+            Objects.equals(this.startDate, userListScheduleRequestBody.startDate) &&
+            Objects.equals(this.endDate, userListScheduleRequestBody.endDate) &&
+            Objects.equals(this.loadFullWeeks, userListScheduleRequestBody.loadFullWeeks);
   }
 
   @Override

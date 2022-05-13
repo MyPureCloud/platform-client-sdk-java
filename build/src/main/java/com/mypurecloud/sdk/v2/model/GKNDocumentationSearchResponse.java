@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationResult;
@@ -51,7 +52,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The total number of pages
    **/
@@ -69,7 +70,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    * The current page size
    **/
@@ -87,7 +88,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The current page number
    **/
@@ -105,7 +106,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Q64 value for the previous page of results
    **/
@@ -123,7 +124,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.previousPage = previousPage;
   }
 
-  
+
   /**
    * Q64 value for the current page of results
    **/
@@ -141,7 +142,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.currentPage = currentPage;
   }
 
-  
+
   /**
    * Q64 value for the next page of results
    **/
@@ -159,7 +160,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.nextPage = nextPage;
   }
 
-  
+
   /**
    * Resource types the search was performed against
    **/
@@ -177,7 +178,7 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * Search results
    **/
@@ -195,7 +196,6 @@ public class GKNDocumentationSearchResponse  implements Serializable {
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,15 +206,16 @@ public class GKNDocumentationSearchResponse  implements Serializable {
       return false;
     }
     GKNDocumentationSearchResponse gKNDocumentationSearchResponse = (GKNDocumentationSearchResponse) o;
+
     return Objects.equals(this.total, gKNDocumentationSearchResponse.total) &&
-        Objects.equals(this.pageCount, gKNDocumentationSearchResponse.pageCount) &&
-        Objects.equals(this.pageSize, gKNDocumentationSearchResponse.pageSize) &&
-        Objects.equals(this.pageNumber, gKNDocumentationSearchResponse.pageNumber) &&
-        Objects.equals(this.previousPage, gKNDocumentationSearchResponse.previousPage) &&
-        Objects.equals(this.currentPage, gKNDocumentationSearchResponse.currentPage) &&
-        Objects.equals(this.nextPage, gKNDocumentationSearchResponse.nextPage) &&
-        Objects.equals(this.types, gKNDocumentationSearchResponse.types) &&
-        Objects.equals(this.results, gKNDocumentationSearchResponse.results);
+            Objects.equals(this.pageCount, gKNDocumentationSearchResponse.pageCount) &&
+            Objects.equals(this.pageSize, gKNDocumentationSearchResponse.pageSize) &&
+            Objects.equals(this.pageNumber, gKNDocumentationSearchResponse.pageNumber) &&
+            Objects.equals(this.previousPage, gKNDocumentationSearchResponse.previousPage) &&
+            Objects.equals(this.currentPage, gKNDocumentationSearchResponse.currentPage) &&
+            Objects.equals(this.nextPage, gKNDocumentationSearchResponse.nextPage) &&
+            Objects.equals(this.types, gKNDocumentationSearchResponse.types) &&
+            Objects.equals(this.results, gKNDocumentationSearchResponse.results);
   }
 
   @Override

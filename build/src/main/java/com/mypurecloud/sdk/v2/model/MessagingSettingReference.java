@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentSetting;
@@ -54,35 +55,35 @@ public class MessagingSettingReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The messaging Setting profile name")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The messaging Setting profile URI")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date this messaging Setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date this messaging Setting was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Version number
    **/
@@ -100,21 +101,21 @@ public class MessagingSettingReference  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User reference that created this Setting")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User reference that modified this Setting")
   @JsonProperty("updatedBy")
   public DomainEntityRef getUpdatedBy() {
     return updatedBy;
   }
 
-  
+
   /**
    * Settings relating to message contents
    **/
@@ -132,7 +133,7 @@ public class MessagingSettingReference  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * Settings relating to events which may occur
    **/
@@ -150,7 +151,6 @@ public class MessagingSettingReference  implements Serializable {
     this.event = event;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,16 +161,17 @@ public class MessagingSettingReference  implements Serializable {
       return false;
     }
     MessagingSettingReference messagingSettingReference = (MessagingSettingReference) o;
+
     return Objects.equals(this.id, messagingSettingReference.id) &&
-        Objects.equals(this.name, messagingSettingReference.name) &&
-        Objects.equals(this.selfUri, messagingSettingReference.selfUri) &&
-        Objects.equals(this.dateCreated, messagingSettingReference.dateCreated) &&
-        Objects.equals(this.dateModified, messagingSettingReference.dateModified) &&
-        Objects.equals(this.version, messagingSettingReference.version) &&
-        Objects.equals(this.createdBy, messagingSettingReference.createdBy) &&
-        Objects.equals(this.updatedBy, messagingSettingReference.updatedBy) &&
-        Objects.equals(this.content, messagingSettingReference.content) &&
-        Objects.equals(this.event, messagingSettingReference.event);
+            Objects.equals(this.name, messagingSettingReference.name) &&
+            Objects.equals(this.selfUri, messagingSettingReference.selfUri) &&
+            Objects.equals(this.dateCreated, messagingSettingReference.dateCreated) &&
+            Objects.equals(this.dateModified, messagingSettingReference.dateModified) &&
+            Objects.equals(this.version, messagingSettingReference.version) &&
+            Objects.equals(this.createdBy, messagingSettingReference.createdBy) &&
+            Objects.equals(this.updatedBy, messagingSettingReference.updatedBy) &&
+            Objects.equals(this.content, messagingSettingReference.content) &&
+            Objects.equals(this.event, messagingSettingReference.event);
   }
 
   @Override

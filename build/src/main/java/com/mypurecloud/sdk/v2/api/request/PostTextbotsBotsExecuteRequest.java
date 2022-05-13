@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
-import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 
 public class PostTextbotsBotsExecuteRequest {
-    
+
 	private PostTextRequest postTextRequest;
 	public PostTextRequest getPostTextRequest() {
 		return this.postTextRequest;
@@ -44,7 +44,7 @@ public class PostTextbotsBotsExecuteRequest {
 	    this.setPostTextRequest(postTextRequest);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,8 +74,8 @@ public class PostTextbotsBotsExecuteRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/textbots/bots/execute")
                 .withBody(postTextRequest)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -86,12 +86,12 @@ public class PostTextbotsBotsExecuteRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(PostTextRequest postTextRequest) {
 	    return new Builder()
 	            .withRequiredParams(postTextRequest);
 	}
-	
+
 
 	public static class Builder {
 		private final PostTextbotsBotsExecuteRequest request;
@@ -100,20 +100,20 @@ public class PostTextbotsBotsExecuteRequest {
 			request = new PostTextbotsBotsExecuteRequest();
 		}
 
-		
+
 		public Builder withPostTextRequest(PostTextRequest postTextRequest) {
 			request.setPostTextRequest(postTextRequest);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(PostTextRequest postTextRequest) {
 			request.setPostTextRequest(postTextRequest);
-			
+
 			return this;
 		}
-		
+
 
 		public PostTextbotsBotsExecuteRequest build() {
             

@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TextBotUserAgent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -186,7 +186,7 @@ public class TextBotChannel  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The input modes for the channel.
    **/
@@ -204,7 +204,7 @@ public class TextBotChannel  implements Serializable {
     this.inputModes = inputModes;
   }
 
-  
+
   /**
    * The output modes for the channel.
    **/
@@ -222,7 +222,7 @@ public class TextBotChannel  implements Serializable {
     this.outputModes = outputModes;
   }
 
-  
+
   /**
    * Information about the end user agent calling the bot flow.
    **/
@@ -240,7 +240,6 @@ public class TextBotChannel  implements Serializable {
     this.userAgent = userAgent;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -251,10 +250,11 @@ public class TextBotChannel  implements Serializable {
       return false;
     }
     TextBotChannel textBotChannel = (TextBotChannel) o;
+
     return Objects.equals(this.name, textBotChannel.name) &&
-        Objects.equals(this.inputModes, textBotChannel.inputModes) &&
-        Objects.equals(this.outputModes, textBotChannel.outputModes) &&
-        Objects.equals(this.userAgent, textBotChannel.userAgent);
+            Objects.equals(this.inputModes, textBotChannel.inputModes) &&
+            Objects.equals(this.outputModes, textBotChannel.outputModes) &&
+            Objects.equals(this.userAgent, textBotChannel.userAgent);
   }
 
   @Override

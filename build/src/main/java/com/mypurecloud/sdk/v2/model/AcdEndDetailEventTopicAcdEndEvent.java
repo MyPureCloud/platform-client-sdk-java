@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -441,7 +442,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent conversationId(String conversationId) {
@@ -458,7 +459,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent participantId(String participantId) {
@@ -475,7 +476,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent sessionId(String sessionId) {
@@ -492,7 +493,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent disconnectType(DisconnectTypeEnum disconnectType) {
@@ -509,7 +510,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent mediaType(MediaTypeEnum mediaType) {
@@ -526,7 +527,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent provider(String provider) {
@@ -543,7 +544,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent direction(DirectionEnum direction) {
@@ -560,7 +561,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent ani(String ani) {
@@ -577,7 +578,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent dnis(String dnis) {
@@ -594,7 +595,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent addressTo(String addressTo) {
@@ -611,7 +612,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent addressFrom(String addressFrom) {
@@ -628,7 +629,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent callbackUserName(String callbackUserName) {
@@ -645,7 +646,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent callbackNumbers(List<String> callbackNumbers) {
@@ -662,7 +663,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -679,7 +680,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent subject(String subject) {
@@ -696,7 +697,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent messageType(MessageTypeEnum messageType) {
@@ -713,7 +714,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent queueId(String queueId) {
@@ -730,7 +731,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent divisionId(String divisionId) {
@@ -747,7 +748,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent acdOutcome(AcdOutcomeEnum acdOutcome) {
@@ -764,7 +765,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.acdOutcome = acdOutcome;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent answeredUserId(String answeredUserId) {
@@ -781,7 +782,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.answeredUserId = answeredUserId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent requestedRoutings(List<RequestedRoutingsEnum> requestedRoutings) {
@@ -798,7 +799,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.requestedRoutings = requestedRoutings;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent usedRouting(UsedRoutingEnum usedRouting) {
@@ -815,7 +816,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.usedRouting = usedRouting;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent requestedRoutingSkillIds(List<String> requestedRoutingSkillIds) {
@@ -832,7 +833,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.requestedRoutingSkillIds = requestedRoutingSkillIds;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent requestedLanguageId(String requestedLanguageId) {
@@ -849,7 +850,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.requestedLanguageId = requestedLanguageId;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent requestedRoutingUserIds(List<String> requestedRoutingUserIds) {
@@ -866,7 +867,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.requestedRoutingUserIds = requestedRoutingUserIds;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent routingPriority(Integer routingPriority) {
@@ -883,7 +884,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.routingPriority = routingPriority;
   }
 
-  
+
   /**
    **/
   public AcdEndDetailEventTopicAcdEndEvent connectedDurationMs(Integer connectedDurationMs) {
@@ -900,7 +901,6 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     this.connectedDurationMs = connectedDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -911,34 +911,35 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
       return false;
     }
     AcdEndDetailEventTopicAcdEndEvent acdEndDetailEventTopicAcdEndEvent = (AcdEndDetailEventTopicAcdEndEvent) o;
+
     return Objects.equals(this.eventTime, acdEndDetailEventTopicAcdEndEvent.eventTime) &&
-        Objects.equals(this.conversationId, acdEndDetailEventTopicAcdEndEvent.conversationId) &&
-        Objects.equals(this.participantId, acdEndDetailEventTopicAcdEndEvent.participantId) &&
-        Objects.equals(this.sessionId, acdEndDetailEventTopicAcdEndEvent.sessionId) &&
-        Objects.equals(this.disconnectType, acdEndDetailEventTopicAcdEndEvent.disconnectType) &&
-        Objects.equals(this.mediaType, acdEndDetailEventTopicAcdEndEvent.mediaType) &&
-        Objects.equals(this.provider, acdEndDetailEventTopicAcdEndEvent.provider) &&
-        Objects.equals(this.direction, acdEndDetailEventTopicAcdEndEvent.direction) &&
-        Objects.equals(this.ani, acdEndDetailEventTopicAcdEndEvent.ani) &&
-        Objects.equals(this.dnis, acdEndDetailEventTopicAcdEndEvent.dnis) &&
-        Objects.equals(this.addressTo, acdEndDetailEventTopicAcdEndEvent.addressTo) &&
-        Objects.equals(this.addressFrom, acdEndDetailEventTopicAcdEndEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, acdEndDetailEventTopicAcdEndEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, acdEndDetailEventTopicAcdEndEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, acdEndDetailEventTopicAcdEndEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, acdEndDetailEventTopicAcdEndEvent.subject) &&
-        Objects.equals(this.messageType, acdEndDetailEventTopicAcdEndEvent.messageType) &&
-        Objects.equals(this.queueId, acdEndDetailEventTopicAcdEndEvent.queueId) &&
-        Objects.equals(this.divisionId, acdEndDetailEventTopicAcdEndEvent.divisionId) &&
-        Objects.equals(this.acdOutcome, acdEndDetailEventTopicAcdEndEvent.acdOutcome) &&
-        Objects.equals(this.answeredUserId, acdEndDetailEventTopicAcdEndEvent.answeredUserId) &&
-        Objects.equals(this.requestedRoutings, acdEndDetailEventTopicAcdEndEvent.requestedRoutings) &&
-        Objects.equals(this.usedRouting, acdEndDetailEventTopicAcdEndEvent.usedRouting) &&
-        Objects.equals(this.requestedRoutingSkillIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingSkillIds) &&
-        Objects.equals(this.requestedLanguageId, acdEndDetailEventTopicAcdEndEvent.requestedLanguageId) &&
-        Objects.equals(this.requestedRoutingUserIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingUserIds) &&
-        Objects.equals(this.routingPriority, acdEndDetailEventTopicAcdEndEvent.routingPriority) &&
-        Objects.equals(this.connectedDurationMs, acdEndDetailEventTopicAcdEndEvent.connectedDurationMs);
+            Objects.equals(this.conversationId, acdEndDetailEventTopicAcdEndEvent.conversationId) &&
+            Objects.equals(this.participantId, acdEndDetailEventTopicAcdEndEvent.participantId) &&
+            Objects.equals(this.sessionId, acdEndDetailEventTopicAcdEndEvent.sessionId) &&
+            Objects.equals(this.disconnectType, acdEndDetailEventTopicAcdEndEvent.disconnectType) &&
+            Objects.equals(this.mediaType, acdEndDetailEventTopicAcdEndEvent.mediaType) &&
+            Objects.equals(this.provider, acdEndDetailEventTopicAcdEndEvent.provider) &&
+            Objects.equals(this.direction, acdEndDetailEventTopicAcdEndEvent.direction) &&
+            Objects.equals(this.ani, acdEndDetailEventTopicAcdEndEvent.ani) &&
+            Objects.equals(this.dnis, acdEndDetailEventTopicAcdEndEvent.dnis) &&
+            Objects.equals(this.addressTo, acdEndDetailEventTopicAcdEndEvent.addressTo) &&
+            Objects.equals(this.addressFrom, acdEndDetailEventTopicAcdEndEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, acdEndDetailEventTopicAcdEndEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, acdEndDetailEventTopicAcdEndEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, acdEndDetailEventTopicAcdEndEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, acdEndDetailEventTopicAcdEndEvent.subject) &&
+            Objects.equals(this.messageType, acdEndDetailEventTopicAcdEndEvent.messageType) &&
+            Objects.equals(this.queueId, acdEndDetailEventTopicAcdEndEvent.queueId) &&
+            Objects.equals(this.divisionId, acdEndDetailEventTopicAcdEndEvent.divisionId) &&
+            Objects.equals(this.acdOutcome, acdEndDetailEventTopicAcdEndEvent.acdOutcome) &&
+            Objects.equals(this.answeredUserId, acdEndDetailEventTopicAcdEndEvent.answeredUserId) &&
+            Objects.equals(this.requestedRoutings, acdEndDetailEventTopicAcdEndEvent.requestedRoutings) &&
+            Objects.equals(this.usedRouting, acdEndDetailEventTopicAcdEndEvent.usedRouting) &&
+            Objects.equals(this.requestedRoutingSkillIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingSkillIds) &&
+            Objects.equals(this.requestedLanguageId, acdEndDetailEventTopicAcdEndEvent.requestedLanguageId) &&
+            Objects.equals(this.requestedRoutingUserIds, acdEndDetailEventTopicAcdEndEvent.requestedRoutingUserIds) &&
+            Objects.equals(this.routingPriority, acdEndDetailEventTopicAcdEndEvent.routingPriority) &&
+            Objects.equals(this.connectedDurationMs, acdEndDetailEventTopicAcdEndEvent.connectedDurationMs);
   }
 
   @Override

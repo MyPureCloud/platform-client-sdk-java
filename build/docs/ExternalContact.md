@@ -48,10 +48,10 @@ title: ExternalContact
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EPHEMERAL | &quot;Ephemeral&quot; |
-| IDENTIFIED | &quot;Identified&quot; |
-| CURATED | &quot;Curated&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EPHEMERAL | &quot;Ephemeral&quot; | 
+| IDENTIFIED | &quot;Identified&quot; | 
+| CURATED | &quot;Curated&quot; | 
 {: class="table table-striped"}
 
 

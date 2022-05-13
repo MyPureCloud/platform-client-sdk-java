@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class PostUsageQueryRequest {
-    
+
 	private ApiUsageQuery body;
 	public ApiUsageQuery getBody() {
 		return this.body;
@@ -40,7 +40,7 @@ public class PostUsageQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,8 +70,8 @@ public class PostUsageQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/usage/query")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class PostUsageQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(ApiUsageQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostUsageQueryRequest request;
@@ -96,20 +96,20 @@ public class PostUsageQueryRequest {
 			request = new PostUsageQueryRequest();
 		}
 
-		
+
 		public Builder withBody(ApiUsageQuery body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(ApiUsageQuery body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostUsageQueryRequest build() {
             

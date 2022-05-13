@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeContactSort direction(DirectionEnum direction) {
@@ -106,7 +107,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     this.direction = direction;
   }
 
-  
+
   /**
    * Whether that column contains numeric data
    **/
@@ -124,7 +125,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     this.numeric = numeric;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -135,9 +135,10 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeContactSort outboundMessagingMessagingCampaignConfigChangeContactSort = (OutboundMessagingMessagingCampaignConfigChangeContactSort) o;
+
     return Objects.equals(this.fieldName, outboundMessagingMessagingCampaignConfigChangeContactSort.fieldName) &&
-        Objects.equals(this.direction, outboundMessagingMessagingCampaignConfigChangeContactSort.direction) &&
-        Objects.equals(this.numeric, outboundMessagingMessagingCampaignConfigChangeContactSort.numeric);
+            Objects.equals(this.direction, outboundMessagingMessagingCampaignConfigChangeContactSort.direction) &&
+            Objects.equals(this.numeric, outboundMessagingMessagingCampaignConfigChangeContactSort.numeric);
   }
 
   @Override

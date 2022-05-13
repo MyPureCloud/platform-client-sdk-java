@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebChatMemberInfo;
@@ -44,7 +45,7 @@ public class CreateWebChatConversationResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The JWT that you can use to identify subsequent calls on this conversation
    **/
@@ -62,7 +63,7 @@ public class CreateWebChatConversationResponse  implements Serializable {
     this.jwt = jwt;
   }
 
-  
+
   /**
    * The URI which provides the conversation event stream.
    **/
@@ -80,7 +81,7 @@ public class CreateWebChatConversationResponse  implements Serializable {
     this.eventStreamUri = eventStreamUri;
   }
 
-  
+
   /**
    * Chat Member
    **/
@@ -98,7 +99,6 @@ public class CreateWebChatConversationResponse  implements Serializable {
     this.member = member;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class CreateWebChatConversationResponse  implements Serializable {
       return false;
     }
     CreateWebChatConversationResponse createWebChatConversationResponse = (CreateWebChatConversationResponse) o;
+
     return Objects.equals(this.id, createWebChatConversationResponse.id) &&
-        Objects.equals(this.jwt, createWebChatConversationResponse.jwt) &&
-        Objects.equals(this.eventStreamUri, createWebChatConversationResponse.eventStreamUri) &&
-        Objects.equals(this.member, createWebChatConversationResponse.member);
+            Objects.equals(this.jwt, createWebChatConversationResponse.jwt) &&
+            Objects.equals(this.eventStreamUri, createWebChatConversationResponse.eventStreamUri) &&
+            Objects.equals(this.member, createWebChatConversationResponse.member);
   }
 
   @Override

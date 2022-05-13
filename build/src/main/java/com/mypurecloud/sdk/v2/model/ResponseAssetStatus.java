@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -81,28 +82,27 @@ public class ResponseAssetStatus  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Upload status of the asset")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error code. Used for localization")
   @JsonProperty("errorCode")
   public String getErrorCode() {
     return errorCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error message that explains upload failure status ")
   @JsonProperty("errorMessage")
   public String getErrorMessage() {
     return errorMessage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +113,11 @@ public class ResponseAssetStatus  implements Serializable {
       return false;
     }
     ResponseAssetStatus responseAssetStatus = (ResponseAssetStatus) o;
+
     return Objects.equals(this.id, responseAssetStatus.id) &&
-        Objects.equals(this.status, responseAssetStatus.status) &&
-        Objects.equals(this.errorCode, responseAssetStatus.errorCode) &&
-        Objects.equals(this.errorMessage, responseAssetStatus.errorMessage);
+            Objects.equals(this.status, responseAssetStatus.status) &&
+            Objects.equals(this.errorCode, responseAssetStatus.errorCode) &&
+            Objects.equals(this.errorMessage, responseAssetStatus.errorMessage);
   }
 
   @Override

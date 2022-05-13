@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class WidgetsApi {
   private final ApiClient pcapiClient;
 
@@ -39,7 +38,6 @@ public class WidgetsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a Widget deployment
    * 
@@ -64,7 +62,7 @@ public class WidgetsApi {
   private DeleteWidgetsDeploymentRequest createDeleteWidgetsDeploymentRequest(String deploymentId) {
     return DeleteWidgetsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
-    
+
             .build();
   }
 
@@ -115,7 +113,6 @@ public class WidgetsApi {
     }
   }
 
-  
   /**
    * Get a Widget deployment
    * 
@@ -142,7 +139,7 @@ public class WidgetsApi {
   private GetWidgetsDeploymentRequest createGetWidgetsDeploymentRequest(String deploymentId) {
     return GetWidgetsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
-    
+
             .build();
   }
 
@@ -194,7 +191,6 @@ public class WidgetsApi {
     }
   }
 
-  
   /**
    * List Widget deployments
    * 
@@ -269,7 +265,6 @@ public class WidgetsApi {
     }
   }
 
-  
   /**
    * Create Widget deployment
    * 
@@ -296,7 +291,7 @@ public class WidgetsApi {
   private PostWidgetsDeploymentsRequest createPostWidgetsDeploymentsRequest(WidgetDeployment body) {
     return PostWidgetsDeploymentsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -348,7 +343,6 @@ public class WidgetsApi {
     }
   }
 
-  
   /**
    * Update a Widget deployment
    * 
@@ -377,9 +371,9 @@ public class WidgetsApi {
   private PutWidgetsDeploymentRequest createPutWidgetsDeploymentRequest(String deploymentId, WidgetDeployment body) {
     return PutWidgetsDeploymentRequest.builder()
             .withDeploymentId(deploymentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -431,5 +425,4 @@ public class WidgetsApi {
     }
   }
 
-  
 }

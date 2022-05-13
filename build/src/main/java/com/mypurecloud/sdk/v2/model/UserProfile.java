@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,7 +87,7 @@ public class UserProfile  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserProfile name(String name) {
@@ -103,7 +104,7 @@ public class UserProfile  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The state of the user resource
    **/
@@ -121,14 +122,14 @@ public class UserProfile  implements Serializable {
     this.state = state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Datetime of the last modification. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * The version of the group resource
    **/
@@ -146,21 +147,20 @@ public class UserProfile  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User information expansions")
   @JsonProperty("expands")
   public UserExpands getExpands() {
     return expands;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -171,13 +171,14 @@ public class UserProfile  implements Serializable {
       return false;
     }
     UserProfile userProfile = (UserProfile) o;
+
     return Objects.equals(this.id, userProfile.id) &&
-        Objects.equals(this.name, userProfile.name) &&
-        Objects.equals(this.state, userProfile.state) &&
-        Objects.equals(this.dateModified, userProfile.dateModified) &&
-        Objects.equals(this.version, userProfile.version) &&
-        Objects.equals(this.expands, userProfile.expands) &&
-        Objects.equals(this.selfUri, userProfile.selfUri);
+            Objects.equals(this.name, userProfile.name) &&
+            Objects.equals(this.state, userProfile.state) &&
+            Objects.equals(this.dateModified, userProfile.dateModified) &&
+            Objects.equals(this.version, userProfile.version) &&
+            Objects.equals(this.expands, userProfile.expands) &&
+            Objects.equals(this.selfUri, userProfile.selfUri);
   }
 
   @Override

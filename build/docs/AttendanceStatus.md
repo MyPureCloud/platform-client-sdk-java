@@ -19,12 +19,12 @@ title: AttendanceStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HASDATA | &quot;HasData&quot; |
-| SCHEDULED | &quot;Scheduled&quot; |
-| ABSENT | &quot;Absent&quot; |
-| PRESENT | &quot;Present&quot; |
-| NOSCHEDULE | &quot;NoSchedule&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HASDATA | &quot;HasData&quot; | 
+| SCHEDULED | &quot;Scheduled&quot; | 
+| ABSENT | &quot;Absent&quot; | 
+| PRESENT | &quot;Present&quot; | 
+| NOSCHEDULE | &quot;NoSchedule&quot; | 
 {: class="table table-striped"}
 
 

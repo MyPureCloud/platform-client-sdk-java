@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     this.businessUnitDate = businessUnitDate;
   }
 
-  
+
   /**
    * The length of the time off marker in minutes
    **/
@@ -64,7 +65,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    * The description of the time off marker
    **/
@@ -82,7 +83,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The ID of the activity code associated with the time off marker
    **/
@@ -100,7 +101,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Whether the time off marker is paid
    **/
@@ -118,7 +119,7 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     this.paid = paid;
   }
 
-  
+
   /**
    * The ID of the time off request
    **/
@@ -136,7 +137,6 @@ public class BuFullDayTimeOffMarker  implements Serializable {
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +147,13 @@ public class BuFullDayTimeOffMarker  implements Serializable {
       return false;
     }
     BuFullDayTimeOffMarker buFullDayTimeOffMarker = (BuFullDayTimeOffMarker) o;
+
     return Objects.equals(this.businessUnitDate, buFullDayTimeOffMarker.businessUnitDate) &&
-        Objects.equals(this.lengthMinutes, buFullDayTimeOffMarker.lengthMinutes) &&
-        Objects.equals(this.description, buFullDayTimeOffMarker.description) &&
-        Objects.equals(this.activityCodeId, buFullDayTimeOffMarker.activityCodeId) &&
-        Objects.equals(this.paid, buFullDayTimeOffMarker.paid) &&
-        Objects.equals(this.timeOffRequestId, buFullDayTimeOffMarker.timeOffRequestId);
+            Objects.equals(this.lengthMinutes, buFullDayTimeOffMarker.lengthMinutes) &&
+            Objects.equals(this.description, buFullDayTimeOffMarker.description) &&
+            Objects.equals(this.activityCodeId, buFullDayTimeOffMarker.activityCodeId) &&
+            Objects.equals(this.paid, buFullDayTimeOffMarker.paid) &&
+            Objects.equals(this.timeOffRequestId, buFullDayTimeOffMarker.timeOffRequestId);
   }
 
   @Override

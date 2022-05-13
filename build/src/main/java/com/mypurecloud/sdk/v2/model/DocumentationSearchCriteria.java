@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DocumentationSearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -154,7 +154,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.endValue = endValue;
   }
 
-  
+
   /**
    * A list of values for the search to match against
    **/
@@ -172,7 +172,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -190,7 +190,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.startValue = startValue;
   }
 
-  
+
   /**
    * Field names to search against
    **/
@@ -208,7 +208,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.fields = fields;
   }
 
-  
+
   /**
    * A value for the search to match against
    **/
@@ -226,7 +226,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -244,7 +244,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Groups multiple conditions
    **/
@@ -262,7 +262,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
    **/
@@ -280,7 +280,7 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.dateFormat = dateFormat;
   }
 
-  
+
   /**
    * Search Type
    **/
@@ -298,7 +298,6 @@ public class DocumentationSearchCriteria  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -309,15 +308,16 @@ public class DocumentationSearchCriteria  implements Serializable {
       return false;
     }
     DocumentationSearchCriteria documentationSearchCriteria = (DocumentationSearchCriteria) o;
+
     return Objects.equals(this.endValue, documentationSearchCriteria.endValue) &&
-        Objects.equals(this.values, documentationSearchCriteria.values) &&
-        Objects.equals(this.startValue, documentationSearchCriteria.startValue) &&
-        Objects.equals(this.fields, documentationSearchCriteria.fields) &&
-        Objects.equals(this.value, documentationSearchCriteria.value) &&
-        Objects.equals(this.operator, documentationSearchCriteria.operator) &&
-        Objects.equals(this.group, documentationSearchCriteria.group) &&
-        Objects.equals(this.dateFormat, documentationSearchCriteria.dateFormat) &&
-        Objects.equals(this.type, documentationSearchCriteria.type);
+            Objects.equals(this.values, documentationSearchCriteria.values) &&
+            Objects.equals(this.startValue, documentationSearchCriteria.startValue) &&
+            Objects.equals(this.fields, documentationSearchCriteria.fields) &&
+            Objects.equals(this.value, documentationSearchCriteria.value) &&
+            Objects.equals(this.operator, documentationSearchCriteria.operator) &&
+            Objects.equals(this.group, documentationSearchCriteria.group) &&
+            Objects.equals(this.dateFormat, documentationSearchCriteria.dateFormat) &&
+            Objects.equals(this.type, documentationSearchCriteria.type);
   }
 
   @Override

@@ -22,9 +22,9 @@ title: ConversationAppSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STANDARD | &quot;Standard&quot; |
-| AUTOMATIC | &quot;Automatic&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STANDARD | &quot;Standard&quot; | 
+| AUTOMATIC | &quot;Automatic&quot; | 
 {: class="table table-striped"}
 
 

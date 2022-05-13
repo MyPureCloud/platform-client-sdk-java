@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class CallToAction  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * URL to open when user clicks on the call to action button.
    **/
@@ -108,7 +109,7 @@ public class CallToAction  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Where the URL should be opened when the user clicks on the call to action button.
    **/
@@ -126,7 +127,6 @@ public class CallToAction  implements Serializable {
     this.target = target;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class CallToAction  implements Serializable {
       return false;
     }
     CallToAction callToAction = (CallToAction) o;
+
     return Objects.equals(this.text, callToAction.text) &&
-        Objects.equals(this.url, callToAction.url) &&
-        Objects.equals(this.target, callToAction.target);
+            Objects.equals(this.url, callToAction.url) &&
+            Objects.equals(this.target, callToAction.target);
   }
 
   @Override

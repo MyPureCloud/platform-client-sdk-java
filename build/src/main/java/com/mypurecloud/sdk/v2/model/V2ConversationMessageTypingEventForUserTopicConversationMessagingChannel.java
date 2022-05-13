@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,6 +85,8 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
   private V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient to = null;
   private V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient from = null;
   private Date time = null;
+  private Date dateModified = null;
+  private Date dateDeleted = null;
   private V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata metadata = null;
 
   
@@ -103,7 +106,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel platform(PlatformEnum platform) {
@@ -120,7 +123,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.platform = platform;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel messageId(String messageId) {
@@ -137,7 +140,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.messageId = messageId;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel to(V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient to) {
@@ -154,7 +157,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.to = to;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel from(V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient from) {
@@ -171,7 +174,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.from = from;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel time(Date time) {
@@ -188,7 +191,41 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.time = time;
   }
 
+
+  /**
+   **/
+  public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+
+  /**
+   **/
+  public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel dateDeleted(Date dateDeleted) {
+    this.dateDeleted = dateDeleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateDeleted")
+  public Date getDateDeleted() {
+    return dateDeleted;
+  }
+  public void setDateDeleted(Date dateDeleted) {
+    this.dateDeleted = dateDeleted;
+  }
+
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel metadata(V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata metadata) {
@@ -205,7 +242,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,18 +252,21 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel = (V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.id) &&
-        Objects.equals(this.platform, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.platform) &&
-        Objects.equals(this.messageId, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.messageId) &&
-        Objects.equals(this.to, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.to) &&
-        Objects.equals(this.from, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.from) &&
-        Objects.equals(this.time, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.time) &&
-        Objects.equals(this.metadata, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.metadata);
+            Objects.equals(this.platform, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.platform) &&
+            Objects.equals(this.messageId, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.messageId) &&
+            Objects.equals(this.to, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.to) &&
+            Objects.equals(this.from, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.from) &&
+            Objects.equals(this.time, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.time) &&
+            Objects.equals(this.dateModified, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.dateModified) &&
+            Objects.equals(this.dateDeleted, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.dateDeleted) &&
+            Objects.equals(this.metadata, v2ConversationMessageTypingEventForUserTopicConversationMessagingChannel.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, platform, messageId, to, from, time, metadata);
+    return Objects.hash(id, platform, messageId, to, from, time, dateModified, dateDeleted, metadata);
   }
 
   @Override
@@ -241,6 +280,8 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessagingCh
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

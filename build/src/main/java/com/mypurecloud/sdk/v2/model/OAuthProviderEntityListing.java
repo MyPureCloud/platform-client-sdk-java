@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public OAuthProviderEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class OAuthProviderEntityListing  implements Serializable, PagedResource<
       return false;
     }
     OAuthProviderEntityListing oAuthProviderEntityListing = (OAuthProviderEntityListing) o;
+
     return Objects.equals(this.entities, oAuthProviderEntityListing.entities) &&
-        Objects.equals(this.pageSize, oAuthProviderEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, oAuthProviderEntityListing.pageNumber) &&
-        Objects.equals(this.total, oAuthProviderEntityListing.total) &&
-        Objects.equals(this.lastUri, oAuthProviderEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, oAuthProviderEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, oAuthProviderEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, oAuthProviderEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, oAuthProviderEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, oAuthProviderEntityListing.pageCount);
+            Objects.equals(this.pageSize, oAuthProviderEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, oAuthProviderEntityListing.pageNumber) &&
+            Objects.equals(this.total, oAuthProviderEntityListing.total) &&
+            Objects.equals(this.lastUri, oAuthProviderEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, oAuthProviderEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, oAuthProviderEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, oAuthProviderEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, oAuthProviderEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, oAuthProviderEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -35,7 +36,7 @@ public class CredentialType  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CredentialType name(String name) {
@@ -52,28 +53,27 @@ public class CredentialType  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Properties describing credentials of this type.")
   @JsonProperty("properties")
   public Object getProperties() {
     return properties;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Order in which properties should be displayed in the UI.")
   @JsonProperty("displayOrder")
   public List<String> getDisplayOrder() {
     return displayOrder;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Properties that are required fields.")
   @JsonProperty("required")
   public List<String> getRequired() {
     return required;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,11 +84,12 @@ public class CredentialType  implements Serializable {
       return false;
     }
     CredentialType credentialType = (CredentialType) o;
+
     return Objects.equals(this.id, credentialType.id) &&
-        Objects.equals(this.name, credentialType.name) &&
-        Objects.equals(this.properties, credentialType.properties) &&
-        Objects.equals(this.displayOrder, credentialType.displayOrder) &&
-        Objects.equals(this.required, credentialType.required);
+            Objects.equals(this.name, credentialType.name) &&
+            Objects.equals(this.properties, credentialType.properties) &&
+            Objects.equals(this.displayOrder, credentialType.displayOrder) &&
+            Objects.equals(this.required, credentialType.required);
   }
 
   @Override

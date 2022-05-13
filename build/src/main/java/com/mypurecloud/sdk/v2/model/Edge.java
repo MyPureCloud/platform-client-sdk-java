@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -331,7 +332,7 @@ public class Edge  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -349,7 +350,7 @@ public class Edge  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -367,7 +368,7 @@ public class Edge  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -385,7 +386,7 @@ public class Edge  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -403,7 +404,7 @@ public class Edge  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -421,7 +422,7 @@ public class Edge  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -439,7 +440,7 @@ public class Edge  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -457,7 +458,7 @@ public class Edge  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -475,14 +476,14 @@ public class Edge  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -500,7 +501,7 @@ public class Edge  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -518,7 +519,7 @@ public class Edge  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
    **/
@@ -536,7 +537,7 @@ public class Edge  implements Serializable {
     this.interfaces = interfaces;
   }
 
-  
+
   /**
    **/
   public Edge make(String make) {
@@ -553,7 +554,7 @@ public class Edge  implements Serializable {
     this.make = make;
   }
 
-  
+
   /**
    **/
   public Edge model(String model) {
@@ -570,7 +571,7 @@ public class Edge  implements Serializable {
     this.model = model;
   }
 
-  
+
   /**
    **/
   public Edge apiVersion(String apiVersion) {
@@ -587,7 +588,7 @@ public class Edge  implements Serializable {
     this.apiVersion = apiVersion;
   }
 
-  
+
   /**
    **/
   public Edge softwareVersion(String softwareVersion) {
@@ -604,7 +605,7 @@ public class Edge  implements Serializable {
     this.softwareVersion = softwareVersion;
   }
 
-  
+
   /**
    **/
   public Edge softwareVersionTimestamp(String softwareVersionTimestamp) {
@@ -621,7 +622,7 @@ public class Edge  implements Serializable {
     this.softwareVersionTimestamp = softwareVersionTimestamp;
   }
 
-  
+
   /**
    **/
   public Edge softwareVersionPlatform(String softwareVersionPlatform) {
@@ -638,7 +639,7 @@ public class Edge  implements Serializable {
     this.softwareVersionPlatform = softwareVersionPlatform;
   }
 
-  
+
   /**
    **/
   public Edge softwareVersionConfiguration(String softwareVersionConfiguration) {
@@ -655,7 +656,7 @@ public class Edge  implements Serializable {
     this.softwareVersionConfiguration = softwareVersionConfiguration;
   }
 
-  
+
   /**
    **/
   public Edge fullSoftwareVersion(String fullSoftwareVersion) {
@@ -672,7 +673,7 @@ public class Edge  implements Serializable {
     this.fullSoftwareVersion = fullSoftwareVersion;
   }
 
-  
+
   /**
    * The pairing Id for a hardware Edge in the format: 00000-00000-00000-00000-00000. This field is only required when creating an Edge with a deployment type of HARDWARE.
    **/
@@ -690,7 +691,7 @@ public class Edge  implements Serializable {
     this.pairingId = pairingId;
   }
 
-  
+
   /**
    **/
   public Edge fingerprint(String fingerprint) {
@@ -707,7 +708,7 @@ public class Edge  implements Serializable {
     this.fingerprint = fingerprint;
   }
 
-  
+
   /**
    **/
   public Edge fingerprintHint(String fingerprintHint) {
@@ -724,7 +725,7 @@ public class Edge  implements Serializable {
     this.fingerprintHint = fingerprintHint;
   }
 
-  
+
   /**
    **/
   public Edge currentVersion(String currentVersion) {
@@ -741,7 +742,7 @@ public class Edge  implements Serializable {
     this.currentVersion = currentVersion;
   }
 
-  
+
   /**
    **/
   public Edge stagedVersion(String stagedVersion) {
@@ -758,7 +759,7 @@ public class Edge  implements Serializable {
     this.stagedVersion = stagedVersion;
   }
 
-  
+
   /**
    **/
   public Edge patch(String patch) {
@@ -775,7 +776,7 @@ public class Edge  implements Serializable {
     this.patch = patch;
   }
 
-  
+
   /**
    * The current status of the Edge.
    **/
@@ -793,7 +794,7 @@ public class Edge  implements Serializable {
     this.statusCode = statusCode;
   }
 
-  
+
   /**
    **/
   public Edge edgeGroup(EdgeGroup edgeGroup) {
@@ -810,7 +811,7 @@ public class Edge  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-  
+
   /**
    * The Site to which the Edge is assigned.
    **/
@@ -828,7 +829,7 @@ public class Edge  implements Serializable {
     this.site = site;
   }
 
-  
+
   /**
    * Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.
    **/
@@ -846,7 +847,7 @@ public class Edge  implements Serializable {
     this.softwareStatus = softwareStatus;
   }
 
-  
+
   /**
    **/
   public Edge onlineStatus(OnlineStatusEnum onlineStatus) {
@@ -863,7 +864,7 @@ public class Edge  implements Serializable {
     this.onlineStatus = onlineStatus;
   }
 
-  
+
   /**
    **/
   public Edge serialNumber(String serialNumber) {
@@ -880,7 +881,7 @@ public class Edge  implements Serializable {
     this.serialNumber = serialNumber;
   }
 
-  
+
   /**
    **/
   public Edge physicalEdge(Boolean physicalEdge) {
@@ -897,7 +898,7 @@ public class Edge  implements Serializable {
     this.physicalEdge = physicalEdge;
   }
 
-  
+
   /**
    **/
   public Edge managed(Boolean managed) {
@@ -914,7 +915,7 @@ public class Edge  implements Serializable {
     this.managed = managed;
   }
 
-  
+
   /**
    **/
   public Edge edgeDeploymentType(EdgeDeploymentTypeEnum edgeDeploymentType) {
@@ -931,21 +932,21 @@ public class Edge  implements Serializable {
     this.edgeDeploymentType = edgeDeploymentType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The current state of the Edge's call draining process before it can be safely rebooted or updated.")
   @JsonProperty("callDrainingState")
   public CallDrainingStateEnum getCallDrainingState() {
     return callDrainingState;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.")
   @JsonProperty("conversationCount")
   public Integer getConversationCount() {
     return conversationCount;
   }
 
-  
+
   /**
    * Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.
    **/
@@ -963,28 +964,27 @@ public class Edge  implements Serializable {
     this.proxy = proxy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "True if the offline edge configuration endpoint has been called for this edge.")
   @JsonProperty("offlineConfigCalled")
   public Boolean getOfflineConfigCalled() {
     return offlineConfigCalled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name provided by the operating system of the Edge.")
   @JsonProperty("osName")
   public String getOsName() {
     return osName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -995,48 +995,49 @@ public class Edge  implements Serializable {
       return false;
     }
     Edge edge = (Edge) o;
+
     return Objects.equals(this.id, edge.id) &&
-        Objects.equals(this.name, edge.name) &&
-        Objects.equals(this.division, edge.division) &&
-        Objects.equals(this.description, edge.description) &&
-        Objects.equals(this.version, edge.version) &&
-        Objects.equals(this.dateCreated, edge.dateCreated) &&
-        Objects.equals(this.dateModified, edge.dateModified) &&
-        Objects.equals(this.modifiedBy, edge.modifiedBy) &&
-        Objects.equals(this.createdBy, edge.createdBy) &&
-        Objects.equals(this.state, edge.state) &&
-        Objects.equals(this.modifiedByApp, edge.modifiedByApp) &&
-        Objects.equals(this.createdByApp, edge.createdByApp) &&
-        Objects.equals(this.interfaces, edge.interfaces) &&
-        Objects.equals(this.make, edge.make) &&
-        Objects.equals(this.model, edge.model) &&
-        Objects.equals(this.apiVersion, edge.apiVersion) &&
-        Objects.equals(this.softwareVersion, edge.softwareVersion) &&
-        Objects.equals(this.softwareVersionTimestamp, edge.softwareVersionTimestamp) &&
-        Objects.equals(this.softwareVersionPlatform, edge.softwareVersionPlatform) &&
-        Objects.equals(this.softwareVersionConfiguration, edge.softwareVersionConfiguration) &&
-        Objects.equals(this.fullSoftwareVersion, edge.fullSoftwareVersion) &&
-        Objects.equals(this.pairingId, edge.pairingId) &&
-        Objects.equals(this.fingerprint, edge.fingerprint) &&
-        Objects.equals(this.fingerprintHint, edge.fingerprintHint) &&
-        Objects.equals(this.currentVersion, edge.currentVersion) &&
-        Objects.equals(this.stagedVersion, edge.stagedVersion) &&
-        Objects.equals(this.patch, edge.patch) &&
-        Objects.equals(this.statusCode, edge.statusCode) &&
-        Objects.equals(this.edgeGroup, edge.edgeGroup) &&
-        Objects.equals(this.site, edge.site) &&
-        Objects.equals(this.softwareStatus, edge.softwareStatus) &&
-        Objects.equals(this.onlineStatus, edge.onlineStatus) &&
-        Objects.equals(this.serialNumber, edge.serialNumber) &&
-        Objects.equals(this.physicalEdge, edge.physicalEdge) &&
-        Objects.equals(this.managed, edge.managed) &&
-        Objects.equals(this.edgeDeploymentType, edge.edgeDeploymentType) &&
-        Objects.equals(this.callDrainingState, edge.callDrainingState) &&
-        Objects.equals(this.conversationCount, edge.conversationCount) &&
-        Objects.equals(this.proxy, edge.proxy) &&
-        Objects.equals(this.offlineConfigCalled, edge.offlineConfigCalled) &&
-        Objects.equals(this.osName, edge.osName) &&
-        Objects.equals(this.selfUri, edge.selfUri);
+            Objects.equals(this.name, edge.name) &&
+            Objects.equals(this.division, edge.division) &&
+            Objects.equals(this.description, edge.description) &&
+            Objects.equals(this.version, edge.version) &&
+            Objects.equals(this.dateCreated, edge.dateCreated) &&
+            Objects.equals(this.dateModified, edge.dateModified) &&
+            Objects.equals(this.modifiedBy, edge.modifiedBy) &&
+            Objects.equals(this.createdBy, edge.createdBy) &&
+            Objects.equals(this.state, edge.state) &&
+            Objects.equals(this.modifiedByApp, edge.modifiedByApp) &&
+            Objects.equals(this.createdByApp, edge.createdByApp) &&
+            Objects.equals(this.interfaces, edge.interfaces) &&
+            Objects.equals(this.make, edge.make) &&
+            Objects.equals(this.model, edge.model) &&
+            Objects.equals(this.apiVersion, edge.apiVersion) &&
+            Objects.equals(this.softwareVersion, edge.softwareVersion) &&
+            Objects.equals(this.softwareVersionTimestamp, edge.softwareVersionTimestamp) &&
+            Objects.equals(this.softwareVersionPlatform, edge.softwareVersionPlatform) &&
+            Objects.equals(this.softwareVersionConfiguration, edge.softwareVersionConfiguration) &&
+            Objects.equals(this.fullSoftwareVersion, edge.fullSoftwareVersion) &&
+            Objects.equals(this.pairingId, edge.pairingId) &&
+            Objects.equals(this.fingerprint, edge.fingerprint) &&
+            Objects.equals(this.fingerprintHint, edge.fingerprintHint) &&
+            Objects.equals(this.currentVersion, edge.currentVersion) &&
+            Objects.equals(this.stagedVersion, edge.stagedVersion) &&
+            Objects.equals(this.patch, edge.patch) &&
+            Objects.equals(this.statusCode, edge.statusCode) &&
+            Objects.equals(this.edgeGroup, edge.edgeGroup) &&
+            Objects.equals(this.site, edge.site) &&
+            Objects.equals(this.softwareStatus, edge.softwareStatus) &&
+            Objects.equals(this.onlineStatus, edge.onlineStatus) &&
+            Objects.equals(this.serialNumber, edge.serialNumber) &&
+            Objects.equals(this.physicalEdge, edge.physicalEdge) &&
+            Objects.equals(this.managed, edge.managed) &&
+            Objects.equals(this.edgeDeploymentType, edge.edgeDeploymentType) &&
+            Objects.equals(this.callDrainingState, edge.callDrainingState) &&
+            Objects.equals(this.conversationCount, edge.conversationCount) &&
+            Objects.equals(this.proxy, edge.proxy) &&
+            Objects.equals(this.offlineConfigCalled, edge.offlineConfigCalled) &&
+            Objects.equals(this.osName, edge.osName) &&
+            Objects.equals(this.selfUri, edge.selfUri);
   }
 
   @Override

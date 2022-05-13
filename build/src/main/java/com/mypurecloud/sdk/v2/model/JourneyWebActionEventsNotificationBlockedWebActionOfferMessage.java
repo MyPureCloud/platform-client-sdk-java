@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -160,7 +161,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.action = action;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage actionMap(JourneyWebActionEventsNotificationActionMap actionMap) {
@@ -177,7 +178,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.actionMap = actionMap;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage actionTarget(JourneyWebActionEventsNotificationActionTarget actionTarget) {
@@ -194,7 +195,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.actionTarget = actionTarget;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingReason(BlockingReasonEnum blockingReason) {
@@ -211,7 +212,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingReason = blockingReason;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingActionMap(JourneyWebActionEventsNotificationActionMap blockingActionMap) {
@@ -228,7 +229,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingActionMap = blockingActionMap;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingAction(JourneyWebActionEventsNotificationEventAction blockingAction) {
@@ -245,7 +246,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingAction = blockingAction;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingFrequencyCapBehaviour(BlockingFrequencyCapBehaviourEnum blockingFrequencyCapBehaviour) {
@@ -262,7 +263,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingFrequencyCapBehaviour = blockingFrequencyCapBehaviour;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingPageUrlConditions(List<JourneyWebActionEventsNotificationActionMapPageUrlCondition> blockingPageUrlConditions) {
@@ -279,7 +280,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingPageUrlConditions = blockingPageUrlConditions;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingScheduleGroup(JourneyWebActionEventsNotificationScheduleGroup blockingScheduleGroup) {
@@ -296,7 +297,7 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingScheduleGroup = blockingScheduleGroup;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockingEmergencyScheduleGroup(JourneyWebActionEventsNotificationEmergencyGroup blockingEmergencyScheduleGroup) {
@@ -313,7 +314,6 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
     this.blockingEmergencyScheduleGroup = blockingEmergencyScheduleGroup;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -324,16 +324,17 @@ public class JourneyWebActionEventsNotificationBlockedWebActionOfferMessage  imp
       return false;
     }
     JourneyWebActionEventsNotificationBlockedWebActionOfferMessage journeyWebActionEventsNotificationBlockedWebActionOfferMessage = (JourneyWebActionEventsNotificationBlockedWebActionOfferMessage) o;
+
     return Objects.equals(this.action, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.action) &&
-        Objects.equals(this.actionMap, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.actionMap) &&
-        Objects.equals(this.actionTarget, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.actionTarget) &&
-        Objects.equals(this.blockingReason, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingReason) &&
-        Objects.equals(this.blockingActionMap, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingActionMap) &&
-        Objects.equals(this.blockingAction, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingAction) &&
-        Objects.equals(this.blockingFrequencyCapBehaviour, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingFrequencyCapBehaviour) &&
-        Objects.equals(this.blockingPageUrlConditions, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingPageUrlConditions) &&
-        Objects.equals(this.blockingScheduleGroup, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingScheduleGroup) &&
-        Objects.equals(this.blockingEmergencyScheduleGroup, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingEmergencyScheduleGroup);
+            Objects.equals(this.actionMap, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.actionMap) &&
+            Objects.equals(this.actionTarget, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.actionTarget) &&
+            Objects.equals(this.blockingReason, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingReason) &&
+            Objects.equals(this.blockingActionMap, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingActionMap) &&
+            Objects.equals(this.blockingAction, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingAction) &&
+            Objects.equals(this.blockingFrequencyCapBehaviour, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingFrequencyCapBehaviour) &&
+            Objects.equals(this.blockingPageUrlConditions, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingPageUrlConditions) &&
+            Objects.equals(this.blockingScheduleGroup, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingScheduleGroup) &&
+            Objects.equals(this.blockingEmergencyScheduleGroup, journeyWebActionEventsNotificationBlockedWebActionOfferMessage.blockingEmergencyScheduleGroup);
   }
 
   @Override

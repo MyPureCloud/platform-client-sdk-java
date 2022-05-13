@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntegrationAction;
@@ -45,7 +46,7 @@ public class IntegrationActionFields  implements Serializable {
     this.integrationAction = integrationAction;
   }
 
-  
+
   /**
    * Collection of Request Mappings to use
    **/
@@ -63,7 +64,6 @@ public class IntegrationActionFields  implements Serializable {
     this.requestMappings = requestMappings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class IntegrationActionFields  implements Serializable {
       return false;
     }
     IntegrationActionFields integrationActionFields = (IntegrationActionFields) o;
+
     return Objects.equals(this.integrationAction, integrationActionFields.integrationAction) &&
-        Objects.equals(this.requestMappings, integrationActionFields.requestMappings);
+            Objects.equals(this.requestMappings, integrationActionFields.requestMappings);
   }
 
   @Override

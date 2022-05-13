@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 
 import java.io.Serializable;
@@ -19,7 +20,6 @@ public class QueueUserEventTopicObject  implements Serializable {
   
 
   
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -28,6 +28,7 @@ public class QueueUserEventTopicObject  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+
     return true;
   }
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,56 +95,55 @@ public class ConversationMessagingChannel  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The provider type.")
   @JsonProperty("platform")
   public PlatformEnum getPlatform() {
     return platform;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Unique provider ID of the message such as a Facebook message ID.")
   @JsonProperty("messageId")
   public String getMessageId() {
     return messageId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is sent to.")
   @JsonProperty("to")
   public ConversationMessagingToRecipient getTo() {
     return to;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is received from.")
   @JsonProperty("from")
   public ConversationMessagingFromRecipient getFrom() {
     return from;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("time")
   public Date getTime() {
     return time;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Time the message was edited. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Time the message was deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateDeleted")
   public Date getDateDeleted() {
     return dateDeleted;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -154,14 +154,15 @@ public class ConversationMessagingChannel  implements Serializable {
       return false;
     }
     ConversationMessagingChannel conversationMessagingChannel = (ConversationMessagingChannel) o;
+
     return Objects.equals(this.id, conversationMessagingChannel.id) &&
-        Objects.equals(this.platform, conversationMessagingChannel.platform) &&
-        Objects.equals(this.messageId, conversationMessagingChannel.messageId) &&
-        Objects.equals(this.to, conversationMessagingChannel.to) &&
-        Objects.equals(this.from, conversationMessagingChannel.from) &&
-        Objects.equals(this.time, conversationMessagingChannel.time) &&
-        Objects.equals(this.dateModified, conversationMessagingChannel.dateModified) &&
-        Objects.equals(this.dateDeleted, conversationMessagingChannel.dateDeleted);
+            Objects.equals(this.platform, conversationMessagingChannel.platform) &&
+            Objects.equals(this.messageId, conversationMessagingChannel.messageId) &&
+            Objects.equals(this.to, conversationMessagingChannel.to) &&
+            Objects.equals(this.from, conversationMessagingChannel.from) &&
+            Objects.equals(this.time, conversationMessagingChannel.time) &&
+            Objects.equals(this.dateModified, conversationMessagingChannel.dateModified) &&
+            Objects.equals(this.dateDeleted, conversationMessagingChannel.dateDeleted);
   }
 
   @Override

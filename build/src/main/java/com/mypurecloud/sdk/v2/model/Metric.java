@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -44,7 +45,7 @@ public class Metric  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of this metric
    **/
@@ -62,7 +63,7 @@ public class Metric  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The id of associated metric definition
    **/
@@ -80,7 +81,7 @@ public class Metric  implements Serializable {
     this.metricDefinitionId = metricDefinitionId;
   }
 
-  
+
   /**
    * The id of associated external metric definition
    **/
@@ -98,7 +99,7 @@ public class Metric  implements Serializable {
     this.externalMetricDefinitionId = externalMetricDefinitionId;
   }
 
-  
+
   /**
    * Associated objective for this metric
    **/
@@ -116,7 +117,7 @@ public class Metric  implements Serializable {
     this.objective = objective;
   }
 
-  
+
   /**
    * Performance profile id of this metric
    **/
@@ -134,42 +135,41 @@ public class Metric  implements Serializable {
     this.performanceProfileId = performanceProfileId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The linked metric entity reference")
   @JsonProperty("linkedMetric")
   public AddressableEntityRef getLinkedMetric() {
     return linkedMetric;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateUnlinked")
   public LocalDate getDateUnlinked() {
     return dateUnlinked;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The source performance profile when this metric is linked")
   @JsonProperty("sourcePerformanceProfile")
   public PerformanceProfile getSourcePerformanceProfile() {
     return sourcePerformanceProfile;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,17 +180,18 @@ public class Metric  implements Serializable {
       return false;
     }
     Metric metric = (Metric) o;
+
     return Objects.equals(this.id, metric.id) &&
-        Objects.equals(this.name, metric.name) &&
-        Objects.equals(this.metricDefinitionId, metric.metricDefinitionId) &&
-        Objects.equals(this.externalMetricDefinitionId, metric.externalMetricDefinitionId) &&
-        Objects.equals(this.objective, metric.objective) &&
-        Objects.equals(this.performanceProfileId, metric.performanceProfileId) &&
-        Objects.equals(this.linkedMetric, metric.linkedMetric) &&
-        Objects.equals(this.dateCreated, metric.dateCreated) &&
-        Objects.equals(this.dateUnlinked, metric.dateUnlinked) &&
-        Objects.equals(this.sourcePerformanceProfile, metric.sourcePerformanceProfile) &&
-        Objects.equals(this.selfUri, metric.selfUri);
+            Objects.equals(this.name, metric.name) &&
+            Objects.equals(this.metricDefinitionId, metric.metricDefinitionId) &&
+            Objects.equals(this.externalMetricDefinitionId, metric.externalMetricDefinitionId) &&
+            Objects.equals(this.objective, metric.objective) &&
+            Objects.equals(this.performanceProfileId, metric.performanceProfileId) &&
+            Objects.equals(this.linkedMetric, metric.linkedMetric) &&
+            Objects.equals(this.dateCreated, metric.dateCreated) &&
+            Objects.equals(this.dateUnlinked, metric.dateUnlinked) &&
+            Objects.equals(this.sourcePerformanceProfile, metric.sourcePerformanceProfile) &&
+            Objects.equals(this.selfUri, metric.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -106,7 +107,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareUpdateDto maxDownloadRate(Integer maxDownloadRate) {
@@ -123,7 +124,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.maxDownloadRate = maxDownloadRate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -141,7 +142,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.downloadStartTime = downloadStartTime;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -159,7 +160,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.executeStartTime = executeStartTime;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -177,7 +178,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.executeStopTime = executeStopTime;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareUpdateDto executeOnIdle(Boolean executeOnIdle) {
@@ -194,7 +195,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.executeOnIdle = executeOnIdle;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareUpdateDto status(StatusEnum status) {
@@ -211,7 +212,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareUpdateDto edgeUri(String edgeUri) {
@@ -228,7 +229,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareUpdateDto callDrainingWaitTimeSeconds(Long callDrainingWaitTimeSeconds) {
@@ -245,7 +246,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.callDrainingWaitTimeSeconds = callDrainingWaitTimeSeconds;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareUpdateDto current(Boolean current) {
@@ -262,7 +263,6 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.current = current;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -273,16 +273,17 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
       return false;
     }
     DomainEdgeSoftwareUpdateDto domainEdgeSoftwareUpdateDto = (DomainEdgeSoftwareUpdateDto) o;
+
     return Objects.equals(this.version, domainEdgeSoftwareUpdateDto.version) &&
-        Objects.equals(this.maxDownloadRate, domainEdgeSoftwareUpdateDto.maxDownloadRate) &&
-        Objects.equals(this.downloadStartTime, domainEdgeSoftwareUpdateDto.downloadStartTime) &&
-        Objects.equals(this.executeStartTime, domainEdgeSoftwareUpdateDto.executeStartTime) &&
-        Objects.equals(this.executeStopTime, domainEdgeSoftwareUpdateDto.executeStopTime) &&
-        Objects.equals(this.executeOnIdle, domainEdgeSoftwareUpdateDto.executeOnIdle) &&
-        Objects.equals(this.status, domainEdgeSoftwareUpdateDto.status) &&
-        Objects.equals(this.edgeUri, domainEdgeSoftwareUpdateDto.edgeUri) &&
-        Objects.equals(this.callDrainingWaitTimeSeconds, domainEdgeSoftwareUpdateDto.callDrainingWaitTimeSeconds) &&
-        Objects.equals(this.current, domainEdgeSoftwareUpdateDto.current);
+            Objects.equals(this.maxDownloadRate, domainEdgeSoftwareUpdateDto.maxDownloadRate) &&
+            Objects.equals(this.downloadStartTime, domainEdgeSoftwareUpdateDto.downloadStartTime) &&
+            Objects.equals(this.executeStartTime, domainEdgeSoftwareUpdateDto.executeStartTime) &&
+            Objects.equals(this.executeStopTime, domainEdgeSoftwareUpdateDto.executeStopTime) &&
+            Objects.equals(this.executeOnIdle, domainEdgeSoftwareUpdateDto.executeOnIdle) &&
+            Objects.equals(this.status, domainEdgeSoftwareUpdateDto.status) &&
+            Objects.equals(this.edgeUri, domainEdgeSoftwareUpdateDto.edgeUri) &&
+            Objects.equals(this.callDrainingWaitTimeSeconds, domainEdgeSoftwareUpdateDto.callDrainingWaitTimeSeconds) &&
+            Objects.equals(this.current, domainEdgeSoftwareUpdateDto.current);
   }
 
   @Override

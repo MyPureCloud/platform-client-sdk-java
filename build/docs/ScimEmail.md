@@ -8,8 +8,8 @@ title: ScimEmail
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**String**<!----> | The email address. Is immutable if \&quot;type\&quot; is set to \&quot;other\&quot;. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of email address. \&quot;value\&quot; is immutable if \&quot;type\&quot; is set to \&quot;other\&quot;. |  [optional] |
+| **value** | <!----><!---->**String**<!----> | The email address. Is immutable if \"type\" is set to \"other\". |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of email address. \"value\" is immutable if \"type\" is set to \"other\". |  [optional] |
 | **primary** | <!----><!---->**Boolean**<!----> | Indicates whether the email address is the primary email address. |  [optional] |
 {: class="table table-striped"}
 
@@ -20,9 +20,9 @@ title: ScimEmail
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WORK | &quot;work&quot; |
-| OTHER | &quot;other&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WORK | &quot;work&quot; | 
+| OTHER | &quot;other&quot; | 
 {: class="table table-striped"}
 
 

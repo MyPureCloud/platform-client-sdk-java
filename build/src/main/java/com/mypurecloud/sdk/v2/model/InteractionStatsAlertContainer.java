@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer total(Long total) {
@@ -103,7 +104,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.total = total;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public InteractionStatsAlertContainer pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
       return false;
     }
     InteractionStatsAlertContainer interactionStatsAlertContainer = (InteractionStatsAlertContainer) o;
+
     return Objects.equals(this.entities, interactionStatsAlertContainer.entities) &&
-        Objects.equals(this.pageSize, interactionStatsAlertContainer.pageSize) &&
-        Objects.equals(this.pageNumber, interactionStatsAlertContainer.pageNumber) &&
-        Objects.equals(this.total, interactionStatsAlertContainer.total) &&
-        Objects.equals(this.lastUri, interactionStatsAlertContainer.lastUri) &&
-        Objects.equals(this.firstUri, interactionStatsAlertContainer.firstUri) &&
-        Objects.equals(this.selfUri, interactionStatsAlertContainer.selfUri) &&
-        Objects.equals(this.previousUri, interactionStatsAlertContainer.previousUri) &&
-        Objects.equals(this.nextUri, interactionStatsAlertContainer.nextUri) &&
-        Objects.equals(this.pageCount, interactionStatsAlertContainer.pageCount);
+            Objects.equals(this.pageSize, interactionStatsAlertContainer.pageSize) &&
+            Objects.equals(this.pageNumber, interactionStatsAlertContainer.pageNumber) &&
+            Objects.equals(this.total, interactionStatsAlertContainer.total) &&
+            Objects.equals(this.lastUri, interactionStatsAlertContainer.lastUri) &&
+            Objects.equals(this.firstUri, interactionStatsAlertContainer.firstUri) &&
+            Objects.equals(this.selfUri, interactionStatsAlertContainer.selfUri) &&
+            Objects.equals(this.previousUri, interactionStatsAlertContainer.previousUri) &&
+            Objects.equals(this.nextUri, interactionStatsAlertContainer.nextUri) &&
+            Objects.equals(this.pageCount, interactionStatsAlertContainer.pageCount);
   }
 
   @Override

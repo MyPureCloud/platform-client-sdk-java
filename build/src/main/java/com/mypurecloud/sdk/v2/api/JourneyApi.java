@@ -10,26 +10,26 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -65,7 +65,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class JourneyApi {
   private final ApiClient pcapiClient;
 
@@ -77,7 +76,6 @@ public class JourneyApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete single action map.
    * 
@@ -102,7 +100,7 @@ public class JourneyApi {
   private DeleteJourneyActionmapRequest createDeleteJourneyActionmapRequest(String actionMapId) {
     return DeleteJourneyActionmapRequest.builder()
             .withActionMapId(actionMapId)
-    
+
             .build();
   }
 
@@ -153,12 +151,11 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Delete a single action template.
    * 
    * @param actionTemplateId ID of the action template. (required)
-   * @param hardDelete Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
+   * @param hardDelete Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -170,7 +167,7 @@ public class JourneyApi {
    * Delete a single action template.
    * 
    * @param actionTemplateId ID of the action template. (required)
-   * @param hardDelete Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
+   * @param hardDelete Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteJourneyActiontemplateWithHttpInfo(String actionTemplateId, Boolean hardDelete) throws IOException {
@@ -180,9 +177,9 @@ public class JourneyApi {
   private DeleteJourneyActiontemplateRequest createDeleteJourneyActiontemplateRequest(String actionTemplateId, Boolean hardDelete) {
     return DeleteJourneyActiontemplateRequest.builder()
             .withActionTemplateId(actionTemplateId)
-    
+
             .withHardDelete(hardDelete)
-    
+
             .build();
   }
 
@@ -233,7 +230,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Delete an outcome.
    * 
@@ -258,7 +254,7 @@ public class JourneyApi {
   private DeleteJourneyOutcomeRequest createDeleteJourneyOutcomeRequest(String outcomeId) {
     return DeleteJourneyOutcomeRequest.builder()
             .withOutcomeId(outcomeId)
-    
+
             .build();
   }
 
@@ -309,7 +305,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Delete a segment.
    * 
@@ -334,7 +329,7 @@ public class JourneyApi {
   private DeleteJourneySegmentRequest createDeleteJourneySegmentRequest(String segmentId) {
     return DeleteJourneySegmentRequest.builder()
             .withSegmentId(segmentId)
-    
+
             .build();
   }
 
@@ -385,7 +380,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve a single action map.
    * 
@@ -412,7 +406,7 @@ public class JourneyApi {
   private GetJourneyActionmapRequest createGetJourneyActionmapRequest(String actionMapId) {
     return GetJourneyActionmapRequest.builder()
             .withActionMapId(actionMapId)
-    
+
             .build();
   }
 
@@ -464,18 +458,17 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve all action maps.
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
-   * @param filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. (optional)
-   * @param filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set. (optional)
+   * @param sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set. (optional)
+   * @param filterValue Value to filter by. Requires 'filterValue' to also be set. (optional)
    * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
-   * @param queryFields Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return ActionMapListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -489,12 +482,12 @@ public class JourneyApi {
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
-   * @param filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. (optional)
-   * @param filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set. (optional)
+   * @param sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set. (optional)
+   * @param filterValue Value to filter by. Requires 'filterValue' to also be set. (optional)
    * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
-   * @param queryFields Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return ActionMapListing
    * @throws IOException if the request fails to be processed
    */
@@ -505,21 +498,21 @@ public class JourneyApi {
   private GetJourneyActionmapsRequest createGetJourneyActionmapsRequest(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds, List<String> queryFields, String queryValue) {
     return GetJourneyActionmapsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withFilterField(filterField)
-    
+
             .withFilterValue(filterValue)
-    
+
             .withActionMapIds(actionMapIds)
-    
+
             .withQueryFields(queryFields)
-    
+
             .withQueryValue(queryValue)
-    
+
             .build();
   }
 
@@ -571,7 +564,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve a single action target.
    * 
@@ -598,7 +590,7 @@ public class JourneyApi {
   private GetJourneyActiontargetRequest createGetJourneyActiontargetRequest(String actionTargetId) {
     return GetJourneyActiontargetRequest.builder()
             .withActionTargetId(actionTargetId)
-    
+
             .build();
   }
 
@@ -650,7 +642,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve all action targets.
    * 
@@ -679,9 +670,9 @@ public class JourneyApi {
   private GetJourneyActiontargetsRequest createGetJourneyActiontargetsRequest(Integer pageNumber, Integer pageSize) {
     return GetJourneyActiontargetsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -733,7 +724,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve a single action template.
    * 
@@ -760,7 +750,7 @@ public class JourneyApi {
   private GetJourneyActiontemplateRequest createGetJourneyActiontemplateRequest(String actionTemplateId) {
     return GetJourneyActiontemplateRequest.builder()
             .withActionTemplateId(actionTemplateId)
-    
+
             .build();
   }
 
@@ -812,17 +802,16 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve all action templates.
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). (optional)
+   * @param sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate). (optional)
    * @param mediaType Media type (optional)
    * @param state Action template state. (optional)
-   * @param queryFields ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return ActionTemplateListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -836,11 +825,11 @@ public class JourneyApi {
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). (optional)
+   * @param sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate). (optional)
    * @param mediaType Media type (optional)
    * @param state Action template state. (optional)
-   * @param queryFields ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return ActionTemplateListing
    * @throws IOException if the request fails to be processed
    */
@@ -851,19 +840,19 @@ public class JourneyApi {
   private GetJourneyActiontemplatesRequest createGetJourneyActiontemplatesRequest(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state, List<String> queryFields, String queryValue) {
     return GetJourneyActiontemplatesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withMediaType(mediaType)
-    
+
             .withState(state)
-    
+
             .withQueryFields(queryFields)
-    
+
             .withQueryValue(queryValue)
-    
+
             .build();
   }
 
@@ -915,7 +904,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve a single outcome.
    * 
@@ -942,7 +930,7 @@ public class JourneyApi {
   private GetJourneyOutcomeRequest createGetJourneyOutcomeRequest(String outcomeId) {
     return GetJourneyOutcomeRequest.builder()
             .withOutcomeId(outcomeId)
-    
+
             .build();
   }
 
@@ -994,16 +982,15 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve all outcomes.
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
-   * @param queryFields Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return OutcomeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1017,10 +1004,10 @@ public class JourneyApi {
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
-   * @param queryFields Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return OutcomeListing
    * @throws IOException if the request fails to be processed
    */
@@ -1031,17 +1018,17 @@ public class JourneyApi {
   private GetJourneyOutcomesRequest createGetJourneyOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds, List<String> queryFields, String queryValue) {
     return GetJourneyOutcomesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withOutcomeIds(outcomeIds)
-    
+
             .withQueryFields(queryFields)
-    
+
             .withQueryValue(queryValue)
-    
+
             .build();
   }
 
@@ -1093,7 +1080,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve a single segment.
    * 
@@ -1120,7 +1106,7 @@ public class JourneyApi {
   private GetJourneySegmentRequest createGetJourneySegmentRequest(String segmentId) {
     return GetJourneySegmentRequest.builder()
             .withSegmentId(segmentId)
-    
+
             .build();
   }
 
@@ -1172,17 +1158,16 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve all segments.
    * 
-   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param isActive Determines whether or not to show only active segments. (optional)
    * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
-   * @param queryFields Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return SegmentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1194,13 +1179,13 @@ public class JourneyApi {
   /**
    * Retrieve all segments.
    * 
-   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param isActive Determines whether or not to show only active segments. (optional)
    * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
-   * @param queryFields Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
-   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
+   * @param queryFields Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
+   * @param queryValue Value to query on. Requires 'queryFields' to also be set. (optional)
    * @return SegmentListing
    * @throws IOException if the request fails to be processed
    */
@@ -1211,19 +1196,19 @@ public class JourneyApi {
   private GetJourneySegmentsRequest createGetJourneySegmentsRequest(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds, List<String> queryFields, String queryValue) {
     return GetJourneySegmentsRequest.builder()
             .withSortBy(sortBy)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withIsActive(isActive)
-    
+
             .withSegmentIds(segmentIds)
-    
+
             .withQueryFields(queryFields)
-    
+
             .withQueryValue(queryValue)
-    
+
             .build();
   }
 
@@ -1275,7 +1260,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve a single session.
    * 
@@ -1302,7 +1286,7 @@ public class JourneyApi {
   private GetJourneySessionRequest createGetJourneySessionRequest(String sessionId) {
     return GetJourneySessionRequest.builder()
             .withSessionId(sessionId)
-    
+
             .build();
   }
 
@@ -1354,7 +1338,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Retrieve latest outcome score associated with a session for all outcomes.
    * 
@@ -1381,7 +1364,7 @@ public class JourneyApi {
   private GetJourneySessionOutcomescoresRequest createGetJourneySessionOutcomescoresRequest(String sessionId) {
     return GetJourneySessionOutcomescoresRequest.builder()
             .withSessionId(sessionId)
-    
+
             .build();
   }
 
@@ -1433,7 +1416,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Update single action map.
    * 
@@ -1462,9 +1444,9 @@ public class JourneyApi {
   private PatchJourneyActionmapRequest createPatchJourneyActionmapRequest(String actionMapId, PatchActionMap body) {
     return PatchJourneyActionmapRequest.builder()
             .withActionMapId(actionMapId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1516,7 +1498,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Update a single action target.
    * 
@@ -1545,9 +1526,9 @@ public class JourneyApi {
   private PatchJourneyActiontargetRequest createPatchJourneyActiontargetRequest(String actionTargetId, PatchActionTarget body) {
     return PatchJourneyActiontargetRequest.builder()
             .withActionTargetId(actionTargetId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1599,7 +1580,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Update a single action template.
    * 
@@ -1628,9 +1608,9 @@ public class JourneyApi {
   private PatchJourneyActiontemplateRequest createPatchJourneyActiontemplateRequest(String actionTemplateId, PatchActionTemplate body) {
     return PatchJourneyActiontemplateRequest.builder()
             .withActionTemplateId(actionTemplateId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1682,7 +1662,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Update an outcome.
    * 
@@ -1711,9 +1690,9 @@ public class JourneyApi {
   private PatchJourneyOutcomeRequest createPatchJourneyOutcomeRequest(String outcomeId, PatchOutcome body) {
     return PatchJourneyOutcomeRequest.builder()
             .withOutcomeId(outcomeId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1765,7 +1744,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Update a segment.
    * 
@@ -1794,9 +1772,9 @@ public class JourneyApi {
   private PatchJourneySegmentRequest createPatchJourneySegmentRequest(String segmentId, PatchSegment body) {
     return PatchJourneySegmentRequest.builder()
             .withSegmentId(segmentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1848,7 +1826,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Query for journey aggregates
    * 
@@ -1875,7 +1852,7 @@ public class JourneyApi {
   private PostAnalyticsJourneysAggregatesQueryRequest createPostAnalyticsJourneysAggregatesQueryRequest(JourneyAggregationQuery body) {
     return PostAnalyticsJourneysAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1927,7 +1904,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Create an action map.
    * 
@@ -1954,7 +1930,7 @@ public class JourneyApi {
   private PostJourneyActionmapsRequest createPostJourneyActionmapsRequest(ActionMap body) {
     return PostJourneyActionmapsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2006,7 +1982,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Create a single action template.
    * 
@@ -2033,7 +2008,7 @@ public class JourneyApi {
   private PostJourneyActiontemplatesRequest createPostJourneyActiontemplatesRequest(ActionTemplate body) {
     return PostJourneyActiontemplatesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2085,7 +2060,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Create an outcome.
    * 
@@ -2112,7 +2086,7 @@ public class JourneyApi {
   private PostJourneyOutcomesRequest createPostJourneyOutcomesRequest(Outcome body) {
     return PostJourneyOutcomesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2164,7 +2138,6 @@ public class JourneyApi {
     }
   }
 
-  
   /**
    * Create a segment.
    * 
@@ -2191,7 +2164,7 @@ public class JourneyApi {
   private PostJourneySegmentsRequest createPostJourneySegmentsRequest(JourneySegment body) {
     return PostJourneySegmentsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2243,5 +2216,4 @@ public class JourneyApi {
     }
   }
 
-  
 }

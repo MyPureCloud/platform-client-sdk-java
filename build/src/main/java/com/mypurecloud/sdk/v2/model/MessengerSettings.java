@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FileUploadSettings;
@@ -51,7 +52,7 @@ public class MessengerSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The style settings for messenger
    **/
@@ -69,7 +70,7 @@ public class MessengerSettings  implements Serializable {
     this.styles = styles;
   }
 
-  
+
   /**
    * The launcher button settings for messenger
    **/
@@ -87,7 +88,7 @@ public class MessengerSettings  implements Serializable {
     this.launcherButton = launcherButton;
   }
 
-  
+
   /**
    * The file upload settings for messenger
    **/
@@ -105,7 +106,7 @@ public class MessengerSettings  implements Serializable {
     this.fileUpload = fileUpload;
   }
 
-  
+
   /**
    * The apps embedded in the messenger
    **/
@@ -123,7 +124,7 @@ public class MessengerSettings  implements Serializable {
     this.apps = apps;
   }
 
-  
+
   /**
    * The homescreen settings for messenger
    **/
@@ -141,7 +142,6 @@ public class MessengerSettings  implements Serializable {
     this.homeScreen = homeScreen;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +152,13 @@ public class MessengerSettings  implements Serializable {
       return false;
     }
     MessengerSettings messengerSettings = (MessengerSettings) o;
+
     return Objects.equals(this.enabled, messengerSettings.enabled) &&
-        Objects.equals(this.styles, messengerSettings.styles) &&
-        Objects.equals(this.launcherButton, messengerSettings.launcherButton) &&
-        Objects.equals(this.fileUpload, messengerSettings.fileUpload) &&
-        Objects.equals(this.apps, messengerSettings.apps) &&
-        Objects.equals(this.homeScreen, messengerSettings.homeScreen);
+            Objects.equals(this.styles, messengerSettings.styles) &&
+            Objects.equals(this.launcherButton, messengerSettings.launcherButton) &&
+            Objects.equals(this.fileUpload, messengerSettings.fileUpload) &&
+            Objects.equals(this.apps, messengerSettings.apps) &&
+            Objects.equals(this.homeScreen, messengerSettings.homeScreen);
   }
 
   @Override

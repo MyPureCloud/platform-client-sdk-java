@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CrossPlatformMediaPolicies;
@@ -45,7 +46,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The policy name.
    **/
@@ -63,7 +64,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -81,7 +82,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -99,7 +100,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyCreate order(Integer order) {
@@ -116,7 +117,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyCreate description(String description) {
@@ -133,7 +134,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyCreate enabled(Boolean enabled) {
@@ -150,7 +151,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Conditions and actions per media type
    **/
@@ -168,7 +169,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.mediaPolicies = mediaPolicies;
   }
 
-  
+
   /**
    * Conditions
    **/
@@ -186,7 +187,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.conditions = conditions;
   }
 
-  
+
   /**
    * Actions
    **/
@@ -204,7 +205,7 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyCreate policyErrors(PolicyErrors policyErrors) {
@@ -221,14 +222,13 @@ public class CrossPlatformPolicyCreate  implements Serializable {
     this.policyErrors = policyErrors;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -239,18 +239,19 @@ public class CrossPlatformPolicyCreate  implements Serializable {
       return false;
     }
     CrossPlatformPolicyCreate crossPlatformPolicyCreate = (CrossPlatformPolicyCreate) o;
+
     return Objects.equals(this.id, crossPlatformPolicyCreate.id) &&
-        Objects.equals(this.name, crossPlatformPolicyCreate.name) &&
-        Objects.equals(this.modifiedDate, crossPlatformPolicyCreate.modifiedDate) &&
-        Objects.equals(this.createdDate, crossPlatformPolicyCreate.createdDate) &&
-        Objects.equals(this.order, crossPlatformPolicyCreate.order) &&
-        Objects.equals(this.description, crossPlatformPolicyCreate.description) &&
-        Objects.equals(this.enabled, crossPlatformPolicyCreate.enabled) &&
-        Objects.equals(this.mediaPolicies, crossPlatformPolicyCreate.mediaPolicies) &&
-        Objects.equals(this.conditions, crossPlatformPolicyCreate.conditions) &&
-        Objects.equals(this.actions, crossPlatformPolicyCreate.actions) &&
-        Objects.equals(this.policyErrors, crossPlatformPolicyCreate.policyErrors) &&
-        Objects.equals(this.selfUri, crossPlatformPolicyCreate.selfUri);
+            Objects.equals(this.name, crossPlatformPolicyCreate.name) &&
+            Objects.equals(this.modifiedDate, crossPlatformPolicyCreate.modifiedDate) &&
+            Objects.equals(this.createdDate, crossPlatformPolicyCreate.createdDate) &&
+            Objects.equals(this.order, crossPlatformPolicyCreate.order) &&
+            Objects.equals(this.description, crossPlatformPolicyCreate.description) &&
+            Objects.equals(this.enabled, crossPlatformPolicyCreate.enabled) &&
+            Objects.equals(this.mediaPolicies, crossPlatformPolicyCreate.mediaPolicies) &&
+            Objects.equals(this.conditions, crossPlatformPolicyCreate.conditions) &&
+            Objects.equals(this.actions, crossPlatformPolicyCreate.actions) &&
+            Objects.equals(this.policyErrors, crossPlatformPolicyCreate.policyErrors) &&
+            Objects.equals(this.selfUri, crossPlatformPolicyCreate.selfUri);
   }
 
   @Override

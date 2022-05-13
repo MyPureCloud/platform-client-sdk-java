@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
@@ -1356,7 +1357,7 @@ public class ViewFilter  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
-  
+
   /**
    * The queue ids are used to filter the view
    **/
@@ -1374,7 +1375,7 @@ public class ViewFilter  implements Serializable {
     this.queueIds = queueIds;
   }
 
-  
+
   /**
    * The skill ids are used to filter the view
    **/
@@ -1392,7 +1393,7 @@ public class ViewFilter  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * The skill groups used to filter the view
    **/
@@ -1410,7 +1411,7 @@ public class ViewFilter  implements Serializable {
     this.skillGroups = skillGroups;
   }
 
-  
+
   /**
    * The language ids are used to filter the view
    **/
@@ -1428,7 +1429,7 @@ public class ViewFilter  implements Serializable {
     this.languageIds = languageIds;
   }
 
-  
+
   /**
    * The language groups used to filter the view
    **/
@@ -1446,7 +1447,7 @@ public class ViewFilter  implements Serializable {
     this.languageGroups = languageGroups;
   }
 
-  
+
   /**
    * The directions are used to filter the view
    **/
@@ -1464,7 +1465,7 @@ public class ViewFilter  implements Serializable {
     this.directions = directions;
   }
 
-  
+
   /**
    * The list of orginating directions used to filter the view
    **/
@@ -1482,7 +1483,7 @@ public class ViewFilter  implements Serializable {
     this.originatingDirections = originatingDirections;
   }
 
-  
+
   /**
    * The wrap up codes are used to filter the view
    **/
@@ -1500,7 +1501,7 @@ public class ViewFilter  implements Serializable {
     this.wrapUpCodes = wrapUpCodes;
   }
 
-  
+
   /**
    * The dnis list is used to filter the view
    **/
@@ -1518,7 +1519,7 @@ public class ViewFilter  implements Serializable {
     this.dnisList = dnisList;
   }
 
-  
+
   /**
    * The list of session dnis used to filter the view
    **/
@@ -1536,7 +1537,7 @@ public class ViewFilter  implements Serializable {
     this.sessionDnisList = sessionDnisList;
   }
 
-  
+
   /**
    * The user ids are used to fetch associated queues for the view
    **/
@@ -1554,7 +1555,7 @@ public class ViewFilter  implements Serializable {
     this.filterQueuesByUserIds = filterQueuesByUserIds;
   }
 
-  
+
   /**
    * The queue ids are used to fetch associated users for the view
    **/
@@ -1572,7 +1573,7 @@ public class ViewFilter  implements Serializable {
     this.filterUsersByQueueIds = filterUsersByQueueIds;
   }
 
-  
+
   /**
    * The user ids are used to filter the view
    **/
@@ -1590,7 +1591,7 @@ public class ViewFilter  implements Serializable {
     this.userIds = userIds;
   }
 
-  
+
   /**
    * The management unit ids are used to filter the view
    **/
@@ -1608,7 +1609,7 @@ public class ViewFilter  implements Serializable {
     this.managementUnitIds = managementUnitIds;
   }
 
-  
+
   /**
    * The address To values are used to filter the view
    **/
@@ -1626,7 +1627,7 @@ public class ViewFilter  implements Serializable {
     this.addressTos = addressTos;
   }
 
-  
+
   /**
    * The address from values are used to filter the view
    **/
@@ -1644,7 +1645,7 @@ public class ViewFilter  implements Serializable {
     this.addressFroms = addressFroms;
   }
 
-  
+
   /**
    * The outbound campaign ids are used to filter the view
    **/
@@ -1662,7 +1663,7 @@ public class ViewFilter  implements Serializable {
     this.outboundCampaignIds = outboundCampaignIds;
   }
 
-  
+
   /**
    * The outbound contact list ids are used to filter the view
    **/
@@ -1680,7 +1681,7 @@ public class ViewFilter  implements Serializable {
     this.outboundContactListIds = outboundContactListIds;
   }
 
-  
+
   /**
    * The contact ids are used to filter the view
    **/
@@ -1698,7 +1699,7 @@ public class ViewFilter  implements Serializable {
     this.contactIds = contactIds;
   }
 
-  
+
   /**
    * The external contact ids are used to filter the view
    **/
@@ -1716,7 +1717,7 @@ public class ViewFilter  implements Serializable {
     this.externalContactIds = externalContactIds;
   }
 
-  
+
   /**
    * The external org ids are used to filter the view
    **/
@@ -1734,7 +1735,7 @@ public class ViewFilter  implements Serializable {
     this.externalOrgIds = externalOrgIds;
   }
 
-  
+
   /**
    * The ani list ids are used to filter the view
    **/
@@ -1752,7 +1753,7 @@ public class ViewFilter  implements Serializable {
     this.aniList = aniList;
   }
 
-  
+
   /**
    * The durations in milliseconds used to filter the view
    **/
@@ -1770,7 +1771,7 @@ public class ViewFilter  implements Serializable {
     this.durationsMilliseconds = durationsMilliseconds;
   }
 
-  
+
   /**
    * The acd durations in milliseconds used to filter the view
    **/
@@ -1788,7 +1789,7 @@ public class ViewFilter  implements Serializable {
     this.acdDurationsMilliseconds = acdDurationsMilliseconds;
   }
 
-  
+
   /**
    * The talk durations in milliseconds used to filter the view
    **/
@@ -1806,7 +1807,7 @@ public class ViewFilter  implements Serializable {
     this.talkDurationsMilliseconds = talkDurationsMilliseconds;
   }
 
-  
+
   /**
    * The acw durations in milliseconds used to filter the view
    **/
@@ -1824,7 +1825,7 @@ public class ViewFilter  implements Serializable {
     this.acwDurationsMilliseconds = acwDurationsMilliseconds;
   }
 
-  
+
   /**
    * The handle durations in milliseconds used to filter the view
    **/
@@ -1842,7 +1843,7 @@ public class ViewFilter  implements Serializable {
     this.handleDurationsMilliseconds = handleDurationsMilliseconds;
   }
 
-  
+
   /**
    * The hold durations in milliseconds used to filter the view
    **/
@@ -1860,7 +1861,7 @@ public class ViewFilter  implements Serializable {
     this.holdDurationsMilliseconds = holdDurationsMilliseconds;
   }
 
-  
+
   /**
    * The abandon durations in milliseconds used to filter the view
    **/
@@ -1878,7 +1879,7 @@ public class ViewFilter  implements Serializable {
     this.abandonDurationsMilliseconds = abandonDurationsMilliseconds;
   }
 
-  
+
   /**
    * The evaluationScore is used to filter the view
    **/
@@ -1896,7 +1897,7 @@ public class ViewFilter  implements Serializable {
     this.evaluationScore = evaluationScore;
   }
 
-  
+
   /**
    * The evaluationCriticalScore is used to filter the view
    **/
@@ -1914,7 +1915,7 @@ public class ViewFilter  implements Serializable {
     this.evaluationCriticalScore = evaluationCriticalScore;
   }
 
-  
+
   /**
    * The evaluation form ids are used to filter the view
    **/
@@ -1932,7 +1933,7 @@ public class ViewFilter  implements Serializable {
     this.evaluationFormIds = evaluationFormIds;
   }
 
-  
+
   /**
    * The evaluated agent ids are used to filter the view
    **/
@@ -1950,7 +1951,7 @@ public class ViewFilter  implements Serializable {
     this.evaluatedAgentIds = evaluatedAgentIds;
   }
 
-  
+
   /**
    * The evaluator ids are used to filter the view
    **/
@@ -1968,7 +1969,7 @@ public class ViewFilter  implements Serializable {
     this.evaluatorIds = evaluatorIds;
   }
 
-  
+
   /**
    * Indicates filtering for transfers
    **/
@@ -1986,7 +1987,7 @@ public class ViewFilter  implements Serializable {
     this.transferred = transferred;
   }
 
-  
+
   /**
    * Indicates filtering for abandons
    **/
@@ -2004,7 +2005,7 @@ public class ViewFilter  implements Serializable {
     this.abandoned = abandoned;
   }
 
-  
+
   /**
    * Indicates filtering for answered interactions
    **/
@@ -2022,7 +2023,7 @@ public class ViewFilter  implements Serializable {
     this.answered = answered;
   }
 
-  
+
   /**
    * The message media types used to filter the view
    **/
@@ -2040,7 +2041,7 @@ public class ViewFilter  implements Serializable {
     this.messageTypes = messageTypes;
   }
 
-  
+
   /**
    * The divison Ids used to filter the view
    **/
@@ -2058,7 +2059,7 @@ public class ViewFilter  implements Serializable {
     this.divisionIds = divisionIds;
   }
 
-  
+
   /**
    * The survey form ids used to filter the view
    **/
@@ -2076,7 +2077,7 @@ public class ViewFilter  implements Serializable {
     this.surveyFormIds = surveyFormIds;
   }
 
-  
+
   /**
    * The survey total score used to filter the view
    **/
@@ -2094,7 +2095,7 @@ public class ViewFilter  implements Serializable {
     this.surveyTotalScore = surveyTotalScore;
   }
 
-  
+
   /**
    * The survey NPS score used to filter the view
    **/
@@ -2112,7 +2113,7 @@ public class ViewFilter  implements Serializable {
     this.surveyNpsScore = surveyNpsScore;
   }
 
-  
+
   /**
    * The desired range for mos values
    **/
@@ -2130,7 +2131,7 @@ public class ViewFilter  implements Serializable {
     this.mos = mos;
   }
 
-  
+
   /**
    * The survey question group score used to filter the view
    **/
@@ -2148,7 +2149,7 @@ public class ViewFilter  implements Serializable {
     this.surveyQuestionGroupScore = surveyQuestionGroupScore;
   }
 
-  
+
   /**
    * The survey promoter score used to filter the view
    **/
@@ -2166,7 +2167,7 @@ public class ViewFilter  implements Serializable {
     this.surveyPromoterScore = surveyPromoterScore;
   }
 
-  
+
   /**
    * The list of survey form context ids used to filter the view
    **/
@@ -2184,7 +2185,7 @@ public class ViewFilter  implements Serializable {
     this.surveyFormContextIds = surveyFormContextIds;
   }
 
-  
+
   /**
    * The list of conversation ids used to filter the view
    **/
@@ -2202,7 +2203,7 @@ public class ViewFilter  implements Serializable {
     this.conversationIds = conversationIds;
   }
 
-  
+
   /**
    * The list of SIP call ids used to filter the view
    **/
@@ -2220,7 +2221,7 @@ public class ViewFilter  implements Serializable {
     this.sipCallIds = sipCallIds;
   }
 
-  
+
   /**
    * Indicates filtering for ended
    **/
@@ -2238,7 +2239,7 @@ public class ViewFilter  implements Serializable {
     this.isEnded = isEnded;
   }
 
-  
+
   /**
    * Indicates filtering for survey
    **/
@@ -2256,7 +2257,7 @@ public class ViewFilter  implements Serializable {
     this.isSurveyed = isSurveyed;
   }
 
-  
+
   /**
    * The list of survey score ranges used to filter the view
    **/
@@ -2274,7 +2275,7 @@ public class ViewFilter  implements Serializable {
     this.surveyScores = surveyScores;
   }
 
-  
+
   /**
    * The list of promoter score ranges used to filter the view
    **/
@@ -2292,7 +2293,7 @@ public class ViewFilter  implements Serializable {
     this.promoterScores = promoterScores;
   }
 
-  
+
   /**
    * Indicates filtering for campaign
    **/
@@ -2310,7 +2311,7 @@ public class ViewFilter  implements Serializable {
     this.isCampaign = isCampaign;
   }
 
-  
+
   /**
    * The list of survey statuses used to filter the view
    **/
@@ -2328,7 +2329,7 @@ public class ViewFilter  implements Serializable {
     this.surveyStatuses = surveyStatuses;
   }
 
-  
+
   /**
    * A grouping of conversation level filters
    **/
@@ -2346,7 +2347,7 @@ public class ViewFilter  implements Serializable {
     this.conversationProperties = conversationProperties;
   }
 
-  
+
   /**
    * Indicates filtering for blind transferred
    **/
@@ -2364,7 +2365,7 @@ public class ViewFilter  implements Serializable {
     this.isBlindTransferred = isBlindTransferred;
   }
 
-  
+
   /**
    * Indicates filtering for consulted
    **/
@@ -2382,7 +2383,7 @@ public class ViewFilter  implements Serializable {
     this.isConsulted = isConsulted;
   }
 
-  
+
   /**
    * Indicates filtering for consult transferred
    **/
@@ -2400,7 +2401,7 @@ public class ViewFilter  implements Serializable {
     this.isConsultTransferred = isConsultTransferred;
   }
 
-  
+
   /**
    * The list of remote participants used to filter the view
    **/
@@ -2418,7 +2419,7 @@ public class ViewFilter  implements Serializable {
     this.remoteParticipants = remoteParticipants;
   }
 
-  
+
   /**
    * The list of flow Ids
    **/
@@ -2436,7 +2437,7 @@ public class ViewFilter  implements Serializable {
     this.flowIds = flowIds;
   }
 
-  
+
   /**
    * A list of outcome ids of the flow
    **/
@@ -2454,7 +2455,7 @@ public class ViewFilter  implements Serializable {
     this.flowOutcomeIds = flowOutcomeIds;
   }
 
-  
+
   /**
    * A list of outcome values of the flow
    **/
@@ -2472,7 +2473,7 @@ public class ViewFilter  implements Serializable {
     this.flowOutcomeValues = flowOutcomeValues;
   }
 
-  
+
   /**
    * The list of destination types of the flow
    **/
@@ -2490,7 +2491,7 @@ public class ViewFilter  implements Serializable {
     this.flowDestinationTypes = flowDestinationTypes;
   }
 
-  
+
   /**
    * The list of reasons for the flow to disconnect
    **/
@@ -2508,7 +2509,7 @@ public class ViewFilter  implements Serializable {
     this.flowDisconnectReasons = flowDisconnectReasons;
   }
 
-  
+
   /**
    * A list of types of the flow
    **/
@@ -2526,7 +2527,7 @@ public class ViewFilter  implements Serializable {
     this.flowTypes = flowTypes;
   }
 
-  
+
   /**
    * A list of types of the flow entry
    **/
@@ -2544,7 +2545,7 @@ public class ViewFilter  implements Serializable {
     this.flowEntryTypes = flowEntryTypes;
   }
 
-  
+
   /**
    * A list of reasons of flow entry
    **/
@@ -2562,7 +2563,7 @@ public class ViewFilter  implements Serializable {
     this.flowEntryReasons = flowEntryReasons;
   }
 
-  
+
   /**
    * A list of versions of a flow
    **/
@@ -2580,7 +2581,7 @@ public class ViewFilter  implements Serializable {
     this.flowVersions = flowVersions;
   }
 
-  
+
   /**
    * A list of directory group ids
    **/
@@ -2598,7 +2599,7 @@ public class ViewFilter  implements Serializable {
     this.groupIds = groupIds;
   }
 
-  
+
   /**
    * Indicates filtering for journey customer id
    **/
@@ -2616,7 +2617,7 @@ public class ViewFilter  implements Serializable {
     this.hasJourneyCustomerId = hasJourneyCustomerId;
   }
 
-  
+
   /**
    * Indicates filtering for Journey action map id
    **/
@@ -2634,7 +2635,7 @@ public class ViewFilter  implements Serializable {
     this.hasJourneyActionMapId = hasJourneyActionMapId;
   }
 
-  
+
   /**
    * Indicates filtering for Journey visit id
    **/
@@ -2652,7 +2653,7 @@ public class ViewFilter  implements Serializable {
     this.hasJourneyVisitId = hasJourneyVisitId;
   }
 
-  
+
   /**
    * Indicates filtering for presence of MMS media
    **/
@@ -2670,7 +2671,7 @@ public class ViewFilter  implements Serializable {
     this.hasMedia = hasMedia;
   }
 
-  
+
   /**
    * The role Ids used to filter the view
    **/
@@ -2688,7 +2689,7 @@ public class ViewFilter  implements Serializable {
     this.roleIds = roleIds;
   }
 
-  
+
   /**
    * The report to user IDs used to filter the view
    **/
@@ -2706,7 +2707,7 @@ public class ViewFilter  implements Serializable {
     this.reportsTos = reportsTos;
   }
 
-  
+
   /**
    * The location Ids used to filter the view
    **/
@@ -2724,7 +2725,7 @@ public class ViewFilter  implements Serializable {
     this.locationIds = locationIds;
   }
 
-  
+
   /**
    * A list of flow out types
    **/
@@ -2742,7 +2743,7 @@ public class ViewFilter  implements Serializable {
     this.flowOutTypes = flowOutTypes;
   }
 
-  
+
   /**
    * A list of providers
    **/
@@ -2760,7 +2761,7 @@ public class ViewFilter  implements Serializable {
     this.providerList = providerList;
   }
 
-  
+
   /**
    * A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"])
    **/
@@ -2778,7 +2779,7 @@ public class ViewFilter  implements Serializable {
     this.callbackNumberList = callbackNumberList;
   }
 
-  
+
   /**
    * An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -2796,7 +2797,7 @@ public class ViewFilter  implements Serializable {
     this.callbackInterval = callbackInterval;
   }
 
-  
+
   /**
    * A list of routing types used
    **/
@@ -2814,7 +2815,7 @@ public class ViewFilter  implements Serializable {
     this.usedRoutingTypes = usedRoutingTypes;
   }
 
-  
+
   /**
    * A list of routing types requested
    **/
@@ -2832,7 +2833,7 @@ public class ViewFilter  implements Serializable {
     this.requestedRoutingTypes = requestedRoutingTypes;
   }
 
-  
+
   /**
    * Indicates filtering for agent assist id
    **/
@@ -2850,7 +2851,7 @@ public class ViewFilter  implements Serializable {
     this.hasAgentAssistId = hasAgentAssistId;
   }
 
-  
+
   /**
    * A list of transcript contents requested
    **/
@@ -2868,7 +2869,7 @@ public class ViewFilter  implements Serializable {
     this.transcripts = transcripts;
   }
 
-  
+
   /**
    * A list of transcript languages requested
    **/
@@ -2886,7 +2887,7 @@ public class ViewFilter  implements Serializable {
     this.transcriptLanguages = transcriptLanguages;
   }
 
-  
+
   /**
    * A list of participant purpose requested
    **/
@@ -2904,7 +2905,7 @@ public class ViewFilter  implements Serializable {
     this.participantPurposes = participantPurposes;
   }
 
-  
+
   /**
    * Indicates filtering for first queue data
    **/
@@ -2922,7 +2923,7 @@ public class ViewFilter  implements Serializable {
     this.showFirstQueue = showFirstQueue;
   }
 
-  
+
   /**
    * The team ids used to filter the view data
    **/
@@ -2940,7 +2941,7 @@ public class ViewFilter  implements Serializable {
     this.teamIds = teamIds;
   }
 
-  
+
   /**
    * The team ids are used to fetch associated users for the view
    **/
@@ -2958,7 +2959,7 @@ public class ViewFilter  implements Serializable {
     this.filterUsersByTeamIds = filterUsersByTeamIds;
   }
 
-  
+
   /**
    * The journey action map ids are used to fetch action maps for the associated view
    **/
@@ -2976,7 +2977,7 @@ public class ViewFilter  implements Serializable {
     this.journeyActionMapIds = journeyActionMapIds;
   }
 
-  
+
   /**
    * The journey outcome ids are used to fetch outcomes for the associated view
    **/
@@ -2994,7 +2995,7 @@ public class ViewFilter  implements Serializable {
     this.journeyOutcomeIds = journeyOutcomeIds;
   }
 
-  
+
   /**
    * The journey segment ids are used to fetch segments for the associated view
    **/
@@ -3012,7 +3013,7 @@ public class ViewFilter  implements Serializable {
     this.journeySegmentIds = journeySegmentIds;
   }
 
-  
+
   /**
    * The journey action map types are used to filter action map data for the associated view
    **/
@@ -3030,7 +3031,7 @@ public class ViewFilter  implements Serializable {
     this.journeyActionMapTypes = journeyActionMapTypes;
   }
 
-  
+
   /**
    * The list of development roles used to filter agent development view
    **/
@@ -3048,7 +3049,7 @@ public class ViewFilter  implements Serializable {
     this.developmentRoleList = developmentRoleList;
   }
 
-  
+
   /**
    * The list of development types used to filter agent development view
    **/
@@ -3066,7 +3067,7 @@ public class ViewFilter  implements Serializable {
     this.developmentTypeList = developmentTypeList;
   }
 
-  
+
   /**
    * The list of development status used to filter agent development view
    **/
@@ -3084,7 +3085,7 @@ public class ViewFilter  implements Serializable {
     this.developmentStatusList = developmentStatusList;
   }
 
-  
+
   /**
    * The list of development moduleIds used to filter agent development view
    **/
@@ -3102,7 +3103,7 @@ public class ViewFilter  implements Serializable {
     this.developmentModuleIds = developmentModuleIds;
   }
 
-  
+
   /**
    * Indicates filtering for development activities
    **/
@@ -3120,7 +3121,7 @@ public class ViewFilter  implements Serializable {
     this.developmentActivityOverdue = developmentActivityOverdue;
   }
 
-  
+
   /**
    * The customer sentiment score used to filter the view
    **/
@@ -3138,7 +3139,7 @@ public class ViewFilter  implements Serializable {
     this.customerSentimentScore = customerSentimentScore;
   }
 
-  
+
   /**
    * The customer sentiment trend used to filter the view
    **/
@@ -3156,7 +3157,7 @@ public class ViewFilter  implements Serializable {
     this.customerSentimentTrend = customerSentimentTrend;
   }
 
-  
+
   /**
    * The list of transfer targets used to filter flow data
    **/
@@ -3174,7 +3175,7 @@ public class ViewFilter  implements Serializable {
     this.flowTransferTargets = flowTransferTargets;
   }
 
-  
+
   /**
    * Filter for development name
    **/
@@ -3192,7 +3193,7 @@ public class ViewFilter  implements Serializable {
     this.developmentName = developmentName;
   }
 
-  
+
   /**
    * Represents the topics detected in the transcript
    **/
@@ -3210,7 +3211,7 @@ public class ViewFilter  implements Serializable {
     this.topicIds = topicIds;
   }
 
-  
+
   /**
    * The list of external Tags used to filter conversation data
    **/
@@ -3228,7 +3229,7 @@ public class ViewFilter  implements Serializable {
     this.externalTags = externalTags;
   }
 
-  
+
   /**
    * Indicates filtering for not responding users
    **/
@@ -3246,7 +3247,7 @@ public class ViewFilter  implements Serializable {
     this.isNotResponding = isNotResponding;
   }
 
-  
+
   /**
    * Indicates filtering for the authenticated chat
    **/
@@ -3264,7 +3265,7 @@ public class ViewFilter  implements Serializable {
     this.isAuthenticated = isAuthenticated;
   }
 
-  
+
   /**
    * The list of bot IDs used to filter bot views
    **/
@@ -3282,7 +3283,7 @@ public class ViewFilter  implements Serializable {
     this.botIds = botIds;
   }
 
-  
+
   /**
    * The list of bot versions used to filter bot views
    **/
@@ -3300,7 +3301,7 @@ public class ViewFilter  implements Serializable {
     this.botVersions = botVersions;
   }
 
-  
+
   /**
    * The list of bot message types used to filter bot views
    **/
@@ -3318,7 +3319,7 @@ public class ViewFilter  implements Serializable {
     this.botMessageTypes = botMessageTypes;
   }
 
-  
+
   /**
    * The list of bot providers used to filter bot views
    **/
@@ -3336,7 +3337,7 @@ public class ViewFilter  implements Serializable {
     this.botProviderList = botProviderList;
   }
 
-  
+
   /**
    * The list of bot products used to filter bot views
    **/
@@ -3354,7 +3355,7 @@ public class ViewFilter  implements Serializable {
     this.botProductList = botProductList;
   }
 
-  
+
   /**
    * The list of bot recognition failure reasons used to filter bot views
    **/
@@ -3372,7 +3373,7 @@ public class ViewFilter  implements Serializable {
     this.botRecognitionFailureReasonList = botRecognitionFailureReasonList;
   }
 
-  
+
   /**
    * The list of bot intents used to filter bot views
    **/
@@ -3390,7 +3391,7 @@ public class ViewFilter  implements Serializable {
     this.botIntentList = botIntentList;
   }
 
-  
+
   /**
    * The list of bot final intents used to filter bot views
    **/
@@ -3408,7 +3409,7 @@ public class ViewFilter  implements Serializable {
     this.botFinalIntentList = botFinalIntentList;
   }
 
-  
+
   /**
    * The list of bot slots used to filter bot views
    **/
@@ -3426,7 +3427,7 @@ public class ViewFilter  implements Serializable {
     this.botSlotList = botSlotList;
   }
 
-  
+
   /**
    * The list of bot results used to filter bot views
    **/
@@ -3444,7 +3445,7 @@ public class ViewFilter  implements Serializable {
     this.botResultList = botResultList;
   }
 
-  
+
   /**
    * The list of blocked reason used to filter action map constraints views
    **/
@@ -3462,7 +3463,7 @@ public class ViewFilter  implements Serializable {
     this.blockedReasons = blockedReasons;
   }
 
-  
+
   /**
    * Indicates filtering for recorded
    **/
@@ -3480,7 +3481,7 @@ public class ViewFilter  implements Serializable {
     this.isRecorded = isRecorded;
   }
 
-  
+
   /**
    * Indicates filtering for evaluation
    **/
@@ -3498,7 +3499,7 @@ public class ViewFilter  implements Serializable {
     this.hasEvaluation = hasEvaluation;
   }
 
-  
+
   /**
    * Indicates filtering for scored evaluation
    **/
@@ -3516,7 +3517,7 @@ public class ViewFilter  implements Serializable {
     this.hasScoredEvaluation = hasScoredEvaluation;
   }
 
-  
+
   /**
    * The list of email delivery statuses used to filter views
    **/
@@ -3534,7 +3535,7 @@ public class ViewFilter  implements Serializable {
     this.emailDeliveryStatusList = emailDeliveryStatusList;
   }
 
-  
+
   /**
    * Indicates filtering for agent owned callback interactions
    **/
@@ -3552,7 +3553,7 @@ public class ViewFilter  implements Serializable {
     this.isAgentOwnedCallback = isAgentOwnedCallback;
   }
 
-  
+
   /**
    * The list of callback owners used to filter interactions
    **/
@@ -3570,7 +3571,7 @@ public class ViewFilter  implements Serializable {
     this.agentCallbackOwnerIds = agentCallbackOwnerIds;
   }
 
-  
+
   /**
    * The list of transcript topics requested in filter
    **/
@@ -3588,7 +3589,7 @@ public class ViewFilter  implements Serializable {
     this.transcriptTopics = transcriptTopics;
   }
 
-  
+
   /**
    * The list of frequency cap reasons to filter offer constraints
    **/
@@ -3606,7 +3607,7 @@ public class ViewFilter  implements Serializable {
     this.journeyFrequencyCapReasons = journeyFrequencyCapReasons;
   }
 
-  
+
   /**
    * The list of blocking action maps to filter offer constraints
    **/
@@ -3624,7 +3625,7 @@ public class ViewFilter  implements Serializable {
     this.journeyBlockingActionMapIds = journeyBlockingActionMapIds;
   }
 
-  
+
   /**
    * The list of action targets to filter offer constraints
    **/
@@ -3642,7 +3643,7 @@ public class ViewFilter  implements Serializable {
     this.journeyActionTargetIds = journeyActionTargetIds;
   }
 
-  
+
   /**
    * The list of blocking schedule groups to filter offer constraints
    **/
@@ -3660,7 +3661,7 @@ public class ViewFilter  implements Serializable {
     this.journeyBlockingScheduleGroupIds = journeyBlockingScheduleGroupIds;
   }
 
-  
+
   /**
    * The list of emergency schedule groups to filter offer constraints
    **/
@@ -3678,7 +3679,7 @@ public class ViewFilter  implements Serializable {
     this.journeyBlockingEmergencyScheduleGroupIds = journeyBlockingEmergencyScheduleGroupIds;
   }
 
-  
+
   /**
    * The list of url equal conditions to filter offer constraints
    **/
@@ -3696,7 +3697,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlEqualConditions = journeyUrlEqualConditions;
   }
 
-  
+
   /**
    * The list of url not equal conditions to filter offer constraints
    **/
@@ -3714,7 +3715,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlNotEqualConditions = journeyUrlNotEqualConditions;
   }
 
-  
+
   /**
    * The list of url starts with conditions to filter offer constraints
    **/
@@ -3732,7 +3733,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlStartsWithConditions = journeyUrlStartsWithConditions;
   }
 
-  
+
   /**
    * The list of url ends with conditions to filter offer constraints
    **/
@@ -3750,7 +3751,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlEndsWithConditions = journeyUrlEndsWithConditions;
   }
 
-  
+
   /**
    * The list of url contains any conditions to filter offer constraints
    **/
@@ -3768,7 +3769,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlContainsAnyConditions = journeyUrlContainsAnyConditions;
   }
 
-  
+
   /**
    * The list of url not contains any conditions to filter offer constraints
    **/
@@ -3786,7 +3787,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlNotContainsAnyConditions = journeyUrlNotContainsAnyConditions;
   }
 
-  
+
   /**
    * The list of url contains all conditions to filter offer constraints
    **/
@@ -3804,7 +3805,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlContainsAllConditions = journeyUrlContainsAllConditions;
   }
 
-  
+
   /**
    * The list of url not contains all conditions to filter offer constraints
    **/
@@ -3822,7 +3823,7 @@ public class ViewFilter  implements Serializable {
     this.journeyUrlNotContainsAllConditions = journeyUrlNotContainsAllConditions;
   }
 
-  
+
   /**
    * The list of flow milestones to filter exports
    **/
@@ -3840,7 +3841,7 @@ public class ViewFilter  implements Serializable {
     this.flowMilestoneIds = flowMilestoneIds;
   }
 
-  
+
   /**
    * Filter to indicate if Agent passed assessment or not
    **/
@@ -3858,7 +3859,7 @@ public class ViewFilter  implements Serializable {
     this.isAssessmentPassed = isAssessmentPassed;
   }
 
-  
+
   /**
    * The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation
    **/
@@ -3876,7 +3877,7 @@ public class ViewFilter  implements Serializable {
     this.conversationInitiators = conversationInitiators;
   }
 
-  
+
   /**
    * Indicates if the customer has participated in an initiated conversation
    **/
@@ -3894,7 +3895,7 @@ public class ViewFilter  implements Serializable {
     this.hasCustomerParticipated = hasCustomerParticipated;
   }
 
-  
+
   /**
    * Filter to indicate if interaction was ACD or non-ACD
    **/
@@ -3912,7 +3913,6 @@ public class ViewFilter  implements Serializable {
     this.isAcdInteraction = isAcdInteraction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -3923,149 +3923,150 @@ public class ViewFilter  implements Serializable {
       return false;
     }
     ViewFilter viewFilter = (ViewFilter) o;
+
     return Objects.equals(this.mediaTypes, viewFilter.mediaTypes) &&
-        Objects.equals(this.queueIds, viewFilter.queueIds) &&
-        Objects.equals(this.skillIds, viewFilter.skillIds) &&
-        Objects.equals(this.skillGroups, viewFilter.skillGroups) &&
-        Objects.equals(this.languageIds, viewFilter.languageIds) &&
-        Objects.equals(this.languageGroups, viewFilter.languageGroups) &&
-        Objects.equals(this.directions, viewFilter.directions) &&
-        Objects.equals(this.originatingDirections, viewFilter.originatingDirections) &&
-        Objects.equals(this.wrapUpCodes, viewFilter.wrapUpCodes) &&
-        Objects.equals(this.dnisList, viewFilter.dnisList) &&
-        Objects.equals(this.sessionDnisList, viewFilter.sessionDnisList) &&
-        Objects.equals(this.filterQueuesByUserIds, viewFilter.filterQueuesByUserIds) &&
-        Objects.equals(this.filterUsersByQueueIds, viewFilter.filterUsersByQueueIds) &&
-        Objects.equals(this.userIds, viewFilter.userIds) &&
-        Objects.equals(this.managementUnitIds, viewFilter.managementUnitIds) &&
-        Objects.equals(this.addressTos, viewFilter.addressTos) &&
-        Objects.equals(this.addressFroms, viewFilter.addressFroms) &&
-        Objects.equals(this.outboundCampaignIds, viewFilter.outboundCampaignIds) &&
-        Objects.equals(this.outboundContactListIds, viewFilter.outboundContactListIds) &&
-        Objects.equals(this.contactIds, viewFilter.contactIds) &&
-        Objects.equals(this.externalContactIds, viewFilter.externalContactIds) &&
-        Objects.equals(this.externalOrgIds, viewFilter.externalOrgIds) &&
-        Objects.equals(this.aniList, viewFilter.aniList) &&
-        Objects.equals(this.durationsMilliseconds, viewFilter.durationsMilliseconds) &&
-        Objects.equals(this.acdDurationsMilliseconds, viewFilter.acdDurationsMilliseconds) &&
-        Objects.equals(this.talkDurationsMilliseconds, viewFilter.talkDurationsMilliseconds) &&
-        Objects.equals(this.acwDurationsMilliseconds, viewFilter.acwDurationsMilliseconds) &&
-        Objects.equals(this.handleDurationsMilliseconds, viewFilter.handleDurationsMilliseconds) &&
-        Objects.equals(this.holdDurationsMilliseconds, viewFilter.holdDurationsMilliseconds) &&
-        Objects.equals(this.abandonDurationsMilliseconds, viewFilter.abandonDurationsMilliseconds) &&
-        Objects.equals(this.evaluationScore, viewFilter.evaluationScore) &&
-        Objects.equals(this.evaluationCriticalScore, viewFilter.evaluationCriticalScore) &&
-        Objects.equals(this.evaluationFormIds, viewFilter.evaluationFormIds) &&
-        Objects.equals(this.evaluatedAgentIds, viewFilter.evaluatedAgentIds) &&
-        Objects.equals(this.evaluatorIds, viewFilter.evaluatorIds) &&
-        Objects.equals(this.transferred, viewFilter.transferred) &&
-        Objects.equals(this.abandoned, viewFilter.abandoned) &&
-        Objects.equals(this.answered, viewFilter.answered) &&
-        Objects.equals(this.messageTypes, viewFilter.messageTypes) &&
-        Objects.equals(this.divisionIds, viewFilter.divisionIds) &&
-        Objects.equals(this.surveyFormIds, viewFilter.surveyFormIds) &&
-        Objects.equals(this.surveyTotalScore, viewFilter.surveyTotalScore) &&
-        Objects.equals(this.surveyNpsScore, viewFilter.surveyNpsScore) &&
-        Objects.equals(this.mos, viewFilter.mos) &&
-        Objects.equals(this.surveyQuestionGroupScore, viewFilter.surveyQuestionGroupScore) &&
-        Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore) &&
-        Objects.equals(this.surveyFormContextIds, viewFilter.surveyFormContextIds) &&
-        Objects.equals(this.conversationIds, viewFilter.conversationIds) &&
-        Objects.equals(this.sipCallIds, viewFilter.sipCallIds) &&
-        Objects.equals(this.isEnded, viewFilter.isEnded) &&
-        Objects.equals(this.isSurveyed, viewFilter.isSurveyed) &&
-        Objects.equals(this.surveyScores, viewFilter.surveyScores) &&
-        Objects.equals(this.promoterScores, viewFilter.promoterScores) &&
-        Objects.equals(this.isCampaign, viewFilter.isCampaign) &&
-        Objects.equals(this.surveyStatuses, viewFilter.surveyStatuses) &&
-        Objects.equals(this.conversationProperties, viewFilter.conversationProperties) &&
-        Objects.equals(this.isBlindTransferred, viewFilter.isBlindTransferred) &&
-        Objects.equals(this.isConsulted, viewFilter.isConsulted) &&
-        Objects.equals(this.isConsultTransferred, viewFilter.isConsultTransferred) &&
-        Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants) &&
-        Objects.equals(this.flowIds, viewFilter.flowIds) &&
-        Objects.equals(this.flowOutcomeIds, viewFilter.flowOutcomeIds) &&
-        Objects.equals(this.flowOutcomeValues, viewFilter.flowOutcomeValues) &&
-        Objects.equals(this.flowDestinationTypes, viewFilter.flowDestinationTypes) &&
-        Objects.equals(this.flowDisconnectReasons, viewFilter.flowDisconnectReasons) &&
-        Objects.equals(this.flowTypes, viewFilter.flowTypes) &&
-        Objects.equals(this.flowEntryTypes, viewFilter.flowEntryTypes) &&
-        Objects.equals(this.flowEntryReasons, viewFilter.flowEntryReasons) &&
-        Objects.equals(this.flowVersions, viewFilter.flowVersions) &&
-        Objects.equals(this.groupIds, viewFilter.groupIds) &&
-        Objects.equals(this.hasJourneyCustomerId, viewFilter.hasJourneyCustomerId) &&
-        Objects.equals(this.hasJourneyActionMapId, viewFilter.hasJourneyActionMapId) &&
-        Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId) &&
-        Objects.equals(this.hasMedia, viewFilter.hasMedia) &&
-        Objects.equals(this.roleIds, viewFilter.roleIds) &&
-        Objects.equals(this.reportsTos, viewFilter.reportsTos) &&
-        Objects.equals(this.locationIds, viewFilter.locationIds) &&
-        Objects.equals(this.flowOutTypes, viewFilter.flowOutTypes) &&
-        Objects.equals(this.providerList, viewFilter.providerList) &&
-        Objects.equals(this.callbackNumberList, viewFilter.callbackNumberList) &&
-        Objects.equals(this.callbackInterval, viewFilter.callbackInterval) &&
-        Objects.equals(this.usedRoutingTypes, viewFilter.usedRoutingTypes) &&
-        Objects.equals(this.requestedRoutingTypes, viewFilter.requestedRoutingTypes) &&
-        Objects.equals(this.hasAgentAssistId, viewFilter.hasAgentAssistId) &&
-        Objects.equals(this.transcripts, viewFilter.transcripts) &&
-        Objects.equals(this.transcriptLanguages, viewFilter.transcriptLanguages) &&
-        Objects.equals(this.participantPurposes, viewFilter.participantPurposes) &&
-        Objects.equals(this.showFirstQueue, viewFilter.showFirstQueue) &&
-        Objects.equals(this.teamIds, viewFilter.teamIds) &&
-        Objects.equals(this.filterUsersByTeamIds, viewFilter.filterUsersByTeamIds) &&
-        Objects.equals(this.journeyActionMapIds, viewFilter.journeyActionMapIds) &&
-        Objects.equals(this.journeyOutcomeIds, viewFilter.journeyOutcomeIds) &&
-        Objects.equals(this.journeySegmentIds, viewFilter.journeySegmentIds) &&
-        Objects.equals(this.journeyActionMapTypes, viewFilter.journeyActionMapTypes) &&
-        Objects.equals(this.developmentRoleList, viewFilter.developmentRoleList) &&
-        Objects.equals(this.developmentTypeList, viewFilter.developmentTypeList) &&
-        Objects.equals(this.developmentStatusList, viewFilter.developmentStatusList) &&
-        Objects.equals(this.developmentModuleIds, viewFilter.developmentModuleIds) &&
-        Objects.equals(this.developmentActivityOverdue, viewFilter.developmentActivityOverdue) &&
-        Objects.equals(this.customerSentimentScore, viewFilter.customerSentimentScore) &&
-        Objects.equals(this.customerSentimentTrend, viewFilter.customerSentimentTrend) &&
-        Objects.equals(this.flowTransferTargets, viewFilter.flowTransferTargets) &&
-        Objects.equals(this.developmentName, viewFilter.developmentName) &&
-        Objects.equals(this.topicIds, viewFilter.topicIds) &&
-        Objects.equals(this.externalTags, viewFilter.externalTags) &&
-        Objects.equals(this.isNotResponding, viewFilter.isNotResponding) &&
-        Objects.equals(this.isAuthenticated, viewFilter.isAuthenticated) &&
-        Objects.equals(this.botIds, viewFilter.botIds) &&
-        Objects.equals(this.botVersions, viewFilter.botVersions) &&
-        Objects.equals(this.botMessageTypes, viewFilter.botMessageTypes) &&
-        Objects.equals(this.botProviderList, viewFilter.botProviderList) &&
-        Objects.equals(this.botProductList, viewFilter.botProductList) &&
-        Objects.equals(this.botRecognitionFailureReasonList, viewFilter.botRecognitionFailureReasonList) &&
-        Objects.equals(this.botIntentList, viewFilter.botIntentList) &&
-        Objects.equals(this.botFinalIntentList, viewFilter.botFinalIntentList) &&
-        Objects.equals(this.botSlotList, viewFilter.botSlotList) &&
-        Objects.equals(this.botResultList, viewFilter.botResultList) &&
-        Objects.equals(this.blockedReasons, viewFilter.blockedReasons) &&
-        Objects.equals(this.isRecorded, viewFilter.isRecorded) &&
-        Objects.equals(this.hasEvaluation, viewFilter.hasEvaluation) &&
-        Objects.equals(this.hasScoredEvaluation, viewFilter.hasScoredEvaluation) &&
-        Objects.equals(this.emailDeliveryStatusList, viewFilter.emailDeliveryStatusList) &&
-        Objects.equals(this.isAgentOwnedCallback, viewFilter.isAgentOwnedCallback) &&
-        Objects.equals(this.agentCallbackOwnerIds, viewFilter.agentCallbackOwnerIds) &&
-        Objects.equals(this.transcriptTopics, viewFilter.transcriptTopics) &&
-        Objects.equals(this.journeyFrequencyCapReasons, viewFilter.journeyFrequencyCapReasons) &&
-        Objects.equals(this.journeyBlockingActionMapIds, viewFilter.journeyBlockingActionMapIds) &&
-        Objects.equals(this.journeyActionTargetIds, viewFilter.journeyActionTargetIds) &&
-        Objects.equals(this.journeyBlockingScheduleGroupIds, viewFilter.journeyBlockingScheduleGroupIds) &&
-        Objects.equals(this.journeyBlockingEmergencyScheduleGroupIds, viewFilter.journeyBlockingEmergencyScheduleGroupIds) &&
-        Objects.equals(this.journeyUrlEqualConditions, viewFilter.journeyUrlEqualConditions) &&
-        Objects.equals(this.journeyUrlNotEqualConditions, viewFilter.journeyUrlNotEqualConditions) &&
-        Objects.equals(this.journeyUrlStartsWithConditions, viewFilter.journeyUrlStartsWithConditions) &&
-        Objects.equals(this.journeyUrlEndsWithConditions, viewFilter.journeyUrlEndsWithConditions) &&
-        Objects.equals(this.journeyUrlContainsAnyConditions, viewFilter.journeyUrlContainsAnyConditions) &&
-        Objects.equals(this.journeyUrlNotContainsAnyConditions, viewFilter.journeyUrlNotContainsAnyConditions) &&
-        Objects.equals(this.journeyUrlContainsAllConditions, viewFilter.journeyUrlContainsAllConditions) &&
-        Objects.equals(this.journeyUrlNotContainsAllConditions, viewFilter.journeyUrlNotContainsAllConditions) &&
-        Objects.equals(this.flowMilestoneIds, viewFilter.flowMilestoneIds) &&
-        Objects.equals(this.isAssessmentPassed, viewFilter.isAssessmentPassed) &&
-        Objects.equals(this.conversationInitiators, viewFilter.conversationInitiators) &&
-        Objects.equals(this.hasCustomerParticipated, viewFilter.hasCustomerParticipated) &&
-        Objects.equals(this.isAcdInteraction, viewFilter.isAcdInteraction);
+            Objects.equals(this.queueIds, viewFilter.queueIds) &&
+            Objects.equals(this.skillIds, viewFilter.skillIds) &&
+            Objects.equals(this.skillGroups, viewFilter.skillGroups) &&
+            Objects.equals(this.languageIds, viewFilter.languageIds) &&
+            Objects.equals(this.languageGroups, viewFilter.languageGroups) &&
+            Objects.equals(this.directions, viewFilter.directions) &&
+            Objects.equals(this.originatingDirections, viewFilter.originatingDirections) &&
+            Objects.equals(this.wrapUpCodes, viewFilter.wrapUpCodes) &&
+            Objects.equals(this.dnisList, viewFilter.dnisList) &&
+            Objects.equals(this.sessionDnisList, viewFilter.sessionDnisList) &&
+            Objects.equals(this.filterQueuesByUserIds, viewFilter.filterQueuesByUserIds) &&
+            Objects.equals(this.filterUsersByQueueIds, viewFilter.filterUsersByQueueIds) &&
+            Objects.equals(this.userIds, viewFilter.userIds) &&
+            Objects.equals(this.managementUnitIds, viewFilter.managementUnitIds) &&
+            Objects.equals(this.addressTos, viewFilter.addressTos) &&
+            Objects.equals(this.addressFroms, viewFilter.addressFroms) &&
+            Objects.equals(this.outboundCampaignIds, viewFilter.outboundCampaignIds) &&
+            Objects.equals(this.outboundContactListIds, viewFilter.outboundContactListIds) &&
+            Objects.equals(this.contactIds, viewFilter.contactIds) &&
+            Objects.equals(this.externalContactIds, viewFilter.externalContactIds) &&
+            Objects.equals(this.externalOrgIds, viewFilter.externalOrgIds) &&
+            Objects.equals(this.aniList, viewFilter.aniList) &&
+            Objects.equals(this.durationsMilliseconds, viewFilter.durationsMilliseconds) &&
+            Objects.equals(this.acdDurationsMilliseconds, viewFilter.acdDurationsMilliseconds) &&
+            Objects.equals(this.talkDurationsMilliseconds, viewFilter.talkDurationsMilliseconds) &&
+            Objects.equals(this.acwDurationsMilliseconds, viewFilter.acwDurationsMilliseconds) &&
+            Objects.equals(this.handleDurationsMilliseconds, viewFilter.handleDurationsMilliseconds) &&
+            Objects.equals(this.holdDurationsMilliseconds, viewFilter.holdDurationsMilliseconds) &&
+            Objects.equals(this.abandonDurationsMilliseconds, viewFilter.abandonDurationsMilliseconds) &&
+            Objects.equals(this.evaluationScore, viewFilter.evaluationScore) &&
+            Objects.equals(this.evaluationCriticalScore, viewFilter.evaluationCriticalScore) &&
+            Objects.equals(this.evaluationFormIds, viewFilter.evaluationFormIds) &&
+            Objects.equals(this.evaluatedAgentIds, viewFilter.evaluatedAgentIds) &&
+            Objects.equals(this.evaluatorIds, viewFilter.evaluatorIds) &&
+            Objects.equals(this.transferred, viewFilter.transferred) &&
+            Objects.equals(this.abandoned, viewFilter.abandoned) &&
+            Objects.equals(this.answered, viewFilter.answered) &&
+            Objects.equals(this.messageTypes, viewFilter.messageTypes) &&
+            Objects.equals(this.divisionIds, viewFilter.divisionIds) &&
+            Objects.equals(this.surveyFormIds, viewFilter.surveyFormIds) &&
+            Objects.equals(this.surveyTotalScore, viewFilter.surveyTotalScore) &&
+            Objects.equals(this.surveyNpsScore, viewFilter.surveyNpsScore) &&
+            Objects.equals(this.mos, viewFilter.mos) &&
+            Objects.equals(this.surveyQuestionGroupScore, viewFilter.surveyQuestionGroupScore) &&
+            Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore) &&
+            Objects.equals(this.surveyFormContextIds, viewFilter.surveyFormContextIds) &&
+            Objects.equals(this.conversationIds, viewFilter.conversationIds) &&
+            Objects.equals(this.sipCallIds, viewFilter.sipCallIds) &&
+            Objects.equals(this.isEnded, viewFilter.isEnded) &&
+            Objects.equals(this.isSurveyed, viewFilter.isSurveyed) &&
+            Objects.equals(this.surveyScores, viewFilter.surveyScores) &&
+            Objects.equals(this.promoterScores, viewFilter.promoterScores) &&
+            Objects.equals(this.isCampaign, viewFilter.isCampaign) &&
+            Objects.equals(this.surveyStatuses, viewFilter.surveyStatuses) &&
+            Objects.equals(this.conversationProperties, viewFilter.conversationProperties) &&
+            Objects.equals(this.isBlindTransferred, viewFilter.isBlindTransferred) &&
+            Objects.equals(this.isConsulted, viewFilter.isConsulted) &&
+            Objects.equals(this.isConsultTransferred, viewFilter.isConsultTransferred) &&
+            Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants) &&
+            Objects.equals(this.flowIds, viewFilter.flowIds) &&
+            Objects.equals(this.flowOutcomeIds, viewFilter.flowOutcomeIds) &&
+            Objects.equals(this.flowOutcomeValues, viewFilter.flowOutcomeValues) &&
+            Objects.equals(this.flowDestinationTypes, viewFilter.flowDestinationTypes) &&
+            Objects.equals(this.flowDisconnectReasons, viewFilter.flowDisconnectReasons) &&
+            Objects.equals(this.flowTypes, viewFilter.flowTypes) &&
+            Objects.equals(this.flowEntryTypes, viewFilter.flowEntryTypes) &&
+            Objects.equals(this.flowEntryReasons, viewFilter.flowEntryReasons) &&
+            Objects.equals(this.flowVersions, viewFilter.flowVersions) &&
+            Objects.equals(this.groupIds, viewFilter.groupIds) &&
+            Objects.equals(this.hasJourneyCustomerId, viewFilter.hasJourneyCustomerId) &&
+            Objects.equals(this.hasJourneyActionMapId, viewFilter.hasJourneyActionMapId) &&
+            Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId) &&
+            Objects.equals(this.hasMedia, viewFilter.hasMedia) &&
+            Objects.equals(this.roleIds, viewFilter.roleIds) &&
+            Objects.equals(this.reportsTos, viewFilter.reportsTos) &&
+            Objects.equals(this.locationIds, viewFilter.locationIds) &&
+            Objects.equals(this.flowOutTypes, viewFilter.flowOutTypes) &&
+            Objects.equals(this.providerList, viewFilter.providerList) &&
+            Objects.equals(this.callbackNumberList, viewFilter.callbackNumberList) &&
+            Objects.equals(this.callbackInterval, viewFilter.callbackInterval) &&
+            Objects.equals(this.usedRoutingTypes, viewFilter.usedRoutingTypes) &&
+            Objects.equals(this.requestedRoutingTypes, viewFilter.requestedRoutingTypes) &&
+            Objects.equals(this.hasAgentAssistId, viewFilter.hasAgentAssistId) &&
+            Objects.equals(this.transcripts, viewFilter.transcripts) &&
+            Objects.equals(this.transcriptLanguages, viewFilter.transcriptLanguages) &&
+            Objects.equals(this.participantPurposes, viewFilter.participantPurposes) &&
+            Objects.equals(this.showFirstQueue, viewFilter.showFirstQueue) &&
+            Objects.equals(this.teamIds, viewFilter.teamIds) &&
+            Objects.equals(this.filterUsersByTeamIds, viewFilter.filterUsersByTeamIds) &&
+            Objects.equals(this.journeyActionMapIds, viewFilter.journeyActionMapIds) &&
+            Objects.equals(this.journeyOutcomeIds, viewFilter.journeyOutcomeIds) &&
+            Objects.equals(this.journeySegmentIds, viewFilter.journeySegmentIds) &&
+            Objects.equals(this.journeyActionMapTypes, viewFilter.journeyActionMapTypes) &&
+            Objects.equals(this.developmentRoleList, viewFilter.developmentRoleList) &&
+            Objects.equals(this.developmentTypeList, viewFilter.developmentTypeList) &&
+            Objects.equals(this.developmentStatusList, viewFilter.developmentStatusList) &&
+            Objects.equals(this.developmentModuleIds, viewFilter.developmentModuleIds) &&
+            Objects.equals(this.developmentActivityOverdue, viewFilter.developmentActivityOverdue) &&
+            Objects.equals(this.customerSentimentScore, viewFilter.customerSentimentScore) &&
+            Objects.equals(this.customerSentimentTrend, viewFilter.customerSentimentTrend) &&
+            Objects.equals(this.flowTransferTargets, viewFilter.flowTransferTargets) &&
+            Objects.equals(this.developmentName, viewFilter.developmentName) &&
+            Objects.equals(this.topicIds, viewFilter.topicIds) &&
+            Objects.equals(this.externalTags, viewFilter.externalTags) &&
+            Objects.equals(this.isNotResponding, viewFilter.isNotResponding) &&
+            Objects.equals(this.isAuthenticated, viewFilter.isAuthenticated) &&
+            Objects.equals(this.botIds, viewFilter.botIds) &&
+            Objects.equals(this.botVersions, viewFilter.botVersions) &&
+            Objects.equals(this.botMessageTypes, viewFilter.botMessageTypes) &&
+            Objects.equals(this.botProviderList, viewFilter.botProviderList) &&
+            Objects.equals(this.botProductList, viewFilter.botProductList) &&
+            Objects.equals(this.botRecognitionFailureReasonList, viewFilter.botRecognitionFailureReasonList) &&
+            Objects.equals(this.botIntentList, viewFilter.botIntentList) &&
+            Objects.equals(this.botFinalIntentList, viewFilter.botFinalIntentList) &&
+            Objects.equals(this.botSlotList, viewFilter.botSlotList) &&
+            Objects.equals(this.botResultList, viewFilter.botResultList) &&
+            Objects.equals(this.blockedReasons, viewFilter.blockedReasons) &&
+            Objects.equals(this.isRecorded, viewFilter.isRecorded) &&
+            Objects.equals(this.hasEvaluation, viewFilter.hasEvaluation) &&
+            Objects.equals(this.hasScoredEvaluation, viewFilter.hasScoredEvaluation) &&
+            Objects.equals(this.emailDeliveryStatusList, viewFilter.emailDeliveryStatusList) &&
+            Objects.equals(this.isAgentOwnedCallback, viewFilter.isAgentOwnedCallback) &&
+            Objects.equals(this.agentCallbackOwnerIds, viewFilter.agentCallbackOwnerIds) &&
+            Objects.equals(this.transcriptTopics, viewFilter.transcriptTopics) &&
+            Objects.equals(this.journeyFrequencyCapReasons, viewFilter.journeyFrequencyCapReasons) &&
+            Objects.equals(this.journeyBlockingActionMapIds, viewFilter.journeyBlockingActionMapIds) &&
+            Objects.equals(this.journeyActionTargetIds, viewFilter.journeyActionTargetIds) &&
+            Objects.equals(this.journeyBlockingScheduleGroupIds, viewFilter.journeyBlockingScheduleGroupIds) &&
+            Objects.equals(this.journeyBlockingEmergencyScheduleGroupIds, viewFilter.journeyBlockingEmergencyScheduleGroupIds) &&
+            Objects.equals(this.journeyUrlEqualConditions, viewFilter.journeyUrlEqualConditions) &&
+            Objects.equals(this.journeyUrlNotEqualConditions, viewFilter.journeyUrlNotEqualConditions) &&
+            Objects.equals(this.journeyUrlStartsWithConditions, viewFilter.journeyUrlStartsWithConditions) &&
+            Objects.equals(this.journeyUrlEndsWithConditions, viewFilter.journeyUrlEndsWithConditions) &&
+            Objects.equals(this.journeyUrlContainsAnyConditions, viewFilter.journeyUrlContainsAnyConditions) &&
+            Objects.equals(this.journeyUrlNotContainsAnyConditions, viewFilter.journeyUrlNotContainsAnyConditions) &&
+            Objects.equals(this.journeyUrlContainsAllConditions, viewFilter.journeyUrlContainsAllConditions) &&
+            Objects.equals(this.journeyUrlNotContainsAllConditions, viewFilter.journeyUrlNotContainsAllConditions) &&
+            Objects.equals(this.flowMilestoneIds, viewFilter.flowMilestoneIds) &&
+            Objects.equals(this.isAssessmentPassed, viewFilter.isAssessmentPassed) &&
+            Objects.equals(this.conversationInitiators, viewFilter.conversationInitiators) &&
+            Objects.equals(this.hasCustomerParticipated, viewFilter.hasCustomerParticipated) &&
+            Objects.equals(this.isAcdInteraction, viewFilter.isAcdInteraction);
   }
 
   @Override

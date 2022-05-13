@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The ID of the shift trade
    **/
@@ -119,7 +120,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.tradeId = tradeId;
   }
 
-  
+
   /**
    * Whether this is a one sided shift trade
    **/
@@ -137,7 +138,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.oneSided = oneSided;
   }
 
-  
+
   /**
    * The new state of the shift trade, null if there was no change
    **/
@@ -155,7 +156,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.newState = newState;
   }
 
-  
+
   /**
    * The user who initiated the shift trade
    **/
@@ -173,7 +174,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.initiatingUser = initiatingUser;
   }
 
-  
+
   /**
    * The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -191,7 +192,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.initiatingShiftDate = initiatingShiftDate;
   }
 
-  
+
   /**
    * The user on the receiving side of this shift trade (null if not matched)
    **/
@@ -209,7 +210,7 @@ public class ShiftTradeNotification  implements Serializable {
     this.receivingUser = receivingUser;
   }
 
-  
+
   /**
    * The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -227,7 +228,6 @@ public class ShiftTradeNotification  implements Serializable {
     this.receivingShiftDate = receivingShiftDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -238,14 +238,15 @@ public class ShiftTradeNotification  implements Serializable {
       return false;
     }
     ShiftTradeNotification shiftTradeNotification = (ShiftTradeNotification) o;
+
     return Objects.equals(this.weekDate, shiftTradeNotification.weekDate) &&
-        Objects.equals(this.tradeId, shiftTradeNotification.tradeId) &&
-        Objects.equals(this.oneSided, shiftTradeNotification.oneSided) &&
-        Objects.equals(this.newState, shiftTradeNotification.newState) &&
-        Objects.equals(this.initiatingUser, shiftTradeNotification.initiatingUser) &&
-        Objects.equals(this.initiatingShiftDate, shiftTradeNotification.initiatingShiftDate) &&
-        Objects.equals(this.receivingUser, shiftTradeNotification.receivingUser) &&
-        Objects.equals(this.receivingShiftDate, shiftTradeNotification.receivingShiftDate);
+            Objects.equals(this.tradeId, shiftTradeNotification.tradeId) &&
+            Objects.equals(this.oneSided, shiftTradeNotification.oneSided) &&
+            Objects.equals(this.newState, shiftTradeNotification.newState) &&
+            Objects.equals(this.initiatingUser, shiftTradeNotification.initiatingUser) &&
+            Objects.equals(this.initiatingShiftDate, shiftTradeNotification.initiatingShiftDate) &&
+            Objects.equals(this.receivingUser, shiftTradeNotification.receivingUser) &&
+            Objects.equals(this.receivingShiftDate, shiftTradeNotification.receivingShiftDate);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing total(Long total) {
@@ -103,7 +104,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.total = total;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public NluDomainVersionListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class NluDomainVersionListing  implements Serializable, PagedResource<Nlu
       return false;
     }
     NluDomainVersionListing nluDomainVersionListing = (NluDomainVersionListing) o;
+
     return Objects.equals(this.entities, nluDomainVersionListing.entities) &&
-        Objects.equals(this.pageSize, nluDomainVersionListing.pageSize) &&
-        Objects.equals(this.pageNumber, nluDomainVersionListing.pageNumber) &&
-        Objects.equals(this.total, nluDomainVersionListing.total) &&
-        Objects.equals(this.lastUri, nluDomainVersionListing.lastUri) &&
-        Objects.equals(this.firstUri, nluDomainVersionListing.firstUri) &&
-        Objects.equals(this.selfUri, nluDomainVersionListing.selfUri) &&
-        Objects.equals(this.previousUri, nluDomainVersionListing.previousUri) &&
-        Objects.equals(this.nextUri, nluDomainVersionListing.nextUri) &&
-        Objects.equals(this.pageCount, nluDomainVersionListing.pageCount);
+            Objects.equals(this.pageSize, nluDomainVersionListing.pageSize) &&
+            Objects.equals(this.pageNumber, nluDomainVersionListing.pageNumber) &&
+            Objects.equals(this.total, nluDomainVersionListing.total) &&
+            Objects.equals(this.lastUri, nluDomainVersionListing.lastUri) &&
+            Objects.equals(this.firstUri, nluDomainVersionListing.firstUri) &&
+            Objects.equals(this.selfUri, nluDomainVersionListing.selfUri) &&
+            Objects.equals(this.previousUri, nluDomainVersionListing.previousUri) &&
+            Objects.equals(this.nextUri, nluDomainVersionListing.nextUri) &&
+            Objects.equals(this.pageCount, nluDomainVersionListing.pageCount);
   }
 
   @Override

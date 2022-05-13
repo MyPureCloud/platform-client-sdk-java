@@ -31,10 +31,10 @@ title: Metabase
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -44,19 +44,19 @@ title: Metabase
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EXTERNAL | &quot;EXTERNAL&quot; |
-| EXTERNAL_PCV | &quot;EXTERNAL_PCV&quot; |
-| EXTERNAL_PCV_AWS | &quot;EXTERNAL_PCV_AWS&quot; |
-| EXTERNAL_BYOC_CARRIER | &quot;EXTERNAL_BYOC_CARRIER&quot; |
-| EXTERNAL_BYOC_PBX | &quot;EXTERNAL_BYOC_PBX&quot; |
-| STATION_CDM | &quot;STATION_CDM&quot; |
-| STATION_CDM_WEBRTC | &quot;STATION_CDM_WEBRTC&quot; |
-| STATION | &quot;STATION&quot; |
-| TIE | &quot;TIE&quot; |
-| TIE_DIRECT | &quot;TIE_DIRECT&quot; |
-| TIE_INDIRECT | &quot;TIE_INDIRECT&quot; |
-| TIE_CLOUD_PROXY | &quot;TIE_CLOUD_PROXY&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EXTERNAL | &quot;EXTERNAL&quot; | 
+| EXTERNAL_PCV | &quot;EXTERNAL_PCV&quot; | 
+| EXTERNAL_PCV_AWS | &quot;EXTERNAL_PCV_AWS&quot; | 
+| EXTERNAL_BYOC_CARRIER | &quot;EXTERNAL_BYOC_CARRIER&quot; | 
+| EXTERNAL_BYOC_PBX | &quot;EXTERNAL_BYOC_PBX&quot; | 
+| STATION_CDM | &quot;STATION_CDM&quot; | 
+| STATION_CDM_WEBRTC | &quot;STATION_CDM_WEBRTC&quot; | 
+| STATION | &quot;STATION&quot; | 
+| TIE | &quot;TIE&quot; | 
+| TIE_DIRECT | &quot;TIE_DIRECT&quot; | 
+| TIE_INDIRECT | &quot;TIE_INDIRECT&quot; | 
+| TIE_CLOUD_PROXY | &quot;TIE_CLOUD_PROXY&quot; | 
 {: class="table table-striped"}
 
 

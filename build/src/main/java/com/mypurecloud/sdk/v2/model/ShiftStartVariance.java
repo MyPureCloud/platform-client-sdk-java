@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -95,7 +95,7 @@ public class ShiftStartVariance  implements Serializable {
     this.applicableDays = applicableDays;
   }
 
-  
+
   /**
    * Maximum variance in minutes across shift starts
    **/
@@ -113,7 +113,6 @@ public class ShiftStartVariance  implements Serializable {
     this.maxShiftStartVarianceMinutes = maxShiftStartVarianceMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,8 +123,9 @@ public class ShiftStartVariance  implements Serializable {
       return false;
     }
     ShiftStartVariance shiftStartVariance = (ShiftStartVariance) o;
+
     return Objects.equals(this.applicableDays, shiftStartVariance.applicableDays) &&
-        Objects.equals(this.maxShiftStartVarianceMinutes, shiftStartVariance.maxShiftStartVarianceMinutes);
+            Objects.equals(this.maxShiftStartVarianceMinutes, shiftStartVariance.maxShiftStartVarianceMinutes);
   }
 
   @Override

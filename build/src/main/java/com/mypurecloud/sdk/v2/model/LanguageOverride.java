@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class LanguageOverride  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * The ID of the TTS engine to use for this language override
    **/
@@ -60,7 +61,7 @@ public class LanguageOverride  implements Serializable {
     this.engine = engine;
   }
 
-  
+
   /**
    * The ID of the voice to use for this language override. The voice must be supported by the chosen engine.
    **/
@@ -78,7 +79,6 @@ public class LanguageOverride  implements Serializable {
     this.voice = voice;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class LanguageOverride  implements Serializable {
       return false;
     }
     LanguageOverride languageOverride = (LanguageOverride) o;
+
     return Objects.equals(this.language, languageOverride.language) &&
-        Objects.equals(this.engine, languageOverride.engine) &&
-        Objects.equals(this.voice, languageOverride.voice);
+            Objects.equals(this.engine, languageOverride.engine) &&
+            Objects.equals(this.voice, languageOverride.voice);
   }
 
   @Override

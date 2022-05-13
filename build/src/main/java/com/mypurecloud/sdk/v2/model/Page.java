@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class Page  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Page name(String name) {
@@ -57,7 +58,7 @@ public class Page  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Page versionId(String versionId) {
@@ -74,7 +75,7 @@ public class Page  implements Serializable {
     this.versionId = versionId;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -92,7 +93,7 @@ public class Page  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -110,7 +111,7 @@ public class Page  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    **/
   public Page rootContainer(Map<String, Object> rootContainer) {
@@ -127,7 +128,7 @@ public class Page  implements Serializable {
     this.rootContainer = rootContainer;
   }
 
-  
+
   /**
    **/
   public Page properties(Map<String, Object> properties) {
@@ -144,14 +145,13 @@ public class Page  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,14 +162,15 @@ public class Page  implements Serializable {
       return false;
     }
     Page page = (Page) o;
+
     return Objects.equals(this.id, page.id) &&
-        Objects.equals(this.name, page.name) &&
-        Objects.equals(this.versionId, page.versionId) &&
-        Objects.equals(this.createdDate, page.createdDate) &&
-        Objects.equals(this.modifiedDate, page.modifiedDate) &&
-        Objects.equals(this.rootContainer, page.rootContainer) &&
-        Objects.equals(this.properties, page.properties) &&
-        Objects.equals(this.selfUri, page.selfUri);
+            Objects.equals(this.name, page.name) &&
+            Objects.equals(this.versionId, page.versionId) &&
+            Objects.equals(this.createdDate, page.createdDate) &&
+            Objects.equals(this.modifiedDate, page.modifiedDate) &&
+            Objects.equals(this.rootContainer, page.rootContainer) &&
+            Objects.equals(this.properties, page.properties) &&
+            Objects.equals(this.selfUri, page.selfUri);
   }
 
   @Override

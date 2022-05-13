@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class AvailableTimeOffRange  implements Serializable {
     this.timeOffLimit = timeOffLimit;
   }
 
-  
+
   /**
    * Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -115,7 +116,7 @@ public class AvailableTimeOffRange  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Granularity choice for time off limit
    **/
@@ -133,7 +134,7 @@ public class AvailableTimeOffRange  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * The list of available time off values in minutes per granularity interval
    **/
@@ -151,7 +152,7 @@ public class AvailableTimeOffRange  implements Serializable {
     this.availableMinutesPerInterval = availableMinutesPerInterval;
   }
 
-  
+
   /**
    * The current number of waitlisted time off requests for every interval per granularity
    **/
@@ -169,7 +170,7 @@ public class AvailableTimeOffRange  implements Serializable {
     this.waitlistedRequestsPerInterval = waitlistedRequestsPerInterval;
   }
 
-  
+
   /**
    * Whether the time off request can be waitlisted
    **/
@@ -187,7 +188,6 @@ public class AvailableTimeOffRange  implements Serializable {
     this.waitlistEnabled = waitlistEnabled;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,12 +198,13 @@ public class AvailableTimeOffRange  implements Serializable {
       return false;
     }
     AvailableTimeOffRange availableTimeOffRange = (AvailableTimeOffRange) o;
+
     return Objects.equals(this.timeOffLimit, availableTimeOffRange.timeOffLimit) &&
-        Objects.equals(this.startDate, availableTimeOffRange.startDate) &&
-        Objects.equals(this.granularity, availableTimeOffRange.granularity) &&
-        Objects.equals(this.availableMinutesPerInterval, availableTimeOffRange.availableMinutesPerInterval) &&
-        Objects.equals(this.waitlistedRequestsPerInterval, availableTimeOffRange.waitlistedRequestsPerInterval) &&
-        Objects.equals(this.waitlistEnabled, availableTimeOffRange.waitlistEnabled);
+            Objects.equals(this.startDate, availableTimeOffRange.startDate) &&
+            Objects.equals(this.granularity, availableTimeOffRange.granularity) &&
+            Objects.equals(this.availableMinutesPerInterval, availableTimeOffRange.availableMinutesPerInterval) &&
+            Objects.equals(this.waitlistedRequestsPerInterval, availableTimeOffRange.waitlistedRequestsPerInterval) &&
+            Objects.equals(this.waitlistEnabled, availableTimeOffRange.waitlistEnabled);
   }
 
   @Override

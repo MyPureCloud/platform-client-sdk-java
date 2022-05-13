@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class LexSlot  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The slot description
    **/
@@ -61,7 +62,7 @@ public class LexSlot  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The slot type
    **/
@@ -79,7 +80,7 @@ public class LexSlot  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The priority of the slot
    **/
@@ -97,7 +98,6 @@ public class LexSlot  implements Serializable {
     this.priority = priority;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class LexSlot  implements Serializable {
       return false;
     }
     LexSlot lexSlot = (LexSlot) o;
+
     return Objects.equals(this.name, lexSlot.name) &&
-        Objects.equals(this.description, lexSlot.description) &&
-        Objects.equals(this.type, lexSlot.type) &&
-        Objects.equals(this.priority, lexSlot.priority);
+            Objects.equals(this.description, lexSlot.description) &&
+            Objects.equals(this.type, lexSlot.type) &&
+            Objects.equals(this.priority, lexSlot.priority);
   }
 
   @Override

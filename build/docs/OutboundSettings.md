@@ -29,9 +29,9 @@ title: OutboundSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALL_CALLS | &quot;ALL_CALLS&quot; |
-| CALLS_THAT_REACHED_QUEUE | &quot;CALLS_THAT_REACHED_QUEUE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALL_CALLS | &quot;ALL_CALLS&quot; | 
+| CALLS_THAT_REACHED_QUEUE | &quot;CALLS_THAT_REACHED_QUEUE&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -172,7 +173,7 @@ public class Campaign  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the Campaign.
    **/
@@ -190,21 +191,21 @@ public class Campaign  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -222,7 +223,7 @@ public class Campaign  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The ContactList for this Campaign to dial.
    **/
@@ -240,7 +241,7 @@ public class Campaign  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   /**
    * The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
    **/
@@ -258,7 +259,7 @@ public class Campaign  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The strategy this Campaign will use for dialing.
    **/
@@ -276,7 +277,7 @@ public class Campaign  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-  
+
   /**
    * The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
    **/
@@ -294,7 +295,7 @@ public class Campaign  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * The EdgeGroup that will place the calls. Required for all dialing modes except preview.
    **/
@@ -312,7 +313,7 @@ public class Campaign  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-  
+
   /**
    * The identifier of the site to be used for dialing; can be set in place of an edge group.
    **/
@@ -330,7 +331,7 @@ public class Campaign  implements Serializable {
     this.site = site;
   }
 
-  
+
   /**
    * The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
    **/
@@ -348,7 +349,7 @@ public class Campaign  implements Serializable {
     this.campaignStatus = campaignStatus;
   }
 
-  
+
   /**
    * The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.
    **/
@@ -366,7 +367,7 @@ public class Campaign  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-  
+
   /**
    * The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
    **/
@@ -384,7 +385,7 @@ public class Campaign  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-  
+
   /**
    * DncLists for this Campaign to check before placing a call.
    **/
@@ -402,7 +403,7 @@ public class Campaign  implements Serializable {
     this.dncLists = dncLists;
   }
 
-  
+
   /**
    * The callable time set for this campaign to check before placing a call.
    **/
@@ -420,7 +421,7 @@ public class Campaign  implements Serializable {
     this.callableTimeSet = callableTimeSet;
   }
 
-  
+
   /**
    * The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
    **/
@@ -438,14 +439,14 @@ public class Campaign  implements Serializable {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A list of current error conditions associated with the campaign.")
   @JsonProperty("errors")
   public List<RestErrorDetail> getErrors() {
     return errors;
   }
 
-  
+
   /**
    * The caller id name to be displayed on the outbound call.
    **/
@@ -463,7 +464,7 @@ public class Campaign  implements Serializable {
     this.callerName = callerName;
   }
 
-  
+
   /**
    * The caller id phone number to be displayed on the outbound call.
    **/
@@ -481,7 +482,7 @@ public class Campaign  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    * The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.
    **/
@@ -499,7 +500,7 @@ public class Campaign  implements Serializable {
     this.outboundLineCount = outboundLineCount;
   }
 
-  
+
   /**
    * Rule sets to be applied while this campaign is dialing.
    **/
@@ -517,7 +518,7 @@ public class Campaign  implements Serializable {
     this.ruleSets = ruleSets;
   }
 
-  
+
   /**
    * Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.
    **/
@@ -535,7 +536,7 @@ public class Campaign  implements Serializable {
     this.skipPreviewDisabled = skipPreviewDisabled;
   }
 
-  
+
   /**
    * The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.
    **/
@@ -553,7 +554,7 @@ public class Campaign  implements Serializable {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
   }
 
-  
+
   /**
    * Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.
    **/
@@ -571,7 +572,7 @@ public class Campaign  implements Serializable {
     this.alwaysRunning = alwaysRunning;
   }
 
-  
+
   /**
    * The order in which to sort contacts for dialing, based on a column.
    **/
@@ -589,7 +590,7 @@ public class Campaign  implements Serializable {
     this.contactSort = contactSort;
   }
 
-  
+
   /**
    * The order in which to sort contacts for dialing, based on up to four columns.
    **/
@@ -607,7 +608,7 @@ public class Campaign  implements Serializable {
     this.contactSorts = contactSorts;
   }
 
-  
+
   /**
    * How long to wait before dispositioning a call as 'no-answer'. Default 30 seconds. Only applicable to non-preview campaigns.
    **/
@@ -625,7 +626,7 @@ public class Campaign  implements Serializable {
     this.noAnswerTimeout = noAnswerTimeout;
   }
 
-  
+
   /**
    * The language the edge will use to analyze the call.
    **/
@@ -643,7 +644,7 @@ public class Campaign  implements Serializable {
     this.callAnalysisLanguage = callAnalysisLanguage;
   }
 
-  
+
   /**
    * The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.
    **/
@@ -661,7 +662,7 @@ public class Campaign  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
    **/
@@ -679,7 +680,7 @@ public class Campaign  implements Serializable {
     this.contactListFilters = contactListFilters;
   }
 
-  
+
   /**
    * The division this campaign belongs to.
    **/
@@ -697,14 +698,13 @@ public class Campaign  implements Serializable {
     this.division = division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -715,39 +715,40 @@ public class Campaign  implements Serializable {
       return false;
     }
     Campaign campaign = (Campaign) o;
+
     return Objects.equals(this.id, campaign.id) &&
-        Objects.equals(this.name, campaign.name) &&
-        Objects.equals(this.dateCreated, campaign.dateCreated) &&
-        Objects.equals(this.dateModified, campaign.dateModified) &&
-        Objects.equals(this.version, campaign.version) &&
-        Objects.equals(this.contactList, campaign.contactList) &&
-        Objects.equals(this.queue, campaign.queue) &&
-        Objects.equals(this.dialingMode, campaign.dialingMode) &&
-        Objects.equals(this.script, campaign.script) &&
-        Objects.equals(this.edgeGroup, campaign.edgeGroup) &&
-        Objects.equals(this.site, campaign.site) &&
-        Objects.equals(this.campaignStatus, campaign.campaignStatus) &&
-        Objects.equals(this.phoneColumns, campaign.phoneColumns) &&
-        Objects.equals(this.abandonRate, campaign.abandonRate) &&
-        Objects.equals(this.dncLists, campaign.dncLists) &&
-        Objects.equals(this.callableTimeSet, campaign.callableTimeSet) &&
-        Objects.equals(this.callAnalysisResponseSet, campaign.callAnalysisResponseSet) &&
-        Objects.equals(this.errors, campaign.errors) &&
-        Objects.equals(this.callerName, campaign.callerName) &&
-        Objects.equals(this.callerAddress, campaign.callerAddress) &&
-        Objects.equals(this.outboundLineCount, campaign.outboundLineCount) &&
-        Objects.equals(this.ruleSets, campaign.ruleSets) &&
-        Objects.equals(this.skipPreviewDisabled, campaign.skipPreviewDisabled) &&
-        Objects.equals(this.previewTimeOutSeconds, campaign.previewTimeOutSeconds) &&
-        Objects.equals(this.alwaysRunning, campaign.alwaysRunning) &&
-        Objects.equals(this.contactSort, campaign.contactSort) &&
-        Objects.equals(this.contactSorts, campaign.contactSorts) &&
-        Objects.equals(this.noAnswerTimeout, campaign.noAnswerTimeout) &&
-        Objects.equals(this.callAnalysisLanguage, campaign.callAnalysisLanguage) &&
-        Objects.equals(this.priority, campaign.priority) &&
-        Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
-        Objects.equals(this.division, campaign.division) &&
-        Objects.equals(this.selfUri, campaign.selfUri);
+            Objects.equals(this.name, campaign.name) &&
+            Objects.equals(this.dateCreated, campaign.dateCreated) &&
+            Objects.equals(this.dateModified, campaign.dateModified) &&
+            Objects.equals(this.version, campaign.version) &&
+            Objects.equals(this.contactList, campaign.contactList) &&
+            Objects.equals(this.queue, campaign.queue) &&
+            Objects.equals(this.dialingMode, campaign.dialingMode) &&
+            Objects.equals(this.script, campaign.script) &&
+            Objects.equals(this.edgeGroup, campaign.edgeGroup) &&
+            Objects.equals(this.site, campaign.site) &&
+            Objects.equals(this.campaignStatus, campaign.campaignStatus) &&
+            Objects.equals(this.phoneColumns, campaign.phoneColumns) &&
+            Objects.equals(this.abandonRate, campaign.abandonRate) &&
+            Objects.equals(this.dncLists, campaign.dncLists) &&
+            Objects.equals(this.callableTimeSet, campaign.callableTimeSet) &&
+            Objects.equals(this.callAnalysisResponseSet, campaign.callAnalysisResponseSet) &&
+            Objects.equals(this.errors, campaign.errors) &&
+            Objects.equals(this.callerName, campaign.callerName) &&
+            Objects.equals(this.callerAddress, campaign.callerAddress) &&
+            Objects.equals(this.outboundLineCount, campaign.outboundLineCount) &&
+            Objects.equals(this.ruleSets, campaign.ruleSets) &&
+            Objects.equals(this.skipPreviewDisabled, campaign.skipPreviewDisabled) &&
+            Objects.equals(this.previewTimeOutSeconds, campaign.previewTimeOutSeconds) &&
+            Objects.equals(this.alwaysRunning, campaign.alwaysRunning) &&
+            Objects.equals(this.contactSort, campaign.contactSort) &&
+            Objects.equals(this.contactSorts, campaign.contactSorts) &&
+            Objects.equals(this.noAnswerTimeout, campaign.noAnswerTimeout) &&
+            Objects.equals(this.callAnalysisLanguage, campaign.callAnalysisLanguage) &&
+            Objects.equals(this.priority, campaign.priority) &&
+            Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
+            Objects.equals(this.division, campaign.division) &&
+            Objects.equals(this.selfUri, campaign.selfUri);
   }
 
   @Override

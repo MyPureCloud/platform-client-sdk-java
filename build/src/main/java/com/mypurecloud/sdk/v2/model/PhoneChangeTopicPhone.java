@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicPhoneStatus;
@@ -44,7 +45,7 @@ public class PhoneChangeTopicPhone  implements Serializable {
     this.userAgentInfo = userAgentInfo;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhone id(String id) {
@@ -61,7 +62,7 @@ public class PhoneChangeTopicPhone  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhone status(PhoneChangeTopicPhoneStatus status) {
@@ -78,7 +79,7 @@ public class PhoneChangeTopicPhone  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhone secondaryStatus(PhoneChangeTopicPhoneStatus secondaryStatus) {
@@ -95,7 +96,6 @@ public class PhoneChangeTopicPhone  implements Serializable {
     this.secondaryStatus = secondaryStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class PhoneChangeTopicPhone  implements Serializable {
       return false;
     }
     PhoneChangeTopicPhone phoneChangeTopicPhone = (PhoneChangeTopicPhone) o;
+
     return Objects.equals(this.userAgentInfo, phoneChangeTopicPhone.userAgentInfo) &&
-        Objects.equals(this.id, phoneChangeTopicPhone.id) &&
-        Objects.equals(this.status, phoneChangeTopicPhone.status) &&
-        Objects.equals(this.secondaryStatus, phoneChangeTopicPhone.secondaryStatus);
+            Objects.equals(this.id, phoneChangeTopicPhone.id) &&
+            Objects.equals(this.status, phoneChangeTopicPhone.status) &&
+            Objects.equals(this.secondaryStatus, phoneChangeTopicPhone.secondaryStatus);
   }
 
   @Override

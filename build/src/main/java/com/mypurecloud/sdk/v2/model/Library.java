@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,7 +87,7 @@ public class Library  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The library name.
    **/
@@ -104,28 +105,28 @@ public class Library  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current version for this resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that created the library.")
   @JsonProperty("createdBy")
   public User getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   /**
    * This value is deprecated. Responses representing message templates may be added to any library.
    **/
@@ -143,14 +144,13 @@ public class Library  implements Serializable {
     this.responseType = responseType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,13 +161,14 @@ public class Library  implements Serializable {
       return false;
     }
     Library library = (Library) o;
+
     return Objects.equals(this.id, library.id) &&
-        Objects.equals(this.name, library.name) &&
-        Objects.equals(this.version, library.version) &&
-        Objects.equals(this.createdBy, library.createdBy) &&
-        Objects.equals(this.dateCreated, library.dateCreated) &&
-        Objects.equals(this.responseType, library.responseType) &&
-        Objects.equals(this.selfUri, library.selfUri);
+            Objects.equals(this.name, library.name) &&
+            Objects.equals(this.version, library.version) &&
+            Objects.equals(this.createdBy, library.createdBy) &&
+            Objects.equals(this.dateCreated, library.dateCreated) &&
+            Objects.equals(this.responseType, library.responseType) &&
+            Objects.equals(this.selfUri, library.selfUri);
   }
 
   @Override

@@ -27,10 +27,10 @@ title: WfmUserNotificationTopicWfmUserNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SHIFTTRADE | &quot;ShiftTrade&quot; |
-| TIMEOFFREQUEST | &quot;TimeOffRequest&quot; |
-| ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SHIFTTRADE | &quot;ShiftTrade&quot; | 
+| TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
+| ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
 {: class="table table-striped"}
 
 

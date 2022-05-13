@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -135,7 +136,7 @@ public class AuditQuerySort  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Sort Order
    **/
@@ -153,7 +154,6 @@ public class AuditQuerySort  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,8 +164,9 @@ public class AuditQuerySort  implements Serializable {
       return false;
     }
     AuditQuerySort auditQuerySort = (AuditQuerySort) o;
+
     return Objects.equals(this.name, auditQuerySort.name) &&
-        Objects.equals(this.sortOrder, auditQuerySort.sortOrder);
+            Objects.equals(this.sortOrder, auditQuerySort.sortOrder);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class BulkUpdateShiftTradeStateRequestItem  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The new state to set on the shift trade
    **/
@@ -113,7 +114,7 @@ public class BulkUpdateShiftTradeStateRequestItem  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Version metadata for the shift trade
    **/
@@ -131,7 +132,6 @@ public class BulkUpdateShiftTradeStateRequestItem  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,9 +142,10 @@ public class BulkUpdateShiftTradeStateRequestItem  implements Serializable {
       return false;
     }
     BulkUpdateShiftTradeStateRequestItem bulkUpdateShiftTradeStateRequestItem = (BulkUpdateShiftTradeStateRequestItem) o;
+
     return Objects.equals(this.id, bulkUpdateShiftTradeStateRequestItem.id) &&
-        Objects.equals(this.state, bulkUpdateShiftTradeStateRequestItem.state) &&
-        Objects.equals(this.metadata, bulkUpdateShiftTradeStateRequestItem.metadata);
+            Objects.equals(this.state, bulkUpdateShiftTradeStateRequestItem.state) &&
+            Objects.equals(this.metadata, bulkUpdateShiftTradeStateRequestItem.metadata);
   }
 
   @Override

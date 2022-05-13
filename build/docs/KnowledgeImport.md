@@ -29,9 +29,9 @@ title: KnowledgeImport
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CSV | &quot;Csv&quot; |
-| JSONLINES | &quot;JsonLines&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CSV | &quot;Csv&quot; | 
+| JSONLINES | &quot;JsonLines&quot; | 
 {: class="table table-striped"}
 
 
@@ -41,16 +41,16 @@ title: KnowledgeImport
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CREATED | &quot;Created&quot; |
-| VALIDATIONINPROGRESS | &quot;ValidationInProgress&quot; |
-| VALIDATIONCOMPLETED | &quot;ValidationCompleted&quot; |
-| VALIDATIONFAILED | &quot;ValidationFailed&quot; |
-| STARTED | &quot;Started&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| PARTIALCOMPLETED | &quot;PartialCompleted&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CREATED | &quot;Created&quot; | 
+| VALIDATIONINPROGRESS | &quot;ValidationInProgress&quot; | 
+| VALIDATIONCOMPLETED | &quot;ValidationCompleted&quot; | 
+| VALIDATIONFAILED | &quot;ValidationFailed&quot; | 
+| STARTED | &quot;Started&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| PARTIALCOMPLETED | &quot;PartialCompleted&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 
@@ -60,17 +60,17 @@ title: KnowledgeImport
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EN_US | &quot;en-US&quot; |
-| EN_UK | &quot;en-UK&quot; |
-| EN_AU | &quot;en-AU&quot; |
-| DE_DE | &quot;de-DE&quot; |
-| ES_US | &quot;es-US&quot; |
-| ES_ES | &quot;es-ES&quot; |
-| FR_FR | &quot;fr-FR&quot; |
-| PT_BR | &quot;pt-BR&quot; |
-| NL_NL | &quot;nl-NL&quot; |
-| IT_IT | &quot;it-IT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EN_US | &quot;en-US&quot; | 
+| EN_UK | &quot;en-UK&quot; | 
+| EN_AU | &quot;en-AU&quot; | 
+| DE_DE | &quot;de-DE&quot; | 
+| ES_US | &quot;es-US&quot; | 
+| ES_ES | &quot;es-ES&quot; | 
+| FR_FR | &quot;fr-FR&quot; | 
+| PT_BR | &quot;pt-BR&quot; | 
+| NL_NL | &quot;nl-NL&quot; | 
+| IT_IT | &quot;it-IT&quot; | 
 {: class="table table-striped"}
 
 

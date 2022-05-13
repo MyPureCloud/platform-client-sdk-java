@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingNotification;
-import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
-import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
-import com.mypurecloud.sdk.v2.model.AddConversationResponse;
 import com.mypurecloud.sdk.v2.model.AddConversationRequest;
-import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingNotification;
+import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
+import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 
 public class GetCoachingAppointmentsRequest {
-    
+
 	private List<String> userIds;
 	public List<String> getUserIds() {
 		return this.userIds;
@@ -56,7 +56,7 @@ public class GetCoachingAppointmentsRequest {
 	    this.setUserIds(userIds);
 	    return this;
 	} 
-	
+
 	private String interval;
 	public String getInterval() {
 		return this.interval;
@@ -70,7 +70,7 @@ public class GetCoachingAppointmentsRequest {
 	    this.setInterval(interval);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -84,7 +84,7 @@ public class GetCoachingAppointmentsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -98,7 +98,7 @@ public class GetCoachingAppointmentsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private List<String> statuses;
 	public List<String> getStatuses() {
 		return this.statuses;
@@ -114,9 +114,9 @@ public class GetCoachingAppointmentsRequest {
 	} 
 
 	public enum statusesValues { 
-		SCHEDULED("Scheduled"), 
-		INPROGRESS("InProgress"), 
-		COMPLETED("Completed"), 
+		SCHEDULED("Scheduled"),
+		INPROGRESS("InProgress"),
+		COMPLETED("Completed"),
 		INVALIDSCHEDULE("InvalidSchedule");
 
 		private String value;
@@ -144,7 +144,7 @@ public class GetCoachingAppointmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> facilitatorIds;
 	public List<String> getFacilitatorIds() {
 		return this.facilitatorIds;
@@ -158,7 +158,7 @@ public class GetCoachingAppointmentsRequest {
 	    this.setFacilitatorIds(facilitatorIds);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -174,7 +174,7 @@ public class GetCoachingAppointmentsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		DESC("Desc"), 
+		DESC("Desc"),
 		ASC("Asc");
 
 		private String value;
@@ -202,7 +202,7 @@ public class GetCoachingAppointmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> relationships;
 	public List<String> getRelationships() {
 		return this.relationships;
@@ -218,8 +218,8 @@ public class GetCoachingAppointmentsRequest {
 	} 
 
 	public enum relationshipsValues { 
-		CREATOR("Creator"), 
-		FACILITATOR("Facilitator"), 
+		CREATOR("Creator"),
+		FACILITATOR("Facilitator"),
 		ATTENDEE("Attendee");
 
 		private String value;
@@ -247,7 +247,7 @@ public class GetCoachingAppointmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String completionInterval;
 	public String getCompletionInterval() {
 		return this.completionInterval;
@@ -261,7 +261,7 @@ public class GetCoachingAppointmentsRequest {
 	    this.setCompletionInterval(completionInterval);
 	    return this;
 	} 
-	
+
 	private String overdue;
 	public String getOverdue() {
 		return this.overdue;
@@ -277,8 +277,8 @@ public class GetCoachingAppointmentsRequest {
 	} 
 
 	public enum overdueValues { 
-		TRUE("True"), 
-		FALSE("False"), 
+		TRUE("True"),
+		FALSE("False"),
 		ANY("Any");
 
 		private String value;
@@ -306,7 +306,7 @@ public class GetCoachingAppointmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String intervalCondition;
 	public String getIntervalCondition() {
 		return this.intervalCondition;
@@ -322,7 +322,7 @@ public class GetCoachingAppointmentsRequest {
 	} 
 
 	public enum intervalConditionValues { 
-		STARTSIN("StartsIn"), 
+		STARTSIN("StartsIn"),
 		OVERLAPS("Overlaps");
 
 		private String value;
@@ -350,7 +350,7 @@ public class GetCoachingAppointmentsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -379,29 +379,40 @@ public class GetCoachingAppointmentsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/coaching/appointments")
+
                 .withQueryParameters("userIds", "multi", userIds)
         
+
                 .withQueryParameters("interval", "", interval)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("statuses", "multi", statuses)
         
+
                 .withQueryParameters("facilitatorIds", "multi", facilitatorIds)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("relationships", "multi", relationships)
         
+
                 .withQueryParameters("completionInterval", "", completionInterval)
         
+
                 .withQueryParameters("overdue", "", overdue)
         
+
                 .withQueryParameters("intervalCondition", "", intervalCondition)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -412,12 +423,12 @@ public class GetCoachingAppointmentsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(List<String> userIds) {
 	    return new Builder()
 	            .withRequiredParams(userIds);
 	}
-	
+
 
 	public static class Builder {
 		private final GetCoachingAppointmentsRequest request;
@@ -426,31 +437,33 @@ public class GetCoachingAppointmentsRequest {
 			request = new GetCoachingAppointmentsRequest();
 		}
 
-		
+
 		public Builder withUserIds(List<String> userIds) {
 			request.setUserIds(userIds);
 			return this;
 		}
-		
+
 		public Builder withInterval(String interval) {
 			request.setInterval(interval);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withStatuses(List<String> statuses) {
 			request.setStatuses(statuses);
 			return this;
 		}
+
+
 
 		public Builder withStatusesEnumValues(List<statusesValues> statuses) {
 		    List<String> stringList = new ArrayList<>();
@@ -460,26 +473,32 @@ public class GetCoachingAppointmentsRequest {
 	      request.setStatuses(stringList);
 		    return this;
 		}
-		
+
 		public Builder withFacilitatorIds(List<String> facilitatorIds) {
 			request.setFacilitatorIds(facilitatorIds);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withRelationships(List<String> relationships) {
 			request.setRelationships(relationships);
 			return this;
 		}
+
+
 
 		public Builder withRelationshipsEnumValues(List<relationshipsValues> relationships) {
 		    List<String> stringList = new ArrayList<>();
@@ -489,40 +508,48 @@ public class GetCoachingAppointmentsRequest {
 	      request.setRelationships(stringList);
 		    return this;
 		}
-		
+
 		public Builder withCompletionInterval(String completionInterval) {
 			request.setCompletionInterval(completionInterval);
 			return this;
 		}
-		
+
 		public Builder withOverdue(String overdue) {
 			request.setOverdue(overdue);
 			return this;
 		}
 
+
+
+		
 		public Builder withOverdue(overdueValues overdue) {
 		    request.setOverdue(overdue.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withIntervalCondition(String intervalCondition) {
 			request.setIntervalCondition(intervalCondition);
 			return this;
 		}
 
-		public Builder withIntervalCondition(intervalConditionValues intervalCondition) {
-		    request.setIntervalCondition(intervalCondition.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withIntervalCondition(intervalConditionValues intervalCondition) {
+		    request.setIntervalCondition(intervalCondition.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(List<String> userIds) {
 			request.setUserIds(userIds);
-			
+
 			return this;
 		}
-		
+
 
 		public GetCoachingAppointmentsRequest build() {
             

@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class ChatApiAsync {
   private final ApiClient pcapiClient;
 
@@ -40,7 +39,6 @@ public class ChatApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get Chat Settings.
    * 
@@ -116,7 +114,6 @@ public class ChatApiAsync {
     }
   }
 
-  
   /**
    * Patch Chat Settings.
    * 
@@ -192,7 +189,6 @@ public class ChatApiAsync {
     }
   }
 
-  
   /**
    * Update Chat Settings.
    * 
@@ -268,7 +264,6 @@ public class ChatApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AvailableTime;
@@ -34,14 +35,13 @@ public class UserAvailableTimes  implements Serializable {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Periods of availability to schedule coaching appointment for an user")
   @JsonProperty("availableTimes")
   public List<AvailableTime> getAvailableTimes() {
     return availableTimes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -52,8 +52,9 @@ public class UserAvailableTimes  implements Serializable {
       return false;
     }
     UserAvailableTimes userAvailableTimes = (UserAvailableTimes) o;
+
     return Objects.equals(this.user, userAvailableTimes.user) &&
-        Objects.equals(this.availableTimes, userAvailableTimes.availableTimes);
+            Objects.equals(this.availableTimes, userAvailableTimes.availableTimes);
   }
 
   @Override

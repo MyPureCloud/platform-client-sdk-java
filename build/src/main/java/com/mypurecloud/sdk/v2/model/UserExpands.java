@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Geolocation;
@@ -43,56 +44,55 @@ public class UserExpands  implements Serializable {
     return routingStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active presence")
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active 3rd party presence")
   @JsonProperty("integrationPresence")
   public UserPresence getIntegrationPresence() {
     return integrationPresence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
     return conversationSummary;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Determine if out of office is enabled")
   @JsonProperty("outOfOffice")
   public OutOfOffice getOutOfOffice() {
     return outOfOffice;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current geolocation position")
   @JsonProperty("geolocation")
   public Geolocation getGeolocation() {
     return geolocation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Effective, default, and last station information")
   @JsonProperty("station")
   public UserStations getStation() {
     return station;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Roles and permissions assigned to the user")
   @JsonProperty("authorization")
   public UserAuthorization getAuthorization() {
     return authorization;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,14 +103,15 @@ public class UserExpands  implements Serializable {
       return false;
     }
     UserExpands userExpands = (UserExpands) o;
+
     return Objects.equals(this.routingStatus, userExpands.routingStatus) &&
-        Objects.equals(this.presence, userExpands.presence) &&
-        Objects.equals(this.integrationPresence, userExpands.integrationPresence) &&
-        Objects.equals(this.conversationSummary, userExpands.conversationSummary) &&
-        Objects.equals(this.outOfOffice, userExpands.outOfOffice) &&
-        Objects.equals(this.geolocation, userExpands.geolocation) &&
-        Objects.equals(this.station, userExpands.station) &&
-        Objects.equals(this.authorization, userExpands.authorization);
+            Objects.equals(this.presence, userExpands.presence) &&
+            Objects.equals(this.integrationPresence, userExpands.integrationPresence) &&
+            Objects.equals(this.conversationSummary, userExpands.conversationSummary) &&
+            Objects.equals(this.outOfOffice, userExpands.outOfOffice) &&
+            Objects.equals(this.geolocation, userExpands.geolocation) &&
+            Objects.equals(this.station, userExpands.station) &&
+            Objects.equals(this.authorization, userExpands.authorization);
   }
 
   @Override

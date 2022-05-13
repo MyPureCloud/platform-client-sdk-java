@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNotificatio
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader text(String text) {
@@ -111,7 +112,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNotificatio
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader media(V2ConversationMessageTypingEventForUserTopicConversationContentAttachment media) {
@@ -128,7 +129,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNotificatio
     this.media = media;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader parameters(List<V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter> parameters) {
@@ -145,7 +146,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNotificatio
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -156,10 +156,11 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNotificatio
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader = (V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.type) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.text) &&
-        Objects.equals(this.media, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.media) &&
-        Objects.equals(this.parameters, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.parameters);
+            Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.text) &&
+            Objects.equals(this.media, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.media) &&
+            Objects.equals(this.parameters, v2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader.parameters);
   }
 
   @Override

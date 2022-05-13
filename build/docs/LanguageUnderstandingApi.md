@@ -49,8 +49,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an NLU Domain.
 
-
-
 Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}  
 
 Requires ANY permissions: 
@@ -111,8 +109,6 @@ null (empty response body)
 > Void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
 
 Delete the feedback on the NLU Domain Version.
-
-
 
 Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}  
 
@@ -177,8 +173,6 @@ null (empty response body)
 
 Delete an NLU Domain Version
 
-
-
 Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}  
 
 Requires ANY permissions: 
@@ -242,8 +236,6 @@ null (empty response body)
 
 Delete a miner.
 
-
-
 Wraps DELETE /api/v2/languageunderstanding/miners/{minerId}  
 
 Requires ALL permissions: 
@@ -303,8 +295,6 @@ null (empty response body)
 > Void deleteLanguageunderstandingMinerDraft(minerId, draftId)
 
 Delete a draft
-
-
 
 Wraps DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}  
 
@@ -368,8 +358,6 @@ null (empty response body)
 
 Find an NLU Domain.
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}  
 
 Requires ANY permissions: 
@@ -432,8 +420,6 @@ try {
 
 Get all feedback in the given NLU Domain Version.
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/feedback  
 
 Requires ANY permissions: 
@@ -473,7 +459,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 Boolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
-List<String> fields = Arrays.asList("fields_example"); // List<String> | Fields and properties to get, comma-separated
+List<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated
 try {
     NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields);
     System.out.println(result);
@@ -497,7 +483,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **enableCursorPagination** | **Boolean**| Enable Cursor Pagination | [optional] [default to false] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination&#x3D;true | [optional] 
 | **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: version, dateCreated, text, intents 
 {: class="table-striped"}
 
@@ -515,8 +501,6 @@ try {
 > [NluFeedbackResponse](NluFeedbackResponse.html) getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, fields)
 
 Find a Feedback
-
-
 
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}  
 
@@ -549,7 +533,7 @@ Configuration.setDefaultApiClient(apiClient);
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String domainId = "domainId_example"; // String | ID of the NLU domain.
 String feedbackId = "feedbackId_example"; // String | ID of the Feedback
-List<String> fields = Arrays.asList("fields_example"); // List<String> | Fields and properties to get, comma-separated
+List<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated
 try {
     NluFeedbackResponse result = apiInstance.getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, fields);
     System.out.println(result);
@@ -583,8 +567,6 @@ try {
 > [NluDomainVersion](NluDomainVersion.html) getLanguageunderstandingDomainVersion(domainId, domainVersionId, includeUtterances)
 
 Find an NLU Domain Version.
-
-
 
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}  
 
@@ -652,8 +634,6 @@ try {
 
 Retrieved quality report for the specified NLU Domain Version
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report  
 
 Requires ANY permissions: 
@@ -717,8 +697,6 @@ try {
 > [NluDomainVersionListing](NluDomainVersionListing.html) getLanguageunderstandingDomainVersions(domainId, includeUtterances, pageNumber, pageSize)
 
 Get all NLU Domain Versions for a given Domain.
-
-
 
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/versions  
 
@@ -788,8 +766,6 @@ try {
 
 Get all NLU Domains.
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains  
 
 Requires ANY permissions: 
@@ -854,8 +830,6 @@ try {
 
 Get information about a miner.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}  
 
 Requires ALL permissions: 
@@ -916,8 +890,6 @@ try {
 > [Draft](Draft.html) getLanguageunderstandingMinerDraft(minerId, draftId)
 
 Get information about a draft.
-
-
 
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}  
 
@@ -982,8 +954,6 @@ try {
 
 Retrieve the list of drafts created.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts  
 
 Requires ALL permissions: 
@@ -1044,8 +1014,6 @@ try {
 > [MinerIntent](MinerIntent.html) getLanguageunderstandingMinerIntent(minerId, intentId, expand)
 
 Get information about a mined intent
-
-
 
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}  
 
@@ -1112,8 +1080,6 @@ try {
 
 Retrieve a list of mined intents.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents  
 
 Requires ALL permissions: 
@@ -1177,8 +1143,6 @@ try {
 
 Retrieve the list of miners created.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners  
 
 Requires ALL permissions: 
@@ -1235,8 +1199,6 @@ This endpoint does not require any parameters.
 > [NluDomain](NluDomain.html) patchLanguageunderstandingDomain(domainId, body)
 
 Update an NLU Domain.
-
-
 
 Wraps PATCH /api/v2/languageunderstanding/domains/{domainId}  
 
@@ -1301,8 +1263,6 @@ try {
 > [Draft](Draft.html) patchLanguageunderstandingMinerDraft(minerId, draftId, body)
 
 Save information for the draft. Either topic draft or intent draft should be sent.
-
-
 
 Wraps PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}  
 
@@ -1369,8 +1329,6 @@ try {
 
 Create feedback for the NLU Domain Version.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/feedback  
 
 Requires ANY permissions: 
@@ -1434,8 +1392,6 @@ try {
 > [NluDetectionResponse](NluDetectionResponse.html) postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
 
 Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
-
-
 
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect  
 
@@ -1503,8 +1459,6 @@ try {
 
 Publish the draft NLU Domain Version.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish  
 
 Requires ANY permissions: 
@@ -1568,8 +1522,6 @@ try {
 > [NluDomainVersionTrainingResponse](NluDomainVersionTrainingResponse.html) postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
 
 Train the draft NLU Domain Version.
-
-
 
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train  
 
@@ -1635,8 +1587,6 @@ try {
 
 Create an NLU Domain Version.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions  
 
 Requires ANY permissions: 
@@ -1701,8 +1651,6 @@ try {
 
 Create an NLU Domain.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains  
 
 Requires ANY permissions: 
@@ -1764,8 +1712,6 @@ try {
 > [Draft](Draft.html) postLanguageunderstandingMinerDrafts(minerId, body)
 
 Create a new draft resource.
-
-
 
 Wraps POST /api/v2/languageunderstanding/miners/{minerId}/drafts  
 
@@ -1830,8 +1776,6 @@ try {
 
 Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
 
-
-
 Wraps POST /api/v2/languageunderstanding/miners/{minerId}/execute  
 
 Requires ALL permissions: 
@@ -1895,8 +1839,6 @@ try {
 
 Create a unique miner.
 
-
-
 Wraps POST /api/v2/languageunderstanding/miners  
 
 Requires ALL permissions: 
@@ -1957,8 +1899,6 @@ try {
 > [NluDomainVersion](NluDomainVersion.html) putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
 
 Update an NLU Domain Version.
-
-
 
 Wraps PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}  
 

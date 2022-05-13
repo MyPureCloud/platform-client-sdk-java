@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class ReplaceResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ReplaceResponse name(String name) {
@@ -110,7 +111,7 @@ public class ReplaceResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ReplaceResponse changeNumber(Integer changeNumber) {
@@ -127,7 +128,7 @@ public class ReplaceResponse  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    **/
   public ReplaceResponse uploadStatus(DomainEntityRef uploadStatus) {
@@ -144,7 +145,7 @@ public class ReplaceResponse  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-  
+
   /**
    **/
   public ReplaceResponse uploadDestinationUri(String uploadDestinationUri) {
@@ -161,7 +162,7 @@ public class ReplaceResponse  implements Serializable {
     this.uploadDestinationUri = uploadDestinationUri;
   }
 
-  
+
   /**
    **/
   public ReplaceResponse uploadMethod(UploadMethodEnum uploadMethod) {
@@ -178,7 +179,6 @@ public class ReplaceResponse  implements Serializable {
     this.uploadMethod = uploadMethod;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -189,12 +189,13 @@ public class ReplaceResponse  implements Serializable {
       return false;
     }
     ReplaceResponse replaceResponse = (ReplaceResponse) o;
+
     return Objects.equals(this.id, replaceResponse.id) &&
-        Objects.equals(this.name, replaceResponse.name) &&
-        Objects.equals(this.changeNumber, replaceResponse.changeNumber) &&
-        Objects.equals(this.uploadStatus, replaceResponse.uploadStatus) &&
-        Objects.equals(this.uploadDestinationUri, replaceResponse.uploadDestinationUri) &&
-        Objects.equals(this.uploadMethod, replaceResponse.uploadMethod);
+            Objects.equals(this.name, replaceResponse.name) &&
+            Objects.equals(this.changeNumber, replaceResponse.changeNumber) &&
+            Objects.equals(this.uploadStatus, replaceResponse.uploadStatus) &&
+            Objects.equals(this.uploadDestinationUri, replaceResponse.uploadDestinationUri) &&
+            Objects.equals(this.uploadMethod, replaceResponse.uploadMethod);
   }
 
   @Override

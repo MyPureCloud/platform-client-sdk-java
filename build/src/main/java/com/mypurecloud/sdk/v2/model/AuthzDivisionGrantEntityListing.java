@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthzGrant;
@@ -46,7 +47,7 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionGrantEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionGrantEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionGrantEntityListing total(Long total) {
@@ -97,7 +98,7 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionGrantEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class AuthzDivisionGrantEntityListing  implements Serializable {
       return false;
     }
     AuthzDivisionGrantEntityListing authzDivisionGrantEntityListing = (AuthzDivisionGrantEntityListing) o;
+
     return Objects.equals(this.entities, authzDivisionGrantEntityListing.entities) &&
-        Objects.equals(this.pageSize, authzDivisionGrantEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, authzDivisionGrantEntityListing.pageNumber) &&
-        Objects.equals(this.total, authzDivisionGrantEntityListing.total) &&
-        Objects.equals(this.pageCount, authzDivisionGrantEntityListing.pageCount);
+            Objects.equals(this.pageSize, authzDivisionGrantEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, authzDivisionGrantEntityListing.pageNumber) &&
+            Objects.equals(this.total, authzDivisionGrantEntityListing.total) &&
+            Objects.equals(this.pageCount, authzDivisionGrantEntityListing.pageCount);
   }
 
   @Override

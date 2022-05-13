@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class TranscriptionSettings  implements Serializable {
     this.transcription = transcription;
   }
 
-  
+
   /**
    * Configure confidence threshold. The possible values are from 1 to 100.
    **/
@@ -109,7 +110,7 @@ public class TranscriptionSettings  implements Serializable {
     this.transcriptionConfidenceThreshold = transcriptionConfidenceThreshold;
   }
 
-  
+
   /**
    * Setting to enable/disable content search
    **/
@@ -127,7 +128,6 @@ public class TranscriptionSettings  implements Serializable {
     this.contentSearchEnabled = contentSearchEnabled;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,9 +138,10 @@ public class TranscriptionSettings  implements Serializable {
       return false;
     }
     TranscriptionSettings transcriptionSettings = (TranscriptionSettings) o;
+
     return Objects.equals(this.transcription, transcriptionSettings.transcription) &&
-        Objects.equals(this.transcriptionConfidenceThreshold, transcriptionSettings.transcriptionConfidenceThreshold) &&
-        Objects.equals(this.contentSearchEnabled, transcriptionSettings.contentSearchEnabled);
+            Objects.equals(this.transcriptionConfidenceThreshold, transcriptionSettings.transcriptionConfidenceThreshold) &&
+            Objects.equals(this.contentSearchEnabled, transcriptionSettings.contentSearchEnabled);
   }
 
   @Override

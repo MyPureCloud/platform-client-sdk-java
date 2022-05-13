@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
@@ -43,7 +44,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WorkPlanRotationResponse name(String name) {
@@ -60,7 +61,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Whether the work plan rotation is enabled for scheduling
    **/
@@ -78,7 +79,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The date range to which this work plan rotation applies
    **/
@@ -96,7 +97,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.dateRange = dateRange;
   }
 
-  
+
   /**
    * Pattern with ordered list of work plans that rotate on a weekly basis
    **/
@@ -114,7 +115,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.pattern = pattern;
   }
 
-  
+
   /**
    * Number of agents in this work plan rotation
    **/
@@ -132,7 +133,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.agentCount = agentCount;
   }
 
-  
+
   /**
    * Agents in this work plan rotation. Populate with expand=agents for GET WorkPlanRotationsList (defaults to empty list)
    **/
@@ -150,7 +151,7 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.agents = agents;
   }
 
-  
+
   /**
    * Version metadata for this work plan rotation
    **/
@@ -168,14 +169,13 @@ public class WorkPlanRotationResponse  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -186,15 +186,16 @@ public class WorkPlanRotationResponse  implements Serializable {
       return false;
     }
     WorkPlanRotationResponse workPlanRotationResponse = (WorkPlanRotationResponse) o;
+
     return Objects.equals(this.id, workPlanRotationResponse.id) &&
-        Objects.equals(this.name, workPlanRotationResponse.name) &&
-        Objects.equals(this.enabled, workPlanRotationResponse.enabled) &&
-        Objects.equals(this.dateRange, workPlanRotationResponse.dateRange) &&
-        Objects.equals(this.pattern, workPlanRotationResponse.pattern) &&
-        Objects.equals(this.agentCount, workPlanRotationResponse.agentCount) &&
-        Objects.equals(this.agents, workPlanRotationResponse.agents) &&
-        Objects.equals(this.metadata, workPlanRotationResponse.metadata) &&
-        Objects.equals(this.selfUri, workPlanRotationResponse.selfUri);
+            Objects.equals(this.name, workPlanRotationResponse.name) &&
+            Objects.equals(this.enabled, workPlanRotationResponse.enabled) &&
+            Objects.equals(this.dateRange, workPlanRotationResponse.dateRange) &&
+            Objects.equals(this.pattern, workPlanRotationResponse.pattern) &&
+            Objects.equals(this.agentCount, workPlanRotationResponse.agentCount) &&
+            Objects.equals(this.agents, workPlanRotationResponse.agents) &&
+            Objects.equals(this.metadata, workPlanRotationResponse.metadata) &&
+            Objects.equals(this.selfUri, workPlanRotationResponse.selfUri);
   }
 
   @Override

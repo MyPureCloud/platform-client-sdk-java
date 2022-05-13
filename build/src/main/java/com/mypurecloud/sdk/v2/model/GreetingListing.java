@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public GreetingListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public GreetingListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public GreetingListing total(Long total) {
@@ -103,7 +104,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public GreetingListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public GreetingListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public GreetingListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public GreetingListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public GreetingListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public GreetingListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
       return false;
     }
     GreetingListing greetingListing = (GreetingListing) o;
+
     return Objects.equals(this.entities, greetingListing.entities) &&
-        Objects.equals(this.pageSize, greetingListing.pageSize) &&
-        Objects.equals(this.pageNumber, greetingListing.pageNumber) &&
-        Objects.equals(this.total, greetingListing.total) &&
-        Objects.equals(this.lastUri, greetingListing.lastUri) &&
-        Objects.equals(this.firstUri, greetingListing.firstUri) &&
-        Objects.equals(this.selfUri, greetingListing.selfUri) &&
-        Objects.equals(this.previousUri, greetingListing.previousUri) &&
-        Objects.equals(this.nextUri, greetingListing.nextUri) &&
-        Objects.equals(this.pageCount, greetingListing.pageCount);
+            Objects.equals(this.pageSize, greetingListing.pageSize) &&
+            Objects.equals(this.pageNumber, greetingListing.pageNumber) &&
+            Objects.equals(this.total, greetingListing.total) &&
+            Objects.equals(this.lastUri, greetingListing.lastUri) &&
+            Objects.equals(this.firstUri, greetingListing.firstUri) &&
+            Objects.equals(this.selfUri, greetingListing.selfUri) &&
+            Objects.equals(this.previousUri, greetingListing.previousUri) &&
+            Objects.equals(this.nextUri, greetingListing.nextUri) &&
+            Objects.equals(this.pageCount, greetingListing.pageCount);
   }
 
   @Override

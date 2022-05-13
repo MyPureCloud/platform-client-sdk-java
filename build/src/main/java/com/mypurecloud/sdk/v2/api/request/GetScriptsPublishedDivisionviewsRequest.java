@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsPublishedDivisionviewsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -43,7 +43,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,7 +57,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -71,7 +71,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -85,7 +85,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private String feature;
 	public String getFeature() {
 		return this.feature;
@@ -99,7 +99,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setFeature(feature);
 	    return this;
 	} 
-	
+
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -113,7 +113,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setFlowId(flowId);
 	    return this;
 	} 
-	
+
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
 		return this.scriptDataVersion;
@@ -127,7 +127,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
 	} 
-	
+
 	private String divisionIds;
 	public String getDivisionIds() {
 		return this.divisionIds;
@@ -141,7 +141,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 	    this.setDivisionIds(divisionIds);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -165,23 +165,31 @@ public class GetScriptsPublishedDivisionviewsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/published/divisionviews")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("expand", "", expand)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("feature", "", feature)
         
+
                 .withQueryParameters("flowId", "", flowId)
         
+
                 .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
         
+
                 .withQueryParameters("divisionIds", "", divisionIds)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -192,7 +200,7 @@ public class GetScriptsPublishedDivisionviewsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetScriptsPublishedDivisionviewsRequest request;
@@ -201,49 +209,49 @@ public class GetScriptsPublishedDivisionviewsRequest {
 			request = new GetScriptsPublishedDivisionviewsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withFeature(String feature) {
 			request.setFeature(feature);
 			return this;
 		}
-		
+
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
-		
+
 		public Builder withScriptDataVersion(String scriptDataVersion) {
 			request.setScriptDataVersion(scriptDataVersion);
 			return this;
 		}
-		
+
 		public Builder withDivisionIds(String divisionIds) {
 			request.setDivisionIds(divisionIds);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetScriptsPublishedDivisionviewsRequest build() {
             

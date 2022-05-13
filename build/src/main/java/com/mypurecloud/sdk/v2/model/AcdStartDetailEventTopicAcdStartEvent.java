@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -215,7 +216,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent conversationId(String conversationId) {
@@ -232,7 +233,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent participantId(String participantId) {
@@ -249,7 +250,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent sessionId(String sessionId) {
@@ -266,7 +267,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent mediaType(MediaTypeEnum mediaType) {
@@ -283,7 +284,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent provider(String provider) {
@@ -300,7 +301,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent direction(DirectionEnum direction) {
@@ -317,7 +318,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent ani(String ani) {
@@ -334,7 +335,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent dnis(String dnis) {
@@ -351,7 +352,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent addressTo(String addressTo) {
@@ -368,7 +369,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent addressFrom(String addressFrom) {
@@ -385,7 +386,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent callbackUserName(String callbackUserName) {
@@ -402,7 +403,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent callbackNumbers(List<String> callbackNumbers) {
@@ -419,7 +420,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -436,7 +437,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent subject(String subject) {
@@ -453,7 +454,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent messageType(MessageTypeEnum messageType) {
@@ -470,7 +471,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent queueId(String queueId) {
@@ -487,7 +488,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public AcdStartDetailEventTopicAcdStartEvent divisionId(String divisionId) {
@@ -504,7 +505,6 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -515,24 +515,25 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
       return false;
     }
     AcdStartDetailEventTopicAcdStartEvent acdStartDetailEventTopicAcdStartEvent = (AcdStartDetailEventTopicAcdStartEvent) o;
+
     return Objects.equals(this.eventTime, acdStartDetailEventTopicAcdStartEvent.eventTime) &&
-        Objects.equals(this.conversationId, acdStartDetailEventTopicAcdStartEvent.conversationId) &&
-        Objects.equals(this.participantId, acdStartDetailEventTopicAcdStartEvent.participantId) &&
-        Objects.equals(this.sessionId, acdStartDetailEventTopicAcdStartEvent.sessionId) &&
-        Objects.equals(this.mediaType, acdStartDetailEventTopicAcdStartEvent.mediaType) &&
-        Objects.equals(this.provider, acdStartDetailEventTopicAcdStartEvent.provider) &&
-        Objects.equals(this.direction, acdStartDetailEventTopicAcdStartEvent.direction) &&
-        Objects.equals(this.ani, acdStartDetailEventTopicAcdStartEvent.ani) &&
-        Objects.equals(this.dnis, acdStartDetailEventTopicAcdStartEvent.dnis) &&
-        Objects.equals(this.addressTo, acdStartDetailEventTopicAcdStartEvent.addressTo) &&
-        Objects.equals(this.addressFrom, acdStartDetailEventTopicAcdStartEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, acdStartDetailEventTopicAcdStartEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, acdStartDetailEventTopicAcdStartEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, acdStartDetailEventTopicAcdStartEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, acdStartDetailEventTopicAcdStartEvent.subject) &&
-        Objects.equals(this.messageType, acdStartDetailEventTopicAcdStartEvent.messageType) &&
-        Objects.equals(this.queueId, acdStartDetailEventTopicAcdStartEvent.queueId) &&
-        Objects.equals(this.divisionId, acdStartDetailEventTopicAcdStartEvent.divisionId);
+            Objects.equals(this.conversationId, acdStartDetailEventTopicAcdStartEvent.conversationId) &&
+            Objects.equals(this.participantId, acdStartDetailEventTopicAcdStartEvent.participantId) &&
+            Objects.equals(this.sessionId, acdStartDetailEventTopicAcdStartEvent.sessionId) &&
+            Objects.equals(this.mediaType, acdStartDetailEventTopicAcdStartEvent.mediaType) &&
+            Objects.equals(this.provider, acdStartDetailEventTopicAcdStartEvent.provider) &&
+            Objects.equals(this.direction, acdStartDetailEventTopicAcdStartEvent.direction) &&
+            Objects.equals(this.ani, acdStartDetailEventTopicAcdStartEvent.ani) &&
+            Objects.equals(this.dnis, acdStartDetailEventTopicAcdStartEvent.dnis) &&
+            Objects.equals(this.addressTo, acdStartDetailEventTopicAcdStartEvent.addressTo) &&
+            Objects.equals(this.addressFrom, acdStartDetailEventTopicAcdStartEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, acdStartDetailEventTopicAcdStartEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, acdStartDetailEventTopicAcdStartEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, acdStartDetailEventTopicAcdStartEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, acdStartDetailEventTopicAcdStartEvent.subject) &&
+            Objects.equals(this.messageType, acdStartDetailEventTopicAcdStartEvent.messageType) &&
+            Objects.equals(this.queueId, acdStartDetailEventTopicAcdStartEvent.queueId) &&
+            Objects.equals(this.divisionId, acdStartDetailEventTopicAcdStartEvent.divisionId);
   }
 
   @Override

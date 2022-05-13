@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public MessagingStickerEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class MessagingStickerEntityListing  implements Serializable, PagedResour
       return false;
     }
     MessagingStickerEntityListing messagingStickerEntityListing = (MessagingStickerEntityListing) o;
+
     return Objects.equals(this.entities, messagingStickerEntityListing.entities) &&
-        Objects.equals(this.pageSize, messagingStickerEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, messagingStickerEntityListing.pageNumber) &&
-        Objects.equals(this.total, messagingStickerEntityListing.total) &&
-        Objects.equals(this.lastUri, messagingStickerEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, messagingStickerEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, messagingStickerEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, messagingStickerEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, messagingStickerEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, messagingStickerEntityListing.pageCount);
+            Objects.equals(this.pageSize, messagingStickerEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, messagingStickerEntityListing.pageNumber) &&
+            Objects.equals(this.total, messagingStickerEntityListing.total) &&
+            Objects.equals(this.lastUri, messagingStickerEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, messagingStickerEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, messagingStickerEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, messagingStickerEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, messagingStickerEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, messagingStickerEntityListing.pageCount);
   }
 
   @Override

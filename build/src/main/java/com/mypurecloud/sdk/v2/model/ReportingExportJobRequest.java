@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -280,7 +281,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
@@ -298,7 +299,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The requested format of the exported data
    **/
@@ -316,7 +317,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.exportFormat = exportFormat;
   }
 
-  
+
   /**
    * The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -334,7 +335,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
@@ -352,7 +353,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.period = period;
   }
 
-  
+
   /**
    * The type of view export job to be created
    **/
@@ -370,7 +371,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.viewType = viewType;
   }
 
-  
+
   /**
    * Filters to apply to create the view
    **/
@@ -388,7 +389,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.filter = filter;
   }
 
-  
+
   /**
    * Indicates if the request has been marked as read
    **/
@@ -406,7 +407,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.read = read;
   }
 
-  
+
   /**
    * The locale use for localization of the exported data, i.e. en-us, es-mx  
    **/
@@ -424,7 +425,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.locale = locale;
   }
 
-  
+
   /**
    * Indicates if durations are formatted in hh:mm:ss format instead of ms
    **/
@@ -442,7 +443,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.hasFormatDurations = hasFormatDurations;
   }
 
-  
+
   /**
    * Indicates if filters will be split in aggregate detail exports
    **/
@@ -460,7 +461,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.hasSplitFilters = hasSplitFilters;
   }
 
-  
+
   /**
    * Excludes empty rows from the exports
    **/
@@ -478,7 +479,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.excludeEmptyRows = excludeEmptyRows;
   }
 
-  
+
   /**
    * Indicates if media type will be split in aggregate detail exports
    **/
@@ -496,7 +497,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.hasSplitByMedia = hasSplitByMedia;
   }
 
-  
+
   /**
    * Indicates if summary row needs to be present in exports
    **/
@@ -514,7 +515,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.hasSummaryRow = hasSummaryRow;
   }
 
-  
+
   /**
    * The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
    **/
@@ -532,7 +533,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.csvDelimiter = csvDelimiter;
   }
 
-  
+
   /**
    * The list of ordered selected columns from the export view by the user
    **/
@@ -550,7 +551,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.selectedColumns = selectedColumns;
   }
 
-  
+
   /**
    * Indicates if custom participant attributes will be exported
    **/
@@ -568,7 +569,7 @@ public class ReportingExportJobRequest  implements Serializable {
     this.hasCustomParticipantAttributes = hasCustomParticipantAttributes;
   }
 
-  
+
   /**
    * The list of email recipients for the exports
    **/
@@ -586,7 +587,6 @@ public class ReportingExportJobRequest  implements Serializable {
     this.recipientEmails = recipientEmails;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -597,24 +597,25 @@ public class ReportingExportJobRequest  implements Serializable {
       return false;
     }
     ReportingExportJobRequest reportingExportJobRequest = (ReportingExportJobRequest) o;
+
     return Objects.equals(this.name, reportingExportJobRequest.name) &&
-        Objects.equals(this.timeZone, reportingExportJobRequest.timeZone) &&
-        Objects.equals(this.exportFormat, reportingExportJobRequest.exportFormat) &&
-        Objects.equals(this.interval, reportingExportJobRequest.interval) &&
-        Objects.equals(this.period, reportingExportJobRequest.period) &&
-        Objects.equals(this.viewType, reportingExportJobRequest.viewType) &&
-        Objects.equals(this.filter, reportingExportJobRequest.filter) &&
-        Objects.equals(this.read, reportingExportJobRequest.read) &&
-        Objects.equals(this.locale, reportingExportJobRequest.locale) &&
-        Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations) &&
-        Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters) &&
-        Objects.equals(this.excludeEmptyRows, reportingExportJobRequest.excludeEmptyRows) &&
-        Objects.equals(this.hasSplitByMedia, reportingExportJobRequest.hasSplitByMedia) &&
-        Objects.equals(this.hasSummaryRow, reportingExportJobRequest.hasSummaryRow) &&
-        Objects.equals(this.csvDelimiter, reportingExportJobRequest.csvDelimiter) &&
-        Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
-        Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
-        Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails);
+            Objects.equals(this.timeZone, reportingExportJobRequest.timeZone) &&
+            Objects.equals(this.exportFormat, reportingExportJobRequest.exportFormat) &&
+            Objects.equals(this.interval, reportingExportJobRequest.interval) &&
+            Objects.equals(this.period, reportingExportJobRequest.period) &&
+            Objects.equals(this.viewType, reportingExportJobRequest.viewType) &&
+            Objects.equals(this.filter, reportingExportJobRequest.filter) &&
+            Objects.equals(this.read, reportingExportJobRequest.read) &&
+            Objects.equals(this.locale, reportingExportJobRequest.locale) &&
+            Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations) &&
+            Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters) &&
+            Objects.equals(this.excludeEmptyRows, reportingExportJobRequest.excludeEmptyRows) &&
+            Objects.equals(this.hasSplitByMedia, reportingExportJobRequest.hasSplitByMedia) &&
+            Objects.equals(this.hasSummaryRow, reportingExportJobRequest.hasSummaryRow) &&
+            Objects.equals(this.csvDelimiter, reportingExportJobRequest.csvDelimiter) &&
+            Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
+            Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
+            Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails);
   }
 
   @Override

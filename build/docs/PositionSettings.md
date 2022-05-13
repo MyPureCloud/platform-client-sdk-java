@@ -20,10 +20,10 @@ title: PositionSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AUTO | &quot;Auto&quot; |
-| LEFT | &quot;Left&quot; |
-| RIGHT | &quot;Right&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AUTO | &quot;Auto&quot; | 
+| LEFT | &quot;Left&quot; | 
+| RIGHT | &quot;Right&quot; | 
 {: class="table table-striped"}
 
 

@@ -22,10 +22,10 @@ title: QueueObservationQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DIMENSION | &quot;dimension&quot; |
-| PROPERTY | &quot;property&quot; |
-| METRIC | &quot;metric&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DIMENSION | &quot;dimension&quot; | 
+| PROPERTY | &quot;property&quot; | 
+| METRIC | &quot;metric&quot; | 
 {: class="table table-striped"}
 
 
@@ -35,9 +35,9 @@ title: QueueObservationQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MEDIATYPE | &quot;mediaType&quot; |
-| QUEUEID | &quot;queueId&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MEDIATYPE | &quot;mediaType&quot; | 
+| QUEUEID | &quot;queueId&quot; | 
 {: class="table table-striped"}
 
 
@@ -47,10 +47,10 @@ title: QueueObservationQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MATCHES | &quot;matches&quot; |
-| EXISTS | &quot;exists&quot; |
-| NOTEXISTS | &quot;notExists&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MATCHES | &quot;matches&quot; | 
+| EXISTS | &quot;exists&quot; | 
+| NOTEXISTS | &quot;notExists&quot; | 
 {: class="table table-striped"}
 
 

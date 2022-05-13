@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class LearningAssignmentUpdate  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * An updated Assessment
    **/
@@ -111,7 +112,6 @@ public class LearningAssignmentUpdate  implements Serializable {
     this.assessment = assessment;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,8 +122,9 @@ public class LearningAssignmentUpdate  implements Serializable {
       return false;
     }
     LearningAssignmentUpdate learningAssignmentUpdate = (LearningAssignmentUpdate) o;
+
     return Objects.equals(this.state, learningAssignmentUpdate.state) &&
-        Objects.equals(this.assessment, learningAssignmentUpdate.assessment);
+            Objects.equals(this.assessment, learningAssignmentUpdate.assessment);
   }
 
   @Override

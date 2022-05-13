@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryFilter;
@@ -135,7 +136,7 @@ public class FlowObservationQuery  implements Serializable {
     this.filter = filter;
   }
 
-  
+
   /**
    * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
@@ -153,7 +154,7 @@ public class FlowObservationQuery  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * Metrics for which to include additional detailed observations
    **/
@@ -171,7 +172,6 @@ public class FlowObservationQuery  implements Serializable {
     this.detailMetrics = detailMetrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,9 +182,10 @@ public class FlowObservationQuery  implements Serializable {
       return false;
     }
     FlowObservationQuery flowObservationQuery = (FlowObservationQuery) o;
+
     return Objects.equals(this.filter, flowObservationQuery.filter) &&
-        Objects.equals(this.metrics, flowObservationQuery.metrics) &&
-        Objects.equals(this.detailMetrics, flowObservationQuery.detailMetrics);
+            Objects.equals(this.metrics, flowObservationQuery.metrics) &&
+            Objects.equals(this.detailMetrics, flowObservationQuery.detailMetrics);
   }
 
   @Override

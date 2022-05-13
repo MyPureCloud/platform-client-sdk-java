@@ -19,9 +19,9 @@ title: ContactColumnTimeZone
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PHONE | &quot;PHONE&quot; |
-| ZIP | &quot;ZIP&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PHONE | &quot;PHONE&quot; | 
+| ZIP | &quot;ZIP&quot; | 
 {: class="table table-striped"}
 
 

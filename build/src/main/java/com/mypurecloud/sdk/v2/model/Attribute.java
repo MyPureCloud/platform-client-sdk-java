@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -39,7 +40,7 @@ public class Attribute  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The attribute name.
    **/
@@ -57,7 +58,7 @@ public class Attribute  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Attribute version(Integer version) {
@@ -74,7 +75,7 @@ public class Attribute  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public Attribute description(String description) {
@@ -91,7 +92,7 @@ public class Attribute  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public Attribute createdBy(DomainEntityRef createdBy) {
@@ -108,7 +109,7 @@ public class Attribute  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -126,7 +127,7 @@ public class Attribute  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public Attribute modifiedBy(DomainEntityRef modifiedBy) {
@@ -143,7 +144,7 @@ public class Attribute  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -161,14 +162,13 @@ public class Attribute  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,15 +179,16 @@ public class Attribute  implements Serializable {
       return false;
     }
     Attribute attribute = (Attribute) o;
+
     return Objects.equals(this.id, attribute.id) &&
-        Objects.equals(this.name, attribute.name) &&
-        Objects.equals(this.version, attribute.version) &&
-        Objects.equals(this.description, attribute.description) &&
-        Objects.equals(this.createdBy, attribute.createdBy) &&
-        Objects.equals(this.dateCreated, attribute.dateCreated) &&
-        Objects.equals(this.modifiedBy, attribute.modifiedBy) &&
-        Objects.equals(this.dateModified, attribute.dateModified) &&
-        Objects.equals(this.selfUri, attribute.selfUri);
+            Objects.equals(this.name, attribute.name) &&
+            Objects.equals(this.version, attribute.version) &&
+            Objects.equals(this.description, attribute.description) &&
+            Objects.equals(this.createdBy, attribute.createdBy) &&
+            Objects.equals(this.dateCreated, attribute.dateCreated) &&
+            Objects.equals(this.modifiedBy, attribute.modifiedBy) &&
+            Objects.equals(this.dateModified, attribute.dateModified) &&
+            Objects.equals(this.selfUri, attribute.selfUri);
   }
 
   @Override

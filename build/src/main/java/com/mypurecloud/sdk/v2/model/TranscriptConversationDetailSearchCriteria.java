@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -149,7 +149,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.endValue = endValue;
   }
 
-  
+
   /**
    * A list of values for the search to match against
    **/
@@ -167,7 +167,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.values = values;
   }
 
-  
+
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -185,7 +185,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.startValue = startValue;
   }
 
-  
+
   /**
    * Field names to search against
    **/
@@ -203,7 +203,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.fields = fields;
   }
 
-  
+
   /**
    * A value for the search to match against
    **/
@@ -221,7 +221,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.value = value;
   }
 
-  
+
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -239,7 +239,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.operator = operator;
   }
 
-  
+
   /**
    * Groups multiple conditions
    **/
@@ -257,7 +257,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.group = group;
   }
 
-  
+
   /**
    * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
    **/
@@ -275,7 +275,7 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.dateFormat = dateFormat;
   }
 
-  
+
   /**
    **/
   public TranscriptConversationDetailSearchCriteria type(TypeEnum type) {
@@ -292,7 +292,6 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -303,15 +302,16 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
       return false;
     }
     TranscriptConversationDetailSearchCriteria transcriptConversationDetailSearchCriteria = (TranscriptConversationDetailSearchCriteria) o;
+
     return Objects.equals(this.endValue, transcriptConversationDetailSearchCriteria.endValue) &&
-        Objects.equals(this.values, transcriptConversationDetailSearchCriteria.values) &&
-        Objects.equals(this.startValue, transcriptConversationDetailSearchCriteria.startValue) &&
-        Objects.equals(this.fields, transcriptConversationDetailSearchCriteria.fields) &&
-        Objects.equals(this.value, transcriptConversationDetailSearchCriteria.value) &&
-        Objects.equals(this.operator, transcriptConversationDetailSearchCriteria.operator) &&
-        Objects.equals(this.group, transcriptConversationDetailSearchCriteria.group) &&
-        Objects.equals(this.dateFormat, transcriptConversationDetailSearchCriteria.dateFormat) &&
-        Objects.equals(this.type, transcriptConversationDetailSearchCriteria.type);
+            Objects.equals(this.values, transcriptConversationDetailSearchCriteria.values) &&
+            Objects.equals(this.startValue, transcriptConversationDetailSearchCriteria.startValue) &&
+            Objects.equals(this.fields, transcriptConversationDetailSearchCriteria.fields) &&
+            Objects.equals(this.value, transcriptConversationDetailSearchCriteria.value) &&
+            Objects.equals(this.operator, transcriptConversationDetailSearchCriteria.operator) &&
+            Objects.equals(this.group, transcriptConversationDetailSearchCriteria.group) &&
+            Objects.equals(this.dateFormat, transcriptConversationDetailSearchCriteria.dateFormat) &&
+            Objects.equals(this.type, transcriptConversationDetailSearchCriteria.type);
   }
 
   @Override

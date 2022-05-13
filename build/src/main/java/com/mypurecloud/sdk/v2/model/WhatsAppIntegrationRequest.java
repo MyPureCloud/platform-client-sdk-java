@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
@@ -37,7 +38,7 @@ public class WhatsAppIntegrationRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the WhatsApp Integration
    **/
@@ -55,7 +56,7 @@ public class WhatsAppIntegrationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -73,7 +74,7 @@ public class WhatsAppIntegrationRequest  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationRequest messagingSetting(MessagingSettingReference messagingSetting) {
@@ -90,7 +91,7 @@ public class WhatsAppIntegrationRequest  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The phone number associated to the whatsApp integration
    **/
@@ -108,7 +109,7 @@ public class WhatsAppIntegrationRequest  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * The waba(WhatsApp Business Manager) certificate associated to the WhatsApp integration phone number
    **/
@@ -126,14 +127,13 @@ public class WhatsAppIntegrationRequest  implements Serializable {
     this.wabaCertificate = wabaCertificate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,13 +144,14 @@ public class WhatsAppIntegrationRequest  implements Serializable {
       return false;
     }
     WhatsAppIntegrationRequest whatsAppIntegrationRequest = (WhatsAppIntegrationRequest) o;
+
     return Objects.equals(this.id, whatsAppIntegrationRequest.id) &&
-        Objects.equals(this.name, whatsAppIntegrationRequest.name) &&
-        Objects.equals(this.supportedContent, whatsAppIntegrationRequest.supportedContent) &&
-        Objects.equals(this.messagingSetting, whatsAppIntegrationRequest.messagingSetting) &&
-        Objects.equals(this.phoneNumber, whatsAppIntegrationRequest.phoneNumber) &&
-        Objects.equals(this.wabaCertificate, whatsAppIntegrationRequest.wabaCertificate) &&
-        Objects.equals(this.selfUri, whatsAppIntegrationRequest.selfUri);
+            Objects.equals(this.name, whatsAppIntegrationRequest.name) &&
+            Objects.equals(this.supportedContent, whatsAppIntegrationRequest.supportedContent) &&
+            Objects.equals(this.messagingSetting, whatsAppIntegrationRequest.messagingSetting) &&
+            Objects.equals(this.phoneNumber, whatsAppIntegrationRequest.phoneNumber) &&
+            Objects.equals(this.wabaCertificate, whatsAppIntegrationRequest.wabaCertificate) &&
+            Objects.equals(this.selfUri, whatsAppIntegrationRequest.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class LearningAssignmentCreate  implements Serializable {
     this.moduleId = moduleId;
   }
 
-  
+
   /**
    * The User for whom the assignment is assigned
    **/
@@ -61,7 +62,7 @@ public class LearningAssignmentCreate  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -79,7 +80,6 @@ public class LearningAssignmentCreate  implements Serializable {
     this.recommendedCompletionDate = recommendedCompletionDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class LearningAssignmentCreate  implements Serializable {
       return false;
     }
     LearningAssignmentCreate learningAssignmentCreate = (LearningAssignmentCreate) o;
+
     return Objects.equals(this.moduleId, learningAssignmentCreate.moduleId) &&
-        Objects.equals(this.userId, learningAssignmentCreate.userId) &&
-        Objects.equals(this.recommendedCompletionDate, learningAssignmentCreate.recommendedCompletionDate);
+            Objects.equals(this.userId, learningAssignmentCreate.userId) &&
+            Objects.equals(this.recommendedCompletionDate, learningAssignmentCreate.recommendedCompletionDate);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCallabletimesetConfigChangeTimeSlot;
@@ -44,7 +45,7 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
     this.timeSlots = timeSlots;
   }
 
-  
+
   /**
    * The ISO ID for the timezone
    **/
@@ -62,7 +63,6 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
     this.timeZoneId = timeZoneId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
       return false;
     }
     DialerCallabletimesetConfigChangeCallableTime dialerCallabletimesetConfigChangeCallableTime = (DialerCallabletimesetConfigChangeCallableTime) o;
+
     return Objects.equals(this.timeSlots, dialerCallabletimesetConfigChangeCallableTime.timeSlots) &&
-        Objects.equals(this.timeZoneId, dialerCallabletimesetConfigChangeCallableTime.timeZoneId);
+            Objects.equals(this.timeZoneId, dialerCallabletimesetConfigChangeCallableTime.timeZoneId);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class MemberGroup  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public MemberGroup name(String name) {
@@ -112,7 +113,7 @@ public class MemberGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -130,7 +131,7 @@ public class MemberGroup  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The group type
    **/
@@ -148,21 +149,20 @@ public class MemberGroup  implements Serializable {
     this.type = type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of members in this group")
   @JsonProperty("memberCount")
   public Integer getMemberCount() {
     return memberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -173,12 +173,13 @@ public class MemberGroup  implements Serializable {
       return false;
     }
     MemberGroup memberGroup = (MemberGroup) o;
+
     return Objects.equals(this.id, memberGroup.id) &&
-        Objects.equals(this.name, memberGroup.name) &&
-        Objects.equals(this.division, memberGroup.division) &&
-        Objects.equals(this.type, memberGroup.type) &&
-        Objects.equals(this.memberCount, memberGroup.memberCount) &&
-        Objects.equals(this.selfUri, memberGroup.selfUri);
+            Objects.equals(this.name, memberGroup.name) &&
+            Objects.equals(this.division, memberGroup.division) &&
+            Objects.equals(this.type, memberGroup.type) &&
+            Objects.equals(this.memberCount, memberGroup.memberCount) &&
+            Objects.equals(this.selfUri, memberGroup.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListWrapperInterval;
@@ -47,7 +48,7 @@ public class PatchShiftTradeRequest  implements Serializable {
     this.receivingUserId = receivingUserId;
   }
 
-  
+
   /**
    * Update the expiration time for this shift trade.
    **/
@@ -65,7 +66,7 @@ public class PatchShiftTradeRequest  implements Serializable {
     this.expiration = expiration;
   }
 
-  
+
   /**
    * Update the acceptable intervals the initiating user is willing to accept in trade. Setting the enclosed list to empty will make this a one sided trade request
    **/
@@ -83,7 +84,7 @@ public class PatchShiftTradeRequest  implements Serializable {
     this.acceptableIntervals = acceptableIntervals;
   }
 
-  
+
   /**
    * Version metadata
    **/
@@ -101,7 +102,6 @@ public class PatchShiftTradeRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class PatchShiftTradeRequest  implements Serializable {
       return false;
     }
     PatchShiftTradeRequest patchShiftTradeRequest = (PatchShiftTradeRequest) o;
+
     return Objects.equals(this.receivingUserId, patchShiftTradeRequest.receivingUserId) &&
-        Objects.equals(this.expiration, patchShiftTradeRequest.expiration) &&
-        Objects.equals(this.acceptableIntervals, patchShiftTradeRequest.acceptableIntervals) &&
-        Objects.equals(this.metadata, patchShiftTradeRequest.metadata);
+            Objects.equals(this.expiration, patchShiftTradeRequest.expiration) &&
+            Objects.equals(this.acceptableIntervals, patchShiftTradeRequest.acceptableIntervals) &&
+            Objects.equals(this.metadata, patchShiftTradeRequest.metadata);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicScoredAgent;
@@ -48,7 +49,7 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
     this.queue = queue;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -66,7 +67,7 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
     this.language = language;
   }
 
-  
+
   /**
    * The priority of the conversation to use for routing decisions
    **/
@@ -84,7 +85,7 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
     this.priority = priority;
   }
 
-  
+
   /**
    * The skills to use for routing decisions
    **/
@@ -102,7 +103,7 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
     this.skills = skills;
   }
 
-  
+
   /**
    * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
@@ -120,7 +121,6 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class QueueConversationScreenShareEventTopicConversationRoutingData  impl
       return false;
     }
     QueueConversationScreenShareEventTopicConversationRoutingData queueConversationScreenShareEventTopicConversationRoutingData = (QueueConversationScreenShareEventTopicConversationRoutingData) o;
+
     return Objects.equals(this.queue, queueConversationScreenShareEventTopicConversationRoutingData.queue) &&
-        Objects.equals(this.language, queueConversationScreenShareEventTopicConversationRoutingData.language) &&
-        Objects.equals(this.priority, queueConversationScreenShareEventTopicConversationRoutingData.priority) &&
-        Objects.equals(this.skills, queueConversationScreenShareEventTopicConversationRoutingData.skills) &&
-        Objects.equals(this.scoredAgents, queueConversationScreenShareEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.language, queueConversationScreenShareEventTopicConversationRoutingData.language) &&
+            Objects.equals(this.priority, queueConversationScreenShareEventTopicConversationRoutingData.priority) &&
+            Objects.equals(this.skills, queueConversationScreenShareEventTopicConversationRoutingData.skills) &&
+            Objects.equals(this.scoredAgents, queueConversationScreenShareEventTopicConversationRoutingData.scoredAgents);
   }
 
   @Override

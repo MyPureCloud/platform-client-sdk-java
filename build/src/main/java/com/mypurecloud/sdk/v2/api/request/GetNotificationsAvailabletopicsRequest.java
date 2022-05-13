@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AvailableTopicEntityListing;
-import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelEntityListing;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
-import com.mypurecloud.sdk.v2.model.Channel;
+import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetNotificationsAvailabletopicsRequest {
-    
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -44,14 +44,14 @@ public class GetNotificationsAvailabletopicsRequest {
 	} 
 
 	public enum expandValues { 
-		DESCRIPTION("description"), 
-		ENFORCED("enforced"), 
-		SCHEMA("schema"), 
-		VISIBILITY("visibility"), 
-		TRANSPORTS("transports"), 
-		PUBLICAPITEMPLATEURIPATHS("publicApiTemplateUriPaths"), 
-		REQUIRESPERMISSIONS("requiresPermissions"), 
-		PERMISSIONDETAILS("permissionDetails"), 
+		DESCRIPTION("description"),
+		ENFORCED("enforced"),
+		SCHEMA("schema"),
+		VISIBILITY("visibility"),
+		TRANSPORTS("transports"),
+		PUBLICAPITEMPLATEURIPATHS("publicApiTemplateUriPaths"),
+		REQUIRESPERMISSIONS("requiresPermissions"),
+		PERMISSIONDETAILS("permissionDetails"),
 		TOPICPARAMETERS("topicParameters");
 
 		private String value;
@@ -79,7 +79,7 @@ public class GetNotificationsAvailabletopicsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Boolean includePreview;
 	public Boolean getIncludePreview() {
 		return this.includePreview;
@@ -93,7 +93,7 @@ public class GetNotificationsAvailabletopicsRequest {
 	    this.setIncludePreview(includePreview);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -117,11 +117,13 @@ public class GetNotificationsAvailabletopicsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/notifications/availabletopics")
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("includePreview", "", includePreview)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -132,7 +134,7 @@ public class GetNotificationsAvailabletopicsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetNotificationsAvailabletopicsRequest request;
@@ -141,11 +143,13 @@ public class GetNotificationsAvailabletopicsRequest {
 			request = new GetNotificationsAvailabletopicsRequest();
 		}
 
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -155,14 +159,14 @@ public class GetNotificationsAvailabletopicsRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
+
 		public Builder withIncludePreview(Boolean includePreview) {
 			request.setIncludePreview(includePreview);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetNotificationsAvailabletopicsRequest build() {
             

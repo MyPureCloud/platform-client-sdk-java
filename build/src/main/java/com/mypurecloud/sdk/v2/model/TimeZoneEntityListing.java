@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.total = total;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public TimeZoneEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<Regio
       return false;
     }
     TimeZoneEntityListing timeZoneEntityListing = (TimeZoneEntityListing) o;
+
     return Objects.equals(this.entities, timeZoneEntityListing.entities) &&
-        Objects.equals(this.pageSize, timeZoneEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, timeZoneEntityListing.pageNumber) &&
-        Objects.equals(this.total, timeZoneEntityListing.total) &&
-        Objects.equals(this.lastUri, timeZoneEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, timeZoneEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, timeZoneEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, timeZoneEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, timeZoneEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, timeZoneEntityListing.pageCount);
+            Objects.equals(this.pageSize, timeZoneEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, timeZoneEntityListing.pageNumber) &&
+            Objects.equals(this.total, timeZoneEntityListing.total) &&
+            Objects.equals(this.lastUri, timeZoneEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, timeZoneEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, timeZoneEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, timeZoneEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, timeZoneEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, timeZoneEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class ConversationMetrics  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * The Sentiment Score
    **/
@@ -116,7 +117,7 @@ public class ConversationMetrics  implements Serializable {
     this.sentimentScore = sentimentScore;
   }
 
-  
+
   /**
    * The Sentiment Trend
    **/
@@ -134,7 +135,7 @@ public class ConversationMetrics  implements Serializable {
     this.sentimentTrend = sentimentTrend;
   }
 
-  
+
   /**
    * The Sentiment Trend Class
    **/
@@ -152,7 +153,7 @@ public class ConversationMetrics  implements Serializable {
     this.sentimentTrendClass = sentimentTrendClass;
   }
 
-  
+
   /**
    * The Participant Metrics
    **/
@@ -170,7 +171,6 @@ public class ConversationMetrics  implements Serializable {
     this.participantMetrics = participantMetrics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,11 +181,12 @@ public class ConversationMetrics  implements Serializable {
       return false;
     }
     ConversationMetrics conversationMetrics = (ConversationMetrics) o;
+
     return Objects.equals(this.conversation, conversationMetrics.conversation) &&
-        Objects.equals(this.sentimentScore, conversationMetrics.sentimentScore) &&
-        Objects.equals(this.sentimentTrend, conversationMetrics.sentimentTrend) &&
-        Objects.equals(this.sentimentTrendClass, conversationMetrics.sentimentTrendClass) &&
-        Objects.equals(this.participantMetrics, conversationMetrics.participantMetrics);
+            Objects.equals(this.sentimentScore, conversationMetrics.sentimentScore) &&
+            Objects.equals(this.sentimentTrend, conversationMetrics.sentimentTrend) &&
+            Objects.equals(this.sentimentTrendClass, conversationMetrics.sentimentTrendClass) &&
+            Objects.equals(this.participantMetrics, conversationMetrics.participantMetrics);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class KnowledgeCategory  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Category name
    **/
@@ -112,7 +113,7 @@ public class KnowledgeCategory  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Category description
    **/
@@ -130,42 +131,41 @@ public class KnowledgeCategory  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base which category does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Actual language of the category")
   @JsonProperty("languageCode")
   public LanguageCodeEnum getLanguageCode() {
     return languageCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,14 +176,15 @@ public class KnowledgeCategory  implements Serializable {
       return false;
     }
     KnowledgeCategory knowledgeCategory = (KnowledgeCategory) o;
+
     return Objects.equals(this.id, knowledgeCategory.id) &&
-        Objects.equals(this.name, knowledgeCategory.name) &&
-        Objects.equals(this.description, knowledgeCategory.description) &&
-        Objects.equals(this.knowledgeBase, knowledgeCategory.knowledgeBase) &&
-        Objects.equals(this.languageCode, knowledgeCategory.languageCode) &&
-        Objects.equals(this.dateCreated, knowledgeCategory.dateCreated) &&
-        Objects.equals(this.dateModified, knowledgeCategory.dateModified) &&
-        Objects.equals(this.selfUri, knowledgeCategory.selfUri);
+            Objects.equals(this.name, knowledgeCategory.name) &&
+            Objects.equals(this.description, knowledgeCategory.description) &&
+            Objects.equals(this.knowledgeBase, knowledgeCategory.knowledgeBase) &&
+            Objects.equals(this.languageCode, knowledgeCategory.languageCode) &&
+            Objects.equals(this.dateCreated, knowledgeCategory.dateCreated) &&
+            Objects.equals(this.dateModified, knowledgeCategory.dateModified) &&
+            Objects.equals(this.selfUri, knowledgeCategory.selfUri);
   }
 
   @Override

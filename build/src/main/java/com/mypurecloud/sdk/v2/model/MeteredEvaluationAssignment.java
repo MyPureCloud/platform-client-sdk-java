@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -49,7 +50,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.evaluationContextId = evaluationContextId;
   }
 
-  
+
   /**
    **/
   public MeteredEvaluationAssignment evaluators(List<User> evaluators) {
@@ -66,7 +67,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.evaluators = evaluators;
   }
 
-  
+
   /**
    **/
   public MeteredEvaluationAssignment maxNumberEvaluations(Integer maxNumberEvaluations) {
@@ -83,7 +84,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.maxNumberEvaluations = maxNumberEvaluations;
   }
 
-  
+
   /**
    **/
   public MeteredEvaluationAssignment evaluationForm(EvaluationForm evaluationForm) {
@@ -100,7 +101,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-  
+
   /**
    **/
   public MeteredEvaluationAssignment assignToActiveUser(Boolean assignToActiveUser) {
@@ -117,7 +118,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.assignToActiveUser = assignToActiveUser;
   }
 
-  
+
   /**
    **/
   public MeteredEvaluationAssignment timeInterval(TimeInterval timeInterval) {
@@ -134,7 +135,6 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.timeInterval = timeInterval;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,12 +145,13 @@ public class MeteredEvaluationAssignment  implements Serializable {
       return false;
     }
     MeteredEvaluationAssignment meteredEvaluationAssignment = (MeteredEvaluationAssignment) o;
+
     return Objects.equals(this.evaluationContextId, meteredEvaluationAssignment.evaluationContextId) &&
-        Objects.equals(this.evaluators, meteredEvaluationAssignment.evaluators) &&
-        Objects.equals(this.maxNumberEvaluations, meteredEvaluationAssignment.maxNumberEvaluations) &&
-        Objects.equals(this.evaluationForm, meteredEvaluationAssignment.evaluationForm) &&
-        Objects.equals(this.assignToActiveUser, meteredEvaluationAssignment.assignToActiveUser) &&
-        Objects.equals(this.timeInterval, meteredEvaluationAssignment.timeInterval);
+            Objects.equals(this.evaluators, meteredEvaluationAssignment.evaluators) &&
+            Objects.equals(this.maxNumberEvaluations, meteredEvaluationAssignment.maxNumberEvaluations) &&
+            Objects.equals(this.evaluationForm, meteredEvaluationAssignment.evaluationForm) &&
+            Objects.equals(this.assignToActiveUser, meteredEvaluationAssignment.assignToActiveUser) &&
+            Objects.equals(this.timeInterval, meteredEvaluationAssignment.timeInterval);
   }
 
   @Override

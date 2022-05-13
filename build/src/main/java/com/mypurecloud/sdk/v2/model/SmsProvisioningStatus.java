@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -142,7 +143,7 @@ public class SmsProvisioningStatus  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * Provisioning state
    **/
@@ -160,7 +161,7 @@ public class SmsProvisioningStatus  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Any error associated with a Failed state
    **/
@@ -178,7 +179,7 @@ public class SmsProvisioningStatus  implements Serializable {
     this.error = error;
   }
 
-  
+
   /**
    * The phone number version associated with the provisioning action
    **/
@@ -196,7 +197,6 @@ public class SmsProvisioningStatus  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -207,10 +207,11 @@ public class SmsProvisioningStatus  implements Serializable {
       return false;
     }
     SmsProvisioningStatus smsProvisioningStatus = (SmsProvisioningStatus) o;
+
     return Objects.equals(this.action, smsProvisioningStatus.action) &&
-        Objects.equals(this.state, smsProvisioningStatus.state) &&
-        Objects.equals(this.error, smsProvisioningStatus.error) &&
-        Objects.equals(this.version, smsProvisioningStatus.version);
+            Objects.equals(this.state, smsProvisioningStatus.state) &&
+            Objects.equals(this.error, smsProvisioningStatus.error) &&
+            Objects.equals(this.version, smsProvisioningStatus.version);
   }
 
   @Override

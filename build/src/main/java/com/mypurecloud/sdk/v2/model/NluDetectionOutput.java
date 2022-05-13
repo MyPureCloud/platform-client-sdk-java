@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DetectedDialogAct;
@@ -34,14 +35,13 @@ public class NluDetectionOutput  implements Serializable {
     return intents;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The detected dialog acts.")
   @JsonProperty("dialogActs")
   public List<DetectedDialogAct> getDialogActs() {
     return dialogActs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -52,8 +52,9 @@ public class NluDetectionOutput  implements Serializable {
       return false;
     }
     NluDetectionOutput nluDetectionOutput = (NluDetectionOutput) o;
+
     return Objects.equals(this.intents, nluDetectionOutput.intents) &&
-        Objects.equals(this.dialogActs, nluDetectionOutput.dialogActs);
+            Objects.equals(this.dialogActs, nluDetectionOutput.dialogActs);
   }
 
   @Override

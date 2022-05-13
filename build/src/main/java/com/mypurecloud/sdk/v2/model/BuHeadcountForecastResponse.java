@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecast;
@@ -42,7 +43,7 @@ public class BuHeadcountForecastResponse  implements Serializable {
     this.result = result;
   }
 
-  
+
   /**
    * Download URL.  Null unless the response is too large to pass directly through the api
    **/
@@ -60,7 +61,6 @@ public class BuHeadcountForecastResponse  implements Serializable {
     this.downloadUrl = downloadUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class BuHeadcountForecastResponse  implements Serializable {
       return false;
     }
     BuHeadcountForecastResponse buHeadcountForecastResponse = (BuHeadcountForecastResponse) o;
+
     return Objects.equals(this.result, buHeadcountForecastResponse.result) &&
-        Objects.equals(this.downloadUrl, buHeadcountForecastResponse.downloadUrl);
+            Objects.equals(this.downloadUrl, buHeadcountForecastResponse.downloadUrl);
   }
 
   @Override

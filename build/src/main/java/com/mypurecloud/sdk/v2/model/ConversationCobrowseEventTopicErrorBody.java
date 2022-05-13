@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody details(List<ConversationCobrowseEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.details = details;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicErrorBody errors(List<ConversationCobrowseEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
       return false;
     }
     ConversationCobrowseEventTopicErrorBody conversationCobrowseEventTopicErrorBody = (ConversationCobrowseEventTopicErrorBody) o;
+
     return Objects.equals(this.message, conversationCobrowseEventTopicErrorBody.message) &&
-        Objects.equals(this.code, conversationCobrowseEventTopicErrorBody.code) &&
-        Objects.equals(this.status, conversationCobrowseEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, conversationCobrowseEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, conversationCobrowseEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, conversationCobrowseEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, conversationCobrowseEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, conversationCobrowseEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, conversationCobrowseEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, conversationCobrowseEventTopicErrorBody.errors);
+            Objects.equals(this.code, conversationCobrowseEventTopicErrorBody.code) &&
+            Objects.equals(this.status, conversationCobrowseEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, conversationCobrowseEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, conversationCobrowseEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, conversationCobrowseEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, conversationCobrowseEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, conversationCobrowseEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, conversationCobrowseEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, conversationCobrowseEventTopicErrorBody.errors);
   }
 
   @Override

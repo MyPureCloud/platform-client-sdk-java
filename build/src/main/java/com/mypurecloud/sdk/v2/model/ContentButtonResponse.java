@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class ContentButtonResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Describes the button that resulted in the Button Response.
    **/
@@ -110,7 +111,7 @@ public class ContentButtonResponse  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The response text from the button click.
    **/
@@ -128,7 +129,7 @@ public class ContentButtonResponse  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * The response payload associated with the clicked button.
    **/
@@ -146,7 +147,6 @@ public class ContentButtonResponse  implements Serializable {
     this.payload = payload;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,10 +157,11 @@ public class ContentButtonResponse  implements Serializable {
       return false;
     }
     ContentButtonResponse contentButtonResponse = (ContentButtonResponse) o;
+
     return Objects.equals(this.id, contentButtonResponse.id) &&
-        Objects.equals(this.type, contentButtonResponse.type) &&
-        Objects.equals(this.text, contentButtonResponse.text) &&
-        Objects.equals(this.payload, contentButtonResponse.payload);
+            Objects.equals(this.type, contentButtonResponse.type) &&
+            Objects.equals(this.text, contentButtonResponse.text) &&
+            Objects.equals(this.payload, contentButtonResponse.payload);
   }
 
   @Override

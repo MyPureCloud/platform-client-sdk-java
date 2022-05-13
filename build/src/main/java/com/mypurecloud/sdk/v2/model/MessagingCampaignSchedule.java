@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -42,7 +43,7 @@ public class MessagingCampaignSchedule  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignSchedule name(String name) {
@@ -59,21 +60,21 @@ public class MessagingCampaignSchedule  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -91,7 +92,7 @@ public class MessagingCampaignSchedule  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * A list of intervals during which to run the associated Campaign.
    **/
@@ -109,7 +110,7 @@ public class MessagingCampaignSchedule  implements Serializable {
     this.intervals = intervals;
   }
 
-  
+
   /**
    * The time zone for this messaging campaign schedule.
    **/
@@ -127,7 +128,7 @@ public class MessagingCampaignSchedule  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The Campaign that this messaging campaign schedule is for.
    **/
@@ -145,14 +146,13 @@ public class MessagingCampaignSchedule  implements Serializable {
     this.messagingCampaign = messagingCampaign;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,15 +163,16 @@ public class MessagingCampaignSchedule  implements Serializable {
       return false;
     }
     MessagingCampaignSchedule messagingCampaignSchedule = (MessagingCampaignSchedule) o;
+
     return Objects.equals(this.id, messagingCampaignSchedule.id) &&
-        Objects.equals(this.name, messagingCampaignSchedule.name) &&
-        Objects.equals(this.dateCreated, messagingCampaignSchedule.dateCreated) &&
-        Objects.equals(this.dateModified, messagingCampaignSchedule.dateModified) &&
-        Objects.equals(this.version, messagingCampaignSchedule.version) &&
-        Objects.equals(this.intervals, messagingCampaignSchedule.intervals) &&
-        Objects.equals(this.timeZone, messagingCampaignSchedule.timeZone) &&
-        Objects.equals(this.messagingCampaign, messagingCampaignSchedule.messagingCampaign) &&
-        Objects.equals(this.selfUri, messagingCampaignSchedule.selfUri);
+            Objects.equals(this.name, messagingCampaignSchedule.name) &&
+            Objects.equals(this.dateCreated, messagingCampaignSchedule.dateCreated) &&
+            Objects.equals(this.dateModified, messagingCampaignSchedule.dateModified) &&
+            Objects.equals(this.version, messagingCampaignSchedule.version) &&
+            Objects.equals(this.intervals, messagingCampaignSchedule.intervals) &&
+            Objects.equals(this.timeZone, messagingCampaignSchedule.timeZone) &&
+            Objects.equals(this.messagingCampaign, messagingCampaignSchedule.messagingCampaign) &&
+            Objects.equals(this.selfUri, messagingCampaignSchedule.selfUri);
   }
 
   @Override

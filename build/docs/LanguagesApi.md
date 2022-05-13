@@ -91,8 +91,6 @@ null (empty response body)
 
 Delete Language
 
-
-
 Wraps DELETE /api/v2/routing/languages/{languageId}  
 
 Requires ANY permissions: 
@@ -285,8 +283,6 @@ try {
 
 Get all available languages for translation
 
-
-
 Wraps GET /api/v2/languages/translations  
 
 Requires NO permissions: 
@@ -339,11 +335,9 @@ This endpoint does not require any parameters.
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) getLanguagesTranslationsBuiltin(language)
+> Map&lt;String, Object&gt; getLanguagesTranslationsBuiltin(language)
 
 Get the builtin translation for a language
-
-
 
 Wraps GET /api/v2/languages/translations/builtin  
 
@@ -393,7 +387,7 @@ try {
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="getLanguagesTranslationsOrganization"></a>
 
@@ -401,11 +395,9 @@ try {
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) getLanguagesTranslationsOrganization(language)
+> Map&lt;String, Object&gt; getLanguagesTranslationsOrganization(language)
 
 Get effective translation for an organization by language
-
-
 
 Wraps GET /api/v2/languages/translations/organization  
 
@@ -455,7 +447,7 @@ try {
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="getLanguagesTranslationsUser"></a>
 
@@ -463,11 +455,9 @@ try {
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) getLanguagesTranslationsUser(userId)
+> Map&lt;String, Object&gt; getLanguagesTranslationsUser(userId)
 
 Get effective language translation for a user
-
-
 
 Wraps GET /api/v2/languages/translations/users/{userId}  
 
@@ -517,7 +507,7 @@ try {
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="getRoutingLanguage"></a>
 
@@ -528,8 +518,6 @@ try {
 > [Language](Language.html) getRoutingLanguage(languageId)
 
 Get language
-
-
 
 Wraps GET /api/v2/routing/languages/{languageId}  
 

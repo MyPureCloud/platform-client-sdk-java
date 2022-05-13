@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GamificationScorecardChangeTopicMetric;
@@ -47,7 +48,7 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicPerformanceMetric points(Integer points) {
@@ -64,7 +65,7 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     this.points = points;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicPerformanceMetric value(BigDecimal value) {
@@ -81,7 +82,7 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     this.value = value;
   }
 
-  
+
   /**
    **/
   public GamificationScorecardChangeTopicPerformanceMetric punctualityEvents(List<GamificationScorecardChangeTopicPunctualityEvent> punctualityEvents) {
@@ -98,7 +99,6 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
     this.punctualityEvents = punctualityEvents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class GamificationScorecardChangeTopicPerformanceMetric  implements Seria
       return false;
     }
     GamificationScorecardChangeTopicPerformanceMetric gamificationScorecardChangeTopicPerformanceMetric = (GamificationScorecardChangeTopicPerformanceMetric) o;
+
     return Objects.equals(this.metric, gamificationScorecardChangeTopicPerformanceMetric.metric) &&
-        Objects.equals(this.points, gamificationScorecardChangeTopicPerformanceMetric.points) &&
-        Objects.equals(this.value, gamificationScorecardChangeTopicPerformanceMetric.value) &&
-        Objects.equals(this.punctualityEvents, gamificationScorecardChangeTopicPerformanceMetric.punctualityEvents);
+            Objects.equals(this.points, gamificationScorecardChangeTopicPerformanceMetric.points) &&
+            Objects.equals(this.value, gamificationScorecardChangeTopicPerformanceMetric.value) &&
+            Objects.equals(this.punctualityEvents, gamificationScorecardChangeTopicPerformanceMetric.punctualityEvents);
   }
 
   @Override

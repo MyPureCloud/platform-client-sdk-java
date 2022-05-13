@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -171,7 +172,7 @@ public class AnalyticsFlow  implements Serializable {
     this.endingLanguage = endingLanguage;
   }
 
-  
+
   /**
    * The particular entry reason for this flow, e.g. an address, userId, or flowId
    **/
@@ -189,7 +190,7 @@ public class AnalyticsFlow  implements Serializable {
     this.entryReason = entryReason;
   }
 
-  
+
   /**
    * The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct
    **/
@@ -207,7 +208,7 @@ public class AnalyticsFlow  implements Serializable {
     this.entryType = entryType;
   }
 
-  
+
   /**
    * The exit reason for this flow, e.g. DISCONNECT
    **/
@@ -225,7 +226,7 @@ public class AnalyticsFlow  implements Serializable {
     this.exitReason = exitReason;
   }
 
-  
+
   /**
    * The unique identifier of this flow
    **/
@@ -243,7 +244,7 @@ public class AnalyticsFlow  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    * The name of this flow at the time of flow execution
    **/
@@ -261,7 +262,7 @@ public class AnalyticsFlow  implements Serializable {
     this.flowName = flowName;
   }
 
-  
+
   /**
    * The type of this flow
    **/
@@ -279,7 +280,7 @@ public class AnalyticsFlow  implements Serializable {
     this.flowType = flowType;
   }
 
-  
+
   /**
    * The version of this flow
    **/
@@ -297,7 +298,7 @@ public class AnalyticsFlow  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
+
   /**
    * Flag indicating whether the flow issued a callback
    **/
@@ -315,7 +316,7 @@ public class AnalyticsFlow  implements Serializable {
     this.issuedCallback = issuedCallback;
   }
 
-  
+
   /**
    * The recognition failure reason causing to exit/disconnect
    **/
@@ -333,7 +334,7 @@ public class AnalyticsFlow  implements Serializable {
     this.recognitionFailureReason = recognitionFailureReason;
   }
 
-  
+
   /**
    * Flow starting language, e.g. en-us
    **/
@@ -351,7 +352,7 @@ public class AnalyticsFlow  implements Serializable {
     this.startingLanguage = startingLanguage;
   }
 
-  
+
   /**
    * The address of a flow transfer target, e.g. a phone number, an email address, or a queueId
    **/
@@ -369,7 +370,7 @@ public class AnalyticsFlow  implements Serializable {
     this.transferTargetAddress = transferTargetAddress;
   }
 
-  
+
   /**
    * The name of a flow transfer target
    **/
@@ -387,7 +388,7 @@ public class AnalyticsFlow  implements Serializable {
     this.transferTargetName = transferTargetName;
   }
 
-  
+
   /**
    * The type of transfer for flows that ended with a transfer
    **/
@@ -405,7 +406,7 @@ public class AnalyticsFlow  implements Serializable {
     this.transferType = transferType;
   }
 
-  
+
   /**
    * Flow outcomes
    **/
@@ -423,7 +424,6 @@ public class AnalyticsFlow  implements Serializable {
     this.outcomes = outcomes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -434,21 +434,22 @@ public class AnalyticsFlow  implements Serializable {
       return false;
     }
     AnalyticsFlow analyticsFlow = (AnalyticsFlow) o;
+
     return Objects.equals(this.endingLanguage, analyticsFlow.endingLanguage) &&
-        Objects.equals(this.entryReason, analyticsFlow.entryReason) &&
-        Objects.equals(this.entryType, analyticsFlow.entryType) &&
-        Objects.equals(this.exitReason, analyticsFlow.exitReason) &&
-        Objects.equals(this.flowId, analyticsFlow.flowId) &&
-        Objects.equals(this.flowName, analyticsFlow.flowName) &&
-        Objects.equals(this.flowType, analyticsFlow.flowType) &&
-        Objects.equals(this.flowVersion, analyticsFlow.flowVersion) &&
-        Objects.equals(this.issuedCallback, analyticsFlow.issuedCallback) &&
-        Objects.equals(this.recognitionFailureReason, analyticsFlow.recognitionFailureReason) &&
-        Objects.equals(this.startingLanguage, analyticsFlow.startingLanguage) &&
-        Objects.equals(this.transferTargetAddress, analyticsFlow.transferTargetAddress) &&
-        Objects.equals(this.transferTargetName, analyticsFlow.transferTargetName) &&
-        Objects.equals(this.transferType, analyticsFlow.transferType) &&
-        Objects.equals(this.outcomes, analyticsFlow.outcomes);
+            Objects.equals(this.entryReason, analyticsFlow.entryReason) &&
+            Objects.equals(this.entryType, analyticsFlow.entryType) &&
+            Objects.equals(this.exitReason, analyticsFlow.exitReason) &&
+            Objects.equals(this.flowId, analyticsFlow.flowId) &&
+            Objects.equals(this.flowName, analyticsFlow.flowName) &&
+            Objects.equals(this.flowType, analyticsFlow.flowType) &&
+            Objects.equals(this.flowVersion, analyticsFlow.flowVersion) &&
+            Objects.equals(this.issuedCallback, analyticsFlow.issuedCallback) &&
+            Objects.equals(this.recognitionFailureReason, analyticsFlow.recognitionFailureReason) &&
+            Objects.equals(this.startingLanguage, analyticsFlow.startingLanguage) &&
+            Objects.equals(this.transferTargetAddress, analyticsFlow.transferTargetAddress) &&
+            Objects.equals(this.transferTargetName, analyticsFlow.transferTargetName) &&
+            Objects.equals(this.transferType, analyticsFlow.transferType) &&
+            Objects.equals(this.outcomes, analyticsFlow.outcomes);
   }
 
   @Override

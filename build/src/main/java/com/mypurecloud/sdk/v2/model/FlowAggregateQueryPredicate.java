@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -281,7 +282,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -299,7 +300,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -317,7 +318,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -335,7 +336,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension predicates
    **/
@@ -353,7 +354,6 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -364,11 +364,12 @@ public class FlowAggregateQueryPredicate  implements Serializable {
       return false;
     }
     FlowAggregateQueryPredicate flowAggregateQueryPredicate = (FlowAggregateQueryPredicate) o;
+
     return Objects.equals(this.type, flowAggregateQueryPredicate.type) &&
-        Objects.equals(this.dimension, flowAggregateQueryPredicate.dimension) &&
-        Objects.equals(this.operator, flowAggregateQueryPredicate.operator) &&
-        Objects.equals(this.value, flowAggregateQueryPredicate.value) &&
-        Objects.equals(this.range, flowAggregateQueryPredicate.range);
+            Objects.equals(this.dimension, flowAggregateQueryPredicate.dimension) &&
+            Objects.equals(this.operator, flowAggregateQueryPredicate.operator) &&
+            Objects.equals(this.value, flowAggregateQueryPredicate.value) &&
+            Objects.equals(this.range, flowAggregateQueryPredicate.range);
   }
 
   @Override

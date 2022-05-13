@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody;
@@ -46,7 +47,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate language(String language) {
@@ -63,7 +64,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.language = language;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate header(V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader header) {
@@ -80,7 +81,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.header = header;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate body(V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody body) {
@@ -97,7 +98,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.body = body;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate footer(V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateFooter footer) {
@@ -114,7 +115,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.footer = footer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.id) &&
-        Objects.equals(this.language, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.language) &&
-        Objects.equals(this.header, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.header) &&
-        Objects.equals(this.body, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.body) &&
-        Objects.equals(this.footer, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.footer);
+            Objects.equals(this.language, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.language) &&
+            Objects.equals(this.header, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.header) &&
+            Objects.equals(this.body, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.body) &&
+            Objects.equals(this.footer, v2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate.footer);
   }
 
   @Override

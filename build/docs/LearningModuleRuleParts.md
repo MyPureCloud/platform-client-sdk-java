@@ -21,9 +21,9 @@ title: LearningModuleRuleParts
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INCLUDE | &quot;Include&quot; |
-| EXCLUDE | &quot;Exclude&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INCLUDE | &quot;Include&quot; | 
+| EXCLUDE | &quot;Exclude&quot; | 
 {: class="table table-striped"}
 
 
@@ -33,15 +33,15 @@ title: LearningModuleRuleParts
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACDSKILLS | &quot;AcdSkills&quot; |
-| AGENTNAME | &quot;AgentName&quot; |
-| DIVISION | &quot;Division&quot; |
-| GROUP | &quot;Group&quot; |
-| LOCATION | &quot;Location&quot; |
-| QUEUE | &quot;Queue&quot; |
-| ROLE | &quot;Role&quot; |
-| TEAM | &quot;Team&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACDSKILLS | &quot;AcdSkills&quot; | 
+| AGENTNAME | &quot;AgentName&quot; | 
+| DIVISION | &quot;Division&quot; | 
+| GROUP | &quot;Group&quot; | 
+| LOCATION | &quot;Location&quot; | 
+| QUEUE | &quot;Queue&quot; | 
+| ROLE | &quot;Role&quot; | 
+| TEAM | &quot;Team&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -45,7 +46,7 @@ public class FlowExecutionLaunchResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The flow execution name.
    **/
@@ -63,7 +64,7 @@ public class FlowExecutionLaunchResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The version of the flow that launched
    **/
@@ -81,14 +82,13 @@ public class FlowExecutionLaunchResponse  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,10 +99,11 @@ public class FlowExecutionLaunchResponse  implements Serializable {
       return false;
     }
     FlowExecutionLaunchResponse flowExecutionLaunchResponse = (FlowExecutionLaunchResponse) o;
+
     return Objects.equals(this.id, flowExecutionLaunchResponse.id) &&
-        Objects.equals(this.name, flowExecutionLaunchResponse.name) &&
-        Objects.equals(this.flowVersion, flowExecutionLaunchResponse.flowVersion) &&
-        Objects.equals(this.selfUri, flowExecutionLaunchResponse.selfUri);
+            Objects.equals(this.name, flowExecutionLaunchResponse.name) &&
+            Objects.equals(this.flowVersion, flowExecutionLaunchResponse.flowVersion) &&
+            Objects.equals(this.selfUri, flowExecutionLaunchResponse.selfUri);
   }
 
   @Override

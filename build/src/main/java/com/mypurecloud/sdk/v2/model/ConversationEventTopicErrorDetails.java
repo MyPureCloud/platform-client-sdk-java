@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * A code unique to this error.
    **/
@@ -68,7 +69,7 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * Friendly description of this error.
    **/
@@ -86,7 +87,7 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    * This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'
    **/
@@ -104,7 +105,7 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    * Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'
    **/
@@ -122,7 +123,7 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    * The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
    **/
@@ -140,7 +141,7 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ConversationEventTopicErrorDetails uri(String uri) {
@@ -157,7 +158,6 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     this.uri = uri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,13 +168,14 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
       return false;
     }
     ConversationEventTopicErrorDetails conversationEventTopicErrorDetails = (ConversationEventTopicErrorDetails) o;
+
     return Objects.equals(this.status, conversationEventTopicErrorDetails.status) &&
-        Objects.equals(this.code, conversationEventTopicErrorDetails.code) &&
-        Objects.equals(this.message, conversationEventTopicErrorDetails.message) &&
-        Objects.equals(this.messageWithParams, conversationEventTopicErrorDetails.messageWithParams) &&
-        Objects.equals(this.messageParams, conversationEventTopicErrorDetails.messageParams) &&
-        Objects.equals(this.contextId, conversationEventTopicErrorDetails.contextId) &&
-        Objects.equals(this.uri, conversationEventTopicErrorDetails.uri);
+            Objects.equals(this.code, conversationEventTopicErrorDetails.code) &&
+            Objects.equals(this.message, conversationEventTopicErrorDetails.message) &&
+            Objects.equals(this.messageWithParams, conversationEventTopicErrorDetails.messageWithParams) &&
+            Objects.equals(this.messageParams, conversationEventTopicErrorDetails.messageParams) &&
+            Objects.equals(this.contextId, conversationEventTopicErrorDetails.contextId) &&
+            Objects.equals(this.uri, conversationEventTopicErrorDetails.uri);
   }
 
   @Override

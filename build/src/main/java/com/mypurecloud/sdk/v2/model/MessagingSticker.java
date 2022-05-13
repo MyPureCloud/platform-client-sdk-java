@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -140,7 +141,7 @@ public class MessagingSticker  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public MessagingSticker name(String name) {
@@ -157,7 +158,7 @@ public class MessagingSticker  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The sticker Id of the sticker, assigned by the sticker provider.
    **/
@@ -175,7 +176,7 @@ public class MessagingSticker  implements Serializable {
     this.providerStickerId = providerStickerId;
   }
 
-  
+
   /**
    * The package Id of the sticker, assigned by the sticker provider.
    **/
@@ -193,7 +194,7 @@ public class MessagingSticker  implements Serializable {
     this.providerPackageId = providerPackageId;
   }
 
-  
+
   /**
    * The package name of the sticker, assigned by the sticker provider.
    **/
@@ -211,7 +212,7 @@ public class MessagingSticker  implements Serializable {
     this.packageName = packageName;
   }
 
-  
+
   /**
    * The type of the messenger provider.
    **/
@@ -229,7 +230,7 @@ public class MessagingSticker  implements Serializable {
     this.messengerType = messengerType;
   }
 
-  
+
   /**
    * The type of the sticker.
    **/
@@ -247,7 +248,7 @@ public class MessagingSticker  implements Serializable {
     this.stickerType = stickerType;
   }
 
-  
+
   /**
    * The version of the sticker, assigned by the provider.
    **/
@@ -265,7 +266,7 @@ public class MessagingSticker  implements Serializable {
     this.providerVersion = providerVersion;
   }
 
-  
+
   /**
    **/
   public MessagingSticker uriLocation(String uriLocation) {
@@ -282,14 +283,13 @@ public class MessagingSticker  implements Serializable {
     this.uriLocation = uriLocation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -300,16 +300,17 @@ public class MessagingSticker  implements Serializable {
       return false;
     }
     MessagingSticker messagingSticker = (MessagingSticker) o;
+
     return Objects.equals(this.id, messagingSticker.id) &&
-        Objects.equals(this.name, messagingSticker.name) &&
-        Objects.equals(this.providerStickerId, messagingSticker.providerStickerId) &&
-        Objects.equals(this.providerPackageId, messagingSticker.providerPackageId) &&
-        Objects.equals(this.packageName, messagingSticker.packageName) &&
-        Objects.equals(this.messengerType, messagingSticker.messengerType) &&
-        Objects.equals(this.stickerType, messagingSticker.stickerType) &&
-        Objects.equals(this.providerVersion, messagingSticker.providerVersion) &&
-        Objects.equals(this.uriLocation, messagingSticker.uriLocation) &&
-        Objects.equals(this.selfUri, messagingSticker.selfUri);
+            Objects.equals(this.name, messagingSticker.name) &&
+            Objects.equals(this.providerStickerId, messagingSticker.providerStickerId) &&
+            Objects.equals(this.providerPackageId, messagingSticker.providerPackageId) &&
+            Objects.equals(this.packageName, messagingSticker.packageName) &&
+            Objects.equals(this.messengerType, messagingSticker.messengerType) &&
+            Objects.equals(this.stickerType, messagingSticker.stickerType) &&
+            Objects.equals(this.providerVersion, messagingSticker.providerVersion) &&
+            Objects.equals(this.uriLocation, messagingSticker.uriLocation) &&
+            Objects.equals(this.selfUri, messagingSticker.selfUri);
   }
 
   @Override

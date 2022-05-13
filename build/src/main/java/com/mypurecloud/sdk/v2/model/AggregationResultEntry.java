@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class AggregationResultEntry  implements Serializable {
     this.count = count;
   }
 
-  
+
   /**
    * For termFrequency aggregations
    **/
@@ -61,7 +62,7 @@ public class AggregationResultEntry  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * For numericRange aggregations
    **/
@@ -79,7 +80,7 @@ public class AggregationResultEntry  implements Serializable {
     this.gte = gte;
   }
 
-  
+
   /**
    * For numericRange aggregations
    **/
@@ -97,7 +98,6 @@ public class AggregationResultEntry  implements Serializable {
     this.lt = lt;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class AggregationResultEntry  implements Serializable {
       return false;
     }
     AggregationResultEntry aggregationResultEntry = (AggregationResultEntry) o;
+
     return Objects.equals(this.count, aggregationResultEntry.count) &&
-        Objects.equals(this.value, aggregationResultEntry.value) &&
-        Objects.equals(this.gte, aggregationResultEntry.gte) &&
-        Objects.equals(this.lt, aggregationResultEntry.lt);
+            Objects.equals(this.value, aggregationResultEntry.value) &&
+            Objects.equals(this.gte, aggregationResultEntry.gte) &&
+            Objects.equals(this.lt, aggregationResultEntry.lt);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class CallConversation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CallConversation name(String name) {
@@ -104,7 +105,7 @@ public class CallConversation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The list of participants involved in the conversation.
    **/
@@ -122,7 +123,7 @@ public class CallConversation  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    * The list of other media channels involved in the conversation.
    **/
@@ -140,7 +141,7 @@ public class CallConversation  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
-  
+
   /**
    **/
   public CallConversation recordingState(RecordingStateEnum recordingState) {
@@ -157,7 +158,7 @@ public class CallConversation  implements Serializable {
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    * If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
    **/
@@ -175,14 +176,13 @@ public class CallConversation  implements Serializable {
     this.maxParticipants = maxParticipants;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,13 +193,14 @@ public class CallConversation  implements Serializable {
       return false;
     }
     CallConversation callConversation = (CallConversation) o;
+
     return Objects.equals(this.id, callConversation.id) &&
-        Objects.equals(this.name, callConversation.name) &&
-        Objects.equals(this.participants, callConversation.participants) &&
-        Objects.equals(this.otherMediaUris, callConversation.otherMediaUris) &&
-        Objects.equals(this.recordingState, callConversation.recordingState) &&
-        Objects.equals(this.maxParticipants, callConversation.maxParticipants) &&
-        Objects.equals(this.selfUri, callConversation.selfUri);
+            Objects.equals(this.name, callConversation.name) &&
+            Objects.equals(this.participants, callConversation.participants) &&
+            Objects.equals(this.otherMediaUris, callConversation.otherMediaUris) &&
+            Objects.equals(this.recordingState, callConversation.recordingState) &&
+            Objects.equals(this.maxParticipants, callConversation.maxParticipants) &&
+            Objects.equals(this.selfUri, callConversation.selfUri);
   }
 
   @Override

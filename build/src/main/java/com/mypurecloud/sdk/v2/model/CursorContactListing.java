@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
@@ -45,7 +46,7 @@ public class CursorContactListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CursorContactListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class CursorContactListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CursorContactListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class CursorContactListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CursorContactListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class CursorContactListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class CursorContactListing  implements Serializable {
       return false;
     }
     CursorContactListing cursorContactListing = (CursorContactListing) o;
+
     return Objects.equals(this.entities, cursorContactListing.entities) &&
-        Objects.equals(this.nextUri, cursorContactListing.nextUri) &&
-        Objects.equals(this.selfUri, cursorContactListing.selfUri) &&
-        Objects.equals(this.previousUri, cursorContactListing.previousUri);
+            Objects.equals(this.nextUri, cursorContactListing.nextUri) &&
+            Objects.equals(this.selfUri, cursorContactListing.selfUri) &&
+            Objects.equals(this.previousUri, cursorContactListing.previousUri);
   }
 
   @Override

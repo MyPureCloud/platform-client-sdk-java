@@ -10,12 +10,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGreetingRequest;
@@ -41,7 +41,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class GreetingsApi {
   private final ApiClient pcapiClient;
 
@@ -53,7 +52,6 @@ public class GreetingsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Deletes a Greeting with the given GreetingId
    * 
@@ -78,7 +76,7 @@ public class GreetingsApi {
   private DeleteGreetingRequest createDeleteGreetingRequest(String greetingId) {
     return DeleteGreetingRequest.builder()
             .withGreetingId(greetingId)
-    
+
             .build();
   }
 
@@ -129,7 +127,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Get a Greeting with the given GreetingId
    * 
@@ -156,7 +153,7 @@ public class GreetingsApi {
   private GetGreetingRequest createGetGreetingRequest(String greetingId) {
     return GetGreetingRequest.builder()
             .withGreetingId(greetingId)
-    
+
             .build();
   }
 
@@ -208,7 +205,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Get media playback URI for this greeting
    * 
@@ -237,9 +233,9 @@ public class GreetingsApi {
   private GetGreetingMediaRequest createGetGreetingMediaRequest(String greetingId, String formatId) {
     return GetGreetingMediaRequest.builder()
             .withGreetingId(greetingId)
-    
+
             .withFormatId(formatId)
-    
+
             .build();
   }
 
@@ -291,9 +287,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Gets an Organization&#39;s Greetings
+   * Gets an Organization's Greetings
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -306,7 +301,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Gets an Organization&#39;s Greetings
+   * Gets an Organization's Greetings
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -320,14 +315,14 @@ public class GreetingsApi {
   private GetGreetingsRequest createGetGreetingsRequest(Integer pageSize, Integer pageNumber) {
     return GetGreetingsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
   /**
-   * Gets an Organization&#39;s Greetings
+   * Gets an Organization's Greetings
    * 
    * @param request The request object
    * @return DomainEntityListing
@@ -346,7 +341,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Gets an Organization&#39;s Greetings
+   * Gets an Organization's Greetings
    * 
    * @param request The request object
    * @return the response
@@ -374,9 +369,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Get an Organization&#39;s DefaultGreetingList
+   * Get an Organization's DefaultGreetingList
    * 
    * @return DefaultGreetingList
    * @throws ApiException if the request fails on the server
@@ -387,7 +381,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get an Organization&#39;s DefaultGreetingList
+   * Get an Organization's DefaultGreetingList
    * 
    * @return DefaultGreetingList
    * @throws IOException if the request fails to be processed
@@ -402,7 +396,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get an Organization&#39;s DefaultGreetingList
+   * Get an Organization's DefaultGreetingList
    * 
    * @param request The request object
    * @return DefaultGreetingList
@@ -421,7 +415,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get an Organization&#39;s DefaultGreetingList
+   * Get an Organization's DefaultGreetingList
    * 
    * @param request The request object
    * @return the response
@@ -449,9 +443,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Get a list of the Group&#39;s Greetings
+   * Get a list of the Group's Greetings
    * 
    * @param groupId Group ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -465,7 +458,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get a list of the Group&#39;s Greetings
+   * Get a list of the Group's Greetings
    * 
    * @param groupId Group ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -480,16 +473,16 @@ public class GreetingsApi {
   private GetGroupGreetingsRequest createGetGroupGreetingsRequest(String groupId, Integer pageSize, Integer pageNumber) {
     return GetGroupGreetingsRequest.builder()
             .withGroupId(groupId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
   /**
-   * Get a list of the Group&#39;s Greetings
+   * Get a list of the Group's Greetings
    * 
    * @param request The request object
    * @return GreetingListing
@@ -508,7 +501,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get a list of the Group&#39;s Greetings
+   * Get a list of the Group's Greetings
    * 
    * @param request The request object
    * @return the response
@@ -536,9 +529,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Grabs the list of Default Greetings given a Group&#39;s ID
+   * Grabs the list of Default Greetings given a Group's ID
    * 
    * @param groupId Group ID (required)
    * @return DefaultGreetingList
@@ -550,7 +542,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Grabs the list of Default Greetings given a Group&#39;s ID
+   * Grabs the list of Default Greetings given a Group's ID
    * 
    * @param groupId Group ID (required)
    * @return DefaultGreetingList
@@ -563,12 +555,12 @@ public class GreetingsApi {
   private GetGroupGreetingsDefaultsRequest createGetGroupGreetingsDefaultsRequest(String groupId) {
     return GetGroupGreetingsDefaultsRequest.builder()
             .withGroupId(groupId)
-    
+
             .build();
   }
 
   /**
-   * Grabs the list of Default Greetings given a Group&#39;s ID
+   * Grabs the list of Default Greetings given a Group's ID
    * 
    * @param request The request object
    * @return DefaultGreetingList
@@ -587,7 +579,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Grabs the list of Default Greetings given a Group&#39;s ID
+   * Grabs the list of Default Greetings given a Group's ID
    * 
    * @param request The request object
    * @return the response
@@ -615,9 +607,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Get a list of the User&#39;s Greetings
+   * Get a list of the User's Greetings
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -631,7 +622,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get a list of the User&#39;s Greetings
+   * Get a list of the User's Greetings
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -646,16 +637,16 @@ public class GreetingsApi {
   private GetUserGreetingsRequest createGetUserGreetingsRequest(String userId, Integer pageSize, Integer pageNumber) {
     return GetUserGreetingsRequest.builder()
             .withUserId(userId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
   /**
-   * Get a list of the User&#39;s Greetings
+   * Get a list of the User's Greetings
    * 
    * @param request The request object
    * @return DomainEntityListing
@@ -674,7 +665,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Get a list of the User&#39;s Greetings
+   * Get a list of the User's Greetings
    * 
    * @param request The request object
    * @return the response
@@ -702,9 +693,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Grabs the list of Default Greetings given a User&#39;s ID
+   * Grabs the list of Default Greetings given a User's ID
    * 
    * @param userId User ID (required)
    * @return DefaultGreetingList
@@ -716,7 +706,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Grabs the list of Default Greetings given a User&#39;s ID
+   * Grabs the list of Default Greetings given a User's ID
    * 
    * @param userId User ID (required)
    * @return DefaultGreetingList
@@ -729,12 +719,12 @@ public class GreetingsApi {
   private GetUserGreetingsDefaultsRequest createGetUserGreetingsDefaultsRequest(String userId) {
     return GetUserGreetingsDefaultsRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
   /**
-   * Grabs the list of Default Greetings given a User&#39;s ID
+   * Grabs the list of Default Greetings given a User's ID
    * 
    * @param request The request object
    * @return DefaultGreetingList
@@ -753,7 +743,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Grabs the list of Default Greetings given a User&#39;s ID
+   * Grabs the list of Default Greetings given a User's ID
    * 
    * @param request The request object
    * @return the response
@@ -781,7 +771,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Create a Greeting for an Organization
    * 
@@ -808,7 +797,7 @@ public class GreetingsApi {
   private PostGreetingsRequest createPostGreetingsRequest(Greeting body) {
     return PostGreetingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -860,7 +849,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Creates a Greeting for a Group
    * 
@@ -889,9 +877,9 @@ public class GreetingsApi {
   private PostGroupGreetingsRequest createPostGroupGreetingsRequest(String groupId, Greeting body) {
     return PostGroupGreetingsRequest.builder()
             .withGroupId(groupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -943,7 +931,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Creates a Greeting for a User
    * 
@@ -972,9 +959,9 @@ public class GreetingsApi {
   private PostUserGreetingsRequest createPostUserGreetingsRequest(String userId, Greeting body) {
     return PostUserGreetingsRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1026,7 +1013,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Updates the Greeting with the given GreetingId
    * 
@@ -1055,9 +1041,9 @@ public class GreetingsApi {
   private PutGreetingRequest createPutGreetingRequest(String greetingId, Greeting body) {
     return PutGreetingRequest.builder()
             .withGreetingId(greetingId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1109,9 +1095,8 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
-   * Update an Organization&#39;s DefaultGreetingList
+   * Update an Organization's DefaultGreetingList
    * 
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
@@ -1123,7 +1108,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Update an Organization&#39;s DefaultGreetingList
+   * Update an Organization's DefaultGreetingList
    * 
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
@@ -1136,12 +1121,12 @@ public class GreetingsApi {
   private PutGreetingsDefaultsRequest createPutGreetingsDefaultsRequest(DefaultGreetingList body) {
     return PutGreetingsDefaultsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Update an Organization&#39;s DefaultGreetingList
+   * Update an Organization's DefaultGreetingList
    * 
    * @param request The request object
    * @return DefaultGreetingList
@@ -1160,7 +1145,7 @@ public class GreetingsApi {
   }
 
   /**
-   * Update an Organization&#39;s DefaultGreetingList
+   * Update an Organization's DefaultGreetingList
    * 
    * @param request The request object
    * @return the response
@@ -1188,7 +1173,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
@@ -1217,9 +1201,9 @@ public class GreetingsApi {
   private PutGroupGreetingsDefaultsRequest createPutGroupGreetingsDefaultsRequest(String groupId, DefaultGreetingList body) {
     return PutGroupGreetingsDefaultsRequest.builder()
             .withGroupId(groupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1271,7 +1255,6 @@ public class GreetingsApi {
     }
   }
 
-  
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
@@ -1300,9 +1283,9 @@ public class GreetingsApi {
   private PutUserGreetingsDefaultsRequest createPutUserGreetingsDefaultsRequest(String userId, DefaultGreetingList body) {
     return PutUserGreetingsDefaultsRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1354,5 +1337,4 @@ public class GreetingsApi {
     }
   }
 
-  
 }

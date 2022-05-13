@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class QueueConversationCallEventTopicJourneyContext  implements Serializa
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicJourneyContext customerSession(QueueConversationCallEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class QueueConversationCallEventTopicJourneyContext  implements Serializa
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicJourneyContext triggeringAction(QueueConversationCallEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class QueueConversationCallEventTopicJourneyContext  implements Serializa
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class QueueConversationCallEventTopicJourneyContext  implements Serializa
       return false;
     }
     QueueConversationCallEventTopicJourneyContext queueConversationCallEventTopicJourneyContext = (QueueConversationCallEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationCallEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationCallEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationCallEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationCallEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationCallEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

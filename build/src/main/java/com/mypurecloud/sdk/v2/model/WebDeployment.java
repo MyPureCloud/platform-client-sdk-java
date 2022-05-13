@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class WebDeployment  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The deployment name
    **/
@@ -117,7 +118,7 @@ public class WebDeployment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The description of the config
    **/
@@ -135,7 +136,7 @@ public class WebDeployment  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The config version this deployment uses
    **/
@@ -153,7 +154,7 @@ public class WebDeployment  implements Serializable {
     this._configuration = _configuration;
   }
 
-  
+
   /**
    * Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true.
    **/
@@ -171,7 +172,7 @@ public class WebDeployment  implements Serializable {
     this.allowAllDomains = allowAllDomains;
   }
 
-  
+
   /**
    * The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use.
    **/
@@ -189,35 +190,35 @@ public class WebDeployment  implements Serializable {
     this.allowedDomains = allowedDomains;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Javascript snippet used to load the config")
   @JsonProperty("snippet")
   public String getSnippet() {
     return snippet;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the deployment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date the deployment was most recently modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A reference to the user who most recently modified the deployment")
   @JsonProperty("lastModifiedUser")
   public AddressableEntityRef getLastModifiedUser() {
     return lastModifiedUser;
   }
 
-  
+
   /**
    * A reference to the inboundshortmessage flow used by this deployment
    **/
@@ -235,7 +236,7 @@ public class WebDeployment  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * The current status of the deployment
    **/
@@ -253,14 +254,13 @@ public class WebDeployment  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -271,19 +271,20 @@ public class WebDeployment  implements Serializable {
       return false;
     }
     WebDeployment webDeployment = (WebDeployment) o;
+
     return Objects.equals(this.id, webDeployment.id) &&
-        Objects.equals(this.name, webDeployment.name) &&
-        Objects.equals(this.description, webDeployment.description) &&
-        Objects.equals(this._configuration, webDeployment._configuration) &&
-        Objects.equals(this.allowAllDomains, webDeployment.allowAllDomains) &&
-        Objects.equals(this.allowedDomains, webDeployment.allowedDomains) &&
-        Objects.equals(this.snippet, webDeployment.snippet) &&
-        Objects.equals(this.dateCreated, webDeployment.dateCreated) &&
-        Objects.equals(this.dateModified, webDeployment.dateModified) &&
-        Objects.equals(this.lastModifiedUser, webDeployment.lastModifiedUser) &&
-        Objects.equals(this.flow, webDeployment.flow) &&
-        Objects.equals(this.status, webDeployment.status) &&
-        Objects.equals(this.selfUri, webDeployment.selfUri);
+            Objects.equals(this.name, webDeployment.name) &&
+            Objects.equals(this.description, webDeployment.description) &&
+            Objects.equals(this._configuration, webDeployment._configuration) &&
+            Objects.equals(this.allowAllDomains, webDeployment.allowAllDomains) &&
+            Objects.equals(this.allowedDomains, webDeployment.allowedDomains) &&
+            Objects.equals(this.snippet, webDeployment.snippet) &&
+            Objects.equals(this.dateCreated, webDeployment.dateCreated) &&
+            Objects.equals(this.dateModified, webDeployment.dateModified) &&
+            Objects.equals(this.lastModifiedUser, webDeployment.lastModifiedUser) &&
+            Objects.equals(this.flow, webDeployment.flow) &&
+            Objects.equals(this.status, webDeployment.status) &&
+            Objects.equals(this.selfUri, webDeployment.selfUri);
   }
 
   @Override

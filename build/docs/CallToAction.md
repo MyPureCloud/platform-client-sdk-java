@@ -20,9 +20,9 @@ title: CallToAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BLANK | &quot;Blank&quot; |
-| SELF | &quot;Self&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BLANK | &quot;Blank&quot; | 
+| SELF | &quot;Self&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMessageEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
       return false;
     }
     VoicemailMessageEntityListing voicemailMessageEntityListing = (VoicemailMessageEntityListing) o;
+
     return Objects.equals(this.entities, voicemailMessageEntityListing.entities) &&
-        Objects.equals(this.pageSize, voicemailMessageEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, voicemailMessageEntityListing.pageNumber) &&
-        Objects.equals(this.total, voicemailMessageEntityListing.total) &&
-        Objects.equals(this.lastUri, voicemailMessageEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, voicemailMessageEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, voicemailMessageEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, voicemailMessageEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, voicemailMessageEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, voicemailMessageEntityListing.pageCount);
+            Objects.equals(this.pageSize, voicemailMessageEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, voicemailMessageEntityListing.pageNumber) &&
+            Objects.equals(this.total, voicemailMessageEntityListing.total) &&
+            Objects.equals(this.lastUri, voicemailMessageEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, voicemailMessageEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, voicemailMessageEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, voicemailMessageEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, voicemailMessageEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, voicemailMessageEntityListing.pageCount);
   }
 
   @Override

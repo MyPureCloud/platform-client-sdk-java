@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -130,7 +131,7 @@ public class AuditQueryRequest  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Name of the service to query audits for.
    **/
@@ -148,7 +149,7 @@ public class AuditQueryRequest  implements Serializable {
     this.serviceName = serviceName;
   }
 
-  
+
   /**
    * Additional filters for the query.
    **/
@@ -166,7 +167,7 @@ public class AuditQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    * Sort parameter for the query.
    **/
@@ -184,7 +185,6 @@ public class AuditQueryRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -195,10 +195,11 @@ public class AuditQueryRequest  implements Serializable {
       return false;
     }
     AuditQueryRequest auditQueryRequest = (AuditQueryRequest) o;
+
     return Objects.equals(this.interval, auditQueryRequest.interval) &&
-        Objects.equals(this.serviceName, auditQueryRequest.serviceName) &&
-        Objects.equals(this.filters, auditQueryRequest.filters) &&
-        Objects.equals(this.sort, auditQueryRequest.sort);
+            Objects.equals(this.serviceName, auditQueryRequest.serviceName) &&
+            Objects.equals(this.filters, auditQueryRequest.filters) &&
+            Objects.equals(this.sort, auditQueryRequest.sort);
   }
 
   @Override

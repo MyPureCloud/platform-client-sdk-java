@@ -21,9 +21,9 @@ title: ContentButtonResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BUTTON | &quot;Button&quot; |
-| QUICKREPLY | &quot;QuickReply&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BUTTON | &quot;Button&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
 {: class="table table-striped"}
 
 

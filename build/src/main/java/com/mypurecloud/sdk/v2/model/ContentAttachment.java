@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class ContentAttachment  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The type of attachment this instance represents.
    **/
@@ -116,7 +117,7 @@ public class ContentAttachment  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * URL of the attachment.
    **/
@@ -134,7 +135,7 @@ public class ContentAttachment  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).
    **/
@@ -152,7 +153,7 @@ public class ContentAttachment  implements Serializable {
     this.mime = mime;
   }
 
-  
+
   /**
    * Text associated with attachment such as an image caption.
    **/
@@ -170,7 +171,7 @@ public class ContentAttachment  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Secure hash of the attachment content.
    **/
@@ -188,7 +189,7 @@ public class ContentAttachment  implements Serializable {
     this.sha256 = sha256;
   }
 
-  
+
   /**
    * Suggested file name for attachment.
    **/
@@ -206,7 +207,6 @@ public class ContentAttachment  implements Serializable {
     this.filename = filename;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,13 +217,14 @@ public class ContentAttachment  implements Serializable {
       return false;
     }
     ContentAttachment contentAttachment = (ContentAttachment) o;
+
     return Objects.equals(this.id, contentAttachment.id) &&
-        Objects.equals(this.mediaType, contentAttachment.mediaType) &&
-        Objects.equals(this.url, contentAttachment.url) &&
-        Objects.equals(this.mime, contentAttachment.mime) &&
-        Objects.equals(this.text, contentAttachment.text) &&
-        Objects.equals(this.sha256, contentAttachment.sha256) &&
-        Objects.equals(this.filename, contentAttachment.filename);
+            Objects.equals(this.mediaType, contentAttachment.mediaType) &&
+            Objects.equals(this.url, contentAttachment.url) &&
+            Objects.equals(this.mime, contentAttachment.mime) &&
+            Objects.equals(this.text, contentAttachment.text) &&
+            Objects.equals(this.sha256, contentAttachment.sha256) &&
+            Objects.equals(this.filename, contentAttachment.filename);
   }
 
   @Override

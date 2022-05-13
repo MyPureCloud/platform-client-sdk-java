@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricDisk;
@@ -19,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -29,6 +31,7 @@ import java.io.Serializable;
 public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
   
   private EdgeMetricsTopicUriReference edge = null;
+  private Date eventTime = null;
   private Integer upTimeMsec = null;
   private List<EdgeMetricsTopicEdgeMetricProcessor> processors = new ArrayList<EdgeMetricsTopicEdgeMetricProcessor>();
   private List<EdgeMetricsTopicEdgeMetricMemory> memory = new ArrayList<EdgeMetricsTopicEdgeMetricMemory>();
@@ -53,7 +56,24 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.edge = edge;
   }
 
+
+  /**
+   **/
+  public EdgeMetricsTopicEdgeMetrics eventTime(Date eventTime) {
+    this.eventTime = eventTime;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("eventTime")
+  public Date getEventTime() {
+    return eventTime;
+  }
+  public void setEventTime(Date eventTime) {
+    this.eventTime = eventTime;
+  }
+
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetrics upTimeMsec(Integer upTimeMsec) {
@@ -70,7 +90,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.upTimeMsec = upTimeMsec;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetrics processors(List<EdgeMetricsTopicEdgeMetricProcessor> processors) {
@@ -87,7 +107,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.processors = processors;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetrics memory(List<EdgeMetricsTopicEdgeMetricMemory> memory) {
@@ -104,7 +124,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.memory = memory;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetrics disks(List<EdgeMetricsTopicEdgeMetricDisk> disks) {
@@ -121,7 +141,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.disks = disks;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetrics subsystems(List<EdgeMetricsTopicEdgeMetricSubsystem> subsystems) {
@@ -138,7 +158,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.subsystems = subsystems;
   }
 
-  
+
   /**
    **/
   public EdgeMetricsTopicEdgeMetrics networks(List<EdgeMetricsTopicEdgeMetricNetworks> networks) {
@@ -155,7 +175,6 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     this.networks = networks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -166,18 +185,20 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
       return false;
     }
     EdgeMetricsTopicEdgeMetrics edgeMetricsTopicEdgeMetrics = (EdgeMetricsTopicEdgeMetrics) o;
+
     return Objects.equals(this.edge, edgeMetricsTopicEdgeMetrics.edge) &&
-        Objects.equals(this.upTimeMsec, edgeMetricsTopicEdgeMetrics.upTimeMsec) &&
-        Objects.equals(this.processors, edgeMetricsTopicEdgeMetrics.processors) &&
-        Objects.equals(this.memory, edgeMetricsTopicEdgeMetrics.memory) &&
-        Objects.equals(this.disks, edgeMetricsTopicEdgeMetrics.disks) &&
-        Objects.equals(this.subsystems, edgeMetricsTopicEdgeMetrics.subsystems) &&
-        Objects.equals(this.networks, edgeMetricsTopicEdgeMetrics.networks);
+            Objects.equals(this.eventTime, edgeMetricsTopicEdgeMetrics.eventTime) &&
+            Objects.equals(this.upTimeMsec, edgeMetricsTopicEdgeMetrics.upTimeMsec) &&
+            Objects.equals(this.processors, edgeMetricsTopicEdgeMetrics.processors) &&
+            Objects.equals(this.memory, edgeMetricsTopicEdgeMetrics.memory) &&
+            Objects.equals(this.disks, edgeMetricsTopicEdgeMetrics.disks) &&
+            Objects.equals(this.subsystems, edgeMetricsTopicEdgeMetrics.subsystems) &&
+            Objects.equals(this.networks, edgeMetricsTopicEdgeMetrics.networks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(edge, upTimeMsec, processors, memory, disks, subsystems, networks);
+    return Objects.hash(edge, eventTime, upTimeMsec, processors, memory, disks, subsystems, networks);
   }
 
   @Override
@@ -186,6 +207,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     sb.append("class EdgeMetricsTopicEdgeMetrics {\n");
     
     sb.append("    edge: ").append(toIndentedString(edge)).append("\n");
+    sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    upTimeMsec: ").append(toIndentedString(upTimeMsec)).append("\n");
     sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
     sb.append("    memory: ").append(toIndentedString(memory)).append("\n");

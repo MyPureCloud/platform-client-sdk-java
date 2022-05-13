@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -104,7 +105,7 @@ public class TrusteeBillingOverview  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public TrusteeBillingOverview name(String name) {
@@ -121,7 +122,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Organization
    **/
@@ -139,7 +140,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.organization = organization;
   }
 
-  
+
   /**
    * The currency type.
    **/
@@ -157,7 +158,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.currency = currency;
   }
 
-  
+
   /**
    * The charge short names for products enabled during the specified period.
    **/
@@ -175,7 +176,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.enabledProducts = enabledProducts;
   }
 
-  
+
   /**
    * The subscription type.
    **/
@@ -193,7 +194,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.subscriptionType = subscriptionType;
   }
 
-  
+
   /**
    * Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -211,7 +212,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.rampPeriodStartDate = rampPeriodStartDate;
   }
 
-  
+
   /**
    * Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -229,7 +230,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.rampPeriodEndDate = rampPeriodEndDate;
   }
 
-  
+
   /**
    * Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -247,7 +248,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.billingPeriodStartDate = billingPeriodStartDate;
   }
 
-  
+
   /**
    * Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -265,7 +266,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.billingPeriodEndDate = billingPeriodEndDate;
   }
 
-  
+
   /**
    * Usages for the specified period.
    **/
@@ -283,7 +284,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.usages = usages;
   }
 
-  
+
   /**
    * Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -301,7 +302,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.contractAmendmentDate = contractAmendmentDate;
   }
 
-  
+
   /**
    * Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -319,7 +320,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.contractEffectiveDate = contractEffectiveDate;
   }
 
-  
+
   /**
    * Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -337,7 +338,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.contractEndDate = contractEndDate;
   }
 
-  
+
   /**
    * Minimum amount that will be charged for the month
    **/
@@ -355,7 +356,7 @@ public class TrusteeBillingOverview  implements Serializable {
     this.minimumMonthlyAmount = minimumMonthlyAmount;
   }
 
-  
+
   /**
    **/
   public TrusteeBillingOverview inRampPeriod(Boolean inRampPeriod) {
@@ -372,14 +373,13 @@ public class TrusteeBillingOverview  implements Serializable {
     this.inRampPeriod = inRampPeriod;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -390,23 +390,24 @@ public class TrusteeBillingOverview  implements Serializable {
       return false;
     }
     TrusteeBillingOverview trusteeBillingOverview = (TrusteeBillingOverview) o;
+
     return Objects.equals(this.id, trusteeBillingOverview.id) &&
-        Objects.equals(this.name, trusteeBillingOverview.name) &&
-        Objects.equals(this.organization, trusteeBillingOverview.organization) &&
-        Objects.equals(this.currency, trusteeBillingOverview.currency) &&
-        Objects.equals(this.enabledProducts, trusteeBillingOverview.enabledProducts) &&
-        Objects.equals(this.subscriptionType, trusteeBillingOverview.subscriptionType) &&
-        Objects.equals(this.rampPeriodStartDate, trusteeBillingOverview.rampPeriodStartDate) &&
-        Objects.equals(this.rampPeriodEndDate, trusteeBillingOverview.rampPeriodEndDate) &&
-        Objects.equals(this.billingPeriodStartDate, trusteeBillingOverview.billingPeriodStartDate) &&
-        Objects.equals(this.billingPeriodEndDate, trusteeBillingOverview.billingPeriodEndDate) &&
-        Objects.equals(this.usages, trusteeBillingOverview.usages) &&
-        Objects.equals(this.contractAmendmentDate, trusteeBillingOverview.contractAmendmentDate) &&
-        Objects.equals(this.contractEffectiveDate, trusteeBillingOverview.contractEffectiveDate) &&
-        Objects.equals(this.contractEndDate, trusteeBillingOverview.contractEndDate) &&
-        Objects.equals(this.minimumMonthlyAmount, trusteeBillingOverview.minimumMonthlyAmount) &&
-        Objects.equals(this.inRampPeriod, trusteeBillingOverview.inRampPeriod) &&
-        Objects.equals(this.selfUri, trusteeBillingOverview.selfUri);
+            Objects.equals(this.name, trusteeBillingOverview.name) &&
+            Objects.equals(this.organization, trusteeBillingOverview.organization) &&
+            Objects.equals(this.currency, trusteeBillingOverview.currency) &&
+            Objects.equals(this.enabledProducts, trusteeBillingOverview.enabledProducts) &&
+            Objects.equals(this.subscriptionType, trusteeBillingOverview.subscriptionType) &&
+            Objects.equals(this.rampPeriodStartDate, trusteeBillingOverview.rampPeriodStartDate) &&
+            Objects.equals(this.rampPeriodEndDate, trusteeBillingOverview.rampPeriodEndDate) &&
+            Objects.equals(this.billingPeriodStartDate, trusteeBillingOverview.billingPeriodStartDate) &&
+            Objects.equals(this.billingPeriodEndDate, trusteeBillingOverview.billingPeriodEndDate) &&
+            Objects.equals(this.usages, trusteeBillingOverview.usages) &&
+            Objects.equals(this.contractAmendmentDate, trusteeBillingOverview.contractAmendmentDate) &&
+            Objects.equals(this.contractEffectiveDate, trusteeBillingOverview.contractEffectiveDate) &&
+            Objects.equals(this.contractEndDate, trusteeBillingOverview.contractEndDate) &&
+            Objects.equals(this.minimumMonthlyAmount, trusteeBillingOverview.minimumMonthlyAmount) &&
+            Objects.equals(this.inRampPeriod, trusteeBillingOverview.inRampPeriod) &&
+            Objects.equals(this.selfUri, trusteeBillingOverview.selfUri);
   }
 
   @Override

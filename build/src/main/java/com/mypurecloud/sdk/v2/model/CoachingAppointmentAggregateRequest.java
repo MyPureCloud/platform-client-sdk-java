@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueryRequestFilter;
@@ -141,7 +142,7 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * A list of metrics to aggregate.  If omitted, all metrics are returned.
    **/
@@ -159,7 +160,7 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * An optional list of items by which to group the result data.
    **/
@@ -177,7 +178,7 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
     this.groupBy = groupBy;
   }
 
-  
+
   /**
    * The filter applied to the data
    **/
@@ -195,7 +196,6 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
     this.filter = filter;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,10 +206,11 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
       return false;
     }
     CoachingAppointmentAggregateRequest coachingAppointmentAggregateRequest = (CoachingAppointmentAggregateRequest) o;
+
     return Objects.equals(this.interval, coachingAppointmentAggregateRequest.interval) &&
-        Objects.equals(this.metrics, coachingAppointmentAggregateRequest.metrics) &&
-        Objects.equals(this.groupBy, coachingAppointmentAggregateRequest.groupBy) &&
-        Objects.equals(this.filter, coachingAppointmentAggregateRequest.filter);
+            Objects.equals(this.metrics, coachingAppointmentAggregateRequest.metrics) &&
+            Objects.equals(this.groupBy, coachingAppointmentAggregateRequest.groupBy) &&
+            Objects.equals(this.filter, coachingAppointmentAggregateRequest.filter);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class EdgeMetricsDisk  implements Serializable {
     this.availableBytes = availableBytes;
   }
 
-  
+
   /**
    * Disk partition name.
    **/
@@ -60,7 +61,7 @@ public class EdgeMetricsDisk  implements Serializable {
     this.partitionName = partitionName;
   }
 
-  
+
   /**
    * Total memory in bytes.
    **/
@@ -78,7 +79,6 @@ public class EdgeMetricsDisk  implements Serializable {
     this.totalBytes = totalBytes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class EdgeMetricsDisk  implements Serializable {
       return false;
     }
     EdgeMetricsDisk edgeMetricsDisk = (EdgeMetricsDisk) o;
+
     return Objects.equals(this.availableBytes, edgeMetricsDisk.availableBytes) &&
-        Objects.equals(this.partitionName, edgeMetricsDisk.partitionName) &&
-        Objects.equals(this.totalBytes, edgeMetricsDisk.totalBytes);
+            Objects.equals(this.partitionName, edgeMetricsDisk.partitionName) &&
+            Objects.equals(this.totalBytes, edgeMetricsDisk.totalBytes);
   }
 
   @Override

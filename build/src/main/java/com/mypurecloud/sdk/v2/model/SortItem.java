@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class SortItem  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SortItem ascending(Boolean ascending) {
@@ -57,7 +58,6 @@ public class SortItem  implements Serializable {
     this.ascending = ascending;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class SortItem  implements Serializable {
       return false;
     }
     SortItem sortItem = (SortItem) o;
+
     return Objects.equals(this.name, sortItem.name) &&
-        Objects.equals(this.ascending, sortItem.ascending);
+            Objects.equals(this.ascending, sortItem.ascending);
   }
 
   @Override

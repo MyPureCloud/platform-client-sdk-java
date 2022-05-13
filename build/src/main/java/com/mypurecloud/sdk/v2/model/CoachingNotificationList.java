@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList total(Long total) {
@@ -103,7 +104,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CoachingNotificationList pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class CoachingNotificationList  implements Serializable, PagedResource<Co
       return false;
     }
     CoachingNotificationList coachingNotificationList = (CoachingNotificationList) o;
+
     return Objects.equals(this.entities, coachingNotificationList.entities) &&
-        Objects.equals(this.pageSize, coachingNotificationList.pageSize) &&
-        Objects.equals(this.pageNumber, coachingNotificationList.pageNumber) &&
-        Objects.equals(this.total, coachingNotificationList.total) &&
-        Objects.equals(this.lastUri, coachingNotificationList.lastUri) &&
-        Objects.equals(this.firstUri, coachingNotificationList.firstUri) &&
-        Objects.equals(this.selfUri, coachingNotificationList.selfUri) &&
-        Objects.equals(this.previousUri, coachingNotificationList.previousUri) &&
-        Objects.equals(this.nextUri, coachingNotificationList.nextUri) &&
-        Objects.equals(this.pageCount, coachingNotificationList.pageCount);
+            Objects.equals(this.pageSize, coachingNotificationList.pageSize) &&
+            Objects.equals(this.pageNumber, coachingNotificationList.pageNumber) &&
+            Objects.equals(this.total, coachingNotificationList.total) &&
+            Objects.equals(this.lastUri, coachingNotificationList.lastUri) &&
+            Objects.equals(this.firstUri, coachingNotificationList.firstUri) &&
+            Objects.equals(this.selfUri, coachingNotificationList.selfUri) &&
+            Objects.equals(this.previousUri, coachingNotificationList.previousUri) &&
+            Objects.equals(this.nextUri, coachingNotificationList.nextUri) &&
+            Objects.equals(this.pageCount, coachingNotificationList.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-  
+
   /**
    **/
   public EmailMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -117,7 +118,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
+
   /**
    **/
   public EmailMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -134,7 +135,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-  
+
   /**
    **/
   public EmailMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -151,7 +152,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-  
+
   /**
    **/
   public EmailMediaPolicyConditions languages(List<Language> languages) {
@@ -168,7 +169,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    **/
   public EmailMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -185,7 +186,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-  
+
   /**
    **/
   public EmailMediaPolicyConditions customerParticipation(CustomerParticipationEnum customerParticipation) {
@@ -202,7 +203,6 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.customerParticipation = customerParticipation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,13 +213,14 @@ public class EmailMediaPolicyConditions  implements Serializable {
       return false;
     }
     EmailMediaPolicyConditions emailMediaPolicyConditions = (EmailMediaPolicyConditions) o;
+
     return Objects.equals(this.forUsers, emailMediaPolicyConditions.forUsers) &&
-        Objects.equals(this.dateRanges, emailMediaPolicyConditions.dateRanges) &&
-        Objects.equals(this.forQueues, emailMediaPolicyConditions.forQueues) &&
-        Objects.equals(this.wrapupCodes, emailMediaPolicyConditions.wrapupCodes) &&
-        Objects.equals(this.languages, emailMediaPolicyConditions.languages) &&
-        Objects.equals(this.timeAllowed, emailMediaPolicyConditions.timeAllowed) &&
-        Objects.equals(this.customerParticipation, emailMediaPolicyConditions.customerParticipation);
+            Objects.equals(this.dateRanges, emailMediaPolicyConditions.dateRanges) &&
+            Objects.equals(this.forQueues, emailMediaPolicyConditions.forQueues) &&
+            Objects.equals(this.wrapupCodes, emailMediaPolicyConditions.wrapupCodes) &&
+            Objects.equals(this.languages, emailMediaPolicyConditions.languages) &&
+            Objects.equals(this.timeAllowed, emailMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.customerParticipation, emailMediaPolicyConditions.customerParticipation);
   }
 
   @Override

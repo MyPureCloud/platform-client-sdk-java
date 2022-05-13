@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -204,7 +205,7 @@ public class WhatsAppIntegration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the WhatsApp integration.
    **/
@@ -222,7 +223,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -240,7 +241,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegration messagingSetting(MessagingSettingReference messagingSetting) {
@@ -257,7 +258,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The phone number associated to the WhatsApp integration.
    **/
@@ -275,14 +276,14 @@ public class WhatsAppIntegration  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.")
   @JsonProperty("availablePhoneNumbers")
   public WhatsAppAvailablePhoneNumberDetailsListing getAvailablePhoneNumbers() {
     return availablePhoneNumbers;
   }
 
-  
+
   /**
    * The status of the WhatsApp Integration
    **/
@@ -300,14 +301,14 @@ public class WhatsAppIntegration  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient associated to the WhatsApp Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
   }
 
-  
+
   /**
    * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -325,7 +326,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -343,7 +344,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User reference that created this Integration
    **/
@@ -361,7 +362,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User reference that last modified this Integration
    **/
@@ -379,7 +380,7 @@ public class WhatsAppIntegration  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -397,42 +398,41 @@ public class WhatsAppIntegration  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status code of WhatsApp Integration activation process")
   @JsonProperty("activationStatusCode")
   public ActivationStatusCodeEnum getActivationStatusCode() {
     return activationStatusCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The error information of WhatsApp Integration activation process")
   @JsonProperty("activationErrorInfo")
   public ErrorBody getActivationErrorInfo() {
     return activationErrorInfo;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
   @JsonProperty("createStatus")
   public CreateStatusEnum getCreateStatus() {
     return createStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -443,24 +443,25 @@ public class WhatsAppIntegration  implements Serializable {
       return false;
     }
     WhatsAppIntegration whatsAppIntegration = (WhatsAppIntegration) o;
+
     return Objects.equals(this.id, whatsAppIntegration.id) &&
-        Objects.equals(this.name, whatsAppIntegration.name) &&
-        Objects.equals(this.supportedContent, whatsAppIntegration.supportedContent) &&
-        Objects.equals(this.messagingSetting, whatsAppIntegration.messagingSetting) &&
-        Objects.equals(this.phoneNumber, whatsAppIntegration.phoneNumber) &&
-        Objects.equals(this.availablePhoneNumbers, whatsAppIntegration.availablePhoneNumbers) &&
-        Objects.equals(this.status, whatsAppIntegration.status) &&
-        Objects.equals(this.recipient, whatsAppIntegration.recipient) &&
-        Objects.equals(this.dateCreated, whatsAppIntegration.dateCreated) &&
-        Objects.equals(this.dateModified, whatsAppIntegration.dateModified) &&
-        Objects.equals(this.createdBy, whatsAppIntegration.createdBy) &&
-        Objects.equals(this.modifiedBy, whatsAppIntegration.modifiedBy) &&
-        Objects.equals(this.version, whatsAppIntegration.version) &&
-        Objects.equals(this.activationStatusCode, whatsAppIntegration.activationStatusCode) &&
-        Objects.equals(this.activationErrorInfo, whatsAppIntegration.activationErrorInfo) &&
-        Objects.equals(this.createStatus, whatsAppIntegration.createStatus) &&
-        Objects.equals(this.createError, whatsAppIntegration.createError) &&
-        Objects.equals(this.selfUri, whatsAppIntegration.selfUri);
+            Objects.equals(this.name, whatsAppIntegration.name) &&
+            Objects.equals(this.supportedContent, whatsAppIntegration.supportedContent) &&
+            Objects.equals(this.messagingSetting, whatsAppIntegration.messagingSetting) &&
+            Objects.equals(this.phoneNumber, whatsAppIntegration.phoneNumber) &&
+            Objects.equals(this.availablePhoneNumbers, whatsAppIntegration.availablePhoneNumbers) &&
+            Objects.equals(this.status, whatsAppIntegration.status) &&
+            Objects.equals(this.recipient, whatsAppIntegration.recipient) &&
+            Objects.equals(this.dateCreated, whatsAppIntegration.dateCreated) &&
+            Objects.equals(this.dateModified, whatsAppIntegration.dateModified) &&
+            Objects.equals(this.createdBy, whatsAppIntegration.createdBy) &&
+            Objects.equals(this.modifiedBy, whatsAppIntegration.modifiedBy) &&
+            Objects.equals(this.version, whatsAppIntegration.version) &&
+            Objects.equals(this.activationStatusCode, whatsAppIntegration.activationStatusCode) &&
+            Objects.equals(this.activationErrorInfo, whatsAppIntegration.activationErrorInfo) &&
+            Objects.equals(this.createStatus, whatsAppIntegration.createStatus) &&
+            Objects.equals(this.createError, whatsAppIntegration.createError) &&
+            Objects.equals(this.selfUri, whatsAppIntegration.selfUri);
   }
 
   @Override

@@ -10,13 +10,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryRealtimeServicemappingRequest;
@@ -32,7 +32,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class AuditApi {
   private final ApiClient pcapiClient;
 
@@ -44,7 +43,6 @@ public class AuditApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get service mapping information used in realtime audits.
    * 
@@ -119,7 +117,6 @@ public class AuditApi {
     }
   }
 
-  
   /**
    * Get service mapping information used in audits.
    * 
@@ -194,7 +191,6 @@ public class AuditApi {
     }
   }
 
-  
   /**
    * Get status of audit query execution
    * 
@@ -221,7 +217,7 @@ public class AuditApi {
   private GetAuditsQueryTransactionIdRequest createGetAuditsQueryTransactionIdRequest(String transactionId) {
     return GetAuditsQueryTransactionIdRequest.builder()
             .withTransactionId(transactionId)
-    
+
             .build();
   }
 
@@ -273,7 +269,6 @@ public class AuditApi {
     }
   }
 
-  
   /**
    * Get results of audit query
    * 
@@ -306,13 +301,13 @@ public class AuditApi {
   private GetAuditsQueryTransactionIdResultsRequest createGetAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize, List<String> expand) {
     return GetAuditsQueryTransactionIdResultsRequest.builder()
             .withTransactionId(transactionId)
-    
+
             .withCursor(cursor)
-    
+
             .withPageSize(pageSize)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -364,7 +359,6 @@ public class AuditApi {
     }
   }
 
-  
   /**
    * Create audit query execution
    * 
@@ -391,7 +385,7 @@ public class AuditApi {
   private PostAuditsQueryRequest createPostAuditsQueryRequest(AuditQueryRequest body) {
     return PostAuditsQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -443,7 +437,6 @@ public class AuditApi {
     }
   }
 
-  
   /**
    * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
@@ -472,9 +465,9 @@ public class AuditApi {
   private PostAuditsQueryRealtimeRequest createPostAuditsQueryRealtimeRequest(AuditRealtimeQueryRequest body, List<String> expand) {
     return PostAuditsQueryRealtimeRequest.builder()
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -526,5 +519,4 @@ public class AuditApi {
     }
   }
 
-  
 }

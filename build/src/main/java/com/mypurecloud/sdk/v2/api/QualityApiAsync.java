@@ -13,34 +13,34 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
@@ -106,7 +106,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class QualityApiAsync {
   private final ApiClient pcapiClient;
 
@@ -118,7 +117,6 @@ public class QualityApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a calibration by id.
    * 
@@ -194,7 +192,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Delete an evaluation
    * 
@@ -270,7 +267,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Delete an evaluation form.
    * 
@@ -346,7 +342,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Delete an evaluation form.
    * 
@@ -422,7 +417,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Delete a survey form.
    * 
@@ -498,10 +492,9 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Gets a list of Agent Activities
-   * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+   * Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -535,7 +528,7 @@ public class QualityApiAsync {
 
   /**
    * Gets a list of Agent Activities
-   * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+   * Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -574,7 +567,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
@@ -650,7 +642,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the list of calibrations
    * 
@@ -726,7 +717,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get an evaluation
    * 
@@ -802,7 +792,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the surveys for a conversation
    * 
@@ -878,7 +867,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get status of audit query execution
    * 
@@ -954,7 +942,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get results of audit query
    * 
@@ -1030,10 +1017,9 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1067,7 +1053,7 @@ public class QualityApiAsync {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1106,7 +1092,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get an evaluator activity
    * 
@@ -1182,7 +1167,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get an evaluation form
    * 
@@ -1258,7 +1242,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Gets all the revisions for a specific evaluation.
    * 
@@ -1334,7 +1317,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the list of evaluation forms
    * 
@@ -1410,7 +1392,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get an evaluation form
    * 
@@ -1486,7 +1467,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Gets all the revisions for a specific evaluation.
    * 
@@ -1562,7 +1542,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the list of evaluation forms
    * 
@@ -1638,7 +1617,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of the latest published evaluation form versions by context ids
    * 
@@ -1714,7 +1692,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get a survey form
    * 
@@ -1790,7 +1767,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Gets all the revisions for a specific survey.
    * 
@@ -1866,7 +1842,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the list of survey forms
    * 
@@ -1942,7 +1917,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of survey forms by their ids
    * 
@@ -2018,7 +1992,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Retrieve a list of the latest form versions by context ids
    * 
@@ -2094,7 +2067,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the published evaluation forms.
    * 
@@ -2170,7 +2142,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the published evaluation forms.
    * 
@@ -2246,7 +2217,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the most recent published version of an evaluation form.
    * 
@@ -2322,7 +2292,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the published evaluation forms.
    * 
@@ -2398,7 +2367,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the most recent published version of a survey form.
    * 
@@ -2474,7 +2442,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get the published survey forms.
    * 
@@ -2550,7 +2517,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get a survey for a conversation
    * 
@@ -2626,7 +2592,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Get a survey as an end-customer, for the purposes of scoring it.
    * 
@@ -2702,7 +2667,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
    * 
@@ -2778,7 +2742,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Query for evaluation aggregates
    * 
@@ -2854,7 +2817,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Query for survey aggregates
    * 
@@ -2930,7 +2892,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Create a calibration
    * 
@@ -3006,7 +2967,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Create an evaluation
    * 
@@ -3082,7 +3042,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Create audit query execution
    * 
@@ -3158,7 +3117,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Query for evaluation aggregates for the current user
    * 
@@ -3234,7 +3192,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Score evaluation
    * 
@@ -3310,7 +3267,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Create an evaluation form.
    * 
@@ -3386,7 +3342,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Create an evaluation form.
    * 
@@ -3462,7 +3417,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Create a survey form.
    * 
@@ -3538,7 +3492,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Publish an evaluation form.
    * 
@@ -3614,7 +3567,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Publish an evaluation form.
    * 
@@ -3690,7 +3642,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Publish a survey form.
    * 
@@ -3766,7 +3717,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Score survey
    * 
@@ -3842,7 +3792,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
@@ -3918,7 +3867,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Update an evaluation
    * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
@@ -3994,7 +3942,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Update an evaluation form.
    * 
@@ -4070,7 +4017,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Update an evaluation form.
    * 
@@ -4146,7 +4092,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Update a survey form.
    * 
@@ -4222,7 +4167,6 @@ public class QualityApiAsync {
     }
   }
 
-  
   /**
    * Update a survey as an end-customer, for the purposes of scoring it.
    * 
@@ -4298,7 +4242,6 @@ public class QualityApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

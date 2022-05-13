@@ -14,12 +14,12 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLocationRequest;
@@ -38,7 +38,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class LocationsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -50,7 +49,6 @@ public class LocationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a location
    * 
@@ -126,7 +124,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Get Location by ID.
    * 
@@ -202,7 +199,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Get sublocations for location ID.
    * 
@@ -278,7 +274,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of all locations.
    * 
@@ -354,7 +349,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -430,7 +424,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Update a location
    * 
@@ -506,7 +499,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Create a location
    * 
@@ -582,7 +574,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
   /**
    * Search locations
    * 
@@ -658,7 +649,6 @@ public class LocationsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

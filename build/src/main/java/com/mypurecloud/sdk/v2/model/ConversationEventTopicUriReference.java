@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ConversationEventTopicUriReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The name of the resource
    **/
@@ -60,7 +61,6 @@ public class ConversationEventTopicUriReference  implements Serializable {
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ConversationEventTopicUriReference  implements Serializable {
       return false;
     }
     ConversationEventTopicUriReference conversationEventTopicUriReference = (ConversationEventTopicUriReference) o;
+
     return Objects.equals(this.id, conversationEventTopicUriReference.id) &&
-        Objects.equals(this.name, conversationEventTopicUriReference.name);
+            Objects.equals(this.name, conversationEventTopicUriReference.name);
   }
 
   @Override

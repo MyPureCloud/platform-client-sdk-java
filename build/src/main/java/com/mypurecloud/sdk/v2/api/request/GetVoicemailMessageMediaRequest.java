@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
-import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailMessage;
-import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
-import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
-import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.VoicemailGroupPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailMailboxInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMediaInfo;
+import com.mypurecloud.sdk.v2.model.VoicemailMessage;
+import com.mypurecloud.sdk.v2.model.VoicemailMessageEntityListing;
+import com.mypurecloud.sdk.v2.model.VoicemailOrganizationPolicy;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.model.VoicemailUserPolicy;
+import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
 
 public class GetVoicemailMessageMediaRequest {
-    
+
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -47,7 +47,7 @@ public class GetVoicemailMessageMediaRequest {
 	    this.setMessageId(messageId);
 	    return this;
 	} 
-	
+
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -63,12 +63,12 @@ public class GetVoicemailMessageMediaRequest {
 	} 
 
 	public enum formatIdValues { 
-		WAV("WAV"), 
-		WEBM("WEBM"), 
-		WAV_ULAW("WAV_ULAW"), 
-		OGG_VORBIS("OGG_VORBIS"), 
-		OGG_OPUS("OGG_OPUS"), 
-		MP3("MP3"), 
+		WAV("WAV"),
+		WEBM("WEBM"),
+		WAV_ULAW("WAV_ULAW"),
+		OGG_VORBIS("OGG_VORBIS"),
+		OGG_OPUS("OGG_OPUS"),
+		MP3("MP3"),
 		NONE("NONE");
 
 		private String value;
@@ -96,7 +96,7 @@ public class GetVoicemailMessageMediaRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,9 +127,10 @@ public class GetVoicemailMessageMediaRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/messages/{messageId}/media")
                 .withPathParameter("messageId", messageId)
         
+
                 .withQueryParameters("formatId", "", formatId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -140,12 +141,12 @@ public class GetVoicemailMessageMediaRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String messageId) {
 	    return new Builder()
 	            .withRequiredParams(messageId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetVoicemailMessageMediaRequest request;
@@ -154,30 +155,34 @@ public class GetVoicemailMessageMediaRequest {
 			request = new GetVoicemailMessageMediaRequest();
 		}
 
-		
+
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
-		
+
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
 
-		public Builder withFormatId(formatIdValues formatId) {
-		    request.setFormatId(formatId.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withFormatId(formatIdValues formatId) {
+		    request.setFormatId(formatId.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String messageId) {
 			request.setMessageId(messageId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetVoicemailMessageMediaRequest build() {
             

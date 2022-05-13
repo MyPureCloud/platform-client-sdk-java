@@ -37,9 +37,9 @@ title: TwitterIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PREMIUM | &quot;premium&quot; |
-| ENTERPRISE | &quot;enterprise&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PREMIUM | &quot;premium&quot; | 
+| ENTERPRISE | &quot;enterprise&quot; | 
 {: class="table table-striped"}
 
 
@@ -49,10 +49,10 @@ title: TwitterIntegration
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INITIATED | &quot;Initiated&quot; |
-| COMPLETED | &quot;Completed&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INITIATED | &quot;Initiated&quot; | 
+| COMPLETED | &quot;Completed&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class TrustUpdate  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -60,7 +61,6 @@ public class TrustUpdate  implements Serializable {
     this.dateExpired = dateExpired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class TrustUpdate  implements Serializable {
       return false;
     }
     TrustUpdate trustUpdate = (TrustUpdate) o;
+
     return Objects.equals(this.enabled, trustUpdate.enabled) &&
-        Objects.equals(this.dateExpired, trustUpdate.dateExpired);
+            Objects.equals(this.dateExpired, trustUpdate.dateExpired);
   }
 
   @Override

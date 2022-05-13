@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -48,7 +49,7 @@ public class RequestConfig  implements Serializable {
     this.requestUrlTemplate = requestUrlTemplate;
   }
 
-  
+
   /**
    * Velocity template to define request body sent to 3rd party service.
    **/
@@ -66,7 +67,7 @@ public class RequestConfig  implements Serializable {
     this.requestTemplate = requestTemplate;
   }
 
-  
+
   /**
    * URI to retrieve requestTemplate
    **/
@@ -84,7 +85,7 @@ public class RequestConfig  implements Serializable {
     this.requestTemplateUri = requestTemplateUri;
   }
 
-  
+
   /**
    * HTTP method to use for request
    **/
@@ -102,7 +103,7 @@ public class RequestConfig  implements Serializable {
     this.requestType = requestType;
   }
 
-  
+
   /**
    * Headers to include in request in (Header Name, Value) pairs.
    **/
@@ -120,7 +121,6 @@ public class RequestConfig  implements Serializable {
     this.headers = headers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class RequestConfig  implements Serializable {
       return false;
     }
     RequestConfig requestConfig = (RequestConfig) o;
+
     return Objects.equals(this.requestUrlTemplate, requestConfig.requestUrlTemplate) &&
-        Objects.equals(this.requestTemplate, requestConfig.requestTemplate) &&
-        Objects.equals(this.requestTemplateUri, requestConfig.requestTemplateUri) &&
-        Objects.equals(this.requestType, requestConfig.requestType) &&
-        Objects.equals(this.headers, requestConfig.headers);
+            Objects.equals(this.requestTemplate, requestConfig.requestTemplate) &&
+            Objects.equals(this.requestTemplateUri, requestConfig.requestTemplateUri) &&
+            Objects.equals(this.requestType, requestConfig.requestType) &&
+            Objects.equals(this.headers, requestConfig.headers);
   }
 
   @Override

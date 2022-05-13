@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -45,7 +46,7 @@ public class TestExecutionOperationResult  implements Serializable {
     this.step = step;
   }
 
-  
+
   /**
    * Name of the operation performed
    **/
@@ -63,7 +64,7 @@ public class TestExecutionOperationResult  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Indicated whether or not the operation was successful
    **/
@@ -81,7 +82,7 @@ public class TestExecutionOperationResult  implements Serializable {
     this.success = success;
   }
 
-  
+
   /**
    * The result of the operation
    **/
@@ -99,7 +100,7 @@ public class TestExecutionOperationResult  implements Serializable {
     this.result = result;
   }
 
-  
+
   /**
    * Error that occurred during the operation
    **/
@@ -117,7 +118,6 @@ public class TestExecutionOperationResult  implements Serializable {
     this.error = error;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class TestExecutionOperationResult  implements Serializable {
       return false;
     }
     TestExecutionOperationResult testExecutionOperationResult = (TestExecutionOperationResult) o;
+
     return Objects.equals(this.step, testExecutionOperationResult.step) &&
-        Objects.equals(this.name, testExecutionOperationResult.name) &&
-        Objects.equals(this.success, testExecutionOperationResult.success) &&
-        Objects.equals(this.result, testExecutionOperationResult.result) &&
-        Objects.equals(this.error, testExecutionOperationResult.error);
+            Objects.equals(this.name, testExecutionOperationResult.name) &&
+            Objects.equals(this.success, testExecutionOperationResult.success) &&
+            Objects.equals(this.result, testExecutionOperationResult.result) &&
+            Objects.equals(this.error, testExecutionOperationResult.error);
   }
 
   @Override

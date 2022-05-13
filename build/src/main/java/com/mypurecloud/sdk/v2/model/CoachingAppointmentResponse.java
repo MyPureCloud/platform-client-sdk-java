@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -105,133 +106,132 @@ public class CoachingAppointmentResponse  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The name of coaching appointment")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The description of coaching appointment")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the coaching appointment starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStart")
   public Date getDateStart() {
     return dateStart;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The duration of coaching appointment in minutes")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of coaching appointment")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The facilitator of coaching appointment")
   @JsonProperty("facilitator")
   public UserReference getFacilitator() {
     return facilitator;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of attendees attending the coaching")
   @JsonProperty("attendees")
   public List<UserReference> getAttendees() {
     return attendees;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who created the coaching appointment")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the coaching appointment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The last user to modify the coaching appointment")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the coaching appointment was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of conversations associated with coaching appointment.")
   @JsonProperty("conversations")
   public List<ConversationReference> getConversations() {
     return conversations;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of documents associated with coaching appointment.")
   @JsonProperty("documents")
   public List<DocumentReference> getDocuments() {
     return documents;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether the appointment is overdue.")
   @JsonProperty("isOverdue")
   public Boolean getIsOverdue() {
     return isOverdue;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The Workforce Management schedule the appointment is associated with.")
   @JsonProperty("wfmSchedule")
   public WfmScheduleReference getWfmSchedule() {
     return wfmSchedule;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of external links related to the appointment")
   @JsonProperty("externalLinks")
   public List<String> getExternalLinks() {
     return externalLinks;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -242,25 +242,26 @@ public class CoachingAppointmentResponse  implements Serializable {
       return false;
     }
     CoachingAppointmentResponse coachingAppointmentResponse = (CoachingAppointmentResponse) o;
+
     return Objects.equals(this.id, coachingAppointmentResponse.id) &&
-        Objects.equals(this.name, coachingAppointmentResponse.name) &&
-        Objects.equals(this.description, coachingAppointmentResponse.description) &&
-        Objects.equals(this.dateStart, coachingAppointmentResponse.dateStart) &&
-        Objects.equals(this.lengthInMinutes, coachingAppointmentResponse.lengthInMinutes) &&
-        Objects.equals(this.status, coachingAppointmentResponse.status) &&
-        Objects.equals(this.facilitator, coachingAppointmentResponse.facilitator) &&
-        Objects.equals(this.attendees, coachingAppointmentResponse.attendees) &&
-        Objects.equals(this.createdBy, coachingAppointmentResponse.createdBy) &&
-        Objects.equals(this.dateCreated, coachingAppointmentResponse.dateCreated) &&
-        Objects.equals(this.modifiedBy, coachingAppointmentResponse.modifiedBy) &&
-        Objects.equals(this.dateModified, coachingAppointmentResponse.dateModified) &&
-        Objects.equals(this.conversations, coachingAppointmentResponse.conversations) &&
-        Objects.equals(this.documents, coachingAppointmentResponse.documents) &&
-        Objects.equals(this.isOverdue, coachingAppointmentResponse.isOverdue) &&
-        Objects.equals(this.wfmSchedule, coachingAppointmentResponse.wfmSchedule) &&
-        Objects.equals(this.dateCompleted, coachingAppointmentResponse.dateCompleted) &&
-        Objects.equals(this.externalLinks, coachingAppointmentResponse.externalLinks) &&
-        Objects.equals(this.selfUri, coachingAppointmentResponse.selfUri);
+            Objects.equals(this.name, coachingAppointmentResponse.name) &&
+            Objects.equals(this.description, coachingAppointmentResponse.description) &&
+            Objects.equals(this.dateStart, coachingAppointmentResponse.dateStart) &&
+            Objects.equals(this.lengthInMinutes, coachingAppointmentResponse.lengthInMinutes) &&
+            Objects.equals(this.status, coachingAppointmentResponse.status) &&
+            Objects.equals(this.facilitator, coachingAppointmentResponse.facilitator) &&
+            Objects.equals(this.attendees, coachingAppointmentResponse.attendees) &&
+            Objects.equals(this.createdBy, coachingAppointmentResponse.createdBy) &&
+            Objects.equals(this.dateCreated, coachingAppointmentResponse.dateCreated) &&
+            Objects.equals(this.modifiedBy, coachingAppointmentResponse.modifiedBy) &&
+            Objects.equals(this.dateModified, coachingAppointmentResponse.dateModified) &&
+            Objects.equals(this.conversations, coachingAppointmentResponse.conversations) &&
+            Objects.equals(this.documents, coachingAppointmentResponse.documents) &&
+            Objects.equals(this.isOverdue, coachingAppointmentResponse.isOverdue) &&
+            Objects.equals(this.wfmSchedule, coachingAppointmentResponse.wfmSchedule) &&
+            Objects.equals(this.dateCompleted, coachingAppointmentResponse.dateCompleted) &&
+            Objects.equals(this.externalLinks, coachingAppointmentResponse.externalLinks) &&
+            Objects.equals(this.selfUri, coachingAppointmentResponse.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerOutboundSettingsConfigChangeAtzmTimeSlot;
@@ -42,7 +43,7 @@ public class DialerOutboundSettingsConfigChangeCallableWindow  implements Serial
     this.mapped = mapped;
   }
 
-  
+
   /**
    **/
   public DialerOutboundSettingsConfigChangeCallableWindow unmapped(DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone unmapped) {
@@ -59,7 +60,6 @@ public class DialerOutboundSettingsConfigChangeCallableWindow  implements Serial
     this.unmapped = unmapped;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class DialerOutboundSettingsConfigChangeCallableWindow  implements Serial
       return false;
     }
     DialerOutboundSettingsConfigChangeCallableWindow dialerOutboundSettingsConfigChangeCallableWindow = (DialerOutboundSettingsConfigChangeCallableWindow) o;
+
     return Objects.equals(this.mapped, dialerOutboundSettingsConfigChangeCallableWindow.mapped) &&
-        Objects.equals(this.unmapped, dialerOutboundSettingsConfigChangeCallableWindow.unmapped);
+            Objects.equals(this.unmapped, dialerOutboundSettingsConfigChangeCallableWindow.unmapped);
   }
 
   @Override

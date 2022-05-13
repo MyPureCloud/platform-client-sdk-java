@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -32,7 +33,7 @@ public class SessionLastEvent  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the event.
    **/
@@ -50,7 +51,7 @@ public class SessionLastEvent  implements Serializable {
     this.eventName = eventName;
   }
 
-  
+
   /**
    * Timestamp indicating when the event was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -68,7 +69,6 @@ public class SessionLastEvent  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,9 +79,10 @@ public class SessionLastEvent  implements Serializable {
       return false;
     }
     SessionLastEvent sessionLastEvent = (SessionLastEvent) o;
+
     return Objects.equals(this.id, sessionLastEvent.id) &&
-        Objects.equals(this.eventName, sessionLastEvent.eventName) &&
-        Objects.equals(this.createdDate, sessionLastEvent.createdDate);
+            Objects.equals(this.eventName, sessionLastEvent.eventName) &&
+            Objects.equals(this.createdDate, sessionLastEvent.createdDate);
   }
 
   @Override

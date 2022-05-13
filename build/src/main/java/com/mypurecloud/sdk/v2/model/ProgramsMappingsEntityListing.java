@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ProgramMappings;
@@ -46,7 +47,7 @@ public class ProgramsMappingsEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ProgramsMappingsEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class ProgramsMappingsEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ProgramsMappingsEntityListing selfUri(String selfUri) {
@@ -80,7 +81,7 @@ public class ProgramsMappingsEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ProgramsMappingsEntityListing nextUri(String nextUri) {
@@ -97,7 +98,7 @@ public class ProgramsMappingsEntityListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ProgramsMappingsEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class ProgramsMappingsEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class ProgramsMappingsEntityListing  implements Serializable {
       return false;
     }
     ProgramsMappingsEntityListing programsMappingsEntityListing = (ProgramsMappingsEntityListing) o;
+
     return Objects.equals(this.entities, programsMappingsEntityListing.entities) &&
-        Objects.equals(this.pageSize, programsMappingsEntityListing.pageSize) &&
-        Objects.equals(this.selfUri, programsMappingsEntityListing.selfUri) &&
-        Objects.equals(this.nextUri, programsMappingsEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, programsMappingsEntityListing.pageCount);
+            Objects.equals(this.pageSize, programsMappingsEntityListing.pageSize) &&
+            Objects.equals(this.selfUri, programsMappingsEntityListing.selfUri) &&
+            Objects.equals(this.nextUri, programsMappingsEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, programsMappingsEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class UserImage  implements Serializable {
     this.resolution = resolution;
   }
 
-  
+
   /**
    **/
   public UserImage imageUri(String imageUri) {
@@ -58,7 +59,6 @@ public class UserImage  implements Serializable {
     this.imageUri = imageUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class UserImage  implements Serializable {
       return false;
     }
     UserImage userImage = (UserImage) o;
+
     return Objects.equals(this.resolution, userImage.resolution) &&
-        Objects.equals(this.imageUri, userImage.imageUri);
+            Objects.equals(this.imageUri, userImage.imageUri);
   }
 
   @Override

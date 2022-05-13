@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,7 +85,7 @@ public class UserRoutingSkill  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserRoutingSkill name(String name) {
@@ -101,7 +102,7 @@ public class UserRoutingSkill  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \"Best available skills\" is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.
    **/
@@ -119,7 +120,7 @@ public class UserRoutingSkill  implements Serializable {
     this.proficiency = proficiency;
   }
 
-  
+
   /**
    * Activate or deactivate this routing skill.
    **/
@@ -137,21 +138,20 @@ public class UserRoutingSkill  implements Serializable {
     this.state = state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI to the organization skill used by this user skill.")
   @JsonProperty("skillUri")
   public String getSkillUri() {
     return skillUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,12 +162,13 @@ public class UserRoutingSkill  implements Serializable {
       return false;
     }
     UserRoutingSkill userRoutingSkill = (UserRoutingSkill) o;
+
     return Objects.equals(this.id, userRoutingSkill.id) &&
-        Objects.equals(this.name, userRoutingSkill.name) &&
-        Objects.equals(this.proficiency, userRoutingSkill.proficiency) &&
-        Objects.equals(this.state, userRoutingSkill.state) &&
-        Objects.equals(this.skillUri, userRoutingSkill.skillUri) &&
-        Objects.equals(this.selfUri, userRoutingSkill.selfUri);
+            Objects.equals(this.name, userRoutingSkill.name) &&
+            Objects.equals(this.proficiency, userRoutingSkill.proficiency) &&
+            Objects.equals(this.state, userRoutingSkill.state) &&
+            Objects.equals(this.skillUri, userRoutingSkill.skillUri) &&
+            Objects.equals(this.selfUri, userRoutingSkill.selfUri);
   }
 
   @Override

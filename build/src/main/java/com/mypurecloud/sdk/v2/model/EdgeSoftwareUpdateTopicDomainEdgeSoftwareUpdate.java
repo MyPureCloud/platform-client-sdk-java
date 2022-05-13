@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate status(StatusEnum status) {
@@ -116,7 +117,7 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
     this.status = status;
   }
 
-  
+
   /**
    **/
   public EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate downloadStartTime(Date downloadStartTime) {
@@ -133,7 +134,7 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
     this.downloadStartTime = downloadStartTime;
   }
 
-  
+
   /**
    **/
   public EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate executeStartTime(Date executeStartTime) {
@@ -150,7 +151,7 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
     this.executeStartTime = executeStartTime;
   }
 
-  
+
   /**
    **/
   public EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate executeStopTime(Date executeStopTime) {
@@ -167,7 +168,6 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
     this.executeStopTime = executeStopTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,11 +178,12 @@ public class EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate  implements Seriali
       return false;
     }
     EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate = (EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate) o;
+
     return Objects.equals(this.id, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.id) &&
-        Objects.equals(this.status, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.status) &&
-        Objects.equals(this.downloadStartTime, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.downloadStartTime) &&
-        Objects.equals(this.executeStartTime, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.executeStartTime) &&
-        Objects.equals(this.executeStopTime, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.executeStopTime);
+            Objects.equals(this.status, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.status) &&
+            Objects.equals(this.downloadStartTime, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.downloadStartTime) &&
+            Objects.equals(this.executeStartTime, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.executeStartTime) &&
+            Objects.equals(this.executeStopTime, edgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.executeStopTime);
   }
 
   @Override

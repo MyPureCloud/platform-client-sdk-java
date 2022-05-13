@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchiveRetention;
@@ -43,7 +44,7 @@ public class InitiateScreenRecording  implements Serializable {
     this.recordACW = recordACW;
   }
 
-  
+
   /**
    **/
   public InitiateScreenRecording archiveRetention(ArchiveRetention archiveRetention) {
@@ -60,7 +61,7 @@ public class InitiateScreenRecording  implements Serializable {
     this.archiveRetention = archiveRetention;
   }
 
-  
+
   /**
    **/
   public InitiateScreenRecording deleteRetention(DeleteRetention deleteRetention) {
@@ -77,7 +78,6 @@ public class InitiateScreenRecording  implements Serializable {
     this.deleteRetention = deleteRetention;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class InitiateScreenRecording  implements Serializable {
       return false;
     }
     InitiateScreenRecording initiateScreenRecording = (InitiateScreenRecording) o;
+
     return Objects.equals(this.recordACW, initiateScreenRecording.recordACW) &&
-        Objects.equals(this.archiveRetention, initiateScreenRecording.archiveRetention) &&
-        Objects.equals(this.deleteRetention, initiateScreenRecording.deleteRetention);
+            Objects.equals(this.archiveRetention, initiateScreenRecording.archiveRetention) &&
+            Objects.equals(this.deleteRetention, initiateScreenRecording.deleteRetention);
   }
 
   @Override

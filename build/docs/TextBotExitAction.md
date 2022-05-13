@@ -23,12 +23,12 @@ title: TextBotExitAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TRIGGEREDBYUSER | &quot;TriggeredByUser&quot; |
-| AGENTREQUESTEDBYUSER | &quot;AgentRequestedByUser&quot; |
-| TRIGGEREDBYFLOW | &quot;TriggeredByFlow&quot; |
-| ERROR | &quot;Error&quot; |
-| RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TRIGGEREDBYUSER | &quot;TriggeredByUser&quot; | 
+| AGENTREQUESTEDBYUSER | &quot;AgentRequestedByUser&quot; | 
+| TRIGGEREDBYFLOW | &quot;TriggeredByFlow&quot; | 
+| ERROR | &quot;Error&quot; | 
+| RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; | 
 {: class="table table-striped"}
 
 

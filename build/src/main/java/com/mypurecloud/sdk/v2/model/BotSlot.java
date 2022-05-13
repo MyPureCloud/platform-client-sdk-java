@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class BotSlot  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The data type of the slot string, integer, decimal, duration, boolean, currency, datetime or the xxxCollection versions of those types
    **/
@@ -60,7 +61,6 @@ public class BotSlot  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class BotSlot  implements Serializable {
       return false;
     }
     BotSlot botSlot = (BotSlot) o;
+
     return Objects.equals(this.name, botSlot.name) &&
-        Objects.equals(this.type, botSlot.type);
+            Objects.equals(this.type, botSlot.type);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorEntity;
@@ -44,7 +45,7 @@ public class BulkResponseResultNoteEntity  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultNoteEntity success(Boolean success) {
@@ -61,7 +62,7 @@ public class BulkResponseResultNoteEntity  implements Serializable {
     this.success = success;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultNoteEntity entity(Note entity) {
@@ -78,7 +79,7 @@ public class BulkResponseResultNoteEntity  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultNoteEntity error(BulkErrorEntity error) {
@@ -95,7 +96,6 @@ public class BulkResponseResultNoteEntity  implements Serializable {
     this.error = error;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class BulkResponseResultNoteEntity  implements Serializable {
       return false;
     }
     BulkResponseResultNoteEntity bulkResponseResultNoteEntity = (BulkResponseResultNoteEntity) o;
+
     return Objects.equals(this.id, bulkResponseResultNoteEntity.id) &&
-        Objects.equals(this.success, bulkResponseResultNoteEntity.success) &&
-        Objects.equals(this.entity, bulkResponseResultNoteEntity.entity) &&
-        Objects.equals(this.error, bulkResponseResultNoteEntity.error);
+            Objects.equals(this.success, bulkResponseResultNoteEntity.success) &&
+            Objects.equals(this.entity, bulkResponseResultNoteEntity.entity) &&
+            Objects.equals(this.error, bulkResponseResultNoteEntity.error);
   }
 
   @Override

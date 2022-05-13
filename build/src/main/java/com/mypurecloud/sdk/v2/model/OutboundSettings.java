@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class OutboundSettings  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public OutboundSettings name(String name) {
@@ -107,21 +108,21 @@ public class OutboundSettings  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -139,7 +140,7 @@ public class OutboundSettings  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The maximum number of calls that can be placed per agent on any campaign
    **/
@@ -157,14 +158,14 @@ public class OutboundSettings  implements Serializable {
     this.maxCallsPerAgent = maxCallsPerAgent;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The maximum number of calls that can be configured to be placed per agent on any campaign")
   @JsonProperty("maxConfigurableCallsPerAgent")
   public Integer getMaxConfigurableCallsPerAgent() {
     return maxConfigurableCallsPerAgent;
   }
 
-  
+
   /**
    * The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]
    **/
@@ -182,7 +183,7 @@ public class OutboundSettings  implements Serializable {
     this.maxLineUtilization = maxLineUtilization;
   }
 
-  
+
   /**
    * The number of seconds used to determine if a call is abandoned
    **/
@@ -200,7 +201,7 @@ public class OutboundSettings  implements Serializable {
     this.abandonSeconds = abandonSeconds;
   }
 
-  
+
   /**
    * The denominator to be used in determining the compliance abandon rate
    **/
@@ -218,7 +219,7 @@ public class OutboundSettings  implements Serializable {
     this.complianceAbandonRateDenominator = complianceAbandonRateDenominator;
   }
 
-  
+
   /**
    * The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.
    **/
@@ -236,14 +237,13 @@ public class OutboundSettings  implements Serializable {
     this.automaticTimeZoneMapping = automaticTimeZoneMapping;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -254,18 +254,19 @@ public class OutboundSettings  implements Serializable {
       return false;
     }
     OutboundSettings outboundSettings = (OutboundSettings) o;
+
     return Objects.equals(this.id, outboundSettings.id) &&
-        Objects.equals(this.name, outboundSettings.name) &&
-        Objects.equals(this.dateCreated, outboundSettings.dateCreated) &&
-        Objects.equals(this.dateModified, outboundSettings.dateModified) &&
-        Objects.equals(this.version, outboundSettings.version) &&
-        Objects.equals(this.maxCallsPerAgent, outboundSettings.maxCallsPerAgent) &&
-        Objects.equals(this.maxConfigurableCallsPerAgent, outboundSettings.maxConfigurableCallsPerAgent) &&
-        Objects.equals(this.maxLineUtilization, outboundSettings.maxLineUtilization) &&
-        Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
-        Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
-        Objects.equals(this.automaticTimeZoneMapping, outboundSettings.automaticTimeZoneMapping) &&
-        Objects.equals(this.selfUri, outboundSettings.selfUri);
+            Objects.equals(this.name, outboundSettings.name) &&
+            Objects.equals(this.dateCreated, outboundSettings.dateCreated) &&
+            Objects.equals(this.dateModified, outboundSettings.dateModified) &&
+            Objects.equals(this.version, outboundSettings.version) &&
+            Objects.equals(this.maxCallsPerAgent, outboundSettings.maxCallsPerAgent) &&
+            Objects.equals(this.maxConfigurableCallsPerAgent, outboundSettings.maxConfigurableCallsPerAgent) &&
+            Objects.equals(this.maxLineUtilization, outboundSettings.maxLineUtilization) &&
+            Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
+            Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
+            Objects.equals(this.automaticTimeZoneMapping, outboundSettings.automaticTimeZoneMapping) &&
+            Objects.equals(this.selfUri, outboundSettings.selfUri);
   }
 
   @Override

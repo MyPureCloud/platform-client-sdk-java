@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -356,7 +357,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.id = id;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule name(String name) {
@@ -373,7 +374,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.name = name;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule dimension(DimensionEnum dimension) {
@@ -390,7 +391,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.dimension = dimension;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule dimensionValue(String dimensionValue) {
@@ -407,7 +408,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.dimensionValue = dimensionValue;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule dimensionValueName(String dimensionValueName) {
@@ -424,7 +425,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.dimensionValueName = dimensionValueName;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule metric(MetricEnum metric) {
@@ -441,7 +442,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule mediaType(MediaTypeEnum mediaType) {
@@ -458,7 +459,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule numericRange(NumericRangeEnum numericRange) {
@@ -475,7 +476,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.numericRange = numericRange;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule statistic(StatisticEnum statistic) {
@@ -492,7 +493,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.statistic = statistic;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule value(BigDecimal value) {
@@ -509,7 +510,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.value = value;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule inAlarm(Boolean inAlarm) {
@@ -526,7 +527,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.inAlarm = inAlarm;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule enabled(Boolean enabled) {
@@ -543,7 +544,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule notificationUsers(List<KlaxonInteractionStatsRulesTopicNotificationUser> notificationUsers) {
@@ -560,7 +561,7 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.notificationUsers = notificationUsers;
   }
 
-  
+
   /**
    **/
   public KlaxonInteractionStatsRulesTopicInteractionStatRule alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -577,7 +578,6 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
     this.alertTypes = alertTypes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -588,20 +588,21 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
       return false;
     }
     KlaxonInteractionStatsRulesTopicInteractionStatRule klaxonInteractionStatsRulesTopicInteractionStatRule = (KlaxonInteractionStatsRulesTopicInteractionStatRule) o;
+
     return Objects.equals(this.id, klaxonInteractionStatsRulesTopicInteractionStatRule.id) &&
-        Objects.equals(this.name, klaxonInteractionStatsRulesTopicInteractionStatRule.name) &&
-        Objects.equals(this.dimension, klaxonInteractionStatsRulesTopicInteractionStatRule.dimension) &&
-        Objects.equals(this.dimensionValue, klaxonInteractionStatsRulesTopicInteractionStatRule.dimensionValue) &&
-        Objects.equals(this.dimensionValueName, klaxonInteractionStatsRulesTopicInteractionStatRule.dimensionValueName) &&
-        Objects.equals(this.metric, klaxonInteractionStatsRulesTopicInteractionStatRule.metric) &&
-        Objects.equals(this.mediaType, klaxonInteractionStatsRulesTopicInteractionStatRule.mediaType) &&
-        Objects.equals(this.numericRange, klaxonInteractionStatsRulesTopicInteractionStatRule.numericRange) &&
-        Objects.equals(this.statistic, klaxonInteractionStatsRulesTopicInteractionStatRule.statistic) &&
-        Objects.equals(this.value, klaxonInteractionStatsRulesTopicInteractionStatRule.value) &&
-        Objects.equals(this.inAlarm, klaxonInteractionStatsRulesTopicInteractionStatRule.inAlarm) &&
-        Objects.equals(this.enabled, klaxonInteractionStatsRulesTopicInteractionStatRule.enabled) &&
-        Objects.equals(this.notificationUsers, klaxonInteractionStatsRulesTopicInteractionStatRule.notificationUsers) &&
-        Objects.equals(this.alertTypes, klaxonInteractionStatsRulesTopicInteractionStatRule.alertTypes);
+            Objects.equals(this.name, klaxonInteractionStatsRulesTopicInteractionStatRule.name) &&
+            Objects.equals(this.dimension, klaxonInteractionStatsRulesTopicInteractionStatRule.dimension) &&
+            Objects.equals(this.dimensionValue, klaxonInteractionStatsRulesTopicInteractionStatRule.dimensionValue) &&
+            Objects.equals(this.dimensionValueName, klaxonInteractionStatsRulesTopicInteractionStatRule.dimensionValueName) &&
+            Objects.equals(this.metric, klaxonInteractionStatsRulesTopicInteractionStatRule.metric) &&
+            Objects.equals(this.mediaType, klaxonInteractionStatsRulesTopicInteractionStatRule.mediaType) &&
+            Objects.equals(this.numericRange, klaxonInteractionStatsRulesTopicInteractionStatRule.numericRange) &&
+            Objects.equals(this.statistic, klaxonInteractionStatsRulesTopicInteractionStatRule.statistic) &&
+            Objects.equals(this.value, klaxonInteractionStatsRulesTopicInteractionStatRule.value) &&
+            Objects.equals(this.inAlarm, klaxonInteractionStatsRulesTopicInteractionStatRule.inAlarm) &&
+            Objects.equals(this.enabled, klaxonInteractionStatsRulesTopicInteractionStatRule.enabled) &&
+            Objects.equals(this.notificationUsers, klaxonInteractionStatsRulesTopicInteractionStatRule.notificationUsers) &&
+            Objects.equals(this.alertTypes, klaxonInteractionStatsRulesTopicInteractionStatRule.alertTypes);
   }
 
   @Override

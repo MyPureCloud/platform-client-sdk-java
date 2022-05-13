@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthzGrantPolicy;
@@ -37,7 +38,7 @@ public class AuthzGrantRole  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public AuthzGrantRole name(String name) {
@@ -54,7 +55,7 @@ public class AuthzGrantRole  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public AuthzGrantRole description(String description) {
@@ -71,7 +72,7 @@ public class AuthzGrantRole  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public AuthzGrantRole policies(List<AuthzGrantPolicy> policies) {
@@ -88,7 +89,7 @@ public class AuthzGrantRole  implements Serializable {
     this.policies = policies;
   }
 
-  
+
   /**
    **/
   public AuthzGrantRole _default(Boolean _default) {
@@ -105,14 +106,13 @@ public class AuthzGrantRole  implements Serializable {
     this._default = _default;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,12 +123,13 @@ public class AuthzGrantRole  implements Serializable {
       return false;
     }
     AuthzGrantRole authzGrantRole = (AuthzGrantRole) o;
+
     return Objects.equals(this.id, authzGrantRole.id) &&
-        Objects.equals(this.name, authzGrantRole.name) &&
-        Objects.equals(this.description, authzGrantRole.description) &&
-        Objects.equals(this.policies, authzGrantRole.policies) &&
-        Objects.equals(this._default, authzGrantRole._default) &&
-        Objects.equals(this.selfUri, authzGrantRole.selfUri);
+            Objects.equals(this.name, authzGrantRole.name) &&
+            Objects.equals(this.description, authzGrantRole.description) &&
+            Objects.equals(this.policies, authzGrantRole.policies) &&
+            Objects.equals(this._default, authzGrantRole._default) &&
+            Objects.equals(this.selfUri, authzGrantRole.selfUri);
   }
 
   @Override

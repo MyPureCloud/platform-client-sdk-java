@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LanguageReference;
@@ -49,7 +50,7 @@ public class WfmAgent  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The user associated with this data
    **/
@@ -67,7 +68,7 @@ public class WfmAgent  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The work plan associated with this agent, if applicable
    **/
@@ -85,7 +86,7 @@ public class WfmAgent  implements Serializable {
     this.workPlan = workPlan;
   }
 
-  
+
   /**
    * The work plan rotation associated with this agent, if applicable
    **/
@@ -103,7 +104,7 @@ public class WfmAgent  implements Serializable {
     this.workPlanRotation = workPlanRotation;
   }
 
-  
+
   /**
    * Whether the agent accepts direct shift trade requests
    **/
@@ -121,7 +122,7 @@ public class WfmAgent  implements Serializable {
     this.acceptDirectShiftTrades = acceptDirectShiftTrades;
   }
 
-  
+
   /**
    * List of queues to which this agent is capable of handling
    **/
@@ -139,7 +140,7 @@ public class WfmAgent  implements Serializable {
     this.queues = queues;
   }
 
-  
+
   /**
    * The list of languages this agent is capable of handling
    **/
@@ -157,7 +158,7 @@ public class WfmAgent  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    * The list of skills this agent is capable of handling
    **/
@@ -175,7 +176,7 @@ public class WfmAgent  implements Serializable {
     this.skills = skills;
   }
 
-  
+
   /**
    * Whether the agent has the permission to be included in schedule generation
    **/
@@ -193,7 +194,7 @@ public class WfmAgent  implements Serializable {
     this.schedulable = schedulable;
   }
 
-  
+
   /**
    * Metadata for this agent
    **/
@@ -211,14 +212,13 @@ public class WfmAgent  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -229,17 +229,18 @@ public class WfmAgent  implements Serializable {
       return false;
     }
     WfmAgent wfmAgent = (WfmAgent) o;
+
     return Objects.equals(this.id, wfmAgent.id) &&
-        Objects.equals(this.user, wfmAgent.user) &&
-        Objects.equals(this.workPlan, wfmAgent.workPlan) &&
-        Objects.equals(this.workPlanRotation, wfmAgent.workPlanRotation) &&
-        Objects.equals(this.acceptDirectShiftTrades, wfmAgent.acceptDirectShiftTrades) &&
-        Objects.equals(this.queues, wfmAgent.queues) &&
-        Objects.equals(this.languages, wfmAgent.languages) &&
-        Objects.equals(this.skills, wfmAgent.skills) &&
-        Objects.equals(this.schedulable, wfmAgent.schedulable) &&
-        Objects.equals(this.metadata, wfmAgent.metadata) &&
-        Objects.equals(this.selfUri, wfmAgent.selfUri);
+            Objects.equals(this.user, wfmAgent.user) &&
+            Objects.equals(this.workPlan, wfmAgent.workPlan) &&
+            Objects.equals(this.workPlanRotation, wfmAgent.workPlanRotation) &&
+            Objects.equals(this.acceptDirectShiftTrades, wfmAgent.acceptDirectShiftTrades) &&
+            Objects.equals(this.queues, wfmAgent.queues) &&
+            Objects.equals(this.languages, wfmAgent.languages) &&
+            Objects.equals(this.skills, wfmAgent.skills) &&
+            Objects.equals(this.schedulable, wfmAgent.schedulable) &&
+            Objects.equals(this.metadata, wfmAgent.metadata) &&
+            Objects.equals(this.selfUri, wfmAgent.selfUri);
   }
 
   @Override

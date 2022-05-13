@@ -21,19 +21,19 @@ title: Criteria
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CONTAINSALL | &quot;containsAll&quot; |
-| CONTAINSANY | &quot;containsAny&quot; |
-| NOTCONTAINSALL | &quot;notContainsAll&quot; |
-| NOTCONTAINSANY | &quot;notContainsAny&quot; |
-| EQUAL | &quot;equal&quot; |
-| NOTEQUAL | &quot;notEqual&quot; |
-| GREATERTHAN | &quot;greaterThan&quot; |
-| GREATERTHANOREQUAL | &quot;greaterThanOrEqual&quot; |
-| LESSTHAN | &quot;lessThan&quot; |
-| LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; |
-| STARTSWITH | &quot;startsWith&quot; |
-| ENDSWITH | &quot;endsWith&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CONTAINSALL | &quot;containsAll&quot; | 
+| CONTAINSANY | &quot;containsAny&quot; | 
+| NOTCONTAINSALL | &quot;notContainsAll&quot; | 
+| NOTCONTAINSANY | &quot;notContainsAny&quot; | 
+| EQUAL | &quot;equal&quot; | 
+| NOTEQUAL | &quot;notEqual&quot; | 
+| GREATERTHAN | &quot;greaterThan&quot; | 
+| GREATERTHANOREQUAL | &quot;greaterThanOrEqual&quot; | 
+| LESSTHAN | &quot;lessThan&quot; | 
+| LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
+| STARTSWITH | &quot;startsWith&quot; | 
+| ENDSWITH | &quot;endsWith&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SetWrapperRoutePathRequest;
@@ -45,7 +46,7 @@ public class UpdatePlanningGroupRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Set of route paths to associate with the planning group
    **/
@@ -63,7 +64,7 @@ public class UpdatePlanningGroupRequest  implements Serializable {
     this.routePaths = routePaths;
   }
 
-  
+
   /**
    * The ID of the service goal template to associate with this planning group
    **/
@@ -81,7 +82,7 @@ public class UpdatePlanningGroupRequest  implements Serializable {
     this.serviceGoalTemplateId = serviceGoalTemplateId;
   }
 
-  
+
   /**
    * Version metadata for the planning group
    **/
@@ -99,7 +100,6 @@ public class UpdatePlanningGroupRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class UpdatePlanningGroupRequest  implements Serializable {
       return false;
     }
     UpdatePlanningGroupRequest updatePlanningGroupRequest = (UpdatePlanningGroupRequest) o;
+
     return Objects.equals(this.name, updatePlanningGroupRequest.name) &&
-        Objects.equals(this.routePaths, updatePlanningGroupRequest.routePaths) &&
-        Objects.equals(this.serviceGoalTemplateId, updatePlanningGroupRequest.serviceGoalTemplateId) &&
-        Objects.equals(this.metadata, updatePlanningGroupRequest.metadata);
+            Objects.equals(this.routePaths, updatePlanningGroupRequest.routePaths) &&
+            Objects.equals(this.serviceGoalTemplateId, updatePlanningGroupRequest.serviceGoalTemplateId) &&
+            Objects.equals(this.metadata, updatePlanningGroupRequest.metadata);
   }
 
   @Override

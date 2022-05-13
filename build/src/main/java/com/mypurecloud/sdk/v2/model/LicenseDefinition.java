@@ -8,14 +8,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableLicenseDefinition;
-import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.Permissions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -39,7 +38,7 @@ public class LicenseDefinition  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public LicenseDefinition description(String description) {
@@ -56,7 +55,7 @@ public class LicenseDefinition  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public LicenseDefinition permissions(Permissions permissions) {
@@ -73,7 +72,7 @@ public class LicenseDefinition  implements Serializable {
     this.permissions = permissions;
   }
 
-  
+
   /**
    **/
   public LicenseDefinition prerequisites(List<AddressableLicenseDefinition> prerequisites) {
@@ -90,7 +89,7 @@ public class LicenseDefinition  implements Serializable {
     this.prerequisites = prerequisites;
   }
 
-  
+
   /**
    **/
   public LicenseDefinition comprises(List<LicenseDefinition> comprises) {
@@ -107,14 +106,13 @@ public class LicenseDefinition  implements Serializable {
     this.comprises = comprises;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +123,13 @@ public class LicenseDefinition  implements Serializable {
       return false;
     }
     LicenseDefinition licenseDefinition = (LicenseDefinition) o;
+
     return Objects.equals(this.id, licenseDefinition.id) &&
-        Objects.equals(this.description, licenseDefinition.description) &&
-        Objects.equals(this.permissions, licenseDefinition.permissions) &&
-        Objects.equals(this.prerequisites, licenseDefinition.prerequisites) &&
-        Objects.equals(this.comprises, licenseDefinition.comprises) &&
-        Objects.equals(this.selfUri, licenseDefinition.selfUri);
+            Objects.equals(this.description, licenseDefinition.description) &&
+            Objects.equals(this.permissions, licenseDefinition.permissions) &&
+            Objects.equals(this.prerequisites, licenseDefinition.prerequisites) &&
+            Objects.equals(this.comprises, licenseDefinition.comprises) &&
+            Objects.equals(this.selfUri, licenseDefinition.selfUri);
   }
 
   @Override

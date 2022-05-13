@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -239,7 +240,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The connection state of this communication.
    **/
@@ -257,7 +258,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -275,7 +276,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * Detailed information about an error response.
    **/
@@ -293,7 +294,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The source provider of the email.
    **/
@@ -311,7 +312,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -329,7 +330,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -347,7 +348,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -365,7 +366,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
    **/
@@ -383,7 +384,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -401,7 +402,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -419,7 +420,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -437,7 +438,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -455,7 +456,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The messages sent on this communication channel.
    **/
@@ -473,7 +474,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.messages = messages;
   }
 
-  
+
   /**
    * the messages transcript file uri.
    **/
@@ -491,7 +492,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.messagesTranscriptUri = messagesTranscriptUri;
   }
 
-  
+
   /**
    * Indicates the type of message platform from which the message originated.
    **/
@@ -509,7 +510,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
    **/
@@ -527,7 +528,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.recipientCountry = recipientCountry;
   }
 
-  
+
   /**
    * The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
    **/
@@ -545,7 +546,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.recipientType = recipientType;
   }
 
-  
+
   /**
    * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
    **/
@@ -563,7 +564,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -581,7 +582,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -599,7 +600,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -617,7 +618,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
+
   /**
    * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
@@ -635,7 +636,6 @@ public class ConversationEventTopicMessage  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -646,29 +646,30 @@ public class ConversationEventTopicMessage  implements Serializable {
       return false;
     }
     ConversationEventTopicMessage conversationEventTopicMessage = (ConversationEventTopicMessage) o;
+
     return Objects.equals(this.id, conversationEventTopicMessage.id) &&
-        Objects.equals(this.state, conversationEventTopicMessage.state) &&
-        Objects.equals(this.held, conversationEventTopicMessage.held) &&
-        Objects.equals(this.errorInfo, conversationEventTopicMessage.errorInfo) &&
-        Objects.equals(this.provider, conversationEventTopicMessage.provider) &&
-        Objects.equals(this.scriptId, conversationEventTopicMessage.scriptId) &&
-        Objects.equals(this.peerId, conversationEventTopicMessage.peerId) &&
-        Objects.equals(this.disconnectType, conversationEventTopicMessage.disconnectType) &&
-        Objects.equals(this.startHoldTime, conversationEventTopicMessage.startHoldTime) &&
-        Objects.equals(this.connectedTime, conversationEventTopicMessage.connectedTime) &&
-        Objects.equals(this.disconnectedTime, conversationEventTopicMessage.disconnectedTime) &&
-        Objects.equals(this.toAddress, conversationEventTopicMessage.toAddress) &&
-        Objects.equals(this.fromAddress, conversationEventTopicMessage.fromAddress) &&
-        Objects.equals(this.messages, conversationEventTopicMessage.messages) &&
-        Objects.equals(this.messagesTranscriptUri, conversationEventTopicMessage.messagesTranscriptUri) &&
-        Objects.equals(this.type, conversationEventTopicMessage.type) &&
-        Objects.equals(this.recipientCountry, conversationEventTopicMessage.recipientCountry) &&
-        Objects.equals(this.recipientType, conversationEventTopicMessage.recipientType) &&
-        Objects.equals(this.journeyContext, conversationEventTopicMessage.journeyContext) &&
-        Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
-        Objects.equals(this.afterCallWork, conversationEventTopicMessage.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, conversationEventTopicMessage.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, conversationEventTopicMessage.agentAssistantId);
+            Objects.equals(this.state, conversationEventTopicMessage.state) &&
+            Objects.equals(this.held, conversationEventTopicMessage.held) &&
+            Objects.equals(this.errorInfo, conversationEventTopicMessage.errorInfo) &&
+            Objects.equals(this.provider, conversationEventTopicMessage.provider) &&
+            Objects.equals(this.scriptId, conversationEventTopicMessage.scriptId) &&
+            Objects.equals(this.peerId, conversationEventTopicMessage.peerId) &&
+            Objects.equals(this.disconnectType, conversationEventTopicMessage.disconnectType) &&
+            Objects.equals(this.startHoldTime, conversationEventTopicMessage.startHoldTime) &&
+            Objects.equals(this.connectedTime, conversationEventTopicMessage.connectedTime) &&
+            Objects.equals(this.disconnectedTime, conversationEventTopicMessage.disconnectedTime) &&
+            Objects.equals(this.toAddress, conversationEventTopicMessage.toAddress) &&
+            Objects.equals(this.fromAddress, conversationEventTopicMessage.fromAddress) &&
+            Objects.equals(this.messages, conversationEventTopicMessage.messages) &&
+            Objects.equals(this.messagesTranscriptUri, conversationEventTopicMessage.messagesTranscriptUri) &&
+            Objects.equals(this.type, conversationEventTopicMessage.type) &&
+            Objects.equals(this.recipientCountry, conversationEventTopicMessage.recipientCountry) &&
+            Objects.equals(this.recipientType, conversationEventTopicMessage.recipientType) &&
+            Objects.equals(this.journeyContext, conversationEventTopicMessage.journeyContext) &&
+            Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
+            Objects.equals(this.afterCallWork, conversationEventTopicMessage.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, conversationEventTopicMessage.afterCallWorkRequired) &&
+            Objects.equals(this.agentAssistantId, conversationEventTopicMessage.agentAssistantId);
   }
 
   @Override

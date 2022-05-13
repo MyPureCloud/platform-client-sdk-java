@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.total = total;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public SurveyFormEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
       return false;
     }
     SurveyFormEntityListing surveyFormEntityListing = (SurveyFormEntityListing) o;
+
     return Objects.equals(this.entities, surveyFormEntityListing.entities) &&
-        Objects.equals(this.pageSize, surveyFormEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, surveyFormEntityListing.pageNumber) &&
-        Objects.equals(this.total, surveyFormEntityListing.total) &&
-        Objects.equals(this.lastUri, surveyFormEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, surveyFormEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, surveyFormEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, surveyFormEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, surveyFormEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, surveyFormEntityListing.pageCount);
+            Objects.equals(this.pageSize, surveyFormEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, surveyFormEntityListing.pageNumber) &&
+            Objects.equals(this.total, surveyFormEntityListing.total) &&
+            Objects.equals(this.lastUri, surveyFormEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, surveyFormEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, surveyFormEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, surveyFormEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, surveyFormEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, surveyFormEntityListing.pageCount);
   }
 
   @Override

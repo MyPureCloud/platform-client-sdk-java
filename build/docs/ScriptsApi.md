@@ -32,8 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get a script
 
-
-
 Wraps GET /api/v2/scripts/{scriptId}  
 
 Requires ANY permissions: 
@@ -94,8 +92,6 @@ try {
 > [Page](Page.html) getScriptPage(scriptId, pageId, scriptDataVersion)
 
 Get a page
-
-
 
 Wraps GET /api/v2/scripts/{scriptId}/pages/{pageId}  
 
@@ -162,8 +158,6 @@ try {
 
 Get the list of pages
 
-
-
 Wraps GET /api/v2/scripts/{scriptId}/pages  
 
 Requires ANY permissions: 
@@ -226,8 +220,6 @@ try {
 > [ScriptEntityListing](ScriptEntityListing.html) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)
 
 Get the list of scripts
-
-
 
 Wraps GET /api/v2/scripts  
 
@@ -308,8 +300,6 @@ try {
 
 Get the metadata for a list of scripts
 
-
-
 Wraps GET /api/v2/scripts/divisionviews  
 
 Requires ANY permissions: 
@@ -389,8 +379,6 @@ try {
 
 Get the published scripts.
 
-
-
 Wraps GET /api/v2/scripts/published  
 
 Requires ANY permissions: 
@@ -465,8 +453,6 @@ try {
 > [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublishedDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds)
 
 Get the published scripts metadata.
-
-
 
 Wraps GET /api/v2/scripts/published/divisionviews  
 
@@ -543,8 +529,6 @@ try {
 
 Get the published script.
 
-
-
 Wraps GET /api/v2/scripts/published/{scriptId}  
 
 Requires ANY permissions: 
@@ -607,8 +591,6 @@ try {
 > [Page](Page.html) getScriptsPublishedScriptIdPage(scriptId, pageId, scriptDataVersion)
 
 Get the published page.
-
-
 
 Wraps GET /api/v2/scripts/published/{scriptId}/pages/{pageId}  
 
@@ -675,8 +657,6 @@ try {
 
 Get the list of published pages
 
-
-
 Wraps GET /api/v2/scripts/published/{scriptId}/pages  
 
 Requires ANY permissions: 
@@ -739,8 +719,6 @@ try {
 > Object getScriptsPublishedScriptIdVariables(scriptId, input, output, type, scriptDataVersion)
 
 Get the published variables
-
-
 
 Wraps GET /api/v2/scripts/published/{scriptId}/variables  
 
@@ -811,8 +789,6 @@ try {
 
 Get the upload status of an imported script
 
-
-
 Wraps GET /api/v2/scripts/uploads/{uploadId}/status  
 
 Requires ANY permissions: 
@@ -875,8 +851,6 @@ try {
 > [ExportScriptResponse](ExportScriptResponse.html) postScriptExport(scriptId, body)
 
 Export a script via download service.
-
-
 
 Wraps POST /api/v2/scripts/{scriptId}/export  
 

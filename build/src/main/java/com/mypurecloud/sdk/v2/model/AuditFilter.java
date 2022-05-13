@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class AuditFilter  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The type of the filter, DATE or STRING.
    **/
@@ -63,7 +64,7 @@ public class AuditFilter  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The operation that the filter performs.
    **/
@@ -81,7 +82,7 @@ public class AuditFilter  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * The values to make the filter comparison against.
    **/
@@ -99,7 +100,6 @@ public class AuditFilter  implements Serializable {
     this.values = values;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class AuditFilter  implements Serializable {
       return false;
     }
     AuditFilter auditFilter = (AuditFilter) o;
+
     return Objects.equals(this.name, auditFilter.name) &&
-        Objects.equals(this.type, auditFilter.type) &&
-        Objects.equals(this.operator, auditFilter.operator) &&
-        Objects.equals(this.values, auditFilter.values);
+            Objects.equals(this.type, auditFilter.type) &&
+            Objects.equals(this.operator, auditFilter.operator) &&
+            Objects.equals(this.values, auditFilter.values);
   }
 
   @Override

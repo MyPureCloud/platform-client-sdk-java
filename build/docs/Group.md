@@ -31,10 +31,10 @@ title: Group
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -44,9 +44,9 @@ title: Group
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OFFICIAL | &quot;official&quot; |
-| SOCIAL | &quot;social&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OFFICIAL | &quot;official&quot; | 
+| SOCIAL | &quot;social&quot; | 
 {: class="table table-striped"}
 
 
@@ -56,10 +56,10 @@ title: Group
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PUBLIC | &quot;public&quot; |
-| OWNERS | &quot;owners&quot; |
-| MEMBERS | &quot;members&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLIC | &quot;public&quot; | 
+| OWNERS | &quot;owners&quot; | 
+| MEMBERS | &quot;members&quot; | 
 {: class="table table-striped"}
 
 

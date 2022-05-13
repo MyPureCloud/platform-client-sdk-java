@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocalDateRange;
@@ -46,7 +47,7 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
     this.timeOffLimitId = timeOffLimitId;
   }
 
-  
+
   /**
    * The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified
    **/
@@ -64,7 +65,7 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * The list of the date ranges to return time off limit, allocated and waitlisted minutes.
    **/
@@ -82,7 +83,6 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class QueryTimeOffLimitValuesRequest  implements Serializable {
       return false;
     }
     QueryTimeOffLimitValuesRequest queryTimeOffLimitValuesRequest = (QueryTimeOffLimitValuesRequest) o;
+
     return Objects.equals(this.timeOffLimitId, queryTimeOffLimitValuesRequest.timeOffLimitId) &&
-        Objects.equals(this.activityCodeId, queryTimeOffLimitValuesRequest.activityCodeId) &&
-        Objects.equals(this.dateRanges, queryTimeOffLimitValuesRequest.dateRanges);
+            Objects.equals(this.activityCodeId, queryTimeOffLimitValuesRequest.activityCodeId) &&
+            Objects.equals(this.dateRanges, queryTimeOffLimitValuesRequest.dateRanges);
   }
 
   @Override

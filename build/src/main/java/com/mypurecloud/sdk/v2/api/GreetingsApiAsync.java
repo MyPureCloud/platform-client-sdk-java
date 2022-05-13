@@ -13,12 +13,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteGreetingRequest;
@@ -45,7 +45,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class GreetingsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -57,7 +56,6 @@ public class GreetingsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Deletes a Greeting with the given GreetingId
    * 
@@ -133,7 +131,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Get a Greeting with the given GreetingId
    * 
@@ -209,7 +206,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Get media playback URI for this greeting
    * 
@@ -285,9 +281,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Gets an Organization&#39;s Greetings
+   * Gets an Organization's Greetings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -321,7 +316,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Gets an Organization&#39;s Greetings
+   * Gets an Organization's Greetings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -361,9 +356,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Get an Organization&#39;s DefaultGreetingList
+   * Get an Organization's DefaultGreetingList
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -397,7 +391,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Get an Organization&#39;s DefaultGreetingList
+   * Get an Organization's DefaultGreetingList
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -437,9 +431,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Get a list of the Group&#39;s Greetings
+   * Get a list of the Group's Greetings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -473,7 +466,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Get a list of the Group&#39;s Greetings
+   * Get a list of the Group's Greetings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -513,9 +506,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Grabs the list of Default Greetings given a Group&#39;s ID
+   * Grabs the list of Default Greetings given a Group's ID
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -549,7 +541,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Grabs the list of Default Greetings given a Group&#39;s ID
+   * Grabs the list of Default Greetings given a Group's ID
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -589,9 +581,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Get a list of the User&#39;s Greetings
+   * Get a list of the User's Greetings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -625,7 +616,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Get a list of the User&#39;s Greetings
+   * Get a list of the User's Greetings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -665,9 +656,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Grabs the list of Default Greetings given a User&#39;s ID
+   * Grabs the list of Default Greetings given a User's ID
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -701,7 +691,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Grabs the list of Default Greetings given a User&#39;s ID
+   * Grabs the list of Default Greetings given a User's ID
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -741,7 +731,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Create a Greeting for an Organization
    * 
@@ -817,7 +806,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Creates a Greeting for a Group
    * 
@@ -893,7 +881,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Creates a Greeting for a User
    * 
@@ -969,7 +956,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Updates the Greeting with the given GreetingId
    * 
@@ -1045,9 +1031,8 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
-   * Update an Organization&#39;s DefaultGreetingList
+   * Update an Organization's DefaultGreetingList
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1081,7 +1066,7 @@ public class GreetingsApiAsync {
   }
 
   /**
-   * Update an Organization&#39;s DefaultGreetingList
+   * Update an Organization's DefaultGreetingList
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1121,7 +1106,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
@@ -1197,7 +1181,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
@@ -1273,7 +1256,6 @@ public class GreetingsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

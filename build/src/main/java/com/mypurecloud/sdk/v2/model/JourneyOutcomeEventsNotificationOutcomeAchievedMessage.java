@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationBrowser;
@@ -55,7 +56,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.outcome = outcome;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage browser(JourneyOutcomeEventsNotificationBrowser browser) {
@@ -72,7 +73,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.browser = browser;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage visitCreatedDate(Date visitCreatedDate) {
@@ -89,7 +90,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.visitCreatedDate = visitCreatedDate;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage ipAddress(String ipAddress) {
@@ -106,7 +107,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage ipOrganization(String ipOrganization) {
@@ -123,7 +124,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.ipOrganization = ipOrganization;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage userAgentString(String userAgentString) {
@@ -140,7 +141,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.userAgentString = userAgentString;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage device(JourneyOutcomeEventsNotificationDevice device) {
@@ -157,7 +158,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.device = device;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage geolocation(JourneyOutcomeEventsNotificationGeoLocation geolocation) {
@@ -174,7 +175,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.geolocation = geolocation;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage mktCampaign(JourneyOutcomeEventsNotificationMktCampaign mktCampaign) {
@@ -191,7 +192,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.mktCampaign = mktCampaign;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationOutcomeAchievedMessage visitReferrer(JourneyOutcomeEventsNotificationReferrer visitReferrer) {
@@ -208,7 +209,6 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     this.visitReferrer = visitReferrer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -219,16 +219,17 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
       return false;
     }
     JourneyOutcomeEventsNotificationOutcomeAchievedMessage journeyOutcomeEventsNotificationOutcomeAchievedMessage = (JourneyOutcomeEventsNotificationOutcomeAchievedMessage) o;
+
     return Objects.equals(this.outcome, journeyOutcomeEventsNotificationOutcomeAchievedMessage.outcome) &&
-        Objects.equals(this.browser, journeyOutcomeEventsNotificationOutcomeAchievedMessage.browser) &&
-        Objects.equals(this.visitCreatedDate, journeyOutcomeEventsNotificationOutcomeAchievedMessage.visitCreatedDate) &&
-        Objects.equals(this.ipAddress, journeyOutcomeEventsNotificationOutcomeAchievedMessage.ipAddress) &&
-        Objects.equals(this.ipOrganization, journeyOutcomeEventsNotificationOutcomeAchievedMessage.ipOrganization) &&
-        Objects.equals(this.userAgentString, journeyOutcomeEventsNotificationOutcomeAchievedMessage.userAgentString) &&
-        Objects.equals(this.device, journeyOutcomeEventsNotificationOutcomeAchievedMessage.device) &&
-        Objects.equals(this.geolocation, journeyOutcomeEventsNotificationOutcomeAchievedMessage.geolocation) &&
-        Objects.equals(this.mktCampaign, journeyOutcomeEventsNotificationOutcomeAchievedMessage.mktCampaign) &&
-        Objects.equals(this.visitReferrer, journeyOutcomeEventsNotificationOutcomeAchievedMessage.visitReferrer);
+            Objects.equals(this.browser, journeyOutcomeEventsNotificationOutcomeAchievedMessage.browser) &&
+            Objects.equals(this.visitCreatedDate, journeyOutcomeEventsNotificationOutcomeAchievedMessage.visitCreatedDate) &&
+            Objects.equals(this.ipAddress, journeyOutcomeEventsNotificationOutcomeAchievedMessage.ipAddress) &&
+            Objects.equals(this.ipOrganization, journeyOutcomeEventsNotificationOutcomeAchievedMessage.ipOrganization) &&
+            Objects.equals(this.userAgentString, journeyOutcomeEventsNotificationOutcomeAchievedMessage.userAgentString) &&
+            Objects.equals(this.device, journeyOutcomeEventsNotificationOutcomeAchievedMessage.device) &&
+            Objects.equals(this.geolocation, journeyOutcomeEventsNotificationOutcomeAchievedMessage.geolocation) &&
+            Objects.equals(this.mktCampaign, journeyOutcomeEventsNotificationOutcomeAchievedMessage.mktCampaign) &&
+            Objects.equals(this.visitReferrer, journeyOutcomeEventsNotificationOutcomeAchievedMessage.visitReferrer);
   }
 
   @Override

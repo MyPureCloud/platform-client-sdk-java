@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -88,7 +88,7 @@ public class WrapUpCodeMapping  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WrapUpCodeMapping name(String name) {
@@ -105,21 +105,21 @@ public class WrapUpCodeMapping  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -137,7 +137,7 @@ public class WrapUpCodeMapping  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.
    **/
@@ -155,7 +155,7 @@ public class WrapUpCodeMapping  implements Serializable {
     this.defaultSet = defaultSet;
   }
 
-  
+
   /**
    * A map from wrap-up code identifiers to a set of wrap-up flags.
    **/
@@ -173,14 +173,13 @@ public class WrapUpCodeMapping  implements Serializable {
     this.mapping = mapping;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -191,14 +190,15 @@ public class WrapUpCodeMapping  implements Serializable {
       return false;
     }
     WrapUpCodeMapping wrapUpCodeMapping = (WrapUpCodeMapping) o;
+
     return Objects.equals(this.id, wrapUpCodeMapping.id) &&
-        Objects.equals(this.name, wrapUpCodeMapping.name) &&
-        Objects.equals(this.dateCreated, wrapUpCodeMapping.dateCreated) &&
-        Objects.equals(this.dateModified, wrapUpCodeMapping.dateModified) &&
-        Objects.equals(this.version, wrapUpCodeMapping.version) &&
-        Objects.equals(this.defaultSet, wrapUpCodeMapping.defaultSet) &&
-        Objects.equals(this.mapping, wrapUpCodeMapping.mapping) &&
-        Objects.equals(this.selfUri, wrapUpCodeMapping.selfUri);
+            Objects.equals(this.name, wrapUpCodeMapping.name) &&
+            Objects.equals(this.dateCreated, wrapUpCodeMapping.dateCreated) &&
+            Objects.equals(this.dateModified, wrapUpCodeMapping.dateModified) &&
+            Objects.equals(this.version, wrapUpCodeMapping.version) &&
+            Objects.equals(this.defaultSet, wrapUpCodeMapping.defaultSet) &&
+            Objects.equals(this.mapping, wrapUpCodeMapping.mapping) &&
+            Objects.equals(this.selfUri, wrapUpCodeMapping.selfUri);
   }
 
   @Override

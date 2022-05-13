@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,7 +88,7 @@ public class BillingUsageReport  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public BillingUsageReport name(String name) {
@@ -104,7 +105,7 @@ public class BillingUsageReport  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -122,7 +123,7 @@ public class BillingUsageReport  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -140,7 +141,7 @@ public class BillingUsageReport  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * Generation status of report
    **/
@@ -158,7 +159,7 @@ public class BillingUsageReport  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The usages for the given period.
    **/
@@ -176,14 +177,13 @@ public class BillingUsageReport  implements Serializable {
     this.usages = usages;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,13 +194,14 @@ public class BillingUsageReport  implements Serializable {
       return false;
     }
     BillingUsageReport billingUsageReport = (BillingUsageReport) o;
+
     return Objects.equals(this.id, billingUsageReport.id) &&
-        Objects.equals(this.name, billingUsageReport.name) &&
-        Objects.equals(this.startDate, billingUsageReport.startDate) &&
-        Objects.equals(this.endDate, billingUsageReport.endDate) &&
-        Objects.equals(this.status, billingUsageReport.status) &&
-        Objects.equals(this.usages, billingUsageReport.usages) &&
-        Objects.equals(this.selfUri, billingUsageReport.selfUri);
+            Objects.equals(this.name, billingUsageReport.name) &&
+            Objects.equals(this.startDate, billingUsageReport.startDate) &&
+            Objects.equals(this.endDate, billingUsageReport.endDate) &&
+            Objects.equals(this.status, billingUsageReport.status) &&
+            Objects.equals(this.usages, billingUsageReport.usages) &&
+            Objects.equals(this.selfUri, billingUsageReport.selfUri);
   }
 
   @Override

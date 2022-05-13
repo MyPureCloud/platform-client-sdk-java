@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
@@ -34,7 +35,7 @@ public class BuScheduleReferenceForMuRoute  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -52,7 +53,7 @@ public class BuScheduleReferenceForMuRoute  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The start week date for this schedule
    **/
@@ -70,14 +71,13 @@ public class BuScheduleReferenceForMuRoute  implements Serializable {
     this.businessUnit = businessUnit;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,10 +88,11 @@ public class BuScheduleReferenceForMuRoute  implements Serializable {
       return false;
     }
     BuScheduleReferenceForMuRoute buScheduleReferenceForMuRoute = (BuScheduleReferenceForMuRoute) o;
+
     return Objects.equals(this.id, buScheduleReferenceForMuRoute.id) &&
-        Objects.equals(this.weekDate, buScheduleReferenceForMuRoute.weekDate) &&
-        Objects.equals(this.businessUnit, buScheduleReferenceForMuRoute.businessUnit) &&
-        Objects.equals(this.selfUri, buScheduleReferenceForMuRoute.selfUri);
+            Objects.equals(this.weekDate, buScheduleReferenceForMuRoute.weekDate) &&
+            Objects.equals(this.businessUnit, buScheduleReferenceForMuRoute.businessUnit) &&
+            Objects.equals(this.selfUri, buScheduleReferenceForMuRoute.selfUri);
   }
 
   @Override

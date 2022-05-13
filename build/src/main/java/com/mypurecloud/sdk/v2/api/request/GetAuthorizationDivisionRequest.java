@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuthorizationDivisionRequest {
-    
+
 	private String divisionId;
 	public String getDivisionId() {
 		return this.divisionId;
@@ -39,7 +39,7 @@ public class GetAuthorizationDivisionRequest {
 	    this.setDivisionId(divisionId);
 	    return this;
 	} 
-	
+
 	private Boolean objectCount;
 	public Boolean getObjectCount() {
 		return this.objectCount;
@@ -53,7 +53,7 @@ public class GetAuthorizationDivisionRequest {
 	    this.setObjectCount(objectCount);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -84,9 +84,10 @@ public class GetAuthorizationDivisionRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/divisions/{divisionId}")
                 .withPathParameter("divisionId", divisionId)
         
+
                 .withQueryParameters("objectCount", "", objectCount)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -97,12 +98,12 @@ public class GetAuthorizationDivisionRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String divisionId) {
 	    return new Builder()
 	            .withRequiredParams(divisionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationDivisionRequest request;
@@ -111,25 +112,25 @@ public class GetAuthorizationDivisionRequest {
 			request = new GetAuthorizationDivisionRequest();
 		}
 
-		
+
 		public Builder withDivisionId(String divisionId) {
 			request.setDivisionId(divisionId);
 			return this;
 		}
-		
+
 		public Builder withObjectCount(Boolean objectCount) {
 			request.setObjectCount(objectCount);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String divisionId) {
 			request.setDivisionId(divisionId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAuthorizationDivisionRequest build() {
             

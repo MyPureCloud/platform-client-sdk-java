@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Language;
@@ -48,7 +49,7 @@ public class RoutingConversationAttributesResponse  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * Current routing skills on in-queue conversation
    **/
@@ -66,7 +67,7 @@ public class RoutingConversationAttributesResponse  implements Serializable {
     this.skills = skills;
   }
 
-  
+
   /**
    * Current language on in-queue conversation
    **/
@@ -84,7 +85,7 @@ public class RoutingConversationAttributesResponse  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * Current scored agents on in-queue conversation
    **/
@@ -102,7 +103,6 @@ public class RoutingConversationAttributesResponse  implements Serializable {
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +113,11 @@ public class RoutingConversationAttributesResponse  implements Serializable {
       return false;
     }
     RoutingConversationAttributesResponse routingConversationAttributesResponse = (RoutingConversationAttributesResponse) o;
+
     return Objects.equals(this.priority, routingConversationAttributesResponse.priority) &&
-        Objects.equals(this.skills, routingConversationAttributesResponse.skills) &&
-        Objects.equals(this.language, routingConversationAttributesResponse.language) &&
-        Objects.equals(this.scoredAgents, routingConversationAttributesResponse.scoredAgents);
+            Objects.equals(this.skills, routingConversationAttributesResponse.skills) &&
+            Objects.equals(this.language, routingConversationAttributesResponse.language) &&
+            Objects.equals(this.scoredAgents, routingConversationAttributesResponse.scoredAgents);
   }
 
   @Override

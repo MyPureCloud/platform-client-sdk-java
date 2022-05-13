@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.total = total;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public WhatsAppIntegrationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class WhatsAppIntegrationEntityListing  implements Serializable, PagedRes
       return false;
     }
     WhatsAppIntegrationEntityListing whatsAppIntegrationEntityListing = (WhatsAppIntegrationEntityListing) o;
+
     return Objects.equals(this.entities, whatsAppIntegrationEntityListing.entities) &&
-        Objects.equals(this.pageSize, whatsAppIntegrationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, whatsAppIntegrationEntityListing.pageNumber) &&
-        Objects.equals(this.total, whatsAppIntegrationEntityListing.total) &&
-        Objects.equals(this.lastUri, whatsAppIntegrationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, whatsAppIntegrationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, whatsAppIntegrationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, whatsAppIntegrationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, whatsAppIntegrationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, whatsAppIntegrationEntityListing.pageCount);
+            Objects.equals(this.pageSize, whatsAppIntegrationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, whatsAppIntegrationEntityListing.pageNumber) &&
+            Objects.equals(this.total, whatsAppIntegrationEntityListing.total) &&
+            Objects.equals(this.lastUri, whatsAppIntegrationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, whatsAppIntegrationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, whatsAppIntegrationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, whatsAppIntegrationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, whatsAppIntegrationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, whatsAppIntegrationEntityListing.pageCount);
   }
 
   @Override

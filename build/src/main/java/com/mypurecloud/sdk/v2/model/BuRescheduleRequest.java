@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -51,7 +52,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -69,7 +70,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * The IDs of the agents to consider for rescheduling.  Omit to consider all agents in the specified management units.Agents not in the specified management units will be ignored
    **/
@@ -87,7 +88,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.agentIds = agentIds;
   }
 
-  
+
   /**
    * The IDs of the activity codes to consider for rescheduling.  Omit to consider all activity codes
    **/
@@ -105,7 +106,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.activityCodeIds = activityCodeIds;
   }
 
-  
+
   /**
    * The IDs of the management units to reschedule
    **/
@@ -123,7 +124,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.managementUnitIds = managementUnitIds;
   }
 
-  
+
   /**
    * Instructs the scheduler whether it is allowed to change weekly paid time
    **/
@@ -141,7 +142,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.doNotChangeWeeklyPaidTime = doNotChangeWeeklyPaidTime;
   }
 
-  
+
   /**
    * Instructs the scheduler whether it is allowed to change daily paid time
    **/
@@ -159,7 +160,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.doNotChangeDailyPaidTime = doNotChangeDailyPaidTime;
   }
 
-  
+
   /**
    * Instructs the scheduler whether it is allowed to change shift start times
    **/
@@ -177,7 +178,7 @@ public class BuRescheduleRequest  implements Serializable {
     this.doNotChangeShiftStartTimes = doNotChangeShiftStartTimes;
   }
 
-  
+
   /**
    * Instructs the scheduler whether it is allowed to change manually edited shifts
    **/
@@ -195,7 +196,6 @@ public class BuRescheduleRequest  implements Serializable {
     this.doNotChangeManuallyEditedShifts = doNotChangeManuallyEditedShifts;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,15 +206,16 @@ public class BuRescheduleRequest  implements Serializable {
       return false;
     }
     BuRescheduleRequest buRescheduleRequest = (BuRescheduleRequest) o;
+
     return Objects.equals(this.startDate, buRescheduleRequest.startDate) &&
-        Objects.equals(this.endDate, buRescheduleRequest.endDate) &&
-        Objects.equals(this.agentIds, buRescheduleRequest.agentIds) &&
-        Objects.equals(this.activityCodeIds, buRescheduleRequest.activityCodeIds) &&
-        Objects.equals(this.managementUnitIds, buRescheduleRequest.managementUnitIds) &&
-        Objects.equals(this.doNotChangeWeeklyPaidTime, buRescheduleRequest.doNotChangeWeeklyPaidTime) &&
-        Objects.equals(this.doNotChangeDailyPaidTime, buRescheduleRequest.doNotChangeDailyPaidTime) &&
-        Objects.equals(this.doNotChangeShiftStartTimes, buRescheduleRequest.doNotChangeShiftStartTimes) &&
-        Objects.equals(this.doNotChangeManuallyEditedShifts, buRescheduleRequest.doNotChangeManuallyEditedShifts);
+            Objects.equals(this.endDate, buRescheduleRequest.endDate) &&
+            Objects.equals(this.agentIds, buRescheduleRequest.agentIds) &&
+            Objects.equals(this.activityCodeIds, buRescheduleRequest.activityCodeIds) &&
+            Objects.equals(this.managementUnitIds, buRescheduleRequest.managementUnitIds) &&
+            Objects.equals(this.doNotChangeWeeklyPaidTime, buRescheduleRequest.doNotChangeWeeklyPaidTime) &&
+            Objects.equals(this.doNotChangeDailyPaidTime, buRescheduleRequest.doNotChangeDailyPaidTime) &&
+            Objects.equals(this.doNotChangeShiftStartTimes, buRescheduleRequest.doNotChangeShiftStartTimes) &&
+            Objects.equals(this.doNotChangeManuallyEditedShifts, buRescheduleRequest.doNotChangeManuallyEditedShifts);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallForwardingEventCall;
@@ -48,7 +49,7 @@ public class CallForwardingEventCallForwarding  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public CallForwardingEventCallForwarding enabled(Boolean enabled) {
@@ -65,7 +66,7 @@ public class CallForwardingEventCallForwarding  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public CallForwardingEventCallForwarding calls(List<CallForwardingEventCall> calls) {
@@ -82,7 +83,7 @@ public class CallForwardingEventCallForwarding  implements Serializable {
     this.calls = calls;
   }
 
-  
+
   /**
    **/
   public CallForwardingEventCallForwarding voicemail(String voicemail) {
@@ -99,7 +100,7 @@ public class CallForwardingEventCallForwarding  implements Serializable {
     this.voicemail = voicemail;
   }
 
-  
+
   /**
    **/
   public CallForwardingEventCallForwarding modifiedDate(Date modifiedDate) {
@@ -116,7 +117,6 @@ public class CallForwardingEventCallForwarding  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class CallForwardingEventCallForwarding  implements Serializable {
       return false;
     }
     CallForwardingEventCallForwarding callForwardingEventCallForwarding = (CallForwardingEventCallForwarding) o;
+
     return Objects.equals(this.user, callForwardingEventCallForwarding.user) &&
-        Objects.equals(this.enabled, callForwardingEventCallForwarding.enabled) &&
-        Objects.equals(this.calls, callForwardingEventCallForwarding.calls) &&
-        Objects.equals(this.voicemail, callForwardingEventCallForwarding.voicemail) &&
-        Objects.equals(this.modifiedDate, callForwardingEventCallForwarding.modifiedDate);
+            Objects.equals(this.enabled, callForwardingEventCallForwarding.enabled) &&
+            Objects.equals(this.calls, callForwardingEventCallForwarding.calls) &&
+            Objects.equals(this.voicemail, callForwardingEventCallForwarding.voicemail) &&
+            Objects.equals(this.modifiedDate, callForwardingEventCallForwarding.modifiedDate);
   }
 
   @Override

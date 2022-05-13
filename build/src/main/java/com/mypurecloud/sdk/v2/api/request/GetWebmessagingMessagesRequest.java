@@ -24,7 +24,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebMessagingMessageEntityList;
 
 public class GetWebmessagingMessagesRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -38,7 +38,7 @@ public class GetWebmessagingMessagesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -52,7 +52,7 @@ public class GetWebmessagingMessagesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -76,11 +76,13 @@ public class GetWebmessagingMessagesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/webmessaging/messages")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames()
@@ -91,7 +93,7 @@ public class GetWebmessagingMessagesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetWebmessagingMessagesRequest request;
@@ -100,19 +102,19 @@ public class GetWebmessagingMessagesRequest {
 			request = new GetWebmessagingMessagesRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetWebmessagingMessagesRequest build() {
             

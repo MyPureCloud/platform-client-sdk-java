@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -42,7 +43,7 @@ public class Knowledge  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The knowledge base for messenger
    **/
@@ -60,7 +61,6 @@ public class Knowledge  implements Serializable {
     this.knowledgeBase = knowledgeBase;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class Knowledge  implements Serializable {
       return false;
     }
     Knowledge knowledge = (Knowledge) o;
+
     return Objects.equals(this.enabled, knowledge.enabled) &&
-        Objects.equals(this.knowledgeBase, knowledge.knowledgeBase);
+            Objects.equals(this.knowledgeBase, knowledge.knowledgeBase);
   }
 
   @Override

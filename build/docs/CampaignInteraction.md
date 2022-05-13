@@ -38,15 +38,15 @@ title: CampaignInteraction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DISCONNECT | &quot;DISCONNECT&quot; |
-| LIVE_VOICE | &quot;LIVE_VOICE&quot; |
-| BUSY | &quot;BUSY&quot; |
-| MACHINE | &quot;MACHINE&quot; |
-| NO_ANSWER | &quot;NO_ANSWER&quot; |
-| SIT_CALLABLE | &quot;SIT_CALLABLE&quot; |
-| SIT_UNCALLABLE | &quot;SIT_UNCALLABLE&quot; |
-| FAX | &quot;FAX&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DISCONNECT | &quot;DISCONNECT&quot; | 
+| LIVE_VOICE | &quot;LIVE_VOICE&quot; | 
+| BUSY | &quot;BUSY&quot; | 
+| MACHINE | &quot;MACHINE&quot; | 
+| NO_ANSWER | &quot;NO_ANSWER&quot; | 
+| SIT_CALLABLE | &quot;SIT_CALLABLE&quot; | 
+| SIT_UNCALLABLE | &quot;SIT_UNCALLABLE&quot; | 
+| FAX | &quot;FAX&quot; | 
 {: class="table table-striped"}
 
 

@@ -27,10 +27,10 @@ title: DataTableExportJob
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PROCESSING | &quot;Processing&quot; |
-| FAILED | &quot;Failed&quot; |
-| SUCCEEDED | &quot;Succeeded&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PROCESSING | &quot;Processing&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| SUCCEEDED | &quot;Succeeded&quot; | 
 {: class="table table-striped"}
 
 

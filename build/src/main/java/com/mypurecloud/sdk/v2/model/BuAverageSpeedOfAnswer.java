@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class BuAverageSpeedOfAnswer  implements Serializable {
     this.include = include;
   }
 
-  
+
   /**
    * The target average speed of answer (ASA) in seconds. Required if include == true
    **/
@@ -60,7 +61,6 @@ public class BuAverageSpeedOfAnswer  implements Serializable {
     this.seconds = seconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class BuAverageSpeedOfAnswer  implements Serializable {
       return false;
     }
     BuAverageSpeedOfAnswer buAverageSpeedOfAnswer = (BuAverageSpeedOfAnswer) o;
+
     return Objects.equals(this.include, buAverageSpeedOfAnswer.include) &&
-        Objects.equals(this.seconds, buAverageSpeedOfAnswer.seconds);
+            Objects.equals(this.seconds, buAverageSpeedOfAnswer.seconds);
   }
 
   @Override

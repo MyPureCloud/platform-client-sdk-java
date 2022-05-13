@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
+
   /**
    * Page size of the returned results
    **/
@@ -111,7 +112,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * Page number of the returned results
    **/
@@ -129,7 +130,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Document type to be used while searching
    **/
@@ -147,7 +148,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     this.documentType = documentType;
   }
 
-  
+
   /**
    * query search for specific languageCode
    **/
@@ -165,7 +166,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     this.languageCode = languageCode;
   }
 
-  
+
   /**
    * If true the search query will be executed on draft documents, else it will be on active documents
    **/
@@ -183,7 +184,6 @@ public class KnowledgeSearchRequest  implements Serializable {
     this.searchOnDraftDocuments = searchOnDraftDocuments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,12 +194,13 @@ public class KnowledgeSearchRequest  implements Serializable {
       return false;
     }
     KnowledgeSearchRequest knowledgeSearchRequest = (KnowledgeSearchRequest) o;
+
     return Objects.equals(this.query, knowledgeSearchRequest.query) &&
-        Objects.equals(this.pageSize, knowledgeSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, knowledgeSearchRequest.pageNumber) &&
-        Objects.equals(this.documentType, knowledgeSearchRequest.documentType) &&
-        Objects.equals(this.languageCode, knowledgeSearchRequest.languageCode) &&
-        Objects.equals(this.searchOnDraftDocuments, knowledgeSearchRequest.searchOnDraftDocuments);
+            Objects.equals(this.pageSize, knowledgeSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, knowledgeSearchRequest.pageNumber) &&
+            Objects.equals(this.documentType, knowledgeSearchRequest.documentType) &&
+            Objects.equals(this.languageCode, knowledgeSearchRequest.languageCode) &&
+            Objects.equals(this.searchOnDraftDocuments, knowledgeSearchRequest.searchOnDraftDocuments);
   }
 
   @Override

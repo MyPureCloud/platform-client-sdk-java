@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicJourneyActionMap;
@@ -43,7 +44,7 @@ public class ConversationVideoEventTopicJourneyAction  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicJourneyAction actionMap(ConversationVideoEventTopicJourneyActionMap actionMap) {
@@ -60,7 +61,6 @@ public class ConversationVideoEventTopicJourneyAction  implements Serializable {
     this.actionMap = actionMap;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ConversationVideoEventTopicJourneyAction  implements Serializable {
       return false;
     }
     ConversationVideoEventTopicJourneyAction conversationVideoEventTopicJourneyAction = (ConversationVideoEventTopicJourneyAction) o;
+
     return Objects.equals(this.id, conversationVideoEventTopicJourneyAction.id) &&
-        Objects.equals(this.actionMap, conversationVideoEventTopicJourneyAction.actionMap);
+            Objects.equals(this.actionMap, conversationVideoEventTopicJourneyAction.actionMap);
   }
 
   @Override

@@ -23,14 +23,14 @@ title: ScorableSurvey
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;Pending&quot; |
-| SENT | &quot;Sent&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| FINISHED | &quot;Finished&quot; |
-| OPTOUT | &quot;OptOut&quot; |
-| ERROR | &quot;Error&quot; |
-| EXPIRED | &quot;Expired&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| SENT | &quot;Sent&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| FINISHED | &quot;Finished&quot; | 
+| OPTOUT | &quot;OptOut&quot; | 
+| ERROR | &quot;Error&quot; | 
+| EXPIRED | &quot;Expired&quot; | 
 {: class="table table-striped"}
 
 

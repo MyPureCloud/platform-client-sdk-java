@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContextEntity;
@@ -43,7 +44,7 @@ public class NluDetectionContext  implements Serializable {
     this.intent = intent;
   }
 
-  
+
   /**
    * Use this entity to restrict detection.
    **/
@@ -61,7 +62,6 @@ public class NluDetectionContext  implements Serializable {
     this.entity = entity;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class NluDetectionContext  implements Serializable {
       return false;
     }
     NluDetectionContext nluDetectionContext = (NluDetectionContext) o;
+
     return Objects.equals(this.intent, nluDetectionContext.intent) &&
-        Objects.equals(this.entity, nluDetectionContext.entity);
+            Objects.equals(this.entity, nluDetectionContext.entity);
   }
 
   @Override

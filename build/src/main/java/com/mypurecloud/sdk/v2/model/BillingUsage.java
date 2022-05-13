@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BillingUsageResource;
@@ -45,7 +46,7 @@ public class BillingUsage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The total amount of usage, expressed as a decimal number in string format.
    **/
@@ -63,7 +64,7 @@ public class BillingUsage  implements Serializable {
     this.totalUsage = totalUsage;
   }
 
-  
+
   /**
    * The resources for which usage was observed (e.g. license users, devices).
    **/
@@ -81,7 +82,6 @@ public class BillingUsage  implements Serializable {
     this.resources = resources;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class BillingUsage  implements Serializable {
       return false;
     }
     BillingUsage billingUsage = (BillingUsage) o;
+
     return Objects.equals(this.name, billingUsage.name) &&
-        Objects.equals(this.totalUsage, billingUsage.totalUsage) &&
-        Objects.equals(this.resources, billingUsage.resources);
+            Objects.equals(this.totalUsage, billingUsage.totalUsage) &&
+            Objects.equals(this.resources, billingUsage.resources);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Attachment;
@@ -45,7 +46,7 @@ public class CopyAttachmentsRequest  implements Serializable {
     this.sourceMessage = sourceMessage;
   }
 
-  
+
   /**
    * A list of attachments that will be copied from the source message to the current draft
    **/
@@ -63,7 +64,6 @@ public class CopyAttachmentsRequest  implements Serializable {
     this.attachments = attachments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class CopyAttachmentsRequest  implements Serializable {
       return false;
     }
     CopyAttachmentsRequest copyAttachmentsRequest = (CopyAttachmentsRequest) o;
+
     return Objects.equals(this.sourceMessage, copyAttachmentsRequest.sourceMessage) &&
-        Objects.equals(this.attachments, copyAttachmentsRequest.attachments);
+            Objects.equals(this.attachments, copyAttachmentsRequest.attachments);
   }
 
   @Override

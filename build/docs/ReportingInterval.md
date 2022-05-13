@@ -19,10 +19,10 @@ title: ReportingInterval
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DAY | &quot;Day&quot; |
-| WEEK | &quot;Week&quot; |
-| MONTH | &quot;Month&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DAY | &quot;Day&quot; | 
+| WEEK | &quot;Week&quot; | 
+| MONTH | &quot;Month&quot; | 
 {: class="table table-striped"}
 
 

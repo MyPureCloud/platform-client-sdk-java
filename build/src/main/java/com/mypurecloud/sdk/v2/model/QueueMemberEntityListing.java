@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueMember;
@@ -48,7 +49,7 @@ public class QueueMemberEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListing pageNumber(Integer pageNumber) {
@@ -65,7 +66,7 @@ public class QueueMemberEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListing pageSize(Integer pageSize) {
@@ -82,7 +83,7 @@ public class QueueMemberEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListing firstUri(String firstUri) {
@@ -99,7 +100,7 @@ public class QueueMemberEntityListing  implements Serializable {
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListing selfUri(String selfUri) {
@@ -116,7 +117,7 @@ public class QueueMemberEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListing previousUri(String previousUri) {
@@ -133,7 +134,7 @@ public class QueueMemberEntityListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public QueueMemberEntityListing nextUri(String nextUri) {
@@ -150,7 +151,6 @@ public class QueueMemberEntityListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,13 +161,14 @@ public class QueueMemberEntityListing  implements Serializable {
       return false;
     }
     QueueMemberEntityListing queueMemberEntityListing = (QueueMemberEntityListing) o;
+
     return Objects.equals(this.entities, queueMemberEntityListing.entities) &&
-        Objects.equals(this.pageNumber, queueMemberEntityListing.pageNumber) &&
-        Objects.equals(this.pageSize, queueMemberEntityListing.pageSize) &&
-        Objects.equals(this.firstUri, queueMemberEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, queueMemberEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, queueMemberEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, queueMemberEntityListing.nextUri);
+            Objects.equals(this.pageNumber, queueMemberEntityListing.pageNumber) &&
+            Objects.equals(this.pageSize, queueMemberEntityListing.pageSize) &&
+            Objects.equals(this.firstUri, queueMemberEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, queueMemberEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, queueMemberEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, queueMemberEntityListing.nextUri);
   }
 
   @Override

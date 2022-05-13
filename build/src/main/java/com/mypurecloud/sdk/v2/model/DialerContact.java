@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallRecord;
@@ -47,7 +48,7 @@ public class DialerContact  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DialerContact name(String name) {
@@ -64,7 +65,7 @@ public class DialerContact  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The identifier of the contact list containing this contact.
    **/
@@ -82,7 +83,7 @@ public class DialerContact  implements Serializable {
     this.contactListId = contactListId;
   }
 
-  
+
   /**
    * An ordered map of the contact's columns and corresponding values.
    **/
@@ -100,21 +101,21 @@ public class DialerContact  implements Serializable {
     this.data = data;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A map of call records for the contact phone columns.")
   @JsonProperty("callRecords")
   public Map<String, CallRecord> getCallRecords() {
     return callRecords;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A map of SMS records for the contact phone columns.")
   @JsonProperty("latestSmsEvaluations")
   public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
     return latestSmsEvaluations;
   }
 
-  
+
   /**
    * Indicates whether or not the contact can be called.
    **/
@@ -132,7 +133,7 @@ public class DialerContact  implements Serializable {
     this.callable = callable;
   }
 
-  
+
   /**
    * A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
    **/
@@ -150,28 +151,27 @@ public class DialerContact  implements Serializable {
     this.phoneNumberStatus = phoneNumberStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip")
   @JsonProperty("contactColumnTimeZones")
   public Map<String, ContactColumnTimeZone> getContactColumnTimeZones() {
     return contactColumnTimeZones;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue")
   @JsonProperty("configurationOverrides")
   public ConfigurationOverrides getConfigurationOverrides() {
     return configurationOverrides;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,17 +182,18 @@ public class DialerContact  implements Serializable {
       return false;
     }
     DialerContact dialerContact = (DialerContact) o;
+
     return Objects.equals(this.id, dialerContact.id) &&
-        Objects.equals(this.name, dialerContact.name) &&
-        Objects.equals(this.contactListId, dialerContact.contactListId) &&
-        Objects.equals(this.data, dialerContact.data) &&
-        Objects.equals(this.callRecords, dialerContact.callRecords) &&
-        Objects.equals(this.latestSmsEvaluations, dialerContact.latestSmsEvaluations) &&
-        Objects.equals(this.callable, dialerContact.callable) &&
-        Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
-        Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
-        Objects.equals(this.configurationOverrides, dialerContact.configurationOverrides) &&
-        Objects.equals(this.selfUri, dialerContact.selfUri);
+            Objects.equals(this.name, dialerContact.name) &&
+            Objects.equals(this.contactListId, dialerContact.contactListId) &&
+            Objects.equals(this.data, dialerContact.data) &&
+            Objects.equals(this.callRecords, dialerContact.callRecords) &&
+            Objects.equals(this.latestSmsEvaluations, dialerContact.latestSmsEvaluations) &&
+            Objects.equals(this.callable, dialerContact.callable) &&
+            Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
+            Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
+            Objects.equals(this.configurationOverrides, dialerContact.configurationOverrides) &&
+            Objects.equals(this.selfUri, dialerContact.selfUri);
   }
 
   @Override

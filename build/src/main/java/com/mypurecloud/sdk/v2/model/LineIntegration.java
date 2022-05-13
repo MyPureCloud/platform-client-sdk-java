@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class LineIntegration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the LINE Integration
    **/
@@ -116,7 +117,7 @@ public class LineIntegration  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -134,7 +135,7 @@ public class LineIntegration  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public LineIntegration messagingSetting(MessagingSettingReference messagingSetting) {
@@ -151,7 +152,7 @@ public class LineIntegration  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   /**
    * The Channel Id from LINE messenger
    **/
@@ -169,7 +170,7 @@ public class LineIntegration  implements Serializable {
     this.channelId = channelId;
   }
 
-  
+
   /**
    * The Webhook URI to be updated in LINE platform
    **/
@@ -187,7 +188,7 @@ public class LineIntegration  implements Serializable {
     this.webhookUri = webhookUri;
   }
 
-  
+
   /**
    * The status of the LINE Integration
    **/
@@ -205,14 +206,14 @@ public class LineIntegration  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient associated to the Line Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
   }
 
-  
+
   /**
    * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -230,7 +231,7 @@ public class LineIntegration  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -248,7 +249,7 @@ public class LineIntegration  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User reference that created this Integration
    **/
@@ -266,7 +267,7 @@ public class LineIntegration  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * User reference that last modified this Integration
    **/
@@ -284,7 +285,7 @@ public class LineIntegration  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -302,28 +303,27 @@ public class LineIntegration  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
   @JsonProperty("createStatus")
   public CreateStatusEnum getCreateStatus() {
     return createStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,22 +334,23 @@ public class LineIntegration  implements Serializable {
       return false;
     }
     LineIntegration lineIntegration = (LineIntegration) o;
+
     return Objects.equals(this.id, lineIntegration.id) &&
-        Objects.equals(this.name, lineIntegration.name) &&
-        Objects.equals(this.supportedContent, lineIntegration.supportedContent) &&
-        Objects.equals(this.messagingSetting, lineIntegration.messagingSetting) &&
-        Objects.equals(this.channelId, lineIntegration.channelId) &&
-        Objects.equals(this.webhookUri, lineIntegration.webhookUri) &&
-        Objects.equals(this.status, lineIntegration.status) &&
-        Objects.equals(this.recipient, lineIntegration.recipient) &&
-        Objects.equals(this.dateCreated, lineIntegration.dateCreated) &&
-        Objects.equals(this.dateModified, lineIntegration.dateModified) &&
-        Objects.equals(this.createdBy, lineIntegration.createdBy) &&
-        Objects.equals(this.modifiedBy, lineIntegration.modifiedBy) &&
-        Objects.equals(this.version, lineIntegration.version) &&
-        Objects.equals(this.createStatus, lineIntegration.createStatus) &&
-        Objects.equals(this.createError, lineIntegration.createError) &&
-        Objects.equals(this.selfUri, lineIntegration.selfUri);
+            Objects.equals(this.name, lineIntegration.name) &&
+            Objects.equals(this.supportedContent, lineIntegration.supportedContent) &&
+            Objects.equals(this.messagingSetting, lineIntegration.messagingSetting) &&
+            Objects.equals(this.channelId, lineIntegration.channelId) &&
+            Objects.equals(this.webhookUri, lineIntegration.webhookUri) &&
+            Objects.equals(this.status, lineIntegration.status) &&
+            Objects.equals(this.recipient, lineIntegration.recipient) &&
+            Objects.equals(this.dateCreated, lineIntegration.dateCreated) &&
+            Objects.equals(this.dateModified, lineIntegration.dateModified) &&
+            Objects.equals(this.createdBy, lineIntegration.createdBy) &&
+            Objects.equals(this.modifiedBy, lineIntegration.modifiedBy) &&
+            Objects.equals(this.version, lineIntegration.version) &&
+            Objects.equals(this.createStatus, lineIntegration.createStatus) &&
+            Objects.equals(this.createError, lineIntegration.createError) &&
+            Objects.equals(this.selfUri, lineIntegration.selfUri);
   }
 
   @Override

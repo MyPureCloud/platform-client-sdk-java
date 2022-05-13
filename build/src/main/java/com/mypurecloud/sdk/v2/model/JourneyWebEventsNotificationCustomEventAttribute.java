@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class JourneyWebEventsNotificationCustomEventAttribute  implements Serial
     this.value = value;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationCustomEventAttribute dataType(DataTypeEnum dataType) {
@@ -106,7 +107,6 @@ public class JourneyWebEventsNotificationCustomEventAttribute  implements Serial
     this.dataType = dataType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,8 +117,9 @@ public class JourneyWebEventsNotificationCustomEventAttribute  implements Serial
       return false;
     }
     JourneyWebEventsNotificationCustomEventAttribute journeyWebEventsNotificationCustomEventAttribute = (JourneyWebEventsNotificationCustomEventAttribute) o;
+
     return Objects.equals(this.value, journeyWebEventsNotificationCustomEventAttribute.value) &&
-        Objects.equals(this.dataType, journeyWebEventsNotificationCustomEventAttribute.dataType);
+            Objects.equals(this.dataType, journeyWebEventsNotificationCustomEventAttribute.dataType);
   }
 
   @Override

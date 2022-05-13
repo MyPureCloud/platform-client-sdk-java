@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing total(Long total) {
@@ -103,7 +104,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.total = total;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public NluFeedbackListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class NluFeedbackListing  implements Serializable, PagedResource<NluFeedb
       return false;
     }
     NluFeedbackListing nluFeedbackListing = (NluFeedbackListing) o;
+
     return Objects.equals(this.entities, nluFeedbackListing.entities) &&
-        Objects.equals(this.pageSize, nluFeedbackListing.pageSize) &&
-        Objects.equals(this.pageNumber, nluFeedbackListing.pageNumber) &&
-        Objects.equals(this.total, nluFeedbackListing.total) &&
-        Objects.equals(this.lastUri, nluFeedbackListing.lastUri) &&
-        Objects.equals(this.firstUri, nluFeedbackListing.firstUri) &&
-        Objects.equals(this.selfUri, nluFeedbackListing.selfUri) &&
-        Objects.equals(this.previousUri, nluFeedbackListing.previousUri) &&
-        Objects.equals(this.nextUri, nluFeedbackListing.nextUri) &&
-        Objects.equals(this.pageCount, nluFeedbackListing.pageCount);
+            Objects.equals(this.pageSize, nluFeedbackListing.pageSize) &&
+            Objects.equals(this.pageNumber, nluFeedbackListing.pageNumber) &&
+            Objects.equals(this.total, nluFeedbackListing.total) &&
+            Objects.equals(this.lastUri, nluFeedbackListing.lastUri) &&
+            Objects.equals(this.firstUri, nluFeedbackListing.firstUri) &&
+            Objects.equals(this.selfUri, nluFeedbackListing.selfUri) &&
+            Objects.equals(this.previousUri, nluFeedbackListing.previousUri) &&
+            Objects.equals(this.nextUri, nluFeedbackListing.nextUri) &&
+            Objects.equals(this.pageCount, nluFeedbackListing.pageCount);
   }
 
   @Override

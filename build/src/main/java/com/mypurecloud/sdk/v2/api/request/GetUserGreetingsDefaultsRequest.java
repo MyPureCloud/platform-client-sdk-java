@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetUserGreetingsDefaultsRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -42,7 +42,7 @@ public class GetUserGreetingsDefaultsRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +73,7 @@ public class GetUserGreetingsDefaultsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/users/{userId}/greetings/defaults")
                 .withPathParameter("userId", userId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class GetUserGreetingsDefaultsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetUserGreetingsDefaultsRequest request;
@@ -98,20 +98,20 @@ public class GetUserGreetingsDefaultsRequest {
 			request = new GetUserGreetingsDefaultsRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetUserGreetingsDefaultsRequest build() {
             

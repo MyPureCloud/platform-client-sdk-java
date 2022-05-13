@@ -20,72 +20,72 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.BenefitAssessment;
-import com.mypurecloud.sdk.v2.model.AssessmentListing;
-import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
-import com.mypurecloud.sdk.v2.model.InboundDomain;
-import com.mypurecloud.sdk.v2.model.InboundRoute;
-import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
-import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.EmailSetup;
-import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.Recipient;
-import com.mypurecloud.sdk.v2.model.RecipientListing;
-import com.mypurecloud.sdk.v2.model.Predictor;
-import com.mypurecloud.sdk.v2.model.PredictorListing;
-import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
-import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.BenefitAssessment;
+import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
+import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
+import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.EmailSetup;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.InboundRoute;
+import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
+import com.mypurecloud.sdk.v2.model.Predictor;
+import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.QueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
-import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
-import com.mypurecloud.sdk.v2.model.QueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.RoutingSettings;
-import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
-import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
-import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.Utilization;
-import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
+import com.mypurecloud.sdk.v2.model.TestMessage;
+import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
-import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
-import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
-import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
-import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
-import com.mypurecloud.sdk.v2.model.TestMessage;
-import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
-import com.mypurecloud.sdk.v2.model.WritableEntity;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
-import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
-import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
-import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.QueueRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
+import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingQueueUsersRequest {
-    
+
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -99,7 +99,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setQueueId(queueId);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -113,7 +113,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -127,7 +127,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -143,7 +143,7 @@ public class GetRoutingQueueUsersRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASC("asc"), 
+		ASC("asc"),
 		DESC("desc");
 
 		private String value;
@@ -171,7 +171,7 @@ public class GetRoutingQueueUsersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -187,25 +187,25 @@ public class GetRoutingQueueUsersRequest {
 	} 
 
 	public enum expandValues { 
-		ROUTINGSTATUS("routingStatus"), 
-		PRESENCE("presence"), 
-		CONVERSATIONSUMMARY("conversationSummary"), 
-		OUTOFOFFICE("outOfOffice"), 
-		GEOLOCATION("geolocation"), 
-		STATION("station"), 
-		AUTHORIZATION("authorization"), 
-		LASTTOKENISSUED("lasttokenissued"), 
-		DATELASTLOGIN("dateLastLogin"), 
-		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
-		TEAM("team"), 
-		PROFILESKILLS("profileSkills"), 
-		CERTIFICATIONS("certifications"), 
-		LOCATIONS("locations"), 
-		GROUPS("groups"), 
-		SKILLS("skills"), 
-		LANGUAGES("languages"), 
-		LANGUAGEPREFERENCE("languagePreference"), 
-		EMPLOYERINFO("employerInfo"), 
+		ROUTINGSTATUS("routingStatus"),
+		PRESENCE("presence"),
+		CONVERSATIONSUMMARY("conversationSummary"),
+		OUTOFOFFICE("outOfOffice"),
+		GEOLOCATION("geolocation"),
+		STATION("station"),
+		AUTHORIZATION("authorization"),
+		LASTTOKENISSUED("lasttokenissued"),
+		DATELASTLOGIN("dateLastLogin"),
+		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
+		TEAM("team"),
+		PROFILESKILLS("profileSkills"),
+		CERTIFICATIONS("certifications"),
+		LOCATIONS("locations"),
+		GROUPS("groups"),
+		SKILLS("skills"),
+		LANGUAGES("languages"),
+		LANGUAGEPREFERENCE("languagePreference"),
+		EMPLOYERINFO("employerInfo"),
 		BIOGRAPHY("biography");
 
 		private String value;
@@ -233,7 +233,7 @@ public class GetRoutingQueueUsersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Boolean joined;
 	public Boolean getJoined() {
 		return this.joined;
@@ -247,7 +247,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setJoined(joined);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -261,7 +261,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private List<String> profileSkills;
 	public List<String> getProfileSkills() {
 		return this.profileSkills;
@@ -275,7 +275,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setProfileSkills(profileSkills);
 	    return this;
 	} 
-	
+
 	private List<String> skills;
 	public List<String> getSkills() {
 		return this.skills;
@@ -289,7 +289,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setSkills(skills);
 	    return this;
 	} 
-	
+
 	private List<String> languages;
 	public List<String> getLanguages() {
 		return this.languages;
@@ -303,7 +303,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setLanguages(languages);
 	    return this;
 	} 
-	
+
 	private List<String> routingStatus;
 	public List<String> getRoutingStatus() {
 		return this.routingStatus;
@@ -317,7 +317,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setRoutingStatus(routingStatus);
 	    return this;
 	} 
-	
+
 	private List<String> presence;
 	public List<String> getPresence() {
 		return this.presence;
@@ -331,7 +331,7 @@ public class GetRoutingQueueUsersRequest {
 	    this.setPresence(presence);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -362,29 +362,40 @@ public class GetRoutingQueueUsersRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/routing/queues/{queueId}/users")
                 .withPathParameter("queueId", queueId)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("joined", "", joined)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("profileSkills", "multi", profileSkills)
         
+
                 .withQueryParameters("skills", "multi", skills)
         
+
                 .withQueryParameters("languages", "multi", languages)
         
+
                 .withQueryParameters("routingStatus", "multi", routingStatus)
         
+
                 .withQueryParameters("presence", "multi", presence)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -395,12 +406,12 @@ public class GetRoutingQueueUsersRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String queueId) {
 	    return new Builder()
 	            .withRequiredParams(queueId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetRoutingQueueUsersRequest request;
@@ -409,36 +420,42 @@ public class GetRoutingQueueUsersRequest {
 			request = new GetRoutingQueueUsersRequest();
 		}
 
-		
+
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -448,50 +465,50 @@ public class GetRoutingQueueUsersRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
+
 		public Builder withJoined(Boolean joined) {
 			request.setJoined(joined);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withProfileSkills(List<String> profileSkills) {
 			request.setProfileSkills(profileSkills);
 			return this;
 		}
-		
+
 		public Builder withSkills(List<String> skills) {
 			request.setSkills(skills);
 			return this;
 		}
-		
+
 		public Builder withLanguages(List<String> languages) {
 			request.setLanguages(languages);
 			return this;
 		}
-		
+
 		public Builder withRoutingStatus(List<String> routingStatus) {
 			request.setRoutingStatus(routingStatus);
 			return this;
 		}
-		
+
 		public Builder withPresence(List<String> presence) {
 			request.setPresence(presence);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String queueId) {
 			request.setQueueId(queueId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetRoutingQueueUsersRequest build() {
             

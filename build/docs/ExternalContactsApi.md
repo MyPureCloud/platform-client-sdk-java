@@ -20,7 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContacts**](ExternalContactsApi.html#getExternalcontactsContacts) | Search for external contacts |
 | [**getExternalcontactsContactsSchema**](ExternalContactsApi.html#getExternalcontactsContactsSchema) | Get a schema |
 | [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersion) | Get a specific version of a schema |
-| [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact&#39;s schema |
+| [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact's schema |
 | [**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | Get a list of schemas. |
 | [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizations**](ExternalContactsApi.html#getExternalcontactsOrganizations) | Search for external organizations |
 | [**getExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchema) | Get a schema |
 | [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersion) | Get a specific version of a schema |
-| [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | Get all versions of an external organization&#39;s schema |
+| [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | Get all versions of an external organization's schema |
 | [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | Get a list of schemas. |
 | [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | Fetch a relationship |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned. |
@@ -78,11 +78,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> [Empty](Empty.html) deleteExternalcontactsContact(contactId)
+> Empty deleteExternalcontactsContact(contactId)
 
 Delete an external contact
-
-
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId}  
 
@@ -133,7 +131,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteExternalcontactsContactNote"></a>
 
@@ -141,11 +139,9 @@ try {
 
 
 
-> [Empty](Empty.html) deleteExternalcontactsContactNote(contactId, noteId)
+> Empty deleteExternalcontactsContactNote(contactId, noteId)
 
 Delete a note for an external contact
-
-
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
 
@@ -198,7 +194,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteExternalcontactsContactsSchema"></a>
 
@@ -209,8 +205,6 @@ try {
 > Void deleteExternalcontactsContactsSchema(schemaId)
 
 Delete a schema
-
-
 
 Wraps DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}  
 
@@ -268,11 +262,9 @@ null (empty response body)
 
 
 
-> [Empty](Empty.html) deleteExternalcontactsOrganization(externalOrganizationId)
+> Empty deleteExternalcontactsOrganization(externalOrganizationId)
 
 Delete an external organization
-
-
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}  
 
@@ -324,7 +316,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteExternalcontactsOrganizationNote"></a>
 
@@ -332,11 +324,9 @@ try {
 
 
 
-> [Empty](Empty.html) deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+> Empty deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 Delete a note for an external organization
-
-
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
 
@@ -389,7 +379,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteExternalcontactsOrganizationTrustor"></a>
 
@@ -400,8 +390,6 @@ try {
 > Void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 Unlink the Trustor for this External Organization
-
-
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor  
 
@@ -459,11 +447,9 @@ null (empty response body)
 
 
 
-> [Empty](Empty.html) deleteExternalcontactsRelationship(relationshipId)
+> Empty deleteExternalcontactsRelationship(relationshipId)
 
 Delete a relationship
-
-
 
 Wraps DELETE /api/v2/externalcontacts/relationships/{relationshipId}  
 
@@ -514,7 +500,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getExternalcontactsContact"></a>
 
@@ -525,8 +511,6 @@ try {
 > [ExternalContact](ExternalContact.html) getExternalcontactsContact(contactId, expand)
 
 Fetch an external contact
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}  
 
@@ -557,7 +541,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources)
 try {
     ExternalContact result = apiInstance.getExternalcontactsContact(contactId, expand);
     System.out.println(result);
@@ -591,8 +575,6 @@ try {
 
 Fetch a note for an external contact
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
 
 Requires ANY permissions: 
@@ -623,7 +605,7 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact Id
 String noteId = "noteId_example"; // String | Note Id
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     Note result = apiInstance.getExternalcontactsContactNote(contactId, noteId, expand);
     System.out.println(result);
@@ -658,8 +640,6 @@ try {
 
 List notes for an external contact
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes  
 
 Requires ANY permissions: 
@@ -692,7 +672,7 @@ String contactId = "contactId_example"; // String | ExternalContact Id
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String sortOrder = "sortOrder_example"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     NoteListing result = apiInstance.getExternalcontactsContactNotes(contactId, pageSize, pageNumber, sortOrder, expand);
     System.out.println(result);
@@ -708,8 +688,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact Id | 
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **sortOrder** | **String**| Sort order | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
 {: class="table-striped"}
@@ -728,8 +708,6 @@ try {
 > [ContactListing](ContactListing.html) getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand)
 
 Search for external contacts
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts  
 
@@ -763,7 +741,7 @@ Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 r
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
 String sortOrder = "sortOrder_example"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     ContactListing result = apiInstance.getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand);
     System.out.println(result);
@@ -778,8 +756,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
@@ -799,8 +777,6 @@ try {
 > [DataSchema](DataSchema.html) getExternalcontactsContactsSchema(schemaId)
 
 Get a schema
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}  
 
@@ -863,8 +839,6 @@ try {
 
 Get a specific version of a schema
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}  
 
 Requires ANY permissions: 
@@ -926,9 +900,7 @@ try {
 
 > [DataSchema](DataSchema.html) getExternalcontactsContactsSchemaVersions(schemaId)
 
-Get all versions of an external contact&#39;s schema
-
-
+Get all versions of an external contact's schema
 
 Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions  
 
@@ -991,8 +963,6 @@ try {
 
 Get a list of schemas.
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/schemas  
 
 Requires ANY permissions: 
@@ -1049,8 +1019,6 @@ This endpoint does not require any parameters.
 > [ExternalOrganization](ExternalOrganization.html) getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors)
 
 Fetch an external organization
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}  
 
@@ -1118,8 +1086,6 @@ try {
 
 Search for external contacts in an external organization
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts  
 
 Requires ANY permissions: 
@@ -1153,7 +1119,7 @@ Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 r
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
 String sortOrder = "sortOrder_example"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     ContactListing result = apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand);
     System.out.println(result);
@@ -1169,8 +1135,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | 
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
@@ -1190,8 +1156,6 @@ try {
 > [Note](Note.html) getExternalcontactsOrganizationNote(externalOrganizationId, noteId, expand)
 
 Fetch a note for an external organization
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
 
@@ -1223,7 +1187,7 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 String noteId = "noteId_example"; // String | Note Id
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     Note result = apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, expand);
     System.out.println(result);
@@ -1258,8 +1222,6 @@ try {
 
 List notes for an external organization
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes  
 
 Requires ANY permissions: 
@@ -1293,7 +1255,7 @@ String externalOrganizationId = "externalOrganizationId_example"; // String | Ex
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String sortOrder = "sortOrder_example"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     NoteListing result = apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, pageSize, pageNumber, sortOrder, expand);
     System.out.println(result);
@@ -1309,8 +1271,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | 
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **sortOrder** | **String**| Sort order | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
 {: class="table-striped"}
@@ -1329,8 +1291,6 @@ try {
 > [RelationshipListing](RelationshipListing.html) getExternalcontactsOrganizationRelationships(externalOrganizationId, pageSize, pageNumber, expand, sortOrder)
 
 Fetch a relationship for an external organization
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships  
 
@@ -1381,8 +1341,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | 
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
 | **sortOrder** | **String**| Sort order | [optional] 
 {: class="table-striped"}
@@ -1401,8 +1361,6 @@ try {
 > [ExternalOrganizationListing](ExternalOrganizationListing.html) getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)
 
 Search for external organizations
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations  
 
@@ -1436,9 +1394,9 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | Search query
-List<String> trustorId = Arrays.asList("trustorId_example"); // List<String> | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
+List<String> trustorId = Arrays.asList(null); // List<String> | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
 String sortOrder = "sortOrder_example"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
     ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors);
@@ -1454,8 +1412,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| Search query | [optional] 
 | **trustorId** | [**List&lt;String&gt;**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] 
@@ -1477,8 +1435,6 @@ try {
 > [DataSchema](DataSchema.html) getExternalcontactsOrganizationsSchema(schemaId)
 
 Get a schema
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}  
 
@@ -1541,8 +1497,6 @@ try {
 
 Get a specific version of a schema
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}  
 
 Requires ANY permissions: 
@@ -1604,9 +1558,7 @@ try {
 
 > [DataSchema](DataSchema.html) getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
-Get all versions of an external organization&#39;s schema
-
-
+Get all versions of an external organization's schema
 
 Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions  
 
@@ -1669,8 +1621,6 @@ try {
 
 Get a list of schemas.
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/schemas  
 
 Requires ANY permissions: 
@@ -1727,8 +1677,6 @@ This endpoint does not require any parameters.
 > [Relationship](Relationship.html) getExternalcontactsRelationship(relationshipId, expand)
 
 Fetch a relationship
-
-
 
 Wraps GET /api/v2/externalcontacts/relationships/{relationshipId}  
 
@@ -1793,8 +1741,6 @@ try {
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 
-
-
 Wraps GET /api/v2/externalcontacts/reversewhitepageslookup  
 
 Requires ANY permissions: 
@@ -1824,7 +1770,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which field, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which field, if any, to expand
 try {
     ReverseWhitepagesLookupResult result = apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, expand);
     System.out.println(result);
@@ -1857,8 +1803,6 @@ try {
 > [CursorContactListing](CursorContactListing.html) getExternalcontactsScanContacts(limit, cursor)
 
 Scan for external contacts using paging
-
-
 
 Wraps GET /api/v2/externalcontacts/scan/contacts  
 
@@ -1923,8 +1867,6 @@ try {
 
 Scan for notes using paging
 
-
-
 Wraps GET /api/v2/externalcontacts/scan/notes  
 
 Requires ANY permissions: 
@@ -1987,8 +1929,6 @@ try {
 > [CursorOrganizationListing](CursorOrganizationListing.html) getExternalcontactsScanOrganizations(limit, cursor)
 
 Scan for external organizations using paging
-
-
 
 Wraps GET /api/v2/externalcontacts/scan/organizations  
 
@@ -2053,8 +1993,6 @@ try {
 
 Scan for relationships
 
-
-
 Wraps GET /api/v2/externalcontacts/scan/relationships  
 
 Requires ANY permissions: 
@@ -2118,8 +2056,6 @@ try {
 
 Bulk fetch contacts
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts  
 
 Requires ANY permissions: 
@@ -2180,8 +2116,6 @@ try {
 > [BulkContactsResponse](BulkContactsResponse.html) postExternalcontactsBulkContactsAdd(body)
 
 Bulk add contacts
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/contacts/add  
 
@@ -2244,8 +2178,6 @@ try {
 
 Bulk remove contacts
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts/remove  
 
 Requires ANY permissions: 
@@ -2307,8 +2239,6 @@ try {
 
 Bulk update contacts
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts/update  
 
 Requires ANY permissions: 
@@ -2369,8 +2299,6 @@ try {
 > [BulkFetchNotesResponse](BulkFetchNotesResponse.html) postExternalcontactsBulkNotes(body)
 
 Bulk fetch notes
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/notes  
 
@@ -2434,8 +2362,6 @@ try {
 
 Bulk add notes
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/notes/add  
 
 Requires ALL permissions: 
@@ -2497,8 +2423,6 @@ try {
 > [BulkDeleteResponse](BulkDeleteResponse.html) postExternalcontactsBulkNotesRemove(body)
 
 Bulk remove notes
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/notes/remove  
 
@@ -2562,8 +2486,6 @@ try {
 
 Bulk update notes
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/notes/update  
 
 Requires ALL permissions: 
@@ -2626,8 +2548,6 @@ try {
 
 Bulk fetch organizations
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations  
 
 Requires ANY permissions: 
@@ -2688,8 +2608,6 @@ try {
 > [BulkOrganizationsResponse](BulkOrganizationsResponse.html) postExternalcontactsBulkOrganizationsAdd(body)
 
 Bulk add organizations
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/organizations/add  
 
@@ -2752,8 +2670,6 @@ try {
 
 Bulk remove organizations
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations/remove  
 
 Requires ANY permissions: 
@@ -2815,8 +2731,6 @@ try {
 
 Bulk update organizations
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations/update  
 
 Requires ANY permissions: 
@@ -2877,8 +2791,6 @@ try {
 > [BulkFetchRelationshipsResponse](BulkFetchRelationshipsResponse.html) postExternalcontactsBulkRelationships(body)
 
 Bulk fetch relationships
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/relationships  
 
@@ -2942,8 +2854,6 @@ try {
 
 Bulk add relationships
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/relationships/add  
 
 Requires ALL permissions: 
@@ -3005,8 +2915,6 @@ try {
 > [BulkDeleteResponse](BulkDeleteResponse.html) postExternalcontactsBulkRelationshipsRemove(body)
 
 Bulk remove relationships
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/relationships/remove  
 
@@ -3070,8 +2978,6 @@ try {
 
 Bulk update relationships
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/relationships/update  
 
 Requires ALL permissions: 
@@ -3133,8 +3039,6 @@ try {
 > [Note](Note.html) postExternalcontactsContactNotes(contactId, body)
 
 Create a note for an external contact
-
-
 
 Wraps POST /api/v2/externalcontacts/contacts/{contactId}/notes  
 
@@ -3199,8 +3103,6 @@ try {
 
 Create an external contact
 
-
-
 Wraps POST /api/v2/externalcontacts/contacts  
 
 Requires ANY permissions: 
@@ -3262,8 +3164,6 @@ try {
 
 Create a schema
 
-
-
 Wraps POST /api/v2/externalcontacts/contacts/schemas  
 
 Requires ANY permissions: 
@@ -3324,8 +3224,6 @@ try {
 > [Note](Note.html) postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 
 Create a note for an external organization
-
-
 
 Wraps POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes  
 
@@ -3391,8 +3289,6 @@ try {
 
 Create an external organization
 
-
-
 Wraps POST /api/v2/externalcontacts/organizations  
 
 Requires ANY permissions: 
@@ -3455,8 +3351,6 @@ try {
 
 Create a schema
 
-
-
 Wraps POST /api/v2/externalcontacts/organizations/schemas  
 
 Requires ANY permissions: 
@@ -3518,8 +3412,6 @@ try {
 
 Create a relationship
 
-
-
 Wraps POST /api/v2/externalcontacts/relationships  
 
 Requires ANY permissions: 
@@ -3580,8 +3472,6 @@ try {
 > [ExternalContact](ExternalContact.html) putExternalcontactsContact(contactId, body)
 
 Update an external contact
-
-
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId}  
 
@@ -3645,8 +3535,6 @@ try {
 > [Note](Note.html) putExternalcontactsContactNote(contactId, noteId, body)
 
 Update a note for an external contact
-
-
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
 
@@ -3713,8 +3601,6 @@ try {
 
 Update a schema
 
-
-
 Wraps PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -3774,7 +3660,7 @@ try {
 
 
 
-> Void putExternalcontactsConversation(body, conversationId)
+> Void putExternalcontactsConversation(conversationId, body)
 
 Associate/disassociate an external contact with a conversation
 
@@ -3808,10 +3694,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
-ConversationAssociation body = new ConversationAssociation(); // ConversationAssociation | ConversationAssociation
 String conversationId = "conversationId_example"; // String | Conversation ID
+ConversationAssociation body = new ConversationAssociation(); // ConversationAssociation | ConversationAssociation
 try {
-    apiInstance.putExternalcontactsConversation(body, conversationId);
+    apiInstance.putExternalcontactsConversation(conversationId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsConversation");
     e.printStackTrace();
@@ -3823,8 +3709,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | 
 | **conversationId** | **String**| Conversation ID | 
+| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | 
 {: class="table-striped"}
 
 
@@ -3841,8 +3727,6 @@ null (empty response body)
 > [ExternalOrganization](ExternalOrganization.html) putExternalcontactsOrganization(externalOrganizationId, body)
 
 Update an external organization
-
-
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}  
 
@@ -3907,8 +3791,6 @@ try {
 > [Note](Note.html) putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
 
 Update a note for an external organization
-
-
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
 
@@ -3975,8 +3857,6 @@ try {
 
 Links a Trustor with an External Organization
 
-
-
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}  
 
 Requires ANY permissions: 
@@ -4040,8 +3920,6 @@ try {
 
 Update a schema
 
-
-
 Wraps PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}  
 
 Requires ANY permissions: 
@@ -4104,8 +3982,6 @@ try {
 > [Relationship](Relationship.html) putExternalcontactsRelationship(relationshipId, body)
 
 Update a relationship
-
-
 
 Wraps PUT /api/v2/externalcontacts/relationships/{relationshipId}  
 

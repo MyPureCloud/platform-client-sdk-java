@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContactId;
@@ -53,7 +54,7 @@ public class GDPRSubject  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public GDPRSubject userId(String userId) {
@@ -70,7 +71,7 @@ public class GDPRSubject  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public GDPRSubject externalContactId(String externalContactId) {
@@ -87,7 +88,7 @@ public class GDPRSubject  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    **/
   public GDPRSubject dialerContactId(DialerContactId dialerContactId) {
@@ -104,7 +105,7 @@ public class GDPRSubject  implements Serializable {
     this.dialerContactId = dialerContactId;
   }
 
-  
+
   /**
    **/
   public GDPRSubject journeyCustomer(GDPRJourneyCustomer journeyCustomer) {
@@ -121,7 +122,7 @@ public class GDPRSubject  implements Serializable {
     this.journeyCustomer = journeyCustomer;
   }
 
-  
+
   /**
    **/
   public GDPRSubject socialHandle(SocialHandle socialHandle) {
@@ -138,7 +139,7 @@ public class GDPRSubject  implements Serializable {
     this.socialHandle = socialHandle;
   }
 
-  
+
   /**
    **/
   public GDPRSubject externalId(String externalId) {
@@ -155,7 +156,7 @@ public class GDPRSubject  implements Serializable {
     this.externalId = externalId;
   }
 
-  
+
   /**
    **/
   public GDPRSubject addresses(List<String> addresses) {
@@ -172,7 +173,7 @@ public class GDPRSubject  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    **/
   public GDPRSubject phoneNumbers(List<String> phoneNumbers) {
@@ -189,7 +190,7 @@ public class GDPRSubject  implements Serializable {
     this.phoneNumbers = phoneNumbers;
   }
 
-  
+
   /**
    **/
   public GDPRSubject emailAddresses(List<String> emailAddresses) {
@@ -206,7 +207,6 @@ public class GDPRSubject  implements Serializable {
     this.emailAddresses = emailAddresses;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,16 +217,17 @@ public class GDPRSubject  implements Serializable {
       return false;
     }
     GDPRSubject gDPRSubject = (GDPRSubject) o;
+
     return Objects.equals(this.name, gDPRSubject.name) &&
-        Objects.equals(this.userId, gDPRSubject.userId) &&
-        Objects.equals(this.externalContactId, gDPRSubject.externalContactId) &&
-        Objects.equals(this.dialerContactId, gDPRSubject.dialerContactId) &&
-        Objects.equals(this.journeyCustomer, gDPRSubject.journeyCustomer) &&
-        Objects.equals(this.socialHandle, gDPRSubject.socialHandle) &&
-        Objects.equals(this.externalId, gDPRSubject.externalId) &&
-        Objects.equals(this.addresses, gDPRSubject.addresses) &&
-        Objects.equals(this.phoneNumbers, gDPRSubject.phoneNumbers) &&
-        Objects.equals(this.emailAddresses, gDPRSubject.emailAddresses);
+            Objects.equals(this.userId, gDPRSubject.userId) &&
+            Objects.equals(this.externalContactId, gDPRSubject.externalContactId) &&
+            Objects.equals(this.dialerContactId, gDPRSubject.dialerContactId) &&
+            Objects.equals(this.journeyCustomer, gDPRSubject.journeyCustomer) &&
+            Objects.equals(this.socialHandle, gDPRSubject.socialHandle) &&
+            Objects.equals(this.externalId, gDPRSubject.externalId) &&
+            Objects.equals(this.addresses, gDPRSubject.addresses) &&
+            Objects.equals(this.phoneNumbers, gDPRSubject.phoneNumbers) &&
+            Objects.equals(this.emailAddresses, gDPRSubject.emailAddresses);
   }
 
   @Override

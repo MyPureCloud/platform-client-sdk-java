@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssignmentError;
@@ -46,7 +47,7 @@ public class Assignment  implements Serializable {
     this.assignedMembers = assignedMembers;
   }
 
-  
+
   /**
    * The list of users successfully removed from the custom performance profile
    **/
@@ -64,7 +65,7 @@ public class Assignment  implements Serializable {
     this.removedMembers = removedMembers;
   }
 
-  
+
   /**
    * The list of users failed assignment or removal for the custom performance profile
    **/
@@ -82,7 +83,6 @@ public class Assignment  implements Serializable {
     this.assignmentErrors = assignmentErrors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class Assignment  implements Serializable {
       return false;
     }
     Assignment assignment = (Assignment) o;
+
     return Objects.equals(this.assignedMembers, assignment.assignedMembers) &&
-        Objects.equals(this.removedMembers, assignment.removedMembers) &&
-        Objects.equals(this.assignmentErrors, assignment.assignmentErrors);
+            Objects.equals(this.removedMembers, assignment.removedMembers) &&
+            Objects.equals(this.assignmentErrors, assignment.assignmentErrors);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WfmIntradayPlanningGroupListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    * The reason there was no data for the request
    **/
@@ -110,7 +111,6 @@ public class WfmIntradayPlanningGroupListing  implements Serializable {
     this.noDataReason = noDataReason;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class WfmIntradayPlanningGroupListing  implements Serializable {
       return false;
     }
     WfmIntradayPlanningGroupListing wfmIntradayPlanningGroupListing = (WfmIntradayPlanningGroupListing) o;
+
     return Objects.equals(this.entities, wfmIntradayPlanningGroupListing.entities) &&
-        Objects.equals(this.noDataReason, wfmIntradayPlanningGroupListing.noDataReason);
+            Objects.equals(this.noDataReason, wfmIntradayPlanningGroupListing.noDataReason);
   }
 
   @Override

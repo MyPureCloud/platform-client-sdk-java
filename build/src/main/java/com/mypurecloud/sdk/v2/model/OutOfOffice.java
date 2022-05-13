@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -38,7 +39,7 @@ public class OutOfOffice  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public OutOfOffice name(String name) {
@@ -55,7 +56,7 @@ public class OutOfOffice  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public OutOfOffice user(User user) {
@@ -72,7 +73,7 @@ public class OutOfOffice  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -90,7 +91,7 @@ public class OutOfOffice  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -108,7 +109,7 @@ public class OutOfOffice  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public OutOfOffice active(Boolean active) {
@@ -125,7 +126,7 @@ public class OutOfOffice  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    **/
   public OutOfOffice indefinite(Boolean indefinite) {
@@ -142,14 +143,13 @@ public class OutOfOffice  implements Serializable {
     this.indefinite = indefinite;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -160,14 +160,15 @@ public class OutOfOffice  implements Serializable {
       return false;
     }
     OutOfOffice outOfOffice = (OutOfOffice) o;
+
     return Objects.equals(this.id, outOfOffice.id) &&
-        Objects.equals(this.name, outOfOffice.name) &&
-        Objects.equals(this.user, outOfOffice.user) &&
-        Objects.equals(this.startDate, outOfOffice.startDate) &&
-        Objects.equals(this.endDate, outOfOffice.endDate) &&
-        Objects.equals(this.active, outOfOffice.active) &&
-        Objects.equals(this.indefinite, outOfOffice.indefinite) &&
-        Objects.equals(this.selfUri, outOfOffice.selfUri);
+            Objects.equals(this.name, outOfOffice.name) &&
+            Objects.equals(this.user, outOfOffice.user) &&
+            Objects.equals(this.startDate, outOfOffice.startDate) &&
+            Objects.equals(this.endDate, outOfOffice.endDate) &&
+            Objects.equals(this.active, outOfOffice.active) &&
+            Objects.equals(this.indefinite, outOfOffice.indefinite) &&
+            Objects.equals(this.selfUri, outOfOffice.selfUri);
   }
 
   @Override

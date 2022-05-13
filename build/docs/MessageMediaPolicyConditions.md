@@ -24,9 +24,9 @@ title: MessageMediaPolicyConditions
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| YES | &quot;YES&quot; |
-| NO | &quot;NO&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| YES | &quot;YES&quot; | 
+| NO | &quot;NO&quot; | 
 {: class="table table-striped"}
 
 

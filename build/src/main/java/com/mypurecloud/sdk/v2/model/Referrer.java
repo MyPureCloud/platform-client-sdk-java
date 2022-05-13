@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class Referrer  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * Referrer URL domain.
    **/
@@ -118,7 +119,7 @@ public class Referrer  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    * Referrer URL hostname.
    **/
@@ -136,7 +137,7 @@ public class Referrer  implements Serializable {
     this.hostname = hostname;
   }
 
-  
+
   /**
    * Referrer keywords.
    **/
@@ -154,7 +155,7 @@ public class Referrer  implements Serializable {
     this.keywords = keywords;
   }
 
-  
+
   /**
    * Referrer URL pathname.
    **/
@@ -172,7 +173,7 @@ public class Referrer  implements Serializable {
     this.pathname = pathname;
   }
 
-  
+
   /**
    * Referrer URL querystring.
    **/
@@ -190,7 +191,7 @@ public class Referrer  implements Serializable {
     this.queryString = queryString;
   }
 
-  
+
   /**
    * Referrer URL fragment.
    **/
@@ -208,7 +209,7 @@ public class Referrer  implements Serializable {
     this.fragment = fragment;
   }
 
-  
+
   /**
    * Name of referrer (e.g. Yahoo!, Google, InfoSpace).
    **/
@@ -226,7 +227,7 @@ public class Referrer  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Type of referrer (e.g. search, social).
    **/
@@ -244,7 +245,6 @@ public class Referrer  implements Serializable {
     this.medium = medium;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -255,15 +255,16 @@ public class Referrer  implements Serializable {
       return false;
     }
     Referrer referrer = (Referrer) o;
+
     return Objects.equals(this.url, referrer.url) &&
-        Objects.equals(this.domain, referrer.domain) &&
-        Objects.equals(this.hostname, referrer.hostname) &&
-        Objects.equals(this.keywords, referrer.keywords) &&
-        Objects.equals(this.pathname, referrer.pathname) &&
-        Objects.equals(this.queryString, referrer.queryString) &&
-        Objects.equals(this.fragment, referrer.fragment) &&
-        Objects.equals(this.name, referrer.name) &&
-        Objects.equals(this.medium, referrer.medium);
+            Objects.equals(this.domain, referrer.domain) &&
+            Objects.equals(this.hostname, referrer.hostname) &&
+            Objects.equals(this.keywords, referrer.keywords) &&
+            Objects.equals(this.pathname, referrer.pathname) &&
+            Objects.equals(this.queryString, referrer.queryString) &&
+            Objects.equals(this.fragment, referrer.fragment) &&
+            Objects.equals(this.name, referrer.name) &&
+            Objects.equals(this.medium, referrer.medium);
   }
 
   @Override

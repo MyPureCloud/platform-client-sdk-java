@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RoutePathResponse;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -39,7 +39,7 @@ public class PlanningGroup  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public PlanningGroup name(String name) {
@@ -56,7 +56,7 @@ public class PlanningGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The ID of the service goal template associated with this planning group
    **/
@@ -74,7 +74,7 @@ public class PlanningGroup  implements Serializable {
     this.serviceGoalTemplate = serviceGoalTemplate;
   }
 
-  
+
   /**
    * Set of route paths associated with the planning group
    **/
@@ -92,7 +92,7 @@ public class PlanningGroup  implements Serializable {
     this.routePaths = routePaths;
   }
 
-  
+
   /**
    * Version metadata for the planning group
    **/
@@ -110,14 +110,13 @@ public class PlanningGroup  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +127,13 @@ public class PlanningGroup  implements Serializable {
       return false;
     }
     PlanningGroup planningGroup = (PlanningGroup) o;
+
     return Objects.equals(this.id, planningGroup.id) &&
-        Objects.equals(this.name, planningGroup.name) &&
-        Objects.equals(this.serviceGoalTemplate, planningGroup.serviceGoalTemplate) &&
-        Objects.equals(this.routePaths, planningGroup.routePaths) &&
-        Objects.equals(this.metadata, planningGroup.metadata) &&
-        Objects.equals(this.selfUri, planningGroup.selfUri);
+            Objects.equals(this.name, planningGroup.name) &&
+            Objects.equals(this.serviceGoalTemplate, planningGroup.serviceGoalTemplate) &&
+            Objects.equals(this.routePaths, planningGroup.routePaths) &&
+            Objects.equals(this.metadata, planningGroup.metadata) &&
+            Objects.equals(this.selfUri, planningGroup.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class ConversationReason  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * Description of the reason for the failed message receipt.
    **/
@@ -118,7 +119,6 @@ public class ConversationReason  implements Serializable {
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,8 +129,9 @@ public class ConversationReason  implements Serializable {
       return false;
     }
     ConversationReason conversationReason = (ConversationReason) o;
+
     return Objects.equals(this.code, conversationReason.code) &&
-        Objects.equals(this.message, conversationReason.message);
+            Objects.equals(this.message, conversationReason.message);
   }
 
   @Override

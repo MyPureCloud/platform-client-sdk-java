@@ -22,9 +22,9 @@ title: TextBotFlowOutcome
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SUCCESS | &quot;SUCCESS&quot; |
-| FAILURE | &quot;FAILURE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SUCCESS | &quot;SUCCESS&quot; | 
+| FAILURE | &quot;FAILURE&quot; | 
 {: class="table table-striped"}
 
 

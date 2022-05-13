@@ -19,21 +19,21 @@ title: GeneralProgramJobRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EN_US | &quot;en-US&quot; |
-| ES_US | &quot;es-US&quot; |
-| EN_AU | &quot;en-AU&quot; |
-| EN_GB | &quot;en-GB&quot; |
-| EN_ZA | &quot;en-ZA&quot; |
-| ES_ES | &quot;es-ES&quot; |
-| EN_IN | &quot;en-IN&quot; |
-| FR_FR | &quot;fr-FR&quot; |
-| FR_CA | &quot;fr-CA&quot; |
-| IT_IT | &quot;it-IT&quot; |
-| DE_DE | &quot;de-DE&quot; |
-| PT_BR | &quot;pt-BR&quot; |
-| PL_PL | &quot;pl-PL&quot; |
-| PT_PT | &quot;pt-PT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EN_US | &quot;en-US&quot; | 
+| ES_US | &quot;es-US&quot; | 
+| EN_AU | &quot;en-AU&quot; | 
+| EN_GB | &quot;en-GB&quot; | 
+| EN_ZA | &quot;en-ZA&quot; | 
+| ES_ES | &quot;es-ES&quot; | 
+| EN_IN | &quot;en-IN&quot; | 
+| FR_FR | &quot;fr-FR&quot; | 
+| FR_CA | &quot;fr-CA&quot; | 
+| IT_IT | &quot;it-IT&quot; | 
+| DE_DE | &quot;de-DE&quot; | 
+| PT_BR | &quot;pt-BR&quot; | 
+| PL_PL | &quot;pl-PL&quot; | 
+| PT_PT | &quot;pt-PT&quot; | 
 {: class="table table-striped"}
 
 
@@ -43,9 +43,9 @@ title: GeneralProgramJobRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SKIP | &quot;Skip&quot; |
-| MERGE | &quot;Merge&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SKIP | &quot;Skip&quot; | 
+| MERGE | &quot;Merge&quot; | 
 {: class="table table-striped"}
 
 

@@ -42,11 +42,11 @@ title: SmsPhoneNumber
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LOCAL | &quot;local&quot; |
-| MOBILE | &quot;mobile&quot; |
-| TOLLFREE | &quot;tollfree&quot; |
-| SHORTCODE | &quot;shortcode&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LOCAL | &quot;local&quot; | 
+| MOBILE | &quot;mobile&quot; | 
+| TOLLFREE | &quot;tollfree&quot; | 
+| SHORTCODE | &quot;shortcode&quot; | 
 {: class="table table-striped"}
 
 
@@ -56,13 +56,13 @@ title: SmsPhoneNumber
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INVALID | &quot;INVALID&quot; |
-| ACTIVE | &quot;ACTIVE&quot; |
-| PORTING | &quot;PORTING&quot; |
-| PENDING | &quot;PENDING&quot; |
-| PENDING_CANCELLATION | &quot;PENDING_CANCELLATION&quot; |
-| INITIATED | &quot;INITIATED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INVALID | &quot;INVALID&quot; | 
+| ACTIVE | &quot;ACTIVE&quot; | 
+| PORTING | &quot;PORTING&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| PENDING_CANCELLATION | &quot;PENDING_CANCELLATION&quot; | 
+| INITIATED | &quot;INITIATED&quot; | 
 {: class="table table-striped"}
 
 
@@ -84,8 +84,8 @@ title: SmsPhoneNumber
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUARTERLY | &quot;Quarterly&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUARTERLY | &quot;Quarterly&quot; | 
 {: class="table table-striped"}
 
 
@@ -95,9 +95,9 @@ title: SmsPhoneNumber
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BASIC | &quot;Basic&quot; |
-| VANITY | &quot;Vanity&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BASIC | &quot;Basic&quot; | 
+| VANITY | &quot;Vanity&quot; | 
 {: class="table table-striped"}
 
 

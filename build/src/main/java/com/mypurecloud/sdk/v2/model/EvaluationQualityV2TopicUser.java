@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class EvaluationQualityV2TopicUser  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EvaluationQualityV2TopicUser displayName(String displayName) {
@@ -57,7 +58,6 @@ public class EvaluationQualityV2TopicUser  implements Serializable {
     this.displayName = displayName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class EvaluationQualityV2TopicUser  implements Serializable {
       return false;
     }
     EvaluationQualityV2TopicUser evaluationQualityV2TopicUser = (EvaluationQualityV2TopicUser) o;
+
     return Objects.equals(this.id, evaluationQualityV2TopicUser.id) &&
-        Objects.equals(this.displayName, evaluationQualityV2TopicUser.displayName);
+            Objects.equals(this.displayName, evaluationQualityV2TopicUser.displayName);
   }
 
   @Override

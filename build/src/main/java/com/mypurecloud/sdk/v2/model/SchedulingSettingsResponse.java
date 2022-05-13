@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     this.maxOccupancyPercentForDeferredWork = maxOccupancyPercentForDeferredWork;
   }
 
-  
+
   /**
    * Default shrinkage percent for scheduling
    **/
@@ -118,7 +119,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     this.defaultShrinkagePercent = defaultShrinkagePercent;
   }
 
-  
+
   /**
    * Shrinkage overrides for scheduling
    **/
@@ -136,7 +137,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     this.shrinkageOverrides = shrinkageOverrides;
   }
 
-  
+
   /**
    * Planning period settings for scheduling
    **/
@@ -154,7 +155,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     this.planningPeriod = planningPeriod;
   }
 
-  
+
   /**
    * Start day of weekend for scheduling
    **/
@@ -172,7 +173,6 @@ public class SchedulingSettingsResponse  implements Serializable {
     this.startDayOfWeekend = startDayOfWeekend;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,11 +183,12 @@ public class SchedulingSettingsResponse  implements Serializable {
       return false;
     }
     SchedulingSettingsResponse schedulingSettingsResponse = (SchedulingSettingsResponse) o;
+
     return Objects.equals(this.maxOccupancyPercentForDeferredWork, schedulingSettingsResponse.maxOccupancyPercentForDeferredWork) &&
-        Objects.equals(this.defaultShrinkagePercent, schedulingSettingsResponse.defaultShrinkagePercent) &&
-        Objects.equals(this.shrinkageOverrides, schedulingSettingsResponse.shrinkageOverrides) &&
-        Objects.equals(this.planningPeriod, schedulingSettingsResponse.planningPeriod) &&
-        Objects.equals(this.startDayOfWeekend, schedulingSettingsResponse.startDayOfWeekend);
+            Objects.equals(this.defaultShrinkagePercent, schedulingSettingsResponse.defaultShrinkagePercent) &&
+            Objects.equals(this.shrinkageOverrides, schedulingSettingsResponse.shrinkageOverrides) &&
+            Objects.equals(this.planningPeriod, schedulingSettingsResponse.planningPeriod) &&
+            Objects.equals(this.startDayOfWeekend, schedulingSettingsResponse.startDayOfWeekend);
   }
 
   @Override

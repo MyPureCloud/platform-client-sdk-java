@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -174,7 +175,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -192,7 +193,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The source provider of the chat.
    **/
@@ -210,7 +211,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -228,7 +229,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -246,7 +247,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The room id for the chat.
    **/
@@ -264,7 +265,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    * The avatar for the chat (if available).
    **/
@@ -282,7 +283,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.avatarImageUrl = avatarImageUrl;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -300,7 +301,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -318,7 +319,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
    **/
@@ -336,7 +337,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -354,7 +355,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -372,7 +373,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationEventTopicChat journeyContext(QueueConversationEventTopicJourneyContext journeyContext) {
@@ -389,7 +390,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -407,7 +408,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -425,7 +426,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -443,7 +444,6 @@ public class QueueConversationEventTopicChat  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -454,22 +454,23 @@ public class QueueConversationEventTopicChat  implements Serializable {
       return false;
     }
     QueueConversationEventTopicChat queueConversationEventTopicChat = (QueueConversationEventTopicChat) o;
+
     return Objects.equals(this.state, queueConversationEventTopicChat.state) &&
-        Objects.equals(this.id, queueConversationEventTopicChat.id) &&
-        Objects.equals(this.provider, queueConversationEventTopicChat.provider) &&
-        Objects.equals(this.scriptId, queueConversationEventTopicChat.scriptId) &&
-        Objects.equals(this.peerId, queueConversationEventTopicChat.peerId) &&
-        Objects.equals(this.roomId, queueConversationEventTopicChat.roomId) &&
-        Objects.equals(this.avatarImageUrl, queueConversationEventTopicChat.avatarImageUrl) &&
-        Objects.equals(this.held, queueConversationEventTopicChat.held) &&
-        Objects.equals(this.disconnectType, queueConversationEventTopicChat.disconnectType) &&
-        Objects.equals(this.startHoldTime, queueConversationEventTopicChat.startHoldTime) &&
-        Objects.equals(this.connectedTime, queueConversationEventTopicChat.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationEventTopicChat.disconnectedTime) &&
-        Objects.equals(this.journeyContext, queueConversationEventTopicChat.journeyContext) &&
-        Objects.equals(this.wrapup, queueConversationEventTopicChat.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationEventTopicChat.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicChat.afterCallWorkRequired);
+            Objects.equals(this.id, queueConversationEventTopicChat.id) &&
+            Objects.equals(this.provider, queueConversationEventTopicChat.provider) &&
+            Objects.equals(this.scriptId, queueConversationEventTopicChat.scriptId) &&
+            Objects.equals(this.peerId, queueConversationEventTopicChat.peerId) &&
+            Objects.equals(this.roomId, queueConversationEventTopicChat.roomId) &&
+            Objects.equals(this.avatarImageUrl, queueConversationEventTopicChat.avatarImageUrl) &&
+            Objects.equals(this.held, queueConversationEventTopicChat.held) &&
+            Objects.equals(this.disconnectType, queueConversationEventTopicChat.disconnectType) &&
+            Objects.equals(this.startHoldTime, queueConversationEventTopicChat.startHoldTime) &&
+            Objects.equals(this.connectedTime, queueConversationEventTopicChat.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationEventTopicChat.disconnectedTime) &&
+            Objects.equals(this.journeyContext, queueConversationEventTopicChat.journeyContext) &&
+            Objects.equals(this.wrapup, queueConversationEventTopicChat.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationEventTopicChat.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicChat.afterCallWorkRequired);
   }
 
   @Override

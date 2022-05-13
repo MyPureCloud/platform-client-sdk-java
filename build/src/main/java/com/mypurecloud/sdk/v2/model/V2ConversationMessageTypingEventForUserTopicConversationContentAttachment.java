@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentAttachment mediaType(MediaTypeEnum mediaType) {
@@ -113,7 +114,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentAttachment url(String url) {
@@ -130,7 +131,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentAttachment mime(String mime) {
@@ -147,7 +148,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.mime = mime;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentAttachment text(String text) {
@@ -164,7 +165,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentAttachment sha256(String sha256) {
@@ -181,7 +182,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.sha256 = sha256;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentAttachment filename(String filename) {
@@ -198,7 +199,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
     this.filename = filename;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,13 +209,14 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentAtta
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentAttachment v2ConversationMessageTypingEventForUserTopicConversationContentAttachment = (V2ConversationMessageTypingEventForUserTopicConversationContentAttachment) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.id) &&
-        Objects.equals(this.mediaType, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.mediaType) &&
-        Objects.equals(this.url, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.url) &&
-        Objects.equals(this.mime, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.mime) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.text) &&
-        Objects.equals(this.sha256, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.sha256) &&
-        Objects.equals(this.filename, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.filename);
+            Objects.equals(this.mediaType, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.mediaType) &&
+            Objects.equals(this.url, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.url) &&
+            Objects.equals(this.mime, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.mime) &&
+            Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.text) &&
+            Objects.equals(this.sha256, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.sha256) &&
+            Objects.equals(this.filename, v2ConversationMessageTypingEventForUserTopicConversationContentAttachment.filename);
   }
 
   @Override

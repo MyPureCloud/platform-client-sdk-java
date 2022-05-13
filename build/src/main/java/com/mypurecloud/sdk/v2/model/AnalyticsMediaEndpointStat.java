@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -53,7 +54,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.codecs = codecs;
   }
 
-  
+
   /**
    * The total number of packets received too late or too early, jitter queue overrun or underrun, for all audio streams belonging to this endpoint
    **/
@@ -71,7 +72,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.discardedPackets = discardedPackets;
   }
 
-  
+
   /**
    * The total number of packets received with the same sequence number as another one recently received (window of 64 packets), for all audio streams belonging to this endpoint
    **/
@@ -89,7 +90,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.duplicatePackets = duplicatePackets;
   }
 
-  
+
   /**
    * Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -107,7 +108,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    * The total number of malformed or not RTP packets, unknown payload type, or discarded probation packets for all audio streams belonging to this endpoint
    **/
@@ -125,7 +126,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.invalidPackets = invalidPackets;
   }
 
-  
+
   /**
    * The maximum latency experienced by any audio stream belonging to this endpoint, in milliseconds
    **/
@@ -143,7 +144,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.maxLatencyMs = maxLatencyMs;
   }
 
-  
+
   /**
    * The lowest estimated average MOS among all the audio streams belonging to this endpoint
    **/
@@ -161,7 +162,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.minMos = minMos;
   }
 
-  
+
   /**
    * The lowest R-factor value among all of the audio streams belonging to this endpoint
    **/
@@ -179,7 +180,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.minRFactor = minRFactor;
   }
 
-  
+
   /**
    * The total number of packets for which there was no room in the jitter queue when it was received, for all audio streams belonging to this endpoint (also counted in discarded)
    **/
@@ -197,7 +198,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.overrunPackets = overrunPackets;
   }
 
-  
+
   /**
    * The total number of packets received for all audio streams belonging to this endpoint (includes invalid, duplicate, and discarded packets)
    **/
@@ -215,7 +216,7 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.receivedPackets = receivedPackets;
   }
 
-  
+
   /**
    * The total number of packets received after their timestamp/seqnum has been played out, for all audio streams belonging to this endpoint (also counted in discarded)
    **/
@@ -233,7 +234,6 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
     this.underrunPackets = underrunPackets;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -244,17 +244,18 @@ public class AnalyticsMediaEndpointStat  implements Serializable {
       return false;
     }
     AnalyticsMediaEndpointStat analyticsMediaEndpointStat = (AnalyticsMediaEndpointStat) o;
+
     return Objects.equals(this.codecs, analyticsMediaEndpointStat.codecs) &&
-        Objects.equals(this.discardedPackets, analyticsMediaEndpointStat.discardedPackets) &&
-        Objects.equals(this.duplicatePackets, analyticsMediaEndpointStat.duplicatePackets) &&
-        Objects.equals(this.eventTime, analyticsMediaEndpointStat.eventTime) &&
-        Objects.equals(this.invalidPackets, analyticsMediaEndpointStat.invalidPackets) &&
-        Objects.equals(this.maxLatencyMs, analyticsMediaEndpointStat.maxLatencyMs) &&
-        Objects.equals(this.minMos, analyticsMediaEndpointStat.minMos) &&
-        Objects.equals(this.minRFactor, analyticsMediaEndpointStat.minRFactor) &&
-        Objects.equals(this.overrunPackets, analyticsMediaEndpointStat.overrunPackets) &&
-        Objects.equals(this.receivedPackets, analyticsMediaEndpointStat.receivedPackets) &&
-        Objects.equals(this.underrunPackets, analyticsMediaEndpointStat.underrunPackets);
+            Objects.equals(this.discardedPackets, analyticsMediaEndpointStat.discardedPackets) &&
+            Objects.equals(this.duplicatePackets, analyticsMediaEndpointStat.duplicatePackets) &&
+            Objects.equals(this.eventTime, analyticsMediaEndpointStat.eventTime) &&
+            Objects.equals(this.invalidPackets, analyticsMediaEndpointStat.invalidPackets) &&
+            Objects.equals(this.maxLatencyMs, analyticsMediaEndpointStat.maxLatencyMs) &&
+            Objects.equals(this.minMos, analyticsMediaEndpointStat.minMos) &&
+            Objects.equals(this.minRFactor, analyticsMediaEndpointStat.minRFactor) &&
+            Objects.equals(this.overrunPackets, analyticsMediaEndpointStat.overrunPackets) &&
+            Objects.equals(this.receivedPackets, analyticsMediaEndpointStat.receivedPackets) &&
+            Objects.equals(this.underrunPackets, analyticsMediaEndpointStat.underrunPackets);
   }
 
   @Override

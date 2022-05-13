@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
     this.confidence = confidence;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptWord startTimeMs(Integer startTimeMs) {
@@ -61,7 +62,7 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
     this.startTimeMs = startTimeMs;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptWord offsetMs(Integer offsetMs) {
@@ -78,7 +79,7 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
     this.offsetMs = offsetMs;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptWord durationMs(Integer durationMs) {
@@ -95,7 +96,7 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
     this.durationMs = durationMs;
   }
 
-  
+
   /**
    **/
   public TranscriptionTopicTranscriptWord word(String word) {
@@ -112,7 +113,6 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
     this.word = word;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,11 +123,12 @@ public class TranscriptionTopicTranscriptWord  implements Serializable {
       return false;
     }
     TranscriptionTopicTranscriptWord transcriptionTopicTranscriptWord = (TranscriptionTopicTranscriptWord) o;
+
     return Objects.equals(this.confidence, transcriptionTopicTranscriptWord.confidence) &&
-        Objects.equals(this.startTimeMs, transcriptionTopicTranscriptWord.startTimeMs) &&
-        Objects.equals(this.offsetMs, transcriptionTopicTranscriptWord.offsetMs) &&
-        Objects.equals(this.durationMs, transcriptionTopicTranscriptWord.durationMs) &&
-        Objects.equals(this.word, transcriptionTopicTranscriptWord.word);
+            Objects.equals(this.startTimeMs, transcriptionTopicTranscriptWord.startTimeMs) &&
+            Objects.equals(this.offsetMs, transcriptionTopicTranscriptWord.offsetMs) &&
+            Objects.equals(this.durationMs, transcriptionTopicTranscriptWord.durationMs) &&
+            Objects.equals(this.word, transcriptionTopicTranscriptWord.word);
   }
 
   @Override

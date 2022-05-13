@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetOauthScopeRequest {
-    
+
 	private String scopeId;
 	public String getScopeId() {
 		return this.scopeId;
@@ -47,7 +47,7 @@ public class GetOauthScopeRequest {
 	    this.setScopeId(scopeId);
 	    return this;
 	} 
-	
+
 	private String acceptLanguage;
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
@@ -61,7 +61,7 @@ public class GetOauthScopeRequest {
 	    this.setAcceptLanguage(acceptLanguage);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -94,7 +94,7 @@ public class GetOauthScopeRequest {
         
                 .withHeaderParameter("Accept-Language", acceptLanguage)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class GetOauthScopeRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String scopeId) {
 	    return new Builder()
 	            .withRequiredParams(scopeId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOauthScopeRequest request;
@@ -119,25 +119,25 @@ public class GetOauthScopeRequest {
 			request = new GetOauthScopeRequest();
 		}
 
-		
+
 		public Builder withScopeId(String scopeId) {
 			request.setScopeId(scopeId);
 			return this;
 		}
-		
+
 		public Builder withAcceptLanguage(String acceptLanguage) {
 			request.setAcceptLanguage(acceptLanguage);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String scopeId) {
 			request.setScopeId(scopeId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetOauthScopeRequest build() {
             

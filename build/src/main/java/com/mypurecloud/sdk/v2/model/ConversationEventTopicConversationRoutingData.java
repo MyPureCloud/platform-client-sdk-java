@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicScoredAgent;
@@ -48,7 +49,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     this.queue = queue;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -66,7 +67,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     this.language = language;
   }
 
-  
+
   /**
    * The priority of the conversation to use for routing decisions
    **/
@@ -84,7 +85,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     this.priority = priority;
   }
 
-  
+
   /**
    * The skills to use for routing decisions
    **/
@@ -102,7 +103,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     this.skills = skills;
   }
 
-  
+
   /**
    * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
@@ -120,7 +121,6 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
       return false;
     }
     ConversationEventTopicConversationRoutingData conversationEventTopicConversationRoutingData = (ConversationEventTopicConversationRoutingData) o;
+
     return Objects.equals(this.queue, conversationEventTopicConversationRoutingData.queue) &&
-        Objects.equals(this.language, conversationEventTopicConversationRoutingData.language) &&
-        Objects.equals(this.priority, conversationEventTopicConversationRoutingData.priority) &&
-        Objects.equals(this.skills, conversationEventTopicConversationRoutingData.skills) &&
-        Objects.equals(this.scoredAgents, conversationEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.language, conversationEventTopicConversationRoutingData.language) &&
+            Objects.equals(this.priority, conversationEventTopicConversationRoutingData.priority) &&
+            Objects.equals(this.skills, conversationEventTopicConversationRoutingData.skills) &&
+            Objects.equals(this.scoredAgents, conversationEventTopicConversationRoutingData.scoredAgents);
   }
 
   @Override

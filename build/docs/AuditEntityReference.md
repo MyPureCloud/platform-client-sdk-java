@@ -22,18 +22,18 @@ title: AuditEntityReference
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ATTRIBUTE | &quot;ATTRIBUTE&quot; |
-| ATTRIBUTE_GROUP_INSTANCE | &quot;ATTRIBUTE_GROUP_INSTANCE&quot; |
-| DOCUMENT | &quot;DOCUMENT&quot; |
-| DOWNLOAD | &quot;DOWNLOAD&quot; |
-| FAX | &quot;FAX&quot; |
-| GROUP | &quot;GROUP&quot; |
-| RECORDING | &quot;RECORDING&quot; |
-| TAG | &quot;TAG&quot; |
-| WORKSPACE | &quot;WORKSPACE&quot; |
-| USER | &quot;USER&quot; |
-| PUBLIC | &quot;PUBLIC&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ATTRIBUTE | &quot;ATTRIBUTE&quot; | 
+| ATTRIBUTE_GROUP_INSTANCE | &quot;ATTRIBUTE_GROUP_INSTANCE&quot; | 
+| DOCUMENT | &quot;DOCUMENT&quot; | 
+| DOWNLOAD | &quot;DOWNLOAD&quot; | 
+| FAX | &quot;FAX&quot; | 
+| GROUP | &quot;GROUP&quot; | 
+| RECORDING | &quot;RECORDING&quot; | 
+| TAG | &quot;TAG&quot; | 
+| WORKSPACE | &quot;WORKSPACE&quot; | 
+| USER | &quot;USER&quot; | 
+| PUBLIC | &quot;PUBLIC&quot; | 
 {: class="table table-striped"}
 
 

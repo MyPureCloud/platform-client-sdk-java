@@ -10,17 +10,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteGreeting**](GreetingsApi.html#deleteGreeting) | Deletes a Greeting with the given GreetingId |
 | [**getGreeting**](GreetingsApi.html#getGreeting) | Get a Greeting with the given GreetingId |
 | [**getGreetingMedia**](GreetingsApi.html#getGreetingMedia) | Get media playback URI for this greeting |
-| [**getGreetings**](GreetingsApi.html#getGreetings) | Gets an Organization&#39;s Greetings |
-| [**getGreetingsDefaults**](GreetingsApi.html#getGreetingsDefaults) | Get an Organization&#39;s DefaultGreetingList |
-| [**getGroupGreetings**](GreetingsApi.html#getGroupGreetings) | Get a list of the Group&#39;s Greetings |
-| [**getGroupGreetingsDefaults**](GreetingsApi.html#getGroupGreetingsDefaults) | Grabs the list of Default Greetings given a Group&#39;s ID |
-| [**getUserGreetings**](GreetingsApi.html#getUserGreetings) | Get a list of the User&#39;s Greetings |
-| [**getUserGreetingsDefaults**](GreetingsApi.html#getUserGreetingsDefaults) | Grabs the list of Default Greetings given a User&#39;s ID |
+| [**getGreetings**](GreetingsApi.html#getGreetings) | Gets an Organization's Greetings |
+| [**getGreetingsDefaults**](GreetingsApi.html#getGreetingsDefaults) | Get an Organization's DefaultGreetingList |
+| [**getGroupGreetings**](GreetingsApi.html#getGroupGreetings) | Get a list of the Group's Greetings |
+| [**getGroupGreetingsDefaults**](GreetingsApi.html#getGroupGreetingsDefaults) | Grabs the list of Default Greetings given a Group's ID |
+| [**getUserGreetings**](GreetingsApi.html#getUserGreetings) | Get a list of the User's Greetings |
+| [**getUserGreetingsDefaults**](GreetingsApi.html#getUserGreetingsDefaults) | Grabs the list of Default Greetings given a User's ID |
 | [**postGreetings**](GreetingsApi.html#postGreetings) | Create a Greeting for an Organization |
 | [**postGroupGreetings**](GreetingsApi.html#postGroupGreetings) | Creates a Greeting for a Group |
 | [**postUserGreetings**](GreetingsApi.html#postUserGreetings) | Creates a Greeting for a User |
 | [**putGreeting**](GreetingsApi.html#putGreeting) | Updates the Greeting with the given GreetingId |
-| [**putGreetingsDefaults**](GreetingsApi.html#putGreetingsDefaults) | Update an Organization&#39;s DefaultGreetingList |
+| [**putGreetingsDefaults**](GreetingsApi.html#putGreetingsDefaults) | Update an Organization's DefaultGreetingList |
 | [**putGroupGreetingsDefaults**](GreetingsApi.html#putGroupGreetingsDefaults) | Updates the DefaultGreetingList of the specified Group |
 | [**putUserGreetingsDefaults**](GreetingsApi.html#putUserGreetingsDefaults) | Updates the DefaultGreetingList of the specified User |
 {: class="table-striped"}
@@ -34,8 +34,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteGreeting(greetingId)
 
 Deletes a Greeting with the given GreetingId
-
-
 
 Wraps DELETE /api/v2/greetings/{greetingId}  
 
@@ -95,8 +93,6 @@ null (empty response body)
 > [Greeting](Greeting.html) getGreeting(greetingId)
 
 Get a Greeting with the given GreetingId
-
-
 
 Wraps GET /api/v2/greetings/{greetingId}  
 
@@ -158,8 +154,6 @@ try {
 
 Get media playback URI for this greeting
 
-
-
 Wraps GET /api/v2/greetings/{greetingId}/media  
 
 Requires NO permissions: 
@@ -220,9 +214,7 @@ try {
 
 > [DomainEntityListing](DomainEntityListing.html) getGreetings(pageSize, pageNumber)
 
-Gets an Organization&#39;s Greetings
-
-
+Gets an Organization's Greetings
 
 Wraps GET /api/v2/greetings  
 
@@ -284,9 +276,7 @@ try {
 
 > [DefaultGreetingList](DefaultGreetingList.html) getGreetingsDefaults()
 
-Get an Organization&#39;s DefaultGreetingList
-
-
+Get an Organization's DefaultGreetingList
 
 Wraps GET /api/v2/greetings/defaults  
 
@@ -342,9 +332,7 @@ This endpoint does not require any parameters.
 
 > [GreetingListing](GreetingListing.html) getGroupGreetings(groupId, pageSize, pageNumber)
 
-Get a list of the Group&#39;s Greetings
-
-
+Get a list of the Group's Greetings
 
 Wraps GET /api/v2/groups/{groupId}/greetings  
 
@@ -408,9 +396,7 @@ try {
 
 > [DefaultGreetingList](DefaultGreetingList.html) getGroupGreetingsDefaults(groupId)
 
-Grabs the list of Default Greetings given a Group&#39;s ID
-
-
+Grabs the list of Default Greetings given a Group's ID
 
 Wraps GET /api/v2/groups/{groupId}/greetings/defaults  
 
@@ -470,9 +456,7 @@ try {
 
 > [DomainEntityListing](DomainEntityListing.html) getUserGreetings(userId, pageSize, pageNumber)
 
-Get a list of the User&#39;s Greetings
-
-
+Get a list of the User's Greetings
 
 Wraps GET /api/v2/users/{userId}/greetings  
 
@@ -536,9 +520,7 @@ try {
 
 > [DefaultGreetingList](DefaultGreetingList.html) getUserGreetingsDefaults(userId)
 
-Grabs the list of Default Greetings given a User&#39;s ID
-
-
+Grabs the list of Default Greetings given a User's ID
 
 Wraps GET /api/v2/users/{userId}/greetings/defaults  
 
@@ -600,8 +582,6 @@ try {
 
 Create a Greeting for an Organization
 
-
-
 Wraps POST /api/v2/greetings  
 
 Requires NO permissions: 
@@ -661,8 +641,6 @@ try {
 > [Greeting](Greeting.html) postGroupGreetings(groupId, body)
 
 Creates a Greeting for a Group
-
-
 
 Wraps POST /api/v2/groups/{groupId}/greetings  
 
@@ -726,8 +704,6 @@ try {
 
 Creates a Greeting for a User
 
-
-
 Wraps POST /api/v2/users/{userId}/greetings  
 
 Requires NO permissions: 
@@ -790,8 +766,6 @@ try {
 
 Updates the Greeting with the given GreetingId
 
-
-
 Wraps PUT /api/v2/greetings/{greetingId}  
 
 Requires NO permissions: 
@@ -852,9 +826,7 @@ try {
 
 > [DefaultGreetingList](DefaultGreetingList.html) putGreetingsDefaults(body)
 
-Update an Organization&#39;s DefaultGreetingList
-
-
+Update an Organization's DefaultGreetingList
 
 Wraps PUT /api/v2/greetings/defaults  
 
@@ -915,8 +887,6 @@ try {
 > [DefaultGreetingList](DefaultGreetingList.html) putGroupGreetingsDefaults(groupId, body)
 
 Updates the DefaultGreetingList of the specified Group
-
-
 
 Wraps PUT /api/v2/groups/{groupId}/greetings/defaults  
 
@@ -979,8 +949,6 @@ try {
 > [DefaultGreetingList](DefaultGreetingList.html) putUserGreetingsDefaults(userId, body)
 
 Updates the DefaultGreetingList of the specified User
-
-
 
 Wraps PUT /api/v2/users/{userId}/greetings/defaults  
 

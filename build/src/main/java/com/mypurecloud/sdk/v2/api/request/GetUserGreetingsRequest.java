@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetUserGreetingsRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -42,7 +42,7 @@ public class GetUserGreetingsRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -56,7 +56,7 @@ public class GetUserGreetingsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,7 +70,7 @@ public class GetUserGreetingsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,11 +101,13 @@ public class GetUserGreetingsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/users/{userId}/greetings")
                 .withPathParameter("userId", userId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -116,12 +118,12 @@ public class GetUserGreetingsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetUserGreetingsRequest request;
@@ -130,30 +132,30 @@ public class GetUserGreetingsRequest {
 			request = new GetUserGreetingsRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetUserGreetingsRequest build() {
             

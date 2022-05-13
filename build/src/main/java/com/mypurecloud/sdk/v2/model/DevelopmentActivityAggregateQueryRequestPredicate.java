@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching
    **/
@@ -109,7 +110,6 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,8 +120,9 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
       return false;
     }
     DevelopmentActivityAggregateQueryRequestPredicate developmentActivityAggregateQueryRequestPredicate = (DevelopmentActivityAggregateQueryRequestPredicate) o;
+
     return Objects.equals(this.dimension, developmentActivityAggregateQueryRequestPredicate.dimension) &&
-        Objects.equals(this.value, developmentActivityAggregateQueryRequestPredicate.value);
+            Objects.equals(this.value, developmentActivityAggregateQueryRequestPredicate.value);
   }
 
   @Override

@@ -10,21 +10,20 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
-import com.mypurecloud.sdk.v2.model.GenericSAML;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
+import com.mypurecloud.sdk.v2.model.OAuthProvider;
+import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
 import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersAdfsRequest;
@@ -68,7 +67,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class IdentityProviderApi {
   private final ApiClient pcapiClient;
 
@@ -80,7 +78,6 @@ public class IdentityProviderApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete ADFS Identity Provider
    * 
@@ -155,7 +152,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
@@ -230,7 +226,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete Generic SAML Identity Provider
    * 
@@ -305,7 +300,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete G Suite Identity Provider
    * 
@@ -380,7 +374,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete IdentityNow Provider
    * 
@@ -455,7 +448,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete Okta Identity Provider
    * 
@@ -530,7 +522,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete OneLogin Identity Provider
    * 
@@ -605,7 +596,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete Ping Identity Provider
    * 
@@ -680,7 +670,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete PureCloud Identity Provider
    * 
@@ -755,7 +744,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete PureEngage Identity Provider
    * 
@@ -830,7 +818,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Delete Salesforce Identity Provider
    * 
@@ -905,7 +892,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * The list of identity providers
    * 
@@ -980,7 +966,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get ADFS Identity Provider
    * 
@@ -1055,7 +1040,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
@@ -1130,7 +1114,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get Generic SAML Identity Provider
    * 
@@ -1205,7 +1188,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get G Suite Identity Provider
    * 
@@ -1280,7 +1262,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get IdentityNow Provider
    * 
@@ -1355,7 +1336,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get Okta Identity Provider
    * 
@@ -1430,7 +1410,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get OneLogin Identity Provider
    * 
@@ -1505,7 +1484,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get Ping Identity Provider
    * 
@@ -1580,7 +1558,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get PureCloud Identity Provider
    * 
@@ -1655,7 +1632,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get PureEngage Identity Provider
    * 
@@ -1730,7 +1706,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Get Salesforce Identity Provider
    * 
@@ -1805,7 +1780,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create ADFS Identity Provider
    * 
@@ -1832,7 +1806,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersAdfsRequest createPutIdentityprovidersAdfsRequest(ADFS body) {
     return PutIdentityprovidersAdfsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1884,7 +1858,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
@@ -1911,7 +1884,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersCicRequest createPutIdentityprovidersCicRequest(CustomerInteractionCenter body) {
     return PutIdentityprovidersCicRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1963,7 +1936,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create Generic SAML Identity Provider
    * 
@@ -1990,7 +1962,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersGenericRequest createPutIdentityprovidersGenericRequest(GenericSAML body) {
     return PutIdentityprovidersGenericRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2042,7 +2014,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create G Suite Identity Provider
    * 
@@ -2069,7 +2040,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersGsuiteRequest createPutIdentityprovidersGsuiteRequest(GSuite body) {
     return PutIdentityprovidersGsuiteRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2121,7 +2092,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create IdentityNow Provider
    * 
@@ -2148,7 +2118,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersIdentitynowRequest createPutIdentityprovidersIdentitynowRequest(IdentityNow body) {
     return PutIdentityprovidersIdentitynowRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2200,7 +2170,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create Okta Identity Provider
    * 
@@ -2227,7 +2196,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersOktaRequest createPutIdentityprovidersOktaRequest(Okta body) {
     return PutIdentityprovidersOktaRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2279,7 +2248,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create OneLogin Identity Provider
    * 
@@ -2306,7 +2274,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersOneloginRequest createPutIdentityprovidersOneloginRequest(OneLogin body) {
     return PutIdentityprovidersOneloginRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2358,7 +2326,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create Ping Identity Provider
    * 
@@ -2385,7 +2352,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersPingRequest createPutIdentityprovidersPingRequest(PingIdentity body) {
     return PutIdentityprovidersPingRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2437,7 +2404,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create PureCloud Identity Provider
    * 
@@ -2464,7 +2430,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersPurecloudRequest createPutIdentityprovidersPurecloudRequest(PureCloud body) {
     return PutIdentityprovidersPurecloudRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2516,7 +2482,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create PureEngage Identity Provider
    * 
@@ -2543,7 +2508,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersPureengageRequest createPutIdentityprovidersPureengageRequest(PureEngage body) {
     return PutIdentityprovidersPureengageRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2595,7 +2560,6 @@ public class IdentityProviderApi {
     }
   }
 
-  
   /**
    * Update/Create Salesforce Identity Provider
    * 
@@ -2622,7 +2586,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersSalesforceRequest createPutIdentityprovidersSalesforceRequest(Salesforce body) {
     return PutIdentityprovidersSalesforceRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2674,5 +2638,4 @@ public class IdentityProviderApi {
     }
   }
 
-  
 }

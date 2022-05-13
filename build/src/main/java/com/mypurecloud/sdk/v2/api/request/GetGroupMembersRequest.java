@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupProfile;
-import com.mypurecloud.sdk.v2.model.GroupEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
-import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
+import com.mypurecloud.sdk.v2.model.GroupEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
+import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetGroupMembersRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -49,7 +48,7 @@ public class GetGroupMembersRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -63,7 +62,7 @@ public class GetGroupMembersRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -77,7 +76,7 @@ public class GetGroupMembersRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -93,7 +92,7 @@ public class GetGroupMembersRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -121,7 +120,7 @@ public class GetGroupMembersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -137,25 +136,25 @@ public class GetGroupMembersRequest {
 	} 
 
 	public enum expandValues { 
-		ROUTINGSTATUS("routingStatus"), 
-		PRESENCE("presence"), 
-		CONVERSATIONSUMMARY("conversationSummary"), 
-		OUTOFOFFICE("outOfOffice"), 
-		GEOLOCATION("geolocation"), 
-		STATION("station"), 
-		AUTHORIZATION("authorization"), 
-		LASTTOKENISSUED("lasttokenissued"), 
-		DATELASTLOGIN("dateLastLogin"), 
-		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
-		TEAM("team"), 
-		PROFILESKILLS("profileSkills"), 
-		CERTIFICATIONS("certifications"), 
-		LOCATIONS("locations"), 
-		GROUPS("groups"), 
-		SKILLS("skills"), 
-		LANGUAGES("languages"), 
-		LANGUAGEPREFERENCE("languagePreference"), 
-		EMPLOYERINFO("employerInfo"), 
+		ROUTINGSTATUS("routingStatus"),
+		PRESENCE("presence"),
+		CONVERSATIONSUMMARY("conversationSummary"),
+		OUTOFOFFICE("outOfOffice"),
+		GEOLOCATION("geolocation"),
+		STATION("station"),
+		AUTHORIZATION("authorization"),
+		LASTTOKENISSUED("lasttokenissued"),
+		DATELASTLOGIN("dateLastLogin"),
+		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
+		TEAM("team"),
+		PROFILESKILLS("profileSkills"),
+		CERTIFICATIONS("certifications"),
+		LOCATIONS("locations"),
+		GROUPS("groups"),
+		SKILLS("skills"),
+		LANGUAGES("languages"),
+		LANGUAGEPREFERENCE("languagePreference"),
+		EMPLOYERINFO("employerInfo"),
 		BIOGRAPHY("biography");
 
 		private String value;
@@ -183,7 +182,7 @@ public class GetGroupMembersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -214,15 +213,19 @@ public class GetGroupMembersRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/groups/{groupId}/members")
                 .withPathParameter("groupId", groupId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -233,12 +236,12 @@ public class GetGroupMembersRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGroupMembersRequest request;
@@ -247,36 +250,42 @@ public class GetGroupMembersRequest {
 			request = new GetGroupMembersRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -286,15 +295,15 @@ public class GetGroupMembersRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGroupMembersRequest build() {
             

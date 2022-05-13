@@ -18,9 +18,9 @@ title: InboundOnlySetting
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENABLED | &quot;Enabled&quot; |
-| DISABLED | &quot;Disabled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENABLED | &quot;Enabled&quot; | 
+| DISABLED | &quot;Disabled&quot; | 
 {: class="table table-striped"}
 
 

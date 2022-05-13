@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurn;
@@ -45,7 +46,7 @@ public class ReportingTurnsResponse  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ReportingTurnsResponse nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class ReportingTurnsResponse  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ReportingTurnsResponse selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class ReportingTurnsResponse  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ReportingTurnsResponse previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class ReportingTurnsResponse  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class ReportingTurnsResponse  implements Serializable {
       return false;
     }
     ReportingTurnsResponse reportingTurnsResponse = (ReportingTurnsResponse) o;
+
     return Objects.equals(this.entities, reportingTurnsResponse.entities) &&
-        Objects.equals(this.nextUri, reportingTurnsResponse.nextUri) &&
-        Objects.equals(this.selfUri, reportingTurnsResponse.selfUri) &&
-        Objects.equals(this.previousUri, reportingTurnsResponse.previousUri);
+            Objects.equals(this.nextUri, reportingTurnsResponse.nextUri) &&
+            Objects.equals(this.selfUri, reportingTurnsResponse.selfUri) &&
+            Objects.equals(this.previousUri, reportingTurnsResponse.previousUri);
   }
 
   @Override

@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 public class GetLearningModulesRequest {
-    
+
 	private Boolean isArchived;
 	public Boolean getIsArchived() {
 		return this.isArchived;
@@ -55,7 +55,7 @@ public class GetLearningModulesRequest {
 	    this.setIsArchived(isArchived);
 	    return this;
 	} 
-	
+
 	private List<String> types;
 	public List<String> getTypes() {
 		return this.types;
@@ -71,8 +71,8 @@ public class GetLearningModulesRequest {
 	} 
 
 	public enum typesValues { 
-		INFORMATIONAL("Informational"), 
-		ASSESSEDCONTENT("AssessedContent"), 
+		INFORMATIONAL("Informational"),
+		ASSESSEDCONTENT("AssessedContent"),
 		ASSESSMENT("Assessment");
 
 		private String value;
@@ -100,7 +100,7 @@ public class GetLearningModulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -114,7 +114,7 @@ public class GetLearningModulesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -128,7 +128,7 @@ public class GetLearningModulesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -144,7 +144,7 @@ public class GetLearningModulesRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -172,7 +172,7 @@ public class GetLearningModulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -215,7 +215,7 @@ public class GetLearningModulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String searchTerm;
 	public String getSearchTerm() {
 		return this.searchTerm;
@@ -229,7 +229,7 @@ public class GetLearningModulesRequest {
 	    this.setSearchTerm(searchTerm);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -245,7 +245,7 @@ public class GetLearningModulesRequest {
 	} 
 
 	public enum expandValues { 
-		RULE("rule"), 
+		RULE("rule"),
 		SUMMARYDATA("summaryData");
 
 		private String value;
@@ -273,7 +273,7 @@ public class GetLearningModulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String isPublished;
 	public String getIsPublished() {
 		return this.isPublished;
@@ -289,8 +289,8 @@ public class GetLearningModulesRequest {
 	} 
 
 	public enum isPublishedValues { 
-		TRUE("True"), 
-		FALSE("False"), 
+		TRUE("True"),
+		FALSE("False"),
 		ANY("Any");
 
 		private String value;
@@ -318,7 +318,7 @@ public class GetLearningModulesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -342,25 +342,34 @@ public class GetLearningModulesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/learning/modules")
+
                 .withQueryParameters("isArchived", "", isArchived)
         
+
                 .withQueryParameters("types", "multi", types)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("searchTerm", "", searchTerm)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("isPublished", "", isPublished)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -371,7 +380,7 @@ public class GetLearningModulesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetLearningModulesRequest request;
@@ -380,16 +389,18 @@ public class GetLearningModulesRequest {
 			request = new GetLearningModulesRequest();
 		}
 
-		
+
 		public Builder withIsArchived(Boolean isArchived) {
 			request.setIsArchived(isArchived);
 			return this;
 		}
-		
+
 		public Builder withTypes(List<String> types) {
 			request.setTypes(types);
 			return this;
 		}
+
+
 
 		public Builder withTypesEnumValues(List<typesValues> types) {
 		    List<String> stringList = new ArrayList<>();
@@ -399,46 +410,56 @@ public class GetLearningModulesRequest {
 	      request.setTypes(stringList);
 		    return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortBy(sortByValues sortBy) {
 		    request.setSortBy(sortBy.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withSearchTerm(String searchTerm) {
 			request.setSearchTerm(searchTerm);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -448,19 +469,23 @@ public class GetLearningModulesRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
+
 		public Builder withIsPublished(String isPublished) {
 			request.setIsPublished(isPublished);
 			return this;
 		}
 
-		public Builder withIsPublished(isPublishedValues isPublished) {
-		    request.setIsPublished(isPublished.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withIsPublished(isPublishedValues isPublished) {
+		    request.setIsPublished(isPublished.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetLearningModulesRequest build() {
             

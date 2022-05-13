@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public EmailConversationEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
       return false;
     }
     EmailConversationEntityListing emailConversationEntityListing = (EmailConversationEntityListing) o;
+
     return Objects.equals(this.entities, emailConversationEntityListing.entities) &&
-        Objects.equals(this.pageSize, emailConversationEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, emailConversationEntityListing.pageNumber) &&
-        Objects.equals(this.total, emailConversationEntityListing.total) &&
-        Objects.equals(this.lastUri, emailConversationEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, emailConversationEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, emailConversationEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, emailConversationEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, emailConversationEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, emailConversationEntityListing.pageCount);
+            Objects.equals(this.pageSize, emailConversationEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, emailConversationEntityListing.pageNumber) &&
+            Objects.equals(this.total, emailConversationEntityListing.total) &&
+            Objects.equals(this.lastUri, emailConversationEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, emailConversationEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, emailConversationEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, emailConversationEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, emailConversationEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, emailConversationEntityListing.pageCount);
   }
 
   @Override

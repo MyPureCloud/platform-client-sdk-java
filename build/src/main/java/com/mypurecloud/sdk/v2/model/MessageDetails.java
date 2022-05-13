@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -106,7 +107,7 @@ public class MessageDetails  implements Serializable {
     this.messageId = messageId;
   }
 
-  
+
   /**
    * A URI for this message entity.
    **/
@@ -124,7 +125,7 @@ public class MessageDetails  implements Serializable {
     this.messageURI = messageURI;
   }
 
-  
+
   /**
    * Indicates the delivery status of the message.
    **/
@@ -142,7 +143,7 @@ public class MessageDetails  implements Serializable {
     this.messageStatus = messageStatus;
   }
 
-  
+
   /**
    * The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
    **/
@@ -160,7 +161,7 @@ public class MessageDetails  implements Serializable {
     this.messageSegmentCount = messageSegmentCount;
   }
 
-  
+
   /**
    * The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -178,7 +179,7 @@ public class MessageDetails  implements Serializable {
     this.messageTime = messageTime;
   }
 
-  
+
   /**
    * The media (images, files, etc) associated with this message, if any
    **/
@@ -196,7 +197,7 @@ public class MessageDetails  implements Serializable {
     this.media = media;
   }
 
-  
+
   /**
    * One or more stickers associated with this message, if any
    **/
@@ -214,7 +215,7 @@ public class MessageDetails  implements Serializable {
     this.stickers = stickers;
   }
 
-  
+
   /**
    * Provider specific error information for a communication.
    **/
@@ -232,7 +233,6 @@ public class MessageDetails  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -243,14 +243,15 @@ public class MessageDetails  implements Serializable {
       return false;
     }
     MessageDetails messageDetails = (MessageDetails) o;
+
     return Objects.equals(this.messageId, messageDetails.messageId) &&
-        Objects.equals(this.messageURI, messageDetails.messageURI) &&
-        Objects.equals(this.messageStatus, messageDetails.messageStatus) &&
-        Objects.equals(this.messageSegmentCount, messageDetails.messageSegmentCount) &&
-        Objects.equals(this.messageTime, messageDetails.messageTime) &&
-        Objects.equals(this.media, messageDetails.media) &&
-        Objects.equals(this.stickers, messageDetails.stickers) &&
-        Objects.equals(this.errorInfo, messageDetails.errorInfo);
+            Objects.equals(this.messageURI, messageDetails.messageURI) &&
+            Objects.equals(this.messageStatus, messageDetails.messageStatus) &&
+            Objects.equals(this.messageSegmentCount, messageDetails.messageSegmentCount) &&
+            Objects.equals(this.messageTime, messageDetails.messageTime) &&
+            Objects.equals(this.media, messageDetails.media) &&
+            Objects.equals(this.stickers, messageDetails.stickers) &&
+            Objects.equals(this.errorInfo, messageDetails.errorInfo);
   }
 
   @Override

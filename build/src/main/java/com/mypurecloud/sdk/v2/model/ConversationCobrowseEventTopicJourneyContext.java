@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class ConversationCobrowseEventTopicJourneyContext  implements Serializab
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicJourneyContext customerSession(ConversationCobrowseEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class ConversationCobrowseEventTopicJourneyContext  implements Serializab
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicJourneyContext triggeringAction(ConversationCobrowseEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class ConversationCobrowseEventTopicJourneyContext  implements Serializab
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class ConversationCobrowseEventTopicJourneyContext  implements Serializab
       return false;
     }
     ConversationCobrowseEventTopicJourneyContext conversationCobrowseEventTopicJourneyContext = (ConversationCobrowseEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, conversationCobrowseEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, conversationCobrowseEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, conversationCobrowseEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, conversationCobrowseEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, conversationCobrowseEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

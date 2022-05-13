@@ -23,10 +23,9 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
-import com.mypurecloud.sdk.v2.model.Empty;
 
 public class PostLanguageunderstandingMinerUploadsRequest {
-    
+
 	private String minerId;
 	public String getMinerId() {
 		return this.minerId;
@@ -40,21 +39,21 @@ public class PostLanguageunderstandingMinerUploadsRequest {
 	    this.setMinerId(minerId);
 	    return this;
 	} 
-	
-	private Empty body;
-	public Empty getBody() {
+
+	private Object body;
+	public Object getBody() {
 		return this.body;
 	}
 
-	public void setBody(Empty body) {
+	public void setBody(Object body) {
 		this.body = body;
 	}
 
-	public PostLanguageunderstandingMinerUploadsRequest withBody(Empty body) {
+	public PostLanguageunderstandingMinerUploadsRequest withBody(Object body) {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +73,7 @@ public class PostLanguageunderstandingMinerUploadsRequest {
         return this;
     }
 
-    public ApiRequest<Empty> withHttpInfo() {
+    public ApiRequest<Object> withHttpInfo() {
         
         // verify the required parameter 'minerId' is set
         if (this.minerId == null) {
@@ -91,8 +90,8 @@ public class PostLanguageunderstandingMinerUploadsRequest {
                 .withPathParameter("minerId", minerId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -103,12 +102,12 @@ public class PostLanguageunderstandingMinerUploadsRequest {
 		return new Builder();
 	}
 
-	
-	public static Builder builder(String minerId, Empty body) {
+
+	public static Builder builder(String minerId, Object body) {
 	    return new Builder()
 	            .withRequiredParams(minerId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostLanguageunderstandingMinerUploadsRequest request;
@@ -117,26 +116,26 @@ public class PostLanguageunderstandingMinerUploadsRequest {
 			request = new PostLanguageunderstandingMinerUploadsRequest();
 		}
 
-		
+
 		public Builder withMinerId(String minerId) {
 			request.setMinerId(minerId);
 			return this;
 		}
-		
-		public Builder withBody(Empty body) {
+
+		public Builder withBody(Object body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
-		public Builder withRequiredParams(String minerId, Empty body) {
+
+
+		public Builder withRequiredParams(String minerId, Object body) {
 			request.setMinerId(minerId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostLanguageunderstandingMinerUploadsRequest build() {
             

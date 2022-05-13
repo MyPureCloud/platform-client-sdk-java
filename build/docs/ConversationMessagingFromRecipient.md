@@ -25,10 +25,10 @@ title: ConversationMessagingFromRecipient
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EMAIL | &quot;Email&quot; |
-| PHONE | &quot;Phone&quot; |
-| OPAQUE | &quot;Opaque&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EMAIL | &quot;Email&quot; | 
+| PHONE | &quot;Phone&quot; | 
+| OPAQUE | &quot;Opaque&quot; | 
 {: class="table table-striped"}
 
 

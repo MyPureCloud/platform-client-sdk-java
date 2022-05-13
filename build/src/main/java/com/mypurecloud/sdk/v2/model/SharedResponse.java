@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Document;
@@ -45,7 +46,7 @@ public class SharedResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public SharedResponse downloadUri(String downloadUri) {
@@ -62,7 +63,7 @@ public class SharedResponse  implements Serializable {
     this.downloadUri = downloadUri;
   }
 
-  
+
   /**
    **/
   public SharedResponse viewUri(String viewUri) {
@@ -79,7 +80,7 @@ public class SharedResponse  implements Serializable {
     this.viewUri = viewUri;
   }
 
-  
+
   /**
    **/
   public SharedResponse document(Document document) {
@@ -96,7 +97,7 @@ public class SharedResponse  implements Serializable {
     this.document = document;
   }
 
-  
+
   /**
    **/
   public SharedResponse share(Share share) {
@@ -113,7 +114,6 @@ public class SharedResponse  implements Serializable {
     this.share = share;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,11 +124,12 @@ public class SharedResponse  implements Serializable {
       return false;
     }
     SharedResponse sharedResponse = (SharedResponse) o;
+
     return Objects.equals(this.id, sharedResponse.id) &&
-        Objects.equals(this.downloadUri, sharedResponse.downloadUri) &&
-        Objects.equals(this.viewUri, sharedResponse.viewUri) &&
-        Objects.equals(this.document, sharedResponse.document) &&
-        Objects.equals(this.share, sharedResponse.share);
+            Objects.equals(this.downloadUri, sharedResponse.downloadUri) &&
+            Objects.equals(this.viewUri, sharedResponse.viewUri) &&
+            Objects.equals(this.document, sharedResponse.document) &&
+            Objects.equals(this.share, sharedResponse.share);
   }
 
   @Override

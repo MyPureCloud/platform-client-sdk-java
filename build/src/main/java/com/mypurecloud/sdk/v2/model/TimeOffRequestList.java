@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
@@ -35,7 +36,7 @@ public class TimeOffRequestList  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public TimeOffRequestList name(String name) {
@@ -52,7 +53,7 @@ public class TimeOffRequestList  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public TimeOffRequestList timeOffRequests(List<TimeOffRequestResponse> timeOffRequests) {
@@ -69,14 +70,13 @@ public class TimeOffRequestList  implements Serializable {
     this.timeOffRequests = timeOffRequests;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,10 +87,11 @@ public class TimeOffRequestList  implements Serializable {
       return false;
     }
     TimeOffRequestList timeOffRequestList = (TimeOffRequestList) o;
+
     return Objects.equals(this.id, timeOffRequestList.id) &&
-        Objects.equals(this.name, timeOffRequestList.name) &&
-        Objects.equals(this.timeOffRequests, timeOffRequestList.timeOffRequests) &&
-        Objects.equals(this.selfUri, timeOffRequestList.selfUri);
+            Objects.equals(this.name, timeOffRequestList.name) &&
+            Objects.equals(this.timeOffRequests, timeOffRequestList.timeOffRequests) &&
+            Objects.equals(this.selfUri, timeOffRequestList.selfUri);
   }
 
   @Override

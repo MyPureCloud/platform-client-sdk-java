@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
     this.error = error;
   }
 
-  
+
   /**
    * additional information regarding the error
    **/
@@ -59,7 +60,6 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
     this.details = details;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
       return false;
     }
     DialerCampaignConfigChangeRestErrorDetail dialerCampaignConfigChangeRestErrorDetail = (DialerCampaignConfigChangeRestErrorDetail) o;
+
     return Objects.equals(this.error, dialerCampaignConfigChangeRestErrorDetail.error) &&
-        Objects.equals(this.details, dialerCampaignConfigChangeRestErrorDetail.details);
+            Objects.equals(this.details, dialerCampaignConfigChangeRestErrorDetail.details);
   }
 
   @Override

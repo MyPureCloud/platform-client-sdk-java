@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory url(String url) {
@@ -106,7 +107,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory replyToId(String replyToId) {
@@ -123,7 +124,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.replyToId = replyToId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,9 +134,10 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory v2ConversationMessageTypingEventForWorkflowTopicConversationContentStory = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationContentStory.type) &&
-        Objects.equals(this.url, v2ConversationMessageTypingEventForWorkflowTopicConversationContentStory.url) &&
-        Objects.equals(this.replyToId, v2ConversationMessageTypingEventForWorkflowTopicConversationContentStory.replyToId);
+            Objects.equals(this.url, v2ConversationMessageTypingEventForWorkflowTopicConversationContentStory.url) &&
+            Objects.equals(this.replyToId, v2ConversationMessageTypingEventForWorkflowTopicConversationContentStory.replyToId);
   }
 
   @Override

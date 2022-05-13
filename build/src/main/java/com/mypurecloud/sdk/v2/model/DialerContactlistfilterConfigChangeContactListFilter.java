@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.contactList = contactList;
   }
 
-  
+
   /**
    * The list of contact list columns
    **/
@@ -118,7 +119,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.contactListColumns = contactListColumns;
   }
 
-  
+
   /**
    **/
   public DialerContactlistfilterConfigChangeContactListFilter clauses(List<DialerContactlistfilterConfigChangeFilterClause> clauses) {
@@ -135,7 +136,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.clauses = clauses;
   }
 
-  
+
   /**
    * Contact list filter type
    **/
@@ -153,7 +154,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.filterType = filterType;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -171,7 +172,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -189,7 +190,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -207,7 +208,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -225,7 +226,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -243,7 +244,6 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -254,15 +254,16 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
       return false;
     }
     DialerContactlistfilterConfigChangeContactListFilter dialerContactlistfilterConfigChangeContactListFilter = (DialerContactlistfilterConfigChangeContactListFilter) o;
+
     return Objects.equals(this.contactList, dialerContactlistfilterConfigChangeContactListFilter.contactList) &&
-        Objects.equals(this.contactListColumns, dialerContactlistfilterConfigChangeContactListFilter.contactListColumns) &&
-        Objects.equals(this.clauses, dialerContactlistfilterConfigChangeContactListFilter.clauses) &&
-        Objects.equals(this.filterType, dialerContactlistfilterConfigChangeContactListFilter.filterType) &&
-        Objects.equals(this.id, dialerContactlistfilterConfigChangeContactListFilter.id) &&
-        Objects.equals(this.name, dialerContactlistfilterConfigChangeContactListFilter.name) &&
-        Objects.equals(this.dateCreated, dialerContactlistfilterConfigChangeContactListFilter.dateCreated) &&
-        Objects.equals(this.dateModified, dialerContactlistfilterConfigChangeContactListFilter.dateModified) &&
-        Objects.equals(this.version, dialerContactlistfilterConfigChangeContactListFilter.version);
+            Objects.equals(this.contactListColumns, dialerContactlistfilterConfigChangeContactListFilter.contactListColumns) &&
+            Objects.equals(this.clauses, dialerContactlistfilterConfigChangeContactListFilter.clauses) &&
+            Objects.equals(this.filterType, dialerContactlistfilterConfigChangeContactListFilter.filterType) &&
+            Objects.equals(this.id, dialerContactlistfilterConfigChangeContactListFilter.id) &&
+            Objects.equals(this.name, dialerContactlistfilterConfigChangeContactListFilter.name) &&
+            Objects.equals(this.dateCreated, dialerContactlistfilterConfigChangeContactListFilter.dateCreated) &&
+            Objects.equals(this.dateModified, dialerContactlistfilterConfigChangeContactListFilter.dateModified) &&
+            Objects.equals(this.version, dialerContactlistfilterConfigChangeContactListFilter.version);
   }
 
   @Override

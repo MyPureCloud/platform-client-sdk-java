@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class IdleEventTrigger  implements Serializable {
     this.eventName = eventName;
   }
 
-  
+
   /**
    * Number of seconds of inactivity before an event is triggered.
    **/
@@ -60,7 +61,6 @@ public class IdleEventTrigger  implements Serializable {
     this.idleAfterSeconds = idleAfterSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class IdleEventTrigger  implements Serializable {
       return false;
     }
     IdleEventTrigger idleEventTrigger = (IdleEventTrigger) o;
+
     return Objects.equals(this.eventName, idleEventTrigger.eventName) &&
-        Objects.equals(this.idleAfterSeconds, idleEventTrigger.idleAfterSeconds);
+            Objects.equals(this.idleAfterSeconds, idleEventTrigger.idleAfterSeconds);
   }
 
   @Override

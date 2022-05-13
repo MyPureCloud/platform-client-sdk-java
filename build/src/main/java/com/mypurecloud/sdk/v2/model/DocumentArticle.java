@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArticleContent;
@@ -45,14 +46,14 @@ public class DocumentArticle  implements Serializable {
     this.title = title;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The content of the Article.")
   @JsonProperty("content")
   public ArticleContent getContent() {
     return content;
   }
 
-  
+
   /**
    * List of Alternative questions related to the title which helps in improving the likelihood of a match to user query.
    **/
@@ -70,7 +71,6 @@ public class DocumentArticle  implements Serializable {
     this.alternatives = alternatives;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,9 +81,10 @@ public class DocumentArticle  implements Serializable {
       return false;
     }
     DocumentArticle documentArticle = (DocumentArticle) o;
+
     return Objects.equals(this.title, documentArticle.title) &&
-        Objects.equals(this.content, documentArticle.content) &&
-        Objects.equals(this.alternatives, documentArticle.alternatives);
+            Objects.equals(this.content, documentArticle.content) &&
+            Objects.equals(this.alternatives, documentArticle.alternatives);
   }
 
   @Override

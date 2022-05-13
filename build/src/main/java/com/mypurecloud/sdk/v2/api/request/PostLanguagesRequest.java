@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class PostLanguagesRequest {
-    
+
 	private Language body;
 	public Language getBody() {
 		return this.body;
@@ -40,7 +40,7 @@ public class PostLanguagesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,8 +70,8 @@ public class PostLanguagesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/languages")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class PostLanguagesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Language body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostLanguagesRequest request;
@@ -96,20 +96,20 @@ public class PostLanguagesRequest {
 			request = new PostLanguagesRequest();
 		}
 
-		
+
 		public Builder withBody(Language body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Language body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostLanguagesRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -35,7 +36,7 @@ public class TagValue  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The workspace tag name.
    **/
@@ -53,7 +54,7 @@ public class TagValue  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public TagValue inUse(Boolean inUse) {
@@ -70,7 +71,7 @@ public class TagValue  implements Serializable {
     this.inUse = inUse;
   }
 
-  
+
   /**
    **/
   public TagValue acl(List<String> acl) {
@@ -87,14 +88,13 @@ public class TagValue  implements Serializable {
     this.acl = acl;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,11 +105,12 @@ public class TagValue  implements Serializable {
       return false;
     }
     TagValue tagValue = (TagValue) o;
+
     return Objects.equals(this.id, tagValue.id) &&
-        Objects.equals(this.name, tagValue.name) &&
-        Objects.equals(this.inUse, tagValue.inUse) &&
-        Objects.equals(this.acl, tagValue.acl) &&
-        Objects.equals(this.selfUri, tagValue.selfUri);
+            Objects.equals(this.name, tagValue.name) &&
+            Objects.equals(this.inUse, tagValue.inUse) &&
+            Objects.equals(this.acl, tagValue.acl) &&
+            Objects.equals(this.selfUri, tagValue.selfUri);
   }
 
   @Override

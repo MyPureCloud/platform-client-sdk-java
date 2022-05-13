@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
     this.columnName = columnName;
   }
 
-  
+
   /**
    * The type of the phone column, for example, 'cell' or 'home'
    **/
@@ -59,7 +60,6 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class DialerCampaignConfigChangePhoneColumn  implements Serializable {
       return false;
     }
     DialerCampaignConfigChangePhoneColumn dialerCampaignConfigChangePhoneColumn = (DialerCampaignConfigChangePhoneColumn) o;
+
     return Objects.equals(this.columnName, dialerCampaignConfigChangePhoneColumn.columnName) &&
-        Objects.equals(this.type, dialerCampaignConfigChangePhoneColumn.type);
+            Objects.equals(this.type, dialerCampaignConfigChangePhoneColumn.type);
   }
 
   @Override

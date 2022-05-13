@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationEmailEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.QueueConversationEmailEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.message = message;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.code = code;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.status = status;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody details(List<QueueConversationEmailEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.details = details;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicErrorBody errors(List<QueueConversationEmailEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class QueueConversationEmailEventTopicErrorBody  implements Serializable 
       return false;
     }
     QueueConversationEmailEventTopicErrorBody queueConversationEmailEventTopicErrorBody = (QueueConversationEmailEventTopicErrorBody) o;
+
     return Objects.equals(this.message, queueConversationEmailEventTopicErrorBody.message) &&
-        Objects.equals(this.code, queueConversationEmailEventTopicErrorBody.code) &&
-        Objects.equals(this.status, queueConversationEmailEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, queueConversationEmailEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, queueConversationEmailEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, queueConversationEmailEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, queueConversationEmailEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, queueConversationEmailEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, queueConversationEmailEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, queueConversationEmailEventTopicErrorBody.errors);
+            Objects.equals(this.code, queueConversationEmailEventTopicErrorBody.code) &&
+            Objects.equals(this.status, queueConversationEmailEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, queueConversationEmailEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, queueConversationEmailEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, queueConversationEmailEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, queueConversationEmailEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, queueConversationEmailEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, queueConversationEmailEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, queueConversationEmailEventTopicErrorBody.errors);
   }
 
   @Override

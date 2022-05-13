@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserStation;
@@ -33,28 +34,27 @@ public class UserStations  implements Serializable {
     return associatedStation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The station where the user can be reached based on their default and associated station.")
   @JsonProperty("effectiveStation")
   public UserStation getEffectiveStation() {
     return effectiveStation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Default station to be used if not associated with a station.")
   @JsonProperty("defaultStation")
   public UserStation getDefaultStation() {
     return defaultStation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last associated station for this user.")
   @JsonProperty("lastAssociatedStation")
   public UserStation getLastAssociatedStation() {
     return lastAssociatedStation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -65,10 +65,11 @@ public class UserStations  implements Serializable {
       return false;
     }
     UserStations userStations = (UserStations) o;
+
     return Objects.equals(this.associatedStation, userStations.associatedStation) &&
-        Objects.equals(this.effectiveStation, userStations.effectiveStation) &&
-        Objects.equals(this.defaultStation, userStations.defaultStation) &&
-        Objects.equals(this.lastAssociatedStation, userStations.lastAssociatedStation);
+            Objects.equals(this.effectiveStation, userStations.effectiveStation) &&
+            Objects.equals(this.defaultStation, userStations.defaultStation) &&
+            Objects.equals(this.lastAssociatedStation, userStations.lastAssociatedStation);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
@@ -33,7 +34,7 @@ public class WorkPlanReference  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The management unit to which this work plan belongs.  Nullable in some routes
    **/
@@ -51,14 +52,13 @@ public class WorkPlanReference  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,9 +69,10 @@ public class WorkPlanReference  implements Serializable {
       return false;
     }
     WorkPlanReference workPlanReference = (WorkPlanReference) o;
+
     return Objects.equals(this.id, workPlanReference.id) &&
-        Objects.equals(this.managementUnit, workPlanReference.managementUnit) &&
-        Objects.equals(this.selfUri, workPlanReference.selfUri);
+            Objects.equals(this.managementUnit, workPlanReference.managementUnit) &&
+            Objects.equals(this.selfUri, workPlanReference.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -34,7 +35,7 @@ public class VoicemailMediaInfo  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public VoicemailMediaInfo mediaFileUri(String mediaFileUri) {
@@ -51,7 +52,7 @@ public class VoicemailMediaInfo  implements Serializable {
     this.mediaFileUri = mediaFileUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMediaInfo mediaImageUri(String mediaImageUri) {
@@ -68,7 +69,7 @@ public class VoicemailMediaInfo  implements Serializable {
     this.mediaImageUri = mediaImageUri;
   }
 
-  
+
   /**
    **/
   public VoicemailMediaInfo waveformData(List<Float> waveformData) {
@@ -85,7 +86,6 @@ public class VoicemailMediaInfo  implements Serializable {
     this.waveformData = waveformData;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -96,10 +96,11 @@ public class VoicemailMediaInfo  implements Serializable {
       return false;
     }
     VoicemailMediaInfo voicemailMediaInfo = (VoicemailMediaInfo) o;
+
     return Objects.equals(this.id, voicemailMediaInfo.id) &&
-        Objects.equals(this.mediaFileUri, voicemailMediaInfo.mediaFileUri) &&
-        Objects.equals(this.mediaImageUri, voicemailMediaInfo.mediaImageUri) &&
-        Objects.equals(this.waveformData, voicemailMediaInfo.waveformData);
+            Objects.equals(this.mediaFileUri, voicemailMediaInfo.mediaFileUri) &&
+            Objects.equals(this.mediaImageUri, voicemailMediaInfo.mediaImageUri) &&
+            Objects.equals(this.waveformData, voicemailMediaInfo.waveformData);
   }
 
   @Override

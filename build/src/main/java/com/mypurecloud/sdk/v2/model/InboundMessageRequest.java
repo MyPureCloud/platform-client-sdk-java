@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -55,7 +56,7 @@ public class InboundMessageRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
    **/
@@ -73,7 +74,7 @@ public class InboundMessageRequest  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    * The name of the provider that is sourcing the email such as Oracle, Salesforce, etc.
    **/
@@ -91,7 +92,7 @@ public class InboundMessageRequest  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The list of skill ID's to use for routing.
    **/
@@ -109,7 +110,7 @@ public class InboundMessageRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * The ID of the language to use for routing.
    **/
@@ -127,7 +128,7 @@ public class InboundMessageRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    * The priority to assign to the conversation for routing.
    **/
@@ -145,7 +146,7 @@ public class InboundMessageRequest  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * The list of attributes to associate with the customer participant.
    **/
@@ -163,7 +164,7 @@ public class InboundMessageRequest  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * The email address of the recipient of the email.
    **/
@@ -181,7 +182,7 @@ public class InboundMessageRequest  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * The name of the recipient of the email.
    **/
@@ -199,7 +200,7 @@ public class InboundMessageRequest  implements Serializable {
     this.toName = toName;
   }
 
-  
+
   /**
    * The email address of the sender of the email.
    **/
@@ -217,7 +218,7 @@ public class InboundMessageRequest  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The name of the sender of the email.
    **/
@@ -235,7 +236,7 @@ public class InboundMessageRequest  implements Serializable {
     this.fromName = fromName;
   }
 
-  
+
   /**
    * The subject of the email
    **/
@@ -253,7 +254,6 @@ public class InboundMessageRequest  implements Serializable {
     this.subject = subject;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -264,18 +264,19 @@ public class InboundMessageRequest  implements Serializable {
       return false;
     }
     InboundMessageRequest inboundMessageRequest = (InboundMessageRequest) o;
+
     return Objects.equals(this.queueId, inboundMessageRequest.queueId) &&
-        Objects.equals(this.flowId, inboundMessageRequest.flowId) &&
-        Objects.equals(this.provider, inboundMessageRequest.provider) &&
-        Objects.equals(this.skillIds, inboundMessageRequest.skillIds) &&
-        Objects.equals(this.languageId, inboundMessageRequest.languageId) &&
-        Objects.equals(this.priority, inboundMessageRequest.priority) &&
-        Objects.equals(this.attributes, inboundMessageRequest.attributes) &&
-        Objects.equals(this.toAddress, inboundMessageRequest.toAddress) &&
-        Objects.equals(this.toName, inboundMessageRequest.toName) &&
-        Objects.equals(this.fromAddress, inboundMessageRequest.fromAddress) &&
-        Objects.equals(this.fromName, inboundMessageRequest.fromName) &&
-        Objects.equals(this.subject, inboundMessageRequest.subject);
+            Objects.equals(this.flowId, inboundMessageRequest.flowId) &&
+            Objects.equals(this.provider, inboundMessageRequest.provider) &&
+            Objects.equals(this.skillIds, inboundMessageRequest.skillIds) &&
+            Objects.equals(this.languageId, inboundMessageRequest.languageId) &&
+            Objects.equals(this.priority, inboundMessageRequest.priority) &&
+            Objects.equals(this.attributes, inboundMessageRequest.attributes) &&
+            Objects.equals(this.toAddress, inboundMessageRequest.toAddress) &&
+            Objects.equals(this.toName, inboundMessageRequest.toName) &&
+            Objects.equals(this.fromAddress, inboundMessageRequest.fromAddress) &&
+            Objects.equals(this.fromName, inboundMessageRequest.fromName) &&
+            Objects.equals(this.subject, inboundMessageRequest.subject);
   }
 
   @Override

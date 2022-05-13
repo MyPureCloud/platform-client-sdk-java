@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -51,7 +52,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Product part number
    **/
@@ -69,7 +70,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.partNumber = partNumber;
   }
 
-  
+
   /**
    * UI grouping key
    **/
@@ -87,7 +88,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.grouping = grouping;
   }
 
-  
+
   /**
    * UI unit of measure
    **/
@@ -105,7 +106,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.unitOfMeasureType = unitOfMeasureType;
   }
 
-  
+
   /**
    * Usage count for specified period
    **/
@@ -123,7 +124,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.usageQuantity = usageQuantity;
   }
 
-  
+
   /**
    * Price for usage / overage charge
    **/
@@ -141,7 +142,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.overagePrice = overagePrice;
   }
 
-  
+
   /**
    * Items prepaid for specified period
    **/
@@ -159,7 +160,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.prepayQuantity = prepayQuantity;
   }
 
-  
+
   /**
    * Price for prepay charge
    **/
@@ -177,7 +178,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.prepayPrice = prepayPrice;
   }
 
-  
+
   /**
    * Notes about the usage/charge item
    **/
@@ -195,7 +196,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.usageNotes = usageNotes;
   }
 
-  
+
   /**
    * Indicates whether the item is cancellable
    **/
@@ -213,7 +214,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.isCancellable = isCancellable;
   }
 
-  
+
   /**
    * Quantity multiplier for this charge
    **/
@@ -231,7 +232,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.bundleQuantity = bundleQuantity;
   }
 
-  
+
   /**
    * A charge from a third party entity
    **/
@@ -249,7 +250,6 @@ public class SubscriptionOverviewUsage  implements Serializable {
     this.isThirdParty = isThirdParty;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,18 +260,19 @@ public class SubscriptionOverviewUsage  implements Serializable {
       return false;
     }
     SubscriptionOverviewUsage subscriptionOverviewUsage = (SubscriptionOverviewUsage) o;
+
     return Objects.equals(this.name, subscriptionOverviewUsage.name) &&
-        Objects.equals(this.partNumber, subscriptionOverviewUsage.partNumber) &&
-        Objects.equals(this.grouping, subscriptionOverviewUsage.grouping) &&
-        Objects.equals(this.unitOfMeasureType, subscriptionOverviewUsage.unitOfMeasureType) &&
-        Objects.equals(this.usageQuantity, subscriptionOverviewUsage.usageQuantity) &&
-        Objects.equals(this.overagePrice, subscriptionOverviewUsage.overagePrice) &&
-        Objects.equals(this.prepayQuantity, subscriptionOverviewUsage.prepayQuantity) &&
-        Objects.equals(this.prepayPrice, subscriptionOverviewUsage.prepayPrice) &&
-        Objects.equals(this.usageNotes, subscriptionOverviewUsage.usageNotes) &&
-        Objects.equals(this.isCancellable, subscriptionOverviewUsage.isCancellable) &&
-        Objects.equals(this.bundleQuantity, subscriptionOverviewUsage.bundleQuantity) &&
-        Objects.equals(this.isThirdParty, subscriptionOverviewUsage.isThirdParty);
+            Objects.equals(this.partNumber, subscriptionOverviewUsage.partNumber) &&
+            Objects.equals(this.grouping, subscriptionOverviewUsage.grouping) &&
+            Objects.equals(this.unitOfMeasureType, subscriptionOverviewUsage.unitOfMeasureType) &&
+            Objects.equals(this.usageQuantity, subscriptionOverviewUsage.usageQuantity) &&
+            Objects.equals(this.overagePrice, subscriptionOverviewUsage.overagePrice) &&
+            Objects.equals(this.prepayQuantity, subscriptionOverviewUsage.prepayQuantity) &&
+            Objects.equals(this.prepayPrice, subscriptionOverviewUsage.prepayPrice) &&
+            Objects.equals(this.usageNotes, subscriptionOverviewUsage.usageNotes) &&
+            Objects.equals(this.isCancellable, subscriptionOverviewUsage.isCancellable) &&
+            Objects.equals(this.bundleQuantity, subscriptionOverviewUsage.bundleQuantity) &&
+            Objects.equals(this.isThirdParty, subscriptionOverviewUsage.isThirdParty);
   }
 
   @Override

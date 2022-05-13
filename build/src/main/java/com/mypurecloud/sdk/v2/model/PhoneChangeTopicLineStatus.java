@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicLineStatus reachable(Boolean reachable) {
@@ -63,7 +64,7 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
     this.reachable = reachable;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicLineStatus addressOfRecord(String addressOfRecord) {
@@ -80,7 +81,7 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
     this.addressOfRecord = addressOfRecord;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicLineStatus contactAddresses(List<String> contactAddresses) {
@@ -97,7 +98,7 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
     this.contactAddresses = contactAddresses;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicLineStatus reachableStateTime(Date reachableStateTime) {
@@ -114,7 +115,6 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
     this.reachableStateTime = reachableStateTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class PhoneChangeTopicLineStatus  implements Serializable {
       return false;
     }
     PhoneChangeTopicLineStatus phoneChangeTopicLineStatus = (PhoneChangeTopicLineStatus) o;
+
     return Objects.equals(this.id, phoneChangeTopicLineStatus.id) &&
-        Objects.equals(this.reachable, phoneChangeTopicLineStatus.reachable) &&
-        Objects.equals(this.addressOfRecord, phoneChangeTopicLineStatus.addressOfRecord) &&
-        Objects.equals(this.contactAddresses, phoneChangeTopicLineStatus.contactAddresses) &&
-        Objects.equals(this.reachableStateTime, phoneChangeTopicLineStatus.reachableStateTime);
+            Objects.equals(this.reachable, phoneChangeTopicLineStatus.reachable) &&
+            Objects.equals(this.addressOfRecord, phoneChangeTopicLineStatus.addressOfRecord) &&
+            Objects.equals(this.contactAddresses, phoneChangeTopicLineStatus.contactAddresses) &&
+            Objects.equals(this.reachableStateTime, phoneChangeTopicLineStatus.reachableStateTime);
   }
 
   @Override

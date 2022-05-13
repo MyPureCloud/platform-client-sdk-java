@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class CreateWebChatMessageRequest  implements Serializable {
     this.body = body;
   }
 
-  
+
   /**
    * The purpose of the message within the conversation, such as a standard text entry versus a greeting.
    **/
@@ -110,7 +111,6 @@ public class CreateWebChatMessageRequest  implements Serializable {
     this.bodyType = bodyType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class CreateWebChatMessageRequest  implements Serializable {
       return false;
     }
     CreateWebChatMessageRequest createWebChatMessageRequest = (CreateWebChatMessageRequest) o;
+
     return Objects.equals(this.body, createWebChatMessageRequest.body) &&
-        Objects.equals(this.bodyType, createWebChatMessageRequest.bodyType);
+            Objects.equals(this.bodyType, createWebChatMessageRequest.bodyType);
   }
 
   @Override

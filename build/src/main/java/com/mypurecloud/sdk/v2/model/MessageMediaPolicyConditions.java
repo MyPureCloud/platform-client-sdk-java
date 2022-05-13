@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-  
+
   /**
    **/
   public MessageMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -117,7 +118,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
+
   /**
    **/
   public MessageMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -134,7 +135,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-  
+
   /**
    **/
   public MessageMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -151,7 +152,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-  
+
   /**
    **/
   public MessageMediaPolicyConditions languages(List<Language> languages) {
@@ -168,7 +169,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    **/
   public MessageMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -185,7 +186,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-  
+
   /**
    **/
   public MessageMediaPolicyConditions customerParticipation(CustomerParticipationEnum customerParticipation) {
@@ -202,7 +203,6 @@ public class MessageMediaPolicyConditions  implements Serializable {
     this.customerParticipation = customerParticipation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,13 +213,14 @@ public class MessageMediaPolicyConditions  implements Serializable {
       return false;
     }
     MessageMediaPolicyConditions messageMediaPolicyConditions = (MessageMediaPolicyConditions) o;
+
     return Objects.equals(this.forUsers, messageMediaPolicyConditions.forUsers) &&
-        Objects.equals(this.dateRanges, messageMediaPolicyConditions.dateRanges) &&
-        Objects.equals(this.forQueues, messageMediaPolicyConditions.forQueues) &&
-        Objects.equals(this.wrapupCodes, messageMediaPolicyConditions.wrapupCodes) &&
-        Objects.equals(this.languages, messageMediaPolicyConditions.languages) &&
-        Objects.equals(this.timeAllowed, messageMediaPolicyConditions.timeAllowed) &&
-        Objects.equals(this.customerParticipation, messageMediaPolicyConditions.customerParticipation);
+            Objects.equals(this.dateRanges, messageMediaPolicyConditions.dateRanges) &&
+            Objects.equals(this.forQueues, messageMediaPolicyConditions.forQueues) &&
+            Objects.equals(this.wrapupCodes, messageMediaPolicyConditions.wrapupCodes) &&
+            Objects.equals(this.languages, messageMediaPolicyConditions.languages) &&
+            Objects.equals(this.timeAllowed, messageMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.customerParticipation, messageMediaPolicyConditions.customerParticipation);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class MediaUtilization  implements Serializable {
     this.maximumCapacity = maximumCapacity;
   }
 
-  
+
   /**
    * Defines the list of other media types that can interrupt a conversation of this media type.  Values include call, chat, email, callback, and message.
    **/
@@ -62,7 +63,7 @@ public class MediaUtilization  implements Serializable {
     this.interruptableMediaTypes = interruptableMediaTypes;
   }
 
-  
+
   /**
    * If true, then track non-ACD conversations against utilization
    **/
@@ -80,7 +81,6 @@ public class MediaUtilization  implements Serializable {
     this.includeNonAcd = includeNonAcd;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class MediaUtilization  implements Serializable {
       return false;
     }
     MediaUtilization mediaUtilization = (MediaUtilization) o;
+
     return Objects.equals(this.maximumCapacity, mediaUtilization.maximumCapacity) &&
-        Objects.equals(this.interruptableMediaTypes, mediaUtilization.interruptableMediaTypes) &&
-        Objects.equals(this.includeNonAcd, mediaUtilization.includeNonAcd);
+            Objects.equals(this.interruptableMediaTypes, mediaUtilization.interruptableMediaTypes) &&
+            Objects.equals(this.includeNonAcd, mediaUtilization.includeNonAcd);
   }
 
   @Override

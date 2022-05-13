@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class SchemaQuantityLimits  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SchemaQuantityLimits name(String name) {
@@ -59,91 +60,90 @@ public class SchemaQuantityLimits  implements Serializable {
     this.name = name;
   }
 
-  
-  @ApiModelProperty(example = "\"minFieldNameCharacters\":1", value = "The minimum number of schema field name characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The minimum number of schema field name characters allowed.")
   @JsonProperty("minFieldNameCharacters")
   public Integer getMinFieldNameCharacters() {
     return minFieldNameCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"minFieldNameCharacters\":100", value = "The maximum number of schema field name characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema field name characters allowed.")
   @JsonProperty("maxFieldNameCharacters")
   public Integer getMaxFieldNameCharacters() {
     return maxFieldNameCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"minFieldDescriptionCharacters\":0", value = "The minimum number of schema field description characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The minimum number of schema field description characters allowed.")
   @JsonProperty("minFieldDescriptionCharacters")
   public Integer getMinFieldDescriptionCharacters() {
     return minFieldDescriptionCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"maxFieldDescriptionCharacters\":200", value = "The maximum number of schema field description characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema field description characters allowed.")
   @JsonProperty("maxFieldDescriptionCharacters")
   public Integer getMaxFieldDescriptionCharacters() {
     return maxFieldDescriptionCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"minSchemaNameCharacters\":1", value = "The minimum number of schema name characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The minimum number of schema name characters allowed.")
   @JsonProperty("minSchemaNameCharacters")
   public Integer getMinSchemaNameCharacters() {
     return minSchemaNameCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"maxSchemaNameCharacters\":50", value = "The maximum number of schema name characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema name characters allowed.")
   @JsonProperty("maxSchemaNameCharacters")
   public Integer getMaxSchemaNameCharacters() {
     return maxSchemaNameCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"minSchemaDescriptionCharacters\":0", value = "The minimum number of schema description characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The minimum number of schema description characters allowed.")
   @JsonProperty("minSchemaDescriptionCharacters")
   public Integer getMinSchemaDescriptionCharacters() {
     return minSchemaDescriptionCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"maxSchemaDescriptionCharacters\":200", value = "The maximum number of schema description characters allowed.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema description characters allowed.")
   @JsonProperty("maxSchemaDescriptionCharacters")
   public Integer getMaxSchemaDescriptionCharacters() {
     return maxSchemaDescriptionCharacters;
   }
 
-  
-  @ApiModelProperty(example = "\"maxNumberOfSchemasPerOrg\":20", value = "The maximum number of schema allowed per org.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema allowed per org.")
   @JsonProperty("maxNumberOfSchemasPerOrg")
   public Integer getMaxNumberOfSchemasPerOrg() {
     return maxNumberOfSchemasPerOrg;
   }
 
-  
-  @ApiModelProperty(example = "\"maxNumberOfFieldsPerSchema\":25", value = "The maximum number of schema fields allowed per schema.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema fields allowed per schema.")
   @JsonProperty("maxNumberOfFieldsPerSchema")
   public Integer getMaxNumberOfFieldsPerSchema() {
     return maxNumberOfFieldsPerSchema;
   }
 
-  
-  @ApiModelProperty(example = "\"maxNumberOfFieldsPerOrg\":500", value = "The maximum number of schema fields allowed per organization across all of their schemas.")
+
+  @ApiModelProperty(example = "null", value = "The maximum number of schema fields allowed per organization across all of their schemas.")
   @JsonProperty("maxNumberOfFieldsPerOrg")
   public Integer getMaxNumberOfFieldsPerOrg() {
     return maxNumberOfFieldsPerOrg;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -154,20 +154,21 @@ public class SchemaQuantityLimits  implements Serializable {
       return false;
     }
     SchemaQuantityLimits schemaQuantityLimits = (SchemaQuantityLimits) o;
+
     return Objects.equals(this.id, schemaQuantityLimits.id) &&
-        Objects.equals(this.name, schemaQuantityLimits.name) &&
-        Objects.equals(this.minFieldNameCharacters, schemaQuantityLimits.minFieldNameCharacters) &&
-        Objects.equals(this.maxFieldNameCharacters, schemaQuantityLimits.maxFieldNameCharacters) &&
-        Objects.equals(this.minFieldDescriptionCharacters, schemaQuantityLimits.minFieldDescriptionCharacters) &&
-        Objects.equals(this.maxFieldDescriptionCharacters, schemaQuantityLimits.maxFieldDescriptionCharacters) &&
-        Objects.equals(this.minSchemaNameCharacters, schemaQuantityLimits.minSchemaNameCharacters) &&
-        Objects.equals(this.maxSchemaNameCharacters, schemaQuantityLimits.maxSchemaNameCharacters) &&
-        Objects.equals(this.minSchemaDescriptionCharacters, schemaQuantityLimits.minSchemaDescriptionCharacters) &&
-        Objects.equals(this.maxSchemaDescriptionCharacters, schemaQuantityLimits.maxSchemaDescriptionCharacters) &&
-        Objects.equals(this.maxNumberOfSchemasPerOrg, schemaQuantityLimits.maxNumberOfSchemasPerOrg) &&
-        Objects.equals(this.maxNumberOfFieldsPerSchema, schemaQuantityLimits.maxNumberOfFieldsPerSchema) &&
-        Objects.equals(this.maxNumberOfFieldsPerOrg, schemaQuantityLimits.maxNumberOfFieldsPerOrg) &&
-        Objects.equals(this.selfUri, schemaQuantityLimits.selfUri);
+            Objects.equals(this.name, schemaQuantityLimits.name) &&
+            Objects.equals(this.minFieldNameCharacters, schemaQuantityLimits.minFieldNameCharacters) &&
+            Objects.equals(this.maxFieldNameCharacters, schemaQuantityLimits.maxFieldNameCharacters) &&
+            Objects.equals(this.minFieldDescriptionCharacters, schemaQuantityLimits.minFieldDescriptionCharacters) &&
+            Objects.equals(this.maxFieldDescriptionCharacters, schemaQuantityLimits.maxFieldDescriptionCharacters) &&
+            Objects.equals(this.minSchemaNameCharacters, schemaQuantityLimits.minSchemaNameCharacters) &&
+            Objects.equals(this.maxSchemaNameCharacters, schemaQuantityLimits.maxSchemaNameCharacters) &&
+            Objects.equals(this.minSchemaDescriptionCharacters, schemaQuantityLimits.minSchemaDescriptionCharacters) &&
+            Objects.equals(this.maxSchemaDescriptionCharacters, schemaQuantityLimits.maxSchemaDescriptionCharacters) &&
+            Objects.equals(this.maxNumberOfSchemasPerOrg, schemaQuantityLimits.maxNumberOfSchemasPerOrg) &&
+            Objects.equals(this.maxNumberOfFieldsPerSchema, schemaQuantityLimits.maxNumberOfFieldsPerSchema) &&
+            Objects.equals(this.maxNumberOfFieldsPerOrg, schemaQuantityLimits.maxNumberOfFieldsPerOrg) &&
+            Objects.equals(this.selfUri, schemaQuantityLimits.selfUri);
   }
 
   @Override

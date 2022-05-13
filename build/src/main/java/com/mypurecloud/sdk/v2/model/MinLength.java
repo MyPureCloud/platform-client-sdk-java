@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class MinLength  implements Serializable {
     this.min = min;
   }
 
-  
+
   /**
    * A non-negative integer for a text-based schema field denoting the maximum smallest length string the field can contain for a schema instance.
    **/
@@ -59,7 +60,6 @@ public class MinLength  implements Serializable {
     this.max = max;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class MinLength  implements Serializable {
       return false;
     }
     MinLength minLength = (MinLength) o;
+
     return Objects.equals(this.min, minLength.min) &&
-        Objects.equals(this.max, minLength.max);
+            Objects.equals(this.max, minLength.max);
   }
 
   @Override

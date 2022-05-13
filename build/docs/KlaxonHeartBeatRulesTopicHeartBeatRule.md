@@ -38,8 +38,8 @@ title: KlaxonHeartBeatRulesTopicHeartBeatRule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EDGE | &quot;EDGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EDGE | &quot;EDGE&quot; | 
 {: class="table table-striped"}
 
 

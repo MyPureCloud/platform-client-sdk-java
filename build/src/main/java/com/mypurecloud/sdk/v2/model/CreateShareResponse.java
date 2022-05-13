@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -138,7 +139,7 @@ public class CreateShareResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse name(String name) {
@@ -155,7 +156,7 @@ public class CreateShareResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse sharedEntityType(SharedEntityTypeEnum sharedEntityType) {
@@ -172,7 +173,7 @@ public class CreateShareResponse  implements Serializable {
     this.sharedEntityType = sharedEntityType;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse sharedEntity(DomainEntityRef sharedEntity) {
@@ -189,7 +190,7 @@ public class CreateShareResponse  implements Serializable {
     this.sharedEntity = sharedEntity;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse memberType(MemberTypeEnum memberType) {
@@ -206,7 +207,7 @@ public class CreateShareResponse  implements Serializable {
     this.memberType = memberType;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse member(DomainEntityRef member) {
@@ -223,7 +224,7 @@ public class CreateShareResponse  implements Serializable {
     this.member = member;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse sharedBy(DomainEntityRef sharedBy) {
@@ -240,7 +241,7 @@ public class CreateShareResponse  implements Serializable {
     this.sharedBy = sharedBy;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse workspace(DomainEntityRef workspace) {
@@ -257,7 +258,7 @@ public class CreateShareResponse  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse succeeded(List<Share> succeeded) {
@@ -274,7 +275,7 @@ public class CreateShareResponse  implements Serializable {
     this.succeeded = succeeded;
   }
 
-  
+
   /**
    **/
   public CreateShareResponse failed(List<Share> failed) {
@@ -291,14 +292,13 @@ public class CreateShareResponse  implements Serializable {
     this.failed = failed;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -309,17 +309,18 @@ public class CreateShareResponse  implements Serializable {
       return false;
     }
     CreateShareResponse createShareResponse = (CreateShareResponse) o;
+
     return Objects.equals(this.id, createShareResponse.id) &&
-        Objects.equals(this.name, createShareResponse.name) &&
-        Objects.equals(this.sharedEntityType, createShareResponse.sharedEntityType) &&
-        Objects.equals(this.sharedEntity, createShareResponse.sharedEntity) &&
-        Objects.equals(this.memberType, createShareResponse.memberType) &&
-        Objects.equals(this.member, createShareResponse.member) &&
-        Objects.equals(this.sharedBy, createShareResponse.sharedBy) &&
-        Objects.equals(this.workspace, createShareResponse.workspace) &&
-        Objects.equals(this.succeeded, createShareResponse.succeeded) &&
-        Objects.equals(this.failed, createShareResponse.failed) &&
-        Objects.equals(this.selfUri, createShareResponse.selfUri);
+            Objects.equals(this.name, createShareResponse.name) &&
+            Objects.equals(this.sharedEntityType, createShareResponse.sharedEntityType) &&
+            Objects.equals(this.sharedEntity, createShareResponse.sharedEntity) &&
+            Objects.equals(this.memberType, createShareResponse.memberType) &&
+            Objects.equals(this.member, createShareResponse.member) &&
+            Objects.equals(this.sharedBy, createShareResponse.sharedBy) &&
+            Objects.equals(this.workspace, createShareResponse.workspace) &&
+            Objects.equals(this.succeeded, createShareResponse.succeeded) &&
+            Objects.equals(this.failed, createShareResponse.failed) &&
+            Objects.equals(this.selfUri, createShareResponse.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentSchedulePublishedScheduleReference;
@@ -51,7 +52,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     this.agentSchedules = agentSchedules;
   }
 
-  
+
   /**
    * The time zone configured for the business unit to which this schedule applies
    **/
@@ -69,7 +70,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     this.businessUnitTimeZone = businessUnitTimeZone;
   }
 
-  
+
   /**
    * References to all published week schedules overlapping the start/end date query parameters
    **/
@@ -87,7 +88,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     this.publishedSchedules = publishedSchedules;
   }
 
-  
+
   /**
    * The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -105,7 +106,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -123,7 +124,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * The list of updates for the schedule. Only used in notifications
    **/
@@ -141,7 +142,6 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     this.updates = updates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +152,13 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
       return false;
     }
     BuCurrentAgentScheduleSearchResponse buCurrentAgentScheduleSearchResponse = (BuCurrentAgentScheduleSearchResponse) o;
+
     return Objects.equals(this.agentSchedules, buCurrentAgentScheduleSearchResponse.agentSchedules) &&
-        Objects.equals(this.businessUnitTimeZone, buCurrentAgentScheduleSearchResponse.businessUnitTimeZone) &&
-        Objects.equals(this.publishedSchedules, buCurrentAgentScheduleSearchResponse.publishedSchedules) &&
-        Objects.equals(this.startDate, buCurrentAgentScheduleSearchResponse.startDate) &&
-        Objects.equals(this.endDate, buCurrentAgentScheduleSearchResponse.endDate) &&
-        Objects.equals(this.updates, buCurrentAgentScheduleSearchResponse.updates);
+            Objects.equals(this.businessUnitTimeZone, buCurrentAgentScheduleSearchResponse.businessUnitTimeZone) &&
+            Objects.equals(this.publishedSchedules, buCurrentAgentScheduleSearchResponse.publishedSchedules) &&
+            Objects.equals(this.startDate, buCurrentAgentScheduleSearchResponse.startDate) &&
+            Objects.equals(this.endDate, buCurrentAgentScheduleSearchResponse.endDate) &&
+            Objects.equals(this.updates, buCurrentAgentScheduleSearchResponse.updates);
   }
 
   @Override

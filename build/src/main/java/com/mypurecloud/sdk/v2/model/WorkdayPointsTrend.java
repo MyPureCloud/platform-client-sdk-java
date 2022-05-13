@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,42 +93,41 @@ public class WorkdayPointsTrend  implements Serializable {
     return dateStartWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The end workday for the query range for the gamification points trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEndWorkday")
   public LocalDate getDateEndWorkday() {
     return dateEndWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted user for the query")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Aggregated for same day comparison")
   @JsonProperty("dayOfWeek")
   public DayOfWeekEnum getDayOfWeek() {
     return dayOfWeek;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total average points")
   @JsonProperty("averagePoints")
   public Double getAveragePoints() {
     return averagePoints;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Daily points trends")
   @JsonProperty("trend")
   public List<WorkdayPointsTrendItem> getTrend() {
     return trend;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,12 +138,13 @@ public class WorkdayPointsTrend  implements Serializable {
       return false;
     }
     WorkdayPointsTrend workdayPointsTrend = (WorkdayPointsTrend) o;
+
     return Objects.equals(this.dateStartWorkday, workdayPointsTrend.dateStartWorkday) &&
-        Objects.equals(this.dateEndWorkday, workdayPointsTrend.dateEndWorkday) &&
-        Objects.equals(this.user, workdayPointsTrend.user) &&
-        Objects.equals(this.dayOfWeek, workdayPointsTrend.dayOfWeek) &&
-        Objects.equals(this.averagePoints, workdayPointsTrend.averagePoints) &&
-        Objects.equals(this.trend, workdayPointsTrend.trend);
+            Objects.equals(this.dateEndWorkday, workdayPointsTrend.dateEndWorkday) &&
+            Objects.equals(this.user, workdayPointsTrend.user) &&
+            Objects.equals(this.dayOfWeek, workdayPointsTrend.dayOfWeek) &&
+            Objects.equals(this.averagePoints, workdayPointsTrend.averagePoints) &&
+            Objects.equals(this.trend, workdayPointsTrend.trend);
   }
 
   @Override

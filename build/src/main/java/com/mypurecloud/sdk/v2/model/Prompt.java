@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Operation;
@@ -49,7 +50,7 @@ public class Prompt  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The prompt name.
    **/
@@ -67,7 +68,7 @@ public class Prompt  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Prompt description(String description) {
@@ -84,28 +85,27 @@ public class Prompt  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of resources associated with this prompt")
   @JsonProperty("resources")
   public List<PromptAsset> getResources() {
     return resources;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current prompt operation status")
   @JsonProperty("currentOperation")
   public Operation getCurrentOperation() {
     return currentOperation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,12 +116,13 @@ public class Prompt  implements Serializable {
       return false;
     }
     Prompt prompt = (Prompt) o;
+
     return Objects.equals(this.id, prompt.id) &&
-        Objects.equals(this.name, prompt.name) &&
-        Objects.equals(this.description, prompt.description) &&
-        Objects.equals(this.resources, prompt.resources) &&
-        Objects.equals(this.currentOperation, prompt.currentOperation) &&
-        Objects.equals(this.selfUri, prompt.selfUri);
+            Objects.equals(this.name, prompt.name) &&
+            Objects.equals(this.description, prompt.description) &&
+            Objects.equals(this.resources, prompt.resources) &&
+            Objects.equals(this.currentOperation, prompt.currentOperation) &&
+            Objects.equals(this.selfUri, prompt.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class WebMessagingEvent  implements Serializable {
     this.eventType = eventType;
   }
 
-  
+
   /**
    * Cobrowse event.
    **/
@@ -111,7 +112,7 @@ public class WebMessagingEvent  implements Serializable {
     this.coBrowse = coBrowse;
   }
 
-  
+
   /**
    * Presence event.
    **/
@@ -129,7 +130,6 @@ public class WebMessagingEvent  implements Serializable {
     this.presence = presence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class WebMessagingEvent  implements Serializable {
       return false;
     }
     WebMessagingEvent webMessagingEvent = (WebMessagingEvent) o;
+
     return Objects.equals(this.eventType, webMessagingEvent.eventType) &&
-        Objects.equals(this.coBrowse, webMessagingEvent.coBrowse) &&
-        Objects.equals(this.presence, webMessagingEvent.presence);
+            Objects.equals(this.coBrowse, webMessagingEvent.coBrowse) &&
+            Objects.equals(this.presence, webMessagingEvent.presence);
   }
 
   @Override

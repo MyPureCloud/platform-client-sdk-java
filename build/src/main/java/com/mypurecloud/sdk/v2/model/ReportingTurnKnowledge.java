@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledgeFeedback;
@@ -44,7 +45,7 @@ public class ReportingTurnKnowledge  implements Serializable {
     this.knowledgeBaseId = knowledgeBaseId;
   }
 
-  
+
   /**
    * The knowledge feedback data that was captured during this reporting turn.
    **/
@@ -62,7 +63,7 @@ public class ReportingTurnKnowledge  implements Serializable {
     this.feedback = feedback;
   }
 
-  
+
   /**
    * The knowledge search data that was captured during this reporting turn.
    **/
@@ -80,7 +81,6 @@ public class ReportingTurnKnowledge  implements Serializable {
     this.search = search;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class ReportingTurnKnowledge  implements Serializable {
       return false;
     }
     ReportingTurnKnowledge reportingTurnKnowledge = (ReportingTurnKnowledge) o;
+
     return Objects.equals(this.knowledgeBaseId, reportingTurnKnowledge.knowledgeBaseId) &&
-        Objects.equals(this.feedback, reportingTurnKnowledge.feedback) &&
-        Objects.equals(this.search, reportingTurnKnowledge.search);
+            Objects.equals(this.feedback, reportingTurnKnowledge.feedback) &&
+            Objects.equals(this.search, reportingTurnKnowledge.search);
   }
 
   @Override

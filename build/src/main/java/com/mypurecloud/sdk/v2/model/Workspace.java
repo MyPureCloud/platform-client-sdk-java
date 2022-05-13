@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class Workspace  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The current name of the workspace.
    **/
@@ -111,7 +112,7 @@ public class Workspace  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Workspace type(TypeEnum type) {
@@ -128,7 +129,7 @@ public class Workspace  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public Workspace isCurrentUserWorkspace(Boolean isCurrentUserWorkspace) {
@@ -145,7 +146,7 @@ public class Workspace  implements Serializable {
     this.isCurrentUserWorkspace = isCurrentUserWorkspace;
   }
 
-  
+
   /**
    **/
   public Workspace user(DomainEntityRef user) {
@@ -162,7 +163,7 @@ public class Workspace  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public Workspace bucket(String bucket) {
@@ -179,7 +180,7 @@ public class Workspace  implements Serializable {
     this.bucket = bucket;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -197,7 +198,7 @@ public class Workspace  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -215,7 +216,7 @@ public class Workspace  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public Workspace summary(WorkspaceSummary summary) {
@@ -232,7 +233,7 @@ public class Workspace  implements Serializable {
     this.summary = summary;
   }
 
-  
+
   /**
    **/
   public Workspace acl(List<String> acl) {
@@ -249,7 +250,7 @@ public class Workspace  implements Serializable {
     this.acl = acl;
   }
 
-  
+
   /**
    **/
   public Workspace description(String description) {
@@ -266,14 +267,13 @@ public class Workspace  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -284,18 +284,19 @@ public class Workspace  implements Serializable {
       return false;
     }
     Workspace workspace = (Workspace) o;
+
     return Objects.equals(this.id, workspace.id) &&
-        Objects.equals(this.name, workspace.name) &&
-        Objects.equals(this.type, workspace.type) &&
-        Objects.equals(this.isCurrentUserWorkspace, workspace.isCurrentUserWorkspace) &&
-        Objects.equals(this.user, workspace.user) &&
-        Objects.equals(this.bucket, workspace.bucket) &&
-        Objects.equals(this.dateCreated, workspace.dateCreated) &&
-        Objects.equals(this.dateModified, workspace.dateModified) &&
-        Objects.equals(this.summary, workspace.summary) &&
-        Objects.equals(this.acl, workspace.acl) &&
-        Objects.equals(this.description, workspace.description) &&
-        Objects.equals(this.selfUri, workspace.selfUri);
+            Objects.equals(this.name, workspace.name) &&
+            Objects.equals(this.type, workspace.type) &&
+            Objects.equals(this.isCurrentUserWorkspace, workspace.isCurrentUserWorkspace) &&
+            Objects.equals(this.user, workspace.user) &&
+            Objects.equals(this.bucket, workspace.bucket) &&
+            Objects.equals(this.dateCreated, workspace.dateCreated) &&
+            Objects.equals(this.dateModified, workspace.dateModified) &&
+            Objects.equals(this.summary, workspace.summary) &&
+            Objects.equals(this.acl, workspace.acl) &&
+            Objects.equals(this.description, workspace.description) &&
+            Objects.equals(this.selfUri, workspace.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.MessageEvaluation;
@@ -50,7 +51,7 @@ public class WritableDialerContact  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The identifier of the contact list containing this contact.
    **/
@@ -68,7 +69,7 @@ public class WritableDialerContact  implements Serializable {
     this.contactListId = contactListId;
   }
 
-  
+
   /**
    * An ordered map of the contact's columns and corresponding values.
    **/
@@ -86,14 +87,14 @@ public class WritableDialerContact  implements Serializable {
     this.data = data;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A map of SMS records for the contact phone columns.")
   @JsonProperty("latestSmsEvaluations")
   public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
     return latestSmsEvaluations;
   }
 
-  
+
   /**
    * Indicates whether or not the contact can be called.
    **/
@@ -111,7 +112,7 @@ public class WritableDialerContact  implements Serializable {
     this.callable = callable;
   }
 
-  
+
   /**
    * A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
    **/
@@ -129,7 +130,6 @@ public class WritableDialerContact  implements Serializable {
     this.phoneNumberStatus = phoneNumberStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +140,13 @@ public class WritableDialerContact  implements Serializable {
       return false;
     }
     WritableDialerContact writableDialerContact = (WritableDialerContact) o;
+
     return Objects.equals(this.id, writableDialerContact.id) &&
-        Objects.equals(this.contactListId, writableDialerContact.contactListId) &&
-        Objects.equals(this.data, writableDialerContact.data) &&
-        Objects.equals(this.latestSmsEvaluations, writableDialerContact.latestSmsEvaluations) &&
-        Objects.equals(this.callable, writableDialerContact.callable) &&
-        Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus);
+            Objects.equals(this.contactListId, writableDialerContact.contactListId) &&
+            Objects.equals(this.data, writableDialerContact.data) &&
+            Objects.equals(this.latestSmsEvaluations, writableDialerContact.latestSmsEvaluations) &&
+            Objects.equals(this.callable, writableDialerContact.callable) &&
+            Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus);
   }
 
   @Override

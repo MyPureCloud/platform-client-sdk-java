@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class FaxSummary  implements Serializable {
     this.readCount = readCount;
   }
 
-  
+
   /**
    **/
   public FaxSummary unreadCount(Integer unreadCount) {
@@ -58,7 +59,7 @@ public class FaxSummary  implements Serializable {
     this.unreadCount = unreadCount;
   }
 
-  
+
   /**
    **/
   public FaxSummary totalCount(Integer totalCount) {
@@ -75,7 +76,6 @@ public class FaxSummary  implements Serializable {
     this.totalCount = totalCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class FaxSummary  implements Serializable {
       return false;
     }
     FaxSummary faxSummary = (FaxSummary) o;
+
     return Objects.equals(this.readCount, faxSummary.readCount) &&
-        Objects.equals(this.unreadCount, faxSummary.unreadCount) &&
-        Objects.equals(this.totalCount, faxSummary.totalCount);
+            Objects.equals(this.unreadCount, faxSummary.unreadCount) &&
+            Objects.equals(this.totalCount, faxSummary.totalCount);
   }
 
   @Override

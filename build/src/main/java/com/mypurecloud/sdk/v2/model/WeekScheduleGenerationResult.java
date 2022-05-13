@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationWarning;
@@ -46,7 +47,7 @@ public class WeekScheduleGenerationResult  implements Serializable {
     this.failed = failed;
   }
 
-  
+
   /**
    * ID of the schedule run
    **/
@@ -64,7 +65,7 @@ public class WeekScheduleGenerationResult  implements Serializable {
     this.runId = runId;
   }
 
-  
+
   /**
    * Warning messages from the schedule run. This will be available only when requesting information for a single week schedule
    **/
@@ -82,7 +83,7 @@ public class WeekScheduleGenerationResult  implements Serializable {
     this.agentWarnings = agentWarnings;
   }
 
-  
+
   /**
    * Count of warning messages from the schedule run. This will be available only when requesting multiple week schedules
    **/
@@ -100,7 +101,6 @@ public class WeekScheduleGenerationResult  implements Serializable {
     this.agentWarningCount = agentWarningCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class WeekScheduleGenerationResult  implements Serializable {
       return false;
     }
     WeekScheduleGenerationResult weekScheduleGenerationResult = (WeekScheduleGenerationResult) o;
+
     return Objects.equals(this.failed, weekScheduleGenerationResult.failed) &&
-        Objects.equals(this.runId, weekScheduleGenerationResult.runId) &&
-        Objects.equals(this.agentWarnings, weekScheduleGenerationResult.agentWarnings) &&
-        Objects.equals(this.agentWarningCount, weekScheduleGenerationResult.agentWarningCount);
+            Objects.equals(this.runId, weekScheduleGenerationResult.runId) &&
+            Objects.equals(this.agentWarnings, weekScheduleGenerationResult.agentWarnings) &&
+            Objects.equals(this.agentWarningCount, weekScheduleGenerationResult.agentWarningCount);
   }
 
   @Override

@@ -24,7 +24,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 public class DeleteTokenRequest {
-    
+
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -38,7 +38,7 @@ public class DeleteTokenRequest {
 	    this.setUserId(userId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,7 +69,7 @@ public class DeleteTokenRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/tokens/{userId}")
                 .withPathParameter("userId", userId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -80,12 +80,12 @@ public class DeleteTokenRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteTokenRequest request;
@@ -94,20 +94,20 @@ public class DeleteTokenRequest {
 			request = new DeleteTokenRequest();
 		}
 
-		
+
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteTokenRequest build() {
             

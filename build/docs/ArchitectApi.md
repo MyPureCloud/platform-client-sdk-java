@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatablesDivisionview**](ArchitectApi.html#getFlowsDatatablesDivisionview) | Returns a specific datatable by id |
 | [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | Retrieve a list of datatables for the org |
 | [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
-| [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started. |
+| [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution's details. Flow execution details are available for several days after the flow is started. |
 | [**getFlowsJob**](ArchitectApi.html#getFlowsJob) | Fetch Architect Job Status |
 | [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | Get a flow milestone |
 | [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | Get a pageable list of flow milestones, filtered by query parameters |
@@ -96,7 +96,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | Begin an import process for importing rows into a datatable |
 | [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry for the datatable. |
 | [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
-| [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type. |
+| [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type. |
 | [**postFlowsJobs**](ArchitectApi.html#postFlowsJobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job. |
 | [**postFlowsMilestones**](ArchitectApi.html#postFlowsMilestones) | Create a flow milestone |
 | [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | Create a flow outcome |
@@ -123,8 +123,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteArchitectEmergencygroup(emergencyGroupId)
 
 Deletes a emergency group by ID
-
-
 
 Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}  
 
@@ -186,8 +184,6 @@ null (empty response body)
 
 Delete an IVR Config.
 
-
-
 Wraps DELETE /api/v2/architect/ivrs/{ivrId}  
 
 Requires ALL permissions: 
@@ -247,8 +243,6 @@ null (empty response body)
 > Void deleteArchitectPrompt(promptId, allResources)
 
 Delete specified user prompt
-
-
 
 Wraps DELETE /api/v2/architect/prompts/{promptId}  
 
@@ -312,8 +306,6 @@ null (empty response body)
 
 Delete specified user prompt resource
 
-
-
 Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}  
 
 Requires ALL permissions: 
@@ -375,8 +367,6 @@ null (empty response body)
 > Void deleteArchitectPromptResourceAudio(promptId, languageCode)
 
 Delete specified user prompt resource audio
-
-
 
 Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio  
 
@@ -470,7 +460,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
-List<String> id = Arrays.asList("id_example"); // List<String> | List of Prompt IDs
+List<String> id = Arrays.asList(null); // List<String> | List of Prompt IDs
 try {
     Operation result = apiInstance.deleteArchitectPrompts(id);
     System.out.println(result);
@@ -502,8 +492,6 @@ try {
 > Void deleteArchitectSchedule(scheduleId)
 
 Delete a schedule by id
-
-
 
 Wraps DELETE /api/v2/architect/schedules/{scheduleId}  
 
@@ -565,8 +553,6 @@ null (empty response body)
 
 Deletes a schedule group by ID
 
-
-
 Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}  
 
 Requires ALL permissions: 
@@ -626,8 +612,6 @@ null (empty response body)
 > Void deleteArchitectSystempromptResource(promptId, languageCode)
 
 Delete a system prompt resource override.
-
-
 
 Wraps DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}  
 
@@ -690,8 +674,6 @@ null (empty response body)
 > Void deleteFlow(flowId)
 
 Delete flow
-
-
 
 Wraps DELETE /api/v2/flows/{flowId}  
 
@@ -783,7 +765,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
-List<String> id = Arrays.asList("id_example"); // List<String> | List of Flow IDs
+List<String> id = Arrays.asList(null); // List<String> | List of Flow IDs
 try {
     Operation result = apiInstance.deleteFlows(id);
     System.out.println(result);
@@ -941,11 +923,9 @@ null (empty response body)
 
 
 
-> [Empty](Empty.html) deleteFlowsMilestone(milestoneId)
+> Empty deleteFlowsMilestone(milestoneId)
 
 Delete a flow milestone.
-
-
 
 Wraps DELETE /api/v2/flows/milestones/{milestoneId}  
 
@@ -996,7 +976,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getArchitectDependencytracking"></a>
 
@@ -1007,8 +987,6 @@ try {
 > [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
 
 Get Dependency Tracking objects that have a given display name
-
-
 
 Wraps GET /api/v2/architect/dependencytracking  
 
@@ -1041,11 +1019,11 @@ ArchitectApi apiInstance = new ArchitectApi();
 String name = "name_example"; // String | Object name to search for
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-List<String> objectType = Arrays.asList("objectType_example"); // List<String> | Object type(s) to search for
+List<String> objectType = Arrays.asList(null); // List<String> | Object type(s) to search for
 Boolean consumedResources = true; // Boolean | Include resources each result item consumes
 Boolean consumingResources = true; // Boolean | Include resources that consume each result item
-List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Types of consumed resources to return, if consumed resources are requested
-List<String> consumingResourceType = Arrays.asList("consumingResourceType_example"); // List<String> | Types of consuming resources to return, if consuming resources are requested
+List<String> consumedResourceType = Arrays.asList(null); // List<String> | Types of consumed resources to return, if consumed resources are requested
+List<String> consumingResourceType = Arrays.asList(null); // List<String> | Types of consuming resources to return, if consuming resources are requested
 try {
     DependencyObjectEntityListing result = apiInstance.getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType);
     System.out.println(result);
@@ -1084,8 +1062,6 @@ try {
 > [DependencyStatus](DependencyStatus.html) getArchitectDependencytrackingBuild()
 
 Get Dependency Tracking build status for an organization
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/build  
 
@@ -1144,8 +1120,6 @@ This endpoint does not require any parameters.
 
 Get resources that are consumed by a given Dependency Tracking object
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/consumedresources  
 
 Requires ALL permissions: 
@@ -1177,7 +1151,7 @@ ArchitectApi apiInstance = new ArchitectApi();
 String id = "id_example"; // String | Consuming object ID
 String version = "version_example"; // String | Consuming object version
 String objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
-List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consumed resources to show
+List<String> resourceType = Arrays.asList(null); // List<String> | Types of consumed resources to show
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 try {
@@ -1217,8 +1191,6 @@ try {
 
 Get resources that consume a given Dependency Tracking object
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/consumingresources  
 
 Requires ALL permissions: 
@@ -1249,7 +1221,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 String id = "id_example"; // String | Consumed object ID
 String objectType = "objectType_example"; // String | Consumed object type
-List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consuming resources to show.  Only versioned types are allowed here.
+List<String> resourceType = Arrays.asList(null); // List<String> | Types of consuming resources to show.  Only versioned types are allowed here.
 String version = "version_example"; // String | Object version
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
@@ -1292,8 +1264,6 @@ try {
 
 Get Dependency Tracking objects that consume deleted resources
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers  
 
 Requires ALL permissions: 
@@ -1323,10 +1293,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String name = "name_example"; // String | Name to search for
-List<String> objectType = Arrays.asList("objectType_example"); // List<String> | Object type(s) to search for
+List<String> objectType = Arrays.asList(null); // List<String> | Object type(s) to search for
 String flowFilter = "flowFilter_example"; // String | Show only checkedIn or published flows
 Boolean consumedResources = false; // Boolean | Return consumed resources?
-List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Resource type(s) to return
+List<String> consumedResourceType = Arrays.asList(null); // List<String> | Resource type(s) to return
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 try {
@@ -1367,8 +1337,6 @@ try {
 
 Get a Dependency Tracking object
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/object  
 
 Requires ALL permissions: 
@@ -1402,8 +1370,8 @@ String version = "version_example"; // String | Object version
 String objectType = "objectType_example"; // String | Object type
 Boolean consumedResources = true; // Boolean | Include resources this item consumes
 Boolean consumingResources = true; // Boolean | Include resources that consume this item
-List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Types of consumed resources to return, if consumed resources are requested
-List<String> consumingResourceType = Arrays.asList("consumingResourceType_example"); // List<String> | Types of consuming resources to return, if consuming resources are requested
+List<String> consumedResourceType = Arrays.asList(null); // List<String> | Types of consumed resources to return, if consumed resources are requested
+List<String> consumingResourceType = Arrays.asList(null); // List<String> | Types of consuming resources to return, if consuming resources are requested
 Boolean consumedResourceRequest = true; // Boolean | Indicate that this is going to look up a consumed resource object
 try {
     DependencyObject result = apiInstance.getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest);
@@ -1443,8 +1411,6 @@ try {
 > [DependencyType](DependencyType.html) getArchitectDependencytrackingType(typeId)
 
 Get a Dependency Tracking type.
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/types/{typeId}  
 
@@ -1506,8 +1472,6 @@ try {
 > [DependencyTypeEntityListing](DependencyTypeEntityListing.html) getArchitectDependencytrackingTypes(pageNumber, pageSize)
 
 Get Dependency Tracking types.
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/types  
 
@@ -1572,8 +1536,6 @@ try {
 
 Get Dependency Tracking objects that depend on updated resources
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers  
 
 Requires ALL permissions: 
@@ -1603,9 +1565,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String name = "name_example"; // String | Name to search for
-List<String> objectType = Arrays.asList("objectType_example"); // List<String> | Object type(s) to search for
+List<String> objectType = Arrays.asList(null); // List<String> | Object type(s) to search for
 Boolean consumedResources = false; // Boolean | Return consumed resources?
-List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Resource type(s) to return
+List<String> consumedResourceType = Arrays.asList(null); // List<String> | Resource type(s) to return
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 try {
@@ -1644,8 +1606,6 @@ try {
 > [EmergencyGroup](EmergencyGroup.html) getArchitectEmergencygroup(emergencyGroupId)
 
 Gets a emergency group by ID
-
-
 
 Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId}  
 
@@ -1707,8 +1667,6 @@ try {
 > [EmergencyGroupListing](EmergencyGroupListing.html) getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of emergency groups.
-
-
 
 Wraps GET /api/v2/architect/emergencygroups  
 
@@ -1779,8 +1737,6 @@ try {
 
 Get an IVR config.
 
-
-
 Wraps GET /api/v2/architect/ivrs/{ivrId}  
 
 Requires ALL permissions: 
@@ -1841,8 +1797,6 @@ try {
 > [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get IVR configs.
-
-
 
 Wraps GET /api/v2/architect/ivrs  
 
@@ -1913,8 +1867,6 @@ try {
 
 Get specified user prompt
 
-
-
 Wraps GET /api/v2/architect/prompts/{promptId}  
 
 Requires ALL permissions: 
@@ -1976,8 +1928,6 @@ try {
 
 Get generated prompt history
 
-
-
 Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId}  
 
 Requires ALL permissions: 
@@ -2012,7 +1962,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortOrder = "desc"; // String | Sort order
 String sortBy = "timestamp"; // String | Sort by
-List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions to include (omit to include all)
+List<String> action = Arrays.asList(null); // List<String> | Flow actions to include (omit to include all)
 try {
     HistoryListing result = apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action);
     System.out.println(result);
@@ -2050,8 +2000,6 @@ try {
 > [PromptAsset](PromptAsset.html) getArchitectPromptResource(promptId, languageCode)
 
 Get specified user prompt resource
-
-
 
 Wraps GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}  
 
@@ -2215,7 +2163,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-List<String> name = Arrays.asList("name_example"); // List<String> | Name
+List<String> name = Arrays.asList(null); // List<String> | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
 String sortBy = "id"; // String | Sort by
@@ -2257,8 +2205,6 @@ try {
 > [Schedule](Schedule.html) getArchitectSchedule(scheduleId)
 
 Get a schedule by ID
-
-
 
 Wraps GET /api/v2/architect/schedules/{scheduleId}  
 
@@ -2321,8 +2267,6 @@ try {
 
 Gets a schedule group by ID
 
-
-
 Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId}  
 
 Requires ALL permissions: 
@@ -2384,8 +2328,6 @@ try {
 
 Get a list of schedule groups.
 
-
-
 Wraps GET /api/v2/architect/schedulegroups  
 
 Requires ALL permissions: 
@@ -2420,7 +2362,7 @@ String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name of the Schedule Group to filter by.
 String scheduleIds = "scheduleIds_example"; // String | A comma-delimited list of Schedule IDs to filter by.
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | List of divisionIds on which to filter.
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
 try {
     ScheduleGroupEntityListing result = apiInstance.getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId);
     System.out.println(result);
@@ -2459,8 +2401,6 @@ try {
 
 Get a list of schedules.
 
-
-
 Wraps GET /api/v2/architect/schedules  
 
 Requires ALL permissions: 
@@ -2494,7 +2434,7 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name of the Schedule to filter by.
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | List of divisionIds on which to filter.
+List<String> divisionId = Arrays.asList(null); // List<String> | List of divisionIds on which to filter.
 try {
     ScheduleEntityListing result = apiInstance.getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name, divisionId);
     System.out.println(result);
@@ -2531,8 +2471,6 @@ try {
 > [SystemPrompt](SystemPrompt.html) getArchitectSystemprompt(promptId)
 
 Get a system prompt
-
-
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}  
 
@@ -2595,8 +2533,6 @@ try {
 
 Get generated prompt history
 
-
-
 Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}  
 
 Requires ALL permissions: 
@@ -2631,7 +2567,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortOrder = "desc"; // String | Sort order
 String sortBy = "timestamp"; // String | Sort by
-List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions to include (omit to include all)
+List<String> action = Arrays.asList(null); // List<String> | Flow actions to include (omit to include all)
 try {
     HistoryListing result = apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action);
     System.out.println(result);
@@ -2669,8 +2605,6 @@ try {
 > [SystemPromptAsset](SystemPromptAsset.html) getArchitectSystempromptResource(promptId, languageCode)
 
 Get a system prompt resource.
-
-
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}  
 
@@ -2734,8 +2668,6 @@ try {
 > [SystemPromptAssetEntityListing](SystemPromptAssetEntityListing.html) getArchitectSystempromptResources(promptId, pageNumber, pageSize, sortBy, sortOrder)
 
 Get system prompt resources.
-
-
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources  
 
@@ -2805,8 +2737,6 @@ try {
 > [SystemPromptEntityListing](SystemPromptEntityListing.html) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription)
 
 Get System Prompts
-
-
 
 Wraps GET /api/v2/architect/systemprompts  
 
@@ -2881,8 +2811,6 @@ try {
 
 Get flow
 
-
-
 Wraps GET /api/v2/flows/{flowId}  
 
 Requires ANY permissions: 
@@ -2946,8 +2874,6 @@ try {
 
 Get generated flow history
 
-
-
 Wraps GET /api/v2/flows/{flowId}/history/{historyId}  
 
 Requires ANY permissions: 
@@ -2982,7 +2908,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortOrder = "desc"; // String | Sort order
 String sortBy = "timestamp"; // String | Sort by
-List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions to include (omit to include all)
+List<String> action = Arrays.asList(null); // List<String> | Flow actions to include (omit to include all)
 try {
     HistoryListing result = apiInstance.getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action);
     System.out.println(result);
@@ -3020,8 +2946,6 @@ try {
 > Object getFlowLatestconfiguration(flowId, deleted)
 
 Get the latest configuration for flow
-
-
 
 Wraps GET /api/v2/flows/{flowId}/latestconfiguration  
 
@@ -3085,8 +3009,6 @@ try {
 > [FlowVersion](FlowVersion.html) getFlowVersion(flowId, versionId, deleted)
 
 Get flow version
-
-
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}  
 
@@ -3153,8 +3075,6 @@ try {
 
 Create flow version configuration
 
-
-
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration  
 
 Requires ANY permissions: 
@@ -3219,8 +3139,6 @@ try {
 > [FlowVersionEntityListing](FlowVersionEntityListing.html) getFlowVersions(flowId, pageNumber, pageSize, deleted)
 
 Get flow version list
-
-
 
 Wraps GET /api/v2/flows/{flowId}/versions  
 
@@ -3319,12 +3237,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
-List<String> type = Arrays.asList("type_example"); // List<String> | Type
+List<String> type = Arrays.asList(null); // List<String> | Type
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList("id_example"); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
@@ -3335,9 +3253,9 @@ String lockedByClientId = "lockedByClientId_example"; // String | Locked by clie
 String secure = "secure_example"; // String | Secure
 Boolean deleted = false; // Boolean | Include deleted
 Boolean includeSchemas = false; // Boolean | Include variable schemas
-String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
-String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+String publishedAfter = 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01; // String | Published after
+String publishedBefore = 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01; // String | Published before
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 try {
     FlowEntityListing result = apiInstance.getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId);
     System.out.println(result);
@@ -3368,8 +3286,8 @@ try {
 | **secure** | **String**| Secure | [optional]<br />**Values**: any, checkedin, published 
 | **deleted** | **Boolean**| Include deleted | [optional] [default to false] 
 | **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] 
-| **publishedAfter** | **String**| Published after | [optional] 
-| **publishedBefore** | **String**| Published before | [optional] 
+| **publishedAfter** | **String**| Published after | [optional] [default to null] 
+| **publishedBefore** | **String**| Published before | [optional] [default to null] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
 {: class="table-striped"}
 
@@ -3649,7 +3567,7 @@ try {
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) getFlowsDatatableRow(datatableId, rowId, showbrief)
+> Map&lt;String, Object&gt; getFlowsDatatableRow(datatableId, rowId, showbrief)
 
 Returns a specific row for the datatable
 
@@ -3709,7 +3627,7 @@ try {
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="getFlowsDatatableRows"></a>
 
@@ -3826,7 +3744,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 String name = "name_example"; // String | Name to filter by
 try {
     DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name);
@@ -3966,7 +3884,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 String name = "name_example"; // String | Name to filter by
 try {
     DataTablesDomainEntityListing result = apiInstance.getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name);
@@ -4036,17 +3954,17 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
-List<String> type = Arrays.asList("type_example"); // List<String> | Type
+List<String> type = Arrays.asList(null); // List<String> | Type
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList("id_example"); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID
 String name = "name_example"; // String | Name
 String publishVersionId = "publishVersionId_example"; // String | Publish version ID
-String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
-String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+String publishedAfter = 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01; // String | Published after
+String publishedBefore = 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01; // String | Published before
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 Boolean includeSchemas = false; // Boolean | Include variable schemas
 try {
     FlowDivisionViewEntityListing result = apiInstance.getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas);
@@ -4070,8 +3988,8 @@ try {
 | **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
 | **publishVersionId** | **String**| Publish version ID | [optional] 
-| **publishedAfter** | **String**| Published after | [optional] 
-| **publishedBefore** | **String**| Published before | [optional] 
+| **publishedAfter** | **String**| Published after | [optional] [default to null] 
+| **publishedBefore** | **String**| Published before | [optional] [default to null] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
 | **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] 
 {: class="table-striped"}
@@ -4089,9 +4007,7 @@ try {
 
 > [FlowRuntimeExecution](FlowRuntimeExecution.html) getFlowsExecution(flowExecutionId)
 
-Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
-
-
+Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 
 Wraps GET /api/v2/flows/executions/{flowExecutionId}  
 
@@ -4154,8 +4070,6 @@ try {
 
 Fetch Architect Job Status
 
-
-
 Wraps GET /api/v2/flows/jobs/{jobId}  
 
 Requires ALL permissions: 
@@ -4185,7 +4099,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String jobId = "jobId_example"; // String | Job ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     ArchitectJobStateResponse result = apiInstance.getFlowsJob(jobId, expand);
     System.out.println(result);
@@ -4316,11 +4230,11 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList("id_example"); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 try {
     FlowMilestoneListing result = apiInstance.getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId);
     System.out.println(result);
@@ -4395,9 +4309,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList("id_example"); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID
 String name = "name_example"; // String | Name
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 try {
     FlowMilestoneDivisionViewEntityListing result = apiInstance.getFlowsMilestonesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
     System.out.println(result);
@@ -4533,11 +4447,11 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList("id_example"); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 try {
     FlowOutcomeListing result = apiInstance.getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId);
     System.out.println(result);
@@ -4612,9 +4526,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
-List<String> id = Arrays.asList("id_example"); // List<String> | ID
+List<String> id = Arrays.asList(null); // List<String> | ID
 String name = "name_example"; // String | Name
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 try {
     FlowOutcomeDivisionViewEntityListing result = apiInstance.getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
     System.out.println(result);
@@ -4711,8 +4625,6 @@ null (empty response body)
 
 Creates a new emergency group
 
-
-
 Wraps POST /api/v2/architect/emergencygroups  
 
 Requires ALL permissions: 
@@ -4773,8 +4685,6 @@ try {
 > [IVR](IVR.html) postArchitectIvrs(body)
 
 Create IVR config.
-
-
 
 Wraps POST /api/v2/architect/ivrs  
 
@@ -4900,8 +4810,6 @@ try {
 
 Create a new user prompt resource
 
-
-
 Wraps POST /api/v2/architect/prompts/{promptId}/resources  
 
 Requires ALL permissions: 
@@ -4965,8 +4873,6 @@ try {
 
 Create a new user prompt
 
-
-
 Wraps POST /api/v2/architect/prompts  
 
 Requires ALL permissions: 
@@ -5028,8 +4934,6 @@ try {
 
 Creates a new schedule group
 
-
-
 Wraps POST /api/v2/architect/schedulegroups  
 
 Requires ALL permissions: 
@@ -5090,8 +4994,6 @@ try {
 > [Schedule](Schedule.html) postArchitectSchedules(body)
 
 Create a new schedule.
-
-
 
 Wraps POST /api/v2/architect/schedules  
 
@@ -5216,8 +5118,6 @@ try {
 > [SystemPromptAsset](SystemPromptAsset.html) postArchitectSystempromptResources(promptId, body)
 
 Create system prompt resource override.
-
-
 
 Wraps POST /api/v2/architect/systemprompts/{promptId}/resources  
 
@@ -5345,8 +5245,6 @@ try {
 
 Create flow version
 
-
-
 Wraps POST /api/v2/flows/{flowId}/versions  
 
 Requires ANY permissions: 
@@ -5376,7 +5274,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
-Object body = null; // Object | 
+Object body = new HashMap(); // Object | 
 try {
     FlowVersion result = apiInstance.postFlowVersions(flowId, body);
     System.out.println(result);
@@ -5392,7 +5290,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
-| **body** | **Object**|  | 
+| **body** | [**Object**](Object.html)|  | 
 {: class="table-striped"}
 
 
@@ -5409,8 +5307,6 @@ try {
 > [Flow](Flow.html) postFlows(body, language)
 
 Create flow
-
-
 
 Wraps POST /api/v2/flows  
 
@@ -5539,8 +5435,6 @@ try {
 
 Check-out flow
 
-
-
 Wraps POST /api/v2/flows/actions/checkout  
 
 Requires ANY permissions: 
@@ -5601,8 +5495,6 @@ try {
 > [Flow](Flow.html) postFlowsActionsDeactivate(flow)
 
 Deactivate flow
-
-
 
 Wraps POST /api/v2/flows/actions/deactivate  
 
@@ -5730,8 +5622,6 @@ try {
 > [Flow](Flow.html) postFlowsActionsRevert(flow)
 
 Revert flow
-
-
 
 Wraps POST /api/v2/flows/actions/revert  
 
@@ -5983,11 +5873,11 @@ try {
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) postFlowsDatatableRows(datatableId, dataTableRow)
+> Map&lt;String, Object&gt; postFlowsDatatableRows(datatableId, dataTableRow)
 
 Create a new row entry for the datatable.
 
-Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows  
 
@@ -6019,7 +5909,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
-Object dataTableRow = null; // Object | 
+Object dataTableRow = new HashMap(); // Object | 
 try {
     Map<String, Object> result = apiInstance.postFlowsDatatableRows(datatableId, dataTableRow);
     System.out.println(result);
@@ -6035,13 +5925,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
-| **dataTableRow** | **Object**|  | 
+| **dataTableRow** | [**Object**](Object.html)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="postFlowsDatatables"></a>
 
@@ -6053,7 +5943,7 @@ try {
 
 Create a new datatable with the specified json-schema definition
 
-This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
 Wraps POST /api/v2/flows/datatables  
 
@@ -6114,7 +6004,7 @@ try {
 
 > [FlowExecutionLaunchResponse](FlowExecutionLaunchResponse.html) postFlowsExecutions(flowLaunchRequest)
 
-Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 
 The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
 
@@ -6179,8 +6069,6 @@ try {
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 
-
-
 Wraps POST /api/v2/flows/jobs  
 
 Requires ALL permissions: 
@@ -6237,8 +6125,6 @@ This endpoint does not require any parameters.
 > [FlowMilestone](FlowMilestone.html) postFlowsMilestones(body)
 
 Create a flow milestone
-
-
 
 Wraps POST /api/v2/flows/milestones  
 
@@ -6364,8 +6250,6 @@ try {
 
 Updates a emergency group by ID
 
-
-
 Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId}  
 
 Requires ALL permissions: 
@@ -6428,8 +6312,6 @@ try {
 > [IVR](IVR.html) putArchitectIvr(ivrId, body)
 
 Update an IVR Config.
-
-
 
 Wraps PUT /api/v2/architect/ivrs/{ivrId}  
 
@@ -6494,8 +6376,6 @@ try {
 
 Update specified user prompt
 
-
-
 Wraps PUT /api/v2/architect/prompts/{promptId}  
 
 Requires ALL permissions: 
@@ -6558,8 +6438,6 @@ try {
 > [PromptAsset](PromptAsset.html) putArchitectPromptResource(promptId, languageCode, body)
 
 Update specified user prompt resource
-
-
 
 Wraps PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}  
 
@@ -6626,8 +6504,6 @@ try {
 
 Update schedule by ID
 
-
-
 Wraps PUT /api/v2/architect/schedules/{scheduleId}  
 
 Requires ALL permissions: 
@@ -6691,8 +6567,6 @@ try {
 
 Updates a schedule group by ID
 
-
-
 Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId}  
 
 Requires ALL permissions: 
@@ -6755,8 +6629,6 @@ try {
 > [SystemPromptAsset](SystemPromptAsset.html) putArchitectSystempromptResource(promptId, languageCode, body)
 
 Updates a system prompt resource override.
-
-
 
 Wraps PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}  
 
@@ -6822,8 +6694,6 @@ try {
 > [Flow](Flow.html) putFlow(flowId, body)
 
 Update flow
-
-
 
 Wraps PUT /api/v2/flows/{flowId}  
 
@@ -6951,11 +6821,11 @@ try {
 
 
 
-> [Map&lt;String, Object&gt;](Map.html) putFlowsDatatableRow(datatableId, rowId, body)
+> Map&lt;String, Object&gt; putFlowsDatatableRow(datatableId, rowId, body)
 
 Update a row entry
 
-Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
 
@@ -6988,7 +6858,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
 String rowId = "rowId_example"; // String | the key for the row
-Object body = null; // Object | datatable row
+Object body = new HashMap(); // Object | datatable row
 try {
     Map<String, Object> result = apiInstance.putFlowsDatatableRow(datatableId, rowId, body);
     System.out.println(result);
@@ -7005,13 +6875,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
 | **rowId** | **String**| the key for the row | 
-| **body** | **Object**| datatable row | [optional] 
+| **body** | [**Object**](Object.html)| datatable row | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Map&lt;String, Object&gt;**](Map.html)
+**Map&lt;String, Object&gt;**
 
 <a name="putFlowsMilestone"></a>
 
@@ -7022,8 +6892,6 @@ try {
 > [FlowMilestone](FlowMilestone.html) putFlowsMilestone(milestoneId, body)
 
 Updates a flow milestone
-
-
 
 Wraps PUT /api/v2/flows/milestones/{milestoneId}  
 

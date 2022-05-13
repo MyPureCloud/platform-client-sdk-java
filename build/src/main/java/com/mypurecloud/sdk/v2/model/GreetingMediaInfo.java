@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +32,7 @@ public class GreetingMediaInfo  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GreetingMediaInfo mediaFileUri(String mediaFileUri) {
@@ -48,7 +49,7 @@ public class GreetingMediaInfo  implements Serializable {
     this.mediaFileUri = mediaFileUri;
   }
 
-  
+
   /**
    **/
   public GreetingMediaInfo mediaImageUri(String mediaImageUri) {
@@ -65,7 +66,6 @@ public class GreetingMediaInfo  implements Serializable {
     this.mediaImageUri = mediaImageUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -76,9 +76,10 @@ public class GreetingMediaInfo  implements Serializable {
       return false;
     }
     GreetingMediaInfo greetingMediaInfo = (GreetingMediaInfo) o;
+
     return Objects.equals(this.id, greetingMediaInfo.id) &&
-        Objects.equals(this.mediaFileUri, greetingMediaInfo.mediaFileUri) &&
-        Objects.equals(this.mediaImageUri, greetingMediaInfo.mediaImageUri);
+            Objects.equals(this.mediaFileUri, greetingMediaInfo.mediaFileUri) &&
+            Objects.equals(this.mediaImageUri, greetingMediaInfo.mediaImageUri);
   }
 
   @Override

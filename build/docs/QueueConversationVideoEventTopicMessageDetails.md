@@ -24,14 +24,14 @@ title: QueueConversationVideoEventTopicMessageDetails
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;queued&quot; |
-| SENT | &quot;sent&quot; |
-| FAILED | &quot;failed&quot; |
-| RECEIVED | &quot;received&quot; |
-| DELIVERY_SUCCESS | &quot;delivery-success&quot; |
-| DELIVERY_FAILED | &quot;delivery-failed&quot; |
-| READ | &quot;read&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUEUED | &quot;queued&quot; | 
+| SENT | &quot;sent&quot; | 
+| FAILED | &quot;failed&quot; | 
+| RECEIVED | &quot;received&quot; | 
+| DELIVERY_SUCCESS | &quot;delivery-success&quot; | 
+| DELIVERY_FAILED | &quot;delivery-failed&quot; | 
+| READ | &quot;read&quot; | 
 {: class="table table-striped"}
 
 

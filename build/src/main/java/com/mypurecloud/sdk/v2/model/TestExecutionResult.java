@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -47,7 +48,7 @@ public class TestExecutionResult  implements Serializable {
     this.operations = operations;
   }
 
-  
+
   /**
    * The final error encountered during the test that resulted in test failure
    **/
@@ -65,7 +66,7 @@ public class TestExecutionResult  implements Serializable {
     this.error = error;
   }
 
-  
+
   /**
    * The final result of the test. This is the response that would be returned during normal action execution
    **/
@@ -83,7 +84,7 @@ public class TestExecutionResult  implements Serializable {
     this.finalResult = finalResult;
   }
 
-  
+
   /**
    * Indicates whether or not the test was a success
    **/
@@ -101,7 +102,6 @@ public class TestExecutionResult  implements Serializable {
     this.success = success;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class TestExecutionResult  implements Serializable {
       return false;
     }
     TestExecutionResult testExecutionResult = (TestExecutionResult) o;
+
     return Objects.equals(this.operations, testExecutionResult.operations) &&
-        Objects.equals(this.error, testExecutionResult.error) &&
-        Objects.equals(this.finalResult, testExecutionResult.finalResult) &&
-        Objects.equals(this.success, testExecutionResult.success);
+            Objects.equals(this.error, testExecutionResult.error) &&
+            Objects.equals(this.finalResult, testExecutionResult.finalResult) &&
+            Objects.equals(this.success, testExecutionResult.success);
   }
 
   @Override

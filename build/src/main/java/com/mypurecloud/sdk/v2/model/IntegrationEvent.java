@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,63 +99,63 @@ public class IntegrationEvent  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Correlation ID for the event")
   @JsonProperty("correlationId")
   public String getCorrelationId() {
     return correlationId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Time the event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("timestamp")
   public Date getTimestamp() {
     return timestamp;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates the severity of the event.")
   @JsonProperty("level")
   public LevelEnum getLevel() {
     return level;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A classification for the event. Suitable for programmatic searching, sorting, or filtering")
   @JsonProperty("eventCode")
   public String getEventCode() {
     return eventCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Message indicating what happened")
   @JsonProperty("message")
   public MessageInfo getMessage() {
     return message;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Collection of entities affected by or pertaining to the event (e.g. a list of Integrations or Bridge connectors)")
   @JsonProperty("entities")
   public List<EventEntity> getEntities() {
     return entities;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Map of context attributes specific to this event.")
   @JsonProperty("contextAttributes")
   public Map<String, String> getContextAttributes() {
     return contextAttributes;
   }
 
-  
+
   /**
    * Message with additional details about the event. (e.g. an exception cause.)
    **/
@@ -172,14 +173,13 @@ public class IntegrationEvent  implements Serializable {
     this.detailMessage = detailMessage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that took an action that resulted in the event.")
   @JsonProperty("user")
   public User getUser() {
     return user;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -190,17 +190,18 @@ public class IntegrationEvent  implements Serializable {
       return false;
     }
     IntegrationEvent integrationEvent = (IntegrationEvent) o;
+
     return Objects.equals(this.id, integrationEvent.id) &&
-        Objects.equals(this.selfUri, integrationEvent.selfUri) &&
-        Objects.equals(this.correlationId, integrationEvent.correlationId) &&
-        Objects.equals(this.timestamp, integrationEvent.timestamp) &&
-        Objects.equals(this.level, integrationEvent.level) &&
-        Objects.equals(this.eventCode, integrationEvent.eventCode) &&
-        Objects.equals(this.message, integrationEvent.message) &&
-        Objects.equals(this.entities, integrationEvent.entities) &&
-        Objects.equals(this.contextAttributes, integrationEvent.contextAttributes) &&
-        Objects.equals(this.detailMessage, integrationEvent.detailMessage) &&
-        Objects.equals(this.user, integrationEvent.user);
+            Objects.equals(this.selfUri, integrationEvent.selfUri) &&
+            Objects.equals(this.correlationId, integrationEvent.correlationId) &&
+            Objects.equals(this.timestamp, integrationEvent.timestamp) &&
+            Objects.equals(this.level, integrationEvent.level) &&
+            Objects.equals(this.eventCode, integrationEvent.eventCode) &&
+            Objects.equals(this.message, integrationEvent.message) &&
+            Objects.equals(this.entities, integrationEvent.entities) &&
+            Objects.equals(this.contextAttributes, integrationEvent.contextAttributes) &&
+            Objects.equals(this.detailMessage, integrationEvent.detailMessage) &&
+            Objects.equals(this.user, integrationEvent.user);
   }
 
   @Override

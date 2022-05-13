@@ -21,10 +21,10 @@ title: ResponseAssetStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| UPLOADED | &quot;Uploaded&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| UPLOADED | &quot;Uploaded&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.SipSearchResult;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
-import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
+import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
+import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 public class GetTelephonySiptracesDownloadDownloadIdRequest {
-    
+
 	private String downloadId;
 	public String getDownloadId() {
 		return this.downloadId;
@@ -42,7 +42,7 @@ public class GetTelephonySiptracesDownloadDownloadIdRequest {
 	    this.setDownloadId(downloadId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +73,7 @@ public class GetTelephonySiptracesDownloadDownloadIdRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/siptraces/download/{downloadId}")
                 .withPathParameter("downloadId", downloadId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -84,12 +84,12 @@ public class GetTelephonySiptracesDownloadDownloadIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String downloadId) {
 	    return new Builder()
 	            .withRequiredParams(downloadId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetTelephonySiptracesDownloadDownloadIdRequest request;
@@ -98,20 +98,20 @@ public class GetTelephonySiptracesDownloadDownloadIdRequest {
 			request = new GetTelephonySiptracesDownloadDownloadIdRequest();
 		}
 
-		
+
 		public Builder withDownloadId(String downloadId) {
 			request.setDownloadId(downloadId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String downloadId) {
 			request.setDownloadId(downloadId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetTelephonySiptracesDownloadDownloadIdRequest build() {
             

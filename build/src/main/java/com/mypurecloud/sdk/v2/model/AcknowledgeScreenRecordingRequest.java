@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class AcknowledgeScreenRecordingRequest  implements Serializable {
     this.participantJid = participantJid;
   }
 
-  
+
   /**
    **/
   public AcknowledgeScreenRecordingRequest roomId(String roomId) {
@@ -58,7 +59,7 @@ public class AcknowledgeScreenRecordingRequest  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    **/
   public AcknowledgeScreenRecordingRequest conversationId(String conversationId) {
@@ -75,7 +76,6 @@ public class AcknowledgeScreenRecordingRequest  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class AcknowledgeScreenRecordingRequest  implements Serializable {
       return false;
     }
     AcknowledgeScreenRecordingRequest acknowledgeScreenRecordingRequest = (AcknowledgeScreenRecordingRequest) o;
+
     return Objects.equals(this.participantJid, acknowledgeScreenRecordingRequest.participantJid) &&
-        Objects.equals(this.roomId, acknowledgeScreenRecordingRequest.roomId) &&
-        Objects.equals(this.conversationId, acknowledgeScreenRecordingRequest.conversationId);
+            Objects.equals(this.roomId, acknowledgeScreenRecordingRequest.roomId) &&
+            Objects.equals(this.conversationId, acknowledgeScreenRecordingRequest.conversationId);
   }
 
   @Override

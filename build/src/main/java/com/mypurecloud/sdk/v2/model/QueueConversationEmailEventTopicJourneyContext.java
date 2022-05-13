@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationEmailEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class QueueConversationEmailEventTopicJourneyContext  implements Serializ
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicJourneyContext customerSession(QueueConversationEmailEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class QueueConversationEmailEventTopicJourneyContext  implements Serializ
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationEmailEventTopicJourneyContext triggeringAction(QueueConversationEmailEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class QueueConversationEmailEventTopicJourneyContext  implements Serializ
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class QueueConversationEmailEventTopicJourneyContext  implements Serializ
       return false;
     }
     QueueConversationEmailEventTopicJourneyContext queueConversationEmailEventTopicJourneyContext = (QueueConversationEmailEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationEmailEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationEmailEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationEmailEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationEmailEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationEmailEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

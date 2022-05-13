@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The state of the shift trade after the update request is processed
    **/
@@ -161,7 +162,7 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The user who reviewed the request, if applicable
    **/
@@ -179,7 +180,7 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     this.reviewedBy = reviewedBy;
   }
 
-  
+
   /**
    * The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -197,7 +198,7 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     this.reviewedDate = reviewedDate;
   }
 
-  
+
   /**
    * The reason the update failed, if applicable
    **/
@@ -215,7 +216,7 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     this.failureReason = failureReason;
   }
 
-  
+
   /**
    * Version metadata for the shift trade
    **/
@@ -233,7 +234,6 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -244,12 +244,13 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
       return false;
     }
     BulkUpdateShiftTradeStateResultItem bulkUpdateShiftTradeStateResultItem = (BulkUpdateShiftTradeStateResultItem) o;
+
     return Objects.equals(this.id, bulkUpdateShiftTradeStateResultItem.id) &&
-        Objects.equals(this.state, bulkUpdateShiftTradeStateResultItem.state) &&
-        Objects.equals(this.reviewedBy, bulkUpdateShiftTradeStateResultItem.reviewedBy) &&
-        Objects.equals(this.reviewedDate, bulkUpdateShiftTradeStateResultItem.reviewedDate) &&
-        Objects.equals(this.failureReason, bulkUpdateShiftTradeStateResultItem.failureReason) &&
-        Objects.equals(this.metadata, bulkUpdateShiftTradeStateResultItem.metadata);
+            Objects.equals(this.state, bulkUpdateShiftTradeStateResultItem.state) &&
+            Objects.equals(this.reviewedBy, bulkUpdateShiftTradeStateResultItem.reviewedBy) &&
+            Objects.equals(this.reviewedDate, bulkUpdateShiftTradeStateResultItem.reviewedDate) &&
+            Objects.equals(this.failureReason, bulkUpdateShiftTradeStateResultItem.failureReason) &&
+            Objects.equals(this.metadata, bulkUpdateShiftTradeStateResultItem.metadata);
   }
 
   @Override

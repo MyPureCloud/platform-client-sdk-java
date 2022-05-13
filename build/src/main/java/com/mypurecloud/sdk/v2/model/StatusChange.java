@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -192,42 +193,41 @@ public class StatusChange  implements Serializable {
     return dateStatusChanged;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status the change request transitioned to")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status the change request transitioned from")
   @JsonProperty("previousStatus")
   public PreviousStatusEnum getPreviousStatus() {
     return previousStatus;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A short message describing the status change")
   @JsonProperty("message")
   public String getMessage() {
     return message;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If applicable, the user who updated the change request to this status")
   @JsonProperty("changedBy")
   public String getChangedBy() {
     return changedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The reason for rejecting the limit override request")
   @JsonProperty("rejectReason")
   public RejectReasonEnum getRejectReason() {
     return rejectReason;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -238,12 +238,13 @@ public class StatusChange  implements Serializable {
       return false;
     }
     StatusChange statusChange = (StatusChange) o;
+
     return Objects.equals(this.dateStatusChanged, statusChange.dateStatusChanged) &&
-        Objects.equals(this.status, statusChange.status) &&
-        Objects.equals(this.previousStatus, statusChange.previousStatus) &&
-        Objects.equals(this.message, statusChange.message) &&
-        Objects.equals(this.changedBy, statusChange.changedBy) &&
-        Objects.equals(this.rejectReason, statusChange.rejectReason);
+            Objects.equals(this.status, statusChange.status) &&
+            Objects.equals(this.previousStatus, statusChange.previousStatus) &&
+            Objects.equals(this.message, statusChange.message) &&
+            Objects.equals(this.changedBy, statusChange.changedBy) &&
+            Objects.equals(this.rejectReason, statusChange.rejectReason);
   }
 
   @Override

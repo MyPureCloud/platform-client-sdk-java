@@ -8,7 +8,7 @@ title: ContentNotificationTemplate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The messaging provider template ID. For WhatsApp, &#39;namespace@name&#39;. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The messaging provider template ID. For WhatsApp, 'namespace@name'. |  [optional] |
 | **language** | <!----><!---->**String**<!----> | Template language. |  [optional] |
 | **header** | <!----><!---->[**NotificationTemplateHeader**](NotificationTemplateHeader.html)<!----> | The template header. |  [optional] |
 | **body** | <!----><!---->[**NotificationTemplateBody**](NotificationTemplateBody.html)<!----> | The template body. |  |

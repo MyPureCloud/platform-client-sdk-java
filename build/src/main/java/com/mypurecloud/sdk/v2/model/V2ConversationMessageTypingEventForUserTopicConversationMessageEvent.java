@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessageEven
     this.eventType = eventType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessageEvent coBrowse(V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse coBrowse) {
@@ -108,7 +109,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessageEven
     this.coBrowse = coBrowse;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationMessageEvent typing(V2ConversationMessageTypingEventForUserTopicConversationEventTyping typing) {
@@ -125,7 +126,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessageEven
     this.typing = typing;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class V2ConversationMessageTypingEventForUserTopicConversationMessageEven
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationMessageEvent v2ConversationMessageTypingEventForUserTopicConversationMessageEvent = (V2ConversationMessageTypingEventForUserTopicConversationMessageEvent) o;
+
     return Objects.equals(this.eventType, v2ConversationMessageTypingEventForUserTopicConversationMessageEvent.eventType) &&
-        Objects.equals(this.coBrowse, v2ConversationMessageTypingEventForUserTopicConversationMessageEvent.coBrowse) &&
-        Objects.equals(this.typing, v2ConversationMessageTypingEventForUserTopicConversationMessageEvent.typing);
+            Objects.equals(this.coBrowse, v2ConversationMessageTypingEventForUserTopicConversationMessageEvent.coBrowse) &&
+            Objects.equals(this.typing, v2ConversationMessageTypingEventForUserTopicConversationMessageEvent.typing);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -43,7 +44,7 @@ public class OtherProfileAssignment  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The current performance profile that this user belongs to
    **/
@@ -61,14 +62,13 @@ public class OtherProfileAssignment  implements Serializable {
     this.currentProfile = currentProfile;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,9 +79,10 @@ public class OtherProfileAssignment  implements Serializable {
       return false;
     }
     OtherProfileAssignment otherProfileAssignment = (OtherProfileAssignment) o;
+
     return Objects.equals(this.id, otherProfileAssignment.id) &&
-        Objects.equals(this.currentProfile, otherProfileAssignment.currentProfile) &&
-        Objects.equals(this.selfUri, otherProfileAssignment.selfUri);
+            Objects.equals(this.currentProfile, otherProfileAssignment.currentProfile) &&
+            Objects.equals(this.selfUri, otherProfileAssignment.selfUri);
   }
 
   @Override

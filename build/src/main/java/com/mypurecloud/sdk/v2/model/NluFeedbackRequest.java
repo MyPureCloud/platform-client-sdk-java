@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntentFeedback;
@@ -45,7 +46,7 @@ public class NluFeedbackRequest  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Detected intent of the utterance
    **/
@@ -63,7 +64,7 @@ public class NluFeedbackRequest  implements Serializable {
     this.intents = intents;
   }
 
-  
+
   /**
    * The domain version ID of the feedback.
    **/
@@ -81,7 +82,6 @@ public class NluFeedbackRequest  implements Serializable {
     this.versionId = versionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class NluFeedbackRequest  implements Serializable {
       return false;
     }
     NluFeedbackRequest nluFeedbackRequest = (NluFeedbackRequest) o;
+
     return Objects.equals(this.text, nluFeedbackRequest.text) &&
-        Objects.equals(this.intents, nluFeedbackRequest.intents) &&
-        Objects.equals(this.versionId, nluFeedbackRequest.versionId);
+            Objects.equals(this.intents, nluFeedbackRequest.intents) &&
+            Objects.equals(this.versionId, nluFeedbackRequest.versionId);
   }
 
   @Override

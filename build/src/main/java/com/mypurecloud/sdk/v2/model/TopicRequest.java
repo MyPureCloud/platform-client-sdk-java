@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,7 +151,7 @@ public class TopicRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The topic description
    **/
@@ -168,7 +169,7 @@ public class TopicRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The topic strictness, default value is 72
    **/
@@ -186,7 +187,7 @@ public class TopicRequest  implements Serializable {
     this.strictness = strictness;
   }
 
-  
+
   /**
    * The ids of programs associated to the topic
    **/
@@ -204,7 +205,7 @@ public class TopicRequest  implements Serializable {
     this.programIds = programIds;
   }
 
-  
+
   /**
    * The topic tags
    **/
@@ -222,7 +223,7 @@ public class TopicRequest  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    * The topic dialect
    **/
@@ -240,7 +241,7 @@ public class TopicRequest  implements Serializable {
     this.dialect = dialect;
   }
 
-  
+
   /**
    * The topic participants, default value is All
    **/
@@ -258,7 +259,7 @@ public class TopicRequest  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    * The topic phrases
    **/
@@ -276,7 +277,6 @@ public class TopicRequest  implements Serializable {
     this.phrases = phrases;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -287,14 +287,15 @@ public class TopicRequest  implements Serializable {
       return false;
     }
     TopicRequest topicRequest = (TopicRequest) o;
+
     return Objects.equals(this.name, topicRequest.name) &&
-        Objects.equals(this.description, topicRequest.description) &&
-        Objects.equals(this.strictness, topicRequest.strictness) &&
-        Objects.equals(this.programIds, topicRequest.programIds) &&
-        Objects.equals(this.tags, topicRequest.tags) &&
-        Objects.equals(this.dialect, topicRequest.dialect) &&
-        Objects.equals(this.participants, topicRequest.participants) &&
-        Objects.equals(this.phrases, topicRequest.phrases);
+            Objects.equals(this.description, topicRequest.description) &&
+            Objects.equals(this.strictness, topicRequest.strictness) &&
+            Objects.equals(this.programIds, topicRequest.programIds) &&
+            Objects.equals(this.tags, topicRequest.tags) &&
+            Objects.equals(this.dialect, topicRequest.dialect) &&
+            Objects.equals(this.participants, topicRequest.participants) &&
+            Objects.equals(this.phrases, topicRequest.phrases);
   }
 
   @Override

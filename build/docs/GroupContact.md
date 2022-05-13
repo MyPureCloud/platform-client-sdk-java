@@ -22,9 +22,9 @@ title: GroupContact
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GROUPRING | &quot;GROUPRING&quot; |
-| GROUPPHONE | &quot;GROUPPHONE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GROUPRING | &quot;GROUPRING&quot; | 
+| GROUPPHONE | &quot;GROUPPHONE&quot; | 
 {: class="table table-striped"}
 
 
@@ -34,8 +34,8 @@ title: GroupContact
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PHONE | &quot;PHONE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PHONE | &quot;PHONE&quot; | 
 {: class="table table-striped"}
 
 

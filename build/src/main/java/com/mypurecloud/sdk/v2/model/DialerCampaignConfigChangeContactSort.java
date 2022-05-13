@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    **/
   public DialerCampaignConfigChangeContactSort direction(DirectionEnum direction) {
@@ -107,7 +108,7 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Whether that column contains numeric data
    **/
@@ -125,7 +126,6 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     this.numeric = numeric;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
       return false;
     }
     DialerCampaignConfigChangeContactSort dialerCampaignConfigChangeContactSort = (DialerCampaignConfigChangeContactSort) o;
+
     return Objects.equals(this.fieldName, dialerCampaignConfigChangeContactSort.fieldName) &&
-        Objects.equals(this.direction, dialerCampaignConfigChangeContactSort.direction) &&
-        Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric);
+            Objects.equals(this.direction, dialerCampaignConfigChangeContactSort.direction) &&
+            Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric);
   }
 
   @Override

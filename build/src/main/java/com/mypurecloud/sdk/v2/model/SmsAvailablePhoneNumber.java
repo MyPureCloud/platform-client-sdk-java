@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -186,7 +187,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public SmsAvailablePhoneNumber name(String name) {
@@ -203,7 +204,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A phone number available for provisioning in E.164 format. E.g. +13175555555 or +34234234234
    **/
@@ -221,7 +222,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
    **/
@@ -239,7 +240,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
+
   /**
    * The region/province/state the phone number is associated with.
    **/
@@ -257,7 +258,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.region = region;
   }
 
-  
+
   /**
    * The city the phone number is associated with.
    **/
@@ -275,7 +276,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.city = city;
   }
 
-  
+
   /**
    * The capabilities of the phone number available for provisioning.
    **/
@@ -293,7 +294,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.capabilities = capabilities;
   }
 
-  
+
   /**
    * The type of phone number available for provisioning.
    **/
@@ -311,7 +312,7 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.phoneNumberType = phoneNumberType;
   }
 
-  
+
   /**
    * The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.
    **/
@@ -329,14 +330,13 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     this.addressRequirement = addressRequirement;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -347,16 +347,17 @@ public class SmsAvailablePhoneNumber  implements Serializable {
       return false;
     }
     SmsAvailablePhoneNumber smsAvailablePhoneNumber = (SmsAvailablePhoneNumber) o;
+
     return Objects.equals(this.id, smsAvailablePhoneNumber.id) &&
-        Objects.equals(this.name, smsAvailablePhoneNumber.name) &&
-        Objects.equals(this.phoneNumber, smsAvailablePhoneNumber.phoneNumber) &&
-        Objects.equals(this.countryCode, smsAvailablePhoneNumber.countryCode) &&
-        Objects.equals(this.region, smsAvailablePhoneNumber.region) &&
-        Objects.equals(this.city, smsAvailablePhoneNumber.city) &&
-        Objects.equals(this.capabilities, smsAvailablePhoneNumber.capabilities) &&
-        Objects.equals(this.phoneNumberType, smsAvailablePhoneNumber.phoneNumberType) &&
-        Objects.equals(this.addressRequirement, smsAvailablePhoneNumber.addressRequirement) &&
-        Objects.equals(this.selfUri, smsAvailablePhoneNumber.selfUri);
+            Objects.equals(this.name, smsAvailablePhoneNumber.name) &&
+            Objects.equals(this.phoneNumber, smsAvailablePhoneNumber.phoneNumber) &&
+            Objects.equals(this.countryCode, smsAvailablePhoneNumber.countryCode) &&
+            Objects.equals(this.region, smsAvailablePhoneNumber.region) &&
+            Objects.equals(this.city, smsAvailablePhoneNumber.city) &&
+            Objects.equals(this.capabilities, smsAvailablePhoneNumber.capabilities) &&
+            Objects.equals(this.phoneNumberType, smsAvailablePhoneNumber.phoneNumberType) &&
+            Objects.equals(this.addressRequirement, smsAvailablePhoneNumber.addressRequirement) &&
+            Objects.equals(this.selfUri, smsAvailablePhoneNumber.selfUri);
   }
 
   @Override

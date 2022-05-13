@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class PutGroupGreetingsDefaultsRequest {
-    
+
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -42,7 +42,7 @@ public class PutGroupGreetingsDefaultsRequest {
 	    this.setGroupId(groupId);
 	    return this;
 	} 
-	
+
 	private DefaultGreetingList body;
 	public DefaultGreetingList getBody() {
 		return this.body;
@@ -56,7 +56,7 @@ public class PutGroupGreetingsDefaultsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,8 +93,8 @@ public class PutGroupGreetingsDefaultsRequest {
                 .withPathParameter("groupId", groupId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -105,12 +105,12 @@ public class PutGroupGreetingsDefaultsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String groupId, DefaultGreetingList body) {
 	    return new Builder()
 	            .withRequiredParams(groupId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutGroupGreetingsDefaultsRequest request;
@@ -119,26 +119,26 @@ public class PutGroupGreetingsDefaultsRequest {
 			request = new PutGroupGreetingsDefaultsRequest();
 		}
 
-		
+
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
-		
+
 		public Builder withBody(DefaultGreetingList body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String groupId, DefaultGreetingList body) {
 			request.setGroupId(groupId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutGroupGreetingsDefaultsRequest build() {
             

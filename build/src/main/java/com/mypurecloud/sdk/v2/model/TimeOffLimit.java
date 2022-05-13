@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -82,7 +83,7 @@ public class TimeOffLimit  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Granularity choice for the time off limit
    **/
@@ -100,7 +101,7 @@ public class TimeOffLimit  implements Serializable {
     this.granularity = granularity;
   }
 
-  
+
   /**
    * The default time off limit value in minutes per granularity interval
    **/
@@ -118,7 +119,7 @@ public class TimeOffLimit  implements Serializable {
     this.defaultLimitMinutes = defaultLimitMinutes;
   }
 
-  
+
   /**
    * Version metadata for the time off limit
    **/
@@ -136,14 +137,13 @@ public class TimeOffLimit  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -154,11 +154,12 @@ public class TimeOffLimit  implements Serializable {
       return false;
     }
     TimeOffLimit timeOffLimit = (TimeOffLimit) o;
+
     return Objects.equals(this.id, timeOffLimit.id) &&
-        Objects.equals(this.granularity, timeOffLimit.granularity) &&
-        Objects.equals(this.defaultLimitMinutes, timeOffLimit.defaultLimitMinutes) &&
-        Objects.equals(this.metadata, timeOffLimit.metadata) &&
-        Objects.equals(this.selfUri, timeOffLimit.selfUri);
+            Objects.equals(this.granularity, timeOffLimit.granularity) &&
+            Objects.equals(this.defaultLimitMinutes, timeOffLimit.defaultLimitMinutes) &&
+            Objects.equals(this.metadata, timeOffLimit.metadata) &&
+            Objects.equals(this.selfUri, timeOffLimit.selfUri);
   }
 
   @Override

@@ -25,15 +25,15 @@ title: ConversationMessagingChannel
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TWITTER | &quot;Twitter&quot; |
-| FACEBOOK | &quot;Facebook&quot; |
-| INSTAGRAM | &quot;Instagram&quot; |
-| LINE | &quot;Line&quot; |
-| WHATSAPP | &quot;Whatsapp&quot; |
-| WEBMESSAGING | &quot;WebMessaging&quot; |
-| OPEN | &quot;Open&quot; |
-| SMS | &quot;Sms&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TWITTER | &quot;Twitter&quot; | 
+| FACEBOOK | &quot;Facebook&quot; | 
+| INSTAGRAM | &quot;Instagram&quot; | 
+| LINE | &quot;Line&quot; | 
+| WHATSAPP | &quot;Whatsapp&quot; | 
+| WEBMESSAGING | &quot;WebMessaging&quot; | 
+| OPEN | &quot;Open&quot; | 
+| SMS | &quot;Sms&quot; | 
 {: class="table table-striped"}
 
 

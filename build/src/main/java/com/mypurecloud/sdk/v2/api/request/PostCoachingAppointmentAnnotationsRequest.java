@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
-import com.mypurecloud.sdk.v2.model.CoachingNotification;
-import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
-import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
-import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
-import com.mypurecloud.sdk.v2.model.AddConversationResponse;
 import com.mypurecloud.sdk.v2.model.AddConversationRequest;
-import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
+import com.mypurecloud.sdk.v2.model.CoachingNotification;
+import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
 import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
+import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 
 public class PostCoachingAppointmentAnnotationsRequest {
-    
+
 	private String appointmentId;
 	public String getAppointmentId() {
 		return this.appointmentId;
@@ -56,7 +56,7 @@ public class PostCoachingAppointmentAnnotationsRequest {
 	    this.setAppointmentId(appointmentId);
 	    return this;
 	} 
-	
+
 	private CoachingAnnotationCreateRequest body;
 	public CoachingAnnotationCreateRequest getBody() {
 		return this.body;
@@ -70,7 +70,7 @@ public class PostCoachingAppointmentAnnotationsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,8 +107,8 @@ public class PostCoachingAppointmentAnnotationsRequest {
                 .withPathParameter("appointmentId", appointmentId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -119,12 +119,12 @@ public class PostCoachingAppointmentAnnotationsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String appointmentId, CoachingAnnotationCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(appointmentId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostCoachingAppointmentAnnotationsRequest request;
@@ -133,26 +133,26 @@ public class PostCoachingAppointmentAnnotationsRequest {
 			request = new PostCoachingAppointmentAnnotationsRequest();
 		}
 
-		
+
 		public Builder withAppointmentId(String appointmentId) {
 			request.setAppointmentId(appointmentId);
 			return this;
 		}
-		
+
 		public Builder withBody(CoachingAnnotationCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String appointmentId, CoachingAnnotationCreateRequest body) {
 			request.setAppointmentId(appointmentId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostCoachingAppointmentAnnotationsRequest build() {
             

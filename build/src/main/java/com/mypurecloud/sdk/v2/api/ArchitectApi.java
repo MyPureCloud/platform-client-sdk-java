@@ -10,56 +10,55 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Operation;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
-import com.mypurecloud.sdk.v2.model.DependencyStatus;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableExportJob;
+import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
+import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
+import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Flow;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowMilestone;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowVersion;
+import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
+import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
-import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
+import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroup;
 import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
-import com.mypurecloud.sdk.v2.model.Flow;
-import com.mypurecloud.sdk.v2.model.FlowVersion;
-import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTable;
-import com.mypurecloud.sdk.v2.model.DataTableExportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
-import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
-import com.mypurecloud.sdk.v2.model.FlowMilestone;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcome;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
-import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
@@ -174,7 +173,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ArchitectApi {
   private final ApiClient pcapiClient;
 
@@ -186,7 +184,6 @@ public class ArchitectApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Deletes a emergency group by ID
    * 
@@ -211,7 +208,7 @@ public class ArchitectApi {
   private DeleteArchitectEmergencygroupRequest createDeleteArchitectEmergencygroupRequest(String emergencyGroupId) {
     return DeleteArchitectEmergencygroupRequest.builder()
             .withEmergencyGroupId(emergencyGroupId)
-    
+
             .build();
   }
 
@@ -262,7 +259,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete an IVR Config.
    * 
@@ -287,7 +283,7 @@ public class ArchitectApi {
   private DeleteArchitectIvrRequest createDeleteArchitectIvrRequest(String ivrId) {
     return DeleteArchitectIvrRequest.builder()
             .withIvrId(ivrId)
-    
+
             .build();
   }
 
@@ -338,7 +334,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete specified user prompt
    * 
@@ -365,9 +360,9 @@ public class ArchitectApi {
   private DeleteArchitectPromptRequest createDeleteArchitectPromptRequest(String promptId, Boolean allResources) {
     return DeleteArchitectPromptRequest.builder()
             .withPromptId(promptId)
-    
+
             .withAllResources(allResources)
-    
+
             .build();
   }
 
@@ -418,7 +413,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete specified user prompt resource
    * 
@@ -445,9 +439,9 @@ public class ArchitectApi {
   private DeleteArchitectPromptResourceRequest createDeleteArchitectPromptResourceRequest(String promptId, String languageCode) {
     return DeleteArchitectPromptResourceRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -498,7 +492,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete specified user prompt resource audio
    * 
@@ -525,9 +518,9 @@ public class ArchitectApi {
   private DeleteArchitectPromptResourceAudioRequest createDeleteArchitectPromptResourceAudioRequest(String promptId, String languageCode) {
     return DeleteArchitectPromptResourceAudioRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -578,7 +571,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Batch-delete a list of prompts
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -605,7 +597,7 @@ public class ArchitectApi {
   private DeleteArchitectPromptsRequest createDeleteArchitectPromptsRequest(List<String> id) {
     return DeleteArchitectPromptsRequest.builder()
             .withId(id)
-    
+
             .build();
   }
 
@@ -657,7 +649,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete a schedule by id
    * 
@@ -682,7 +673,7 @@ public class ArchitectApi {
   private DeleteArchitectScheduleRequest createDeleteArchitectScheduleRequest(String scheduleId) {
     return DeleteArchitectScheduleRequest.builder()
             .withScheduleId(scheduleId)
-    
+
             .build();
   }
 
@@ -733,7 +724,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Deletes a schedule group by ID
    * 
@@ -758,7 +748,7 @@ public class ArchitectApi {
   private DeleteArchitectSchedulegroupRequest createDeleteArchitectSchedulegroupRequest(String scheduleGroupId) {
     return DeleteArchitectSchedulegroupRequest.builder()
             .withScheduleGroupId(scheduleGroupId)
-    
+
             .build();
   }
 
@@ -809,7 +799,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete a system prompt resource override.
    * 
@@ -836,9 +825,9 @@ public class ArchitectApi {
   private DeleteArchitectSystempromptResourceRequest createDeleteArchitectSystempromptResourceRequest(String promptId, String languageCode) {
     return DeleteArchitectSystempromptResourceRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -889,7 +878,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete flow
    * 
@@ -914,7 +902,7 @@ public class ArchitectApi {
   private DeleteFlowRequest createDeleteFlowRequest(String flowId) {
     return DeleteFlowRequest.builder()
             .withFlowId(flowId)
-    
+
             .build();
   }
 
@@ -965,7 +953,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Batch-delete a list of flows
    * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -992,7 +979,7 @@ public class ArchitectApi {
   private DeleteFlowsRequest createDeleteFlowsRequest(List<String> id) {
     return DeleteFlowsRequest.builder()
             .withId(id)
-    
+
             .build();
   }
 
@@ -1044,7 +1031,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * deletes a specific datatable by id
    * Deletes an entire datatable (including the schema and data) with a given datatableId
@@ -1071,9 +1057,9 @@ public class ArchitectApi {
   private DeleteFlowsDatatableRequest createDeleteFlowsDatatableRequest(String datatableId, Boolean force) {
     return DeleteFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withForce(force)
-    
+
             .build();
   }
 
@@ -1124,7 +1110,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete a row entry
    * Deletes a row with a given rowId (the value of the key field).
@@ -1151,9 +1136,9 @@ public class ArchitectApi {
   private DeleteFlowsDatatableRowRequest createDeleteFlowsDatatableRowRequest(String datatableId, String rowId) {
     return DeleteFlowsDatatableRowRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withRowId(rowId)
-    
+
             .build();
   }
 
@@ -1204,7 +1189,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Delete a flow milestone.
    * 
@@ -1231,7 +1215,7 @@ public class ArchitectApi {
   private DeleteFlowsMilestoneRequest createDeleteFlowsMilestoneRequest(String milestoneId) {
     return DeleteFlowsMilestoneRequest.builder()
             .withMilestoneId(milestoneId)
-    
+
             .build();
   }
 
@@ -1283,7 +1267,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get Dependency Tracking objects that have a given display name
    * 
@@ -1324,21 +1307,21 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingRequest createGetArchitectDependencytrackingRequest(String name, Integer pageNumber, Integer pageSize, List<String> objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) {
     return GetArchitectDependencytrackingRequest.builder()
             .withName(name)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withObjectType(objectType)
-    
+
             .withConsumedResources(consumedResources)
-    
+
             .withConsumingResources(consumingResources)
-    
+
             .withConsumedResourceType(consumedResourceType)
-    
+
             .withConsumingResourceType(consumingResourceType)
-    
+
             .build();
   }
 
@@ -1390,7 +1373,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get Dependency Tracking build status for an organization
    * 
@@ -1465,7 +1447,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get resources that are consumed by a given Dependency Tracking object
    * 
@@ -1502,17 +1483,17 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingConsumedresourcesRequest createGetArchitectDependencytrackingConsumedresourcesRequest(String id, String version, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingConsumedresourcesRequest.builder()
             .withId(id)
-    
+
             .withVersion(version)
-    
+
             .withObjectType(objectType)
-    
+
             .withResourceType(resourceType)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1564,7 +1545,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get resources that consume a given Dependency Tracking object
    * 
@@ -1603,19 +1583,19 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType, String version, Integer pageNumber, Integer pageSize, String flowFilter) {
     return GetArchitectDependencytrackingConsumingresourcesRequest.builder()
             .withId(id)
-    
+
             .withObjectType(objectType)
-    
+
             .withResourceType(resourceType)
-    
+
             .withVersion(version)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withFlowFilter(flowFilter)
-    
+
             .build();
   }
 
@@ -1667,7 +1647,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get Dependency Tracking objects that consume deleted resources
    * 
@@ -1706,19 +1685,19 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingDeletedresourceconsumersRequest createGetArchitectDependencytrackingDeletedresourceconsumersRequest(String name, List<String> objectType, String flowFilter, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingDeletedresourceconsumersRequest.builder()
             .withName(name)
-    
+
             .withObjectType(objectType)
-    
+
             .withFlowFilter(flowFilter)
-    
+
             .withConsumedResources(consumedResources)
-    
+
             .withConsumedResourceType(consumedResourceType)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1770,7 +1749,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a Dependency Tracking object
    * 
@@ -1811,21 +1789,21 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingObjectRequest createGetArchitectDependencytrackingObjectRequest(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType, Boolean consumedResourceRequest) {
     return GetArchitectDependencytrackingObjectRequest.builder()
             .withId(id)
-    
+
             .withVersion(version)
-    
+
             .withObjectType(objectType)
-    
+
             .withConsumedResources(consumedResources)
-    
+
             .withConsumingResources(consumingResources)
-    
+
             .withConsumedResourceType(consumedResourceType)
-    
+
             .withConsumingResourceType(consumingResourceType)
-    
+
             .withConsumedResourceRequest(consumedResourceRequest)
-    
+
             .build();
   }
 
@@ -1877,7 +1855,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a Dependency Tracking type.
    * 
@@ -1904,7 +1881,7 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingTypeRequest createGetArchitectDependencytrackingTypeRequest(String typeId) {
     return GetArchitectDependencytrackingTypeRequest.builder()
             .withTypeId(typeId)
-    
+
             .build();
   }
 
@@ -1956,7 +1933,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get Dependency Tracking types.
    * 
@@ -1985,9 +1961,9 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingTypesRequest createGetArchitectDependencytrackingTypesRequest(Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingTypesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -2039,7 +2015,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get Dependency Tracking objects that depend on updated resources
    * 
@@ -2076,17 +2051,17 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingUpdatedresourceconsumersRequest createGetArchitectDependencytrackingUpdatedresourceconsumersRequest(String name, List<String> objectType, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingUpdatedresourceconsumersRequest.builder()
             .withName(name)
-    
+
             .withObjectType(objectType)
-    
+
             .withConsumedResources(consumedResources)
-    
+
             .withConsumedResourceType(consumedResourceType)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -2138,7 +2113,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Gets a emergency group by ID
    * 
@@ -2165,7 +2139,7 @@ public class ArchitectApi {
   private GetArchitectEmergencygroupRequest createGetArchitectEmergencygroupRequest(String emergencyGroupId) {
     return GetArchitectEmergencygroupRequest.builder()
             .withEmergencyGroupId(emergencyGroupId)
-    
+
             .build();
   }
 
@@ -2217,7 +2191,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a list of emergency groups.
    * 
@@ -2252,15 +2225,15 @@ public class ArchitectApi {
   private GetArchitectEmergencygroupsRequest createGetArchitectEmergencygroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
     return GetArchitectEmergencygroupsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -2312,7 +2285,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get an IVR config.
    * 
@@ -2339,7 +2311,7 @@ public class ArchitectApi {
   private GetArchitectIvrRequest createGetArchitectIvrRequest(String ivrId) {
     return GetArchitectIvrRequest.builder()
             .withIvrId(ivrId)
-    
+
             .build();
   }
 
@@ -2391,7 +2363,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get IVR configs.
    * 
@@ -2426,15 +2397,15 @@ public class ArchitectApi {
   private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
     return GetArchitectIvrsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -2486,7 +2457,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get specified user prompt
    * 
@@ -2513,7 +2483,7 @@ public class ArchitectApi {
   private GetArchitectPromptRequest createGetArchitectPromptRequest(String promptId) {
     return GetArchitectPromptRequest.builder()
             .withPromptId(promptId)
-    
+
             .build();
   }
 
@@ -2565,7 +2535,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get generated prompt history
    * 
@@ -2604,19 +2573,19 @@ public class ArchitectApi {
   private GetArchitectPromptHistoryHistoryIdRequest createGetArchitectPromptHistoryHistoryIdRequest(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) {
     return GetArchitectPromptHistoryHistoryIdRequest.builder()
             .withPromptId(promptId)
-    
+
             .withHistoryId(historyId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSortBy(sortBy)
-    
+
             .withAction(action)
-    
+
             .build();
   }
 
@@ -2668,7 +2637,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get specified user prompt resource
    * 
@@ -2697,9 +2665,9 @@ public class ArchitectApi {
   private GetArchitectPromptResourceRequest createGetArchitectPromptResourceRequest(String promptId, String languageCode) {
     return GetArchitectPromptResourceRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -2751,7 +2719,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of user prompt resources
    * The returned list is pageable, and query parameters can be used for filtering.
@@ -2782,11 +2749,11 @@ public class ArchitectApi {
   private GetArchitectPromptResourcesRequest createGetArchitectPromptResourcesRequest(String promptId, Integer pageNumber, Integer pageSize) {
     return GetArchitectPromptResourcesRequest.builder()
             .withPromptId(promptId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -2838,7 +2805,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of user prompts
    * The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
@@ -2877,19 +2843,19 @@ public class ArchitectApi {
   private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) {
     return GetArchitectPromptsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withName(name)
-    
+
             .withDescription(description)
-    
+
             .withNameOrDescription(nameOrDescription)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2941,7 +2907,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a schedule by ID
    * 
@@ -2968,7 +2933,7 @@ public class ArchitectApi {
   private GetArchitectScheduleRequest createGetArchitectScheduleRequest(String scheduleId) {
     return GetArchitectScheduleRequest.builder()
             .withScheduleId(scheduleId)
-    
+
             .build();
   }
 
@@ -3020,7 +2985,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Gets a schedule group by ID
    * 
@@ -3047,7 +3011,7 @@ public class ArchitectApi {
   private GetArchitectSchedulegroupRequest createGetArchitectSchedulegroupRequest(String scheduleGroupId) {
     return GetArchitectSchedulegroupRequest.builder()
             .withScheduleGroupId(scheduleGroupId)
-    
+
             .build();
   }
 
@@ -3099,7 +3063,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a list of schedule groups.
    * 
@@ -3138,19 +3101,19 @@ public class ArchitectApi {
   private GetArchitectSchedulegroupsRequest createGetArchitectSchedulegroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String scheduleIds, List<String> divisionId) {
     return GetArchitectSchedulegroupsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withScheduleIds(scheduleIds)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -3202,7 +3165,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a list of schedules.
    * 
@@ -3239,17 +3201,17 @@ public class ArchitectApi {
   private GetArchitectSchedulesRequest createGetArchitectSchedulesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, List<String> divisionId) {
     return GetArchitectSchedulesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -3301,7 +3263,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a system prompt
    * 
@@ -3328,7 +3289,7 @@ public class ArchitectApi {
   private GetArchitectSystempromptRequest createGetArchitectSystempromptRequest(String promptId) {
     return GetArchitectSystempromptRequest.builder()
             .withPromptId(promptId)
-    
+
             .build();
   }
 
@@ -3380,7 +3341,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get generated prompt history
    * 
@@ -3419,19 +3379,19 @@ public class ArchitectApi {
   private GetArchitectSystempromptHistoryHistoryIdRequest createGetArchitectSystempromptHistoryHistoryIdRequest(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) {
     return GetArchitectSystempromptHistoryHistoryIdRequest.builder()
             .withPromptId(promptId)
-    
+
             .withHistoryId(historyId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSortBy(sortBy)
-    
+
             .withAction(action)
-    
+
             .build();
   }
 
@@ -3483,7 +3443,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a system prompt resource.
    * 
@@ -3512,9 +3471,9 @@ public class ArchitectApi {
   private GetArchitectSystempromptResourceRequest createGetArchitectSystempromptResourceRequest(String promptId, String languageCode) {
     return GetArchitectSystempromptResourceRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .build();
   }
 
@@ -3566,7 +3525,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get system prompt resources.
    * 
@@ -3601,15 +3559,15 @@ public class ArchitectApi {
   private GetArchitectSystempromptResourcesRequest createGetArchitectSystempromptResourcesRequest(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
     return GetArchitectSystempromptResourcesRequest.builder()
             .withPromptId(promptId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -3661,7 +3619,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get System Prompts
    * 
@@ -3700,19 +3657,19 @@ public class ArchitectApi {
   private GetArchitectSystempromptsRequest createGetArchitectSystempromptsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) {
     return GetArchitectSystempromptsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withName(name)
-    
+
             .withDescription(description)
-    
+
             .withNameOrDescription(nameOrDescription)
-    
+
             .build();
   }
 
@@ -3764,7 +3721,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get flow
    * 
@@ -3793,9 +3749,9 @@ public class ArchitectApi {
   private GetFlowRequest createGetFlowRequest(String flowId, Boolean deleted) {
     return GetFlowRequest.builder()
             .withFlowId(flowId)
-    
+
             .withDeleted(deleted)
-    
+
             .build();
   }
 
@@ -3847,7 +3803,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get generated flow history
    * 
@@ -3886,19 +3841,19 @@ public class ArchitectApi {
   private GetFlowHistoryHistoryIdRequest createGetFlowHistoryHistoryIdRequest(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) {
     return GetFlowHistoryHistoryIdRequest.builder()
             .withFlowId(flowId)
-    
+
             .withHistoryId(historyId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withSortBy(sortBy)
-    
+
             .withAction(action)
-    
+
             .build();
   }
 
@@ -3950,7 +3905,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get the latest configuration for flow
    * 
@@ -3979,9 +3933,9 @@ public class ArchitectApi {
   private GetFlowLatestconfigurationRequest createGetFlowLatestconfigurationRequest(String flowId, Boolean deleted) {
     return GetFlowLatestconfigurationRequest.builder()
             .withFlowId(flowId)
-    
+
             .withDeleted(deleted)
-    
+
             .build();
   }
 
@@ -4033,7 +3987,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get flow version
    * 
@@ -4064,11 +4017,11 @@ public class ArchitectApi {
   private GetFlowVersionRequest createGetFlowVersionRequest(String flowId, String versionId, String deleted) {
     return GetFlowVersionRequest.builder()
             .withFlowId(flowId)
-    
+
             .withVersionId(versionId)
-    
+
             .withDeleted(deleted)
-    
+
             .build();
   }
 
@@ -4120,7 +4073,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create flow version configuration
    * 
@@ -4151,11 +4103,11 @@ public class ArchitectApi {
   private GetFlowVersionConfigurationRequest createGetFlowVersionConfigurationRequest(String flowId, String versionId, String deleted) {
     return GetFlowVersionConfigurationRequest.builder()
             .withFlowId(flowId)
-    
+
             .withVersionId(versionId)
-    
+
             .withDeleted(deleted)
-    
+
             .build();
   }
 
@@ -4207,7 +4159,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get flow version list
    * 
@@ -4240,13 +4191,13 @@ public class ArchitectApi {
   private GetFlowVersionsRequest createGetFlowVersionsRequest(String flowId, Integer pageNumber, Integer pageSize, Boolean deleted) {
     return GetFlowVersionsRequest.builder()
             .withFlowId(flowId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withDeleted(deleted)
-    
+
             .build();
   }
 
@@ -4298,7 +4249,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of flows, filtered by query parameters
    * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -4318,8 +4268,8 @@ public class ArchitectApi {
    * @param secure Secure (optional)
    * @param deleted Include deleted (optional, default to false)
    * @param includeSchemas Include variable schemas (optional, default to false)
-   * @param publishedAfter Published after (optional)
-   * @param publishedBefore Published before (optional)
+   * @param publishedAfter Published after (optional, default to null)
+   * @param publishedBefore Published before (optional, default to null)
    * @param divisionId division ID(s) (optional)
    * @return FlowEntityListing
    * @throws ApiException if the request fails on the server
@@ -4348,8 +4298,8 @@ public class ArchitectApi {
    * @param secure Secure (optional)
    * @param deleted Include deleted (optional, default to false)
    * @param includeSchemas Include variable schemas (optional, default to false)
-   * @param publishedAfter Published after (optional)
-   * @param publishedBefore Published before (optional)
+   * @param publishedAfter Published after (optional, default to null)
+   * @param publishedBefore Published before (optional, default to null)
    * @param divisionId division ID(s) (optional)
    * @return FlowEntityListing
    * @throws IOException if the request fails to be processed
@@ -4361,43 +4311,43 @@ public class ArchitectApi {
   private GetFlowsRequest createGetFlowsRequest(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String lockedByClientId, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) {
     return GetFlowsRequest.builder()
             .withType(type)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDescription(description)
-    
+
             .withNameOrDescription(nameOrDescription)
-    
+
             .withPublishVersionId(publishVersionId)
-    
+
             .withEditableBy(editableBy)
-    
+
             .withLockedBy(lockedBy)
-    
+
             .withLockedByClientId(lockedByClientId)
-    
+
             .withSecure(secure)
-    
+
             .withDeleted(deleted)
-    
+
             .withIncludeSchemas(includeSchemas)
-    
+
             .withPublishedAfter(publishedAfter)
-    
+
             .withPublishedBefore(publishedBefore)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -4449,7 +4399,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Returns a specific datatable by id
    * Given a datatableId returns the datatable object and schema associated with it.
@@ -4478,9 +4427,9 @@ public class ArchitectApi {
   private GetFlowsDatatableRequest createGetFlowsDatatableRequest(String datatableId, String expand) {
     return GetFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -4532,7 +4481,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Returns the state information about an export job
    * Returns the state information about an export job.
@@ -4561,9 +4509,9 @@ public class ArchitectApi {
   private GetFlowsDatatableExportJobRequest createGetFlowsDatatableExportJobRequest(String datatableId, String exportJobId) {
     return GetFlowsDatatableExportJobRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withExportJobId(exportJobId)
-    
+
             .build();
   }
 
@@ -4615,7 +4563,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Returns the state information about an import job
    * Returns the state information about an import job.
@@ -4644,9 +4591,9 @@ public class ArchitectApi {
   private GetFlowsDatatableImportJobRequest createGetFlowsDatatableImportJobRequest(String datatableId, String importJobId) {
     return GetFlowsDatatableImportJobRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withImportJobId(importJobId)
-    
+
             .build();
   }
 
@@ -4698,7 +4645,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get all recent import jobs
    * Get all recent import jobs
@@ -4729,11 +4675,11 @@ public class ArchitectApi {
   private GetFlowsDatatableImportJobsRequest createGetFlowsDatatableImportJobsRequest(String datatableId, Integer pageNumber, Integer pageSize) {
     return GetFlowsDatatableImportJobsRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -4785,7 +4731,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Returns a specific row for the datatable
    * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
@@ -4816,11 +4761,11 @@ public class ArchitectApi {
   private GetFlowsDatatableRowRequest createGetFlowsDatatableRowRequest(String datatableId, String rowId, Boolean showbrief) {
     return GetFlowsDatatableRowRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withRowId(rowId)
-    
+
             .withShowbrief(showbrief)
-    
+
             .build();
   }
 
@@ -4872,7 +4817,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Returns the rows for the datatable with the given id
    * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
@@ -4905,13 +4849,13 @@ public class ArchitectApi {
   private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) {
     return GetFlowsDatatableRowsRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withShowbrief(showbrief)
-    
+
             .build();
   }
 
@@ -4963,7 +4907,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
@@ -5002,19 +4945,19 @@ public class ArchitectApi {
   private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) {
     return GetFlowsDatatablesRequest.builder()
             .withExpand(expand)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -5066,7 +5009,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Returns a specific datatable by id
    * Given a datatableId returns the datatable object and schema associated with it.
@@ -5095,9 +5037,9 @@ public class ArchitectApi {
   private GetFlowsDatatablesDivisionviewRequest createGetFlowsDatatablesDivisionviewRequest(String datatableId, String expand) {
     return GetFlowsDatatablesDivisionviewRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5149,7 +5091,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
@@ -5188,19 +5129,19 @@ public class ArchitectApi {
   private GetFlowsDatatablesDivisionviewsRequest createGetFlowsDatatablesDivisionviewsRequest(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) {
     return GetFlowsDatatablesDivisionviewsRequest.builder()
             .withExpand(expand)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withName(name)
-    
+
             .build();
   }
 
@@ -5252,7 +5193,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
    * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -5264,8 +5204,8 @@ public class ArchitectApi {
    * @param id ID (optional)
    * @param name Name (optional)
    * @param publishVersionId Publish version ID (optional)
-   * @param publishedAfter Published after (optional)
-   * @param publishedBefore Published before (optional)
+   * @param publishedAfter Published after (optional, default to null)
+   * @param publishedBefore Published before (optional, default to null)
    * @param divisionId division ID(s) (optional)
    * @param includeSchemas Include variable schemas (optional, default to false)
    * @return FlowDivisionViewEntityListing
@@ -5287,8 +5227,8 @@ public class ArchitectApi {
    * @param id ID (optional)
    * @param name Name (optional)
    * @param publishVersionId Publish version ID (optional)
-   * @param publishedAfter Published after (optional)
-   * @param publishedBefore Published before (optional)
+   * @param publishedAfter Published after (optional, default to null)
+   * @param publishedBefore Published before (optional, default to null)
    * @param divisionId division ID(s) (optional)
    * @param includeSchemas Include variable schemas (optional, default to false)
    * @return FlowDivisionViewEntityListing
@@ -5301,29 +5241,29 @@ public class ArchitectApi {
   private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId, Boolean includeSchemas) {
     return GetFlowsDivisionviewsRequest.builder()
             .withType(type)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withPublishVersionId(publishVersionId)
-    
+
             .withPublishedAfter(publishedAfter)
-    
+
             .withPublishedBefore(publishedBefore)
-    
+
             .withDivisionId(divisionId)
-    
+
             .withIncludeSchemas(includeSchemas)
-    
+
             .build();
   }
 
@@ -5375,9 +5315,8 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
-   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
    * 
    * @param flowExecutionId flow execution ID (required)
    * @return FlowRuntimeExecution
@@ -5389,7 +5328,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
    * 
    * @param flowExecutionId flow execution ID (required)
    * @return FlowRuntimeExecution
@@ -5402,12 +5341,12 @@ public class ArchitectApi {
   private GetFlowsExecutionRequest createGetFlowsExecutionRequest(String flowExecutionId) {
     return GetFlowsExecutionRequest.builder()
             .withFlowExecutionId(flowExecutionId)
-    
+
             .build();
   }
 
   /**
-   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
    * 
    * @param request The request object
    * @return FlowRuntimeExecution
@@ -5426,7 +5365,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
    * 
    * @param request The request object
    * @return the response
@@ -5454,7 +5393,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Fetch Architect Job Status
    * 
@@ -5483,9 +5421,9 @@ public class ArchitectApi {
   private GetFlowsJobRequest createGetFlowsJobRequest(String jobId, List<String> expand) {
     return GetFlowsJobRequest.builder()
             .withJobId(jobId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -5537,7 +5475,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a flow milestone
    * Returns a specified flow milestone
@@ -5564,7 +5501,7 @@ public class ArchitectApi {
   private GetFlowsMilestoneRequest createGetFlowsMilestoneRequest(String milestoneId) {
     return GetFlowsMilestoneRequest.builder()
             .withMilestoneId(milestoneId)
-    
+
             .build();
   }
 
@@ -5616,7 +5553,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of flow milestones, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
@@ -5659,23 +5595,23 @@ public class ArchitectApi {
   private GetFlowsMilestonesRequest createGetFlowsMilestonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) {
     return GetFlowsMilestonesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDescription(description)
-    
+
             .withNameOrDescription(nameOrDescription)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -5727,7 +5663,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of basic flow milestone information objects filterable by query parameters.
    * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -5766,19 +5701,19 @@ public class ArchitectApi {
   private GetFlowsMilestonesDivisionviewsRequest createGetFlowsMilestonesDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
     return GetFlowsMilestonesDivisionviewsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -5830,7 +5765,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a flow outcome
    * Returns a specified flow outcome
@@ -5857,7 +5791,7 @@ public class ArchitectApi {
   private GetFlowsOutcomeRequest createGetFlowsOutcomeRequest(String flowOutcomeId) {
     return GetFlowsOutcomeRequest.builder()
             .withFlowOutcomeId(flowOutcomeId)
-    
+
             .build();
   }
 
@@ -5909,7 +5843,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of flow outcomes, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
@@ -5952,23 +5885,23 @@ public class ArchitectApi {
   private GetFlowsOutcomesRequest createGetFlowsOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) {
     return GetFlowsOutcomesRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDescription(description)
-    
+
             .withNameOrDescription(nameOrDescription)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -6020,7 +5953,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Get a pageable list of basic flow outcome information objects filterable by query parameters.
    * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
@@ -6059,19 +5991,19 @@ public class ArchitectApi {
   private GetFlowsOutcomesDivisionviewsRequest createGetFlowsOutcomesDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
     return GetFlowsOutcomesDivisionviewsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withId(id)
-    
+
             .withName(name)
-    
+
             .withDivisionId(divisionId)
-    
+
             .build();
   }
 
@@ -6123,7 +6055,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
@@ -6195,7 +6126,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Creates a new emergency group
    * 
@@ -6222,7 +6152,7 @@ public class ArchitectApi {
   private PostArchitectEmergencygroupsRequest createPostArchitectEmergencygroupsRequest(EmergencyGroup body) {
     return PostArchitectEmergencygroupsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6274,7 +6204,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create IVR config.
    * 
@@ -6301,7 +6230,7 @@ public class ArchitectApi {
   private PostArchitectIvrsRequest createPostArchitectIvrsRequest(IVR body) {
     return PostArchitectIvrsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6353,7 +6282,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Generate prompt history
    * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -6380,7 +6308,7 @@ public class ArchitectApi {
   private PostArchitectPromptHistoryRequest createPostArchitectPromptHistoryRequest(String promptId) {
     return PostArchitectPromptHistoryRequest.builder()
             .withPromptId(promptId)
-    
+
             .build();
   }
 
@@ -6432,7 +6360,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a new user prompt resource
    * 
@@ -6461,9 +6388,9 @@ public class ArchitectApi {
   private PostArchitectPromptResourcesRequest createPostArchitectPromptResourcesRequest(String promptId, PromptAssetCreate body) {
     return PostArchitectPromptResourcesRequest.builder()
             .withPromptId(promptId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6515,7 +6442,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a new user prompt
    * 
@@ -6542,7 +6468,7 @@ public class ArchitectApi {
   private PostArchitectPromptsRequest createPostArchitectPromptsRequest(Prompt body) {
     return PostArchitectPromptsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6594,7 +6520,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Creates a new schedule group
    * 
@@ -6621,7 +6546,7 @@ public class ArchitectApi {
   private PostArchitectSchedulegroupsRequest createPostArchitectSchedulegroupsRequest(ScheduleGroup body) {
     return PostArchitectSchedulegroupsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6673,7 +6598,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a new schedule.
    * 
@@ -6700,7 +6624,7 @@ public class ArchitectApi {
   private PostArchitectSchedulesRequest createPostArchitectSchedulesRequest(Schedule body) {
     return PostArchitectSchedulesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6752,7 +6676,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Generate system prompt history
    * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
@@ -6779,7 +6702,7 @@ public class ArchitectApi {
   private PostArchitectSystempromptHistoryRequest createPostArchitectSystempromptHistoryRequest(String promptId) {
     return PostArchitectSystempromptHistoryRequest.builder()
             .withPromptId(promptId)
-    
+
             .build();
   }
 
@@ -6831,7 +6754,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create system prompt resource override.
    * 
@@ -6860,9 +6782,9 @@ public class ArchitectApi {
   private PostArchitectSystempromptResourcesRequest createPostArchitectSystempromptResourcesRequest(String promptId, SystemPromptAsset body) {
     return PostArchitectSystempromptResourcesRequest.builder()
             .withPromptId(promptId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -6914,7 +6836,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Generate flow history
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -6941,7 +6862,7 @@ public class ArchitectApi {
   private PostFlowHistoryRequest createPostFlowHistoryRequest(String flowId) {
     return PostFlowHistoryRequest.builder()
             .withFlowId(flowId)
-    
+
             .build();
   }
 
@@ -6993,7 +6914,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create flow version
    * 
@@ -7022,9 +6942,9 @@ public class ArchitectApi {
   private PostFlowVersionsRequest createPostFlowVersionsRequest(String flowId, Object body) {
     return PostFlowVersionsRequest.builder()
             .withFlowId(flowId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7076,7 +6996,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create flow
    * 
@@ -7105,9 +7024,9 @@ public class ArchitectApi {
   private PostFlowsRequest createPostFlowsRequest(Flow body, String language) {
     return PostFlowsRequest.builder()
             .withBody(body)
-    
+
             .withLanguage(language)
-    
+
             .build();
   }
 
@@ -7159,7 +7078,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -7186,7 +7104,7 @@ public class ArchitectApi {
   private PostFlowsActionsCheckinRequest createPostFlowsActionsCheckinRequest(String flow) {
     return PostFlowsActionsCheckinRequest.builder()
             .withFlow(flow)
-    
+
             .build();
   }
 
@@ -7238,7 +7156,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Check-out flow
    * 
@@ -7265,7 +7182,7 @@ public class ArchitectApi {
   private PostFlowsActionsCheckoutRequest createPostFlowsActionsCheckoutRequest(String flow) {
     return PostFlowsActionsCheckoutRequest.builder()
             .withFlow(flow)
-    
+
             .build();
   }
 
@@ -7317,7 +7234,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Deactivate flow
    * 
@@ -7344,7 +7260,7 @@ public class ArchitectApi {
   private PostFlowsActionsDeactivateRequest createPostFlowsActionsDeactivateRequest(String flow) {
     return PostFlowsActionsDeactivateRequest.builder()
             .withFlow(flow)
-    
+
             .build();
   }
 
@@ -7396,7 +7312,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Publish flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -7425,9 +7340,9 @@ public class ArchitectApi {
   private PostFlowsActionsPublishRequest createPostFlowsActionsPublishRequest(String flow, String version) {
     return PostFlowsActionsPublishRequest.builder()
             .withFlow(flow)
-    
+
             .withVersion(version)
-    
+
             .build();
   }
 
@@ -7479,7 +7394,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Revert flow
    * 
@@ -7506,7 +7420,7 @@ public class ArchitectApi {
   private PostFlowsActionsRevertRequest createPostFlowsActionsRevertRequest(String flow) {
     return PostFlowsActionsRevertRequest.builder()
             .withFlow(flow)
-    
+
             .build();
   }
 
@@ -7558,7 +7472,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Unlock flow
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
@@ -7585,7 +7498,7 @@ public class ArchitectApi {
   private PostFlowsActionsUnlockRequest createPostFlowsActionsUnlockRequest(String flow) {
     return PostFlowsActionsUnlockRequest.builder()
             .withFlow(flow)
-    
+
             .build();
   }
 
@@ -7637,7 +7550,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Begin an export process for exporting all rows from a datatable
    * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
@@ -7664,7 +7576,7 @@ public class ArchitectApi {
   private PostFlowsDatatableExportJobsRequest createPostFlowsDatatableExportJobsRequest(String datatableId) {
     return PostFlowsDatatableExportJobsRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .build();
   }
 
@@ -7716,7 +7628,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Begin an import process for importing rows into a datatable
    * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
@@ -7745,9 +7656,9 @@ public class ArchitectApi {
   private PostFlowsDatatableImportJobsRequest createPostFlowsDatatableImportJobsRequest(String datatableId, DataTableImportJob body) {
     return PostFlowsDatatableImportJobsRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -7799,10 +7710,9 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a new row entry for the datatable.
-   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
    * @param datatableId id of datatable (required)
    * @param dataTableRow  (required)
    * @return Map<String, Object>
@@ -7815,7 +7725,7 @@ public class ArchitectApi {
 
   /**
    * Create a new row entry for the datatable.
-   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
    * @param datatableId id of datatable (required)
    * @param dataTableRow  (required)
    * @return Map<String, Object>
@@ -7828,15 +7738,15 @@ public class ArchitectApi {
   private PostFlowsDatatableRowsRequest createPostFlowsDatatableRowsRequest(String datatableId, Object dataTableRow) {
     return PostFlowsDatatableRowsRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withDataTableRow(dataTableRow)
-    
+
             .build();
   }
 
   /**
    * Create a new row entry for the datatable.
-   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
    * @param request The request object
    * @return Map<String, Object>
    * @throws ApiException if the request fails on the server
@@ -7855,7 +7765,7 @@ public class ArchitectApi {
 
   /**
    * Create a new row entry for the datatable.
-   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7882,10 +7792,9 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param body datatable json-schema (required)
    * @return DataTable
    * @throws ApiException if the request fails on the server
@@ -7897,7 +7806,7 @@ public class ArchitectApi {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param body datatable json-schema (required)
    * @return DataTable
    * @throws IOException if the request fails to be processed
@@ -7909,13 +7818,13 @@ public class ArchitectApi {
   private PostFlowsDatatablesRequest createPostFlowsDatatablesRequest(DataTable body) {
     return PostFlowsDatatablesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request The request object
    * @return DataTable
    * @throws ApiException if the request fails on the server
@@ -7934,7 +7843,7 @@ public class ArchitectApi {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7961,9 +7870,8 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
-   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
    * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
    * @param flowLaunchRequest  (required)
    * @return FlowExecutionLaunchResponse
@@ -7975,7 +7883,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
    * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
    * @param flowLaunchRequest  (required)
    * @return FlowExecutionLaunchResponse
@@ -7988,12 +7896,12 @@ public class ArchitectApi {
   private PostFlowsExecutionsRequest createPostFlowsExecutionsRequest(FlowExecutionLaunchRequest flowLaunchRequest) {
     return PostFlowsExecutionsRequest.builder()
             .withFlowLaunchRequest(flowLaunchRequest)
-    
+
             .build();
   }
 
   /**
-   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
    * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
    * @param request The request object
    * @return FlowExecutionLaunchResponse
@@ -8012,7 +7920,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
    * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
    * @param request The request object
    * @return the response
@@ -8040,7 +7948,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
    * 
@@ -8115,7 +8022,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a flow milestone
    * 
@@ -8142,7 +8048,7 @@ public class ArchitectApi {
   private PostFlowsMilestonesRequest createPostFlowsMilestonesRequest(FlowMilestone body) {
     return PostFlowsMilestonesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8194,7 +8100,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Create a flow outcome
    * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
@@ -8221,7 +8126,7 @@ public class ArchitectApi {
   private PostFlowsOutcomesRequest createPostFlowsOutcomesRequest(FlowOutcome body) {
     return PostFlowsOutcomesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8273,7 +8178,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Updates a emergency group by ID
    * 
@@ -8302,9 +8206,9 @@ public class ArchitectApi {
   private PutArchitectEmergencygroupRequest createPutArchitectEmergencygroupRequest(String emergencyGroupId, EmergencyGroup body) {
     return PutArchitectEmergencygroupRequest.builder()
             .withEmergencyGroupId(emergencyGroupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8356,7 +8260,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Update an IVR Config.
    * 
@@ -8385,9 +8288,9 @@ public class ArchitectApi {
   private PutArchitectIvrRequest createPutArchitectIvrRequest(String ivrId, IVR body) {
     return PutArchitectIvrRequest.builder()
             .withIvrId(ivrId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8439,7 +8342,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Update specified user prompt
    * 
@@ -8468,9 +8370,9 @@ public class ArchitectApi {
   private PutArchitectPromptRequest createPutArchitectPromptRequest(String promptId, Prompt body) {
     return PutArchitectPromptRequest.builder()
             .withPromptId(promptId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8522,7 +8424,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Update specified user prompt resource
    * 
@@ -8553,11 +8454,11 @@ public class ArchitectApi {
   private PutArchitectPromptResourceRequest createPutArchitectPromptResourceRequest(String promptId, String languageCode, PromptAsset body) {
     return PutArchitectPromptResourceRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8609,7 +8510,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Update schedule by ID
    * 
@@ -8638,9 +8538,9 @@ public class ArchitectApi {
   private PutArchitectScheduleRequest createPutArchitectScheduleRequest(String scheduleId, Schedule body) {
     return PutArchitectScheduleRequest.builder()
             .withScheduleId(scheduleId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8692,7 +8592,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Updates a schedule group by ID
    * 
@@ -8721,9 +8620,9 @@ public class ArchitectApi {
   private PutArchitectSchedulegroupRequest createPutArchitectSchedulegroupRequest(String scheduleGroupId, ScheduleGroup body) {
     return PutArchitectSchedulegroupRequest.builder()
             .withScheduleGroupId(scheduleGroupId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8775,7 +8674,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Updates a system prompt resource override.
    * 
@@ -8806,11 +8704,11 @@ public class ArchitectApi {
   private PutArchitectSystempromptResourceRequest createPutArchitectSystempromptResourceRequest(String promptId, String languageCode, SystemPromptAsset body) {
     return PutArchitectSystempromptResourceRequest.builder()
             .withPromptId(promptId)
-    
+
             .withLanguageCode(languageCode)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8862,7 +8760,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Update flow
    * 
@@ -8891,9 +8788,9 @@ public class ArchitectApi {
   private PutFlowRequest createPutFlowRequest(String flowId, Flow body) {
     return PutFlowRequest.builder()
             .withFlowId(flowId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -8945,7 +8842,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Updates a specific datatable by id
    * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
@@ -8976,11 +8872,11 @@ public class ArchitectApi {
   private PutFlowsDatatableRequest createPutFlowsDatatableRequest(String datatableId, DataTable body, String expand) {
     return PutFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -9032,10 +8928,9 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Update a row entry
-   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
    * @param datatableId id of datatable (required)
    * @param rowId the key for the row (required)
    * @param body datatable row (optional)
@@ -9049,7 +8944,7 @@ public class ArchitectApi {
 
   /**
    * Update a row entry
-   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
    * @param datatableId id of datatable (required)
    * @param rowId the key for the row (required)
    * @param body datatable row (optional)
@@ -9063,17 +8958,17 @@ public class ArchitectApi {
   private PutFlowsDatatableRowRequest createPutFlowsDatatableRowRequest(String datatableId, String rowId, Object body) {
     return PutFlowsDatatableRowRequest.builder()
             .withDatatableId(datatableId)
-    
+
             .withRowId(rowId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Update a row entry
-   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
    * @param request The request object
    * @return Map<String, Object>
    * @throws ApiException if the request fails on the server
@@ -9092,7 +8987,7 @@ public class ArchitectApi {
 
   /**
    * Update a row entry
-   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9119,7 +9014,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Updates a flow milestone
    * 
@@ -9148,9 +9042,9 @@ public class ArchitectApi {
   private PutFlowsMilestoneRequest createPutFlowsMilestoneRequest(String milestoneId, FlowMilestone body) {
     return PutFlowsMilestoneRequest.builder()
             .withMilestoneId(milestoneId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9202,7 +9096,6 @@ public class ArchitectApi {
     }
   }
 
-  
   /**
    * Updates a flow outcome
    * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
@@ -9231,9 +9124,9 @@ public class ArchitectApi {
   private PutFlowsOutcomeRequest createPutFlowsOutcomeRequest(String flowOutcomeId, FlowOutcome body) {
     return PutFlowsOutcomeRequest.builder()
             .withFlowOutcomeId(flowOutcomeId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -9285,5 +9178,4 @@ public class ArchitectApi {
     }
   }
 
-  
 }

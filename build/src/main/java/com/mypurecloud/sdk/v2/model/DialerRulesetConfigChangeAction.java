@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Identifier of the action
    **/
@@ -64,7 +65,7 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     this.actionTypeName = actionTypeName;
   }
 
-  
+
   /**
    * Indicator of the type of update action (applicable only to certain types of actions)
    **/
@@ -82,7 +83,7 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     this.updateOption = updateOption;
   }
 
-  
+
   /**
    * Map of key-value pairs pertinent to the action (different actions require different properties)
    **/
@@ -100,7 +101,6 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     this.properties = properties;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,10 +111,11 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
       return false;
     }
     DialerRulesetConfigChangeAction dialerRulesetConfigChangeAction = (DialerRulesetConfigChangeAction) o;
+
     return Objects.equals(this.type, dialerRulesetConfigChangeAction.type) &&
-        Objects.equals(this.actionTypeName, dialerRulesetConfigChangeAction.actionTypeName) &&
-        Objects.equals(this.updateOption, dialerRulesetConfigChangeAction.updateOption) &&
-        Objects.equals(this.properties, dialerRulesetConfigChangeAction.properties);
+            Objects.equals(this.actionTypeName, dialerRulesetConfigChangeAction.actionTypeName) &&
+            Objects.equals(this.updateOption, dialerRulesetConfigChangeAction.updateOption) &&
+            Objects.equals(this.properties, dialerRulesetConfigChangeAction.properties);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -116,7 +117,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -134,7 +135,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * A reference to the associated schedule
    **/
@@ -152,7 +153,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   /**
    * The state of this shift trade
    **/
@@ -170,7 +171,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The user who initiated this trade
    **/
@@ -188,7 +189,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.initiatingUser = initiatingUser;
   }
 
-  
+
   /**
    * The ID of the shift offered for trade by the initiating user
    **/
@@ -206,7 +207,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.initiatingShiftId = initiatingShiftId;
   }
 
-  
+
   /**
    * The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -224,7 +225,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.initiatingShiftStart = initiatingShiftStart;
   }
 
-  
+
   /**
    * The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -242,7 +243,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.initiatingShiftEnd = initiatingShiftEnd;
   }
 
-  
+
   /**
    * The user matching the trade, or if the state is not Matched, the user to whom the trade request was sent
    **/
@@ -260,7 +261,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.receivingUser = receivingUser;
   }
 
-  
+
   /**
    * The ID of the shift being exchanged for the initiating shift, null if the receiving user is picking up a shift
    **/
@@ -278,7 +279,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.receivingShiftId = receivingShiftId;
   }
 
-  
+
   /**
    * The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -296,7 +297,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.receivingShiftStart = receivingShiftStart;
   }
 
-  
+
   /**
    * The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -314,7 +315,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.receivingShiftEnd = receivingShiftEnd;
   }
 
-  
+
   /**
    * When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -332,7 +333,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.expiration = expiration;
   }
 
-  
+
   /**
    * Whether this is a one-sided shift trade (e.g. the initiating user is not asking for a shift in return)
    **/
@@ -350,7 +351,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.oneSided = oneSided;
   }
 
-  
+
   /**
    **/
   public ShiftTradeResponse acceptableIntervals(List<String> acceptableIntervals) {
@@ -367,7 +368,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.acceptableIntervals = acceptableIntervals;
   }
 
-  
+
   /**
    * The user who reviewed this shift trade
    **/
@@ -385,7 +386,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.reviewedBy = reviewedBy;
   }
 
-  
+
   /**
    * The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -403,7 +404,7 @@ public class ShiftTradeResponse  implements Serializable {
     this.reviewedDate = reviewedDate;
   }
 
-  
+
   /**
    * Version data for this trade
    **/
@@ -421,7 +422,6 @@ public class ShiftTradeResponse  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -432,24 +432,25 @@ public class ShiftTradeResponse  implements Serializable {
       return false;
     }
     ShiftTradeResponse shiftTradeResponse = (ShiftTradeResponse) o;
+
     return Objects.equals(this.id, shiftTradeResponse.id) &&
-        Objects.equals(this.weekDate, shiftTradeResponse.weekDate) &&
-        Objects.equals(this.schedule, shiftTradeResponse.schedule) &&
-        Objects.equals(this.state, shiftTradeResponse.state) &&
-        Objects.equals(this.initiatingUser, shiftTradeResponse.initiatingUser) &&
-        Objects.equals(this.initiatingShiftId, shiftTradeResponse.initiatingShiftId) &&
-        Objects.equals(this.initiatingShiftStart, shiftTradeResponse.initiatingShiftStart) &&
-        Objects.equals(this.initiatingShiftEnd, shiftTradeResponse.initiatingShiftEnd) &&
-        Objects.equals(this.receivingUser, shiftTradeResponse.receivingUser) &&
-        Objects.equals(this.receivingShiftId, shiftTradeResponse.receivingShiftId) &&
-        Objects.equals(this.receivingShiftStart, shiftTradeResponse.receivingShiftStart) &&
-        Objects.equals(this.receivingShiftEnd, shiftTradeResponse.receivingShiftEnd) &&
-        Objects.equals(this.expiration, shiftTradeResponse.expiration) &&
-        Objects.equals(this.oneSided, shiftTradeResponse.oneSided) &&
-        Objects.equals(this.acceptableIntervals, shiftTradeResponse.acceptableIntervals) &&
-        Objects.equals(this.reviewedBy, shiftTradeResponse.reviewedBy) &&
-        Objects.equals(this.reviewedDate, shiftTradeResponse.reviewedDate) &&
-        Objects.equals(this.metadata, shiftTradeResponse.metadata);
+            Objects.equals(this.weekDate, shiftTradeResponse.weekDate) &&
+            Objects.equals(this.schedule, shiftTradeResponse.schedule) &&
+            Objects.equals(this.state, shiftTradeResponse.state) &&
+            Objects.equals(this.initiatingUser, shiftTradeResponse.initiatingUser) &&
+            Objects.equals(this.initiatingShiftId, shiftTradeResponse.initiatingShiftId) &&
+            Objects.equals(this.initiatingShiftStart, shiftTradeResponse.initiatingShiftStart) &&
+            Objects.equals(this.initiatingShiftEnd, shiftTradeResponse.initiatingShiftEnd) &&
+            Objects.equals(this.receivingUser, shiftTradeResponse.receivingUser) &&
+            Objects.equals(this.receivingShiftId, shiftTradeResponse.receivingShiftId) &&
+            Objects.equals(this.receivingShiftStart, shiftTradeResponse.receivingShiftStart) &&
+            Objects.equals(this.receivingShiftEnd, shiftTradeResponse.receivingShiftEnd) &&
+            Objects.equals(this.expiration, shiftTradeResponse.expiration) &&
+            Objects.equals(this.oneSided, shiftTradeResponse.oneSided) &&
+            Objects.equals(this.acceptableIntervals, shiftTradeResponse.acceptableIntervals) &&
+            Objects.equals(this.reviewedBy, shiftTradeResponse.reviewedBy) &&
+            Objects.equals(this.reviewedDate, shiftTradeResponse.reviewedDate) &&
+            Objects.equals(this.metadata, shiftTradeResponse.metadata);
   }
 
   @Override

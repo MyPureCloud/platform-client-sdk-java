@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class EvaluationAggregateQueryClause  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Like a three-word sentence: (attribute-name) (operator) (target-value).
    **/
@@ -110,7 +111,6 @@ public class EvaluationAggregateQueryClause  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class EvaluationAggregateQueryClause  implements Serializable {
       return false;
     }
     EvaluationAggregateQueryClause evaluationAggregateQueryClause = (EvaluationAggregateQueryClause) o;
+
     return Objects.equals(this.type, evaluationAggregateQueryClause.type) &&
-        Objects.equals(this.predicates, evaluationAggregateQueryClause.predicates);
+            Objects.equals(this.predicates, evaluationAggregateQueryClause.predicates);
   }
 
   @Override

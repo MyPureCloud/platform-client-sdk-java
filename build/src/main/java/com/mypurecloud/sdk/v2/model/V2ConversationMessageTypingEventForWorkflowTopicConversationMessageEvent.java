@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.eventType = eventType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent coBrowse(V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse coBrowse) {
@@ -108,7 +109,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.coBrowse = coBrowse;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent typing(V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping typing) {
@@ -125,7 +126,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
     this.typing = typing;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessage
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent v2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent = (V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent) o;
+
     return Objects.equals(this.eventType, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent.eventType) &&
-        Objects.equals(this.coBrowse, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent.coBrowse) &&
-        Objects.equals(this.typing, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent.typing);
+            Objects.equals(this.coBrowse, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent.coBrowse) &&
+            Objects.equals(this.typing, v2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent.typing);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,49 +90,48 @@ public class BenefitAssessment  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of queues that are assessed for Predictive Routing benefit.")
   @JsonProperty("queues")
   public List<AddressableEntityRef> getQueues() {
     return queues;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A set of key performance indicators applied on the queue to determine suitability of Predictive Routing.")
   @JsonProperty("kpiAssessments")
   public List<KeyPerformanceIndicatorAssessment> getKpiAssessments() {
     return kpiAssessments;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "State of the benefit assessment.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Modified Date of the benefit assessment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,13 +142,14 @@ public class BenefitAssessment  implements Serializable {
       return false;
     }
     BenefitAssessment benefitAssessment = (BenefitAssessment) o;
+
     return Objects.equals(this.id, benefitAssessment.id) &&
-        Objects.equals(this.queues, benefitAssessment.queues) &&
-        Objects.equals(this.kpiAssessments, benefitAssessment.kpiAssessments) &&
-        Objects.equals(this.state, benefitAssessment.state) &&
-        Objects.equals(this.dateCreated, benefitAssessment.dateCreated) &&
-        Objects.equals(this.dateModified, benefitAssessment.dateModified) &&
-        Objects.equals(this.selfUri, benefitAssessment.selfUri);
+            Objects.equals(this.queues, benefitAssessment.queues) &&
+            Objects.equals(this.kpiAssessments, benefitAssessment.kpiAssessments) &&
+            Objects.equals(this.state, benefitAssessment.state) &&
+            Objects.equals(this.dateCreated, benefitAssessment.dateCreated) &&
+            Objects.equals(this.dateModified, benefitAssessment.dateModified) &&
+            Objects.equals(this.selfUri, benefitAssessment.selfUri);
   }
 
   @Override

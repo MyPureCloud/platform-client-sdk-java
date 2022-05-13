@@ -20,39 +20,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CommandStatus;
+import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
+import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareRequest;
+import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
 import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
+import com.mypurecloud.sdk.v2.model.DocumentUpdate;
+import com.mypurecloud.sdk.v2.model.DocumentUpload;
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.QueryRequest;
 import com.mypurecloud.sdk.v2.model.QueryResults;
+import com.mypurecloud.sdk.v2.model.ReplaceRequest;
+import com.mypurecloud.sdk.v2.model.ReplaceResponse;
 import com.mypurecloud.sdk.v2.model.SecurityProfile;
 import com.mypurecloud.sdk.v2.model.SecurityProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.Share;
-import com.mypurecloud.sdk.v2.model.SharedResponse;
 import com.mypurecloud.sdk.v2.model.ShareEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.CommandStatus;
-import com.mypurecloud.sdk.v2.model.Usage;
-import com.mypurecloud.sdk.v2.model.Workspace;
-import com.mypurecloud.sdk.v2.model.WorkspaceMember;
-import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.SharedResponse;
+import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.TagValue;
 import com.mypurecloud.sdk.v2.model.TagValueEntityListing;
-import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
-import com.mypurecloud.sdk.v2.model.DocumentUpdate;
-import com.mypurecloud.sdk.v2.model.ReplaceRequest;
-import com.mypurecloud.sdk.v2.model.ReplaceResponse;
-import com.mypurecloud.sdk.v2.model.DocumentUpload;
-import com.mypurecloud.sdk.v2.model.QueryRequest;
-import com.mypurecloud.sdk.v2.model.CreateShareResponse;
-import com.mypurecloud.sdk.v2.model.CreateShareRequest;
-import com.mypurecloud.sdk.v2.model.TagQueryRequest;
+import com.mypurecloud.sdk.v2.model.Usage;
+import com.mypurecloud.sdk.v2.model.Workspace;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
+import com.mypurecloud.sdk.v2.model.WorkspaceEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkspaceMember;
+import com.mypurecloud.sdk.v2.model.WorkspaceMemberEntityListing;
 
 public class GetContentmanagementSharedSharedIdRequest {
-    
+
 	private String sharedId;
 	public String getSharedId() {
 		return this.sharedId;
@@ -66,7 +66,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    this.setSharedId(sharedId);
 	    return this;
 	} 
-	
+
 	private Boolean redirect;
 	public Boolean getRedirect() {
 		return this.redirect;
@@ -80,7 +80,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    this.setRedirect(redirect);
 	    return this;
 	} 
-	
+
 	private String disposition;
 	public String getDisposition() {
 		return this.disposition;
@@ -96,8 +96,8 @@ public class GetContentmanagementSharedSharedIdRequest {
 	} 
 
 	public enum dispositionValues { 
-		ATTACHMENT("attachment"), 
-		INLINE("inline"), 
+		ATTACHMENT("attachment"),
+		INLINE("inline"),
 		NONE("none");
 
 		private String value;
@@ -125,7 +125,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String contentType;
 	public String getContentType() {
 		return this.contentType;
@@ -139,7 +139,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    this.setContentType(contentType);
 	    return this;
 	} 
-	
+
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -182,7 +182,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -213,15 +213,19 @@ public class GetContentmanagementSharedSharedIdRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/contentmanagement/shared/{sharedId}")
                 .withPathParameter("sharedId", sharedId)
         
+
                 .withQueryParameters("redirect", "", redirect)
         
+
                 .withQueryParameters("disposition", "", disposition)
         
+
                 .withQueryParameters("contentType", "", contentType)
         
+
                 .withQueryParameters("expand", "", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -232,12 +236,12 @@ public class GetContentmanagementSharedSharedIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String sharedId) {
 	    return new Builder()
 	            .withRequiredParams(sharedId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetContentmanagementSharedSharedIdRequest request;
@@ -246,50 +250,58 @@ public class GetContentmanagementSharedSharedIdRequest {
 			request = new GetContentmanagementSharedSharedIdRequest();
 		}
 
-		
+
 		public Builder withSharedId(String sharedId) {
 			request.setSharedId(sharedId);
 			return this;
 		}
-		
+
 		public Builder withRedirect(Boolean redirect) {
 			request.setRedirect(redirect);
 			return this;
 		}
-		
+
 		public Builder withDisposition(String disposition) {
 			request.setDisposition(disposition);
 			return this;
 		}
 
+
+
+		
 		public Builder withDisposition(dispositionValues disposition) {
 		    request.setDisposition(disposition.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withContentType(String contentType) {
 			request.setContentType(contentType);
 			return this;
 		}
-		
+
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
 
-		public Builder withExpand(expandValues expand) {
-		    request.setExpand(expand.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String sharedId) {
 			request.setSharedId(sharedId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetContentmanagementSharedSharedIdRequest build() {
             

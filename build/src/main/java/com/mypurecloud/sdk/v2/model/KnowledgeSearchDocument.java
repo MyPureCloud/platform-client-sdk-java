@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,7 +152,7 @@ public class KnowledgeSearchDocument  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public KnowledgeSearchDocument name(String name) {
@@ -168,7 +169,7 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Language of the document
    **/
@@ -186,7 +187,7 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.languageCode = languageCode;
   }
 
-  
+
   /**
    * Document type
    **/
@@ -204,7 +205,7 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * FAQ document details
    **/
@@ -222,21 +223,21 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.faq = faq;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Document categories
    **/
@@ -254,14 +255,14 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base which document does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
   }
 
-  
+
   /**
    * External URL to the document
    **/
@@ -279,7 +280,7 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.externalUrl = externalUrl;
   }
 
-  
+
   /**
    * Article
    **/
@@ -297,21 +298,20 @@ public class KnowledgeSearchDocument  implements Serializable {
     this.article = article;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The confidence associated with a document with respect to a search query")
   @JsonProperty("confidence")
   public Double getConfidence() {
     return confidence;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -322,19 +322,20 @@ public class KnowledgeSearchDocument  implements Serializable {
       return false;
     }
     KnowledgeSearchDocument knowledgeSearchDocument = (KnowledgeSearchDocument) o;
+
     return Objects.equals(this.id, knowledgeSearchDocument.id) &&
-        Objects.equals(this.name, knowledgeSearchDocument.name) &&
-        Objects.equals(this.languageCode, knowledgeSearchDocument.languageCode) &&
-        Objects.equals(this.type, knowledgeSearchDocument.type) &&
-        Objects.equals(this.faq, knowledgeSearchDocument.faq) &&
-        Objects.equals(this.dateCreated, knowledgeSearchDocument.dateCreated) &&
-        Objects.equals(this.dateModified, knowledgeSearchDocument.dateModified) &&
-        Objects.equals(this.categories, knowledgeSearchDocument.categories) &&
-        Objects.equals(this.knowledgeBase, knowledgeSearchDocument.knowledgeBase) &&
-        Objects.equals(this.externalUrl, knowledgeSearchDocument.externalUrl) &&
-        Objects.equals(this.article, knowledgeSearchDocument.article) &&
-        Objects.equals(this.confidence, knowledgeSearchDocument.confidence) &&
-        Objects.equals(this.selfUri, knowledgeSearchDocument.selfUri);
+            Objects.equals(this.name, knowledgeSearchDocument.name) &&
+            Objects.equals(this.languageCode, knowledgeSearchDocument.languageCode) &&
+            Objects.equals(this.type, knowledgeSearchDocument.type) &&
+            Objects.equals(this.faq, knowledgeSearchDocument.faq) &&
+            Objects.equals(this.dateCreated, knowledgeSearchDocument.dateCreated) &&
+            Objects.equals(this.dateModified, knowledgeSearchDocument.dateModified) &&
+            Objects.equals(this.categories, knowledgeSearchDocument.categories) &&
+            Objects.equals(this.knowledgeBase, knowledgeSearchDocument.knowledgeBase) &&
+            Objects.equals(this.externalUrl, knowledgeSearchDocument.externalUrl) &&
+            Objects.equals(this.article, knowledgeSearchDocument.article) &&
+            Objects.equals(this.confidence, knowledgeSearchDocument.confidence) &&
+            Objects.equals(this.selfUri, knowledgeSearchDocument.selfUri);
   }
 
   @Override

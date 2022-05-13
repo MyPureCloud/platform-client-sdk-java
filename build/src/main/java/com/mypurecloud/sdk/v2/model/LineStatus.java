@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class LineStatus  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Indicates whether the edge can reach the line.
    **/
@@ -65,7 +66,7 @@ public class LineStatus  implements Serializable {
     this.reachable = reachable;
   }
 
-  
+
   /**
    * The line's address of record.
    **/
@@ -83,7 +84,7 @@ public class LineStatus  implements Serializable {
     this.addressOfRecord = addressOfRecord;
   }
 
-  
+
   /**
    * The addresses used to contact the line.
    **/
@@ -101,7 +102,7 @@ public class LineStatus  implements Serializable {
     this.contactAddresses = contactAddresses;
   }
 
-  
+
   /**
    * The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -119,7 +120,6 @@ public class LineStatus  implements Serializable {
     this.reachableStateTime = reachableStateTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class LineStatus  implements Serializable {
       return false;
     }
     LineStatus lineStatus = (LineStatus) o;
+
     return Objects.equals(this.id, lineStatus.id) &&
-        Objects.equals(this.reachable, lineStatus.reachable) &&
-        Objects.equals(this.addressOfRecord, lineStatus.addressOfRecord) &&
-        Objects.equals(this.contactAddresses, lineStatus.contactAddresses) &&
-        Objects.equals(this.reachableStateTime, lineStatus.reachableStateTime);
+            Objects.equals(this.reachable, lineStatus.reachable) &&
+            Objects.equals(this.addressOfRecord, lineStatus.addressOfRecord) &&
+            Objects.equals(this.contactAddresses, lineStatus.contactAddresses) &&
+            Objects.equals(this.reachableStateTime, lineStatus.reachableStateTime);
   }
 
   @Override

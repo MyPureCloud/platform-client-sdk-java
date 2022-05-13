@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -217,7 +218,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent conversationId(String conversationId) {
@@ -234,7 +235,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent participantId(String participantId) {
@@ -251,7 +252,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent sessionId(String sessionId) {
@@ -268,7 +269,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent disconnectType(DisconnectTypeEnum disconnectType) {
@@ -285,7 +286,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent mediaType(MediaTypeEnum mediaType) {
@@ -302,7 +303,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent provider(String provider) {
@@ -319,7 +320,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent direction(DirectionEnum direction) {
@@ -336,7 +337,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent ani(String ani) {
@@ -353,7 +354,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent dnis(String dnis) {
@@ -370,7 +371,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent userId(String userId) {
@@ -387,7 +388,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent queueId(String queueId) {
@@ -404,7 +405,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.queueId = queueId;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent divisionId(String divisionId) {
@@ -421,7 +422,7 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public VoicemailEndDetailEventTopicVoicemailEndEvent voicemailDurationMs(Integer voicemailDurationMs) {
@@ -438,7 +439,6 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     this.voicemailDurationMs = voicemailDurationMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -449,20 +449,21 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
       return false;
     }
     VoicemailEndDetailEventTopicVoicemailEndEvent voicemailEndDetailEventTopicVoicemailEndEvent = (VoicemailEndDetailEventTopicVoicemailEndEvent) o;
+
     return Objects.equals(this.eventTime, voicemailEndDetailEventTopicVoicemailEndEvent.eventTime) &&
-        Objects.equals(this.conversationId, voicemailEndDetailEventTopicVoicemailEndEvent.conversationId) &&
-        Objects.equals(this.participantId, voicemailEndDetailEventTopicVoicemailEndEvent.participantId) &&
-        Objects.equals(this.sessionId, voicemailEndDetailEventTopicVoicemailEndEvent.sessionId) &&
-        Objects.equals(this.disconnectType, voicemailEndDetailEventTopicVoicemailEndEvent.disconnectType) &&
-        Objects.equals(this.mediaType, voicemailEndDetailEventTopicVoicemailEndEvent.mediaType) &&
-        Objects.equals(this.provider, voicemailEndDetailEventTopicVoicemailEndEvent.provider) &&
-        Objects.equals(this.direction, voicemailEndDetailEventTopicVoicemailEndEvent.direction) &&
-        Objects.equals(this.ani, voicemailEndDetailEventTopicVoicemailEndEvent.ani) &&
-        Objects.equals(this.dnis, voicemailEndDetailEventTopicVoicemailEndEvent.dnis) &&
-        Objects.equals(this.userId, voicemailEndDetailEventTopicVoicemailEndEvent.userId) &&
-        Objects.equals(this.queueId, voicemailEndDetailEventTopicVoicemailEndEvent.queueId) &&
-        Objects.equals(this.divisionId, voicemailEndDetailEventTopicVoicemailEndEvent.divisionId) &&
-        Objects.equals(this.voicemailDurationMs, voicemailEndDetailEventTopicVoicemailEndEvent.voicemailDurationMs);
+            Objects.equals(this.conversationId, voicemailEndDetailEventTopicVoicemailEndEvent.conversationId) &&
+            Objects.equals(this.participantId, voicemailEndDetailEventTopicVoicemailEndEvent.participantId) &&
+            Objects.equals(this.sessionId, voicemailEndDetailEventTopicVoicemailEndEvent.sessionId) &&
+            Objects.equals(this.disconnectType, voicemailEndDetailEventTopicVoicemailEndEvent.disconnectType) &&
+            Objects.equals(this.mediaType, voicemailEndDetailEventTopicVoicemailEndEvent.mediaType) &&
+            Objects.equals(this.provider, voicemailEndDetailEventTopicVoicemailEndEvent.provider) &&
+            Objects.equals(this.direction, voicemailEndDetailEventTopicVoicemailEndEvent.direction) &&
+            Objects.equals(this.ani, voicemailEndDetailEventTopicVoicemailEndEvent.ani) &&
+            Objects.equals(this.dnis, voicemailEndDetailEventTopicVoicemailEndEvent.dnis) &&
+            Objects.equals(this.userId, voicemailEndDetailEventTopicVoicemailEndEvent.userId) &&
+            Objects.equals(this.queueId, voicemailEndDetailEventTopicVoicemailEndEvent.queueId) &&
+            Objects.equals(this.divisionId, voicemailEndDetailEventTopicVoicemailEndEvent.divisionId) &&
+            Objects.equals(this.voicemailDurationMs, voicemailEndDetailEventTopicVoicemailEndEvent.voicemailDurationMs);
   }
 
   @Override

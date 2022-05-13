@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class ConsultTransfer  implements Serializable {
     this.speakTo = speakTo;
   }
 
-  
+
   /**
    * Destination phone number and name.
    **/
@@ -109,7 +110,6 @@ public class ConsultTransfer  implements Serializable {
     this.destination = destination;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,8 +120,9 @@ public class ConsultTransfer  implements Serializable {
       return false;
     }
     ConsultTransfer consultTransfer = (ConsultTransfer) o;
+
     return Objects.equals(this.speakTo, consultTransfer.speakTo) &&
-        Objects.equals(this.destination, consultTransfer.destination);
+            Objects.equals(this.destination, consultTransfer.destination);
   }
 
   @Override

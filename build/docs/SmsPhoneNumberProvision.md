@@ -24,11 +24,11 @@ title: SmsPhoneNumberProvision
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| LOCAL | &quot;local&quot; |
-| MOBILE | &quot;mobile&quot; |
-| TOLLFREE | &quot;tollfree&quot; |
-| SHORTCODE | &quot;shortcode&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LOCAL | &quot;local&quot; | 
+| MOBILE | &quot;mobile&quot; | 
+| TOLLFREE | &quot;tollfree&quot; | 
+| SHORTCODE | &quot;shortcode&quot; | 
 {: class="table table-striped"}
 
 

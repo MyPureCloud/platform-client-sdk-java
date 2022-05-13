@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ObservationMetricData;
@@ -46,7 +47,7 @@ public class FlowObservationDataContainer  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    **/
   public FlowObservationDataContainer data(List<ObservationMetricData> data) {
@@ -63,7 +64,6 @@ public class FlowObservationDataContainer  implements Serializable {
     this.data = data;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class FlowObservationDataContainer  implements Serializable {
       return false;
     }
     FlowObservationDataContainer flowObservationDataContainer = (FlowObservationDataContainer) o;
+
     return Objects.equals(this.group, flowObservationDataContainer.group) &&
-        Objects.equals(this.data, flowObservationDataContainer.data);
+            Objects.equals(this.data, flowObservationDataContainer.data);
   }
 
   @Override

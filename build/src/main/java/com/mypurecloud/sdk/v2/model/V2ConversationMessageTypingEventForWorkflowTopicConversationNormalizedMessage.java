@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -253,7 +254,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage channel(V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel channel) {
@@ -270,7 +271,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.channel = channel;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage type(TypeEnum type) {
@@ -287,7 +288,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage text(String text) {
@@ -304,7 +305,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage content(List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent> content) {
@@ -321,7 +322,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.content = content;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage events(List<V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent> events) {
@@ -338,7 +339,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.events = events;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage status(StatusEnum status) {
@@ -355,7 +356,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.status = status;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage reasons(List<V2ConversationMessageTypingEventForWorkflowTopicConversationReason> reasons) {
@@ -372,7 +373,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.reasons = reasons;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage originatingEntity(OriginatingEntityEnum originatingEntity) {
@@ -389,7 +390,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.originatingEntity = originatingEntity;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage isFinalReceipt(Boolean isFinalReceipt) {
@@ -406,7 +407,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.isFinalReceipt = isFinalReceipt;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage direction(DirectionEnum direction) {
@@ -423,7 +424,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage metadata(Map<String, String> metadata) {
@@ -440,7 +441,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -451,18 +451,19 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNormali
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage = (V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.id) &&
-        Objects.equals(this.channel, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.channel) &&
-        Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.type) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.text) &&
-        Objects.equals(this.content, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.content) &&
-        Objects.equals(this.events, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.events) &&
-        Objects.equals(this.status, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.status) &&
-        Objects.equals(this.reasons, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.reasons) &&
-        Objects.equals(this.originatingEntity, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.originatingEntity) &&
-        Objects.equals(this.isFinalReceipt, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.isFinalReceipt) &&
-        Objects.equals(this.direction, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.direction) &&
-        Objects.equals(this.metadata, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.metadata);
+            Objects.equals(this.channel, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.channel) &&
+            Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.type) &&
+            Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.text) &&
+            Objects.equals(this.content, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.content) &&
+            Objects.equals(this.events, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.events) &&
+            Objects.equals(this.status, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.status) &&
+            Objects.equals(this.reasons, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.reasons) &&
+            Objects.equals(this.originatingEntity, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.originatingEntity) &&
+            Objects.equals(this.isFinalReceipt, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.isFinalReceipt) &&
+            Objects.equals(this.direction, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.direction) &&
+            Objects.equals(this.metadata, v2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.metadata);
   }
 
   @Override

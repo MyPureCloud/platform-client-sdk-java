@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AggregateMetricData;
@@ -45,7 +46,7 @@ public class StatisticalResponse  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    **/
   public StatisticalResponse metrics(List<AggregateMetricData> metrics) {
@@ -62,7 +63,7 @@ public class StatisticalResponse  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    **/
   public StatisticalResponse views(List<AggregateViewData> views) {
@@ -79,7 +80,6 @@ public class StatisticalResponse  implements Serializable {
     this.views = views;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class StatisticalResponse  implements Serializable {
       return false;
     }
     StatisticalResponse statisticalResponse = (StatisticalResponse) o;
+
     return Objects.equals(this.interval, statisticalResponse.interval) &&
-        Objects.equals(this.metrics, statisticalResponse.metrics) &&
-        Objects.equals(this.views, statisticalResponse.views);
+            Objects.equals(this.metrics, statisticalResponse.metrics) &&
+            Objects.equals(this.views, statisticalResponse.views);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
     this.data = data;
   }
 
-  
+
   /**
    **/
   public DialerResponsesetConfigChangeReaction name(String name) {
@@ -108,7 +109,7 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public DialerResponsesetConfigChangeReaction reactionType(ReactionTypeEnum reactionType) {
@@ -125,7 +126,6 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
     this.reactionType = reactionType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class DialerResponsesetConfigChangeReaction  implements Serializable {
       return false;
     }
     DialerResponsesetConfigChangeReaction dialerResponsesetConfigChangeReaction = (DialerResponsesetConfigChangeReaction) o;
+
     return Objects.equals(this.data, dialerResponsesetConfigChangeReaction.data) &&
-        Objects.equals(this.name, dialerResponsesetConfigChangeReaction.name) &&
-        Objects.equals(this.reactionType, dialerResponsesetConfigChangeReaction.reactionType);
+            Objects.equals(this.name, dialerResponsesetConfigChangeReaction.name) &&
+            Objects.equals(this.reactionType, dialerResponsesetConfigChangeReaction.reactionType);
   }
 
   @Override

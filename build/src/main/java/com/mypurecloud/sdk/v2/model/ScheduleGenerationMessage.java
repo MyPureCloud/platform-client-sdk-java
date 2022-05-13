@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -135,7 +136,7 @@ public class ScheduleGenerationMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The arguments describing the message
    **/
@@ -153,7 +154,6 @@ public class ScheduleGenerationMessage  implements Serializable {
     this.arguments = arguments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,8 +164,9 @@ public class ScheduleGenerationMessage  implements Serializable {
       return false;
     }
     ScheduleGenerationMessage scheduleGenerationMessage = (ScheduleGenerationMessage) o;
+
     return Objects.equals(this.type, scheduleGenerationMessage.type) &&
-        Objects.equals(this.arguments, scheduleGenerationMessage.arguments);
+            Objects.equals(this.arguments, scheduleGenerationMessage.arguments);
   }
 
   @Override

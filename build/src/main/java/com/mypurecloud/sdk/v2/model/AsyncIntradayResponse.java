@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class AsyncIntradayResponse  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The ID for the operation
    **/
@@ -111,7 +112,7 @@ public class AsyncIntradayResponse  implements Serializable {
     this.operationId = operationId;
   }
 
-  
+
   /**
    * The result of the operation.  Null unless status == Complete
    **/
@@ -129,7 +130,6 @@ public class AsyncIntradayResponse  implements Serializable {
     this.result = result;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class AsyncIntradayResponse  implements Serializable {
       return false;
     }
     AsyncIntradayResponse asyncIntradayResponse = (AsyncIntradayResponse) o;
+
     return Objects.equals(this.status, asyncIntradayResponse.status) &&
-        Objects.equals(this.operationId, asyncIntradayResponse.operationId) &&
-        Objects.equals(this.result, asyncIntradayResponse.result);
+            Objects.equals(this.operationId, asyncIntradayResponse.operationId) &&
+            Objects.equals(this.result, asyncIntradayResponse.result);
   }
 
   @Override

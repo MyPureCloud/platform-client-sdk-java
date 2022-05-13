@@ -28,11 +28,11 @@ title: OAuthAuthorization
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNAUTHORIZED | &quot;Unauthorized&quot; |
-| REQUESTED | &quot;Requested&quot; |
-| AUTHORIZED | &quot;Authorized&quot; |
-| REVOKED | &quot;Revoked&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNAUTHORIZED | &quot;Unauthorized&quot; | 
+| REQUESTED | &quot;Requested&quot; | 
+| AUTHORIZED | &quot;Authorized&quot; | 
+| REVOKED | &quot;Revoked&quot; | 
 {: class="table table-striped"}
 
 

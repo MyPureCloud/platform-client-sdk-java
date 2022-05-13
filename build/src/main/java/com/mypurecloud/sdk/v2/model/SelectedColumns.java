@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class SelectedColumns  implements Serializable {
     this.columnOrder = columnOrder;
   }
 
-  
+
   /**
    * Indicates enum name of the column from the export view
    **/
@@ -59,7 +60,6 @@ public class SelectedColumns  implements Serializable {
     this.columnName = columnName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class SelectedColumns  implements Serializable {
       return false;
     }
     SelectedColumns selectedColumns = (SelectedColumns) o;
+
     return Objects.equals(this.columnOrder, selectedColumns.columnOrder) &&
-        Objects.equals(this.columnName, selectedColumns.columnName);
+            Objects.equals(this.columnName, selectedColumns.columnName);
   }
 
   @Override

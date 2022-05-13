@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -105,7 +106,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageDetails messageTime(Date messageTime) {
@@ -122,7 +123,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.messageTime = messageTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
@@ -139,7 +140,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.messageSegmentCount = messageSegmentCount;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageDetails messageStatus(MessageStatusEnum messageStatus) {
@@ -156,7 +157,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.messageStatus = messageStatus;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageDetails media(List<ConversationMessageEventTopicMessageMedia> media) {
@@ -173,7 +174,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.media = media;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageDetails stickers(List<ConversationMessageEventTopicMessageSticker> stickers) {
@@ -190,7 +191,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.stickers = stickers;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageDetails errorInfo(ConversationMessageEventTopicErrorDetails errorInfo) {
@@ -207,7 +208,6 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,13 +218,14 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
       return false;
     }
     ConversationMessageEventTopicMessageDetails conversationMessageEventTopicMessageDetails = (ConversationMessageEventTopicMessageDetails) o;
+
     return Objects.equals(this.message, conversationMessageEventTopicMessageDetails.message) &&
-        Objects.equals(this.messageTime, conversationMessageEventTopicMessageDetails.messageTime) &&
-        Objects.equals(this.messageSegmentCount, conversationMessageEventTopicMessageDetails.messageSegmentCount) &&
-        Objects.equals(this.messageStatus, conversationMessageEventTopicMessageDetails.messageStatus) &&
-        Objects.equals(this.media, conversationMessageEventTopicMessageDetails.media) &&
-        Objects.equals(this.stickers, conversationMessageEventTopicMessageDetails.stickers) &&
-        Objects.equals(this.errorInfo, conversationMessageEventTopicMessageDetails.errorInfo);
+            Objects.equals(this.messageTime, conversationMessageEventTopicMessageDetails.messageTime) &&
+            Objects.equals(this.messageSegmentCount, conversationMessageEventTopicMessageDetails.messageSegmentCount) &&
+            Objects.equals(this.messageStatus, conversationMessageEventTopicMessageDetails.messageStatus) &&
+            Objects.equals(this.media, conversationMessageEventTopicMessageDetails.media) &&
+            Objects.equals(this.stickers, conversationMessageEventTopicMessageDetails.stickers) &&
+            Objects.equals(this.errorInfo, conversationMessageEventTopicMessageDetails.errorInfo);
   }
 
   @Override

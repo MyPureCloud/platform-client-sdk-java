@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class DeleteAlertingInteractionstatsRuleRequest {
-    
+
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -44,7 +44,7 @@ public class DeleteAlertingInteractionstatsRuleRequest {
 	    this.setRuleId(ruleId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -75,7 +75,7 @@ public class DeleteAlertingInteractionstatsRuleRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/alerting/interactionstats/rules/{ruleId}")
                 .withPathParameter("ruleId", ruleId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -86,12 +86,12 @@ public class DeleteAlertingInteractionstatsRuleRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String ruleId) {
 	    return new Builder()
 	            .withRequiredParams(ruleId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteAlertingInteractionstatsRuleRequest request;
@@ -100,20 +100,20 @@ public class DeleteAlertingInteractionstatsRuleRequest {
 			request = new DeleteAlertingInteractionstatsRuleRequest();
 		}
 
-		
+
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String ruleId) {
 			request.setRuleId(ruleId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteAlertingInteractionstatsRuleRequest build() {
             

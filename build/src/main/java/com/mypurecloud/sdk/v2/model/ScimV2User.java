@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimEmail;
@@ -53,14 +54,14 @@ public class ScimV2User  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
   }
 
-  
+
   /**
    * Indicates whether the user's administrative status is active.
    **/
@@ -78,7 +79,7 @@ public class ScimV2User  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    * The user's Genesys Cloud email address. Must be unique.
    **/
@@ -96,7 +97,7 @@ public class ScimV2User  implements Serializable {
     this.userName = userName;
   }
 
-  
+
   /**
    * The display name of the user.
    **/
@@ -114,7 +115,7 @@ public class ScimV2User  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * The new password for the Genesys Cloud user. Does not return an existing password. When creating a user, if a password is not supplied, then a password will be randomly generated that is 40 characters in length and contains five characters from each of the password policy groups.
    **/
@@ -132,7 +133,7 @@ public class ScimV2User  implements Serializable {
     this.password = password;
   }
 
-  
+
   /**
    * The user's title.
    **/
@@ -150,7 +151,7 @@ public class ScimV2User  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * The list of the user's phone numbers.
    **/
@@ -168,7 +169,7 @@ public class ScimV2User  implements Serializable {
     this.phoneNumbers = phoneNumbers;
   }
 
-  
+
   /**
    * The list of the user's email addresses.
    **/
@@ -186,7 +187,7 @@ public class ScimV2User  implements Serializable {
     this.emails = emails;
   }
 
-  
+
   /**
    * The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
    **/
@@ -204,7 +205,7 @@ public class ScimV2User  implements Serializable {
     this.externalId = externalId;
   }
 
-  
+
   /**
    * The list of groups that the user is a member of.
    **/
@@ -222,7 +223,7 @@ public class ScimV2User  implements Serializable {
     this.groups = groups;
   }
 
-  
+
   /**
    * The list of roles assigned to the user.
    **/
@@ -240,7 +241,7 @@ public class ScimV2User  implements Serializable {
     this.roles = roles;
   }
 
-  
+
   /**
    * The URI of the schema for the enterprise user.
    **/
@@ -258,7 +259,7 @@ public class ScimV2User  implements Serializable {
     this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
   }
 
-  
+
   /**
    * The URI of the schema for the Genesys Cloud user.
    **/
@@ -276,14 +277,13 @@ public class ScimV2User  implements Serializable {
     this.urnietfparamsscimschemasextensiongenesyspurecloud20User = urnietfparamsscimschemasextensiongenesyspurecloud20User;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -294,21 +294,22 @@ public class ScimV2User  implements Serializable {
       return false;
     }
     ScimV2User scimV2User = (ScimV2User) o;
+
     return Objects.equals(this.id, scimV2User.id) &&
-        Objects.equals(this.schemas, scimV2User.schemas) &&
-        Objects.equals(this.active, scimV2User.active) &&
-        Objects.equals(this.userName, scimV2User.userName) &&
-        Objects.equals(this.displayName, scimV2User.displayName) &&
-        Objects.equals(this.password, scimV2User.password) &&
-        Objects.equals(this.title, scimV2User.title) &&
-        Objects.equals(this.phoneNumbers, scimV2User.phoneNumbers) &&
-        Objects.equals(this.emails, scimV2User.emails) &&
-        Objects.equals(this.externalId, scimV2User.externalId) &&
-        Objects.equals(this.groups, scimV2User.groups) &&
-        Objects.equals(this.roles, scimV2User.roles) &&
-        Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User) &&
-        Objects.equals(this.urnietfparamsscimschemasextensiongenesyspurecloud20User, scimV2User.urnietfparamsscimschemasextensiongenesyspurecloud20User) &&
-        Objects.equals(this.meta, scimV2User.meta);
+            Objects.equals(this.schemas, scimV2User.schemas) &&
+            Objects.equals(this.active, scimV2User.active) &&
+            Objects.equals(this.userName, scimV2User.userName) &&
+            Objects.equals(this.displayName, scimV2User.displayName) &&
+            Objects.equals(this.password, scimV2User.password) &&
+            Objects.equals(this.title, scimV2User.title) &&
+            Objects.equals(this.phoneNumbers, scimV2User.phoneNumbers) &&
+            Objects.equals(this.emails, scimV2User.emails) &&
+            Objects.equals(this.externalId, scimV2User.externalId) &&
+            Objects.equals(this.groups, scimV2User.groups) &&
+            Objects.equals(this.roles, scimV2User.roles) &&
+            Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User) &&
+            Objects.equals(this.urnietfparamsscimschemasextensiongenesyspurecloud20User, scimV2User.urnietfparamsscimschemasextensiongenesyspurecloud20User) &&
+            Objects.equals(this.meta, scimV2User.meta);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.total = total;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public PhoneBaseEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
       return false;
     }
     PhoneBaseEntityListing phoneBaseEntityListing = (PhoneBaseEntityListing) o;
+
     return Objects.equals(this.entities, phoneBaseEntityListing.entities) &&
-        Objects.equals(this.pageSize, phoneBaseEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, phoneBaseEntityListing.pageNumber) &&
-        Objects.equals(this.total, phoneBaseEntityListing.total) &&
-        Objects.equals(this.lastUri, phoneBaseEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, phoneBaseEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, phoneBaseEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, phoneBaseEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, phoneBaseEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, phoneBaseEntityListing.pageCount);
+            Objects.equals(this.pageSize, phoneBaseEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, phoneBaseEntityListing.pageNumber) &&
+            Objects.equals(this.total, phoneBaseEntityListing.total) &&
+            Objects.equals(this.lastUri, phoneBaseEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, phoneBaseEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, phoneBaseEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, phoneBaseEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, phoneBaseEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, phoneBaseEntityListing.pageCount);
   }
 
   @Override

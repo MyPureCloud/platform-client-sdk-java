@@ -19,11 +19,11 @@ title: WfmBuScheduleRunTopicSchedulerMessageSeverityCount
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| IGNORE | &quot;Ignore&quot; |
-| INFORMATION | &quot;Information&quot; |
-| WARNING | &quot;Warning&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| IGNORE | &quot;Ignore&quot; | 
+| INFORMATION | &quot;Information&quot; | 
+| WARNING | &quot;Warning&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

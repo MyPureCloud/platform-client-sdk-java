@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class ResponseConfig  implements Serializable {
     this.translationMap = translationMap;
   }
 
-  
+
   /**
    * Map 'attribute name' and 'default value' pairs used as fallback values if JSON path extraction fails for specified key.
    **/
@@ -65,7 +66,7 @@ public class ResponseConfig  implements Serializable {
     this.translationMapDefaults = translationMapDefaults;
   }
 
-  
+
   /**
    * Velocity template to build response to return from Action.
    **/
@@ -83,7 +84,7 @@ public class ResponseConfig  implements Serializable {
     this.successTemplate = successTemplate;
   }
 
-  
+
   /**
    * URI to retrieve success template.
    **/
@@ -101,7 +102,6 @@ public class ResponseConfig  implements Serializable {
     this.successTemplateUri = successTemplateUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class ResponseConfig  implements Serializable {
       return false;
     }
     ResponseConfig responseConfig = (ResponseConfig) o;
+
     return Objects.equals(this.translationMap, responseConfig.translationMap) &&
-        Objects.equals(this.translationMapDefaults, responseConfig.translationMapDefaults) &&
-        Objects.equals(this.successTemplate, responseConfig.successTemplate) &&
-        Objects.equals(this.successTemplateUri, responseConfig.successTemplateUri);
+            Objects.equals(this.translationMapDefaults, responseConfig.translationMapDefaults) &&
+            Objects.equals(this.successTemplate, responseConfig.successTemplate) &&
+            Objects.equals(this.successTemplateUri, responseConfig.successTemplateUri);
   }
 
   @Override

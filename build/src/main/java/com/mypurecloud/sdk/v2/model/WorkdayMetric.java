@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Metric;
@@ -38,35 +39,34 @@ public class WorkdayMetric  implements Serializable {
     return metric;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current objective for this metric")
   @JsonProperty("objective")
   public Objective getObjective() {
     return objective;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Gamification points earned for this metric")
   @JsonProperty("points")
   public Integer getPoints() {
     return points;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Value of this metric")
   @JsonProperty("value")
   public Double getValue() {
     return value;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of schedule activity events for punctuality metrics")
   @JsonProperty("punctualityEvents")
   public List<PunctualityEvent> getPunctualityEvents() {
     return punctualityEvents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,11 +77,12 @@ public class WorkdayMetric  implements Serializable {
       return false;
     }
     WorkdayMetric workdayMetric = (WorkdayMetric) o;
+
     return Objects.equals(this.metric, workdayMetric.metric) &&
-        Objects.equals(this.objective, workdayMetric.objective) &&
-        Objects.equals(this.points, workdayMetric.points) &&
-        Objects.equals(this.value, workdayMetric.value) &&
-        Objects.equals(this.punctualityEvents, workdayMetric.punctualityEvents);
+            Objects.equals(this.objective, workdayMetric.objective) &&
+            Objects.equals(this.points, workdayMetric.points) &&
+            Objects.equals(this.value, workdayMetric.value) &&
+            Objects.equals(this.punctualityEvents, workdayMetric.punctualityEvents);
   }
 
   @Override

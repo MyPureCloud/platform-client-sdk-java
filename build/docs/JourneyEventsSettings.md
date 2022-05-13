@@ -11,7 +11,7 @@ title: JourneyEventsSettings
 | **enabled** | <!----><!---->**Boolean**<!----> | Whether or not journey event collection is enabled. |  [optional] |
 | **excludedQueryParameters** | <!----><!---->**List&lt;String&gt;**<!----> | List of parameters to be excluded from the query string. |  [optional] |
 | **shouldKeepUrlFragment** | <!----><!---->**Boolean**<!----> | Whether or not to keep the URL fragment. |  [optional] |
-| **searchQueryParameters** | <!----><!---->**List&lt;String&gt;**<!----> | List of query parameters used for search (e.g. &#39;q&#39;). |  [optional] |
+| **searchQueryParameters** | <!----><!---->**List&lt;String&gt;**<!----> | List of query parameters used for search (e.g. 'q'). |  [optional] |
 | **pageviewConfig** | [**PageviewConfigEnum**](#PageviewConfigEnum)<!----> | Controls how the pageview events are tracked. |  [optional] |
 | **clickEvents** | <!----><!---->[**List&lt;SelectorEventTrigger&gt;**](SelectorEventTrigger.html)<!----> | Tracks when and where a visitor clicks on a webpage. |  [optional] |
 | **formsTrackEvents** | <!----><!---->[**List&lt;FormsTrackTrigger&gt;**](FormsTrackTrigger.html)<!----> | Controls how the form submitted and form abandoned events are tracked after a visitor interacts with a form element. |  [optional] |
@@ -27,10 +27,10 @@ title: JourneyEventsSettings
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AUTO | &quot;Auto&quot; |
-| ONCE | &quot;Once&quot; |
-| OFF | &quot;Off&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AUTO | &quot;Auto&quot; | 
+| ONCE | &quot;Once&quot; | 
+| OFF | &quot;Off&quot; | 
 {: class="table table-striped"}
 
 

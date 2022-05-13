@@ -24,10 +24,10 @@ title: BenefitAssessment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CREATED | &quot;Created&quot; |
-| FINISHED | &quot;Finished&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CREATED | &quot;Created&quot; | 
+| FINISHED | &quot;Finished&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 

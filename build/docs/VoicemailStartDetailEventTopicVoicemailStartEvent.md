@@ -29,16 +29,16 @@ title: VoicemailStartDetailEventTopicVoicemailStartEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| VOICE | &quot;VOICE&quot; |
-| CHAT | &quot;CHAT&quot; |
-| EMAIL | &quot;EMAIL&quot; |
-| CALLBACK | &quot;CALLBACK&quot; |
-| COBROWSE | &quot;COBROWSE&quot; |
-| VIDEO | &quot;VIDEO&quot; |
-| SCREENSHARE | &quot;SCREENSHARE&quot; |
-| MESSAGE | &quot;MESSAGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| VOICE | &quot;VOICE&quot; | 
+| CHAT | &quot;CHAT&quot; | 
+| EMAIL | &quot;EMAIL&quot; | 
+| CALLBACK | &quot;CALLBACK&quot; | 
+| COBROWSE | &quot;COBROWSE&quot; | 
+| VIDEO | &quot;VIDEO&quot; | 
+| SCREENSHARE | &quot;SCREENSHARE&quot; | 
+| MESSAGE | &quot;MESSAGE&quot; | 
 {: class="table table-striped"}
 
 
@@ -48,10 +48,10 @@ title: VoicemailStartDetailEventTopicVoicemailStartEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| INBOUND | &quot;INBOUND&quot; |
-| OUTBOUND | &quot;OUTBOUND&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| INBOUND | &quot;INBOUND&quot; | 
+| OUTBOUND | &quot;OUTBOUND&quot; | 
 {: class="table table-striped"}
 
 

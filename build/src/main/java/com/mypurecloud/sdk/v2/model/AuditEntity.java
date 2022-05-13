@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class AuditEntity  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The id of the entity the action of this AuditEntity targeted.
    **/
@@ -61,7 +62,7 @@ public class AuditEntity  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The name of the entity the action of this AuditEntity targeted.
    **/
@@ -79,7 +80,7 @@ public class AuditEntity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The selfUri for this entity.
    **/
@@ -97,7 +98,6 @@ public class AuditEntity  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class AuditEntity  implements Serializable {
       return false;
     }
     AuditEntity auditEntity = (AuditEntity) o;
+
     return Objects.equals(this.type, auditEntity.type) &&
-        Objects.equals(this.id, auditEntity.id) &&
-        Objects.equals(this.name, auditEntity.name) &&
-        Objects.equals(this.selfUri, auditEntity.selfUri);
+            Objects.equals(this.id, auditEntity.id) &&
+            Objects.equals(this.name, auditEntity.name) &&
+            Objects.equals(this.selfUri, auditEntity.selfUri);
   }
 
   @Override

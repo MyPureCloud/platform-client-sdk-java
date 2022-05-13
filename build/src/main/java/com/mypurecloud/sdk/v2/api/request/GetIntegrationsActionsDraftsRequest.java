@@ -20,51 +20,51 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Integration;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
-import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.Action;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
-import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
-import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
+import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotList;
-import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.Credential;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
-import com.mypurecloud.sdk.v2.model.IntegrationEvent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.DraftValidationResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Integration;
+import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
+import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
-import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
-import com.mypurecloud.sdk.v2.model.TtsSettings;
-import com.mypurecloud.sdk.v2.model.IntegrationType;
-import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
-import com.mypurecloud.sdk.v2.model.UpdateActionInput;
-import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
-import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
-import com.mypurecloud.sdk.v2.model.PostActionInput;
-import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsSettings;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
+import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
+import com.mypurecloud.sdk.v2.model.UpdateActionInput;
+import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
 import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 public class GetIntegrationsActionsDraftsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -78,7 +78,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -92,7 +92,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -106,7 +106,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setNextPage(nextPage);
 	    return this;
 	} 
-	
+
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -120,7 +120,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setPreviousPage(previousPage);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -134,7 +134,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -150,7 +150,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASC("ASC"), 
+		ASC("ASC"),
 		DESC("DESC");
 
 		private String value;
@@ -178,7 +178,7 @@ public class GetIntegrationsActionsDraftsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String category;
 	public String getCategory() {
 		return this.category;
@@ -192,7 +192,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setCategory(category);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -206,7 +206,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -220,7 +220,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	    this.setIds(ids);
 	    return this;
 	} 
-	
+
 	private String secure;
 	public String getSecure() {
 		return this.secure;
@@ -236,7 +236,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	} 
 
 	public enum secureValues { 
-		TRUE("true"), 
+		TRUE("true"),
 		FALSE("false");
 
 		private String value;
@@ -264,7 +264,7 @@ public class GetIntegrationsActionsDraftsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String includeAuthActions;
 	public String getIncludeAuthActions() {
 		return this.includeAuthActions;
@@ -280,7 +280,7 @@ public class GetIntegrationsActionsDraftsRequest {
 	} 
 
 	public enum includeAuthActionsValues { 
-		TRUE("true"), 
+		TRUE("true"),
 		FALSE("false");
 
 		private String value;
@@ -308,7 +308,7 @@ public class GetIntegrationsActionsDraftsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -332,29 +332,40 @@ public class GetIntegrationsActionsDraftsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/integrations/actions/drafts")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("nextPage", "", nextPage)
         
+
                 .withQueryParameters("previousPage", "", previousPage)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+
                 .withQueryParameters("category", "", category)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("ids", "", ids)
         
+
                 .withQueryParameters("secure", "", secure)
         
+
                 .withQueryParameters("includeAuthActions", "", includeAuthActions)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -365,7 +376,7 @@ public class GetIntegrationsActionsDraftsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetIntegrationsActionsDraftsRequest request;
@@ -374,79 +385,91 @@ public class GetIntegrationsActionsDraftsRequest {
 			request = new GetIntegrationsActionsDraftsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
-		
+
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
+
+
+		
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withCategory(String category) {
 			request.setCategory(category);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withIds(String ids) {
 			request.setIds(ids);
 			return this;
 		}
-		
+
 		public Builder withSecure(String secure) {
 			request.setSecure(secure);
 			return this;
 		}
 
+
+
+		
 		public Builder withSecure(secureValues secure) {
 		    request.setSecure(secure.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withIncludeAuthActions(String includeAuthActions) {
 			request.setIncludeAuthActions(includeAuthActions);
 			return this;
 		}
 
-		public Builder withIncludeAuthActions(includeAuthActionsValues includeAuthActions) {
-		    request.setIncludeAuthActions(includeAuthActions.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withIncludeAuthActions(includeAuthActionsValues includeAuthActions) {
+		    request.setIncludeAuthActions(includeAuthActions.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetIntegrationsActionsDraftsRequest build() {
             

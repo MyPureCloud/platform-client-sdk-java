@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserTokensTopicUriReference;
@@ -46,7 +47,7 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public UserTokensTopicTokenNotification ipAddress(String ipAddress) {
@@ -63,7 +64,7 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public UserTokensTopicTokenNotification dateCreated(String dateCreated) {
@@ -80,7 +81,7 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public UserTokensTopicTokenNotification tokenExpirationDate(String tokenExpirationDate) {
@@ -97,7 +98,7 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.tokenExpirationDate = tokenExpirationDate;
   }
 
-  
+
   /**
    **/
   public UserTokensTopicTokenNotification sessionId(String sessionId) {
@@ -114,7 +115,7 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public UserTokensTopicTokenNotification clientId(String clientId) {
@@ -131,7 +132,7 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.clientId = clientId;
   }
 
-  
+
   /**
    **/
   public UserTokensTopicTokenNotification tokenHash(String tokenHash) {
@@ -148,7 +149,6 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     this.tokenHash = tokenHash;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -159,13 +159,14 @@ public class UserTokensTopicTokenNotification  implements Serializable {
       return false;
     }
     UserTokensTopicTokenNotification userTokensTopicTokenNotification = (UserTokensTopicTokenNotification) o;
+
     return Objects.equals(this.user, userTokensTopicTokenNotification.user) &&
-        Objects.equals(this.ipAddress, userTokensTopicTokenNotification.ipAddress) &&
-        Objects.equals(this.dateCreated, userTokensTopicTokenNotification.dateCreated) &&
-        Objects.equals(this.tokenExpirationDate, userTokensTopicTokenNotification.tokenExpirationDate) &&
-        Objects.equals(this.sessionId, userTokensTopicTokenNotification.sessionId) &&
-        Objects.equals(this.clientId, userTokensTopicTokenNotification.clientId) &&
-        Objects.equals(this.tokenHash, userTokensTopicTokenNotification.tokenHash);
+            Objects.equals(this.ipAddress, userTokensTopicTokenNotification.ipAddress) &&
+            Objects.equals(this.dateCreated, userTokensTopicTokenNotification.dateCreated) &&
+            Objects.equals(this.tokenExpirationDate, userTokensTopicTokenNotification.tokenExpirationDate) &&
+            Objects.equals(this.sessionId, userTokensTopicTokenNotification.sessionId) &&
+            Objects.equals(this.clientId, userTokensTopicTokenNotification.clientId) &&
+            Objects.equals(this.tokenHash, userTokensTopicTokenNotification.tokenHash);
   }
 
   @Override

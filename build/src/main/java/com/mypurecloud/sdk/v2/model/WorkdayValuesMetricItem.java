@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,35 +92,34 @@ public class WorkdayValuesMetricItem  implements Serializable {
     return metric;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Gamification metric definition for the average and the trend")
   @JsonProperty("metricDefinition")
   public DomainEntityRef getMetricDefinition() {
     return metricDefinition;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The average value of the metric")
   @JsonProperty("average")
   public Double getAverage() {
     return average;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The unit type of the metric value")
   @JsonProperty("unitType")
   public UnitTypeEnum getUnitType() {
     return unitType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metric value trend")
   @JsonProperty("trend")
   public List<WorkdayValuesTrendItem> getTrend() {
     return trend;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class WorkdayValuesMetricItem  implements Serializable {
       return false;
     }
     WorkdayValuesMetricItem workdayValuesMetricItem = (WorkdayValuesMetricItem) o;
+
     return Objects.equals(this.metric, workdayValuesMetricItem.metric) &&
-        Objects.equals(this.metricDefinition, workdayValuesMetricItem.metricDefinition) &&
-        Objects.equals(this.average, workdayValuesMetricItem.average) &&
-        Objects.equals(this.unitType, workdayValuesMetricItem.unitType) &&
-        Objects.equals(this.trend, workdayValuesMetricItem.trend);
+            Objects.equals(this.metricDefinition, workdayValuesMetricItem.metricDefinition) &&
+            Objects.equals(this.average, workdayValuesMetricItem.average) &&
+            Objects.equals(this.unitType, workdayValuesMetricItem.unitType) &&
+            Objects.equals(this.trend, workdayValuesMetricItem.trend);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -88,7 +89,7 @@ public class EdgeChangeTopicEdge  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public EdgeChangeTopicEdge onlineStatus(OnlineStatusEnum onlineStatus) {
@@ -105,7 +106,6 @@ public class EdgeChangeTopicEdge  implements Serializable {
     this.onlineStatus = onlineStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,8 +116,9 @@ public class EdgeChangeTopicEdge  implements Serializable {
       return false;
     }
     EdgeChangeTopicEdge edgeChangeTopicEdge = (EdgeChangeTopicEdge) o;
+
     return Objects.equals(this.id, edgeChangeTopicEdge.id) &&
-        Objects.equals(this.onlineStatus, edgeChangeTopicEdge.onlineStatus);
+            Objects.equals(this.onlineStatus, edgeChangeTopicEdge.onlineStatus);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ResponseAssetRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Division to associate to this asset. Can only be used with this division.
    **/
@@ -59,7 +60,6 @@ public class ResponseAssetRequest  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class ResponseAssetRequest  implements Serializable {
       return false;
     }
     ResponseAssetRequest responseAssetRequest = (ResponseAssetRequest) o;
+
     return Objects.equals(this.name, responseAssetRequest.name) &&
-        Objects.equals(this.divisionId, responseAssetRequest.divisionId);
+            Objects.equals(this.divisionId, responseAssetRequest.divisionId);
   }
 
   @Override

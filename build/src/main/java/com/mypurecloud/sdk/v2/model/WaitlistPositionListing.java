@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WaitlistPosition;
@@ -43,7 +44,6 @@ public class WaitlistPositionListing  implements Serializable {
     this.entities = entities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,6 +54,7 @@ public class WaitlistPositionListing  implements Serializable {
       return false;
     }
     WaitlistPositionListing waitlistPositionListing = (WaitlistPositionListing) o;
+
     return Objects.equals(this.entities, waitlistPositionListing.entities);
   }
 

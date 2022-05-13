@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -49,7 +50,7 @@ public class JourneyGeolocation  implements Serializable {
     this.country = country;
   }
 
-  
+
   /**
    * Geolocation's country name.
    **/
@@ -67,7 +68,7 @@ public class JourneyGeolocation  implements Serializable {
     this.countryName = countryName;
   }
 
-  
+
   /**
    * Geolocation's latitude.
    **/
@@ -85,7 +86,7 @@ public class JourneyGeolocation  implements Serializable {
     this.latitude = latitude;
   }
 
-  
+
   /**
    * Geolocation's longitude.
    **/
@@ -103,7 +104,7 @@ public class JourneyGeolocation  implements Serializable {
     this.longitude = longitude;
   }
 
-  
+
   /**
    * Geolocation's locality or city.
    **/
@@ -121,7 +122,7 @@ public class JourneyGeolocation  implements Serializable {
     this.locality = locality;
   }
 
-  
+
   /**
    * Geolocation's postal code or ZIP code.
    **/
@@ -139,7 +140,7 @@ public class JourneyGeolocation  implements Serializable {
     this.postalCode = postalCode;
   }
 
-  
+
   /**
    * Geolocation's ISO-3166-2 region code.
    **/
@@ -157,7 +158,7 @@ public class JourneyGeolocation  implements Serializable {
     this.region = region;
   }
 
-  
+
   /**
    * Geolocation's region name.
    **/
@@ -175,7 +176,7 @@ public class JourneyGeolocation  implements Serializable {
     this.regionName = regionName;
   }
 
-  
+
   /**
    * The source that was used to determine the geolocation information.
    **/
@@ -193,7 +194,7 @@ public class JourneyGeolocation  implements Serializable {
     this.source = source;
   }
 
-  
+
   /**
    * Geolocation's timezone.
    **/
@@ -211,7 +212,6 @@ public class JourneyGeolocation  implements Serializable {
     this.timezone = timezone;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -222,16 +222,17 @@ public class JourneyGeolocation  implements Serializable {
       return false;
     }
     JourneyGeolocation journeyGeolocation = (JourneyGeolocation) o;
+
     return Objects.equals(this.country, journeyGeolocation.country) &&
-        Objects.equals(this.countryName, journeyGeolocation.countryName) &&
-        Objects.equals(this.latitude, journeyGeolocation.latitude) &&
-        Objects.equals(this.longitude, journeyGeolocation.longitude) &&
-        Objects.equals(this.locality, journeyGeolocation.locality) &&
-        Objects.equals(this.postalCode, journeyGeolocation.postalCode) &&
-        Objects.equals(this.region, journeyGeolocation.region) &&
-        Objects.equals(this.regionName, journeyGeolocation.regionName) &&
-        Objects.equals(this.source, journeyGeolocation.source) &&
-        Objects.equals(this.timezone, journeyGeolocation.timezone);
+            Objects.equals(this.countryName, journeyGeolocation.countryName) &&
+            Objects.equals(this.latitude, journeyGeolocation.latitude) &&
+            Objects.equals(this.longitude, journeyGeolocation.longitude) &&
+            Objects.equals(this.locality, journeyGeolocation.locality) &&
+            Objects.equals(this.postalCode, journeyGeolocation.postalCode) &&
+            Objects.equals(this.region, journeyGeolocation.region) &&
+            Objects.equals(this.regionName, journeyGeolocation.regionName) &&
+            Objects.equals(this.source, journeyGeolocation.source) &&
+            Objects.equals(this.timezone, journeyGeolocation.timezone);
   }
 
   @Override

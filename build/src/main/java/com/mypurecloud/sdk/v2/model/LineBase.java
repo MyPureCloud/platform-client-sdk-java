@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class LineBase  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -116,7 +117,7 @@ public class LineBase  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -134,7 +135,7 @@ public class LineBase  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -152,7 +153,7 @@ public class LineBase  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -170,7 +171,7 @@ public class LineBase  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -188,7 +189,7 @@ public class LineBase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -206,7 +207,7 @@ public class LineBase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -224,7 +225,7 @@ public class LineBase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -242,14 +243,14 @@ public class LineBase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -267,7 +268,7 @@ public class LineBase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -285,7 +286,7 @@ public class LineBase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    **/
   public LineBase lineMetaBase(DomainEntityRef lineMetaBase) {
@@ -302,7 +303,7 @@ public class LineBase  implements Serializable {
     this.lineMetaBase = lineMetaBase;
   }
 
-  
+
   /**
    **/
   public LineBase properties(Map<String, Object> properties) {
@@ -319,14 +320,13 @@ public class LineBase  implements Serializable {
     this.properties = properties;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -337,21 +337,22 @@ public class LineBase  implements Serializable {
       return false;
     }
     LineBase lineBase = (LineBase) o;
+
     return Objects.equals(this.id, lineBase.id) &&
-        Objects.equals(this.name, lineBase.name) &&
-        Objects.equals(this.division, lineBase.division) &&
-        Objects.equals(this.description, lineBase.description) &&
-        Objects.equals(this.version, lineBase.version) &&
-        Objects.equals(this.dateCreated, lineBase.dateCreated) &&
-        Objects.equals(this.dateModified, lineBase.dateModified) &&
-        Objects.equals(this.modifiedBy, lineBase.modifiedBy) &&
-        Objects.equals(this.createdBy, lineBase.createdBy) &&
-        Objects.equals(this.state, lineBase.state) &&
-        Objects.equals(this.modifiedByApp, lineBase.modifiedByApp) &&
-        Objects.equals(this.createdByApp, lineBase.createdByApp) &&
-        Objects.equals(this.lineMetaBase, lineBase.lineMetaBase) &&
-        Objects.equals(this.properties, lineBase.properties) &&
-        Objects.equals(this.selfUri, lineBase.selfUri);
+            Objects.equals(this.name, lineBase.name) &&
+            Objects.equals(this.division, lineBase.division) &&
+            Objects.equals(this.description, lineBase.description) &&
+            Objects.equals(this.version, lineBase.version) &&
+            Objects.equals(this.dateCreated, lineBase.dateCreated) &&
+            Objects.equals(this.dateModified, lineBase.dateModified) &&
+            Objects.equals(this.modifiedBy, lineBase.modifiedBy) &&
+            Objects.equals(this.createdBy, lineBase.createdBy) &&
+            Objects.equals(this.state, lineBase.state) &&
+            Objects.equals(this.modifiedByApp, lineBase.modifiedByApp) &&
+            Objects.equals(this.createdByApp, lineBase.createdByApp) &&
+            Objects.equals(this.lineMetaBase, lineBase.lineMetaBase) &&
+            Objects.equals(this.properties, lineBase.properties) &&
+            Objects.equals(this.selfUri, lineBase.selfUri);
   }
 
   @Override

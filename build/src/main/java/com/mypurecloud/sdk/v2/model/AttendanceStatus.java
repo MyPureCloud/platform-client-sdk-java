@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -82,14 +83,13 @@ public class AttendanceStatus  implements Serializable {
     return dateWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "the attendance status")
   @JsonProperty("attendanceStatusType")
   public AttendanceStatusTypeEnum getAttendanceStatusType() {
     return attendanceStatusType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -100,8 +100,9 @@ public class AttendanceStatus  implements Serializable {
       return false;
     }
     AttendanceStatus attendanceStatus = (AttendanceStatus) o;
+
     return Objects.equals(this.dateWorkday, attendanceStatus.dateWorkday) &&
-        Objects.equals(this.attendanceStatusType, attendanceStatus.attendanceStatusType);
+            Objects.equals(this.attendanceStatusType, attendanceStatus.attendanceStatusType);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class Station  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Station name(String name) {
@@ -109,7 +110,7 @@ public class Station  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Station description(String description) {
@@ -126,7 +127,7 @@ public class Station  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public Station status(StatusEnum status) {
@@ -143,7 +144,7 @@ public class Station  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The Id of the user currently logged in and associated with the station.
    **/
@@ -161,7 +162,7 @@ public class Station  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
    **/
@@ -179,7 +180,7 @@ public class Station  implements Serializable {
     this.webRtcUserId = webRtcUserId;
   }
 
-  
+
   /**
    **/
   public Station primaryEdge(DomainEntityRef primaryEdge) {
@@ -196,7 +197,7 @@ public class Station  implements Serializable {
     this.primaryEdge = primaryEdge;
   }
 
-  
+
   /**
    **/
   public Station secondaryEdge(DomainEntityRef secondaryEdge) {
@@ -213,7 +214,7 @@ public class Station  implements Serializable {
     this.secondaryEdge = secondaryEdge;
   }
 
-  
+
   /**
    **/
   public Station type(String type) {
@@ -230,7 +231,7 @@ public class Station  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public Station lineAppearanceId(String lineAppearanceId) {
@@ -247,42 +248,41 @@ public class Station  implements Serializable {
     this.lineAppearanceId = lineAppearanceId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.")
   @JsonProperty("webRtcMediaDscp")
   public Integer getWebRtcMediaDscp() {
     return webRtcMediaDscp;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.")
   @JsonProperty("webRtcPersistentEnabled")
   public Boolean getWebRtcPersistentEnabled() {
     return webRtcPersistentEnabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.")
   @JsonProperty("webRtcForceTurn")
   public Boolean getWebRtcForceTurn() {
     return webRtcForceTurn;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of call appearances on the station.")
   @JsonProperty("webRtcCallAppearances")
   public Integer getWebRtcCallAppearances() {
     return webRtcCallAppearances;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -293,21 +293,22 @@ public class Station  implements Serializable {
       return false;
     }
     Station station = (Station) o;
+
     return Objects.equals(this.id, station.id) &&
-        Objects.equals(this.name, station.name) &&
-        Objects.equals(this.description, station.description) &&
-        Objects.equals(this.status, station.status) &&
-        Objects.equals(this.userId, station.userId) &&
-        Objects.equals(this.webRtcUserId, station.webRtcUserId) &&
-        Objects.equals(this.primaryEdge, station.primaryEdge) &&
-        Objects.equals(this.secondaryEdge, station.secondaryEdge) &&
-        Objects.equals(this.type, station.type) &&
-        Objects.equals(this.lineAppearanceId, station.lineAppearanceId) &&
-        Objects.equals(this.webRtcMediaDscp, station.webRtcMediaDscp) &&
-        Objects.equals(this.webRtcPersistentEnabled, station.webRtcPersistentEnabled) &&
-        Objects.equals(this.webRtcForceTurn, station.webRtcForceTurn) &&
-        Objects.equals(this.webRtcCallAppearances, station.webRtcCallAppearances) &&
-        Objects.equals(this.selfUri, station.selfUri);
+            Objects.equals(this.name, station.name) &&
+            Objects.equals(this.description, station.description) &&
+            Objects.equals(this.status, station.status) &&
+            Objects.equals(this.userId, station.userId) &&
+            Objects.equals(this.webRtcUserId, station.webRtcUserId) &&
+            Objects.equals(this.primaryEdge, station.primaryEdge) &&
+            Objects.equals(this.secondaryEdge, station.secondaryEdge) &&
+            Objects.equals(this.type, station.type) &&
+            Objects.equals(this.lineAppearanceId, station.lineAppearanceId) &&
+            Objects.equals(this.webRtcMediaDscp, station.webRtcMediaDscp) &&
+            Objects.equals(this.webRtcPersistentEnabled, station.webRtcPersistentEnabled) &&
+            Objects.equals(this.webRtcForceTurn, station.webRtcForceTurn) &&
+            Objects.equals(this.webRtcCallAppearances, station.webRtcCallAppearances) &&
+            Objects.equals(this.selfUri, station.selfUri);
   }
 
   @Override

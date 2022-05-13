@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -161,7 +162,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * External organization identifier
    **/
@@ -179,7 +180,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * Reason for which participant flagged conversation
    **/
@@ -197,7 +198,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Unique identifier for the participant
    **/
@@ -215,7 +216,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant
    **/
@@ -233,7 +234,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.participantName = participantName;
   }
 
-  
+
   /**
    * The participant's purpose
    **/
@@ -251,7 +252,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The team ID the user is a member of
    **/
@@ -269,7 +270,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.teamId = teamId;
   }
 
-  
+
   /**
    * Unique identifier for the user
    **/
@@ -287,7 +288,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * List of sessions associated to this participant
    **/
@@ -305,7 +306,6 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     this.sessions = sessions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -316,15 +316,16 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
       return false;
     }
     AnalyticsParticipantWithoutAttributes analyticsParticipantWithoutAttributes = (AnalyticsParticipantWithoutAttributes) o;
+
     return Objects.equals(this.externalContactId, analyticsParticipantWithoutAttributes.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, analyticsParticipantWithoutAttributes.externalOrganizationId) &&
-        Objects.equals(this.flaggedReason, analyticsParticipantWithoutAttributes.flaggedReason) &&
-        Objects.equals(this.participantId, analyticsParticipantWithoutAttributes.participantId) &&
-        Objects.equals(this.participantName, analyticsParticipantWithoutAttributes.participantName) &&
-        Objects.equals(this.purpose, analyticsParticipantWithoutAttributes.purpose) &&
-        Objects.equals(this.teamId, analyticsParticipantWithoutAttributes.teamId) &&
-        Objects.equals(this.userId, analyticsParticipantWithoutAttributes.userId) &&
-        Objects.equals(this.sessions, analyticsParticipantWithoutAttributes.sessions);
+            Objects.equals(this.externalOrganizationId, analyticsParticipantWithoutAttributes.externalOrganizationId) &&
+            Objects.equals(this.flaggedReason, analyticsParticipantWithoutAttributes.flaggedReason) &&
+            Objects.equals(this.participantId, analyticsParticipantWithoutAttributes.participantId) &&
+            Objects.equals(this.participantName, analyticsParticipantWithoutAttributes.participantName) &&
+            Objects.equals(this.purpose, analyticsParticipantWithoutAttributes.purpose) &&
+            Objects.equals(this.teamId, analyticsParticipantWithoutAttributes.teamId) &&
+            Objects.equals(this.userId, analyticsParticipantWithoutAttributes.userId) &&
+            Objects.equals(this.sessions, analyticsParticipantWithoutAttributes.sessions);
   }
 
   @Override

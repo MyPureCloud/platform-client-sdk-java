@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -44,7 +44,7 @@ public class LicenseAssignmentRequest  implements Serializable {
     this.licenseId = licenseId;
   }
 
-  
+
   /**
    * The ids of users to assign this license to.
    **/
@@ -62,7 +62,7 @@ public class LicenseAssignmentRequest  implements Serializable {
     this.userIdsAdd = userIdsAdd;
   }
 
-  
+
   /**
    * The ids of users to unassign this license from.
    **/
@@ -80,7 +80,6 @@ public class LicenseAssignmentRequest  implements Serializable {
     this.userIdsRemove = userIdsRemove;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +90,10 @@ public class LicenseAssignmentRequest  implements Serializable {
       return false;
     }
     LicenseAssignmentRequest licenseAssignmentRequest = (LicenseAssignmentRequest) o;
+
     return Objects.equals(this.licenseId, licenseAssignmentRequest.licenseId) &&
-        Objects.equals(this.userIdsAdd, licenseAssignmentRequest.userIdsAdd) &&
-        Objects.equals(this.userIdsRemove, licenseAssignmentRequest.userIdsRemove);
+            Objects.equals(this.userIdsAdd, licenseAssignmentRequest.userIdsAdd) &&
+            Objects.equals(this.userIdsRemove, licenseAssignmentRequest.userIdsRemove);
   }
 
   @Override

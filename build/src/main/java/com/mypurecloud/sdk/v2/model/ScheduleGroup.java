@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class ScheduleGroup  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -118,7 +119,7 @@ public class ScheduleGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -136,7 +137,7 @@ public class ScheduleGroup  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -154,7 +155,7 @@ public class ScheduleGroup  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -172,7 +173,7 @@ public class ScheduleGroup  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -190,7 +191,7 @@ public class ScheduleGroup  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -208,7 +209,7 @@ public class ScheduleGroup  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -226,7 +227,7 @@ public class ScheduleGroup  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -244,14 +245,14 @@ public class ScheduleGroup  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -269,7 +270,7 @@ public class ScheduleGroup  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -287,7 +288,7 @@ public class ScheduleGroup  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The timezone the schedules are a part of.  This is not a schedule property to allow a schedule to be used in multiple timezones.
    **/
@@ -305,7 +306,7 @@ public class ScheduleGroup  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The schedules defining the hours an organization is open.
    **/
@@ -323,7 +324,7 @@ public class ScheduleGroup  implements Serializable {
     this.openSchedules = openSchedules;
   }
 
-  
+
   /**
    * The schedules defining the hours an organization is closed.
    **/
@@ -341,7 +342,7 @@ public class ScheduleGroup  implements Serializable {
     this.closedSchedules = closedSchedules;
   }
 
-  
+
   /**
    * The schedules defining the hours an organization is closed for the holidays.
    **/
@@ -359,14 +360,13 @@ public class ScheduleGroup  implements Serializable {
     this.holidaySchedules = holidaySchedules;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -377,23 +377,24 @@ public class ScheduleGroup  implements Serializable {
       return false;
     }
     ScheduleGroup scheduleGroup = (ScheduleGroup) o;
+
     return Objects.equals(this.id, scheduleGroup.id) &&
-        Objects.equals(this.name, scheduleGroup.name) &&
-        Objects.equals(this.division, scheduleGroup.division) &&
-        Objects.equals(this.description, scheduleGroup.description) &&
-        Objects.equals(this.version, scheduleGroup.version) &&
-        Objects.equals(this.dateCreated, scheduleGroup.dateCreated) &&
-        Objects.equals(this.dateModified, scheduleGroup.dateModified) &&
-        Objects.equals(this.modifiedBy, scheduleGroup.modifiedBy) &&
-        Objects.equals(this.createdBy, scheduleGroup.createdBy) &&
-        Objects.equals(this.state, scheduleGroup.state) &&
-        Objects.equals(this.modifiedByApp, scheduleGroup.modifiedByApp) &&
-        Objects.equals(this.createdByApp, scheduleGroup.createdByApp) &&
-        Objects.equals(this.timeZone, scheduleGroup.timeZone) &&
-        Objects.equals(this.openSchedules, scheduleGroup.openSchedules) &&
-        Objects.equals(this.closedSchedules, scheduleGroup.closedSchedules) &&
-        Objects.equals(this.holidaySchedules, scheduleGroup.holidaySchedules) &&
-        Objects.equals(this.selfUri, scheduleGroup.selfUri);
+            Objects.equals(this.name, scheduleGroup.name) &&
+            Objects.equals(this.division, scheduleGroup.division) &&
+            Objects.equals(this.description, scheduleGroup.description) &&
+            Objects.equals(this.version, scheduleGroup.version) &&
+            Objects.equals(this.dateCreated, scheduleGroup.dateCreated) &&
+            Objects.equals(this.dateModified, scheduleGroup.dateModified) &&
+            Objects.equals(this.modifiedBy, scheduleGroup.modifiedBy) &&
+            Objects.equals(this.createdBy, scheduleGroup.createdBy) &&
+            Objects.equals(this.state, scheduleGroup.state) &&
+            Objects.equals(this.modifiedByApp, scheduleGroup.modifiedByApp) &&
+            Objects.equals(this.createdByApp, scheduleGroup.createdByApp) &&
+            Objects.equals(this.timeZone, scheduleGroup.timeZone) &&
+            Objects.equals(this.openSchedules, scheduleGroup.openSchedules) &&
+            Objects.equals(this.closedSchedules, scheduleGroup.closedSchedules) &&
+            Objects.equals(this.holidaySchedules, scheduleGroup.holidaySchedules) &&
+            Objects.equals(this.selfUri, scheduleGroup.selfUri);
   }
 
   @Override

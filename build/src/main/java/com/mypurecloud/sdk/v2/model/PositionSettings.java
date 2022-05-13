@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class PositionSettings  implements Serializable {
     this.alignment = alignment;
   }
 
-  
+
   /**
    * The sidespace value for position
    **/
@@ -110,7 +111,7 @@ public class PositionSettings  implements Serializable {
     this.sideSpace = sideSpace;
   }
 
-  
+
   /**
    * The bottomspace value for position
    **/
@@ -128,7 +129,6 @@ public class PositionSettings  implements Serializable {
     this.bottomSpace = bottomSpace;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -139,9 +139,10 @@ public class PositionSettings  implements Serializable {
       return false;
     }
     PositionSettings positionSettings = (PositionSettings) o;
+
     return Objects.equals(this.alignment, positionSettings.alignment) &&
-        Objects.equals(this.sideSpace, positionSettings.sideSpace) &&
-        Objects.equals(this.bottomSpace, positionSettings.bottomSpace);
+            Objects.equals(this.sideSpace, positionSettings.sideSpace) &&
+            Objects.equals(this.bottomSpace, positionSettings.bottomSpace);
   }
 
   @Override

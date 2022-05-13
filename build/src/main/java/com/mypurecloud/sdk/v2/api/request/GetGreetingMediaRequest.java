@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
+import com.mypurecloud.sdk.v2.model.DomainEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Greeting;
-import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
-import com.mypurecloud.sdk.v2.model.DomainEntityListing;
-import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
+import com.mypurecloud.sdk.v2.model.GreetingMediaInfo;
 
 public class GetGreetingMediaRequest {
-    
+
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -42,7 +42,7 @@ public class GetGreetingMediaRequest {
 	    this.setGreetingId(greetingId);
 	    return this;
 	} 
-	
+
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -58,12 +58,12 @@ public class GetGreetingMediaRequest {
 	} 
 
 	public enum formatIdValues { 
-		WAV("WAV"), 
-		WEBM("WEBM"), 
-		WAV_ULAW("WAV_ULAW"), 
-		OGG_VORBIS("OGG_VORBIS"), 
-		OGG_OPUS("OGG_OPUS"), 
-		MP3("MP3"), 
+		WAV("WAV"),
+		WEBM("WEBM"),
+		WAV_ULAW("WAV_ULAW"),
+		OGG_VORBIS("OGG_VORBIS"),
+		OGG_OPUS("OGG_OPUS"),
+		MP3("MP3"),
 		NONE("NONE");
 
 		private String value;
@@ -91,7 +91,7 @@ public class GetGreetingMediaRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,9 +122,10 @@ public class GetGreetingMediaRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/greetings/{greetingId}/media")
                 .withPathParameter("greetingId", greetingId)
         
+
                 .withQueryParameters("formatId", "", formatId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -135,12 +136,12 @@ public class GetGreetingMediaRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String greetingId) {
 	    return new Builder()
 	            .withRequiredParams(greetingId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetGreetingMediaRequest request;
@@ -149,30 +150,34 @@ public class GetGreetingMediaRequest {
 			request = new GetGreetingMediaRequest();
 		}
 
-		
+
 		public Builder withGreetingId(String greetingId) {
 			request.setGreetingId(greetingId);
 			return this;
 		}
-		
+
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
 
-		public Builder withFormatId(formatIdValues formatId) {
-		    request.setFormatId(formatId.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withFormatId(formatIdValues formatId) {
+		    request.setFormatId(formatId.toString());
+
+		    return this;
+		}
+
+
+
 		public Builder withRequiredParams(String greetingId) {
 			request.setGreetingId(greetingId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetGreetingMediaRequest build() {
             

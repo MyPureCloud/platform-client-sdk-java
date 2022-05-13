@@ -21,13 +21,13 @@ title: DialerCampaignRuleConfigChangeCampaignRuleAction
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TURNONCAMPAIGN | &quot;turnOnCampaign&quot; |
-| TURNOFFCAMPAIGN | &quot;turnOffCampaign&quot; |
-| TURNONSEQUENCE | &quot;turnOnSequence&quot; |
-| TURNOFFSEQUENCE | &quot;turnOffSequence&quot; |
-| SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; |
-| RECYCLECAMPAIGN | &quot;recycleCampaign&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TURNONCAMPAIGN | &quot;turnOnCampaign&quot; | 
+| TURNOFFCAMPAIGN | &quot;turnOffCampaign&quot; | 
+| TURNONSEQUENCE | &quot;turnOnSequence&quot; | 
+| TURNOFFSEQUENCE | &quot;turnOffSequence&quot; | 
+| SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; | 
+| RECYCLECAMPAIGN | &quot;recycleCampaign&quot; | 
 {: class="table table-striped"}
 
 

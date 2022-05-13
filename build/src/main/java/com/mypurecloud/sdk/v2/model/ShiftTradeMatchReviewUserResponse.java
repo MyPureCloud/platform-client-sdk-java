@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ShiftTradePreviewResponse;
@@ -45,7 +46,7 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
     this.weeklyMinimumPaidMinutes = weeklyMinimumPaidMinutes;
   }
 
-  
+
   /**
    * The maximum weekly paid minutes for this user per the work plan tied to the agent schedule
    **/
@@ -63,7 +64,7 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
     this.weeklyMaximumPaidMinutes = weeklyMaximumPaidMinutes;
   }
 
-  
+
   /**
    * The paid minutes on the week schedule for this user prior to the shift trade
    **/
@@ -81,7 +82,7 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
     this.preTradeSchedulePaidMinutes = preTradeSchedulePaidMinutes;
   }
 
-  
+
   /**
    * The paid minutes on the week schedule for this user if the shift trade is approved
    **/
@@ -99,7 +100,7 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
     this.postTradeSchedulePaidMinutes = postTradeSchedulePaidMinutes;
   }
 
-  
+
   /**
    * Preview of what the shift will look like for the opposite side of this trade after the match is approved
    **/
@@ -117,7 +118,6 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
     this.postTradeNewShift = postTradeNewShift;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class ShiftTradeMatchReviewUserResponse  implements Serializable {
       return false;
     }
     ShiftTradeMatchReviewUserResponse shiftTradeMatchReviewUserResponse = (ShiftTradeMatchReviewUserResponse) o;
+
     return Objects.equals(this.weeklyMinimumPaidMinutes, shiftTradeMatchReviewUserResponse.weeklyMinimumPaidMinutes) &&
-        Objects.equals(this.weeklyMaximumPaidMinutes, shiftTradeMatchReviewUserResponse.weeklyMaximumPaidMinutes) &&
-        Objects.equals(this.preTradeSchedulePaidMinutes, shiftTradeMatchReviewUserResponse.preTradeSchedulePaidMinutes) &&
-        Objects.equals(this.postTradeSchedulePaidMinutes, shiftTradeMatchReviewUserResponse.postTradeSchedulePaidMinutes) &&
-        Objects.equals(this.postTradeNewShift, shiftTradeMatchReviewUserResponse.postTradeNewShift);
+            Objects.equals(this.weeklyMaximumPaidMinutes, shiftTradeMatchReviewUserResponse.weeklyMaximumPaidMinutes) &&
+            Objects.equals(this.preTradeSchedulePaidMinutes, shiftTradeMatchReviewUserResponse.preTradeSchedulePaidMinutes) &&
+            Objects.equals(this.postTradeSchedulePaidMinutes, shiftTradeMatchReviewUserResponse.postTradeSchedulePaidMinutes) &&
+            Objects.equals(this.postTradeNewShift, shiftTradeMatchReviewUserResponse.postTradeNewShift);
   }
 
   @Override

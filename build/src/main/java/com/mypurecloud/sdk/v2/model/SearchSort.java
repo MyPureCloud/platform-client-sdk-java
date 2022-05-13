@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class SearchSort  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -108,7 +109,6 @@ public class SearchSort  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class SearchSort  implements Serializable {
       return false;
     }
     SearchSort searchSort = (SearchSort) o;
+
     return Objects.equals(this.sortOrder, searchSort.sortOrder) &&
-        Objects.equals(this.sortBy, searchSort.sortBy);
+            Objects.equals(this.sortBy, searchSort.sortBy);
   }
 
   @Override

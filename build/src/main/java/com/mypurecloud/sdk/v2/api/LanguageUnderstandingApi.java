@@ -10,27 +10,27 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
@@ -70,7 +70,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class LanguageUnderstandingApi {
   private final ApiClient pcapiClient;
 
@@ -82,7 +81,6 @@ public class LanguageUnderstandingApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an NLU Domain.
    * 
@@ -107,7 +105,7 @@ public class LanguageUnderstandingApi {
   private DeleteLanguageunderstandingDomainRequest createDeleteLanguageunderstandingDomainRequest(String domainId) {
     return DeleteLanguageunderstandingDomainRequest.builder()
             .withDomainId(domainId)
-    
+
             .build();
   }
 
@@ -158,7 +156,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Delete the feedback on the NLU Domain Version.
    * 
@@ -185,9 +182,9 @@ public class LanguageUnderstandingApi {
   private DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest createDeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest(String domainId, String feedbackId) {
     return DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest.builder()
             .withDomainId(domainId)
-    
+
             .withFeedbackId(feedbackId)
-    
+
             .build();
   }
 
@@ -238,7 +235,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Delete an NLU Domain Version
    * 
@@ -265,9 +261,9 @@ public class LanguageUnderstandingApi {
   private DeleteLanguageunderstandingDomainVersionRequest createDeleteLanguageunderstandingDomainVersionRequest(String domainId, String domainVersionId) {
     return DeleteLanguageunderstandingDomainVersionRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .build();
   }
 
@@ -318,7 +314,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Delete a miner.
    * 
@@ -343,7 +338,7 @@ public class LanguageUnderstandingApi {
   private DeleteLanguageunderstandingMinerRequest createDeleteLanguageunderstandingMinerRequest(String minerId) {
     return DeleteLanguageunderstandingMinerRequest.builder()
             .withMinerId(minerId)
-    
+
             .build();
   }
 
@@ -394,7 +389,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Delete a draft
    * 
@@ -421,9 +415,9 @@ public class LanguageUnderstandingApi {
   private DeleteLanguageunderstandingMinerDraftRequest createDeleteLanguageunderstandingMinerDraftRequest(String minerId, String draftId) {
     return DeleteLanguageunderstandingMinerDraftRequest.builder()
             .withMinerId(minerId)
-    
+
             .withDraftId(draftId)
-    
+
             .build();
   }
 
@@ -474,7 +468,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Find an NLU Domain.
    * 
@@ -501,7 +494,7 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainRequest createGetLanguageunderstandingDomainRequest(String domainId) {
     return GetLanguageunderstandingDomainRequest.builder()
             .withDomainId(domainId)
-    
+
             .build();
   }
 
@@ -553,7 +546,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Get all feedback in the given NLU Domain Version.
    * 
@@ -600,27 +592,27 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) {
     return GetLanguageunderstandingDomainFeedbackRequest.builder()
             .withDomainId(domainId)
-    
+
             .withIntentName(intentName)
-    
+
             .withAssessment(assessment)
-    
+
             .withDateStart(dateStart)
-    
+
             .withDateEnd(dateEnd)
-    
+
             .withIncludeDeleted(includeDeleted)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withEnableCursorPagination(enableCursorPagination)
-    
+
             .withAfter(after)
-    
+
             .withFields(fields)
-    
+
             .build();
   }
 
@@ -672,7 +664,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Find a Feedback
    * 
@@ -703,11 +694,11 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainFeedbackFeedbackIdRequest createGetLanguageunderstandingDomainFeedbackFeedbackIdRequest(String domainId, String feedbackId, List<String> fields) {
     return GetLanguageunderstandingDomainFeedbackFeedbackIdRequest.builder()
             .withDomainId(domainId)
-    
+
             .withFeedbackId(feedbackId)
-    
+
             .withFields(fields)
-    
+
             .build();
   }
 
@@ -759,7 +750,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Find an NLU Domain Version.
    * 
@@ -790,11 +780,11 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainVersionRequest createGetLanguageunderstandingDomainVersionRequest(String domainId, String domainVersionId, Boolean includeUtterances) {
     return GetLanguageunderstandingDomainVersionRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .withIncludeUtterances(includeUtterances)
-    
+
             .build();
   }
 
@@ -846,7 +836,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Retrieved quality report for the specified NLU Domain Version
    * 
@@ -875,9 +864,9 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainVersionReportRequest createGetLanguageunderstandingDomainVersionReportRequest(String domainId, String domainVersionId) {
     return GetLanguageunderstandingDomainVersionReportRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .build();
   }
 
@@ -929,7 +918,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Get all NLU Domain Versions for a given Domain.
    * 
@@ -962,13 +950,13 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainVersionsRequest createGetLanguageunderstandingDomainVersionsRequest(String domainId, Boolean includeUtterances, Integer pageNumber, Integer pageSize) {
     return GetLanguageunderstandingDomainVersionsRequest.builder()
             .withDomainId(domainId)
-    
+
             .withIncludeUtterances(includeUtterances)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1020,7 +1008,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Get all NLU Domains.
    * 
@@ -1049,9 +1036,9 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingDomainsRequest createGetLanguageunderstandingDomainsRequest(Integer pageNumber, Integer pageSize) {
     return GetLanguageunderstandingDomainsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .build();
   }
 
@@ -1103,7 +1090,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Get information about a miner.
    * 
@@ -1130,7 +1116,7 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingMinerRequest createGetLanguageunderstandingMinerRequest(String minerId) {
     return GetLanguageunderstandingMinerRequest.builder()
             .withMinerId(minerId)
-    
+
             .build();
   }
 
@@ -1182,7 +1168,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Get information about a draft.
    * 
@@ -1211,9 +1196,9 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingMinerDraftRequest createGetLanguageunderstandingMinerDraftRequest(String minerId, String draftId) {
     return GetLanguageunderstandingMinerDraftRequest.builder()
             .withMinerId(minerId)
-    
+
             .withDraftId(draftId)
-    
+
             .build();
   }
 
@@ -1265,7 +1250,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Retrieve the list of drafts created.
    * 
@@ -1292,7 +1276,7 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingMinerDraftsRequest createGetLanguageunderstandingMinerDraftsRequest(String minerId) {
     return GetLanguageunderstandingMinerDraftsRequest.builder()
             .withMinerId(minerId)
-    
+
             .build();
   }
 
@@ -1344,7 +1328,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Get information about a mined intent
    * 
@@ -1375,11 +1358,11 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingMinerIntentRequest createGetLanguageunderstandingMinerIntentRequest(String minerId, String intentId, String expand) {
     return GetLanguageunderstandingMinerIntentRequest.builder()
             .withMinerId(minerId)
-    
+
             .withIntentId(intentId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1431,7 +1414,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Retrieve a list of mined intents.
    * 
@@ -1460,9 +1442,9 @@ public class LanguageUnderstandingApi {
   private GetLanguageunderstandingMinerIntentsRequest createGetLanguageunderstandingMinerIntentsRequest(String minerId, String expand) {
     return GetLanguageunderstandingMinerIntentsRequest.builder()
             .withMinerId(minerId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1514,7 +1496,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Retrieve the list of miners created.
    * 
@@ -1589,7 +1570,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Update an NLU Domain.
    * 
@@ -1618,9 +1598,9 @@ public class LanguageUnderstandingApi {
   private PatchLanguageunderstandingDomainRequest createPatchLanguageunderstandingDomainRequest(String domainId, NluDomain body) {
     return PatchLanguageunderstandingDomainRequest.builder()
             .withDomainId(domainId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1672,7 +1652,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
@@ -1703,11 +1682,11 @@ public class LanguageUnderstandingApi {
   private PatchLanguageunderstandingMinerDraftRequest createPatchLanguageunderstandingMinerDraftRequest(String minerId, String draftId, DraftRequest body) {
     return PatchLanguageunderstandingMinerDraftRequest.builder()
             .withMinerId(minerId)
-    
+
             .withDraftId(draftId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1759,7 +1738,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Create feedback for the NLU Domain Version.
    * 
@@ -1788,9 +1766,9 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingDomainFeedbackRequest createPostLanguageunderstandingDomainFeedbackRequest(String domainId, NluFeedbackRequest body) {
     return PostLanguageunderstandingDomainFeedbackRequest.builder()
             .withDomainId(domainId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1842,7 +1820,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
    * 
@@ -1873,11 +1850,11 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingDomainVersionDetectRequest createPostLanguageunderstandingDomainVersionDetectRequest(String domainId, String domainVersionId, NluDetectionRequest body) {
     return PostLanguageunderstandingDomainVersionDetectRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1929,7 +1906,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Publish the draft NLU Domain Version.
    * 
@@ -1958,9 +1934,9 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingDomainVersionPublishRequest createPostLanguageunderstandingDomainVersionPublishRequest(String domainId, String domainVersionId) {
     return PostLanguageunderstandingDomainVersionPublishRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .build();
   }
 
@@ -2012,7 +1988,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Train the draft NLU Domain Version.
    * 
@@ -2041,9 +2016,9 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingDomainVersionTrainRequest createPostLanguageunderstandingDomainVersionTrainRequest(String domainId, String domainVersionId) {
     return PostLanguageunderstandingDomainVersionTrainRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .build();
   }
 
@@ -2095,7 +2070,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Create an NLU Domain Version.
    * 
@@ -2124,9 +2098,9 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingDomainVersionsRequest createPostLanguageunderstandingDomainVersionsRequest(String domainId, NluDomainVersion body) {
     return PostLanguageunderstandingDomainVersionsRequest.builder()
             .withDomainId(domainId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2178,7 +2152,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Create an NLU Domain.
    * 
@@ -2205,7 +2178,7 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingDomainsRequest createPostLanguageunderstandingDomainsRequest(NluDomain body) {
     return PostLanguageunderstandingDomainsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2257,7 +2230,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Create a new draft resource.
    * 
@@ -2286,9 +2258,9 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingMinerDraftsRequest createPostLanguageunderstandingMinerDraftsRequest(String minerId, Draft body) {
     return PostLanguageunderstandingMinerDraftsRequest.builder()
             .withMinerId(minerId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2340,7 +2312,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
@@ -2369,9 +2340,9 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingMinerExecuteRequest createPostLanguageunderstandingMinerExecuteRequest(String minerId, MinerExecuteRequest body) {
     return PostLanguageunderstandingMinerExecuteRequest.builder()
             .withMinerId(minerId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2423,7 +2394,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Create a unique miner.
    * 
@@ -2450,7 +2420,7 @@ public class LanguageUnderstandingApi {
   private PostLanguageunderstandingMinersRequest createPostLanguageunderstandingMinersRequest(Miner body) {
     return PostLanguageunderstandingMinersRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2502,7 +2472,6 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
   /**
    * Update an NLU Domain Version.
    * 
@@ -2533,11 +2502,11 @@ public class LanguageUnderstandingApi {
   private PutLanguageunderstandingDomainVersionRequest createPutLanguageunderstandingDomainVersionRequest(String domainId, String domainVersionId, NluDomainVersion body) {
     return PutLanguageunderstandingDomainVersionRequest.builder()
             .withDomainId(domainId)
-    
+
             .withDomainVersionId(domainVersionId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2589,5 +2558,4 @@ public class LanguageUnderstandingApi {
     }
   }
 
-  
 }

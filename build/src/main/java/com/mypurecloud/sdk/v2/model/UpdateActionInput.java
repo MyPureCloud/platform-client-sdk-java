@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionConfig;
@@ -44,7 +45,7 @@ public class UpdateActionInput  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * Name of action, Can be up to 256 characters long
    **/
@@ -62,7 +63,7 @@ public class UpdateActionInput  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Configuration to support request and response processing
    **/
@@ -80,7 +81,7 @@ public class UpdateActionInput  implements Serializable {
     this.config = config;
   }
 
-  
+
   /**
    * Version of this action
    **/
@@ -98,7 +99,6 @@ public class UpdateActionInput  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class UpdateActionInput  implements Serializable {
       return false;
     }
     UpdateActionInput updateActionInput = (UpdateActionInput) o;
+
     return Objects.equals(this.category, updateActionInput.category) &&
-        Objects.equals(this.name, updateActionInput.name) &&
-        Objects.equals(this.config, updateActionInput.config) &&
-        Objects.equals(this.version, updateActionInput.version);
+            Objects.equals(this.name, updateActionInput.name) &&
+            Objects.equals(this.config, updateActionInput.config) &&
+            Objects.equals(this.version, updateActionInput.version);
   }
 
   @Override

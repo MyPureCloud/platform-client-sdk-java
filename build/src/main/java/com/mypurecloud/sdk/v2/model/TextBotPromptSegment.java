@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class TextBotPromptSegment  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * The segment type which describes any semantics about the 'text' and also indicates which other field might include additional relevant info.
    **/
@@ -114,7 +115,7 @@ public class TextBotPromptSegment  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Additional details describing the segment’s contents, which the client should honour where possible.
    **/
@@ -132,7 +133,7 @@ public class TextBotPromptSegment  implements Serializable {
     this.format = format;
   }
 
-  
+
   /**
    * Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
    **/
@@ -150,7 +151,6 @@ public class TextBotPromptSegment  implements Serializable {
     this.content = content;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,10 +161,11 @@ public class TextBotPromptSegment  implements Serializable {
       return false;
     }
     TextBotPromptSegment textBotPromptSegment = (TextBotPromptSegment) o;
+
     return Objects.equals(this.text, textBotPromptSegment.text) &&
-        Objects.equals(this.type, textBotPromptSegment.type) &&
-        Objects.equals(this.format, textBotPromptSegment.format) &&
-        Objects.equals(this.content, textBotPromptSegment.content);
+            Objects.equals(this.type, textBotPromptSegment.type) &&
+            Objects.equals(this.format, textBotPromptSegment.format) &&
+            Objects.equals(this.content, textBotPromptSegment.content);
   }
 
   @Override

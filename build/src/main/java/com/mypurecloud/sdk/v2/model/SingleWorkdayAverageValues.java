@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -41,42 +42,41 @@ public class SingleWorkdayAverageValues  implements Serializable {
     return dateWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted division for the metrics")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted user for the metrics")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The time zone used for aggregating metric values")
   @JsonProperty("timezone")
   public String getTimezone() {
     return timezone;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metric value averages")
   @JsonProperty("results")
   public List<WorkdayValuesMetricItem> getResults() {
     return results;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
   @JsonProperty("performanceProfile")
   public AddressableEntityRef getPerformanceProfile() {
     return performanceProfile;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,12 +87,13 @@ public class SingleWorkdayAverageValues  implements Serializable {
       return false;
     }
     SingleWorkdayAverageValues singleWorkdayAverageValues = (SingleWorkdayAverageValues) o;
+
     return Objects.equals(this.dateWorkday, singleWorkdayAverageValues.dateWorkday) &&
-        Objects.equals(this.division, singleWorkdayAverageValues.division) &&
-        Objects.equals(this.user, singleWorkdayAverageValues.user) &&
-        Objects.equals(this.timezone, singleWorkdayAverageValues.timezone) &&
-        Objects.equals(this.results, singleWorkdayAverageValues.results) &&
-        Objects.equals(this.performanceProfile, singleWorkdayAverageValues.performanceProfile);
+            Objects.equals(this.division, singleWorkdayAverageValues.division) &&
+            Objects.equals(this.user, singleWorkdayAverageValues.user) &&
+            Objects.equals(this.timezone, singleWorkdayAverageValues.timezone) &&
+            Objects.equals(this.results, singleWorkdayAverageValues.results) &&
+            Objects.equals(this.performanceProfile, singleWorkdayAverageValues.performanceProfile);
   }
 
   @Override

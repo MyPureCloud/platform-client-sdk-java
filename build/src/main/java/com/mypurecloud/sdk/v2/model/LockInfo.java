@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -97,7 +98,7 @@ public class LockInfo  implements Serializable {
     this.lockedBy = lockedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -115,7 +116,7 @@ public class LockInfo  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -133,7 +134,7 @@ public class LockInfo  implements Serializable {
     this.dateExpires = dateExpires;
   }
 
-  
+
   /**
    **/
   public LockInfo action(ActionEnum action) {
@@ -150,7 +151,6 @@ public class LockInfo  implements Serializable {
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,10 +161,11 @@ public class LockInfo  implements Serializable {
       return false;
     }
     LockInfo lockInfo = (LockInfo) o;
+
     return Objects.equals(this.lockedBy, lockInfo.lockedBy) &&
-        Objects.equals(this.dateCreated, lockInfo.dateCreated) &&
-        Objects.equals(this.dateExpires, lockInfo.dateExpires) &&
-        Objects.equals(this.action, lockInfo.action);
+            Objects.equals(this.dateCreated, lockInfo.dateCreated) &&
+            Objects.equals(this.dateExpires, lockInfo.dateExpires) &&
+            Objects.equals(this.action, lockInfo.action);
   }
 
   @Override

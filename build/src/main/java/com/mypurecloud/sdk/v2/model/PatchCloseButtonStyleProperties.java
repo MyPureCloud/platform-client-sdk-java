@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class PatchCloseButtonStyleProperties  implements Serializable {
     this.color = color;
   }
 
-  
+
   /**
    * Opacity of button.
    **/
@@ -59,7 +60,6 @@ public class PatchCloseButtonStyleProperties  implements Serializable {
     this.opacity = opacity;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class PatchCloseButtonStyleProperties  implements Serializable {
       return false;
     }
     PatchCloseButtonStyleProperties patchCloseButtonStyleProperties = (PatchCloseButtonStyleProperties) o;
+
     return Objects.equals(this.color, patchCloseButtonStyleProperties.color) &&
-        Objects.equals(this.opacity, patchCloseButtonStyleProperties.opacity);
+            Objects.equals(this.opacity, patchCloseButtonStyleProperties.opacity);
   }
 
   @Override

@@ -12,7 +12,7 @@ title: ConversationChat
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
 | **roomId** | <!----><!---->**String**<!----> | The room id for the chat. |  [optional] |
 | **recordingId** | <!----><!---->**String**<!----> | A globally unique identifier for the recording associated with this chat. |  [optional] |
-| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant&#39;s chat, divided into activity segments. |  [optional] |
+| **segments** | <!----><!---->[**List&lt;Segment&gt;**](Segment.html)<!----> | The time line of the participant's chat, divided into activity segments. |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the chat |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
@@ -24,7 +24,7 @@ title: ConversationChat
 | **scriptId** | <!----><!---->**String**<!----> | The UUID of the script to use. |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **avatarImageUrl** | <!----><!---->**String**<!----> | If available, the URI to the avatar image of this communication. |  [optional] |
-| **journeyContext** | <!----><!---->[**JourneyContext**](JourneyContext.html)<!----> | A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
+| **journeyContext** | <!----><!---->[**JourneyContext**](JourneyContext.html)<!----> | A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
 | **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
@@ -37,15 +37,15 @@ title: ConversationChat
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;alerting&quot; |
-| DIALING | &quot;dialing&quot; |
-| CONTACTING | &quot;contacting&quot; |
-| OFFERING | &quot;offering&quot; |
-| CONNECTED | &quot;connected&quot; |
-| DISCONNECTED | &quot;disconnected&quot; |
-| TERMINATED | &quot;terminated&quot; |
-| NONE | &quot;none&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 
 
@@ -55,9 +55,9 @@ title: ConversationChat
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -67,19 +67,19 @@ title: ConversationChat
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| CLIENT | &quot;client&quot; |
-| SYSTEM | &quot;system&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
-| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
-| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
-| ERROR | &quot;error&quot; |
-| PEER | &quot;peer&quot; |
-| OTHER | &quot;other&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
-| TIMEOUT | &quot;timeout&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| CLIENT | &quot;client&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; | 
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; | 
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
+| ERROR | &quot;error&quot; | 
+| PEER | &quot;peer&quot; | 
+| OTHER | &quot;other&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
 {: class="table table-striped"}
 
 

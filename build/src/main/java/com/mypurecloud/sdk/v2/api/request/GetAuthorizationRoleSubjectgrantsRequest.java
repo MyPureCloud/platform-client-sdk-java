@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetAuthorizationRoleSubjectgrantsRequest {
-    
+
 	private String roleId;
 	public String getRoleId() {
 		return this.roleId;
@@ -54,7 +54,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setRoleId(roleId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -68,7 +68,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -82,7 +82,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -96,7 +96,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -110,7 +110,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
-	
+
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -124,7 +124,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setNextPage(nextPage);
 	    return this;
 	} 
-	
+
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -138,7 +138,7 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 	    this.setPreviousPage(previousPage);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,19 +169,25 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/roles/{roleId}/subjectgrants")
                 .withPathParameter("roleId", roleId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
+
                 .withQueryParameters("nextPage", "", nextPage)
         
+
                 .withQueryParameters("previousPage", "", previousPage)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -192,12 +198,12 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String roleId) {
 	    return new Builder()
 	            .withRequiredParams(roleId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationRoleSubjectgrantsRequest request;
@@ -206,50 +212,50 @@ public class GetAuthorizationRoleSubjectgrantsRequest {
 			request = new GetAuthorizationRoleSubjectgrantsRequest();
 		}
 
-		
+
 		public Builder withRoleId(String roleId) {
 			request.setRoleId(roleId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
-		
+
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
-		
+
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String roleId) {
 			request.setRoleId(roleId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAuthorizationRoleSubjectgrantsRequest build() {
             

@@ -20,23 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 public class PutResponsemanagementResponseassetRequest {
-    
+
 	private String responseAssetId;
 	public String getResponseAssetId() {
 		return this.responseAssetId;
@@ -50,7 +50,7 @@ public class PutResponsemanagementResponseassetRequest {
 	    this.setResponseAssetId(responseAssetId);
 	    return this;
 	} 
-	
+
 	private ResponseAssetRequest body;
 	public ResponseAssetRequest getBody() {
 		return this.body;
@@ -64,7 +64,7 @@ public class PutResponsemanagementResponseassetRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,8 +101,8 @@ public class PutResponsemanagementResponseassetRequest {
                 .withPathParameter("responseAssetId", responseAssetId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -113,12 +113,12 @@ public class PutResponsemanagementResponseassetRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String responseAssetId, ResponseAssetRequest body) {
 	    return new Builder()
 	            .withRequiredParams(responseAssetId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutResponsemanagementResponseassetRequest request;
@@ -127,26 +127,26 @@ public class PutResponsemanagementResponseassetRequest {
 			request = new PutResponsemanagementResponseassetRequest();
 		}
 
-		
+
 		public Builder withResponseAssetId(String responseAssetId) {
 			request.setResponseAssetId(responseAssetId);
 			return this;
 		}
-		
+
 		public Builder withBody(ResponseAssetRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String responseAssetId, ResponseAssetRequest body) {
 			request.setResponseAssetId(responseAssetId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutResponsemanagementResponseassetRequest build() {
             

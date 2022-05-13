@@ -25,10 +25,10 @@ title: MessageMediaData
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UPLOADING | &quot;uploading&quot; |
-| VALID | &quot;valid&quot; |
-| INVALID | &quot;invalid&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UPLOADING | &quot;uploading&quot; | 
+| VALID | &quot;valid&quot; | 
+| INVALID | &quot;invalid&quot; | 
 {: class="table table-striped"}
 
 

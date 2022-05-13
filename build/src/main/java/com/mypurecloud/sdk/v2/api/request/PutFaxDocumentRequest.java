@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class PutFaxDocumentRequest {
-    
+
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -41,7 +41,7 @@ public class PutFaxDocumentRequest {
 	    this.setDocumentId(documentId);
 	    return this;
 	} 
-	
+
 	private FaxDocument body;
 	public FaxDocument getBody() {
 		return this.body;
@@ -55,7 +55,7 @@ public class PutFaxDocumentRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -92,8 +92,8 @@ public class PutFaxDocumentRequest {
                 .withPathParameter("documentId", documentId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -104,12 +104,12 @@ public class PutFaxDocumentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String documentId, FaxDocument body) {
 	    return new Builder()
 	            .withRequiredParams(documentId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutFaxDocumentRequest request;
@@ -118,26 +118,26 @@ public class PutFaxDocumentRequest {
 			request = new PutFaxDocumentRequest();
 		}
 
-		
+
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
-		
+
 		public Builder withBody(FaxDocument body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String documentId, FaxDocument body) {
 			request.setDocumentId(documentId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PutFaxDocumentRequest build() {
             

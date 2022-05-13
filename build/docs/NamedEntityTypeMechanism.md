@@ -20,11 +20,11 @@ title: NamedEntityTypeMechanism
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DYNAMICLIST | &quot;DynamicList&quot; |
-| LIST | &quot;List&quot; |
-| REGEX | &quot;Regex&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DYNAMICLIST | &quot;DynamicList&quot; | 
+| LIST | &quot;List&quot; | 
+| REGEX | &quot;Regex&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

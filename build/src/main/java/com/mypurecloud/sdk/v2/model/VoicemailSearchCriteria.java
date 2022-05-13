@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.VoicemailSearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -153,7 +153,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.endValue = endValue;
   }
 
-  
+
   /**
    * A list of values for the search to match against
    **/
@@ -171,7 +171,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.values = values;
   }
 
-  
+
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -189,7 +189,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.startValue = startValue;
   }
 
-  
+
   /**
    * Field names to search against
    **/
@@ -207,7 +207,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.fields = fields;
   }
 
-  
+
   /**
    * A value for the search to match against
    **/
@@ -225,7 +225,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -243,7 +243,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Groups multiple conditions
    **/
@@ -261,7 +261,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
    **/
@@ -279,7 +279,7 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.dateFormat = dateFormat;
   }
 
-  
+
   /**
    * Search Type
    **/
@@ -297,7 +297,6 @@ public class VoicemailSearchCriteria  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -308,15 +307,16 @@ public class VoicemailSearchCriteria  implements Serializable {
       return false;
     }
     VoicemailSearchCriteria voicemailSearchCriteria = (VoicemailSearchCriteria) o;
+
     return Objects.equals(this.endValue, voicemailSearchCriteria.endValue) &&
-        Objects.equals(this.values, voicemailSearchCriteria.values) &&
-        Objects.equals(this.startValue, voicemailSearchCriteria.startValue) &&
-        Objects.equals(this.fields, voicemailSearchCriteria.fields) &&
-        Objects.equals(this.value, voicemailSearchCriteria.value) &&
-        Objects.equals(this.operator, voicemailSearchCriteria.operator) &&
-        Objects.equals(this.group, voicemailSearchCriteria.group) &&
-        Objects.equals(this.dateFormat, voicemailSearchCriteria.dateFormat) &&
-        Objects.equals(this.type, voicemailSearchCriteria.type);
+            Objects.equals(this.values, voicemailSearchCriteria.values) &&
+            Objects.equals(this.startValue, voicemailSearchCriteria.startValue) &&
+            Objects.equals(this.fields, voicemailSearchCriteria.fields) &&
+            Objects.equals(this.value, voicemailSearchCriteria.value) &&
+            Objects.equals(this.operator, voicemailSearchCriteria.operator) &&
+            Objects.equals(this.group, voicemailSearchCriteria.group) &&
+            Objects.equals(this.dateFormat, voicemailSearchCriteria.dateFormat) &&
+            Objects.equals(this.type, voicemailSearchCriteria.type);
   }
 
   @Override

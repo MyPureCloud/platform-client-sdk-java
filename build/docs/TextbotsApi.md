@@ -53,9 +53,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 TextbotsApi apiInstance = new TextbotsApi();
-List<String> botType = Arrays.asList("botType_example"); // List<String> | Bot types
+List<String> botType = Arrays.asList(null); // List<String> | Bot types
 String botName = "botName_example"; // String | Bot name
-List<String> botId = Arrays.asList("botId_example"); // List<String> | Bot IDs
+List<String> botId = Arrays.asList(null); // List<String> | Bot IDs
 Integer pageSize = 25; // Integer | The maximum results to return
 try {
     BotSearchResponseEntityListing result = apiInstance.getTextbotsBotsSearch(botType, botName, botId, pageSize);
@@ -157,7 +157,7 @@ try {
 
 Create an execution instance of a bot flow definition.
 
-The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+The launch is asynchronous; use the returned instance ID to post turns to it using 'POST /api/v2/textbots/botflows/sessions/{sessionId}/turns'.
 
 Wraps POST /api/v2/textbots/botflows/sessions  
 

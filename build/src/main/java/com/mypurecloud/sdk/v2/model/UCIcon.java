@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -29,7 +30,6 @@ public class UCIcon  implements Serializable {
     return vector;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -40,6 +40,7 @@ public class UCIcon  implements Serializable {
       return false;
     }
     UCIcon uCIcon = (UCIcon) o;
+
     return Objects.equals(this.vector, uCIcon.vector);
   }
 

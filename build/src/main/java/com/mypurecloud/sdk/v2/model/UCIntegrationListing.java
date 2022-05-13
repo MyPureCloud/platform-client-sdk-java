@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing total(Long total) {
@@ -103,7 +104,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.total = total;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public UCIntegrationListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class UCIntegrationListing  implements Serializable, PagedResource<UCInte
       return false;
     }
     UCIntegrationListing uCIntegrationListing = (UCIntegrationListing) o;
+
     return Objects.equals(this.entities, uCIntegrationListing.entities) &&
-        Objects.equals(this.pageSize, uCIntegrationListing.pageSize) &&
-        Objects.equals(this.pageNumber, uCIntegrationListing.pageNumber) &&
-        Objects.equals(this.total, uCIntegrationListing.total) &&
-        Objects.equals(this.lastUri, uCIntegrationListing.lastUri) &&
-        Objects.equals(this.firstUri, uCIntegrationListing.firstUri) &&
-        Objects.equals(this.selfUri, uCIntegrationListing.selfUri) &&
-        Objects.equals(this.previousUri, uCIntegrationListing.previousUri) &&
-        Objects.equals(this.nextUri, uCIntegrationListing.nextUri) &&
-        Objects.equals(this.pageCount, uCIntegrationListing.pageCount);
+            Objects.equals(this.pageSize, uCIntegrationListing.pageSize) &&
+            Objects.equals(this.pageNumber, uCIntegrationListing.pageNumber) &&
+            Objects.equals(this.total, uCIntegrationListing.total) &&
+            Objects.equals(this.lastUri, uCIntegrationListing.lastUri) &&
+            Objects.equals(this.firstUri, uCIntegrationListing.firstUri) &&
+            Objects.equals(this.selfUri, uCIntegrationListing.selfUri) &&
+            Objects.equals(this.previousUri, uCIntegrationListing.previousUri) &&
+            Objects.equals(this.nextUri, uCIntegrationListing.nextUri) &&
+            Objects.equals(this.pageCount, uCIntegrationListing.pageCount);
   }
 
   @Override

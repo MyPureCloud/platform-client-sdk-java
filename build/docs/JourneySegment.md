@@ -32,9 +32,9 @@ title: JourneySegment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SESSION | &quot;Session&quot; |
-| CUSTOMER | &quot;Customer&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SESSION | &quot;Session&quot; | 
+| CUSTOMER | &quot;Customer&quot; | 
 {: class="table table-striped"}
 
 

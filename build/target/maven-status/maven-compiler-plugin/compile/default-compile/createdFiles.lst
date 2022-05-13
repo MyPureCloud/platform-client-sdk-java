@@ -10293,8 +10293,8 @@ com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesPhonesRequest$expan
 com/mypurecloud/sdk/v2/api/request/GetGamificationLeaderboardAllRequest$filterTypeValues.class
 com/mypurecloud/sdk/v2/api/GamificationApi$12.class
 com/mypurecloud/sdk/v2/api/WorkforceManagementApiAsync$316.class
-com/mypurecloud/sdk/v2/model/PresenceEventOrganizationPresence.class
 com/mypurecloud/sdk/v2/model/Line.class
+com/mypurecloud/sdk/v2/model/PresenceEventOrganizationPresence.class
 com/mypurecloud/sdk/v2/api/request/DeleteLanguageunderstandingMinerDraftRequest$1.class
 com/mypurecloud/sdk/v2/api/LearningApi$8.class
 com/mypurecloud/sdk/v2/api/ConversationsApi$53.class

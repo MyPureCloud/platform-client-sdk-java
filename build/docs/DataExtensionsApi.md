@@ -22,8 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get a specific named core type.
 
-
-
 Wraps GET /api/v2/dataextensions/coretypes/{coretypeName}  
 
 Requires ANY permissions: 
@@ -85,8 +83,6 @@ try {
 
 Get the core types from which all schemas are built.
 
-
-
 Wraps GET /api/v2/dataextensions/coretypes  
 
 Requires ANY permissions: 
@@ -143,8 +139,6 @@ This endpoint does not require any parameters.
 > [SchemaQuantityLimits](SchemaQuantityLimits.html) getDataextensionsLimits()
 
 Get quantitative limits on schemas
-
-
 
 Wraps GET /api/v2/dataextensions/limits  
 

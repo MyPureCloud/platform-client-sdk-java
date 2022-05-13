@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class AnalyticsReportingSettings  implements Serializable {
     this.piiMaskingEnabled = piiMaskingEnabled;
   }
 
-  
+
   /**
    * Indication of whether or not to obfuscate export data from the Queue Agent Details view based on User ACL
    **/
@@ -59,7 +60,6 @@ public class AnalyticsReportingSettings  implements Serializable {
     this.queueAgentAccessObfuscation = queueAgentAccessObfuscation;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class AnalyticsReportingSettings  implements Serializable {
       return false;
     }
     AnalyticsReportingSettings analyticsReportingSettings = (AnalyticsReportingSettings) o;
+
     return Objects.equals(this.piiMaskingEnabled, analyticsReportingSettings.piiMaskingEnabled) &&
-        Objects.equals(this.queueAgentAccessObfuscation, analyticsReportingSettings.queueAgentAccessObfuscation);
+            Objects.equals(this.queueAgentAccessObfuscation, analyticsReportingSettings.queueAgentAccessObfuscation);
   }
 
   @Override

@@ -13,25 +13,25 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.KnowledgeBase;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeImport;
-import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
-import com.mypurecloud.sdk.v2.model.TrainingListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
-import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeBase;
+import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
+import com.mypurecloud.sdk.v2.model.TrainingListing;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseRequest;
@@ -68,7 +68,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class KnowledgeApiAsync {
   private final ApiClient pcapiClient;
 
@@ -80,7 +79,6 @@ public class KnowledgeApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete knowledge base
    * 
@@ -156,7 +154,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Delete category
    * 
@@ -232,7 +229,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Delete document
    * 
@@ -308,7 +304,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Delete import operation
    * 
@@ -384,7 +379,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get knowledge base
    * 
@@ -460,7 +454,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get categories
    * 
@@ -536,7 +529,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get category
    * 
@@ -612,7 +604,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get document
    * 
@@ -688,7 +679,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get documents
    * 
@@ -764,7 +754,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get import operation report
    * 
@@ -840,7 +829,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get training detail
    * 
@@ -916,7 +904,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get all trainings information for a knowledgebase
    * 
@@ -992,7 +979,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Get knowledge bases
    * 
@@ -1068,7 +1054,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Update knowledge base
    * 
@@ -1144,7 +1129,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Update category
    * 
@@ -1220,7 +1204,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Update document
    * 
@@ -1296,7 +1279,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Update documents collection
    * 
@@ -1372,7 +1354,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Start import operation
    * 
@@ -1448,7 +1429,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Creates a presigned URL for uploading a knowledge import file with a set of documents
    * 
@@ -1524,7 +1504,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Create new category
    * 
@@ -1600,7 +1579,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Create document
    * 
@@ -1676,7 +1654,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Create import operation
    * 
@@ -1752,7 +1729,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Promote trained documents from draft state to active.
    * 
@@ -1828,7 +1804,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Trigger training
    * 
@@ -1904,7 +1879,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Search Documents
    * 
@@ -1980,7 +1954,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
   /**
    * Create new knowledge base
    * 
@@ -2056,7 +2029,6 @@ public class KnowledgeApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

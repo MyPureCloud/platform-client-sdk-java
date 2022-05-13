@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.total = total;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public MessagingCampaignScheduleEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class MessagingCampaignScheduleEntityListing  implements Serializable, Pa
       return false;
     }
     MessagingCampaignScheduleEntityListing messagingCampaignScheduleEntityListing = (MessagingCampaignScheduleEntityListing) o;
+
     return Objects.equals(this.entities, messagingCampaignScheduleEntityListing.entities) &&
-        Objects.equals(this.pageSize, messagingCampaignScheduleEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, messagingCampaignScheduleEntityListing.pageNumber) &&
-        Objects.equals(this.total, messagingCampaignScheduleEntityListing.total) &&
-        Objects.equals(this.lastUri, messagingCampaignScheduleEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, messagingCampaignScheduleEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, messagingCampaignScheduleEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, messagingCampaignScheduleEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, messagingCampaignScheduleEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, messagingCampaignScheduleEntityListing.pageCount);
+            Objects.equals(this.pageSize, messagingCampaignScheduleEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, messagingCampaignScheduleEntityListing.pageNumber) &&
+            Objects.equals(this.total, messagingCampaignScheduleEntityListing.total) &&
+            Objects.equals(this.lastUri, messagingCampaignScheduleEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, messagingCampaignScheduleEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, messagingCampaignScheduleEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, messagingCampaignScheduleEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, messagingCampaignScheduleEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, messagingCampaignScheduleEntityListing.pageCount);
   }
 
   @Override

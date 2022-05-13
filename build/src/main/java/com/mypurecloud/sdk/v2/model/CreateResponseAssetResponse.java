@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -34,21 +35,20 @@ public class CreateResponseAssetResponse  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Pre-signed URL to PUT the file to")
   @JsonProperty("url")
   public String getUrl() {
     return url;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Required headers when uploading a file through PUT request to the URL")
   @JsonProperty("headers")
   public Map<String, String> getHeaders() {
     return headers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,9 +59,10 @@ public class CreateResponseAssetResponse  implements Serializable {
       return false;
     }
     CreateResponseAssetResponse createResponseAssetResponse = (CreateResponseAssetResponse) o;
+
     return Objects.equals(this.id, createResponseAssetResponse.id) &&
-        Objects.equals(this.url, createResponseAssetResponse.url) &&
-        Objects.equals(this.headers, createResponseAssetResponse.headers);
+            Objects.equals(this.url, createResponseAssetResponse.url) &&
+            Objects.equals(this.headers, createResponseAssetResponse.headers);
   }
 
   @Override

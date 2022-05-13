@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,14 +152,14 @@ public class MessagingIntegration  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The name of the Integration")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-  
+
   /**
    * Defines the SupportedContent profile configured for an integration
    **/
@@ -176,7 +177,7 @@ public class MessagingIntegration  implements Serializable {
     this.supportedContent = supportedContent;
   }
 
-  
+
   /**
    **/
   public MessagingIntegration messagingSetting(MessagingSettingReference messagingSetting) {
@@ -193,70 +194,69 @@ public class MessagingIntegration  implements Serializable {
     this.messagingSetting = messagingSetting;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the Integration")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The type of Messaging Integration")
   @JsonProperty("messengerType")
   public MessengerTypeEnum getMessengerType() {
     return messengerType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The recipient associated to the Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User reference that created this Integration")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User reference that last modified this Integration")
   @JsonProperty("modifiedBy")
   public DomainEntityRef getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "Version number required for updates.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -267,19 +267,20 @@ public class MessagingIntegration  implements Serializable {
       return false;
     }
     MessagingIntegration messagingIntegration = (MessagingIntegration) o;
+
     return Objects.equals(this.id, messagingIntegration.id) &&
-        Objects.equals(this.name, messagingIntegration.name) &&
-        Objects.equals(this.supportedContent, messagingIntegration.supportedContent) &&
-        Objects.equals(this.messagingSetting, messagingIntegration.messagingSetting) &&
-        Objects.equals(this.status, messagingIntegration.status) &&
-        Objects.equals(this.messengerType, messagingIntegration.messengerType) &&
-        Objects.equals(this.recipient, messagingIntegration.recipient) &&
-        Objects.equals(this.dateCreated, messagingIntegration.dateCreated) &&
-        Objects.equals(this.dateModified, messagingIntegration.dateModified) &&
-        Objects.equals(this.createdBy, messagingIntegration.createdBy) &&
-        Objects.equals(this.modifiedBy, messagingIntegration.modifiedBy) &&
-        Objects.equals(this.version, messagingIntegration.version) &&
-        Objects.equals(this.selfUri, messagingIntegration.selfUri);
+            Objects.equals(this.name, messagingIntegration.name) &&
+            Objects.equals(this.supportedContent, messagingIntegration.supportedContent) &&
+            Objects.equals(this.messagingSetting, messagingIntegration.messagingSetting) &&
+            Objects.equals(this.status, messagingIntegration.status) &&
+            Objects.equals(this.messengerType, messagingIntegration.messengerType) &&
+            Objects.equals(this.recipient, messagingIntegration.recipient) &&
+            Objects.equals(this.dateCreated, messagingIntegration.dateCreated) &&
+            Objects.equals(this.dateModified, messagingIntegration.dateModified) &&
+            Objects.equals(this.createdBy, messagingIntegration.createdBy) &&
+            Objects.equals(this.modifiedBy, messagingIntegration.modifiedBy) &&
+            Objects.equals(this.version, messagingIntegration.version) &&
+            Objects.equals(this.selfUri, messagingIntegration.selfUri);
   }
 
   @Override

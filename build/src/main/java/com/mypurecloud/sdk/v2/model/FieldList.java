@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -52,7 +53,7 @@ public class FieldList  implements Serializable {
     this.customLabels = customLabels;
   }
 
-  
+
   /**
    **/
   public FieldList instructionText(String instructionText) {
@@ -69,7 +70,7 @@ public class FieldList  implements Serializable {
     this.instructionText = instructionText;
   }
 
-  
+
   /**
    **/
   public FieldList key(String key) {
@@ -86,7 +87,7 @@ public class FieldList  implements Serializable {
     this.key = key;
   }
 
-  
+
   /**
    **/
   public FieldList labelKeys(List<String> labelKeys) {
@@ -103,7 +104,7 @@ public class FieldList  implements Serializable {
     this.labelKeys = labelKeys;
   }
 
-  
+
   /**
    **/
   public FieldList params(Map<String, Object> params) {
@@ -120,7 +121,7 @@ public class FieldList  implements Serializable {
     this.params = params;
   }
 
-  
+
   /**
    **/
   public FieldList repeatable(Boolean repeatable) {
@@ -137,7 +138,7 @@ public class FieldList  implements Serializable {
     this.repeatable = repeatable;
   }
 
-  
+
   /**
    **/
   public FieldList state(String state) {
@@ -154,7 +155,7 @@ public class FieldList  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public FieldList type(String type) {
@@ -171,7 +172,7 @@ public class FieldList  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public FieldList required(Boolean required) {
@@ -188,7 +189,7 @@ public class FieldList  implements Serializable {
     this.required = required;
   }
 
-  
+
   /**
    **/
   public FieldList gdpr(Boolean gdpr) {
@@ -205,7 +206,6 @@ public class FieldList  implements Serializable {
     this.gdpr = gdpr;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FieldList  implements Serializable {
       return false;
     }
     FieldList fieldList = (FieldList) o;
+
     return Objects.equals(this.customLabels, fieldList.customLabels) &&
-        Objects.equals(this.instructionText, fieldList.instructionText) &&
-        Objects.equals(this.key, fieldList.key) &&
-        Objects.equals(this.labelKeys, fieldList.labelKeys) &&
-        Objects.equals(this.params, fieldList.params) &&
-        Objects.equals(this.repeatable, fieldList.repeatable) &&
-        Objects.equals(this.state, fieldList.state) &&
-        Objects.equals(this.type, fieldList.type) &&
-        Objects.equals(this.required, fieldList.required) &&
-        Objects.equals(this.gdpr, fieldList.gdpr);
+            Objects.equals(this.instructionText, fieldList.instructionText) &&
+            Objects.equals(this.key, fieldList.key) &&
+            Objects.equals(this.labelKeys, fieldList.labelKeys) &&
+            Objects.equals(this.params, fieldList.params) &&
+            Objects.equals(this.repeatable, fieldList.repeatable) &&
+            Objects.equals(this.state, fieldList.state) &&
+            Objects.equals(this.type, fieldList.type) &&
+            Objects.equals(this.required, fieldList.required) &&
+            Objects.equals(this.gdpr, fieldList.gdpr);
   }
 
   @Override

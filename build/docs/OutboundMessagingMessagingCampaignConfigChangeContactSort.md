@@ -20,9 +20,9 @@ title: OutboundMessagingMessagingCampaignConfigChangeContactSort
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASC | &quot;ASC&quot; |
-| DESC | &quot;DESC&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASC | &quot;ASC&quot; | 
+| DESC | &quot;DESC&quot; | 
 {: class="table table-striped"}
 
 

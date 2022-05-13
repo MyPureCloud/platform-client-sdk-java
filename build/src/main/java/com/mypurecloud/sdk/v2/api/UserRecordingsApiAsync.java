@@ -13,11 +13,11 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.UserRecording;
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
-import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.UserRecording;
+import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteUserrecordingRequest;
@@ -34,7 +34,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class UserRecordingsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -46,7 +45,6 @@ public class UserRecordingsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a user recording.
    * 
@@ -122,7 +120,6 @@ public class UserRecordingsApiAsync {
     }
   }
 
-  
   /**
    * Get a user recording.
    * 
@@ -198,7 +195,6 @@ public class UserRecordingsApiAsync {
     }
   }
 
-  
   /**
    * Download a user recording.
    * 
@@ -274,7 +270,6 @@ public class UserRecordingsApiAsync {
     }
   }
 
-  
   /**
    * Get a list of user recordings.
    * 
@@ -350,7 +345,6 @@ public class UserRecordingsApiAsync {
     }
   }
 
-  
   /**
    * Get user recording summary
    * 
@@ -426,7 +420,6 @@ public class UserRecordingsApiAsync {
     }
   }
 
-  
   /**
    * Update a user recording.
    * 
@@ -502,7 +495,6 @@ public class UserRecordingsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

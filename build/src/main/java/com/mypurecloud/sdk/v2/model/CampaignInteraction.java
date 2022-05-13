@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.ConversationBasic;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -118,7 +118,7 @@ public class CampaignInteraction  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction campaign(DomainEntityRef campaign) {
@@ -135,7 +135,7 @@ public class CampaignInteraction  implements Serializable {
     this.campaign = campaign;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction agent(DomainEntityRef agent) {
@@ -152,7 +152,7 @@ public class CampaignInteraction  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction contact(DomainEntityRef contact) {
@@ -169,7 +169,7 @@ public class CampaignInteraction  implements Serializable {
     this.contact = contact;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction destinationAddress(String destinationAddress) {
@@ -186,7 +186,7 @@ public class CampaignInteraction  implements Serializable {
     this.destinationAddress = destinationAddress;
   }
 
-  
+
   /**
    * Boolean value if there is an active preview call on the interaction
    **/
@@ -204,7 +204,7 @@ public class CampaignInteraction  implements Serializable {
     this.activePreviewCall = activePreviewCall;
   }
 
-  
+
   /**
    * The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -222,7 +222,7 @@ public class CampaignInteraction  implements Serializable {
     this.lastActivePreviewWrapupTime = lastActivePreviewWrapupTime;
   }
 
-  
+
   /**
    * The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -240,7 +240,7 @@ public class CampaignInteraction  implements Serializable {
     this.creationTime = creationTime;
   }
 
-  
+
   /**
    * The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -258,7 +258,7 @@ public class CampaignInteraction  implements Serializable {
     this.callPlacedTime = callPlacedTime;
   }
 
-  
+
   /**
    * The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -276,7 +276,7 @@ public class CampaignInteraction  implements Serializable {
     this.callRoutedTime = callRoutedTime;
   }
 
-  
+
   /**
    * The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -294,7 +294,7 @@ public class CampaignInteraction  implements Serializable {
     this.previewConnectedTime = previewConnectedTime;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction queue(DomainEntityRef queue) {
@@ -311,7 +311,7 @@ public class CampaignInteraction  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction script(DomainEntityRef script) {
@@ -328,7 +328,7 @@ public class CampaignInteraction  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer
    **/
@@ -346,7 +346,7 @@ public class CampaignInteraction  implements Serializable {
     this.disposition = disposition;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction callerName(String callerName) {
@@ -363,7 +363,7 @@ public class CampaignInteraction  implements Serializable {
     this.callerName = callerName;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction callerAddress(String callerAddress) {
@@ -380,7 +380,7 @@ public class CampaignInteraction  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -398,7 +398,7 @@ public class CampaignInteraction  implements Serializable {
     this.previewPopDeliveredTime = previewPopDeliveredTime;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction conversation(ConversationBasic conversation) {
@@ -415,7 +415,7 @@ public class CampaignInteraction  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    * conversation participant id that is the dialer system participant to monitor the call from dialer perspective
    **/
@@ -433,7 +433,7 @@ public class CampaignInteraction  implements Serializable {
     this.dialerSystemParticipantId = dialerSystemParticipantId;
   }
 
-  
+
   /**
    **/
   public CampaignInteraction dialingMode(String dialingMode) {
@@ -450,7 +450,7 @@ public class CampaignInteraction  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-  
+
   /**
    * Any skills that are attached to the call for routing
    **/
@@ -468,7 +468,6 @@ public class CampaignInteraction  implements Serializable {
     this.skills = skills;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -479,27 +478,28 @@ public class CampaignInteraction  implements Serializable {
       return false;
     }
     CampaignInteraction campaignInteraction = (CampaignInteraction) o;
+
     return Objects.equals(this.id, campaignInteraction.id) &&
-        Objects.equals(this.campaign, campaignInteraction.campaign) &&
-        Objects.equals(this.agent, campaignInteraction.agent) &&
-        Objects.equals(this.contact, campaignInteraction.contact) &&
-        Objects.equals(this.destinationAddress, campaignInteraction.destinationAddress) &&
-        Objects.equals(this.activePreviewCall, campaignInteraction.activePreviewCall) &&
-        Objects.equals(this.lastActivePreviewWrapupTime, campaignInteraction.lastActivePreviewWrapupTime) &&
-        Objects.equals(this.creationTime, campaignInteraction.creationTime) &&
-        Objects.equals(this.callPlacedTime, campaignInteraction.callPlacedTime) &&
-        Objects.equals(this.callRoutedTime, campaignInteraction.callRoutedTime) &&
-        Objects.equals(this.previewConnectedTime, campaignInteraction.previewConnectedTime) &&
-        Objects.equals(this.queue, campaignInteraction.queue) &&
-        Objects.equals(this.script, campaignInteraction.script) &&
-        Objects.equals(this.disposition, campaignInteraction.disposition) &&
-        Objects.equals(this.callerName, campaignInteraction.callerName) &&
-        Objects.equals(this.callerAddress, campaignInteraction.callerAddress) &&
-        Objects.equals(this.previewPopDeliveredTime, campaignInteraction.previewPopDeliveredTime) &&
-        Objects.equals(this.conversation, campaignInteraction.conversation) &&
-        Objects.equals(this.dialerSystemParticipantId, campaignInteraction.dialerSystemParticipantId) &&
-        Objects.equals(this.dialingMode, campaignInteraction.dialingMode) &&
-        Objects.equals(this.skills, campaignInteraction.skills);
+            Objects.equals(this.campaign, campaignInteraction.campaign) &&
+            Objects.equals(this.agent, campaignInteraction.agent) &&
+            Objects.equals(this.contact, campaignInteraction.contact) &&
+            Objects.equals(this.destinationAddress, campaignInteraction.destinationAddress) &&
+            Objects.equals(this.activePreviewCall, campaignInteraction.activePreviewCall) &&
+            Objects.equals(this.lastActivePreviewWrapupTime, campaignInteraction.lastActivePreviewWrapupTime) &&
+            Objects.equals(this.creationTime, campaignInteraction.creationTime) &&
+            Objects.equals(this.callPlacedTime, campaignInteraction.callPlacedTime) &&
+            Objects.equals(this.callRoutedTime, campaignInteraction.callRoutedTime) &&
+            Objects.equals(this.previewConnectedTime, campaignInteraction.previewConnectedTime) &&
+            Objects.equals(this.queue, campaignInteraction.queue) &&
+            Objects.equals(this.script, campaignInteraction.script) &&
+            Objects.equals(this.disposition, campaignInteraction.disposition) &&
+            Objects.equals(this.callerName, campaignInteraction.callerName) &&
+            Objects.equals(this.callerAddress, campaignInteraction.callerAddress) &&
+            Objects.equals(this.previewPopDeliveredTime, campaignInteraction.previewPopDeliveredTime) &&
+            Objects.equals(this.conversation, campaignInteraction.conversation) &&
+            Objects.equals(this.dialerSystemParticipantId, campaignInteraction.dialerSystemParticipantId) &&
+            Objects.equals(this.dialingMode, campaignInteraction.dialingMode) &&
+            Objects.equals(this.skills, campaignInteraction.skills);
   }
 
   @Override

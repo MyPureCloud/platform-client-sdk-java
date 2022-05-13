@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class ReportingTurnIntentSlot  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The value of the slot.
    **/
@@ -61,7 +62,7 @@ public class ReportingTurnIntentSlot  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The NLU entity type of the slot (either builtin or user defined)
    **/
@@ -79,7 +80,7 @@ public class ReportingTurnIntentSlot  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The confidence score this slot received during detection.
    **/
@@ -97,7 +98,6 @@ public class ReportingTurnIntentSlot  implements Serializable {
     this.confidence = confidence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class ReportingTurnIntentSlot  implements Serializable {
       return false;
     }
     ReportingTurnIntentSlot reportingTurnIntentSlot = (ReportingTurnIntentSlot) o;
+
     return Objects.equals(this.name, reportingTurnIntentSlot.name) &&
-        Objects.equals(this.value, reportingTurnIntentSlot.value) &&
-        Objects.equals(this.type, reportingTurnIntentSlot.type) &&
-        Objects.equals(this.confidence, reportingTurnIntentSlot.confidence);
+            Objects.equals(this.value, reportingTurnIntentSlot.value) &&
+            Objects.equals(this.type, reportingTurnIntentSlot.type) &&
+            Objects.equals(this.confidence, reportingTurnIntentSlot.confidence);
   }
 
   @Override

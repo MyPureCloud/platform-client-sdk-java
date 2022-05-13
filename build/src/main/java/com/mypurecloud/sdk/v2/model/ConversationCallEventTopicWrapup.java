@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class ConversationCallEventTopicWrapup  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    * Text entered by the agent to describe the call or disposition.
    **/
@@ -65,7 +66,7 @@ public class ConversationCallEventTopicWrapup  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * List of tags selected by the agent to describe the call or disposition.
    **/
@@ -83,7 +84,7 @@ public class ConversationCallEventTopicWrapup  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    * The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
    **/
@@ -101,7 +102,7 @@ public class ConversationCallEventTopicWrapup  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-  
+
   /**
    * The timestamp when the wrapup was finished.
    **/
@@ -119,7 +120,6 @@ public class ConversationCallEventTopicWrapup  implements Serializable {
     this.endTime = endTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class ConversationCallEventTopicWrapup  implements Serializable {
       return false;
     }
     ConversationCallEventTopicWrapup conversationCallEventTopicWrapup = (ConversationCallEventTopicWrapup) o;
+
     return Objects.equals(this.code, conversationCallEventTopicWrapup.code) &&
-        Objects.equals(this.notes, conversationCallEventTopicWrapup.notes) &&
-        Objects.equals(this.tags, conversationCallEventTopicWrapup.tags) &&
-        Objects.equals(this.durationSeconds, conversationCallEventTopicWrapup.durationSeconds) &&
-        Objects.equals(this.endTime, conversationCallEventTopicWrapup.endTime);
+            Objects.equals(this.notes, conversationCallEventTopicWrapup.notes) &&
+            Objects.equals(this.tags, conversationCallEventTopicWrapup.tags) &&
+            Objects.equals(this.durationSeconds, conversationCallEventTopicWrapup.durationSeconds) &&
+            Objects.equals(this.endTime, conversationCallEventTopicWrapup.endTime);
   }
 
   @Override

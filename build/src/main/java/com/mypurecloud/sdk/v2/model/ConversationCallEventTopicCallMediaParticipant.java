@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -356,7 +357,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant name(String name) {
@@ -373,7 +374,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant address(String address) {
@@ -390,7 +391,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant startTime(Date startTime) {
@@ -407,7 +408,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant connectedTime(Date connectedTime) {
@@ -424,7 +425,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant endTime(Date endTime) {
@@ -441,7 +442,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant startHoldTime(Date startHoldTime) {
@@ -458,7 +459,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant purpose(String purpose) {
@@ -475,7 +476,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant state(StateEnum state) {
@@ -492,7 +493,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant direction(DirectionEnum direction) {
@@ -509,7 +510,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -526,7 +527,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant held(Boolean held) {
@@ -543,7 +544,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -560,7 +561,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -577,7 +578,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant user(ConversationCallEventTopicUriReference user) {
@@ -594,7 +595,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant queue(ConversationCallEventTopicUriReference queue) {
@@ -611,7 +612,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant team(ConversationCallEventTopicUriReference team) {
@@ -628,7 +629,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant attributes(Map<String, String> attributes) {
@@ -645,7 +646,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant errorInfo(ConversationCallEventTopicErrorBody errorInfo) {
@@ -662,7 +663,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant script(ConversationCallEventTopicUriReference script) {
@@ -679,7 +680,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -696,7 +697,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -713,7 +714,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -730,7 +731,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant provider(String provider) {
@@ -747,7 +748,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant externalContact(ConversationCallEventTopicUriReference externalContact) {
@@ -764,7 +765,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant externalOrganization(ConversationCallEventTopicUriReference externalOrganization) {
@@ -781,7 +782,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant wrapup(ConversationCallEventTopicWrapup wrapup) {
@@ -798,7 +799,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant conversationRoutingData(ConversationCallEventTopicConversationRoutingData conversationRoutingData) {
@@ -815,7 +816,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant peer(String peer) {
@@ -832,7 +833,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -849,7 +850,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -866,7 +867,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant journeyContext(ConversationCallEventTopicJourneyContext journeyContext) {
@@ -883,7 +884,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant startAcwTime(Date startAcwTime) {
@@ -900,7 +901,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant endAcwTime(Date endAcwTime) {
@@ -917,7 +918,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
@@ -934,7 +935,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.muted = muted;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant confined(Boolean confined) {
@@ -951,7 +952,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.confined = confined;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant recording(Boolean recording) {
@@ -968,7 +969,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.recording = recording;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant recordingState(RecordingStateEnum recordingState) {
@@ -985,7 +986,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant group(ConversationCallEventTopicUriReference group) {
@@ -1002,7 +1003,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.group = group;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant ani(String ani) {
@@ -1019,7 +1020,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant dnis(String dnis) {
@@ -1036,7 +1037,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant documentId(String documentId) {
@@ -1053,7 +1054,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.documentId = documentId;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant monitoredParticipantId(String monitoredParticipantId) {
@@ -1070,7 +1071,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant coachedParticipantId(String coachedParticipantId) {
@@ -1087,7 +1088,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant bargedParticipantId(String bargedParticipantId) {
@@ -1104,7 +1105,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.bargedParticipantId = bargedParticipantId;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant bargedTime(Date bargedTime) {
@@ -1121,7 +1122,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.bargedTime = bargedTime;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant consultParticipantId(String consultParticipantId) {
@@ -1138,7 +1139,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.consultParticipantId = consultParticipantId;
   }
 
-  
+
   /**
    **/
   public ConversationCallEventTopicCallMediaParticipant faxStatus(ConversationCallEventTopicFaxStatus faxStatus) {
@@ -1155,7 +1156,6 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     this.faxStatus = faxStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1166,54 +1166,55 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
       return false;
     }
     ConversationCallEventTopicCallMediaParticipant conversationCallEventTopicCallMediaParticipant = (ConversationCallEventTopicCallMediaParticipant) o;
+
     return Objects.equals(this.id, conversationCallEventTopicCallMediaParticipant.id) &&
-        Objects.equals(this.name, conversationCallEventTopicCallMediaParticipant.name) &&
-        Objects.equals(this.address, conversationCallEventTopicCallMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationCallEventTopicCallMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationCallEventTopicCallMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationCallEventTopicCallMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationCallEventTopicCallMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationCallEventTopicCallMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationCallEventTopicCallMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationCallEventTopicCallMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationCallEventTopicCallMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationCallEventTopicCallMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationCallEventTopicCallMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationCallEventTopicCallMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationCallEventTopicCallMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationCallEventTopicCallMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationCallEventTopicCallMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationCallEventTopicCallMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationCallEventTopicCallMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationCallEventTopicCallMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationCallEventTopicCallMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationCallEventTopicCallMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationCallEventTopicCallMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationCallEventTopicCallMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationCallEventTopicCallMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationCallEventTopicCallMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationCallEventTopicCallMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationCallEventTopicCallMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationCallEventTopicCallMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationCallEventTopicCallMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationCallEventTopicCallMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationCallEventTopicCallMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationCallEventTopicCallMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationCallEventTopicCallMediaParticipant.endAcwTime) &&
-        Objects.equals(this.muted, conversationCallEventTopicCallMediaParticipant.muted) &&
-        Objects.equals(this.confined, conversationCallEventTopicCallMediaParticipant.confined) &&
-        Objects.equals(this.recording, conversationCallEventTopicCallMediaParticipant.recording) &&
-        Objects.equals(this.recordingState, conversationCallEventTopicCallMediaParticipant.recordingState) &&
-        Objects.equals(this.group, conversationCallEventTopicCallMediaParticipant.group) &&
-        Objects.equals(this.ani, conversationCallEventTopicCallMediaParticipant.ani) &&
-        Objects.equals(this.dnis, conversationCallEventTopicCallMediaParticipant.dnis) &&
-        Objects.equals(this.documentId, conversationCallEventTopicCallMediaParticipant.documentId) &&
-        Objects.equals(this.monitoredParticipantId, conversationCallEventTopicCallMediaParticipant.monitoredParticipantId) &&
-        Objects.equals(this.coachedParticipantId, conversationCallEventTopicCallMediaParticipant.coachedParticipantId) &&
-        Objects.equals(this.bargedParticipantId, conversationCallEventTopicCallMediaParticipant.bargedParticipantId) &&
-        Objects.equals(this.bargedTime, conversationCallEventTopicCallMediaParticipant.bargedTime) &&
-        Objects.equals(this.consultParticipantId, conversationCallEventTopicCallMediaParticipant.consultParticipantId) &&
-        Objects.equals(this.faxStatus, conversationCallEventTopicCallMediaParticipant.faxStatus);
+            Objects.equals(this.name, conversationCallEventTopicCallMediaParticipant.name) &&
+            Objects.equals(this.address, conversationCallEventTopicCallMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationCallEventTopicCallMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationCallEventTopicCallMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationCallEventTopicCallMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationCallEventTopicCallMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationCallEventTopicCallMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationCallEventTopicCallMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationCallEventTopicCallMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationCallEventTopicCallMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationCallEventTopicCallMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationCallEventTopicCallMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationCallEventTopicCallMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationCallEventTopicCallMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationCallEventTopicCallMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationCallEventTopicCallMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationCallEventTopicCallMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationCallEventTopicCallMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationCallEventTopicCallMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationCallEventTopicCallMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationCallEventTopicCallMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationCallEventTopicCallMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationCallEventTopicCallMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationCallEventTopicCallMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationCallEventTopicCallMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationCallEventTopicCallMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationCallEventTopicCallMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationCallEventTopicCallMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationCallEventTopicCallMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationCallEventTopicCallMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationCallEventTopicCallMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationCallEventTopicCallMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationCallEventTopicCallMediaParticipant.endAcwTime) &&
+            Objects.equals(this.muted, conversationCallEventTopicCallMediaParticipant.muted) &&
+            Objects.equals(this.confined, conversationCallEventTopicCallMediaParticipant.confined) &&
+            Objects.equals(this.recording, conversationCallEventTopicCallMediaParticipant.recording) &&
+            Objects.equals(this.recordingState, conversationCallEventTopicCallMediaParticipant.recordingState) &&
+            Objects.equals(this.group, conversationCallEventTopicCallMediaParticipant.group) &&
+            Objects.equals(this.ani, conversationCallEventTopicCallMediaParticipant.ani) &&
+            Objects.equals(this.dnis, conversationCallEventTopicCallMediaParticipant.dnis) &&
+            Objects.equals(this.documentId, conversationCallEventTopicCallMediaParticipant.documentId) &&
+            Objects.equals(this.monitoredParticipantId, conversationCallEventTopicCallMediaParticipant.monitoredParticipantId) &&
+            Objects.equals(this.coachedParticipantId, conversationCallEventTopicCallMediaParticipant.coachedParticipantId) &&
+            Objects.equals(this.bargedParticipantId, conversationCallEventTopicCallMediaParticipant.bargedParticipantId) &&
+            Objects.equals(this.bargedTime, conversationCallEventTopicCallMediaParticipant.bargedTime) &&
+            Objects.equals(this.consultParticipantId, conversationCallEventTopicCallMediaParticipant.consultParticipantId) &&
+            Objects.equals(this.faxStatus, conversationCallEventTopicCallMediaParticipant.faxStatus);
   }
 
   @Override

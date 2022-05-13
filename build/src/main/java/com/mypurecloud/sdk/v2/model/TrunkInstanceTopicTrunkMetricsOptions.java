@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceTopicTrunkErrorInfo;
@@ -44,7 +45,7 @@ public class TrunkInstanceTopicTrunkMetricsOptions  implements Serializable {
     this.proxyAddress = proxyAddress;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkMetricsOptions optionState(Boolean optionState) {
@@ -61,7 +62,7 @@ public class TrunkInstanceTopicTrunkMetricsOptions  implements Serializable {
     this.optionState = optionState;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkMetricsOptions optionStateTime(Date optionStateTime) {
@@ -78,7 +79,7 @@ public class TrunkInstanceTopicTrunkMetricsOptions  implements Serializable {
     this.optionStateTime = optionStateTime;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkMetricsOptions errorInfo(TrunkInstanceTopicTrunkErrorInfo errorInfo) {
@@ -95,7 +96,6 @@ public class TrunkInstanceTopicTrunkMetricsOptions  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class TrunkInstanceTopicTrunkMetricsOptions  implements Serializable {
       return false;
     }
     TrunkInstanceTopicTrunkMetricsOptions trunkInstanceTopicTrunkMetricsOptions = (TrunkInstanceTopicTrunkMetricsOptions) o;
+
     return Objects.equals(this.proxyAddress, trunkInstanceTopicTrunkMetricsOptions.proxyAddress) &&
-        Objects.equals(this.optionState, trunkInstanceTopicTrunkMetricsOptions.optionState) &&
-        Objects.equals(this.optionStateTime, trunkInstanceTopicTrunkMetricsOptions.optionStateTime) &&
-        Objects.equals(this.errorInfo, trunkInstanceTopicTrunkMetricsOptions.errorInfo);
+            Objects.equals(this.optionState, trunkInstanceTopicTrunkMetricsOptions.optionState) &&
+            Objects.equals(this.optionStateTime, trunkInstanceTopicTrunkMetricsOptions.optionStateTime) &&
+            Objects.equals(this.errorInfo, trunkInstanceTopicTrunkMetricsOptions.errorInfo);
   }
 
   @Override

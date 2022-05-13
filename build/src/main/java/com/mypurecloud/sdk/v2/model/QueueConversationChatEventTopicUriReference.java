@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class QueueConversationChatEventTopicUriReference  implements Serializabl
     this.id = id;
   }
 
-  
+
   /**
    * The name of the resource
    **/
@@ -59,7 +60,6 @@ public class QueueConversationChatEventTopicUriReference  implements Serializabl
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class QueueConversationChatEventTopicUriReference  implements Serializabl
       return false;
     }
     QueueConversationChatEventTopicUriReference queueConversationChatEventTopicUriReference = (QueueConversationChatEventTopicUriReference) o;
+
     return Objects.equals(this.id, queueConversationChatEventTopicUriReference.id) &&
-        Objects.equals(this.name, queueConversationChatEventTopicUriReference.name);
+            Objects.equals(this.name, queueConversationChatEventTopicUriReference.name);
   }
 
   @Override

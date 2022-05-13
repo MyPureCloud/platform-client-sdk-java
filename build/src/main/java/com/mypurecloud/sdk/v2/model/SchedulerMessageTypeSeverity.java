@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -181,7 +182,7 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The severity of the message
    **/
@@ -199,7 +200,6 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
     this.severity = severity;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -210,8 +210,9 @@ public class SchedulerMessageTypeSeverity  implements Serializable {
       return false;
     }
     SchedulerMessageTypeSeverity schedulerMessageTypeSeverity = (SchedulerMessageTypeSeverity) o;
+
     return Objects.equals(this.type, schedulerMessageTypeSeverity.type) &&
-        Objects.equals(this.severity, schedulerMessageTypeSeverity.severity);
+            Objects.equals(this.severity, schedulerMessageTypeSeverity.severity);
   }
 
   @Override

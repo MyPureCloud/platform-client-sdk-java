@@ -22,10 +22,10 @@ title: KpiResult
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| VOICE | &quot;voice&quot; |
-| EMAIL | &quot;email&quot; |
-| MESSAGE | &quot;message&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| VOICE | &quot;voice&quot; | 
+| EMAIL | &quot;email&quot; | 
+| MESSAGE | &quot;message&quot; | 
 {: class="table table-striped"}
 
 

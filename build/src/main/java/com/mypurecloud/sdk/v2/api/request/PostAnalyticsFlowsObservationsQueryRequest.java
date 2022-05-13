@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
 
 public class PostAnalyticsFlowsObservationsQueryRequest {
-    
+
 	private FlowObservationQuery body;
 	public FlowObservationQuery getBody() {
 		return this.body;
@@ -41,7 +41,7 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,8 +71,8 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/flows/observations/query")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(FlowObservationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAnalyticsFlowsObservationsQueryRequest request;
@@ -97,20 +97,20 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
 			request = new PostAnalyticsFlowsObservationsQueryRequest();
 		}
 
-		
+
 		public Builder withBody(FlowObservationQuery body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(FlowObservationQuery body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostAnalyticsFlowsObservationsQueryRequest build() {
             

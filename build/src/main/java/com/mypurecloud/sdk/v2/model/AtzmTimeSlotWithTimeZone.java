@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class AtzmTimeSlotWithTimeZone  implements Serializable {
     this.earliestCallableTime = earliestCallableTime;
   }
 
-  
+
   /**
    * The latest time to dial a contact. Valid format is HH:mm
    **/
@@ -60,7 +61,7 @@ public class AtzmTimeSlotWithTimeZone  implements Serializable {
     this.latestCallableTime = latestCallableTime;
   }
 
-  
+
   /**
    * The time zone to use for contacts that cannot be mapped.
    **/
@@ -78,7 +79,6 @@ public class AtzmTimeSlotWithTimeZone  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class AtzmTimeSlotWithTimeZone  implements Serializable {
       return false;
     }
     AtzmTimeSlotWithTimeZone atzmTimeSlotWithTimeZone = (AtzmTimeSlotWithTimeZone) o;
+
     return Objects.equals(this.earliestCallableTime, atzmTimeSlotWithTimeZone.earliestCallableTime) &&
-        Objects.equals(this.latestCallableTime, atzmTimeSlotWithTimeZone.latestCallableTime) &&
-        Objects.equals(this.timeZoneId, atzmTimeSlotWithTimeZone.timeZoneId);
+            Objects.equals(this.latestCallableTime, atzmTimeSlotWithTimeZone.latestCallableTime) &&
+            Objects.equals(this.timeZoneId, atzmTimeSlotWithTimeZone.timeZoneId);
   }
 
   @Override

@@ -20,20 +20,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 public class GetOauthClientUsageQueryResultRequest {
-    
+
 	private String executionId;
 	public String getExecutionId() {
 		return this.executionId;
@@ -47,7 +47,7 @@ public class GetOauthClientUsageQueryResultRequest {
 	    this.setExecutionId(executionId);
 	    return this;
 	} 
-	
+
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -61,7 +61,7 @@ public class GetOauthClientUsageQueryResultRequest {
 	    this.setClientId(clientId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -99,7 +99,7 @@ public class GetOauthClientUsageQueryResultRequest {
         
                 .withPathParameter("clientId", clientId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -110,12 +110,12 @@ public class GetOauthClientUsageQueryResultRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String executionId, String clientId) {
 	    return new Builder()
 	            .withRequiredParams(executionId, clientId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetOauthClientUsageQueryResultRequest request;
@@ -124,26 +124,26 @@ public class GetOauthClientUsageQueryResultRequest {
 			request = new GetOauthClientUsageQueryResultRequest();
 		}
 
-		
+
 		public Builder withExecutionId(String executionId) {
 			request.setExecutionId(executionId);
 			return this;
 		}
-		
+
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String executionId, String clientId) {
 			request.setExecutionId(executionId);
-						request.setClientId(clientId);
-			
+			request.setClientId(clientId);
+
 			return this;
 		}
-		
+
 
 		public GetOauthClientUsageQueryResultRequest build() {
             

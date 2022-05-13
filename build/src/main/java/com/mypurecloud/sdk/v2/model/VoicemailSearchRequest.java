@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -117,7 +118,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -135,7 +136,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -153,7 +154,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -171,7 +172,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    * Provides more details about a specified resource
    **/
@@ -189,7 +190,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.expand = expand;
   }
 
-  
+
   /**
    **/
   public VoicemailSearchRequest query(List<VoicemailSearchCriteria> query) {
@@ -206,7 +207,6 @@ public class VoicemailSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,13 +217,14 @@ public class VoicemailSearchRequest  implements Serializable {
       return false;
     }
     VoicemailSearchRequest voicemailSearchRequest = (VoicemailSearchRequest) o;
+
     return Objects.equals(this.sortOrder, voicemailSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, voicemailSearchRequest.sortBy) &&
-        Objects.equals(this.pageSize, voicemailSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, voicemailSearchRequest.pageNumber) &&
-        Objects.equals(this.sort, voicemailSearchRequest.sort) &&
-        Objects.equals(this.expand, voicemailSearchRequest.expand) &&
-        Objects.equals(this.query, voicemailSearchRequest.query);
+            Objects.equals(this.sortBy, voicemailSearchRequest.sortBy) &&
+            Objects.equals(this.pageSize, voicemailSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, voicemailSearchRequest.pageNumber) &&
+            Objects.equals(this.sort, voicemailSearchRequest.sort) &&
+            Objects.equals(this.expand, voicemailSearchRequest.expand) &&
+            Objects.equals(this.query, voicemailSearchRequest.query);
   }
 
   @Override

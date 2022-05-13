@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ScheduleInterval  implements Serializable {
     this.start = start;
   }
 
-  
+
   /**
    * The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -59,7 +60,6 @@ public class ScheduleInterval  implements Serializable {
     this.end = end;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class ScheduleInterval  implements Serializable {
       return false;
     }
     ScheduleInterval scheduleInterval = (ScheduleInterval) o;
+
     return Objects.equals(this.start, scheduleInterval.start) &&
-        Objects.equals(this.end, scheduleInterval.end);
+            Objects.equals(this.end, scheduleInterval.end);
   }
 
   @Override

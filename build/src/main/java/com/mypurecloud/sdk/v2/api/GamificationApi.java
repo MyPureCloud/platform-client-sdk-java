@@ -10,36 +10,36 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Leaderboard;
+import com.mypurecloud.sdk.v2.model.AllTimePoints;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GamificationStatus;
+import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
+import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Leaderboard;
 import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.OverallBestPoints;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
-import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
-import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
+import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
-import com.mypurecloud.sdk.v2.model.MemberListing;
-import com.mypurecloud.sdk.v2.model.GetMetricResponse;
-import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
-import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
-import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
-import com.mypurecloud.sdk.v2.model.UserBestPoints;
-import com.mypurecloud.sdk.v2.model.AllTimePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
+import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
+import com.mypurecloud.sdk.v2.model.UserBestPoints;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
-import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
-import com.mypurecloud.sdk.v2.model.GamificationStatus;
-import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
-import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
-import com.mypurecloud.sdk.v2.model.CreateMetric;
-import com.mypurecloud.sdk.v2.model.Assignment;
-import com.mypurecloud.sdk.v2.model.AssignUsers;
-import com.mypurecloud.sdk.v2.model.AssignmentValidation;
-import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
-import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
-import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
@@ -97,7 +97,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class GamificationApi {
   private final ApiClient pcapiClient;
 
@@ -109,9 +108,8 @@ public class GamificationApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
-   * Leaderboard of the requesting user&#39;s division or performance profile
+   * Leaderboard of the requesting user's division or performance profile
    * 
    * @param startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -125,7 +123,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division or performance profile
+   * Leaderboard of the requesting user's division or performance profile
    * 
    * @param startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -140,16 +138,16 @@ public class GamificationApi {
   private GetGamificationLeaderboardRequest createGetGamificationLeaderboardRequest(LocalDate startWorkday, LocalDate endWorkday, String metricId) {
     return GetGamificationLeaderboardRequest.builder()
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withMetricId(metricId)
-    
+
             .build();
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division or performance profile
+   * Leaderboard of the requesting user's division or performance profile
    * 
    * @param request The request object
    * @return Leaderboard
@@ -168,7 +166,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division or performance profile
+   * Leaderboard of the requesting user's division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -196,7 +194,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Leaderboard by filter type
    * 
@@ -231,15 +228,15 @@ public class GamificationApi {
   private GetGamificationLeaderboardAllRequest createGetGamificationLeaderboardAllRequest(String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, String metricId) {
     return GetGamificationLeaderboardAllRequest.builder()
             .withFilterType(filterType)
-    
+
             .withFilterId(filterId)
-    
+
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withMetricId(metricId)
-    
+
             .build();
   }
 
@@ -291,7 +288,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Best Points by division or performance profile
    * 
@@ -320,9 +316,9 @@ public class GamificationApi {
   private GetGamificationLeaderboardAllBestpointsRequest createGetGamificationLeaderboardAllBestpointsRequest(String filterType, String filterId) {
     return GetGamificationLeaderboardAllBestpointsRequest.builder()
             .withFilterType(filterType)
-    
+
             .withFilterId(filterId)
-    
+
             .build();
   }
 
@@ -374,9 +370,8 @@ public class GamificationApi {
     }
   }
 
-  
   /**
-   * Best Points of the requesting user&#39;s current performance profile or division
+   * Best Points of the requesting user's current performance profile or division
    * 
    * @return OverallBestPoints
    * @throws ApiException if the request fails on the server
@@ -387,7 +382,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points of the requesting user&#39;s current performance profile or division
+   * Best Points of the requesting user's current performance profile or division
    * 
    * @return OverallBestPoints
    * @throws IOException if the request fails to be processed
@@ -402,7 +397,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points of the requesting user&#39;s current performance profile or division
+   * Best Points of the requesting user's current performance profile or division
    * 
    * @param request The request object
    * @return OverallBestPoints
@@ -421,7 +416,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points of the requesting user&#39;s current performance profile or division
+   * Best Points of the requesting user's current performance profile or division
    * 
    * @param request The request object
    * @return the response
@@ -449,7 +444,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Gamified metric by id
    * 
@@ -480,11 +474,11 @@ public class GamificationApi {
   private GetGamificationMetricRequest createGetGamificationMetricRequest(String metricId, LocalDate workday, String performanceProfileId) {
     return GetGamificationMetricRequest.builder()
             .withMetricId(metricId)
-    
+
             .withWorkday(workday)
-    
+
             .withPerformanceProfileId(performanceProfileId)
-    
+
             .build();
   }
 
@@ -536,7 +530,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Metric definition by id
    * 
@@ -563,7 +556,7 @@ public class GamificationApi {
   private GetGamificationMetricdefinitionRequest createGetGamificationMetricdefinitionRequest(String metricDefinitionId) {
     return GetGamificationMetricdefinitionRequest.builder()
             .withMetricDefinitionId(metricDefinitionId)
-    
+
             .build();
   }
 
@@ -615,7 +608,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All metric definitions
    * Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
@@ -690,7 +682,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All gamified metrics for a given profile
    * 
@@ -719,9 +710,9 @@ public class GamificationApi {
   private GetGamificationMetricsRequest createGetGamificationMetricsRequest(String performanceProfileId, LocalDate workday) {
     return GetGamificationMetricsRequest.builder()
             .withPerformanceProfileId(performanceProfileId)
-    
+
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -773,7 +764,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Performance profile by id
    * 
@@ -800,7 +790,7 @@ public class GamificationApi {
   private GetGamificationProfileRequest createGetGamificationProfileRequest(String profileId) {
     return GetGamificationProfileRequest.builder()
             .withProfileId(profileId)
-    
+
             .build();
   }
 
@@ -852,7 +842,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Members of a given performance profile
    * 
@@ -879,7 +868,7 @@ public class GamificationApi {
   private GetGamificationProfileMembersRequest createGetGamificationProfileMembersRequest(String performanceProfileId) {
     return GetGamificationProfileMembersRequest.builder()
             .withPerformanceProfileId(performanceProfileId)
-    
+
             .build();
   }
 
@@ -931,7 +920,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Performance profile gamified metric by id
    * 
@@ -962,11 +950,11 @@ public class GamificationApi {
   private GetGamificationProfileMetricRequest createGetGamificationProfileMetricRequest(String profileId, String metricId, LocalDate workday) {
     return GetGamificationProfileMetricRequest.builder()
             .withProfileId(profileId)
-    
+
             .withMetricId(metricId)
-    
+
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -1018,7 +1006,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All gamified metrics for a given performance profile
    * 
@@ -1049,11 +1036,11 @@ public class GamificationApi {
   private GetGamificationProfileMetricsRequest createGetGamificationProfileMetricsRequest(String profileId, List<String> expand, LocalDate workday) {
     return GetGamificationProfileMetricsRequest.builder()
             .withProfileId(profileId)
-    
+
             .withExpand(expand)
-    
+
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -1105,7 +1092,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All metrics for a given performance profile with objective details such as order and maxPoints
    * 
@@ -1134,9 +1120,9 @@ public class GamificationApi {
   private GetGamificationProfileMetricsObjectivedetailsRequest createGetGamificationProfileMetricsObjectivedetailsRequest(String profileId, LocalDate workday) {
     return GetGamificationProfileMetricsObjectivedetailsRequest.builder()
             .withProfileId(profileId)
-    
+
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -1188,7 +1174,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All performance profiles
    * 
@@ -1263,7 +1248,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Performance profile of a user
    * 
@@ -1292,9 +1276,9 @@ public class GamificationApi {
   private GetGamificationProfilesUserRequest createGetGamificationProfilesUserRequest(String userId, LocalDate workday) {
     return GetGamificationProfilesUserRequest.builder()
             .withUserId(userId)
-    
+
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -1346,7 +1330,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Performance profile of the requesting user
    * 
@@ -1373,7 +1356,7 @@ public class GamificationApi {
   private GetGamificationProfilesUsersMeRequest createGetGamificationProfilesUsersMeRequest(LocalDate workday) {
     return GetGamificationProfilesUsersMeRequest.builder()
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -1425,7 +1408,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Workday performance metrics of the requesting user
    * 
@@ -1454,9 +1436,9 @@ public class GamificationApi {
   private GetGamificationScorecardsRequest createGetGamificationScorecardsRequest(LocalDate workday, List<String> expand) {
     return GetGamificationScorecardsRequest.builder()
             .withWorkday(workday)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1508,7 +1490,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Attendance status metrics of the requesting user
    * 
@@ -1537,9 +1518,9 @@ public class GamificationApi {
   private GetGamificationScorecardsAttendanceRequest createGetGamificationScorecardsAttendanceRequest(LocalDate startWorkday, LocalDate endWorkday) {
     return GetGamificationScorecardsAttendanceRequest.builder()
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .build();
   }
 
@@ -1591,7 +1572,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Best points of the requesting user
    * 
@@ -1666,7 +1646,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All-time points of the requesting user
    * 
@@ -1693,7 +1672,7 @@ public class GamificationApi {
   private GetGamificationScorecardsPointsAlltimeRequest createGetGamificationScorecardsPointsAlltimeRequest(LocalDate endWorkday) {
     return GetGamificationScorecardsPointsAlltimeRequest.builder()
             .withEndWorkday(endWorkday)
-    
+
             .build();
   }
 
@@ -1745,9 +1724,8 @@ public class GamificationApi {
     }
   }
 
-  
   /**
-   * Average points of the requesting user&#39;s division or performance profile
+   * Average points of the requesting user's division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return SingleWorkdayAveragePoints
@@ -1759,7 +1737,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average points of the requesting user&#39;s division or performance profile
+   * Average points of the requesting user's division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return SingleWorkdayAveragePoints
@@ -1772,12 +1750,12 @@ public class GamificationApi {
   private GetGamificationScorecardsPointsAverageRequest createGetGamificationScorecardsPointsAverageRequest(LocalDate workday) {
     return GetGamificationScorecardsPointsAverageRequest.builder()
             .withWorkday(workday)
-    
+
             .build();
   }
 
   /**
-   * Average points of the requesting user&#39;s division or performance profile
+   * Average points of the requesting user's division or performance profile
    * 
    * @param request The request object
    * @return SingleWorkdayAveragePoints
@@ -1796,7 +1774,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average points of the requesting user&#39;s division or performance profile
+   * Average points of the requesting user's division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -1824,7 +1802,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Points trends of the requesting user
    * 
@@ -1855,11 +1832,11 @@ public class GamificationApi {
   private GetGamificationScorecardsPointsTrendsRequest createGetGamificationScorecardsPointsTrendsRequest(LocalDate startWorkday, LocalDate endWorkday, String dayOfWeek) {
     return GetGamificationScorecardsPointsTrendsRequest.builder()
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withDayOfWeek(dayOfWeek)
-    
+
             .build();
   }
 
@@ -1911,7 +1888,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Workday performance metrics for a user
    * 
@@ -1942,11 +1918,11 @@ public class GamificationApi {
   private GetGamificationScorecardsUserRequest createGetGamificationScorecardsUserRequest(String userId, LocalDate workday, List<String> expand) {
     return GetGamificationScorecardsUserRequest.builder()
             .withUserId(userId)
-    
+
             .withWorkday(workday)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1998,7 +1974,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Attendance status metrics for a user
    * 
@@ -2029,11 +2004,11 @@ public class GamificationApi {
   private GetGamificationScorecardsUserAttendanceRequest createGetGamificationScorecardsUserAttendanceRequest(String userId, LocalDate startWorkday, LocalDate endWorkday) {
     return GetGamificationScorecardsUserAttendanceRequest.builder()
             .withUserId(userId)
-    
+
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .build();
   }
 
@@ -2085,7 +2060,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Best points of a user
    * 
@@ -2112,7 +2086,7 @@ public class GamificationApi {
   private GetGamificationScorecardsUserBestpointsRequest createGetGamificationScorecardsUserBestpointsRequest(String userId) {
     return GetGamificationScorecardsUserBestpointsRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
@@ -2164,7 +2138,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All-time points for a user
    * 
@@ -2193,9 +2166,9 @@ public class GamificationApi {
   private GetGamificationScorecardsUserPointsAlltimeRequest createGetGamificationScorecardsUserPointsAlltimeRequest(String userId, LocalDate endWorkday) {
     return GetGamificationScorecardsUserPointsAlltimeRequest.builder()
             .withUserId(userId)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .build();
   }
 
@@ -2247,7 +2220,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Points trend for a user
    * 
@@ -2280,13 +2252,13 @@ public class GamificationApi {
   private GetGamificationScorecardsUserPointsTrendsRequest createGetGamificationScorecardsUserPointsTrendsRequest(String userId, LocalDate startWorkday, LocalDate endWorkday, String dayOfWeek) {
     return GetGamificationScorecardsUserPointsTrendsRequest.builder()
             .withUserId(userId)
-    
+
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withDayOfWeek(dayOfWeek)
-    
+
             .build();
   }
 
@@ -2338,7 +2310,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Values trends of a user
    * 
@@ -2371,13 +2342,13 @@ public class GamificationApi {
   private GetGamificationScorecardsUserValuesTrendsRequest createGetGamificationScorecardsUserValuesTrendsRequest(String userId, LocalDate startWorkday, LocalDate endWorkday, String timeZone) {
     return GetGamificationScorecardsUserValuesTrendsRequest.builder()
             .withUserId(userId)
-    
+
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withTimeZone(timeZone)
-    
+
             .build();
   }
 
@@ -2429,7 +2400,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Workday average points by target group
    * 
@@ -2460,11 +2430,11 @@ public class GamificationApi {
   private GetGamificationScorecardsUsersPointsAverageRequest createGetGamificationScorecardsUsersPointsAverageRequest(String filterType, String filterId, LocalDate workday) {
     return GetGamificationScorecardsUsersPointsAverageRequest.builder()
             .withFilterType(filterType)
-    
+
             .withFilterId(filterId)
-    
+
             .withWorkday(workday)
-    
+
             .build();
   }
 
@@ -2516,7 +2486,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Workday average values by target group
    * 
@@ -2549,13 +2518,13 @@ public class GamificationApi {
   private GetGamificationScorecardsUsersValuesAverageRequest createGetGamificationScorecardsUsersValuesAverageRequest(String filterType, String filterId, LocalDate workday, String timeZone) {
     return GetGamificationScorecardsUsersValuesAverageRequest.builder()
             .withFilterType(filterType)
-    
+
             .withFilterId(filterId)
-    
+
             .withWorkday(workday)
-    
+
             .withTimeZone(timeZone)
-    
+
             .build();
   }
 
@@ -2607,7 +2576,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Values trend by target group
    * 
@@ -2642,15 +2610,15 @@ public class GamificationApi {
   private GetGamificationScorecardsUsersValuesTrendsRequest createGetGamificationScorecardsUsersValuesTrendsRequest(String filterType, String filterId, LocalDate startWorkday, LocalDate endWorkday, String timeZone) {
     return GetGamificationScorecardsUsersValuesTrendsRequest.builder()
             .withFilterType(filterType)
-    
+
             .withFilterId(filterId)
-    
+
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withTimeZone(timeZone)
-    
+
             .build();
   }
 
@@ -2702,9 +2670,8 @@ public class GamificationApi {
     }
   }
 
-  
   /**
-   * Average values of the requesting user&#39;s division or performance profile
+   * Average values of the requesting user's division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
@@ -2717,7 +2684,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average values of the requesting user&#39;s division or performance profile
+   * Average values of the requesting user's division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
@@ -2731,14 +2698,14 @@ public class GamificationApi {
   private GetGamificationScorecardsValuesAverageRequest createGetGamificationScorecardsValuesAverageRequest(LocalDate workday, String timeZone) {
     return GetGamificationScorecardsValuesAverageRequest.builder()
             .withWorkday(workday)
-    
+
             .withTimeZone(timeZone)
-    
+
             .build();
   }
 
   /**
-   * Average values of the requesting user&#39;s division or performance profile
+   * Average values of the requesting user's division or performance profile
    * 
    * @param request The request object
    * @return SingleWorkdayAverageValues
@@ -2757,7 +2724,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average values of the requesting user&#39;s division or performance profile
+   * Average values of the requesting user's division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -2785,14 +2752,13 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Values trends of the requesting user or group
    * 
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param filterType Filter type for the query request. If not set, then the request is for the requesting user. (optional)
-   * @param referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws ApiException if the request fails on the server
@@ -2808,7 +2774,7 @@ public class GamificationApi {
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param filterType Filter type for the query request. If not set, then the request is for the requesting user. (optional)
-   * @param referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws IOException if the request fails to be processed
@@ -2820,15 +2786,15 @@ public class GamificationApi {
   private GetGamificationScorecardsValuesTrendsRequest createGetGamificationScorecardsValuesTrendsRequest(LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) {
     return GetGamificationScorecardsValuesTrendsRequest.builder()
             .withStartWorkday(startWorkday)
-    
+
             .withEndWorkday(endWorkday)
-    
+
             .withFilterType(filterType)
-    
+
             .withReferenceWorkday(referenceWorkday)
-    
+
             .withTimeZone(timeZone)
-    
+
             .build();
   }
 
@@ -2880,7 +2846,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Gamification activation status
    * 
@@ -2955,7 +2920,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Objective template by id
    * 
@@ -2982,7 +2946,7 @@ public class GamificationApi {
   private GetGamificationTemplateRequest createGetGamificationTemplateRequest(String templateId) {
     return GetGamificationTemplateRequest.builder()
             .withTemplateId(templateId)
-    
+
             .build();
   }
 
@@ -3034,7 +2998,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * All objective templates
    * 
@@ -3109,7 +3072,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Creates a gamified metric with a given metric definition and metric objective
    * 
@@ -3136,7 +3098,7 @@ public class GamificationApi {
   private PostGamificationMetricsRequest createPostGamificationMetricsRequest(CreateMetric body) {
     return PostGamificationMetricsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3188,7 +3150,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Activate a performance profile
    * 
@@ -3215,7 +3176,7 @@ public class GamificationApi {
   private PostGamificationProfileActivateRequest createPostGamificationProfileActivateRequest(String profileId) {
     return PostGamificationProfileActivateRequest.builder()
             .withProfileId(profileId)
-    
+
             .build();
   }
 
@@ -3267,7 +3228,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Deactivate a performance profile
    * 
@@ -3294,7 +3254,7 @@ public class GamificationApi {
   private PostGamificationProfileDeactivateRequest createPostGamificationProfileDeactivateRequest(String profileId) {
     return PostGamificationProfileDeactivateRequest.builder()
             .withProfileId(profileId)
-    
+
             .build();
   }
 
@@ -3346,7 +3306,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Assign members to a given performance profile
    * 
@@ -3375,9 +3334,9 @@ public class GamificationApi {
   private PostGamificationProfileMembersRequest createPostGamificationProfileMembersRequest(String performanceProfileId, AssignUsers body) {
     return PostGamificationProfileMembersRequest.builder()
             .withPerformanceProfileId(performanceProfileId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3429,7 +3388,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Validate member assignment
    * 
@@ -3458,9 +3416,9 @@ public class GamificationApi {
   private PostGamificationProfileMembersValidateRequest createPostGamificationProfileMembersValidateRequest(String performanceProfileId, ValidateAssignUsers body) {
     return PostGamificationProfileMembersValidateRequest.builder()
             .withPerformanceProfileId(performanceProfileId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3512,7 +3470,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Creates a linked metric
    * 
@@ -3543,11 +3500,11 @@ public class GamificationApi {
   private PostGamificationProfileMetricLinkRequest createPostGamificationProfileMetricLinkRequest(String sourceProfileId, String sourceMetricId, TargetPerformanceProfile body) {
     return PostGamificationProfileMetricLinkRequest.builder()
             .withSourceProfileId(sourceProfileId)
-    
+
             .withSourceMetricId(sourceMetricId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3599,7 +3556,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
    * 
@@ -3628,9 +3584,9 @@ public class GamificationApi {
   private PostGamificationProfileMetricsRequest createPostGamificationProfileMetricsRequest(String profileId, CreateMetric body) {
     return PostGamificationProfileMetricsRequest.builder()
             .withProfileId(profileId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3682,7 +3638,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Create a new custom performance profile
    * 
@@ -3711,9 +3666,9 @@ public class GamificationApi {
   private PostGamificationProfilesRequest createPostGamificationProfilesRequest(CreatePerformanceProfile body, Boolean copyMetrics) {
     return PostGamificationProfilesRequest.builder()
             .withBody(body)
-    
+
             .withCopyMetrics(copyMetrics)
-    
+
             .build();
   }
 
@@ -3765,7 +3720,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Updates a metric
    * 
@@ -3796,11 +3750,11 @@ public class GamificationApi {
   private PutGamificationMetricRequest createPutGamificationMetricRequest(String metricId, CreateMetric body, String performanceProfileId) {
     return PutGamificationMetricRequest.builder()
             .withMetricId(metricId)
-    
+
             .withBody(body)
-    
+
             .withPerformanceProfileId(performanceProfileId)
-    
+
             .build();
   }
 
@@ -3852,7 +3806,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Updates a performance profile
    * 
@@ -3881,9 +3834,9 @@ public class GamificationApi {
   private PutGamificationProfileRequest createPutGamificationProfileRequest(String profileId, PerformanceProfile body) {
     return PutGamificationProfileRequest.builder()
             .withProfileId(profileId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3935,7 +3888,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Updates a metric in performance profile
    * 
@@ -3966,11 +3918,11 @@ public class GamificationApi {
   private PutGamificationProfileMetricRequest createPutGamificationProfileMetricRequest(String profileId, String metricId, CreateMetric body) {
     return PutGamificationProfileMetricRequest.builder()
             .withProfileId(profileId)
-    
+
             .withMetricId(metricId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4022,7 +3974,6 @@ public class GamificationApi {
     }
   }
 
-  
   /**
    * Update gamification activation status
    * 
@@ -4049,7 +4000,7 @@ public class GamificationApi {
   private PutGamificationStatusRequest createPutGamificationStatusRequest(GamificationStatus status) {
     return PutGamificationStatusRequest.builder()
             .withStatus(status)
-    
+
             .build();
   }
 
@@ -4101,5 +4052,4 @@ public class GamificationApi {
     }
   }
 
-  
 }

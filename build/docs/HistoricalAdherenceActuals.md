@@ -20,16 +20,16 @@ title: HistoricalAdherenceActuals
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ONQUEUEWORK | &quot;OnQueueWork&quot; |
-| BREAK | &quot;Break&quot; |
-| MEAL | &quot;Meal&quot; |
-| MEETING | &quot;Meeting&quot; |
-| OFFQUEUEWORK | &quot;OffQueueWork&quot; |
-| TIMEOFF | &quot;TimeOff&quot; |
-| TRAINING | &quot;Training&quot; |
-| UNAVAILABLE | &quot;Unavailable&quot; |
-| UNSCHEDULED | &quot;Unscheduled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONQUEUEWORK | &quot;OnQueueWork&quot; | 
+| BREAK | &quot;Break&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| OFFQUEUEWORK | &quot;OffQueueWork&quot; | 
+| TIMEOFF | &quot;TimeOff&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| UNAVAILABLE | &quot;Unavailable&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
 {: class="table table-striped"}
 
 

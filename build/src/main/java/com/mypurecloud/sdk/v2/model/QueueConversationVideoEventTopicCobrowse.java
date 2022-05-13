@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -176,7 +177,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -194,7 +195,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -212,7 +213,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -230,7 +231,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.self = self;
   }
 
-  
+
   /**
    * The room id for the chat.
    **/
@@ -248,7 +249,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    * The co-browse session ID.
    **/
@@ -266,7 +267,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-  
+
   /**
    * This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).
    **/
@@ -284,7 +285,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.cobrowseRole = cobrowseRole;
   }
 
-  
+
   /**
    * ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).
    **/
@@ -302,7 +303,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.controlling = controlling;
   }
 
-  
+
   /**
    * The URL that can be used to open co-browse session in web browser.
    **/
@@ -320,7 +321,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.viewerUrl = viewerUrl;
   }
 
-  
+
   /**
    * The source provider of the co-browse communication.
    **/
@@ -338,7 +339,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -356,7 +357,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -374,7 +375,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC).
    **/
@@ -392,7 +393,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.providerEventTime = providerEventTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -410,7 +411,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -428,7 +429,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -446,7 +447,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -464,7 +465,7 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -482,7 +483,6 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -493,24 +493,25 @@ public class QueueConversationVideoEventTopicCobrowse  implements Serializable {
       return false;
     }
     QueueConversationVideoEventTopicCobrowse queueConversationVideoEventTopicCobrowse = (QueueConversationVideoEventTopicCobrowse) o;
+
     return Objects.equals(this.state, queueConversationVideoEventTopicCobrowse.state) &&
-        Objects.equals(this.disconnectType, queueConversationVideoEventTopicCobrowse.disconnectType) &&
-        Objects.equals(this.id, queueConversationVideoEventTopicCobrowse.id) &&
-        Objects.equals(this.self, queueConversationVideoEventTopicCobrowse.self) &&
-        Objects.equals(this.roomId, queueConversationVideoEventTopicCobrowse.roomId) &&
-        Objects.equals(this.cobrowseSessionId, queueConversationVideoEventTopicCobrowse.cobrowseSessionId) &&
-        Objects.equals(this.cobrowseRole, queueConversationVideoEventTopicCobrowse.cobrowseRole) &&
-        Objects.equals(this.controlling, queueConversationVideoEventTopicCobrowse.controlling) &&
-        Objects.equals(this.viewerUrl, queueConversationVideoEventTopicCobrowse.viewerUrl) &&
-        Objects.equals(this.provider, queueConversationVideoEventTopicCobrowse.provider) &&
-        Objects.equals(this.scriptId, queueConversationVideoEventTopicCobrowse.scriptId) &&
-        Objects.equals(this.peerId, queueConversationVideoEventTopicCobrowse.peerId) &&
-        Objects.equals(this.providerEventTime, queueConversationVideoEventTopicCobrowse.providerEventTime) &&
-        Objects.equals(this.connectedTime, queueConversationVideoEventTopicCobrowse.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicCobrowse.disconnectedTime) &&
-        Objects.equals(this.wrapup, queueConversationVideoEventTopicCobrowse.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationVideoEventTopicCobrowse.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCobrowse.afterCallWorkRequired);
+            Objects.equals(this.disconnectType, queueConversationVideoEventTopicCobrowse.disconnectType) &&
+            Objects.equals(this.id, queueConversationVideoEventTopicCobrowse.id) &&
+            Objects.equals(this.self, queueConversationVideoEventTopicCobrowse.self) &&
+            Objects.equals(this.roomId, queueConversationVideoEventTopicCobrowse.roomId) &&
+            Objects.equals(this.cobrowseSessionId, queueConversationVideoEventTopicCobrowse.cobrowseSessionId) &&
+            Objects.equals(this.cobrowseRole, queueConversationVideoEventTopicCobrowse.cobrowseRole) &&
+            Objects.equals(this.controlling, queueConversationVideoEventTopicCobrowse.controlling) &&
+            Objects.equals(this.viewerUrl, queueConversationVideoEventTopicCobrowse.viewerUrl) &&
+            Objects.equals(this.provider, queueConversationVideoEventTopicCobrowse.provider) &&
+            Objects.equals(this.scriptId, queueConversationVideoEventTopicCobrowse.scriptId) &&
+            Objects.equals(this.peerId, queueConversationVideoEventTopicCobrowse.peerId) &&
+            Objects.equals(this.providerEventTime, queueConversationVideoEventTopicCobrowse.providerEventTime) &&
+            Objects.equals(this.connectedTime, queueConversationVideoEventTopicCobrowse.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicCobrowse.disconnectedTime) &&
+            Objects.equals(this.wrapup, queueConversationVideoEventTopicCobrowse.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationVideoEventTopicCobrowse.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCobrowse.afterCallWorkRequired);
   }
 
   @Override

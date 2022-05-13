@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class VoicemailRetentionPolicy  implements Serializable {
     this.voicemailRetentionPolicyType = voicemailRetentionPolicyType;
   }
 
-  
+
   /**
    * If retentionPolicyType == RETAIN_WITH_TTL, then this value represents the number of days for the TTL
    **/
@@ -109,7 +110,6 @@ public class VoicemailRetentionPolicy  implements Serializable {
     this.numberOfDays = numberOfDays;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,8 +120,9 @@ public class VoicemailRetentionPolicy  implements Serializable {
       return false;
     }
     VoicemailRetentionPolicy voicemailRetentionPolicy = (VoicemailRetentionPolicy) o;
+
     return Objects.equals(this.voicemailRetentionPolicyType, voicemailRetentionPolicy.voicemailRetentionPolicyType) &&
-        Objects.equals(this.numberOfDays, voicemailRetentionPolicy.numberOfDays);
+            Objects.equals(this.numberOfDays, voicemailRetentionPolicy.numberOfDays);
   }
 
   @Override

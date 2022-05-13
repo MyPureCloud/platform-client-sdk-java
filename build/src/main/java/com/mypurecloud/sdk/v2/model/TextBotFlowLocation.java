@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class TextBotFlowLocation  implements Serializable {
     this.actionName = actionName;
   }
 
-  
+
   /**
    * The number of the action that was active when the event of interest happened.
    **/
@@ -61,7 +62,7 @@ public class TextBotFlowLocation  implements Serializable {
     this.actionNumber = actionNumber;
   }
 
-  
+
   /**
    * The name of the state or task which was active when the event of interest happened.
    **/
@@ -79,7 +80,6 @@ public class TextBotFlowLocation  implements Serializable {
     this.sequenceName = sequenceName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class TextBotFlowLocation  implements Serializable {
       return false;
     }
     TextBotFlowLocation textBotFlowLocation = (TextBotFlowLocation) o;
+
     return Objects.equals(this.actionName, textBotFlowLocation.actionName) &&
-        Objects.equals(this.actionNumber, textBotFlowLocation.actionNumber) &&
-        Objects.equals(this.sequenceName, textBotFlowLocation.sequenceName);
+            Objects.equals(this.actionNumber, textBotFlowLocation.actionNumber) &&
+            Objects.equals(this.sequenceName, textBotFlowLocation.sequenceName);
   }
 
   @Override

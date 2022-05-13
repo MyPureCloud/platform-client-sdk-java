@@ -22,10 +22,10 @@ title: UserAggregateQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DIMENSION | &quot;dimension&quot; |
-| PROPERTY | &quot;property&quot; |
-| METRIC | &quot;metric&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DIMENSION | &quot;dimension&quot; | 
+| PROPERTY | &quot;property&quot; | 
+| METRIC | &quot;metric&quot; | 
 {: class="table table-striped"}
 
 
@@ -35,8 +35,8 @@ title: UserAggregateQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| USERID | &quot;userId&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| USERID | &quot;userId&quot; | 
 {: class="table table-striped"}
 
 
@@ -46,10 +46,10 @@ title: UserAggregateQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MATCHES | &quot;matches&quot; |
-| EXISTS | &quot;exists&quot; |
-| NOTEXISTS | &quot;notExists&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MATCHES | &quot;matches&quot; | 
+| EXISTS | &quot;exists&quot; | 
+| NOTEXISTS | &quot;notExists&quot; | 
 {: class="table table-striped"}
 
 

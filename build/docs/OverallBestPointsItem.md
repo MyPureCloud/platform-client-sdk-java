@@ -23,10 +23,10 @@ title: OverallBestPointsItem
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MONTHLY | &quot;Monthly&quot; |
-| WEEKLY | &quot;Weekly&quot; |
-| DAILY | &quot;Daily&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MONTHLY | &quot;Monthly&quot; | 
+| WEEKLY | &quot;Weekly&quot; | 
+| DAILY | &quot;Daily&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.
    **/
@@ -62,7 +63,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.rrule = rrule;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
    **/
@@ -80,7 +81,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.start = start;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
    **/
@@ -98,7 +99,6 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.end = end;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class EdgeAutoUpdateConfig  implements Serializable {
       return false;
     }
     EdgeAutoUpdateConfig edgeAutoUpdateConfig = (EdgeAutoUpdateConfig) o;
+
     return Objects.equals(this.timeZone, edgeAutoUpdateConfig.timeZone) &&
-        Objects.equals(this.rrule, edgeAutoUpdateConfig.rrule) &&
-        Objects.equals(this.start, edgeAutoUpdateConfig.start) &&
-        Objects.equals(this.end, edgeAutoUpdateConfig.end);
+            Objects.equals(this.rrule, edgeAutoUpdateConfig.rrule) &&
+            Objects.equals(this.start, edgeAutoUpdateConfig.start) &&
+            Objects.equals(this.end, edgeAutoUpdateConfig.end);
   }
 
   @Override

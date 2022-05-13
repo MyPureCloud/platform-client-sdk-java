@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,7 +151,7 @@ public class KnowledgeDocument  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public KnowledgeDocument name(String name) {
@@ -167,7 +168,7 @@ public class KnowledgeDocument  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Language of the document
    **/
@@ -185,7 +186,7 @@ public class KnowledgeDocument  implements Serializable {
     this.languageCode = languageCode;
   }
 
-  
+
   /**
    * Document type
    **/
@@ -203,7 +204,7 @@ public class KnowledgeDocument  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * FAQ document details
    **/
@@ -221,21 +222,21 @@ public class KnowledgeDocument  implements Serializable {
     this.faq = faq;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Document categories
    **/
@@ -253,14 +254,14 @@ public class KnowledgeDocument  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Knowledge base which document does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
   }
 
-  
+
   /**
    * External URL to the document
    **/
@@ -278,7 +279,7 @@ public class KnowledgeDocument  implements Serializable {
     this.externalUrl = externalUrl;
   }
 
-  
+
   /**
    * Article
    **/
@@ -296,14 +297,13 @@ public class KnowledgeDocument  implements Serializable {
     this.article = article;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -314,18 +314,19 @@ public class KnowledgeDocument  implements Serializable {
       return false;
     }
     KnowledgeDocument knowledgeDocument = (KnowledgeDocument) o;
+
     return Objects.equals(this.id, knowledgeDocument.id) &&
-        Objects.equals(this.name, knowledgeDocument.name) &&
-        Objects.equals(this.languageCode, knowledgeDocument.languageCode) &&
-        Objects.equals(this.type, knowledgeDocument.type) &&
-        Objects.equals(this.faq, knowledgeDocument.faq) &&
-        Objects.equals(this.dateCreated, knowledgeDocument.dateCreated) &&
-        Objects.equals(this.dateModified, knowledgeDocument.dateModified) &&
-        Objects.equals(this.categories, knowledgeDocument.categories) &&
-        Objects.equals(this.knowledgeBase, knowledgeDocument.knowledgeBase) &&
-        Objects.equals(this.externalUrl, knowledgeDocument.externalUrl) &&
-        Objects.equals(this.article, knowledgeDocument.article) &&
-        Objects.equals(this.selfUri, knowledgeDocument.selfUri);
+            Objects.equals(this.name, knowledgeDocument.name) &&
+            Objects.equals(this.languageCode, knowledgeDocument.languageCode) &&
+            Objects.equals(this.type, knowledgeDocument.type) &&
+            Objects.equals(this.faq, knowledgeDocument.faq) &&
+            Objects.equals(this.dateCreated, knowledgeDocument.dateCreated) &&
+            Objects.equals(this.dateModified, knowledgeDocument.dateModified) &&
+            Objects.equals(this.categories, knowledgeDocument.categories) &&
+            Objects.equals(this.knowledgeBase, knowledgeDocument.knowledgeBase) &&
+            Objects.equals(this.externalUrl, knowledgeDocument.externalUrl) &&
+            Objects.equals(this.article, knowledgeDocument.article) &&
+            Objects.equals(this.selfUri, knowledgeDocument.selfUri);
   }
 
   @Override

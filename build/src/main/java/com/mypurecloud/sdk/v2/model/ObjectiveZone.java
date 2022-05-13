@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class ObjectiveZone  implements Serializable {
     this.label = label;
   }
 
-  
+
   /**
    * direction type
    **/
@@ -162,7 +163,7 @@ public class ObjectiveZone  implements Serializable {
     this.directionType = directionType;
   }
 
-  
+
   /**
    * zone type
    **/
@@ -180,7 +181,7 @@ public class ObjectiveZone  implements Serializable {
     this.zoneType = zoneType;
   }
 
-  
+
   /**
    * upper limit points
    **/
@@ -198,7 +199,7 @@ public class ObjectiveZone  implements Serializable {
     this.upperLimitPoints = upperLimitPoints;
   }
 
-  
+
   /**
    * lower limit points
    **/
@@ -216,7 +217,7 @@ public class ObjectiveZone  implements Serializable {
     this.lowerLimitPoints = lowerLimitPoints;
   }
 
-  
+
   /**
    * upper limit value
    **/
@@ -234,7 +235,7 @@ public class ObjectiveZone  implements Serializable {
     this.upperLimitValue = upperLimitValue;
   }
 
-  
+
   /**
    * lower limit value
    **/
@@ -252,7 +253,6 @@ public class ObjectiveZone  implements Serializable {
     this.lowerLimitValue = lowerLimitValue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -263,13 +263,14 @@ public class ObjectiveZone  implements Serializable {
       return false;
     }
     ObjectiveZone objectiveZone = (ObjectiveZone) o;
+
     return Objects.equals(this.label, objectiveZone.label) &&
-        Objects.equals(this.directionType, objectiveZone.directionType) &&
-        Objects.equals(this.zoneType, objectiveZone.zoneType) &&
-        Objects.equals(this.upperLimitPoints, objectiveZone.upperLimitPoints) &&
-        Objects.equals(this.lowerLimitPoints, objectiveZone.lowerLimitPoints) &&
-        Objects.equals(this.upperLimitValue, objectiveZone.upperLimitValue) &&
-        Objects.equals(this.lowerLimitValue, objectiveZone.lowerLimitValue);
+            Objects.equals(this.directionType, objectiveZone.directionType) &&
+            Objects.equals(this.zoneType, objectiveZone.zoneType) &&
+            Objects.equals(this.upperLimitPoints, objectiveZone.upperLimitPoints) &&
+            Objects.equals(this.lowerLimitPoints, objectiveZone.lowerLimitPoints) &&
+            Objects.equals(this.upperLimitValue, objectiveZone.upperLimitValue) &&
+            Objects.equals(this.lowerLimitValue, objectiveZone.lowerLimitValue);
   }
 
   @Override

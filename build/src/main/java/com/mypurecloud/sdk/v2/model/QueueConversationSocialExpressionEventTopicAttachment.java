@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     this.attachmentId = attachmentId;
   }
 
-  
+
   /**
    * The name of the attachment.
    **/
@@ -62,7 +63,7 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     this.name = name;
   }
 
-  
+
   /**
    * The content uri of the attachment. If set, this is commonly a public api download location.
    **/
@@ -80,7 +81,7 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     this.contentUri = contentUri;
   }
 
-  
+
   /**
    * The type of file the attachment is.
    **/
@@ -98,7 +99,7 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     this.contentType = contentType;
   }
 
-  
+
   /**
    * The length of the attachment file.
    **/
@@ -116,7 +117,6 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
     this.contentLength = contentLength;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class QueueConversationSocialExpressionEventTopicAttachment  implements S
       return false;
     }
     QueueConversationSocialExpressionEventTopicAttachment queueConversationSocialExpressionEventTopicAttachment = (QueueConversationSocialExpressionEventTopicAttachment) o;
+
     return Objects.equals(this.attachmentId, queueConversationSocialExpressionEventTopicAttachment.attachmentId) &&
-        Objects.equals(this.name, queueConversationSocialExpressionEventTopicAttachment.name) &&
-        Objects.equals(this.contentUri, queueConversationSocialExpressionEventTopicAttachment.contentUri) &&
-        Objects.equals(this.contentType, queueConversationSocialExpressionEventTopicAttachment.contentType) &&
-        Objects.equals(this.contentLength, queueConversationSocialExpressionEventTopicAttachment.contentLength);
+            Objects.equals(this.name, queueConversationSocialExpressionEventTopicAttachment.name) &&
+            Objects.equals(this.contentUri, queueConversationSocialExpressionEventTopicAttachment.contentUri) &&
+            Objects.equals(this.contentType, queueConversationSocialExpressionEventTopicAttachment.contentType) &&
+            Objects.equals(this.contentLength, queueConversationSocialExpressionEventTopicAttachment.contentLength);
   }
 
   @Override

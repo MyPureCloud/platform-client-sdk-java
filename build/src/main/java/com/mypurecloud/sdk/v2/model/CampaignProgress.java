@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -46,7 +47,7 @@ public class CampaignProgress  implements Serializable {
     this.campaign = campaign;
   }
 
-  
+
   /**
    * Identifier of the contact list
    **/
@@ -64,35 +65,34 @@ public class CampaignProgress  implements Serializable {
     this.contactList = contactList;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of contacts called during the campaign")
   @JsonProperty("numberOfContactsCalled")
   public Long getNumberOfContactsCalled() {
     return numberOfContactsCalled;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of contacts messaged during the campaign")
   @JsonProperty("numberOfContactsMessaged")
   public Long getNumberOfContactsMessaged() {
     return numberOfContactsMessaged;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total number of contacts in the campaign")
   @JsonProperty("totalNumberOfContacts")
   public Long getTotalNumberOfContacts() {
     return totalNumberOfContacts;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Percentage of contacts processed during the campaign")
   @JsonProperty("percentage")
   public Long getPercentage() {
     return percentage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +103,13 @@ public class CampaignProgress  implements Serializable {
       return false;
     }
     CampaignProgress campaignProgress = (CampaignProgress) o;
+
     return Objects.equals(this.campaign, campaignProgress.campaign) &&
-        Objects.equals(this.contactList, campaignProgress.contactList) &&
-        Objects.equals(this.numberOfContactsCalled, campaignProgress.numberOfContactsCalled) &&
-        Objects.equals(this.numberOfContactsMessaged, campaignProgress.numberOfContactsMessaged) &&
-        Objects.equals(this.totalNumberOfContacts, campaignProgress.totalNumberOfContacts) &&
-        Objects.equals(this.percentage, campaignProgress.percentage);
+            Objects.equals(this.contactList, campaignProgress.contactList) &&
+            Objects.equals(this.numberOfContactsCalled, campaignProgress.numberOfContactsCalled) &&
+            Objects.equals(this.numberOfContactsMessaged, campaignProgress.numberOfContactsMessaged) &&
+            Objects.equals(this.totalNumberOfContacts, campaignProgress.totalNumberOfContacts) &&
+            Objects.equals(this.percentage, campaignProgress.percentage);
   }
 
   @Override

@@ -19,10 +19,10 @@ title: TranscriptionTopicTranscriptionRequestStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| SESSION_ONGOING | &quot;SESSION_ONGOING&quot; |
-| SESSION_ENDED | &quot;SESSION_ENDED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| SESSION_ONGOING | &quot;SESSION_ONGOING&quot; | 
+| SESSION_ENDED | &quot;SESSION_ENDED&quot; | 
 {: class="table table-striped"}
 
 

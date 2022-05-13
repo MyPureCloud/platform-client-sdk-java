@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -194,7 +195,7 @@ public class DomainCertificateAuthority  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -212,7 +213,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -230,7 +231,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -248,7 +249,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -266,7 +267,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -284,7 +285,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -302,7 +303,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -320,7 +321,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -338,14 +339,14 @@ public class DomainCertificateAuthority  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -363,7 +364,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -381,7 +382,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * The authorities signed X509 PEM encoded certificate.
    **/
@@ -399,7 +400,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    * The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.
    **/
@@ -417,7 +418,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The service(s) that the authority can be used to authenticate.
    **/
@@ -435,7 +436,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.services = services;
   }
 
-  
+
   /**
    * The details of the parsed certificate(s).
    **/
@@ -453,14 +454,13 @@ public class DomainCertificateAuthority  implements Serializable {
     this.certificateDetails = certificateDetails;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -471,23 +471,24 @@ public class DomainCertificateAuthority  implements Serializable {
       return false;
     }
     DomainCertificateAuthority domainCertificateAuthority = (DomainCertificateAuthority) o;
+
     return Objects.equals(this.id, domainCertificateAuthority.id) &&
-        Objects.equals(this.name, domainCertificateAuthority.name) &&
-        Objects.equals(this.division, domainCertificateAuthority.division) &&
-        Objects.equals(this.description, domainCertificateAuthority.description) &&
-        Objects.equals(this.version, domainCertificateAuthority.version) &&
-        Objects.equals(this.dateCreated, domainCertificateAuthority.dateCreated) &&
-        Objects.equals(this.dateModified, domainCertificateAuthority.dateModified) &&
-        Objects.equals(this.modifiedBy, domainCertificateAuthority.modifiedBy) &&
-        Objects.equals(this.createdBy, domainCertificateAuthority.createdBy) &&
-        Objects.equals(this.state, domainCertificateAuthority.state) &&
-        Objects.equals(this.modifiedByApp, domainCertificateAuthority.modifiedByApp) &&
-        Objects.equals(this.createdByApp, domainCertificateAuthority.createdByApp) &&
-        Objects.equals(this.certificate, domainCertificateAuthority.certificate) &&
-        Objects.equals(this.type, domainCertificateAuthority.type) &&
-        Objects.equals(this.services, domainCertificateAuthority.services) &&
-        Objects.equals(this.certificateDetails, domainCertificateAuthority.certificateDetails) &&
-        Objects.equals(this.selfUri, domainCertificateAuthority.selfUri);
+            Objects.equals(this.name, domainCertificateAuthority.name) &&
+            Objects.equals(this.division, domainCertificateAuthority.division) &&
+            Objects.equals(this.description, domainCertificateAuthority.description) &&
+            Objects.equals(this.version, domainCertificateAuthority.version) &&
+            Objects.equals(this.dateCreated, domainCertificateAuthority.dateCreated) &&
+            Objects.equals(this.dateModified, domainCertificateAuthority.dateModified) &&
+            Objects.equals(this.modifiedBy, domainCertificateAuthority.modifiedBy) &&
+            Objects.equals(this.createdBy, domainCertificateAuthority.createdBy) &&
+            Objects.equals(this.state, domainCertificateAuthority.state) &&
+            Objects.equals(this.modifiedByApp, domainCertificateAuthority.modifiedByApp) &&
+            Objects.equals(this.createdByApp, domainCertificateAuthority.createdByApp) &&
+            Objects.equals(this.certificate, domainCertificateAuthority.certificate) &&
+            Objects.equals(this.type, domainCertificateAuthority.type) &&
+            Objects.equals(this.services, domainCertificateAuthority.services) &&
+            Objects.equals(this.certificateDetails, domainCertificateAuthority.certificateDetails) &&
+            Objects.equals(this.selfUri, domainCertificateAuthority.selfUri);
   }
 
   @Override

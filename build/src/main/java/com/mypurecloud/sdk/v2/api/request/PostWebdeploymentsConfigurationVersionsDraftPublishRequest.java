@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class PostWebdeploymentsConfigurationVersionsDraftPublishRequest {
-    
+
 	private String configurationId;
 	public String getConfigurationId() {
 		return this.configurationId;
@@ -41,7 +41,7 @@ public class PostWebdeploymentsConfigurationVersionsDraftPublishRequest {
 	    this.setConfigurationId(configurationId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,7 +72,7 @@ public class PostWebdeploymentsConfigurationVersionsDraftPublishRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish")
                 .withPathParameter("configurationId", configurationId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class PostWebdeploymentsConfigurationVersionsDraftPublishRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String configurationId) {
 	    return new Builder()
 	            .withRequiredParams(configurationId);
 	}
-	
+
 
 	public static class Builder {
 		private final PostWebdeploymentsConfigurationVersionsDraftPublishRequest request;
@@ -97,20 +97,20 @@ public class PostWebdeploymentsConfigurationVersionsDraftPublishRequest {
 			request = new PostWebdeploymentsConfigurationVersionsDraftPublishRequest();
 		}
 
-		
+
 		public Builder withConfigurationId(String configurationId) {
 			request.setConfigurationId(configurationId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String configurationId) {
 			request.setConfigurationId(configurationId);
-			
+
 			return this;
 		}
-		
+
 
 		public PostWebdeploymentsConfigurationVersionsDraftPublishRequest build() {
             

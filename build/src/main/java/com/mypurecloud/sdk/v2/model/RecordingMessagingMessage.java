@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ButtonResponse;
@@ -61,7 +62,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.from = from;
   }
 
-  
+
   /**
    * The user who sent this message.
    **/
@@ -79,7 +80,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.fromUser = fromUser;
   }
 
-  
+
   /**
    * The PureCloud external contact sender details.
    **/
@@ -97,7 +98,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.fromExternalContact = fromExternalContact;
   }
 
-  
+
   /**
    * The message recipient.
    **/
@@ -115,7 +116,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.to = to;
   }
 
-  
+
   /**
    * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -133,7 +134,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -151,7 +152,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The content of this message.
    **/
@@ -169,7 +170,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.messageText = messageText;
   }
 
-  
+
   /**
    * List of media objects attached  with this message.
    **/
@@ -187,7 +188,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.messageMediaAttachments = messageMediaAttachments;
   }
 
-  
+
   /**
    * List of message stickers attached with this message.
    **/
@@ -205,7 +206,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.messageStickerAttachments = messageStickerAttachments;
   }
 
-  
+
   /**
    * List of quick reply options offered with this message.
    **/
@@ -223,7 +224,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.quickReplies = quickReplies;
   }
 
-  
+
   /**
    * Button Response selected by user for this message.
    **/
@@ -241,7 +242,7 @@ public class RecordingMessagingMessage  implements Serializable {
     this.buttonResponse = buttonResponse;
   }
 
-  
+
   /**
    * Ephemeral story content.
    **/
@@ -259,7 +260,6 @@ public class RecordingMessagingMessage  implements Serializable {
     this.story = story;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -270,18 +270,19 @@ public class RecordingMessagingMessage  implements Serializable {
       return false;
     }
     RecordingMessagingMessage recordingMessagingMessage = (RecordingMessagingMessage) o;
+
     return Objects.equals(this.from, recordingMessagingMessage.from) &&
-        Objects.equals(this.fromUser, recordingMessagingMessage.fromUser) &&
-        Objects.equals(this.fromExternalContact, recordingMessagingMessage.fromExternalContact) &&
-        Objects.equals(this.to, recordingMessagingMessage.to) &&
-        Objects.equals(this.timestamp, recordingMessagingMessage.timestamp) &&
-        Objects.equals(this.id, recordingMessagingMessage.id) &&
-        Objects.equals(this.messageText, recordingMessagingMessage.messageText) &&
-        Objects.equals(this.messageMediaAttachments, recordingMessagingMessage.messageMediaAttachments) &&
-        Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
-        Objects.equals(this.quickReplies, recordingMessagingMessage.quickReplies) &&
-        Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse) &&
-        Objects.equals(this.story, recordingMessagingMessage.story);
+            Objects.equals(this.fromUser, recordingMessagingMessage.fromUser) &&
+            Objects.equals(this.fromExternalContact, recordingMessagingMessage.fromExternalContact) &&
+            Objects.equals(this.to, recordingMessagingMessage.to) &&
+            Objects.equals(this.timestamp, recordingMessagingMessage.timestamp) &&
+            Objects.equals(this.id, recordingMessagingMessage.id) &&
+            Objects.equals(this.messageText, recordingMessagingMessage.messageText) &&
+            Objects.equals(this.messageMediaAttachments, recordingMessagingMessage.messageMediaAttachments) &&
+            Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
+            Objects.equals(this.quickReplies, recordingMessagingMessage.quickReplies) &&
+            Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse) &&
+            Objects.equals(this.story, recordingMessagingMessage.story);
   }
 
   @Override

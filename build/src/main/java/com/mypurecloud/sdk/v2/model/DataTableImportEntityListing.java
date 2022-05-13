@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DataTableImportJob;
@@ -46,7 +47,7 @@ public class DataTableImportEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DataTableImportEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class DataTableImportEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DataTableImportEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class DataTableImportEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DataTableImportEntityListing total(Long total) {
@@ -97,7 +98,7 @@ public class DataTableImportEntityListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DataTableImportEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class DataTableImportEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class DataTableImportEntityListing  implements Serializable {
       return false;
     }
     DataTableImportEntityListing dataTableImportEntityListing = (DataTableImportEntityListing) o;
+
     return Objects.equals(this.entities, dataTableImportEntityListing.entities) &&
-        Objects.equals(this.pageSize, dataTableImportEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, dataTableImportEntityListing.pageNumber) &&
-        Objects.equals(this.total, dataTableImportEntityListing.total) &&
-        Objects.equals(this.pageCount, dataTableImportEntityListing.pageCount);
+            Objects.equals(this.pageSize, dataTableImportEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, dataTableImportEntityListing.pageNumber) &&
+            Objects.equals(this.total, dataTableImportEntityListing.total) &&
+            Objects.equals(this.pageCount, dataTableImportEntityListing.pageCount);
   }
 
   @Override

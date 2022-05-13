@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -247,7 +248,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -265,7 +266,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Left hand side for metric predicates
    **/
@@ -283,7 +284,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -301,7 +302,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension or metric predicates
    **/
@@ -319,7 +320,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension or metric predicates
    **/
@@ -337,7 +338,6 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -348,12 +348,13 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
       return false;
     }
     EvaluationDetailQueryPredicate evaluationDetailQueryPredicate = (EvaluationDetailQueryPredicate) o;
+
     return Objects.equals(this.type, evaluationDetailQueryPredicate.type) &&
-        Objects.equals(this.dimension, evaluationDetailQueryPredicate.dimension) &&
-        Objects.equals(this.metric, evaluationDetailQueryPredicate.metric) &&
-        Objects.equals(this.operator, evaluationDetailQueryPredicate.operator) &&
-        Objects.equals(this.value, evaluationDetailQueryPredicate.value) &&
-        Objects.equals(this.range, evaluationDetailQueryPredicate.range);
+            Objects.equals(this.dimension, evaluationDetailQueryPredicate.dimension) &&
+            Objects.equals(this.metric, evaluationDetailQueryPredicate.metric) &&
+            Objects.equals(this.operator, evaluationDetailQueryPredicate.operator) &&
+            Objects.equals(this.value, evaluationDetailQueryPredicate.value) &&
+            Objects.equals(this.range, evaluationDetailQueryPredicate.range);
   }
 
   @Override

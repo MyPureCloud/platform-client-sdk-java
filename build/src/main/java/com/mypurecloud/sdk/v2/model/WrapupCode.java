@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -36,7 +37,7 @@ public class WrapupCode  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The wrap-up code name.
    **/
@@ -54,7 +55,7 @@ public class WrapupCode  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -72,7 +73,7 @@ public class WrapupCode  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -90,7 +91,7 @@ public class WrapupCode  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public WrapupCode modifiedBy(String modifiedBy) {
@@ -107,7 +108,7 @@ public class WrapupCode  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public WrapupCode createdBy(String createdBy) {
@@ -124,14 +125,13 @@ public class WrapupCode  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,13 +142,14 @@ public class WrapupCode  implements Serializable {
       return false;
     }
     WrapupCode wrapupCode = (WrapupCode) o;
+
     return Objects.equals(this.id, wrapupCode.id) &&
-        Objects.equals(this.name, wrapupCode.name) &&
-        Objects.equals(this.dateCreated, wrapupCode.dateCreated) &&
-        Objects.equals(this.dateModified, wrapupCode.dateModified) &&
-        Objects.equals(this.modifiedBy, wrapupCode.modifiedBy) &&
-        Objects.equals(this.createdBy, wrapupCode.createdBy) &&
-        Objects.equals(this.selfUri, wrapupCode.selfUri);
+            Objects.equals(this.name, wrapupCode.name) &&
+            Objects.equals(this.dateCreated, wrapupCode.dateCreated) &&
+            Objects.equals(this.dateModified, wrapupCode.dateModified) &&
+            Objects.equals(this.modifiedBy, wrapupCode.modifiedBy) &&
+            Objects.equals(this.createdBy, wrapupCode.createdBy) &&
+            Objects.equals(this.selfUri, wrapupCode.selfUri);
   }
 
   @Override

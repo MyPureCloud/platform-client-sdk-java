@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class LocalDateRange  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The inclusive end of a date range in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -60,7 +61,6 @@ public class LocalDateRange  implements Serializable {
     this.endDate = endDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class LocalDateRange  implements Serializable {
       return false;
     }
     LocalDateRange localDateRange = (LocalDateRange) o;
+
     return Objects.equals(this.startDate, localDateRange.startDate) &&
-        Objects.equals(this.endDate, localDateRange.endDate);
+            Objects.equals(this.endDate, localDateRange.endDate);
   }
 
   @Override

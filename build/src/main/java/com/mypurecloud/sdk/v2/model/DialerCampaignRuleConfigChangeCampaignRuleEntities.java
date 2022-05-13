@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeUriReference;
@@ -44,7 +45,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Seri
     this.campaigns = campaigns;
   }
 
-  
+
   /**
    * A list of sequenceIds to act on
    **/
@@ -62,7 +63,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Seri
     this.sequences = sequences;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Seri
       return false;
     }
     DialerCampaignRuleConfigChangeCampaignRuleEntities dialerCampaignRuleConfigChangeCampaignRuleEntities = (DialerCampaignRuleConfigChangeCampaignRuleEntities) o;
+
     return Objects.equals(this.campaigns, dialerCampaignRuleConfigChangeCampaignRuleEntities.campaigns) &&
-        Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleEntities.sequences);
+            Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleEntities.sequences);
   }
 
   @Override

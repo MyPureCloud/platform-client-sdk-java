@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -101,7 +102,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The activity code's category
    **/
@@ -119,7 +120,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    * The default length of the activity in minutes
    **/
@@ -137,7 +138,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * Whether an agent is paid while performing this activity
    **/
@@ -155,7 +156,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-  
+
   /**
    * Indicates whether or not the activity should be counted as work time
    **/
@@ -173,7 +174,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     this.countsAsWorkTime = countsAsWorkTime;
   }
 
-  
+
   /**
    * Whether an agent can select this activity code when creating or editing a time off request
    **/
@@ -191,7 +192,6 @@ public class CreateActivityCodeRequest  implements Serializable {
     this.agentTimeOffSelectable = agentTimeOffSelectable;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -202,12 +202,13 @@ public class CreateActivityCodeRequest  implements Serializable {
       return false;
     }
     CreateActivityCodeRequest createActivityCodeRequest = (CreateActivityCodeRequest) o;
+
     return Objects.equals(this.name, createActivityCodeRequest.name) &&
-        Objects.equals(this.category, createActivityCodeRequest.category) &&
-        Objects.equals(this.lengthInMinutes, createActivityCodeRequest.lengthInMinutes) &&
-        Objects.equals(this.countsAsPaidTime, createActivityCodeRequest.countsAsPaidTime) &&
-        Objects.equals(this.countsAsWorkTime, createActivityCodeRequest.countsAsWorkTime) &&
-        Objects.equals(this.agentTimeOffSelectable, createActivityCodeRequest.agentTimeOffSelectable);
+            Objects.equals(this.category, createActivityCodeRequest.category) &&
+            Objects.equals(this.lengthInMinutes, createActivityCodeRequest.lengthInMinutes) &&
+            Objects.equals(this.countsAsPaidTime, createActivityCodeRequest.countsAsPaidTime) &&
+            Objects.equals(this.countsAsWorkTime, createActivityCodeRequest.countsAsWorkTime) &&
+            Objects.equals(this.agentTimeOffSelectable, createActivityCodeRequest.agentTimeOffSelectable);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -96,7 +97,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicCallConversation name(String name) {
@@ -113,7 +114,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicCallConversation participants(List<QueueConversationCallEventTopicCallMediaParticipant> participants) {
@@ -130,7 +131,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicCallConversation otherMediaUris(List<String> otherMediaUris) {
@@ -147,7 +148,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     this.otherMediaUris = otherMediaUris;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicCallConversation recordingState(RecordingStateEnum recordingState) {
@@ -164,7 +165,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicCallConversation maxParticipants(Integer maxParticipants) {
@@ -181,7 +182,6 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     this.maxParticipants = maxParticipants;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +192,13 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
       return false;
     }
     QueueConversationCallEventTopicCallConversation queueConversationCallEventTopicCallConversation = (QueueConversationCallEventTopicCallConversation) o;
+
     return Objects.equals(this.id, queueConversationCallEventTopicCallConversation.id) &&
-        Objects.equals(this.name, queueConversationCallEventTopicCallConversation.name) &&
-        Objects.equals(this.participants, queueConversationCallEventTopicCallConversation.participants) &&
-        Objects.equals(this.otherMediaUris, queueConversationCallEventTopicCallConversation.otherMediaUris) &&
-        Objects.equals(this.recordingState, queueConversationCallEventTopicCallConversation.recordingState) &&
-        Objects.equals(this.maxParticipants, queueConversationCallEventTopicCallConversation.maxParticipants);
+            Objects.equals(this.name, queueConversationCallEventTopicCallConversation.name) &&
+            Objects.equals(this.participants, queueConversationCallEventTopicCallConversation.participants) &&
+            Objects.equals(this.otherMediaUris, queueConversationCallEventTopicCallConversation.otherMediaUris) &&
+            Objects.equals(this.recordingState, queueConversationCallEventTopicCallConversation.recordingState) &&
+            Objects.equals(this.maxParticipants, queueConversationCallEventTopicCallConversation.maxParticipants);
   }
 
   @Override

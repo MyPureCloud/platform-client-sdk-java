@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage title(String title) {
@@ -67,7 +68,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage domain(String domain) {
@@ -84,7 +85,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage fragment(String fragment) {
@@ -101,7 +102,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.fragment = fragment;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage hostname(String hostname) {
@@ -118,7 +119,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.hostname = hostname;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage keywords(String keywords) {
@@ -135,7 +136,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.keywords = keywords;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage lang(String lang) {
@@ -152,7 +153,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.lang = lang;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage pathname(String pathname) {
@@ -169,7 +170,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.pathname = pathname;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage queryString(String queryString) {
@@ -186,7 +187,7 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.queryString = queryString;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationPage breadcrumb(List<String> breadcrumb) {
@@ -203,7 +204,6 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
     this.breadcrumb = breadcrumb;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -214,16 +214,17 @@ public class JourneyWebEventsNotificationPage  implements Serializable {
       return false;
     }
     JourneyWebEventsNotificationPage journeyWebEventsNotificationPage = (JourneyWebEventsNotificationPage) o;
+
     return Objects.equals(this.url, journeyWebEventsNotificationPage.url) &&
-        Objects.equals(this.title, journeyWebEventsNotificationPage.title) &&
-        Objects.equals(this.domain, journeyWebEventsNotificationPage.domain) &&
-        Objects.equals(this.fragment, journeyWebEventsNotificationPage.fragment) &&
-        Objects.equals(this.hostname, journeyWebEventsNotificationPage.hostname) &&
-        Objects.equals(this.keywords, journeyWebEventsNotificationPage.keywords) &&
-        Objects.equals(this.lang, journeyWebEventsNotificationPage.lang) &&
-        Objects.equals(this.pathname, journeyWebEventsNotificationPage.pathname) &&
-        Objects.equals(this.queryString, journeyWebEventsNotificationPage.queryString) &&
-        Objects.equals(this.breadcrumb, journeyWebEventsNotificationPage.breadcrumb);
+            Objects.equals(this.title, journeyWebEventsNotificationPage.title) &&
+            Objects.equals(this.domain, journeyWebEventsNotificationPage.domain) &&
+            Objects.equals(this.fragment, journeyWebEventsNotificationPage.fragment) &&
+            Objects.equals(this.hostname, journeyWebEventsNotificationPage.hostname) &&
+            Objects.equals(this.keywords, journeyWebEventsNotificationPage.keywords) &&
+            Objects.equals(this.lang, journeyWebEventsNotificationPage.lang) &&
+            Objects.equals(this.pathname, journeyWebEventsNotificationPage.pathname) &&
+            Objects.equals(this.queryString, journeyWebEventsNotificationPage.queryString) &&
+            Objects.equals(this.breadcrumb, journeyWebEventsNotificationPage.breadcrumb);
   }
 
   @Override

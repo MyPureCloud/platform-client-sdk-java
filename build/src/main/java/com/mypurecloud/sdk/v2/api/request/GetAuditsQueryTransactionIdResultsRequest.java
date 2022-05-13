@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuditsQueryTransactionIdResultsRequest {
-    
+
 	private String transactionId;
 	public String getTransactionId() {
 		return this.transactionId;
@@ -43,7 +43,7 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 	    this.setTransactionId(transactionId);
 	    return this;
 	} 
-	
+
 	private String cursor;
 	public String getCursor() {
 		return this.cursor;
@@ -57,7 +57,7 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 	    this.setCursor(cursor);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -71,7 +71,7 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -114,7 +114,7 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,13 +145,16 @@ public class GetAuditsQueryTransactionIdResultsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/audits/query/{transactionId}/results")
                 .withPathParameter("transactionId", transactionId)
         
+
                 .withQueryParameters("cursor", "", cursor)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -162,12 +165,12 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String transactionId) {
 	    return new Builder()
 	            .withRequiredParams(transactionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetAuditsQueryTransactionIdResultsRequest request;
@@ -176,26 +179,28 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 			request = new GetAuditsQueryTransactionIdResultsRequest();
 		}
 
-		
+
 		public Builder withTransactionId(String transactionId) {
 			request.setTransactionId(transactionId);
 			return this;
 		}
-		
+
 		public Builder withCursor(String cursor) {
 			request.setCursor(cursor);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -205,15 +210,15 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String transactionId) {
 			request.setTransactionId(transactionId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetAuditsQueryTransactionIdResultsRequest build() {
             

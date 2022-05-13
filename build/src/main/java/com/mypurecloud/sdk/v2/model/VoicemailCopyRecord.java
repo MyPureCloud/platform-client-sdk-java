@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Group;
@@ -34,21 +35,20 @@ public class VoicemailCopyRecord  implements Serializable {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The group that the voicemail message was copied to/from")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("date")
   public Date getDate() {
     return date;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,9 +59,10 @@ public class VoicemailCopyRecord  implements Serializable {
       return false;
     }
     VoicemailCopyRecord voicemailCopyRecord = (VoicemailCopyRecord) o;
+
     return Objects.equals(this.user, voicemailCopyRecord.user) &&
-        Objects.equals(this.group, voicemailCopyRecord.group) &&
-        Objects.equals(this.date, voicemailCopyRecord.date);
+            Objects.equals(this.group, voicemailCopyRecord.group) &&
+            Objects.equals(this.date, voicemailCopyRecord.date);
   }
 
   @Override

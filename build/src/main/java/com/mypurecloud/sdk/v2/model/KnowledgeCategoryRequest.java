@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentCategoryInput;
@@ -34,7 +35,7 @@ public class KnowledgeCategoryRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Category name
    **/
@@ -52,7 +53,7 @@ public class KnowledgeCategoryRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Category description
    **/
@@ -70,7 +71,7 @@ public class KnowledgeCategoryRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Category parent
    **/
@@ -88,14 +89,13 @@ public class KnowledgeCategoryRequest  implements Serializable {
     this.parent = parent;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,11 +106,12 @@ public class KnowledgeCategoryRequest  implements Serializable {
       return false;
     }
     KnowledgeCategoryRequest knowledgeCategoryRequest = (KnowledgeCategoryRequest) o;
+
     return Objects.equals(this.id, knowledgeCategoryRequest.id) &&
-        Objects.equals(this.name, knowledgeCategoryRequest.name) &&
-        Objects.equals(this.description, knowledgeCategoryRequest.description) &&
-        Objects.equals(this.parent, knowledgeCategoryRequest.parent) &&
-        Objects.equals(this.selfUri, knowledgeCategoryRequest.selfUri);
+            Objects.equals(this.name, knowledgeCategoryRequest.name) &&
+            Objects.equals(this.description, knowledgeCategoryRequest.description) &&
+            Objects.equals(this.parent, knowledgeCategoryRequest.parent) &&
+            Objects.equals(this.selfUri, knowledgeCategoryRequest.selfUri);
   }
 
   @Override

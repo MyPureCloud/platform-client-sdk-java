@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicPhoneNumberColumn;
@@ -47,7 +48,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     this.id = id;
   }
 
-  
+
   /**
    * The contact associated with this preview data pop
    **/
@@ -65,7 +66,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     this.contactId = contactId;
   }
 
-  
+
   /**
    * The contactList associated with this preview data pop.
    **/
@@ -83,7 +84,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     this.contactListId = contactListId;
   }
 
-  
+
   /**
    * The campaignId associated with this preview data pop.
    **/
@@ -101,7 +102,7 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     this.campaignId = campaignId;
   }
 
-  
+
   /**
    * The phone number columns associated with this campaign
    **/
@@ -119,7 +120,6 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     this.phoneNumberColumns = phoneNumberColumns;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
       return false;
     }
     QueueConversationVideoEventTopicDialerPreview queueConversationVideoEventTopicDialerPreview = (QueueConversationVideoEventTopicDialerPreview) o;
+
     return Objects.equals(this.id, queueConversationVideoEventTopicDialerPreview.id) &&
-        Objects.equals(this.contactId, queueConversationVideoEventTopicDialerPreview.contactId) &&
-        Objects.equals(this.contactListId, queueConversationVideoEventTopicDialerPreview.contactListId) &&
-        Objects.equals(this.campaignId, queueConversationVideoEventTopicDialerPreview.campaignId) &&
-        Objects.equals(this.phoneNumberColumns, queueConversationVideoEventTopicDialerPreview.phoneNumberColumns);
+            Objects.equals(this.contactId, queueConversationVideoEventTopicDialerPreview.contactId) &&
+            Objects.equals(this.contactListId, queueConversationVideoEventTopicDialerPreview.contactListId) &&
+            Objects.equals(this.campaignId, queueConversationVideoEventTopicDialerPreview.campaignId) &&
+            Objects.equals(this.phoneNumberColumns, queueConversationVideoEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override

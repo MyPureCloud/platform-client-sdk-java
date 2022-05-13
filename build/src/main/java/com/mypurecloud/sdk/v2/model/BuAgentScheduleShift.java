@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleActivity;
@@ -50,21 +51,21 @@ public class BuAgentScheduleShift  implements Serializable {
     this.id = id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The length of this shift in minutes")
   @JsonProperty("lengthMinutes")
   public Integer getLengthMinutes() {
     return lengthMinutes;
   }
 
-  
+
   /**
    * The activities associated with this shift
    **/
@@ -82,7 +83,7 @@ public class BuAgentScheduleShift  implements Serializable {
     this.activities = activities;
   }
 
-  
+
   /**
    * Whether this shift was manually edited. This is only set by clients and is used for rescheduling
    **/
@@ -100,14 +101,13 @@ public class BuAgentScheduleShift  implements Serializable {
     this.manuallyEdited = manuallyEdited;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The schedule to which this shift belongs")
   @JsonProperty("schedule")
   public BuScheduleReference getSchedule() {
     return schedule;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,12 +118,13 @@ public class BuAgentScheduleShift  implements Serializable {
       return false;
     }
     BuAgentScheduleShift buAgentScheduleShift = (BuAgentScheduleShift) o;
+
     return Objects.equals(this.id, buAgentScheduleShift.id) &&
-        Objects.equals(this.startDate, buAgentScheduleShift.startDate) &&
-        Objects.equals(this.lengthMinutes, buAgentScheduleShift.lengthMinutes) &&
-        Objects.equals(this.activities, buAgentScheduleShift.activities) &&
-        Objects.equals(this.manuallyEdited, buAgentScheduleShift.manuallyEdited) &&
-        Objects.equals(this.schedule, buAgentScheduleShift.schedule);
+            Objects.equals(this.startDate, buAgentScheduleShift.startDate) &&
+            Objects.equals(this.lengthMinutes, buAgentScheduleShift.lengthMinutes) &&
+            Objects.equals(this.activities, buAgentScheduleShift.activities) &&
+            Objects.equals(this.manuallyEdited, buAgentScheduleShift.manuallyEdited) &&
+            Objects.equals(this.schedule, buAgentScheduleShift.schedule);
   }
 
   @Override

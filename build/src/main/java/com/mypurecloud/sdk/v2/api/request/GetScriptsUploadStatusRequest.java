@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsUploadStatusRequest {
-    
+
 	private String uploadId;
 	public String getUploadId() {
 		return this.uploadId;
@@ -43,7 +43,7 @@ public class GetScriptsUploadStatusRequest {
 	    this.setUploadId(uploadId);
 	    return this;
 	} 
-	
+
 	private Boolean longPoll;
 	public Boolean getLongPoll() {
 		return this.longPoll;
@@ -57,7 +57,7 @@ public class GetScriptsUploadStatusRequest {
 	    this.setLongPoll(longPoll);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,9 +88,10 @@ public class GetScriptsUploadStatusRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/uploads/{uploadId}/status")
                 .withPathParameter("uploadId", uploadId)
         
+
                 .withQueryParameters("longPoll", "", longPoll)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -101,12 +102,12 @@ public class GetScriptsUploadStatusRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String uploadId) {
 	    return new Builder()
 	            .withRequiredParams(uploadId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetScriptsUploadStatusRequest request;
@@ -115,25 +116,25 @@ public class GetScriptsUploadStatusRequest {
 			request = new GetScriptsUploadStatusRequest();
 		}
 
-		
+
 		public Builder withUploadId(String uploadId) {
 			request.setUploadId(uploadId);
 			return this;
 		}
-		
+
 		public Builder withLongPoll(Boolean longPoll) {
 			request.setLongPoll(longPoll);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String uploadId) {
 			request.setUploadId(uploadId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetScriptsUploadStatusRequest build() {
             

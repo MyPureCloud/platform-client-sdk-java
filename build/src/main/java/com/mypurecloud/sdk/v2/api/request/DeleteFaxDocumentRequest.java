@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
-import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class DeleteFaxDocumentRequest {
-    
+
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -41,7 +41,7 @@ public class DeleteFaxDocumentRequest {
 	    this.setDocumentId(documentId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,7 +72,7 @@ public class DeleteFaxDocumentRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/fax/documents/{documentId}")
                 .withPathParameter("documentId", documentId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class DeleteFaxDocumentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String documentId) {
 	    return new Builder()
 	            .withRequiredParams(documentId);
 	}
-	
+
 
 	public static class Builder {
 		private final DeleteFaxDocumentRequest request;
@@ -97,20 +97,20 @@ public class DeleteFaxDocumentRequest {
 			request = new DeleteFaxDocumentRequest();
 		}
 
-		
+
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String documentId) {
 			request.setDocumentId(documentId);
-			
+
 			return this;
 		}
-		
+
 
 		public DeleteFaxDocumentRequest build() {
             

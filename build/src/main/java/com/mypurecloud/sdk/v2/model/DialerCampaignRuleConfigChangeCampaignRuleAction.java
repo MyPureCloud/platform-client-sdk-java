@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    * The parameters to match this action
    **/
@@ -117,7 +118,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     this.parameters = parameters;
   }
 
-  
+
   /**
    * The type of this action
    **/
@@ -135,7 +136,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     this.actionType = actionType;
   }
 
-  
+
   /**
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleAction campaignRuleActionEntities(DialerCampaignRuleConfigChangeCampaignRuleActionEntities campaignRuleActionEntities) {
@@ -152,7 +153,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     this.campaignRuleActionEntities = campaignRuleActionEntities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,10 +163,11 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
       return false;
     }
     DialerCampaignRuleConfigChangeCampaignRuleAction dialerCampaignRuleConfigChangeCampaignRuleAction = (DialerCampaignRuleConfigChangeCampaignRuleAction) o;
+
     return Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRuleAction.id) &&
-        Objects.equals(this.parameters, dialerCampaignRuleConfigChangeCampaignRuleAction.parameters) &&
-        Objects.equals(this.actionType, dialerCampaignRuleConfigChangeCampaignRuleAction.actionType) &&
-        Objects.equals(this.campaignRuleActionEntities, dialerCampaignRuleConfigChangeCampaignRuleAction.campaignRuleActionEntities);
+            Objects.equals(this.parameters, dialerCampaignRuleConfigChangeCampaignRuleAction.parameters) &&
+            Objects.equals(this.actionType, dialerCampaignRuleConfigChangeCampaignRuleAction.actionType) &&
+            Objects.equals(this.campaignRuleActionEntities, dialerCampaignRuleConfigChangeCampaignRuleAction.campaignRuleActionEntities);
   }
 
   @Override

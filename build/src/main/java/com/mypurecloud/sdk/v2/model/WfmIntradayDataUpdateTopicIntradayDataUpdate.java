@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmIntradayDataUpdateTopicIntradayDataGroup;
@@ -50,7 +51,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataUpdate endDate(Date endDate) {
@@ -67,7 +68,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataUpdate intervalLengthMinutes(Integer intervalLengthMinutes) {
@@ -84,7 +85,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataUpdate numberOfIntervals(Integer numberOfIntervals) {
@@ -101,7 +102,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.numberOfIntervals = numberOfIntervals;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataUpdate metrics(List<WfmIntradayDataUpdateTopicIntradayMetric> metrics) {
@@ -118,7 +119,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.metrics = metrics;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataUpdate queueIds(List<String> queueIds) {
@@ -135,7 +136,7 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.queueIds = queueIds;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayDataUpdate intradayDataGroupings(List<WfmIntradayDataUpdateTopicIntradayDataGroup> intradayDataGroupings) {
@@ -152,7 +153,6 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
     this.intradayDataGroupings = intradayDataGroupings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,13 +163,14 @@ public class WfmIntradayDataUpdateTopicIntradayDataUpdate  implements Serializab
       return false;
     }
     WfmIntradayDataUpdateTopicIntradayDataUpdate wfmIntradayDataUpdateTopicIntradayDataUpdate = (WfmIntradayDataUpdateTopicIntradayDataUpdate) o;
+
     return Objects.equals(this.startDate, wfmIntradayDataUpdateTopicIntradayDataUpdate.startDate) &&
-        Objects.equals(this.endDate, wfmIntradayDataUpdateTopicIntradayDataUpdate.endDate) &&
-        Objects.equals(this.intervalLengthMinutes, wfmIntradayDataUpdateTopicIntradayDataUpdate.intervalLengthMinutes) &&
-        Objects.equals(this.numberOfIntervals, wfmIntradayDataUpdateTopicIntradayDataUpdate.numberOfIntervals) &&
-        Objects.equals(this.metrics, wfmIntradayDataUpdateTopicIntradayDataUpdate.metrics) &&
-        Objects.equals(this.queueIds, wfmIntradayDataUpdateTopicIntradayDataUpdate.queueIds) &&
-        Objects.equals(this.intradayDataGroupings, wfmIntradayDataUpdateTopicIntradayDataUpdate.intradayDataGroupings);
+            Objects.equals(this.endDate, wfmIntradayDataUpdateTopicIntradayDataUpdate.endDate) &&
+            Objects.equals(this.intervalLengthMinutes, wfmIntradayDataUpdateTopicIntradayDataUpdate.intervalLengthMinutes) &&
+            Objects.equals(this.numberOfIntervals, wfmIntradayDataUpdateTopicIntradayDataUpdate.numberOfIntervals) &&
+            Objects.equals(this.metrics, wfmIntradayDataUpdateTopicIntradayDataUpdate.metrics) &&
+            Objects.equals(this.queueIds, wfmIntradayDataUpdateTopicIntradayDataUpdate.queueIds) &&
+            Objects.equals(this.intradayDataGroupings, wfmIntradayDataUpdateTopicIntradayDataUpdate.intradayDataGroupings);
   }
 
   @Override

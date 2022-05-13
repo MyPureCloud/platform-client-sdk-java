@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeCampaignRuleAction;
@@ -54,7 +55,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.campaignRuleEntities = campaignRuleEntities;
   }
 
-  
+
   /**
    * The list of conditions that will trigger this Campaign Rule
    **/
@@ -72,7 +73,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.campaignRuleConditions = campaignRuleConditions;
   }
 
-  
+
   /**
    * The list of actions that will be taken when this Campaign Rule's conditions are met
    **/
@@ -90,7 +91,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.campaignRuleActions = campaignRuleActions;
   }
 
-  
+
   /**
    * Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)
    **/
@@ -108,7 +109,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.matchAnyConditions = matchAnyConditions;
   }
 
-  
+
   /**
    * Whether this campaign rule is enabled
    **/
@@ -126,7 +127,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -144,7 +145,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -162,7 +163,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -180,7 +181,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -198,7 +199,7 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -216,7 +217,6 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,16 +227,17 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
       return false;
     }
     DialerCampaignRuleConfigChangeCampaignRule dialerCampaignRuleConfigChangeCampaignRule = (DialerCampaignRuleConfigChangeCampaignRule) o;
+
     return Objects.equals(this.campaignRuleEntities, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleEntities) &&
-        Objects.equals(this.campaignRuleConditions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleConditions) &&
-        Objects.equals(this.campaignRuleActions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleActions) &&
-        Objects.equals(this.matchAnyConditions, dialerCampaignRuleConfigChangeCampaignRule.matchAnyConditions) &&
-        Objects.equals(this.enabled, dialerCampaignRuleConfigChangeCampaignRule.enabled) &&
-        Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRule.id) &&
-        Objects.equals(this.name, dialerCampaignRuleConfigChangeCampaignRule.name) &&
-        Objects.equals(this.dateCreated, dialerCampaignRuleConfigChangeCampaignRule.dateCreated) &&
-        Objects.equals(this.dateModified, dialerCampaignRuleConfigChangeCampaignRule.dateModified) &&
-        Objects.equals(this.version, dialerCampaignRuleConfigChangeCampaignRule.version);
+            Objects.equals(this.campaignRuleConditions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleConditions) &&
+            Objects.equals(this.campaignRuleActions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleActions) &&
+            Objects.equals(this.matchAnyConditions, dialerCampaignRuleConfigChangeCampaignRule.matchAnyConditions) &&
+            Objects.equals(this.enabled, dialerCampaignRuleConfigChangeCampaignRule.enabled) &&
+            Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRule.id) &&
+            Objects.equals(this.name, dialerCampaignRuleConfigChangeCampaignRule.name) &&
+            Objects.equals(this.dateCreated, dialerCampaignRuleConfigChangeCampaignRule.dateCreated) &&
+            Objects.equals(this.dateModified, dialerCampaignRuleConfigChangeCampaignRule.dateModified) &&
+            Objects.equals(this.version, dialerCampaignRuleConfigChangeCampaignRule.version);
   }
 
   @Override

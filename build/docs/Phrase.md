@@ -20,13 +20,13 @@ title: Phrase
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| _1 | &quot;1&quot; |
-| _55 | &quot;55&quot; |
-| _65 | &quot;65&quot; |
-| _72 | &quot;72&quot; |
-| _85 | &quot;85&quot; |
-| _90 | &quot;90&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| _1 | &quot;1&quot; | 
+| _55 | &quot;55&quot; | 
+| _65 | &quot;65&quot; | 
+| _72 | &quot;72&quot; | 
+| _85 | &quot;85&quot; | 
+| _90 | &quot;90&quot; | 
 {: class="table table-striped"}
 
 
@@ -36,11 +36,11 @@ title: Phrase
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNSPECIFIED | &quot;Unspecified&quot; |
-| POSITIVE | &quot;Positive&quot; |
-| NEUTRAL | &quot;Neutral&quot; |
-| NEGATIVE | &quot;Negative&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNSPECIFIED | &quot;Unspecified&quot; | 
+| POSITIVE | &quot;Positive&quot; | 
+| NEUTRAL | &quot;Neutral&quot; | 
+| NEGATIVE | &quot;Negative&quot; | 
 {: class="table table-striped"}
 
 

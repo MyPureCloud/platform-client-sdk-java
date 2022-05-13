@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -48,7 +49,7 @@ public class UserScheduleActivity  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Start time in UTC for this activity, in ISO-8601 format
    **/
@@ -66,7 +67,7 @@ public class UserScheduleActivity  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Length in minutes for this activity
    **/
@@ -84,7 +85,7 @@ public class UserScheduleActivity  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * Description for this activity
    **/
@@ -102,7 +103,7 @@ public class UserScheduleActivity  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Whether this activity is paid
    **/
@@ -120,7 +121,7 @@ public class UserScheduleActivity  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-  
+
   /**
    * Whether this activity spans a DST fallback
    **/
@@ -138,7 +139,7 @@ public class UserScheduleActivity  implements Serializable {
     this.isDstFallback = isDstFallback;
   }
 
-  
+
   /**
    * Time off request id of this activity
    **/
@@ -156,7 +157,6 @@ public class UserScheduleActivity  implements Serializable {
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -167,13 +167,14 @@ public class UserScheduleActivity  implements Serializable {
       return false;
     }
     UserScheduleActivity userScheduleActivity = (UserScheduleActivity) o;
+
     return Objects.equals(this.activityCodeId, userScheduleActivity.activityCodeId) &&
-        Objects.equals(this.startDate, userScheduleActivity.startDate) &&
-        Objects.equals(this.lengthInMinutes, userScheduleActivity.lengthInMinutes) &&
-        Objects.equals(this.description, userScheduleActivity.description) &&
-        Objects.equals(this.countsAsPaidTime, userScheduleActivity.countsAsPaidTime) &&
-        Objects.equals(this.isDstFallback, userScheduleActivity.isDstFallback) &&
-        Objects.equals(this.timeOffRequestId, userScheduleActivity.timeOffRequestId);
+            Objects.equals(this.startDate, userScheduleActivity.startDate) &&
+            Objects.equals(this.lengthInMinutes, userScheduleActivity.lengthInMinutes) &&
+            Objects.equals(this.description, userScheduleActivity.description) &&
+            Objects.equals(this.countsAsPaidTime, userScheduleActivity.countsAsPaidTime) &&
+            Objects.equals(this.isDstFallback, userScheduleActivity.isDstFallback) &&
+            Objects.equals(this.timeOffRequestId, userScheduleActivity.timeOffRequestId);
   }
 
   @Override

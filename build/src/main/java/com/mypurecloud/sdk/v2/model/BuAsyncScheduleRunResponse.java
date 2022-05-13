@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class BuAsyncScheduleRunResponse  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The ID for the operation
    **/
@@ -111,7 +112,7 @@ public class BuAsyncScheduleRunResponse  implements Serializable {
     this.operationId = operationId;
   }
 
-  
+
   /**
    * The result of the operation.  Null unless status == Complete
    **/
@@ -129,7 +130,6 @@ public class BuAsyncScheduleRunResponse  implements Serializable {
     this.result = result;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class BuAsyncScheduleRunResponse  implements Serializable {
       return false;
     }
     BuAsyncScheduleRunResponse buAsyncScheduleRunResponse = (BuAsyncScheduleRunResponse) o;
+
     return Objects.equals(this.status, buAsyncScheduleRunResponse.status) &&
-        Objects.equals(this.operationId, buAsyncScheduleRunResponse.operationId) &&
-        Objects.equals(this.result, buAsyncScheduleRunResponse.result);
+            Objects.equals(this.operationId, buAsyncScheduleRunResponse.operationId) &&
+            Objects.equals(this.result, buAsyncScheduleRunResponse.result);
   }
 
   @Override

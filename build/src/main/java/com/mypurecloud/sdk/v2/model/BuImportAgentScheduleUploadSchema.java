@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
@@ -50,7 +51,7 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek
    **/
@@ -68,7 +69,7 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
     this.workPlanId = workPlanId;
   }
 
-  
+
   /**
    * The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId
    **/
@@ -86,7 +87,7 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
     this.workPlanIdsPerWeek = workPlanIdsPerWeek;
   }
 
-  
+
   /**
    * The shift definitions for this agent schedule
    **/
@@ -104,7 +105,7 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * Any full day time off markers that apply to this agent schedule
    **/
@@ -122,7 +123,6 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -133,11 +133,12 @@ public class BuImportAgentScheduleUploadSchema  implements Serializable {
       return false;
     }
     BuImportAgentScheduleUploadSchema buImportAgentScheduleUploadSchema = (BuImportAgentScheduleUploadSchema) o;
+
     return Objects.equals(this.userId, buImportAgentScheduleUploadSchema.userId) &&
-        Objects.equals(this.workPlanId, buImportAgentScheduleUploadSchema.workPlanId) &&
-        Objects.equals(this.workPlanIdsPerWeek, buImportAgentScheduleUploadSchema.workPlanIdsPerWeek) &&
-        Objects.equals(this.shifts, buImportAgentScheduleUploadSchema.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, buImportAgentScheduleUploadSchema.fullDayTimeOffMarkers);
+            Objects.equals(this.workPlanId, buImportAgentScheduleUploadSchema.workPlanId) &&
+            Objects.equals(this.workPlanIdsPerWeek, buImportAgentScheduleUploadSchema.workPlanIdsPerWeek) &&
+            Objects.equals(this.shifts, buImportAgentScheduleUploadSchema.shifts) &&
+            Objects.equals(this.fullDayTimeOffMarkers, buImportAgentScheduleUploadSchema.fullDayTimeOffMarkers);
   }
 
   @Override

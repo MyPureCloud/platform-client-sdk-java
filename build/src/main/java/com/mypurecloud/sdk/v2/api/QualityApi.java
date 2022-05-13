@@ -10,34 +10,34 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
@@ -102,7 +102,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class QualityApi {
   private final ApiClient pcapiClient;
 
@@ -114,7 +113,6 @@ public class QualityApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a calibration by id.
    * 
@@ -143,9 +141,9 @@ public class QualityApi {
   private DeleteQualityCalibrationRequest createDeleteQualityCalibrationRequest(String calibrationId, String calibratorId) {
     return DeleteQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
-    
+
             .withCalibratorId(calibratorId)
-    
+
             .build();
   }
 
@@ -197,7 +195,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Delete an evaluation
    * 
@@ -228,11 +225,11 @@ public class QualityApi {
   private DeleteQualityConversationEvaluationRequest createDeleteQualityConversationEvaluationRequest(String conversationId, String evaluationId, String expand) {
     return DeleteQualityConversationEvaluationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withEvaluationId(evaluationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -284,7 +281,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Delete an evaluation form.
    * 
@@ -309,7 +305,7 @@ public class QualityApi {
   private DeleteQualityFormRequest createDeleteQualityFormRequest(String formId) {
     return DeleteQualityFormRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -360,7 +356,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Delete an evaluation form.
    * 
@@ -385,7 +380,7 @@ public class QualityApi {
   private DeleteQualityFormsEvaluationRequest createDeleteQualityFormsEvaluationRequest(String formId) {
     return DeleteQualityFormsEvaluationRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -436,7 +431,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Delete a survey form.
    * 
@@ -461,7 +455,7 @@ public class QualityApi {
   private DeleteQualityFormsSurveyRequest createDeleteQualityFormsSurveyRequest(String formId) {
     return DeleteQualityFormsSurveyRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -512,10 +506,9 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Gets a list of Agent Activities
-   * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+   * Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -538,7 +531,7 @@ public class QualityApi {
 
   /**
    * Gets a list of Agent Activities
-   * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+   * Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -561,35 +554,35 @@ public class QualityApi {
   private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) {
     return GetQualityAgentsActivityRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withStartTime(startTime)
-    
+
             .withEndTime(endTime)
-    
+
             .withAgentUserId(agentUserId)
-    
+
             .withEvaluatorUserId(evaluatorUserId)
-    
+
             .withName(name)
-    
+
             .withGroup(group)
-    
+
             .build();
   }
 
   /**
    * Gets a list of Agent Activities
-   * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+   * Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
    * @param request The request object
    * @return AgentActivityEntityListing
    * @throws ApiException if the request fails on the server
@@ -608,7 +601,7 @@ public class QualityApi {
 
   /**
    * Gets a list of Agent Activities
-   * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+   * Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -635,7 +628,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
@@ -666,11 +658,11 @@ public class QualityApi {
   private GetQualityCalibrationRequest createGetQualityCalibrationRequest(String calibrationId, String calibratorId, String conversationId) {
     return GetQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
-    
+
             .withCalibratorId(calibratorId)
-    
+
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -722,7 +714,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the list of calibrations
    * 
@@ -767,25 +758,25 @@ public class QualityApi {
   private GetQualityCalibrationsRequest createGetQualityCalibrationsRequest(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) {
     return GetQualityCalibrationsRequest.builder()
             .withCalibratorId(calibratorId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withConversationId(conversationId)
-    
+
             .withStartTime(startTime)
-    
+
             .withEndTime(endTime)
-    
+
             .build();
   }
 
@@ -837,7 +828,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get an evaluation
    * 
@@ -868,11 +858,11 @@ public class QualityApi {
   private GetQualityConversationEvaluationRequest createGetQualityConversationEvaluationRequest(String conversationId, String evaluationId, String expand) {
     return GetQualityConversationEvaluationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withEvaluationId(evaluationId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -924,7 +914,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the surveys for a conversation
    * 
@@ -951,7 +940,7 @@ public class QualityApi {
   private GetQualityConversationSurveysRequest createGetQualityConversationSurveysRequest(String conversationId) {
     return GetQualityConversationSurveysRequest.builder()
             .withConversationId(conversationId)
-    
+
             .build();
   }
 
@@ -1003,7 +992,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get status of audit query execution
    * 
@@ -1030,7 +1018,7 @@ public class QualityApi {
   private GetQualityConversationsAuditsQueryTransactionIdRequest createGetQualityConversationsAuditsQueryTransactionIdRequest(String transactionId) {
     return GetQualityConversationsAuditsQueryTransactionIdRequest.builder()
             .withTransactionId(transactionId)
-    
+
             .build();
   }
 
@@ -1082,7 +1070,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get results of audit query
    * 
@@ -1115,13 +1102,13 @@ public class QualityApi {
   private GetQualityConversationsAuditsQueryTransactionIdResultsRequest createGetQualityConversationsAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize, List<String> expand) {
     return GetQualityConversationsAuditsQueryTransactionIdResultsRequest.builder()
             .withTransactionId(transactionId)
-    
+
             .withCursor(cursor)
-    
+
             .withPageSize(pageSize)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1173,10 +1160,9 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -1194,7 +1180,7 @@ public class QualityApi {
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
-   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; (optional)
+   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1205,7 +1191,7 @@ public class QualityApi {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -1223,7 +1209,7 @@ public class QualityApi {
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
-   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; (optional)
+   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' (optional)
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -1234,47 +1220,47 @@ public class QualityApi {
   private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withConversationId(conversationId)
-    
+
             .withAgentUserId(agentUserId)
-    
+
             .withEvaluatorUserId(evaluatorUserId)
-    
+
             .withQueueId(queueId)
-    
+
             .withStartTime(startTime)
-    
+
             .withEndTime(endTime)
-    
+
             .withEvaluationState(evaluationState)
-    
+
             .withIsReleased(isReleased)
-    
+
             .withAgentHasRead(agentHasRead)
-    
+
             .withExpandAnswerTotalScores(expandAnswerTotalScores)
-    
+
             .withMaximum(maximum)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param request The request object
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
@@ -1293,7 +1279,7 @@ public class QualityApi {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1320,7 +1306,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get an evaluator activity
    * 
@@ -1367,27 +1352,27 @@ public class QualityApi {
   private GetQualityEvaluatorsActivityRequest createGetQualityEvaluatorsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<String> permission, String group) {
     return GetQualityEvaluatorsActivityRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withExpand(expand)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withStartTime(startTime)
-    
+
             .withEndTime(endTime)
-    
+
             .withName(name)
-    
+
             .withPermission(permission)
-    
+
             .withGroup(group)
-    
+
             .build();
   }
 
@@ -1439,7 +1424,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get an evaluation form
    * 
@@ -1466,7 +1450,7 @@ public class QualityApi {
   private GetQualityFormRequest createGetQualityFormRequest(String formId) {
     return GetQualityFormRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -1518,7 +1502,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Gets all the revisions for a specific evaluation.
    * 
@@ -1549,11 +1532,11 @@ public class QualityApi {
   private GetQualityFormVersionsRequest createGetQualityFormVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
     return GetQualityFormVersionsRequest.builder()
             .withFormId(formId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1605,7 +1588,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the list of evaluation forms
    * 
@@ -1646,21 +1628,21 @@ public class QualityApi {
   private GetQualityFormsRequest createGetQualityFormsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) {
     return GetQualityFormsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -1712,7 +1694,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get an evaluation form
    * 
@@ -1739,7 +1720,7 @@ public class QualityApi {
   private GetQualityFormsEvaluationRequest createGetQualityFormsEvaluationRequest(String formId) {
     return GetQualityFormsEvaluationRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -1791,7 +1772,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Gets all the revisions for a specific evaluation.
    * 
@@ -1824,13 +1804,13 @@ public class QualityApi {
   private GetQualityFormsEvaluationVersionsRequest createGetQualityFormsEvaluationVersionsRequest(String formId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetQualityFormsEvaluationVersionsRequest.builder()
             .withFormId(formId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -1882,7 +1862,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the list of evaluation forms
    * 
@@ -1923,21 +1902,21 @@ public class QualityApi {
   private GetQualityFormsEvaluationsRequest createGetQualityFormsEvaluationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) {
     return GetQualityFormsEvaluationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -1989,7 +1968,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Retrieve a list of the latest published evaluation form versions by context ids
    * 
@@ -2016,7 +1994,7 @@ public class QualityApi {
   private GetQualityFormsEvaluationsBulkContextsRequest createGetQualityFormsEvaluationsBulkContextsRequest(List<String> contextId) {
     return GetQualityFormsEvaluationsBulkContextsRequest.builder()
             .withContextId(contextId)
-    
+
             .build();
   }
 
@@ -2068,7 +2046,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get a survey form
    * 
@@ -2095,7 +2072,7 @@ public class QualityApi {
   private GetQualityFormsSurveyRequest createGetQualityFormsSurveyRequest(String formId) {
     return GetQualityFormsSurveyRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -2147,7 +2124,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Gets all the revisions for a specific survey.
    * 
@@ -2178,11 +2154,11 @@ public class QualityApi {
   private GetQualityFormsSurveyVersionsRequest createGetQualityFormsSurveyVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
     return GetQualityFormsSurveyVersionsRequest.builder()
             .withFormId(formId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -2234,7 +2210,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the list of survey forms
    * 
@@ -2275,21 +2250,21 @@ public class QualityApi {
   private GetQualityFormsSurveysRequest createGetQualityFormsSurveysRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) {
     return GetQualityFormsSurveysRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withNextPage(nextPage)
-    
+
             .withPreviousPage(previousPage)
-    
+
             .withExpand(expand)
-    
+
             .withName(name)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2341,7 +2316,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Retrieve a list of survey forms by their ids
    * 
@@ -2368,7 +2342,7 @@ public class QualityApi {
   private GetQualityFormsSurveysBulkRequest createGetQualityFormsSurveysBulkRequest(List<String> id) {
     return GetQualityFormsSurveysBulkRequest.builder()
             .withId(id)
-    
+
             .build();
   }
 
@@ -2420,7 +2394,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Retrieve a list of the latest form versions by context ids
    * 
@@ -2449,9 +2422,9 @@ public class QualityApi {
   private GetQualityFormsSurveysBulkContextsRequest createGetQualityFormsSurveysBulkContextsRequest(List<String> contextId, Boolean published) {
     return GetQualityFormsSurveysBulkContextsRequest.builder()
             .withContextId(contextId)
-    
+
             .withPublished(published)
-    
+
             .build();
   }
 
@@ -2503,7 +2476,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the published evaluation forms.
    * 
@@ -2530,7 +2502,7 @@ public class QualityApi {
   private GetQualityPublishedformRequest createGetQualityPublishedformRequest(String formId) {
     return GetQualityPublishedformRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -2582,7 +2554,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the published evaluation forms.
    * 
@@ -2615,13 +2586,13 @@ public class QualityApi {
   private GetQualityPublishedformsRequest createGetQualityPublishedformsRequest(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) {
     return GetQualityPublishedformsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withName(name)
-    
+
             .withOnlyLatestPerContext(onlyLatestPerContext)
-    
+
             .build();
   }
 
@@ -2673,7 +2644,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the most recent published version of an evaluation form.
    * 
@@ -2700,7 +2670,7 @@ public class QualityApi {
   private GetQualityPublishedformsEvaluationRequest createGetQualityPublishedformsEvaluationRequest(String formId) {
     return GetQualityPublishedformsEvaluationRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -2752,7 +2722,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the published evaluation forms.
    * 
@@ -2785,13 +2754,13 @@ public class QualityApi {
   private GetQualityPublishedformsEvaluationsRequest createGetQualityPublishedformsEvaluationsRequest(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) {
     return GetQualityPublishedformsEvaluationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withName(name)
-    
+
             .withOnlyLatestPerContext(onlyLatestPerContext)
-    
+
             .build();
   }
 
@@ -2843,7 +2812,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the most recent published version of a survey form.
    * 
@@ -2870,7 +2838,7 @@ public class QualityApi {
   private GetQualityPublishedformsSurveyRequest createGetQualityPublishedformsSurveyRequest(String formId) {
     return GetQualityPublishedformsSurveyRequest.builder()
             .withFormId(formId)
-    
+
             .build();
   }
 
@@ -2922,7 +2890,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get the published survey forms.
    * 
@@ -2955,13 +2922,13 @@ public class QualityApi {
   private GetQualityPublishedformsSurveysRequest createGetQualityPublishedformsSurveysRequest(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestEnabledPerContext) {
     return GetQualityPublishedformsSurveysRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withName(name)
-    
+
             .withOnlyLatestEnabledPerContext(onlyLatestEnabledPerContext)
-    
+
             .build();
   }
 
@@ -3013,7 +2980,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get a survey for a conversation
    * 
@@ -3040,7 +3006,7 @@ public class QualityApi {
   private GetQualitySurveyRequest createGetQualitySurveyRequest(String surveyId) {
     return GetQualitySurveyRequest.builder()
             .withSurveyId(surveyId)
-    
+
             .build();
   }
 
@@ -3092,7 +3058,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Get a survey as an end-customer, for the purposes of scoring it.
    * 
@@ -3119,7 +3084,7 @@ public class QualityApi {
   private GetQualitySurveysScorableRequest createGetQualitySurveysScorableRequest(String customerSurveyUrl) {
     return GetQualitySurveysScorableRequest.builder()
             .withCustomerSurveyUrl(customerSurveyUrl)
-    
+
             .build();
   }
 
@@ -3171,7 +3136,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
    * 
@@ -3200,9 +3164,9 @@ public class QualityApi {
   private PatchQualityFormsSurveyRequest createPatchQualityFormsSurveyRequest(String formId, SurveyForm body) {
     return PatchQualityFormsSurveyRequest.builder()
             .withFormId(formId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3254,7 +3218,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Query for evaluation aggregates
    * 
@@ -3281,7 +3244,7 @@ public class QualityApi {
   private PostAnalyticsEvaluationsAggregatesQueryRequest createPostAnalyticsEvaluationsAggregatesQueryRequest(EvaluationAggregationQuery body) {
     return PostAnalyticsEvaluationsAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3333,7 +3296,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Query for survey aggregates
    * 
@@ -3360,7 +3322,7 @@ public class QualityApi {
   private PostAnalyticsSurveysAggregatesQueryRequest createPostAnalyticsSurveysAggregatesQueryRequest(SurveyAggregationQuery body) {
     return PostAnalyticsSurveysAggregatesQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3412,7 +3374,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Create a calibration
    * 
@@ -3441,9 +3402,9 @@ public class QualityApi {
   private PostQualityCalibrationsRequest createPostQualityCalibrationsRequest(CalibrationCreate body, String expand) {
     return PostQualityCalibrationsRequest.builder()
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -3495,7 +3456,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Create an evaluation
    * 
@@ -3526,11 +3486,11 @@ public class QualityApi {
   private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, Evaluation body, String expand) {
     return PostQualityConversationEvaluationsRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -3582,7 +3542,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Create audit query execution
    * 
@@ -3609,7 +3568,7 @@ public class QualityApi {
   private PostQualityConversationsAuditsQueryRequest createPostQualityConversationsAuditsQueryRequest(QMAuditQueryRequest body) {
     return PostQualityConversationsAuditsQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3661,7 +3620,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Query for evaluation aggregates for the current user
    * 
@@ -3688,7 +3646,7 @@ public class QualityApi {
   private PostQualityEvaluationsAggregatesQueryMeRequest createPostQualityEvaluationsAggregatesQueryMeRequest(EvaluationAggregationQueryMe body) {
     return PostQualityEvaluationsAggregatesQueryMeRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3740,7 +3698,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Score evaluation
    * 
@@ -3767,7 +3724,7 @@ public class QualityApi {
   private PostQualityEvaluationsScoringRequest createPostQualityEvaluationsScoringRequest(EvaluationFormAndScoringSet body) {
     return PostQualityEvaluationsScoringRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3819,7 +3776,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Create an evaluation form.
    * 
@@ -3846,7 +3802,7 @@ public class QualityApi {
   private PostQualityFormsRequest createPostQualityFormsRequest(EvaluationForm body) {
     return PostQualityFormsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3898,7 +3854,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Create an evaluation form.
    * 
@@ -3925,7 +3880,7 @@ public class QualityApi {
   private PostQualityFormsEvaluationsRequest createPostQualityFormsEvaluationsRequest(EvaluationForm body) {
     return PostQualityFormsEvaluationsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3977,7 +3932,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Create a survey form.
    * 
@@ -4004,7 +3958,7 @@ public class QualityApi {
   private PostQualityFormsSurveysRequest createPostQualityFormsSurveysRequest(SurveyForm body) {
     return PostQualityFormsSurveysRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4056,7 +4010,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Publish an evaluation form.
    * 
@@ -4083,7 +4036,7 @@ public class QualityApi {
   private PostQualityPublishedformsRequest createPostQualityPublishedformsRequest(PublishForm body) {
     return PostQualityPublishedformsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4135,7 +4088,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Publish an evaluation form.
    * 
@@ -4162,7 +4114,7 @@ public class QualityApi {
   private PostQualityPublishedformsEvaluationsRequest createPostQualityPublishedformsEvaluationsRequest(PublishForm body) {
     return PostQualityPublishedformsEvaluationsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4214,7 +4166,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Publish a survey form.
    * 
@@ -4241,7 +4192,7 @@ public class QualityApi {
   private PostQualityPublishedformsSurveysRequest createPostQualityPublishedformsSurveysRequest(PublishForm body) {
     return PostQualityPublishedformsSurveysRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4293,7 +4244,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Score survey
    * 
@@ -4320,7 +4270,7 @@ public class QualityApi {
   private PostQualitySurveysScoringRequest createPostQualitySurveysScoringRequest(SurveyFormAndScoringSet body) {
     return PostQualitySurveysScoringRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4372,7 +4322,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
@@ -4401,9 +4350,9 @@ public class QualityApi {
   private PutQualityCalibrationRequest createPutQualityCalibrationRequest(String calibrationId, Calibration body) {
     return PutQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4455,7 +4404,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Update an evaluation
    * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
@@ -4488,13 +4436,13 @@ public class QualityApi {
   private PutQualityConversationEvaluationRequest createPutQualityConversationEvaluationRequest(String conversationId, String evaluationId, Evaluation body, String expand) {
     return PutQualityConversationEvaluationRequest.builder()
             .withConversationId(conversationId)
-    
+
             .withEvaluationId(evaluationId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -4546,7 +4494,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Update an evaluation form.
    * 
@@ -4575,9 +4522,9 @@ public class QualityApi {
   private PutQualityFormRequest createPutQualityFormRequest(String formId, EvaluationForm body) {
     return PutQualityFormRequest.builder()
             .withFormId(formId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4629,7 +4576,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Update an evaluation form.
    * 
@@ -4658,9 +4604,9 @@ public class QualityApi {
   private PutQualityFormsEvaluationRequest createPutQualityFormsEvaluationRequest(String formId, EvaluationForm body) {
     return PutQualityFormsEvaluationRequest.builder()
             .withFormId(formId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4712,7 +4658,6 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Update a survey form.
    * 
@@ -4741,9 +4686,9 @@ public class QualityApi {
   private PutQualityFormsSurveyRequest createPutQualityFormsSurveyRequest(String formId, SurveyForm body) {
     return PutQualityFormsSurveyRequest.builder()
             .withFormId(formId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4795,38 +4740,37 @@ public class QualityApi {
     }
   }
 
-  
   /**
    * Update a survey as an end-customer, for the purposes of scoring it.
    * 
-   * @param body survey (required)
    * @param customerSurveyUrl customerSurveyUrl (required)
+   * @param body survey (required)
    * @return ScorableSurvey
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScorableSurvey putQualitySurveysScorable(ScorableSurvey body, String customerSurveyUrl) throws IOException, ApiException {
-    return  putQualitySurveysScorable(createPutQualitySurveysScorableRequest(body, customerSurveyUrl));
+  public ScorableSurvey putQualitySurveysScorable(String customerSurveyUrl, ScorableSurvey body) throws IOException, ApiException {
+    return  putQualitySurveysScorable(createPutQualitySurveysScorableRequest(customerSurveyUrl, body));
   }
 
   /**
    * Update a survey as an end-customer, for the purposes of scoring it.
    * 
-   * @param body survey (required)
    * @param customerSurveyUrl customerSurveyUrl (required)
+   * @param body survey (required)
    * @return ScorableSurvey
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScorableSurvey> putQualitySurveysScorableWithHttpInfo(ScorableSurvey body, String customerSurveyUrl) throws IOException {
-    return putQualitySurveysScorable(createPutQualitySurveysScorableRequest(body, customerSurveyUrl).withHttpInfo());
+  public ApiResponse<ScorableSurvey> putQualitySurveysScorableWithHttpInfo(String customerSurveyUrl, ScorableSurvey body) throws IOException {
+    return putQualitySurveysScorable(createPutQualitySurveysScorableRequest(customerSurveyUrl, body).withHttpInfo());
   }
 
-  private PutQualitySurveysScorableRequest createPutQualitySurveysScorableRequest(ScorableSurvey body, String customerSurveyUrl) {
+  private PutQualitySurveysScorableRequest createPutQualitySurveysScorableRequest(String customerSurveyUrl, ScorableSurvey body) {
     return PutQualitySurveysScorableRequest.builder()
-            .withBody(body)
-    
             .withCustomerSurveyUrl(customerSurveyUrl)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -4878,5 +4822,4 @@ public class QualityApi {
     }
   }
 
-  
 }

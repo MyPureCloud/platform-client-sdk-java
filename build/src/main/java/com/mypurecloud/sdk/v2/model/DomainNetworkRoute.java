@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.prefix = prefix;
   }
 
-  
+
   /**
    * The IPv4 or IPv6 nexthop IP address.
    **/
@@ -110,7 +111,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.nexthop = nexthop;
   }
 
-  
+
   /**
    * True if this route will persist on Edge restart.  Routes assigned by DHCP will be returned as false.
    **/
@@ -128,7 +129,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.persistent = persistent;
   }
 
-  
+
   /**
    * The metric being used for route. Lower values will have a higher priority.
    **/
@@ -146,7 +147,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * The address family for this route.
    **/
@@ -164,7 +165,6 @@ public class DomainNetworkRoute  implements Serializable {
     this.family = family;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,11 +175,12 @@ public class DomainNetworkRoute  implements Serializable {
       return false;
     }
     DomainNetworkRoute domainNetworkRoute = (DomainNetworkRoute) o;
+
     return Objects.equals(this.prefix, domainNetworkRoute.prefix) &&
-        Objects.equals(this.nexthop, domainNetworkRoute.nexthop) &&
-        Objects.equals(this.persistent, domainNetworkRoute.persistent) &&
-        Objects.equals(this.metric, domainNetworkRoute.metric) &&
-        Objects.equals(this.family, domainNetworkRoute.family);
+            Objects.equals(this.nexthop, domainNetworkRoute.nexthop) &&
+            Objects.equals(this.persistent, domainNetworkRoute.persistent) &&
+            Objects.equals(this.metric, domainNetworkRoute.metric) &&
+            Objects.equals(this.family, domainNetworkRoute.family);
   }
 
   @Override

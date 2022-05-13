@@ -20,28 +20,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LearningAssignment;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
-import com.mypurecloud.sdk.v2.model.LearningModule;
-import com.mypurecloud.sdk.v2.model.LearningModuleRule;
-import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignment;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
-import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
-import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
-import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
+import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
+import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 
 public class GetLearningModuleVersionRequest {
-    
+
 	private String moduleId;
 	public String getModuleId() {
 		return this.moduleId;
@@ -55,7 +55,7 @@ public class GetLearningModuleVersionRequest {
 	    this.setModuleId(moduleId);
 	    return this;
 	} 
-	
+
 	private String versionId;
 	public String getVersionId() {
 		return this.versionId;
@@ -69,7 +69,7 @@ public class GetLearningModuleVersionRequest {
 	    this.setVersionId(versionId);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -85,7 +85,7 @@ public class GetLearningModuleVersionRequest {
 	} 
 
 	public enum expandValues { 
-		ASSESSMENTFORM("assessmentForm"), 
+		ASSESSMENTFORM("assessmentForm"),
 		COVERART("coverArt");
 
 		private String value;
@@ -113,7 +113,7 @@ public class GetLearningModuleVersionRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -151,9 +151,10 @@ public class GetLearningModuleVersionRequest {
         
                 .withPathParameter("versionId", versionId)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -164,12 +165,12 @@ public class GetLearningModuleVersionRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String moduleId, String versionId) {
 	    return new Builder()
 	            .withRequiredParams(moduleId, versionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLearningModuleVersionRequest request;
@@ -178,21 +179,23 @@ public class GetLearningModuleVersionRequest {
 			request = new GetLearningModuleVersionRequest();
 		}
 
-		
+
 		public Builder withModuleId(String moduleId) {
 			request.setModuleId(moduleId);
 			return this;
 		}
-		
+
 		public Builder withVersionId(String versionId) {
 			request.setVersionId(versionId);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -202,16 +205,16 @@ public class GetLearningModuleVersionRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String moduleId, String versionId) {
 			request.setModuleId(moduleId);
-						request.setVersionId(versionId);
-			
+			request.setVersionId(versionId);
+
 			return this;
 		}
-		
+
 
 		public GetLearningModuleVersionRequest build() {
             

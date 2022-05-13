@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class EdgeGroup  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -118,7 +119,7 @@ public class EdgeGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -136,7 +137,7 @@ public class EdgeGroup  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -154,7 +155,7 @@ public class EdgeGroup  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -172,7 +173,7 @@ public class EdgeGroup  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -190,7 +191,7 @@ public class EdgeGroup  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -208,7 +209,7 @@ public class EdgeGroup  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -226,7 +227,7 @@ public class EdgeGroup  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -244,14 +245,14 @@ public class EdgeGroup  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -269,7 +270,7 @@ public class EdgeGroup  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -287,7 +288,7 @@ public class EdgeGroup  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * Is this edge group being managed remotely.
    **/
@@ -305,7 +306,7 @@ public class EdgeGroup  implements Serializable {
     this.managed = managed;
   }
 
-  
+
   /**
    * Is this edge group hybrid.
    **/
@@ -323,7 +324,7 @@ public class EdgeGroup  implements Serializable {
     this.hybrid = hybrid;
   }
 
-  
+
   /**
    * A trunk base settings assignment of trunkType \"EDGE\" to use for edge-to-edge communication.
    **/
@@ -341,7 +342,7 @@ public class EdgeGroup  implements Serializable {
     this.edgeTrunkBaseAssignment = edgeTrunkBaseAssignment;
   }
 
-  
+
   /**
    * Trunk base settings of trunkType \"PHONE\" to inherit to edge logical interface for phone communication.
    **/
@@ -359,14 +360,13 @@ public class EdgeGroup  implements Serializable {
     this.phoneTrunkBases = phoneTrunkBases;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -377,23 +377,24 @@ public class EdgeGroup  implements Serializable {
       return false;
     }
     EdgeGroup edgeGroup = (EdgeGroup) o;
+
     return Objects.equals(this.id, edgeGroup.id) &&
-        Objects.equals(this.name, edgeGroup.name) &&
-        Objects.equals(this.division, edgeGroup.division) &&
-        Objects.equals(this.description, edgeGroup.description) &&
-        Objects.equals(this.version, edgeGroup.version) &&
-        Objects.equals(this.dateCreated, edgeGroup.dateCreated) &&
-        Objects.equals(this.dateModified, edgeGroup.dateModified) &&
-        Objects.equals(this.modifiedBy, edgeGroup.modifiedBy) &&
-        Objects.equals(this.createdBy, edgeGroup.createdBy) &&
-        Objects.equals(this.state, edgeGroup.state) &&
-        Objects.equals(this.modifiedByApp, edgeGroup.modifiedByApp) &&
-        Objects.equals(this.createdByApp, edgeGroup.createdByApp) &&
-        Objects.equals(this.managed, edgeGroup.managed) &&
-        Objects.equals(this.hybrid, edgeGroup.hybrid) &&
-        Objects.equals(this.edgeTrunkBaseAssignment, edgeGroup.edgeTrunkBaseAssignment) &&
-        Objects.equals(this.phoneTrunkBases, edgeGroup.phoneTrunkBases) &&
-        Objects.equals(this.selfUri, edgeGroup.selfUri);
+            Objects.equals(this.name, edgeGroup.name) &&
+            Objects.equals(this.division, edgeGroup.division) &&
+            Objects.equals(this.description, edgeGroup.description) &&
+            Objects.equals(this.version, edgeGroup.version) &&
+            Objects.equals(this.dateCreated, edgeGroup.dateCreated) &&
+            Objects.equals(this.dateModified, edgeGroup.dateModified) &&
+            Objects.equals(this.modifiedBy, edgeGroup.modifiedBy) &&
+            Objects.equals(this.createdBy, edgeGroup.createdBy) &&
+            Objects.equals(this.state, edgeGroup.state) &&
+            Objects.equals(this.modifiedByApp, edgeGroup.modifiedByApp) &&
+            Objects.equals(this.createdByApp, edgeGroup.createdByApp) &&
+            Objects.equals(this.managed, edgeGroup.managed) &&
+            Objects.equals(this.hybrid, edgeGroup.hybrid) &&
+            Objects.equals(this.edgeTrunkBaseAssignment, edgeGroup.edgeTrunkBaseAssignment) &&
+            Objects.equals(this.phoneTrunkBases, edgeGroup.phoneTrunkBases) &&
+            Objects.equals(this.selfUri, edgeGroup.selfUri);
   }
 
   @Override

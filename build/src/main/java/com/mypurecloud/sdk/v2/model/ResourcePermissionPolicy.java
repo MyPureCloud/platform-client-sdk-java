@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ResourceConditionNode;
@@ -52,7 +53,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy domain(String domain) {
@@ -69,7 +70,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy entityName(String entityName) {
@@ -86,7 +87,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy policyName(String policyName) {
@@ -103,7 +104,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.policyName = policyName;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy policyDescription(String policyDescription) {
@@ -120,7 +121,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.policyDescription = policyDescription;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy actionSetKey(String actionSetKey) {
@@ -137,7 +138,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.actionSetKey = actionSetKey;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy allowConditions(Boolean allowConditions) {
@@ -154,7 +155,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.allowConditions = allowConditions;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy resourceConditionNode(ResourceConditionNode resourceConditionNode) {
@@ -171,7 +172,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.resourceConditionNode = resourceConditionNode;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy namedResources(List<String> namedResources) {
@@ -188,7 +189,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.namedResources = namedResources;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy resourceCondition(String resourceCondition) {
@@ -205,7 +206,7 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.resourceCondition = resourceCondition;
   }
 
-  
+
   /**
    **/
   public ResourcePermissionPolicy actionSet(List<String> actionSet) {
@@ -222,7 +223,6 @@ public class ResourcePermissionPolicy  implements Serializable {
     this.actionSet = actionSet;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,17 +233,18 @@ public class ResourcePermissionPolicy  implements Serializable {
       return false;
     }
     ResourcePermissionPolicy resourcePermissionPolicy = (ResourcePermissionPolicy) o;
+
     return Objects.equals(this.id, resourcePermissionPolicy.id) &&
-        Objects.equals(this.domain, resourcePermissionPolicy.domain) &&
-        Objects.equals(this.entityName, resourcePermissionPolicy.entityName) &&
-        Objects.equals(this.policyName, resourcePermissionPolicy.policyName) &&
-        Objects.equals(this.policyDescription, resourcePermissionPolicy.policyDescription) &&
-        Objects.equals(this.actionSetKey, resourcePermissionPolicy.actionSetKey) &&
-        Objects.equals(this.allowConditions, resourcePermissionPolicy.allowConditions) &&
-        Objects.equals(this.resourceConditionNode, resourcePermissionPolicy.resourceConditionNode) &&
-        Objects.equals(this.namedResources, resourcePermissionPolicy.namedResources) &&
-        Objects.equals(this.resourceCondition, resourcePermissionPolicy.resourceCondition) &&
-        Objects.equals(this.actionSet, resourcePermissionPolicy.actionSet);
+            Objects.equals(this.domain, resourcePermissionPolicy.domain) &&
+            Objects.equals(this.entityName, resourcePermissionPolicy.entityName) &&
+            Objects.equals(this.policyName, resourcePermissionPolicy.policyName) &&
+            Objects.equals(this.policyDescription, resourcePermissionPolicy.policyDescription) &&
+            Objects.equals(this.actionSetKey, resourcePermissionPolicy.actionSetKey) &&
+            Objects.equals(this.allowConditions, resourcePermissionPolicy.allowConditions) &&
+            Objects.equals(this.resourceConditionNode, resourcePermissionPolicy.resourceConditionNode) &&
+            Objects.equals(this.namedResources, resourcePermissionPolicy.namedResources) &&
+            Objects.equals(this.resourceCondition, resourcePermissionPolicy.resourceCondition) &&
+            Objects.equals(this.actionSet, resourcePermissionPolicy.actionSet);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingArchiveRestoreTopicMediaResult;
@@ -47,7 +48,7 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public RecordingArchiveRestoreTopicRecording conversationId(String conversationId) {
@@ -64,7 +65,7 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public RecordingArchiveRestoreTopicRecording fileState(String fileState) {
@@ -81,7 +82,7 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     this.fileState = fileState;
   }
 
-  
+
   /**
    **/
   public RecordingArchiveRestoreTopicRecording mediaUris(List<RecordingArchiveRestoreTopicMediaResult> mediaUris) {
@@ -98,7 +99,7 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     this.mediaUris = mediaUris;
   }
 
-  
+
   /**
    **/
   public RecordingArchiveRestoreTopicRecording estimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
@@ -115,7 +116,7 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
-  
+
   /**
    **/
   public RecordingArchiveRestoreTopicRecording actualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
@@ -132,7 +133,6 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class RecordingArchiveRestoreTopicRecording  implements Serializable {
       return false;
     }
     RecordingArchiveRestoreTopicRecording recordingArchiveRestoreTopicRecording = (RecordingArchiveRestoreTopicRecording) o;
+
     return Objects.equals(this.id, recordingArchiveRestoreTopicRecording.id) &&
-        Objects.equals(this.conversationId, recordingArchiveRestoreTopicRecording.conversationId) &&
-        Objects.equals(this.fileState, recordingArchiveRestoreTopicRecording.fileState) &&
-        Objects.equals(this.mediaUris, recordingArchiveRestoreTopicRecording.mediaUris) &&
-        Objects.equals(this.estimatedTranscodeTimeMs, recordingArchiveRestoreTopicRecording.estimatedTranscodeTimeMs) &&
-        Objects.equals(this.actualTranscodeTimeMs, recordingArchiveRestoreTopicRecording.actualTranscodeTimeMs);
+            Objects.equals(this.conversationId, recordingArchiveRestoreTopicRecording.conversationId) &&
+            Objects.equals(this.fileState, recordingArchiveRestoreTopicRecording.fileState) &&
+            Objects.equals(this.mediaUris, recordingArchiveRestoreTopicRecording.mediaUris) &&
+            Objects.equals(this.estimatedTranscodeTimeMs, recordingArchiveRestoreTopicRecording.estimatedTranscodeTimeMs) &&
+            Objects.equals(this.actualTranscodeTimeMs, recordingArchiveRestoreTopicRecording.actualTranscodeTimeMs);
   }
 
   @Override

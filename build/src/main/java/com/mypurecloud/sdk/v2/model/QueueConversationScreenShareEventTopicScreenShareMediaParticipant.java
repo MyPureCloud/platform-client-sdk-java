@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -296,7 +297,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant name(String name) {
@@ -313,7 +314,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.name = name;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant address(String address) {
@@ -330,7 +331,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.address = address;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant startTime(Date startTime) {
@@ -347,7 +348,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant connectedTime(Date connectedTime) {
@@ -364,7 +365,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant endTime(Date endTime) {
@@ -381,7 +382,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant startHoldTime(Date startHoldTime) {
@@ -398,7 +399,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant purpose(String purpose) {
@@ -415,7 +416,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant state(StateEnum state) {
@@ -432,7 +433,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.state = state;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant direction(DirectionEnum direction) {
@@ -449,7 +450,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -466,7 +467,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant held(Boolean held) {
@@ -483,7 +484,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.held = held;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -500,7 +501,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -517,7 +518,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant user(QueueConversationScreenShareEventTopicUriReference user) {
@@ -534,7 +535,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.user = user;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant queue(QueueConversationScreenShareEventTopicUriReference queue) {
@@ -551,7 +552,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant team(QueueConversationScreenShareEventTopicUriReference team) {
@@ -568,7 +569,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.team = team;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant attributes(Map<String, String> attributes) {
@@ -585,7 +586,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant errorInfo(QueueConversationScreenShareEventTopicErrorBody errorInfo) {
@@ -602,7 +603,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant script(QueueConversationScreenShareEventTopicUriReference script) {
@@ -619,7 +620,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.script = script;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -636,7 +637,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -653,7 +654,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -670,7 +671,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant provider(String provider) {
@@ -687,7 +688,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant externalContact(QueueConversationScreenShareEventTopicUriReference externalContact) {
@@ -704,7 +705,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant externalOrganization(QueueConversationScreenShareEventTopicUriReference externalOrganization) {
@@ -721,7 +722,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant wrapup(QueueConversationScreenShareEventTopicWrapup wrapup) {
@@ -738,7 +739,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant conversationRoutingData(QueueConversationScreenShareEventTopicConversationRoutingData conversationRoutingData) {
@@ -755,7 +756,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant peer(String peer) {
@@ -772,7 +773,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -789,7 +790,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -806,7 +807,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant journeyContext(QueueConversationScreenShareEventTopicJourneyContext journeyContext) {
@@ -823,7 +824,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant startAcwTime(Date startAcwTime) {
@@ -840,7 +841,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant endAcwTime(Date endAcwTime) {
@@ -857,7 +858,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
@@ -874,7 +875,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.context = context;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant peerCount(Integer peerCount) {
@@ -891,7 +892,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant sharing(Boolean sharing) {
@@ -908,7 +909,6 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     this.sharing = sharing;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -919,43 +919,44 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
       return false;
     }
     QueueConversationScreenShareEventTopicScreenShareMediaParticipant queueConversationScreenShareEventTopicScreenShareMediaParticipant = (QueueConversationScreenShareEventTopicScreenShareMediaParticipant) o;
+
     return Objects.equals(this.id, queueConversationScreenShareEventTopicScreenShareMediaParticipant.id) &&
-        Objects.equals(this.name, queueConversationScreenShareEventTopicScreenShareMediaParticipant.name) &&
-        Objects.equals(this.address, queueConversationScreenShareEventTopicScreenShareMediaParticipant.address) &&
-        Objects.equals(this.startTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, queueConversationScreenShareEventTopicScreenShareMediaParticipant.purpose) &&
-        Objects.equals(this.state, queueConversationScreenShareEventTopicScreenShareMediaParticipant.state) &&
-        Objects.equals(this.direction, queueConversationScreenShareEventTopicScreenShareMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, queueConversationScreenShareEventTopicScreenShareMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, queueConversationScreenShareEventTopicScreenShareMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, queueConversationScreenShareEventTopicScreenShareMediaParticipant.user) &&
-        Objects.equals(this.queue, queueConversationScreenShareEventTopicScreenShareMediaParticipant.queue) &&
-        Objects.equals(this.team, queueConversationScreenShareEventTopicScreenShareMediaParticipant.team) &&
-        Objects.equals(this.attributes, queueConversationScreenShareEventTopicScreenShareMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, queueConversationScreenShareEventTopicScreenShareMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, queueConversationScreenShareEventTopicScreenShareMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, queueConversationScreenShareEventTopicScreenShareMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, queueConversationScreenShareEventTopicScreenShareMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, queueConversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, queueConversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, queueConversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, queueConversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
-        Objects.equals(this.context, queueConversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
-        Objects.equals(this.peerCount, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
-        Objects.equals(this.sharing, queueConversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
+            Objects.equals(this.name, queueConversationScreenShareEventTopicScreenShareMediaParticipant.name) &&
+            Objects.equals(this.address, queueConversationScreenShareEventTopicScreenShareMediaParticipant.address) &&
+            Objects.equals(this.startTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, queueConversationScreenShareEventTopicScreenShareMediaParticipant.purpose) &&
+            Objects.equals(this.state, queueConversationScreenShareEventTopicScreenShareMediaParticipant.state) &&
+            Objects.equals(this.direction, queueConversationScreenShareEventTopicScreenShareMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, queueConversationScreenShareEventTopicScreenShareMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, queueConversationScreenShareEventTopicScreenShareMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, queueConversationScreenShareEventTopicScreenShareMediaParticipant.user) &&
+            Objects.equals(this.queue, queueConversationScreenShareEventTopicScreenShareMediaParticipant.queue) &&
+            Objects.equals(this.team, queueConversationScreenShareEventTopicScreenShareMediaParticipant.team) &&
+            Objects.equals(this.attributes, queueConversationScreenShareEventTopicScreenShareMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, queueConversationScreenShareEventTopicScreenShareMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, queueConversationScreenShareEventTopicScreenShareMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, queueConversationScreenShareEventTopicScreenShareMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, queueConversationScreenShareEventTopicScreenShareMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, queueConversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, queueConversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, queueConversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, queueConversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
+            Objects.equals(this.context, queueConversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
+            Objects.equals(this.peerCount, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
+            Objects.equals(this.sharing, queueConversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
   }
 
   @Override

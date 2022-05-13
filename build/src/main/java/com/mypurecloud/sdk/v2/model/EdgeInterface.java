@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -97,7 +98,7 @@ public class EdgeInterface  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public EdgeInterface ipAddress(String ipAddress) {
@@ -114,7 +115,7 @@ public class EdgeInterface  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public EdgeInterface name(String name) {
@@ -131,7 +132,7 @@ public class EdgeInterface  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public EdgeInterface macAddress(String macAddress) {
@@ -148,7 +149,7 @@ public class EdgeInterface  implements Serializable {
     this.macAddress = macAddress;
   }
 
-  
+
   /**
    **/
   public EdgeInterface ifName(String ifName) {
@@ -165,7 +166,7 @@ public class EdgeInterface  implements Serializable {
     this.ifName = ifName;
   }
 
-  
+
   /**
    **/
   public EdgeInterface endpoints(List<DomainEntityRef> endpoints) {
@@ -182,7 +183,7 @@ public class EdgeInterface  implements Serializable {
     this.endpoints = endpoints;
   }
 
-  
+
   /**
    **/
   public EdgeInterface lineTypes(List<LineTypesEnum> lineTypes) {
@@ -199,7 +200,7 @@ public class EdgeInterface  implements Serializable {
     this.lineTypes = lineTypes;
   }
 
-  
+
   /**
    **/
   public EdgeInterface addressFamilyId(String addressFamilyId) {
@@ -216,7 +217,6 @@ public class EdgeInterface  implements Serializable {
     this.addressFamilyId = addressFamilyId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,14 +227,15 @@ public class EdgeInterface  implements Serializable {
       return false;
     }
     EdgeInterface edgeInterface = (EdgeInterface) o;
+
     return Objects.equals(this.type, edgeInterface.type) &&
-        Objects.equals(this.ipAddress, edgeInterface.ipAddress) &&
-        Objects.equals(this.name, edgeInterface.name) &&
-        Objects.equals(this.macAddress, edgeInterface.macAddress) &&
-        Objects.equals(this.ifName, edgeInterface.ifName) &&
-        Objects.equals(this.endpoints, edgeInterface.endpoints) &&
-        Objects.equals(this.lineTypes, edgeInterface.lineTypes) &&
-        Objects.equals(this.addressFamilyId, edgeInterface.addressFamilyId);
+            Objects.equals(this.ipAddress, edgeInterface.ipAddress) &&
+            Objects.equals(this.name, edgeInterface.name) &&
+            Objects.equals(this.macAddress, edgeInterface.macAddress) &&
+            Objects.equals(this.ifName, edgeInterface.ifName) &&
+            Objects.equals(this.endpoints, edgeInterface.endpoints) &&
+            Objects.equals(this.lineTypes, edgeInterface.lineTypes) &&
+            Objects.equals(this.addressFamilyId, edgeInterface.addressFamilyId);
   }
 
   @Override

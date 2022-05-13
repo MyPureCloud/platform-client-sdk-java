@@ -20,14 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.UserRecording;
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
-import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.UserRecording;
+import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 public class GetUserrecordingRequest {
-    
+
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -41,7 +41,7 @@ public class GetUserrecordingRequest {
 	    this.setRecordingId(recordingId);
 	    return this;
 	} 
-	
+
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -84,7 +84,7 @@ public class GetUserrecordingRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -115,9 +115,10 @@ public class GetUserrecordingRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/userrecordings/{recordingId}")
                 .withPathParameter("recordingId", recordingId)
         
+
                 .withQueryParameters("expand", "multi", expand)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -128,12 +129,12 @@ public class GetUserrecordingRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String recordingId) {
 	    return new Builder()
 	            .withRequiredParams(recordingId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetUserrecordingRequest request;
@@ -142,16 +143,18 @@ public class GetUserrecordingRequest {
 			request = new GetUserrecordingRequest();
 		}
 
-		
+
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
-		
+
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+
 
 		public Builder withExpandEnumValues(List<expandValues> expand) {
 		    List<String> stringList = new ArrayList<>();
@@ -161,15 +164,15 @@ public class GetUserrecordingRequest {
 	      request.setExpand(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String recordingId) {
 			request.setRecordingId(recordingId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetUserrecordingRequest build() {
             

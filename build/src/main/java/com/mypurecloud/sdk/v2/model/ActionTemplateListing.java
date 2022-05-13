@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing total(Long total) {
@@ -103,7 +104,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ActionTemplateListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ActionTemplateListing  implements Serializable, PagedResource<Actio
       return false;
     }
     ActionTemplateListing actionTemplateListing = (ActionTemplateListing) o;
+
     return Objects.equals(this.entities, actionTemplateListing.entities) &&
-        Objects.equals(this.pageSize, actionTemplateListing.pageSize) &&
-        Objects.equals(this.pageNumber, actionTemplateListing.pageNumber) &&
-        Objects.equals(this.total, actionTemplateListing.total) &&
-        Objects.equals(this.lastUri, actionTemplateListing.lastUri) &&
-        Objects.equals(this.firstUri, actionTemplateListing.firstUri) &&
-        Objects.equals(this.selfUri, actionTemplateListing.selfUri) &&
-        Objects.equals(this.previousUri, actionTemplateListing.previousUri) &&
-        Objects.equals(this.nextUri, actionTemplateListing.nextUri) &&
-        Objects.equals(this.pageCount, actionTemplateListing.pageCount);
+            Objects.equals(this.pageSize, actionTemplateListing.pageSize) &&
+            Objects.equals(this.pageNumber, actionTemplateListing.pageNumber) &&
+            Objects.equals(this.total, actionTemplateListing.total) &&
+            Objects.equals(this.lastUri, actionTemplateListing.lastUri) &&
+            Objects.equals(this.firstUri, actionTemplateListing.firstUri) &&
+            Objects.equals(this.selfUri, actionTemplateListing.selfUri) &&
+            Objects.equals(this.previousUri, actionTemplateListing.previousUri) &&
+            Objects.equals(this.nextUri, actionTemplateListing.nextUri) &&
+            Objects.equals(this.pageCount, actionTemplateListing.pageCount);
   }
 
   @Override

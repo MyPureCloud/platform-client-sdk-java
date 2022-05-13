@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
@@ -44,7 +45,7 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public LocalEncryptionConfigurationListing entities(List<LocalEncryptionConfiguration> entities) {
@@ -61,7 +62,7 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public LocalEncryptionConfigurationListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
       return false;
     }
     LocalEncryptionConfigurationListing localEncryptionConfigurationListing = (LocalEncryptionConfigurationListing) o;
+
     return Objects.equals(this.total, localEncryptionConfigurationListing.total) &&
-        Objects.equals(this.entities, localEncryptionConfigurationListing.entities) &&
-        Objects.equals(this.selfUri, localEncryptionConfigurationListing.selfUri);
+            Objects.equals(this.entities, localEncryptionConfigurationListing.entities) &&
+            Objects.equals(this.selfUri, localEncryptionConfigurationListing.selfUri);
   }
 
   @Override

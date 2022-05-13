@@ -23,8 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete all auth tokens for the specified user.
 
-
-
 Wraps DELETE /api/v2/tokens/{userId}  
 
 Requires ANY permissions: 
@@ -85,8 +83,6 @@ null (empty response body)
 
 Delete auth token used to make the request.
 
-
-
 Wraps DELETE /api/v2/tokens/me  
 
 Requires NO permissions: 
@@ -141,8 +137,6 @@ null (empty response body)
 > [TokenInfo](TokenInfo.html) getTokensMe()
 
 Fetch information about the current token
-
-
 
 Wraps GET /api/v2/tokens/me  
 
@@ -199,8 +193,6 @@ This endpoint does not require any parameters.
 > Void headTokensMe()
 
 Verify user token
-
-
 
 Wraps HEAD /api/v2/tokens/me  
 

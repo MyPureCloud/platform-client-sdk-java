@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,35 +88,34 @@ public class SchedulingStatusResponse  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the scheduling job.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If the request could not be properly processed, error details will be given here.")
   @JsonProperty("errorDetails")
   public List<SchedulingProcessingError> getErrorDetails() {
     return errorDetails;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The uri of the scheduling result. It has a value if the status is 'Success'.")
   @JsonProperty("schedulingResultUri")
   public String getSchedulingResultUri() {
     return schedulingResultUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The percentage of the job that is complete.")
   @JsonProperty("percentComplete")
   public Integer getPercentComplete() {
     return percentComplete;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,11 +126,12 @@ public class SchedulingStatusResponse  implements Serializable {
       return false;
     }
     SchedulingStatusResponse schedulingStatusResponse = (SchedulingStatusResponse) o;
+
     return Objects.equals(this.id, schedulingStatusResponse.id) &&
-        Objects.equals(this.status, schedulingStatusResponse.status) &&
-        Objects.equals(this.errorDetails, schedulingStatusResponse.errorDetails) &&
-        Objects.equals(this.schedulingResultUri, schedulingStatusResponse.schedulingResultUri) &&
-        Objects.equals(this.percentComplete, schedulingStatusResponse.percentComplete);
+            Objects.equals(this.status, schedulingStatusResponse.status) &&
+            Objects.equals(this.errorDetails, schedulingStatusResponse.errorDetails) &&
+            Objects.equals(this.schedulingResultUri, schedulingStatusResponse.schedulingResultUri) &&
+            Objects.equals(this.percentComplete, schedulingStatusResponse.percentComplete);
   }
 
   @Override

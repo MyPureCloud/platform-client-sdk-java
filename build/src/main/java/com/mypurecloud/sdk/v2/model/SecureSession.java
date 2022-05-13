@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,7 +86,7 @@ public class SecureSession  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The flow to execute securely
    **/
@@ -103,7 +104,7 @@ public class SecureSession  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * Customer-provided data
    **/
@@ -121,7 +122,7 @@ public class SecureSession  implements Serializable {
     this.userData = userData;
   }
 
-  
+
   /**
    * The current state of a secure session
    **/
@@ -139,7 +140,7 @@ public class SecureSession  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Unique identifier for the participant initiating the secure session.
    **/
@@ -157,7 +158,7 @@ public class SecureSession  implements Serializable {
     this.sourceParticipantId = sourceParticipantId;
   }
 
-  
+
   /**
    * If true, disconnect the agent after creating the session
    **/
@@ -175,14 +176,13 @@ public class SecureSession  implements Serializable {
     this.disconnect = disconnect;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,13 +193,14 @@ public class SecureSession  implements Serializable {
       return false;
     }
     SecureSession secureSession = (SecureSession) o;
+
     return Objects.equals(this.id, secureSession.id) &&
-        Objects.equals(this.flow, secureSession.flow) &&
-        Objects.equals(this.userData, secureSession.userData) &&
-        Objects.equals(this.state, secureSession.state) &&
-        Objects.equals(this.sourceParticipantId, secureSession.sourceParticipantId) &&
-        Objects.equals(this.disconnect, secureSession.disconnect) &&
-        Objects.equals(this.selfUri, secureSession.selfUri);
+            Objects.equals(this.flow, secureSession.flow) &&
+            Objects.equals(this.userData, secureSession.userData) &&
+            Objects.equals(this.state, secureSession.state) &&
+            Objects.equals(this.sourceParticipantId, secureSession.sourceParticipantId) &&
+            Objects.equals(this.disconnect, secureSession.disconnect) &&
+            Objects.equals(this.selfUri, secureSession.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -378,7 +379,7 @@ public class AnalyticsSession  implements Serializable {
     this.activeSkillIds = activeSkillIds;
   }
 
-  
+
   /**
    * Marker for an agent that skipped after call work
    **/
@@ -396,7 +397,7 @@ public class AnalyticsSession  implements Serializable {
     this.acwSkipped = acwSkipped;
   }
 
-  
+
   /**
    * The address that initiated an action
    **/
@@ -414,7 +415,7 @@ public class AnalyticsSession  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    * The email address for the participant on the other side of the email conversation
    **/
@@ -432,7 +433,7 @@ public class AnalyticsSession  implements Serializable {
     this.addressOther = addressOther;
   }
 
-  
+
   /**
    * The email address for the participant on this side of the email conversation
    **/
@@ -450,7 +451,7 @@ public class AnalyticsSession  implements Serializable {
     this.addressSelf = addressSelf;
   }
 
-  
+
   /**
    * The address receiving an action
    **/
@@ -468,7 +469,7 @@ public class AnalyticsSession  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    * Unique identifier of the active virtual agent assistant
    **/
@@ -486,7 +487,7 @@ public class AnalyticsSession  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
+
   /**
    * Bullseye ring of the targeted agent
    **/
@@ -504,7 +505,7 @@ public class AnalyticsSession  implements Serializable {
     this.agentBullseyeRing = agentBullseyeRing;
   }
 
-  
+
   /**
    * Flag indicating an agent-owned callback
    **/
@@ -522,7 +523,7 @@ public class AnalyticsSession  implements Serializable {
     this.agentOwned = agentOwned;
   }
 
-  
+
   /**
    * Automatic Number Identification (caller's number)
    **/
@@ -540,7 +541,7 @@ public class AnalyticsSession  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    * ID of the user that manually assigned a conversation
    **/
@@ -558,7 +559,7 @@ public class AnalyticsSession  implements Serializable {
     this.assignerId = assignerId;
   }
 
-  
+
   /**
    * Flag that indicates that the identity of the customer has been asserted as verified by the provider.
    **/
@@ -576,7 +577,7 @@ public class AnalyticsSession  implements Serializable {
     this.authenticated = authenticated;
   }
 
-  
+
   /**
    * Callback phone number(s)
    **/
@@ -594,7 +595,7 @@ public class AnalyticsSession  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    * Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -612,7 +613,7 @@ public class AnalyticsSession  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    * The name of the user requesting a call back
    **/
@@ -630,7 +631,7 @@ public class AnalyticsSession  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    * The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)
    **/
@@ -648,7 +649,7 @@ public class AnalyticsSession  implements Serializable {
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    * Describes side of the cobrowse (sharer or viewer)
    **/
@@ -666,7 +667,7 @@ public class AnalyticsSession  implements Serializable {
     this.cobrowseRole = cobrowseRole;
   }
 
-  
+
   /**
    * A unique identifier for a PureCloud cobrowse room
    **/
@@ -684,7 +685,7 @@ public class AnalyticsSession  implements Serializable {
     this.cobrowseRoomId = cobrowseRoomId;
   }
 
-  
+
   /**
    * The email or SMS delivery status
    **/
@@ -702,7 +703,7 @@ public class AnalyticsSession  implements Serializable {
     this.deliveryStatus = deliveryStatus;
   }
 
-  
+
   /**
    * Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -720,7 +721,7 @@ public class AnalyticsSession  implements Serializable {
     this.deliveryStatusChangeDate = deliveryStatusChangeDate;
   }
 
-  
+
   /**
    * Destination address(es) of transfers or consults
    **/
@@ -738,7 +739,7 @@ public class AnalyticsSession  implements Serializable {
     this.destinationAddresses = destinationAddresses;
   }
 
-  
+
   /**
    * The direction of the communication
    **/
@@ -756,7 +757,7 @@ public class AnalyticsSession  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * (Dialer) Analyzer (for example speech.person)
    **/
@@ -774,7 +775,7 @@ public class AnalyticsSession  implements Serializable {
     this.dispositionAnalyzer = dispositionAnalyzer;
   }
 
-  
+
   /**
    * (Dialer) Result of the analysis (for example disposition.classification.callable.machine)
    **/
@@ -792,7 +793,7 @@ public class AnalyticsSession  implements Serializable {
     this.dispositionName = dispositionName;
   }
 
-  
+
   /**
    * Dialed number identification service (number dialed by the calling party)
    **/
@@ -810,7 +811,7 @@ public class AnalyticsSession  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * Unique identifier of the edge device
    **/
@@ -828,7 +829,7 @@ public class AnalyticsSession  implements Serializable {
     this.edgeId = edgeId;
   }
 
-  
+
   /**
    * Number of eligible agents for each predictive routing attempt
    **/
@@ -846,7 +847,7 @@ public class AnalyticsSession  implements Serializable {
     this.eligibleAgentCounts = eligibleAgentCounts;
   }
 
-  
+
   /**
    * Extended email delivery status
    **/
@@ -864,7 +865,7 @@ public class AnalyticsSession  implements Serializable {
     this.extendedDeliveryStatus = extendedDeliveryStatus;
   }
 
-  
+
   /**
    * Type of flow in that occurred when entering ACD.
    **/
@@ -882,7 +883,7 @@ public class AnalyticsSession  implements Serializable {
     this.flowInType = flowInType;
   }
 
-  
+
   /**
    * Type of flow out that occurred when emitting tFlowOut.
    **/
@@ -900,7 +901,7 @@ public class AnalyticsSession  implements Serializable {
     this.flowOutType = flowOutType;
   }
 
-  
+
   /**
    * Identifier of the journey action.
    **/
@@ -918,7 +919,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyActionId = journeyActionId;
   }
 
-  
+
   /**
    * Identifier of the journey action map that triggered the action.
    **/
@@ -936,7 +937,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyActionMapId = journeyActionMapId;
   }
 
-  
+
   /**
    * Version of the journey action map that triggered the action.
    **/
@@ -954,7 +955,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyActionMapVersion = journeyActionMapVersion;
   }
 
-  
+
   /**
    * Primary identifier of the journey customer in the source where the activities originate from.
    **/
@@ -972,7 +973,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyCustomerId = journeyCustomerId;
   }
 
-  
+
   /**
    * Type of primary identifier of the journey customer (e.g. cookie).
    **/
@@ -990,7 +991,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyCustomerIdType = journeyCustomerIdType;
   }
 
-  
+
   /**
    * Unique identifier of the journey session.
    **/
@@ -1008,7 +1009,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyCustomerSessionId = journeyCustomerSessionId;
   }
 
-  
+
   /**
    * Type or category of journey sessions (e.g. web, ticket, delivery, atm).
    **/
@@ -1026,7 +1027,7 @@ public class AnalyticsSession  implements Serializable {
     this.journeyCustomerSessionIdType = journeyCustomerSessionIdType;
   }
 
-  
+
   /**
    * Media bridge ID for the conference session consistent across all participants
    **/
@@ -1044,7 +1045,7 @@ public class AnalyticsSession  implements Serializable {
     this.mediaBridgeId = mediaBridgeId;
   }
 
-  
+
   /**
    * Count of any media (images, files, etc) included in this session
    **/
@@ -1062,7 +1063,7 @@ public class AnalyticsSession  implements Serializable {
     this.mediaCount = mediaCount;
   }
 
-  
+
   /**
    * The session media type
    **/
@@ -1080,7 +1081,7 @@ public class AnalyticsSession  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Message type for messaging services. E.g.: sms, facebook, twitter, line
    **/
@@ -1098,7 +1099,7 @@ public class AnalyticsSession  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    * The participantId being monitored (if someone (e.g. an agent) is being monitored, this would correspond to one of the other participantIds present in the conversation)
    **/
@@ -1116,7 +1117,7 @@ public class AnalyticsSession  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the outbound campaign
    **/
@@ -1134,7 +1135,7 @@ public class AnalyticsSession  implements Serializable {
     this.outboundCampaignId = outboundCampaignId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the contact
    **/
@@ -1152,7 +1153,7 @@ public class AnalyticsSession  implements Serializable {
     this.outboundContactId = outboundContactId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the contact list that this contact belongs to
    **/
@@ -1170,7 +1171,7 @@ public class AnalyticsSession  implements Serializable {
     this.outboundContactListId = outboundContactListId;
   }
 
-  
+
   /**
    * This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.
    **/
@@ -1188,7 +1189,7 @@ public class AnalyticsSession  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The original voice protocol call ID, e.g. a SIP call ID
    **/
@@ -1206,7 +1207,7 @@ public class AnalyticsSession  implements Serializable {
     this.protocolCallId = protocolCallId;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -1224,7 +1225,7 @@ public class AnalyticsSession  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * Flag determining if an audio recording was started or not
    **/
@@ -1242,7 +1243,7 @@ public class AnalyticsSession  implements Serializable {
     this.recording = recording;
   }
 
-  
+
   /**
    * Name, phone number, or email address of the remote party.
    **/
@@ -1260,7 +1261,7 @@ public class AnalyticsSession  implements Serializable {
     this.remote = remote;
   }
 
-  
+
   /**
    * Unique identifier for the remote party
    **/
@@ -1278,7 +1279,7 @@ public class AnalyticsSession  implements Serializable {
     this.remoteNameDisplayable = remoteNameDisplayable;
   }
 
-  
+
   /**
    * ID(s) of Skill(s) that have been removed by bullseye routing
    **/
@@ -1296,7 +1297,7 @@ public class AnalyticsSession  implements Serializable {
     this.removedSkillIds = removedSkillIds;
   }
 
-  
+
   /**
    * Routing type(s) for requested/attempted routing methods.
    **/
@@ -1314,7 +1315,7 @@ public class AnalyticsSession  implements Serializable {
     this.requestedRoutings = requestedRoutings;
   }
 
-  
+
   /**
    * Unique identifier for the room
    **/
@@ -1332,7 +1333,7 @@ public class AnalyticsSession  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    * Routing ring for bullseye or preferred agent routing
    **/
@@ -1350,7 +1351,7 @@ public class AnalyticsSession  implements Serializable {
     this.routingRing = routingRing;
   }
 
-  
+
   /**
    * Direct ScreenShare address
    **/
@@ -1368,7 +1369,7 @@ public class AnalyticsSession  implements Serializable {
     this.screenShareAddressSelf = screenShareAddressSelf;
   }
 
-  
+
   /**
    * A unique identifier for a PureCloud ScreenShare room
    **/
@@ -1386,7 +1387,7 @@ public class AnalyticsSession  implements Serializable {
     this.screenShareRoomId = screenShareRoomId;
   }
 
-  
+
   /**
    * A unique identifier for a script
    **/
@@ -1404,7 +1405,7 @@ public class AnalyticsSession  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * Selected agent ID
    **/
@@ -1422,7 +1423,7 @@ public class AnalyticsSession  implements Serializable {
     this.selectedAgentId = selectedAgentId;
   }
 
-  
+
   /**
    * Selected agent GPR rank
    **/
@@ -1440,7 +1441,7 @@ public class AnalyticsSession  implements Serializable {
     this.selectedAgentRank = selectedAgentRank;
   }
 
-  
+
   /**
    * Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
    **/
@@ -1458,7 +1459,7 @@ public class AnalyticsSession  implements Serializable {
     this.sessionDnis = sessionDnis;
   }
 
-  
+
   /**
    * The unique identifier of this session
    **/
@@ -1476,7 +1477,7 @@ public class AnalyticsSession  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * Flag determining if screenShare is started or not (true/false)
    **/
@@ -1494,7 +1495,7 @@ public class AnalyticsSession  implements Serializable {
     this.sharingScreen = sharingScreen;
   }
 
-  
+
   /**
    * (Dialer) Whether the agent can skip the dialer contact
    **/
@@ -1512,7 +1513,7 @@ public class AnalyticsSession  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-  
+
   /**
    * The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
    **/
@@ -1530,7 +1531,7 @@ public class AnalyticsSession  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-  
+
   /**
    * Complete routing method
    **/
@@ -1548,7 +1549,7 @@ public class AnalyticsSession  implements Serializable {
     this.usedRouting = usedRouting;
   }
 
-  
+
   /**
    * Direct Video address
    **/
@@ -1566,7 +1567,7 @@ public class AnalyticsSession  implements Serializable {
     this.videoAddressSelf = videoAddressSelf;
   }
 
-  
+
   /**
    * A unique identifier for a PureCloud video room
    **/
@@ -1584,7 +1585,7 @@ public class AnalyticsSession  implements Serializable {
     this.videoRoomId = videoRoomId;
   }
 
-  
+
   /**
    * Number of waiting interactions for each predictive routing attempt
    **/
@@ -1602,7 +1603,7 @@ public class AnalyticsSession  implements Serializable {
     this.waitingInteractionCounts = waitingInteractionCounts;
   }
 
-  
+
   /**
    * Proposed agents
    **/
@@ -1620,7 +1621,7 @@ public class AnalyticsSession  implements Serializable {
     this.proposedAgents = proposedAgents;
   }
 
-  
+
   /**
    * MediaEndpointStats associated with this session
    **/
@@ -1638,7 +1639,7 @@ public class AnalyticsSession  implements Serializable {
     this.mediaEndpointStats = mediaEndpointStats;
   }
 
-  
+
   /**
    * IVR flow execution associated with this session
    **/
@@ -1656,7 +1657,7 @@ public class AnalyticsSession  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   /**
    * List of metrics for this session
    **/
@@ -1674,7 +1675,7 @@ public class AnalyticsSession  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * List of segments for this session
    **/
@@ -1692,7 +1693,6 @@ public class AnalyticsSession  implements Serializable {
     this.segments = segments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1703,80 +1703,81 @@ public class AnalyticsSession  implements Serializable {
       return false;
     }
     AnalyticsSession analyticsSession = (AnalyticsSession) o;
+
     return Objects.equals(this.activeSkillIds, analyticsSession.activeSkillIds) &&
-        Objects.equals(this.acwSkipped, analyticsSession.acwSkipped) &&
-        Objects.equals(this.addressFrom, analyticsSession.addressFrom) &&
-        Objects.equals(this.addressOther, analyticsSession.addressOther) &&
-        Objects.equals(this.addressSelf, analyticsSession.addressSelf) &&
-        Objects.equals(this.addressTo, analyticsSession.addressTo) &&
-        Objects.equals(this.agentAssistantId, analyticsSession.agentAssistantId) &&
-        Objects.equals(this.agentBullseyeRing, analyticsSession.agentBullseyeRing) &&
-        Objects.equals(this.agentOwned, analyticsSession.agentOwned) &&
-        Objects.equals(this.ani, analyticsSession.ani) &&
-        Objects.equals(this.assignerId, analyticsSession.assignerId) &&
-        Objects.equals(this.authenticated, analyticsSession.authenticated) &&
-        Objects.equals(this.callbackNumbers, analyticsSession.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, analyticsSession.callbackScheduledTime) &&
-        Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
-        Objects.equals(this.coachedParticipantId, analyticsSession.coachedParticipantId) &&
-        Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
-        Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
-        Objects.equals(this.deliveryStatus, analyticsSession.deliveryStatus) &&
-        Objects.equals(this.deliveryStatusChangeDate, analyticsSession.deliveryStatusChangeDate) &&
-        Objects.equals(this.destinationAddresses, analyticsSession.destinationAddresses) &&
-        Objects.equals(this.direction, analyticsSession.direction) &&
-        Objects.equals(this.dispositionAnalyzer, analyticsSession.dispositionAnalyzer) &&
-        Objects.equals(this.dispositionName, analyticsSession.dispositionName) &&
-        Objects.equals(this.dnis, analyticsSession.dnis) &&
-        Objects.equals(this.edgeId, analyticsSession.edgeId) &&
-        Objects.equals(this.eligibleAgentCounts, analyticsSession.eligibleAgentCounts) &&
-        Objects.equals(this.extendedDeliveryStatus, analyticsSession.extendedDeliveryStatus) &&
-        Objects.equals(this.flowInType, analyticsSession.flowInType) &&
-        Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
-        Objects.equals(this.journeyActionId, analyticsSession.journeyActionId) &&
-        Objects.equals(this.journeyActionMapId, analyticsSession.journeyActionMapId) &&
-        Objects.equals(this.journeyActionMapVersion, analyticsSession.journeyActionMapVersion) &&
-        Objects.equals(this.journeyCustomerId, analyticsSession.journeyCustomerId) &&
-        Objects.equals(this.journeyCustomerIdType, analyticsSession.journeyCustomerIdType) &&
-        Objects.equals(this.journeyCustomerSessionId, analyticsSession.journeyCustomerSessionId) &&
-        Objects.equals(this.journeyCustomerSessionIdType, analyticsSession.journeyCustomerSessionIdType) &&
-        Objects.equals(this.mediaBridgeId, analyticsSession.mediaBridgeId) &&
-        Objects.equals(this.mediaCount, analyticsSession.mediaCount) &&
-        Objects.equals(this.mediaType, analyticsSession.mediaType) &&
-        Objects.equals(this.messageType, analyticsSession.messageType) &&
-        Objects.equals(this.monitoredParticipantId, analyticsSession.monitoredParticipantId) &&
-        Objects.equals(this.outboundCampaignId, analyticsSession.outboundCampaignId) &&
-        Objects.equals(this.outboundContactId, analyticsSession.outboundContactId) &&
-        Objects.equals(this.outboundContactListId, analyticsSession.outboundContactListId) &&
-        Objects.equals(this.peerId, analyticsSession.peerId) &&
-        Objects.equals(this.protocolCallId, analyticsSession.protocolCallId) &&
-        Objects.equals(this.provider, analyticsSession.provider) &&
-        Objects.equals(this.recording, analyticsSession.recording) &&
-        Objects.equals(this.remote, analyticsSession.remote) &&
-        Objects.equals(this.remoteNameDisplayable, analyticsSession.remoteNameDisplayable) &&
-        Objects.equals(this.removedSkillIds, analyticsSession.removedSkillIds) &&
-        Objects.equals(this.requestedRoutings, analyticsSession.requestedRoutings) &&
-        Objects.equals(this.roomId, analyticsSession.roomId) &&
-        Objects.equals(this.routingRing, analyticsSession.routingRing) &&
-        Objects.equals(this.screenShareAddressSelf, analyticsSession.screenShareAddressSelf) &&
-        Objects.equals(this.screenShareRoomId, analyticsSession.screenShareRoomId) &&
-        Objects.equals(this.scriptId, analyticsSession.scriptId) &&
-        Objects.equals(this.selectedAgentId, analyticsSession.selectedAgentId) &&
-        Objects.equals(this.selectedAgentRank, analyticsSession.selectedAgentRank) &&
-        Objects.equals(this.sessionDnis, analyticsSession.sessionDnis) &&
-        Objects.equals(this.sessionId, analyticsSession.sessionId) &&
-        Objects.equals(this.sharingScreen, analyticsSession.sharingScreen) &&
-        Objects.equals(this.skipEnabled, analyticsSession.skipEnabled) &&
-        Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds) &&
-        Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
-        Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
-        Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
-        Objects.equals(this.waitingInteractionCounts, analyticsSession.waitingInteractionCounts) &&
-        Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
-        Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
-        Objects.equals(this.flow, analyticsSession.flow) &&
-        Objects.equals(this.metrics, analyticsSession.metrics) &&
-        Objects.equals(this.segments, analyticsSession.segments);
+            Objects.equals(this.acwSkipped, analyticsSession.acwSkipped) &&
+            Objects.equals(this.addressFrom, analyticsSession.addressFrom) &&
+            Objects.equals(this.addressOther, analyticsSession.addressOther) &&
+            Objects.equals(this.addressSelf, analyticsSession.addressSelf) &&
+            Objects.equals(this.addressTo, analyticsSession.addressTo) &&
+            Objects.equals(this.agentAssistantId, analyticsSession.agentAssistantId) &&
+            Objects.equals(this.agentBullseyeRing, analyticsSession.agentBullseyeRing) &&
+            Objects.equals(this.agentOwned, analyticsSession.agentOwned) &&
+            Objects.equals(this.ani, analyticsSession.ani) &&
+            Objects.equals(this.assignerId, analyticsSession.assignerId) &&
+            Objects.equals(this.authenticated, analyticsSession.authenticated) &&
+            Objects.equals(this.callbackNumbers, analyticsSession.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, analyticsSession.callbackScheduledTime) &&
+            Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
+            Objects.equals(this.coachedParticipantId, analyticsSession.coachedParticipantId) &&
+            Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
+            Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
+            Objects.equals(this.deliveryStatus, analyticsSession.deliveryStatus) &&
+            Objects.equals(this.deliveryStatusChangeDate, analyticsSession.deliveryStatusChangeDate) &&
+            Objects.equals(this.destinationAddresses, analyticsSession.destinationAddresses) &&
+            Objects.equals(this.direction, analyticsSession.direction) &&
+            Objects.equals(this.dispositionAnalyzer, analyticsSession.dispositionAnalyzer) &&
+            Objects.equals(this.dispositionName, analyticsSession.dispositionName) &&
+            Objects.equals(this.dnis, analyticsSession.dnis) &&
+            Objects.equals(this.edgeId, analyticsSession.edgeId) &&
+            Objects.equals(this.eligibleAgentCounts, analyticsSession.eligibleAgentCounts) &&
+            Objects.equals(this.extendedDeliveryStatus, analyticsSession.extendedDeliveryStatus) &&
+            Objects.equals(this.flowInType, analyticsSession.flowInType) &&
+            Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
+            Objects.equals(this.journeyActionId, analyticsSession.journeyActionId) &&
+            Objects.equals(this.journeyActionMapId, analyticsSession.journeyActionMapId) &&
+            Objects.equals(this.journeyActionMapVersion, analyticsSession.journeyActionMapVersion) &&
+            Objects.equals(this.journeyCustomerId, analyticsSession.journeyCustomerId) &&
+            Objects.equals(this.journeyCustomerIdType, analyticsSession.journeyCustomerIdType) &&
+            Objects.equals(this.journeyCustomerSessionId, analyticsSession.journeyCustomerSessionId) &&
+            Objects.equals(this.journeyCustomerSessionIdType, analyticsSession.journeyCustomerSessionIdType) &&
+            Objects.equals(this.mediaBridgeId, analyticsSession.mediaBridgeId) &&
+            Objects.equals(this.mediaCount, analyticsSession.mediaCount) &&
+            Objects.equals(this.mediaType, analyticsSession.mediaType) &&
+            Objects.equals(this.messageType, analyticsSession.messageType) &&
+            Objects.equals(this.monitoredParticipantId, analyticsSession.monitoredParticipantId) &&
+            Objects.equals(this.outboundCampaignId, analyticsSession.outboundCampaignId) &&
+            Objects.equals(this.outboundContactId, analyticsSession.outboundContactId) &&
+            Objects.equals(this.outboundContactListId, analyticsSession.outboundContactListId) &&
+            Objects.equals(this.peerId, analyticsSession.peerId) &&
+            Objects.equals(this.protocolCallId, analyticsSession.protocolCallId) &&
+            Objects.equals(this.provider, analyticsSession.provider) &&
+            Objects.equals(this.recording, analyticsSession.recording) &&
+            Objects.equals(this.remote, analyticsSession.remote) &&
+            Objects.equals(this.remoteNameDisplayable, analyticsSession.remoteNameDisplayable) &&
+            Objects.equals(this.removedSkillIds, analyticsSession.removedSkillIds) &&
+            Objects.equals(this.requestedRoutings, analyticsSession.requestedRoutings) &&
+            Objects.equals(this.roomId, analyticsSession.roomId) &&
+            Objects.equals(this.routingRing, analyticsSession.routingRing) &&
+            Objects.equals(this.screenShareAddressSelf, analyticsSession.screenShareAddressSelf) &&
+            Objects.equals(this.screenShareRoomId, analyticsSession.screenShareRoomId) &&
+            Objects.equals(this.scriptId, analyticsSession.scriptId) &&
+            Objects.equals(this.selectedAgentId, analyticsSession.selectedAgentId) &&
+            Objects.equals(this.selectedAgentRank, analyticsSession.selectedAgentRank) &&
+            Objects.equals(this.sessionDnis, analyticsSession.sessionDnis) &&
+            Objects.equals(this.sessionId, analyticsSession.sessionId) &&
+            Objects.equals(this.sharingScreen, analyticsSession.sharingScreen) &&
+            Objects.equals(this.skipEnabled, analyticsSession.skipEnabled) &&
+            Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds) &&
+            Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
+            Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
+            Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
+            Objects.equals(this.waitingInteractionCounts, analyticsSession.waitingInteractionCounts) &&
+            Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
+            Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
+            Objects.equals(this.flow, analyticsSession.flow) &&
+            Objects.equals(this.metrics, analyticsSession.metrics) &&
+            Objects.equals(this.segments, analyticsSession.segments);
   }
 
   @Override

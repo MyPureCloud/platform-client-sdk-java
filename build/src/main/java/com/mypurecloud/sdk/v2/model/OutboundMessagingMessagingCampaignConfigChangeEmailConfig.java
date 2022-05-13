@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress;
@@ -49,7 +50,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
     this.emailColumns = emailColumns;
   }
 
-  
+
   /**
    * A reference for a Response
    **/
@@ -67,7 +68,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
     this.contentTemplate = contentTemplate;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeEmailConfig fromAddress(OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress fromAddress) {
@@ -84,7 +85,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeEmailConfig replyToAddress(OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress replyToAddress) {
@@ -101,7 +102,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
     this.replyToAddress = replyToAddress;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,10 +112,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeEmailConfig outboundMessagingMessagingCampaignConfigChangeEmailConfig = (OutboundMessagingMessagingCampaignConfigChangeEmailConfig) o;
+
     return Objects.equals(this.emailColumns, outboundMessagingMessagingCampaignConfigChangeEmailConfig.emailColumns) &&
-        Objects.equals(this.contentTemplate, outboundMessagingMessagingCampaignConfigChangeEmailConfig.contentTemplate) &&
-        Objects.equals(this.fromAddress, outboundMessagingMessagingCampaignConfigChangeEmailConfig.fromAddress) &&
-        Objects.equals(this.replyToAddress, outboundMessagingMessagingCampaignConfigChangeEmailConfig.replyToAddress);
+            Objects.equals(this.contentTemplate, outboundMessagingMessagingCampaignConfigChangeEmailConfig.contentTemplate) &&
+            Objects.equals(this.fromAddress, outboundMessagingMessagingCampaignConfigChangeEmailConfig.fromAddress) &&
+            Objects.equals(this.replyToAddress, outboundMessagingMessagingCampaignConfigChangeEmailConfig.replyToAddress);
   }
 
   @Override

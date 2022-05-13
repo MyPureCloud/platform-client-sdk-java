@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkResult;
@@ -45,7 +46,7 @@ public class BulkCallbackPatchResponse  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    * The number of errors from the bulk operation.
    **/
@@ -63,7 +64,7 @@ public class BulkCallbackPatchResponse  implements Serializable {
     this.errorCount = errorCount;
   }
 
-  
+
   /**
    * An index of where the errors are in the listing.
    **/
@@ -81,7 +82,6 @@ public class BulkCallbackPatchResponse  implements Serializable {
     this.errorIndexes = errorIndexes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class BulkCallbackPatchResponse  implements Serializable {
       return false;
     }
     BulkCallbackPatchResponse bulkCallbackPatchResponse = (BulkCallbackPatchResponse) o;
+
     return Objects.equals(this.results, bulkCallbackPatchResponse.results) &&
-        Objects.equals(this.errorCount, bulkCallbackPatchResponse.errorCount) &&
-        Objects.equals(this.errorIndexes, bulkCallbackPatchResponse.errorIndexes);
+            Objects.equals(this.errorCount, bulkCallbackPatchResponse.errorCount) &&
+            Objects.equals(this.errorIndexes, bulkCallbackPatchResponse.errorIndexes);
   }
 
   @Override

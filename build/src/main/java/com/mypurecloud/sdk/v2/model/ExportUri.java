@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ExportUri  implements Serializable {
     this.uri = uri;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -59,7 +60,6 @@ public class ExportUri  implements Serializable {
     this.exportTimestamp = exportTimestamp;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class ExportUri  implements Serializable {
       return false;
     }
     ExportUri exportUri = (ExportUri) o;
+
     return Objects.equals(this.uri, exportUri.uri) &&
-        Objects.equals(this.exportTimestamp, exportUri.exportTimestamp);
+            Objects.equals(this.exportTimestamp, exportUri.exportTimestamp);
   }
 
   @Override

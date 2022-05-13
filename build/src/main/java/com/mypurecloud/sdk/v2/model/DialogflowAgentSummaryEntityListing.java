@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DialogflowAgentSummaryEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
       return false;
     }
     DialogflowAgentSummaryEntityListing dialogflowAgentSummaryEntityListing = (DialogflowAgentSummaryEntityListing) o;
+
     return Objects.equals(this.entities, dialogflowAgentSummaryEntityListing.entities) &&
-        Objects.equals(this.pageSize, dialogflowAgentSummaryEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, dialogflowAgentSummaryEntityListing.pageNumber) &&
-        Objects.equals(this.total, dialogflowAgentSummaryEntityListing.total) &&
-        Objects.equals(this.lastUri, dialogflowAgentSummaryEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, dialogflowAgentSummaryEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, dialogflowAgentSummaryEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, dialogflowAgentSummaryEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, dialogflowAgentSummaryEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, dialogflowAgentSummaryEntityListing.pageCount);
+            Objects.equals(this.pageSize, dialogflowAgentSummaryEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, dialogflowAgentSummaryEntityListing.pageNumber) &&
+            Objects.equals(this.total, dialogflowAgentSummaryEntityListing.total) &&
+            Objects.equals(this.lastUri, dialogflowAgentSummaryEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, dialogflowAgentSummaryEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, dialogflowAgentSummaryEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, dialogflowAgentSummaryEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, dialogflowAgentSummaryEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, dialogflowAgentSummaryEntityListing.pageCount);
   }
 
   @Override

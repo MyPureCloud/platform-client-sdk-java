@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -37,7 +38,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDto name(String name) {
@@ -54,7 +55,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDto edgeVersion(String edgeVersion) {
@@ -71,7 +72,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.edgeVersion = edgeVersion;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -89,7 +90,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.publishDate = publishDate;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDto edgeUri(String edgeUri) {
@@ -106,7 +107,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDto current(Boolean current) {
@@ -123,7 +124,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.current = current;
   }
 
-  
+
   /**
    **/
   public DomainEdgeSoftwareVersionDto latestRelease(Boolean latestRelease) {
@@ -140,14 +141,13 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.latestRelease = latestRelease;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,14 +158,15 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
       return false;
     }
     DomainEdgeSoftwareVersionDto domainEdgeSoftwareVersionDto = (DomainEdgeSoftwareVersionDto) o;
+
     return Objects.equals(this.id, domainEdgeSoftwareVersionDto.id) &&
-        Objects.equals(this.name, domainEdgeSoftwareVersionDto.name) &&
-        Objects.equals(this.edgeVersion, domainEdgeSoftwareVersionDto.edgeVersion) &&
-        Objects.equals(this.publishDate, domainEdgeSoftwareVersionDto.publishDate) &&
-        Objects.equals(this.edgeUri, domainEdgeSoftwareVersionDto.edgeUri) &&
-        Objects.equals(this.current, domainEdgeSoftwareVersionDto.current) &&
-        Objects.equals(this.latestRelease, domainEdgeSoftwareVersionDto.latestRelease) &&
-        Objects.equals(this.selfUri, domainEdgeSoftwareVersionDto.selfUri);
+            Objects.equals(this.name, domainEdgeSoftwareVersionDto.name) &&
+            Objects.equals(this.edgeVersion, domainEdgeSoftwareVersionDto.edgeVersion) &&
+            Objects.equals(this.publishDate, domainEdgeSoftwareVersionDto.publishDate) &&
+            Objects.equals(this.edgeUri, domainEdgeSoftwareVersionDto.edgeUri) &&
+            Objects.equals(this.current, domainEdgeSoftwareVersionDto.current) &&
+            Objects.equals(this.latestRelease, domainEdgeSoftwareVersionDto.latestRelease) &&
+            Objects.equals(this.selfUri, domainEdgeSoftwareVersionDto.selfUri);
   }
 
   @Override

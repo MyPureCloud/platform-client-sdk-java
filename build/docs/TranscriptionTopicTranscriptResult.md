@@ -27,11 +27,11 @@ title: TranscriptionTopicTranscriptResult
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| INTERNAL | &quot;INTERNAL&quot; |
-| EXTERNAL | &quot;EXTERNAL&quot; |
-| BOTH | &quot;BOTH&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| INTERNAL | &quot;INTERNAL&quot; | 
+| EXTERNAL | &quot;EXTERNAL&quot; | 
+| BOTH | &quot;BOTH&quot; | 
 {: class="table table-striped"}
 
 

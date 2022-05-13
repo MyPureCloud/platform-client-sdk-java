@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
@@ -43,7 +44,7 @@ public class LearningAssessmentScoringRequest  implements Serializable {
     this.assessmentForm = assessmentForm;
   }
 
-  
+
   /**
    * The answers to score
    **/
@@ -61,7 +62,6 @@ public class LearningAssessmentScoringRequest  implements Serializable {
     this.answers = answers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class LearningAssessmentScoringRequest  implements Serializable {
       return false;
     }
     LearningAssessmentScoringRequest learningAssessmentScoringRequest = (LearningAssessmentScoringRequest) o;
+
     return Objects.equals(this.assessmentForm, learningAssessmentScoringRequest.assessmentForm) &&
-        Objects.equals(this.answers, learningAssessmentScoringRequest.answers);
+            Objects.equals(this.answers, learningAssessmentScoringRequest.answers);
   }
 
   @Override

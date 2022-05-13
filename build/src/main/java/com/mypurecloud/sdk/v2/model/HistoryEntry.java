@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -107,7 +108,7 @@ public class HistoryEntry  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * For actions performed not on the item itself, but on a sub-item, this field identifies the sub-item by name.  For example, for actions performed on prompt resources, this will be the prompt resource name.
    **/
@@ -125,7 +126,7 @@ public class HistoryEntry  implements Serializable {
     this.resource = resource;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -143,7 +144,7 @@ public class HistoryEntry  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   /**
    * User associated with this entry.
    **/
@@ -161,7 +162,7 @@ public class HistoryEntry  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * OAuth client associated with this entry.
    **/
@@ -179,7 +180,7 @@ public class HistoryEntry  implements Serializable {
     this.client = client;
   }
 
-  
+
   /**
    **/
   public HistoryEntry version(String version) {
@@ -196,7 +197,7 @@ public class HistoryEntry  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    **/
   public HistoryEntry secure(Boolean secure) {
@@ -213,7 +214,6 @@ public class HistoryEntry  implements Serializable {
     this.secure = secure;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,13 +224,14 @@ public class HistoryEntry  implements Serializable {
       return false;
     }
     HistoryEntry historyEntry = (HistoryEntry) o;
+
     return Objects.equals(this.action, historyEntry.action) &&
-        Objects.equals(this.resource, historyEntry.resource) &&
-        Objects.equals(this.timestamp, historyEntry.timestamp) &&
-        Objects.equals(this.user, historyEntry.user) &&
-        Objects.equals(this.client, historyEntry.client) &&
-        Objects.equals(this.version, historyEntry.version) &&
-        Objects.equals(this.secure, historyEntry.secure);
+            Objects.equals(this.resource, historyEntry.resource) &&
+            Objects.equals(this.timestamp, historyEntry.timestamp) &&
+            Objects.equals(this.user, historyEntry.user) &&
+            Objects.equals(this.client, historyEntry.client) &&
+            Objects.equals(this.version, historyEntry.version) &&
+            Objects.equals(this.secure, historyEntry.secure);
   }
 
   @Override

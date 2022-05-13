@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -51,7 +52,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    * The ID of the associated queue
    **/
@@ -69,7 +70,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * Completion datetime of the survey in ISO 8601 format
    **/
@@ -87,7 +88,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyCompletedDate = surveyCompletedDate;
   }
 
-  
+
   /**
    * Unique identifier for the survey form, regardless of version
    **/
@@ -105,7 +106,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyFormContextId = surveyFormContextId;
   }
 
-  
+
   /**
    * ID of the survey form used
    **/
@@ -123,7 +124,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyFormId = surveyFormId;
   }
 
-  
+
   /**
    * Name of the survey form used
    **/
@@ -141,7 +142,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyFormName = surveyFormName;
   }
 
-  
+
   /**
    * ID of the survey
    **/
@@ -159,7 +160,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyId = surveyId;
   }
 
-  
+
   /**
    * Score of the survey used with NPS
    **/
@@ -177,7 +178,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyPromoterScore = surveyPromoterScore;
   }
 
-  
+
   /**
    * The status of the survey
    **/
@@ -195,7 +196,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.surveyStatus = surveyStatus;
   }
 
-  
+
   /**
    * ID of the agent the survey was performed against
    **/
@@ -213,7 +214,7 @@ public class AnalyticsSurvey  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public AnalyticsSurvey oSurveyTotalScore(Long oSurveyTotalScore) {
@@ -230,7 +231,6 @@ public class AnalyticsSurvey  implements Serializable {
     this.oSurveyTotalScore = oSurveyTotalScore;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -241,17 +241,18 @@ public class AnalyticsSurvey  implements Serializable {
       return false;
     }
     AnalyticsSurvey analyticsSurvey = (AnalyticsSurvey) o;
+
     return Objects.equals(this.eventTime, analyticsSurvey.eventTime) &&
-        Objects.equals(this.queueId, analyticsSurvey.queueId) &&
-        Objects.equals(this.surveyCompletedDate, analyticsSurvey.surveyCompletedDate) &&
-        Objects.equals(this.surveyFormContextId, analyticsSurvey.surveyFormContextId) &&
-        Objects.equals(this.surveyFormId, analyticsSurvey.surveyFormId) &&
-        Objects.equals(this.surveyFormName, analyticsSurvey.surveyFormName) &&
-        Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
-        Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
-        Objects.equals(this.surveyStatus, analyticsSurvey.surveyStatus) &&
-        Objects.equals(this.userId, analyticsSurvey.userId) &&
-        Objects.equals(this.oSurveyTotalScore, analyticsSurvey.oSurveyTotalScore);
+            Objects.equals(this.queueId, analyticsSurvey.queueId) &&
+            Objects.equals(this.surveyCompletedDate, analyticsSurvey.surveyCompletedDate) &&
+            Objects.equals(this.surveyFormContextId, analyticsSurvey.surveyFormContextId) &&
+            Objects.equals(this.surveyFormId, analyticsSurvey.surveyFormId) &&
+            Objects.equals(this.surveyFormName, analyticsSurvey.surveyFormName) &&
+            Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
+            Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
+            Objects.equals(this.surveyStatus, analyticsSurvey.surveyStatus) &&
+            Objects.equals(this.userId, analyticsSurvey.userId) &&
+            Objects.equals(this.oSurveyTotalScore, analyticsSurvey.oSurveyTotalScore);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class BuCopyScheduleRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The start weekDate for the new copy of the schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -60,7 +61,6 @@ public class BuCopyScheduleRequest  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class BuCopyScheduleRequest  implements Serializable {
       return false;
     }
     BuCopyScheduleRequest buCopyScheduleRequest = (BuCopyScheduleRequest) o;
+
     return Objects.equals(this.description, buCopyScheduleRequest.description) &&
-        Objects.equals(this.weekDate, buCopyScheduleRequest.weekDate);
+            Objects.equals(this.weekDate, buCopyScheduleRequest.weekDate);
   }
 
   @Override

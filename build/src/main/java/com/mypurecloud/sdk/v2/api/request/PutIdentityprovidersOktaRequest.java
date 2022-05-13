@@ -20,24 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
-import com.mypurecloud.sdk.v2.model.GenericSAML;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
+import com.mypurecloud.sdk.v2.model.OAuthProvider;
+import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
 import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersOktaRequest {
-    
+
 	private Okta body;
 	public Okta getBody() {
 		return this.body;
@@ -51,7 +50,7 @@ public class PutIdentityprovidersOktaRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,8 +80,8 @@ public class PutIdentityprovidersOktaRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/identityproviders/okta")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -93,12 +92,12 @@ public class PutIdentityprovidersOktaRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Okta body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PutIdentityprovidersOktaRequest request;
@@ -107,20 +106,20 @@ public class PutIdentityprovidersOktaRequest {
 			request = new PutIdentityprovidersOktaRequest();
 		}
 
-		
+
 		public Builder withBody(Okta body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Okta body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PutIdentityprovidersOktaRequest build() {
             

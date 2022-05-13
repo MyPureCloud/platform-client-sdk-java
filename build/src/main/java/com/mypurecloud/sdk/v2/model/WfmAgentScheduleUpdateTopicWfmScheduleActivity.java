@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleActivity startDate(Date startDate) {
@@ -62,7 +63,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleActivity countsAsPaidTime(Boolean countsAsPaidTime) {
@@ -79,7 +80,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleActivity lengthInMinutes(Integer lengthInMinutes) {
@@ -96,7 +97,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleActivity timeOffRequestId(String timeOffRequestId) {
@@ -113,7 +114,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleActivity description(String description) {
@@ -130,7 +131,6 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
     this.description = description;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,12 +141,13 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleActivity  implements Serializ
       return false;
     }
     WfmAgentScheduleUpdateTopicWfmScheduleActivity wfmAgentScheduleUpdateTopicWfmScheduleActivity = (WfmAgentScheduleUpdateTopicWfmScheduleActivity) o;
+
     return Objects.equals(this.activityCodeId, wfmAgentScheduleUpdateTopicWfmScheduleActivity.activityCodeId) &&
-        Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmScheduleActivity.startDate) &&
-        Objects.equals(this.countsAsPaidTime, wfmAgentScheduleUpdateTopicWfmScheduleActivity.countsAsPaidTime) &&
-        Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmScheduleActivity.lengthInMinutes) &&
-        Objects.equals(this.timeOffRequestId, wfmAgentScheduleUpdateTopicWfmScheduleActivity.timeOffRequestId) &&
-        Objects.equals(this.description, wfmAgentScheduleUpdateTopicWfmScheduleActivity.description);
+            Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmScheduleActivity.startDate) &&
+            Objects.equals(this.countsAsPaidTime, wfmAgentScheduleUpdateTopicWfmScheduleActivity.countsAsPaidTime) &&
+            Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmScheduleActivity.lengthInMinutes) &&
+            Objects.equals(this.timeOffRequestId, wfmAgentScheduleUpdateTopicWfmScheduleActivity.timeOffRequestId) &&
+            Objects.equals(this.description, wfmAgentScheduleUpdateTopicWfmScheduleActivity.description);
   }
 
   @Override

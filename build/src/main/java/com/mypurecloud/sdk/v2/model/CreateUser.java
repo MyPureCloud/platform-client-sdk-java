@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class CreateUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public CreateUser department(String department) {
@@ -116,7 +117,7 @@ public class CreateUser  implements Serializable {
     this.department = department;
   }
 
-  
+
   /**
    * User's email and username
    **/
@@ -134,7 +135,7 @@ public class CreateUser  implements Serializable {
     this.email = email;
   }
 
-  
+
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -152,7 +153,7 @@ public class CreateUser  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    **/
   public CreateUser title(String title) {
@@ -169,7 +170,7 @@ public class CreateUser  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * User's password
    **/
@@ -187,7 +188,7 @@ public class CreateUser  implements Serializable {
     this.password = password;
   }
 
-  
+
   /**
    * The division to which this user will belong
    **/
@@ -205,7 +206,7 @@ public class CreateUser  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    * Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
    **/
@@ -223,7 +224,6 @@ public class CreateUser  implements Serializable {
     this.state = state;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -234,14 +234,15 @@ public class CreateUser  implements Serializable {
       return false;
     }
     CreateUser createUser = (CreateUser) o;
+
     return Objects.equals(this.name, createUser.name) &&
-        Objects.equals(this.department, createUser.department) &&
-        Objects.equals(this.email, createUser.email) &&
-        Objects.equals(this.addresses, createUser.addresses) &&
-        Objects.equals(this.title, createUser.title) &&
-        Objects.equals(this.password, createUser.password) &&
-        Objects.equals(this.divisionId, createUser.divisionId) &&
-        Objects.equals(this.state, createUser.state);
+            Objects.equals(this.department, createUser.department) &&
+            Objects.equals(this.email, createUser.email) &&
+            Objects.equals(this.addresses, createUser.addresses) &&
+            Objects.equals(this.title, createUser.title) &&
+            Objects.equals(this.password, createUser.password) &&
+            Objects.equals(this.divisionId, createUser.divisionId) &&
+            Objects.equals(this.state, createUser.state);
   }
 
   @Override

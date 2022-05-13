@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class GetAuthorizationPermissionsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -54,7 +54,7 @@ public class GetAuthorizationPermissionsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -68,7 +68,7 @@ public class GetAuthorizationPermissionsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String queryType;
 	public String getQueryType() {
 		return this.queryType;
@@ -84,7 +84,7 @@ public class GetAuthorizationPermissionsRequest {
 	} 
 
 	public enum queryTypeValues { 
-		DOMAIN("domain"), 
+		DOMAIN("domain"),
 		PERMISSION("permission");
 
 		private String value;
@@ -112,7 +112,7 @@ public class GetAuthorizationPermissionsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String query;
 	public String getQuery() {
 		return this.query;
@@ -126,7 +126,7 @@ public class GetAuthorizationPermissionsRequest {
 	    this.setQuery(query);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -150,15 +150,19 @@ public class GetAuthorizationPermissionsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/permissions")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("queryType", "", queryType)
         
+
                 .withQueryParameters("query", "", query)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -169,7 +173,7 @@ public class GetAuthorizationPermissionsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationPermissionsRequest request;
@@ -178,34 +182,38 @@ public class GetAuthorizationPermissionsRequest {
 			request = new GetAuthorizationPermissionsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withQueryType(String queryType) {
 			request.setQueryType(queryType);
 			return this;
 		}
 
+
+
+		
 		public Builder withQueryType(queryTypeValues queryType) {
 		    request.setQueryType(queryType.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withQuery(String query) {
 			request.setQuery(query);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetAuthorizationPermissionsRequest build() {
             

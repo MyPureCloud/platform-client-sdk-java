@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader text(String text) {
@@ -111,7 +112,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader media(V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment media) {
@@ -128,7 +129,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.media = media;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader parameters(List<V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter> parameters) {
@@ -145,7 +146,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -156,10 +156,11 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader = (V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.type) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.text) &&
-        Objects.equals(this.media, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.media) &&
-        Objects.equals(this.parameters, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.parameters);
+            Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.text) &&
+            Objects.equals(this.media, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.media) &&
+            Objects.equals(this.parameters, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader.parameters);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -49,7 +50,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.country = country;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation countryName(String countryName) {
@@ -66,7 +67,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.countryName = countryName;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation latitude(BigDecimal latitude) {
@@ -83,7 +84,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.latitude = latitude;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation longitude(BigDecimal longitude) {
@@ -100,7 +101,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.longitude = longitude;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation locality(String locality) {
@@ -117,7 +118,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.locality = locality;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation postalCode(String postalCode) {
@@ -134,7 +135,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.postalCode = postalCode;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation region(String region) {
@@ -151,7 +152,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.region = region;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation regionName(String regionName) {
@@ -168,7 +169,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.regionName = regionName;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation timezone(String timezone) {
@@ -185,7 +186,7 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.timezone = timezone;
   }
 
-  
+
   /**
    **/
   public JourneyWebActionEventsNotificationGeoLocation source(String source) {
@@ -202,7 +203,6 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
     this.source = source;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,16 +213,17 @@ public class JourneyWebActionEventsNotificationGeoLocation  implements Serializa
       return false;
     }
     JourneyWebActionEventsNotificationGeoLocation journeyWebActionEventsNotificationGeoLocation = (JourneyWebActionEventsNotificationGeoLocation) o;
+
     return Objects.equals(this.country, journeyWebActionEventsNotificationGeoLocation.country) &&
-        Objects.equals(this.countryName, journeyWebActionEventsNotificationGeoLocation.countryName) &&
-        Objects.equals(this.latitude, journeyWebActionEventsNotificationGeoLocation.latitude) &&
-        Objects.equals(this.longitude, journeyWebActionEventsNotificationGeoLocation.longitude) &&
-        Objects.equals(this.locality, journeyWebActionEventsNotificationGeoLocation.locality) &&
-        Objects.equals(this.postalCode, journeyWebActionEventsNotificationGeoLocation.postalCode) &&
-        Objects.equals(this.region, journeyWebActionEventsNotificationGeoLocation.region) &&
-        Objects.equals(this.regionName, journeyWebActionEventsNotificationGeoLocation.regionName) &&
-        Objects.equals(this.timezone, journeyWebActionEventsNotificationGeoLocation.timezone) &&
-        Objects.equals(this.source, journeyWebActionEventsNotificationGeoLocation.source);
+            Objects.equals(this.countryName, journeyWebActionEventsNotificationGeoLocation.countryName) &&
+            Objects.equals(this.latitude, journeyWebActionEventsNotificationGeoLocation.latitude) &&
+            Objects.equals(this.longitude, journeyWebActionEventsNotificationGeoLocation.longitude) &&
+            Objects.equals(this.locality, journeyWebActionEventsNotificationGeoLocation.locality) &&
+            Objects.equals(this.postalCode, journeyWebActionEventsNotificationGeoLocation.postalCode) &&
+            Objects.equals(this.region, journeyWebActionEventsNotificationGeoLocation.region) &&
+            Objects.equals(this.regionName, journeyWebActionEventsNotificationGeoLocation.regionName) &&
+            Objects.equals(this.timezone, journeyWebActionEventsNotificationGeoLocation.timezone) &&
+            Objects.equals(this.source, journeyWebActionEventsNotificationGeoLocation.source);
   }
 
   @Override

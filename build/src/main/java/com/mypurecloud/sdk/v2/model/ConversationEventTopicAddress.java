@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class ConversationEventTopicAddress  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The name as close to the bits on the wire as possible.
    **/
@@ -63,7 +64,7 @@ public class ConversationEventTopicAddress  implements Serializable {
     this.nameRaw = nameRaw;
   }
 
-  
+
   /**
    * The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
    **/
@@ -81,7 +82,7 @@ public class ConversationEventTopicAddress  implements Serializable {
     this.addressNormalized = addressNormalized;
   }
 
-  
+
   /**
    * The address as close to the bits on the wire as possible.
    **/
@@ -99,7 +100,7 @@ public class ConversationEventTopicAddress  implements Serializable {
     this.addressRaw = addressRaw;
   }
 
-  
+
   /**
    * The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
    **/
@@ -117,7 +118,6 @@ public class ConversationEventTopicAddress  implements Serializable {
     this.addressDisplayable = addressDisplayable;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class ConversationEventTopicAddress  implements Serializable {
       return false;
     }
     ConversationEventTopicAddress conversationEventTopicAddress = (ConversationEventTopicAddress) o;
+
     return Objects.equals(this.name, conversationEventTopicAddress.name) &&
-        Objects.equals(this.nameRaw, conversationEventTopicAddress.nameRaw) &&
-        Objects.equals(this.addressNormalized, conversationEventTopicAddress.addressNormalized) &&
-        Objects.equals(this.addressRaw, conversationEventTopicAddress.addressRaw) &&
-        Objects.equals(this.addressDisplayable, conversationEventTopicAddress.addressDisplayable);
+            Objects.equals(this.nameRaw, conversationEventTopicAddress.nameRaw) &&
+            Objects.equals(this.addressNormalized, conversationEventTopicAddress.addressNormalized) &&
+            Objects.equals(this.addressRaw, conversationEventTopicAddress.addressRaw) &&
+            Objects.equals(this.addressDisplayable, conversationEventTopicAddress.addressDisplayable);
   }
 
   @Override

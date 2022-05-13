@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -153,7 +154,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.conversationFilters = conversationFilters;
   }
 
-  
+
   /**
    * Filters that target individual segments within a conversation
    **/
@@ -171,7 +172,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.segmentFilters = segmentFilters;
   }
 
-  
+
   /**
    * Filters that target evaluations
    **/
@@ -189,7 +190,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.evaluationFilters = evaluationFilters;
   }
 
-  
+
   /**
    * Filters that target surveys
    **/
@@ -207,7 +208,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.surveyFilters = surveyFilters;
   }
 
-  
+
   /**
    * Filters that target resolutions
    **/
@@ -225,7 +226,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.resolutionFilters = resolutionFilters;
   }
 
-  
+
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
@@ -243,7 +244,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart
    **/
@@ -261,7 +262,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.orderBy = orderBy;
   }
 
-  
+
   /**
    * Specifies the date and time range of data being queried. Results will include all conversations that had activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -279,7 +280,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Specify number of results to be returned
    **/
@@ -297,7 +298,7 @@ public class AsyncConversationQuery  implements Serializable {
     this.limit = limit;
   }
 
-  
+
   /**
    * Add a filter to only include conversations that started after the beginning of the interval start date (UTC)
    **/
@@ -315,7 +316,6 @@ public class AsyncConversationQuery  implements Serializable {
     this.startOfDayIntervalMatching = startOfDayIntervalMatching;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -326,16 +326,17 @@ public class AsyncConversationQuery  implements Serializable {
       return false;
     }
     AsyncConversationQuery asyncConversationQuery = (AsyncConversationQuery) o;
+
     return Objects.equals(this.conversationFilters, asyncConversationQuery.conversationFilters) &&
-        Objects.equals(this.segmentFilters, asyncConversationQuery.segmentFilters) &&
-        Objects.equals(this.evaluationFilters, asyncConversationQuery.evaluationFilters) &&
-        Objects.equals(this.surveyFilters, asyncConversationQuery.surveyFilters) &&
-        Objects.equals(this.resolutionFilters, asyncConversationQuery.resolutionFilters) &&
-        Objects.equals(this.order, asyncConversationQuery.order) &&
-        Objects.equals(this.orderBy, asyncConversationQuery.orderBy) &&
-        Objects.equals(this.interval, asyncConversationQuery.interval) &&
-        Objects.equals(this.limit, asyncConversationQuery.limit) &&
-        Objects.equals(this.startOfDayIntervalMatching, asyncConversationQuery.startOfDayIntervalMatching);
+            Objects.equals(this.segmentFilters, asyncConversationQuery.segmentFilters) &&
+            Objects.equals(this.evaluationFilters, asyncConversationQuery.evaluationFilters) &&
+            Objects.equals(this.surveyFilters, asyncConversationQuery.surveyFilters) &&
+            Objects.equals(this.resolutionFilters, asyncConversationQuery.resolutionFilters) &&
+            Objects.equals(this.order, asyncConversationQuery.order) &&
+            Objects.equals(this.orderBy, asyncConversationQuery.orderBy) &&
+            Objects.equals(this.interval, asyncConversationQuery.interval) &&
+            Objects.equals(this.limit, asyncConversationQuery.limit) &&
+            Objects.equals(this.startOfDayIntervalMatching, asyncConversationQuery.startOfDayIntervalMatching);
   }
 
   @Override

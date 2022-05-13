@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class PropertyChange  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * Previous values for the property.
    **/
@@ -62,7 +63,7 @@ public class PropertyChange  implements Serializable {
     this.oldValues = oldValues;
   }
 
-  
+
   /**
    * New values for the property.
    **/
@@ -80,7 +81,6 @@ public class PropertyChange  implements Serializable {
     this.newValues = newValues;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class PropertyChange  implements Serializable {
       return false;
     }
     PropertyChange propertyChange = (PropertyChange) o;
+
     return Objects.equals(this.property, propertyChange.property) &&
-        Objects.equals(this.oldValues, propertyChange.oldValues) &&
-        Objects.equals(this.newValues, propertyChange.newValues);
+            Objects.equals(this.oldValues, propertyChange.oldValues) &&
+            Objects.equals(this.newValues, propertyChange.newValues);
   }
 
   @Override

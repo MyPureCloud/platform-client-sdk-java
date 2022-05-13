@@ -22,9 +22,9 @@ title: ContactlistImportStatusImportStatus
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| IN_PROGRESS | &quot;IN_PROGRESS&quot; |
-| FAILED | &quot;FAILED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| IN_PROGRESS | &quot;IN_PROGRESS&quot; | 
+| FAILED | &quot;FAILED&quot; | 
 {: class="table table-striped"}
 
 

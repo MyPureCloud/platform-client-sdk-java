@@ -24,12 +24,12 @@ title: V2ConversationMessageTypingEventForUserTopicConversationContentAttachment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| IMAGE | &quot;Image&quot; |
-| VIDEO | &quot;Video&quot; |
-| AUDIO | &quot;Audio&quot; |
-| FILE | &quot;File&quot; |
-| LINK | &quot;Link&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| IMAGE | &quot;Image&quot; | 
+| VIDEO | &quot;Video&quot; | 
+| AUDIO | &quot;Audio&quot; | 
+| FILE | &quot;File&quot; | 
+| LINK | &quot;Link&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing total(Long total) {
@@ -103,7 +104,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ExternalOrganizationListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ExternalOrganizationListing  implements Serializable, PagedResource
       return false;
     }
     ExternalOrganizationListing externalOrganizationListing = (ExternalOrganizationListing) o;
+
     return Objects.equals(this.entities, externalOrganizationListing.entities) &&
-        Objects.equals(this.pageSize, externalOrganizationListing.pageSize) &&
-        Objects.equals(this.pageNumber, externalOrganizationListing.pageNumber) &&
-        Objects.equals(this.total, externalOrganizationListing.total) &&
-        Objects.equals(this.lastUri, externalOrganizationListing.lastUri) &&
-        Objects.equals(this.firstUri, externalOrganizationListing.firstUri) &&
-        Objects.equals(this.selfUri, externalOrganizationListing.selfUri) &&
-        Objects.equals(this.previousUri, externalOrganizationListing.previousUri) &&
-        Objects.equals(this.nextUri, externalOrganizationListing.nextUri) &&
-        Objects.equals(this.pageCount, externalOrganizationListing.pageCount);
+            Objects.equals(this.pageSize, externalOrganizationListing.pageSize) &&
+            Objects.equals(this.pageNumber, externalOrganizationListing.pageNumber) &&
+            Objects.equals(this.total, externalOrganizationListing.total) &&
+            Objects.equals(this.lastUri, externalOrganizationListing.lastUri) &&
+            Objects.equals(this.firstUri, externalOrganizationListing.firstUri) &&
+            Objects.equals(this.selfUri, externalOrganizationListing.selfUri) &&
+            Objects.equals(this.previousUri, externalOrganizationListing.previousUri) &&
+            Objects.equals(this.nextUri, externalOrganizationListing.nextUri) &&
+            Objects.equals(this.pageCount, externalOrganizationListing.pageCount);
   }
 
   @Override

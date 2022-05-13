@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DetectedNamedEntityValue;
@@ -33,28 +34,27 @@ public class DetectedNamedEntity  implements Serializable {
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of the detected named entity.")
   @JsonProperty("entityType")
   public String getEntityType() {
     return entityType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The probability of the detected named entity.")
   @JsonProperty("probability")
   public Double getProbability() {
     return probability;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The value of the detected named entity.")
   @JsonProperty("value")
   public DetectedNamedEntityValue getValue() {
     return value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -65,10 +65,11 @@ public class DetectedNamedEntity  implements Serializable {
       return false;
     }
     DetectedNamedEntity detectedNamedEntity = (DetectedNamedEntity) o;
+
     return Objects.equals(this.name, detectedNamedEntity.name) &&
-        Objects.equals(this.entityType, detectedNamedEntity.entityType) &&
-        Objects.equals(this.probability, detectedNamedEntity.probability) &&
-        Objects.equals(this.value, detectedNamedEntity.value);
+            Objects.equals(this.entityType, detectedNamedEntity.entityType) &&
+            Objects.equals(this.probability, detectedNamedEntity.probability) &&
+            Objects.equals(this.value, detectedNamedEntity.value);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FullDayTimeOffMarker;
@@ -36,21 +37,20 @@ public class WfmScheduleActivity  implements Serializable {
     return userReference;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of user's scheduled activities")
   @JsonProperty("activities")
   public List<ScheduleActivity> getActivities() {
     return activities;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of user's days off")
   @JsonProperty("fullDayTimeOffMarkers")
   public List<FullDayTimeOffMarker> getFullDayTimeOffMarkers() {
     return fullDayTimeOffMarkers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,9 +61,10 @@ public class WfmScheduleActivity  implements Serializable {
       return false;
     }
     WfmScheduleActivity wfmScheduleActivity = (WfmScheduleActivity) o;
+
     return Objects.equals(this.userReference, wfmScheduleActivity.userReference) &&
-        Objects.equals(this.activities, wfmScheduleActivity.activities) &&
-        Objects.equals(this.fullDayTimeOffMarkers, wfmScheduleActivity.fullDayTimeOffMarkers);
+            Objects.equals(this.activities, wfmScheduleActivity.activities) &&
+            Objects.equals(this.fullDayTimeOffMarkers, wfmScheduleActivity.fullDayTimeOffMarkers);
   }
 
   @Override

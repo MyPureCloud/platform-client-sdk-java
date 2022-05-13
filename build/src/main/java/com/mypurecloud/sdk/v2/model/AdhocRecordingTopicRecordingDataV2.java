@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdhocRecordingTopicConversationData;
@@ -60,7 +61,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 name(String name) {
@@ -77,7 +78,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 dateCreated(Date dateCreated) {
@@ -94,7 +95,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 dateModified(Date dateModified) {
@@ -111,7 +112,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 workspace(AdhocRecordingTopicWorkspaceData workspace) {
@@ -128,7 +129,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 createdBy(AdhocRecordingTopicUserData createdBy) {
@@ -145,7 +146,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 contentType(String contentType) {
@@ -162,7 +163,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 contentLength(Integer contentLength) {
@@ -179,7 +180,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 filename(String filename) {
@@ -196,7 +197,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.filename = filename;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 changeNumber(Integer changeNumber) {
@@ -213,7 +214,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 dateUploaded(Date dateUploaded) {
@@ -230,7 +231,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 uploadedBy(AdhocRecordingTopicUserData uploadedBy) {
@@ -247,7 +248,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 lockInfo(AdhocRecordingTopicLockData lockInfo) {
@@ -264,7 +265,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 selfUri(String selfUri) {
@@ -281,7 +282,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 durationMillieconds(Integer durationMillieconds) {
@@ -298,7 +299,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.durationMillieconds = durationMillieconds;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 conversation(AdhocRecordingTopicConversationData conversation) {
@@ -315,7 +316,7 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   /**
    **/
   public AdhocRecordingTopicRecordingDataV2 read(Boolean read) {
@@ -332,7 +333,6 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
     this.read = read;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -343,23 +343,24 @@ public class AdhocRecordingTopicRecordingDataV2  implements Serializable {
       return false;
     }
     AdhocRecordingTopicRecordingDataV2 adhocRecordingTopicRecordingDataV2 = (AdhocRecordingTopicRecordingDataV2) o;
+
     return Objects.equals(this.id, adhocRecordingTopicRecordingDataV2.id) &&
-        Objects.equals(this.name, adhocRecordingTopicRecordingDataV2.name) &&
-        Objects.equals(this.dateCreated, adhocRecordingTopicRecordingDataV2.dateCreated) &&
-        Objects.equals(this.dateModified, adhocRecordingTopicRecordingDataV2.dateModified) &&
-        Objects.equals(this.workspace, adhocRecordingTopicRecordingDataV2.workspace) &&
-        Objects.equals(this.createdBy, adhocRecordingTopicRecordingDataV2.createdBy) &&
-        Objects.equals(this.contentType, adhocRecordingTopicRecordingDataV2.contentType) &&
-        Objects.equals(this.contentLength, adhocRecordingTopicRecordingDataV2.contentLength) &&
-        Objects.equals(this.filename, adhocRecordingTopicRecordingDataV2.filename) &&
-        Objects.equals(this.changeNumber, adhocRecordingTopicRecordingDataV2.changeNumber) &&
-        Objects.equals(this.dateUploaded, adhocRecordingTopicRecordingDataV2.dateUploaded) &&
-        Objects.equals(this.uploadedBy, adhocRecordingTopicRecordingDataV2.uploadedBy) &&
-        Objects.equals(this.lockInfo, adhocRecordingTopicRecordingDataV2.lockInfo) &&
-        Objects.equals(this.selfUri, adhocRecordingTopicRecordingDataV2.selfUri) &&
-        Objects.equals(this.durationMillieconds, adhocRecordingTopicRecordingDataV2.durationMillieconds) &&
-        Objects.equals(this.conversation, adhocRecordingTopicRecordingDataV2.conversation) &&
-        Objects.equals(this.read, adhocRecordingTopicRecordingDataV2.read);
+            Objects.equals(this.name, adhocRecordingTopicRecordingDataV2.name) &&
+            Objects.equals(this.dateCreated, adhocRecordingTopicRecordingDataV2.dateCreated) &&
+            Objects.equals(this.dateModified, adhocRecordingTopicRecordingDataV2.dateModified) &&
+            Objects.equals(this.workspace, adhocRecordingTopicRecordingDataV2.workspace) &&
+            Objects.equals(this.createdBy, adhocRecordingTopicRecordingDataV2.createdBy) &&
+            Objects.equals(this.contentType, adhocRecordingTopicRecordingDataV2.contentType) &&
+            Objects.equals(this.contentLength, adhocRecordingTopicRecordingDataV2.contentLength) &&
+            Objects.equals(this.filename, adhocRecordingTopicRecordingDataV2.filename) &&
+            Objects.equals(this.changeNumber, adhocRecordingTopicRecordingDataV2.changeNumber) &&
+            Objects.equals(this.dateUploaded, adhocRecordingTopicRecordingDataV2.dateUploaded) &&
+            Objects.equals(this.uploadedBy, adhocRecordingTopicRecordingDataV2.uploadedBy) &&
+            Objects.equals(this.lockInfo, adhocRecordingTopicRecordingDataV2.lockInfo) &&
+            Objects.equals(this.selfUri, adhocRecordingTopicRecordingDataV2.selfUri) &&
+            Objects.equals(this.durationMillieconds, adhocRecordingTopicRecordingDataV2.durationMillieconds) &&
+            Objects.equals(this.conversation, adhocRecordingTopicRecordingDataV2.conversation) &&
+            Objects.equals(this.read, adhocRecordingTopicRecordingDataV2.read);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -143,7 +144,7 @@ public class Parameter  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Parameter parameterType(ParameterTypeEnum parameterType) {
@@ -160,7 +161,7 @@ public class Parameter  implements Serializable {
     this.parameterType = parameterType;
   }
 
-  
+
   /**
    **/
   public Parameter domain(DomainEnum domain) {
@@ -177,7 +178,7 @@ public class Parameter  implements Serializable {
     this.domain = domain;
   }
 
-  
+
   /**
    **/
   public Parameter required(Boolean required) {
@@ -194,7 +195,6 @@ public class Parameter  implements Serializable {
     this.required = required;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -205,10 +205,11 @@ public class Parameter  implements Serializable {
       return false;
     }
     Parameter parameter = (Parameter) o;
+
     return Objects.equals(this.name, parameter.name) &&
-        Objects.equals(this.parameterType, parameter.parameterType) &&
-        Objects.equals(this.domain, parameter.domain) &&
-        Objects.equals(this.required, parameter.required);
+            Objects.equals(this.parameterType, parameter.parameterType) &&
+            Objects.equals(this.domain, parameter.domain) &&
+            Objects.equals(this.required, parameter.required);
   }
 
   @Override

@@ -26,10 +26,10 @@ title: TimeOffPlan
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NEVER | &quot;Never&quot; |
-| ALWAYS | &quot;Always&quot; |
-| CHECKLIMITS | &quot;CheckLimits&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVER | &quot;Never&quot; | 
+| ALWAYS | &quot;Always&quot; | 
+| CHECKLIMITS | &quot;CheckLimits&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionMapAction;
@@ -55,7 +56,7 @@ public class ActionMap  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The version of the action map.
    **/
@@ -73,7 +74,7 @@ public class ActionMap  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Whether the action map is active.
    **/
@@ -91,7 +92,7 @@ public class ActionMap  implements Serializable {
     this.isActive = isActive;
   }
 
-  
+
   /**
    * Display name of the action map.
    **/
@@ -109,7 +110,7 @@ public class ActionMap  implements Serializable {
     this.displayName = displayName;
   }
 
-  
+
   /**
    * Trigger action map if any segment in the list is assigned to a given customer.
    **/
@@ -127,7 +128,7 @@ public class ActionMap  implements Serializable {
     this.triggerWithSegments = triggerWithSegments;
   }
 
-  
+
   /**
    * List of event conditions that must be satisfied to trigger the action map.
    **/
@@ -145,7 +146,7 @@ public class ActionMap  implements Serializable {
     this.triggerWithEventConditions = triggerWithEventConditions;
   }
 
-  
+
   /**
    * Probability conditions for outcomes that must be satisfied to trigger the action map.
    **/
@@ -163,7 +164,7 @@ public class ActionMap  implements Serializable {
     this.triggerWithOutcomeProbabilityConditions = triggerWithOutcomeProbabilityConditions;
   }
 
-  
+
   /**
    * URL conditions that a page must match for web actions to be displayable.
    **/
@@ -181,7 +182,7 @@ public class ActionMap  implements Serializable {
     this.pageUrlConditions = pageUrlConditions;
   }
 
-  
+
   /**
    * Type of activation.
    **/
@@ -199,7 +200,7 @@ public class ActionMap  implements Serializable {
     this.activation = activation;
   }
 
-  
+
   /**
    * Weight of the action map with higher number denoting higher weight.
    **/
@@ -217,7 +218,7 @@ public class ActionMap  implements Serializable {
     this.weight = weight;
   }
 
-  
+
   /**
    * The action that will be executed if this action map is triggered.
    **/
@@ -235,7 +236,7 @@ public class ActionMap  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * The action map's associated schedule groups.
    **/
@@ -253,7 +254,7 @@ public class ActionMap  implements Serializable {
     this.actionMapScheduleGroups = actionMapScheduleGroups;
   }
 
-  
+
   /**
    * Override organization-level frequency cap and always offer web engagements from this action map.
    **/
@@ -271,14 +272,14 @@ public class ActionMap  implements Serializable {
     this.ignoreFrequencyCap = ignoreFrequencyCap;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   /**
    * Timestamp indicating when the action map was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -296,7 +297,7 @@ public class ActionMap  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    * Timestamp indicating when the action map was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -314,7 +315,7 @@ public class ActionMap  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    * Timestamp at which the action map is scheduled to start firing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -332,7 +333,7 @@ public class ActionMap  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Timestamp at which the action map is scheduled to stop firing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -350,7 +351,6 @@ public class ActionMap  implements Serializable {
     this.endDate = endDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -361,24 +361,25 @@ public class ActionMap  implements Serializable {
       return false;
     }
     ActionMap actionMap = (ActionMap) o;
+
     return Objects.equals(this.id, actionMap.id) &&
-        Objects.equals(this.version, actionMap.version) &&
-        Objects.equals(this.isActive, actionMap.isActive) &&
-        Objects.equals(this.displayName, actionMap.displayName) &&
-        Objects.equals(this.triggerWithSegments, actionMap.triggerWithSegments) &&
-        Objects.equals(this.triggerWithEventConditions, actionMap.triggerWithEventConditions) &&
-        Objects.equals(this.triggerWithOutcomeProbabilityConditions, actionMap.triggerWithOutcomeProbabilityConditions) &&
-        Objects.equals(this.pageUrlConditions, actionMap.pageUrlConditions) &&
-        Objects.equals(this.activation, actionMap.activation) &&
-        Objects.equals(this.weight, actionMap.weight) &&
-        Objects.equals(this.action, actionMap.action) &&
-        Objects.equals(this.actionMapScheduleGroups, actionMap.actionMapScheduleGroups) &&
-        Objects.equals(this.ignoreFrequencyCap, actionMap.ignoreFrequencyCap) &&
-        Objects.equals(this.selfUri, actionMap.selfUri) &&
-        Objects.equals(this.createdDate, actionMap.createdDate) &&
-        Objects.equals(this.modifiedDate, actionMap.modifiedDate) &&
-        Objects.equals(this.startDate, actionMap.startDate) &&
-        Objects.equals(this.endDate, actionMap.endDate);
+            Objects.equals(this.version, actionMap.version) &&
+            Objects.equals(this.isActive, actionMap.isActive) &&
+            Objects.equals(this.displayName, actionMap.displayName) &&
+            Objects.equals(this.triggerWithSegments, actionMap.triggerWithSegments) &&
+            Objects.equals(this.triggerWithEventConditions, actionMap.triggerWithEventConditions) &&
+            Objects.equals(this.triggerWithOutcomeProbabilityConditions, actionMap.triggerWithOutcomeProbabilityConditions) &&
+            Objects.equals(this.pageUrlConditions, actionMap.pageUrlConditions) &&
+            Objects.equals(this.activation, actionMap.activation) &&
+            Objects.equals(this.weight, actionMap.weight) &&
+            Objects.equals(this.action, actionMap.action) &&
+            Objects.equals(this.actionMapScheduleGroups, actionMap.actionMapScheduleGroups) &&
+            Objects.equals(this.ignoreFrequencyCap, actionMap.ignoreFrequencyCap) &&
+            Objects.equals(this.selfUri, actionMap.selfUri) &&
+            Objects.equals(this.createdDate, actionMap.createdDate) &&
+            Objects.equals(this.modifiedDate, actionMap.modifiedDate) &&
+            Objects.equals(this.startDate, actionMap.startDate) &&
+            Objects.equals(this.endDate, actionMap.endDate);
   }
 
   @Override

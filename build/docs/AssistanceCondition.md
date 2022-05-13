@@ -19,9 +19,9 @@ title: AssistanceCondition
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EXISTS | &quot;EXISTS&quot; |
-| NOTEXISTS | &quot;NOTEXISTS&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EXISTS | &quot;EXISTS&quot; | 
+| NOTEXISTS | &quot;NOTEXISTS&quot; | 
 {: class="table table-striped"}
 
 

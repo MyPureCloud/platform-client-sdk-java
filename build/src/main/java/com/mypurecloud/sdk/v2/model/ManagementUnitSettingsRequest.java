@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdherenceSettings;
@@ -52,7 +53,7 @@ public class ManagementUnitSettingsRequest  implements Serializable {
     this.adherence = adherence;
   }
 
-  
+
   /**
    * Short term forecasting settings for this management unit.  Moving to Business Unit
    **/
@@ -70,7 +71,7 @@ public class ManagementUnitSettingsRequest  implements Serializable {
     this.shortTermForecasting = shortTermForecasting;
   }
 
-  
+
   /**
    * Time off request settings for this management unit
    **/
@@ -88,7 +89,7 @@ public class ManagementUnitSettingsRequest  implements Serializable {
     this.timeOff = timeOff;
   }
 
-  
+
   /**
    * Scheduling settings for this management unit
    **/
@@ -106,7 +107,7 @@ public class ManagementUnitSettingsRequest  implements Serializable {
     this.scheduling = scheduling;
   }
 
-  
+
   /**
    * Shift trade settings for this management unit
    **/
@@ -124,7 +125,7 @@ public class ManagementUnitSettingsRequest  implements Serializable {
     this.shiftTrading = shiftTrading;
   }
 
-  
+
   /**
    * Version info metadata for the associated management unit
    **/
@@ -142,7 +143,6 @@ public class ManagementUnitSettingsRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +153,13 @@ public class ManagementUnitSettingsRequest  implements Serializable {
       return false;
     }
     ManagementUnitSettingsRequest managementUnitSettingsRequest = (ManagementUnitSettingsRequest) o;
+
     return Objects.equals(this.adherence, managementUnitSettingsRequest.adherence) &&
-        Objects.equals(this.shortTermForecasting, managementUnitSettingsRequest.shortTermForecasting) &&
-        Objects.equals(this.timeOff, managementUnitSettingsRequest.timeOff) &&
-        Objects.equals(this.scheduling, managementUnitSettingsRequest.scheduling) &&
-        Objects.equals(this.shiftTrading, managementUnitSettingsRequest.shiftTrading) &&
-        Objects.equals(this.metadata, managementUnitSettingsRequest.metadata);
+            Objects.equals(this.shortTermForecasting, managementUnitSettingsRequest.shortTermForecasting) &&
+            Objects.equals(this.timeOff, managementUnitSettingsRequest.timeOff) &&
+            Objects.equals(this.scheduling, managementUnitSettingsRequest.scheduling) &&
+            Objects.equals(this.shiftTrading, managementUnitSettingsRequest.shiftTrading) &&
+            Objects.equals(this.metadata, managementUnitSettingsRequest.metadata);
   }
 
   @Override

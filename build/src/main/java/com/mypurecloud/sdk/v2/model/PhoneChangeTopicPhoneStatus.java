@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -17,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.PhoneChangeTopicProvisionInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -79,6 +81,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
   private PhoneChangeTopicEdgeReference edge = null;
   private PhoneChangeTopicProvisionInfo provision = null;
   private List<PhoneChangeTopicLineStatus> lineStatuses = new ArrayList<PhoneChangeTopicLineStatus>();
+  private Date eventCreationTime = null;
 
   
   /**
@@ -97,7 +100,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhoneStatus operationalStatus(OperationalStatusEnum operationalStatus) {
@@ -114,7 +117,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     this.operationalStatus = operationalStatus;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhoneStatus edge(PhoneChangeTopicEdgeReference edge) {
@@ -131,7 +134,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     this.edge = edge;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhoneStatus provision(PhoneChangeTopicProvisionInfo provision) {
@@ -148,7 +151,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     this.provision = provision;
   }
 
-  
+
   /**
    **/
   public PhoneChangeTopicPhoneStatus lineStatuses(List<PhoneChangeTopicLineStatus> lineStatuses) {
@@ -165,7 +168,23 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     this.lineStatuses = lineStatuses;
   }
 
+
+  /**
+   **/
+  public PhoneChangeTopicPhoneStatus eventCreationTime(Date eventCreationTime) {
+    this.eventCreationTime = eventCreationTime;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("eventCreationTime")
+  public Date getEventCreationTime() {
+    return eventCreationTime;
+  }
+  public void setEventCreationTime(Date eventCreationTime) {
+    this.eventCreationTime = eventCreationTime;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,16 +195,18 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
       return false;
     }
     PhoneChangeTopicPhoneStatus phoneChangeTopicPhoneStatus = (PhoneChangeTopicPhoneStatus) o;
+
     return Objects.equals(this.id, phoneChangeTopicPhoneStatus.id) &&
-        Objects.equals(this.operationalStatus, phoneChangeTopicPhoneStatus.operationalStatus) &&
-        Objects.equals(this.edge, phoneChangeTopicPhoneStatus.edge) &&
-        Objects.equals(this.provision, phoneChangeTopicPhoneStatus.provision) &&
-        Objects.equals(this.lineStatuses, phoneChangeTopicPhoneStatus.lineStatuses);
+            Objects.equals(this.operationalStatus, phoneChangeTopicPhoneStatus.operationalStatus) &&
+            Objects.equals(this.edge, phoneChangeTopicPhoneStatus.edge) &&
+            Objects.equals(this.provision, phoneChangeTopicPhoneStatus.provision) &&
+            Objects.equals(this.lineStatuses, phoneChangeTopicPhoneStatus.lineStatuses) &&
+            Objects.equals(this.eventCreationTime, phoneChangeTopicPhoneStatus.eventCreationTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, operationalStatus, edge, provision, lineStatuses);
+    return Objects.hash(id, operationalStatus, edge, provision, lineStatuses, eventCreationTime);
   }
 
   @Override
@@ -198,6 +219,7 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     sb.append("    edge: ").append(toIndentedString(edge)).append("\n");
     sb.append("    provision: ").append(toIndentedString(provision)).append("\n");
     sb.append("    lineStatuses: ").append(toIndentedString(lineStatuses)).append("\n");
+    sb.append("    eventCreationTime: ").append(toIndentedString(eventCreationTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

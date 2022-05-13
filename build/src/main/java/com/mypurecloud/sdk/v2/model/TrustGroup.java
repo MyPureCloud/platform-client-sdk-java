@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -194,7 +195,7 @@ public class TrustGroup  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The group name.
    **/
@@ -212,7 +213,7 @@ public class TrustGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public TrustGroup description(String description) {
@@ -229,35 +230,35 @@ public class TrustGroup  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Number of members.")
   @JsonProperty("memberCount")
   public Long getMemberCount() {
     return memberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Active, inactive, or deleted state.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Current version for this resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   /**
    * Type of group.
    **/
@@ -275,7 +276,7 @@ public class TrustGroup  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public TrustGroup images(List<UserImage> images) {
@@ -292,7 +293,7 @@ public class TrustGroup  implements Serializable {
     this.images = images;
   }
 
-  
+
   /**
    **/
   public TrustGroup addresses(List<GroupContact> addresses) {
@@ -309,7 +310,7 @@ public class TrustGroup  implements Serializable {
     this.addresses = addresses;
   }
 
-  
+
   /**
    * Are membership rules visible to the person requesting to view the group
    **/
@@ -327,7 +328,7 @@ public class TrustGroup  implements Serializable {
     this.rulesVisible = rulesVisible;
   }
 
-  
+
   /**
    * Who can view this group
    **/
@@ -345,7 +346,7 @@ public class TrustGroup  implements Serializable {
     this.visibility = visibility;
   }
 
-  
+
   /**
    * Owners of the group
    **/
@@ -363,21 +364,20 @@ public class TrustGroup  implements Serializable {
     this.owners = owners;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user that added trusted group.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -388,21 +388,22 @@ public class TrustGroup  implements Serializable {
       return false;
     }
     TrustGroup trustGroup = (TrustGroup) o;
+
     return Objects.equals(this.id, trustGroup.id) &&
-        Objects.equals(this.name, trustGroup.name) &&
-        Objects.equals(this.description, trustGroup.description) &&
-        Objects.equals(this.dateModified, trustGroup.dateModified) &&
-        Objects.equals(this.memberCount, trustGroup.memberCount) &&
-        Objects.equals(this.state, trustGroup.state) &&
-        Objects.equals(this.version, trustGroup.version) &&
-        Objects.equals(this.type, trustGroup.type) &&
-        Objects.equals(this.images, trustGroup.images) &&
-        Objects.equals(this.addresses, trustGroup.addresses) &&
-        Objects.equals(this.rulesVisible, trustGroup.rulesVisible) &&
-        Objects.equals(this.visibility, trustGroup.visibility) &&
-        Objects.equals(this.owners, trustGroup.owners) &&
-        Objects.equals(this.dateCreated, trustGroup.dateCreated) &&
-        Objects.equals(this.createdBy, trustGroup.createdBy);
+            Objects.equals(this.name, trustGroup.name) &&
+            Objects.equals(this.description, trustGroup.description) &&
+            Objects.equals(this.dateModified, trustGroup.dateModified) &&
+            Objects.equals(this.memberCount, trustGroup.memberCount) &&
+            Objects.equals(this.state, trustGroup.state) &&
+            Objects.equals(this.version, trustGroup.version) &&
+            Objects.equals(this.type, trustGroup.type) &&
+            Objects.equals(this.images, trustGroup.images) &&
+            Objects.equals(this.addresses, trustGroup.addresses) &&
+            Objects.equals(this.rulesVisible, trustGroup.rulesVisible) &&
+            Objects.equals(this.visibility, trustGroup.visibility) &&
+            Objects.equals(this.owners, trustGroup.owners) &&
+            Objects.equals(this.dateCreated, trustGroup.dateCreated) &&
+            Objects.equals(this.createdBy, trustGroup.createdBy);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class CallHistoryConversation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public CallHistoryConversation name(String name) {
@@ -110,7 +111,7 @@ public class CallHistoryConversation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The list of participants involved in the conversation.
    **/
@@ -128,7 +129,7 @@ public class CallHistoryConversation  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    * The direction of the call relating to the current user
    **/
@@ -146,7 +147,7 @@ public class CallHistoryConversation  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Did the call end in the current user's voicemail
    **/
@@ -164,7 +165,7 @@ public class CallHistoryConversation  implements Serializable {
     this.wentToVoicemail = wentToVoicemail;
   }
 
-  
+
   /**
    * Did the user not answer this conversation
    **/
@@ -182,7 +183,7 @@ public class CallHistoryConversation  implements Serializable {
     this.missedCall = missedCall;
   }
 
-  
+
   /**
    * The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -200,7 +201,7 @@ public class CallHistoryConversation  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * Was this conversation a conference
    **/
@@ -218,7 +219,7 @@ public class CallHistoryConversation  implements Serializable {
     this.wasConference = wasConference;
   }
 
-  
+
   /**
    * Was this conversation a callback
    **/
@@ -236,7 +237,7 @@ public class CallHistoryConversation  implements Serializable {
     this.wasCallback = wasCallback;
   }
 
-  
+
   /**
    * Did this conversation have a screen share session
    **/
@@ -254,7 +255,7 @@ public class CallHistoryConversation  implements Serializable {
     this.hadScreenShare = hadScreenShare;
   }
 
-  
+
   /**
    * Did this conversation have a cobrowse session
    **/
@@ -272,7 +273,7 @@ public class CallHistoryConversation  implements Serializable {
     this.hadCobrowse = hadCobrowse;
   }
 
-  
+
   /**
    * Was this conversation associated with an outbound campaign
    **/
@@ -290,14 +291,13 @@ public class CallHistoryConversation  implements Serializable {
     this.wasOutboundCampaign = wasOutboundCampaign;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -308,19 +308,20 @@ public class CallHistoryConversation  implements Serializable {
       return false;
     }
     CallHistoryConversation callHistoryConversation = (CallHistoryConversation) o;
+
     return Objects.equals(this.id, callHistoryConversation.id) &&
-        Objects.equals(this.name, callHistoryConversation.name) &&
-        Objects.equals(this.participants, callHistoryConversation.participants) &&
-        Objects.equals(this.direction, callHistoryConversation.direction) &&
-        Objects.equals(this.wentToVoicemail, callHistoryConversation.wentToVoicemail) &&
-        Objects.equals(this.missedCall, callHistoryConversation.missedCall) &&
-        Objects.equals(this.startTime, callHistoryConversation.startTime) &&
-        Objects.equals(this.wasConference, callHistoryConversation.wasConference) &&
-        Objects.equals(this.wasCallback, callHistoryConversation.wasCallback) &&
-        Objects.equals(this.hadScreenShare, callHistoryConversation.hadScreenShare) &&
-        Objects.equals(this.hadCobrowse, callHistoryConversation.hadCobrowse) &&
-        Objects.equals(this.wasOutboundCampaign, callHistoryConversation.wasOutboundCampaign) &&
-        Objects.equals(this.selfUri, callHistoryConversation.selfUri);
+            Objects.equals(this.name, callHistoryConversation.name) &&
+            Objects.equals(this.participants, callHistoryConversation.participants) &&
+            Objects.equals(this.direction, callHistoryConversation.direction) &&
+            Objects.equals(this.wentToVoicemail, callHistoryConversation.wentToVoicemail) &&
+            Objects.equals(this.missedCall, callHistoryConversation.missedCall) &&
+            Objects.equals(this.startTime, callHistoryConversation.startTime) &&
+            Objects.equals(this.wasConference, callHistoryConversation.wasConference) &&
+            Objects.equals(this.wasCallback, callHistoryConversation.wasCallback) &&
+            Objects.equals(this.hadScreenShare, callHistoryConversation.hadScreenShare) &&
+            Objects.equals(this.hadCobrowse, callHistoryConversation.hadCobrowse) &&
+            Objects.equals(this.wasOutboundCampaign, callHistoryConversation.wasOutboundCampaign) &&
+            Objects.equals(this.selfUri, callHistoryConversation.selfUri);
   }
 
   @Override

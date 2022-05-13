@@ -19,9 +19,9 @@ title: AssociatedValueField
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NUMBER | &quot;Number&quot; |
-| INTEGER | &quot;Integer&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NUMBER | &quot;Number&quot; | 
+| INTEGER | &quot;Integer&quot; | 
 {: class="table table-striped"}
 
 

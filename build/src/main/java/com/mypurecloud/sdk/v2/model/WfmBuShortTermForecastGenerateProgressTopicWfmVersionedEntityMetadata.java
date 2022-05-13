@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastGenerateProgressTopicUserReference;
@@ -43,7 +44,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetada
     this.version = version;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata modifiedBy(WfmBuShortTermForecastGenerateProgressTopicUserReference modifiedBy) {
@@ -60,7 +61,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetada
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata dateModified(Date dateModified) {
@@ -77,7 +78,6 @@ public class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetada
     this.dateModified = dateModified;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetada
       return false;
     }
     WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata wfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata = (WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata) o;
+
     return Objects.equals(this.version, wfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata.version) &&
-        Objects.equals(this.modifiedBy, wfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata.modifiedBy) &&
-        Objects.equals(this.dateModified, wfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata.dateModified);
+            Objects.equals(this.modifiedBy, wfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata.modifiedBy) &&
+            Objects.equals(this.dateModified, wfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata.dateModified);
   }
 
   @Override

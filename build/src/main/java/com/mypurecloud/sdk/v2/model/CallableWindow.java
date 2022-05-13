@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AtzmTimeSlot;
@@ -43,7 +44,7 @@ public class CallableWindow  implements Serializable {
     this.mapped = mapped;
   }
 
-  
+
   /**
    * The time interval and time zone to place outbound calls, for contacts that cannot be mapped to a time zone.
    **/
@@ -61,7 +62,6 @@ public class CallableWindow  implements Serializable {
     this.unmapped = unmapped;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class CallableWindow  implements Serializable {
       return false;
     }
     CallableWindow callableWindow = (CallableWindow) o;
+
     return Objects.equals(this.mapped, callableWindow.mapped) &&
-        Objects.equals(this.unmapped, callableWindow.unmapped);
+            Objects.equals(this.unmapped, callableWindow.unmapped);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -149,7 +150,7 @@ public class UserSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-  
+
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -167,7 +168,7 @@ public class UserSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-  
+
   /**
    * The number of results per page
    **/
@@ -185,7 +186,7 @@ public class UserSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The page of resources you want to retrieve
    **/
@@ -203,7 +204,7 @@ public class UserSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Multi-value sort order, list of multiple sort values
    **/
@@ -221,7 +222,7 @@ public class UserSearchRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    * Provides more details about a specified resource
    **/
@@ -239,7 +240,7 @@ public class UserSearchRequest  implements Serializable {
     this.expand = expand;
   }
 
-  
+
   /**
    **/
   public UserSearchRequest query(List<UserSearchCriteria> query) {
@@ -256,7 +257,7 @@ public class UserSearchRequest  implements Serializable {
     this.query = query;
   }
 
-  
+
   /**
    * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
    **/
@@ -274,7 +275,7 @@ public class UserSearchRequest  implements Serializable {
     this.integrationPresenceSource = integrationPresenceSource;
   }
 
-  
+
   /**
    * This property only applies to api/v2/user/search; when set to true add additional search criteria to filter users by: directory:user:view
    **/
@@ -292,7 +293,6 @@ public class UserSearchRequest  implements Serializable {
     this.enforcePermissions = enforcePermissions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -303,15 +303,16 @@ public class UserSearchRequest  implements Serializable {
       return false;
     }
     UserSearchRequest userSearchRequest = (UserSearchRequest) o;
+
     return Objects.equals(this.sortOrder, userSearchRequest.sortOrder) &&
-        Objects.equals(this.sortBy, userSearchRequest.sortBy) &&
-        Objects.equals(this.pageSize, userSearchRequest.pageSize) &&
-        Objects.equals(this.pageNumber, userSearchRequest.pageNumber) &&
-        Objects.equals(this.sort, userSearchRequest.sort) &&
-        Objects.equals(this.expand, userSearchRequest.expand) &&
-        Objects.equals(this.query, userSearchRequest.query) &&
-        Objects.equals(this.integrationPresenceSource, userSearchRequest.integrationPresenceSource) &&
-        Objects.equals(this.enforcePermissions, userSearchRequest.enforcePermissions);
+            Objects.equals(this.sortBy, userSearchRequest.sortBy) &&
+            Objects.equals(this.pageSize, userSearchRequest.pageSize) &&
+            Objects.equals(this.pageNumber, userSearchRequest.pageNumber) &&
+            Objects.equals(this.sort, userSearchRequest.sort) &&
+            Objects.equals(this.expand, userSearchRequest.expand) &&
+            Objects.equals(this.query, userSearchRequest.query) &&
+            Objects.equals(this.integrationPresenceSource, userSearchRequest.integrationPresenceSource) &&
+            Objects.equals(this.enforcePermissions, userSearchRequest.enforcePermissions);
   }
 
   @Override

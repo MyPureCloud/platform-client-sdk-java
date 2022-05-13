@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
-import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 public class GetLicenseToggleRequest {
-    
+
 	private String featureName;
 	public String getFeatureName() {
 		return this.featureName;
@@ -43,7 +43,7 @@ public class GetLicenseToggleRequest {
 	    this.setFeatureName(featureName);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +74,7 @@ public class GetLicenseToggleRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/license/toggles/{featureName}")
                 .withPathParameter("featureName", featureName)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -85,12 +85,12 @@ public class GetLicenseToggleRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String featureName) {
 	    return new Builder()
 	            .withRequiredParams(featureName);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLicenseToggleRequest request;
@@ -99,20 +99,20 @@ public class GetLicenseToggleRequest {
 			request = new GetLicenseToggleRequest();
 		}
 
-		
+
 		public Builder withFeatureName(String featureName) {
 			request.setFeatureName(featureName);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String featureName) {
 			request.setFeatureName(featureName);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLicenseToggleRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DateRangeWithOptionalEnd;
@@ -44,7 +45,7 @@ public class UpdateWorkPlanRotationAgentRequest  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The date range to which this agent is effective in the work plan rotation
    **/
@@ -62,7 +63,7 @@ public class UpdateWorkPlanRotationAgentRequest  implements Serializable {
     this.dateRange = dateRange;
   }
 
-  
+
   /**
    * Start position of the work plan in the pattern for this agent in the work plan rotation. Position value starts from 0
    **/
@@ -80,7 +81,7 @@ public class UpdateWorkPlanRotationAgentRequest  implements Serializable {
     this.position = position;
   }
 
-  
+
   /**
    * If marked true for this agent when updating, then this agent will be removed from this work plan rotation
    **/
@@ -98,7 +99,6 @@ public class UpdateWorkPlanRotationAgentRequest  implements Serializable {
     this.delete = delete;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class UpdateWorkPlanRotationAgentRequest  implements Serializable {
       return false;
     }
     UpdateWorkPlanRotationAgentRequest updateWorkPlanRotationAgentRequest = (UpdateWorkPlanRotationAgentRequest) o;
+
     return Objects.equals(this.userId, updateWorkPlanRotationAgentRequest.userId) &&
-        Objects.equals(this.dateRange, updateWorkPlanRotationAgentRequest.dateRange) &&
-        Objects.equals(this.position, updateWorkPlanRotationAgentRequest.position) &&
-        Objects.equals(this.delete, updateWorkPlanRotationAgentRequest.delete);
+            Objects.equals(this.dateRange, updateWorkPlanRotationAgentRequest.dateRange) &&
+            Objects.equals(this.position, updateWorkPlanRotationAgentRequest.position) &&
+            Objects.equals(this.delete, updateWorkPlanRotationAgentRequest.delete);
   }
 
   @Override

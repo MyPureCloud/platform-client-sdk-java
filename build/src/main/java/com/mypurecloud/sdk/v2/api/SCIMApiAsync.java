@@ -13,20 +13,19 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ScimError;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimError;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
+import com.mypurecloud.sdk.v2.model.ScimV2Group;
+import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
-import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
-import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
-import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteScimUserRequest;
@@ -67,7 +66,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class SCIMApiAsync {
   private final ApiClient pcapiClient;
 
@@ -79,7 +77,6 @@ public class SCIMApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a user
    * 
@@ -155,7 +152,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Delete a user
    * 
@@ -231,7 +227,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a group
    * 
@@ -307,7 +302,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of groups
    * 
@@ -383,7 +377,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a resource type
    * 
@@ -459,7 +452,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of resource types
    * 
@@ -535,7 +527,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a SCIM schema
    * 
@@ -611,7 +602,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of SCIM schemas
    * 
@@ -687,9 +677,8 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
-   * Get a service provider&#39;s configuration
+   * Get a service provider's configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -723,7 +712,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get a service provider&#39;s configuration
+   * Get a service provider's configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -763,7 +752,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a user
    * 
@@ -839,10 +827,9 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of users
-   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -876,7 +863,7 @@ public class SCIMApiAsync {
 
   /**
    * Get a list of users
-   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -915,7 +902,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a group
    * 
@@ -991,7 +977,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of groups
    * 
@@ -1067,7 +1052,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a resource type
    * 
@@ -1143,7 +1127,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of resource types
    * 
@@ -1219,7 +1202,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a SCIM schema
    * 
@@ -1295,7 +1277,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of SCIM schemas
    * 
@@ -1371,9 +1352,8 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
-   * Get a service provider&#39;s configuration
+   * Get a service provider's configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1407,7 +1387,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get a service provider&#39;s configuration
+   * Get a service provider's configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1447,7 +1427,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a user
    * 
@@ -1523,10 +1502,9 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Get a list of users
-   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1560,7 +1538,7 @@ public class SCIMApiAsync {
 
   /**
    * Get a list of users
-   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1599,7 +1577,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Modify a group
    * 
@@ -1675,7 +1652,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Modify a user
    * 
@@ -1751,7 +1727,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Modify a group
    * 
@@ -1827,7 +1802,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Modify a user
    * 
@@ -1903,7 +1877,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Create a user
    * 
@@ -1979,7 +1952,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Create a user
    * 
@@ -2055,7 +2027,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Replace a group
    * 
@@ -2131,7 +2102,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Replace a user
    * 
@@ -2207,7 +2177,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Replace a group
    * 
@@ -2283,7 +2252,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
   /**
    * Replace a user
    * 
@@ -2359,7 +2327,6 @@ public class SCIMApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

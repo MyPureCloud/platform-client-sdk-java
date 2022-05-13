@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AchievedOutcome;
@@ -43,7 +44,7 @@ public class OutcomeAchievement  implements Serializable {
     this.outcome = outcome;
   }
 
-  
+
   /**
    * Timestamp indicating when the outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -61,7 +62,6 @@ public class OutcomeAchievement  implements Serializable {
     this.achievedDate = achievedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class OutcomeAchievement  implements Serializable {
       return false;
     }
     OutcomeAchievement outcomeAchievement = (OutcomeAchievement) o;
+
     return Objects.equals(this.outcome, outcomeAchievement.outcome) &&
-        Objects.equals(this.achievedDate, outcomeAchievement.achievedDate);
+            Objects.equals(this.achievedDate, outcomeAchievement.achievedDate);
   }
 
   @Override

@@ -20,9 +20,9 @@ title: ExternalSegment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ADOBEEXPERIENCEPLATFORM | &quot;AdobeExperiencePlatform&quot; |
-| CUSTOM | &quot;Custom&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ADOBEEXPERIENCEPLATFORM | &quot;AdobeExperiencePlatform&quot; | 
+| CUSTOM | &quot;Custom&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,60 +20,60 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
-import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
-import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
-import com.mypurecloud.sdk.v2.model.ReportMetaData;
-import com.mypurecloud.sdk.v2.model.ReportSchedule;
-import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
-import com.mypurecloud.sdk.v2.model.ReportRunEntry;
-import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.AnalyticsReportingSettings;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
-import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
-import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
+import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
-import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.ReportMetaData;
+import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
+import com.mypurecloud.sdk.v2.model.ReportRunEntry;
+import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
+import com.mypurecloud.sdk.v2.model.ReportSchedule;
+import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
+import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
+import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 
 public class GetAnalyticsReportingMetadataRequest {
-    
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -87,7 +87,7 @@ public class GetAnalyticsReportingMetadataRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -101,7 +101,7 @@ public class GetAnalyticsReportingMetadataRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String locale;
 	public String getLocale() {
 		return this.locale;
@@ -115,7 +115,7 @@ public class GetAnalyticsReportingMetadataRequest {
 	    this.setLocale(locale);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,13 +139,16 @@ public class GetAnalyticsReportingMetadataRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/analytics/reporting/metadata")
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("locale", "", locale)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -156,7 +159,7 @@ public class GetAnalyticsReportingMetadataRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAnalyticsReportingMetadataRequest request;
@@ -165,24 +168,24 @@ public class GetAnalyticsReportingMetadataRequest {
 			request = new GetAnalyticsReportingMetadataRequest();
 		}
 
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withLocale(String locale) {
 			request.setLocale(locale);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetAnalyticsReportingMetadataRequest build() {
             

@@ -18,10 +18,10 @@ title: JourneyOutcomeEventsNotificationOutcomeTouchpointChannel
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
-| CONTENTOFFER | &quot;ContentOffer&quot; |
-| WEBCHAT | &quot;Webchat&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| CONTENTOFFER | &quot;ContentOffer&quot; | 
+| WEBCHAT | &quot;Webchat&quot; | 
 {: class="table table-striped"}
 
 

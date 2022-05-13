@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,7 +87,7 @@ public class UserDevice  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserDevice name(String name) {
@@ -103,7 +104,7 @@ public class UserDevice  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * device token sent by mobile clients.
    **/
@@ -121,7 +122,7 @@ public class UserDevice  implements Serializable {
     this.deviceToken = deviceToken;
   }
 
-  
+
   /**
    * notification id of the device.
    **/
@@ -139,7 +140,7 @@ public class UserDevice  implements Serializable {
     this.notificationId = notificationId;
   }
 
-  
+
   /**
    * make of the device.
    **/
@@ -157,7 +158,7 @@ public class UserDevice  implements Serializable {
     this.make = make;
   }
 
-  
+
   /**
    * Device model
    **/
@@ -175,7 +176,7 @@ public class UserDevice  implements Serializable {
     this.model = model;
   }
 
-  
+
   /**
    * if the device accepts notifications
    **/
@@ -193,7 +194,7 @@ public class UserDevice  implements Serializable {
     this.acceptNotifications = acceptNotifications;
   }
 
-  
+
   /**
    * type of the device; ios or android
    **/
@@ -211,7 +212,7 @@ public class UserDevice  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public UserDevice sessionHash(String sessionHash) {
@@ -228,14 +229,13 @@ public class UserDevice  implements Serializable {
     this.sessionHash = sessionHash;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -246,16 +246,17 @@ public class UserDevice  implements Serializable {
       return false;
     }
     UserDevice userDevice = (UserDevice) o;
+
     return Objects.equals(this.id, userDevice.id) &&
-        Objects.equals(this.name, userDevice.name) &&
-        Objects.equals(this.deviceToken, userDevice.deviceToken) &&
-        Objects.equals(this.notificationId, userDevice.notificationId) &&
-        Objects.equals(this.make, userDevice.make) &&
-        Objects.equals(this.model, userDevice.model) &&
-        Objects.equals(this.acceptNotifications, userDevice.acceptNotifications) &&
-        Objects.equals(this.type, userDevice.type) &&
-        Objects.equals(this.sessionHash, userDevice.sessionHash) &&
-        Objects.equals(this.selfUri, userDevice.selfUri);
+            Objects.equals(this.name, userDevice.name) &&
+            Objects.equals(this.deviceToken, userDevice.deviceToken) &&
+            Objects.equals(this.notificationId, userDevice.notificationId) &&
+            Objects.equals(this.make, userDevice.make) &&
+            Objects.equals(this.model, userDevice.model) &&
+            Objects.equals(this.acceptNotifications, userDevice.acceptNotifications) &&
+            Objects.equals(this.type, userDevice.type) &&
+            Objects.equals(this.sessionHash, userDevice.sessionHash) &&
+            Objects.equals(this.selfUri, userDevice.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public WorkspaceMemberEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class WorkspaceMemberEntityListing  implements Serializable, PagedResourc
       return false;
     }
     WorkspaceMemberEntityListing workspaceMemberEntityListing = (WorkspaceMemberEntityListing) o;
+
     return Objects.equals(this.entities, workspaceMemberEntityListing.entities) &&
-        Objects.equals(this.pageSize, workspaceMemberEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, workspaceMemberEntityListing.pageNumber) &&
-        Objects.equals(this.total, workspaceMemberEntityListing.total) &&
-        Objects.equals(this.lastUri, workspaceMemberEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, workspaceMemberEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, workspaceMemberEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, workspaceMemberEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, workspaceMemberEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, workspaceMemberEntityListing.pageCount);
+            Objects.equals(this.pageSize, workspaceMemberEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, workspaceMemberEntityListing.pageNumber) &&
+            Objects.equals(this.total, workspaceMemberEntityListing.total) &&
+            Objects.equals(this.lastUri, workspaceMemberEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, workspaceMemberEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, workspaceMemberEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, workspaceMemberEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, workspaceMemberEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, workspaceMemberEntityListing.pageCount);
   }
 
   @Override

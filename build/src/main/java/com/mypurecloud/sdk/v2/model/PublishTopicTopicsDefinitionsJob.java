@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -88,7 +89,7 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public PublishTopicTopicsDefinitionsJob state(StateEnum state) {
@@ -105,7 +106,6 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
     this.state = state;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,8 +116,9 @@ public class PublishTopicTopicsDefinitionsJob  implements Serializable {
       return false;
     }
     PublishTopicTopicsDefinitionsJob publishTopicTopicsDefinitionsJob = (PublishTopicTopicsDefinitionsJob) o;
+
     return Objects.equals(this.id, publishTopicTopicsDefinitionsJob.id) &&
-        Objects.equals(this.state, publishTopicTopicsDefinitionsJob.state);
+            Objects.equals(this.state, publishTopicTopicsDefinitionsJob.state);
   }
 
   @Override

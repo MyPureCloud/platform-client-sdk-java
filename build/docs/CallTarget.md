@@ -19,9 +19,9 @@ title: CallTarget
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STATION | &quot;STATION&quot; |
-| PHONENUMBER | &quot;PHONENUMBER&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STATION | &quot;STATION&quot; | 
+| PHONENUMBER | &quot;PHONENUMBER&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArticleContentBody;
@@ -30,7 +31,6 @@ public class ArticleContent  implements Serializable {
     return body;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -41,6 +41,7 @@ public class ArticleContent  implements Serializable {
       return false;
     }
     ArticleContent articleContent = (ArticleContent) o;
+
     return Objects.equals(this.body, articleContent.body);
   }
 

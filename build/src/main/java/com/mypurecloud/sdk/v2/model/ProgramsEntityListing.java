@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListedProgram;
@@ -46,7 +47,7 @@ public class ProgramsEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ProgramsEntityListing pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class ProgramsEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ProgramsEntityListing selfUri(String selfUri) {
@@ -80,7 +81,7 @@ public class ProgramsEntityListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ProgramsEntityListing nextUri(String nextUri) {
@@ -97,7 +98,7 @@ public class ProgramsEntityListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ProgramsEntityListing pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class ProgramsEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class ProgramsEntityListing  implements Serializable {
       return false;
     }
     ProgramsEntityListing programsEntityListing = (ProgramsEntityListing) o;
+
     return Objects.equals(this.entities, programsEntityListing.entities) &&
-        Objects.equals(this.pageSize, programsEntityListing.pageSize) &&
-        Objects.equals(this.selfUri, programsEntityListing.selfUri) &&
-        Objects.equals(this.nextUri, programsEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, programsEntityListing.pageCount);
+            Objects.equals(this.pageSize, programsEntityListing.pageSize) &&
+            Objects.equals(this.selfUri, programsEntityListing.selfUri) &&
+            Objects.equals(this.nextUri, programsEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, programsEntityListing.pageCount);
   }
 
   @Override

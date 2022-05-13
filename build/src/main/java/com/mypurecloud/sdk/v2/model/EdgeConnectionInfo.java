@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -38,7 +39,7 @@ public class EdgeConnectionInfo  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public EdgeConnectionInfo name(String name) {
@@ -55,28 +56,28 @@ public class EdgeConnectionInfo  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Interface used for the connection on the edge")
   @JsonProperty("interfaceName")
   public String getInterfaceName() {
     return interfaceName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "IP address of the interface")
   @JsonProperty("interfaceIpAddress")
   public String getInterfaceIpAddress() {
     return interfaceIpAddress;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Connection errors")
   @JsonProperty("connectionErrors")
   public List<String> getConnectionErrors() {
     return connectionErrors;
   }
 
-  
+
   /**
    **/
   public EdgeConnectionInfo site(AddressableEntityRef site) {
@@ -93,14 +94,13 @@ public class EdgeConnectionInfo  implements Serializable {
     this.site = site;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,13 +111,14 @@ public class EdgeConnectionInfo  implements Serializable {
       return false;
     }
     EdgeConnectionInfo edgeConnectionInfo = (EdgeConnectionInfo) o;
+
     return Objects.equals(this.id, edgeConnectionInfo.id) &&
-        Objects.equals(this.name, edgeConnectionInfo.name) &&
-        Objects.equals(this.interfaceName, edgeConnectionInfo.interfaceName) &&
-        Objects.equals(this.interfaceIpAddress, edgeConnectionInfo.interfaceIpAddress) &&
-        Objects.equals(this.connectionErrors, edgeConnectionInfo.connectionErrors) &&
-        Objects.equals(this.site, edgeConnectionInfo.site) &&
-        Objects.equals(this.selfUri, edgeConnectionInfo.selfUri);
+            Objects.equals(this.name, edgeConnectionInfo.name) &&
+            Objects.equals(this.interfaceName, edgeConnectionInfo.interfaceName) &&
+            Objects.equals(this.interfaceIpAddress, edgeConnectionInfo.interfaceIpAddress) &&
+            Objects.equals(this.connectionErrors, edgeConnectionInfo.connectionErrors) &&
+            Objects.equals(this.site, edgeConnectionInfo.site) &&
+            Objects.equals(this.selfUri, edgeConnectionInfo.selfUri);
   }
 
   @Override

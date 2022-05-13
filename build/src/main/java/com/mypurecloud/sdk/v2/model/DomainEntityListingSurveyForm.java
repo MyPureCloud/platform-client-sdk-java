@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm total(Long total) {
@@ -103,7 +104,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DomainEntityListingSurveyForm pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DomainEntityListingSurveyForm  implements Serializable, PagedResour
       return false;
     }
     DomainEntityListingSurveyForm domainEntityListingSurveyForm = (DomainEntityListingSurveyForm) o;
+
     return Objects.equals(this.entities, domainEntityListingSurveyForm.entities) &&
-        Objects.equals(this.pageSize, domainEntityListingSurveyForm.pageSize) &&
-        Objects.equals(this.pageNumber, domainEntityListingSurveyForm.pageNumber) &&
-        Objects.equals(this.total, domainEntityListingSurveyForm.total) &&
-        Objects.equals(this.lastUri, domainEntityListingSurveyForm.lastUri) &&
-        Objects.equals(this.firstUri, domainEntityListingSurveyForm.firstUri) &&
-        Objects.equals(this.selfUri, domainEntityListingSurveyForm.selfUri) &&
-        Objects.equals(this.previousUri, domainEntityListingSurveyForm.previousUri) &&
-        Objects.equals(this.nextUri, domainEntityListingSurveyForm.nextUri) &&
-        Objects.equals(this.pageCount, domainEntityListingSurveyForm.pageCount);
+            Objects.equals(this.pageSize, domainEntityListingSurveyForm.pageSize) &&
+            Objects.equals(this.pageNumber, domainEntityListingSurveyForm.pageNumber) &&
+            Objects.equals(this.total, domainEntityListingSurveyForm.total) &&
+            Objects.equals(this.lastUri, domainEntityListingSurveyForm.lastUri) &&
+            Objects.equals(this.firstUri, domainEntityListingSurveyForm.firstUri) &&
+            Objects.equals(this.selfUri, domainEntityListingSurveyForm.selfUri) &&
+            Objects.equals(this.previousUri, domainEntityListingSurveyForm.previousUri) &&
+            Objects.equals(this.nextUri, domainEntityListingSurveyForm.nextUri) &&
+            Objects.equals(this.pageCount, domainEntityListingSurveyForm.pageCount);
   }
 
   @Override

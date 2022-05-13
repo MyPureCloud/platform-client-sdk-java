@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class ConversationThreadingWindowSetting  implements Serializable {
     this.messengerType = messengerType;
   }
 
-  
+
   /**
    * The conversation threading window timeout (Minutes) of specified messenger type
    **/
@@ -113,7 +114,6 @@ public class ConversationThreadingWindowSetting  implements Serializable {
     this.timeoutInMinutes = timeoutInMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,8 +124,9 @@ public class ConversationThreadingWindowSetting  implements Serializable {
       return false;
     }
     ConversationThreadingWindowSetting conversationThreadingWindowSetting = (ConversationThreadingWindowSetting) o;
+
     return Objects.equals(this.messengerType, conversationThreadingWindowSetting.messengerType) &&
-        Objects.equals(this.timeoutInMinutes, conversationThreadingWindowSetting.timeoutInMinutes);
+            Objects.equals(this.timeoutInMinutes, conversationThreadingWindowSetting.timeoutInMinutes);
   }
 
   @Override

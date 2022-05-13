@@ -19,10 +19,10 @@ title: WemCoachingAppointmentTopicCoachingAppointmentExternalLink
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ADD | &quot;Add&quot; |
-| REMOVE | &quot;Remove&quot; |
-| NONE | &quot;None&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ADD | &quot;Add&quot; | 
+| REMOVE | &quot;Remove&quot; | 
+| NONE | &quot;None&quot; | 
 {: class="table table-striped"}
 
 

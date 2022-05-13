@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -203,7 +204,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.type = type;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification startIntervalIndex(Integer startIntervalIndex) {
@@ -220,7 +221,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.startIntervalIndex = startIntervalIndex;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification endIntervalIndex(Integer endIntervalIndex) {
@@ -237,7 +238,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.endIntervalIndex = endIntervalIndex;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification metric(MetricEnum metric) {
@@ -254,7 +255,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.metric = metric;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification legacyMetric(LegacyMetricEnum legacyMetric) {
@@ -271,7 +272,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.legacyMetric = legacyMetric;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification value(BigDecimal value) {
@@ -288,7 +289,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.value = value;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification values(List<WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue> values) {
@@ -305,7 +306,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.values = values;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification enabled(Boolean enabled) {
@@ -322,7 +323,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.enabled = enabled;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification granularity(String granularity) {
@@ -339,7 +340,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.granularity = granularity;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification displayGranularity(String displayGranularity) {
@@ -356,7 +357,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.displayGranularity = displayGranularity;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicBuForecastModification planningGroupIds(List<String> planningGroupIds) {
@@ -373,7 +374,6 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
     this.planningGroupIds = planningGroupIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -384,17 +384,18 @@ public class WfmBuShortTermForecastImportCompleteTopicBuForecastModification  im
       return false;
     }
     WfmBuShortTermForecastImportCompleteTopicBuForecastModification wfmBuShortTermForecastImportCompleteTopicBuForecastModification = (WfmBuShortTermForecastImportCompleteTopicBuForecastModification) o;
+
     return Objects.equals(this.type, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.type) &&
-        Objects.equals(this.startIntervalIndex, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.startIntervalIndex) &&
-        Objects.equals(this.endIntervalIndex, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.endIntervalIndex) &&
-        Objects.equals(this.metric, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.metric) &&
-        Objects.equals(this.legacyMetric, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.legacyMetric) &&
-        Objects.equals(this.value, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.value) &&
-        Objects.equals(this.values, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.values) &&
-        Objects.equals(this.enabled, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.enabled) &&
-        Objects.equals(this.granularity, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.granularity) &&
-        Objects.equals(this.displayGranularity, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.displayGranularity) &&
-        Objects.equals(this.planningGroupIds, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.planningGroupIds);
+            Objects.equals(this.startIntervalIndex, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.startIntervalIndex) &&
+            Objects.equals(this.endIntervalIndex, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.endIntervalIndex) &&
+            Objects.equals(this.metric, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.metric) &&
+            Objects.equals(this.legacyMetric, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.legacyMetric) &&
+            Objects.equals(this.value, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.value) &&
+            Objects.equals(this.values, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.values) &&
+            Objects.equals(this.enabled, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.enabled) &&
+            Objects.equals(this.granularity, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.granularity) &&
+            Objects.equals(this.displayGranularity, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.displayGranularity) &&
+            Objects.equals(this.planningGroupIds, wfmBuShortTermForecastImportCompleteTopicBuForecastModification.planningGroupIds);
   }
 
   @Override

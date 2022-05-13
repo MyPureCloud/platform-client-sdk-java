@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluConfusionMatrixRow;
@@ -47,7 +48,7 @@ public class NluDomainVersionQualityReport  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The confusion matrix for the Domain Version
    **/
@@ -65,7 +66,7 @@ public class NluDomainVersionQualityReport  implements Serializable {
     this.confusionMatrix = confusionMatrix;
   }
 
-  
+
   /**
    * The quality report summary for the Domain Version
    **/
@@ -83,7 +84,6 @@ public class NluDomainVersionQualityReport  implements Serializable {
     this.summary = summary;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -94,9 +94,10 @@ public class NluDomainVersionQualityReport  implements Serializable {
       return false;
     }
     NluDomainVersionQualityReport nluDomainVersionQualityReport = (NluDomainVersionQualityReport) o;
+
     return Objects.equals(this.version, nluDomainVersionQualityReport.version) &&
-        Objects.equals(this.confusionMatrix, nluDomainVersionQualityReport.confusionMatrix) &&
-        Objects.equals(this.summary, nluDomainVersionQualityReport.summary);
+            Objects.equals(this.confusionMatrix, nluDomainVersionQualityReport.confusionMatrix) &&
+            Objects.equals(this.summary, nluDomainVersionQualityReport.summary);
   }
 
   @Override

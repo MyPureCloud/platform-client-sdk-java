@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeMechanism;
@@ -43,7 +44,7 @@ public class NamedEntityTypeDefinition  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Description of the of the named entity type.
    **/
@@ -61,7 +62,7 @@ public class NamedEntityTypeDefinition  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The mechanism enabling detection of the named entity type.
    **/
@@ -79,7 +80,6 @@ public class NamedEntityTypeDefinition  implements Serializable {
     this.mechanism = mechanism;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class NamedEntityTypeDefinition  implements Serializable {
       return false;
     }
     NamedEntityTypeDefinition namedEntityTypeDefinition = (NamedEntityTypeDefinition) o;
+
     return Objects.equals(this.name, namedEntityTypeDefinition.name) &&
-        Objects.equals(this.description, namedEntityTypeDefinition.description) &&
-        Objects.equals(this.mechanism, namedEntityTypeDefinition.mechanism);
+            Objects.equals(this.description, namedEntityTypeDefinition.description) &&
+            Objects.equals(this.mechanism, namedEntityTypeDefinition.mechanism);
   }
 
   @Override

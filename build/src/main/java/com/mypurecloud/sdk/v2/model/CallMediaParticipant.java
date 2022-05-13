@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -354,7 +355,7 @@ public class CallMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display friendly name of the participant.
    **/
@@ -372,7 +373,7 @@ public class CallMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The participant address.
    **/
@@ -390,7 +391,7 @@ public class CallMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -408,7 +409,7 @@ public class CallMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -426,7 +427,7 @@ public class CallMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -444,7 +445,7 @@ public class CallMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -462,7 +463,7 @@ public class CallMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -480,7 +481,7 @@ public class CallMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -498,7 +499,7 @@ public class CallMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -516,7 +517,7 @@ public class CallMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -534,7 +535,7 @@ public class CallMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Value is true when the participant is on hold.
    **/
@@ -552,7 +553,7 @@ public class CallMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -570,7 +571,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -588,7 +589,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * The PureCloud user for this participant.
    **/
@@ -606,7 +607,7 @@ public class CallMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The PureCloud queue for this participant.
    **/
@@ -624,7 +625,7 @@ public class CallMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The PureCloud team for this participant.
    **/
@@ -642,7 +643,7 @@ public class CallMediaParticipant  implements Serializable {
     this.team = team;
   }
 
-  
+
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -660,7 +661,7 @@ public class CallMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -678,7 +679,7 @@ public class CallMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -696,7 +697,7 @@ public class CallMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-  
+
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -714,7 +715,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -732,7 +733,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -750,7 +751,7 @@ public class CallMediaParticipant  implements Serializable {
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -768,7 +769,7 @@ public class CallMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -786,7 +787,7 @@ public class CallMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -804,7 +805,7 @@ public class CallMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -822,7 +823,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -840,7 +841,7 @@ public class CallMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -858,7 +859,7 @@ public class CallMediaParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
    **/
@@ -876,7 +877,7 @@ public class CallMediaParticipant  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Information on how a communication should be routed to an agent.
    **/
@@ -894,7 +895,7 @@ public class CallMediaParticipant  implements Serializable {
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -912,7 +913,7 @@ public class CallMediaParticipant  implements Serializable {
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -930,7 +931,7 @@ public class CallMediaParticipant  implements Serializable {
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    * Value is true when the call is muted.
    **/
@@ -948,7 +949,7 @@ public class CallMediaParticipant  implements Serializable {
     this.muted = muted;
   }
 
-  
+
   /**
    * Value is true when the call is confined.
    **/
@@ -966,7 +967,7 @@ public class CallMediaParticipant  implements Serializable {
     this.confined = confined;
   }
 
-  
+
   /**
    * Value is true when the call is being recorded.
    **/
@@ -984,7 +985,7 @@ public class CallMediaParticipant  implements Serializable {
     this.recording = recording;
   }
 
-  
+
   /**
    * The state of the call recording.
    **/
@@ -1002,7 +1003,7 @@ public class CallMediaParticipant  implements Serializable {
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    * The group involved in the group ring call.
    **/
@@ -1020,7 +1021,7 @@ public class CallMediaParticipant  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * The call ANI.
    **/
@@ -1038,7 +1039,7 @@ public class CallMediaParticipant  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    * The call DNIS.
    **/
@@ -1056,7 +1057,7 @@ public class CallMediaParticipant  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * The ID of the Content Management document if the call is a fax.
    **/
@@ -1074,7 +1075,7 @@ public class CallMediaParticipant  implements Serializable {
     this.documentId = documentId;
   }
 
-  
+
   /**
    * Extra fax information if the call is a fax.
    **/
@@ -1092,7 +1093,7 @@ public class CallMediaParticipant  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
-  
+
   /**
    * The ID of the participant being monitored when performing a call monitor.
    **/
@@ -1110,7 +1111,7 @@ public class CallMediaParticipant  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    * The ID of the participant being coached when performing a call coach.
    **/
@@ -1128,7 +1129,7 @@ public class CallMediaParticipant  implements Serializable {
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    * If this participant barged in a participant's call, then this will be the id of the targeted participant.
    **/
@@ -1146,7 +1147,7 @@ public class CallMediaParticipant  implements Serializable {
     this.bargedParticipantId = bargedParticipantId;
   }
 
-  
+
   /**
    * The ID of the consult transfer target participant when performing a consult transfer.
    **/
@@ -1164,7 +1165,7 @@ public class CallMediaParticipant  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
-  
+
   /**
    * User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567.
    **/
@@ -1182,7 +1183,7 @@ public class CallMediaParticipant  implements Serializable {
     this.uuiData = uuiData;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -1200,7 +1201,6 @@ public class CallMediaParticipant  implements Serializable {
     this.bargedTime = bargedTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1211,54 +1211,55 @@ public class CallMediaParticipant  implements Serializable {
       return false;
     }
     CallMediaParticipant callMediaParticipant = (CallMediaParticipant) o;
+
     return Objects.equals(this.id, callMediaParticipant.id) &&
-        Objects.equals(this.name, callMediaParticipant.name) &&
-        Objects.equals(this.address, callMediaParticipant.address) &&
-        Objects.equals(this.startTime, callMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, callMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, callMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, callMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, callMediaParticipant.purpose) &&
-        Objects.equals(this.state, callMediaParticipant.state) &&
-        Objects.equals(this.direction, callMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, callMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, callMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, callMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, callMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, callMediaParticipant.user) &&
-        Objects.equals(this.queue, callMediaParticipant.queue) &&
-        Objects.equals(this.team, callMediaParticipant.team) &&
-        Objects.equals(this.attributes, callMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, callMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, callMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, callMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, callMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, callMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, callMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, callMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, callMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, callMediaParticipant.wrapup) &&
-        Objects.equals(this.peer, callMediaParticipant.peer) &&
-        Objects.equals(this.flaggedReason, callMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, callMediaParticipant.journeyContext) &&
-        Objects.equals(this.conversationRoutingData, callMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.startAcwTime, callMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, callMediaParticipant.endAcwTime) &&
-        Objects.equals(this.muted, callMediaParticipant.muted) &&
-        Objects.equals(this.confined, callMediaParticipant.confined) &&
-        Objects.equals(this.recording, callMediaParticipant.recording) &&
-        Objects.equals(this.recordingState, callMediaParticipant.recordingState) &&
-        Objects.equals(this.group, callMediaParticipant.group) &&
-        Objects.equals(this.ani, callMediaParticipant.ani) &&
-        Objects.equals(this.dnis, callMediaParticipant.dnis) &&
-        Objects.equals(this.documentId, callMediaParticipant.documentId) &&
-        Objects.equals(this.faxStatus, callMediaParticipant.faxStatus) &&
-        Objects.equals(this.monitoredParticipantId, callMediaParticipant.monitoredParticipantId) &&
-        Objects.equals(this.coachedParticipantId, callMediaParticipant.coachedParticipantId) &&
-        Objects.equals(this.bargedParticipantId, callMediaParticipant.bargedParticipantId) &&
-        Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
-        Objects.equals(this.uuiData, callMediaParticipant.uuiData) &&
-        Objects.equals(this.bargedTime, callMediaParticipant.bargedTime);
+            Objects.equals(this.name, callMediaParticipant.name) &&
+            Objects.equals(this.address, callMediaParticipant.address) &&
+            Objects.equals(this.startTime, callMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, callMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, callMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, callMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, callMediaParticipant.purpose) &&
+            Objects.equals(this.state, callMediaParticipant.state) &&
+            Objects.equals(this.direction, callMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, callMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, callMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, callMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, callMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, callMediaParticipant.user) &&
+            Objects.equals(this.queue, callMediaParticipant.queue) &&
+            Objects.equals(this.team, callMediaParticipant.team) &&
+            Objects.equals(this.attributes, callMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, callMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, callMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, callMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, callMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, callMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, callMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, callMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, callMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, callMediaParticipant.wrapup) &&
+            Objects.equals(this.peer, callMediaParticipant.peer) &&
+            Objects.equals(this.flaggedReason, callMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, callMediaParticipant.journeyContext) &&
+            Objects.equals(this.conversationRoutingData, callMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.startAcwTime, callMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, callMediaParticipant.endAcwTime) &&
+            Objects.equals(this.muted, callMediaParticipant.muted) &&
+            Objects.equals(this.confined, callMediaParticipant.confined) &&
+            Objects.equals(this.recording, callMediaParticipant.recording) &&
+            Objects.equals(this.recordingState, callMediaParticipant.recordingState) &&
+            Objects.equals(this.group, callMediaParticipant.group) &&
+            Objects.equals(this.ani, callMediaParticipant.ani) &&
+            Objects.equals(this.dnis, callMediaParticipant.dnis) &&
+            Objects.equals(this.documentId, callMediaParticipant.documentId) &&
+            Objects.equals(this.faxStatus, callMediaParticipant.faxStatus) &&
+            Objects.equals(this.monitoredParticipantId, callMediaParticipant.monitoredParticipantId) &&
+            Objects.equals(this.coachedParticipantId, callMediaParticipant.coachedParticipantId) &&
+            Objects.equals(this.bargedParticipantId, callMediaParticipant.bargedParticipantId) &&
+            Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
+            Objects.equals(this.uuiData, callMediaParticipant.uuiData) &&
+            Objects.equals(this.bargedTime, callMediaParticipant.bargedTime);
   }
 
   @Override

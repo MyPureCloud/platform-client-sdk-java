@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
@@ -43,14 +44,13 @@ public class UserScheduleAdherenceListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The downloadUrl if the response is too large to send directly via http response")
   @JsonProperty("downloadUrl")
   public String getDownloadUrl() {
     return downloadUrl;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,8 +61,9 @@ public class UserScheduleAdherenceListing  implements Serializable {
       return false;
     }
     UserScheduleAdherenceListing userScheduleAdherenceListing = (UserScheduleAdherenceListing) o;
+
     return Objects.equals(this.entities, userScheduleAdherenceListing.entities) &&
-        Objects.equals(this.downloadUrl, userScheduleAdherenceListing.downloadUrl);
+            Objects.equals(this.downloadUrl, userScheduleAdherenceListing.downloadUrl);
   }
 
   @Override

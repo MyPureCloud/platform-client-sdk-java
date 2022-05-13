@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody details(List<QueueConversationChatEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.details = details;
   }
 
-  
+
   /**
    **/
   public QueueConversationChatEventTopicErrorBody errors(List<QueueConversationChatEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class QueueConversationChatEventTopicErrorBody  implements Serializable {
       return false;
     }
     QueueConversationChatEventTopicErrorBody queueConversationChatEventTopicErrorBody = (QueueConversationChatEventTopicErrorBody) o;
+
     return Objects.equals(this.message, queueConversationChatEventTopicErrorBody.message) &&
-        Objects.equals(this.code, queueConversationChatEventTopicErrorBody.code) &&
-        Objects.equals(this.status, queueConversationChatEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, queueConversationChatEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, queueConversationChatEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, queueConversationChatEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, queueConversationChatEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, queueConversationChatEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, queueConversationChatEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, queueConversationChatEventTopicErrorBody.errors);
+            Objects.equals(this.code, queueConversationChatEventTopicErrorBody.code) &&
+            Objects.equals(this.status, queueConversationChatEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, queueConversationChatEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, queueConversationChatEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, queueConversationChatEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, queueConversationChatEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, queueConversationChatEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, queueConversationChatEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, queueConversationChatEventTopicErrorBody.errors);
   }
 
   @Override

@@ -23,14 +23,14 @@ title: ResponseAssetFilter
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TERM | &quot;TERM&quot; |
-| TERMS | &quot;TERMS&quot; |
-| STARTS_WITH | &quot;STARTS_WITH&quot; |
-| RANGE | &quot;RANGE&quot; |
-| GREATER_THAN_EQUAL_TO | &quot;GREATER_THAN_EQUAL_TO&quot; |
-| LESS_THAN_EQUAL_TO | &quot;LESS_THAN_EQUAL_TO&quot; |
-| DATE_RANGE | &quot;DATE_RANGE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TERM | &quot;TERM&quot; | 
+| TERMS | &quot;TERMS&quot; | 
+| STARTS_WITH | &quot;STARTS_WITH&quot; | 
+| RANGE | &quot;RANGE&quot; | 
+| GREATER_THAN_EQUAL_TO | &quot;GREATER_THAN_EQUAL_TO&quot; | 
+| LESS_THAN_EQUAL_TO | &quot;LESS_THAN_EQUAL_TO&quot; | 
+| DATE_RANGE | &quot;DATE_RANGE&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -37,7 +38,7 @@ public class AuthzDivision  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public AuthzDivision name(String name) {
@@ -54,7 +55,7 @@ public class AuthzDivision  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A helpful description for the division.
    **/
@@ -72,28 +73,27 @@ public class AuthzDivision  implements Serializable {
     this.description = description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A flag indicating whether this division is the \"Home\" (default) division. Cannot be modified and any supplied value will be ignored on create or update.")
   @JsonProperty("homeDivision")
   public Boolean getHomeDivision() {
     return homeDivision;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A count of objects in this division, grouped by type.")
   @JsonProperty("objectCounts")
   public Map<String, Long> getObjectCounts() {
     return objectCounts;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +104,13 @@ public class AuthzDivision  implements Serializable {
       return false;
     }
     AuthzDivision authzDivision = (AuthzDivision) o;
+
     return Objects.equals(this.id, authzDivision.id) &&
-        Objects.equals(this.name, authzDivision.name) &&
-        Objects.equals(this.description, authzDivision.description) &&
-        Objects.equals(this.homeDivision, authzDivision.homeDivision) &&
-        Objects.equals(this.objectCounts, authzDivision.objectCounts) &&
-        Objects.equals(this.selfUri, authzDivision.selfUri);
+            Objects.equals(this.name, authzDivision.name) &&
+            Objects.equals(this.description, authzDivision.description) &&
+            Objects.equals(this.homeDivision, authzDivision.homeDivision) &&
+            Objects.equals(this.objectCounts, authzDivision.objectCounts) &&
+            Objects.equals(this.selfUri, authzDivision.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -147,7 +148,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert name(String name) {
@@ -164,7 +165,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert senderId(String senderId) {
@@ -181,7 +182,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.senderId = senderId;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert heartBeatTimeoutInMinutes(BigDecimal heartBeatTimeoutInMinutes) {
@@ -198,7 +199,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.heartBeatTimeoutInMinutes = heartBeatTimeoutInMinutes;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert ruleId(String ruleId) {
@@ -215,7 +216,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.ruleId = ruleId;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert startDate(Date startDate) {
@@ -232,7 +233,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert endDate(Date endDate) {
@@ -249,7 +250,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert notificationUsers(List<KlaxonHeartBeatAlertsTopicNotificationUser> notificationUsers) {
@@ -266,7 +267,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -283,7 +284,7 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-  
+
   /**
    **/
   public KlaxonHeartBeatAlertsTopicHeartBeatAlert ruleType(RuleTypeEnum ruleType) {
@@ -300,7 +301,6 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
     this.ruleType = ruleType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -311,16 +311,17 @@ public class KlaxonHeartBeatAlertsTopicHeartBeatAlert  implements Serializable {
       return false;
     }
     KlaxonHeartBeatAlertsTopicHeartBeatAlert klaxonHeartBeatAlertsTopicHeartBeatAlert = (KlaxonHeartBeatAlertsTopicHeartBeatAlert) o;
+
     return Objects.equals(this.id, klaxonHeartBeatAlertsTopicHeartBeatAlert.id) &&
-        Objects.equals(this.name, klaxonHeartBeatAlertsTopicHeartBeatAlert.name) &&
-        Objects.equals(this.senderId, klaxonHeartBeatAlertsTopicHeartBeatAlert.senderId) &&
-        Objects.equals(this.heartBeatTimeoutInMinutes, klaxonHeartBeatAlertsTopicHeartBeatAlert.heartBeatTimeoutInMinutes) &&
-        Objects.equals(this.ruleId, klaxonHeartBeatAlertsTopicHeartBeatAlert.ruleId) &&
-        Objects.equals(this.startDate, klaxonHeartBeatAlertsTopicHeartBeatAlert.startDate) &&
-        Objects.equals(this.endDate, klaxonHeartBeatAlertsTopicHeartBeatAlert.endDate) &&
-        Objects.equals(this.notificationUsers, klaxonHeartBeatAlertsTopicHeartBeatAlert.notificationUsers) &&
-        Objects.equals(this.alertTypes, klaxonHeartBeatAlertsTopicHeartBeatAlert.alertTypes) &&
-        Objects.equals(this.ruleType, klaxonHeartBeatAlertsTopicHeartBeatAlert.ruleType);
+            Objects.equals(this.name, klaxonHeartBeatAlertsTopicHeartBeatAlert.name) &&
+            Objects.equals(this.senderId, klaxonHeartBeatAlertsTopicHeartBeatAlert.senderId) &&
+            Objects.equals(this.heartBeatTimeoutInMinutes, klaxonHeartBeatAlertsTopicHeartBeatAlert.heartBeatTimeoutInMinutes) &&
+            Objects.equals(this.ruleId, klaxonHeartBeatAlertsTopicHeartBeatAlert.ruleId) &&
+            Objects.equals(this.startDate, klaxonHeartBeatAlertsTopicHeartBeatAlert.startDate) &&
+            Objects.equals(this.endDate, klaxonHeartBeatAlertsTopicHeartBeatAlert.endDate) &&
+            Objects.equals(this.notificationUsers, klaxonHeartBeatAlertsTopicHeartBeatAlert.notificationUsers) &&
+            Objects.equals(this.alertTypes, klaxonHeartBeatAlertsTopicHeartBeatAlert.alertTypes) &&
+            Objects.equals(this.ruleType, klaxonHeartBeatAlertsTopicHeartBeatAlert.ruleType);
   }
 
   @Override

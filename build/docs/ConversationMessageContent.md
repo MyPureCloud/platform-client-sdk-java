@@ -8,7 +8,7 @@ title: ConversationMessageContent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. If contentType = \&quot;Attachment\&quot; only one item is allowed. |  |
+| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. If contentType = \"Attachment\" only one item is allowed. |  |
 | **location** | <!----><!---->[**ConversationContentLocation**](ConversationContentLocation.html)<!----> | Location content. |  [optional] |
 | **story** | <!----><!---->[**ConversationContentStory**](ConversationContentStory.html)<!----> | Ephemeral story content. |  [optional] |
 | **attachment** | <!----><!---->[**ConversationContentAttachment**](ConversationContentAttachment.html)<!----> | Attachment content. |  [optional] |
@@ -27,16 +27,16 @@ title: ConversationMessageContent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ATTACHMENT | &quot;Attachment&quot; |
-| LOCATION | &quot;Location&quot; |
-| STORY | &quot;Story&quot; |
-| QUICKREPLY | &quot;QuickReply&quot; |
-| NOTIFICATION | &quot;Notification&quot; |
-| BUTTONRESPONSE | &quot;ButtonResponse&quot; |
-| GENERICTEMPLATE | &quot;GenericTemplate&quot; |
-| CARD | &quot;Card&quot; |
-| CAROUSEL | &quot;Carousel&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ATTACHMENT | &quot;Attachment&quot; | 
+| LOCATION | &quot;Location&quot; | 
+| STORY | &quot;Story&quot; | 
+| QUICKREPLY | &quot;QuickReply&quot; | 
+| NOTIFICATION | &quot;Notification&quot; | 
+| BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
+| GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
+| CARD | &quot;Card&quot; | 
+| CAROUSEL | &quot;Carousel&quot; | 
 {: class="table table-striped"}
 
 

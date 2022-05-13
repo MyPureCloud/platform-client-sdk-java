@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorRelationship;
@@ -44,7 +45,7 @@ public class BulkResponseResultRelationshipRelationship  implements Serializable
     this.id = id;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultRelationshipRelationship success(Boolean success) {
@@ -61,7 +62,7 @@ public class BulkResponseResultRelationshipRelationship  implements Serializable
     this.success = success;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultRelationshipRelationship entity(Relationship entity) {
@@ -78,7 +79,7 @@ public class BulkResponseResultRelationshipRelationship  implements Serializable
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultRelationshipRelationship error(BulkErrorRelationship error) {
@@ -95,7 +96,6 @@ public class BulkResponseResultRelationshipRelationship  implements Serializable
     this.error = error;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class BulkResponseResultRelationshipRelationship  implements Serializable
       return false;
     }
     BulkResponseResultRelationshipRelationship bulkResponseResultRelationshipRelationship = (BulkResponseResultRelationshipRelationship) o;
+
     return Objects.equals(this.id, bulkResponseResultRelationshipRelationship.id) &&
-        Objects.equals(this.success, bulkResponseResultRelationshipRelationship.success) &&
-        Objects.equals(this.entity, bulkResponseResultRelationshipRelationship.entity) &&
-        Objects.equals(this.error, bulkResponseResultRelationshipRelationship.error);
+            Objects.equals(this.success, bulkResponseResultRelationshipRelationship.success) &&
+            Objects.equals(this.entity, bulkResponseResultRelationshipRelationship.entity) &&
+            Objects.equals(this.error, bulkResponseResultRelationshipRelationship.error);
   }
 
   @Override

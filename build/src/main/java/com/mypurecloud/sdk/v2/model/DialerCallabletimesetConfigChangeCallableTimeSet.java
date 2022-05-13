@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCallabletimesetConfigChangeCallableTime;
@@ -49,7 +50,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     this.callableTimes = callableTimes;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -67,7 +68,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -85,7 +86,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -103,7 +104,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -121,7 +122,7 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -139,7 +140,6 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,12 +150,13 @@ public class DialerCallabletimesetConfigChangeCallableTimeSet  implements Serial
       return false;
     }
     DialerCallabletimesetConfigChangeCallableTimeSet dialerCallabletimesetConfigChangeCallableTimeSet = (DialerCallabletimesetConfigChangeCallableTimeSet) o;
+
     return Objects.equals(this.callableTimes, dialerCallabletimesetConfigChangeCallableTimeSet.callableTimes) &&
-        Objects.equals(this.id, dialerCallabletimesetConfigChangeCallableTimeSet.id) &&
-        Objects.equals(this.name, dialerCallabletimesetConfigChangeCallableTimeSet.name) &&
-        Objects.equals(this.dateCreated, dialerCallabletimesetConfigChangeCallableTimeSet.dateCreated) &&
-        Objects.equals(this.dateModified, dialerCallabletimesetConfigChangeCallableTimeSet.dateModified) &&
-        Objects.equals(this.version, dialerCallabletimesetConfigChangeCallableTimeSet.version);
+            Objects.equals(this.id, dialerCallabletimesetConfigChangeCallableTimeSet.id) &&
+            Objects.equals(this.name, dialerCallabletimesetConfigChangeCallableTimeSet.name) &&
+            Objects.equals(this.dateCreated, dialerCallabletimesetConfigChangeCallableTimeSet.dateCreated) &&
+            Objects.equals(this.dateModified, dialerCallabletimesetConfigChangeCallableTimeSet.dateModified) &&
+            Objects.equals(this.version, dialerCallabletimesetConfigChangeCallableTimeSet.version);
   }
 
   @Override

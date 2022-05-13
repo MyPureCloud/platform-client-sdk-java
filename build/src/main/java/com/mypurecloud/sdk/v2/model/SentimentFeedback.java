@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,7 +86,7 @@ public class SentimentFeedback  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The phrase for which sentiment feedback is provided
    **/
@@ -103,7 +104,7 @@ public class SentimentFeedback  implements Serializable {
     this.phrase = phrase;
   }
 
-  
+
   /**
    * The dialect for the given phrase, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
    **/
@@ -121,7 +122,7 @@ public class SentimentFeedback  implements Serializable {
     this.dialect = dialect;
   }
 
-  
+
   /**
    * The sentiment feedback value for the given phrase
    **/
@@ -139,21 +140,20 @@ public class SentimentFeedback  implements Serializable {
     this.feedbackValue = feedbackValue;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The Id of user who created the sentiment feedback")
   @JsonProperty("createdBy")
   public AddressableEntityRef getCreatedBy() {
     return createdBy;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,12 +164,13 @@ public class SentimentFeedback  implements Serializable {
       return false;
     }
     SentimentFeedback sentimentFeedback = (SentimentFeedback) o;
+
     return Objects.equals(this.id, sentimentFeedback.id) &&
-        Objects.equals(this.phrase, sentimentFeedback.phrase) &&
-        Objects.equals(this.dialect, sentimentFeedback.dialect) &&
-        Objects.equals(this.feedbackValue, sentimentFeedback.feedbackValue) &&
-        Objects.equals(this.dateCreated, sentimentFeedback.dateCreated) &&
-        Objects.equals(this.createdBy, sentimentFeedback.createdBy);
+            Objects.equals(this.phrase, sentimentFeedback.phrase) &&
+            Objects.equals(this.dialect, sentimentFeedback.dialect) &&
+            Objects.equals(this.feedbackValue, sentimentFeedback.feedbackValue) &&
+            Objects.equals(this.dateCreated, sentimentFeedback.dateCreated) &&
+            Objects.equals(this.createdBy, sentimentFeedback.createdBy);
   }
 
   @Override

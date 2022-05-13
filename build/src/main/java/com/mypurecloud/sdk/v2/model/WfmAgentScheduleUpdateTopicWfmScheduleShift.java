@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmAgentScheduleUpdateTopicWfmScheduleActivity;
@@ -48,7 +49,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleShift weekScheduleId(String weekScheduleId) {
@@ -65,7 +66,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     this.weekScheduleId = weekScheduleId;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleShift id(String id) {
@@ -82,7 +83,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleShift startDate(Date startDate) {
@@ -99,7 +100,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleShift lengthInMinutes(Integer lengthInMinutes) {
@@ -116,7 +117,7 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmScheduleShift activities(List<WfmAgentScheduleUpdateTopicWfmScheduleActivity> activities) {
@@ -133,7 +134,6 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     this.activities = activities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +144,13 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
       return false;
     }
     WfmAgentScheduleUpdateTopicWfmScheduleShift wfmAgentScheduleUpdateTopicWfmScheduleShift = (WfmAgentScheduleUpdateTopicWfmScheduleShift) o;
+
     return Objects.equals(this.weekDate, wfmAgentScheduleUpdateTopicWfmScheduleShift.weekDate) &&
-        Objects.equals(this.weekScheduleId, wfmAgentScheduleUpdateTopicWfmScheduleShift.weekScheduleId) &&
-        Objects.equals(this.id, wfmAgentScheduleUpdateTopicWfmScheduleShift.id) &&
-        Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmScheduleShift.startDate) &&
-        Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmScheduleShift.lengthInMinutes) &&
-        Objects.equals(this.activities, wfmAgentScheduleUpdateTopicWfmScheduleShift.activities);
+            Objects.equals(this.weekScheduleId, wfmAgentScheduleUpdateTopicWfmScheduleShift.weekScheduleId) &&
+            Objects.equals(this.id, wfmAgentScheduleUpdateTopicWfmScheduleShift.id) &&
+            Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmScheduleShift.startDate) &&
+            Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmScheduleShift.lengthInMinutes) &&
+            Objects.equals(this.activities, wfmAgentScheduleUpdateTopicWfmScheduleShift.activities);
   }
 
   @Override

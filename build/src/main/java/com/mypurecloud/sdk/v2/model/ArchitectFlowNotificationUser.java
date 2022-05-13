@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationHomeOrganization;
@@ -44,7 +45,7 @@ public class ArchitectFlowNotificationUser  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The name of the user, if available.
    **/
@@ -62,7 +63,7 @@ public class ArchitectFlowNotificationUser  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowNotificationUser homeOrg(ArchitectFlowNotificationHomeOrganization homeOrg) {
@@ -79,7 +80,6 @@ public class ArchitectFlowNotificationUser  implements Serializable {
     this.homeOrg = homeOrg;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class ArchitectFlowNotificationUser  implements Serializable {
       return false;
     }
     ArchitectFlowNotificationUser architectFlowNotificationUser = (ArchitectFlowNotificationUser) o;
+
     return Objects.equals(this.id, architectFlowNotificationUser.id) &&
-        Objects.equals(this.name, architectFlowNotificationUser.name) &&
-        Objects.equals(this.homeOrg, architectFlowNotificationUser.homeOrg);
+            Objects.equals(this.name, architectFlowNotificationUser.name) &&
+            Objects.equals(this.homeOrg, architectFlowNotificationUser.homeOrg);
   }
 
   @Override

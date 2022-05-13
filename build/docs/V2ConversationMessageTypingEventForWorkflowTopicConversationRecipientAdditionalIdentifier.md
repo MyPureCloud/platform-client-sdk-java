@@ -19,10 +19,10 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAddi
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DEPLOYMENT | &quot;Deployment&quot; |
-| SUBJECT | &quot;Subject&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DEPLOYMENT | &quot;Deployment&quot; | 
+| SUBJECT | &quot;Subject&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public FailedRecordingEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class FailedRecordingEntityListing  implements Serializable, PagedResourc
       return false;
     }
     FailedRecordingEntityListing failedRecordingEntityListing = (FailedRecordingEntityListing) o;
+
     return Objects.equals(this.entities, failedRecordingEntityListing.entities) &&
-        Objects.equals(this.pageSize, failedRecordingEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, failedRecordingEntityListing.pageNumber) &&
-        Objects.equals(this.total, failedRecordingEntityListing.total) &&
-        Objects.equals(this.lastUri, failedRecordingEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, failedRecordingEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, failedRecordingEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, failedRecordingEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, failedRecordingEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, failedRecordingEntityListing.pageCount);
+            Objects.equals(this.pageSize, failedRecordingEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, failedRecordingEntityListing.pageNumber) &&
+            Objects.equals(this.total, failedRecordingEntityListing.total) &&
+            Objects.equals(this.lastUri, failedRecordingEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, failedRecordingEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, failedRecordingEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, failedRecordingEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, failedRecordingEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, failedRecordingEntityListing.pageCount);
   }
 
   @Override

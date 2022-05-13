@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
-import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -88,7 +88,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
-  private QueueConversationSocialExpressionEventTopicObject peerCount = null;
+  private Object peerCount = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -179,7 +179,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.state = state;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -197,7 +197,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.self = self;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -215,7 +215,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -233,7 +233,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.context = context;
   }
 
-  
+
   /**
    * Indicates whether this participant has muted their outgoing audio.
    **/
@@ -251,7 +251,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.audioMuted = audioMuted;
   }
 
-  
+
   /**
    * Indicates whether this participant has muted/paused their outgoing video.
    **/
@@ -269,7 +269,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.videoMuted = videoMuted;
   }
 
-  
+
   /**
    * Indicates whether this participant is sharing their screen to the session.
    **/
@@ -287,25 +287,25 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.sharingScreen = sharingScreen;
   }
 
-  
+
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
-  public QueueConversationSocialExpressionEventTopicVideo peerCount(QueueConversationSocialExpressionEventTopicObject peerCount) {
+  public QueueConversationSocialExpressionEventTopicVideo peerCount(Object peerCount) {
     this.peerCount = peerCount;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
   @JsonProperty("peerCount")
-  public QueueConversationSocialExpressionEventTopicObject getPeerCount() {
+  public Object getPeerCount() {
     return peerCount;
   }
-  public void setPeerCount(QueueConversationSocialExpressionEventTopicObject peerCount) {
+  public void setPeerCount(Object peerCount) {
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    * The media provider controlling the video.
    **/
@@ -323,7 +323,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -341,7 +341,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -359,7 +359,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.peerId = peerId;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -377,7 +377,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -395,7 +395,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -413,7 +413,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * List of media stream ids
    **/
@@ -431,7 +431,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.msids = msids;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -449,7 +449,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -467,7 +467,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -485,7 +485,6 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -496,24 +495,25 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
       return false;
     }
     QueueConversationSocialExpressionEventTopicVideo queueConversationSocialExpressionEventTopicVideo = (QueueConversationSocialExpressionEventTopicVideo) o;
+
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicVideo.state) &&
-        Objects.equals(this.self, queueConversationSocialExpressionEventTopicVideo.self) &&
-        Objects.equals(this.id, queueConversationSocialExpressionEventTopicVideo.id) &&
-        Objects.equals(this.context, queueConversationSocialExpressionEventTopicVideo.context) &&
-        Objects.equals(this.audioMuted, queueConversationSocialExpressionEventTopicVideo.audioMuted) &&
-        Objects.equals(this.videoMuted, queueConversationSocialExpressionEventTopicVideo.videoMuted) &&
-        Objects.equals(this.sharingScreen, queueConversationSocialExpressionEventTopicVideo.sharingScreen) &&
-        Objects.equals(this.peerCount, queueConversationSocialExpressionEventTopicVideo.peerCount) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicVideo.provider) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicVideo.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicVideo.peerId) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicVideo.disconnectType) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicVideo.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicVideo.disconnectedTime) &&
-        Objects.equals(this.msids, queueConversationSocialExpressionEventTopicVideo.msids) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicVideo.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicVideo.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicVideo.afterCallWorkRequired);
+            Objects.equals(this.self, queueConversationSocialExpressionEventTopicVideo.self) &&
+            Objects.equals(this.id, queueConversationSocialExpressionEventTopicVideo.id) &&
+            Objects.equals(this.context, queueConversationSocialExpressionEventTopicVideo.context) &&
+            Objects.equals(this.audioMuted, queueConversationSocialExpressionEventTopicVideo.audioMuted) &&
+            Objects.equals(this.videoMuted, queueConversationSocialExpressionEventTopicVideo.videoMuted) &&
+            Objects.equals(this.sharingScreen, queueConversationSocialExpressionEventTopicVideo.sharingScreen) &&
+            Objects.equals(this.peerCount, queueConversationSocialExpressionEventTopicVideo.peerCount) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicVideo.provider) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicVideo.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicVideo.peerId) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicVideo.disconnectType) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicVideo.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicVideo.disconnectedTime) &&
+            Objects.equals(this.msids, queueConversationSocialExpressionEventTopicVideo.msids) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicVideo.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicVideo.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicVideo.afterCallWorkRequired);
   }
 
   @Override

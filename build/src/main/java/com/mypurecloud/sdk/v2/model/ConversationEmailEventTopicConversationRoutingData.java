@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationEmailEventTopicScoredAgent;
@@ -48,7 +49,7 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
     this.queue = queue;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -66,7 +67,7 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
     this.language = language;
   }
 
-  
+
   /**
    * The priority of the conversation to use for routing decisions
    **/
@@ -84,7 +85,7 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
     this.priority = priority;
   }
 
-  
+
   /**
    * The skills to use for routing decisions
    **/
@@ -102,7 +103,7 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
     this.skills = skills;
   }
 
-  
+
   /**
    * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
@@ -120,7 +121,6 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class ConversationEmailEventTopicConversationRoutingData  implements Seri
       return false;
     }
     ConversationEmailEventTopicConversationRoutingData conversationEmailEventTopicConversationRoutingData = (ConversationEmailEventTopicConversationRoutingData) o;
+
     return Objects.equals(this.queue, conversationEmailEventTopicConversationRoutingData.queue) &&
-        Objects.equals(this.language, conversationEmailEventTopicConversationRoutingData.language) &&
-        Objects.equals(this.priority, conversationEmailEventTopicConversationRoutingData.priority) &&
-        Objects.equals(this.skills, conversationEmailEventTopicConversationRoutingData.skills) &&
-        Objects.equals(this.scoredAgents, conversationEmailEventTopicConversationRoutingData.scoredAgents);
+            Objects.equals(this.language, conversationEmailEventTopicConversationRoutingData.language) &&
+            Objects.equals(this.priority, conversationEmailEventTopicConversationRoutingData.priority) &&
+            Objects.equals(this.skills, conversationEmailEventTopicConversationRoutingData.skills) &&
+            Objects.equals(this.scoredAgents, conversationEmailEventTopicConversationRoutingData.scoredAgents);
   }
 
   @Override

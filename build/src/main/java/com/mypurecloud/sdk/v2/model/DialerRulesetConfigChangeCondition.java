@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -214,7 +215,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.dataAction = dataAction;
   }
 
-  
+
   /**
    * The type of the condition
    **/
@@ -232,7 +233,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Indicates whether to evaluate for the opposite of the stated condition; default is false
    **/
@@ -250,7 +251,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.inverted = inverted;
   }
 
-  
+
   /**
    * An attribute name associated with the condition (applies only to certain rule conditions)
    **/
@@ -268,7 +269,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.attributeName = attributeName;
   }
 
-  
+
   /**
    * A value associated with the condition
    **/
@@ -286,7 +287,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Determines the type of the value associated with the condition
    **/
@@ -304,7 +305,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.valueType = valueType;
   }
 
-  
+
   /**
    * An operation type for condition evaluation
    **/
@@ -322,7 +323,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
    **/
@@ -340,7 +341,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.codes = codes;
   }
 
-  
+
   /**
    * Determines the type of the property associated with the condition
    **/
@@ -358,7 +359,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.propertyType = propertyType;
   }
 
-  
+
   /**
    * A value associated with the property type of this condition
    **/
@@ -376,7 +377,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
    **/
@@ -394,7 +395,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.dataNotFoundResolution = dataNotFoundResolution;
   }
 
-  
+
   /**
    * The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
    **/
@@ -412,7 +413,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.contactIdField = contactIdField;
   }
 
-  
+
   /**
    * The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
    **/
@@ -430,7 +431,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.callAnalysisResultField = callAnalysisResultField;
   }
 
-  
+
   /**
    * The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
    **/
@@ -448,7 +449,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.agentWrapupField = agentWrapupField;
   }
 
-  
+
   /**
    * A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
    **/
@@ -466,7 +467,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
   }
 
-  
+
   /**
    * A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
    **/
@@ -484,7 +485,6 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -495,22 +495,23 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
       return false;
     }
     DialerRulesetConfigChangeCondition dialerRulesetConfigChangeCondition = (DialerRulesetConfigChangeCondition) o;
+
     return Objects.equals(this.dataAction, dialerRulesetConfigChangeCondition.dataAction) &&
-        Objects.equals(this.type, dialerRulesetConfigChangeCondition.type) &&
-        Objects.equals(this.inverted, dialerRulesetConfigChangeCondition.inverted) &&
-        Objects.equals(this.attributeName, dialerRulesetConfigChangeCondition.attributeName) &&
-        Objects.equals(this.value, dialerRulesetConfigChangeCondition.value) &&
-        Objects.equals(this.valueType, dialerRulesetConfigChangeCondition.valueType) &&
-        Objects.equals(this.operator, dialerRulesetConfigChangeCondition.operator) &&
-        Objects.equals(this.codes, dialerRulesetConfigChangeCondition.codes) &&
-        Objects.equals(this.propertyType, dialerRulesetConfigChangeCondition.propertyType) &&
-        Objects.equals(this.property, dialerRulesetConfigChangeCondition.property) &&
-        Objects.equals(this.dataNotFoundResolution, dialerRulesetConfigChangeCondition.dataNotFoundResolution) &&
-        Objects.equals(this.contactIdField, dialerRulesetConfigChangeCondition.contactIdField) &&
-        Objects.equals(this.callAnalysisResultField, dialerRulesetConfigChangeCondition.callAnalysisResultField) &&
-        Objects.equals(this.agentWrapupField, dialerRulesetConfigChangeCondition.agentWrapupField) &&
-        Objects.equals(this.contactColumnToDataActionFieldMappings, dialerRulesetConfigChangeCondition.contactColumnToDataActionFieldMappings) &&
-        Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates);
+            Objects.equals(this.type, dialerRulesetConfigChangeCondition.type) &&
+            Objects.equals(this.inverted, dialerRulesetConfigChangeCondition.inverted) &&
+            Objects.equals(this.attributeName, dialerRulesetConfigChangeCondition.attributeName) &&
+            Objects.equals(this.value, dialerRulesetConfigChangeCondition.value) &&
+            Objects.equals(this.valueType, dialerRulesetConfigChangeCondition.valueType) &&
+            Objects.equals(this.operator, dialerRulesetConfigChangeCondition.operator) &&
+            Objects.equals(this.codes, dialerRulesetConfigChangeCondition.codes) &&
+            Objects.equals(this.propertyType, dialerRulesetConfigChangeCondition.propertyType) &&
+            Objects.equals(this.property, dialerRulesetConfigChangeCondition.property) &&
+            Objects.equals(this.dataNotFoundResolution, dialerRulesetConfigChangeCondition.dataNotFoundResolution) &&
+            Objects.equals(this.contactIdField, dialerRulesetConfigChangeCondition.contactIdField) &&
+            Objects.equals(this.callAnalysisResultField, dialerRulesetConfigChangeCondition.callAnalysisResultField) &&
+            Objects.equals(this.agentWrapupField, dialerRulesetConfigChangeCondition.agentWrapupField) &&
+            Objects.equals(this.contactColumnToDataActionFieldMappings, dialerRulesetConfigChangeCondition.contactColumnToDataActionFieldMappings) &&
+            Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates);
   }
 
   @Override

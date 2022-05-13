@@ -20,24 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
-import com.mypurecloud.sdk.v2.model.GenericSAML;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
+import com.mypurecloud.sdk.v2.model.OAuthProvider;
+import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
 import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class DeleteIdentityprovidersGsuiteRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -61,7 +60,7 @@ public class DeleteIdentityprovidersGsuiteRequest {
         
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/identityproviders/gsuite")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -72,7 +71,7 @@ public class DeleteIdentityprovidersGsuiteRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final DeleteIdentityprovidersGsuiteRequest request;
@@ -81,9 +80,9 @@ public class DeleteIdentityprovidersGsuiteRequest {
 			request = new DeleteIdentityprovidersGsuiteRequest();
 		}
 
-		
 
-		
+
+
 
 		public DeleteIdentityprovidersGsuiteRequest build() {
             

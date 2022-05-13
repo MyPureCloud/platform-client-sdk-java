@@ -20,29 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionMap;
 import com.mypurecloud.sdk.v2.model.ActionMapListing;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
-import com.mypurecloud.sdk.v2.model.JourneySegment;
-import com.mypurecloud.sdk.v2.model.SegmentListing;
-import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
 
 public class PatchJourneySegmentRequest {
-    
+
 	private String segmentId;
 	public String getSegmentId() {
 		return this.segmentId;
@@ -56,7 +56,7 @@ public class PatchJourneySegmentRequest {
 	    this.setSegmentId(segmentId);
 	    return this;
 	} 
-	
+
 	private PatchSegment body;
 	public PatchSegment getBody() {
 		return this.body;
@@ -70,7 +70,7 @@ public class PatchJourneySegmentRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,8 +102,8 @@ public class PatchJourneySegmentRequest {
                 .withPathParameter("segmentId", segmentId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -114,12 +114,12 @@ public class PatchJourneySegmentRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String segmentId) {
 	    return new Builder()
 	            .withRequiredParams(segmentId);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchJourneySegmentRequest request;
@@ -128,25 +128,25 @@ public class PatchJourneySegmentRequest {
 			request = new PatchJourneySegmentRequest();
 		}
 
-		
+
 		public Builder withSegmentId(String segmentId) {
 			request.setSegmentId(segmentId);
 			return this;
 		}
-		
+
 		public Builder withBody(PatchSegment body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String segmentId) {
 			request.setSegmentId(segmentId);
-			
+
 			return this;
 		}
-		
+
 
 		public PatchJourneySegmentRequest build() {
             

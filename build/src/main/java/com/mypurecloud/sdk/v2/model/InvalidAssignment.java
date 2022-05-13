@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -42,7 +43,7 @@ public class InvalidAssignment  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The reason for the invalid input for validation
    **/
@@ -60,7 +61,6 @@ public class InvalidAssignment  implements Serializable {
     this.message = message;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class InvalidAssignment  implements Serializable {
       return false;
     }
     InvalidAssignment invalidAssignment = (InvalidAssignment) o;
+
     return Objects.equals(this.user, invalidAssignment.user) &&
-        Objects.equals(this.message, invalidAssignment.message);
+            Objects.equals(this.message, invalidAssignment.message);
   }
 
   @Override

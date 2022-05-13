@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledgeDocument;
@@ -45,7 +46,7 @@ public class ReportingTurnKnowledgeSearch  implements Serializable {
     this.searchId = searchId;
   }
 
-  
+
   /**
    * The list of search documents captured during this reporting turn.
    **/
@@ -63,7 +64,7 @@ public class ReportingTurnKnowledgeSearch  implements Serializable {
     this.documents = documents;
   }
 
-  
+
   /**
    * The search query that was used to search the Knowledge Base documents for a matching question.
    **/
@@ -81,7 +82,6 @@ public class ReportingTurnKnowledgeSearch  implements Serializable {
     this.query = query;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class ReportingTurnKnowledgeSearch  implements Serializable {
       return false;
     }
     ReportingTurnKnowledgeSearch reportingTurnKnowledgeSearch = (ReportingTurnKnowledgeSearch) o;
+
     return Objects.equals(this.searchId, reportingTurnKnowledgeSearch.searchId) &&
-        Objects.equals(this.documents, reportingTurnKnowledgeSearch.documents) &&
-        Objects.equals(this.query, reportingTurnKnowledgeSearch.query);
+            Objects.equals(this.documents, reportingTurnKnowledgeSearch.documents) &&
+            Objects.equals(this.query, reportingTurnKnowledgeSearch.query);
   }
 
   @Override

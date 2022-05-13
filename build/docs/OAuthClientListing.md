@@ -33,10 +33,10 @@ title: OAuthClientListing
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| DISABLED | &quot;disabled&quot; |
-| INACTIVE | &quot;inactive&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| DISABLED | &quot;disabled&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
 {: class="table table-striped"}
 
 

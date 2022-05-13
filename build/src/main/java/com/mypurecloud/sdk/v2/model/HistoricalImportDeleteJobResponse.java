@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -81,7 +82,7 @@ public class HistoricalImportDeleteJobResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public HistoricalImportDeleteJobResponse name(String name) {
@@ -98,21 +99,20 @@ public class HistoricalImportDeleteJobResponse  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Property denoting the status of the delete.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,10 +123,11 @@ public class HistoricalImportDeleteJobResponse  implements Serializable {
       return false;
     }
     HistoricalImportDeleteJobResponse historicalImportDeleteJobResponse = (HistoricalImportDeleteJobResponse) o;
+
     return Objects.equals(this.id, historicalImportDeleteJobResponse.id) &&
-        Objects.equals(this.name, historicalImportDeleteJobResponse.name) &&
-        Objects.equals(this.status, historicalImportDeleteJobResponse.status) &&
-        Objects.equals(this.selfUri, historicalImportDeleteJobResponse.selfUri);
+            Objects.equals(this.name, historicalImportDeleteJobResponse.name) &&
+            Objects.equals(this.status, historicalImportDeleteJobResponse.status) &&
+            Objects.equals(this.selfUri, historicalImportDeleteJobResponse.selfUri);
   }
 
   @Override

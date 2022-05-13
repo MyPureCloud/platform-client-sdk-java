@@ -23,10 +23,10 @@ title: SurveyDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DIMENSION | &quot;dimension&quot; |
-| PROPERTY | &quot;property&quot; |
-| METRIC | &quot;metric&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DIMENSION | &quot;dimension&quot; | 
+| PROPERTY | &quot;property&quot; | 
+| METRIC | &quot;metric&quot; | 
 {: class="table table-striped"}
 
 
@@ -36,16 +36,16 @@ title: SurveyDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EVENTTIME | &quot;eventTime&quot; |
-| QUEUEID | &quot;queueId&quot; |
-| SURVEYCOMPLETEDDATE | &quot;surveyCompletedDate&quot; |
-| SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; |
-| SURVEYFORMID | &quot;surveyFormId&quot; |
-| SURVEYID | &quot;surveyId&quot; |
-| SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; |
-| SURVEYSTATUS | &quot;surveyStatus&quot; |
-| USERID | &quot;userId&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EVENTTIME | &quot;eventTime&quot; | 
+| QUEUEID | &quot;queueId&quot; | 
+| SURVEYCOMPLETEDDATE | &quot;surveyCompletedDate&quot; | 
+| SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; | 
+| SURVEYFORMID | &quot;surveyFormId&quot; | 
+| SURVEYID | &quot;surveyId&quot; | 
+| SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; | 
+| SURVEYSTATUS | &quot;surveyStatus&quot; | 
+| USERID | &quot;userId&quot; | 
 {: class="table table-striped"}
 
 
@@ -55,8 +55,8 @@ title: SurveyDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; | 
 {: class="table table-striped"}
 
 
@@ -66,10 +66,10 @@ title: SurveyDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MATCHES | &quot;matches&quot; |
-| EXISTS | &quot;exists&quot; |
-| NOTEXISTS | &quot;notExists&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MATCHES | &quot;matches&quot; | 
+| EXISTS | &quot;exists&quot; | 
+| NOTEXISTS | &quot;notExists&quot; | 
 {: class="table table-striped"}
 
 

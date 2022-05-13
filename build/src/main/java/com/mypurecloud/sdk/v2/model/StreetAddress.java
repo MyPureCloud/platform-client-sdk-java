@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class StreetAddress  implements Serializable {
     this.country = country;
   }
 
-  
+
   /**
    * State or Province
    **/
@@ -65,7 +66,7 @@ public class StreetAddress  implements Serializable {
     this.a1 = a1;
   }
 
-  
+
   /**
    * City or township
    **/
@@ -83,7 +84,7 @@ public class StreetAddress  implements Serializable {
     this.a3 = a3;
   }
 
-  
+
   /**
    * Number and street
    **/
@@ -101,7 +102,7 @@ public class StreetAddress  implements Serializable {
     this.RD = RD;
   }
 
-  
+
   /**
    * House Number
    **/
@@ -119,7 +120,7 @@ public class StreetAddress  implements Serializable {
     this.HNO = HNO;
   }
 
-  
+
   /**
    * extra location info like suite 300
    **/
@@ -137,7 +138,7 @@ public class StreetAddress  implements Serializable {
     this.LOC = LOC;
   }
 
-  
+
   /**
    * Name of the customer
    **/
@@ -155,7 +156,7 @@ public class StreetAddress  implements Serializable {
     this.NAM = NAM;
   }
 
-  
+
   /**
    * Postal code
    **/
@@ -173,7 +174,6 @@ public class StreetAddress  implements Serializable {
     this.PC = PC;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -184,14 +184,15 @@ public class StreetAddress  implements Serializable {
       return false;
     }
     StreetAddress streetAddress = (StreetAddress) o;
+
     return Objects.equals(this.country, streetAddress.country) &&
-        Objects.equals(this.a1, streetAddress.a1) &&
-        Objects.equals(this.a3, streetAddress.a3) &&
-        Objects.equals(this.RD, streetAddress.RD) &&
-        Objects.equals(this.HNO, streetAddress.HNO) &&
-        Objects.equals(this.LOC, streetAddress.LOC) &&
-        Objects.equals(this.NAM, streetAddress.NAM) &&
-        Objects.equals(this.PC, streetAddress.PC);
+            Objects.equals(this.a1, streetAddress.a1) &&
+            Objects.equals(this.a3, streetAddress.a3) &&
+            Objects.equals(this.RD, streetAddress.RD) &&
+            Objects.equals(this.HNO, streetAddress.HNO) &&
+            Objects.equals(this.LOC, streetAddress.LOC) &&
+            Objects.equals(this.NAM, streetAddress.NAM) &&
+            Objects.equals(this.PC, streetAddress.PC);
   }
 
   @Override

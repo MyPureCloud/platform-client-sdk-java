@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -42,7 +43,7 @@ public class WebChatDeployment  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WebChatDeployment name(String name) {
@@ -59,7 +60,7 @@ public class WebChatDeployment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public WebChatDeployment description(String description) {
@@ -76,7 +77,7 @@ public class WebChatDeployment  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public WebChatDeployment authenticationRequired(Boolean authenticationRequired) {
@@ -93,7 +94,7 @@ public class WebChatDeployment  implements Serializable {
     this.authenticationRequired = authenticationRequired;
   }
 
-  
+
   /**
    * URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
    **/
@@ -111,7 +112,7 @@ public class WebChatDeployment  implements Serializable {
     this.authenticationUrl = authenticationUrl;
   }
 
-  
+
   /**
    **/
   public WebChatDeployment disabled(Boolean disabled) {
@@ -128,7 +129,7 @@ public class WebChatDeployment  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public WebChatDeployment webChatConfig(WebChatConfig webChatConfig) {
@@ -145,7 +146,7 @@ public class WebChatDeployment  implements Serializable {
     this.webChatConfig = webChatConfig;
   }
 
-  
+
   /**
    **/
   public WebChatDeployment allowedDomains(List<String> allowedDomains) {
@@ -162,7 +163,7 @@ public class WebChatDeployment  implements Serializable {
     this.allowedDomains = allowedDomains;
   }
 
-  
+
   /**
    * The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
    **/
@@ -180,14 +181,13 @@ public class WebChatDeployment  implements Serializable {
     this.flow = flow;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,16 +198,17 @@ public class WebChatDeployment  implements Serializable {
       return false;
     }
     WebChatDeployment webChatDeployment = (WebChatDeployment) o;
+
     return Objects.equals(this.id, webChatDeployment.id) &&
-        Objects.equals(this.name, webChatDeployment.name) &&
-        Objects.equals(this.description, webChatDeployment.description) &&
-        Objects.equals(this.authenticationRequired, webChatDeployment.authenticationRequired) &&
-        Objects.equals(this.authenticationUrl, webChatDeployment.authenticationUrl) &&
-        Objects.equals(this.disabled, webChatDeployment.disabled) &&
-        Objects.equals(this.webChatConfig, webChatDeployment.webChatConfig) &&
-        Objects.equals(this.allowedDomains, webChatDeployment.allowedDomains) &&
-        Objects.equals(this.flow, webChatDeployment.flow) &&
-        Objects.equals(this.selfUri, webChatDeployment.selfUri);
+            Objects.equals(this.name, webChatDeployment.name) &&
+            Objects.equals(this.description, webChatDeployment.description) &&
+            Objects.equals(this.authenticationRequired, webChatDeployment.authenticationRequired) &&
+            Objects.equals(this.authenticationUrl, webChatDeployment.authenticationUrl) &&
+            Objects.equals(this.disabled, webChatDeployment.disabled) &&
+            Objects.equals(this.webChatConfig, webChatDeployment.webChatConfig) &&
+            Objects.equals(this.allowedDomains, webChatDeployment.allowedDomains) &&
+            Objects.equals(this.flow, webChatDeployment.flow) &&
+            Objects.equals(this.selfUri, webChatDeployment.selfUri);
   }
 
   @Override

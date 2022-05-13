@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayForecastData  implements Seri
     this.offered = offered;
   }
 
-  
+
   /**
    **/
   public WfmBuIntradayDataUpdateTopicBuIntradayForecastData averageHandleTimeSeconds(BigDecimal averageHandleTimeSeconds) {
@@ -58,7 +59,6 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayForecastData  implements Seri
     this.averageHandleTimeSeconds = averageHandleTimeSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayForecastData  implements Seri
       return false;
     }
     WfmBuIntradayDataUpdateTopicBuIntradayForecastData wfmBuIntradayDataUpdateTopicBuIntradayForecastData = (WfmBuIntradayDataUpdateTopicBuIntradayForecastData) o;
+
     return Objects.equals(this.offered, wfmBuIntradayDataUpdateTopicBuIntradayForecastData.offered) &&
-        Objects.equals(this.averageHandleTimeSeconds, wfmBuIntradayDataUpdateTopicBuIntradayForecastData.averageHandleTimeSeconds);
+            Objects.equals(this.averageHandleTimeSeconds, wfmBuIntradayDataUpdateTopicBuIntradayForecastData.averageHandleTimeSeconds);
   }
 
   @Override

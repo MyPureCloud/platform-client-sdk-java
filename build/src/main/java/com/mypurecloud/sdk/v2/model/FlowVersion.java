@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -176,7 +177,7 @@ public class FlowVersion  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public FlowVersion name(String name) {
@@ -193,7 +194,7 @@ public class FlowVersion  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public FlowVersion commitVersion(String commitVersion) {
@@ -210,7 +211,7 @@ public class FlowVersion  implements Serializable {
     this.commitVersion = commitVersion;
   }
 
-  
+
   /**
    **/
   public FlowVersion configurationVersion(String configurationVersion) {
@@ -227,7 +228,7 @@ public class FlowVersion  implements Serializable {
     this.configurationVersion = configurationVersion;
   }
 
-  
+
   /**
    **/
   public FlowVersion type(TypeEnum type) {
@@ -244,7 +245,7 @@ public class FlowVersion  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public FlowVersion secure(Boolean secure) {
@@ -261,7 +262,7 @@ public class FlowVersion  implements Serializable {
     this.secure = secure;
   }
 
-  
+
   /**
    **/
   public FlowVersion debug(Boolean debug) {
@@ -278,7 +279,7 @@ public class FlowVersion  implements Serializable {
     this.debug = debug;
   }
 
-  
+
   /**
    **/
   public FlowVersion createdBy(User createdBy) {
@@ -295,7 +296,7 @@ public class FlowVersion  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public FlowVersion createdByClient(DomainEntityRef createdByClient) {
@@ -312,7 +313,7 @@ public class FlowVersion  implements Serializable {
     this.createdByClient = createdByClient;
   }
 
-  
+
   /**
    **/
   public FlowVersion configurationUri(String configurationUri) {
@@ -329,7 +330,7 @@ public class FlowVersion  implements Serializable {
     this.configurationUri = configurationUri;
   }
 
-  
+
   /**
    **/
   public FlowVersion dateCreated(Long dateCreated) {
@@ -346,7 +347,7 @@ public class FlowVersion  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public FlowVersion generationId(String generationId) {
@@ -363,7 +364,7 @@ public class FlowVersion  implements Serializable {
     this.generationId = generationId;
   }
 
-  
+
   /**
    **/
   public FlowVersion publishResultUri(String publishResultUri) {
@@ -380,7 +381,7 @@ public class FlowVersion  implements Serializable {
     this.publishResultUri = publishResultUri;
   }
 
-  
+
   /**
    **/
   public FlowVersion inputSchema(JsonSchemaDocument inputSchema) {
@@ -397,7 +398,7 @@ public class FlowVersion  implements Serializable {
     this.inputSchema = inputSchema;
   }
 
-  
+
   /**
    **/
   public FlowVersion outputSchema(JsonSchemaDocument outputSchema) {
@@ -414,35 +415,34 @@ public class FlowVersion  implements Serializable {
     this.outputSchema = outputSchema;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Information about the natural language understanding configuration for the flow version")
   @JsonProperty("nluInfo")
   public NluInfo getNluInfo() {
     return nluInfo;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of supported languages for this version of the flow")
   @JsonProperty("supportedLanguages")
   public List<SupportedLanguage> getSupportedLanguages() {
     return supportedLanguages;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.")
   @JsonProperty("compatibleFlowTypes")
   public List<CompatibleFlowTypesEnum> getCompatibleFlowTypes() {
     return compatibleFlowTypes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -453,25 +453,26 @@ public class FlowVersion  implements Serializable {
       return false;
     }
     FlowVersion flowVersion = (FlowVersion) o;
+
     return Objects.equals(this.id, flowVersion.id) &&
-        Objects.equals(this.name, flowVersion.name) &&
-        Objects.equals(this.commitVersion, flowVersion.commitVersion) &&
-        Objects.equals(this.configurationVersion, flowVersion.configurationVersion) &&
-        Objects.equals(this.type, flowVersion.type) &&
-        Objects.equals(this.secure, flowVersion.secure) &&
-        Objects.equals(this.debug, flowVersion.debug) &&
-        Objects.equals(this.createdBy, flowVersion.createdBy) &&
-        Objects.equals(this.createdByClient, flowVersion.createdByClient) &&
-        Objects.equals(this.configurationUri, flowVersion.configurationUri) &&
-        Objects.equals(this.dateCreated, flowVersion.dateCreated) &&
-        Objects.equals(this.generationId, flowVersion.generationId) &&
-        Objects.equals(this.publishResultUri, flowVersion.publishResultUri) &&
-        Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
-        Objects.equals(this.outputSchema, flowVersion.outputSchema) &&
-        Objects.equals(this.nluInfo, flowVersion.nluInfo) &&
-        Objects.equals(this.supportedLanguages, flowVersion.supportedLanguages) &&
-        Objects.equals(this.compatibleFlowTypes, flowVersion.compatibleFlowTypes) &&
-        Objects.equals(this.selfUri, flowVersion.selfUri);
+            Objects.equals(this.name, flowVersion.name) &&
+            Objects.equals(this.commitVersion, flowVersion.commitVersion) &&
+            Objects.equals(this.configurationVersion, flowVersion.configurationVersion) &&
+            Objects.equals(this.type, flowVersion.type) &&
+            Objects.equals(this.secure, flowVersion.secure) &&
+            Objects.equals(this.debug, flowVersion.debug) &&
+            Objects.equals(this.createdBy, flowVersion.createdBy) &&
+            Objects.equals(this.createdByClient, flowVersion.createdByClient) &&
+            Objects.equals(this.configurationUri, flowVersion.configurationUri) &&
+            Objects.equals(this.dateCreated, flowVersion.dateCreated) &&
+            Objects.equals(this.generationId, flowVersion.generationId) &&
+            Objects.equals(this.publishResultUri, flowVersion.publishResultUri) &&
+            Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
+            Objects.equals(this.outputSchema, flowVersion.outputSchema) &&
+            Objects.equals(this.nluInfo, flowVersion.nluInfo) &&
+            Objects.equals(this.supportedLanguages, flowVersion.supportedLanguages) &&
+            Objects.equals(this.compatibleFlowTypes, flowVersion.compatibleFlowTypes) &&
+            Objects.equals(this.selfUri, flowVersion.selfUri);
   }
 
   @Override

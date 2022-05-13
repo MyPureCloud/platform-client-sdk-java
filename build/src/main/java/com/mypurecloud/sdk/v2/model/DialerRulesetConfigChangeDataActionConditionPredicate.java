@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     this.outputField = outputField;
   }
 
-  
+
   /**
    * The operation with which to evaluate this condition
    **/
@@ -118,7 +119,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     this.outputOperator = outputOperator;
   }
 
-  
+
   /**
    * The value to compare against for this condition
    **/
@@ -136,7 +137,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     this.comparisonValue = comparisonValue;
   }
 
-  
+
   /**
    * The result of this predicate if the requested output field is missing from the data action's result
    **/
@@ -154,7 +155,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     this.outputFieldMissingResolution = outputFieldMissingResolution;
   }
 
-  
+
   /**
    * If true, inverts the result of evaluating this Predicate. Default is false.
    **/
@@ -172,7 +173,6 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     this.inverted = inverted;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,11 +183,12 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
       return false;
     }
     DialerRulesetConfigChangeDataActionConditionPredicate dialerRulesetConfigChangeDataActionConditionPredicate = (DialerRulesetConfigChangeDataActionConditionPredicate) o;
+
     return Objects.equals(this.outputField, dialerRulesetConfigChangeDataActionConditionPredicate.outputField) &&
-        Objects.equals(this.outputOperator, dialerRulesetConfigChangeDataActionConditionPredicate.outputOperator) &&
-        Objects.equals(this.comparisonValue, dialerRulesetConfigChangeDataActionConditionPredicate.comparisonValue) &&
-        Objects.equals(this.outputFieldMissingResolution, dialerRulesetConfigChangeDataActionConditionPredicate.outputFieldMissingResolution) &&
-        Objects.equals(this.inverted, dialerRulesetConfigChangeDataActionConditionPredicate.inverted);
+            Objects.equals(this.outputOperator, dialerRulesetConfigChangeDataActionConditionPredicate.outputOperator) &&
+            Objects.equals(this.comparisonValue, dialerRulesetConfigChangeDataActionConditionPredicate.comparisonValue) &&
+            Objects.equals(this.outputFieldMissingResolution, dialerRulesetConfigChangeDataActionConditionPredicate.outputFieldMissingResolution) &&
+            Objects.equals(this.inverted, dialerRulesetConfigChangeDataActionConditionPredicate.inverted);
   }
 
   @Override

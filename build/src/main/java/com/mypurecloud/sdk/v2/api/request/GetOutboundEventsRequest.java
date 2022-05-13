@@ -20,69 +20,68 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Campaign;
-import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
-import com.mypurecloud.sdk.v2.model.ResponseSet;
-import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
+import com.mypurecloud.sdk.v2.model.Campaign;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
-import com.mypurecloud.sdk.v2.model.CampaignInteractions;
-import com.mypurecloud.sdk.v2.model.CampaignProgress;
-import com.mypurecloud.sdk.v2.model.CampaignStats;
-import com.mypurecloud.sdk.v2.model.CampaignRule;
-import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
-import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.ContactList;
-import com.mypurecloud.sdk.v2.model.DialerContact;
-import com.mypurecloud.sdk.v2.model.ExportUri;
-import com.mypurecloud.sdk.v2.model.ImportStatus;
-import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
-import com.mypurecloud.sdk.v2.model.ContactListFilter;
-import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
-import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.DncList;
-import com.mypurecloud.sdk.v2.model.DncListEntityListing;
-import com.mypurecloud.sdk.v2.model.DncListDivisionView;
-import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
-import com.mypurecloud.sdk.v2.model.EventLog;
-import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.RuleSet;
-import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignInteractions;
+import com.mypurecloud.sdk.v2.model.CampaignProgress;
+import com.mypurecloud.sdk.v2.model.CampaignRule;
+import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
-import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
-import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
-import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.CampaignSequence;
 import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
-import com.mypurecloud.sdk.v2.model.OutboundSettings;
-import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
-import com.mypurecloud.sdk.v2.model.AuditSearchResult;
-import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
-import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.CampaignStats;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
-import com.mypurecloud.sdk.v2.model.WritableDialerContact;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ContactList;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
+import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
+import com.mypurecloud.sdk.v2.model.DialerContact;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
-import com.mypurecloud.sdk.v2.model.Agent;
+import com.mypurecloud.sdk.v2.model.DncListDivisionView;
+import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
+import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.ExportUri;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
+import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.ResponseSet;
+import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
+import com.mypurecloud.sdk.v2.model.RuleSet;
+import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
+import com.mypurecloud.sdk.v2.model.SequenceSchedule;
+import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
+import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
 public class GetOutboundEventsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -96,7 +95,7 @@ public class GetOutboundEventsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -110,7 +109,7 @@ public class GetOutboundEventsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String filterType;
 	public String getFilterType() {
 		return this.filterType;
@@ -126,15 +125,15 @@ public class GetOutboundEventsRequest {
 	} 
 
 	public enum filterTypeValues { 
-		EQUALS("Equals"), 
-		REGEX("RegEx"), 
-		CONTAINS("Contains"), 
-		PREFIX("Prefix"), 
-		LESSTHAN("LessThan"), 
-		LESSTHANEQUALTO("LessThanEqualTo"), 
-		GREATERTHAN("GreaterThan"), 
-		GREATERTHANEQUALTO("GreaterThanEqualTo"), 
-		BEGINSWITH("BeginsWith"), 
+		EQUALS("Equals"),
+		REGEX("RegEx"),
+		CONTAINS("Contains"),
+		PREFIX("Prefix"),
+		LESSTHAN("LessThan"),
+		LESSTHANEQUALTO("LessThanEqualTo"),
+		GREATERTHAN("GreaterThan"),
+		GREATERTHANEQUALTO("GreaterThanEqualTo"),
+		BEGINSWITH("BeginsWith"),
 		ENDSWITH("EndsWith");
 
 		private String value;
@@ -162,7 +161,7 @@ public class GetOutboundEventsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String category;
 	public String getCategory() {
 		return this.category;
@@ -176,7 +175,7 @@ public class GetOutboundEventsRequest {
 	    this.setCategory(category);
 	    return this;
 	} 
-	
+
 	private String level;
 	public String getLevel() {
 		return this.level;
@@ -190,7 +189,7 @@ public class GetOutboundEventsRequest {
 	    this.setLevel(level);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -204,7 +203,7 @@ public class GetOutboundEventsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -220,7 +219,7 @@ public class GetOutboundEventsRequest {
 	} 
 
 	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
+		ASCENDING("ascending"),
 		DESCENDING("descending");
 
 		private String value;
@@ -248,7 +247,7 @@ public class GetOutboundEventsRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -272,21 +271,28 @@ public class GetOutboundEventsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/outbound/events")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("filterType", "", filterType)
         
+
                 .withQueryParameters("category", "", category)
         
+
                 .withQueryParameters("level", "", level)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("sortOrder", "", sortOrder)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -297,7 +303,7 @@ public class GetOutboundEventsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetOutboundEventsRequest request;
@@ -306,54 +312,62 @@ public class GetOutboundEventsRequest {
 			request = new GetOutboundEventsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withFilterType(String filterType) {
 			request.setFilterType(filterType);
 			return this;
 		}
 
+
+
+		
 		public Builder withFilterType(filterTypeValues filterType) {
 		    request.setFilterType(filterType.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withCategory(String category) {
 			request.setCategory(category);
 			return this;
 		}
-		
+
 		public Builder withLevel(String level) {
 			request.setLevel(level);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
 
-		public Builder withSortOrder(sortOrderValues sortOrder) {
-		    request.setSortOrder(sortOrder.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetOutboundEventsRequest build() {
             

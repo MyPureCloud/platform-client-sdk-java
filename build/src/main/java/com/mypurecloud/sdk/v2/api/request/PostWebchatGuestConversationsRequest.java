@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebChatDeployment;
 import com.mypurecloud.sdk.v2.model.WebChatDeploymentEntityListing;
@@ -30,13 +33,10 @@ import com.mypurecloud.sdk.v2.model.WebChatMemberInfoEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatSettings;
-import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
-import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
 
 public class PostWebchatGuestConversationsRequest {
-    
+
 	private CreateWebChatConversationRequest body;
 	public CreateWebChatConversationRequest getBody() {
 		return this.body;
@@ -50,7 +50,7 @@ public class PostWebchatGuestConversationsRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -80,8 +80,8 @@ public class PostWebchatGuestConversationsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/webchat/guest/conversations")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames()
@@ -92,12 +92,12 @@ public class PostWebchatGuestConversationsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(CreateWebChatConversationRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostWebchatGuestConversationsRequest request;
@@ -106,20 +106,20 @@ public class PostWebchatGuestConversationsRequest {
 			request = new PostWebchatGuestConversationsRequest();
 		}
 
-		
+
 		public Builder withBody(CreateWebChatConversationRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(CreateWebChatConversationRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostWebchatGuestConversationsRequest build() {
             

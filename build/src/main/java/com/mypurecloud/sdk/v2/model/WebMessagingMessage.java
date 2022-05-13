@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -197,7 +198,7 @@ public class WebMessagingMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Channel-specific information that describes the message and the message channel/provider.
    **/
@@ -215,7 +216,7 @@ public class WebMessagingMessage  implements Serializable {
     this.channel = channel;
   }
 
-  
+
   /**
    * Message type.
    **/
@@ -233,7 +234,7 @@ public class WebMessagingMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Message text.
    **/
@@ -251,7 +252,7 @@ public class WebMessagingMessage  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * List of content elements.
    **/
@@ -269,7 +270,7 @@ public class WebMessagingMessage  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * List of event elements.
    **/
@@ -287,7 +288,7 @@ public class WebMessagingMessage  implements Serializable {
     this.events = events;
   }
 
-  
+
   /**
    * The direction of the message.  Direction is always from the perspective of the Genesys Cloud platform.  An Inbound message is one sent from a guest to the Genesys Cloud Platform.  An Outbound message is one sent from the Genesys Cloud Platform to a guest.
    **/
@@ -305,7 +306,7 @@ public class WebMessagingMessage  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.
    **/
@@ -323,7 +324,6 @@ public class WebMessagingMessage  implements Serializable {
     this.originatingEntity = originatingEntity;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,14 +334,15 @@ public class WebMessagingMessage  implements Serializable {
       return false;
     }
     WebMessagingMessage webMessagingMessage = (WebMessagingMessage) o;
+
     return Objects.equals(this.id, webMessagingMessage.id) &&
-        Objects.equals(this.channel, webMessagingMessage.channel) &&
-        Objects.equals(this.type, webMessagingMessage.type) &&
-        Objects.equals(this.text, webMessagingMessage.text) &&
-        Objects.equals(this.content, webMessagingMessage.content) &&
-        Objects.equals(this.events, webMessagingMessage.events) &&
-        Objects.equals(this.direction, webMessagingMessage.direction) &&
-        Objects.equals(this.originatingEntity, webMessagingMessage.originatingEntity);
+            Objects.equals(this.channel, webMessagingMessage.channel) &&
+            Objects.equals(this.type, webMessagingMessage.type) &&
+            Objects.equals(this.text, webMessagingMessage.text) &&
+            Objects.equals(this.content, webMessagingMessage.content) &&
+            Objects.equals(this.events, webMessagingMessage.events) &&
+            Objects.equals(this.direction, webMessagingMessage.direction) &&
+            Objects.equals(this.originatingEntity, webMessagingMessage.originatingEntity);
   }
 
   @Override

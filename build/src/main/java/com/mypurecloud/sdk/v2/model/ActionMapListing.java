@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ActionMapListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ActionMapListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ActionMapListing total(Long total) {
@@ -103,7 +104,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ActionMapListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ActionMapListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ActionMapListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ActionMapListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ActionMapListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ActionMapListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ActionMapListing  implements Serializable, PagedResource<ActionMap>
       return false;
     }
     ActionMapListing actionMapListing = (ActionMapListing) o;
+
     return Objects.equals(this.entities, actionMapListing.entities) &&
-        Objects.equals(this.pageSize, actionMapListing.pageSize) &&
-        Objects.equals(this.pageNumber, actionMapListing.pageNumber) &&
-        Objects.equals(this.total, actionMapListing.total) &&
-        Objects.equals(this.lastUri, actionMapListing.lastUri) &&
-        Objects.equals(this.firstUri, actionMapListing.firstUri) &&
-        Objects.equals(this.selfUri, actionMapListing.selfUri) &&
-        Objects.equals(this.previousUri, actionMapListing.previousUri) &&
-        Objects.equals(this.nextUri, actionMapListing.nextUri) &&
-        Objects.equals(this.pageCount, actionMapListing.pageCount);
+            Objects.equals(this.pageSize, actionMapListing.pageSize) &&
+            Objects.equals(this.pageNumber, actionMapListing.pageNumber) &&
+            Objects.equals(this.total, actionMapListing.total) &&
+            Objects.equals(this.lastUri, actionMapListing.lastUri) &&
+            Objects.equals(this.firstUri, actionMapListing.firstUri) &&
+            Objects.equals(this.selfUri, actionMapListing.selfUri) &&
+            Objects.equals(this.previousUri, actionMapListing.previousUri) &&
+            Objects.equals(this.nextUri, actionMapListing.nextUri) &&
+            Objects.equals(this.pageCount, actionMapListing.pageCount);
   }
 
   @Override

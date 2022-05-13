@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class MessageMediaAttachment  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The optional internet media type of the the media object.If null then the media type should be dictated by the url.
    **/
@@ -111,7 +112,7 @@ public class MessageMediaAttachment  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The optional content length of the the media object, in bytes.
    **/
@@ -129,7 +130,7 @@ public class MessageMediaAttachment  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    * The name of the media object.
    **/
@@ -147,7 +148,7 @@ public class MessageMediaAttachment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * A globally unique identifier for the media object.
    **/
@@ -165,7 +166,6 @@ public class MessageMediaAttachment  implements Serializable {
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,11 +176,12 @@ public class MessageMediaAttachment  implements Serializable {
       return false;
     }
     MessageMediaAttachment messageMediaAttachment = (MessageMediaAttachment) o;
+
     return Objects.equals(this.url, messageMediaAttachment.url) &&
-        Objects.equals(this.mediaType, messageMediaAttachment.mediaType) &&
-        Objects.equals(this.contentLength, messageMediaAttachment.contentLength) &&
-        Objects.equals(this.name, messageMediaAttachment.name) &&
-        Objects.equals(this.id, messageMediaAttachment.id);
+            Objects.equals(this.mediaType, messageMediaAttachment.mediaType) &&
+            Objects.equals(this.contentLength, messageMediaAttachment.contentLength) &&
+            Objects.equals(this.name, messageMediaAttachment.name) &&
+            Objects.equals(this.id, messageMediaAttachment.id);
   }
 
   @Override

@@ -27,10 +27,10 @@ title: DialerSequenceConfigChangeCampaignSequence
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;on&quot; |
-| OFF | &quot;off&quot; |
-| COMPLETE | &quot;complete&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;on&quot; | 
+| OFF | &quot;off&quot; | 
+| COMPLETE | &quot;complete&quot; | 
 {: class="table table-striped"}
 
 

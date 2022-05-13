@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -102,7 +103,7 @@ public class TextBotExitAction  implements Serializable {
     this.reason = reason;
   }
 
-  
+
   /**
    * Extended information related to the reason, if available.
    **/
@@ -120,7 +121,7 @@ public class TextBotExitAction  implements Serializable {
     this.reasonExtendedInfo = reasonExtendedInfo;
   }
 
-  
+
   /**
    * The active intent at the time of the exit.
    **/
@@ -138,7 +139,7 @@ public class TextBotExitAction  implements Serializable {
     this.activeIntent = activeIntent;
   }
 
-  
+
   /**
    * Describes where in the Bot Flow the user was when the exit occurred.
    **/
@@ -156,7 +157,7 @@ public class TextBotExitAction  implements Serializable {
     this.flowLocation = flowLocation;
   }
 
-  
+
   /**
    * The output data for the bot flow.
    **/
@@ -174,7 +175,7 @@ public class TextBotExitAction  implements Serializable {
     this.outputData = outputData;
   }
 
-  
+
   /**
    * The list of Flow Outcomes for the bot flow and their details.
    **/
@@ -192,7 +193,6 @@ public class TextBotExitAction  implements Serializable {
     this.flowOutcomes = flowOutcomes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -203,12 +203,13 @@ public class TextBotExitAction  implements Serializable {
       return false;
     }
     TextBotExitAction textBotExitAction = (TextBotExitAction) o;
+
     return Objects.equals(this.reason, textBotExitAction.reason) &&
-        Objects.equals(this.reasonExtendedInfo, textBotExitAction.reasonExtendedInfo) &&
-        Objects.equals(this.activeIntent, textBotExitAction.activeIntent) &&
-        Objects.equals(this.flowLocation, textBotExitAction.flowLocation) &&
-        Objects.equals(this.outputData, textBotExitAction.outputData) &&
-        Objects.equals(this.flowOutcomes, textBotExitAction.flowOutcomes);
+            Objects.equals(this.reasonExtendedInfo, textBotExitAction.reasonExtendedInfo) &&
+            Objects.equals(this.activeIntent, textBotExitAction.activeIntent) &&
+            Objects.equals(this.flowLocation, textBotExitAction.flowLocation) &&
+            Objects.equals(this.outputData, textBotExitAction.outputData) &&
+            Objects.equals(this.flowOutcomes, textBotExitAction.flowOutcomes);
   }
 
   @Override

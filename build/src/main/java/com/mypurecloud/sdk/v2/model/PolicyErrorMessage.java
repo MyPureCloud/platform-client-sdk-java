@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserParam;
@@ -49,7 +50,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.statusCode = statusCode;
   }
 
-  
+
   /**
    **/
   public PolicyErrorMessage userMessage(Object userMessage) {
@@ -66,7 +67,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.userMessage = userMessage;
   }
 
-  
+
   /**
    **/
   public PolicyErrorMessage userParamsMessage(String userParamsMessage) {
@@ -83,7 +84,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.userParamsMessage = userParamsMessage;
   }
 
-  
+
   /**
    **/
   public PolicyErrorMessage errorCode(String errorCode) {
@@ -100,7 +101,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public PolicyErrorMessage correlationId(String correlationId) {
@@ -117,7 +118,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    **/
   public PolicyErrorMessage userParams(List<UserParam> userParams) {
@@ -134,7 +135,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.userParams = userParams;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -152,7 +153,6 @@ public class PolicyErrorMessage  implements Serializable {
     this.insertDate = insertDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,13 +163,14 @@ public class PolicyErrorMessage  implements Serializable {
       return false;
     }
     PolicyErrorMessage policyErrorMessage = (PolicyErrorMessage) o;
+
     return Objects.equals(this.statusCode, policyErrorMessage.statusCode) &&
-        Objects.equals(this.userMessage, policyErrorMessage.userMessage) &&
-        Objects.equals(this.userParamsMessage, policyErrorMessage.userParamsMessage) &&
-        Objects.equals(this.errorCode, policyErrorMessage.errorCode) &&
-        Objects.equals(this.correlationId, policyErrorMessage.correlationId) &&
-        Objects.equals(this.userParams, policyErrorMessage.userParams) &&
-        Objects.equals(this.insertDate, policyErrorMessage.insertDate);
+            Objects.equals(this.userMessage, policyErrorMessage.userMessage) &&
+            Objects.equals(this.userParamsMessage, policyErrorMessage.userParamsMessage) &&
+            Objects.equals(this.errorCode, policyErrorMessage.errorCode) &&
+            Objects.equals(this.correlationId, policyErrorMessage.correlationId) &&
+            Objects.equals(this.userParams, policyErrorMessage.userParams) &&
+            Objects.equals(this.insertDate, policyErrorMessage.insertDate);
   }
 
   @Override

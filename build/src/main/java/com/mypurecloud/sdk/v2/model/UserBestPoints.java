@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserBestPointsItem;
@@ -34,14 +35,13 @@ public class UserBestPoints  implements Serializable {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of best point for the requested user")
   @JsonProperty("bestPoints")
   public List<UserBestPointsItem> getBestPoints() {
     return bestPoints;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -52,8 +52,9 @@ public class UserBestPoints  implements Serializable {
       return false;
     }
     UserBestPoints userBestPoints = (UserBestPoints) o;
+
     return Objects.equals(this.user, userBestPoints.user) &&
-        Objects.equals(this.bestPoints, userBestPoints.bestPoints);
+            Objects.equals(this.bestPoints, userBestPoints.bestPoints);
   }
 
   @Override

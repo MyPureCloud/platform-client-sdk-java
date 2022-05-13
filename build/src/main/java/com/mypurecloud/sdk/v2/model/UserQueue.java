@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -121,7 +122,7 @@ public class UserQueue  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public UserQueue name(String name) {
@@ -138,7 +139,7 @@ public class UserQueue  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -156,7 +157,7 @@ public class UserQueue  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The queue description.
    **/
@@ -174,7 +175,7 @@ public class UserQueue  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -192,7 +193,7 @@ public class UserQueue  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -210,7 +211,7 @@ public class UserQueue  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the queue.
    **/
@@ -228,7 +229,7 @@ public class UserQueue  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the queue.
    **/
@@ -246,28 +247,28 @@ public class UserQueue  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total number of members in the queue.")
   @JsonProperty("memberCount")
   public Integer getMemberCount() {
     return memberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of user members (i.e., non-group members) in the queue.")
   @JsonProperty("userMemberCount")
   public Integer getUserMemberCount() {
     return userMemberCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The number of joined members in the queue.")
   @JsonProperty("joinedMemberCount")
   public Integer getJoinedMemberCount() {
     return joinedMemberCount;
   }
 
-  
+
   /**
    * The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
    **/
@@ -285,7 +286,7 @@ public class UserQueue  implements Serializable {
     this.mediaSettings = mediaSettings;
   }
 
-  
+
   /**
    * The routing rules for the queue, used for Preferred Agent Routing.
    **/
@@ -303,7 +304,7 @@ public class UserQueue  implements Serializable {
     this.routingRules = routingRules;
   }
 
-  
+
   /**
    * The bullseye settings for the queue.
    **/
@@ -321,7 +322,7 @@ public class UserQueue  implements Serializable {
     this.bullseye = bullseye;
   }
 
-  
+
   /**
    * The ACW settings for the queue.
    **/
@@ -339,7 +340,7 @@ public class UserQueue  implements Serializable {
     this.acwSettings = acwSettings;
   }
 
-  
+
   /**
    * The skill evaluation method to use when routing conversations.
    **/
@@ -357,7 +358,7 @@ public class UserQueue  implements Serializable {
     this.skillEvaluationMethod = skillEvaluationMethod;
   }
 
-  
+
   /**
    * The in-queue flow to use for call conversations waiting in queue.
    **/
@@ -375,7 +376,7 @@ public class UserQueue  implements Serializable {
     this.queueFlow = queueFlow;
   }
 
-  
+
   /**
    * The in-queue flow to use for email conversations waiting in queue.
    **/
@@ -393,7 +394,7 @@ public class UserQueue  implements Serializable {
     this.emailInQueueFlow = emailInQueueFlow;
   }
 
-  
+
   /**
    * The in-queue flow to use for message conversations waiting in queue.
    **/
@@ -411,7 +412,7 @@ public class UserQueue  implements Serializable {
     this.messageInQueueFlow = messageInQueueFlow;
   }
 
-  
+
   /**
    * The prompt used for whisper on the queue, if configured.
    **/
@@ -429,7 +430,7 @@ public class UserQueue  implements Serializable {
     this.whisperPrompt = whisperPrompt;
   }
 
-  
+
   /**
    * The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
    **/
@@ -447,7 +448,7 @@ public class UserQueue  implements Serializable {
     this.onHoldPrompt = onHoldPrompt;
   }
 
-  
+
   /**
    * Indicates whether voice transcription is enabled for this queue.
    **/
@@ -465,7 +466,7 @@ public class UserQueue  implements Serializable {
     this.enableTranscription = enableTranscription;
   }
 
-  
+
   /**
    * Indicates whether manual assignment is enabled for this queue.
    **/
@@ -483,7 +484,7 @@ public class UserQueue  implements Serializable {
     this.enableManualAssignment = enableManualAssignment;
   }
 
-  
+
   /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
@@ -501,7 +502,7 @@ public class UserQueue  implements Serializable {
     this.callingPartyName = callingPartyName;
   }
 
-  
+
   /**
    * The phone number to use for caller identification for outbound calls from this queue.
    **/
@@ -519,7 +520,7 @@ public class UserQueue  implements Serializable {
     this.callingPartyNumber = callingPartyNumber;
   }
 
-  
+
   /**
    * The default script Ids for the communication types.
    **/
@@ -537,7 +538,7 @@ public class UserQueue  implements Serializable {
     this.defaultScripts = defaultScripts;
   }
 
-  
+
   /**
    * The messaging addresses for the queue.
    **/
@@ -555,7 +556,7 @@ public class UserQueue  implements Serializable {
     this.outboundMessagingAddresses = outboundMessagingAddresses;
   }
 
-  
+
   /**
    **/
   public UserQueue outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
@@ -572,7 +573,7 @@ public class UserQueue  implements Serializable {
     this.outboundEmailAddress = outboundEmailAddress;
   }
 
-  
+
   /**
    **/
   public UserQueue joined(Boolean joined) {
@@ -589,14 +590,13 @@ public class UserQueue  implements Serializable {
     this.joined = joined;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -607,36 +607,37 @@ public class UserQueue  implements Serializable {
       return false;
     }
     UserQueue userQueue = (UserQueue) o;
+
     return Objects.equals(this.id, userQueue.id) &&
-        Objects.equals(this.name, userQueue.name) &&
-        Objects.equals(this.division, userQueue.division) &&
-        Objects.equals(this.description, userQueue.description) &&
-        Objects.equals(this.dateCreated, userQueue.dateCreated) &&
-        Objects.equals(this.dateModified, userQueue.dateModified) &&
-        Objects.equals(this.modifiedBy, userQueue.modifiedBy) &&
-        Objects.equals(this.createdBy, userQueue.createdBy) &&
-        Objects.equals(this.memberCount, userQueue.memberCount) &&
-        Objects.equals(this.userMemberCount, userQueue.userMemberCount) &&
-        Objects.equals(this.joinedMemberCount, userQueue.joinedMemberCount) &&
-        Objects.equals(this.mediaSettings, userQueue.mediaSettings) &&
-        Objects.equals(this.routingRules, userQueue.routingRules) &&
-        Objects.equals(this.bullseye, userQueue.bullseye) &&
-        Objects.equals(this.acwSettings, userQueue.acwSettings) &&
-        Objects.equals(this.skillEvaluationMethod, userQueue.skillEvaluationMethod) &&
-        Objects.equals(this.queueFlow, userQueue.queueFlow) &&
-        Objects.equals(this.emailInQueueFlow, userQueue.emailInQueueFlow) &&
-        Objects.equals(this.messageInQueueFlow, userQueue.messageInQueueFlow) &&
-        Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
-        Objects.equals(this.onHoldPrompt, userQueue.onHoldPrompt) &&
-        Objects.equals(this.enableTranscription, userQueue.enableTranscription) &&
-        Objects.equals(this.enableManualAssignment, userQueue.enableManualAssignment) &&
-        Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
-        Objects.equals(this.callingPartyNumber, userQueue.callingPartyNumber) &&
-        Objects.equals(this.defaultScripts, userQueue.defaultScripts) &&
-        Objects.equals(this.outboundMessagingAddresses, userQueue.outboundMessagingAddresses) &&
-        Objects.equals(this.outboundEmailAddress, userQueue.outboundEmailAddress) &&
-        Objects.equals(this.joined, userQueue.joined) &&
-        Objects.equals(this.selfUri, userQueue.selfUri);
+            Objects.equals(this.name, userQueue.name) &&
+            Objects.equals(this.division, userQueue.division) &&
+            Objects.equals(this.description, userQueue.description) &&
+            Objects.equals(this.dateCreated, userQueue.dateCreated) &&
+            Objects.equals(this.dateModified, userQueue.dateModified) &&
+            Objects.equals(this.modifiedBy, userQueue.modifiedBy) &&
+            Objects.equals(this.createdBy, userQueue.createdBy) &&
+            Objects.equals(this.memberCount, userQueue.memberCount) &&
+            Objects.equals(this.userMemberCount, userQueue.userMemberCount) &&
+            Objects.equals(this.joinedMemberCount, userQueue.joinedMemberCount) &&
+            Objects.equals(this.mediaSettings, userQueue.mediaSettings) &&
+            Objects.equals(this.routingRules, userQueue.routingRules) &&
+            Objects.equals(this.bullseye, userQueue.bullseye) &&
+            Objects.equals(this.acwSettings, userQueue.acwSettings) &&
+            Objects.equals(this.skillEvaluationMethod, userQueue.skillEvaluationMethod) &&
+            Objects.equals(this.queueFlow, userQueue.queueFlow) &&
+            Objects.equals(this.emailInQueueFlow, userQueue.emailInQueueFlow) &&
+            Objects.equals(this.messageInQueueFlow, userQueue.messageInQueueFlow) &&
+            Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
+            Objects.equals(this.onHoldPrompt, userQueue.onHoldPrompt) &&
+            Objects.equals(this.enableTranscription, userQueue.enableTranscription) &&
+            Objects.equals(this.enableManualAssignment, userQueue.enableManualAssignment) &&
+            Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
+            Objects.equals(this.callingPartyNumber, userQueue.callingPartyNumber) &&
+            Objects.equals(this.defaultScripts, userQueue.defaultScripts) &&
+            Objects.equals(this.outboundMessagingAddresses, userQueue.outboundMessagingAddresses) &&
+            Objects.equals(this.outboundEmailAddress, userQueue.outboundEmailAddress) &&
+            Objects.equals(this.joined, userQueue.joined) &&
+            Objects.equals(this.selfUri, userQueue.selfUri);
   }
 
   @Override

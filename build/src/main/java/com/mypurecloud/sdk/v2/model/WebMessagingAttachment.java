@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -87,56 +88,55 @@ public class WebMessagingAttachment  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The type of attachment this instance represents.")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URL of the attachment.")
   @JsonProperty("url")
   public String getUrl() {
     return url;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).")
   @JsonProperty("mime")
   public String getMime() {
     return mime;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Text associated with attachment such as an image caption.")
   @JsonProperty("text")
   public String getText() {
     return text;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Secure hash of the attachment content.")
   @JsonProperty("sha256")
   public String getSha256() {
     return sha256;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Suggested file name for attachment.")
   @JsonProperty("filename")
   public String getFilename() {
     return filename;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The file size associated with the file")
   @JsonProperty("fileSize")
   public Integer getFileSize() {
     return fileSize;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,14 +147,15 @@ public class WebMessagingAttachment  implements Serializable {
       return false;
     }
     WebMessagingAttachment webMessagingAttachment = (WebMessagingAttachment) o;
+
     return Objects.equals(this.id, webMessagingAttachment.id) &&
-        Objects.equals(this.mediaType, webMessagingAttachment.mediaType) &&
-        Objects.equals(this.url, webMessagingAttachment.url) &&
-        Objects.equals(this.mime, webMessagingAttachment.mime) &&
-        Objects.equals(this.text, webMessagingAttachment.text) &&
-        Objects.equals(this.sha256, webMessagingAttachment.sha256) &&
-        Objects.equals(this.filename, webMessagingAttachment.filename) &&
-        Objects.equals(this.fileSize, webMessagingAttachment.fileSize);
+            Objects.equals(this.mediaType, webMessagingAttachment.mediaType) &&
+            Objects.equals(this.url, webMessagingAttachment.url) &&
+            Objects.equals(this.mime, webMessagingAttachment.mime) &&
+            Objects.equals(this.text, webMessagingAttachment.text) &&
+            Objects.equals(this.sha256, webMessagingAttachment.sha256) &&
+            Objects.equals(this.filename, webMessagingAttachment.filename) &&
+            Objects.equals(this.fileSize, webMessagingAttachment.fileSize);
   }
 
   @Override

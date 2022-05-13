@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -33,7 +34,7 @@ public class BuAgentSchedulePublishedScheduleReference  implements Serializable 
     return id;
   }
 
-  
+
   /**
    * The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -51,7 +52,7 @@ public class BuAgentSchedulePublishedScheduleReference  implements Serializable 
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The number of weeks encompassed by the schedule
    **/
@@ -69,14 +70,13 @@ public class BuAgentSchedulePublishedScheduleReference  implements Serializable 
     this.weekCount = weekCount;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,10 +87,11 @@ public class BuAgentSchedulePublishedScheduleReference  implements Serializable 
       return false;
     }
     BuAgentSchedulePublishedScheduleReference buAgentSchedulePublishedScheduleReference = (BuAgentSchedulePublishedScheduleReference) o;
+
     return Objects.equals(this.id, buAgentSchedulePublishedScheduleReference.id) &&
-        Objects.equals(this.weekDate, buAgentSchedulePublishedScheduleReference.weekDate) &&
-        Objects.equals(this.weekCount, buAgentSchedulePublishedScheduleReference.weekCount) &&
-        Objects.equals(this.selfUri, buAgentSchedulePublishedScheduleReference.selfUri);
+            Objects.equals(this.weekDate, buAgentSchedulePublishedScheduleReference.weekDate) &&
+            Objects.equals(this.weekCount, buAgentSchedulePublishedScheduleReference.weekCount) &&
+            Objects.equals(this.selfUri, buAgentSchedulePublishedScheduleReference.selfUri);
   }
 
   @Override

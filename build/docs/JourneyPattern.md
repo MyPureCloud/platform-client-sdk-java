@@ -22,10 +22,10 @@ title: JourneyPattern
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| WEB | &quot;Web&quot; |
-| CUSTOM | &quot;Custom&quot; |
-| CONVERSATION | &quot;Conversation&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEB | &quot;Web&quot; | 
+| CUSTOM | &quot;Custom&quot; | 
+| CONVERSATION | &quot;Conversation&quot; | 
 {: class="table table-striped"}
 
 

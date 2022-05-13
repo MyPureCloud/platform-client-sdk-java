@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class ProvisionInfo  implements Serializable {
     this.time = time;
   }
 
-  
+
   /**
    * The source of the provisioning
    **/
@@ -61,7 +62,7 @@ public class ProvisionInfo  implements Serializable {
     this.source = source;
   }
 
-  
+
   /**
    * The error information from the provision process, if any
    **/
@@ -79,7 +80,6 @@ public class ProvisionInfo  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class ProvisionInfo  implements Serializable {
       return false;
     }
     ProvisionInfo provisionInfo = (ProvisionInfo) o;
+
     return Objects.equals(this.time, provisionInfo.time) &&
-        Objects.equals(this.source, provisionInfo.source) &&
-        Objects.equals(this.errorInfo, provisionInfo.errorInfo);
+            Objects.equals(this.source, provisionInfo.source) &&
+            Objects.equals(this.errorInfo, provisionInfo.errorInfo);
   }
 
   @Override

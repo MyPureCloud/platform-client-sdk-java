@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
-| [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default. |
+| [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteUser**](UsersApi.html#deleteUser) | Delete user |
 | [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | Remove routing skill from user |
@@ -25,13 +25,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
 | [**getFieldconfig**](UsersApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | Get a user profile listing |
-| [**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned. |
+| [**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
 | [**getUser**](UsersApi.html#getUser) | Get user. |
 | [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | Get adjacents |
-| [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | Get a user&#39;s CallForwarding |
+| [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | Get a user's CallForwarding |
 | [**getUserDirectreports**](UsersApi.html#getUserDirectreports) | Get direct reports |
 | [**getUserFavorites**](UsersApi.html#getUserFavorites) | Deprecated; will be revived with new contract |
-| [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | Get a user&#39;s Geolocation |
+| [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | Get a user's Geolocation |
 | [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | Get a OutOfOffice |
 | [**getUserProfile**](UsersApi.html#getUserProfile) | Get user profile |
 | [**getUserProfileskills**](UsersApi.html#getUserProfileskills) | List profile skills for a user |
@@ -51,8 +51,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUsersMe**](UsersApi.html#getUsersMe) | Get current user details. |
 | [**getUsersSearch**](UsersApi.html#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**patchUser**](UsersApi.html#patchUser) | Update user |
-| [**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | Patch a user&#39;s CallForwarding |
-| [**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | Patch a user&#39;s Geolocation |
+| [**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | Patch a user's CallForwarding |
+| [**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | Patch a user's Geolocation |
 | [**patchUserQueue**](UsersApi.html#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](UsersApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
 | [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**postAuthorizationSubjectBulkadd**](UsersApi.html#postAuthorizationSubjectBulkadd) | Bulk-grant roles and divisions to a subject. |
 | [**postAuthorizationSubjectBulkremove**](UsersApi.html#postAuthorizationSubjectBulkremove) | Bulk-remove grants from a subject. |
-| [**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | Replace subject&#39;s roles and divisions with the exact list supplied in the request. |
+| [**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | Replace subject's roles and divisions with the exact list supplied in the request. |
 | [**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
 | [**postUserInvite**](UsersApi.html#postUserInvite) | Send an activation email to the user |
 | [**postUserPassword**](UsersApi.html#postUserPassword) | Change a users password |
@@ -75,11 +75,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | Retrieve aggregated development activity data |
 | [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | Change your password |
 | [**postUsersSearch**](UsersApi.html#postUsersSearch) | Search users |
-| [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. |
-| [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | Update a user&#39;s CallForwarding |
+| [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
+| [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | Update a user's CallForwarding |
 | [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | Update an OutOfOffice |
 | [**putUserProfileskills**](UsersApi.html#putUserProfileskills) | Update profile skills for a user |
-| [**putUserRoles**](UsersApi.html#putUserRoles) | Sets the user&#39;s roles |
+| [**putUserRoles**](UsersApi.html#putUserRoles) | Sets the user's roles |
 | [**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
 | [**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
 | [**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | Update the routing status of a user |
@@ -97,8 +97,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteAnalyticsUsersDetailsJob(jobId)
 
 Delete/cancel an async request
-
-
 
 Wraps DELETE /api/v2/analytics/users/details/jobs/{jobId}  
 
@@ -159,8 +157,6 @@ null (empty response body)
 > Void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 Delete a grant of a role in a division
-
-
 
 Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
 
@@ -224,9 +220,7 @@ null (empty response body)
 
 > Void deleteRoutingUserUtilization(userId)
 
-Delete the user&#39;s max utilization settings and revert to the organization-wide default.
-
-
+Delete the user's max utilization settings and revert to the organization-wide default.
 
 Wraps DELETE /api/v2/routing/users/{userId}/utilization  
 
@@ -284,11 +278,9 @@ null (empty response body)
 
 
 
-> [Empty](Empty.html) deleteUser(userId)
+> Empty deleteUser(userId)
 
 Delete user
-
-
 
 Wraps DELETE /api/v2/users/{userId}  
 
@@ -339,7 +331,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteUserRoutinglanguage"></a>
 
@@ -350,8 +342,6 @@ try {
 > Void deleteUserRoutinglanguage(userId, languageId)
 
 Remove routing language from user
-
-
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}  
 
@@ -416,8 +406,6 @@ null (empty response body)
 
 Remove routing skill from user
 
-
-
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}  
 
 Requires ALL permissions: 
@@ -480,8 +468,6 @@ null (empty response body)
 
 Clear associated station
 
-
-
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation  
 
 Requires NO permissions: 
@@ -540,8 +526,6 @@ null (empty response body)
 > Void deleteUserStationDefaultstation(userId)
 
 Clear default station
-
-
 
 Wraps DELETE /api/v2/users/{userId}/station/defaultstation  
 
@@ -604,8 +588,6 @@ null (empty response body)
 
 Get status for async query for user details
 
-
-
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -666,8 +648,6 @@ try {
 > [AnalyticsUserDetailsAsyncQueryResponse](AnalyticsUserDetailsAsyncQueryResponse.html) getAnalyticsUsersDetailsJobResults(jobId, cursor, pageSize)
 
 Fetch a page of results for an async query
-
-
 
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId}/results  
 
@@ -733,8 +713,6 @@ try {
 > [DataAvailabilityResponse](DataAvailabilityResponse.html) getAnalyticsUsersDetailsJobsAvailability()
 
 Lookup the datalake availability date and time
-
-
 
 Wraps GET /api/v2/analytics/users/details/jobs/availability  
 
@@ -856,8 +834,6 @@ try {
 > [DivsPermittedEntityListing](DivsPermittedEntityListing.html) getAuthorizationDivisionspermittedPagedMe(permission, pageNumber, pageSize)
 
 Returns which divisions the current user has the given permission in.
-
-
 
 Wraps GET /api/v2/authorization/divisionspermitted/paged/me  
 
@@ -991,8 +967,6 @@ try {
 
 Returns a listing of roles and permissions for a user.
 
-
-
 Wraps GET /api/v2/authorization/subjects/{subjectId}  
 
 Requires ANY permissions: 
@@ -1054,8 +1028,6 @@ try {
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
-
-
 Wraps GET /api/v2/authorization/subjects/me  
 
 Requires NO permissions: 
@@ -1111,8 +1083,6 @@ This endpoint does not require any parameters.
 > [FieldConfig](FieldConfig.html) getFieldconfig(type)
 
 Fetch field config for an entity type
-
-
 
 Wraps GET /api/v2/fieldconfig  
 
@@ -1205,10 +1175,10 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | id
-List<String> jid = Arrays.asList("jid_example"); // List<String> | jid
+List<String> id = Arrays.asList(null); // List<String> | id
+List<String> jid = Arrays.asList(null); // List<String> | jid
 String sortOrder = "ASC"; // String | Ascending or descending sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\".
 try {
     UserProfileEntityListing result = apiInstance.getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource);
@@ -1246,9 +1216,7 @@ try {
 
 > [AgentMaxUtilization](AgentMaxUtilization.html) getRoutingUserUtilization(userId)
 
-Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
-
-
+Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
 Wraps GET /api/v2/routing/users/{userId}/utilization  
 
@@ -1312,8 +1280,6 @@ try {
 
 Get user.
 
-
-
 Wraps GET /api/v2/users/{userId}  
 
 Requires NO permissions: 
@@ -1342,7 +1308,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for a user instead of their default.
 String state = "active"; // String | Search for a user with this state
 try {
@@ -1380,8 +1346,6 @@ try {
 
 Get adjacents
 
-
-
 Wraps GET /api/v2/users/{userId}/adjacents  
 
 Requires NO permissions: 
@@ -1410,7 +1374,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     Adjacents result = apiInstance.getUserAdjacents(userId, expand);
     System.out.println(result);
@@ -1442,9 +1406,7 @@ try {
 
 > [CallForwarding](CallForwarding.html) getUserCallforwarding(userId)
 
-Get a user&#39;s CallForwarding
-
-
+Get a user's CallForwarding
 
 Wraps GET /api/v2/users/{userId}/callforwarding  
 
@@ -1506,8 +1468,6 @@ try {
 
 Get direct reports
 
-
-
 Wraps GET /api/v2/users/{userId}/directreports  
 
 Requires NO permissions: 
@@ -1536,7 +1496,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     List<User> result = apiInstance.getUserDirectreports(userId, expand);
     System.out.println(result);
@@ -1570,8 +1530,6 @@ try {
 
 Deprecated; will be revived with new contract
 
-
-
 Wraps GET /api/v2/users/{userId}/favorites  
 
 Requires NO permissions: 
@@ -1603,7 +1561,7 @@ String userId = "userId_example"; // String | User ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "ASC"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     UserEntityListing result = apiInstance.getUserFavorites(userId, pageSize, pageNumber, sortOrder, expand);
     System.out.println(result);
@@ -1638,9 +1596,7 @@ try {
 
 > [Geolocation](Geolocation.html) getUserGeolocation(userId, clientId)
 
-Get a user&#39;s Geolocation
-
-
+Get a user's Geolocation
 
 Wraps GET /api/v2/users/{userId}/geolocations/{clientId}  
 
@@ -1703,8 +1659,6 @@ try {
 > [OutOfOffice](OutOfOffice.html) getUserOutofoffice(userId)
 
 Get a OutOfOffice
-
-
 
 Wraps GET /api/v2/users/{userId}/outofoffice  
 
@@ -1796,7 +1750,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | userId
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for a user instead of their default.
 try {
     UserProfile result = apiInstance.getUserProfile(userId, expand, integrationPresenceSource);
@@ -1831,8 +1785,6 @@ try {
 > List&lt;String&gt; getUserProfileskills(userId)
 
 List profile skills for a user
-
-
 
 Wraps GET /api/v2/users/{userId}/profileskills  
 
@@ -1895,8 +1847,6 @@ try {
 
 Get queues for user
 
-
-
 Wraps GET /api/v2/users/{userId}/queues  
 
 Requires ANY permissions: 
@@ -1931,7 +1881,7 @@ String userId = "userId_example"; // String | User ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean joined = true; // Boolean | Is joined to the queue
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 try {
     UserQueueEntityListing result = apiInstance.getUserQueues(userId, pageSize, pageNumber, joined, divisionId);
     System.out.println(result);
@@ -1967,8 +1917,6 @@ try {
 > [UserAuthorization](UserAuthorization.html) getUserRoles(userId)
 
 Returns a listing of roles and permissions for a user.
-
-
 
 Wraps GET /api/v2/users/{userId}/roles  
 
@@ -2030,8 +1978,6 @@ try {
 > [UserLanguageEntityListing](UserLanguageEntityListing.html) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
 
 List routing language for user
-
-
 
 Wraps GET /api/v2/users/{userId}/routinglanguages  
 
@@ -2099,8 +2045,6 @@ try {
 
 List routing skills for user
 
-
-
 Wraps GET /api/v2/users/{userId}/routingskills  
 
 Requires NO permissions: 
@@ -2167,8 +2111,6 @@ try {
 
 Fetch the routing status of a user
 
-
-
 Wraps GET /api/v2/users/{userId}/routingstatus  
 
 Requires NO permissions: 
@@ -2228,8 +2170,6 @@ try {
 > [UserState](UserState.html) getUserState(userId)
 
 Get user state information.
-
-
 
 Wraps GET /api/v2/users/{userId}/state  
 
@@ -2292,8 +2232,6 @@ try {
 
 Get station information for user
 
-
-
 Wraps GET /api/v2/users/{userId}/station  
 
 Requires NO permissions: 
@@ -2354,8 +2292,6 @@ try {
 
 Get superiors
 
-
-
 Wraps GET /api/v2/users/{userId}/superiors  
 
 Requires NO permissions: 
@@ -2384,7 +2320,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     List<User> result = apiInstance.getUserSuperiors(userId, expand);
     System.out.println(result);
@@ -2417,8 +2353,6 @@ try {
 > [TrustorEntityListing](TrustorEntityListing.html) getUserTrustors(userId, pageSize, pageNumber)
 
 List the organizations that have authorized/trusted the user.
-
-
 
 Wraps GET /api/v2/users/{userId}/trustors  
 
@@ -2485,8 +2419,6 @@ try {
 
 Get the list of available users.
 
-
-
 Wraps GET /api/v2/users  
 
 Requires NO permissions: 
@@ -2516,10 +2448,10 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | A list of user IDs to fetch by bulk
-List<String> jabberId = Arrays.asList("jabberId_example"); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
+List<String> id = Arrays.asList(null); // List<String> | A list of user IDs to fetch by bulk
+List<String> jabberId = Arrays.asList(null); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
 String state = "active"; // String | Only list users of this state
 try {
@@ -2592,7 +2524,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
-List<String> userId = Arrays.asList("userId_example"); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.
+List<String> userId = Arrays.asList(null); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.
 String moduleId = "moduleId_example"; // String | Specifies the ID of the learning module.
 String interval = "interval_example"; // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 String completionInterval = "completionInterval_example"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
@@ -2600,9 +2532,9 @@ String overdue = "Any"; // String | Specifies if non-overdue, overdue, or all ac
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the activity types.
-List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Specifies the activity statuses to filter by
-List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+List<String> types = Arrays.asList(null); // List<String> | Specifies the activity types.
+List<String> statuses = Arrays.asList(null); // List<String> | Specifies the activity statuses to filter by
+List<String> relationship = Arrays.asList(null); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 try {
     DevelopmentActivityListing result = apiInstance.getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship);
     System.out.println(result);
@@ -2681,9 +2613,9 @@ String overdue = "Any"; // String | Specifies if non-overdue, overdue, or all ac
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the activity types.
-List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Specifies the activity statuses to filter by
-List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+List<String> types = Arrays.asList(null); // List<String> | Specifies the activity types.
+List<String> statuses = Arrays.asList(null); // List<String> | Specifies the activity statuses to filter by
+List<String> relationship = Arrays.asList(null); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 try {
     DevelopmentActivityListing result = apiInstance.getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship);
     System.out.println(result);
@@ -2820,7 +2752,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\".
 try {
     UserMe result = apiInstance.getUsersMe(expand, integrationPresenceSource);
@@ -2855,8 +2787,6 @@ try {
 
 Search users using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/users/search  
 
 Requires ANY permissions: 
@@ -2886,7 +2816,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+List<String> expand = Arrays.asList(null); // List<String> | expand
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | integrationPresenceSource
 try {
     UsersSearchResponse result = apiInstance.getUsersSearch(q64, expand, integrationPresenceSource);
@@ -2921,8 +2851,6 @@ try {
 > [User](User.html) patchUser(userId, body)
 
 Update user
-
-
 
 Wraps PATCH /api/v2/users/{userId}  
 
@@ -2985,9 +2913,7 @@ try {
 
 > [CallForwarding](CallForwarding.html) patchUserCallforwarding(userId, body)
 
-Patch a user&#39;s CallForwarding
-
-
+Patch a user's CallForwarding
 
 Wraps PATCH /api/v2/users/{userId}/callforwarding  
 
@@ -3050,9 +2976,9 @@ try {
 
 > [Geolocation](Geolocation.html) patchUserGeolocation(userId, clientId, body)
 
-Patch a user&#39;s Geolocation
+Patch a user's Geolocation
 
-The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId}  
 
@@ -3117,8 +3043,6 @@ try {
 > [UserQueue](UserQueue.html) patchUserQueue(queueId, userId, body)
 
 Join or unjoin a queue for a user
-
-
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId}  
 
@@ -3186,8 +3110,6 @@ try {
 
 Join or unjoin a set of queues for a user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/queues  
 
 Requires ANY permissions: 
@@ -3219,7 +3141,7 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 List<UserQueue> body = Arrays.asList(new UserQueue()); // List<UserQueue> | User Queues
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 try {
     UserQueueEntityListing result = apiInstance.patchUserQueues(userId, body, divisionId);
     System.out.println(result);
@@ -3253,8 +3175,6 @@ try {
 > [UserRoutingLanguage](UserRoutingLanguage.html) patchUserRoutinglanguage(userId, languageId, body)
 
 Update routing language proficiency or state.
-
-
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}  
 
@@ -3322,8 +3242,6 @@ try {
 
 Add bulk routing language to user. Max limit 50 languages
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk  
 
 Requires ANY permissions: 
@@ -3388,8 +3306,6 @@ try {
 
 Bulk add routing skills to user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routingskills/bulk  
 
 Requires ANY permissions: 
@@ -3453,8 +3369,6 @@ try {
 
 Update bulk acd autoanswer on users
 
-
-
 Wraps PATCH /api/v2/users/bulk  
 
 Requires ANY permissions: 
@@ -3517,8 +3431,6 @@ try {
 
 Query for user aggregates
 
-
-
 Wraps POST /api/v2/analytics/users/aggregates/query  
 
 Requires ANY permissions: 
@@ -3579,8 +3491,6 @@ try {
 > [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsUsersDetailsJobs(body)
 
 Query for user details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/users/details/jobs  
 
@@ -3643,8 +3553,6 @@ try {
 
 Query for user details
 
-
-
 Wraps POST /api/v2/analytics/users/details/query  
 
 Requires ANY permissions: 
@@ -3706,8 +3614,6 @@ try {
 
 Query for user observations
 
-
-
 Wraps POST /api/v2/analytics/users/observations/query  
 
 Requires ANY permissions: 
@@ -3768,8 +3674,6 @@ try {
 > Void postAuthorizationSubjectBulkadd(subjectId, body, subjectType)
 
 Bulk-grant roles and divisions to a subject.
-
-
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd  
 
@@ -3835,8 +3739,6 @@ null (empty response body)
 
 Bulk-remove grants from a subject.
 
-
-
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove  
 
 Requires ANY permissions: 
@@ -3897,7 +3799,7 @@ null (empty response body)
 
 > Void postAuthorizationSubjectBulkreplace(subjectId, body, subjectType)
 
-Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+Replace subject's roles and divisions with the exact list supplied in the request.
 
 This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 
@@ -3966,8 +3868,6 @@ null (empty response body)
 
 Make a grant of a role in a division
 
-
-
 Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
 
 Requires ANY permissions: 
@@ -4034,8 +3934,6 @@ null (empty response body)
 
 Send an activation email to the user
 
-
-
 Wraps POST /api/v2/users/{userId}/invite  
 
 Requires ANY permissions: 
@@ -4098,8 +3996,6 @@ null (empty response body)
 
 Change a users password
 
-
-
 Wraps POST /api/v2/users/{userId}/password  
 
 Requires ANY permissions: 
@@ -4161,8 +4057,6 @@ null (empty response body)
 > [UserRoutingLanguage](UserRoutingLanguage.html) postUserRoutinglanguages(userId, body)
 
 Add routing language to user
-
-
 
 Wraps POST /api/v2/users/{userId}/routinglanguages  
 
@@ -4228,8 +4122,6 @@ try {
 
 Add routing skill to user
 
-
-
 Wraps POST /api/v2/users/{userId}/routingskills  
 
 Requires ALL permissions: 
@@ -4292,8 +4184,6 @@ try {
 > [User](User.html) postUsers(body)
 
 Create user
-
-
 
 Wraps POST /api/v2/users  
 
@@ -4420,8 +4310,6 @@ try {
 
 Change your password
 
-
-
 Wraps POST /api/v2/users/me/password  
 
 Requires NO permissions: 
@@ -4480,8 +4368,6 @@ null (empty response body)
 > [UsersSearchResponse](UsersSearchResponse.html) postUsersSearch(body)
 
 Search users
-
-
 
 Wraps POST /api/v2/users/search  
 
@@ -4542,9 +4428,7 @@ try {
 
 > [AgentMaxUtilization](AgentMaxUtilization.html) putRoutingUserUtilization(userId, body)
 
-Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
-
-
+Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
 Wraps PUT /api/v2/routing/users/{userId}/utilization  
 
@@ -4607,9 +4491,7 @@ try {
 
 > [CallForwarding](CallForwarding.html) putUserCallforwarding(userId, body)
 
-Update a user&#39;s CallForwarding
-
-
+Update a user's CallForwarding
 
 Wraps PUT /api/v2/users/{userId}/callforwarding  
 
@@ -4674,8 +4556,6 @@ try {
 
 Update an OutOfOffice
 
-
-
 Wraps PUT /api/v2/users/{userId}/outofoffice  
 
 Requires NO permissions: 
@@ -4738,8 +4618,6 @@ try {
 
 Update profile skills for a user
 
-
-
 Wraps PUT /api/v2/users/{userId}/profileskills  
 
 Requires ANY permissions: 
@@ -4769,7 +4647,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | Skills
+List<String> body = Arrays.asList(null); // List<String> | Skills
 try {
     List<String> result = apiInstance.putUserProfileskills(userId, body);
     System.out.println(result);
@@ -4785,7 +4663,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | **List&lt;String&gt;**| Skills | 
+| **body** | [**List&lt;String&gt;**](String.html)| Skills | 
 {: class="table-striped"}
 
 
@@ -4801,9 +4679,7 @@ try {
 
 > [UserAuthorization](UserAuthorization.html) putUserRoles(userId, body)
 
-Sets the user&#39;s roles
-
-
+Sets the user's roles
 
 Wraps PUT /api/v2/users/{userId}/roles  
 
@@ -4834,7 +4710,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> body = Arrays.asList(new List<String>()); // List<String> | List of roles
+List<String> body = Arrays.asList(null); // List<String> | List of roles
 try {
     UserAuthorization result = apiInstance.putUserRoles(userId, body);
     System.out.println(result);
@@ -4850,7 +4726,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | **List&lt;String&gt;**| List of roles | 
+| **body** | [**List&lt;String&gt;**](String.html)| List of roles | 
 {: class="table-striped"}
 
 
@@ -4867,8 +4743,6 @@ try {
 > [UserRoutingSkill](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
 
 Update routing skill proficiency or state.
-
-
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}  
 
@@ -4935,8 +4809,6 @@ try {
 
 Replace all routing skills assigned to a user
 
-
-
 Wraps PUT /api/v2/users/{userId}/routingskills/bulk  
 
 Requires ANY permissions: 
@@ -5000,8 +4872,6 @@ try {
 
 Update the routing status of a user
 
-
-
 Wraps PUT /api/v2/users/{userId}/routingstatus  
 
 Requires NO permissions: 
@@ -5063,8 +4933,6 @@ try {
 > [UserState](UserState.html) putUserState(userId, body)
 
 Update user state information.
-
-
 
 Wraps PUT /api/v2/users/{userId}/state  
 
@@ -5129,8 +4997,6 @@ try {
 
 Set associated station
 
-
-
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId}  
 
 Requires NO permissions: 
@@ -5191,8 +5057,6 @@ null (empty response body)
 > Void putUserStationDefaultstationStationId(userId, stationId)
 
 Set default station
-
-
 
 Wraps PUT /api/v2/users/{userId}/station/defaultstation/{stationId}  
 

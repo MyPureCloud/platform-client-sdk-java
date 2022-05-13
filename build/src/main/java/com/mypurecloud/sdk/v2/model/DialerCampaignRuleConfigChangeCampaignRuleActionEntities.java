@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeUriReference;
@@ -46,7 +47,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     this.useTriggeringEntity = useTriggeringEntity;
   }
 
-  
+
   /**
    * A list of campaignIds to act on
    **/
@@ -64,7 +65,7 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     this.campaigns = campaigns;
   }
 
-  
+
   /**
    * A list of sequenceIds to act on
    **/
@@ -82,7 +83,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     this.sequences = sequences;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
       return false;
     }
     DialerCampaignRuleConfigChangeCampaignRuleActionEntities dialerCampaignRuleConfigChangeCampaignRuleActionEntities = (DialerCampaignRuleConfigChangeCampaignRuleActionEntities) o;
+
     return Objects.equals(this.useTriggeringEntity, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.useTriggeringEntity) &&
-        Objects.equals(this.campaigns, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.campaigns) &&
-        Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.sequences);
+            Objects.equals(this.campaigns, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.campaigns) &&
+            Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.sequences);
   }
 
   @Override

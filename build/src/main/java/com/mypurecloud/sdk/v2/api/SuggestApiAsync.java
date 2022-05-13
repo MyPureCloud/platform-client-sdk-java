@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class SuggestApiAsync {
   private final ApiClient pcapiClient;
 
@@ -43,7 +42,6 @@ public class SuggestApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Search using the q64 value returned from a previous search.
    * 
@@ -119,7 +117,6 @@ public class SuggestApiAsync {
     }
   }
 
-  
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
@@ -195,7 +192,6 @@ public class SuggestApiAsync {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -271,7 +267,6 @@ public class SuggestApiAsync {
     }
   }
 
-  
   /**
    * Suggest resources.
    * 
@@ -347,7 +342,6 @@ public class SuggestApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

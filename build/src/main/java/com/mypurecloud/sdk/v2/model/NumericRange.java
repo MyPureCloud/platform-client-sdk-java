@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class NumericRange  implements Serializable {
     this.gt = gt;
   }
 
-  
+
   /**
    * Greater than or equal to
    **/
@@ -62,7 +63,7 @@ public class NumericRange  implements Serializable {
     this.gte = gte;
   }
 
-  
+
   /**
    * Less than
    **/
@@ -80,7 +81,7 @@ public class NumericRange  implements Serializable {
     this.lt = lt;
   }
 
-  
+
   /**
    * Less than or equal to
    **/
@@ -98,7 +99,6 @@ public class NumericRange  implements Serializable {
     this.lte = lte;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class NumericRange  implements Serializable {
       return false;
     }
     NumericRange numericRange = (NumericRange) o;
+
     return Objects.equals(this.gt, numericRange.gt) &&
-        Objects.equals(this.gte, numericRange.gte) &&
-        Objects.equals(this.lt, numericRange.lt) &&
-        Objects.equals(this.lte, numericRange.lte);
+            Objects.equals(this.gte, numericRange.gte) &&
+            Objects.equals(this.lt, numericRange.lt) &&
+            Objects.equals(this.lte, numericRange.lte);
   }
 
   @Override

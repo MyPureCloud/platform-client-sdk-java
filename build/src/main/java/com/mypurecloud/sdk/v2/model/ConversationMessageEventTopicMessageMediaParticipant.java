@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -357,7 +358,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant name(String name) {
@@ -374,7 +375,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant address(String address) {
@@ -391,7 +392,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant startTime(Date startTime) {
@@ -408,7 +409,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant connectedTime(Date connectedTime) {
@@ -425,7 +426,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant endTime(Date endTime) {
@@ -442,7 +443,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant startHoldTime(Date startHoldTime) {
@@ -459,7 +460,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant purpose(String purpose) {
@@ -476,7 +477,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant state(StateEnum state) {
@@ -493,7 +494,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant direction(DirectionEnum direction) {
@@ -510,7 +511,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -527,7 +528,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant held(Boolean held) {
@@ -544,7 +545,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -561,7 +562,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -578,7 +579,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant user(ConversationMessageEventTopicUriReference user) {
@@ -595,7 +596,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant queue(ConversationMessageEventTopicUriReference queue) {
@@ -612,7 +613,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant team(ConversationMessageEventTopicUriReference team) {
@@ -629,7 +630,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant attributes(Map<String, String> attributes) {
@@ -646,7 +647,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant errorInfo(ConversationMessageEventTopicErrorBody errorInfo) {
@@ -663,7 +664,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant script(ConversationMessageEventTopicUriReference script) {
@@ -680,7 +681,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -697,7 +698,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -714,7 +715,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -731,7 +732,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant provider(String provider) {
@@ -748,7 +749,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant externalContact(ConversationMessageEventTopicUriReference externalContact) {
@@ -765,7 +766,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant externalOrganization(ConversationMessageEventTopicUriReference externalOrganization) {
@@ -782,7 +783,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant wrapup(ConversationMessageEventTopicWrapup wrapup) {
@@ -799,7 +800,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant conversationRoutingData(ConversationMessageEventTopicConversationRoutingData conversationRoutingData) {
@@ -816,7 +817,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant peer(String peer) {
@@ -833,7 +834,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -850,7 +851,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -867,7 +868,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant journeyContext(ConversationMessageEventTopicJourneyContext journeyContext) {
@@ -884,7 +885,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant startAcwTime(Date startAcwTime) {
@@ -901,7 +902,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant endAcwTime(Date endAcwTime) {
@@ -918,7 +919,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant messages(List<ConversationMessageEventTopicMessageDetails> messages) {
@@ -935,7 +936,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.messages = messages;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant type(TypeEnum type) {
@@ -952,7 +953,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.type = type;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant recipientCountry(String recipientCountry) {
@@ -969,7 +970,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.recipientCountry = recipientCountry;
   }
 
-  
+
   /**
    **/
   public ConversationMessageEventTopicMessageMediaParticipant recipientType(String recipientType) {
@@ -986,7 +987,6 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     this.recipientType = recipientType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -997,44 +997,45 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
       return false;
     }
     ConversationMessageEventTopicMessageMediaParticipant conversationMessageEventTopicMessageMediaParticipant = (ConversationMessageEventTopicMessageMediaParticipant) o;
+
     return Objects.equals(this.id, conversationMessageEventTopicMessageMediaParticipant.id) &&
-        Objects.equals(this.name, conversationMessageEventTopicMessageMediaParticipant.name) &&
-        Objects.equals(this.address, conversationMessageEventTopicMessageMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationMessageEventTopicMessageMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationMessageEventTopicMessageMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationMessageEventTopicMessageMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationMessageEventTopicMessageMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationMessageEventTopicMessageMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationMessageEventTopicMessageMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationMessageEventTopicMessageMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationMessageEventTopicMessageMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationMessageEventTopicMessageMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationMessageEventTopicMessageMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationMessageEventTopicMessageMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationMessageEventTopicMessageMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationMessageEventTopicMessageMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationMessageEventTopicMessageMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationMessageEventTopicMessageMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationMessageEventTopicMessageMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationMessageEventTopicMessageMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationMessageEventTopicMessageMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationMessageEventTopicMessageMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationMessageEventTopicMessageMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationMessageEventTopicMessageMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationMessageEventTopicMessageMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationMessageEventTopicMessageMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationMessageEventTopicMessageMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationMessageEventTopicMessageMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationMessageEventTopicMessageMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationMessageEventTopicMessageMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationMessageEventTopicMessageMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
-        Objects.equals(this.messages, conversationMessageEventTopicMessageMediaParticipant.messages) &&
-        Objects.equals(this.type, conversationMessageEventTopicMessageMediaParticipant.type) &&
-        Objects.equals(this.recipientCountry, conversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
-        Objects.equals(this.recipientType, conversationMessageEventTopicMessageMediaParticipant.recipientType);
+            Objects.equals(this.name, conversationMessageEventTopicMessageMediaParticipant.name) &&
+            Objects.equals(this.address, conversationMessageEventTopicMessageMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationMessageEventTopicMessageMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationMessageEventTopicMessageMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationMessageEventTopicMessageMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationMessageEventTopicMessageMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationMessageEventTopicMessageMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationMessageEventTopicMessageMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationMessageEventTopicMessageMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationMessageEventTopicMessageMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationMessageEventTopicMessageMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationMessageEventTopicMessageMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationMessageEventTopicMessageMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationMessageEventTopicMessageMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationMessageEventTopicMessageMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationMessageEventTopicMessageMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationMessageEventTopicMessageMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationMessageEventTopicMessageMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationMessageEventTopicMessageMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationMessageEventTopicMessageMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationMessageEventTopicMessageMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationMessageEventTopicMessageMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationMessageEventTopicMessageMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationMessageEventTopicMessageMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationMessageEventTopicMessageMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationMessageEventTopicMessageMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationMessageEventTopicMessageMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationMessageEventTopicMessageMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationMessageEventTopicMessageMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationMessageEventTopicMessageMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
+            Objects.equals(this.messages, conversationMessageEventTopicMessageMediaParticipant.messages) &&
+            Objects.equals(this.type, conversationMessageEventTopicMessageMediaParticipant.type) &&
+            Objects.equals(this.recipientCountry, conversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
+            Objects.equals(this.recipientType, conversationMessageEventTopicMessageMediaParticipant.recipientType);
   }
 
   @Override

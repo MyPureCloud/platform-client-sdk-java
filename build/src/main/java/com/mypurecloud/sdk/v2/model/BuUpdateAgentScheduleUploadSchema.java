@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
@@ -53,7 +54,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek
    **/
@@ -71,7 +72,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.workPlanId = workPlanId;
   }
 
-  
+
   /**
    * The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId
    **/
@@ -89,7 +90,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.workPlanIdsPerWeek = workPlanIdsPerWeek;
   }
 
-  
+
   /**
    * The shift definitions for this agent schedule
    **/
@@ -107,7 +108,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * Any full day time off markers that apply to this agent schedule
    **/
@@ -125,7 +126,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
+
   /**
    * Version metadata for this agent schedule. Required if updating or deleting an existing agent schedule, otherwise should be omitted
    **/
@@ -143,7 +144,7 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * Whether to delete this agent's schedule. Defaults to false if not set
    **/
@@ -161,7 +162,6 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
     this.delete = delete;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -172,13 +172,14 @@ public class BuUpdateAgentScheduleUploadSchema  implements Serializable {
       return false;
     }
     BuUpdateAgentScheduleUploadSchema buUpdateAgentScheduleUploadSchema = (BuUpdateAgentScheduleUploadSchema) o;
+
     return Objects.equals(this.userId, buUpdateAgentScheduleUploadSchema.userId) &&
-        Objects.equals(this.workPlanId, buUpdateAgentScheduleUploadSchema.workPlanId) &&
-        Objects.equals(this.workPlanIdsPerWeek, buUpdateAgentScheduleUploadSchema.workPlanIdsPerWeek) &&
-        Objects.equals(this.shifts, buUpdateAgentScheduleUploadSchema.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, buUpdateAgentScheduleUploadSchema.fullDayTimeOffMarkers) &&
-        Objects.equals(this.metadata, buUpdateAgentScheduleUploadSchema.metadata) &&
-        Objects.equals(this.delete, buUpdateAgentScheduleUploadSchema.delete);
+            Objects.equals(this.workPlanId, buUpdateAgentScheduleUploadSchema.workPlanId) &&
+            Objects.equals(this.workPlanIdsPerWeek, buUpdateAgentScheduleUploadSchema.workPlanIdsPerWeek) &&
+            Objects.equals(this.shifts, buUpdateAgentScheduleUploadSchema.shifts) &&
+            Objects.equals(this.fullDayTimeOffMarkers, buUpdateAgentScheduleUploadSchema.fullDayTimeOffMarkers) &&
+            Objects.equals(this.metadata, buUpdateAgentScheduleUploadSchema.metadata) &&
+            Objects.equals(this.delete, buUpdateAgentScheduleUploadSchema.delete);
   }
 
   @Override

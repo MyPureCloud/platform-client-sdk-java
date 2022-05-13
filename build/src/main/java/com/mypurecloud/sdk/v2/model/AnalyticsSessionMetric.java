@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class AnalyticsSessionMetric  implements Serializable {
     this.emitDate = emitDate;
   }
 
-  
+
   /**
    * Unique name of this metric
    **/
@@ -61,7 +62,7 @@ public class AnalyticsSessionMetric  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The metric value
    **/
@@ -79,7 +80,6 @@ public class AnalyticsSessionMetric  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class AnalyticsSessionMetric  implements Serializable {
       return false;
     }
     AnalyticsSessionMetric analyticsSessionMetric = (AnalyticsSessionMetric) o;
+
     return Objects.equals(this.emitDate, analyticsSessionMetric.emitDate) &&
-        Objects.equals(this.name, analyticsSessionMetric.name) &&
-        Objects.equals(this.value, analyticsSessionMetric.value);
+            Objects.equals(this.name, analyticsSessionMetric.name) &&
+            Objects.equals(this.value, analyticsSessionMetric.value);
   }
 
   @Override

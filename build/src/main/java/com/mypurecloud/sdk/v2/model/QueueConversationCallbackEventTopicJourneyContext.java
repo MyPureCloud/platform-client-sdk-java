@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicJourneyAction;
@@ -44,7 +45,7 @@ public class QueueConversationCallbackEventTopicJourneyContext  implements Seria
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallbackEventTopicJourneyContext customerSession(QueueConversationCallbackEventTopicJourneyCustomerSession customerSession) {
@@ -61,7 +62,7 @@ public class QueueConversationCallbackEventTopicJourneyContext  implements Seria
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallbackEventTopicJourneyContext triggeringAction(QueueConversationCallbackEventTopicJourneyAction triggeringAction) {
@@ -78,7 +79,6 @@ public class QueueConversationCallbackEventTopicJourneyContext  implements Seria
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class QueueConversationCallbackEventTopicJourneyContext  implements Seria
       return false;
     }
     QueueConversationCallbackEventTopicJourneyContext queueConversationCallbackEventTopicJourneyContext = (QueueConversationCallbackEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationCallbackEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationCallbackEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationCallbackEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationCallbackEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationCallbackEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class FreeSeatingConfiguration  implements Serializable {
     this.freeSeatingState = freeSeatingState;
   }
 
-  
+
   /**
    * The amount of time in minutes until an offline user is disassociated from their station
    **/
@@ -108,7 +109,6 @@ public class FreeSeatingConfiguration  implements Serializable {
     this.ttlMinutes = ttlMinutes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class FreeSeatingConfiguration  implements Serializable {
       return false;
     }
     FreeSeatingConfiguration freeSeatingConfiguration = (FreeSeatingConfiguration) o;
+
     return Objects.equals(this.freeSeatingState, freeSeatingConfiguration.freeSeatingState) &&
-        Objects.equals(this.ttlMinutes, freeSeatingConfiguration.ttlMinutes);
+            Objects.equals(this.ttlMinutes, freeSeatingConfiguration.ttlMinutes);
   }
 
   @Override

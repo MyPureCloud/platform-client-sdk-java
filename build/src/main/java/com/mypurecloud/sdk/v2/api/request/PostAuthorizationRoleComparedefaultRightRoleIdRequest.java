@@ -20,27 +20,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
-import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
-import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
-import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
-import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
+import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 
 public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
-    
+
 	private String leftRoleId;
 	public String getLeftRoleId() {
 		return this.leftRoleId;
@@ -54,7 +54,7 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
 	    this.setLeftRoleId(leftRoleId);
 	    return this;
 	} 
-	
+
 	private String rightRoleId;
 	public String getRightRoleId() {
 		return this.rightRoleId;
@@ -68,7 +68,7 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
 	    this.setRightRoleId(rightRoleId);
 	    return this;
 	} 
-	
+
 	private DomainOrganizationRole body;
 	public DomainOrganizationRole getBody() {
 		return this.body;
@@ -82,7 +82,7 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -126,8 +126,8 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
                 .withPathParameter("rightRoleId", rightRoleId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -138,12 +138,12 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String leftRoleId, String rightRoleId, DomainOrganizationRole body) {
 	    return new Builder()
 	            .withRequiredParams(leftRoleId, rightRoleId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostAuthorizationRoleComparedefaultRightRoleIdRequest request;
@@ -152,32 +152,32 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
 			request = new PostAuthorizationRoleComparedefaultRightRoleIdRequest();
 		}
 
-		
+
 		public Builder withLeftRoleId(String leftRoleId) {
 			request.setLeftRoleId(leftRoleId);
 			return this;
 		}
-		
+
 		public Builder withRightRoleId(String rightRoleId) {
 			request.setRightRoleId(rightRoleId);
 			return this;
 		}
-		
+
 		public Builder withBody(DomainOrganizationRole body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String leftRoleId, String rightRoleId, DomainOrganizationRole body) {
 			request.setLeftRoleId(leftRoleId);
-						request.setRightRoleId(rightRoleId);
-						request.setBody(body);
-			
+			request.setRightRoleId(rightRoleId);
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PostAuthorizationRoleComparedefaultRightRoleIdRequest build() {
             

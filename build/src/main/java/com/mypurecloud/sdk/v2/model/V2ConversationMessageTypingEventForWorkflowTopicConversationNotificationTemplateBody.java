@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter;
@@ -43,7 +44,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody parameters(List<V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter> parameters) {
@@ -60,7 +61,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationNotific
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody = (V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody) o;
+
     return Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody.text) &&
-        Objects.equals(this.parameters, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody.parameters);
+            Objects.equals(this.parameters, v2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody.parameters);
   }
 
   @Override

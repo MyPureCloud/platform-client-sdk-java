@@ -36,10 +36,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | List all events |
 | [**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | Get a single event |
 | [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | Get details about a Dialogflow agent |
-| [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | Get a list of Dialogflow agents in the customers&#39; Google accounts |
+| [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | Get a list of Dialogflow agents in the customers' Google accounts |
 | [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | Get details about a Lex bot alias |
-| [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | Get a list of aliases for a bot in the customer&#39;s AWS accounts |
-| [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | Get a list of Lex bots in the customers&#39; AWS accounts |
+| [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | Get a list of aliases for a bot in the customer's AWS accounts |
+| [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | Get a list of Lex bots in the customers' AWS accounts |
 | [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | Get details about a TTS engine |
 | [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | Get details about a specific voice for a TTS engine |
 | [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | Get a list of voices for a TTS engine |
@@ -77,8 +77,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > [Integration](Integration.html) deleteIntegration(integrationId)
 
 Delete integration.
-
-
 
 Wraps DELETE /api/v2/integrations/{integrationId}  
 
@@ -141,8 +139,6 @@ try {
 
 Delete an Action
 
-
-
 Wraps DELETE /api/v2/integrations/actions/{actionId}  
 
 Requires ANY permissions: 
@@ -202,8 +198,6 @@ null (empty response body)
 > Void deleteIntegrationsActionDraft(actionId)
 
 Delete a Draft
-
-
 
 Wraps DELETE /api/v2/integrations/actions/{actionId}/draft  
 
@@ -265,8 +259,6 @@ null (empty response body)
 
 Delete a set of credentials
 
-
-
 Wraps DELETE /api/v2/integrations/credentials/{credentialId}  
 
 Requires NO permissions: 
@@ -326,8 +318,6 @@ null (empty response body)
 
 Get integration.
 
-
-
 Wraps GET /api/v2/integrations/{integrationId}  
 
 Requires ANY permissions: 
@@ -360,7 +350,7 @@ String integrationId = "integrationId_example"; // String | Integration Id
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -400,8 +390,6 @@ try {
 > [IntegrationConfiguration](IntegrationConfiguration.html) getIntegrationConfigCurrent(integrationId)
 
 Get integration configuration.
-
-
 
 Wraps GET /api/v2/integrations/{integrationId}/config/current  
 
@@ -464,8 +452,6 @@ try {
 
 List integrations
 
-
-
 Wraps GET /api/v2/integrations  
 
 Requires ANY permissions: 
@@ -497,7 +483,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -536,8 +522,6 @@ try {
 > [Action](Action.html) getIntegrationsAction(actionId, expand, includeConfig)
 
 Retrieves a single Action matching id.
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}  
 
@@ -587,7 +571,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract 
-| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false] 
+| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -604,8 +588,6 @@ try {
 > [Action](Action.html) getIntegrationsActionDraft(actionId, expand, includeConfig)
 
 Retrieve a Draft
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft  
 
@@ -655,7 +637,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract 
-| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false] 
+| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -672,8 +654,6 @@ try {
 > [JsonSchemaDocument](JsonSchemaDocument.html) getIntegrationsActionDraftSchema(actionId, fileName)
 
 Retrieve schema for a Draft based on filename.
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}  
 
@@ -739,8 +719,6 @@ try {
 
 Retrieve templates for a Draft based on filename.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}  
 
 Requires ANY permissions: 
@@ -805,8 +783,6 @@ try {
 
 Validate current Draft configuration.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/validation  
 
 Requires ANY permissions: 
@@ -867,8 +843,6 @@ try {
 > [JsonSchemaDocument](JsonSchemaDocument.html) getIntegrationsActionSchema(actionId, fileName)
 
 Retrieve schema for an action based on filename.
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}  
 
@@ -934,8 +908,6 @@ try {
 
 Retrieve text of templates for an action based on filename.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId}/templates/{fileName}  
 
 Requires ANY permissions: 
@@ -999,8 +971,6 @@ try {
 > [ActionEntityListing](ActionEntityListing.html) getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
 
 Retrieves all actions associated with filters passed in via query param.
-
-
 
 Wraps GET /api/v2/integrations/actions  
 
@@ -1084,8 +1054,6 @@ try {
 
 Retrieves all categories of available Actions
 
-
-
 Wraps GET /api/v2/integrations/actions/categories  
 
 Requires ANY permissions: 
@@ -1159,8 +1127,6 @@ try {
 > [ActionEntityListing](ActionEntityListing.html) getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
 
 Retrieves all action drafts associated with the filters passed in via query param.
-
-
 
 Wraps GET /api/v2/integrations/actions/drafts  
 
@@ -1244,8 +1210,6 @@ try {
 
 Get a specific botConnector bot, plus versions, for this integration
 
-
-
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}  
 
 Requires ANY permissions: 
@@ -1310,8 +1274,6 @@ try {
 > [BotConnectorBotVersionSummaryEntityListing](BotConnectorBotVersionSummaryEntityListing.html) getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, pageNumber, pageSize)
 
 Get a list of bot versions for a bot
-
-
 
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions  
 
@@ -1380,8 +1342,6 @@ try {
 
 Get a list of botConnector bots for this integration
 
-
-
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots  
 
 Requires ANY permissions: 
@@ -1442,8 +1402,6 @@ try {
 > [BotConnectorBotSummaryEntityListing](BotConnectorBotSummaryEntityListing.html) getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, pageNumber, pageSize)
 
 Get a summary list of botConnector bots for this integration
-
-
 
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries  
 
@@ -1510,8 +1468,6 @@ try {
 
 List permitted client app integrations for the logged in user
 
-
-
 Wraps GET /api/v2/integrations/clientapps  
 
 Requires NO permissions: 
@@ -1542,7 +1498,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -1615,7 +1571,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -1654,8 +1610,6 @@ try {
 > [Credential](Credential.html) getIntegrationsCredential(credentialId)
 
 Get a single credential with sensitive fields redacted
-
-
 
 Wraps GET /api/v2/integrations/credentials/{credentialId}  
 
@@ -1716,8 +1670,6 @@ try {
 > [CredentialInfoListing](CredentialInfoListing.html) getIntegrationsCredentials(pageNumber, pageSize)
 
 List multiple sets of credentials
-
-
 
 Wraps GET /api/v2/integrations/credentials  
 
@@ -1781,8 +1733,6 @@ try {
 
 List all credential types
 
-
-
 Wraps GET /api/v2/integrations/credentials/types  
 
 Requires NO permissions: 
@@ -1838,8 +1788,6 @@ This endpoint does not require any parameters.
 > [IntegrationEventEntityListing](IntegrationEventEntityListing.html) getIntegrationsEventlog(pageSize, pageNumber, sortBy, sortOrder, entityId)
 
 List all events
-
-
 
 Wraps GET /api/v2/integrations/eventlog  
 
@@ -1911,8 +1859,6 @@ try {
 
 Get a single event
 
-
-
 Wraps GET /api/v2/integrations/eventlog/{eventId}  
 
 Requires ANY permissions: 
@@ -1975,8 +1921,6 @@ try {
 
 Get details about a Dialogflow agent
 
-
-
 Wraps GET /api/v2/integrations/speech/dialogflow/agents/{agentId}  
 
 Requires ANY permissions: 
@@ -2036,9 +1980,7 @@ try {
 
 > [DialogflowAgentSummaryEntityListing](DialogflowAgentSummaryEntityListing.html) getIntegrationsSpeechDialogflowAgents(pageNumber, pageSize, name)
 
-Get a list of Dialogflow agents in the customers&#39; Google accounts
-
-
+Get a list of Dialogflow agents in the customers' Google accounts
 
 Wraps GET /api/v2/integrations/speech/dialogflow/agents  
 
@@ -2105,8 +2047,6 @@ try {
 
 Get details about a Lex bot alias
 
-
-
 Wraps GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}  
 
 Requires ANY permissions: 
@@ -2166,9 +2106,7 @@ try {
 
 > [LexBotAliasEntityListing](LexBotAliasEntityListing.html) getIntegrationsSpeechLexBotBotIdAliases(botId, pageNumber, pageSize, status, name)
 
-Get a list of aliases for a bot in the customer&#39;s AWS accounts
-
-
+Get a list of aliases for a bot in the customer's AWS accounts
 
 Wraps GET /api/v2/integrations/speech/lex/bot/{botId}/aliases  
 
@@ -2237,9 +2175,7 @@ try {
 
 > [LexBotEntityListing](LexBotEntityListing.html) getIntegrationsSpeechLexBots(pageNumber, pageSize, name)
 
-Get a list of Lex bots in the customers&#39; AWS accounts
-
-
+Get a list of Lex bots in the customers' AWS accounts
 
 Wraps GET /api/v2/integrations/speech/lex/bots  
 
@@ -2306,8 +2242,6 @@ try {
 
 Get details about a TTS engine
 
-
-
 Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}  
 
 Requires ANY permissions: 
@@ -2371,8 +2305,6 @@ try {
 
 Get details about a specific voice for a TTS engine
 
-
-
 Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}  
 
 Requires ANY permissions: 
@@ -2435,8 +2367,6 @@ try {
 > [TtsVoiceEntityListing](TtsVoiceEntityListing.html) getIntegrationsSpeechTtsEngineVoices(engineId, pageNumber, pageSize)
 
 Get a list of voices for a TTS engine
-
-
 
 Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices  
 
@@ -2503,8 +2433,6 @@ try {
 
 Get a list of TTS engines enabled for org
 
-
-
 Wraps GET /api/v2/integrations/speech/tts/engines  
 
 Requires ANY permissions: 
@@ -2556,7 +2484,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **includeVoices** | **Boolean**| Include voices for the engine | [optional] [default to false] 
 | **name** | **String**| Filter on engine name | [optional] 
-| **language** | **String**| Filter on supported language. If includeVoices=true then the voices are also filtered. | [optional] 
+| **language** | **String**| Filter on supported language. If includeVoices&#x3D;true then the voices are also filtered. | [optional] 
 {: class="table-striped"}
 
 
@@ -2573,8 +2501,6 @@ try {
 > [TtsSettings](TtsSettings.html) getIntegrationsSpeechTtsSettings()
 
 Get TTS settings for an org
-
-
 
 Wraps GET /api/v2/integrations/speech/tts/settings  
 
@@ -2632,8 +2558,6 @@ This endpoint does not require any parameters.
 > [IntegrationType](IntegrationType.html) getIntegrationsType(typeId)
 
 Get integration type.
-
-
 
 Wraps GET /api/v2/integrations/types/{typeId}  
 
@@ -2695,8 +2619,6 @@ try {
 > [JsonSchemaDocument](JsonSchemaDocument.html) getIntegrationsTypeConfigschema(typeId, configType)
 
 Get properties config schema for an integration type.
-
-
 
 Wraps GET /api/v2/integrations/types/{typeId}/configschemas/{configType}  
 
@@ -2761,8 +2683,6 @@ try {
 
 List integration types
 
-
-
 Wraps GET /api/v2/integrations/types  
 
 Requires ANY permissions: 
@@ -2794,7 +2714,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -2834,8 +2754,6 @@ try {
 
 List permitted user app integrations for the logged in user
 
-
-
 Wraps GET /api/v2/integrations/userapps  
 
 Requires NO permissions: 
@@ -2866,7 +2784,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String appHost = "appHost_example"; // String | The type of UserApp to filter by
@@ -2904,11 +2822,9 @@ try {
 
 
 
-> [Integration](Integration.html) patchIntegration(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+> [Integration](Integration.html) patchIntegration(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, body)
 
 Update an integration.
-
-
 
 Wraps PATCH /api/v2/integrations/{integrationId}  
 
@@ -2939,15 +2855,15 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
-Integration body = new Integration(); // Integration | Integration Update
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
+Integration body = new Integration(); // Integration | Integration Update
 try {
-    Integration result = apiInstance.patchIntegration(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
+    Integration result = apiInstance.patchIntegration(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#patchIntegration");
@@ -2961,13 +2877,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration Id | 
-| **body** | [**Integration**](Integration.html)| Integration Update | [optional] 
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
+| **body** | [**Integration**](Integration.html)| Integration Update | [optional] 
 {: class="table-striped"}
 
 
@@ -2984,8 +2900,6 @@ try {
 > [Action](Action.html) patchIntegrationsAction(actionId, body)
 
 Patch an Action
-
-
 
 Wraps PATCH /api/v2/integrations/actions/{actionId}  
 
@@ -3050,8 +2964,6 @@ try {
 
 Update an existing Draft
 
-
-
 Wraps PATCH /api/v2/integrations/actions/{actionId}/draft  
 
 Requires ANY permissions: 
@@ -3115,8 +3027,6 @@ try {
 
 Create an integration.
 
-
-
 Wraps POST /api/v2/integrations  
 
 Requires ANY permissions: 
@@ -3178,8 +3088,6 @@ try {
 
 Create a new Draft from existing Action
 
-
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft  
 
 Requires ANY permissions: 
@@ -3240,8 +3148,6 @@ try {
 > [Action](Action.html) postIntegrationsActionDraftPublish(actionId, body)
 
 Publish a Draft and make it the active Action configuration
-
-
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/publish  
 
@@ -3306,8 +3212,6 @@ try {
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/test  
 
 Requires ANY permissions: 
@@ -3337,7 +3241,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
-Object body = null; // Object | Map of parameters used for variable substitution.
+Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
 try {
     TestExecutionResult result = apiInstance.postIntegrationsActionDraftTest(actionId, body);
     System.out.println(result);
@@ -3353,7 +3257,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
-| **body** | **Object**| Map of parameters used for variable substitution. | 
+| **body** | [**Object**](Object.html)| Map of parameters used for variable substitution. | 
 {: class="table-striped"}
 
 
@@ -3370,8 +3274,6 @@ try {
 > Object postIntegrationsActionExecute(actionId, body)
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
-
-
 
 Wraps POST /api/v2/integrations/actions/{actionId}/execute  
 
@@ -3403,7 +3305,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
-Object body = null; // Object | Map of parameters used for variable substitution.
+Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
 try {
     Object result = apiInstance.postIntegrationsActionExecute(actionId, body);
     System.out.println(result);
@@ -3419,7 +3321,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
-| **body** | **Object**| Map of parameters used for variable substitution. | 
+| **body** | [**Object**](Object.html)| Map of parameters used for variable substitution. | 
 {: class="table-striped"}
 
 
@@ -3436,8 +3338,6 @@ try {
 > [TestExecutionResult](TestExecutionResult.html) postIntegrationsActionTest(actionId, body)
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
-
-
 
 Wraps POST /api/v2/integrations/actions/{actionId}/test  
 
@@ -3469,7 +3369,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
-Object body = null; // Object | Map of parameters used for variable substitution.
+Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
 try {
     TestExecutionResult result = apiInstance.postIntegrationsActionTest(actionId, body);
     System.out.println(result);
@@ -3485,7 +3385,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
-| **body** | **Object**| Map of parameters used for variable substitution. | 
+| **body** | [**Object**](Object.html)| Map of parameters used for variable substitution. | 
 {: class="table-striped"}
 
 
@@ -3502,8 +3402,6 @@ try {
 > [Action](Action.html) postIntegrationsActions(body)
 
 Create a new Action
-
-
 
 Wraps POST /api/v2/integrations/actions  
 
@@ -3566,8 +3464,6 @@ try {
 
 Create a new Draft
 
-
-
 Wraps POST /api/v2/integrations/actions/drafts  
 
 Requires ANY permissions: 
@@ -3629,8 +3525,6 @@ try {
 
 Create a set of credentials
 
-
-
 Wraps POST /api/v2/integrations/credentials  
 
 Requires NO permissions: 
@@ -3691,8 +3585,6 @@ try {
 
 Add a vendor connection
 
-
-
 Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection  
 
 Requires NO permissions: 
@@ -3752,8 +3644,6 @@ try {
 > [IntegrationConfiguration](IntegrationConfiguration.html) putIntegrationConfigCurrent(integrationId, body)
 
 Update integration configuration.
-
-
 
 Wraps PUT /api/v2/integrations/{integrationId}/config/current  
 
@@ -3818,8 +3708,6 @@ try {
 
 Set a list of botConnector bots plus versions for this integration
 
-
-
 Wraps PUT /api/v2/integrations/botconnector/{integrationId}/bots  
 
 Requires ANY permissions: 
@@ -3882,8 +3770,6 @@ null (empty response body)
 
 Update a set of credentials
 
-
-
 Wraps PUT /api/v2/integrations/credentials/{credentialId}  
 
 Requires NO permissions: 
@@ -3945,8 +3831,6 @@ try {
 > [TtsSettings](TtsSettings.html) putIntegrationsSpeechTtsSettings(body)
 
 Update TTS settings for an org
-
-
 
 Wraps PUT /api/v2/integrations/speech/tts/settings  
 

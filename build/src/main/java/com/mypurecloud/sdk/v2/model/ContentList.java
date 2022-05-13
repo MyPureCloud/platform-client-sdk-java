@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class ContentList  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The type of list this instance represents.
    **/
@@ -117,7 +118,7 @@ public class ContentList  implements Serializable {
     this.listType = listType;
   }
 
-  
+
   /**
    * Text to show in the title.
    **/
@@ -135,7 +136,7 @@ public class ContentList  implements Serializable {
     this.title = title;
   }
 
-  
+
   /**
    * Text to show in the description.
    **/
@@ -153,7 +154,7 @@ public class ContentList  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Label for Submit button.
    **/
@@ -171,7 +172,7 @@ public class ContentList  implements Serializable {
     this.submitLabel = submitLabel;
   }
 
-  
+
   /**
    * The list actions (Deprecated).
    **/
@@ -189,7 +190,7 @@ public class ContentList  implements Serializable {
     this.actions = actions;
   }
 
-  
+
   /**
    * An array of component objects.
    **/
@@ -207,7 +208,6 @@ public class ContentList  implements Serializable {
     this.components = components;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,13 +218,14 @@ public class ContentList  implements Serializable {
       return false;
     }
     ContentList contentList = (ContentList) o;
+
     return Objects.equals(this.id, contentList.id) &&
-        Objects.equals(this.listType, contentList.listType) &&
-        Objects.equals(this.title, contentList.title) &&
-        Objects.equals(this.description, contentList.description) &&
-        Objects.equals(this.submitLabel, contentList.submitLabel) &&
-        Objects.equals(this.actions, contentList.actions) &&
-        Objects.equals(this.components, contentList.components);
+            Objects.equals(this.listType, contentList.listType) &&
+            Objects.equals(this.title, contentList.title) &&
+            Objects.equals(this.description, contentList.description) &&
+            Objects.equals(this.submitLabel, contentList.submitLabel) &&
+            Objects.equals(this.actions, contentList.actions) &&
+            Objects.equals(this.components, contentList.components);
   }
 
   @Override

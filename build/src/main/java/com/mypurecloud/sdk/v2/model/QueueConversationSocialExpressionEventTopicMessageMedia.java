@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
     this.url = url;
   }
 
-  
+
   /**
    * The optional internet media type of the the media object.  If null then the media type should be dictated by the url
    **/
@@ -62,7 +63,7 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The optional content length of the the media object, in bytes.
    **/
@@ -80,7 +81,7 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
     this.contentLengthBytes = contentLengthBytes;
   }
 
-  
+
   /**
    * The optional name of the the media object.
    **/
@@ -98,7 +99,7 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
     this.name = name;
   }
 
-  
+
   /**
    * The optional id of the the media object.
    **/
@@ -116,7 +117,6 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
     this.id = id;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class QueueConversationSocialExpressionEventTopicMessageMedia  implements
       return false;
     }
     QueueConversationSocialExpressionEventTopicMessageMedia queueConversationSocialExpressionEventTopicMessageMedia = (QueueConversationSocialExpressionEventTopicMessageMedia) o;
+
     return Objects.equals(this.url, queueConversationSocialExpressionEventTopicMessageMedia.url) &&
-        Objects.equals(this.mediaType, queueConversationSocialExpressionEventTopicMessageMedia.mediaType) &&
-        Objects.equals(this.contentLengthBytes, queueConversationSocialExpressionEventTopicMessageMedia.contentLengthBytes) &&
-        Objects.equals(this.name, queueConversationSocialExpressionEventTopicMessageMedia.name) &&
-        Objects.equals(this.id, queueConversationSocialExpressionEventTopicMessageMedia.id);
+            Objects.equals(this.mediaType, queueConversationSocialExpressionEventTopicMessageMedia.mediaType) &&
+            Objects.equals(this.contentLengthBytes, queueConversationSocialExpressionEventTopicMessageMedia.contentLengthBytes) &&
+            Objects.equals(this.name, queueConversationSocialExpressionEventTopicMessageMedia.name) &&
+            Objects.equals(this.id, queueConversationSocialExpressionEventTopicMessageMedia.id);
   }
 
   @Override

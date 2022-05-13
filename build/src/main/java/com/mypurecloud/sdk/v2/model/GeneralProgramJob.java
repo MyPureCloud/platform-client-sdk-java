@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,7 +86,7 @@ public class GeneralProgramJob  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GeneralProgramJob state(StateEnum state) {
@@ -102,7 +103,7 @@ public class GeneralProgramJob  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public GeneralProgramJob createdBy(AddressableEntityRef createdBy) {
@@ -119,7 +120,7 @@ public class GeneralProgramJob  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -137,7 +138,7 @@ public class GeneralProgramJob  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -155,14 +156,13 @@ public class GeneralProgramJob  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -173,12 +173,13 @@ public class GeneralProgramJob  implements Serializable {
       return false;
     }
     GeneralProgramJob generalProgramJob = (GeneralProgramJob) o;
+
     return Objects.equals(this.id, generalProgramJob.id) &&
-        Objects.equals(this.state, generalProgramJob.state) &&
-        Objects.equals(this.createdBy, generalProgramJob.createdBy) &&
-        Objects.equals(this.dateCreated, generalProgramJob.dateCreated) &&
-        Objects.equals(this.dateModified, generalProgramJob.dateModified) &&
-        Objects.equals(this.selfUri, generalProgramJob.selfUri);
+            Objects.equals(this.state, generalProgramJob.state) &&
+            Objects.equals(this.createdBy, generalProgramJob.createdBy) &&
+            Objects.equals(this.dateCreated, generalProgramJob.dateCreated) &&
+            Objects.equals(this.dateModified, generalProgramJob.dateModified) &&
+            Objects.equals(this.selfUri, generalProgramJob.selfUri);
   }
 
   @Override

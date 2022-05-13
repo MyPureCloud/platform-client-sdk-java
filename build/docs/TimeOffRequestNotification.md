@@ -13,7 +13,7 @@ title: TimeOffRequestNotification
 | **isFullDayRequest** | <!----><!---->**Boolean**<!----> | Whether this is a full day request (false means partial day) |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of this time off request |  [optional] |
 | **partialDayStartDateTimes** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> | A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false |  [optional] |
-| **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.  Will be not empty if isFullDayRequest == true |  [optional] |
+| **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> | A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true |  [optional] |
 {: class="table table-striped"}
 
 
@@ -23,11 +23,11 @@ title: TimeOffRequestNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| APPROVED | &quot;APPROVED&quot; |
-| DENIED | &quot;DENIED&quot; |
-| CANCELED | &quot;CANCELED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| APPROVED | &quot;APPROVED&quot; | 
+| DENIED | &quot;DENIED&quot; | 
+| CANCELED | &quot;CANCELED&quot; | 
 {: class="table table-striped"}
 
 

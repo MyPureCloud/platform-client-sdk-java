@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationActionMap;
@@ -59,7 +60,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.action = action;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage actionTarget(JourneyWebEventsNotificationActionTarget actionTarget) {
@@ -76,7 +77,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.actionTarget = actionTarget;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage actionMap(JourneyWebEventsNotificationActionMap actionMap) {
@@ -93,7 +94,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.actionMap = actionMap;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage errorCode(String errorCode) {
@@ -110,7 +111,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage errorMessage(String errorMessage) {
@@ -127,7 +128,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage userAgentString(String userAgentString) {
@@ -144,7 +145,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.userAgentString = userAgentString;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage ipAddress(String ipAddress) {
@@ -161,7 +162,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.ipAddress = ipAddress;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage ipOrganization(String ipOrganization) {
@@ -178,7 +179,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.ipOrganization = ipOrganization;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage browser(JourneyWebEventsNotificationBrowser browser) {
@@ -195,7 +196,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.browser = browser;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage device(JourneyWebEventsNotificationDevice device) {
@@ -212,7 +213,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.device = device;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage geolocation(JourneyWebEventsNotificationGeoLocation geolocation) {
@@ -229,7 +230,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.geolocation = geolocation;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage mktCampaign(JourneyWebEventsNotificationMktCampaign mktCampaign) {
@@ -246,7 +247,7 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.mktCampaign = mktCampaign;
   }
 
-  
+
   /**
    **/
   public JourneyWebEventsNotificationWebActionMessage visitReferrer(JourneyWebEventsNotificationReferrer visitReferrer) {
@@ -263,7 +264,6 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
     this.visitReferrer = visitReferrer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -274,19 +274,20 @@ public class JourneyWebEventsNotificationWebActionMessage  implements Serializab
       return false;
     }
     JourneyWebEventsNotificationWebActionMessage journeyWebEventsNotificationWebActionMessage = (JourneyWebEventsNotificationWebActionMessage) o;
+
     return Objects.equals(this.action, journeyWebEventsNotificationWebActionMessage.action) &&
-        Objects.equals(this.actionTarget, journeyWebEventsNotificationWebActionMessage.actionTarget) &&
-        Objects.equals(this.actionMap, journeyWebEventsNotificationWebActionMessage.actionMap) &&
-        Objects.equals(this.errorCode, journeyWebEventsNotificationWebActionMessage.errorCode) &&
-        Objects.equals(this.errorMessage, journeyWebEventsNotificationWebActionMessage.errorMessage) &&
-        Objects.equals(this.userAgentString, journeyWebEventsNotificationWebActionMessage.userAgentString) &&
-        Objects.equals(this.ipAddress, journeyWebEventsNotificationWebActionMessage.ipAddress) &&
-        Objects.equals(this.ipOrganization, journeyWebEventsNotificationWebActionMessage.ipOrganization) &&
-        Objects.equals(this.browser, journeyWebEventsNotificationWebActionMessage.browser) &&
-        Objects.equals(this.device, journeyWebEventsNotificationWebActionMessage.device) &&
-        Objects.equals(this.geolocation, journeyWebEventsNotificationWebActionMessage.geolocation) &&
-        Objects.equals(this.mktCampaign, journeyWebEventsNotificationWebActionMessage.mktCampaign) &&
-        Objects.equals(this.visitReferrer, journeyWebEventsNotificationWebActionMessage.visitReferrer);
+            Objects.equals(this.actionTarget, journeyWebEventsNotificationWebActionMessage.actionTarget) &&
+            Objects.equals(this.actionMap, journeyWebEventsNotificationWebActionMessage.actionMap) &&
+            Objects.equals(this.errorCode, journeyWebEventsNotificationWebActionMessage.errorCode) &&
+            Objects.equals(this.errorMessage, journeyWebEventsNotificationWebActionMessage.errorMessage) &&
+            Objects.equals(this.userAgentString, journeyWebEventsNotificationWebActionMessage.userAgentString) &&
+            Objects.equals(this.ipAddress, journeyWebEventsNotificationWebActionMessage.ipAddress) &&
+            Objects.equals(this.ipOrganization, journeyWebEventsNotificationWebActionMessage.ipOrganization) &&
+            Objects.equals(this.browser, journeyWebEventsNotificationWebActionMessage.browser) &&
+            Objects.equals(this.device, journeyWebEventsNotificationWebActionMessage.device) &&
+            Objects.equals(this.geolocation, journeyWebEventsNotificationWebActionMessage.geolocation) &&
+            Objects.equals(this.mktCampaign, journeyWebEventsNotificationWebActionMessage.mktCampaign) &&
+            Objects.equals(this.visitReferrer, journeyWebEventsNotificationWebActionMessage.visitReferrer);
   }
 
   @Override

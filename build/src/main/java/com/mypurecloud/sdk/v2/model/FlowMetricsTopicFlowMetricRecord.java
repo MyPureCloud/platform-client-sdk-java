@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -839,7 +840,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * The date and time of metric creation
    **/
@@ -857,7 +858,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.metricDate = metricDate;
   }
 
-  
+
   /**
    * Metric value
    **/
@@ -875,7 +876,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Record identifier
    **/
@@ -893,7 +894,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.recordId = recordId;
   }
 
-  
+
   /**
    * ID(s) of Skill(s) that are active on the conversation
    **/
@@ -911,7 +912,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.activeSkillIds = activeSkillIds;
   }
 
-  
+
   /**
    * The address that initiated an action
    **/
@@ -929,7 +930,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    * The address receiving an action
    **/
@@ -947,7 +948,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    * Unique identifier of the active virtual agent assistant
    **/
@@ -965,7 +966,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.agentAssistantId = agentAssistantId;
   }
 
-  
+
   /**
    * Bullseye ring of the targeted agent
    **/
@@ -983,7 +984,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.agentBullseyeRing = agentBullseyeRing;
   }
 
-  
+
   /**
    * Flag indicating an agent-owned callback
    **/
@@ -1001,7 +1002,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.agentOwned = agentOwned;
   }
 
-  
+
   /**
    * Automatic Number Identification (caller's number)
    **/
@@ -1019,7 +1020,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    * ID of the user that manually assigned a conversation
    **/
@@ -1037,7 +1038,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.assignerId = assignerId;
   }
 
-  
+
   /**
    * Flag that indicates that the identity of the customer has been asserted as verified by the provider.
    **/
@@ -1055,7 +1056,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.authenticated = authenticated;
   }
 
-  
+
   /**
    * Unique identifier for the conversation
    **/
@@ -1073,7 +1074,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * Indicates the participant purpose of the participant initiating a message conversation
    **/
@@ -1091,7 +1092,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.conversationInitiator = conversationInitiator;
   }
 
-  
+
   /**
    * Session media type that was converted from in case of a media type conversion
    **/
@@ -1109,7 +1110,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.convertedFrom = convertedFrom;
   }
 
-  
+
   /**
    * Session media type that was converted to in case of a media type conversion
    **/
@@ -1127,7 +1128,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.convertedTo = convertedTo;
   }
 
-  
+
   /**
    * Indicates a messaging conversation in which the customer participated by sending at least one message
    **/
@@ -1145,7 +1146,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.customerParticipation = customerParticipation;
   }
 
-  
+
   /**
    * The email or SMS delivery status
    **/
@@ -1163,7 +1164,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.deliveryStatus = deliveryStatus;
   }
 
-  
+
   /**
    * Destination address(es) of transfers or consults
    **/
@@ -1181,7 +1182,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.destinationAddresses = destinationAddresses;
   }
 
-  
+
   /**
    * The direction of the communication
    **/
@@ -1199,7 +1200,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The session disconnect type
    **/
@@ -1217,7 +1218,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * Identifier(s) of division(s) associated with a conversation
    **/
@@ -1235,7 +1236,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.divisionIds = divisionIds;
   }
 
-  
+
   /**
    * Dialed number identification service (number dialed by the calling party)
    **/
@@ -1253,7 +1254,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * Unique identifier of the edge device
    **/
@@ -1271,7 +1272,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.edgeId = edgeId;
   }
 
-  
+
   /**
    * Number of eligible agents for each predictive routing attempt
    **/
@@ -1289,7 +1290,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.eligibleAgentCounts = eligibleAgentCounts;
   }
 
-  
+
   /**
    * Flow ending language, e.g. en-us
    **/
@@ -1307,7 +1308,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.endingLanguage = endingLanguage;
   }
 
-  
+
   /**
    * The particular entry reason for this flow, e.g. an address, userId, or flowId
    **/
@@ -1325,7 +1326,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.entryReason = entryReason;
   }
 
-  
+
   /**
    * The entry type for this flow, e.g. dnis, dialer, agent, flow, or direct
    **/
@@ -1343,7 +1344,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.entryType = entryType;
   }
 
-  
+
   /**
    * The exit reason for this flow, e.g. DISCONNECT
    **/
@@ -1361,7 +1362,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.exitReason = exitReason;
   }
 
-  
+
   /**
    * Extended delivery status
    **/
@@ -1379,7 +1380,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.extendedDeliveryStatus = extendedDeliveryStatus;
   }
 
-  
+
   /**
    * External contact identifier
    **/
@@ -1397,7 +1398,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * Count of any media (images, files, etc) included on the external session
    **/
@@ -1415,7 +1416,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.externalMediaCount = externalMediaCount;
   }
 
-  
+
   /**
    * External organization identifier
    **/
@@ -1433,7 +1434,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * External tag for the conversation
    **/
@@ -1451,7 +1452,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.externalTag = externalTag;
   }
 
-  
+
   /**
    * Marker that is set if the current queue is the first queue in a conversation
    **/
@@ -1469,7 +1470,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.firstQueue = firstQueue;
   }
 
-  
+
   /**
    * Reason for which participant flagged conversation
    **/
@@ -1487,7 +1488,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * The unique identifier of this flow
    **/
@@ -1505,7 +1506,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    * Type of flow in that occurred when entering ACD.
    **/
@@ -1523,7 +1524,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowInType = flowInType;
   }
 
-  
+
   /**
    * The ID of a flow outcome milestone
    **/
@@ -1541,7 +1542,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowMilestoneIds = flowMilestoneIds;
   }
 
-  
+
   /**
    * The name of this flow at the time of flow execution
    **/
@@ -1559,7 +1560,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowName = flowName;
   }
 
-  
+
   /**
    * Type of flow out that occurred when emitting tFlowOut.
    **/
@@ -1577,7 +1578,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowOutType = flowOutType;
   }
 
-  
+
   /**
    * The type of this flow
    **/
@@ -1595,7 +1596,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowType = flowType;
   }
 
-  
+
   /**
    * The version of this flow
    **/
@@ -1613,7 +1614,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
+
   /**
    * Unique identifier for a PureCloud group
    **/
@@ -1631,7 +1632,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.groupId = groupId;
   }
 
-  
+
   /**
    * The interaction type (enterprise or contactCenter)
    **/
@@ -1649,7 +1650,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.interactionType = interactionType;
   }
 
-  
+
   /**
    * Identifier of the journey action.
    **/
@@ -1667,7 +1668,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyActionId = journeyActionId;
   }
 
-  
+
   /**
    * Identifier of the journey action map that triggered the action.
    **/
@@ -1685,7 +1686,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyActionMapId = journeyActionMapId;
   }
 
-  
+
   /**
    * Version of the journey action map that triggered the action.
    **/
@@ -1703,7 +1704,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyActionMapVersion = journeyActionMapVersion;
   }
 
-  
+
   /**
    * Primary identifier of the journey customer in the source where the activities originate from.
    **/
@@ -1721,7 +1722,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyCustomerId = journeyCustomerId;
   }
 
-  
+
   /**
    * Type of primary identifier of the journey customer (e.g. cookie).
    **/
@@ -1739,7 +1740,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyCustomerIdType = journeyCustomerIdType;
   }
 
-  
+
   /**
    * Unique identifier of the journey session.
    **/
@@ -1757,7 +1758,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyCustomerSessionId = journeyCustomerSessionId;
   }
 
-  
+
   /**
    * Type or category of journey sessions (e.g. web, ticket, delivery, atm).
    **/
@@ -1775,7 +1776,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.journeyCustomerSessionIdType = journeyCustomerSessionIdType;
   }
 
-  
+
   /**
    * The unique identifier of the knowledge base used
    **/
@@ -1793,7 +1794,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.knowledgeBaseId = knowledgeBaseId;
   }
 
-  
+
   /**
    * Count of any media (images, files, etc) included in this session
    **/
@@ -1811,7 +1812,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.mediaCount = mediaCount;
   }
 
-  
+
   /**
    * The session media type
    **/
@@ -1829,7 +1830,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Message type for messaging services. E.g.: sms, facebook, twitter, line
    **/
@@ -1847,7 +1848,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    * The original direction of the conversation
    **/
@@ -1865,7 +1866,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.originatingDirection = originatingDirection;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the outbound campaign
    **/
@@ -1883,7 +1884,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.outboundCampaignId = outboundCampaignId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the contact
    **/
@@ -1901,7 +1902,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.outboundContactId = outboundContactId;
   }
 
-  
+
   /**
    * (Dialer) Unique identifier of the contact list that this contact belongs to
    **/
@@ -1919,7 +1920,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.outboundContactListId = outboundContactListId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant
    **/
@@ -1937,7 +1938,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.participantName = participantName;
   }
 
-  
+
   /**
    * This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session.
    **/
@@ -1955,7 +1956,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * The source provider for the communication.
    **/
@@ -1973,7 +1974,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The participant's purpose
    **/
@@ -1991,7 +1992,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * Queue identifier
    **/
@@ -2009,7 +2010,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The recognition failure reason causing to exit/disconnect
    **/
@@ -2027,7 +2028,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.recognitionFailureReason = recognitionFailureReason;
   }
 
-  
+
   /**
    * Name, phone number, or email address of the remote party.
    **/
@@ -2045,7 +2046,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.remote = remote;
   }
 
-  
+
   /**
    * ID(s) of Skill(s) that have been removed by bullseye routing
    **/
@@ -2063,7 +2064,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.removedSkillIds = removedSkillIds;
   }
 
-  
+
   /**
    * Marker for an interaction that got reoffered to the same queue by an in-queue flow
    **/
@@ -2081,7 +2082,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.reoffered = reoffered;
   }
 
-  
+
   /**
    * Unique identifier for the language requested for an interaction
    **/
@@ -2099,7 +2100,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.requestedLanguageId = requestedLanguageId;
   }
 
-  
+
   /**
    * Unique identifier(s) for skill(s) requested for an interaction
    **/
@@ -2117,7 +2118,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.requestedRoutingSkillIds = requestedRoutingSkillIds;
   }
 
-  
+
   /**
    * Routing type(s) for requested/attempted routing methods.
    **/
@@ -2135,7 +2136,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.requestedRoutings = requestedRoutings;
   }
 
-  
+
   /**
    * Unique identifier for the room
    **/
@@ -2153,7 +2154,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    * Routing priority for the current interaction
    **/
@@ -2171,7 +2172,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.routingPriority = routingPriority;
   }
 
-  
+
   /**
    * Routing ring for bullseye or preferred agent routing
    **/
@@ -2189,7 +2190,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.routingRing = routingRing;
   }
 
-  
+
   /**
    * Selected agent ID
    **/
@@ -2207,7 +2208,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.selectedAgentId = selectedAgentId;
   }
 
-  
+
   /**
    * Selected agent GPR rank
    **/
@@ -2225,7 +2226,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.selectedAgentRank = selectedAgentRank;
   }
 
-  
+
   /**
    * Indicates whether the flow session was self serviced
    **/
@@ -2243,7 +2244,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.selfServed = selfServed;
   }
 
-  
+
   /**
    * Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
    **/
@@ -2261,7 +2262,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.sessionDnis = sessionDnis;
   }
 
-  
+
   /**
    * The unique identifier of this session
    **/
@@ -2279,7 +2280,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * Flow starting language, e.g. en-us
    **/
@@ -2297,7 +2298,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.startingLanguage = startingLanguage;
   }
 
-  
+
   /**
    * Unique identifier for a phone
    **/
@@ -2315,7 +2316,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.stationId = stationId;
   }
 
-  
+
   /**
    * The team ID the user is a member of
    **/
@@ -2333,7 +2334,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.teamId = teamId;
   }
 
-  
+
   /**
    * The address of a flow transfer target, e.g. a phone number, an email address, or a queueId
    **/
@@ -2351,7 +2352,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.transferTargetAddress = transferTargetAddress;
   }
 
-  
+
   /**
    * The name of a flow transfer target
    **/
@@ -2369,7 +2370,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.transferTargetName = transferTargetName;
   }
 
-  
+
   /**
    * The type of transfer for flows that ended with a transfer
    **/
@@ -2387,7 +2388,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.transferType = transferType;
   }
 
-  
+
   /**
    * Complete routing method
    **/
@@ -2405,7 +2406,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.usedRouting = usedRouting;
   }
 
-  
+
   /**
    * Unique identifier for the user
    **/
@@ -2423,7 +2424,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    * Number of waiting interactions for each predictive routing attempt
    **/
@@ -2441,7 +2442,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.waitingInteractionCounts = waitingInteractionCounts;
   }
 
-  
+
   /**
    * Wrap up code
    **/
@@ -2459,7 +2460,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.wrapUpCode = wrapUpCode;
   }
 
-  
+
   /**
    * Proposed agents
    **/
@@ -2477,7 +2478,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.proposedAgents = proposedAgents;
   }
 
-  
+
   /**
    * Flow outcomes
    **/
@@ -2495,7 +2496,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.outcomes = outcomes;
   }
 
-  
+
   /**
    * Scored agents
    **/
@@ -2513,7 +2514,6 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     this.scoredAgents = scoredAgents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2524,100 +2524,101 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
       return false;
     }
     FlowMetricsTopicFlowMetricRecord flowMetricsTopicFlowMetricRecord = (FlowMetricsTopicFlowMetricRecord) o;
+
     return Objects.equals(this.metric, flowMetricsTopicFlowMetricRecord.metric) &&
-        Objects.equals(this.metricDate, flowMetricsTopicFlowMetricRecord.metricDate) &&
-        Objects.equals(this.value, flowMetricsTopicFlowMetricRecord.value) &&
-        Objects.equals(this.recordId, flowMetricsTopicFlowMetricRecord.recordId) &&
-        Objects.equals(this.activeSkillIds, flowMetricsTopicFlowMetricRecord.activeSkillIds) &&
-        Objects.equals(this.addressFrom, flowMetricsTopicFlowMetricRecord.addressFrom) &&
-        Objects.equals(this.addressTo, flowMetricsTopicFlowMetricRecord.addressTo) &&
-        Objects.equals(this.agentAssistantId, flowMetricsTopicFlowMetricRecord.agentAssistantId) &&
-        Objects.equals(this.agentBullseyeRing, flowMetricsTopicFlowMetricRecord.agentBullseyeRing) &&
-        Objects.equals(this.agentOwned, flowMetricsTopicFlowMetricRecord.agentOwned) &&
-        Objects.equals(this.ani, flowMetricsTopicFlowMetricRecord.ani) &&
-        Objects.equals(this.assignerId, flowMetricsTopicFlowMetricRecord.assignerId) &&
-        Objects.equals(this.authenticated, flowMetricsTopicFlowMetricRecord.authenticated) &&
-        Objects.equals(this.conversationId, flowMetricsTopicFlowMetricRecord.conversationId) &&
-        Objects.equals(this.conversationInitiator, flowMetricsTopicFlowMetricRecord.conversationInitiator) &&
-        Objects.equals(this.convertedFrom, flowMetricsTopicFlowMetricRecord.convertedFrom) &&
-        Objects.equals(this.convertedTo, flowMetricsTopicFlowMetricRecord.convertedTo) &&
-        Objects.equals(this.customerParticipation, flowMetricsTopicFlowMetricRecord.customerParticipation) &&
-        Objects.equals(this.deliveryStatus, flowMetricsTopicFlowMetricRecord.deliveryStatus) &&
-        Objects.equals(this.destinationAddresses, flowMetricsTopicFlowMetricRecord.destinationAddresses) &&
-        Objects.equals(this.direction, flowMetricsTopicFlowMetricRecord.direction) &&
-        Objects.equals(this.disconnectType, flowMetricsTopicFlowMetricRecord.disconnectType) &&
-        Objects.equals(this.divisionIds, flowMetricsTopicFlowMetricRecord.divisionIds) &&
-        Objects.equals(this.dnis, flowMetricsTopicFlowMetricRecord.dnis) &&
-        Objects.equals(this.edgeId, flowMetricsTopicFlowMetricRecord.edgeId) &&
-        Objects.equals(this.eligibleAgentCounts, flowMetricsTopicFlowMetricRecord.eligibleAgentCounts) &&
-        Objects.equals(this.endingLanguage, flowMetricsTopicFlowMetricRecord.endingLanguage) &&
-        Objects.equals(this.entryReason, flowMetricsTopicFlowMetricRecord.entryReason) &&
-        Objects.equals(this.entryType, flowMetricsTopicFlowMetricRecord.entryType) &&
-        Objects.equals(this.exitReason, flowMetricsTopicFlowMetricRecord.exitReason) &&
-        Objects.equals(this.extendedDeliveryStatus, flowMetricsTopicFlowMetricRecord.extendedDeliveryStatus) &&
-        Objects.equals(this.externalContactId, flowMetricsTopicFlowMetricRecord.externalContactId) &&
-        Objects.equals(this.externalMediaCount, flowMetricsTopicFlowMetricRecord.externalMediaCount) &&
-        Objects.equals(this.externalOrganizationId, flowMetricsTopicFlowMetricRecord.externalOrganizationId) &&
-        Objects.equals(this.externalTag, flowMetricsTopicFlowMetricRecord.externalTag) &&
-        Objects.equals(this.firstQueue, flowMetricsTopicFlowMetricRecord.firstQueue) &&
-        Objects.equals(this.flaggedReason, flowMetricsTopicFlowMetricRecord.flaggedReason) &&
-        Objects.equals(this.flowId, flowMetricsTopicFlowMetricRecord.flowId) &&
-        Objects.equals(this.flowInType, flowMetricsTopicFlowMetricRecord.flowInType) &&
-        Objects.equals(this.flowMilestoneIds, flowMetricsTopicFlowMetricRecord.flowMilestoneIds) &&
-        Objects.equals(this.flowName, flowMetricsTopicFlowMetricRecord.flowName) &&
-        Objects.equals(this.flowOutType, flowMetricsTopicFlowMetricRecord.flowOutType) &&
-        Objects.equals(this.flowType, flowMetricsTopicFlowMetricRecord.flowType) &&
-        Objects.equals(this.flowVersion, flowMetricsTopicFlowMetricRecord.flowVersion) &&
-        Objects.equals(this.groupId, flowMetricsTopicFlowMetricRecord.groupId) &&
-        Objects.equals(this.interactionType, flowMetricsTopicFlowMetricRecord.interactionType) &&
-        Objects.equals(this.journeyActionId, flowMetricsTopicFlowMetricRecord.journeyActionId) &&
-        Objects.equals(this.journeyActionMapId, flowMetricsTopicFlowMetricRecord.journeyActionMapId) &&
-        Objects.equals(this.journeyActionMapVersion, flowMetricsTopicFlowMetricRecord.journeyActionMapVersion) &&
-        Objects.equals(this.journeyCustomerId, flowMetricsTopicFlowMetricRecord.journeyCustomerId) &&
-        Objects.equals(this.journeyCustomerIdType, flowMetricsTopicFlowMetricRecord.journeyCustomerIdType) &&
-        Objects.equals(this.journeyCustomerSessionId, flowMetricsTopicFlowMetricRecord.journeyCustomerSessionId) &&
-        Objects.equals(this.journeyCustomerSessionIdType, flowMetricsTopicFlowMetricRecord.journeyCustomerSessionIdType) &&
-        Objects.equals(this.knowledgeBaseId, flowMetricsTopicFlowMetricRecord.knowledgeBaseId) &&
-        Objects.equals(this.mediaCount, flowMetricsTopicFlowMetricRecord.mediaCount) &&
-        Objects.equals(this.mediaType, flowMetricsTopicFlowMetricRecord.mediaType) &&
-        Objects.equals(this.messageType, flowMetricsTopicFlowMetricRecord.messageType) &&
-        Objects.equals(this.originatingDirection, flowMetricsTopicFlowMetricRecord.originatingDirection) &&
-        Objects.equals(this.outboundCampaignId, flowMetricsTopicFlowMetricRecord.outboundCampaignId) &&
-        Objects.equals(this.outboundContactId, flowMetricsTopicFlowMetricRecord.outboundContactId) &&
-        Objects.equals(this.outboundContactListId, flowMetricsTopicFlowMetricRecord.outboundContactListId) &&
-        Objects.equals(this.participantName, flowMetricsTopicFlowMetricRecord.participantName) &&
-        Objects.equals(this.peerId, flowMetricsTopicFlowMetricRecord.peerId) &&
-        Objects.equals(this.provider, flowMetricsTopicFlowMetricRecord.provider) &&
-        Objects.equals(this.purpose, flowMetricsTopicFlowMetricRecord.purpose) &&
-        Objects.equals(this.queueId, flowMetricsTopicFlowMetricRecord.queueId) &&
-        Objects.equals(this.recognitionFailureReason, flowMetricsTopicFlowMetricRecord.recognitionFailureReason) &&
-        Objects.equals(this.remote, flowMetricsTopicFlowMetricRecord.remote) &&
-        Objects.equals(this.removedSkillIds, flowMetricsTopicFlowMetricRecord.removedSkillIds) &&
-        Objects.equals(this.reoffered, flowMetricsTopicFlowMetricRecord.reoffered) &&
-        Objects.equals(this.requestedLanguageId, flowMetricsTopicFlowMetricRecord.requestedLanguageId) &&
-        Objects.equals(this.requestedRoutingSkillIds, flowMetricsTopicFlowMetricRecord.requestedRoutingSkillIds) &&
-        Objects.equals(this.requestedRoutings, flowMetricsTopicFlowMetricRecord.requestedRoutings) &&
-        Objects.equals(this.roomId, flowMetricsTopicFlowMetricRecord.roomId) &&
-        Objects.equals(this.routingPriority, flowMetricsTopicFlowMetricRecord.routingPriority) &&
-        Objects.equals(this.routingRing, flowMetricsTopicFlowMetricRecord.routingRing) &&
-        Objects.equals(this.selectedAgentId, flowMetricsTopicFlowMetricRecord.selectedAgentId) &&
-        Objects.equals(this.selectedAgentRank, flowMetricsTopicFlowMetricRecord.selectedAgentRank) &&
-        Objects.equals(this.selfServed, flowMetricsTopicFlowMetricRecord.selfServed) &&
-        Objects.equals(this.sessionDnis, flowMetricsTopicFlowMetricRecord.sessionDnis) &&
-        Objects.equals(this.sessionId, flowMetricsTopicFlowMetricRecord.sessionId) &&
-        Objects.equals(this.startingLanguage, flowMetricsTopicFlowMetricRecord.startingLanguage) &&
-        Objects.equals(this.stationId, flowMetricsTopicFlowMetricRecord.stationId) &&
-        Objects.equals(this.teamId, flowMetricsTopicFlowMetricRecord.teamId) &&
-        Objects.equals(this.transferTargetAddress, flowMetricsTopicFlowMetricRecord.transferTargetAddress) &&
-        Objects.equals(this.transferTargetName, flowMetricsTopicFlowMetricRecord.transferTargetName) &&
-        Objects.equals(this.transferType, flowMetricsTopicFlowMetricRecord.transferType) &&
-        Objects.equals(this.usedRouting, flowMetricsTopicFlowMetricRecord.usedRouting) &&
-        Objects.equals(this.userId, flowMetricsTopicFlowMetricRecord.userId) &&
-        Objects.equals(this.waitingInteractionCounts, flowMetricsTopicFlowMetricRecord.waitingInteractionCounts) &&
-        Objects.equals(this.wrapUpCode, flowMetricsTopicFlowMetricRecord.wrapUpCode) &&
-        Objects.equals(this.proposedAgents, flowMetricsTopicFlowMetricRecord.proposedAgents) &&
-        Objects.equals(this.outcomes, flowMetricsTopicFlowMetricRecord.outcomes) &&
-        Objects.equals(this.scoredAgents, flowMetricsTopicFlowMetricRecord.scoredAgents);
+            Objects.equals(this.metricDate, flowMetricsTopicFlowMetricRecord.metricDate) &&
+            Objects.equals(this.value, flowMetricsTopicFlowMetricRecord.value) &&
+            Objects.equals(this.recordId, flowMetricsTopicFlowMetricRecord.recordId) &&
+            Objects.equals(this.activeSkillIds, flowMetricsTopicFlowMetricRecord.activeSkillIds) &&
+            Objects.equals(this.addressFrom, flowMetricsTopicFlowMetricRecord.addressFrom) &&
+            Objects.equals(this.addressTo, flowMetricsTopicFlowMetricRecord.addressTo) &&
+            Objects.equals(this.agentAssistantId, flowMetricsTopicFlowMetricRecord.agentAssistantId) &&
+            Objects.equals(this.agentBullseyeRing, flowMetricsTopicFlowMetricRecord.agentBullseyeRing) &&
+            Objects.equals(this.agentOwned, flowMetricsTopicFlowMetricRecord.agentOwned) &&
+            Objects.equals(this.ani, flowMetricsTopicFlowMetricRecord.ani) &&
+            Objects.equals(this.assignerId, flowMetricsTopicFlowMetricRecord.assignerId) &&
+            Objects.equals(this.authenticated, flowMetricsTopicFlowMetricRecord.authenticated) &&
+            Objects.equals(this.conversationId, flowMetricsTopicFlowMetricRecord.conversationId) &&
+            Objects.equals(this.conversationInitiator, flowMetricsTopicFlowMetricRecord.conversationInitiator) &&
+            Objects.equals(this.convertedFrom, flowMetricsTopicFlowMetricRecord.convertedFrom) &&
+            Objects.equals(this.convertedTo, flowMetricsTopicFlowMetricRecord.convertedTo) &&
+            Objects.equals(this.customerParticipation, flowMetricsTopicFlowMetricRecord.customerParticipation) &&
+            Objects.equals(this.deliveryStatus, flowMetricsTopicFlowMetricRecord.deliveryStatus) &&
+            Objects.equals(this.destinationAddresses, flowMetricsTopicFlowMetricRecord.destinationAddresses) &&
+            Objects.equals(this.direction, flowMetricsTopicFlowMetricRecord.direction) &&
+            Objects.equals(this.disconnectType, flowMetricsTopicFlowMetricRecord.disconnectType) &&
+            Objects.equals(this.divisionIds, flowMetricsTopicFlowMetricRecord.divisionIds) &&
+            Objects.equals(this.dnis, flowMetricsTopicFlowMetricRecord.dnis) &&
+            Objects.equals(this.edgeId, flowMetricsTopicFlowMetricRecord.edgeId) &&
+            Objects.equals(this.eligibleAgentCounts, flowMetricsTopicFlowMetricRecord.eligibleAgentCounts) &&
+            Objects.equals(this.endingLanguage, flowMetricsTopicFlowMetricRecord.endingLanguage) &&
+            Objects.equals(this.entryReason, flowMetricsTopicFlowMetricRecord.entryReason) &&
+            Objects.equals(this.entryType, flowMetricsTopicFlowMetricRecord.entryType) &&
+            Objects.equals(this.exitReason, flowMetricsTopicFlowMetricRecord.exitReason) &&
+            Objects.equals(this.extendedDeliveryStatus, flowMetricsTopicFlowMetricRecord.extendedDeliveryStatus) &&
+            Objects.equals(this.externalContactId, flowMetricsTopicFlowMetricRecord.externalContactId) &&
+            Objects.equals(this.externalMediaCount, flowMetricsTopicFlowMetricRecord.externalMediaCount) &&
+            Objects.equals(this.externalOrganizationId, flowMetricsTopicFlowMetricRecord.externalOrganizationId) &&
+            Objects.equals(this.externalTag, flowMetricsTopicFlowMetricRecord.externalTag) &&
+            Objects.equals(this.firstQueue, flowMetricsTopicFlowMetricRecord.firstQueue) &&
+            Objects.equals(this.flaggedReason, flowMetricsTopicFlowMetricRecord.flaggedReason) &&
+            Objects.equals(this.flowId, flowMetricsTopicFlowMetricRecord.flowId) &&
+            Objects.equals(this.flowInType, flowMetricsTopicFlowMetricRecord.flowInType) &&
+            Objects.equals(this.flowMilestoneIds, flowMetricsTopicFlowMetricRecord.flowMilestoneIds) &&
+            Objects.equals(this.flowName, flowMetricsTopicFlowMetricRecord.flowName) &&
+            Objects.equals(this.flowOutType, flowMetricsTopicFlowMetricRecord.flowOutType) &&
+            Objects.equals(this.flowType, flowMetricsTopicFlowMetricRecord.flowType) &&
+            Objects.equals(this.flowVersion, flowMetricsTopicFlowMetricRecord.flowVersion) &&
+            Objects.equals(this.groupId, flowMetricsTopicFlowMetricRecord.groupId) &&
+            Objects.equals(this.interactionType, flowMetricsTopicFlowMetricRecord.interactionType) &&
+            Objects.equals(this.journeyActionId, flowMetricsTopicFlowMetricRecord.journeyActionId) &&
+            Objects.equals(this.journeyActionMapId, flowMetricsTopicFlowMetricRecord.journeyActionMapId) &&
+            Objects.equals(this.journeyActionMapVersion, flowMetricsTopicFlowMetricRecord.journeyActionMapVersion) &&
+            Objects.equals(this.journeyCustomerId, flowMetricsTopicFlowMetricRecord.journeyCustomerId) &&
+            Objects.equals(this.journeyCustomerIdType, flowMetricsTopicFlowMetricRecord.journeyCustomerIdType) &&
+            Objects.equals(this.journeyCustomerSessionId, flowMetricsTopicFlowMetricRecord.journeyCustomerSessionId) &&
+            Objects.equals(this.journeyCustomerSessionIdType, flowMetricsTopicFlowMetricRecord.journeyCustomerSessionIdType) &&
+            Objects.equals(this.knowledgeBaseId, flowMetricsTopicFlowMetricRecord.knowledgeBaseId) &&
+            Objects.equals(this.mediaCount, flowMetricsTopicFlowMetricRecord.mediaCount) &&
+            Objects.equals(this.mediaType, flowMetricsTopicFlowMetricRecord.mediaType) &&
+            Objects.equals(this.messageType, flowMetricsTopicFlowMetricRecord.messageType) &&
+            Objects.equals(this.originatingDirection, flowMetricsTopicFlowMetricRecord.originatingDirection) &&
+            Objects.equals(this.outboundCampaignId, flowMetricsTopicFlowMetricRecord.outboundCampaignId) &&
+            Objects.equals(this.outboundContactId, flowMetricsTopicFlowMetricRecord.outboundContactId) &&
+            Objects.equals(this.outboundContactListId, flowMetricsTopicFlowMetricRecord.outboundContactListId) &&
+            Objects.equals(this.participantName, flowMetricsTopicFlowMetricRecord.participantName) &&
+            Objects.equals(this.peerId, flowMetricsTopicFlowMetricRecord.peerId) &&
+            Objects.equals(this.provider, flowMetricsTopicFlowMetricRecord.provider) &&
+            Objects.equals(this.purpose, flowMetricsTopicFlowMetricRecord.purpose) &&
+            Objects.equals(this.queueId, flowMetricsTopicFlowMetricRecord.queueId) &&
+            Objects.equals(this.recognitionFailureReason, flowMetricsTopicFlowMetricRecord.recognitionFailureReason) &&
+            Objects.equals(this.remote, flowMetricsTopicFlowMetricRecord.remote) &&
+            Objects.equals(this.removedSkillIds, flowMetricsTopicFlowMetricRecord.removedSkillIds) &&
+            Objects.equals(this.reoffered, flowMetricsTopicFlowMetricRecord.reoffered) &&
+            Objects.equals(this.requestedLanguageId, flowMetricsTopicFlowMetricRecord.requestedLanguageId) &&
+            Objects.equals(this.requestedRoutingSkillIds, flowMetricsTopicFlowMetricRecord.requestedRoutingSkillIds) &&
+            Objects.equals(this.requestedRoutings, flowMetricsTopicFlowMetricRecord.requestedRoutings) &&
+            Objects.equals(this.roomId, flowMetricsTopicFlowMetricRecord.roomId) &&
+            Objects.equals(this.routingPriority, flowMetricsTopicFlowMetricRecord.routingPriority) &&
+            Objects.equals(this.routingRing, flowMetricsTopicFlowMetricRecord.routingRing) &&
+            Objects.equals(this.selectedAgentId, flowMetricsTopicFlowMetricRecord.selectedAgentId) &&
+            Objects.equals(this.selectedAgentRank, flowMetricsTopicFlowMetricRecord.selectedAgentRank) &&
+            Objects.equals(this.selfServed, flowMetricsTopicFlowMetricRecord.selfServed) &&
+            Objects.equals(this.sessionDnis, flowMetricsTopicFlowMetricRecord.sessionDnis) &&
+            Objects.equals(this.sessionId, flowMetricsTopicFlowMetricRecord.sessionId) &&
+            Objects.equals(this.startingLanguage, flowMetricsTopicFlowMetricRecord.startingLanguage) &&
+            Objects.equals(this.stationId, flowMetricsTopicFlowMetricRecord.stationId) &&
+            Objects.equals(this.teamId, flowMetricsTopicFlowMetricRecord.teamId) &&
+            Objects.equals(this.transferTargetAddress, flowMetricsTopicFlowMetricRecord.transferTargetAddress) &&
+            Objects.equals(this.transferTargetName, flowMetricsTopicFlowMetricRecord.transferTargetName) &&
+            Objects.equals(this.transferType, flowMetricsTopicFlowMetricRecord.transferType) &&
+            Objects.equals(this.usedRouting, flowMetricsTopicFlowMetricRecord.usedRouting) &&
+            Objects.equals(this.userId, flowMetricsTopicFlowMetricRecord.userId) &&
+            Objects.equals(this.waitingInteractionCounts, flowMetricsTopicFlowMetricRecord.waitingInteractionCounts) &&
+            Objects.equals(this.wrapUpCode, flowMetricsTopicFlowMetricRecord.wrapUpCode) &&
+            Objects.equals(this.proposedAgents, flowMetricsTopicFlowMetricRecord.proposedAgents) &&
+            Objects.equals(this.outcomes, flowMetricsTopicFlowMetricRecord.outcomes) &&
+            Objects.equals(this.scoredAgents, flowMetricsTopicFlowMetricRecord.scoredAgents);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -148,7 +149,7 @@ public class BuIntradayResponse  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The end of the date range for which this data applies. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -166,7 +167,7 @@ public class BuIntradayResponse  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * The aggregation period in minutes, which determines the interval duration of the returned data
    **/
@@ -184,7 +185,7 @@ public class BuIntradayResponse  implements Serializable {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
-  
+
   /**
    * If not null, the reason there was no data for the request
    **/
@@ -202,7 +203,7 @@ public class BuIntradayResponse  implements Serializable {
     this.noDataReason = noDataReason;
   }
 
-  
+
   /**
    * The categories to which this data corresponds
    **/
@@ -220,7 +221,7 @@ public class BuIntradayResponse  implements Serializable {
     this.categories = categories;
   }
 
-  
+
   /**
    * Short term forecast reference
    **/
@@ -238,7 +239,7 @@ public class BuIntradayResponse  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    * Schedule reference
    **/
@@ -256,7 +257,7 @@ public class BuIntradayResponse  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   /**
    * Intraday data grouped by a single media type and set of planning group IDs
    **/
@@ -274,7 +275,6 @@ public class BuIntradayResponse  implements Serializable {
     this.intradayDataGroupings = intradayDataGroupings;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -285,14 +285,15 @@ public class BuIntradayResponse  implements Serializable {
       return false;
     }
     BuIntradayResponse buIntradayResponse = (BuIntradayResponse) o;
+
     return Objects.equals(this.startDate, buIntradayResponse.startDate) &&
-        Objects.equals(this.endDate, buIntradayResponse.endDate) &&
-        Objects.equals(this.intervalLengthMinutes, buIntradayResponse.intervalLengthMinutes) &&
-        Objects.equals(this.noDataReason, buIntradayResponse.noDataReason) &&
-        Objects.equals(this.categories, buIntradayResponse.categories) &&
-        Objects.equals(this.shortTermForecast, buIntradayResponse.shortTermForecast) &&
-        Objects.equals(this.schedule, buIntradayResponse.schedule) &&
-        Objects.equals(this.intradayDataGroupings, buIntradayResponse.intradayDataGroupings);
+            Objects.equals(this.endDate, buIntradayResponse.endDate) &&
+            Objects.equals(this.intervalLengthMinutes, buIntradayResponse.intervalLengthMinutes) &&
+            Objects.equals(this.noDataReason, buIntradayResponse.noDataReason) &&
+            Objects.equals(this.categories, buIntradayResponse.categories) &&
+            Objects.equals(this.shortTermForecast, buIntradayResponse.shortTermForecast) &&
+            Objects.equals(this.schedule, buIntradayResponse.schedule) &&
+            Objects.equals(this.intradayDataGroupings, buIntradayResponse.intradayDataGroupings);
   }
 
   @Override

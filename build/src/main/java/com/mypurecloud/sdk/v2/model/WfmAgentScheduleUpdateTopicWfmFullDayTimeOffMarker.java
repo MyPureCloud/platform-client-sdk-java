@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.timeOffRequestId = timeOffRequestId;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker managementUnitDate(String managementUnitDate) {
@@ -62,7 +63,7 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.managementUnitDate = managementUnitDate;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker activityCodeId(String activityCodeId) {
@@ -79,7 +80,7 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker isPaid(Boolean isPaid) {
@@ -96,7 +97,7 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.isPaid = isPaid;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker lengthInMinutes(Integer lengthInMinutes) {
@@ -113,7 +114,7 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker description(String description) {
@@ -130,7 +131,7 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.description = description;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker paid(Boolean paid) {
@@ -147,7 +148,6 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
     this.paid = paid;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,13 +158,14 @@ public class WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker  implements Seri
       return false;
     }
     WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker = (WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker) o;
+
     return Objects.equals(this.timeOffRequestId, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.timeOffRequestId) &&
-        Objects.equals(this.managementUnitDate, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.managementUnitDate) &&
-        Objects.equals(this.activityCodeId, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.activityCodeId) &&
-        Objects.equals(this.isPaid, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.isPaid) &&
-        Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.lengthInMinutes) &&
-        Objects.equals(this.description, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.description) &&
-        Objects.equals(this.paid, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.paid);
+            Objects.equals(this.managementUnitDate, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.managementUnitDate) &&
+            Objects.equals(this.activityCodeId, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.activityCodeId) &&
+            Objects.equals(this.isPaid, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.isPaid) &&
+            Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.lengthInMinutes) &&
+            Objects.equals(this.description, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.description) &&
+            Objects.equals(this.paid, wfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker.paid);
   }
 
   @Override

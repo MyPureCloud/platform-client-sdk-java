@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class UserRoutingSkillPost  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular skill. It is used when a queue is set to \"Best available skills\" mode to allow acd interactions to target agents with higher proficiency ratings.
    **/
@@ -62,21 +63,20 @@ public class UserRoutingSkillPost  implements Serializable {
     this.proficiency = proficiency;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "URI to the organization skill used by this user skill.")
   @JsonProperty("skillUri")
   public String getSkillUri() {
     return skillUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,10 +87,11 @@ public class UserRoutingSkillPost  implements Serializable {
       return false;
     }
     UserRoutingSkillPost userRoutingSkillPost = (UserRoutingSkillPost) o;
+
     return Objects.equals(this.id, userRoutingSkillPost.id) &&
-        Objects.equals(this.proficiency, userRoutingSkillPost.proficiency) &&
-        Objects.equals(this.skillUri, userRoutingSkillPost.skillUri) &&
-        Objects.equals(this.selfUri, userRoutingSkillPost.selfUri);
+            Objects.equals(this.proficiency, userRoutingSkillPost.proficiency) &&
+            Objects.equals(this.skillUri, userRoutingSkillPost.skillUri) &&
+            Objects.equals(this.selfUri, userRoutingSkillPost.selfUri);
   }
 
   @Override

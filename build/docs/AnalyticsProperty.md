@@ -20,13 +20,13 @@ title: AnalyticsProperty
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BOOL | &quot;bool&quot; |
-| INTEGER | &quot;integer&quot; |
-| REAL | &quot;real&quot; |
-| DATE | &quot;date&quot; |
-| STRING | &quot;string&quot; |
-| UUID | &quot;uuid&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BOOL | &quot;bool&quot; | 
+| INTEGER | &quot;integer&quot; | 
+| REAL | &quot;real&quot; | 
+| DATE | &quot;date&quot; | 
+| STRING | &quot;string&quot; | 
+| UUID | &quot;uuid&quot; | 
 {: class="table table-striped"}
 
 

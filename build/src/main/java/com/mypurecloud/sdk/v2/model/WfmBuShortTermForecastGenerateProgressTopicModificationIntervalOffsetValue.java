@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffs
     this.intervalIndex = intervalIndex;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue value(BigDecimal value) {
@@ -58,7 +59,6 @@ public class WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffs
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffs
       return false;
     }
     WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue wfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue = (WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue) o;
+
     return Objects.equals(this.intervalIndex, wfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue.intervalIndex) &&
-        Objects.equals(this.value, wfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue.value);
+            Objects.equals(this.value, wfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue.value);
   }
 
   @Override

@@ -10,7 +10,7 @@ title: DialerAttemptLimitsConfigChangeAttemptLimits
 | ------------ | ------------- | ------------- | ------------- |
 | **maxAttemptsPerContact** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **maxAttemptsPerNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **timeZoneId** | <!----><!---->**String**<!----> | The timezone is necessary to define when \&quot;today\&quot; starts and ends |  [optional] |
+| **timeZoneId** | <!----><!---->**String**<!----> | The timezone is necessary to define when \"today\" starts and ends |  [optional] |
 | **resetPeriod** | [**ResetPeriodEnum**](#ResetPeriodEnum)<!----> | After how long the number of attempts will be set back to 0 |  [optional] |
 | **recallEntries** | <!----><!---->[**Map&lt;String, DialerAttemptLimitsConfigChangeRecallEntry&gt;**](DialerAttemptLimitsConfigChangeRecallEntry.html)<!----> | Configuration for recall attempts |  [optional] |
 | **breadthFirstRecalls** | <!----><!---->**Boolean**<!----> | Whether recalls are performed before considering other numbers (true) or after (false) |  [optional] |
@@ -28,9 +28,9 @@ title: DialerAttemptLimitsConfigChangeAttemptLimits
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NEVER | &quot;NEVER&quot; |
-| TODAY | &quot;TODAY&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVER | &quot;NEVER&quot; | 
+| TODAY | &quot;TODAY&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
@@ -44,7 +45,7 @@ public class ActionInput  implements Serializable {
     this.inputSchema = inputSchema;
   }
 
-  
+
   /**
    * JSON Schema that defines the body of the request that the client (edge/architect/postman) is sending to the service, on the /execute path. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either inputSchema or inputSchemaFlattened will be returned, not both.
    **/
@@ -62,7 +63,7 @@ public class ActionInput  implements Serializable {
     this.inputSchemaFlattened = inputSchemaFlattened;
   }
 
-  
+
   /**
    * The URI of the input schema
    **/
@@ -80,7 +81,6 @@ public class ActionInput  implements Serializable {
     this.inputSchemaUri = inputSchemaUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class ActionInput  implements Serializable {
       return false;
     }
     ActionInput actionInput = (ActionInput) o;
+
     return Objects.equals(this.inputSchema, actionInput.inputSchema) &&
-        Objects.equals(this.inputSchemaFlattened, actionInput.inputSchemaFlattened) &&
-        Objects.equals(this.inputSchemaUri, actionInput.inputSchemaUri);
+            Objects.equals(this.inputSchemaFlattened, actionInput.inputSchemaFlattened) &&
+            Objects.equals(this.inputSchemaUri, actionInput.inputSchemaUri);
   }
 
   @Override

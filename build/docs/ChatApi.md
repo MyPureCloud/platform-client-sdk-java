@@ -22,8 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get Chat Settings.
 
-
-
 Wraps GET /api/v2/chat/settings  
 
 Requires ANY permissions: 
@@ -81,8 +79,6 @@ This endpoint does not require any parameters.
 > [ChatSettings](ChatSettings.html) patchChatSettings(body)
 
 Patch Chat Settings.
-
-
 
 Wraps PATCH /api/v2/chat/settings  
 
@@ -144,8 +140,6 @@ try {
 > [ChatSettings](ChatSettings.html) putChatSettings(body)
 
 Update Chat Settings.
-
-
 
 Wraps PUT /api/v2/chat/settings  
 

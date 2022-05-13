@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Coretype;
@@ -44,7 +45,7 @@ public class CoretypeListing  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public CoretypeListing entities(List<Coretype> entities) {
@@ -61,7 +62,7 @@ public class CoretypeListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CoretypeListing selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class CoretypeListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class CoretypeListing  implements Serializable {
       return false;
     }
     CoretypeListing coretypeListing = (CoretypeListing) o;
+
     return Objects.equals(this.total, coretypeListing.total) &&
-        Objects.equals(this.entities, coretypeListing.entities) &&
-        Objects.equals(this.selfUri, coretypeListing.selfUri);
+            Objects.equals(this.entities, coretypeListing.entities) &&
+            Objects.equals(this.selfUri, coretypeListing.selfUri);
   }
 
   @Override

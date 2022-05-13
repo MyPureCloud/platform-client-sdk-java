@@ -20,46 +20,46 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OrphanRecording;
-import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Annotation;
-import com.mypurecloud.sdk.v2.model.RecordingMetadata;
-import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
-import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
-import com.mypurecloud.sdk.v2.model.RecordingJob;
-import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.Policy;
-import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
-import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
-import com.mypurecloud.sdk.v2.model.RecordingSettings;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
-import com.mypurecloud.sdk.v2.model.PolicyUpdate;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
-import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
-import com.mypurecloud.sdk.v2.model.EncryptionKey;
-import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.EncryptionKey;
+import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.OrphanRecording;
+import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
+import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.Policy;
+import com.mypurecloud.sdk.v2.model.PolicyCreate;
+import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
+import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.RecordingMetadata;
+import com.mypurecloud.sdk.v2.model.RecordingSettings;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 
 public class GetConversationRecordingRequest {
-    
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -73,7 +73,7 @@ public class GetConversationRecordingRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -87,7 +87,7 @@ public class GetConversationRecordingRequest {
 	    this.setRecordingId(recordingId);
 	    return this;
 	} 
-	
+
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -103,12 +103,12 @@ public class GetConversationRecordingRequest {
 	} 
 
 	public enum formatIdValues { 
-		WAV("WAV"), 
-		WEBM("WEBM"), 
-		WAV_ULAW("WAV_ULAW"), 
-		OGG_VORBIS("OGG_VORBIS"), 
-		OGG_OPUS("OGG_OPUS"), 
-		MP3("MP3"), 
+		WAV("WAV"),
+		WEBM("WEBM"),
+		WAV_ULAW("WAV_ULAW"),
+		OGG_VORBIS("OGG_VORBIS"),
+		OGG_OPUS("OGG_OPUS"),
+		MP3("MP3"),
 		NONE("NONE");
 
 		private String value;
@@ -136,7 +136,7 @@ public class GetConversationRecordingRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String emailFormatId;
 	public String getEmailFormatId() {
 		return this.emailFormatId;
@@ -152,7 +152,7 @@ public class GetConversationRecordingRequest {
 	} 
 
 	public enum emailFormatIdValues { 
-		EML("EML"), 
+		EML("EML"),
 		NONE("NONE");
 
 		private String value;
@@ -180,7 +180,7 @@ public class GetConversationRecordingRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String chatFormatId;
 	public String getChatFormatId() {
 		return this.chatFormatId;
@@ -196,7 +196,7 @@ public class GetConversationRecordingRequest {
 	} 
 
 	public enum chatFormatIdValues { 
-		ZIP("ZIP"), 
+		ZIP("ZIP"),
 		NONE("NONE");
 
 		private String value;
@@ -224,7 +224,7 @@ public class GetConversationRecordingRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String messageFormatId;
 	public String getMessageFormatId() {
 		return this.messageFormatId;
@@ -240,7 +240,7 @@ public class GetConversationRecordingRequest {
 	} 
 
 	public enum messageFormatIdValues { 
-		ZIP("ZIP"), 
+		ZIP("ZIP"),
 		NONE("NONE");
 
 		private String value;
@@ -268,7 +268,7 @@ public class GetConversationRecordingRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Boolean download;
 	public Boolean getDownload() {
 		return this.download;
@@ -282,7 +282,7 @@ public class GetConversationRecordingRequest {
 	    this.setDownload(download);
 	    return this;
 	} 
-	
+
 	private String fileName;
 	public String getFileName() {
 		return this.fileName;
@@ -296,7 +296,7 @@ public class GetConversationRecordingRequest {
 	    this.setFileName(fileName);
 	    return this;
 	} 
-	
+
 	private String locale;
 	public String getLocale() {
 		return this.locale;
@@ -310,7 +310,7 @@ public class GetConversationRecordingRequest {
 	    this.setLocale(locale);
 	    return this;
 	} 
-	
+
 	private List<String> mediaFormats;
 	public List<String> getMediaFormats() {
 		return this.mediaFormats;
@@ -324,7 +324,7 @@ public class GetConversationRecordingRequest {
 	    this.setMediaFormats(mediaFormats);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -362,23 +362,31 @@ public class GetConversationRecordingRequest {
         
                 .withPathParameter("recordingId", recordingId)
         
+
                 .withQueryParameters("formatId", "", formatId)
         
+
                 .withQueryParameters("emailFormatId", "", emailFormatId)
         
+
                 .withQueryParameters("chatFormatId", "", chatFormatId)
         
+
                 .withQueryParameters("messageFormatId", "", messageFormatId)
         
+
                 .withQueryParameters("download", "", download)
         
+
                 .withQueryParameters("fileName", "", fileName)
         
+
                 .withQueryParameters("locale", "", locale)
         
+
                 .withQueryParameters("mediaFormats", "multi", mediaFormats)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -389,12 +397,12 @@ public class GetConversationRecordingRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String conversationId, String recordingId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, recordingId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetConversationRecordingRequest request;
@@ -403,86 +411,102 @@ public class GetConversationRecordingRequest {
 			request = new GetConversationRecordingRequest();
 		}
 
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
+
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
-		
+
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
 
+
+
+		
 		public Builder withFormatId(formatIdValues formatId) {
 		    request.setFormatId(formatId.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withEmailFormatId(String emailFormatId) {
 			request.setEmailFormatId(emailFormatId);
 			return this;
 		}
 
+
+
+		
 		public Builder withEmailFormatId(emailFormatIdValues emailFormatId) {
 		    request.setEmailFormatId(emailFormatId.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withChatFormatId(String chatFormatId) {
 			request.setChatFormatId(chatFormatId);
 			return this;
 		}
 
+
+
+		
 		public Builder withChatFormatId(chatFormatIdValues chatFormatId) {
 		    request.setChatFormatId(chatFormatId.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withMessageFormatId(String messageFormatId) {
 			request.setMessageFormatId(messageFormatId);
 			return this;
 		}
 
+
+
+		
 		public Builder withMessageFormatId(messageFormatIdValues messageFormatId) {
 		    request.setMessageFormatId(messageFormatId.toString());
+
 		    return this;
 		}
-		
+
 		public Builder withDownload(Boolean download) {
 			request.setDownload(download);
 			return this;
 		}
-		
+
 		public Builder withFileName(String fileName) {
 			request.setFileName(fileName);
 			return this;
 		}
-		
+
 		public Builder withLocale(String locale) {
 			request.setLocale(locale);
 			return this;
 		}
-		
+
 		public Builder withMediaFormats(List<String> mediaFormats) {
 			request.setMediaFormats(mediaFormats);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String conversationId, String recordingId) {
 			request.setConversationId(conversationId);
-						request.setRecordingId(recordingId);
-			
+			request.setRecordingId(recordingId);
+
 			return this;
 		}
-		
+
 
 		public GetConversationRecordingRequest build() {
             

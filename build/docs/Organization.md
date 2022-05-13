@@ -10,8 +10,8 @@ title: Organization
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **defaultLanguage** | <!----><!---->**String**<!----> | The default language for this organization. Example: &#39;en&#39; |  [optional] |
-| **defaultCountryCode** | <!----><!---->**String**<!----> | The default country code for this organization. Example: &#39;US&#39; |  [optional] |
+| **defaultLanguage** | <!----><!---->**String**<!----> | The default language for this organization. Example: 'en' |  [optional] |
+| **defaultCountryCode** | <!----><!---->**String**<!----> | The default country code for this organization. Example: 'US' |  [optional] |
 | **thirdPartyOrgName** | <!----><!---->**String**<!----> | The short name for the organization. This field is globally unique and cannot be changed. |  [optional] |
 | **thirdPartyURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **domain** | <!----><!---->**String**<!----> |  |  [optional] |
@@ -32,10 +32,10 @@ title: Organization
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -45,14 +45,14 @@ title: Organization
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GENESYSCLOUD | &quot;GenesysCloud&quot; |
-| PURECLOUD | &quot;PureCloud&quot; |
-| PUREENGAGE | &quot;PureEngage&quot; |
-| PUREENGAGECLOUD | &quot;PureEngageCloud&quot; |
-| PURECONNECT | &quot;PureConnect&quot; |
-| PURECONNECTCLOUD | &quot;PureConnectCloud&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GENESYSCLOUD | &quot;GenesysCloud&quot; | 
+| PURECLOUD | &quot;PureCloud&quot; | 
+| PUREENGAGE | &quot;PureEngage&quot; | 
+| PUREENGAGECLOUD | &quot;PureEngageCloud&quot; | 
+| PURECONNECT | &quot;PureConnect&quot; | 
+| PURECONNECTCLOUD | &quot;PureConnectCloud&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

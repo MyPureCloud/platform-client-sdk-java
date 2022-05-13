@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationEventCoBrow
     this.type = type;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse sessionId(String sessionId) {
@@ -108,7 +109,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationEventCoBrow
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse sessionJoinToken(String sessionJoinToken) {
@@ -125,7 +126,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationEventCoBrow
     this.sessionJoinToken = sessionJoinToken;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class V2ConversationMessageTypingEventForUserTopicConversationEventCoBrow
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse v2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse = (V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse) o;
+
     return Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse.type) &&
-        Objects.equals(this.sessionId, v2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse.sessionId) &&
-        Objects.equals(this.sessionJoinToken, v2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse.sessionJoinToken);
+            Objects.equals(this.sessionId, v2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse.sessionId) &&
+            Objects.equals(this.sessionJoinToken, v2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse.sessionJoinToken);
   }
 
   @Override

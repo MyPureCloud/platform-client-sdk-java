@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class EdgeNetworkDiagnosticResponse  implements Serializable {
     this.commandCorrelationId = commandCorrelationId;
   }
 
-  
+
   /**
    * Response string of executed command from edge
    **/
@@ -59,7 +60,6 @@ public class EdgeNetworkDiagnosticResponse  implements Serializable {
     this.diagnostics = diagnostics;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class EdgeNetworkDiagnosticResponse  implements Serializable {
       return false;
     }
     EdgeNetworkDiagnosticResponse edgeNetworkDiagnosticResponse = (EdgeNetworkDiagnosticResponse) o;
+
     return Objects.equals(this.commandCorrelationId, edgeNetworkDiagnosticResponse.commandCorrelationId) &&
-        Objects.equals(this.diagnostics, edgeNetworkDiagnosticResponse.diagnostics);
+            Objects.equals(this.diagnostics, edgeNetworkDiagnosticResponse.diagnostics);
   }
 
   @Override

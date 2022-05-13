@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.offered = offered;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData completed(Integer completed) {
@@ -64,7 +65,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.completed = completed;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData answered(Integer answered) {
@@ -81,7 +82,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.answered = answered;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData abandoned(Integer abandoned) {
@@ -98,7 +99,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.abandoned = abandoned;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData averageTalkTimeSeconds(BigDecimal averageTalkTimeSeconds) {
@@ -115,7 +116,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData averageAfterCallWorkSeconds(BigDecimal averageAfterCallWorkSeconds) {
@@ -132,7 +133,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData serviceLevelPercent(BigDecimal serviceLevelPercent) {
@@ -149,7 +150,7 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-  
+
   /**
    **/
   public WfmIntradayDataUpdateTopicIntradayHistoricalQueueData averageSpeedOfAnswerSeconds(BigDecimal averageSpeedOfAnswerSeconds) {
@@ -166,7 +167,6 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,14 +177,15 @@ public class WfmIntradayDataUpdateTopicIntradayHistoricalQueueData  implements S
       return false;
     }
     WfmIntradayDataUpdateTopicIntradayHistoricalQueueData wfmIntradayDataUpdateTopicIntradayHistoricalQueueData = (WfmIntradayDataUpdateTopicIntradayHistoricalQueueData) o;
+
     return Objects.equals(this.offered, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.offered) &&
-        Objects.equals(this.completed, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.completed) &&
-        Objects.equals(this.answered, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.answered) &&
-        Objects.equals(this.abandoned, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.abandoned) &&
-        Objects.equals(this.averageTalkTimeSeconds, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.averageTalkTimeSeconds) &&
-        Objects.equals(this.averageAfterCallWorkSeconds, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.averageAfterCallWorkSeconds) &&
-        Objects.equals(this.serviceLevelPercent, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.serviceLevelPercent) &&
-        Objects.equals(this.averageSpeedOfAnswerSeconds, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.averageSpeedOfAnswerSeconds);
+            Objects.equals(this.completed, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.completed) &&
+            Objects.equals(this.answered, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.answered) &&
+            Objects.equals(this.abandoned, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.abandoned) &&
+            Objects.equals(this.averageTalkTimeSeconds, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.averageTalkTimeSeconds) &&
+            Objects.equals(this.averageAfterCallWorkSeconds, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.averageAfterCallWorkSeconds) &&
+            Objects.equals(this.serviceLevelPercent, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.serviceLevelPercent) &&
+            Objects.equals(this.averageSpeedOfAnswerSeconds, wfmIntradayDataUpdateTopicIntradayHistoricalQueueData.averageSpeedOfAnswerSeconds);
   }
 
   @Override

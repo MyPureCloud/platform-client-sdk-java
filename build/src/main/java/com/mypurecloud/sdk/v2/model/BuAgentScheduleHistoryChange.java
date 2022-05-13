@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryChangeMetadata;
@@ -49,7 +50,7 @@ public class BuAgentScheduleHistoryChange  implements Serializable {
     this.metadata = metadata;
   }
 
-  
+
   /**
    * The list of changed shifts
    **/
@@ -67,7 +68,7 @@ public class BuAgentScheduleHistoryChange  implements Serializable {
     this.shifts = shifts;
   }
 
-  
+
   /**
    * The list of changed full day time off markers
    **/
@@ -85,7 +86,7 @@ public class BuAgentScheduleHistoryChange  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
-  
+
   /**
    * The deleted shifts, full day time off markers, or the entire agent schedule
    **/
@@ -103,7 +104,6 @@ public class BuAgentScheduleHistoryChange  implements Serializable {
     this.deletes = deletes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -114,10 +114,11 @@ public class BuAgentScheduleHistoryChange  implements Serializable {
       return false;
     }
     BuAgentScheduleHistoryChange buAgentScheduleHistoryChange = (BuAgentScheduleHistoryChange) o;
+
     return Objects.equals(this.metadata, buAgentScheduleHistoryChange.metadata) &&
-        Objects.equals(this.shifts, buAgentScheduleHistoryChange.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleHistoryChange.fullDayTimeOffMarkers) &&
-        Objects.equals(this.deletes, buAgentScheduleHistoryChange.deletes);
+            Objects.equals(this.shifts, buAgentScheduleHistoryChange.shifts) &&
+            Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleHistoryChange.fullDayTimeOffMarkers) &&
+            Objects.equals(this.deletes, buAgentScheduleHistoryChange.deletes);
   }
 
   @Override

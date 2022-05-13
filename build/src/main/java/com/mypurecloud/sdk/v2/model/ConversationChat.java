@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -224,7 +225,7 @@ public class ConversationChat  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -242,7 +243,7 @@ public class ConversationChat  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The room id for the chat.
    **/
@@ -260,7 +261,7 @@ public class ConversationChat  implements Serializable {
     this.roomId = roomId;
   }
 
-  
+
   /**
    * A globally unique identifier for the recording associated with this chat.
    **/
@@ -278,7 +279,7 @@ public class ConversationChat  implements Serializable {
     this.recordingId = recordingId;
   }
 
-  
+
   /**
    * The time line of the participant's chat, divided into activity segments.
    **/
@@ -296,7 +297,7 @@ public class ConversationChat  implements Serializable {
     this.segments = segments;
   }
 
-  
+
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -314,7 +315,7 @@ public class ConversationChat  implements Serializable {
     this.held = held;
   }
 
-  
+
   /**
    * The direction of the chat
    **/
@@ -332,7 +333,7 @@ public class ConversationChat  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -350,7 +351,7 @@ public class ConversationChat  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -368,7 +369,7 @@ public class ConversationChat  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -386,7 +387,7 @@ public class ConversationChat  implements Serializable {
     this.startAlertingTime = startAlertingTime;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -404,7 +405,7 @@ public class ConversationChat  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -422,7 +423,7 @@ public class ConversationChat  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * The source provider for the email.
    **/
@@ -440,7 +441,7 @@ public class ConversationChat  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -458,7 +459,7 @@ public class ConversationChat  implements Serializable {
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -476,7 +477,7 @@ public class ConversationChat  implements Serializable {
     this.peerId = peerId;
   }
 
-  
+
   /**
    * If available, the URI to the avatar image of this communication.
    **/
@@ -494,7 +495,7 @@ public class ConversationChat  implements Serializable {
     this.avatarImageUrl = avatarImageUrl;
   }
 
-  
+
   /**
    * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
    **/
@@ -512,7 +513,7 @@ public class ConversationChat  implements Serializable {
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -530,7 +531,7 @@ public class ConversationChat  implements Serializable {
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * After-call work for the communication.
    **/
@@ -548,7 +549,7 @@ public class ConversationChat  implements Serializable {
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -566,7 +567,6 @@ public class ConversationChat  implements Serializable {
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -577,26 +577,27 @@ public class ConversationChat  implements Serializable {
       return false;
     }
     ConversationChat conversationChat = (ConversationChat) o;
+
     return Objects.equals(this.state, conversationChat.state) &&
-        Objects.equals(this.id, conversationChat.id) &&
-        Objects.equals(this.roomId, conversationChat.roomId) &&
-        Objects.equals(this.recordingId, conversationChat.recordingId) &&
-        Objects.equals(this.segments, conversationChat.segments) &&
-        Objects.equals(this.held, conversationChat.held) &&
-        Objects.equals(this.direction, conversationChat.direction) &&
-        Objects.equals(this.disconnectType, conversationChat.disconnectType) &&
-        Objects.equals(this.startHoldTime, conversationChat.startHoldTime) &&
-        Objects.equals(this.startAlertingTime, conversationChat.startAlertingTime) &&
-        Objects.equals(this.connectedTime, conversationChat.connectedTime) &&
-        Objects.equals(this.disconnectedTime, conversationChat.disconnectedTime) &&
-        Objects.equals(this.provider, conversationChat.provider) &&
-        Objects.equals(this.scriptId, conversationChat.scriptId) &&
-        Objects.equals(this.peerId, conversationChat.peerId) &&
-        Objects.equals(this.avatarImageUrl, conversationChat.avatarImageUrl) &&
-        Objects.equals(this.journeyContext, conversationChat.journeyContext) &&
-        Objects.equals(this.wrapup, conversationChat.wrapup) &&
-        Objects.equals(this.afterCallWork, conversationChat.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, conversationChat.afterCallWorkRequired);
+            Objects.equals(this.id, conversationChat.id) &&
+            Objects.equals(this.roomId, conversationChat.roomId) &&
+            Objects.equals(this.recordingId, conversationChat.recordingId) &&
+            Objects.equals(this.segments, conversationChat.segments) &&
+            Objects.equals(this.held, conversationChat.held) &&
+            Objects.equals(this.direction, conversationChat.direction) &&
+            Objects.equals(this.disconnectType, conversationChat.disconnectType) &&
+            Objects.equals(this.startHoldTime, conversationChat.startHoldTime) &&
+            Objects.equals(this.startAlertingTime, conversationChat.startAlertingTime) &&
+            Objects.equals(this.connectedTime, conversationChat.connectedTime) &&
+            Objects.equals(this.disconnectedTime, conversationChat.disconnectedTime) &&
+            Objects.equals(this.provider, conversationChat.provider) &&
+            Objects.equals(this.scriptId, conversationChat.scriptId) &&
+            Objects.equals(this.peerId, conversationChat.peerId) &&
+            Objects.equals(this.avatarImageUrl, conversationChat.avatarImageUrl) &&
+            Objects.equals(this.journeyContext, conversationChat.journeyContext) &&
+            Objects.equals(this.wrapup, conversationChat.wrapup) &&
+            Objects.equals(this.afterCallWork, conversationChat.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, conversationChat.afterCallWorkRequired);
   }
 
   @Override

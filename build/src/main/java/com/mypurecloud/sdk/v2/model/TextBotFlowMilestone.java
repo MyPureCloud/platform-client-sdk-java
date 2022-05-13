@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class TextBotFlowMilestone  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The timestamp of when the milestone was reached. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -61,7 +62,7 @@ public class TextBotFlowMilestone  implements Serializable {
     this.dateReached = dateReached;
   }
 
-  
+
   /**
    * The sequence number of the milestone.
    **/
@@ -79,7 +80,6 @@ public class TextBotFlowMilestone  implements Serializable {
     this.sequence = sequence;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class TextBotFlowMilestone  implements Serializable {
       return false;
     }
     TextBotFlowMilestone textBotFlowMilestone = (TextBotFlowMilestone) o;
+
     return Objects.equals(this.id, textBotFlowMilestone.id) &&
-        Objects.equals(this.dateReached, textBotFlowMilestone.dateReached) &&
-        Objects.equals(this.sequence, textBotFlowMilestone.sequence);
+            Objects.equals(this.dateReached, textBotFlowMilestone.dateReached) &&
+            Objects.equals(this.sequence, textBotFlowMilestone.sequence);
   }
 
   @Override

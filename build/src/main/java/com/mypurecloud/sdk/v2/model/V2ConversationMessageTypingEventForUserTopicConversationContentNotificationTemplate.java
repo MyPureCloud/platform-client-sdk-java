@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody;
@@ -46,7 +47,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentNoti
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate language(String language) {
@@ -63,7 +64,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentNoti
     this.language = language;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate header(V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader header) {
@@ -80,7 +81,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentNoti
     this.header = header;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate body(V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody body) {
@@ -97,7 +98,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentNoti
     this.body = body;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate footer(V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateFooter footer) {
@@ -114,7 +115,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentNoti
     this.footer = footer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentNoti
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate = (V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate) o;
+
     return Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.id) &&
-        Objects.equals(this.language, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.language) &&
-        Objects.equals(this.header, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.header) &&
-        Objects.equals(this.body, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.body) &&
-        Objects.equals(this.footer, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.footer);
+            Objects.equals(this.language, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.language) &&
+            Objects.equals(this.header, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.header) &&
+            Objects.equals(this.body, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.body) &&
+            Objects.equals(this.footer, v2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate.footer);
   }
 
   @Override

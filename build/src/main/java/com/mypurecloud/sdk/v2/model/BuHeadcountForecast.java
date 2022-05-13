@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuPlanningGroupHeadcountForecast;
@@ -44,7 +45,7 @@ public class BuHeadcountForecast  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    * Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -62,7 +63,6 @@ public class BuHeadcountForecast  implements Serializable {
     this.referenceStartDate = referenceStartDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class BuHeadcountForecast  implements Serializable {
       return false;
     }
     BuHeadcountForecast buHeadcountForecast = (BuHeadcountForecast) o;
+
     return Objects.equals(this.entities, buHeadcountForecast.entities) &&
-        Objects.equals(this.referenceStartDate, buHeadcountForecast.referenceStartDate);
+            Objects.equals(this.referenceStartDate, buHeadcountForecast.referenceStartDate);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class MessageEvaluation  implements Serializable {
     this.contactColumn = contactColumn;
   }
 
-  
+
   /**
    * The address (phone or email) that was wrapped up
    **/
@@ -111,7 +112,7 @@ public class MessageEvaluation  implements Serializable {
     this.contactAddress = contactAddress;
   }
 
-  
+
   /**
    * The type of message sent
    **/
@@ -129,7 +130,7 @@ public class MessageEvaluation  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    * The id of the wrap-up code
    **/
@@ -147,7 +148,7 @@ public class MessageEvaluation  implements Serializable {
     this.wrapupCodeId = wrapupCodeId;
   }
 
-  
+
   /**
    * The time that the wrap-up was applied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -165,7 +166,6 @@ public class MessageEvaluation  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,11 +176,12 @@ public class MessageEvaluation  implements Serializable {
       return false;
     }
     MessageEvaluation messageEvaluation = (MessageEvaluation) o;
+
     return Objects.equals(this.contactColumn, messageEvaluation.contactColumn) &&
-        Objects.equals(this.contactAddress, messageEvaluation.contactAddress) &&
-        Objects.equals(this.messageType, messageEvaluation.messageType) &&
-        Objects.equals(this.wrapupCodeId, messageEvaluation.wrapupCodeId) &&
-        Objects.equals(this.timestamp, messageEvaluation.timestamp);
+            Objects.equals(this.contactAddress, messageEvaluation.contactAddress) &&
+            Objects.equals(this.messageType, messageEvaluation.messageType) &&
+            Objects.equals(this.wrapupCodeId, messageEvaluation.wrapupCodeId) &&
+            Objects.equals(this.timestamp, messageEvaluation.timestamp);
   }
 
   @Override

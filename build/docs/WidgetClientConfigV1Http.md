@@ -19,9 +19,9 @@ title: WidgetClientConfigV1Http
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BASIC | &quot;basic&quot; |
-| MODERN_CARET_SKIN | &quot;modern-caret-skin&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BASIC | &quot;basic&quot; | 
+| MODERN_CARET_SKIN | &quot;modern-caret-skin&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class ConversationEventCoBrowse  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The CoBrowse session ID.
    **/
@@ -111,7 +112,7 @@ public class ConversationEventCoBrowse  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    * The CoBrowse session join token.
    **/
@@ -129,7 +130,6 @@ public class ConversationEventCoBrowse  implements Serializable {
     this.sessionJoinToken = sessionJoinToken;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,9 +140,10 @@ public class ConversationEventCoBrowse  implements Serializable {
       return false;
     }
     ConversationEventCoBrowse conversationEventCoBrowse = (ConversationEventCoBrowse) o;
+
     return Objects.equals(this.type, conversationEventCoBrowse.type) &&
-        Objects.equals(this.sessionId, conversationEventCoBrowse.sessionId) &&
-        Objects.equals(this.sessionJoinToken, conversationEventCoBrowse.sessionJoinToken);
+            Objects.equals(this.sessionId, conversationEventCoBrowse.sessionId) &&
+            Objects.equals(this.sessionJoinToken, conversationEventCoBrowse.sessionJoinToken);
   }
 
   @Override

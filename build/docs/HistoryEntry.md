@@ -24,19 +24,19 @@ title: HistoryEntry
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CHECKIN | &quot;CHECKIN&quot; |
-| CHECKOUT | &quot;CHECKOUT&quot; |
-| CREATE | &quot;CREATE&quot; |
-| DEACTIVATE | &quot;DEACTIVATE&quot; |
-| DEBUG | &quot;DEBUG&quot; |
-| DELETE | &quot;DELETE&quot; |
-| PUBLISH | &quot;PUBLISH&quot; |
-| REVERT | &quot;REVERT&quot; |
-| SAVE | &quot;SAVE&quot; |
-| TRANSCODE | &quot;TRANSCODE&quot; |
-| UPDATE | &quot;UPDATE&quot; |
-| UPLOAD | &quot;UPLOAD&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CHECKIN | &quot;CHECKIN&quot; | 
+| CHECKOUT | &quot;CHECKOUT&quot; | 
+| CREATE | &quot;CREATE&quot; | 
+| DEACTIVATE | &quot;DEACTIVATE&quot; | 
+| DEBUG | &quot;DEBUG&quot; | 
+| DELETE | &quot;DELETE&quot; | 
+| PUBLISH | &quot;PUBLISH&quot; | 
+| REVERT | &quot;REVERT&quot; | 
+| SAVE | &quot;SAVE&quot; | 
+| TRANSCODE | &quot;TRANSCODE&quot; | 
+| UPDATE | &quot;UPDATE&quot; | 
+| UPLOAD | &quot;UPLOAD&quot; | 
 {: class="table table-striped"}
 
 

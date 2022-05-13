@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class DIDNumber  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DIDNumber name(String name) {
@@ -106,7 +107,7 @@ public class DIDNumber  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The number of the DID formatted as E164.
    **/
@@ -124,7 +125,7 @@ public class DIDNumber  implements Serializable {
     this.number = number;
   }
 
-  
+
   /**
    * True if this DID is assigned to an entity.  False otherwise.
    **/
@@ -142,7 +143,7 @@ public class DIDNumber  implements Serializable {
     this.assigned = assigned;
   }
 
-  
+
   /**
    * A Uri reference to the DID Pool this DID is a part of.
    **/
@@ -160,7 +161,7 @@ public class DIDNumber  implements Serializable {
     this.didPool = didPool;
   }
 
-  
+
   /**
    * A Uri reference to the owner of this DID.  The owner's type can be found in ownerType.  If the DID is unassigned, this will be NULL.
    **/
@@ -178,7 +179,7 @@ public class DIDNumber  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    * The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.
    **/
@@ -196,14 +197,13 @@ public class DIDNumber  implements Serializable {
     this.ownerType = ownerType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -214,14 +214,15 @@ public class DIDNumber  implements Serializable {
       return false;
     }
     DIDNumber dIDNumber = (DIDNumber) o;
+
     return Objects.equals(this.id, dIDNumber.id) &&
-        Objects.equals(this.name, dIDNumber.name) &&
-        Objects.equals(this.number, dIDNumber.number) &&
-        Objects.equals(this.assigned, dIDNumber.assigned) &&
-        Objects.equals(this.didPool, dIDNumber.didPool) &&
-        Objects.equals(this.owner, dIDNumber.owner) &&
-        Objects.equals(this.ownerType, dIDNumber.ownerType) &&
-        Objects.equals(this.selfUri, dIDNumber.selfUri);
+            Objects.equals(this.name, dIDNumber.name) &&
+            Objects.equals(this.number, dIDNumber.number) &&
+            Objects.equals(this.assigned, dIDNumber.assigned) &&
+            Objects.equals(this.didPool, dIDNumber.didPool) &&
+            Objects.equals(this.owner, dIDNumber.owner) &&
+            Objects.equals(this.ownerType, dIDNumber.ownerType) &&
+            Objects.equals(this.selfUri, dIDNumber.selfUri);
   }
 
   @Override

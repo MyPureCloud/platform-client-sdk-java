@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class DataActionConditionPredicate  implements Serializable {
     this.outputField = outputField;
   }
 
-  
+
   /**
    * The operation with which to evaluate this condition
    **/
@@ -118,7 +119,7 @@ public class DataActionConditionPredicate  implements Serializable {
     this.outputOperator = outputOperator;
   }
 
-  
+
   /**
    * The value to compare against for this condition
    **/
@@ -136,7 +137,7 @@ public class DataActionConditionPredicate  implements Serializable {
     this.comparisonValue = comparisonValue;
   }
 
-  
+
   /**
    * If true, inverts the result of evaluating this Predicate. Default is false.
    **/
@@ -154,7 +155,7 @@ public class DataActionConditionPredicate  implements Serializable {
     this.inverted = inverted;
   }
 
-  
+
   /**
    * The result of this predicate if the requested output field is missing from the data action's result
    **/
@@ -172,7 +173,6 @@ public class DataActionConditionPredicate  implements Serializable {
     this.outputFieldMissingResolution = outputFieldMissingResolution;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,11 +183,12 @@ public class DataActionConditionPredicate  implements Serializable {
       return false;
     }
     DataActionConditionPredicate dataActionConditionPredicate = (DataActionConditionPredicate) o;
+
     return Objects.equals(this.outputField, dataActionConditionPredicate.outputField) &&
-        Objects.equals(this.outputOperator, dataActionConditionPredicate.outputOperator) &&
-        Objects.equals(this.comparisonValue, dataActionConditionPredicate.comparisonValue) &&
-        Objects.equals(this.inverted, dataActionConditionPredicate.inverted) &&
-        Objects.equals(this.outputFieldMissingResolution, dataActionConditionPredicate.outputFieldMissingResolution);
+            Objects.equals(this.outputOperator, dataActionConditionPredicate.outputOperator) &&
+            Objects.equals(this.comparisonValue, dataActionConditionPredicate.comparisonValue) &&
+            Objects.equals(this.inverted, dataActionConditionPredicate.inverted) &&
+            Objects.equals(this.outputFieldMissingResolution, dataActionConditionPredicate.outputFieldMissingResolution);
   }
 
   @Override

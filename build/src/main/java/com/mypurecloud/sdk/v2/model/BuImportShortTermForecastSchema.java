@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupData;
@@ -48,7 +49,7 @@ public class BuImportShortTermForecastSchema  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The number of weeks covered by the forecast
    **/
@@ -66,7 +67,7 @@ public class BuImportShortTermForecastSchema  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * The short term planning group data
    **/
@@ -84,7 +85,7 @@ public class BuImportShortTermForecastSchema  implements Serializable {
     this.planningGroups = planningGroups;
   }
 
-  
+
   /**
    * The long term planning group data
    **/
@@ -102,7 +103,7 @@ public class BuImportShortTermForecastSchema  implements Serializable {
     this.longTermPlanningGroups = longTermPlanningGroups;
   }
 
-  
+
   /**
    * Whether this forecast can be used for scheduling
    **/
@@ -120,7 +121,6 @@ public class BuImportShortTermForecastSchema  implements Serializable {
     this.canUseForScheduling = canUseForScheduling;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class BuImportShortTermForecastSchema  implements Serializable {
       return false;
     }
     BuImportShortTermForecastSchema buImportShortTermForecastSchema = (BuImportShortTermForecastSchema) o;
+
     return Objects.equals(this.description, buImportShortTermForecastSchema.description) &&
-        Objects.equals(this.weekCount, buImportShortTermForecastSchema.weekCount) &&
-        Objects.equals(this.planningGroups, buImportShortTermForecastSchema.planningGroups) &&
-        Objects.equals(this.longTermPlanningGroups, buImportShortTermForecastSchema.longTermPlanningGroups) &&
-        Objects.equals(this.canUseForScheduling, buImportShortTermForecastSchema.canUseForScheduling);
+            Objects.equals(this.weekCount, buImportShortTermForecastSchema.weekCount) &&
+            Objects.equals(this.planningGroups, buImportShortTermForecastSchema.planningGroups) &&
+            Objects.equals(this.longTermPlanningGroups, buImportShortTermForecastSchema.longTermPlanningGroups) &&
+            Objects.equals(this.canUseForScheduling, buImportShortTermForecastSchema.canUseForScheduling);
   }
 
   @Override

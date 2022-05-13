@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -45,7 +46,7 @@ public class EmergencyCallFlow  implements Serializable {
     this.emergencyFlow = emergencyFlow;
   }
 
-  
+
   /**
    * The IVR(s) to route to the call flow during an emergency.
    **/
@@ -63,7 +64,6 @@ public class EmergencyCallFlow  implements Serializable {
     this.ivrs = ivrs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class EmergencyCallFlow  implements Serializable {
       return false;
     }
     EmergencyCallFlow emergencyCallFlow = (EmergencyCallFlow) o;
+
     return Objects.equals(this.emergencyFlow, emergencyCallFlow.emergencyFlow) &&
-        Objects.equals(this.ivrs, emergencyCallFlow.ivrs);
+            Objects.equals(this.ivrs, emergencyCallFlow.ivrs);
   }
 
   @Override

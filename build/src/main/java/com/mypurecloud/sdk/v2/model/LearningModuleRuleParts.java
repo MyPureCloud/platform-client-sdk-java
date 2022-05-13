@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -146,7 +147,7 @@ public class LearningModuleRuleParts  implements Serializable {
     this.operation = operation;
   }
 
-  
+
   /**
    * The learning module rule selector
    **/
@@ -164,7 +165,7 @@ public class LearningModuleRuleParts  implements Serializable {
     this.selector = selector;
   }
 
-  
+
   /**
    * The value of rules
    **/
@@ -182,7 +183,7 @@ public class LearningModuleRuleParts  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * The order of rules in learning module rule
    **/
@@ -200,7 +201,6 @@ public class LearningModuleRuleParts  implements Serializable {
     this.order = order;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -211,10 +211,11 @@ public class LearningModuleRuleParts  implements Serializable {
       return false;
     }
     LearningModuleRuleParts learningModuleRuleParts = (LearningModuleRuleParts) o;
+
     return Objects.equals(this.operation, learningModuleRuleParts.operation) &&
-        Objects.equals(this.selector, learningModuleRuleParts.selector) &&
-        Objects.equals(this.value, learningModuleRuleParts.value) &&
-        Objects.equals(this.order, learningModuleRuleParts.order);
+            Objects.equals(this.selector, learningModuleRuleParts.selector) &&
+            Objects.equals(this.value, learningModuleRuleParts.value) &&
+            Objects.equals(this.order, learningModuleRuleParts.order);
   }
 
   @Override

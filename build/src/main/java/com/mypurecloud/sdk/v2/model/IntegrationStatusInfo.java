@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,28 +87,27 @@ public class IntegrationStatusInfo  implements Serializable {
     return code;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Localized, human-readable, effective status of the integration.")
   @JsonProperty("effective")
   public String getEffective() {
     return effective;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Localizable status details for the integration.")
   @JsonProperty("detail")
   public MessageInfo getDetail() {
     return detail;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("lastUpdated")
   public Date getLastUpdated() {
     return lastUpdated;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,10 +118,11 @@ public class IntegrationStatusInfo  implements Serializable {
       return false;
     }
     IntegrationStatusInfo integrationStatusInfo = (IntegrationStatusInfo) o;
+
     return Objects.equals(this.code, integrationStatusInfo.code) &&
-        Objects.equals(this.effective, integrationStatusInfo.effective) &&
-        Objects.equals(this.detail, integrationStatusInfo.detail) &&
-        Objects.equals(this.lastUpdated, integrationStatusInfo.lastUpdated);
+            Objects.equals(this.effective, integrationStatusInfo.effective) &&
+            Objects.equals(this.detail, integrationStatusInfo.detail) &&
+            Objects.equals(this.lastUpdated, integrationStatusInfo.lastUpdated);
   }
 
   @Override

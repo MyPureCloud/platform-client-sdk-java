@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply payload(String payload) {
@@ -106,7 +107,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.payload = payload;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply image(String image) {
@@ -123,7 +124,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.image = image;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply action(ActionEnum action) {
@@ -140,7 +141,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,10 +151,11 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply) o;
+
     return Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.text) &&
-        Objects.equals(this.payload, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.payload) &&
-        Objects.equals(this.image, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.image) &&
-        Objects.equals(this.action, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.action);
+            Objects.equals(this.payload, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.payload) &&
+            Objects.equals(this.image, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.image) &&
+            Objects.equals(this.action, v2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply.action);
   }
 
   @Override

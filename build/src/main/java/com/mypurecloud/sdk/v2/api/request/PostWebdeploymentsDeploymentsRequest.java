@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class PostWebdeploymentsDeploymentsRequest {
-    
+
 	private WebDeployment deployment;
 	public WebDeployment getDeployment() {
 		return this.deployment;
@@ -41,7 +41,7 @@ public class PostWebdeploymentsDeploymentsRequest {
 	    this.setDeployment(deployment);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,8 +71,8 @@ public class PostWebdeploymentsDeploymentsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/webdeployments/deployments")
                 .withBody(deployment)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -83,12 +83,12 @@ public class PostWebdeploymentsDeploymentsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(WebDeployment deployment) {
 	    return new Builder()
 	            .withRequiredParams(deployment);
 	}
-	
+
 
 	public static class Builder {
 		private final PostWebdeploymentsDeploymentsRequest request;
@@ -97,20 +97,20 @@ public class PostWebdeploymentsDeploymentsRequest {
 			request = new PostWebdeploymentsDeploymentsRequest();
 		}
 
-		
+
 		public Builder withDeployment(WebDeployment deployment) {
 			request.setDeployment(deployment);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(WebDeployment deployment) {
 			request.setDeployment(deployment);
-			
+
 			return this;
 		}
-		
+
 
 		public PostWebdeploymentsDeploymentsRequest build() {
             

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -43,7 +44,7 @@ public class UserTimeOffRequestReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The ID of the user to whom the time off request applies
    **/
@@ -61,14 +62,13 @@ public class UserTimeOffRequestReference  implements Serializable {
     this.user = user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,9 +79,10 @@ public class UserTimeOffRequestReference  implements Serializable {
       return false;
     }
     UserTimeOffRequestReference userTimeOffRequestReference = (UserTimeOffRequestReference) o;
+
     return Objects.equals(this.id, userTimeOffRequestReference.id) &&
-        Objects.equals(this.user, userTimeOffRequestReference.user) &&
-        Objects.equals(this.selfUri, userTimeOffRequestReference.selfUri);
+            Objects.equals(this.user, userTimeOffRequestReference.user) &&
+            Objects.equals(this.selfUri, userTimeOffRequestReference.selfUri);
   }
 
   @Override

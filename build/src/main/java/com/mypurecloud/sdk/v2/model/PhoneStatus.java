@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -189,7 +190,7 @@ public class PhoneStatus  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public PhoneStatus name(String name) {
@@ -206,7 +207,7 @@ public class PhoneStatus  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The Operational Status of this phone
    **/
@@ -224,7 +225,7 @@ public class PhoneStatus  implements Serializable {
     this.operationalStatus = operationalStatus;
   }
 
-  
+
   /**
    * The status of the primary or secondary Edges assigned to the phone lines.
    **/
@@ -242,7 +243,7 @@ public class PhoneStatus  implements Serializable {
     this.edgesStatus = edgesStatus;
   }
 
-  
+
   /**
    * Event Creation Time represents an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
    **/
@@ -260,7 +261,7 @@ public class PhoneStatus  implements Serializable {
     this.eventCreationTime = eventCreationTime;
   }
 
-  
+
   /**
    * Provision information for this phone
    **/
@@ -278,7 +279,7 @@ public class PhoneStatus  implements Serializable {
     this.provision = provision;
   }
 
-  
+
   /**
    * A list of LineStatus information for each of the lines of this phone
    **/
@@ -296,7 +297,7 @@ public class PhoneStatus  implements Serializable {
     this.lineStatuses = lineStatuses;
   }
 
-  
+
   /**
    * The phone status's edge assignment type.
    **/
@@ -314,7 +315,7 @@ public class PhoneStatus  implements Serializable {
     this.phoneAssignmentToEdgeType = phoneAssignmentToEdgeType;
   }
 
-  
+
   /**
    * The URI of the edge that provided this status information.
    **/
@@ -332,14 +333,13 @@ public class PhoneStatus  implements Serializable {
     this.edge = edge;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -350,16 +350,17 @@ public class PhoneStatus  implements Serializable {
       return false;
     }
     PhoneStatus phoneStatus = (PhoneStatus) o;
+
     return Objects.equals(this.id, phoneStatus.id) &&
-        Objects.equals(this.name, phoneStatus.name) &&
-        Objects.equals(this.operationalStatus, phoneStatus.operationalStatus) &&
-        Objects.equals(this.edgesStatus, phoneStatus.edgesStatus) &&
-        Objects.equals(this.eventCreationTime, phoneStatus.eventCreationTime) &&
-        Objects.equals(this.provision, phoneStatus.provision) &&
-        Objects.equals(this.lineStatuses, phoneStatus.lineStatuses) &&
-        Objects.equals(this.phoneAssignmentToEdgeType, phoneStatus.phoneAssignmentToEdgeType) &&
-        Objects.equals(this.edge, phoneStatus.edge) &&
-        Objects.equals(this.selfUri, phoneStatus.selfUri);
+            Objects.equals(this.name, phoneStatus.name) &&
+            Objects.equals(this.operationalStatus, phoneStatus.operationalStatus) &&
+            Objects.equals(this.edgesStatus, phoneStatus.edgesStatus) &&
+            Objects.equals(this.eventCreationTime, phoneStatus.eventCreationTime) &&
+            Objects.equals(this.provision, phoneStatus.provision) &&
+            Objects.equals(this.lineStatuses, phoneStatus.lineStatuses) &&
+            Objects.equals(this.phoneAssignmentToEdgeType, phoneStatus.phoneAssignmentToEdgeType) &&
+            Objects.equals(this.edge, phoneStatus.edge) &&
+            Objects.equals(this.selfUri, phoneStatus.selfUri);
   }
 
   @Override

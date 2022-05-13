@@ -20,23 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
-import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
-import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
 import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
-import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
-import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
+import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
-import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
+import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 
 public class GetResponsemanagementLibrariesRequest {
-    
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -50,7 +50,7 @@ public class GetResponsemanagementLibrariesRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -64,7 +64,7 @@ public class GetResponsemanagementLibrariesRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private String messagingTemplateFilter;
 	public String getMessagingTemplateFilter() {
 		return this.messagingTemplateFilter;
@@ -107,7 +107,7 @@ public class GetResponsemanagementLibrariesRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -131,13 +131,16 @@ public class GetResponsemanagementLibrariesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/responsemanagement/libraries")
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("messagingTemplateFilter", "", messagingTemplateFilter)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -148,7 +151,7 @@ public class GetResponsemanagementLibrariesRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetResponsemanagementLibrariesRequest request;
@@ -157,29 +160,33 @@ public class GetResponsemanagementLibrariesRequest {
 			request = new GetResponsemanagementLibrariesRequest();
 		}
 
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withMessagingTemplateFilter(String messagingTemplateFilter) {
 			request.setMessagingTemplateFilter(messagingTemplateFilter);
 			return this;
 		}
 
-		public Builder withMessagingTemplateFilter(messagingTemplateFilterValues messagingTemplateFilter) {
-		    request.setMessagingTemplateFilter(messagingTemplateFilter.toString());
-		    return this;
-		}
-		
+
 
 		
+		public Builder withMessagingTemplateFilter(messagingTemplateFilterValues messagingTemplateFilter) {
+		    request.setMessagingTemplateFilter(messagingTemplateFilter.toString());
+
+		    return this;
+		}
+
+
+
 
 		public GetResponsemanagementLibrariesRequest build() {
             

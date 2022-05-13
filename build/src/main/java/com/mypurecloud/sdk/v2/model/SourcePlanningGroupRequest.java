@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -42,7 +43,7 @@ public class SourcePlanningGroupRequest  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Version metadata for the planning group
    **/
@@ -60,7 +61,6 @@ public class SourcePlanningGroupRequest  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class SourcePlanningGroupRequest  implements Serializable {
       return false;
     }
     SourcePlanningGroupRequest sourcePlanningGroupRequest = (SourcePlanningGroupRequest) o;
+
     return Objects.equals(this.id, sourcePlanningGroupRequest.id) &&
-        Objects.equals(this.metadata, sourcePlanningGroupRequest.metadata);
+            Objects.equals(this.metadata, sourcePlanningGroupRequest.metadata);
   }
 
   @Override

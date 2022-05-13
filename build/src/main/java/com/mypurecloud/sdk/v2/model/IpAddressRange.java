@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class IpAddressRange  implements Serializable {
     this.cidr = cidr;
   }
 
-  
+
   /**
    **/
   public IpAddressRange service(ServiceEnum service) {
@@ -106,7 +107,7 @@ public class IpAddressRange  implements Serializable {
     this.service = service;
   }
 
-  
+
   /**
    **/
   public IpAddressRange region(String region) {
@@ -123,7 +124,6 @@ public class IpAddressRange  implements Serializable {
     this.region = region;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,9 +134,10 @@ public class IpAddressRange  implements Serializable {
       return false;
     }
     IpAddressRange ipAddressRange = (IpAddressRange) o;
+
     return Objects.equals(this.cidr, ipAddressRange.cidr) &&
-        Objects.equals(this.service, ipAddressRange.service) &&
-        Objects.equals(this.region, ipAddressRange.region);
+            Objects.equals(this.service, ipAddressRange.service) &&
+            Objects.equals(this.region, ipAddressRange.region);
   }
 
   @Override

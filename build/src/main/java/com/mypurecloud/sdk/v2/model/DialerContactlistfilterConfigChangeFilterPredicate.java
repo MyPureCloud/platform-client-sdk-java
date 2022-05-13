@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,7 +152,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     this.column = column;
   }
 
-  
+
   /**
    * Whether a contact column is numeric or alphabetic
    **/
@@ -169,7 +170,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     this.columnType = columnType;
   }
 
-  
+
   /**
    * The comparison operator
    **/
@@ -187,7 +188,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     this.operator = operator;
   }
 
-  
+
   /**
    * The value the predicate applies to
    **/
@@ -205,7 +206,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     this.value = value;
   }
 
-  
+
   /**
    **/
   public DialerContactlistfilterConfigChangeFilterPredicate range(DialerContactlistfilterConfigChangeRange range) {
@@ -222,7 +223,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     this.range = range;
   }
 
-  
+
   /**
    * Whether or not to invert to result of evaluating the predicate
    **/
@@ -240,7 +241,6 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     this.inverted = inverted;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -251,12 +251,13 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
       return false;
     }
     DialerContactlistfilterConfigChangeFilterPredicate dialerContactlistfilterConfigChangeFilterPredicate = (DialerContactlistfilterConfigChangeFilterPredicate) o;
+
     return Objects.equals(this.column, dialerContactlistfilterConfigChangeFilterPredicate.column) &&
-        Objects.equals(this.columnType, dialerContactlistfilterConfigChangeFilterPredicate.columnType) &&
-        Objects.equals(this.operator, dialerContactlistfilterConfigChangeFilterPredicate.operator) &&
-        Objects.equals(this.value, dialerContactlistfilterConfigChangeFilterPredicate.value) &&
-        Objects.equals(this.range, dialerContactlistfilterConfigChangeFilterPredicate.range) &&
-        Objects.equals(this.inverted, dialerContactlistfilterConfigChangeFilterPredicate.inverted);
+            Objects.equals(this.columnType, dialerContactlistfilterConfigChangeFilterPredicate.columnType) &&
+            Objects.equals(this.operator, dialerContactlistfilterConfigChangeFilterPredicate.operator) &&
+            Objects.equals(this.value, dialerContactlistfilterConfigChangeFilterPredicate.value) &&
+            Objects.equals(this.range, dialerContactlistfilterConfigChangeFilterPredicate.range) &&
+            Objects.equals(this.inverted, dialerContactlistfilterConfigChangeFilterPredicate.inverted);
   }
 
   @Override

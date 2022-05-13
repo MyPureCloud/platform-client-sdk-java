@@ -20,9 +20,9 @@ title: ArchitectJobMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ERROR | &quot;Error&quot; |
-| WARNING | &quot;Warning&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ERROR | &quot;Error&quot; | 
+| WARNING | &quot;Warning&quot; | 
 {: class="table table-striped"}
 
 

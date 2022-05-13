@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,7 +87,7 @@ public class RecordingEncryptionConfiguration  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * When keyConfigurationType is LocalKeyManager, this should be the url for decryption and must specify the path to where GenesysCloud can requests decryption. When keyConfigurationType is KmsSymmetric, this should be the arn to the key alias for the master key
    **/
@@ -104,7 +105,7 @@ public class RecordingEncryptionConfiguration  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The api id for Hawk Authentication. Null if keyConfigurationType is KmsSymmetric
    **/
@@ -122,7 +123,7 @@ public class RecordingEncryptionConfiguration  implements Serializable {
     this.apiId = apiId;
   }
 
-  
+
   /**
    * The api shared symmetric key used for hawk authentication. Null if keyConfigurationType is KmsSymmetric
    **/
@@ -140,7 +141,7 @@ public class RecordingEncryptionConfiguration  implements Serializable {
     this.apiKey = apiKey;
   }
 
-  
+
   /**
    * Type should be LocalKeyManager or KmsSymmetric when create or update Key configurations; 'Native' for disabling configuration.
    **/
@@ -158,7 +159,7 @@ public class RecordingEncryptionConfiguration  implements Serializable {
     this.keyConfigurationType = keyConfigurationType;
   }
 
-  
+
   /**
    * The error message related to the configuration
    **/
@@ -176,14 +177,13 @@ public class RecordingEncryptionConfiguration  implements Serializable {
     this.lastError = lastError;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,13 +194,14 @@ public class RecordingEncryptionConfiguration  implements Serializable {
       return false;
     }
     RecordingEncryptionConfiguration recordingEncryptionConfiguration = (RecordingEncryptionConfiguration) o;
+
     return Objects.equals(this.id, recordingEncryptionConfiguration.id) &&
-        Objects.equals(this.url, recordingEncryptionConfiguration.url) &&
-        Objects.equals(this.apiId, recordingEncryptionConfiguration.apiId) &&
-        Objects.equals(this.apiKey, recordingEncryptionConfiguration.apiKey) &&
-        Objects.equals(this.keyConfigurationType, recordingEncryptionConfiguration.keyConfigurationType) &&
-        Objects.equals(this.lastError, recordingEncryptionConfiguration.lastError) &&
-        Objects.equals(this.selfUri, recordingEncryptionConfiguration.selfUri);
+            Objects.equals(this.url, recordingEncryptionConfiguration.url) &&
+            Objects.equals(this.apiId, recordingEncryptionConfiguration.apiId) &&
+            Objects.equals(this.apiKey, recordingEncryptionConfiguration.apiKey) &&
+            Objects.equals(this.keyConfigurationType, recordingEncryptionConfiguration.keyConfigurationType) &&
+            Objects.equals(this.lastError, recordingEncryptionConfiguration.lastError) &&
+            Objects.equals(this.selfUri, recordingEncryptionConfiguration.selfUri);
   }
 
   @Override

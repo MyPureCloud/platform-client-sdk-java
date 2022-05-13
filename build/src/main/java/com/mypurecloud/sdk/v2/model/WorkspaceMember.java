@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class WorkspaceMember  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public WorkspaceMember name(String name) {
@@ -106,7 +107,7 @@ public class WorkspaceMember  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public WorkspaceMember workspace(DomainEntityRef workspace) {
@@ -123,7 +124,7 @@ public class WorkspaceMember  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    * The workspace member type.
    **/
@@ -141,7 +142,7 @@ public class WorkspaceMember  implements Serializable {
     this.memberType = memberType;
   }
 
-  
+
   /**
    **/
   public WorkspaceMember member(DomainEntityRef member) {
@@ -158,7 +159,7 @@ public class WorkspaceMember  implements Serializable {
     this.member = member;
   }
 
-  
+
   /**
    **/
   public WorkspaceMember user(User user) {
@@ -175,7 +176,7 @@ public class WorkspaceMember  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public WorkspaceMember group(Group group) {
@@ -192,7 +193,7 @@ public class WorkspaceMember  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    **/
   public WorkspaceMember securityProfile(SecurityProfile securityProfile) {
@@ -209,14 +210,13 @@ public class WorkspaceMember  implements Serializable {
     this.securityProfile = securityProfile;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,15 +227,16 @@ public class WorkspaceMember  implements Serializable {
       return false;
     }
     WorkspaceMember workspaceMember = (WorkspaceMember) o;
+
     return Objects.equals(this.id, workspaceMember.id) &&
-        Objects.equals(this.name, workspaceMember.name) &&
-        Objects.equals(this.workspace, workspaceMember.workspace) &&
-        Objects.equals(this.memberType, workspaceMember.memberType) &&
-        Objects.equals(this.member, workspaceMember.member) &&
-        Objects.equals(this.user, workspaceMember.user) &&
-        Objects.equals(this.group, workspaceMember.group) &&
-        Objects.equals(this.securityProfile, workspaceMember.securityProfile) &&
-        Objects.equals(this.selfUri, workspaceMember.selfUri);
+            Objects.equals(this.name, workspaceMember.name) &&
+            Objects.equals(this.workspace, workspaceMember.workspace) &&
+            Objects.equals(this.memberType, workspaceMember.memberType) &&
+            Objects.equals(this.member, workspaceMember.member) &&
+            Objects.equals(this.user, workspaceMember.user) &&
+            Objects.equals(this.group, workspaceMember.group) &&
+            Objects.equals(this.securityProfile, workspaceMember.securityProfile) &&
+            Objects.equals(this.selfUri, workspaceMember.selfUri);
   }
 
   @Override

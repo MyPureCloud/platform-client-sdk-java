@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ADFS  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ADFS name(String name) {
@@ -58,7 +59,7 @@ public class ADFS  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ADFS disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class ADFS  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public ADFS issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class ADFS  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public ADFS ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class ADFS  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public ADFS sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class ADFS  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public ADFS sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class ADFS  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public ADFS relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class ADFS  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public ADFS certificate(String certificate) {
@@ -177,7 +178,7 @@ public class ADFS  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public ADFS certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class ADFS  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class ADFS  implements Serializable {
       return false;
     }
     ADFS ADFS = (ADFS) o;
+
     return Objects.equals(this.id, ADFS.id) &&
-        Objects.equals(this.name, ADFS.name) &&
-        Objects.equals(this.disabled, ADFS.disabled) &&
-        Objects.equals(this.issuerURI, ADFS.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, ADFS.ssoTargetURI) &&
-        Objects.equals(this.sloURI, ADFS.sloURI) &&
-        Objects.equals(this.sloBinding, ADFS.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, ADFS.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, ADFS.certificate) &&
-        Objects.equals(this.certificates, ADFS.certificates) &&
-        Objects.equals(this.selfUri, ADFS.selfUri);
+            Objects.equals(this.name, ADFS.name) &&
+            Objects.equals(this.disabled, ADFS.disabled) &&
+            Objects.equals(this.issuerURI, ADFS.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, ADFS.ssoTargetURI) &&
+            Objects.equals(this.sloURI, ADFS.sloURI) &&
+            Objects.equals(this.sloBinding, ADFS.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, ADFS.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, ADFS.certificate) &&
+            Objects.equals(this.certificates, ADFS.certificates) &&
+            Objects.equals(this.selfUri, ADFS.selfUri);
   }
 
   @Override

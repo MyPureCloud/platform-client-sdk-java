@@ -10,10 +10,10 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetUsageQueryExecutionIdResultsRequest;
@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class UsageApi {
   private final ApiClient pcapiClient;
@@ -37,7 +36,6 @@ public class UsageApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get the results of a usage query
    * 
@@ -64,7 +62,7 @@ public class UsageApi {
   private GetUsageQueryExecutionIdResultsRequest createGetUsageQueryExecutionIdResultsRequest(String executionId) {
     return GetUsageQueryExecutionIdResultsRequest.builder()
             .withExecutionId(executionId)
-    
+
             .build();
   }
 
@@ -116,7 +114,6 @@ public class UsageApi {
     }
   }
 
-  
   /**
    * Query organization API Usage - 
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -143,7 +140,7 @@ public class UsageApi {
   private PostUsageQueryRequest createPostUsageQueryRequest(ApiUsageQuery body) {
     return PostUsageQueryRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -195,5 +192,4 @@ public class UsageApi {
     }
   }
 
-  
 }

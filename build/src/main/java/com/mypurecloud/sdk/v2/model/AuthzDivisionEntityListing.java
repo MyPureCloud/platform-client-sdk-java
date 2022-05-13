@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public AuthzDivisionEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class AuthzDivisionEntityListing  implements Serializable, PagedResource<
       return false;
     }
     AuthzDivisionEntityListing authzDivisionEntityListing = (AuthzDivisionEntityListing) o;
+
     return Objects.equals(this.entities, authzDivisionEntityListing.entities) &&
-        Objects.equals(this.pageSize, authzDivisionEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, authzDivisionEntityListing.pageNumber) &&
-        Objects.equals(this.total, authzDivisionEntityListing.total) &&
-        Objects.equals(this.lastUri, authzDivisionEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, authzDivisionEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, authzDivisionEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, authzDivisionEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, authzDivisionEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, authzDivisionEntityListing.pageCount);
+            Objects.equals(this.pageSize, authzDivisionEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, authzDivisionEntityListing.pageNumber) &&
+            Objects.equals(this.total, authzDivisionEntityListing.total) &&
+            Objects.equals(this.lastUri, authzDivisionEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, authzDivisionEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, authzDivisionEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, authzDivisionEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, authzDivisionEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, authzDivisionEntityListing.pageCount);
   }
 
   @Override

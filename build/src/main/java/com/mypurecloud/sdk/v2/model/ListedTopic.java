@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -145,7 +146,7 @@ public class ListedTopic  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ListedTopic name(String name) {
@@ -162,7 +163,7 @@ public class ListedTopic  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ListedTopic description(String description) {
@@ -179,7 +180,7 @@ public class ListedTopic  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public ListedTopic published(Boolean published) {
@@ -196,7 +197,7 @@ public class ListedTopic  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    **/
   public ListedTopic strictness(StrictnessEnum strictness) {
@@ -213,7 +214,7 @@ public class ListedTopic  implements Serializable {
     this.strictness = strictness;
   }
 
-  
+
   /**
    **/
   public ListedTopic programsCount(Integer programsCount) {
@@ -230,7 +231,7 @@ public class ListedTopic  implements Serializable {
     this.programsCount = programsCount;
   }
 
-  
+
   /**
    **/
   public ListedTopic tags(List<String> tags) {
@@ -247,7 +248,7 @@ public class ListedTopic  implements Serializable {
     this.tags = tags;
   }
 
-  
+
   /**
    **/
   public ListedTopic dialect(String dialect) {
@@ -264,7 +265,7 @@ public class ListedTopic  implements Serializable {
     this.dialect = dialect;
   }
 
-  
+
   /**
    **/
   public ListedTopic participants(ParticipantsEnum participants) {
@@ -281,7 +282,7 @@ public class ListedTopic  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public ListedTopic phrasesCount(Integer phrasesCount) {
@@ -298,7 +299,7 @@ public class ListedTopic  implements Serializable {
     this.phrasesCount = phrasesCount;
   }
 
-  
+
   /**
    **/
   public ListedTopic modifiedBy(AddressableEntityRef modifiedBy) {
@@ -315,7 +316,7 @@ public class ListedTopic  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -333,14 +334,13 @@ public class ListedTopic  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -351,19 +351,20 @@ public class ListedTopic  implements Serializable {
       return false;
     }
     ListedTopic listedTopic = (ListedTopic) o;
+
     return Objects.equals(this.id, listedTopic.id) &&
-        Objects.equals(this.name, listedTopic.name) &&
-        Objects.equals(this.description, listedTopic.description) &&
-        Objects.equals(this.published, listedTopic.published) &&
-        Objects.equals(this.strictness, listedTopic.strictness) &&
-        Objects.equals(this.programsCount, listedTopic.programsCount) &&
-        Objects.equals(this.tags, listedTopic.tags) &&
-        Objects.equals(this.dialect, listedTopic.dialect) &&
-        Objects.equals(this.participants, listedTopic.participants) &&
-        Objects.equals(this.phrasesCount, listedTopic.phrasesCount) &&
-        Objects.equals(this.modifiedBy, listedTopic.modifiedBy) &&
-        Objects.equals(this.dateModified, listedTopic.dateModified) &&
-        Objects.equals(this.selfUri, listedTopic.selfUri);
+            Objects.equals(this.name, listedTopic.name) &&
+            Objects.equals(this.description, listedTopic.description) &&
+            Objects.equals(this.published, listedTopic.published) &&
+            Objects.equals(this.strictness, listedTopic.strictness) &&
+            Objects.equals(this.programsCount, listedTopic.programsCount) &&
+            Objects.equals(this.tags, listedTopic.tags) &&
+            Objects.equals(this.dialect, listedTopic.dialect) &&
+            Objects.equals(this.participants, listedTopic.participants) &&
+            Objects.equals(this.phrasesCount, listedTopic.phrasesCount) &&
+            Objects.equals(this.modifiedBy, listedTopic.modifiedBy) &&
+            Objects.equals(this.dateModified, listedTopic.dateModified) &&
+            Objects.equals(this.selfUri, listedTopic.selfUri);
   }
 
   @Override

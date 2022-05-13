@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.StationEntityListing;
 import com.mypurecloud.sdk.v2.model.StationSettings;
 
 public class GetStationsRequest {
-    
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -40,7 +40,7 @@ public class GetStationsRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -54,7 +54,7 @@ public class GetStationsRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -68,7 +68,7 @@ public class GetStationsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
-	
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -82,7 +82,7 @@ public class GetStationsRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private String userSelectable;
 	public String getUserSelectable() {
 		return this.userSelectable;
@@ -96,7 +96,7 @@ public class GetStationsRequest {
 	    this.setUserSelectable(userSelectable);
 	    return this;
 	} 
-	
+
 	private String webRtcUserId;
 	public String getWebRtcUserId() {
 		return this.webRtcUserId;
@@ -110,7 +110,7 @@ public class GetStationsRequest {
 	    this.setWebRtcUserId(webRtcUserId);
 	    return this;
 	} 
-	
+
 	private String id;
 	public String getId() {
 		return this.id;
@@ -124,7 +124,7 @@ public class GetStationsRequest {
 	    this.setId(id);
 	    return this;
 	} 
-	
+
 	private String lineAppearanceId;
 	public String getLineAppearanceId() {
 		return this.lineAppearanceId;
@@ -138,7 +138,7 @@ public class GetStationsRequest {
 	    this.setLineAppearanceId(lineAppearanceId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -162,23 +162,31 @@ public class GetStationsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/stations")
+
                 .withQueryParameters("pageSize", "", pageSize)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("sortBy", "", sortBy)
         
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("userSelectable", "", userSelectable)
         
+
                 .withQueryParameters("webRtcUserId", "", webRtcUserId)
         
+
                 .withQueryParameters("id", "", id)
         
+
                 .withQueryParameters("lineAppearanceId", "", lineAppearanceId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -189,7 +197,7 @@ public class GetStationsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetStationsRequest request;
@@ -198,49 +206,49 @@ public class GetStationsRequest {
 			request = new GetStationsRequest();
 		}
 
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withUserSelectable(String userSelectable) {
 			request.setUserSelectable(userSelectable);
 			return this;
 		}
-		
+
 		public Builder withWebRtcUserId(String webRtcUserId) {
 			request.setWebRtcUserId(webRtcUserId);
 			return this;
 		}
-		
+
 		public Builder withId(String id) {
 			request.setId(id);
 			return this;
 		}
-		
+
 		public Builder withLineAppearanceId(String lineAppearanceId) {
 			request.setLineAppearanceId(lineAppearanceId);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetStationsRequest build() {
             

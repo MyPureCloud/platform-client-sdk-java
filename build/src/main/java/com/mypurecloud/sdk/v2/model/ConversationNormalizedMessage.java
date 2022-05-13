@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -244,14 +245,14 @@ public class ConversationNormalizedMessage  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Channel-specific information that describes the message and the message channel/provider.")
   @JsonProperty("channel")
   public ConversationMessagingChannel getChannel() {
     return channel;
   }
 
-  
+
   /**
    * Message type.
    **/
@@ -269,7 +270,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Message text.
    **/
@@ -287,7 +288,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * List of content elements
    **/
@@ -305,7 +306,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * List of event elements.
    **/
@@ -323,21 +324,21 @@ public class ConversationNormalizedMessage  implements Serializable {
     this.events = events;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Message receipt status, only used with type Receipt.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.")
   @JsonProperty("reasons")
   public List<ConversationReason> getReasons() {
     return reasons;
   }
 
-  
+
   /**
    * Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.
    **/
@@ -355,21 +356,21 @@ public class ConversationNormalizedMessage  implements Serializable {
     this.originatingEntity = originatingEntity;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if this is the last message receipt for this message, or if another message receipt can be expected.")
   @JsonProperty("isFinalReceipt")
   public Boolean getIsFinalReceipt() {
     return isFinalReceipt;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The direction of the message.")
   @JsonProperty("direction")
   public DirectionEnum getDirection() {
     return direction;
   }
 
-  
+
   /**
    * Additional metadata about this message.
    **/
@@ -387,7 +388,6 @@ public class ConversationNormalizedMessage  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -398,18 +398,19 @@ public class ConversationNormalizedMessage  implements Serializable {
       return false;
     }
     ConversationNormalizedMessage conversationNormalizedMessage = (ConversationNormalizedMessage) o;
+
     return Objects.equals(this.id, conversationNormalizedMessage.id) &&
-        Objects.equals(this.channel, conversationNormalizedMessage.channel) &&
-        Objects.equals(this.type, conversationNormalizedMessage.type) &&
-        Objects.equals(this.text, conversationNormalizedMessage.text) &&
-        Objects.equals(this.content, conversationNormalizedMessage.content) &&
-        Objects.equals(this.events, conversationNormalizedMessage.events) &&
-        Objects.equals(this.status, conversationNormalizedMessage.status) &&
-        Objects.equals(this.reasons, conversationNormalizedMessage.reasons) &&
-        Objects.equals(this.originatingEntity, conversationNormalizedMessage.originatingEntity) &&
-        Objects.equals(this.isFinalReceipt, conversationNormalizedMessage.isFinalReceipt) &&
-        Objects.equals(this.direction, conversationNormalizedMessage.direction) &&
-        Objects.equals(this.metadata, conversationNormalizedMessage.metadata);
+            Objects.equals(this.channel, conversationNormalizedMessage.channel) &&
+            Objects.equals(this.type, conversationNormalizedMessage.type) &&
+            Objects.equals(this.text, conversationNormalizedMessage.text) &&
+            Objects.equals(this.content, conversationNormalizedMessage.content) &&
+            Objects.equals(this.events, conversationNormalizedMessage.events) &&
+            Objects.equals(this.status, conversationNormalizedMessage.status) &&
+            Objects.equals(this.reasons, conversationNormalizedMessage.reasons) &&
+            Objects.equals(this.originatingEntity, conversationNormalizedMessage.originatingEntity) &&
+            Objects.equals(this.isFinalReceipt, conversationNormalizedMessage.isFinalReceipt) &&
+            Objects.equals(this.direction, conversationNormalizedMessage.direction) &&
+            Objects.equals(this.metadata, conversationNormalizedMessage.metadata);
   }
 
   @Override

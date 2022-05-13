@@ -19,10 +19,10 @@ title: QueryRequestPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ATTENDEEID | &quot;attendeeId&quot; |
-| FACILITATORID | &quot;facilitatorId&quot; |
-| STATUS | &quot;status&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ATTENDEEID | &quot;attendeeId&quot; | 
+| FACILITATORID | &quot;facilitatorId&quot; | 
+| STATUS | &quot;status&quot; | 
 {: class="table table-striped"}
 
 

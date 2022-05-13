@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing total(Long total) {
@@ -103,7 +104,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ContactListDivisionViewListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
       return false;
     }
     ContactListDivisionViewListing contactListDivisionViewListing = (ContactListDivisionViewListing) o;
+
     return Objects.equals(this.entities, contactListDivisionViewListing.entities) &&
-        Objects.equals(this.pageSize, contactListDivisionViewListing.pageSize) &&
-        Objects.equals(this.pageNumber, contactListDivisionViewListing.pageNumber) &&
-        Objects.equals(this.total, contactListDivisionViewListing.total) &&
-        Objects.equals(this.lastUri, contactListDivisionViewListing.lastUri) &&
-        Objects.equals(this.firstUri, contactListDivisionViewListing.firstUri) &&
-        Objects.equals(this.selfUri, contactListDivisionViewListing.selfUri) &&
-        Objects.equals(this.previousUri, contactListDivisionViewListing.previousUri) &&
-        Objects.equals(this.nextUri, contactListDivisionViewListing.nextUri) &&
-        Objects.equals(this.pageCount, contactListDivisionViewListing.pageCount);
+            Objects.equals(this.pageSize, contactListDivisionViewListing.pageSize) &&
+            Objects.equals(this.pageNumber, contactListDivisionViewListing.pageNumber) &&
+            Objects.equals(this.total, contactListDivisionViewListing.total) &&
+            Objects.equals(this.lastUri, contactListDivisionViewListing.lastUri) &&
+            Objects.equals(this.firstUri, contactListDivisionViewListing.firstUri) &&
+            Objects.equals(this.selfUri, contactListDivisionViewListing.selfUri) &&
+            Objects.equals(this.previousUri, contactListDivisionViewListing.previousUri) &&
+            Objects.equals(this.nextUri, contactListDivisionViewListing.nextUri) &&
+            Objects.equals(this.pageCount, contactListDivisionViewListing.pageCount);
   }
 
   @Override

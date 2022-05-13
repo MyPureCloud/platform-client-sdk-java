@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FaxTopicLockData;
@@ -59,7 +60,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 name(String name) {
@@ -76,7 +77,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 dateCreated(Date dateCreated) {
@@ -93,7 +94,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 dateModified(Date dateModified) {
@@ -110,7 +111,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 workspace(FaxTopicWorkspaceData workspace) {
@@ -127,7 +128,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 createdBy(FaxTopicUserData createdBy) {
@@ -144,7 +145,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 contentType(String contentType) {
@@ -161,7 +162,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 contentLength(Integer contentLength) {
@@ -178,7 +179,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 filename(String filename) {
@@ -195,7 +196,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.filename = filename;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 changeNumber(Integer changeNumber) {
@@ -212,7 +213,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 dateUploaded(Date dateUploaded) {
@@ -229,7 +230,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 uploadedBy(FaxTopicUserData uploadedBy) {
@@ -246,7 +247,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 lockInfo(FaxTopicLockData lockInfo) {
@@ -263,7 +264,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 selfUri(String selfUri) {
@@ -280,7 +281,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 callerAddress(String callerAddress) {
@@ -297,7 +298,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 receiverAddress(String receiverAddress) {
@@ -314,7 +315,7 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.receiverAddress = receiverAddress;
   }
 
-  
+
   /**
    **/
   public FaxTopicFaxDataV2 read(Boolean read) {
@@ -331,7 +332,6 @@ public class FaxTopicFaxDataV2  implements Serializable {
     this.read = read;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -342,23 +342,24 @@ public class FaxTopicFaxDataV2  implements Serializable {
       return false;
     }
     FaxTopicFaxDataV2 faxTopicFaxDataV2 = (FaxTopicFaxDataV2) o;
+
     return Objects.equals(this.id, faxTopicFaxDataV2.id) &&
-        Objects.equals(this.name, faxTopicFaxDataV2.name) &&
-        Objects.equals(this.dateCreated, faxTopicFaxDataV2.dateCreated) &&
-        Objects.equals(this.dateModified, faxTopicFaxDataV2.dateModified) &&
-        Objects.equals(this.workspace, faxTopicFaxDataV2.workspace) &&
-        Objects.equals(this.createdBy, faxTopicFaxDataV2.createdBy) &&
-        Objects.equals(this.contentType, faxTopicFaxDataV2.contentType) &&
-        Objects.equals(this.contentLength, faxTopicFaxDataV2.contentLength) &&
-        Objects.equals(this.filename, faxTopicFaxDataV2.filename) &&
-        Objects.equals(this.changeNumber, faxTopicFaxDataV2.changeNumber) &&
-        Objects.equals(this.dateUploaded, faxTopicFaxDataV2.dateUploaded) &&
-        Objects.equals(this.uploadedBy, faxTopicFaxDataV2.uploadedBy) &&
-        Objects.equals(this.lockInfo, faxTopicFaxDataV2.lockInfo) &&
-        Objects.equals(this.selfUri, faxTopicFaxDataV2.selfUri) &&
-        Objects.equals(this.callerAddress, faxTopicFaxDataV2.callerAddress) &&
-        Objects.equals(this.receiverAddress, faxTopicFaxDataV2.receiverAddress) &&
-        Objects.equals(this.read, faxTopicFaxDataV2.read);
+            Objects.equals(this.name, faxTopicFaxDataV2.name) &&
+            Objects.equals(this.dateCreated, faxTopicFaxDataV2.dateCreated) &&
+            Objects.equals(this.dateModified, faxTopicFaxDataV2.dateModified) &&
+            Objects.equals(this.workspace, faxTopicFaxDataV2.workspace) &&
+            Objects.equals(this.createdBy, faxTopicFaxDataV2.createdBy) &&
+            Objects.equals(this.contentType, faxTopicFaxDataV2.contentType) &&
+            Objects.equals(this.contentLength, faxTopicFaxDataV2.contentLength) &&
+            Objects.equals(this.filename, faxTopicFaxDataV2.filename) &&
+            Objects.equals(this.changeNumber, faxTopicFaxDataV2.changeNumber) &&
+            Objects.equals(this.dateUploaded, faxTopicFaxDataV2.dateUploaded) &&
+            Objects.equals(this.uploadedBy, faxTopicFaxDataV2.uploadedBy) &&
+            Objects.equals(this.lockInfo, faxTopicFaxDataV2.lockInfo) &&
+            Objects.equals(this.selfUri, faxTopicFaxDataV2.selfUri) &&
+            Objects.equals(this.callerAddress, faxTopicFaxDataV2.callerAddress) &&
+            Objects.equals(this.receiverAddress, faxTopicFaxDataV2.receiverAddress) &&
+            Objects.equals(this.read, faxTopicFaxDataV2.read);
   }
 
   @Override

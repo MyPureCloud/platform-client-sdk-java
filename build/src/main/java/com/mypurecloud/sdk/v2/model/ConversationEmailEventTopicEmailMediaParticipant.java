@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -301,7 +302,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant name(String name) {
@@ -318,7 +319,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant address(String address) {
@@ -335,7 +336,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant startTime(Date startTime) {
@@ -352,7 +353,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant connectedTime(Date connectedTime) {
@@ -369,7 +370,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant endTime(Date endTime) {
@@ -386,7 +387,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant startHoldTime(Date startHoldTime) {
@@ -403,7 +404,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant purpose(String purpose) {
@@ -420,7 +421,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant state(StateEnum state) {
@@ -437,7 +438,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant direction(DirectionEnum direction) {
@@ -454,7 +455,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -471,7 +472,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant held(Boolean held) {
@@ -488,7 +489,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -505,7 +506,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -522,7 +523,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant user(ConversationEmailEventTopicUriReference user) {
@@ -539,7 +540,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant queue(ConversationEmailEventTopicUriReference queue) {
@@ -556,7 +557,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant team(ConversationEmailEventTopicUriReference team) {
@@ -573,7 +574,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant attributes(Map<String, String> attributes) {
@@ -590,7 +591,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant errorInfo(ConversationEmailEventTopicErrorBody errorInfo) {
@@ -607,7 +608,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant script(ConversationEmailEventTopicUriReference script) {
@@ -624,7 +625,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -641,7 +642,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -658,7 +659,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -675,7 +676,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant provider(String provider) {
@@ -692,7 +693,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant externalContact(ConversationEmailEventTopicUriReference externalContact) {
@@ -709,7 +710,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant externalOrganization(ConversationEmailEventTopicUriReference externalOrganization) {
@@ -726,7 +727,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant wrapup(ConversationEmailEventTopicWrapup wrapup) {
@@ -743,7 +744,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant conversationRoutingData(ConversationEmailEventTopicConversationRoutingData conversationRoutingData) {
@@ -760,7 +761,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant peer(String peer) {
@@ -777,7 +778,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -794,7 +795,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -811,7 +812,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant journeyContext(ConversationEmailEventTopicJourneyContext journeyContext) {
@@ -828,7 +829,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant startAcwTime(Date startAcwTime) {
@@ -845,7 +846,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant endAcwTime(Date endAcwTime) {
@@ -862,7 +863,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant subject(String subject) {
@@ -879,7 +880,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant messagesSent(Integer messagesSent) {
@@ -896,7 +897,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.messagesSent = messagesSent;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant autoGenerated(Boolean autoGenerated) {
@@ -913,7 +914,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.autoGenerated = autoGenerated;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant messageId(String messageId) {
@@ -930,7 +931,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.messageId = messageId;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant draftAttachments(List<ConversationEmailEventTopicAttachment> draftAttachments) {
@@ -947,7 +948,7 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.draftAttachments = draftAttachments;
   }
 
-  
+
   /**
    **/
   public ConversationEmailEventTopicEmailMediaParticipant spam(Boolean spam) {
@@ -964,7 +965,6 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
     this.spam = spam;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -975,46 +975,47 @@ public class ConversationEmailEventTopicEmailMediaParticipant  implements Serial
       return false;
     }
     ConversationEmailEventTopicEmailMediaParticipant conversationEmailEventTopicEmailMediaParticipant = (ConversationEmailEventTopicEmailMediaParticipant) o;
+
     return Objects.equals(this.id, conversationEmailEventTopicEmailMediaParticipant.id) &&
-        Objects.equals(this.name, conversationEmailEventTopicEmailMediaParticipant.name) &&
-        Objects.equals(this.address, conversationEmailEventTopicEmailMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationEmailEventTopicEmailMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationEmailEventTopicEmailMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationEmailEventTopicEmailMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationEmailEventTopicEmailMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationEmailEventTopicEmailMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationEmailEventTopicEmailMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationEmailEventTopicEmailMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationEmailEventTopicEmailMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationEmailEventTopicEmailMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationEmailEventTopicEmailMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationEmailEventTopicEmailMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationEmailEventTopicEmailMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationEmailEventTopicEmailMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationEmailEventTopicEmailMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationEmailEventTopicEmailMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationEmailEventTopicEmailMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationEmailEventTopicEmailMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationEmailEventTopicEmailMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationEmailEventTopicEmailMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationEmailEventTopicEmailMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationEmailEventTopicEmailMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationEmailEventTopicEmailMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationEmailEventTopicEmailMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationEmailEventTopicEmailMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationEmailEventTopicEmailMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationEmailEventTopicEmailMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationEmailEventTopicEmailMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationEmailEventTopicEmailMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationEmailEventTopicEmailMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationEmailEventTopicEmailMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationEmailEventTopicEmailMediaParticipant.endAcwTime) &&
-        Objects.equals(this.subject, conversationEmailEventTopicEmailMediaParticipant.subject) &&
-        Objects.equals(this.messagesSent, conversationEmailEventTopicEmailMediaParticipant.messagesSent) &&
-        Objects.equals(this.autoGenerated, conversationEmailEventTopicEmailMediaParticipant.autoGenerated) &&
-        Objects.equals(this.messageId, conversationEmailEventTopicEmailMediaParticipant.messageId) &&
-        Objects.equals(this.draftAttachments, conversationEmailEventTopicEmailMediaParticipant.draftAttachments) &&
-        Objects.equals(this.spam, conversationEmailEventTopicEmailMediaParticipant.spam);
+            Objects.equals(this.name, conversationEmailEventTopicEmailMediaParticipant.name) &&
+            Objects.equals(this.address, conversationEmailEventTopicEmailMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationEmailEventTopicEmailMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationEmailEventTopicEmailMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationEmailEventTopicEmailMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationEmailEventTopicEmailMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationEmailEventTopicEmailMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationEmailEventTopicEmailMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationEmailEventTopicEmailMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationEmailEventTopicEmailMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationEmailEventTopicEmailMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationEmailEventTopicEmailMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationEmailEventTopicEmailMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationEmailEventTopicEmailMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationEmailEventTopicEmailMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationEmailEventTopicEmailMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationEmailEventTopicEmailMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationEmailEventTopicEmailMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationEmailEventTopicEmailMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationEmailEventTopicEmailMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationEmailEventTopicEmailMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationEmailEventTopicEmailMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationEmailEventTopicEmailMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationEmailEventTopicEmailMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationEmailEventTopicEmailMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationEmailEventTopicEmailMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationEmailEventTopicEmailMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationEmailEventTopicEmailMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationEmailEventTopicEmailMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationEmailEventTopicEmailMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationEmailEventTopicEmailMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationEmailEventTopicEmailMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationEmailEventTopicEmailMediaParticipant.endAcwTime) &&
+            Objects.equals(this.subject, conversationEmailEventTopicEmailMediaParticipant.subject) &&
+            Objects.equals(this.messagesSent, conversationEmailEventTopicEmailMediaParticipant.messagesSent) &&
+            Objects.equals(this.autoGenerated, conversationEmailEventTopicEmailMediaParticipant.autoGenerated) &&
+            Objects.equals(this.messageId, conversationEmailEventTopicEmailMediaParticipant.messageId) &&
+            Objects.equals(this.draftAttachments, conversationEmailEventTopicEmailMediaParticipant.draftAttachments) &&
+            Objects.equals(this.spam, conversationEmailEventTopicEmailMediaParticipant.spam);
   }
 
   @Override

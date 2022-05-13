@@ -10,17 +10,17 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
-import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
-import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
@@ -43,7 +43,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class OAuthApi {
   private final ApiClient pcapiClient;
 
@@ -55,7 +54,6 @@ public class OAuthApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete OAuth Client
    * 
@@ -80,7 +78,7 @@ public class OAuthApi {
   private DeleteOauthClientRequest createDeleteOauthClientRequest(String clientId) {
     return DeleteOauthClientRequest.builder()
             .withClientId(clientId)
-    
+
             .build();
   }
 
@@ -131,7 +129,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Get a client that is authorized by the resource owner
    * 
@@ -160,9 +157,9 @@ public class OAuthApi {
   private GetOauthAuthorizationRequest createGetOauthAuthorizationRequest(String clientId, String acceptLanguage) {
     return GetOauthAuthorizationRequest.builder()
             .withClientId(clientId)
-    
+
             .withAcceptLanguage(acceptLanguage)
-    
+
             .build();
   }
 
@@ -214,7 +211,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * List clients that have been authorized, requested, or revoked by the resource owner
    * 
@@ -241,7 +237,7 @@ public class OAuthApi {
   private GetOauthAuthorizationsRequest createGetOauthAuthorizationsRequest(String acceptLanguage) {
     return GetOauthAuthorizationsRequest.builder()
             .withAcceptLanguage(acceptLanguage)
-    
+
             .build();
   }
 
@@ -293,7 +289,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Get OAuth Client
    * 
@@ -320,7 +315,7 @@ public class OAuthApi {
   private GetOauthClientRequest createGetOauthClientRequest(String clientId) {
     return GetOauthClientRequest.builder()
             .withClientId(clientId)
-    
+
             .build();
   }
 
@@ -372,7 +367,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Get the results of a usage query
    * 
@@ -401,9 +395,9 @@ public class OAuthApi {
   private GetOauthClientUsageQueryResultRequest createGetOauthClientUsageQueryResultRequest(String executionId, String clientId) {
     return GetOauthClientUsageQueryResultRequest.builder()
             .withExecutionId(executionId)
-    
+
             .withClientId(clientId)
-    
+
             .build();
   }
 
@@ -455,7 +449,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Get a summary of OAuth client API usage
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -484,9 +477,9 @@ public class OAuthApi {
   private GetOauthClientUsageSummaryRequest createGetOauthClientUsageSummaryRequest(String clientId, String days) {
     return GetOauthClientUsageSummaryRequest.builder()
             .withClientId(clientId)
-    
+
             .withDays(days)
-    
+
             .build();
   }
 
@@ -538,7 +531,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * The list of OAuth clients
    * 
@@ -613,7 +605,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * An OAuth scope
    * 
@@ -642,9 +633,9 @@ public class OAuthApi {
   private GetOauthScopeRequest createGetOauthScopeRequest(String scopeId, String acceptLanguage) {
     return GetOauthScopeRequest.builder()
             .withScopeId(scopeId)
-    
+
             .withAcceptLanguage(acceptLanguage)
-    
+
             .build();
   }
 
@@ -696,7 +687,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * The list of OAuth scopes
    * 
@@ -723,7 +713,7 @@ public class OAuthApi {
   private GetOauthScopesRequest createGetOauthScopesRequest(String acceptLanguage) {
     return GetOauthScopesRequest.builder()
             .withAcceptLanguage(acceptLanguage)
-    
+
             .build();
   }
 
@@ -775,7 +765,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Regenerate Client Secret
    * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
@@ -802,7 +791,7 @@ public class OAuthApi {
   private PostOauthClientSecretRequest createPostOauthClientSecretRequest(String clientId) {
     return PostOauthClientSecretRequest.builder()
             .withClientId(clientId)
-    
+
             .build();
   }
 
@@ -854,7 +843,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Query for OAuth client API usage
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -883,9 +871,9 @@ public class OAuthApi {
   private PostOauthClientUsageQueryRequest createPostOauthClientUsageQueryRequest(String clientId, ApiUsageQuery body) {
     return PostOauthClientUsageQueryRequest.builder()
             .withClientId(clientId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -937,10 +925,9 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Create OAuth client
-   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
    * @param body Client (required)
    * @return OAuthClient
    * @throws ApiException if the request fails on the server
@@ -952,7 +939,7 @@ public class OAuthApi {
 
   /**
    * Create OAuth client
-   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
    * @param body Client (required)
    * @return OAuthClient
    * @throws IOException if the request fails to be processed
@@ -964,13 +951,13 @@ public class OAuthApi {
   private PostOauthClientsRequest createPostOauthClientsRequest(OAuthClientRequest body) {
     return PostOauthClientsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
   /**
    * Create OAuth client
-   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
    * @param request The request object
    * @return OAuthClient
    * @throws ApiException if the request fails on the server
@@ -989,7 +976,7 @@ public class OAuthApi {
 
   /**
    * Create OAuth client
-   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+   * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1016,7 +1003,6 @@ public class OAuthApi {
     }
   }
 
-  
   /**
    * Update OAuth Client
    * 
@@ -1045,9 +1031,9 @@ public class OAuthApi {
   private PutOauthClientRequest createPutOauthClientRequest(String clientId, OAuthClientRequest body) {
     return PutOauthClientRequest.builder()
             .withClientId(clientId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1099,5 +1085,4 @@ public class OAuthApi {
     }
   }
 
-  
 }

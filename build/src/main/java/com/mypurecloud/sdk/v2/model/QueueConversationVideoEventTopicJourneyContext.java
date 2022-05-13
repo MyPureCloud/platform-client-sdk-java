@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicJourneyAction;
@@ -45,7 +46,7 @@ public class QueueConversationVideoEventTopicJourneyContext  implements Serializ
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicJourneyContext customerSession(QueueConversationVideoEventTopicJourneyCustomerSession customerSession) {
@@ -62,7 +63,7 @@ public class QueueConversationVideoEventTopicJourneyContext  implements Serializ
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicJourneyContext triggeringAction(QueueConversationVideoEventTopicJourneyAction triggeringAction) {
@@ -79,7 +80,6 @@ public class QueueConversationVideoEventTopicJourneyContext  implements Serializ
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class QueueConversationVideoEventTopicJourneyContext  implements Serializ
       return false;
     }
     QueueConversationVideoEventTopicJourneyContext queueConversationVideoEventTopicJourneyContext = (QueueConversationVideoEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationVideoEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationVideoEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationVideoEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationVideoEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationVideoEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

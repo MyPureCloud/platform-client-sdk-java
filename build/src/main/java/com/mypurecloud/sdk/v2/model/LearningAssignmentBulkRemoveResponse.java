@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DisallowedEntityLearningAssignmentReference;
@@ -45,7 +46,7 @@ public class LearningAssignmentBulkRemoveResponse  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    * The learning assignments that were not removed due to missing permissions
    **/
@@ -63,7 +64,6 @@ public class LearningAssignmentBulkRemoveResponse  implements Serializable {
     this.disallowedEntities = disallowedEntities;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class LearningAssignmentBulkRemoveResponse  implements Serializable {
       return false;
     }
     LearningAssignmentBulkRemoveResponse learningAssignmentBulkRemoveResponse = (LearningAssignmentBulkRemoveResponse) o;
+
     return Objects.equals(this.entities, learningAssignmentBulkRemoveResponse.entities) &&
-        Objects.equals(this.disallowedEntities, learningAssignmentBulkRemoveResponse.disallowedEntities);
+            Objects.equals(this.disallowedEntities, learningAssignmentBulkRemoveResponse.disallowedEntities);
   }
 
   @Override

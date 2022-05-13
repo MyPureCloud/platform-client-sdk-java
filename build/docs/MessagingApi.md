@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a supported content profile
 
-
-
 Wraps DELETE /api/v2/messaging/supportedcontent/{supportedContentId}  
 
 Requires ALL permissions: 
@@ -85,8 +83,6 @@ null (empty response body)
 > [SupportedContentListing](SupportedContentListing.html) getMessagingSupportedcontent(pageSize, pageNumber)
 
 Get a list of Supported Content profiles
-
-
 
 Wraps GET /api/v2/messaging/supportedcontent  
 
@@ -151,8 +147,6 @@ try {
 
 Get a supported content profile
 
-
-
 Wraps GET /api/v2/messaging/supportedcontent/{supportedContentId}  
 
 Requires ALL permissions: 
@@ -213,8 +207,6 @@ try {
 > [SupportedContent](SupportedContent.html) patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 Update a supported content profile
-
-
 
 Wraps PATCH /api/v2/messaging/supportedcontent/{supportedContentId}  
 
@@ -278,8 +270,6 @@ try {
 > [SupportedContent](SupportedContent.html) postMessagingSupportedcontent(body)
 
 Create a Supported Content profile
-
-
 
 Wraps POST /api/v2/messaging/supportedcontent  
 

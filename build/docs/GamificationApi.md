@@ -7,10 +7,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | Leaderboard of the requesting user&#39;s division or performance profile |
+| [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | Leaderboard of the requesting user's division or performance profile |
 | [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | Leaderboard by filter type |
 | [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | Best Points by division or performance profile |
-| [**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | Best Points of the requesting user&#39;s current performance profile or division |
+| [**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | Best Points of the requesting user's current performance profile or division |
 | [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | Gamified metric by id |
 | [**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | Metric definition by id |
 | [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | All metric definitions |
@@ -27,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationScorecardsAttendance**](GamificationApi.html#getGamificationScorecardsAttendance) | Attendance status metrics of the requesting user |
 | [**getGamificationScorecardsBestpoints**](GamificationApi.html#getGamificationScorecardsBestpoints) | Best points of the requesting user |
 | [**getGamificationScorecardsPointsAlltime**](GamificationApi.html#getGamificationScorecardsPointsAlltime) | All-time points of the requesting user |
-| [**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | Average points of the requesting user&#39;s division or performance profile |
+| [**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | Average points of the requesting user's division or performance profile |
 | [**getGamificationScorecardsPointsTrends**](GamificationApi.html#getGamificationScorecardsPointsTrends) | Points trends of the requesting user |
 | [**getGamificationScorecardsUser**](GamificationApi.html#getGamificationScorecardsUser) | Workday performance metrics for a user |
 | [**getGamificationScorecardsUserAttendance**](GamificationApi.html#getGamificationScorecardsUserAttendance) | Attendance status metrics for a user |
@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationScorecardsUsersPointsAverage**](GamificationApi.html#getGamificationScorecardsUsersPointsAverage) | Workday average points by target group |
 | [**getGamificationScorecardsUsersValuesAverage**](GamificationApi.html#getGamificationScorecardsUsersValuesAverage) | Workday average values by target group |
 | [**getGamificationScorecardsUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsUsersValuesTrends) | Values trend by target group |
-| [**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | Average values of the requesting user&#39;s division or performance profile |
+| [**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | Average values of the requesting user's division or performance profile |
 | [**getGamificationScorecardsValuesTrends**](GamificationApi.html#getGamificationScorecardsValuesTrends) | Values trends of the requesting user or group |
 | [**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | Gamification activation status |
 | [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | Objective template by id |
@@ -65,9 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > [Leaderboard](Leaderboard.html) getGamificationLeaderboard(startWorkday, endWorkday, metricId)
 
-Leaderboard of the requesting user&#39;s division or performance profile
-
-
+Leaderboard of the requesting user's division or performance profile
 
 Wraps GET /api/v2/gamification/leaderboard  
 
@@ -133,8 +131,6 @@ try {
 > [Leaderboard](Leaderboard.html) getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, metricId)
 
 Leaderboard by filter type
-
-
 
 Wraps GET /api/v2/gamification/leaderboard/all  
 
@@ -205,8 +201,6 @@ try {
 
 Best Points by division or performance profile
 
-
-
 Wraps GET /api/v2/gamification/leaderboard/all/bestpoints  
 
 Requires ANY permissions: 
@@ -268,9 +262,7 @@ try {
 
 > [OverallBestPoints](OverallBestPoints.html) getGamificationLeaderboardBestpoints()
 
-Best Points of the requesting user&#39;s current performance profile or division
-
-
+Best Points of the requesting user's current performance profile or division
 
 Wraps GET /api/v2/gamification/leaderboard/bestpoints  
 
@@ -328,8 +320,6 @@ This endpoint does not require any parameters.
 > [Metric](Metric.html) getGamificationMetric(metricId, workday, performanceProfileId)
 
 Gamified metric by id
-
-
 
 Wraps GET /api/v2/gamification/metrics/{metricId}  
 
@@ -397,8 +387,6 @@ try {
 > [MetricDefinition](MetricDefinition.html) getGamificationMetricdefinition(metricDefinitionId)
 
 Metric definition by id
-
-
 
 Wraps GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}  
 
@@ -520,8 +508,6 @@ This endpoint does not require any parameters.
 
 All gamified metrics for a given profile
 
-
-
 Wraps GET /api/v2/gamification/metrics  
 
 Requires ANY permissions: 
@@ -587,8 +573,6 @@ try {
 
 Performance profile by id
 
-
-
 Wraps GET /api/v2/gamification/profiles/{profileId}  
 
 Requires ANY permissions: 
@@ -652,8 +636,6 @@ try {
 
 Members of a given performance profile
 
-
-
 Wraps GET /api/v2/gamification/profiles/{performanceProfileId}/members  
 
 Requires ANY permissions: 
@@ -714,8 +696,6 @@ try {
 > [Metric](Metric.html) getGamificationProfileMetric(profileId, metricId, workday)
 
 Performance profile gamified metric by id
-
-
 
 Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}  
 
@@ -784,8 +764,6 @@ try {
 
 All gamified metrics for a given performance profile
 
-
-
 Wraps GET /api/v2/gamification/profiles/{profileId}/metrics  
 
 Requires ANY permissions: 
@@ -817,7 +795,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String profileId = "profileId_example"; // String | Performance Profile Id
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
     GetMetricResponse result = apiInstance.getGamificationProfileMetrics(profileId, expand, workday);
@@ -852,8 +830,6 @@ try {
 > [GetMetricsResponse](GetMetricsResponse.html) getGamificationProfileMetricsObjectivedetails(profileId, workday)
 
 All metrics for a given performance profile with objective details such as order and maxPoints
-
-
 
 Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails  
 
@@ -920,8 +896,6 @@ try {
 
 All performance profiles
 
-
-
 Wraps GET /api/v2/gamification/profiles  
 
 Requires ANY permissions: 
@@ -980,8 +954,6 @@ This endpoint does not require any parameters.
 > [PerformanceProfile](PerformanceProfile.html) getGamificationProfilesUser(userId, workday)
 
 Performance profile of a user
-
-
 
 Wraps GET /api/v2/gamification/profiles/users/{userId}  
 
@@ -1048,8 +1020,6 @@ try {
 
 Performance profile of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/profiles/users/me  
 
 Requires NO permissions: 
@@ -1110,8 +1080,6 @@ try {
 
 Workday performance metrics of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/scorecards  
 
 Requires ANY permissions: 
@@ -1141,7 +1109,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     WorkdayMetricListing result = apiInstance.getGamificationScorecards(workday, expand);
     System.out.println(result);
@@ -1174,8 +1142,6 @@ try {
 > [AttendanceStatusListing](AttendanceStatusListing.html) getGamificationScorecardsAttendance(startWorkday, endWorkday)
 
 Attendance status metrics of the requesting user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/attendance  
 
@@ -1240,8 +1206,6 @@ try {
 
 Best points of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/bestpoints  
 
 Requires ANY permissions: 
@@ -1298,8 +1262,6 @@ This endpoint does not require any parameters.
 > [AllTimePoints](AllTimePoints.html) getGamificationScorecardsPointsAlltime(endWorkday)
 
 All-time points of the requesting user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/points/alltime  
 
@@ -1360,9 +1322,7 @@ try {
 
 > [SingleWorkdayAveragePoints](SingleWorkdayAveragePoints.html) getGamificationScorecardsPointsAverage(workday)
 
-Average points of the requesting user&#39;s division or performance profile
-
-
+Average points of the requesting user's division or performance profile
 
 Wraps GET /api/v2/gamification/scorecards/points/average  
 
@@ -1424,8 +1384,6 @@ try {
 > [WorkdayPointsTrend](WorkdayPointsTrend.html) getGamificationScorecardsPointsTrends(startWorkday, endWorkday, dayOfWeek)
 
 Points trends of the requesting user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/points/trends  
 
@@ -1492,8 +1450,6 @@ try {
 
 Workday performance metrics for a user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/{userId}  
 
 Requires ANY permissions: 
@@ -1524,7 +1480,7 @@ Configuration.setDefaultApiClient(apiClient);
 GamificationApi apiInstance = new GamificationApi();
 String userId = "userId_example"; // String | 
 LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     WorkdayMetricListing result = apiInstance.getGamificationScorecardsUser(userId, workday, expand);
     System.out.println(result);
@@ -1558,8 +1514,6 @@ try {
 > [AttendanceStatusListing](AttendanceStatusListing.html) getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
 
 Attendance status metrics for a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/attendance  
 
@@ -1626,8 +1580,6 @@ try {
 
 Best points of a user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/bestpoints  
 
 Requires ANY permissions: 
@@ -1688,8 +1640,6 @@ try {
 > [AllTimePoints](AllTimePoints.html) getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 
 All-time points for a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/points/alltime  
 
@@ -1753,8 +1703,6 @@ try {
 > [WorkdayPointsTrend](WorkdayPointsTrend.html) getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, dayOfWeek)
 
 Points trend for a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/points/trends  
 
@@ -1823,8 +1771,6 @@ try {
 
 Values trends of a user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/values/trends  
 
 Requires ANY permissions: 
@@ -1892,8 +1838,6 @@ try {
 
 Workday average points by target group
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/points/average  
 
 Requires ANY permissions: 
@@ -1958,8 +1902,6 @@ try {
 > [SingleWorkdayAverageValues](SingleWorkdayAverageValues.html) getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, timeZone)
 
 Workday average values by target group
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/values/average  
 
@@ -2028,8 +1970,6 @@ try {
 
 Values trend by target group
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/values/trends  
 
 Requires ANY permissions: 
@@ -2097,9 +2037,7 @@ try {
 
 > [SingleWorkdayAverageValues](SingleWorkdayAverageValues.html) getGamificationScorecardsValuesAverage(workday, timeZone)
 
-Average values of the requesting user&#39;s division or performance profile
-
-
+Average values of the requesting user's division or performance profile
 
 Wraps GET /api/v2/gamification/scorecards/values/average  
 
@@ -2163,8 +2101,6 @@ try {
 > [WorkdayValuesTrend](WorkdayValuesTrend.html) getGamificationScorecardsValuesTrends(startWorkday, endWorkday, filterType, referenceWorkday, timeZone)
 
 Values trends of the requesting user or group
-
-
 
 Wraps GET /api/v2/gamification/scorecards/values/trends  
 
@@ -2235,8 +2171,6 @@ try {
 
 Gamification activation status
 
-
-
 Wraps GET /api/v2/gamification/status  
 
 Requires ANY permissions: 
@@ -2295,8 +2229,6 @@ This endpoint does not require any parameters.
 > [ObjectiveTemplate](ObjectiveTemplate.html) getGamificationTemplate(templateId)
 
 Objective template by id
-
-
 
 Wraps GET /api/v2/gamification/templates/{templateId}  
 
@@ -2359,8 +2291,6 @@ try {
 
 All objective templates
 
-
-
 Wraps GET /api/v2/gamification/templates  
 
 Requires ANY permissions: 
@@ -2417,8 +2347,6 @@ This endpoint does not require any parameters.
 > [Metric](Metric.html) postGamificationMetrics(body)
 
 Creates a gamified metric with a given metric definition and metric objective
-
-
 
 Wraps POST /api/v2/gamification/metrics  
 
@@ -2481,8 +2409,6 @@ try {
 
 Activate a performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/activate  
 
 Requires ANY permissions: 
@@ -2544,8 +2470,6 @@ try {
 
 Deactivate a performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/deactivate  
 
 Requires ANY permissions: 
@@ -2606,8 +2530,6 @@ try {
 > [Assignment](Assignment.html) postGamificationProfileMembers(performanceProfileId, body)
 
 Assign members to a given performance profile
-
-
 
 Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members  
 
@@ -2672,8 +2594,6 @@ try {
 
 Validate member assignment
 
-
-
 Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate  
 
 Requires ANY permissions: 
@@ -2736,8 +2656,6 @@ try {
 > [Metric](Metric.html) postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
 
 Creates a linked metric
-
-
 
 Wraps POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link  
 
@@ -2804,8 +2722,6 @@ try {
 
 Creates a gamified metric with a given metric definition and metric objective under in a performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/metrics  
 
 Requires ALL permissions: 
@@ -2869,8 +2785,6 @@ try {
 
 Create a new custom performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles  
 
 Requires ANY permissions: 
@@ -2933,8 +2847,6 @@ try {
 > [Metric](Metric.html) putGamificationMetric(metricId, body, performanceProfileId)
 
 Updates a metric
-
-
 
 Wraps PUT /api/v2/gamification/metrics/{metricId}  
 
@@ -3001,8 +2913,6 @@ try {
 
 Updates a performance profile
 
-
-
 Wraps PUT /api/v2/gamification/profiles/{profileId}  
 
 Requires ANY permissions: 
@@ -3065,8 +2975,6 @@ try {
 > [Metric](Metric.html) putGamificationProfileMetric(profileId, metricId, body)
 
 Updates a metric in performance profile
-
-
 
 Wraps PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}  
 
@@ -3132,8 +3040,6 @@ try {
 > [GamificationStatus](GamificationStatus.html) putGamificationStatus(status)
 
 Update gamification activation status
-
-
 
 Wraps PUT /api/v2/gamification/status  
 

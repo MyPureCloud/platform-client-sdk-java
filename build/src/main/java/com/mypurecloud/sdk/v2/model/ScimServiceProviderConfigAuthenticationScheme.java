@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -86,42 +87,41 @@ public class ScimServiceProviderConfigAuthenticationScheme  implements Serializa
     return name;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The description of the authentication scheme.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The HTTP-addressable URL that points to the authentication scheme's specification.")
   @JsonProperty("specUri")
   public String getSpecUri() {
     return specUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The HTTP-addressable URL that points to the authentication scheme's usage documentation.")
   @JsonProperty("documentationUri")
   public String getDocumentationUri() {
     return documentationUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "The type of authentication scheme.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates whether this authentication scheme is the primary method of authentication.")
   @JsonProperty("primary")
   public Boolean getPrimary() {
     return primary;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -132,12 +132,13 @@ public class ScimServiceProviderConfigAuthenticationScheme  implements Serializa
       return false;
     }
     ScimServiceProviderConfigAuthenticationScheme scimServiceProviderConfigAuthenticationScheme = (ScimServiceProviderConfigAuthenticationScheme) o;
+
     return Objects.equals(this.name, scimServiceProviderConfigAuthenticationScheme.name) &&
-        Objects.equals(this.description, scimServiceProviderConfigAuthenticationScheme.description) &&
-        Objects.equals(this.specUri, scimServiceProviderConfigAuthenticationScheme.specUri) &&
-        Objects.equals(this.documentationUri, scimServiceProviderConfigAuthenticationScheme.documentationUri) &&
-        Objects.equals(this.type, scimServiceProviderConfigAuthenticationScheme.type) &&
-        Objects.equals(this.primary, scimServiceProviderConfigAuthenticationScheme.primary);
+            Objects.equals(this.description, scimServiceProviderConfigAuthenticationScheme.description) &&
+            Objects.equals(this.specUri, scimServiceProviderConfigAuthenticationScheme.specUri) &&
+            Objects.equals(this.documentationUri, scimServiceProviderConfigAuthenticationScheme.documentationUri) &&
+            Objects.equals(this.type, scimServiceProviderConfigAuthenticationScheme.type) &&
+            Objects.equals(this.primary, scimServiceProviderConfigAuthenticationScheme.primary);
   }
 
   @Override

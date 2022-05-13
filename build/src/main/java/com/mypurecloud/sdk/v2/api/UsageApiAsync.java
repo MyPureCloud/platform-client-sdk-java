@@ -13,10 +13,10 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
-import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetUsageQueryExecutionIdResultsRequest;
@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class UsageApiAsync {
   private final ApiClient pcapiClient;
 
@@ -41,7 +40,6 @@ public class UsageApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Get the results of a usage query
    * 
@@ -117,7 +115,6 @@ public class UsageApiAsync {
     }
   }
 
-  
   /**
    * Query organization API Usage - 
    * After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -193,7 +190,6 @@ public class UsageApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

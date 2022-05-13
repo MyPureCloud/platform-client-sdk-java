@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuthorizationDivisionsHomeRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -49,7 +49,7 @@ public class GetAuthorizationDivisionsHomeRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/divisions/home")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -60,7 +60,7 @@ public class GetAuthorizationDivisionsHomeRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAuthorizationDivisionsHomeRequest request;
@@ -69,9 +69,9 @@ public class GetAuthorizationDivisionsHomeRequest {
 			request = new GetAuthorizationDivisionsHomeRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetAuthorizationDivisionsHomeRequest build() {
             

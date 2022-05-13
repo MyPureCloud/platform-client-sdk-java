@@ -22,9 +22,9 @@ title: BenefitAssessmentJob
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CREATED | &quot;Created&quot; |
-| FINISHED | &quot;Finished&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CREATED | &quot;Created&quot; | 
+| FINISHED | &quot;Finished&quot; | 
 {: class="table table-striped"}
 
 

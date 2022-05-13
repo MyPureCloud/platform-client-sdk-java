@@ -13,25 +13,24 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.TrustRequest;
-import com.mypurecloud.sdk.v2.model.Trustee;
-import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustUser;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustEntityListing;
-import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
-import com.mypurecloud.sdk.v2.model.TrustCreate;
-import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
-import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.TrustCreate;
+import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
+import com.mypurecloud.sdk.v2.model.TrustRequest;
+import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.TrustUser;
+import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
+import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
@@ -74,7 +73,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class OrganizationAuthorizationApiAsync {
   private final ApiClient pcapiClient;
 
@@ -86,7 +84,6 @@ public class OrganizationAuthorizationApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete Org Trust
    * 
@@ -162,7 +159,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Deletes cloned user
    * 
@@ -238,7 +234,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete Trustee User
    * 
@@ -314,7 +309,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete Trustee User Roles
    * 
@@ -390,7 +384,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete Org Trust
    * 
@@ -466,7 +459,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete Cloned User
    * 
@@ -542,7 +534,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Delete Trustee User
    * 
@@ -618,7 +609,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Pairing Info
    * 
@@ -694,7 +684,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Org Trust
    * 
@@ -770,7 +759,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * The list of cloned users from the trustee organization (i.e. users with a native user record).
    * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
@@ -846,7 +834,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Trustee User
    * 
@@ -922,7 +909,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Trustee User Roles
    * 
@@ -998,7 +984,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * The list of trustee users for this organization (i.e. users granted access to this organization).
    * 
@@ -1074,7 +1059,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * The list of trustees for this organization (i.e. organizations granted access to this organization).
    * 
@@ -1150,7 +1134,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get organization authorization trust with Customer Care, if one exists.
    * 
@@ -1226,7 +1209,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Org Trust
    * 
@@ -1302,7 +1284,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Cloned User
    * 
@@ -1378,7 +1359,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * The list of cloned users in the trustor organization (i.e. users with a native user record).
    * 
@@ -1454,7 +1434,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Trustee User
    * 
@@ -1530,7 +1509,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * The list of users in the trustor organization (i.e. users granted access).
    * 
@@ -1606,7 +1584,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * The list of organizations that have authorized/trusted your organization.
    * 
@@ -1682,7 +1659,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * A pairing id is created by the trustee and given to the trustor to create a trust.
    * 
@@ -1758,7 +1734,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Add a user to the trust.
    * 
@@ -1834,7 +1809,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Create a new organization authorization trust. This is required to grant other organizations access to your organization.
    * 
@@ -1910,7 +1884,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Org Trustee Audits
    * 
@@ -1918,13 +1891,13 @@ public class OrganizationAuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AuditQueryResponse> postOrgauthorizationTrusteesAuditsAsync(PostOrgauthorizationTrusteesAuditsRequest request, final AsyncApiCallback<AuditQueryResponse> callback) {
+  public Future<Object> postOrgauthorizationTrusteesAuditsAsync(PostOrgauthorizationTrusteesAuditsRequest request, final AsyncApiCallback<Object> callback) {
     try {
-      final SettableFuture<AuditQueryResponse> future = SettableFuture.create();
+      final SettableFuture<Object> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuditQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AuditQueryResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
-        public void onCompleted(ApiResponse<AuditQueryResponse> response) {
+        public void onCompleted(ApiResponse<Object> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1952,13 +1925,13 @@ public class OrganizationAuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AuditQueryResponse>> postOrgauthorizationTrusteesAuditsAsync(ApiRequest<TrusteeAuditQueryRequest> request, final AsyncApiCallback<ApiResponse<AuditQueryResponse>> callback) {
+  public Future<ApiResponse<Object>> postOrgauthorizationTrusteesAuditsAsync(ApiRequest<TrusteeAuditQueryRequest> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
     try {
-      final SettableFuture<ApiResponse<AuditQueryResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AuditQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AuditQueryResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
-        public void onCompleted(ApiResponse<AuditQueryResponse> response) {
+        public void onCompleted(ApiResponse<Object> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1966,7 +1939,7 @@ public class OrganizationAuthorizationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)exception;
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1974,7 +1947,7 @@ public class OrganizationAuthorizationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1986,7 +1959,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
    * 
@@ -2062,7 +2034,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Get Org Trustor Audits
    * 
@@ -2070,13 +2041,13 @@ public class OrganizationAuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AuditQueryResponse> postOrgauthorizationTrustorAuditsAsync(PostOrgauthorizationTrustorAuditsRequest request, final AsyncApiCallback<AuditQueryResponse> callback) {
+  public Future<Object> postOrgauthorizationTrustorAuditsAsync(PostOrgauthorizationTrustorAuditsRequest request, final AsyncApiCallback<Object> callback) {
     try {
-      final SettableFuture<AuditQueryResponse> future = SettableFuture.create();
+      final SettableFuture<Object> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuditQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AuditQueryResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
-        public void onCompleted(ApiResponse<AuditQueryResponse> response) {
+        public void onCompleted(ApiResponse<Object> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2104,13 +2075,13 @@ public class OrganizationAuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AuditQueryResponse>> postOrgauthorizationTrustorAuditsAsync(ApiRequest<TrustorAuditQueryRequest> request, final AsyncApiCallback<ApiResponse<AuditQueryResponse>> callback) {
+  public Future<ApiResponse<Object>> postOrgauthorizationTrustorAuditsAsync(ApiRequest<TrustorAuditQueryRequest> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
     try {
-      final SettableFuture<ApiResponse<AuditQueryResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AuditQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AuditQueryResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
-        public void onCompleted(ApiResponse<AuditQueryResponse> response) {
+        public void onCompleted(ApiResponse<Object> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2118,7 +2089,7 @@ public class OrganizationAuthorizationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)exception;
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2126,7 +2097,7 @@ public class OrganizationAuthorizationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2138,7 +2109,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Update Org Trust
    * 
@@ -2214,7 +2184,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Update Trustee User Roles
    * 
@@ -2290,7 +2259,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Update Trustee User Roles
    * 
@@ -2366,7 +2334,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Creates a clone of the trustee user in the trustor org.
    * 
@@ -2442,7 +2409,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
   /**
    * Add a Trustee user to the trust.
    * 
@@ -2518,7 +2484,6 @@ public class OrganizationAuthorizationApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

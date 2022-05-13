@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluConfusionMatrixColumn;
@@ -44,7 +45,7 @@ public class NluConfusionMatrixRow  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The columns of confusion matrix for the intent
    **/
@@ -62,7 +63,6 @@ public class NluConfusionMatrixRow  implements Serializable {
     this.columns = columns;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class NluConfusionMatrixRow  implements Serializable {
       return false;
     }
     NluConfusionMatrixRow nluConfusionMatrixRow = (NluConfusionMatrixRow) o;
+
     return Objects.equals(this.name, nluConfusionMatrixRow.name) &&
-        Objects.equals(this.columns, nluConfusionMatrixRow.columns);
+            Objects.equals(this.columns, nluConfusionMatrixRow.columns);
   }
 
   @Override

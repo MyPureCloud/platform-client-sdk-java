@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -148,7 +149,7 @@ public class PatchSurveyQuestion  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Label of question.
    **/
@@ -166,7 +167,7 @@ public class PatchSurveyQuestion  implements Serializable {
     this.label = label;
   }
 
-  
+
   /**
    * The customer property that the answer maps to.
    **/
@@ -184,7 +185,7 @@ public class PatchSurveyQuestion  implements Serializable {
     this.customerProperty = customerProperty;
   }
 
-  
+
   /**
    * Choices available to user.
    **/
@@ -202,7 +203,7 @@ public class PatchSurveyQuestion  implements Serializable {
     this.choices = choices;
   }
 
-  
+
   /**
    * Whether answering this question is mandatory.
    **/
@@ -220,7 +221,6 @@ public class PatchSurveyQuestion  implements Serializable {
     this.isMandatory = isMandatory;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -231,11 +231,12 @@ public class PatchSurveyQuestion  implements Serializable {
       return false;
     }
     PatchSurveyQuestion patchSurveyQuestion = (PatchSurveyQuestion) o;
+
     return Objects.equals(this.type, patchSurveyQuestion.type) &&
-        Objects.equals(this.label, patchSurveyQuestion.label) &&
-        Objects.equals(this.customerProperty, patchSurveyQuestion.customerProperty) &&
-        Objects.equals(this.choices, patchSurveyQuestion.choices) &&
-        Objects.equals(this.isMandatory, patchSurveyQuestion.isMandatory);
+            Objects.equals(this.label, patchSurveyQuestion.label) &&
+            Objects.equals(this.customerProperty, patchSurveyQuestion.customerProperty) &&
+            Objects.equals(this.choices, patchSurveyQuestion.choices) &&
+            Objects.equals(this.isMandatory, patchSurveyQuestion.isMandatory);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -95,7 +96,7 @@ public class MailFromResult  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The list of DNS records that pertain that need to exist for verification.
    **/
@@ -113,7 +114,7 @@ public class MailFromResult  implements Serializable {
     this.records = records;
   }
 
-  
+
   /**
    * The custom MAIL FROM domain.
    **/
@@ -131,7 +132,6 @@ public class MailFromResult  implements Serializable {
     this.mailFromDomain = mailFromDomain;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -142,9 +142,10 @@ public class MailFromResult  implements Serializable {
       return false;
     }
     MailFromResult mailFromResult = (MailFromResult) o;
+
     return Objects.equals(this.status, mailFromResult.status) &&
-        Objects.equals(this.records, mailFromResult.records) &&
-        Objects.equals(this.mailFromDomain, mailFromResult.mailFromDomain);
+            Objects.equals(this.records, mailFromResult.records) &&
+            Objects.equals(this.mailFromDomain, mailFromResult.mailFromDomain);
   }
 
   @Override

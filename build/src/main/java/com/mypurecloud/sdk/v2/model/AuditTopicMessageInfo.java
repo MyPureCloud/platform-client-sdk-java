@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class AuditTopicMessageInfo  implements Serializable {
     this.localizableMessageCode = localizableMessageCode;
   }
 
-  
+
   /**
    **/
   public AuditTopicMessageInfo message(String message) {
@@ -62,7 +63,7 @@ public class AuditTopicMessageInfo  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public AuditTopicMessageInfo messageWithParams(String messageWithParams) {
@@ -79,7 +80,7 @@ public class AuditTopicMessageInfo  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public AuditTopicMessageInfo messageParams(Map<String, String> messageParams) {
@@ -96,7 +97,6 @@ public class AuditTopicMessageInfo  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class AuditTopicMessageInfo  implements Serializable {
       return false;
     }
     AuditTopicMessageInfo auditTopicMessageInfo = (AuditTopicMessageInfo) o;
+
     return Objects.equals(this.localizableMessageCode, auditTopicMessageInfo.localizableMessageCode) &&
-        Objects.equals(this.message, auditTopicMessageInfo.message) &&
-        Objects.equals(this.messageWithParams, auditTopicMessageInfo.messageWithParams) &&
-        Objects.equals(this.messageParams, auditTopicMessageInfo.messageParams);
+            Objects.equals(this.message, auditTopicMessageInfo.message) &&
+            Objects.equals(this.messageWithParams, auditTopicMessageInfo.messageWithParams) &&
+            Objects.equals(this.messageParams, auditTopicMessageInfo.messageParams);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class AuthenticationSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The integration identifier which contains the auth settings required on the deployment.
    **/
@@ -60,7 +61,6 @@ public class AuthenticationSettings  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class AuthenticationSettings  implements Serializable {
       return false;
     }
     AuthenticationSettings authenticationSettings = (AuthenticationSettings) o;
+
     return Objects.equals(this.enabled, authenticationSettings.enabled) &&
-        Objects.equals(this.integrationId, authenticationSettings.integrationId);
+            Objects.equals(this.integrationId, authenticationSettings.integrationId);
   }
 
   @Override

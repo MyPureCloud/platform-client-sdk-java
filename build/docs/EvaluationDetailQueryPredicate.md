@@ -23,10 +23,10 @@ title: EvaluationDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DIMENSION | &quot;dimension&quot; |
-| PROPERTY | &quot;property&quot; |
-| METRIC | &quot;metric&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DIMENSION | &quot;dimension&quot; | 
+| PROPERTY | &quot;property&quot; | 
+| METRIC | &quot;metric&quot; | 
 {: class="table table-striped"}
 
 
@@ -36,19 +36,19 @@ title: EvaluationDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CALIBRATIONID | &quot;calibrationId&quot; |
-| CONTEXTID | &quot;contextId&quot; |
-| DELETED | &quot;deleted&quot; |
-| EVALUATIONID | &quot;evaluationId&quot; |
-| EVALUATORID | &quot;evaluatorId&quot; |
-| EVENTTIME | &quot;eventTime&quot; |
-| FORMID | &quot;formId&quot; |
-| FORMNAME | &quot;formName&quot; |
-| QUEUEID | &quot;queueId&quot; |
-| RELEASED | &quot;released&quot; |
-| RESCORED | &quot;rescored&quot; |
-| USERID | &quot;userId&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CALIBRATIONID | &quot;calibrationId&quot; | 
+| CONTEXTID | &quot;contextId&quot; | 
+| DELETED | &quot;deleted&quot; | 
+| EVALUATIONID | &quot;evaluationId&quot; | 
+| EVALUATORID | &quot;evaluatorId&quot; | 
+| EVENTTIME | &quot;eventTime&quot; | 
+| FORMID | &quot;formId&quot; | 
+| FORMNAME | &quot;formName&quot; | 
+| QUEUEID | &quot;queueId&quot; | 
+| RELEASED | &quot;released&quot; | 
+| RESCORED | &quot;rescored&quot; | 
+| USERID | &quot;userId&quot; | 
 {: class="table table-striped"}
 
 
@@ -58,9 +58,9 @@ title: EvaluationDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; |
-| OTOTALSCORE | &quot;oTotalScore&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; | 
+| OTOTALSCORE | &quot;oTotalScore&quot; | 
 {: class="table table-striped"}
 
 
@@ -70,10 +70,10 @@ title: EvaluationDetailQueryPredicate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MATCHES | &quot;matches&quot; |
-| EXISTS | &quot;exists&quot; |
-| NOTEXISTS | &quot;notExists&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MATCHES | &quot;matches&quot; | 
+| EXISTS | &quot;exists&quot; | 
+| NOTEXISTS | &quot;notExists&quot; | 
 {: class="table table-striped"}
 
 

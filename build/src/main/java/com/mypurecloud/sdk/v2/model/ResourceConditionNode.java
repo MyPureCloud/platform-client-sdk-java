@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ResourceConditionNode;
 import com.mypurecloud.sdk.v2.model.ResourceConditionValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -146,7 +146,7 @@ public class ResourceConditionNode  implements Serializable {
     this.variableName = variableName;
   }
 
-  
+
   /**
    **/
   public ResourceConditionNode conjunction(ConjunctionEnum conjunction) {
@@ -163,7 +163,7 @@ public class ResourceConditionNode  implements Serializable {
     this.conjunction = conjunction;
   }
 
-  
+
   /**
    **/
   public ResourceConditionNode operator(OperatorEnum operator) {
@@ -180,7 +180,7 @@ public class ResourceConditionNode  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    **/
   public ResourceConditionNode operands(List<ResourceConditionValue> operands) {
@@ -197,7 +197,7 @@ public class ResourceConditionNode  implements Serializable {
     this.operands = operands;
   }
 
-  
+
   /**
    **/
   public ResourceConditionNode terms(List<ResourceConditionNode> terms) {
@@ -214,7 +214,6 @@ public class ResourceConditionNode  implements Serializable {
     this.terms = terms;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -225,11 +224,12 @@ public class ResourceConditionNode  implements Serializable {
       return false;
     }
     ResourceConditionNode resourceConditionNode = (ResourceConditionNode) o;
+
     return Objects.equals(this.variableName, resourceConditionNode.variableName) &&
-        Objects.equals(this.conjunction, resourceConditionNode.conjunction) &&
-        Objects.equals(this.operator, resourceConditionNode.operator) &&
-        Objects.equals(this.operands, resourceConditionNode.operands) &&
-        Objects.equals(this.terms, resourceConditionNode.terms);
+            Objects.equals(this.conjunction, resourceConditionNode.conjunction) &&
+            Objects.equals(this.operator, resourceConditionNode.operator) &&
+            Objects.equals(this.operands, resourceConditionNode.operands) &&
+            Objects.equals(this.terms, resourceConditionNode.terms);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicJourneyAction;
@@ -45,7 +46,7 @@ public class QueueConversationEventTopicJourneyContext  implements Serializable 
     this.customer = customer;
   }
 
-  
+
   /**
    **/
   public QueueConversationEventTopicJourneyContext customerSession(QueueConversationEventTopicJourneyCustomerSession customerSession) {
@@ -62,7 +63,7 @@ public class QueueConversationEventTopicJourneyContext  implements Serializable 
     this.customerSession = customerSession;
   }
 
-  
+
   /**
    **/
   public QueueConversationEventTopicJourneyContext triggeringAction(QueueConversationEventTopicJourneyAction triggeringAction) {
@@ -79,7 +80,6 @@ public class QueueConversationEventTopicJourneyContext  implements Serializable 
     this.triggeringAction = triggeringAction;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class QueueConversationEventTopicJourneyContext  implements Serializable 
       return false;
     }
     QueueConversationEventTopicJourneyContext queueConversationEventTopicJourneyContext = (QueueConversationEventTopicJourneyContext) o;
+
     return Objects.equals(this.customer, queueConversationEventTopicJourneyContext.customer) &&
-        Objects.equals(this.customerSession, queueConversationEventTopicJourneyContext.customerSession) &&
-        Objects.equals(this.triggeringAction, queueConversationEventTopicJourneyContext.triggeringAction);
+            Objects.equals(this.customerSession, queueConversationEventTopicJourneyContext.customerSession) &&
+            Objects.equals(this.triggeringAction, queueConversationEventTopicJourneyContext.triggeringAction);
   }
 
   @Override

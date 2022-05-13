@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GroupGreetingEventGreetingAudioFile;
@@ -47,7 +48,7 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreeting name(String name) {
@@ -64,7 +65,7 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreeting type(String type) {
@@ -81,7 +82,7 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreeting ownerType(String ownerType) {
@@ -98,7 +99,7 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.ownerType = ownerType;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreeting owner(GroupGreetingEventGreetingOwner owner) {
@@ -115,7 +116,7 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreeting greetingAudioFile(GroupGreetingEventGreetingAudioFile greetingAudioFile) {
@@ -132,7 +133,7 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.greetingAudioFile = greetingAudioFile;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreeting audioTTS(String audioTTS) {
@@ -149,7 +150,6 @@ public class GroupGreetingEventGreeting  implements Serializable {
     this.audioTTS = audioTTS;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -160,13 +160,14 @@ public class GroupGreetingEventGreeting  implements Serializable {
       return false;
     }
     GroupGreetingEventGreeting groupGreetingEventGreeting = (GroupGreetingEventGreeting) o;
+
     return Objects.equals(this.id, groupGreetingEventGreeting.id) &&
-        Objects.equals(this.name, groupGreetingEventGreeting.name) &&
-        Objects.equals(this.type, groupGreetingEventGreeting.type) &&
-        Objects.equals(this.ownerType, groupGreetingEventGreeting.ownerType) &&
-        Objects.equals(this.owner, groupGreetingEventGreeting.owner) &&
-        Objects.equals(this.greetingAudioFile, groupGreetingEventGreeting.greetingAudioFile) &&
-        Objects.equals(this.audioTTS, groupGreetingEventGreeting.audioTTS);
+            Objects.equals(this.name, groupGreetingEventGreeting.name) &&
+            Objects.equals(this.type, groupGreetingEventGreeting.type) &&
+            Objects.equals(this.ownerType, groupGreetingEventGreeting.ownerType) &&
+            Objects.equals(this.owner, groupGreetingEventGreeting.owner) &&
+            Objects.equals(this.greetingAudioFile, groupGreetingEventGreeting.greetingAudioFile) &&
+            Objects.equals(this.audioTTS, groupGreetingEventGreeting.audioTTS);
   }
 
   @Override

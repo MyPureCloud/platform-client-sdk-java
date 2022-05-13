@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class EncryptionKey  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public EncryptionKey name(String name) {
@@ -107,7 +108,7 @@ public class EncryptionKey  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -125,7 +126,7 @@ public class EncryptionKey  implements Serializable {
     this.createDate = createDate;
   }
 
-  
+
   /**
    * key data summary (base 64 encoded public key)
    **/
@@ -143,7 +144,7 @@ public class EncryptionKey  implements Serializable {
     this.keydataSummary = keydataSummary;
   }
 
-  
+
   /**
    * user that requested generation of public key
    **/
@@ -161,7 +162,7 @@ public class EncryptionKey  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * Local configuration
    **/
@@ -179,7 +180,7 @@ public class EncryptionKey  implements Serializable {
     this.localEncryptionConfiguration = localEncryptionConfiguration;
   }
 
-  
+
   /**
    * Key type used in this configuration
    **/
@@ -197,7 +198,7 @@ public class EncryptionKey  implements Serializable {
     this.keyConfigurationType = keyConfigurationType;
   }
 
-  
+
   /**
    * ARN of internal key to be wrapped by AWS KMS Symmetric key
    **/
@@ -215,14 +216,13 @@ public class EncryptionKey  implements Serializable {
     this.kmsKeyArn = kmsKeyArn;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,15 +233,16 @@ public class EncryptionKey  implements Serializable {
       return false;
     }
     EncryptionKey encryptionKey = (EncryptionKey) o;
+
     return Objects.equals(this.id, encryptionKey.id) &&
-        Objects.equals(this.name, encryptionKey.name) &&
-        Objects.equals(this.createDate, encryptionKey.createDate) &&
-        Objects.equals(this.keydataSummary, encryptionKey.keydataSummary) &&
-        Objects.equals(this.user, encryptionKey.user) &&
-        Objects.equals(this.localEncryptionConfiguration, encryptionKey.localEncryptionConfiguration) &&
-        Objects.equals(this.keyConfigurationType, encryptionKey.keyConfigurationType) &&
-        Objects.equals(this.kmsKeyArn, encryptionKey.kmsKeyArn) &&
-        Objects.equals(this.selfUri, encryptionKey.selfUri);
+            Objects.equals(this.name, encryptionKey.name) &&
+            Objects.equals(this.createDate, encryptionKey.createDate) &&
+            Objects.equals(this.keydataSummary, encryptionKey.keydataSummary) &&
+            Objects.equals(this.user, encryptionKey.user) &&
+            Objects.equals(this.localEncryptionConfiguration, encryptionKey.localEncryptionConfiguration) &&
+            Objects.equals(this.keyConfigurationType, encryptionKey.keyConfigurationType) &&
+            Objects.equals(this.kmsKeyArn, encryptionKey.kmsKeyArn) &&
+            Objects.equals(this.selfUri, encryptionKey.selfUri);
   }
 
   @Override

@@ -32,12 +32,12 @@ title: NluDomainVersion
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNTRAINED | &quot;Untrained&quot; |
-| TRAINING | &quot;Training&quot; |
-| TRAINED | &quot;Trained&quot; |
-| ERROR | &quot;Error&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNTRAINED | &quot;Untrained&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| TRAINED | &quot;Trained&quot; | 
+| ERROR | &quot;Error&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 
@@ -47,11 +47,11 @@ title: NluDomainVersion
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNEVALUATED | &quot;Unevaluated&quot; |
-| EVALUATING | &quot;Evaluating&quot; |
-| EVALUATED | &quot;Evaluated&quot; |
-| ERROR | &quot;Error&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNEVALUATED | &quot;Unevaluated&quot; | 
+| EVALUATING | &quot;Evaluating&quot; | 
+| EVALUATED | &quot;Evaluated&quot; | 
+| ERROR | &quot;Error&quot; | 
 {: class="table table-striped"}
 
 

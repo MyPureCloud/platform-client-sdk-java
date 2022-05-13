@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -220,7 +221,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The display friendly name of the participant.
    **/
@@ -238,7 +239,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The participant address.
    **/
@@ -256,7 +257,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.address = address;
   }
 
-  
+
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -274,7 +275,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -292,7 +293,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -310,7 +311,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-  
+
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -328,7 +329,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * The call ANI.
    **/
@@ -346,7 +347,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    * The call DNIS.
    **/
@@ -364,7 +365,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    * The PureCloud user for this participant.
    **/
@@ -382,7 +383,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The PureCloud queue for this participant.
    **/
@@ -400,7 +401,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.queue = queue;
   }
 
-  
+
   /**
    * The group involved in the group ring call.
    **/
@@ -418,7 +419,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.group = group;
   }
 
-  
+
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -436,7 +437,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The PureCloud external contact
    **/
@@ -454,7 +455,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    * The PureCloud external organization
    **/
@@ -472,7 +473,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    * Indicates whether the contact ever connected
    **/
@@ -490,7 +491,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.didInteract = didInteract;
   }
 
-  
+
   /**
    * Indicates SIP Response codes associated with the participant
    **/
@@ -508,7 +509,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.sipResponseCodes = sipResponseCodes;
   }
 
-  
+
   /**
    * The reason specifying why participant flagged the conversation.
    **/
@@ -526,7 +527,7 @@ public class CallHistoryParticipant  implements Serializable {
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * The outbound campaign associated with the participant
    **/
@@ -544,7 +545,6 @@ public class CallHistoryParticipant  implements Serializable {
     this.outboundCampaign = outboundCampaign;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -555,25 +555,26 @@ public class CallHistoryParticipant  implements Serializable {
       return false;
     }
     CallHistoryParticipant callHistoryParticipant = (CallHistoryParticipant) o;
+
     return Objects.equals(this.id, callHistoryParticipant.id) &&
-        Objects.equals(this.name, callHistoryParticipant.name) &&
-        Objects.equals(this.address, callHistoryParticipant.address) &&
-        Objects.equals(this.startTime, callHistoryParticipant.startTime) &&
-        Objects.equals(this.endTime, callHistoryParticipant.endTime) &&
-        Objects.equals(this.purpose, callHistoryParticipant.purpose) &&
-        Objects.equals(this.direction, callHistoryParticipant.direction) &&
-        Objects.equals(this.ani, callHistoryParticipant.ani) &&
-        Objects.equals(this.dnis, callHistoryParticipant.dnis) &&
-        Objects.equals(this.user, callHistoryParticipant.user) &&
-        Objects.equals(this.queue, callHistoryParticipant.queue) &&
-        Objects.equals(this.group, callHistoryParticipant.group) &&
-        Objects.equals(this.disconnectType, callHistoryParticipant.disconnectType) &&
-        Objects.equals(this.externalContact, callHistoryParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization) &&
-        Objects.equals(this.didInteract, callHistoryParticipant.didInteract) &&
-        Objects.equals(this.sipResponseCodes, callHistoryParticipant.sipResponseCodes) &&
-        Objects.equals(this.flaggedReason, callHistoryParticipant.flaggedReason) &&
-        Objects.equals(this.outboundCampaign, callHistoryParticipant.outboundCampaign);
+            Objects.equals(this.name, callHistoryParticipant.name) &&
+            Objects.equals(this.address, callHistoryParticipant.address) &&
+            Objects.equals(this.startTime, callHistoryParticipant.startTime) &&
+            Objects.equals(this.endTime, callHistoryParticipant.endTime) &&
+            Objects.equals(this.purpose, callHistoryParticipant.purpose) &&
+            Objects.equals(this.direction, callHistoryParticipant.direction) &&
+            Objects.equals(this.ani, callHistoryParticipant.ani) &&
+            Objects.equals(this.dnis, callHistoryParticipant.dnis) &&
+            Objects.equals(this.user, callHistoryParticipant.user) &&
+            Objects.equals(this.queue, callHistoryParticipant.queue) &&
+            Objects.equals(this.group, callHistoryParticipant.group) &&
+            Objects.equals(this.disconnectType, callHistoryParticipant.disconnectType) &&
+            Objects.equals(this.externalContact, callHistoryParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization) &&
+            Objects.equals(this.didInteract, callHistoryParticipant.didInteract) &&
+            Objects.equals(this.sipResponseCodes, callHistoryParticipant.sipResponseCodes) &&
+            Objects.equals(this.flaggedReason, callHistoryParticipant.flaggedReason) &&
+            Objects.equals(this.outboundCampaign, callHistoryParticipant.outboundCampaign);
   }
 
   @Override

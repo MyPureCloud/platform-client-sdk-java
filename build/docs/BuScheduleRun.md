@@ -35,13 +35,13 @@ title: BuScheduleRun
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;None&quot; |
-| QUEUED | &quot;Queued&quot; |
-| SCHEDULING | &quot;Scheduling&quot; |
-| CANCELED | &quot;Canceled&quot; |
-| FAILED | &quot;Failed&quot; |
-| COMPLETE | &quot;Complete&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;None&quot; | 
+| QUEUED | &quot;Queued&quot; | 
+| SCHEDULING | &quot;Scheduling&quot; | 
+| CANCELED | &quot;Canceled&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
 {: class="table table-striped"}
 
 

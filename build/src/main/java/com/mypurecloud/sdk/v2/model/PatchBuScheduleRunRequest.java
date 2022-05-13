@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PatchBuReschedulingOptionsRequest;
@@ -41,7 +42,6 @@ public class PatchBuScheduleRunRequest  implements Serializable {
     this.reschedulingOptions = reschedulingOptions;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -52,6 +52,7 @@ public class PatchBuScheduleRunRequest  implements Serializable {
       return false;
     }
     PatchBuScheduleRunRequest patchBuScheduleRunRequest = (PatchBuScheduleRunRequest) o;
+
     return Objects.equals(this.reschedulingOptions, patchBuScheduleRunRequest.reschedulingOptions);
   }
 

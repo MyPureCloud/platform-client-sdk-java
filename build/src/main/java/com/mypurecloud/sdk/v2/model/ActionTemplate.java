@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -139,7 +140,7 @@ public class ActionTemplate  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Name of the action template.
    **/
@@ -157,7 +158,7 @@ public class ActionTemplate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Description of the action template's functionality.
    **/
@@ -175,7 +176,7 @@ public class ActionTemplate  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * Media type of action described by the action template.
    **/
@@ -193,7 +194,7 @@ public class ActionTemplate  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Whether the action template is currently active, inactive or deleted.
    **/
@@ -211,7 +212,7 @@ public class ActionTemplate  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Properties used to configure an action of type content offer
    **/
@@ -229,28 +230,27 @@ public class ActionTemplate  implements Serializable {
     this.contentOffer = contentOffer;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date when action template was created in ISO-8601 format.")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date when action template was last modified in ISO-8601 format.")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -261,15 +261,16 @@ public class ActionTemplate  implements Serializable {
       return false;
     }
     ActionTemplate actionTemplate = (ActionTemplate) o;
+
     return Objects.equals(this.id, actionTemplate.id) &&
-        Objects.equals(this.name, actionTemplate.name) &&
-        Objects.equals(this.description, actionTemplate.description) &&
-        Objects.equals(this.mediaType, actionTemplate.mediaType) &&
-        Objects.equals(this.state, actionTemplate.state) &&
-        Objects.equals(this.contentOffer, actionTemplate.contentOffer) &&
-        Objects.equals(this.selfUri, actionTemplate.selfUri) &&
-        Objects.equals(this.createdDate, actionTemplate.createdDate) &&
-        Objects.equals(this.modifiedDate, actionTemplate.modifiedDate);
+            Objects.equals(this.name, actionTemplate.name) &&
+            Objects.equals(this.description, actionTemplate.description) &&
+            Objects.equals(this.mediaType, actionTemplate.mediaType) &&
+            Objects.equals(this.state, actionTemplate.state) &&
+            Objects.equals(this.contentOffer, actionTemplate.contentOffer) &&
+            Objects.equals(this.selfUri, actionTemplate.selfUri) &&
+            Objects.equals(this.createdDate, actionTemplate.createdDate) &&
+            Objects.equals(this.modifiedDate, actionTemplate.modifiedDate);
   }
 
   @Override

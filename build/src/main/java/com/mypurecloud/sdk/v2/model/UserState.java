@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class UserState  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * Version of this user.
    **/
@@ -162,7 +163,7 @@ public class UserState  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Reason for a change in the user's state.
    **/
@@ -180,14 +181,13 @@ public class UserState  implements Serializable {
     this.stateChangeReason = stateChangeReason;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Date that the state was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("stateChangeDate")
   public Date getStateChangeDate() {
     return stateChangeDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,10 +198,11 @@ public class UserState  implements Serializable {
       return false;
     }
     UserState userState = (UserState) o;
+
     return Objects.equals(this.state, userState.state) &&
-        Objects.equals(this.version, userState.version) &&
-        Objects.equals(this.stateChangeReason, userState.stateChangeReason) &&
-        Objects.equals(this.stateChangeDate, userState.stateChangeDate);
+            Objects.equals(this.version, userState.version) &&
+            Objects.equals(this.stateChangeReason, userState.stateChangeReason) &&
+            Objects.equals(this.stateChangeDate, userState.stateChangeDate);
   }
 
   @Override

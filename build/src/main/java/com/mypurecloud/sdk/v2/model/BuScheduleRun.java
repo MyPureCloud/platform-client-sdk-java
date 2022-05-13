@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -106,7 +107,7 @@ public class BuScheduleRun  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The scheduler run ID.  Reference this value for support
    **/
@@ -124,7 +125,7 @@ public class BuScheduleRun  implements Serializable {
     this.schedulerRunId = schedulerRunId;
   }
 
-  
+
   /**
    * Whether this is an intraday rescheduling run
    **/
@@ -142,7 +143,7 @@ public class BuScheduleRun  implements Serializable {
     this.intradayRescheduling = intradayRescheduling;
   }
 
-  
+
   /**
    * The state of the generation run
    **/
@@ -160,7 +161,7 @@ public class BuScheduleRun  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The number of weeks spanned by the schedule
    **/
@@ -178,7 +179,7 @@ public class BuScheduleRun  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * Percent completion of the schedule run
    **/
@@ -196,7 +197,7 @@ public class BuScheduleRun  implements Serializable {
     this.percentComplete = percentComplete;
   }
 
-  
+
   /**
    * The start date of the target week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
@@ -214,7 +215,7 @@ public class BuScheduleRun  implements Serializable {
     this.targetWeek = targetWeek;
   }
 
-  
+
   /**
    * The generated schedule.  Null unless the schedule run is complete
    **/
@@ -232,7 +233,7 @@ public class BuScheduleRun  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   /**
    * The description of the generated schedule
    **/
@@ -250,7 +251,7 @@ public class BuScheduleRun  implements Serializable {
     this.scheduleDescription = scheduleDescription;
   }
 
-  
+
   /**
    * When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -268,7 +269,7 @@ public class BuScheduleRun  implements Serializable {
     this.schedulingStartTime = schedulingStartTime;
   }
 
-  
+
   /**
    * The user who started the scheduling run
    **/
@@ -286,7 +287,7 @@ public class BuScheduleRun  implements Serializable {
     this.schedulingStartedBy = schedulingStartedBy;
   }
 
-  
+
   /**
    * The user who canceled the scheduling run, if applicable
    **/
@@ -304,7 +305,7 @@ public class BuScheduleRun  implements Serializable {
     this.schedulingCanceledBy = schedulingCanceledBy;
   }
 
-  
+
   /**
    * When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -322,7 +323,7 @@ public class BuScheduleRun  implements Serializable {
     this.schedulingCompletedTime = schedulingCompletedTime;
   }
 
-  
+
   /**
    * The number of schedule generation messages for this schedule generation run
    **/
@@ -340,7 +341,7 @@ public class BuScheduleRun  implements Serializable {
     this.messageCount = messageCount;
   }
 
-  
+
   /**
    * The list of schedule generation message counts by severity for this schedule generation run
    **/
@@ -358,7 +359,7 @@ public class BuScheduleRun  implements Serializable {
     this.messageSeverityCounts = messageSeverityCounts;
   }
 
-  
+
   /**
    * Rescheduling options for this run.  Null unless intradayRescheduling is true
    **/
@@ -376,7 +377,7 @@ public class BuScheduleRun  implements Serializable {
     this.reschedulingOptions = reschedulingOptions;
   }
 
-  
+
   /**
    * When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -394,14 +395,13 @@ public class BuScheduleRun  implements Serializable {
     this.reschedulingResultExpiration = reschedulingResultExpiration;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -412,24 +412,25 @@ public class BuScheduleRun  implements Serializable {
       return false;
     }
     BuScheduleRun buScheduleRun = (BuScheduleRun) o;
+
     return Objects.equals(this.id, buScheduleRun.id) &&
-        Objects.equals(this.schedulerRunId, buScheduleRun.schedulerRunId) &&
-        Objects.equals(this.intradayRescheduling, buScheduleRun.intradayRescheduling) &&
-        Objects.equals(this.state, buScheduleRun.state) &&
-        Objects.equals(this.weekCount, buScheduleRun.weekCount) &&
-        Objects.equals(this.percentComplete, buScheduleRun.percentComplete) &&
-        Objects.equals(this.targetWeek, buScheduleRun.targetWeek) &&
-        Objects.equals(this.schedule, buScheduleRun.schedule) &&
-        Objects.equals(this.scheduleDescription, buScheduleRun.scheduleDescription) &&
-        Objects.equals(this.schedulingStartTime, buScheduleRun.schedulingStartTime) &&
-        Objects.equals(this.schedulingStartedBy, buScheduleRun.schedulingStartedBy) &&
-        Objects.equals(this.schedulingCanceledBy, buScheduleRun.schedulingCanceledBy) &&
-        Objects.equals(this.schedulingCompletedTime, buScheduleRun.schedulingCompletedTime) &&
-        Objects.equals(this.messageCount, buScheduleRun.messageCount) &&
-        Objects.equals(this.messageSeverityCounts, buScheduleRun.messageSeverityCounts) &&
-        Objects.equals(this.reschedulingOptions, buScheduleRun.reschedulingOptions) &&
-        Objects.equals(this.reschedulingResultExpiration, buScheduleRun.reschedulingResultExpiration) &&
-        Objects.equals(this.selfUri, buScheduleRun.selfUri);
+            Objects.equals(this.schedulerRunId, buScheduleRun.schedulerRunId) &&
+            Objects.equals(this.intradayRescheduling, buScheduleRun.intradayRescheduling) &&
+            Objects.equals(this.state, buScheduleRun.state) &&
+            Objects.equals(this.weekCount, buScheduleRun.weekCount) &&
+            Objects.equals(this.percentComplete, buScheduleRun.percentComplete) &&
+            Objects.equals(this.targetWeek, buScheduleRun.targetWeek) &&
+            Objects.equals(this.schedule, buScheduleRun.schedule) &&
+            Objects.equals(this.scheduleDescription, buScheduleRun.scheduleDescription) &&
+            Objects.equals(this.schedulingStartTime, buScheduleRun.schedulingStartTime) &&
+            Objects.equals(this.schedulingStartedBy, buScheduleRun.schedulingStartedBy) &&
+            Objects.equals(this.schedulingCanceledBy, buScheduleRun.schedulingCanceledBy) &&
+            Objects.equals(this.schedulingCompletedTime, buScheduleRun.schedulingCompletedTime) &&
+            Objects.equals(this.messageCount, buScheduleRun.messageCount) &&
+            Objects.equals(this.messageSeverityCounts, buScheduleRun.messageSeverityCounts) &&
+            Objects.equals(this.reschedulingOptions, buScheduleRun.reschedulingOptions) &&
+            Objects.equals(this.reschedulingResultExpiration, buScheduleRun.reschedulingResultExpiration) &&
+            Objects.equals(this.selfUri, buScheduleRun.selfUri);
   }
 
   @Override

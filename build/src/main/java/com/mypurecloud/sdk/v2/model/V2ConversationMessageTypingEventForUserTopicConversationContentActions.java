@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentActi
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentActions urlTarget(String urlTarget) {
@@ -58,7 +59,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentActi
     this.urlTarget = urlTarget;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationContentActions textback(String textback) {
@@ -75,7 +76,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentActi
     this.textback = textback;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,9 +86,10 @@ public class V2ConversationMessageTypingEventForUserTopicConversationContentActi
       return false;
     }
     V2ConversationMessageTypingEventForUserTopicConversationContentActions v2ConversationMessageTypingEventForUserTopicConversationContentActions = (V2ConversationMessageTypingEventForUserTopicConversationContentActions) o;
+
     return Objects.equals(this.url, v2ConversationMessageTypingEventForUserTopicConversationContentActions.url) &&
-        Objects.equals(this.urlTarget, v2ConversationMessageTypingEventForUserTopicConversationContentActions.urlTarget) &&
-        Objects.equals(this.textback, v2ConversationMessageTypingEventForUserTopicConversationContentActions.textback);
+            Objects.equals(this.urlTarget, v2ConversationMessageTypingEventForUserTopicConversationContentActions.urlTarget) &&
+            Objects.equals(this.textback, v2ConversationMessageTypingEventForUserTopicConversationContentActions.textback);
   }
 
   @Override

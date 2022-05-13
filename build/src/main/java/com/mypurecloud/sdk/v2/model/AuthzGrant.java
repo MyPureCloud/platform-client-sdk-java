@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
@@ -45,7 +46,7 @@ public class AuthzGrant  implements Serializable {
     this.subjectId = subjectId;
   }
 
-  
+
   /**
    **/
   public AuthzGrant division(AuthzDivision division) {
@@ -62,7 +63,7 @@ public class AuthzGrant  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public AuthzGrant role(AuthzGrantRole role) {
@@ -79,7 +80,7 @@ public class AuthzGrant  implements Serializable {
     this.role = role;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -97,7 +98,6 @@ public class AuthzGrant  implements Serializable {
     this.grantMadeAt = grantMadeAt;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class AuthzGrant  implements Serializable {
       return false;
     }
     AuthzGrant authzGrant = (AuthzGrant) o;
+
     return Objects.equals(this.subjectId, authzGrant.subjectId) &&
-        Objects.equals(this.division, authzGrant.division) &&
-        Objects.equals(this.role, authzGrant.role) &&
-        Objects.equals(this.grantMadeAt, authzGrant.grantMadeAt);
+            Objects.equals(this.division, authzGrant.division) &&
+            Objects.equals(this.role, authzGrant.role) &&
+            Objects.equals(this.grantMadeAt, authzGrant.grantMadeAt);
   }
 
   @Override

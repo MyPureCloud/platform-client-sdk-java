@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
@@ -44,7 +45,7 @@ public class GetProfilesResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public GetProfilesResponse entities(List<PerformanceProfile> entities) {
@@ -61,7 +62,7 @@ public class GetProfilesResponse  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public GetProfilesResponse selfUri(String selfUri) {
@@ -78,7 +79,6 @@ public class GetProfilesResponse  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class GetProfilesResponse  implements Serializable {
       return false;
     }
     GetProfilesResponse getProfilesResponse = (GetProfilesResponse) o;
+
     return Objects.equals(this.total, getProfilesResponse.total) &&
-        Objects.equals(this.entities, getProfilesResponse.entities) &&
-        Objects.equals(this.selfUri, getProfilesResponse.selfUri);
+            Objects.equals(this.entities, getProfilesResponse.entities) &&
+            Objects.equals(this.selfUri, getProfilesResponse.selfUri);
   }
 
   @Override

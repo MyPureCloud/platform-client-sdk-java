@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.TrunkErrorInfo;
@@ -45,7 +46,7 @@ public class TrunkMetricsRegisters  implements Serializable {
     this.proxyAddress = proxyAddress;
   }
 
-  
+
   /**
    * True if last REGISTER message had positive response; false if error response or no response.
    **/
@@ -63,7 +64,7 @@ public class TrunkMetricsRegisters  implements Serializable {
     this.registerState = registerState;
   }
 
-  
+
   /**
    * ISO 8601 format UTC absolute date & time of the last change of the register state.
    **/
@@ -81,7 +82,7 @@ public class TrunkMetricsRegisters  implements Serializable {
     this.registerStateTime = registerStateTime;
   }
 
-  
+
   /**
    **/
   public TrunkMetricsRegisters errorInfo(TrunkErrorInfo errorInfo) {
@@ -98,7 +99,6 @@ public class TrunkMetricsRegisters  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class TrunkMetricsRegisters  implements Serializable {
       return false;
     }
     TrunkMetricsRegisters trunkMetricsRegisters = (TrunkMetricsRegisters) o;
+
     return Objects.equals(this.proxyAddress, trunkMetricsRegisters.proxyAddress) &&
-        Objects.equals(this.registerState, trunkMetricsRegisters.registerState) &&
-        Objects.equals(this.registerStateTime, trunkMetricsRegisters.registerStateTime) &&
-        Objects.equals(this.errorInfo, trunkMetricsRegisters.errorInfo);
+            Objects.equals(this.registerState, trunkMetricsRegisters.registerState) &&
+            Objects.equals(this.registerStateTime, trunkMetricsRegisters.registerStateTime) &&
+            Objects.equals(this.errorInfo, trunkMetricsRegisters.errorInfo);
   }
 
   @Override

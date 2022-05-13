@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class TrunkInstanceTopicTrunkConnectedStatus  implements Serializable {
     this.connected = connected;
   }
 
-  
+
   /**
    **/
   public TrunkInstanceTopicTrunkConnectedStatus connectedStateTime(Date connectedStateTime) {
@@ -58,7 +59,6 @@ public class TrunkInstanceTopicTrunkConnectedStatus  implements Serializable {
     this.connectedStateTime = connectedStateTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class TrunkInstanceTopicTrunkConnectedStatus  implements Serializable {
       return false;
     }
     TrunkInstanceTopicTrunkConnectedStatus trunkInstanceTopicTrunkConnectedStatus = (TrunkInstanceTopicTrunkConnectedStatus) o;
+
     return Objects.equals(this.connected, trunkInstanceTopicTrunkConnectedStatus.connected) &&
-        Objects.equals(this.connectedStateTime, trunkInstanceTopicTrunkConnectedStatus.connectedStateTime);
+            Objects.equals(this.connectedStateTime, trunkInstanceTopicTrunkConnectedStatus.connectedStateTime);
   }
 
   @Override

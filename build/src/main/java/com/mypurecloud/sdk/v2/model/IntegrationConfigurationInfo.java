@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
@@ -31,7 +32,6 @@ public class IntegrationConfigurationInfo  implements Serializable {
     return current;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -42,6 +42,7 @@ public class IntegrationConfigurationInfo  implements Serializable {
       return false;
     }
     IntegrationConfigurationInfo integrationConfigurationInfo = (IntegrationConfigurationInfo) o;
+
     return Objects.equals(this.current, integrationConfigurationInfo.current);
   }
 

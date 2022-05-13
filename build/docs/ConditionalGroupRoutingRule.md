@@ -23,8 +23,8 @@ title: ConditionalGroupRoutingRule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ESTIMATEDWAITTIME | &quot;EstimatedWaitTime&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ESTIMATEDWAITTIME | &quot;EstimatedWaitTime&quot; | 
 {: class="table table-striped"}
 
 
@@ -34,11 +34,11 @@ title: ConditionalGroupRoutingRule
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| GREATERTHAN | &quot;GreaterThan&quot; |
-| GREATERTHANOREQUALTO | &quot;GreaterThanOrEqualTo&quot; |
-| LESSTHAN | &quot;LessThan&quot; |
-| LESSTHANOREQUALTO | &quot;LessThanOrEqualTo&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| GREATERTHAN | &quot;GreaterThan&quot; | 
+| GREATERTHANOREQUALTO | &quot;GreaterThanOrEqualTo&quot; | 
+| LESSTHAN | &quot;LessThan&quot; | 
+| LESSTHANOREQUALTO | &quot;LessThanOrEqualTo&quot; | 
 {: class="table table-striped"}
 
 

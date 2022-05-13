@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
@@ -53,7 +54,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-  
+
   /**
    **/
   public ChatMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -70,7 +71,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-  
+
   /**
    **/
   public ChatMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -87,7 +88,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-  
+
   /**
    **/
   public ChatMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -104,7 +105,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-  
+
   /**
    **/
   public ChatMediaPolicyConditions languages(List<Language> languages) {
@@ -121,7 +122,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.languages = languages;
   }
 
-  
+
   /**
    **/
   public ChatMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -138,7 +139,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-  
+
   /**
    **/
   public ChatMediaPolicyConditions duration(DurationCondition duration) {
@@ -155,7 +156,6 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.duration = duration;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -166,13 +166,14 @@ public class ChatMediaPolicyConditions  implements Serializable {
       return false;
     }
     ChatMediaPolicyConditions chatMediaPolicyConditions = (ChatMediaPolicyConditions) o;
+
     return Objects.equals(this.forUsers, chatMediaPolicyConditions.forUsers) &&
-        Objects.equals(this.dateRanges, chatMediaPolicyConditions.dateRanges) &&
-        Objects.equals(this.forQueues, chatMediaPolicyConditions.forQueues) &&
-        Objects.equals(this.wrapupCodes, chatMediaPolicyConditions.wrapupCodes) &&
-        Objects.equals(this.languages, chatMediaPolicyConditions.languages) &&
-        Objects.equals(this.timeAllowed, chatMediaPolicyConditions.timeAllowed) &&
-        Objects.equals(this.duration, chatMediaPolicyConditions.duration);
+            Objects.equals(this.dateRanges, chatMediaPolicyConditions.dateRanges) &&
+            Objects.equals(this.forQueues, chatMediaPolicyConditions.forQueues) &&
+            Objects.equals(this.wrapupCodes, chatMediaPolicyConditions.wrapupCodes) &&
+            Objects.equals(this.languages, chatMediaPolicyConditions.languages) &&
+            Objects.equals(this.timeAllowed, chatMediaPolicyConditions.timeAllowed) &&
+            Objects.equals(this.duration, chatMediaPolicyConditions.duration);
   }
 
   @Override

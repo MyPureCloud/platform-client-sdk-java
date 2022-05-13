@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -47,7 +48,7 @@ public class ParticipantMetrics  implements Serializable {
     this.agentDurationPercentage = agentDurationPercentage;
   }
 
-  
+
   /**
    * Percentage of Customer duration in the conversation
    **/
@@ -65,7 +66,7 @@ public class ParticipantMetrics  implements Serializable {
     this.customerDurationPercentage = customerDurationPercentage;
   }
 
-  
+
   /**
    * Percentage of Silence duration in the conversation
    **/
@@ -83,7 +84,7 @@ public class ParticipantMetrics  implements Serializable {
     this.silenceDurationPercentage = silenceDurationPercentage;
   }
 
-  
+
   /**
    * Percentage of IVR duration in the conversation
    **/
@@ -101,7 +102,7 @@ public class ParticipantMetrics  implements Serializable {
     this.ivrDurationPercentage = ivrDurationPercentage;
   }
 
-  
+
   /**
    * Percentage of ACD duration in the conversation
    **/
@@ -119,7 +120,7 @@ public class ParticipantMetrics  implements Serializable {
     this.acdDurationPercentage = acdDurationPercentage;
   }
 
-  
+
   /**
    * Percentage of Overtalk duration in the conversation
    **/
@@ -137,7 +138,7 @@ public class ParticipantMetrics  implements Serializable {
     this.overtalkDurationPercentage = overtalkDurationPercentage;
   }
 
-  
+
   /**
    * Percentage of Other events duration in the conversation
    **/
@@ -155,7 +156,7 @@ public class ParticipantMetrics  implements Serializable {
     this.otherDurationPercentage = otherDurationPercentage;
   }
 
-  
+
   /**
    * Number of Overtalks in the conversation
    **/
@@ -173,7 +174,6 @@ public class ParticipantMetrics  implements Serializable {
     this.overtalkCount = overtalkCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -184,14 +184,15 @@ public class ParticipantMetrics  implements Serializable {
       return false;
     }
     ParticipantMetrics participantMetrics = (ParticipantMetrics) o;
+
     return Objects.equals(this.agentDurationPercentage, participantMetrics.agentDurationPercentage) &&
-        Objects.equals(this.customerDurationPercentage, participantMetrics.customerDurationPercentage) &&
-        Objects.equals(this.silenceDurationPercentage, participantMetrics.silenceDurationPercentage) &&
-        Objects.equals(this.ivrDurationPercentage, participantMetrics.ivrDurationPercentage) &&
-        Objects.equals(this.acdDurationPercentage, participantMetrics.acdDurationPercentage) &&
-        Objects.equals(this.overtalkDurationPercentage, participantMetrics.overtalkDurationPercentage) &&
-        Objects.equals(this.otherDurationPercentage, participantMetrics.otherDurationPercentage) &&
-        Objects.equals(this.overtalkCount, participantMetrics.overtalkCount);
+            Objects.equals(this.customerDurationPercentage, participantMetrics.customerDurationPercentage) &&
+            Objects.equals(this.silenceDurationPercentage, participantMetrics.silenceDurationPercentage) &&
+            Objects.equals(this.ivrDurationPercentage, participantMetrics.ivrDurationPercentage) &&
+            Objects.equals(this.acdDurationPercentage, participantMetrics.acdDurationPercentage) &&
+            Objects.equals(this.overtalkDurationPercentage, participantMetrics.overtalkDurationPercentage) &&
+            Objects.equals(this.otherDurationPercentage, participantMetrics.otherDurationPercentage) &&
+            Objects.equals(this.overtalkCount, participantMetrics.overtalkCount);
   }
 
   @Override

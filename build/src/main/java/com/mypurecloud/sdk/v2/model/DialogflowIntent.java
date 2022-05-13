@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialogflowParameter;
@@ -45,7 +46,7 @@ public class DialogflowIntent  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * An object mapping parameter names to Parameter objects
    **/
@@ -63,7 +64,6 @@ public class DialogflowIntent  implements Serializable {
     this.parameters = parameters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -74,8 +74,9 @@ public class DialogflowIntent  implements Serializable {
       return false;
     }
     DialogflowIntent dialogflowIntent = (DialogflowIntent) o;
+
     return Objects.equals(this.name, dialogflowIntent.name) &&
-        Objects.equals(this.parameters, dialogflowIntent.parameters);
+            Objects.equals(this.parameters, dialogflowIntent.parameters);
   }
 
   @Override

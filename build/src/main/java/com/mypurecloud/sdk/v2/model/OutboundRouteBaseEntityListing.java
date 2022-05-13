@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public OutboundRouteBaseEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class OutboundRouteBaseEntityListing  implements Serializable, PagedResou
       return false;
     }
     OutboundRouteBaseEntityListing outboundRouteBaseEntityListing = (OutboundRouteBaseEntityListing) o;
+
     return Objects.equals(this.entities, outboundRouteBaseEntityListing.entities) &&
-        Objects.equals(this.pageSize, outboundRouteBaseEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, outboundRouteBaseEntityListing.pageNumber) &&
-        Objects.equals(this.total, outboundRouteBaseEntityListing.total) &&
-        Objects.equals(this.lastUri, outboundRouteBaseEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, outboundRouteBaseEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, outboundRouteBaseEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, outboundRouteBaseEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, outboundRouteBaseEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, outboundRouteBaseEntityListing.pageCount);
+            Objects.equals(this.pageSize, outboundRouteBaseEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, outboundRouteBaseEntityListing.pageNumber) &&
+            Objects.equals(this.total, outboundRouteBaseEntityListing.total) &&
+            Objects.equals(this.lastUri, outboundRouteBaseEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, outboundRouteBaseEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, outboundRouteBaseEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, outboundRouteBaseEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, outboundRouteBaseEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, outboundRouteBaseEntityListing.pageCount);
   }
 
   @Override

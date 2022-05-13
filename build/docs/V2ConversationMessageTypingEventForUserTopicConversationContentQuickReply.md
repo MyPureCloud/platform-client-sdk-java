@@ -21,8 +21,8 @@ title: V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MESSAGE | &quot;Message&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MESSAGE | &quot;Message&quot; | 
 {: class="table table-striped"}
 
 

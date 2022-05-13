@@ -22,13 +22,13 @@ title: DomainResourceConditionNode
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| EQ | &quot;EQ&quot; |
-| IN | &quot;IN&quot; |
-| GE | &quot;GE&quot; |
-| GT | &quot;GT&quot; |
-| LE | &quot;LE&quot; |
-| LT | &quot;LT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| EQ | &quot;EQ&quot; | 
+| IN | &quot;IN&quot; | 
+| GE | &quot;GE&quot; | 
+| GT | &quot;GT&quot; | 
+| LE | &quot;LE&quot; | 
+| LT | &quot;LT&quot; | 
 {: class="table table-striped"}
 
 
@@ -38,9 +38,9 @@ title: DomainResourceConditionNode
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AND | &quot;AND&quot; |
-| OR | &quot;OR&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AND | &quot;AND&quot; | 
+| OR | &quot;OR&quot; | 
 {: class="table table-striped"}
 
 

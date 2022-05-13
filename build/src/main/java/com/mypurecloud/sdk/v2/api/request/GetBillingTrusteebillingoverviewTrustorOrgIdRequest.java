@@ -21,12 +21,12 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
-    
+
 	private String trustorOrgId;
 	public String getTrustorOrgId() {
 		return this.trustorOrgId;
@@ -40,7 +40,7 @@ public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
 	    this.setTrustorOrgId(trustorOrgId);
 	    return this;
 	} 
-	
+
 	private Integer billingPeriodIndex;
 	public Integer getBillingPeriodIndex() {
 		return this.billingPeriodIndex;
@@ -54,7 +54,7 @@ public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
 	    this.setBillingPeriodIndex(billingPeriodIndex);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,9 +85,10 @@ public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/billing/trusteebillingoverview/{trustorOrgId}")
                 .withPathParameter("trustorOrgId", trustorOrgId)
         
+
                 .withQueryParameters("billingPeriodIndex", "", billingPeriodIndex)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -98,12 +99,12 @@ public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String trustorOrgId) {
 	    return new Builder()
 	            .withRequiredParams(trustorOrgId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetBillingTrusteebillingoverviewTrustorOrgIdRequest request;
@@ -112,25 +113,25 @@ public class GetBillingTrusteebillingoverviewTrustorOrgIdRequest {
 			request = new GetBillingTrusteebillingoverviewTrustorOrgIdRequest();
 		}
 
-		
+
 		public Builder withTrustorOrgId(String trustorOrgId) {
 			request.setTrustorOrgId(trustorOrgId);
 			return this;
 		}
-		
+
 		public Builder withBillingPeriodIndex(Integer billingPeriodIndex) {
 			request.setBillingPeriodIndex(billingPeriodIndex);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String trustorOrgId) {
 			request.setTrustorOrgId(trustorOrgId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetBillingTrusteebillingoverviewTrustorOrgIdRequest build() {
             

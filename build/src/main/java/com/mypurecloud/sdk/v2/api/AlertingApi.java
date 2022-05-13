@@ -10,13 +10,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 
@@ -38,7 +38,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class AlertingApi {
   private final ApiClient pcapiClient;
 
@@ -50,7 +49,6 @@ public class AlertingApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an interaction stats alert
    * 
@@ -75,7 +73,7 @@ public class AlertingApi {
   private DeleteAlertingInteractionstatsAlertRequest createDeleteAlertingInteractionstatsAlertRequest(String alertId) {
     return DeleteAlertingInteractionstatsAlertRequest.builder()
             .withAlertId(alertId)
-    
+
             .build();
   }
 
@@ -126,7 +124,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Delete an interaction stats rule.
    * 
@@ -151,7 +148,7 @@ public class AlertingApi {
   private DeleteAlertingInteractionstatsRuleRequest createDeleteAlertingInteractionstatsRuleRequest(String ruleId) {
     return DeleteAlertingInteractionstatsRuleRequest.builder()
             .withRuleId(ruleId)
-    
+
             .build();
   }
 
@@ -202,7 +199,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Gets active alert count for a user.
    * 
@@ -277,7 +273,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Get an interaction stats alert
    * 
@@ -306,9 +301,9 @@ public class AlertingApi {
   private GetAlertingInteractionstatsAlertRequest createGetAlertingInteractionstatsAlertRequest(String alertId, List<String> expand) {
     return GetAlertingInteractionstatsAlertRequest.builder()
             .withAlertId(alertId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -360,7 +355,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Get interaction stats alert list.
    * 
@@ -387,7 +381,7 @@ public class AlertingApi {
   private GetAlertingInteractionstatsAlertsRequest createGetAlertingInteractionstatsAlertsRequest(List<String> expand) {
     return GetAlertingInteractionstatsAlertsRequest.builder()
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -439,7 +433,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Gets user unread count of interaction stats alerts.
    * 
@@ -514,7 +507,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Get an interaction stats rule.
    * 
@@ -543,9 +535,9 @@ public class AlertingApi {
   private GetAlertingInteractionstatsRuleRequest createGetAlertingInteractionstatsRuleRequest(String ruleId, List<String> expand) {
     return GetAlertingInteractionstatsRuleRequest.builder()
             .withRuleId(ruleId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -597,7 +589,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Get an interaction stats rule list.
    * 
@@ -624,7 +615,7 @@ public class AlertingApi {
   private GetAlertingInteractionstatsRulesRequest createGetAlertingInteractionstatsRulesRequest(List<String> expand) {
     return GetAlertingInteractionstatsRulesRequest.builder()
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -676,7 +667,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Create an interaction stats rule.
    * 
@@ -705,9 +695,9 @@ public class AlertingApi {
   private PostAlertingInteractionstatsRulesRequest createPostAlertingInteractionstatsRulesRequest(InteractionStatsRule body, List<String> expand) {
     return PostAlertingInteractionstatsRulesRequest.builder()
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -759,7 +749,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Update an interaction stats alert read status
    * 
@@ -790,11 +779,11 @@ public class AlertingApi {
   private PutAlertingInteractionstatsAlertRequest createPutAlertingInteractionstatsAlertRequest(String alertId, UnreadStatus body, List<String> expand) {
     return PutAlertingInteractionstatsAlertRequest.builder()
             .withAlertId(alertId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -846,7 +835,6 @@ public class AlertingApi {
     }
   }
 
-  
   /**
    * Update an interaction stats rule
    * 
@@ -877,11 +865,11 @@ public class AlertingApi {
   private PutAlertingInteractionstatsRuleRequest createPutAlertingInteractionstatsRuleRequest(String ruleId, InteractionStatsRule body, List<String> expand) {
     return PutAlertingInteractionstatsRuleRequest.builder()
             .withRuleId(ruleId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -933,5 +921,4 @@ public class AlertingApi {
     }
   }
 
-  
 }

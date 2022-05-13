@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteTopicManagementUnit;
@@ -46,7 +47,7 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
     this.requestingUser = requestingUser;
   }
 
-  
+
   /**
    **/
   public WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete destinationManagementUnit(WfmMoveAgentsCompleteTopicManagementUnit destinationManagementUnit) {
@@ -63,7 +64,7 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
     this.destinationManagementUnit = destinationManagementUnit;
   }
 
-  
+
   /**
    **/
   public WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete results(List<WfmMoveAgentsCompleteTopicWfmMoveAgentData> results) {
@@ -80,7 +81,6 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
     this.results = results;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +91,10 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete  implements Seriali
       return false;
     }
     WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete wfmMoveAgentsCompleteTopicWfmMoveAgentsComplete = (WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete) o;
+
     return Objects.equals(this.requestingUser, wfmMoveAgentsCompleteTopicWfmMoveAgentsComplete.requestingUser) &&
-        Objects.equals(this.destinationManagementUnit, wfmMoveAgentsCompleteTopicWfmMoveAgentsComplete.destinationManagementUnit) &&
-        Objects.equals(this.results, wfmMoveAgentsCompleteTopicWfmMoveAgentsComplete.results);
+            Objects.equals(this.destinationManagementUnit, wfmMoveAgentsCompleteTopicWfmMoveAgentsComplete.destinationManagementUnit) &&
+            Objects.equals(this.results, wfmMoveAgentsCompleteTopicWfmMoveAgentsComplete.results);
   }
 
   @Override

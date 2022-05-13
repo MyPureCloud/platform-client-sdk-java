@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Miner;
@@ -45,7 +46,7 @@ public class MinerListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public MinerListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class MinerListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public MinerListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class MinerListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public MinerListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class MinerListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class MinerListing  implements Serializable {
       return false;
     }
     MinerListing minerListing = (MinerListing) o;
+
     return Objects.equals(this.entities, minerListing.entities) &&
-        Objects.equals(this.nextUri, minerListing.nextUri) &&
-        Objects.equals(this.selfUri, minerListing.selfUri) &&
-        Objects.equals(this.previousUri, minerListing.previousUri);
+            Objects.equals(this.nextUri, minerListing.nextUri) &&
+            Objects.equals(this.selfUri, minerListing.selfUri) &&
+            Objects.equals(this.previousUri, minerListing.previousUri);
   }
 
   @Override

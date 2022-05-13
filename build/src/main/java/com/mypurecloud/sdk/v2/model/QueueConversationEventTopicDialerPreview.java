@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicPhoneNumberColumn;
@@ -47,7 +48,7 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The contact associated with this preview data pop
    **/
@@ -65,7 +66,7 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
     this.contactId = contactId;
   }
 
-  
+
   /**
    * The contactList associated with this preview data pop.
    **/
@@ -83,7 +84,7 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
     this.contactListId = contactListId;
   }
 
-  
+
   /**
    * The campaignId associated with this preview data pop.
    **/
@@ -101,7 +102,7 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
     this.campaignId = campaignId;
   }
 
-  
+
   /**
    * The phone number columns associated with this campaign
    **/
@@ -119,7 +120,6 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
     this.phoneNumberColumns = phoneNumberColumns;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,11 +130,12 @@ public class QueueConversationEventTopicDialerPreview  implements Serializable {
       return false;
     }
     QueueConversationEventTopicDialerPreview queueConversationEventTopicDialerPreview = (QueueConversationEventTopicDialerPreview) o;
+
     return Objects.equals(this.id, queueConversationEventTopicDialerPreview.id) &&
-        Objects.equals(this.contactId, queueConversationEventTopicDialerPreview.contactId) &&
-        Objects.equals(this.contactListId, queueConversationEventTopicDialerPreview.contactListId) &&
-        Objects.equals(this.campaignId, queueConversationEventTopicDialerPreview.campaignId) &&
-        Objects.equals(this.phoneNumberColumns, queueConversationEventTopicDialerPreview.phoneNumberColumns);
+            Objects.equals(this.contactId, queueConversationEventTopicDialerPreview.contactId) &&
+            Objects.equals(this.contactListId, queueConversationEventTopicDialerPreview.contactListId) &&
+            Objects.equals(this.campaignId, queueConversationEventTopicDialerPreview.campaignId) &&
+            Objects.equals(this.phoneNumberColumns, queueConversationEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.url = url;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation address(String address) {
@@ -61,7 +62,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.address = address;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation text(String text) {
@@ -78,7 +79,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.text = text;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation latitude(BigDecimal latitude) {
@@ -95,7 +96,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.latitude = latitude;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation longitude(BigDecimal longitude) {
@@ -112,7 +113,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
     this.longitude = longitude;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,11 +123,12 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationContent
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation = (V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation) o;
+
     return Objects.equals(this.url, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.url) &&
-        Objects.equals(this.address, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.address) &&
-        Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.text) &&
-        Objects.equals(this.latitude, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.latitude) &&
-        Objects.equals(this.longitude, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.longitude);
+            Objects.equals(this.address, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.address) &&
+            Objects.equals(this.text, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.text) &&
+            Objects.equals(this.latitude, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.latitude) &&
+            Objects.equals(this.longitude, v2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation.longitude);
   }
 
   @Override

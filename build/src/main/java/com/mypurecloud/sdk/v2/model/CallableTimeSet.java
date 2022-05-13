@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableTime;
@@ -39,7 +40,7 @@ public class CallableTimeSet  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the CallableTimeSet.
    **/
@@ -57,21 +58,21 @@ public class CallableTimeSet  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -89,7 +90,7 @@ public class CallableTimeSet  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The list of CallableTimes for which it is acceptable to place outbound calls.
    **/
@@ -107,14 +108,13 @@ public class CallableTimeSet  implements Serializable {
     this.callableTimes = callableTimes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,13 +125,14 @@ public class CallableTimeSet  implements Serializable {
       return false;
     }
     CallableTimeSet callableTimeSet = (CallableTimeSet) o;
+
     return Objects.equals(this.id, callableTimeSet.id) &&
-        Objects.equals(this.name, callableTimeSet.name) &&
-        Objects.equals(this.dateCreated, callableTimeSet.dateCreated) &&
-        Objects.equals(this.dateModified, callableTimeSet.dateModified) &&
-        Objects.equals(this.version, callableTimeSet.version) &&
-        Objects.equals(this.callableTimes, callableTimeSet.callableTimes) &&
-        Objects.equals(this.selfUri, callableTimeSet.selfUri);
+            Objects.equals(this.name, callableTimeSet.name) &&
+            Objects.equals(this.dateCreated, callableTimeSet.dateCreated) &&
+            Objects.equals(this.dateModified, callableTimeSet.dateModified) &&
+            Objects.equals(this.version, callableTimeSet.version) &&
+            Objects.equals(this.callableTimes, callableTimeSet.callableTimes) &&
+            Objects.equals(this.selfUri, callableTimeSet.selfUri);
   }
 
   @Override

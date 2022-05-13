@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicJourneyActionMap;
@@ -43,7 +44,7 @@ public class QueueConversationScreenShareEventTopicJourneyAction  implements Ser
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationScreenShareEventTopicJourneyAction actionMap(QueueConversationScreenShareEventTopicJourneyActionMap actionMap) {
@@ -60,7 +61,6 @@ public class QueueConversationScreenShareEventTopicJourneyAction  implements Ser
     this.actionMap = actionMap;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class QueueConversationScreenShareEventTopicJourneyAction  implements Ser
       return false;
     }
     QueueConversationScreenShareEventTopicJourneyAction queueConversationScreenShareEventTopicJourneyAction = (QueueConversationScreenShareEventTopicJourneyAction) o;
+
     return Objects.equals(this.id, queueConversationScreenShareEventTopicJourneyAction.id) &&
-        Objects.equals(this.actionMap, queueConversationScreenShareEventTopicJourneyAction.actionMap);
+            Objects.equals(this.actionMap, queueConversationScreenShareEventTopicJourneyAction.actionMap);
   }
 
   @Override

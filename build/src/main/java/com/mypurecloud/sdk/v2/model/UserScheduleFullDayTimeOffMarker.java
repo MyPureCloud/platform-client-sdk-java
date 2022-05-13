@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.managementUnitDate = managementUnitDate;
   }
 
-  
+
   /**
    * The id for the activity code.  Look up a map of activity codes with the activities route
    **/
@@ -64,7 +65,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-  
+
   /**
    * Whether this is paid time off
    **/
@@ -82,7 +83,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.isPaid = isPaid;
   }
 
-  
+
   /**
    * The length in minutes of this time off marker
    **/
@@ -100,7 +101,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-  
+
   /**
    * The description associated with the time off request that this marker corresponds to
    **/
@@ -118,7 +119,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * If marked true for updating an existing full day time off marker, it will be deleted
    **/
@@ -136,7 +137,6 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.delete = delete;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +147,13 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
       return false;
     }
     UserScheduleFullDayTimeOffMarker userScheduleFullDayTimeOffMarker = (UserScheduleFullDayTimeOffMarker) o;
+
     return Objects.equals(this.managementUnitDate, userScheduleFullDayTimeOffMarker.managementUnitDate) &&
-        Objects.equals(this.activityCodeId, userScheduleFullDayTimeOffMarker.activityCodeId) &&
-        Objects.equals(this.isPaid, userScheduleFullDayTimeOffMarker.isPaid) &&
-        Objects.equals(this.lengthInMinutes, userScheduleFullDayTimeOffMarker.lengthInMinutes) &&
-        Objects.equals(this.description, userScheduleFullDayTimeOffMarker.description) &&
-        Objects.equals(this.delete, userScheduleFullDayTimeOffMarker.delete);
+            Objects.equals(this.activityCodeId, userScheduleFullDayTimeOffMarker.activityCodeId) &&
+            Objects.equals(this.isPaid, userScheduleFullDayTimeOffMarker.isPaid) &&
+            Objects.equals(this.lengthInMinutes, userScheduleFullDayTimeOffMarker.lengthInMinutes) &&
+            Objects.equals(this.description, userScheduleFullDayTimeOffMarker.description) &&
+            Objects.equals(this.delete, userScheduleFullDayTimeOffMarker.delete);
   }
 
   @Override

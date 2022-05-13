@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -55,7 +56,7 @@ public class EdgeMetrics  implements Serializable {
     this.edge = edge;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -73,7 +74,7 @@ public class EdgeMetrics  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public EdgeMetrics upTimeMsec(Long upTimeMsec) {
@@ -90,7 +91,7 @@ public class EdgeMetrics  implements Serializable {
     this.upTimeMsec = upTimeMsec;
   }
 
-  
+
   /**
    **/
   public EdgeMetrics processors(List<EdgeMetricsProcessor> processors) {
@@ -107,7 +108,7 @@ public class EdgeMetrics  implements Serializable {
     this.processors = processors;
   }
 
-  
+
   /**
    **/
   public EdgeMetrics memory(List<EdgeMetricsMemory> memory) {
@@ -124,7 +125,7 @@ public class EdgeMetrics  implements Serializable {
     this.memory = memory;
   }
 
-  
+
   /**
    **/
   public EdgeMetrics disks(List<EdgeMetricsDisk> disks) {
@@ -141,7 +142,7 @@ public class EdgeMetrics  implements Serializable {
     this.disks = disks;
   }
 
-  
+
   /**
    **/
   public EdgeMetrics subsystems(List<EdgeMetricsSubsystem> subsystems) {
@@ -158,7 +159,7 @@ public class EdgeMetrics  implements Serializable {
     this.subsystems = subsystems;
   }
 
-  
+
   /**
    **/
   public EdgeMetrics networks(List<EdgeMetricsNetwork> networks) {
@@ -175,7 +176,6 @@ public class EdgeMetrics  implements Serializable {
     this.networks = networks;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -186,14 +186,15 @@ public class EdgeMetrics  implements Serializable {
       return false;
     }
     EdgeMetrics edgeMetrics = (EdgeMetrics) o;
+
     return Objects.equals(this.edge, edgeMetrics.edge) &&
-        Objects.equals(this.eventTime, edgeMetrics.eventTime) &&
-        Objects.equals(this.upTimeMsec, edgeMetrics.upTimeMsec) &&
-        Objects.equals(this.processors, edgeMetrics.processors) &&
-        Objects.equals(this.memory, edgeMetrics.memory) &&
-        Objects.equals(this.disks, edgeMetrics.disks) &&
-        Objects.equals(this.subsystems, edgeMetrics.subsystems) &&
-        Objects.equals(this.networks, edgeMetrics.networks);
+            Objects.equals(this.eventTime, edgeMetrics.eventTime) &&
+            Objects.equals(this.upTimeMsec, edgeMetrics.upTimeMsec) &&
+            Objects.equals(this.processors, edgeMetrics.processors) &&
+            Objects.equals(this.memory, edgeMetrics.memory) &&
+            Objects.equals(this.disks, edgeMetrics.disks) &&
+            Objects.equals(this.subsystems, edgeMetrics.subsystems) &&
+            Objects.equals(this.networks, edgeMetrics.networks);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class FlowAggregateQueryFilter  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Boolean 'and/or' logic with up to two-levels of nesting
    **/
@@ -112,7 +113,7 @@ public class FlowAggregateQueryFilter  implements Serializable {
     this.clauses = clauses;
   }
 
-  
+
   /**
    * Like a three-word sentence: (attribute-name) (operator) (target-value).
    **/
@@ -130,7 +131,6 @@ public class FlowAggregateQueryFilter  implements Serializable {
     this.predicates = predicates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class FlowAggregateQueryFilter  implements Serializable {
       return false;
     }
     FlowAggregateQueryFilter flowAggregateQueryFilter = (FlowAggregateQueryFilter) o;
+
     return Objects.equals(this.type, flowAggregateQueryFilter.type) &&
-        Objects.equals(this.clauses, flowAggregateQueryFilter.clauses) &&
-        Objects.equals(this.predicates, flowAggregateQueryFilter.predicates);
+            Objects.equals(this.clauses, flowAggregateQueryFilter.clauses) &&
+            Objects.equals(this.predicates, flowAggregateQueryFilter.predicates);
   }
 
   @Override

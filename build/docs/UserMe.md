@@ -44,17 +44,17 @@ title: UserMe
 | **lastTokenIssued** | <!----><!---->[**OAuthLastTokenIssued**](OAuthLastTokenIssued.html)<!----> |  |  [optional] |
 | **dateLastLogin** | <!----><!---->[**Date**](Date.html)<!----> | The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **date** | <!----><!---->[**ServerDate**](ServerDate.html)<!----> | The PureCloud system date time. |  [optional] |
-| **geolocationSettings** | <!----><!---->[**GeolocationSettings**](GeolocationSettings.html)<!----> | Geolocation settings for user&#39;s organization. |  [optional] |
+| **geolocationSettings** | <!----><!---->[**GeolocationSettings**](GeolocationSettings.html)<!----> | Geolocation settings for user's organization. |  [optional] |
 | **organization** | <!----><!---->[**Organization**](Organization.html)<!----> | Organization details for this user. |  [optional] |
-| **presenceDefinitions** | <!----><!---->[**List&lt;OrganizationPresence&gt;**](OrganizationPresence.html)<!----> | The first 100 presence definitions for user&#39;s organization. |  [optional] |
-| **locationDefinitions** | <!----><!---->[**List&lt;LocationDefinition&gt;**](LocationDefinition.html)<!----> | The first 100 site locations for user&#39;s organization |  [optional] |
-| **orgAuthorization** | <!----><!---->[**List&lt;DomainOrganizationRole&gt;**](DomainOrganizationRole.html)<!----> | The first 100 organization roles, with applicable permission policies, for user&#39;s organization. |  [optional] |
+| **presenceDefinitions** | <!----><!---->[**List&lt;OrganizationPresence&gt;**](OrganizationPresence.html)<!----> | The first 100 presence definitions for user's organization. |  [optional] |
+| **locationDefinitions** | <!----><!---->[**List&lt;LocationDefinition&gt;**](LocationDefinition.html)<!----> | The first 100 site locations for user's organization |  [optional] |
+| **orgAuthorization** | <!----><!---->[**List&lt;DomainOrganizationRole&gt;**](DomainOrganizationRole.html)<!----> | The first 100 organization roles, with applicable permission policies, for user's organization. |  [optional] |
 | **favorites** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | The first 50 favorited users. |  [optional] |
 | **superiors** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | The first 50 superiors of this user. |  [optional] |
 | **directReports** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | The first 50 direct reports to this user. |  [optional] |
 | **adjacents** | <!----><!---->[**Adjacents**](Adjacents.html)<!----> | The first 50 superiors, direct reports, and siblings of this user. Mutually exclusive with superiors and direct reports expands. |  [optional] |
-| **routingSkills** | <!----><!---->[**List&lt;RoutingSkill&gt;**](RoutingSkill.html)<!----> | The first 50 routing skills for user&#39;s organizations |  [optional] |
-| **fieldConfigs** | <!----><!---->[**FieldConfigs**](FieldConfigs.html)<!----> | The field config for all entities types of user&#39;s organization |  [optional] |
+| **routingSkills** | <!----><!---->[**List&lt;RoutingSkill&gt;**](RoutingSkill.html)<!----> | The first 50 routing skills for user's organizations |  [optional] |
+| **fieldConfigs** | <!----><!---->[**FieldConfigs**](FieldConfigs.html)<!----> | The field config for all entities types of user's organization |  [optional] |
 | **token** | <!----><!---->[**TokenInfo**](TokenInfo.html)<!----> | Information about the current token |  [optional] |
 | **trustors** | <!----><!---->[**List&lt;Trustor&gt;**](Trustor.html)<!----> | Organizations having this user as a trustee |  [optional] |
 | **orgProducts** | <!----><!---->[**List&lt;DomainOrganizationProduct&gt;**](DomainOrganizationProduct.html)<!----> | Products enabled in this organization |  [optional] |
@@ -68,10 +68,10 @@ title: UserMe
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 

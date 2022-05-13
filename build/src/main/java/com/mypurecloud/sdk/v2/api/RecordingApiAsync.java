@@ -13,43 +13,43 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OrphanRecording;
-import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Annotation;
-import com.mypurecloud.sdk.v2.model.RecordingMetadata;
-import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
-import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
-import com.mypurecloud.sdk.v2.model.RecordingJob;
-import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.Policy;
-import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
-import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
-import com.mypurecloud.sdk.v2.model.RecordingSettings;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
-import com.mypurecloud.sdk.v2.model.PolicyUpdate;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
-import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
-import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
-import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
-import com.mypurecloud.sdk.v2.model.EncryptionKey;
-import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
-import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
-import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.EncryptionKey;
+import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
+import com.mypurecloud.sdk.v2.model.OrphanRecording;
+import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
+import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.Policy;
+import com.mypurecloud.sdk.v2.model.PolicyCreate;
+import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
+import com.mypurecloud.sdk.v2.model.Recording;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
+import com.mypurecloud.sdk.v2.model.RecordingMetadata;
+import com.mypurecloud.sdk.v2.model.RecordingSettings;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
@@ -119,7 +119,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class RecordingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -131,7 +130,6 @@ public class RecordingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete annotation
    * 
@@ -207,7 +205,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Deletes a single orphan recording
    * 
@@ -283,7 +280,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
@@ -359,7 +355,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Delete a media retention policy
    * 
@@ -435,7 +430,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Delete the recording bulk job
    * 
@@ -511,7 +505,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
@@ -587,7 +580,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Delete a media retention policy
    * 
@@ -663,7 +655,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Gets a specific recording.
    * 
@@ -739,7 +730,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get annotation
    * 
@@ -815,7 +805,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get annotations for recording
    * 
@@ -891,9 +880,8 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -927,7 +915,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
+   * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -967,7 +955,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get metadata for a specific recording. Does not return playable media.
    * 
@@ -1043,9 +1030,8 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
-   * Get all of a Conversation&#39;s Recordings.
+   * Get all of a Conversation's Recordings.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1079,7 +1065,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get all of a Conversation&#39;s Recordings.
+   * Get all of a Conversation's Recordings.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1119,7 +1105,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Gets a single orphan recording
    * 
@@ -1195,7 +1180,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Gets the media of a single orphan recording
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
@@ -1271,7 +1255,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Gets all orphan recordings
    * 
@@ -1347,7 +1330,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
    * 
@@ -1423,7 +1405,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary=true to this endpoint
@@ -1499,7 +1480,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get a media retention policy
    * 
@@ -1575,7 +1555,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get the status of the job associated with the job id.
    * 
@@ -1651,7 +1630,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get IDs of recordings that the bulk job failed for
    * 
@@ -1727,9 +1705,8 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
-   * Get the status of all jobs within the user&#39;s organization
+   * Get the status of all jobs within the user's organization
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1763,7 +1740,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get the status of all jobs within the user&#39;s organization
+   * Get the status of all jobs within the user's organization
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1803,7 +1780,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get the encryption key configurations
    * 
@@ -1879,7 +1855,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of key configurations data
    * 
@@ -1955,7 +1930,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get the local encryption settings
    * 
@@ -2031,7 +2005,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * gets a list local key settings data
    * 
@@ -2107,7 +2080,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary=true to this endpoint
@@ -2183,7 +2155,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get a media retention policy
    * 
@@ -2259,7 +2230,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get encryption key list
    * 
@@ -2335,7 +2305,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get key rotation schedule
    * 
@@ -2411,7 +2380,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get the Recording Settings for the Organization
    * 
@@ -2487,7 +2455,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Retrieves a paged listing of screen recording sessions
    * 
@@ -2563,7 +2530,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Patch a media retention policy
    * 
@@ -2639,7 +2605,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Patch a media retention policy
    * 
@@ -2715,7 +2680,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update a screen recording session
    * 
@@ -2791,7 +2755,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Create annotation
    * 
@@ -2867,7 +2830,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
@@ -2943,7 +2905,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Create media retention policy
    * Policy does not work retroactively
@@ -3019,7 +2980,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Create a recording bulk job.
    * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
@@ -3095,7 +3055,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Setup configurations for encryption key creation
    * 
@@ -3171,7 +3130,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Validate encryption key configurations without saving it
    * 
@@ -3247,7 +3205,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * create a local recording key
    * 
@@ -3323,7 +3280,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * create settings for local key creation
    * 
@@ -3399,7 +3355,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Create media retention policy
    * Policy does not work retroactively
@@ -3475,7 +3430,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Create encryption key
    * 
@@ -3551,7 +3505,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of conversations with protected recordings
    * 
@@ -3627,7 +3580,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Acknowledge a screen recording.
    * 
@@ -3703,7 +3655,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Provide meta-data a screen recording.
    * 
@@ -3779,7 +3730,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
@@ -3855,7 +3805,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update annotation
    * 
@@ -3931,7 +3880,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Updates an orphan recording to a regular recording with retention values
    * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
@@ -4007,7 +3955,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update a media retention policy
    * Policy does not work retroactively
@@ -4083,10 +4030,9 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Execute the recording bulk job.
-   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4120,7 +4066,7 @@ public class RecordingApiAsync {
 
   /**
    * Execute the recording bulk job.
-   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4159,7 +4105,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update the encryption key configurations
    * 
@@ -4235,7 +4180,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update the local encryption settings
    * 
@@ -4311,7 +4255,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update a media retention policy
    * Policy does not work retroactively
@@ -4387,7 +4330,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update key rotation schedule
    * 
@@ -4463,7 +4405,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Update the Recording Settings for the Organization
    * 
@@ -4539,7 +4480,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
   /**
    * Apply or revoke recording protection for conversations
    * 
@@ -4615,7 +4555,6 @@ public class RecordingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

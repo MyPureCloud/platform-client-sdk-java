@@ -19,10 +19,10 @@ title: JourneyWebEventsNotificationCustomEventAttribute
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STRING | &quot;STRING&quot; |
-| BOOLEAN | &quot;BOOLEAN&quot; |
-| NUMBER | &quot;NUMBER&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| STRING | &quot;STRING&quot; | 
+| BOOLEAN | &quot;BOOLEAN&quot; | 
+| NUMBER | &quot;NUMBER&quot; | 
 {: class="table table-striped"}
 
 

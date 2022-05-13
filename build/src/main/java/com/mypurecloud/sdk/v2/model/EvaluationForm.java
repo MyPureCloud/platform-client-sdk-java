@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
@@ -41,7 +42,7 @@ public class EvaluationForm  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The evaluation form name
    **/
@@ -59,7 +60,7 @@ public class EvaluationForm  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -77,7 +78,7 @@ public class EvaluationForm  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   /**
    **/
   public EvaluationForm published(Boolean published) {
@@ -94,7 +95,7 @@ public class EvaluationForm  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    **/
   public EvaluationForm contextId(String contextId) {
@@ -111,7 +112,7 @@ public class EvaluationForm  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    * A list of question groups
    **/
@@ -129,7 +130,7 @@ public class EvaluationForm  implements Serializable {
     this.questionGroups = questionGroups;
   }
 
-  
+
   /**
    **/
   public EvaluationForm publishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
@@ -146,14 +147,13 @@ public class EvaluationForm  implements Serializable {
     this.publishedVersions = publishedVersions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,14 +164,15 @@ public class EvaluationForm  implements Serializable {
       return false;
     }
     EvaluationForm evaluationForm = (EvaluationForm) o;
+
     return Objects.equals(this.id, evaluationForm.id) &&
-        Objects.equals(this.name, evaluationForm.name) &&
-        Objects.equals(this.modifiedDate, evaluationForm.modifiedDate) &&
-        Objects.equals(this.published, evaluationForm.published) &&
-        Objects.equals(this.contextId, evaluationForm.contextId) &&
-        Objects.equals(this.questionGroups, evaluationForm.questionGroups) &&
-        Objects.equals(this.publishedVersions, evaluationForm.publishedVersions) &&
-        Objects.equals(this.selfUri, evaluationForm.selfUri);
+            Objects.equals(this.name, evaluationForm.name) &&
+            Objects.equals(this.modifiedDate, evaluationForm.modifiedDate) &&
+            Objects.equals(this.published, evaluationForm.published) &&
+            Objects.equals(this.contextId, evaluationForm.contextId) &&
+            Objects.equals(this.questionGroups, evaluationForm.questionGroups) &&
+            Objects.equals(this.publishedVersions, evaluationForm.publishedVersions) &&
+            Objects.equals(this.selfUri, evaluationForm.selfUri);
   }
 
   @Override

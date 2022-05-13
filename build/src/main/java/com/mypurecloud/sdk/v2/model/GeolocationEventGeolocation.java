@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class GeolocationEventGeolocation  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public GeolocationEventGeolocation type(String type) {
@@ -60,7 +61,7 @@ public class GeolocationEventGeolocation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public GeolocationEventGeolocation country(String country) {
@@ -77,7 +78,7 @@ public class GeolocationEventGeolocation  implements Serializable {
     this.country = country;
   }
 
-  
+
   /**
    **/
   public GeolocationEventGeolocation region(String region) {
@@ -94,7 +95,7 @@ public class GeolocationEventGeolocation  implements Serializable {
     this.region = region;
   }
 
-  
+
   /**
    **/
   public GeolocationEventGeolocation city(String city) {
@@ -111,7 +112,6 @@ public class GeolocationEventGeolocation  implements Serializable {
     this.city = city;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,11 +122,12 @@ public class GeolocationEventGeolocation  implements Serializable {
       return false;
     }
     GeolocationEventGeolocation geolocationEventGeolocation = (GeolocationEventGeolocation) o;
+
     return Objects.equals(this.userId, geolocationEventGeolocation.userId) &&
-        Objects.equals(this.type, geolocationEventGeolocation.type) &&
-        Objects.equals(this.country, geolocationEventGeolocation.country) &&
-        Objects.equals(this.region, geolocationEventGeolocation.region) &&
-        Objects.equals(this.city, geolocationEventGeolocation.city);
+            Objects.equals(this.type, geolocationEventGeolocation.type) &&
+            Objects.equals(this.country, geolocationEventGeolocation.country) &&
+            Objects.equals(this.region, geolocationEventGeolocation.region) &&
+            Objects.equals(this.city, geolocationEventGeolocation.city);
   }
 
   @Override

@@ -20,13 +20,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguageRequest {
-    
+
 	private String languageId;
 	public String getLanguageId() {
 		return this.languageId;
@@ -40,7 +40,7 @@ public class GetLanguageRequest {
 	    this.setLanguageId(languageId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -71,7 +71,7 @@ public class GetLanguageRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/languages/{languageId}")
                 .withPathParameter("languageId", languageId)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +82,12 @@ public class GetLanguageRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String languageId) {
 	    return new Builder()
 	            .withRequiredParams(languageId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguageRequest request;
@@ -96,20 +96,20 @@ public class GetLanguageRequest {
 			request = new GetLanguageRequest();
 		}
 
-		
+
 		public Builder withLanguageId(String languageId) {
 			request.setLanguageId(languageId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String languageId) {
 			request.setLanguageId(languageId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetLanguageRequest build() {
             

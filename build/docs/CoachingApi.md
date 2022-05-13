@@ -430,8 +430,6 @@ try {
 
 Get appointments for users and optional date range
 
-
-
 Wraps GET /api/v2/coaching/appointments  
 
 Requires ANY permissions: 
@@ -460,14 +458,14 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 CoachingApi apiInstance = new CoachingApi();
-List<String> userIds = Arrays.asList("userIds_example"); // List<String> | The user IDs for which to retrieve appointments
+List<String> userIds = Arrays.asList(null); // List<String> | The user IDs for which to retrieve appointments
 String interval = "interval_example"; // String | Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Appointment Statuses to filter by
-List<String> facilitatorIds = Arrays.asList("facilitatorIds_example"); // List<String> | The facilitator IDs for which to retrieve appointments
+List<String> statuses = Arrays.asList(null); // List<String> | Appointment Statuses to filter by
+List<String> facilitatorIds = Arrays.asList(null); // List<String> | The facilitator IDs for which to retrieve appointments
 String sortOrder = "sortOrder_example"; // String | Sort (by due date) either Asc or Desc
-List<String> relationships = Arrays.asList("relationships_example"); // List<String> | Relationships to filter by
+List<String> relationships = Arrays.asList(null); // List<String> | Relationships to filter by
 String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 String overdue = "overdue_example"; // String | Overdue status to filter by
 String intervalCondition = "intervalCondition_example"; // String | Filter condition for interval
@@ -513,8 +511,6 @@ try {
 
 Get my appointments for a given date range
 
-
-
 Wraps GET /api/v2/coaching/appointments/me  
 
 Requires NO permissions: 
@@ -545,10 +541,10 @@ CoachingApi apiInstance = new CoachingApi();
 String interval = "interval_example"; // String | Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Appointment Statuses to filter by
-List<String> facilitatorIds = Arrays.asList("facilitatorIds_example"); // List<String> | The facilitator IDs for which to retrieve appointments
+List<String> statuses = Arrays.asList(null); // List<String> | Appointment Statuses to filter by
+List<String> facilitatorIds = Arrays.asList(null); // List<String> | The facilitator IDs for which to retrieve appointments
 String sortOrder = "sortOrder_example"; // String | Sort (by due date) either Asc or Desc
-List<String> relationships = Arrays.asList("relationships_example"); // List<String> | Relationships to filter by
+List<String> relationships = Arrays.asList(null); // List<String> | Relationships to filter by
 String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 String overdue = "overdue_example"; // String | Overdue status to filter by
 String intervalCondition = "intervalCondition_example"; // String | Filter condition for interval
@@ -624,7 +620,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 CoachingApi apiInstance = new CoachingApi();
 String notificationId = "notificationId_example"; // String | The ID of the notification.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Indicates a field in the response which should be expanded.
+List<String> expand = Arrays.asList(null); // List<String> | Indicates a field in the response which should be expanded.
 try {
     CoachingNotification result = apiInstance.getCoachingNotification(notificationId, expand);
     System.out.println(result);
@@ -658,8 +654,6 @@ try {
 
 Retrieve the list of your notifications.
 
-
-
 Wraps GET /api/v2/coaching/notifications  
 
 Requires NO permissions: 
@@ -689,7 +683,7 @@ Configuration.setDefaultApiClient(apiClient);
 CoachingApi apiInstance = new CoachingApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Indicates a field in the response which should be expanded.
+List<String> expand = Arrays.asList(null); // List<String> | Indicates a field in the response which should be expanded.
 try {
     CoachingNotificationList result = apiInstance.getCoachingNotifications(pageNumber, pageSize, expand);
     System.out.println(result);
@@ -1118,8 +1112,6 @@ try {
 
 Create a new appointment
 
-
-
 Wraps POST /api/v2/coaching/appointments  
 
 Requires ANY permissions: 
@@ -1181,8 +1173,6 @@ try {
 
 Retrieve aggregated appointment data
 
-
-
 Wraps POST /api/v2/coaching/appointments/aggregates/query  
 
 Requires ANY permissions: 
@@ -1243,8 +1233,6 @@ try {
 > [CoachingSlotsResponse](CoachingSlotsResponse.html) postCoachingScheduleslotsQuery(body)
 
 Get list of possible slots where a coaching appointment can be scheduled.
-
-
 
 Wraps POST /api/v2/coaching/scheduleslots/query  
 

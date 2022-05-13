@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class Segment  implements Serializable {
     this.startTime = startTime;
   }
 
-  
+
   /**
    * The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -63,7 +64,7 @@ public class Segment  implements Serializable {
     this.endTime = endTime;
   }
 
-  
+
   /**
    * The activity taking place for the participant in the segment.
    **/
@@ -81,7 +82,7 @@ public class Segment  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * A description of the event that ended the segment.
    **/
@@ -99,7 +100,7 @@ public class Segment  implements Serializable {
     this.howEnded = howEnded;
   }
 
-  
+
   /**
    * A description of the event that disconnected the segment
    **/
@@ -117,7 +118,6 @@ public class Segment  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class Segment  implements Serializable {
       return false;
     }
     Segment segment = (Segment) o;
+
     return Objects.equals(this.startTime, segment.startTime) &&
-        Objects.equals(this.endTime, segment.endTime) &&
-        Objects.equals(this.type, segment.type) &&
-        Objects.equals(this.howEnded, segment.howEnded) &&
-        Objects.equals(this.disconnectType, segment.disconnectType);
+            Objects.equals(this.endTime, segment.endTime) &&
+            Objects.equals(this.type, segment.type) &&
+            Objects.equals(this.howEnded, segment.howEnded) &&
+            Objects.equals(this.disconnectType, segment.disconnectType);
   }
 
   @Override

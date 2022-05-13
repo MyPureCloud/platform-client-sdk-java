@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentActivityChangedTopicOrganizationPresence;
@@ -43,7 +44,7 @@ public class AgentActivityChangedTopicPresence  implements Serializable {
     this.presenceDefinition = presenceDefinition;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicPresence presenceMessage(String presenceMessage) {
@@ -60,7 +61,7 @@ public class AgentActivityChangedTopicPresence  implements Serializable {
     this.presenceMessage = presenceMessage;
   }
 
-  
+
   /**
    **/
   public AgentActivityChangedTopicPresence modifiedDate(Date modifiedDate) {
@@ -77,7 +78,6 @@ public class AgentActivityChangedTopicPresence  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class AgentActivityChangedTopicPresence  implements Serializable {
       return false;
     }
     AgentActivityChangedTopicPresence agentActivityChangedTopicPresence = (AgentActivityChangedTopicPresence) o;
+
     return Objects.equals(this.presenceDefinition, agentActivityChangedTopicPresence.presenceDefinition) &&
-        Objects.equals(this.presenceMessage, agentActivityChangedTopicPresence.presenceMessage) &&
-        Objects.equals(this.modifiedDate, agentActivityChangedTopicPresence.modifiedDate);
+            Objects.equals(this.presenceMessage, agentActivityChangedTopicPresence.presenceMessage) &&
+            Objects.equals(this.modifiedDate, agentActivityChangedTopicPresence.modifiedDate);
   }
 
   @Override

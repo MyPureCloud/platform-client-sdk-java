@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditEntity;
@@ -45,7 +46,7 @@ public class Change  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    * The property that was changed
    **/
@@ -63,7 +64,7 @@ public class Change  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * The old values which were modified and/or removed by this action.
    **/
@@ -81,7 +82,7 @@ public class Change  implements Serializable {
     this.oldValues = oldValues;
   }
 
-  
+
   /**
    * The new values which were modified and/or added by this action.
    **/
@@ -99,7 +100,6 @@ public class Change  implements Serializable {
     this.newValues = newValues;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,10 +110,11 @@ public class Change  implements Serializable {
       return false;
     }
     Change change = (Change) o;
+
     return Objects.equals(this.entity, change.entity) &&
-        Objects.equals(this.property, change.property) &&
-        Objects.equals(this.oldValues, change.oldValues) &&
-        Objects.equals(this.newValues, change.newValues);
+            Objects.equals(this.property, change.property) &&
+            Objects.equals(this.oldValues, change.oldValues) &&
+            Objects.equals(this.newValues, change.newValues);
   }
 
   @Override

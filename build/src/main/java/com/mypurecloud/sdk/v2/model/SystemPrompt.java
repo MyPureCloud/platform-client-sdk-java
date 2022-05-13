@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
@@ -47,7 +48,7 @@ public class SystemPrompt  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public SystemPrompt name(String name) {
@@ -64,7 +65,7 @@ public class SystemPrompt  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public SystemPrompt description(String description) {
@@ -81,7 +82,7 @@ public class SystemPrompt  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public SystemPrompt resources(List<SystemPromptAsset> resources) {
@@ -98,14 +99,13 @@ public class SystemPrompt  implements Serializable {
     this.resources = resources;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,11 +116,12 @@ public class SystemPrompt  implements Serializable {
       return false;
     }
     SystemPrompt systemPrompt = (SystemPrompt) o;
+
     return Objects.equals(this.id, systemPrompt.id) &&
-        Objects.equals(this.name, systemPrompt.name) &&
-        Objects.equals(this.description, systemPrompt.description) &&
-        Objects.equals(this.resources, systemPrompt.resources) &&
-        Objects.equals(this.selfUri, systemPrompt.selfUri);
+            Objects.equals(this.name, systemPrompt.name) &&
+            Objects.equals(this.description, systemPrompt.description) &&
+            Objects.equals(this.resources, systemPrompt.resources) &&
+            Objects.equals(this.selfUri, systemPrompt.selfUri);
   }
 
   @Override

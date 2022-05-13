@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -142,7 +143,7 @@ public class DataTableImportJob  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public DataTableImportJob name(String name) {
@@ -159,7 +160,7 @@ public class DataTableImportJob  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The PureCloud user who started the import job
    **/
@@ -177,7 +178,7 @@ public class DataTableImportJob  implements Serializable {
     this.owner = owner;
   }
 
-  
+
   /**
    * The status of the import job
    **/
@@ -195,7 +196,7 @@ public class DataTableImportJob  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -213,7 +214,7 @@ public class DataTableImportJob  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -231,7 +232,7 @@ public class DataTableImportJob  implements Serializable {
     this.dateCompleted = dateCompleted;
   }
 
-  
+
   /**
    * The URL of the location at which the caller can upload the file to be imported
    **/
@@ -249,7 +250,7 @@ public class DataTableImportJob  implements Serializable {
     this.uploadURI = uploadURI;
   }
 
-  
+
   /**
    * The indication of whether the processing should remove rows that don't appear in the import file
    **/
@@ -267,7 +268,7 @@ public class DataTableImportJob  implements Serializable {
     this.importMode = importMode;
   }
 
-  
+
   /**
    * Any error information, or null of the processing is not in an error state
    **/
@@ -285,7 +286,7 @@ public class DataTableImportJob  implements Serializable {
     this.errorInformation = errorInformation;
   }
 
-  
+
   /**
    * The current count of the number of records processed
    **/
@@ -303,7 +304,7 @@ public class DataTableImportJob  implements Serializable {
     this.countRecordsUpdated = countRecordsUpdated;
   }
 
-  
+
   /**
    * The current count of the number of records deleted
    **/
@@ -321,7 +322,7 @@ public class DataTableImportJob  implements Serializable {
     this.countRecordsDeleted = countRecordsDeleted;
   }
 
-  
+
   /**
    * The current count of the number of records that failed to import
    **/
@@ -339,14 +340,13 @@ public class DataTableImportJob  implements Serializable {
     this.countRecordsFailed = countRecordsFailed;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -357,19 +357,20 @@ public class DataTableImportJob  implements Serializable {
       return false;
     }
     DataTableImportJob dataTableImportJob = (DataTableImportJob) o;
+
     return Objects.equals(this.id, dataTableImportJob.id) &&
-        Objects.equals(this.name, dataTableImportJob.name) &&
-        Objects.equals(this.owner, dataTableImportJob.owner) &&
-        Objects.equals(this.status, dataTableImportJob.status) &&
-        Objects.equals(this.dateCreated, dataTableImportJob.dateCreated) &&
-        Objects.equals(this.dateCompleted, dataTableImportJob.dateCompleted) &&
-        Objects.equals(this.uploadURI, dataTableImportJob.uploadURI) &&
-        Objects.equals(this.importMode, dataTableImportJob.importMode) &&
-        Objects.equals(this.errorInformation, dataTableImportJob.errorInformation) &&
-        Objects.equals(this.countRecordsUpdated, dataTableImportJob.countRecordsUpdated) &&
-        Objects.equals(this.countRecordsDeleted, dataTableImportJob.countRecordsDeleted) &&
-        Objects.equals(this.countRecordsFailed, dataTableImportJob.countRecordsFailed) &&
-        Objects.equals(this.selfUri, dataTableImportJob.selfUri);
+            Objects.equals(this.name, dataTableImportJob.name) &&
+            Objects.equals(this.owner, dataTableImportJob.owner) &&
+            Objects.equals(this.status, dataTableImportJob.status) &&
+            Objects.equals(this.dateCreated, dataTableImportJob.dateCreated) &&
+            Objects.equals(this.dateCompleted, dataTableImportJob.dateCompleted) &&
+            Objects.equals(this.uploadURI, dataTableImportJob.uploadURI) &&
+            Objects.equals(this.importMode, dataTableImportJob.importMode) &&
+            Objects.equals(this.errorInformation, dataTableImportJob.errorInformation) &&
+            Objects.equals(this.countRecordsUpdated, dataTableImportJob.countRecordsUpdated) &&
+            Objects.equals(this.countRecordsDeleted, dataTableImportJob.countRecordsDeleted) &&
+            Objects.equals(this.countRecordsFailed, dataTableImportJob.countRecordsFailed) &&
+            Objects.equals(this.selfUri, dataTableImportJob.selfUri);
   }
 
   @Override

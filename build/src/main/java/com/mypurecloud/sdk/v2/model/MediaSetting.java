@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
@@ -41,7 +42,7 @@ public class MediaSetting  implements Serializable {
     this.alertingTimeoutSeconds = alertingTimeoutSeconds;
   }
 
-  
+
   /**
    **/
   public MediaSetting serviceLevel(ServiceLevel serviceLevel) {
@@ -58,7 +59,6 @@ public class MediaSetting  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class MediaSetting  implements Serializable {
       return false;
     }
     MediaSetting mediaSetting = (MediaSetting) o;
+
     return Objects.equals(this.alertingTimeoutSeconds, mediaSetting.alertingTimeoutSeconds) &&
-        Objects.equals(this.serviceLevel, mediaSetting.serviceLevel);
+            Objects.equals(this.serviceLevel, mediaSetting.serviceLevel);
   }
 
   @Override

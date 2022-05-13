@@ -13,36 +13,36 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Leaderboard;
+import com.mypurecloud.sdk.v2.model.AllTimePoints;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GamificationStatus;
+import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricResponse;
+import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
+import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Leaderboard;
 import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.OverallBestPoints;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.Metric;
 import com.mypurecloud.sdk.v2.model.MetricDefinition;
-import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
-import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
+import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
+import com.mypurecloud.sdk.v2.model.OverallBestPoints;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
-import com.mypurecloud.sdk.v2.model.MemberListing;
-import com.mypurecloud.sdk.v2.model.GetMetricResponse;
-import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
-import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
-import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
-import com.mypurecloud.sdk.v2.model.UserBestPoints;
-import com.mypurecloud.sdk.v2.model.AllTimePoints;
 import com.mypurecloud.sdk.v2.model.SingleWorkdayAveragePoints;
+import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
+import com.mypurecloud.sdk.v2.model.UserBestPoints;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.WorkdayPointsTrend;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
-import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
-import com.mypurecloud.sdk.v2.model.GamificationStatus;
-import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
-import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
-import com.mypurecloud.sdk.v2.model.CreateMetric;
-import com.mypurecloud.sdk.v2.model.Assignment;
-import com.mypurecloud.sdk.v2.model.AssignUsers;
-import com.mypurecloud.sdk.v2.model.AssignmentValidation;
-import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
-import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
-import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
@@ -101,7 +101,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class GamificationApiAsync {
   private final ApiClient pcapiClient;
 
@@ -113,9 +112,8 @@ public class GamificationApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
-   * Leaderboard of the requesting user&#39;s division or performance profile
+   * Leaderboard of the requesting user's division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -149,7 +147,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division or performance profile
+   * Leaderboard of the requesting user's division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -189,7 +187,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Leaderboard by filter type
    * 
@@ -265,7 +262,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Best Points by division or performance profile
    * 
@@ -341,9 +337,8 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
-   * Best Points of the requesting user&#39;s current performance profile or division
+   * Best Points of the requesting user's current performance profile or division
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -377,7 +372,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Best Points of the requesting user&#39;s current performance profile or division
+   * Best Points of the requesting user's current performance profile or division
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -417,7 +412,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Gamified metric by id
    * 
@@ -493,7 +487,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Metric definition by id
    * 
@@ -569,7 +562,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All metric definitions
    * Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
@@ -645,7 +637,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All gamified metrics for a given profile
    * 
@@ -721,7 +712,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Performance profile by id
    * 
@@ -797,7 +787,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Members of a given performance profile
    * 
@@ -873,7 +862,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Performance profile gamified metric by id
    * 
@@ -949,7 +937,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All gamified metrics for a given performance profile
    * 
@@ -1025,7 +1012,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All metrics for a given performance profile with objective details such as order and maxPoints
    * 
@@ -1101,7 +1087,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All performance profiles
    * 
@@ -1177,7 +1162,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Performance profile of a user
    * 
@@ -1253,7 +1237,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Performance profile of the requesting user
    * 
@@ -1329,7 +1312,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Workday performance metrics of the requesting user
    * 
@@ -1405,7 +1387,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Attendance status metrics of the requesting user
    * 
@@ -1481,7 +1462,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Best points of the requesting user
    * 
@@ -1557,7 +1537,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All-time points of the requesting user
    * 
@@ -1633,9 +1612,8 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
-   * Average points of the requesting user&#39;s division or performance profile
+   * Average points of the requesting user's division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1669,7 +1647,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Average points of the requesting user&#39;s division or performance profile
+   * Average points of the requesting user's division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1709,7 +1687,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Points trends of the requesting user
    * 
@@ -1785,7 +1762,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Workday performance metrics for a user
    * 
@@ -1861,7 +1837,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Attendance status metrics for a user
    * 
@@ -1937,7 +1912,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Best points of a user
    * 
@@ -2013,7 +1987,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All-time points for a user
    * 
@@ -2089,7 +2062,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Points trend for a user
    * 
@@ -2165,7 +2137,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Values trends of a user
    * 
@@ -2241,7 +2212,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Workday average points by target group
    * 
@@ -2317,7 +2287,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Workday average values by target group
    * 
@@ -2393,7 +2362,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Values trend by target group
    * 
@@ -2469,9 +2437,8 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
-   * Average values of the requesting user&#39;s division or performance profile
+   * Average values of the requesting user's division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2505,7 +2472,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Average values of the requesting user&#39;s division or performance profile
+   * Average values of the requesting user's division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2545,7 +2512,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Values trends of the requesting user or group
    * 
@@ -2621,7 +2587,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Gamification activation status
    * 
@@ -2697,7 +2662,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Objective template by id
    * 
@@ -2773,7 +2737,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * All objective templates
    * 
@@ -2849,7 +2812,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Creates a gamified metric with a given metric definition and metric objective
    * 
@@ -2925,7 +2887,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Activate a performance profile
    * 
@@ -3001,7 +2962,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Deactivate a performance profile
    * 
@@ -3077,7 +3037,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Assign members to a given performance profile
    * 
@@ -3153,7 +3112,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Validate member assignment
    * 
@@ -3229,7 +3187,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Creates a linked metric
    * 
@@ -3305,7 +3262,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
    * 
@@ -3381,7 +3337,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Create a new custom performance profile
    * 
@@ -3457,7 +3412,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Updates a metric
    * 
@@ -3533,7 +3487,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Updates a performance profile
    * 
@@ -3609,7 +3562,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Updates a metric in performance profile
    * 
@@ -3685,7 +3637,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
   /**
    * Update gamification activation status
    * 
@@ -3761,7 +3712,6 @@ public class GamificationApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

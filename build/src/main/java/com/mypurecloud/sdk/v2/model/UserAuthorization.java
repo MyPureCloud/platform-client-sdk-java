@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainRole;
@@ -46,28 +47,27 @@ public class UserAuthorization  implements Serializable {
     this.roles = roles;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A collection of the roles the user is not using")
   @JsonProperty("unusedRoles")
   public List<DomainRole> getUnusedRoles() {
     return unusedRoles;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A collection of the permissions granted by all assigned roles")
   @JsonProperty("permissions")
   public List<String> getPermissions() {
     return permissions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The policies configured for assigned permissions.")
   @JsonProperty("permissionPolicies")
   public List<ResourcePermissionPolicy> getPermissionPolicies() {
     return permissionPolicies;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -78,10 +78,11 @@ public class UserAuthorization  implements Serializable {
       return false;
     }
     UserAuthorization userAuthorization = (UserAuthorization) o;
+
     return Objects.equals(this.roles, userAuthorization.roles) &&
-        Objects.equals(this.unusedRoles, userAuthorization.unusedRoles) &&
-        Objects.equals(this.permissions, userAuthorization.permissions) &&
-        Objects.equals(this.permissionPolicies, userAuthorization.permissionPolicies);
+            Objects.equals(this.unusedRoles, userAuthorization.unusedRoles) &&
+            Objects.equals(this.permissions, userAuthorization.permissions) &&
+            Objects.equals(this.permissionPolicies, userAuthorization.permissionPolicies);
   }
 
   @Override

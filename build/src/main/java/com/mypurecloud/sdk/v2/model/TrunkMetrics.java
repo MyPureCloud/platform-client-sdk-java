@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -48,7 +49,7 @@ public class TrunkMetrics  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public TrunkMetrics logicalInterface(DomainEntityRef logicalInterface) {
@@ -65,7 +66,7 @@ public class TrunkMetrics  implements Serializable {
     this.logicalInterface = logicalInterface;
   }
 
-  
+
   /**
    **/
   public TrunkMetrics trunk(DomainEntityRef trunk) {
@@ -82,7 +83,7 @@ public class TrunkMetrics  implements Serializable {
     this.trunk = trunk;
   }
 
-  
+
   /**
    **/
   public TrunkMetrics calls(TrunkMetricsCalls calls) {
@@ -99,7 +100,7 @@ public class TrunkMetrics  implements Serializable {
     this.calls = calls;
   }
 
-  
+
   /**
    **/
   public TrunkMetrics qos(TrunkMetricsQoS qos) {
@@ -116,7 +117,6 @@ public class TrunkMetrics  implements Serializable {
     this.qos = qos;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,11 +127,12 @@ public class TrunkMetrics  implements Serializable {
       return false;
     }
     TrunkMetrics trunkMetrics = (TrunkMetrics) o;
+
     return Objects.equals(this.eventTime, trunkMetrics.eventTime) &&
-        Objects.equals(this.logicalInterface, trunkMetrics.logicalInterface) &&
-        Objects.equals(this.trunk, trunkMetrics.trunk) &&
-        Objects.equals(this.calls, trunkMetrics.calls) &&
-        Objects.equals(this.qos, trunkMetrics.qos);
+            Objects.equals(this.logicalInterface, trunkMetrics.logicalInterface) &&
+            Objects.equals(this.trunk, trunkMetrics.trunk) &&
+            Objects.equals(this.calls, trunkMetrics.calls) &&
+            Objects.equals(this.qos, trunkMetrics.qos);
   }
 
   @Override

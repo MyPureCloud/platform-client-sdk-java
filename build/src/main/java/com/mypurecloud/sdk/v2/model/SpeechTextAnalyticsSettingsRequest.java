@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
     this.defaultProgramId = defaultProgramId;
   }
 
-  
+
   /**
    * Setting to choose expected dialects
    **/
@@ -61,7 +62,6 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
     this.expectedDialects = expectedDialects;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class SpeechTextAnalyticsSettingsRequest  implements Serializable {
       return false;
     }
     SpeechTextAnalyticsSettingsRequest speechTextAnalyticsSettingsRequest = (SpeechTextAnalyticsSettingsRequest) o;
+
     return Objects.equals(this.defaultProgramId, speechTextAnalyticsSettingsRequest.defaultProgramId) &&
-        Objects.equals(this.expectedDialects, speechTextAnalyticsSettingsRequest.expectedDialects);
+            Objects.equals(this.expectedDialects, speechTextAnalyticsSettingsRequest.expectedDialects);
   }
 
   @Override

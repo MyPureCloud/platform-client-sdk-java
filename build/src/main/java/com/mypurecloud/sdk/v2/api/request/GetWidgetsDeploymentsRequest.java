@@ -25,7 +25,7 @@ import com.mypurecloud.sdk.v2.model.WidgetDeployment;
 import com.mypurecloud.sdk.v2.model.WidgetDeploymentEntityListing;
 
 public class GetWidgetsDeploymentsRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -49,7 +49,7 @@ public class GetWidgetsDeploymentsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/widgets/deployments")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -60,7 +60,7 @@ public class GetWidgetsDeploymentsRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetWidgetsDeploymentsRequest request;
@@ -69,9 +69,9 @@ public class GetWidgetsDeploymentsRequest {
 			request = new GetWidgetsDeploymentsRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetWidgetsDeploymentsRequest build() {
             

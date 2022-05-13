@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Items;
@@ -36,35 +37,34 @@ public class Schema  implements Serializable {
     return title;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "A core type's description")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
-  
-  @ApiModelProperty(example = "[\"string\"] for a text-based core type, [\"integer\"] for a numeric core type, or [\"boolean\", \"null\"] for the checkbox core type", value = "An array of fundamental JSON Schema primitive types on which the core type is based")
+
+  @ApiModelProperty(example = "[&quot;string&quot;] for a text-based core type, [&quot;integer&quot;] for a numeric core type, or [&quot;boolean&quot;, &quot;null&quot;] for the checkbox core type", value = "An array of fundamental JSON Schema primitive types on which the core type is based")
   @JsonProperty("type")
   public List<String> getType() {
     return type;
   }
 
-  
-  @ApiModelProperty(example = "null", value = "Denotes the type and pattern of the items in an enum core type")
+
+  @ApiModelProperty(example = "&quot;{\ntype: string,\npattern: ^[\\\\S]+$\n}&quot;", value = "Denotes the type and pattern of the items in an enum core type")
   @JsonProperty("items")
   public Items getItems() {
     return items;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "For the \"date\" and \"datetime\" core types, denotes the regex prescribing the allowable date/datetime format")
   @JsonProperty("pattern")
   public String getPattern() {
     return pattern;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -75,11 +75,12 @@ public class Schema  implements Serializable {
       return false;
     }
     Schema schema = (Schema) o;
+
     return Objects.equals(this.title, schema.title) &&
-        Objects.equals(this.description, schema.description) &&
-        Objects.equals(this.type, schema.type) &&
-        Objects.equals(this.items, schema.items) &&
-        Objects.equals(this.pattern, schema.pattern);
+            Objects.equals(this.description, schema.description) &&
+            Objects.equals(this.type, schema.type) &&
+            Objects.equals(this.items, schema.items) &&
+            Objects.equals(this.pattern, schema.pattern);
   }
 
   @Override

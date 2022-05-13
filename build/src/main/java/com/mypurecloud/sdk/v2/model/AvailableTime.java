@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,35 +90,34 @@ public class AvailableTime  implements Serializable {
     return dateStart;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Length of availability period in minutes")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if this availability period is paid in Workforce Management schedule")
   @JsonProperty("isPaid")
   public Boolean getIsPaid() {
     return isPaid;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Workforce Management activity category for this availability period")
   @JsonProperty("activityCategory")
   public ActivityCategoryEnum getActivityCategory() {
     return activityCategory;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Workforce Management schedule information associated with the available time")
   @JsonProperty("wfmSchedule")
   public WfmScheduleReference getWfmSchedule() {
     return wfmSchedule;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class AvailableTime  implements Serializable {
       return false;
     }
     AvailableTime availableTime = (AvailableTime) o;
+
     return Objects.equals(this.dateStart, availableTime.dateStart) &&
-        Objects.equals(this.lengthInMinutes, availableTime.lengthInMinutes) &&
-        Objects.equals(this.isPaid, availableTime.isPaid) &&
-        Objects.equals(this.activityCategory, availableTime.activityCategory) &&
-        Objects.equals(this.wfmSchedule, availableTime.wfmSchedule);
+            Objects.equals(this.lengthInMinutes, availableTime.lengthInMinutes) &&
+            Objects.equals(this.isPaid, availableTime.isPaid) &&
+            Objects.equals(this.activityCategory, availableTime.activityCategory) &&
+            Objects.equals(this.wfmSchedule, availableTime.wfmSchedule);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class WorkspaceCreate  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public WorkspaceCreate bucket(String bucket) {
@@ -59,7 +60,7 @@ public class WorkspaceCreate  implements Serializable {
     this.bucket = bucket;
   }
 
-  
+
   /**
    **/
   public WorkspaceCreate description(String description) {
@@ -76,7 +77,6 @@ public class WorkspaceCreate  implements Serializable {
     this.description = description;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,9 +87,10 @@ public class WorkspaceCreate  implements Serializable {
       return false;
     }
     WorkspaceCreate workspaceCreate = (WorkspaceCreate) o;
+
     return Objects.equals(this.name, workspaceCreate.name) &&
-        Objects.equals(this.bucket, workspaceCreate.bucket) &&
-        Objects.equals(this.description, workspaceCreate.description);
+            Objects.equals(this.bucket, workspaceCreate.bucket) &&
+            Objects.equals(this.description, workspaceCreate.description);
   }
 
   @Override

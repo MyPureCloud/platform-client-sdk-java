@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FacetEntry;
@@ -44,7 +45,7 @@ public class QueryFacetInfo  implements Serializable {
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public QueryFacetInfo facets(List<FacetEntry> facets) {
@@ -61,7 +62,6 @@ public class QueryFacetInfo  implements Serializable {
     this.facets = facets;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class QueryFacetInfo  implements Serializable {
       return false;
     }
     QueryFacetInfo queryFacetInfo = (QueryFacetInfo) o;
+
     return Objects.equals(this.attributes, queryFacetInfo.attributes) &&
-        Objects.equals(this.facets, queryFacetInfo.facets);
+            Objects.equals(this.facets, queryFacetInfo.facets);
   }
 
   @Override

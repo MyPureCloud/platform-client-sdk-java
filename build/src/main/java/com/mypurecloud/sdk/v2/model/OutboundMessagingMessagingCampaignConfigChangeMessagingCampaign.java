@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -115,7 +116,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.campaignStatus = campaignStatus;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign callableTimeSet(OutboundMessagingMessagingCampaignConfigChangeUriReference callableTimeSet) {
@@ -132,7 +133,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.callableTimeSet = callableTimeSet;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -150,7 +151,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.contactList = contactList;
   }
 
-  
+
   /**
    * The dnc lists to check before sending a message for this messaging campaign.
    **/
@@ -168,7 +169,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.dncLists = dncLists;
   }
 
-  
+
   /**
    * The contact list filters to check before sending a message for this messaging campaign.
    **/
@@ -186,7 +187,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.contactListFilters = contactListFilters;
   }
 
-  
+
   /**
    * Whether this messaging campaign is always running.
    **/
@@ -204,7 +205,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.alwaysRunning = alwaysRunning;
   }
 
-  
+
   /**
    * The order in which to sort contacts for dialing, based on up to four columns.
    **/
@@ -222,7 +223,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.contactSorts = contactSorts;
   }
 
-  
+
   /**
    * How many messages this messaging campaign will send per minute.
    **/
@@ -240,7 +241,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.messagesPerMinute = messagesPerMinute;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign ruleSets(List<OutboundMessagingMessagingCampaignConfigChangeUriReference> ruleSets) {
@@ -257,7 +258,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.ruleSets = ruleSets;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign smsConfig(OutboundMessagingMessagingCampaignConfigChangeSmsConfig smsConfig) {
@@ -274,7 +275,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.smsConfig = smsConfig;
   }
 
-  
+
   /**
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign emailConfig(OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailConfig) {
@@ -291,7 +292,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.emailConfig = emailConfig;
   }
 
-  
+
   /**
    * A list of current error conditions associated with this messaging campaign
    **/
@@ -309,7 +310,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.errors = errors;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -327,7 +328,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -345,7 +346,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -363,7 +364,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -381,7 +382,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -399,7 +400,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.version = version;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -417,7 +418,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     this.division = division;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -428,24 +428,25 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign outboundMessagingMessagingCampaignConfigChangeMessagingCampaign = (OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign) o;
+
     return Objects.equals(this.campaignStatus, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.campaignStatus) &&
-        Objects.equals(this.callableTimeSet, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.callableTimeSet) &&
-        Objects.equals(this.contactList, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactList) &&
-        Objects.equals(this.dncLists, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dncLists) &&
-        Objects.equals(this.contactListFilters, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactListFilters) &&
-        Objects.equals(this.alwaysRunning, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.alwaysRunning) &&
-        Objects.equals(this.contactSorts, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactSorts) &&
-        Objects.equals(this.messagesPerMinute, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.messagesPerMinute) &&
-        Objects.equals(this.ruleSets, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.ruleSets) &&
-        Objects.equals(this.smsConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.smsConfig) &&
-        Objects.equals(this.emailConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.emailConfig) &&
-        Objects.equals(this.errors, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.errors) &&
-        Objects.equals(this.id, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.id) &&
-        Objects.equals(this.name, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.name) &&
-        Objects.equals(this.dateCreated, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateCreated) &&
-        Objects.equals(this.dateModified, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateModified) &&
-        Objects.equals(this.version, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.version) &&
-        Objects.equals(this.division, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.division);
+            Objects.equals(this.callableTimeSet, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.callableTimeSet) &&
+            Objects.equals(this.contactList, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactList) &&
+            Objects.equals(this.dncLists, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dncLists) &&
+            Objects.equals(this.contactListFilters, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactListFilters) &&
+            Objects.equals(this.alwaysRunning, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.alwaysRunning) &&
+            Objects.equals(this.contactSorts, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactSorts) &&
+            Objects.equals(this.messagesPerMinute, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.messagesPerMinute) &&
+            Objects.equals(this.ruleSets, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.ruleSets) &&
+            Objects.equals(this.smsConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.smsConfig) &&
+            Objects.equals(this.emailConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.emailConfig) &&
+            Objects.equals(this.errors, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.errors) &&
+            Objects.equals(this.id, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.id) &&
+            Objects.equals(this.name, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.name) &&
+            Objects.equals(this.dateCreated, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateCreated) &&
+            Objects.equals(this.dateModified, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateModified) &&
+            Objects.equals(this.version, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.version) &&
+            Objects.equals(this.division, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.division);
   }
 
   @Override

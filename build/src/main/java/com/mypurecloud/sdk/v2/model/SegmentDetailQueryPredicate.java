@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -356,7 +357,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Left hand side for dimension predicates
    **/
@@ -374,7 +375,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * Left hand side for property predicates
    **/
@@ -392,7 +393,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.propertyType = propertyType;
   }
 
-  
+
   /**
    * Left hand side for property predicates
    **/
@@ -410,7 +411,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * Left hand side for metric predicates
    **/
@@ -428,7 +429,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.metric = metric;
   }
 
-  
+
   /**
    * Optional operator, default is matches
    **/
@@ -446,7 +447,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-  
+
   /**
    * Right hand side for dimension, metric, or property predicates
    **/
@@ -464,7 +465,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-  
+
   /**
    * Right hand side for dimension, metric, or property predicates
    **/
@@ -482,7 +483,6 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     this.range = range;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -493,14 +493,15 @@ public class SegmentDetailQueryPredicate  implements Serializable {
       return false;
     }
     SegmentDetailQueryPredicate segmentDetailQueryPredicate = (SegmentDetailQueryPredicate) o;
+
     return Objects.equals(this.type, segmentDetailQueryPredicate.type) &&
-        Objects.equals(this.dimension, segmentDetailQueryPredicate.dimension) &&
-        Objects.equals(this.propertyType, segmentDetailQueryPredicate.propertyType) &&
-        Objects.equals(this.property, segmentDetailQueryPredicate.property) &&
-        Objects.equals(this.metric, segmentDetailQueryPredicate.metric) &&
-        Objects.equals(this.operator, segmentDetailQueryPredicate.operator) &&
-        Objects.equals(this.value, segmentDetailQueryPredicate.value) &&
-        Objects.equals(this.range, segmentDetailQueryPredicate.range);
+            Objects.equals(this.dimension, segmentDetailQueryPredicate.dimension) &&
+            Objects.equals(this.propertyType, segmentDetailQueryPredicate.propertyType) &&
+            Objects.equals(this.property, segmentDetailQueryPredicate.property) &&
+            Objects.equals(this.metric, segmentDetailQueryPredicate.metric) &&
+            Objects.equals(this.operator, segmentDetailQueryPredicate.operator) &&
+            Objects.equals(this.value, segmentDetailQueryPredicate.value) &&
+            Objects.equals(this.range, segmentDetailQueryPredicate.range);
   }
 
   @Override

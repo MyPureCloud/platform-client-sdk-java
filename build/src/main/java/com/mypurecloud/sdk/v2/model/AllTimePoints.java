@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -33,21 +34,20 @@ public class AllTimePoints  implements Serializable {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Queried end workday for all time points to be collected. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEndWorkday")
   public LocalDate getDateEndWorkday() {
     return dateEndWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "All time point collected bt the user")
   @JsonProperty("allTimePoints")
   public Long getAllTimePoints() {
     return allTimePoints;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -58,9 +58,10 @@ public class AllTimePoints  implements Serializable {
       return false;
     }
     AllTimePoints allTimePoints = (AllTimePoints) o;
+
     return Objects.equals(this.user, allTimePoints.user) &&
-        Objects.equals(this.dateEndWorkday, allTimePoints.dateEndWorkday) &&
-        Objects.equals(this.allTimePoints, allTimePoints.allTimePoints);
+            Objects.equals(this.dateEndWorkday, allTimePoints.dateEndWorkday) &&
+            Objects.equals(this.allTimePoints, allTimePoints.allTimePoints);
   }
 
   @Override

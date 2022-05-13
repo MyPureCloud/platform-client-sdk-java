@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -91,7 +92,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The identifier of the conversation.
    **/
@@ -109,7 +110,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * The sender of the message.
    **/
@@ -127,7 +128,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The recipient of the message.
    **/
@@ -145,7 +146,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.toAddress = toAddress;
   }
 
-  
+
   /**
    * Type of messenger.
    **/
@@ -163,7 +164,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.messengerType = messengerType;
   }
 
-  
+
   /**
    * The body of the text message.
    **/
@@ -181,7 +182,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The messaging template sent
    **/
@@ -199,7 +200,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.messagingTemplate = messagingTemplate;
   }
 
-  
+
   /**
    * Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
    **/
@@ -217,7 +218,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.useExistingActiveConversation = useExistingActiveConversation;
   }
 
-  
+
   /**
    * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -235,21 +236,20 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Details of the user created the job")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,17 +260,18 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
       return false;
     }
     SendAgentlessOutboundMessageResponse sendAgentlessOutboundMessageResponse = (SendAgentlessOutboundMessageResponse) o;
+
     return Objects.equals(this.id, sendAgentlessOutboundMessageResponse.id) &&
-        Objects.equals(this.conversationId, sendAgentlessOutboundMessageResponse.conversationId) &&
-        Objects.equals(this.fromAddress, sendAgentlessOutboundMessageResponse.fromAddress) &&
-        Objects.equals(this.toAddress, sendAgentlessOutboundMessageResponse.toAddress) &&
-        Objects.equals(this.messengerType, sendAgentlessOutboundMessageResponse.messengerType) &&
-        Objects.equals(this.textBody, sendAgentlessOutboundMessageResponse.textBody) &&
-        Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageResponse.messagingTemplate) &&
-        Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageResponse.useExistingActiveConversation) &&
-        Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
-        Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri) &&
-        Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user);
+            Objects.equals(this.conversationId, sendAgentlessOutboundMessageResponse.conversationId) &&
+            Objects.equals(this.fromAddress, sendAgentlessOutboundMessageResponse.fromAddress) &&
+            Objects.equals(this.toAddress, sendAgentlessOutboundMessageResponse.toAddress) &&
+            Objects.equals(this.messengerType, sendAgentlessOutboundMessageResponse.messengerType) &&
+            Objects.equals(this.textBody, sendAgentlessOutboundMessageResponse.textBody) &&
+            Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageResponse.messagingTemplate) &&
+            Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageResponse.useExistingActiveConversation) &&
+            Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
+            Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri) &&
+            Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -140,7 +141,7 @@ public class RequestMapping  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Type of the value supplied
    **/
@@ -158,7 +159,7 @@ public class RequestMapping  implements Serializable {
     this.attributeType = attributeType;
   }
 
-  
+
   /**
    * Method of finding value to use with Attribute
    **/
@@ -176,7 +177,7 @@ public class RequestMapping  implements Serializable {
     this.mappingType = mappingType;
   }
 
-  
+
   /**
    * Value to supply for the specified Attribute
    **/
@@ -194,7 +195,6 @@ public class RequestMapping  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -205,10 +205,11 @@ public class RequestMapping  implements Serializable {
       return false;
     }
     RequestMapping requestMapping = (RequestMapping) o;
+
     return Objects.equals(this.name, requestMapping.name) &&
-        Objects.equals(this.attributeType, requestMapping.attributeType) &&
-        Objects.equals(this.mappingType, requestMapping.mappingType) &&
-        Objects.equals(this.value, requestMapping.value);
+            Objects.equals(this.attributeType, requestMapping.attributeType) &&
+            Objects.equals(this.mappingType, requestMapping.mappingType) &&
+            Objects.equals(this.value, requestMapping.value);
   }
 
   @Override

@@ -15,11 +15,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | Delete a queue member. |
 | [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member. |
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
-| [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization&#39;s routing settings |
+| [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization's routing settings |
 | [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
 | [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | Delete an Address by Id for SMS |
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
-| [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default. |
+| [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
 | [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
 | [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
@@ -51,7 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
 | [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization. |
 | [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
-| [**getRoutingSettings**](RoutingApi.html#getRoutingSettings) | Get an organization&#39;s routing settings |
+| [**getRoutingSettings**](RoutingApi.html#getRoutingSettings) | Get an organization's routing settings |
 | [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | Get Contact Center Settings |
 | [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | Get Transcription Settings |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
@@ -61,7 +61,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
 | [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
 | [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
-| [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned. |
+| [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
 | [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the organization-wide max utilization settings. |
 | [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | Get details about this wrap-up code. |
 | [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
@@ -103,10 +103,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
 | [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
 | [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
-| [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | Update an organization&#39;s routing settings |
+| [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | Update an organization's routing settings |
 | [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | Update Transcription Settings |
 | [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
-| [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. |
+| [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
 | [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
@@ -122,8 +122,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteRoutingAssessment(assessmentId)
 
 Delete single benefit assessment.
-
-
 
 Wraps DELETE /api/v2/routing/assessments/{assessmentId}  
 
@@ -185,8 +183,6 @@ null (empty response body)
 
 Delete a domain
 
-
-
 Wraps DELETE /api/v2/routing/email/domains/{domainId}  
 
 Requires ALL permissions: 
@@ -246,8 +242,6 @@ null (empty response body)
 > Void deleteRoutingEmailDomainRoute(domainName, routeId)
 
 Delete a route
-
-
 
 Wraps DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}  
 
@@ -311,8 +305,6 @@ null (empty response body)
 
 Delete single predictor.
 
-
-
 Wraps DELETE /api/v2/routing/predictors/{predictorId}  
 
 Requires ALL permissions: 
@@ -373,8 +365,6 @@ null (empty response body)
 > Void deleteRoutingQueue(queueId, forceDelete)
 
 Delete a queue
-
-
 
 Wraps DELETE /api/v2/routing/queues/{queueId}  
 
@@ -437,8 +427,6 @@ null (empty response body)
 > Void deleteRoutingQueueMember(queueId, memberId)
 
 Delete a queue member.
-
-
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/members/{memberId}  
 
@@ -503,8 +491,6 @@ null (empty response body)
 
 DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 
-
-
 Wraps DELETE /api/v2/routing/queues/{queueId}/users/{memberId}  
 
 Requires ANY permissions: 
@@ -568,8 +554,6 @@ null (empty response body)
 
 Delete a wrap-up code from a queue
 
-
-
 Wraps DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}  
 
 Requires ALL permissions: 
@@ -630,9 +614,7 @@ null (empty response body)
 
 > Void deleteRoutingSettings()
 
-Delete an organization&#39;s routing settings
-
-
+Delete an organization's routing settings
 
 Wraps DELETE /api/v2/routing/settings  
 
@@ -689,8 +671,6 @@ null (empty response body)
 > Void deleteRoutingSkill(skillId)
 
 Delete Routing Skill
-
-
 
 Wraps DELETE /api/v2/routing/skills/{skillId}  
 
@@ -752,8 +732,6 @@ null (empty response body)
 
 Delete an Address by Id for SMS
 
-
-
 Wraps DELETE /api/v2/routing/sms/addresses/{addressId}  
 
 Requires ALL permissions: 
@@ -813,8 +791,6 @@ null (empty response body)
 > Void deleteRoutingSmsPhonenumber(addressId, async)
 
 Delete a phone number provisioned for SMS.
-
-
 
 Wraps DELETE /api/v2/routing/sms/phonenumbers/{addressId}  
 
@@ -876,9 +852,7 @@ null (empty response body)
 
 > Void deleteRoutingUserUtilization(userId)
 
-Delete the user&#39;s max utilization settings and revert to the organization-wide default.
-
-
+Delete the user's max utilization settings and revert to the organization-wide default.
 
 Wraps DELETE /api/v2/routing/users/{userId}/utilization  
 
@@ -940,8 +914,6 @@ null (empty response body)
 
 Delete the organization-wide max utilization settings and revert to the system default.
 
-
-
 Wraps DELETE /api/v2/routing/utilization  
 
 Requires ALL permissions: 
@@ -997,8 +969,6 @@ null (empty response body)
 > Void deleteRoutingWrapupcode(codeId)
 
 Delete wrap-up code
-
-
 
 Wraps DELETE /api/v2/routing/wrapupcodes/{codeId}  
 
@@ -1059,8 +1029,6 @@ null (empty response body)
 > Void deleteUserRoutinglanguage(userId, languageId)
 
 Remove routing language from user
-
-
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}  
 
@@ -1125,8 +1093,6 @@ null (empty response body)
 
 Remove routing skill from user
 
-
-
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}  
 
 Requires ALL permissions: 
@@ -1189,8 +1155,6 @@ null (empty response body)
 
 Retrieve a single benefit assessment.
 
-
-
 Wraps GET /api/v2/routing/assessments/{assessmentId}  
 
 Requires ANY permissions: 
@@ -1252,8 +1216,6 @@ try {
 
 Retrieve all benefit assessments.
 
-
-
 Wraps GET /api/v2/routing/assessments  
 
 Requires ANY permissions: 
@@ -1287,7 +1249,7 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
-List<String> queueId = Arrays.asList("queueId_example"); // List<String> | Queue ID(s) to filter assessments by.
+List<String> queueId = Arrays.asList(null); // List<String> | Queue ID(s) to filter assessments by.
 try {
     AssessmentListing result = apiInstance.getRoutingAssessments(before, after, limit, pageSize, queueId);
     System.out.println(result);
@@ -1323,8 +1285,6 @@ try {
 > [BenefitAssessmentJob](BenefitAssessmentJob.html) getRoutingAssessmentsJob(jobId)
 
 Retrieve a single benefit assessments job.
-
-
 
 Wraps GET /api/v2/routing/assessments/jobs/{jobId}  
 
@@ -1387,8 +1347,6 @@ try {
 
 Retrieve all benefit assessment jobs.
 
-
-
 Wraps GET /api/v2/routing/assessments/jobs  
 
 Requires ANY permissions: 
@@ -1417,7 +1375,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s) to filter assessment jobs by.
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s) to filter assessment jobs by.
 try {
     AssessmentJobListing result = apiInstance.getRoutingAssessmentsJobs(divisionId);
     System.out.println(result);
@@ -1449,8 +1407,6 @@ try {
 > [InboundDomain](InboundDomain.html) getRoutingEmailDomain(domainId)
 
 Get domain
-
-
 
 Wraps GET /api/v2/routing/email/domains/{domainId}  
 
@@ -1512,8 +1468,6 @@ try {
 > [InboundRoute](InboundRoute.html) getRoutingEmailDomainRoute(domainName, routeId)
 
 Get a route
-
-
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}  
 
@@ -1577,8 +1531,6 @@ try {
 > [InboundRouteEntityListing](InboundRouteEntityListing.html) getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern)
 
 Get routes
-
-
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes  
 
@@ -1647,8 +1599,6 @@ try {
 
 Get domains
 
-
-
 Wraps GET /api/v2/routing/email/domains  
 
 Requires ALL permissions: 
@@ -1710,8 +1660,6 @@ try {
 
 Get email setup
 
-
-
 Wraps GET /api/v2/routing/email/setup  
 
 Requires ALL permissions: 
@@ -1769,8 +1717,6 @@ This endpoint does not require any parameters.
 
 Get the list of supported languages.
 
-
-
 Wraps GET /api/v2/routing/languages  
 
 Requires NO permissions: 
@@ -1802,7 +1748,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 try {
     LanguageEntityListing result = apiInstance.getRoutingLanguages(pageSize, pageNumber, sortOrder, name, id);
     System.out.println(result);
@@ -1838,8 +1784,6 @@ try {
 > [Recipient](Recipient.html) getRoutingMessageRecipient(recipientId)
 
 Get a recipient
-
-
 
 Wraps GET /api/v2/routing/message/recipients/{recipientId}  
 
@@ -1901,8 +1845,6 @@ try {
 > [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(messengerType, pageSize, pageNumber)
 
 Get recipients
-
-
 
 Wraps GET /api/v2/routing/message/recipients  
 
@@ -1969,8 +1911,6 @@ try {
 
 Retrieve a single predictor.
 
-
-
 Wraps GET /api/v2/routing/predictors/{predictorId}  
 
 Requires ANY permissions: 
@@ -2032,8 +1972,6 @@ try {
 
 Retrieve all predictors.
 
-
-
 Wraps GET /api/v2/routing/predictors  
 
 Requires ANY permissions: 
@@ -2067,7 +2005,7 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
-List<String> queueId = Arrays.asList("queueId_example"); // List<String> | Comma-separated list of queue Ids to filter by.
+List<String> queueId = Arrays.asList(null); // List<String> | Comma-separated list of queue Ids to filter by.
 try {
     PredictorListing result = apiInstance.getRoutingPredictors(before, after, limit, pageSize, queueId);
     System.out.println(result);
@@ -2103,8 +2041,6 @@ try {
 > [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators()
 
 Get a list of Key Performance Indicators available for the predictors.
-
-
 
 Wraps GET /api/v2/routing/predictors/keyperformanceindicators  
 
@@ -2162,8 +2098,6 @@ This endpoint does not require any parameters.
 > [Queue](Queue.html) getRoutingQueue(queueId)
 
 Get details about this queue.
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}  
 
@@ -2225,8 +2159,6 @@ try {
 > [ComparisonPeriod](ComparisonPeriod.html) getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
 
 Get a Comparison Period.
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}  
 
@@ -2292,8 +2224,6 @@ try {
 
 Get list of comparison periods
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods  
 
 Requires ALL permissions: 
@@ -2355,8 +2285,6 @@ try {
 > [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions.html) getRoutingQueueEstimatedwaittime(queueId, conversationId)
 
 Get Estimated Wait Time
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/estimatedwaittime  
 
@@ -2421,8 +2349,6 @@ try {
 
 Get Estimated Wait Time
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime  
 
 Requires ALL permissions: 
@@ -2486,8 +2412,6 @@ try {
 
 Get the members of this queue.
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/members  
 
 Requires ANY permissions: 
@@ -2523,13 +2447,13 @@ String queueId = "queueId_example"; // String | Queue ID
 Integer pageNumber = 1; // Integer | 
 Integer pageSize = 25; // Integer | Max value is 100
 String sortOrder = "asc"; // String | Note: results are sorted by name.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 String name = "name_example"; // String | Filter by queue member name
-List<String> profileSkills = Arrays.asList("profileSkills_example"); // List<String> | Filter by profile skill
-List<String> skills = Arrays.asList("skills_example"); // List<String> | Filter by skill
-List<String> languages = Arrays.asList("languages_example"); // List<String> | Filter by language
-List<String> routingStatus = Arrays.asList("routingStatus_example"); // List<String> | Filter by routing status
-List<String> presence = Arrays.asList("presence_example"); // List<String> | Filter by presence
+List<String> profileSkills = Arrays.asList(null); // List<String> | Filter by profile skill
+List<String> skills = Arrays.asList(null); // List<String> | Filter by skill
+List<String> languages = Arrays.asList(null); // List<String> | Filter by language
+List<String> routingStatus = Arrays.asList(null); // List<String> | Filter by routing status
+List<String> presence = Arrays.asList(null); // List<String> | Filter by presence
 String memberBy = "memberBy_example"; // String | Filter by member type
 Boolean joined = true; // Boolean | Filter by joined status
 try {
@@ -2558,7 +2482,7 @@ try {
 | **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
 | **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
 | **memberBy** | **String**| Filter by member type | [optional]<br />**Values**: user, group 
-| **joined** | **Boolean**| Filter by joined status | [optional] 
+| **joined** | **Boolean**| Filter by joined status | [optional]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -2575,8 +2499,6 @@ try {
 > [QueueMemberEntityListingV1](QueueMemberEntityListingV1.html) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
 
 DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/users  
 
@@ -2611,14 +2533,14 @@ String queueId = "queueId_example"; // String | Queue ID
 Integer pageNumber = 1; // Integer | 
 Integer pageSize = 25; // Integer | Max value is 100
 String sortOrder = "asc"; // String | Note: results are sorted by name.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 Boolean joined = true; // Boolean | Filter by joined status
 String name = "name_example"; // String | Filter by queue member name
-List<String> profileSkills = Arrays.asList("profileSkills_example"); // List<String> | Filter by profile skill
-List<String> skills = Arrays.asList("skills_example"); // List<String> | Filter by skill
-List<String> languages = Arrays.asList("languages_example"); // List<String> | Filter by language
-List<String> routingStatus = Arrays.asList("routingStatus_example"); // List<String> | Filter by routing status
-List<String> presence = Arrays.asList("presence_example"); // List<String> | Filter by presence
+List<String> profileSkills = Arrays.asList(null); // List<String> | Filter by profile skill
+List<String> skills = Arrays.asList(null); // List<String> | Filter by skill
+List<String> languages = Arrays.asList(null); // List<String> | Filter by language
+List<String> routingStatus = Arrays.asList(null); // List<String> | Filter by routing status
+List<String> presence = Arrays.asList(null); // List<String> | Filter by presence
 try {
     QueueMemberEntityListingV1 result = apiInstance.getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
     System.out.println(result);
@@ -2661,8 +2583,6 @@ try {
 > [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber)
 
 Get the wrap-up codes for a queue
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/wrapupcodes  
 
@@ -2729,8 +2649,6 @@ try {
 
 Get list of queues.
 
-
-
 Wraps GET /api/v2/routing/queues  
 
 Requires ANY permissions: 
@@ -2763,8 +2681,8 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortOrder = "asc"; // String | Note: results are sorted by name.
 String name = "name_example"; // String | Filter by queue name
-List<String> id = Arrays.asList("id_example"); // List<String> | Filter by queue ID(s)
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Filter by queue division ID(s)
+List<String> id = Arrays.asList(null); // List<String> | Filter by queue ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Filter by queue division ID(s)
 try {
     QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId);
     System.out.println(result);
@@ -2802,8 +2720,6 @@ try {
 
 Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 
-
-
 Wraps GET /api/v2/routing/queues/divisionviews  
 
 Requires ALL permissions: 
@@ -2837,8 +2753,8 @@ Integer pageNumber = 1; // Integer | Page number [max value is 5]
 String sortBy = "name"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
 String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | Queue ID(s)
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> id = Arrays.asList(null); // List<String> | Queue ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 try {
     QueueEntityListing result = apiInstance.getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId);
     System.out.println(result);
@@ -2876,8 +2792,6 @@ try {
 > [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortOrder)
 
 Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
-
-
 
 Wraps GET /api/v2/routing/queues/divisionviews/all  
 
@@ -2944,8 +2858,6 @@ try {
 
 Get a paged listing of queues the user is a member of.
 
-
-
 Wraps GET /api/v2/routing/queues/me  
 
 Requires NO permissions: 
@@ -2993,7 +2905,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **joined** | **Boolean**| Filter by joined status. | [optional] 
+| **joined** | **Boolean**| Filter by joined status. | [optional]<br />**Values**: true, false 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
 {: class="table-striped"}
 
@@ -3010,9 +2922,7 @@ try {
 
 > [RoutingSettings](RoutingSettings.html) getRoutingSettings()
 
-Get an organization&#39;s routing settings
-
-
+Get an organization's routing settings
 
 Wraps GET /api/v2/routing/settings  
 
@@ -3070,8 +2980,6 @@ This endpoint does not require any parameters.
 
 Get Contact Center Settings
 
-
-
 Wraps GET /api/v2/routing/settings/contactcenter  
 
 Requires NO permissions: 
@@ -3127,8 +3035,6 @@ This endpoint does not require any parameters.
 > [TranscriptionSettings](TranscriptionSettings.html) getRoutingSettingsTranscription()
 
 Get Transcription Settings
-
-
 
 Wraps GET /api/v2/routing/settings/transcription  
 
@@ -3186,8 +3092,6 @@ This endpoint does not require any parameters.
 > [RoutingSkill](RoutingSkill.html) getRoutingSkill(skillId)
 
 Get Routing Skill
-
-
 
 Wraps GET /api/v2/routing/skills/{skillId}  
 
@@ -3249,8 +3153,6 @@ try {
 
 Get the list of routing skills.
 
-
-
 Wraps GET /api/v2/routing/skills  
 
 Requires NO permissions: 
@@ -3281,7 +3183,7 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Filter for results that start with this value
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 try {
     SkillEntityListing result = apiInstance.getRoutingSkills(pageSize, pageNumber, name, id);
     System.out.println(result);
@@ -3316,8 +3218,6 @@ try {
 > [SmsAddress](SmsAddress.html) getRoutingSmsAddress(addressId)
 
 Get an Address by Id for SMS
-
-
 
 Wraps GET /api/v2/routing/sms/addresses/{addressId}  
 
@@ -3379,8 +3279,6 @@ try {
 > [SmsAddressEntityListing](SmsAddressEntityListing.html) getRoutingSmsAddresses(pageSize, pageNumber)
 
 Get a list of Addresses for SMS
-
-
 
 Wraps GET /api/v2/routing/sms/addresses  
 
@@ -3520,8 +3418,6 @@ try {
 
 Get a phone number provisioned for SMS.
 
-
-
 Wraps GET /api/v2/routing/sms/phonenumbers/{addressId}  
 
 Requires ALL permissions: 
@@ -3583,8 +3479,6 @@ try {
 
 Get a list of provisioned phone numbers.
 
-
-
 Wraps GET /api/v2/routing/sms/phonenumbers  
 
 Requires ALL permissions: 
@@ -3614,14 +3508,14 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String phoneNumber = "phoneNumber_example"; // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
-List<String> phoneNumberType = Arrays.asList("phoneNumberType_example"); // List<String> | Filter on phone number type
-List<String> phoneNumberStatus = Arrays.asList("phoneNumberStatus_example"); // List<String> | Filter on phone number status
-List<String> countryCode = Arrays.asList("countryCode_example"); // List<String> | Filter on country code
+List<String> phoneNumberType = Arrays.asList(null); // List<String> | Filter on phone number type
+List<String> phoneNumberStatus = Arrays.asList(null); // List<String> | Filter on phone number status
+List<String> countryCode = Arrays.asList(null); // List<String> | Filter on country code
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "sortBy_example"; // String | Optional field to sort results
 String sortOrder = "sortOrder_example"; // String | Sort order
-String language = "en-US"; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
+String language = en-US; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
 try {
     SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language);
     System.out.println(result);
@@ -3644,7 +3538,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Optional field to sort results | [optional]<br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice 
 | **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
-| **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to en-US] 
+| **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &quot;en-US&quot;] 
 {: class="table-striped"}
 
 
@@ -3660,9 +3554,7 @@ try {
 
 > [AgentMaxUtilization](AgentMaxUtilization.html) getRoutingUserUtilization(userId)
 
-Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
-
-
+Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
 Wraps GET /api/v2/routing/users/{userId}/utilization  
 
@@ -3726,8 +3618,6 @@ try {
 
 Get the organization-wide max utilization settings.
 
-
-
 Wraps GET /api/v2/routing/utilization  
 
 Requires ANY permissions: 
@@ -3785,8 +3675,6 @@ This endpoint does not require any parameters.
 > [WrapupCode](WrapupCode.html) getRoutingWrapupcode(codeId)
 
 Get details about this wrap-up code.
-
-
 
 Wraps GET /api/v2/routing/wrapupcodes/{codeId}  
 
@@ -3848,8 +3736,6 @@ try {
 > [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name)
 
 Get list of wrapup codes.
-
-
 
 Wraps GET /api/v2/routing/wrapupcodes  
 
@@ -3920,8 +3806,6 @@ try {
 
 Get queues for user
 
-
-
 Wraps GET /api/v2/users/{userId}/queues  
 
 Requires ANY permissions: 
@@ -3956,7 +3840,7 @@ String userId = "userId_example"; // String | User ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean joined = true; // Boolean | Is joined to the queue
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 try {
     UserQueueEntityListing result = apiInstance.getUserQueues(userId, pageSize, pageNumber, joined, divisionId);
     System.out.println(result);
@@ -3992,8 +3876,6 @@ try {
 > [UserLanguageEntityListing](UserLanguageEntityListing.html) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
 
 List routing language for user
-
-
 
 Wraps GET /api/v2/users/{userId}/routinglanguages  
 
@@ -4060,8 +3942,6 @@ try {
 > [UserSkillEntityListing](UserSkillEntityListing.html) getUserRoutingskills(userId, pageSize, pageNumber, sortOrder)
 
 List routing skills for user
-
-
 
 Wraps GET /api/v2/users/{userId}/routingskills  
 
@@ -4194,8 +4074,6 @@ try {
 
 Update domain settings
 
-
-
 Wraps PATCH /api/v2/routing/email/domains/{domainId}  
 
 Requires ALL permissions: 
@@ -4258,8 +4136,6 @@ try {
 > [InboundDomain](InboundDomain.html) patchRoutingEmailDomainValidate(domainId, body)
 
 Validate domain settings
-
-
 
 Wraps PATCH /api/v2/routing/email/domains/{domainId}/validate  
 
@@ -4324,8 +4200,6 @@ try {
 
 Update single predictor.
 
-
-
 Wraps PATCH /api/v2/routing/predictors/{predictorId}  
 
 Requires ALL permissions: 
@@ -4389,8 +4263,6 @@ try {
 > Void patchRoutingQueueMember(queueId, memberId, body)
 
 Update the ring number OR joined status for a queue member.
-
-
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/members/{memberId}  
 
@@ -4457,8 +4329,6 @@ null (empty response body)
 
 Join or unjoin a set of users for a queue
 
-
-
 Wraps PATCH /api/v2/routing/queues/{queueId}/members  
 
 Requires ANY permissions: 
@@ -4522,8 +4392,6 @@ try {
 > Void patchRoutingQueueUser(queueId, memberId, body)
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
-
-
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users/{memberId}  
 
@@ -4590,8 +4458,6 @@ null (empty response body)
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 
-
-
 Wraps PATCH /api/v2/routing/queues/{queueId}/users  
 
 Requires ANY permissions: 
@@ -4656,8 +4522,6 @@ try {
 
 Update Contact Center Settings
 
-
-
 Wraps PATCH /api/v2/routing/settings/contactcenter  
 
 Requires ANY permissions: 
@@ -4717,8 +4581,6 @@ null (empty response body)
 > [UserQueue](UserQueue.html) patchUserQueue(queueId, userId, body)
 
 Join or unjoin a queue for a user
-
-
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId}  
 
@@ -4786,8 +4648,6 @@ try {
 
 Join or unjoin a set of queues for a user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/queues  
 
 Requires ANY permissions: 
@@ -4819,7 +4679,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
 List<UserQueue> body = Arrays.asList(new UserQueue()); // List<UserQueue> | User Queues
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
 try {
     UserQueueEntityListing result = apiInstance.patchUserQueues(userId, body, divisionId);
     System.out.println(result);
@@ -4853,8 +4713,6 @@ try {
 > [UserRoutingLanguage](UserRoutingLanguage.html) patchUserRoutinglanguage(userId, languageId, body)
 
 Update routing language proficiency or state.
-
-
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}  
 
@@ -4922,8 +4780,6 @@ try {
 
 Add bulk routing language to user. Max limit 50 languages
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk  
 
 Requires ANY permissions: 
@@ -4988,8 +4844,6 @@ try {
 
 Bulk add routing skills to user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routingskills/bulk  
 
 Requires ANY permissions: 
@@ -5053,8 +4907,6 @@ try {
 
 Query for queue observations
 
-
-
 Wraps POST /api/v2/analytics/queues/observations/query  
 
 Requires ANY permissions: 
@@ -5115,8 +4967,6 @@ try {
 > [BenefitAssessment](BenefitAssessment.html) postRoutingAssessments(body)
 
 Create a benefit assessment.
-
-
 
 Wraps POST /api/v2/routing/assessments  
 
@@ -5180,8 +5030,6 @@ try {
 
 Create a benefit assessment job.
 
-
-
 Wraps POST /api/v2/routing/assessments/jobs  
 
 Requires ANY permissions: 
@@ -5242,8 +5090,6 @@ try {
 > [InboundRoute](InboundRoute.html) postRoutingEmailDomainRoutes(domainName, body)
 
 Create a route
-
-
 
 Wraps POST /api/v2/routing/email/domains/{domainName}/routes  
 
@@ -5373,8 +5219,6 @@ try {
 
 Create a domain
 
-
-
 Wraps POST /api/v2/routing/email/domains  
 
 Requires ALL permissions: 
@@ -5435,8 +5279,6 @@ try {
 > [Language](Language.html) postRoutingLanguages(body)
 
 Create Language
-
-
 
 Wraps POST /api/v2/routing/languages  
 
@@ -5499,8 +5341,6 @@ try {
 
 Create a predictor.
 
-
-
 Wraps POST /api/v2/routing/predictors  
 
 Requires ALL permissions: 
@@ -5562,8 +5402,6 @@ try {
 > Void postRoutingQueueMembers(queueId, body, delete)
 
 Bulk add or delete up to 100 queue members
-
-
 
 Wraps POST /api/v2/routing/queues/{queueId}/members  
 
@@ -5630,8 +5468,6 @@ null (empty response body)
 
 DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 
-
-
 Wraps POST /api/v2/routing/queues/{queueId}/users  
 
 Requires ANY permissions: 
@@ -5697,8 +5533,6 @@ null (empty response body)
 
 Add up to 100 wrap-up codes to a queue
 
-
-
 Wraps POST /api/v2/routing/queues/{queueId}/wrapupcodes  
 
 Requires ALL permissions: 
@@ -5762,8 +5596,6 @@ try {
 
 Create a queue
 
-
-
 Wraps POST /api/v2/routing/queues  
 
 Requires ANY permissions: 
@@ -5824,8 +5656,6 @@ try {
 > [RoutingSkill](RoutingSkill.html) postRoutingSkills(body)
 
 Create Skill
-
-
 
 Wraps POST /api/v2/routing/skills  
 
@@ -5888,8 +5718,6 @@ try {
 
 Provision an Address for SMS
 
-
-
 Wraps POST /api/v2/routing/sms/addresses  
 
 Requires ALL permissions: 
@@ -5950,8 +5778,6 @@ try {
 > [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbers(body, async)
 
 Provision a phone number for SMS
-
-
 
 Wraps POST /api/v2/routing/sms/phonenumbers  
 
@@ -6016,8 +5842,6 @@ try {
 
 Create a wrap-up code
 
-
-
 Wraps POST /api/v2/routing/wrapupcodes  
 
 Requires ALL permissions: 
@@ -6078,8 +5902,6 @@ try {
 > [UserRoutingLanguage](UserRoutingLanguage.html) postUserRoutinglanguages(userId, body)
 
 Add routing language to user
-
-
 
 Wraps POST /api/v2/users/{userId}/routinglanguages  
 
@@ -6145,8 +5967,6 @@ try {
 
 Add routing skill to user
 
-
-
 Wraps POST /api/v2/users/{userId}/routingskills  
 
 Requires ALL permissions: 
@@ -6209,8 +6029,6 @@ try {
 > [InboundRoute](InboundRoute.html) putRoutingEmailDomainRoute(domainName, routeId, body)
 
 Update a route
-
-
 
 Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}  
 
@@ -6277,8 +6095,6 @@ try {
 
 Update a recipient
 
-
-
 Wraps PUT /api/v2/routing/message/recipients/{recipientId}  
 
 Requires ALL permissions: 
@@ -6342,8 +6158,6 @@ try {
 
 Update a queue
 
-
-
 Wraps PUT /api/v2/routing/queues/{queueId}  
 
 Requires ANY permissions: 
@@ -6405,9 +6219,7 @@ try {
 
 > [RoutingSettings](RoutingSettings.html) putRoutingSettings(body)
 
-Update an organization&#39;s routing settings
-
-
+Update an organization's routing settings
 
 Wraps PUT /api/v2/routing/settings  
 
@@ -6470,8 +6282,6 @@ try {
 
 Update Transcription Settings
 
-
-
 Wraps PUT /api/v2/routing/settings/transcription  
 
 Requires ANY permissions: 
@@ -6532,8 +6342,6 @@ try {
 > [SmsPhoneNumber](SmsPhoneNumber.html) putRoutingSmsPhonenumber(addressId, body, async)
 
 Update a phone number provisioned for SMS.
-
-
 
 Wraps PUT /api/v2/routing/sms/phonenumbers/{addressId}  
 
@@ -6598,9 +6406,7 @@ try {
 
 > [AgentMaxUtilization](AgentMaxUtilization.html) putRoutingUserUtilization(userId, body)
 
-Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
-
-
+Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
 Wraps PUT /api/v2/routing/users/{userId}/utilization  
 
@@ -6665,8 +6471,6 @@ try {
 
 Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
-
-
 Wraps PUT /api/v2/routing/utilization  
 
 Requires ALL permissions: 
@@ -6727,8 +6531,6 @@ try {
 > [WrapupCode](WrapupCode.html) putRoutingWrapupcode(codeId, body)
 
 Update wrap-up code
-
-
 
 Wraps PUT /api/v2/routing/wrapupcodes/{codeId}  
 
@@ -6792,8 +6594,6 @@ try {
 > [UserRoutingSkill](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
 
 Update routing skill proficiency or state.
-
-
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}  
 
@@ -6859,8 +6659,6 @@ try {
 > [UserSkillEntityListing](UserSkillEntityListing.html) putUserRoutingskillsBulk(userId, body)
 
 Replace all routing skills assigned to a user
-
-
 
 Wraps PUT /api/v2/users/{userId}/routingskills/bulk  
 

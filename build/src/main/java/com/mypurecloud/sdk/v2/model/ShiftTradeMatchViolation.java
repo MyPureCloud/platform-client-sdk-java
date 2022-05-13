@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -121,7 +122,7 @@ public class ShiftTradeMatchViolation  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Clarifying user params for constructing helpful error messages
    **/
@@ -139,7 +140,6 @@ public class ShiftTradeMatchViolation  implements Serializable {
     this.params = params;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,8 +150,9 @@ public class ShiftTradeMatchViolation  implements Serializable {
       return false;
     }
     ShiftTradeMatchViolation shiftTradeMatchViolation = (ShiftTradeMatchViolation) o;
+
     return Objects.equals(this.type, shiftTradeMatchViolation.type) &&
-        Objects.equals(this.params, shiftTradeMatchViolation.params);
+            Objects.equals(this.params, shiftTradeMatchViolation.params);
   }
 
   @Override

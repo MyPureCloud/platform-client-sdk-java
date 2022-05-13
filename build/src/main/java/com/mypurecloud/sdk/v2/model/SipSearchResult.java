@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.HomerRecord;
@@ -39,7 +40,7 @@ public class SipSearchResult  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * Status of the search request
    **/
@@ -57,7 +58,7 @@ public class SipSearchResult  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * Session id associated to the search request
    **/
@@ -75,7 +76,7 @@ public class SipSearchResult  implements Serializable {
     this.sid = sid;
   }
 
-  
+
   /**
    * Auth token used for this search request
    **/
@@ -93,7 +94,7 @@ public class SipSearchResult  implements Serializable {
     this.auth = auth;
   }
 
-  
+
   /**
    * Any messages returned from homer as part of the response
    **/
@@ -111,7 +112,7 @@ public class SipSearchResult  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    * Homer search data that is returned
    **/
@@ -129,7 +130,7 @@ public class SipSearchResult  implements Serializable {
     this.data = data;
   }
 
-  
+
   /**
    * Number of records returned
    **/
@@ -147,14 +148,13 @@ public class SipSearchResult  implements Serializable {
     this.count = count;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,14 +165,15 @@ public class SipSearchResult  implements Serializable {
       return false;
     }
     SipSearchResult sipSearchResult = (SipSearchResult) o;
+
     return Objects.equals(this.id, sipSearchResult.id) &&
-        Objects.equals(this.status, sipSearchResult.status) &&
-        Objects.equals(this.sid, sipSearchResult.sid) &&
-        Objects.equals(this.auth, sipSearchResult.auth) &&
-        Objects.equals(this.message, sipSearchResult.message) &&
-        Objects.equals(this.data, sipSearchResult.data) &&
-        Objects.equals(this.count, sipSearchResult.count) &&
-        Objects.equals(this.selfUri, sipSearchResult.selfUri);
+            Objects.equals(this.status, sipSearchResult.status) &&
+            Objects.equals(this.sid, sipSearchResult.sid) &&
+            Objects.equals(this.auth, sipSearchResult.auth) &&
+            Objects.equals(this.message, sipSearchResult.message) &&
+            Objects.equals(this.data, sipSearchResult.data) &&
+            Objects.equals(this.count, sipSearchResult.count) &&
+            Objects.equals(this.selfUri, sipSearchResult.selfUri);
   }
 
   @Override

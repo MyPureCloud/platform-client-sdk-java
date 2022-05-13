@@ -24,11 +24,11 @@ title: TextBotFlowTurnResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NOOP | &quot;NoOp&quot; |
-| DISCONNECT | &quot;Disconnect&quot; |
-| WAITFORINPUT | &quot;WaitForInput&quot; |
-| EXIT | &quot;Exit&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NOOP | &quot;NoOp&quot; | 
+| DISCONNECT | &quot;Disconnect&quot; | 
+| WAITFORINPUT | &quot;WaitForInput&quot; | 
+| EXIT | &quot;Exit&quot; | 
 {: class="table table-striped"}
 
 

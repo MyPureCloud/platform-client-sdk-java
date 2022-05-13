@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicDetail;
-import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody code(String code) {
@@ -71,7 +71,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody status(Integer status) {
@@ -88,7 +88,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody entityId(String entityId) {
@@ -105,7 +105,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody entityName(String entityName) {
@@ -122,7 +122,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody messageWithParams(String messageWithParams) {
@@ -139,7 +139,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody messageParams(Map<String, String> messageParams) {
@@ -156,7 +156,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody contextId(String contextId) {
@@ -173,7 +173,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody details(List<ConversationVideoEventTopicDetail> details) {
@@ -190,7 +190,7 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.details = details;
   }
 
-  
+
   /**
    **/
   public ConversationVideoEventTopicErrorBody errors(List<ConversationVideoEventTopicErrorBody> errors) {
@@ -207,7 +207,6 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
     this.errors = errors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,16 +217,17 @@ public class ConversationVideoEventTopicErrorBody  implements Serializable {
       return false;
     }
     ConversationVideoEventTopicErrorBody conversationVideoEventTopicErrorBody = (ConversationVideoEventTopicErrorBody) o;
+
     return Objects.equals(this.message, conversationVideoEventTopicErrorBody.message) &&
-        Objects.equals(this.code, conversationVideoEventTopicErrorBody.code) &&
-        Objects.equals(this.status, conversationVideoEventTopicErrorBody.status) &&
-        Objects.equals(this.entityId, conversationVideoEventTopicErrorBody.entityId) &&
-        Objects.equals(this.entityName, conversationVideoEventTopicErrorBody.entityName) &&
-        Objects.equals(this.messageWithParams, conversationVideoEventTopicErrorBody.messageWithParams) &&
-        Objects.equals(this.messageParams, conversationVideoEventTopicErrorBody.messageParams) &&
-        Objects.equals(this.contextId, conversationVideoEventTopicErrorBody.contextId) &&
-        Objects.equals(this.details, conversationVideoEventTopicErrorBody.details) &&
-        Objects.equals(this.errors, conversationVideoEventTopicErrorBody.errors);
+            Objects.equals(this.code, conversationVideoEventTopicErrorBody.code) &&
+            Objects.equals(this.status, conversationVideoEventTopicErrorBody.status) &&
+            Objects.equals(this.entityId, conversationVideoEventTopicErrorBody.entityId) &&
+            Objects.equals(this.entityName, conversationVideoEventTopicErrorBody.entityName) &&
+            Objects.equals(this.messageWithParams, conversationVideoEventTopicErrorBody.messageWithParams) &&
+            Objects.equals(this.messageParams, conversationVideoEventTopicErrorBody.messageParams) &&
+            Objects.equals(this.contextId, conversationVideoEventTopicErrorBody.contextId) &&
+            Objects.equals(this.details, conversationVideoEventTopicErrorBody.details) &&
+            Objects.equals(this.errors, conversationVideoEventTopicErrorBody.errors);
   }
 
   @Override

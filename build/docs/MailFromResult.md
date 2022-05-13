@@ -20,11 +20,11 @@ title: MailFromResult
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| FAILED | &quot;FAILED&quot; |
-| PENDING | &quot;PENDING&quot; |
-| VERIFIED | &quot;VERIFIED&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| FAILED | &quot;FAILED&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| VERIFIED | &quot;VERIFIED&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
 {: class="table table-striped"}
 
 

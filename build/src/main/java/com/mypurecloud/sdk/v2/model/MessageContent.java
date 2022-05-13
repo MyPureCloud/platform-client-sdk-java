@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -31,7 +32,7 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Message content element. If contentType = \&quot;Attachment\&quot; only one item is allowed.
+ * Message content element. If contentType &#x3D; \&quot;Attachment\&quot; only one item is allowed.
  */
 @ApiModel(description = "Message content element. If contentType = \"Attachment\" only one item is allowed.")
 
@@ -128,7 +129,7 @@ public class MessageContent  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * Location content.
    **/
@@ -146,7 +147,7 @@ public class MessageContent  implements Serializable {
     this.location = location;
   }
 
-  
+
   /**
    * Attachment content.
    **/
@@ -164,7 +165,7 @@ public class MessageContent  implements Serializable {
     this.attachment = attachment;
   }
 
-  
+
   /**
    * Quick reply content.
    **/
@@ -182,7 +183,7 @@ public class MessageContent  implements Serializable {
     this.quickReply = quickReply;
   }
 
-  
+
   /**
    * Button response content.
    **/
@@ -200,7 +201,7 @@ public class MessageContent  implements Serializable {
     this.buttonResponse = buttonResponse;
   }
 
-  
+
   /**
    * Generic content (Deprecated).
    **/
@@ -218,7 +219,7 @@ public class MessageContent  implements Serializable {
     this.generic = generic;
   }
 
-  
+
   /**
    * List content (Deprecated).
    **/
@@ -236,7 +237,7 @@ public class MessageContent  implements Serializable {
     this.list = list;
   }
 
-  
+
   /**
    * Template notification content.
    **/
@@ -254,7 +255,7 @@ public class MessageContent  implements Serializable {
     this.template = template;
   }
 
-  
+
   /**
    * A set of reactions to a message.
    **/
@@ -272,7 +273,7 @@ public class MessageContent  implements Serializable {
     this.reactions = reactions;
   }
 
-  
+
   /**
    * Mention content.
    **/
@@ -290,7 +291,7 @@ public class MessageContent  implements Serializable {
     this.mention = mention;
   }
 
-  
+
   /**
    * Structured message postback (Deprecated).
    **/
@@ -308,7 +309,7 @@ public class MessageContent  implements Serializable {
     this.postback = postback;
   }
 
-  
+
   /**
    * Ephemeral story content.
    **/
@@ -326,7 +327,7 @@ public class MessageContent  implements Serializable {
     this.story = story;
   }
 
-  
+
   /**
    * Card content
    **/
@@ -344,7 +345,7 @@ public class MessageContent  implements Serializable {
     this.card = card;
   }
 
-  
+
   /**
    * Carousel content
    **/
@@ -362,7 +363,6 @@ public class MessageContent  implements Serializable {
     this.carousel = carousel;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -373,20 +373,21 @@ public class MessageContent  implements Serializable {
       return false;
     }
     MessageContent messageContent = (MessageContent) o;
+
     return Objects.equals(this.contentType, messageContent.contentType) &&
-        Objects.equals(this.location, messageContent.location) &&
-        Objects.equals(this.attachment, messageContent.attachment) &&
-        Objects.equals(this.quickReply, messageContent.quickReply) &&
-        Objects.equals(this.buttonResponse, messageContent.buttonResponse) &&
-        Objects.equals(this.generic, messageContent.generic) &&
-        Objects.equals(this.list, messageContent.list) &&
-        Objects.equals(this.template, messageContent.template) &&
-        Objects.equals(this.reactions, messageContent.reactions) &&
-        Objects.equals(this.mention, messageContent.mention) &&
-        Objects.equals(this.postback, messageContent.postback) &&
-        Objects.equals(this.story, messageContent.story) &&
-        Objects.equals(this.card, messageContent.card) &&
-        Objects.equals(this.carousel, messageContent.carousel);
+            Objects.equals(this.location, messageContent.location) &&
+            Objects.equals(this.attachment, messageContent.attachment) &&
+            Objects.equals(this.quickReply, messageContent.quickReply) &&
+            Objects.equals(this.buttonResponse, messageContent.buttonResponse) &&
+            Objects.equals(this.generic, messageContent.generic) &&
+            Objects.equals(this.list, messageContent.list) &&
+            Objects.equals(this.template, messageContent.template) &&
+            Objects.equals(this.reactions, messageContent.reactions) &&
+            Objects.equals(this.mention, messageContent.mention) &&
+            Objects.equals(this.postback, messageContent.postback) &&
+            Objects.equals(this.story, messageContent.story) &&
+            Objects.equals(this.card, messageContent.card) &&
+            Objects.equals(this.carousel, messageContent.carousel);
   }
 
   @Override

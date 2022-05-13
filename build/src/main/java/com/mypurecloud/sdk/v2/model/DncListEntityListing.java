@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DncListEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
       return false;
     }
     DncListEntityListing dncListEntityListing = (DncListEntityListing) o;
+
     return Objects.equals(this.entities, dncListEntityListing.entities) &&
-        Objects.equals(this.pageSize, dncListEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, dncListEntityListing.pageNumber) &&
-        Objects.equals(this.total, dncListEntityListing.total) &&
-        Objects.equals(this.lastUri, dncListEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, dncListEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, dncListEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, dncListEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, dncListEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, dncListEntityListing.pageCount);
+            Objects.equals(this.pageSize, dncListEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, dncListEntityListing.pageNumber) &&
+            Objects.equals(this.total, dncListEntityListing.total) &&
+            Objects.equals(this.lastUri, dncListEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, dncListEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, dncListEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, dncListEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, dncListEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, dncListEntityListing.pageCount);
   }
 
   @Override

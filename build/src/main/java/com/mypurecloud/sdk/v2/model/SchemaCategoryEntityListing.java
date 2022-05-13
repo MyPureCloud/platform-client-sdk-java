@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.total = total;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public SchemaCategoryEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class SchemaCategoryEntityListing  implements Serializable, PagedResource
       return false;
     }
     SchemaCategoryEntityListing schemaCategoryEntityListing = (SchemaCategoryEntityListing) o;
+
     return Objects.equals(this.entities, schemaCategoryEntityListing.entities) &&
-        Objects.equals(this.pageSize, schemaCategoryEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, schemaCategoryEntityListing.pageNumber) &&
-        Objects.equals(this.total, schemaCategoryEntityListing.total) &&
-        Objects.equals(this.lastUri, schemaCategoryEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, schemaCategoryEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, schemaCategoryEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, schemaCategoryEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, schemaCategoryEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, schemaCategoryEntityListing.pageCount);
+            Objects.equals(this.pageSize, schemaCategoryEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, schemaCategoryEntityListing.pageNumber) &&
+            Objects.equals(this.total, schemaCategoryEntityListing.total) &&
+            Objects.equals(this.lastUri, schemaCategoryEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, schemaCategoryEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, schemaCategoryEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, schemaCategoryEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, schemaCategoryEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, schemaCategoryEntityListing.pageCount);
   }
 
   @Override

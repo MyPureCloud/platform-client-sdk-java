@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class ContactSort  implements Serializable {
     this.fieldName = fieldName;
   }
 
-  
+
   /**
    * The direction in which to sort contacts.
    **/
@@ -107,7 +108,7 @@ public class ContactSort  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Whether or not the column contains numeric data.
    **/
@@ -125,7 +126,6 @@ public class ContactSort  implements Serializable {
     this.numeric = numeric;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class ContactSort  implements Serializable {
       return false;
     }
     ContactSort contactSort = (ContactSort) o;
+
     return Objects.equals(this.fieldName, contactSort.fieldName) &&
-        Objects.equals(this.direction, contactSort.direction) &&
-        Objects.equals(this.numeric, contactSort.numeric);
+            Objects.equals(this.direction, contactSort.direction) &&
+            Objects.equals(this.numeric, contactSort.numeric);
   }
 
   @Override

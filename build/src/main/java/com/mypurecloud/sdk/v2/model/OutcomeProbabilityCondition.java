@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class OutcomeProbabilityCondition  implements Serializable {
     this.outcomeId = outcomeId;
   }
 
-  
+
   /**
    * Probability value for the selected outcome at or above which the action map will trigger.
    **/
@@ -60,7 +61,7 @@ public class OutcomeProbabilityCondition  implements Serializable {
     this.maximumProbability = maximumProbability;
   }
 
-  
+
   /**
    * Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value.
    **/
@@ -78,7 +79,6 @@ public class OutcomeProbabilityCondition  implements Serializable {
     this.probability = probability;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class OutcomeProbabilityCondition  implements Serializable {
       return false;
     }
     OutcomeProbabilityCondition outcomeProbabilityCondition = (OutcomeProbabilityCondition) o;
+
     return Objects.equals(this.outcomeId, outcomeProbabilityCondition.outcomeId) &&
-        Objects.equals(this.maximumProbability, outcomeProbabilityCondition.maximumProbability) &&
-        Objects.equals(this.probability, outcomeProbabilityCondition.probability);
+            Objects.equals(this.maximumProbability, outcomeProbabilityCondition.maximumProbability) &&
+            Objects.equals(this.probability, outcomeProbabilityCondition.probability);
   }
 
   @Override

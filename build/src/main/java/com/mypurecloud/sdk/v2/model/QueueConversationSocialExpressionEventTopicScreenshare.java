@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
-import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -87,7 +87,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
-  private QueueConversationSocialExpressionEventTopicObject peerCount = null;
+  private Object peerCount = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
     public DisconnectTypeEnumDeserializer() {
@@ -174,7 +174,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.state = state;
   }
 
-  
+
   /**
    * Address and name data for a call endpoint.
    **/
@@ -192,7 +192,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.self = self;
   }
 
-  
+
   /**
    * A globally unique identifier for this communication.
    **/
@@ -210,7 +210,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.id = id;
   }
 
-  
+
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -228,7 +228,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.context = context;
   }
 
-  
+
   /**
    * Indicates whether this participant is sharing their screen to the session.
    **/
@@ -246,7 +246,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.sharing = sharing;
   }
 
-  
+
   /**
    * The source provider of the screen share.
    **/
@@ -264,7 +264,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.provider = provider;
   }
 
-  
+
   /**
    * The UUID of the script to use.
    **/
@@ -282,7 +282,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.scriptId = scriptId;
   }
 
-  
+
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -300,24 +300,25 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.peerId = peerId;
   }
 
-  
+
   /**
+   * The number of peer participants from the perspective of the participant in the conference.
    **/
-  public QueueConversationSocialExpressionEventTopicScreenshare peerCount(QueueConversationSocialExpressionEventTopicObject peerCount) {
+  public QueueConversationSocialExpressionEventTopicScreenshare peerCount(Object peerCount) {
     this.peerCount = peerCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
   @JsonProperty("peerCount")
-  public QueueConversationSocialExpressionEventTopicObject getPeerCount() {
+  public Object getPeerCount() {
     return peerCount;
   }
-  public void setPeerCount(QueueConversationSocialExpressionEventTopicObject peerCount) {
+  public void setPeerCount(Object peerCount) {
     this.peerCount = peerCount;
   }
 
-  
+
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -335,7 +336,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    * The timestamp when this communication was connected in the cloud clock.
    **/
@@ -353,7 +354,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
@@ -371,7 +372,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.disconnectedTime = disconnectedTime;
   }
 
-  
+
   /**
    * Call wrap up or disposition data.
    **/
@@ -389,7 +390,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * A communication's after-call work data.
    **/
@@ -407,7 +408,7 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.afterCallWork = afterCallWork;
   }
 
-  
+
   /**
    * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
@@ -425,7 +426,6 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
     this.afterCallWorkRequired = afterCallWorkRequired;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -436,21 +436,22 @@ public class QueueConversationSocialExpressionEventTopicScreenshare  implements 
       return false;
     }
     QueueConversationSocialExpressionEventTopicScreenshare queueConversationSocialExpressionEventTopicScreenshare = (QueueConversationSocialExpressionEventTopicScreenshare) o;
+
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicScreenshare.state) &&
-        Objects.equals(this.self, queueConversationSocialExpressionEventTopicScreenshare.self) &&
-        Objects.equals(this.id, queueConversationSocialExpressionEventTopicScreenshare.id) &&
-        Objects.equals(this.context, queueConversationSocialExpressionEventTopicScreenshare.context) &&
-        Objects.equals(this.sharing, queueConversationSocialExpressionEventTopicScreenshare.sharing) &&
-        Objects.equals(this.provider, queueConversationSocialExpressionEventTopicScreenshare.provider) &&
-        Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicScreenshare.scriptId) &&
-        Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicScreenshare.peerId) &&
-        Objects.equals(this.peerCount, queueConversationSocialExpressionEventTopicScreenshare.peerCount) &&
-        Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicScreenshare.disconnectType) &&
-        Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicScreenshare.connectedTime) &&
-        Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicScreenshare.disconnectedTime) &&
-        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicScreenshare.wrapup) &&
-        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicScreenshare.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicScreenshare.afterCallWorkRequired);
+            Objects.equals(this.self, queueConversationSocialExpressionEventTopicScreenshare.self) &&
+            Objects.equals(this.id, queueConversationSocialExpressionEventTopicScreenshare.id) &&
+            Objects.equals(this.context, queueConversationSocialExpressionEventTopicScreenshare.context) &&
+            Objects.equals(this.sharing, queueConversationSocialExpressionEventTopicScreenshare.sharing) &&
+            Objects.equals(this.provider, queueConversationSocialExpressionEventTopicScreenshare.provider) &&
+            Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicScreenshare.scriptId) &&
+            Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicScreenshare.peerId) &&
+            Objects.equals(this.peerCount, queueConversationSocialExpressionEventTopicScreenshare.peerCount) &&
+            Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicScreenshare.disconnectType) &&
+            Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicScreenshare.connectedTime) &&
+            Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicScreenshare.disconnectedTime) &&
+            Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicScreenshare.wrapup) &&
+            Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicScreenshare.afterCallWork) &&
+            Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicScreenshare.afterCallWorkRequired);
   }
 
   @Override

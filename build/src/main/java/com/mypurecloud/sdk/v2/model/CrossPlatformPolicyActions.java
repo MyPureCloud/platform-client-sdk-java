@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
@@ -58,7 +59,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.retainRecording = retainRecording;
   }
 
-  
+
   /**
    * true to delete the recording associated with the conversation. If retainRecording = true, this will be ignored. Default = false
    **/
@@ -76,7 +77,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.deleteRecording = deleteRecording;
   }
 
-  
+
   /**
    * true to delete the recording associated with the conversation regardless of the values of retainRecording or deleteRecording. Default = false
    **/
@@ -94,7 +95,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.alwaysDelete = alwaysDelete;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyActions assignEvaluations(List<EvaluationAssignment> assignEvaluations) {
@@ -111,7 +112,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.assignEvaluations = assignEvaluations;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyActions assignMeteredEvaluations(List<MeteredEvaluationAssignment> assignMeteredEvaluations) {
@@ -128,7 +129,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.assignMeteredEvaluations = assignMeteredEvaluations;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyActions assignMeteredAssignmentByAgent(List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent) {
@@ -145,7 +146,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.assignMeteredAssignmentByAgent = assignMeteredAssignmentByAgent;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyActions assignCalibrations(List<CalibrationAssignment> assignCalibrations) {
@@ -162,7 +163,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.assignCalibrations = assignCalibrations;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyActions retentionDuration(RetentionDuration retentionDuration) {
@@ -179,7 +180,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.retentionDuration = retentionDuration;
   }
 
-  
+
   /**
    **/
   public CrossPlatformPolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
@@ -196,7 +197,7 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.mediaTranscriptions = mediaTranscriptions;
   }
 
-  
+
   /**
    * Policy action for exporting recordings using an integration to 3rd party s3.
    **/
@@ -214,7 +215,6 @@ public class CrossPlatformPolicyActions  implements Serializable {
     this.integrationExport = integrationExport;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -225,16 +225,17 @@ public class CrossPlatformPolicyActions  implements Serializable {
       return false;
     }
     CrossPlatformPolicyActions crossPlatformPolicyActions = (CrossPlatformPolicyActions) o;
+
     return Objects.equals(this.retainRecording, crossPlatformPolicyActions.retainRecording) &&
-        Objects.equals(this.deleteRecording, crossPlatformPolicyActions.deleteRecording) &&
-        Objects.equals(this.alwaysDelete, crossPlatformPolicyActions.alwaysDelete) &&
-        Objects.equals(this.assignEvaluations, crossPlatformPolicyActions.assignEvaluations) &&
-        Objects.equals(this.assignMeteredEvaluations, crossPlatformPolicyActions.assignMeteredEvaluations) &&
-        Objects.equals(this.assignMeteredAssignmentByAgent, crossPlatformPolicyActions.assignMeteredAssignmentByAgent) &&
-        Objects.equals(this.assignCalibrations, crossPlatformPolicyActions.assignCalibrations) &&
-        Objects.equals(this.retentionDuration, crossPlatformPolicyActions.retentionDuration) &&
-        Objects.equals(this.mediaTranscriptions, crossPlatformPolicyActions.mediaTranscriptions) &&
-        Objects.equals(this.integrationExport, crossPlatformPolicyActions.integrationExport);
+            Objects.equals(this.deleteRecording, crossPlatformPolicyActions.deleteRecording) &&
+            Objects.equals(this.alwaysDelete, crossPlatformPolicyActions.alwaysDelete) &&
+            Objects.equals(this.assignEvaluations, crossPlatformPolicyActions.assignEvaluations) &&
+            Objects.equals(this.assignMeteredEvaluations, crossPlatformPolicyActions.assignMeteredEvaluations) &&
+            Objects.equals(this.assignMeteredAssignmentByAgent, crossPlatformPolicyActions.assignMeteredAssignmentByAgent) &&
+            Objects.equals(this.assignCalibrations, crossPlatformPolicyActions.assignCalibrations) &&
+            Objects.equals(this.retentionDuration, crossPlatformPolicyActions.retentionDuration) &&
+            Objects.equals(this.mediaTranscriptions, crossPlatformPolicyActions.mediaTranscriptions) &&
+            Objects.equals(this.integrationExport, crossPlatformPolicyActions.integrationExport);
   }
 
   @Override

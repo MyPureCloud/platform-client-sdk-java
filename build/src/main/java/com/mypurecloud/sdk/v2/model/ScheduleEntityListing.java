@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.total = total;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public ScheduleEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
       return false;
     }
     ScheduleEntityListing scheduleEntityListing = (ScheduleEntityListing) o;
+
     return Objects.equals(this.entities, scheduleEntityListing.entities) &&
-        Objects.equals(this.pageSize, scheduleEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, scheduleEntityListing.pageNumber) &&
-        Objects.equals(this.total, scheduleEntityListing.total) &&
-        Objects.equals(this.lastUri, scheduleEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, scheduleEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, scheduleEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, scheduleEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, scheduleEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, scheduleEntityListing.pageCount);
+            Objects.equals(this.pageSize, scheduleEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, scheduleEntityListing.pageNumber) &&
+            Objects.equals(this.total, scheduleEntityListing.total) &&
+            Objects.equals(this.lastUri, scheduleEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, scheduleEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, scheduleEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, scheduleEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, scheduleEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, scheduleEntityListing.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class TopicJob  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public TopicJob state(StateEnum state) {
@@ -106,7 +107,7 @@ public class TopicJob  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public TopicJob topics(List<BaseTopicEntitiy> topics) {
@@ -123,7 +124,7 @@ public class TopicJob  implements Serializable {
     this.topics = topics;
   }
 
-  
+
   /**
    **/
   public TopicJob createdBy(AddressableEntityRef createdBy) {
@@ -140,7 +141,7 @@ public class TopicJob  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -158,7 +159,7 @@ public class TopicJob  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -176,14 +177,13 @@ public class TopicJob  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,13 +194,14 @@ public class TopicJob  implements Serializable {
       return false;
     }
     TopicJob topicJob = (TopicJob) o;
+
     return Objects.equals(this.id, topicJob.id) &&
-        Objects.equals(this.state, topicJob.state) &&
-        Objects.equals(this.topics, topicJob.topics) &&
-        Objects.equals(this.createdBy, topicJob.createdBy) &&
-        Objects.equals(this.dateCreated, topicJob.dateCreated) &&
-        Objects.equals(this.dateModified, topicJob.dateModified) &&
-        Objects.equals(this.selfUri, topicJob.selfUri);
+            Objects.equals(this.state, topicJob.state) &&
+            Objects.equals(this.topics, topicJob.topics) &&
+            Objects.equals(this.createdBy, topicJob.createdBy) &&
+            Objects.equals(this.dateCreated, topicJob.dateCreated) &&
+            Objects.equals(this.dateModified, topicJob.dateModified) &&
+            Objects.equals(this.selfUri, topicJob.selfUri);
   }
 
   @Override

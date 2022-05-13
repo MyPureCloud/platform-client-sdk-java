@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeContactPhoneNumberColumn;
@@ -62,7 +63,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.columnNames = columnNames;
   }
 
-  
+
   /**
    * the columns containing phone numbers
    **/
@@ -80,7 +81,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-  
+
   /**
    * the columns containing email addresses
    **/
@@ -98,7 +99,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.emailColumns = emailColumns;
   }
 
-  
+
   /**
    **/
   public DialerContactlistConfigChangeContactList importStatus(DialerContactlistConfigChangeImportStatus importStatus) {
@@ -115,7 +116,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.importStatus = importStatus;
   }
 
-  
+
   /**
    * the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
    **/
@@ -133,7 +134,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.previewModeColumnName = previewModeColumnName;
   }
 
-  
+
   /**
    * list of user-defined values indicating the contact is to be dialed in preview mode only
    **/
@@ -151,7 +152,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.previewModeAcceptedValues = previewModeAcceptedValues;
   }
 
-  
+
   /**
    * the number of contacts in the contact list
    **/
@@ -169,7 +170,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.size = size;
   }
 
-  
+
   /**
    **/
   public DialerContactlistConfigChangeContactList attemptLimits(DialerContactlistConfigChangeUriReference attemptLimits) {
@@ -186,7 +187,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.attemptLimits = attemptLimits;
   }
 
-  
+
   /**
    * whether or not automatic time zone mapping is enabled on the list
    **/
@@ -204,7 +205,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.automaticTimeZoneMapping = automaticTimeZoneMapping;
   }
 
-  
+
   /**
    * zip code column from the contact list to be used optionally with automatic time zone mapping
    **/
@@ -222,7 +223,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.zipCodeColumnName = zipCodeColumnName;
   }
 
-  
+
   /**
    * A UriReference for a resource
    **/
@@ -240,7 +241,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -258,7 +259,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -276,7 +277,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -294,7 +295,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -312,7 +313,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -330,7 +331,6 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -341,22 +341,23 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
       return false;
     }
     DialerContactlistConfigChangeContactList dialerContactlistConfigChangeContactList = (DialerContactlistConfigChangeContactList) o;
+
     return Objects.equals(this.columnNames, dialerContactlistConfigChangeContactList.columnNames) &&
-        Objects.equals(this.phoneColumns, dialerContactlistConfigChangeContactList.phoneColumns) &&
-        Objects.equals(this.emailColumns, dialerContactlistConfigChangeContactList.emailColumns) &&
-        Objects.equals(this.importStatus, dialerContactlistConfigChangeContactList.importStatus) &&
-        Objects.equals(this.previewModeColumnName, dialerContactlistConfigChangeContactList.previewModeColumnName) &&
-        Objects.equals(this.previewModeAcceptedValues, dialerContactlistConfigChangeContactList.previewModeAcceptedValues) &&
-        Objects.equals(this.size, dialerContactlistConfigChangeContactList.size) &&
-        Objects.equals(this.attemptLimits, dialerContactlistConfigChangeContactList.attemptLimits) &&
-        Objects.equals(this.automaticTimeZoneMapping, dialerContactlistConfigChangeContactList.automaticTimeZoneMapping) &&
-        Objects.equals(this.zipCodeColumnName, dialerContactlistConfigChangeContactList.zipCodeColumnName) &&
-        Objects.equals(this.division, dialerContactlistConfigChangeContactList.division) &&
-        Objects.equals(this.id, dialerContactlistConfigChangeContactList.id) &&
-        Objects.equals(this.name, dialerContactlistConfigChangeContactList.name) &&
-        Objects.equals(this.dateCreated, dialerContactlistConfigChangeContactList.dateCreated) &&
-        Objects.equals(this.dateModified, dialerContactlistConfigChangeContactList.dateModified) &&
-        Objects.equals(this.version, dialerContactlistConfigChangeContactList.version);
+            Objects.equals(this.phoneColumns, dialerContactlistConfigChangeContactList.phoneColumns) &&
+            Objects.equals(this.emailColumns, dialerContactlistConfigChangeContactList.emailColumns) &&
+            Objects.equals(this.importStatus, dialerContactlistConfigChangeContactList.importStatus) &&
+            Objects.equals(this.previewModeColumnName, dialerContactlistConfigChangeContactList.previewModeColumnName) &&
+            Objects.equals(this.previewModeAcceptedValues, dialerContactlistConfigChangeContactList.previewModeAcceptedValues) &&
+            Objects.equals(this.size, dialerContactlistConfigChangeContactList.size) &&
+            Objects.equals(this.attemptLimits, dialerContactlistConfigChangeContactList.attemptLimits) &&
+            Objects.equals(this.automaticTimeZoneMapping, dialerContactlistConfigChangeContactList.automaticTimeZoneMapping) &&
+            Objects.equals(this.zipCodeColumnName, dialerContactlistConfigChangeContactList.zipCodeColumnName) &&
+            Objects.equals(this.division, dialerContactlistConfigChangeContactList.division) &&
+            Objects.equals(this.id, dialerContactlistConfigChangeContactList.id) &&
+            Objects.equals(this.name, dialerContactlistConfigChangeContactList.name) &&
+            Objects.equals(this.dateCreated, dialerContactlistConfigChangeContactList.dateCreated) &&
+            Objects.equals(this.dateModified, dialerContactlistConfigChangeContactList.dateModified) &&
+            Objects.equals(this.version, dialerContactlistConfigChangeContactList.version);
   }
 
   @Override

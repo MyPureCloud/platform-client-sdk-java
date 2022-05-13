@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BulkErrorEntity;
@@ -44,7 +45,7 @@ public class BulkResponseResultExternalContactEntity  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultExternalContactEntity success(Boolean success) {
@@ -61,7 +62,7 @@ public class BulkResponseResultExternalContactEntity  implements Serializable {
     this.success = success;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultExternalContactEntity entity(ExternalContact entity) {
@@ -78,7 +79,7 @@ public class BulkResponseResultExternalContactEntity  implements Serializable {
     this.entity = entity;
   }
 
-  
+
   /**
    **/
   public BulkResponseResultExternalContactEntity error(BulkErrorEntity error) {
@@ -95,7 +96,6 @@ public class BulkResponseResultExternalContactEntity  implements Serializable {
     this.error = error;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,10 +106,11 @@ public class BulkResponseResultExternalContactEntity  implements Serializable {
       return false;
     }
     BulkResponseResultExternalContactEntity bulkResponseResultExternalContactEntity = (BulkResponseResultExternalContactEntity) o;
+
     return Objects.equals(this.id, bulkResponseResultExternalContactEntity.id) &&
-        Objects.equals(this.success, bulkResponseResultExternalContactEntity.success) &&
-        Objects.equals(this.entity, bulkResponseResultExternalContactEntity.entity) &&
-        Objects.equals(this.error, bulkResponseResultExternalContactEntity.error);
+            Objects.equals(this.success, bulkResponseResultExternalContactEntity.success) &&
+            Objects.equals(this.entity, bulkResponseResultExternalContactEntity.entity) &&
+            Objects.equals(this.error, bulkResponseResultExternalContactEntity.error);
   }
 
   @Override

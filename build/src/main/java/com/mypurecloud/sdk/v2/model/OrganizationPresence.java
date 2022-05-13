@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -44,7 +45,7 @@ public class OrganizationPresence  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public OrganizationPresence name(String name) {
@@ -61,7 +62,7 @@ public class OrganizationPresence  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The label used for the system presence in each specified language
    **/
@@ -79,7 +80,7 @@ public class OrganizationPresence  implements Serializable {
     this.languageLabels = languageLabels;
   }
 
-  
+
   /**
    **/
   public OrganizationPresence systemPresence(String systemPresence) {
@@ -96,7 +97,7 @@ public class OrganizationPresence  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-  
+
   /**
    **/
   public OrganizationPresence deactivated(Boolean deactivated) {
@@ -113,7 +114,7 @@ public class OrganizationPresence  implements Serializable {
     this.deactivated = deactivated;
   }
 
-  
+
   /**
    **/
   public OrganizationPresence primary(Boolean primary) {
@@ -130,7 +131,7 @@ public class OrganizationPresence  implements Serializable {
     this.primary = primary;
   }
 
-  
+
   /**
    **/
   public OrganizationPresence createdBy(User createdBy) {
@@ -147,7 +148,7 @@ public class OrganizationPresence  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -165,7 +166,7 @@ public class OrganizationPresence  implements Serializable {
     this.createdDate = createdDate;
   }
 
-  
+
   /**
    **/
   public OrganizationPresence modifiedBy(User modifiedBy) {
@@ -182,7 +183,7 @@ public class OrganizationPresence  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -200,14 +201,13 @@ public class OrganizationPresence  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,17 +218,18 @@ public class OrganizationPresence  implements Serializable {
       return false;
     }
     OrganizationPresence organizationPresence = (OrganizationPresence) o;
+
     return Objects.equals(this.id, organizationPresence.id) &&
-        Objects.equals(this.name, organizationPresence.name) &&
-        Objects.equals(this.languageLabels, organizationPresence.languageLabels) &&
-        Objects.equals(this.systemPresence, organizationPresence.systemPresence) &&
-        Objects.equals(this.deactivated, organizationPresence.deactivated) &&
-        Objects.equals(this.primary, organizationPresence.primary) &&
-        Objects.equals(this.createdBy, organizationPresence.createdBy) &&
-        Objects.equals(this.createdDate, organizationPresence.createdDate) &&
-        Objects.equals(this.modifiedBy, organizationPresence.modifiedBy) &&
-        Objects.equals(this.modifiedDate, organizationPresence.modifiedDate) &&
-        Objects.equals(this.selfUri, organizationPresence.selfUri);
+            Objects.equals(this.name, organizationPresence.name) &&
+            Objects.equals(this.languageLabels, organizationPresence.languageLabels) &&
+            Objects.equals(this.systemPresence, organizationPresence.systemPresence) &&
+            Objects.equals(this.deactivated, organizationPresence.deactivated) &&
+            Objects.equals(this.primary, organizationPresence.primary) &&
+            Objects.equals(this.createdBy, organizationPresence.createdBy) &&
+            Objects.equals(this.createdDate, organizationPresence.createdDate) &&
+            Objects.equals(this.modifiedBy, organizationPresence.modifiedBy) &&
+            Objects.equals(this.modifiedDate, organizationPresence.modifiedDate) &&
+            Objects.equals(this.selfUri, organizationPresence.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public SegmentListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public SegmentListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public SegmentListing total(Long total) {
@@ -103,7 +104,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.total = total;
   }
 
-  
+
   /**
    **/
   public SegmentListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public SegmentListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public SegmentListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public SegmentListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public SegmentListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public SegmentListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class SegmentListing  implements Serializable, PagedResource<JourneySegme
       return false;
     }
     SegmentListing segmentListing = (SegmentListing) o;
+
     return Objects.equals(this.entities, segmentListing.entities) &&
-        Objects.equals(this.pageSize, segmentListing.pageSize) &&
-        Objects.equals(this.pageNumber, segmentListing.pageNumber) &&
-        Objects.equals(this.total, segmentListing.total) &&
-        Objects.equals(this.lastUri, segmentListing.lastUri) &&
-        Objects.equals(this.firstUri, segmentListing.firstUri) &&
-        Objects.equals(this.selfUri, segmentListing.selfUri) &&
-        Objects.equals(this.previousUri, segmentListing.previousUri) &&
-        Objects.equals(this.nextUri, segmentListing.nextUri) &&
-        Objects.equals(this.pageCount, segmentListing.pageCount);
+            Objects.equals(this.pageSize, segmentListing.pageSize) &&
+            Objects.equals(this.pageNumber, segmentListing.pageNumber) &&
+            Objects.equals(this.total, segmentListing.total) &&
+            Objects.equals(this.lastUri, segmentListing.lastUri) &&
+            Objects.equals(this.firstUri, segmentListing.firstUri) &&
+            Objects.equals(this.selfUri, segmentListing.selfUri) &&
+            Objects.equals(this.previousUri, segmentListing.previousUri) &&
+            Objects.equals(this.nextUri, segmentListing.nextUri) &&
+            Objects.equals(this.pageCount, segmentListing.pageCount);
   }
 
   @Override

@@ -20,37 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
-import java.util.Date;
+import com.mypurecloud.sdk.v2.model.Calibration;
+import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.Survey;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
-import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
-import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
-import com.mypurecloud.sdk.v2.model.EvaluationForm;
-import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
-import com.mypurecloud.sdk.v2.model.SurveyForm;
-import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import java.util.Date;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
+import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationForm;
+import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
+import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
-import com.mypurecloud.sdk.v2.model.CalibrationCreate;
-import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
-import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
-import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
-import com.mypurecloud.sdk.v2.model.PublishForm;
-import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 
 public class GetQualityFormsSurveysBulkContextsRequest {
-    
+
 	private List<String> contextId;
 	public List<String> getContextId() {
 		return this.contextId;
@@ -64,7 +64,7 @@ public class GetQualityFormsSurveysBulkContextsRequest {
 	    this.setContextId(contextId);
 	    return this;
 	} 
-	
+
 	private Boolean published;
 	public Boolean getPublished() {
 		return this.published;
@@ -78,7 +78,7 @@ public class GetQualityFormsSurveysBulkContextsRequest {
 	    this.setPublished(published);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,11 +107,13 @@ public class GetQualityFormsSurveysBulkContextsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/quality/forms/surveys/bulk/contexts")
+
                 .withQueryParameters("contextId", "multi", contextId)
         
+
                 .withQueryParameters("published", "", published)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -122,12 +124,12 @@ public class GetQualityFormsSurveysBulkContextsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(List<String> contextId) {
 	    return new Builder()
 	            .withRequiredParams(contextId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetQualityFormsSurveysBulkContextsRequest request;
@@ -136,25 +138,25 @@ public class GetQualityFormsSurveysBulkContextsRequest {
 			request = new GetQualityFormsSurveysBulkContextsRequest();
 		}
 
-		
+
 		public Builder withContextId(List<String> contextId) {
 			request.setContextId(contextId);
 			return this;
 		}
-		
+
 		public Builder withPublished(Boolean published) {
 			request.setPublished(published);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(List<String> contextId) {
 			request.setContextId(contextId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetQualityFormsSurveysBulkContextsRequest build() {
             

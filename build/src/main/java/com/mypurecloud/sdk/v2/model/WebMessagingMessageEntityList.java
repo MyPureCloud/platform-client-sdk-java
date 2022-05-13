@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebMessagingMessage;
@@ -46,7 +47,7 @@ public class WebMessagingMessageEntityList  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public WebMessagingMessageEntityList pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class WebMessagingMessageEntityList  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public WebMessagingMessageEntityList pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class WebMessagingMessageEntityList  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public WebMessagingMessageEntityList total(Long total) {
@@ -97,7 +98,7 @@ public class WebMessagingMessageEntityList  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public WebMessagingMessageEntityList pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class WebMessagingMessageEntityList  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class WebMessagingMessageEntityList  implements Serializable {
       return false;
     }
     WebMessagingMessageEntityList webMessagingMessageEntityList = (WebMessagingMessageEntityList) o;
+
     return Objects.equals(this.entities, webMessagingMessageEntityList.entities) &&
-        Objects.equals(this.pageSize, webMessagingMessageEntityList.pageSize) &&
-        Objects.equals(this.pageNumber, webMessagingMessageEntityList.pageNumber) &&
-        Objects.equals(this.total, webMessagingMessageEntityList.total) &&
-        Objects.equals(this.pageCount, webMessagingMessageEntityList.pageCount);
+            Objects.equals(this.pageSize, webMessagingMessageEntityList.pageSize) &&
+            Objects.equals(this.pageNumber, webMessagingMessageEntityList.pageNumber) &&
+            Objects.equals(this.total, webMessagingMessageEntityList.total) &&
+            Objects.equals(this.pageCount, webMessagingMessageEntityList.pageCount);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CreateObjective;
@@ -45,7 +46,7 @@ public class CreateMetric  implements Serializable {
     this.metricDefinitionId = metricDefinitionId;
   }
 
-  
+
   /**
    * The id of associated external metric definition
    **/
@@ -63,7 +64,7 @@ public class CreateMetric  implements Serializable {
     this.externalMetricDefinitionId = externalMetricDefinitionId;
   }
 
-  
+
   /**
    * Associated objective for this metric
    **/
@@ -81,7 +82,7 @@ public class CreateMetric  implements Serializable {
     this.objective = objective;
   }
 
-  
+
   /**
    * Performance profile id of this metric
    **/
@@ -99,7 +100,7 @@ public class CreateMetric  implements Serializable {
     this.performanceProfileId = performanceProfileId;
   }
 
-  
+
   /**
    * The name of this metric
    **/
@@ -117,7 +118,6 @@ public class CreateMetric  implements Serializable {
     this.name = name;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,11 +128,12 @@ public class CreateMetric  implements Serializable {
       return false;
     }
     CreateMetric createMetric = (CreateMetric) o;
+
     return Objects.equals(this.metricDefinitionId, createMetric.metricDefinitionId) &&
-        Objects.equals(this.externalMetricDefinitionId, createMetric.externalMetricDefinitionId) &&
-        Objects.equals(this.objective, createMetric.objective) &&
-        Objects.equals(this.performanceProfileId, createMetric.performanceProfileId) &&
-        Objects.equals(this.name, createMetric.name);
+            Objects.equals(this.externalMetricDefinitionId, createMetric.externalMetricDefinitionId) &&
+            Objects.equals(this.objective, createMetric.objective) &&
+            Objects.equals(this.performanceProfileId, createMetric.performanceProfileId) &&
+            Objects.equals(this.name, createMetric.name);
   }
 
   @Override

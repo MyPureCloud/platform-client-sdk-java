@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Page;
-import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
-import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
 import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.Page;
+import com.mypurecloud.sdk.v2.model.Script;
+import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsPublishedScriptIdVariablesRequest {
-    
+
 	private String scriptId;
 	public String getScriptId() {
 		return this.scriptId;
@@ -43,7 +43,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    this.setScriptId(scriptId);
 	    return this;
 	} 
-	
+
 	private String input;
 	public String getInput() {
 		return this.input;
@@ -57,7 +57,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    this.setInput(input);
 	    return this;
 	} 
-	
+
 	private String output;
 	public String getOutput() {
 		return this.output;
@@ -71,7 +71,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    this.setOutput(output);
 	    return this;
 	} 
-	
+
 	private String type;
 	public String getType() {
 		return this.type;
@@ -85,7 +85,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    this.setType(type);
 	    return this;
 	} 
-	
+
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
 		return this.scriptDataVersion;
@@ -99,7 +99,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -130,15 +130,19 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/published/{scriptId}/variables")
                 .withPathParameter("scriptId", scriptId)
         
+
                 .withQueryParameters("input", "", input)
         
+
                 .withQueryParameters("output", "", output)
         
+
                 .withQueryParameters("type", "", type)
         
+
                 .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -149,12 +153,12 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String scriptId) {
 	    return new Builder()
 	            .withRequiredParams(scriptId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetScriptsPublishedScriptIdVariablesRequest request;
@@ -163,40 +167,40 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 			request = new GetScriptsPublishedScriptIdVariablesRequest();
 		}
 
-		
+
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
 			return this;
 		}
-		
+
 		public Builder withInput(String input) {
 			request.setInput(input);
 			return this;
 		}
-		
+
 		public Builder withOutput(String output) {
 			request.setOutput(output);
 			return this;
 		}
-		
+
 		public Builder withType(String type) {
 			request.setType(type);
 			return this;
 		}
-		
+
 		public Builder withScriptDataVersion(String scriptDataVersion) {
 			request.setScriptDataVersion(scriptDataVersion);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String scriptId) {
 			request.setScriptId(scriptId);
-			
+
 			return this;
 		}
-		
+
 
 		public GetScriptsPublishedScriptIdVariablesRequest build() {
             

@@ -24,10 +24,10 @@ title: Library
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; |
-| CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; |
-| CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; | 
+| CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; | 
+| CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; | 
 {: class="table table-striped"}
 
 

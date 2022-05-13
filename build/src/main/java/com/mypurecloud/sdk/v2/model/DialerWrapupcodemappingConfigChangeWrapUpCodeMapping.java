@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -98,7 +99,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -116,7 +117,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -134,7 +135,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -152,7 +153,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -170,7 +171,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.version = version;
   }
 
-  
+
   /**
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping defaultSet(List<DefaultSetEnum> defaultSet) {
@@ -187,7 +188,7 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.defaultSet = defaultSet;
   }
 
-  
+
   /**
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping mapping(Map<String, List<String>> mapping) {
@@ -204,7 +205,6 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
     this.mapping = mapping;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,13 +215,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
       return false;
     }
     DialerWrapupcodemappingConfigChangeWrapUpCodeMapping dialerWrapupcodemappingConfigChangeWrapUpCodeMapping = (DialerWrapupcodemappingConfigChangeWrapUpCodeMapping) o;
+
     return Objects.equals(this.id, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.id) &&
-        Objects.equals(this.name, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.name) &&
-        Objects.equals(this.dateCreated, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.dateCreated) &&
-        Objects.equals(this.dateModified, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.dateModified) &&
-        Objects.equals(this.version, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.version) &&
-        Objects.equals(this.defaultSet, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.defaultSet) &&
-        Objects.equals(this.mapping, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.mapping);
+            Objects.equals(this.name, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.name) &&
+            Objects.equals(this.dateCreated, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.dateCreated) &&
+            Objects.equals(this.dateModified, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.dateModified) &&
+            Objects.equals(this.version, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.version) &&
+            Objects.equals(this.defaultSet, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.defaultSet) &&
+            Objects.equals(this.mapping, dialerWrapupcodemappingConfigChangeWrapUpCodeMapping.mapping);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class TrunkConnectedStatus  implements Serializable {
     this.connected = connected;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -59,7 +60,6 @@ public class TrunkConnectedStatus  implements Serializable {
     this.connectedStateTime = connectedStateTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class TrunkConnectedStatus  implements Serializable {
       return false;
     }
     TrunkConnectedStatus trunkConnectedStatus = (TrunkConnectedStatus) o;
+
     return Objects.equals(this.connected, trunkConnectedStatus.connected) &&
-        Objects.equals(this.connectedStateTime, trunkConnectedStatus.connectedStateTime);
+            Objects.equals(this.connectedStateTime, trunkConnectedStatus.connectedStateTime);
   }
 
   @Override

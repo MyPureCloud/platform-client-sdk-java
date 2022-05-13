@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WorkPlanConstraintConflictMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The arguments to the type of the message that can help clients resolve validation issues
    **/
@@ -110,7 +111,6 @@ public class WorkPlanConstraintConflictMessage  implements Serializable {
     this.arguments = arguments;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,8 +121,9 @@ public class WorkPlanConstraintConflictMessage  implements Serializable {
       return false;
     }
     WorkPlanConstraintConflictMessage workPlanConstraintConflictMessage = (WorkPlanConstraintConflictMessage) o;
+
     return Objects.equals(this.type, workPlanConstraintConflictMessage.type) &&
-        Objects.equals(this.arguments, workPlanConstraintConflictMessage.arguments);
+            Objects.equals(this.arguments, workPlanConstraintConflictMessage.arguments);
   }
 
   @Override

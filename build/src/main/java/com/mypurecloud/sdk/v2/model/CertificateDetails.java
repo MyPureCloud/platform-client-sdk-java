@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -48,7 +49,7 @@ public class CertificateDetails  implements Serializable {
     this.issuer = issuer;
   }
 
-  
+
   /**
    * Information about the subject of the certificate.  The value of this property is a comma separated key=value format.  Each key is one of the attribute names supported by X.500.
    **/
@@ -66,7 +67,7 @@ public class CertificateDetails  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    * The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -84,7 +85,7 @@ public class CertificateDetails  implements Serializable {
     this.expirationDate = expirationDate;
   }
 
-  
+
   /**
    * The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -102,7 +103,7 @@ public class CertificateDetails  implements Serializable {
     this.issueDate = issueDate;
   }
 
-  
+
   /**
    * True if the certificate is expired, false otherwise.
    **/
@@ -120,7 +121,7 @@ public class CertificateDetails  implements Serializable {
     this.expired = expired;
   }
 
-  
+
   /**
    **/
   public CertificateDetails valid(Boolean valid) {
@@ -137,7 +138,7 @@ public class CertificateDetails  implements Serializable {
     this.valid = valid;
   }
 
-  
+
   /**
    **/
   public CertificateDetails signatureValid(Boolean signatureValid) {
@@ -154,7 +155,6 @@ public class CertificateDetails  implements Serializable {
     this.signatureValid = signatureValid;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,13 +165,14 @@ public class CertificateDetails  implements Serializable {
       return false;
     }
     CertificateDetails certificateDetails = (CertificateDetails) o;
+
     return Objects.equals(this.issuer, certificateDetails.issuer) &&
-        Objects.equals(this.subject, certificateDetails.subject) &&
-        Objects.equals(this.expirationDate, certificateDetails.expirationDate) &&
-        Objects.equals(this.issueDate, certificateDetails.issueDate) &&
-        Objects.equals(this.expired, certificateDetails.expired) &&
-        Objects.equals(this.valid, certificateDetails.valid) &&
-        Objects.equals(this.signatureValid, certificateDetails.signatureValid);
+            Objects.equals(this.subject, certificateDetails.subject) &&
+            Objects.equals(this.expirationDate, certificateDetails.expirationDate) &&
+            Objects.equals(this.issueDate, certificateDetails.issueDate) &&
+            Objects.equals(this.expired, certificateDetails.expired) &&
+            Objects.equals(this.valid, certificateDetails.valid) &&
+            Objects.equals(this.signatureValid, certificateDetails.signatureValid);
   }
 
   @Override

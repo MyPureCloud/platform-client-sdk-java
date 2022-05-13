@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,7 +152,7 @@ public class EventLog  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public EventLog name(String name) {
@@ -168,7 +169,7 @@ public class EventLog  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public EventLog errorEntity(DomainEntityRef errorEntity) {
@@ -185,7 +186,7 @@ public class EventLog  implements Serializable {
     this.errorEntity = errorEntity;
   }
 
-  
+
   /**
    **/
   public EventLog relatedEntity(DomainEntityRef relatedEntity) {
@@ -202,7 +203,7 @@ public class EventLog  implements Serializable {
     this.relatedEntity = relatedEntity;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -220,7 +221,7 @@ public class EventLog  implements Serializable {
     this.timestamp = timestamp;
   }
 
-  
+
   /**
    **/
   public EventLog level(LevelEnum level) {
@@ -237,7 +238,7 @@ public class EventLog  implements Serializable {
     this.level = level;
   }
 
-  
+
   /**
    **/
   public EventLog category(CategoryEnum category) {
@@ -254,7 +255,7 @@ public class EventLog  implements Serializable {
     this.category = category;
   }
 
-  
+
   /**
    **/
   public EventLog correlationId(String correlationId) {
@@ -271,7 +272,7 @@ public class EventLog  implements Serializable {
     this.correlationId = correlationId;
   }
 
-  
+
   /**
    **/
   public EventLog eventMessage(EventMessage eventMessage) {
@@ -288,14 +289,13 @@ public class EventLog  implements Serializable {
     this.eventMessage = eventMessage;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -306,16 +306,17 @@ public class EventLog  implements Serializable {
       return false;
     }
     EventLog eventLog = (EventLog) o;
+
     return Objects.equals(this.id, eventLog.id) &&
-        Objects.equals(this.name, eventLog.name) &&
-        Objects.equals(this.errorEntity, eventLog.errorEntity) &&
-        Objects.equals(this.relatedEntity, eventLog.relatedEntity) &&
-        Objects.equals(this.timestamp, eventLog.timestamp) &&
-        Objects.equals(this.level, eventLog.level) &&
-        Objects.equals(this.category, eventLog.category) &&
-        Objects.equals(this.correlationId, eventLog.correlationId) &&
-        Objects.equals(this.eventMessage, eventLog.eventMessage) &&
-        Objects.equals(this.selfUri, eventLog.selfUri);
+            Objects.equals(this.name, eventLog.name) &&
+            Objects.equals(this.errorEntity, eventLog.errorEntity) &&
+            Objects.equals(this.relatedEntity, eventLog.relatedEntity) &&
+            Objects.equals(this.timestamp, eventLog.timestamp) &&
+            Objects.equals(this.level, eventLog.level) &&
+            Objects.equals(this.category, eventLog.category) &&
+            Objects.equals(this.correlationId, eventLog.correlationId) &&
+            Objects.equals(this.eventMessage, eventLog.eventMessage) &&
+            Objects.equals(this.selfUri, eventLog.selfUri);
   }
 
   @Override

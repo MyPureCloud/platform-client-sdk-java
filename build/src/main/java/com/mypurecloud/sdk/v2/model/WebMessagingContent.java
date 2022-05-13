@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,14 +95,14 @@ public class WebMessagingContent  implements Serializable {
     return contentType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Attachment content.")
   @JsonProperty("attachment")
   public WebMessagingAttachment getAttachment() {
     return attachment;
   }
 
-  
+
   /**
    * Quick reply content.
    **/
@@ -119,7 +120,7 @@ public class WebMessagingContent  implements Serializable {
     this.quickReply = quickReply;
   }
 
-  
+
   /**
    * Button response content.
    **/
@@ -137,7 +138,7 @@ public class WebMessagingContent  implements Serializable {
     this.buttonResponse = buttonResponse;
   }
 
-  
+
   /**
    * Generic content.
    **/
@@ -155,7 +156,7 @@ public class WebMessagingContent  implements Serializable {
     this.generic = generic;
   }
 
-  
+
   /**
    * Card content
    **/
@@ -173,7 +174,7 @@ public class WebMessagingContent  implements Serializable {
     this.card = card;
   }
 
-  
+
   /**
    * Carousel content
    **/
@@ -191,7 +192,6 @@ public class WebMessagingContent  implements Serializable {
     this.carousel = carousel;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -202,13 +202,14 @@ public class WebMessagingContent  implements Serializable {
       return false;
     }
     WebMessagingContent webMessagingContent = (WebMessagingContent) o;
+
     return Objects.equals(this.contentType, webMessagingContent.contentType) &&
-        Objects.equals(this.attachment, webMessagingContent.attachment) &&
-        Objects.equals(this.quickReply, webMessagingContent.quickReply) &&
-        Objects.equals(this.buttonResponse, webMessagingContent.buttonResponse) &&
-        Objects.equals(this.generic, webMessagingContent.generic) &&
-        Objects.equals(this.card, webMessagingContent.card) &&
-        Objects.equals(this.carousel, webMessagingContent.carousel);
+            Objects.equals(this.attachment, webMessagingContent.attachment) &&
+            Objects.equals(this.quickReply, webMessagingContent.quickReply) &&
+            Objects.equals(this.buttonResponse, webMessagingContent.buttonResponse) &&
+            Objects.equals(this.generic, webMessagingContent.generic) &&
+            Objects.equals(this.card, webMessagingContent.card) &&
+            Objects.equals(this.carousel, webMessagingContent.carousel);
   }
 
   @Override

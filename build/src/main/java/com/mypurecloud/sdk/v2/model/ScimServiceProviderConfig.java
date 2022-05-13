@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
@@ -46,70 +47,69 @@ public class ScimServiceProviderConfig  implements Serializable {
     return schemas;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The HTTP-addressable URL that points to the service provider's documentation.")
   @JsonProperty("documentationUri")
   public String getDocumentationUri() {
     return documentationUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The \"patch\" configuration options.")
   @JsonProperty("patch")
   public ScimServiceProviderConfigSimpleFeature getPatch() {
     return patch;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The \"filter\" configuration options.")
   @JsonProperty("filter")
   public ScimServiceProviderConfigFilterFeature getFilter() {
     return filter;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The \"etag\" configuration options.")
   @JsonProperty("etag")
   public ScimServiceProviderConfigSimpleFeature getEtag() {
     return etag;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The \"sort\" configuration options.")
   @JsonProperty("sort")
   public ScimServiceProviderConfigSimpleFeature getSort() {
     return sort;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The \"bulk\" configuration options.")
   @JsonProperty("bulk")
   public ScimServiceProviderConfigBulkFeature getBulk() {
     return bulk;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The \"changePassword\" configuration options.")
   @JsonProperty("changePassword")
   public ScimServiceProviderConfigSimpleFeature getChangePassword() {
     return changePassword;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The list of supported authentication schemes.")
   @JsonProperty("authenticationSchemes")
   public List<ScimServiceProviderConfigAuthenticationScheme> getAuthenticationSchemes() {
     return authenticationSchemes;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,16 +120,17 @@ public class ScimServiceProviderConfig  implements Serializable {
       return false;
     }
     ScimServiceProviderConfig scimServiceProviderConfig = (ScimServiceProviderConfig) o;
+
     return Objects.equals(this.schemas, scimServiceProviderConfig.schemas) &&
-        Objects.equals(this.documentationUri, scimServiceProviderConfig.documentationUri) &&
-        Objects.equals(this.patch, scimServiceProviderConfig.patch) &&
-        Objects.equals(this.filter, scimServiceProviderConfig.filter) &&
-        Objects.equals(this.etag, scimServiceProviderConfig.etag) &&
-        Objects.equals(this.sort, scimServiceProviderConfig.sort) &&
-        Objects.equals(this.bulk, scimServiceProviderConfig.bulk) &&
-        Objects.equals(this.changePassword, scimServiceProviderConfig.changePassword) &&
-        Objects.equals(this.authenticationSchemes, scimServiceProviderConfig.authenticationSchemes) &&
-        Objects.equals(this.meta, scimServiceProviderConfig.meta);
+            Objects.equals(this.documentationUri, scimServiceProviderConfig.documentationUri) &&
+            Objects.equals(this.patch, scimServiceProviderConfig.patch) &&
+            Objects.equals(this.filter, scimServiceProviderConfig.filter) &&
+            Objects.equals(this.etag, scimServiceProviderConfig.etag) &&
+            Objects.equals(this.sort, scimServiceProviderConfig.sort) &&
+            Objects.equals(this.bulk, scimServiceProviderConfig.bulk) &&
+            Objects.equals(this.changePassword, scimServiceProviderConfig.changePassword) &&
+            Objects.equals(this.authenticationSchemes, scimServiceProviderConfig.authenticationSchemes) &&
+            Objects.equals(this.meta, scimServiceProviderConfig.meta);
   }
 
   @Override

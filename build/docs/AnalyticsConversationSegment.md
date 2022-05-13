@@ -42,23 +42,23 @@ title: AnalyticsConversationSegment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CLIENT | &quot;client&quot; |
-| CONFERENCETRANSFER | &quot;conferenceTransfer&quot; |
-| CONSULTTRANSFER | &quot;consultTransfer&quot; |
-| ENDPOINT | &quot;endpoint&quot; |
-| ERROR | &quot;error&quot; |
-| FORWARDTRANSFER | &quot;forwardTransfer&quot; |
-| NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; |
-| NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; |
-| OTHER | &quot;other&quot; |
-| PEER | &quot;peer&quot; |
-| SPAM | &quot;spam&quot; |
-| SYSTEM | &quot;system&quot; |
-| TIMEOUT | &quot;timeout&quot; |
-| TRANSFER | &quot;transfer&quot; |
-| TRANSPORTFAILURE | &quot;transportFailure&quot; |
-| UNCALLABLE | &quot;uncallable&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CLIENT | &quot;client&quot; | 
+| CONFERENCETRANSFER | &quot;conferenceTransfer&quot; | 
+| CONSULTTRANSFER | &quot;consultTransfer&quot; | 
+| ENDPOINT | &quot;endpoint&quot; | 
+| ERROR | &quot;error&quot; | 
+| FORWARDTRANSFER | &quot;forwardTransfer&quot; | 
+| NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; | 
+| NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; | 
+| OTHER | &quot;other&quot; | 
+| PEER | &quot;peer&quot; | 
+| SPAM | &quot;spam&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TIMEOUT | &quot;timeout&quot; | 
+| TRANSFER | &quot;transfer&quot; | 
+| TRANSPORTFAILURE | &quot;transportFailure&quot; | 
+| UNCALLABLE | &quot;uncallable&quot; | 
 {: class="table table-striped"}
 
 
@@ -68,26 +68,26 @@ title: AnalyticsConversationSegment
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERT | &quot;alert&quot; |
-| CALLBACK | &quot;callback&quot; |
-| COACHING | &quot;coaching&quot; |
-| CONTACTING | &quot;contacting&quot; |
-| CONVERTING | &quot;converting&quot; |
-| DELAY | &quot;delay&quot; |
-| DIALING | &quot;dialing&quot; |
-| HOLD | &quot;hold&quot; |
-| INTERACT | &quot;interact&quot; |
-| IVR | &quot;ivr&quot; |
-| MONITORING | &quot;monitoring&quot; |
-| SCHEDULED | &quot;scheduled&quot; |
-| SHARING | &quot;sharing&quot; |
-| SYSTEM | &quot;system&quot; |
-| TRANSMITTING | &quot;transmitting&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| UPLOADING | &quot;uploading&quot; |
-| VOICEMAIL | &quot;voicemail&quot; |
-| WRAPUP | &quot;wrapup&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERT | &quot;alert&quot; | 
+| CALLBACK | &quot;callback&quot; | 
+| COACHING | &quot;coaching&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| CONVERTING | &quot;converting&quot; | 
+| DELAY | &quot;delay&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| HOLD | &quot;hold&quot; | 
+| INTERACT | &quot;interact&quot; | 
+| IVR | &quot;ivr&quot; | 
+| MONITORING | &quot;monitoring&quot; | 
+| SCHEDULED | &quot;scheduled&quot; | 
+| SHARING | &quot;sharing&quot; | 
+| SYSTEM | &quot;system&quot; | 
+| TRANSMITTING | &quot;transmitting&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| UPLOADING | &quot;uploading&quot; | 
+| VOICEMAIL | &quot;voicemail&quot; | 
+| WRAPUP | &quot;wrapup&quot; | 
 {: class="table table-striped"}
 
 

@@ -13,58 +13,57 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
-import com.mypurecloud.sdk.v2.model.AuthzDivision;
-import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
-import com.mypurecloud.sdk.v2.model.AuthzSubject;
-import com.mypurecloud.sdk.v2.model.FieldConfig;
-import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
-import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
-import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
-import com.mypurecloud.sdk.v2.model.UserProfile;
-import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
-import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingStatus;
-import com.mypurecloud.sdk.v2.model.UserState;
-import com.mypurecloud.sdk.v2.model.UserStations;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
-import com.mypurecloud.sdk.v2.model.UserMe;
-import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
-import com.mypurecloud.sdk.v2.model.UpdateUser;
-import com.mypurecloud.sdk.v2.model.UserQueue;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
+import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
-import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
-import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
-import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
-import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserProfile;
+import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
+import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
-import com.mypurecloud.sdk.v2.model.CreateUser;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
-import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
-import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.UserState;
+import com.mypurecloud.sdk.v2.model.UserStations;
+import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.Utilization;
 
 
@@ -155,7 +154,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class UsersApiAsync {
   private final ApiClient pcapiClient;
 
@@ -167,7 +165,6 @@ public class UsersApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete/cancel an async request
    * 
@@ -243,7 +240,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Delete a grant of a role in a division
    * 
@@ -319,9 +315,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -355,7 +350,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -395,7 +390,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Delete user
    * 
@@ -471,7 +465,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Remove routing language from user
    * 
@@ -547,7 +540,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Remove routing skill from user
    * 
@@ -623,7 +615,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Clear associated station
    * 
@@ -699,7 +690,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Clear default station
    * 
@@ -775,7 +765,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get status for async query for user details
    * 
@@ -851,7 +840,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Fetch a page of results for an async query
    * 
@@ -927,7 +915,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Lookup the datalake availability date and time
    * 
@@ -1003,7 +990,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Returns which divisions the current user has the given permission in.
    * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -1079,7 +1065,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Returns which divisions the current user has the given permission in.
    * 
@@ -1155,7 +1140,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Returns which divisions the specified user has the given permission in.
    * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
@@ -1231,7 +1215,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1307,7 +1290,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
@@ -1383,7 +1365,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Fetch field config for an entity type
    * 
@@ -1459,7 +1440,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get a user profile listing
    * This api is deprecated. User /api/v2/users
@@ -1535,9 +1515,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1571,7 +1550,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1611,7 +1590,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get user.
    * 
@@ -1687,7 +1665,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get adjacents
    * 
@@ -1763,9 +1740,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Get a user&#39;s CallForwarding
+   * Get a user's CallForwarding
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1799,7 +1775,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Get a user&#39;s CallForwarding
+   * Get a user's CallForwarding
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1839,7 +1815,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get direct reports
    * 
@@ -1915,7 +1890,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Deprecated; will be revived with new contract
    * 
@@ -1991,9 +1965,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Get a user&#39;s Geolocation
+   * Get a user's Geolocation
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2027,7 +2000,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Get a user&#39;s Geolocation
+   * Get a user's Geolocation
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2067,7 +2040,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get a OutOfOffice
    * 
@@ -2143,7 +2115,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get user profile
    * This api has been deprecated. Use api/v2/users instead
@@ -2219,7 +2190,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * List profile skills for a user
    * 
@@ -2295,7 +2265,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get queues for user
    * 
@@ -2371,7 +2340,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -2447,7 +2415,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * List routing language for user
    * 
@@ -2523,7 +2490,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * List routing skills for user
    * 
@@ -2599,7 +2565,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Fetch the routing status of a user
    * 
@@ -2675,7 +2640,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get user state information.
    * 
@@ -2751,7 +2715,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get station information for user
    * 
@@ -2827,7 +2790,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get superiors
    * 
@@ -2903,7 +2865,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * List the organizations that have authorized/trusted the user.
    * 
@@ -2979,7 +2940,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get the list of available users.
    * 
@@ -3055,7 +3015,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get list of Development Activities
    * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
@@ -3131,7 +3090,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get list of Development Activities for current user
    * Results are filtered based on the applicable permissions.
@@ -3207,7 +3165,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get a Development Activity
    * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
@@ -3283,7 +3240,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
@@ -3359,7 +3315,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Search users using the q64 value returned from a previous search
    * 
@@ -3435,7 +3390,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update user
    * 
@@ -3511,9 +3465,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Patch a user&#39;s CallForwarding
+   * Patch a user's CallForwarding
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3547,7 +3500,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Patch a user&#39;s CallForwarding
+   * Patch a user's CallForwarding
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3587,10 +3540,9 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Patch a user&#39;s Geolocation
-   * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+   * Patch a user's Geolocation
+   * The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3623,8 +3575,8 @@ public class UsersApiAsync {
   }
 
   /**
-   * Patch a user&#39;s Geolocation
-   * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+   * Patch a user's Geolocation
+   * The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3663,7 +3615,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Join or unjoin a queue for a user
    * 
@@ -3739,7 +3690,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Join or unjoin a set of queues for a user
    * 
@@ -3815,7 +3765,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update routing language proficiency or state.
    * 
@@ -3891,7 +3840,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Add bulk routing language to user. Max limit 50 languages
    * 
@@ -3967,7 +3915,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Bulk add routing skills to user
    * 
@@ -4043,7 +3990,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update bulk acd autoanswer on users
    * 
@@ -4119,7 +4065,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Query for user aggregates
    * 
@@ -4195,7 +4140,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Query for user details asynchronously
    * 
@@ -4271,7 +4215,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Query for user details
    * 
@@ -4347,7 +4290,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Query for user observations
    * 
@@ -4423,7 +4365,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Bulk-grant roles and divisions to a subject.
    * 
@@ -4499,7 +4440,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Bulk-remove grants from a subject.
    * 
@@ -4575,9 +4515,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4611,7 +4550,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * Replace subject's roles and divisions with the exact list supplied in the request.
    * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4651,7 +4590,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Make a grant of a role in a division
    * 
@@ -4727,7 +4665,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Send an activation email to the user
    * 
@@ -4803,7 +4740,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Change a users password
    * 
@@ -4879,7 +4815,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Add routing language to user
    * 
@@ -4955,7 +4890,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Add routing skill to user
    * 
@@ -5031,7 +4965,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Create user
    * 
@@ -5107,7 +5040,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Retrieve aggregated development activity data
    * Results are filtered based on the applicable permissions.
@@ -5183,7 +5115,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Change your password
    * 
@@ -5259,7 +5190,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Search users
    * 
@@ -5335,9 +5265,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5371,7 +5300,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5411,9 +5340,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Update a user&#39;s CallForwarding
+   * Update a user's CallForwarding
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5447,7 +5375,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Update a user&#39;s CallForwarding
+   * Update a user's CallForwarding
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5487,7 +5415,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update an OutOfOffice
    * 
@@ -5563,7 +5490,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update profile skills for a user
    * 
@@ -5639,9 +5565,8 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5675,7 +5600,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Sets the user&#39;s roles
+   * Sets the user's roles
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5715,7 +5640,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update routing skill proficiency or state.
    * 
@@ -5791,7 +5715,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Replace all routing skills assigned to a user
    * 
@@ -5867,7 +5790,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update the routing status of a user
    * 
@@ -5943,7 +5865,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Update user state information.
    * 
@@ -6019,7 +5940,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Set associated station
    * 
@@ -6095,7 +6015,6 @@ public class UsersApiAsync {
     }
   }
 
-  
   /**
    * Set default station
    * 
@@ -6171,7 +6090,6 @@ public class UsersApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

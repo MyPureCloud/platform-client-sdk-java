@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class FlowMetricsTopicFlowOutcome  implements Serializable {
     this.flowOutcome = flowOutcome;
   }
 
-  
+
   /**
    * Unique identifier of a flow outcome
    **/
@@ -60,7 +61,7 @@ public class FlowMetricsTopicFlowOutcome  implements Serializable {
     this.flowOutcomeId = flowOutcomeId;
   }
 
-  
+
   /**
    * Flow outcome value, e.g. SUCCESS
    **/
@@ -78,7 +79,6 @@ public class FlowMetricsTopicFlowOutcome  implements Serializable {
     this.flowOutcomeValue = flowOutcomeValue;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class FlowMetricsTopicFlowOutcome  implements Serializable {
       return false;
     }
     FlowMetricsTopicFlowOutcome flowMetricsTopicFlowOutcome = (FlowMetricsTopicFlowOutcome) o;
+
     return Objects.equals(this.flowOutcome, flowMetricsTopicFlowOutcome.flowOutcome) &&
-        Objects.equals(this.flowOutcomeId, flowMetricsTopicFlowOutcome.flowOutcomeId) &&
-        Objects.equals(this.flowOutcomeValue, flowMetricsTopicFlowOutcome.flowOutcomeValue);
+            Objects.equals(this.flowOutcomeId, flowMetricsTopicFlowOutcome.flowOutcomeId) &&
+            Objects.equals(this.flowOutcomeValue, flowMetricsTopicFlowOutcome.flowOutcomeValue);
   }
 
   @Override

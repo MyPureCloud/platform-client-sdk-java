@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class TimeOffRequestSettings  implements Serializable {
     this.submissionRangeEnforced = submissionRangeEnforced;
   }
 
-  
+
   /**
    * The earliest number of days from now for which an agent can submit a time off request.  Use negative numbers to indicate days in the past
    **/
@@ -61,7 +62,7 @@ public class TimeOffRequestSettings  implements Serializable {
     this.submissionEarliestDaysFromNow = submissionEarliestDaysFromNow;
   }
 
-  
+
   /**
    * The latest number of days from now for which an agent can submit a time off request
    **/
@@ -79,7 +80,6 @@ public class TimeOffRequestSettings  implements Serializable {
     this.submissionLatestDaysFromNow = submissionLatestDaysFromNow;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class TimeOffRequestSettings  implements Serializable {
       return false;
     }
     TimeOffRequestSettings timeOffRequestSettings = (TimeOffRequestSettings) o;
+
     return Objects.equals(this.submissionRangeEnforced, timeOffRequestSettings.submissionRangeEnforced) &&
-        Objects.equals(this.submissionEarliestDaysFromNow, timeOffRequestSettings.submissionEarliestDaysFromNow) &&
-        Objects.equals(this.submissionLatestDaysFromNow, timeOffRequestSettings.submissionLatestDaysFromNow);
+            Objects.equals(this.submissionEarliestDaysFromNow, timeOffRequestSettings.submissionEarliestDaysFromNow) &&
+            Objects.equals(this.submissionLatestDaysFromNow, timeOffRequestSettings.submissionLatestDaysFromNow);
   }
 
   @Override

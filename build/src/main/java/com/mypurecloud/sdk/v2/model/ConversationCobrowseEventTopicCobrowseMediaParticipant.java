@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -299,7 +300,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant name(String name) {
@@ -316,7 +317,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant address(String address) {
@@ -333,7 +334,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant startTime(Date startTime) {
@@ -350,7 +351,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant connectedTime(Date connectedTime) {
@@ -367,7 +368,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant endTime(Date endTime) {
@@ -384,7 +385,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant startHoldTime(Date startHoldTime) {
@@ -401,7 +402,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant purpose(String purpose) {
@@ -418,7 +419,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant state(StateEnum state) {
@@ -435,7 +436,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant direction(DirectionEnum direction) {
@@ -452,7 +453,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -469,7 +470,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant held(Boolean held) {
@@ -486,7 +487,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -503,7 +504,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -520,7 +521,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant user(ConversationCobrowseEventTopicUriReference user) {
@@ -537,7 +538,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant queue(ConversationCobrowseEventTopicUriReference queue) {
@@ -554,7 +555,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant team(ConversationCobrowseEventTopicUriReference team) {
@@ -571,7 +572,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant attributes(Map<String, String> attributes) {
@@ -588,7 +589,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant errorInfo(ConversationCobrowseEventTopicErrorBody errorInfo) {
@@ -605,7 +606,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant script(ConversationCobrowseEventTopicUriReference script) {
@@ -622,7 +623,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -639,7 +640,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -656,7 +657,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -673,7 +674,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant provider(String provider) {
@@ -690,7 +691,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant externalContact(ConversationCobrowseEventTopicUriReference externalContact) {
@@ -707,7 +708,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant externalOrganization(ConversationCobrowseEventTopicUriReference externalOrganization) {
@@ -724,7 +725,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant wrapup(ConversationCobrowseEventTopicWrapup wrapup) {
@@ -741,7 +742,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant conversationRoutingData(ConversationCobrowseEventTopicConversationRoutingData conversationRoutingData) {
@@ -758,7 +759,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant peer(String peer) {
@@ -775,7 +776,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -792,7 +793,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -809,7 +810,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant journeyContext(ConversationCobrowseEventTopicJourneyContext journeyContext) {
@@ -826,7 +827,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant startAcwTime(Date startAcwTime) {
@@ -843,7 +844,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant endAcwTime(Date endAcwTime) {
@@ -860,7 +861,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -877,7 +878,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant cobrowseRole(String cobrowseRole) {
@@ -894,7 +895,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.cobrowseRole = cobrowseRole;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant viewerUrl(String viewerUrl) {
@@ -911,7 +912,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.viewerUrl = viewerUrl;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant providerEventTime(Date providerEventTime) {
@@ -928,7 +929,7 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.providerEventTime = providerEventTime;
   }
 
-  
+
   /**
    **/
   public ConversationCobrowseEventTopicCobrowseMediaParticipant controlling(List<String> controlling) {
@@ -945,7 +946,6 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
     this.controlling = controlling;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -956,45 +956,46 @@ public class ConversationCobrowseEventTopicCobrowseMediaParticipant  implements 
       return false;
     }
     ConversationCobrowseEventTopicCobrowseMediaParticipant conversationCobrowseEventTopicCobrowseMediaParticipant = (ConversationCobrowseEventTopicCobrowseMediaParticipant) o;
+
     return Objects.equals(this.id, conversationCobrowseEventTopicCobrowseMediaParticipant.id) &&
-        Objects.equals(this.name, conversationCobrowseEventTopicCobrowseMediaParticipant.name) &&
-        Objects.equals(this.address, conversationCobrowseEventTopicCobrowseMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationCobrowseEventTopicCobrowseMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationCobrowseEventTopicCobrowseMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationCobrowseEventTopicCobrowseMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationCobrowseEventTopicCobrowseMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationCobrowseEventTopicCobrowseMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationCobrowseEventTopicCobrowseMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationCobrowseEventTopicCobrowseMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationCobrowseEventTopicCobrowseMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationCobrowseEventTopicCobrowseMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationCobrowseEventTopicCobrowseMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationCobrowseEventTopicCobrowseMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationCobrowseEventTopicCobrowseMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationCobrowseEventTopicCobrowseMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationCobrowseEventTopicCobrowseMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationCobrowseEventTopicCobrowseMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationCobrowseEventTopicCobrowseMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationCobrowseEventTopicCobrowseMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationCobrowseEventTopicCobrowseMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationCobrowseEventTopicCobrowseMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationCobrowseEventTopicCobrowseMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationCobrowseEventTopicCobrowseMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationCobrowseEventTopicCobrowseMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.endAcwTime) &&
-        Objects.equals(this.cobrowseSessionId, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseSessionId) &&
-        Objects.equals(this.cobrowseRole, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseRole) &&
-        Objects.equals(this.viewerUrl, conversationCobrowseEventTopicCobrowseMediaParticipant.viewerUrl) &&
-        Objects.equals(this.providerEventTime, conversationCobrowseEventTopicCobrowseMediaParticipant.providerEventTime) &&
-        Objects.equals(this.controlling, conversationCobrowseEventTopicCobrowseMediaParticipant.controlling);
+            Objects.equals(this.name, conversationCobrowseEventTopicCobrowseMediaParticipant.name) &&
+            Objects.equals(this.address, conversationCobrowseEventTopicCobrowseMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationCobrowseEventTopicCobrowseMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationCobrowseEventTopicCobrowseMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationCobrowseEventTopicCobrowseMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationCobrowseEventTopicCobrowseMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationCobrowseEventTopicCobrowseMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationCobrowseEventTopicCobrowseMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationCobrowseEventTopicCobrowseMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationCobrowseEventTopicCobrowseMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationCobrowseEventTopicCobrowseMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationCobrowseEventTopicCobrowseMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationCobrowseEventTopicCobrowseMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationCobrowseEventTopicCobrowseMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationCobrowseEventTopicCobrowseMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationCobrowseEventTopicCobrowseMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationCobrowseEventTopicCobrowseMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationCobrowseEventTopicCobrowseMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationCobrowseEventTopicCobrowseMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationCobrowseEventTopicCobrowseMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationCobrowseEventTopicCobrowseMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationCobrowseEventTopicCobrowseMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationCobrowseEventTopicCobrowseMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationCobrowseEventTopicCobrowseMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationCobrowseEventTopicCobrowseMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationCobrowseEventTopicCobrowseMediaParticipant.endAcwTime) &&
+            Objects.equals(this.cobrowseSessionId, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseSessionId) &&
+            Objects.equals(this.cobrowseRole, conversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseRole) &&
+            Objects.equals(this.viewerUrl, conversationCobrowseEventTopicCobrowseMediaParticipant.viewerUrl) &&
+            Objects.equals(this.providerEventTime, conversationCobrowseEventTopicCobrowseMediaParticipant.providerEventTime) &&
+            Objects.equals(this.controlling, conversationCobrowseEventTopicCobrowseMediaParticipant.controlling);
   }
 
   @Override

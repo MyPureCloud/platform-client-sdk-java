@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class AnalyticsProperty  implements Serializable {
     this.property = property;
   }
 
-  
+
   /**
    * Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match
    **/
@@ -112,7 +113,7 @@ public class AnalyticsProperty  implements Serializable {
     this.propertyType = propertyType;
   }
 
-  
+
   /**
    * What property value to match against
    **/
@@ -130,7 +131,6 @@ public class AnalyticsProperty  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -141,9 +141,10 @@ public class AnalyticsProperty  implements Serializable {
       return false;
     }
     AnalyticsProperty analyticsProperty = (AnalyticsProperty) o;
+
     return Objects.equals(this.property, analyticsProperty.property) &&
-        Objects.equals(this.propertyType, analyticsProperty.propertyType) &&
-        Objects.equals(this.value, analyticsProperty.value);
+            Objects.equals(this.propertyType, analyticsProperty.propertyType) &&
+            Objects.equals(this.value, analyticsProperty.value);
   }
 
   @Override

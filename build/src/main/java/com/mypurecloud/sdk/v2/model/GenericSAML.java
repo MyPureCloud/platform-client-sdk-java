@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -54,14 +55,14 @@ public class GenericSAML  implements Serializable {
  @JsonDeserialize(using = NameIdentifierFormatEnumDeserializer.class)
   public enum NameIdentifierFormatEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED("urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"),
-    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_EMAILADDRESS("urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"),
-    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_X509SUBJECTNAME("urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName"),
-    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_WINDOWSDOMAINQUALIFIEDNAME("urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName"),
-    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_KERBEROS("urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos"),
-    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_ENTITY("urn:oasis:names:tc:SAML:2.0:nameid-format:entity"),
-    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT("urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"),
-    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT("urn:oasis:names:tc:SAML:2.0:nameid-format:transient");
+    URN_OASIS_NAMES_TC_SAML__1__1_NAMEID_FORMAT_UNSPECIFIED("urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"),
+    URN_OASIS_NAMES_TC_SAML__1__1_NAMEID_FORMAT_EMAILADDRESS("urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"),
+    URN_OASIS_NAMES_TC_SAML__1__1_NAMEID_FORMAT_X509SUBJECTNAME("urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName"),
+    URN_OASIS_NAMES_TC_SAML__1__1_NAMEID_FORMAT_WINDOWSDOMAINQUALIFIEDNAME("urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName"),
+    URN_OASIS_NAMES_TC_SAML__2__0_NAMEID_FORMAT_KERBEROS("urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos"),
+    URN_OASIS_NAMES_TC_SAML__2__0_NAMEID_FORMAT_ENTITY("urn:oasis:names:tc:SAML:2.0:nameid-format:entity"),
+    URN_OASIS_NAMES_TC_SAML__2__0_NAMEID_FORMAT_PERSISTENT("urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"),
+    URN_OASIS_NAMES_TC_SAML__2__0_NAMEID_FORMAT_TRANSIENT("urn:oasis:names:tc:SAML:2.0:nameid-format:transient");
 
     private String value;
 
@@ -98,7 +99,7 @@ public class GenericSAML  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public GenericSAML name(String name) {
@@ -115,7 +116,7 @@ public class GenericSAML  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public GenericSAML disabled(Boolean disabled) {
@@ -132,7 +133,7 @@ public class GenericSAML  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public GenericSAML issuerURI(String issuerURI) {
@@ -149,7 +150,7 @@ public class GenericSAML  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public GenericSAML ssoTargetURI(String ssoTargetURI) {
@@ -166,7 +167,7 @@ public class GenericSAML  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public GenericSAML sloURI(String sloURI) {
@@ -183,7 +184,7 @@ public class GenericSAML  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public GenericSAML sloBinding(String sloBinding) {
@@ -200,7 +201,7 @@ public class GenericSAML  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -217,7 +218,7 @@ public class GenericSAML  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public GenericSAML certificate(String certificate) {
@@ -234,7 +235,7 @@ public class GenericSAML  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public GenericSAML certificates(List<String> certificates) {
@@ -251,7 +252,7 @@ public class GenericSAML  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   /**
    **/
   public GenericSAML logoImageData(String logoImageData) {
@@ -268,7 +269,7 @@ public class GenericSAML  implements Serializable {
     this.logoImageData = logoImageData;
   }
 
-  
+
   /**
    **/
   public GenericSAML endpointCompression(Boolean endpointCompression) {
@@ -285,7 +286,7 @@ public class GenericSAML  implements Serializable {
     this.endpointCompression = endpointCompression;
   }
 
-  
+
   /**
    **/
   public GenericSAML nameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
@@ -302,14 +303,13 @@ public class GenericSAML  implements Serializable {
     this.nameIdentifierFormat = nameIdentifierFormat;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -320,20 +320,21 @@ public class GenericSAML  implements Serializable {
       return false;
     }
     GenericSAML genericSAML = (GenericSAML) o;
+
     return Objects.equals(this.id, genericSAML.id) &&
-        Objects.equals(this.name, genericSAML.name) &&
-        Objects.equals(this.disabled, genericSAML.disabled) &&
-        Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
-        Objects.equals(this.sloURI, genericSAML.sloURI) &&
-        Objects.equals(this.sloBinding, genericSAML.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, genericSAML.certificate) &&
-        Objects.equals(this.certificates, genericSAML.certificates) &&
-        Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
-        Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
-        Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
-        Objects.equals(this.selfUri, genericSAML.selfUri);
+            Objects.equals(this.name, genericSAML.name) &&
+            Objects.equals(this.disabled, genericSAML.disabled) &&
+            Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
+            Objects.equals(this.sloURI, genericSAML.sloURI) &&
+            Objects.equals(this.sloBinding, genericSAML.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, genericSAML.certificate) &&
+            Objects.equals(this.certificates, genericSAML.certificates) &&
+            Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
+            Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
+            Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
+            Objects.equals(this.selfUri, genericSAML.selfUri);
   }
 
   @Override

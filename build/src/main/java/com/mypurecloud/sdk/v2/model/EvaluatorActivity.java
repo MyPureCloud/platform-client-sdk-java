@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.User;
@@ -40,7 +41,7 @@ public class EvaluatorActivity  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity name(String name) {
@@ -57,7 +58,7 @@ public class EvaluatorActivity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity evaluator(User evaluator) {
@@ -74,7 +75,7 @@ public class EvaluatorActivity  implements Serializable {
     this.evaluator = evaluator;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numEvaluationsAssigned(Integer numEvaluationsAssigned) {
@@ -91,7 +92,7 @@ public class EvaluatorActivity  implements Serializable {
     this.numEvaluationsAssigned = numEvaluationsAssigned;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numEvaluationsStarted(Integer numEvaluationsStarted) {
@@ -108,7 +109,7 @@ public class EvaluatorActivity  implements Serializable {
     this.numEvaluationsStarted = numEvaluationsStarted;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numEvaluationsCompleted(Integer numEvaluationsCompleted) {
@@ -125,7 +126,7 @@ public class EvaluatorActivity  implements Serializable {
     this.numEvaluationsCompleted = numEvaluationsCompleted;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numCalibrationsAssigned(Integer numCalibrationsAssigned) {
@@ -142,7 +143,7 @@ public class EvaluatorActivity  implements Serializable {
     this.numCalibrationsAssigned = numCalibrationsAssigned;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numCalibrationsStarted(Integer numCalibrationsStarted) {
@@ -159,7 +160,7 @@ public class EvaluatorActivity  implements Serializable {
     this.numCalibrationsStarted = numCalibrationsStarted;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numCalibrationsCompleted(Integer numCalibrationsCompleted) {
@@ -176,7 +177,7 @@ public class EvaluatorActivity  implements Serializable {
     this.numCalibrationsCompleted = numCalibrationsCompleted;
   }
 
-  
+
   /**
    **/
   public EvaluatorActivity numEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
@@ -193,14 +194,13 @@ public class EvaluatorActivity  implements Serializable {
     this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -211,17 +211,18 @@ public class EvaluatorActivity  implements Serializable {
       return false;
     }
     EvaluatorActivity evaluatorActivity = (EvaluatorActivity) o;
+
     return Objects.equals(this.id, evaluatorActivity.id) &&
-        Objects.equals(this.name, evaluatorActivity.name) &&
-        Objects.equals(this.evaluator, evaluatorActivity.evaluator) &&
-        Objects.equals(this.numEvaluationsAssigned, evaluatorActivity.numEvaluationsAssigned) &&
-        Objects.equals(this.numEvaluationsStarted, evaluatorActivity.numEvaluationsStarted) &&
-        Objects.equals(this.numEvaluationsCompleted, evaluatorActivity.numEvaluationsCompleted) &&
-        Objects.equals(this.numCalibrationsAssigned, evaluatorActivity.numCalibrationsAssigned) &&
-        Objects.equals(this.numCalibrationsStarted, evaluatorActivity.numCalibrationsStarted) &&
-        Objects.equals(this.numCalibrationsCompleted, evaluatorActivity.numCalibrationsCompleted) &&
-        Objects.equals(this.numEvaluationsWithoutViewPermission, evaluatorActivity.numEvaluationsWithoutViewPermission) &&
-        Objects.equals(this.selfUri, evaluatorActivity.selfUri);
+            Objects.equals(this.name, evaluatorActivity.name) &&
+            Objects.equals(this.evaluator, evaluatorActivity.evaluator) &&
+            Objects.equals(this.numEvaluationsAssigned, evaluatorActivity.numEvaluationsAssigned) &&
+            Objects.equals(this.numEvaluationsStarted, evaluatorActivity.numEvaluationsStarted) &&
+            Objects.equals(this.numEvaluationsCompleted, evaluatorActivity.numEvaluationsCompleted) &&
+            Objects.equals(this.numCalibrationsAssigned, evaluatorActivity.numCalibrationsAssigned) &&
+            Objects.equals(this.numCalibrationsStarted, evaluatorActivity.numCalibrationsStarted) &&
+            Objects.equals(this.numCalibrationsCompleted, evaluatorActivity.numCalibrationsCompleted) &&
+            Objects.equals(this.numEvaluationsWithoutViewPermission, evaluatorActivity.numEvaluationsWithoutViewPermission) &&
+            Objects.equals(this.selfUri, evaluatorActivity.selfUri);
   }
 
   @Override

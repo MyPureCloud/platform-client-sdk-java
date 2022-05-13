@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class RecordingJobsQuery  implements Serializable {
     this.action = action;
   }
 
-  
+
   /**
    * The date when the action will be performed. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -112,7 +113,7 @@ public class RecordingJobsQuery  implements Serializable {
     this.actionDate = actionDate;
   }
 
-  
+
   /**
    * IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.
    **/
@@ -130,7 +131,7 @@ public class RecordingJobsQuery  implements Serializable {
     this.integrationId = integrationId;
   }
 
-  
+
   /**
    * Include Screen recordings for export action, default value = true 
    **/
@@ -148,7 +149,7 @@ public class RecordingJobsQuery  implements Serializable {
     this.includeScreenRecordings = includeScreenRecordings;
   }
 
-  
+
   /**
    * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
    **/
@@ -166,7 +167,6 @@ public class RecordingJobsQuery  implements Serializable {
     this.conversationQuery = conversationQuery;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,11 +177,12 @@ public class RecordingJobsQuery  implements Serializable {
       return false;
     }
     RecordingJobsQuery recordingJobsQuery = (RecordingJobsQuery) o;
+
     return Objects.equals(this.action, recordingJobsQuery.action) &&
-        Objects.equals(this.actionDate, recordingJobsQuery.actionDate) &&
-        Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
-        Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
-        Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery);
+            Objects.equals(this.actionDate, recordingJobsQuery.actionDate) &&
+            Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
+            Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
+            Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery);
   }
 
   @Override

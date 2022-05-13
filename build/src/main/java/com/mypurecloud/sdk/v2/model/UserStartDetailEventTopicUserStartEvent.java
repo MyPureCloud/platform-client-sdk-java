@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -216,7 +217,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.eventTime = eventTime;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent conversationId(String conversationId) {
@@ -233,7 +234,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent participantId(String participantId) {
@@ -250,7 +251,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.participantId = participantId;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent sessionId(String sessionId) {
@@ -267,7 +268,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.sessionId = sessionId;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent mediaType(MediaTypeEnum mediaType) {
@@ -284,7 +285,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent provider(String provider) {
@@ -301,7 +302,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent direction(DirectionEnum direction) {
@@ -318,7 +319,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent ani(String ani) {
@@ -335,7 +336,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.ani = ani;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent dnis(String dnis) {
@@ -352,7 +353,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.dnis = dnis;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent addressTo(String addressTo) {
@@ -369,7 +370,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.addressTo = addressTo;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent addressFrom(String addressFrom) {
@@ -386,7 +387,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.addressFrom = addressFrom;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent callbackUserName(String callbackUserName) {
@@ -403,7 +404,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent callbackNumbers(List<String> callbackNumbers) {
@@ -420,7 +421,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent callbackScheduledTime(Integer callbackScheduledTime) {
@@ -437,7 +438,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent subject(String subject) {
@@ -454,7 +455,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent messageType(MessageTypeEnum messageType) {
@@ -471,7 +472,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.messageType = messageType;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent userId(String userId) {
@@ -488,7 +489,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.userId = userId;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent divisionId(String divisionId) {
@@ -505,7 +506,7 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.divisionId = divisionId;
   }
 
-  
+
   /**
    **/
   public UserStartDetailEventTopicUserStartEvent queueId(String queueId) {
@@ -522,7 +523,6 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
     this.queueId = queueId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -533,25 +533,26 @@ public class UserStartDetailEventTopicUserStartEvent  implements Serializable {
       return false;
     }
     UserStartDetailEventTopicUserStartEvent userStartDetailEventTopicUserStartEvent = (UserStartDetailEventTopicUserStartEvent) o;
+
     return Objects.equals(this.eventTime, userStartDetailEventTopicUserStartEvent.eventTime) &&
-        Objects.equals(this.conversationId, userStartDetailEventTopicUserStartEvent.conversationId) &&
-        Objects.equals(this.participantId, userStartDetailEventTopicUserStartEvent.participantId) &&
-        Objects.equals(this.sessionId, userStartDetailEventTopicUserStartEvent.sessionId) &&
-        Objects.equals(this.mediaType, userStartDetailEventTopicUserStartEvent.mediaType) &&
-        Objects.equals(this.provider, userStartDetailEventTopicUserStartEvent.provider) &&
-        Objects.equals(this.direction, userStartDetailEventTopicUserStartEvent.direction) &&
-        Objects.equals(this.ani, userStartDetailEventTopicUserStartEvent.ani) &&
-        Objects.equals(this.dnis, userStartDetailEventTopicUserStartEvent.dnis) &&
-        Objects.equals(this.addressTo, userStartDetailEventTopicUserStartEvent.addressTo) &&
-        Objects.equals(this.addressFrom, userStartDetailEventTopicUserStartEvent.addressFrom) &&
-        Objects.equals(this.callbackUserName, userStartDetailEventTopicUserStartEvent.callbackUserName) &&
-        Objects.equals(this.callbackNumbers, userStartDetailEventTopicUserStartEvent.callbackNumbers) &&
-        Objects.equals(this.callbackScheduledTime, userStartDetailEventTopicUserStartEvent.callbackScheduledTime) &&
-        Objects.equals(this.subject, userStartDetailEventTopicUserStartEvent.subject) &&
-        Objects.equals(this.messageType, userStartDetailEventTopicUserStartEvent.messageType) &&
-        Objects.equals(this.userId, userStartDetailEventTopicUserStartEvent.userId) &&
-        Objects.equals(this.divisionId, userStartDetailEventTopicUserStartEvent.divisionId) &&
-        Objects.equals(this.queueId, userStartDetailEventTopicUserStartEvent.queueId);
+            Objects.equals(this.conversationId, userStartDetailEventTopicUserStartEvent.conversationId) &&
+            Objects.equals(this.participantId, userStartDetailEventTopicUserStartEvent.participantId) &&
+            Objects.equals(this.sessionId, userStartDetailEventTopicUserStartEvent.sessionId) &&
+            Objects.equals(this.mediaType, userStartDetailEventTopicUserStartEvent.mediaType) &&
+            Objects.equals(this.provider, userStartDetailEventTopicUserStartEvent.provider) &&
+            Objects.equals(this.direction, userStartDetailEventTopicUserStartEvent.direction) &&
+            Objects.equals(this.ani, userStartDetailEventTopicUserStartEvent.ani) &&
+            Objects.equals(this.dnis, userStartDetailEventTopicUserStartEvent.dnis) &&
+            Objects.equals(this.addressTo, userStartDetailEventTopicUserStartEvent.addressTo) &&
+            Objects.equals(this.addressFrom, userStartDetailEventTopicUserStartEvent.addressFrom) &&
+            Objects.equals(this.callbackUserName, userStartDetailEventTopicUserStartEvent.callbackUserName) &&
+            Objects.equals(this.callbackNumbers, userStartDetailEventTopicUserStartEvent.callbackNumbers) &&
+            Objects.equals(this.callbackScheduledTime, userStartDetailEventTopicUserStartEvent.callbackScheduledTime) &&
+            Objects.equals(this.subject, userStartDetailEventTopicUserStartEvent.subject) &&
+            Objects.equals(this.messageType, userStartDetailEventTopicUserStartEvent.messageType) &&
+            Objects.equals(this.userId, userStartDetailEventTopicUserStartEvent.userId) &&
+            Objects.equals(this.divisionId, userStartDetailEventTopicUserStartEvent.divisionId) &&
+            Objects.equals(this.queueId, userStartDetailEventTopicUserStartEvent.queueId);
   }
 
   @Override

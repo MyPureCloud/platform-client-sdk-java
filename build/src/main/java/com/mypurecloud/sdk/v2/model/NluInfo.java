@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -37,14 +38,14 @@ public class NluInfo  implements Serializable {
     return domain;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
   public NluDomainVersion getVersion() {
     return version;
   }
 
-  
+
   /**
    **/
   public NluInfo intents(List<Intent> intents) {
@@ -61,7 +62,7 @@ public class NluInfo  implements Serializable {
     this.intents = intents;
   }
 
-  
+
   /**
    **/
   public NluInfo engineVersion(String engineVersion) {
@@ -78,7 +79,6 @@ public class NluInfo  implements Serializable {
     this.engineVersion = engineVersion;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,10 +89,11 @@ public class NluInfo  implements Serializable {
       return false;
     }
     NluInfo nluInfo = (NluInfo) o;
+
     return Objects.equals(this.domain, nluInfo.domain) &&
-        Objects.equals(this.version, nluInfo.version) &&
-        Objects.equals(this.intents, nluInfo.intents) &&
-        Objects.equals(this.engineVersion, nluInfo.engineVersion);
+            Objects.equals(this.version, nluInfo.version) &&
+            Objects.equals(this.intents, nluInfo.intents) &&
+            Objects.equals(this.engineVersion, nluInfo.engineVersion);
   }
 
   @Override

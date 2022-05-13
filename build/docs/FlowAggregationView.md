@@ -21,16 +21,16 @@ title: FlowAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NFLOW | &quot;nFlow&quot; |
-| NFLOWMILESTONE | &quot;nFlowMilestone&quot; |
-| NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
-| NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
-| OFLOWMILESTONE | &quot;oFlowMilestone&quot; |
-| TFLOW | &quot;tFlow&quot; |
-| TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |
-| TFLOWEXIT | &quot;tFlowExit&quot; |
-| TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NFLOW | &quot;nFlow&quot; | 
+| NFLOWMILESTONE | &quot;nFlowMilestone&quot; | 
+| NFLOWOUTCOME | &quot;nFlowOutcome&quot; | 
+| NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; | 
+| OFLOWMILESTONE | &quot;oFlowMilestone&quot; | 
+| TFLOW | &quot;tFlow&quot; | 
+| TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; | 
+| TFLOWEXIT | &quot;tFlowExit&quot; | 
+| TFLOWOUTCOME | &quot;tFlowOutcome&quot; | 
 {: class="table table-striped"}
 
 
@@ -40,8 +40,8 @@ title: FlowAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANGEBOUND | &quot;rangeBound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANGEBOUND | &quot;rangeBound&quot; | 
 {: class="table table-striped"}
 
 

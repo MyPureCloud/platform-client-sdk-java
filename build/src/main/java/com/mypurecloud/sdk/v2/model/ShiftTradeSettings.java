@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -248,7 +249,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * Whether automatic shift trade review is enabled according to the rules defined in for this management unit
    **/
@@ -266,7 +267,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.autoReview = autoReview;
   }
 
-  
+
   /**
    * Whether direct shift trades between agents are allowed
    **/
@@ -284,7 +285,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.allowDirectTrades = allowDirectTrades;
   }
 
-  
+
   /**
    * The minimum number of hours in the future shift trades are allowed
    **/
@@ -302,7 +303,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.minHoursInFuture = minHoursInFuture;
   }
 
-  
+
   /**
    * How to handle shift trades which involve unequal paid times
    **/
@@ -320,7 +321,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.unequalPaid = unequalPaid;
   }
 
-  
+
   /**
    * How to handle one-sided shift trades
    **/
@@ -338,7 +339,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.oneSided = oneSided;
   }
 
-  
+
   /**
    * How to handle shift trades which result in violations of weekly minimum paid time constraint
    **/
@@ -356,7 +357,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.weeklyMinPaidViolations = weeklyMinPaidViolations;
   }
 
-  
+
   /**
    * How to handle shift trades which result in violations of weekly maximum paid time constraint
    **/
@@ -374,7 +375,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.weeklyMaxPaidViolations = weeklyMaxPaidViolations;
   }
 
-  
+
   /**
    * Whether to constrain shift trades to agents with matching queues
    **/
@@ -392,7 +393,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.requiresMatchingQueues = requiresMatchingQueues;
   }
 
-  
+
   /**
    * Whether to constrain shift trades to agents with matching languages
    **/
@@ -410,7 +411,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.requiresMatchingLanguages = requiresMatchingLanguages;
   }
 
-  
+
   /**
    * Whether to constrain shift trades to agents with matching skills
    **/
@@ -428,7 +429,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.requiresMatchingSkills = requiresMatchingSkills;
   }
 
-  
+
   /**
    * Whether to constrain shift trades to agents with matching planning groups
    **/
@@ -446,7 +447,7 @@ public class ShiftTradeSettings  implements Serializable {
     this.requiresMatchingPlanningGroups = requiresMatchingPlanningGroups;
   }
 
-  
+
   /**
    * Rules that specify what to do with activity categories that are part of a shift defined in a trade
    **/
@@ -464,7 +465,6 @@ public class ShiftTradeSettings  implements Serializable {
     this.activityCategoryRules = activityCategoryRules;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -475,19 +475,20 @@ public class ShiftTradeSettings  implements Serializable {
       return false;
     }
     ShiftTradeSettings shiftTradeSettings = (ShiftTradeSettings) o;
+
     return Objects.equals(this.enabled, shiftTradeSettings.enabled) &&
-        Objects.equals(this.autoReview, shiftTradeSettings.autoReview) &&
-        Objects.equals(this.allowDirectTrades, shiftTradeSettings.allowDirectTrades) &&
-        Objects.equals(this.minHoursInFuture, shiftTradeSettings.minHoursInFuture) &&
-        Objects.equals(this.unequalPaid, shiftTradeSettings.unequalPaid) &&
-        Objects.equals(this.oneSided, shiftTradeSettings.oneSided) &&
-        Objects.equals(this.weeklyMinPaidViolations, shiftTradeSettings.weeklyMinPaidViolations) &&
-        Objects.equals(this.weeklyMaxPaidViolations, shiftTradeSettings.weeklyMaxPaidViolations) &&
-        Objects.equals(this.requiresMatchingQueues, shiftTradeSettings.requiresMatchingQueues) &&
-        Objects.equals(this.requiresMatchingLanguages, shiftTradeSettings.requiresMatchingLanguages) &&
-        Objects.equals(this.requiresMatchingSkills, shiftTradeSettings.requiresMatchingSkills) &&
-        Objects.equals(this.requiresMatchingPlanningGroups, shiftTradeSettings.requiresMatchingPlanningGroups) &&
-        Objects.equals(this.activityCategoryRules, shiftTradeSettings.activityCategoryRules);
+            Objects.equals(this.autoReview, shiftTradeSettings.autoReview) &&
+            Objects.equals(this.allowDirectTrades, shiftTradeSettings.allowDirectTrades) &&
+            Objects.equals(this.minHoursInFuture, shiftTradeSettings.minHoursInFuture) &&
+            Objects.equals(this.unequalPaid, shiftTradeSettings.unequalPaid) &&
+            Objects.equals(this.oneSided, shiftTradeSettings.oneSided) &&
+            Objects.equals(this.weeklyMinPaidViolations, shiftTradeSettings.weeklyMinPaidViolations) &&
+            Objects.equals(this.weeklyMaxPaidViolations, shiftTradeSettings.weeklyMaxPaidViolations) &&
+            Objects.equals(this.requiresMatchingQueues, shiftTradeSettings.requiresMatchingQueues) &&
+            Objects.equals(this.requiresMatchingLanguages, shiftTradeSettings.requiresMatchingLanguages) &&
+            Objects.equals(this.requiresMatchingSkills, shiftTradeSettings.requiresMatchingSkills) &&
+            Objects.equals(this.requiresMatchingPlanningGroups, shiftTradeSettings.requiresMatchingPlanningGroups) &&
+            Objects.equals(this.activityCategoryRules, shiftTradeSettings.activityCategoryRules);
   }
 
   @Override

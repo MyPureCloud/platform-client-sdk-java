@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class PatchTextStyleProperties  implements Serializable {
     this.color = color;
   }
 
-  
+
   /**
    * Font of the text. (eg. Helvetica)
    **/
@@ -110,7 +111,7 @@ public class PatchTextStyleProperties  implements Serializable {
     this.font = font;
   }
 
-  
+
   /**
    * Font size of the text. (eg. '12')
    **/
@@ -128,7 +129,7 @@ public class PatchTextStyleProperties  implements Serializable {
     this.fontSize = fontSize;
   }
 
-  
+
   /**
    * Text alignment.
    **/
@@ -146,7 +147,6 @@ public class PatchTextStyleProperties  implements Serializable {
     this.textAlign = textAlign;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,10 +157,11 @@ public class PatchTextStyleProperties  implements Serializable {
       return false;
     }
     PatchTextStyleProperties patchTextStyleProperties = (PatchTextStyleProperties) o;
+
     return Objects.equals(this.color, patchTextStyleProperties.color) &&
-        Objects.equals(this.font, patchTextStyleProperties.font) &&
-        Objects.equals(this.fontSize, patchTextStyleProperties.fontSize) &&
-        Objects.equals(this.textAlign, patchTextStyleProperties.textAlign);
+            Objects.equals(this.font, patchTextStyleProperties.font) &&
+            Objects.equals(this.fontSize, patchTextStyleProperties.fontSize) &&
+            Objects.equals(this.textAlign, patchTextStyleProperties.textAlign);
   }
 
   @Override

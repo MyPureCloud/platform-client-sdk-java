@@ -21,12 +21,12 @@ title: EvaluationAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NEVALUATIONS | &quot;nEvaluations&quot; |
-| NEVALUATIONSDELETED | &quot;nEvaluationsDeleted&quot; |
-| NEVALUATIONSRESCORED | &quot;nEvaluationsRescored&quot; |
-| OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; |
-| OTOTALSCORE | &quot;oTotalScore&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVALUATIONS | &quot;nEvaluations&quot; | 
+| NEVALUATIONSDELETED | &quot;nEvaluationsDeleted&quot; | 
+| NEVALUATIONSRESCORED | &quot;nEvaluationsRescored&quot; | 
+| OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; | 
+| OTOTALSCORE | &quot;oTotalScore&quot; | 
 {: class="table table-striped"}
 
 
@@ -36,8 +36,8 @@ title: EvaluationAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANGEBOUND | &quot;rangeBound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANGEBOUND | &quot;rangeBound&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Destination;
@@ -55,7 +56,7 @@ public class CreateCallRequest  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * The caller id phone number for this outbound call.
    **/
@@ -73,7 +74,7 @@ public class CreateCallRequest  implements Serializable {
     this.callerId = callerId;
   }
 
-  
+
   /**
    * The caller id name for this outbound call.
    **/
@@ -91,7 +92,7 @@ public class CreateCallRequest  implements Serializable {
     this.callerIdName = callerIdName;
   }
 
-  
+
   /**
    * The queue ID to call on behalf of.
    **/
@@ -109,7 +110,7 @@ public class CreateCallRequest  implements Serializable {
     this.callFromQueueId = callFromQueueId;
   }
 
-  
+
   /**
    * The queue ID to call.
    **/
@@ -127,7 +128,7 @@ public class CreateCallRequest  implements Serializable {
     this.callQueueId = callQueueId;
   }
 
-  
+
   /**
    * The user ID to call.
    **/
@@ -145,7 +146,7 @@ public class CreateCallRequest  implements Serializable {
     this.callUserId = callUserId;
   }
 
-  
+
   /**
    * The priority to assign to this call (if calling a queue).
    **/
@@ -163,7 +164,7 @@ public class CreateCallRequest  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * The language skill ID to use for routing this call (if calling a queue).
    **/
@@ -181,7 +182,7 @@ public class CreateCallRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    * The skill ID's to use for routing this call (if calling a queue).
    **/
@@ -199,7 +200,7 @@ public class CreateCallRequest  implements Serializable {
     this.routingSkillsIds = routingSkillsIds;
   }
 
-  
+
   /**
    * The list of existing call conversations to merge into a new ad-hoc conference.
    **/
@@ -217,7 +218,7 @@ public class CreateCallRequest  implements Serializable {
     this.conversationIds = conversationIds;
   }
 
-  
+
   /**
    * The list of participants to call to create a new ad-hoc conference.
    **/
@@ -235,7 +236,7 @@ public class CreateCallRequest  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    * User to User Information (UUI) data managed by SIP session application.
    **/
@@ -253,7 +254,7 @@ public class CreateCallRequest  implements Serializable {
     this.uuiData = uuiData;
   }
 
-  
+
   /**
    * The external contact with which to associate the call.
    **/
@@ -271,7 +272,6 @@ public class CreateCallRequest  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -282,19 +282,20 @@ public class CreateCallRequest  implements Serializable {
       return false;
     }
     CreateCallRequest createCallRequest = (CreateCallRequest) o;
+
     return Objects.equals(this.phoneNumber, createCallRequest.phoneNumber) &&
-        Objects.equals(this.callerId, createCallRequest.callerId) &&
-        Objects.equals(this.callerIdName, createCallRequest.callerIdName) &&
-        Objects.equals(this.callFromQueueId, createCallRequest.callFromQueueId) &&
-        Objects.equals(this.callQueueId, createCallRequest.callQueueId) &&
-        Objects.equals(this.callUserId, createCallRequest.callUserId) &&
-        Objects.equals(this.priority, createCallRequest.priority) &&
-        Objects.equals(this.languageId, createCallRequest.languageId) &&
-        Objects.equals(this.routingSkillsIds, createCallRequest.routingSkillsIds) &&
-        Objects.equals(this.conversationIds, createCallRequest.conversationIds) &&
-        Objects.equals(this.participants, createCallRequest.participants) &&
-        Objects.equals(this.uuiData, createCallRequest.uuiData) &&
-        Objects.equals(this.externalContactId, createCallRequest.externalContactId);
+            Objects.equals(this.callerId, createCallRequest.callerId) &&
+            Objects.equals(this.callerIdName, createCallRequest.callerIdName) &&
+            Objects.equals(this.callFromQueueId, createCallRequest.callFromQueueId) &&
+            Objects.equals(this.callQueueId, createCallRequest.callQueueId) &&
+            Objects.equals(this.callUserId, createCallRequest.callUserId) &&
+            Objects.equals(this.priority, createCallRequest.priority) &&
+            Objects.equals(this.languageId, createCallRequest.languageId) &&
+            Objects.equals(this.routingSkillsIds, createCallRequest.routingSkillsIds) &&
+            Objects.equals(this.conversationIds, createCallRequest.conversationIds) &&
+            Objects.equals(this.participants, createCallRequest.participants) &&
+            Objects.equals(this.uuiData, createCallRequest.uuiData) &&
+            Objects.equals(this.externalContactId, createCallRequest.externalContactId);
   }
 
   @Override

@@ -14,9 +14,9 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 
@@ -41,7 +41,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class WebDeploymentsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -53,7 +52,6 @@ public class WebDeploymentsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete all versions of a configuration
    * 
@@ -129,7 +127,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Delete a deployment
    * 
@@ -205,7 +202,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Get a configuration version
    * 
@@ -281,7 +277,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Get the versions of a configuration
    * This returns the 50 most recent versions for this configuration
@@ -357,7 +352,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Get the configuration draft
    * 
@@ -433,7 +427,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * View configuration drafts
    * 
@@ -509,7 +502,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Get a deployment
    * 
@@ -585,7 +577,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Get deployments
    * 
@@ -661,7 +652,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Publish the configuration draft and create a new version
    * 
@@ -737,7 +727,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Create a configuration draft
    * 
@@ -813,7 +802,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Create a deployment
    * 
@@ -889,7 +877,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Update the configuration draft
    * 
@@ -965,7 +952,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
   /**
    * Update a deployment
    * 
@@ -1041,7 +1027,6 @@ public class WebDeploymentsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

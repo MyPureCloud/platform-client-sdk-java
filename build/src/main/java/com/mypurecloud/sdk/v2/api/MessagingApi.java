@@ -11,8 +11,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteMessagingSupportedcontentSupportedContentIdRequest;
@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class MessagingApi {
   private final ApiClient pcapiClient;
 
@@ -39,7 +38,6 @@ public class MessagingApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a supported content profile
    * 
@@ -64,7 +62,7 @@ public class MessagingApi {
   private DeleteMessagingSupportedcontentSupportedContentIdRequest createDeleteMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId) {
     return DeleteMessagingSupportedcontentSupportedContentIdRequest.builder()
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -115,7 +113,6 @@ public class MessagingApi {
     }
   }
 
-  
   /**
    * Get a list of Supported Content profiles
    * 
@@ -144,9 +141,9 @@ public class MessagingApi {
   private GetMessagingSupportedcontentRequest createGetMessagingSupportedcontentRequest(Integer pageSize, Integer pageNumber) {
     return GetMessagingSupportedcontentRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -198,7 +195,6 @@ public class MessagingApi {
     }
   }
 
-  
   /**
    * Get a supported content profile
    * 
@@ -225,7 +221,7 @@ public class MessagingApi {
   private GetMessagingSupportedcontentSupportedContentIdRequest createGetMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId) {
     return GetMessagingSupportedcontentSupportedContentIdRequest.builder()
             .withSupportedContentId(supportedContentId)
-    
+
             .build();
   }
 
@@ -277,7 +273,6 @@ public class MessagingApi {
     }
   }
 
-  
   /**
    * Update a supported content profile
    * 
@@ -306,9 +301,9 @@ public class MessagingApi {
   private PatchMessagingSupportedcontentSupportedContentIdRequest createPatchMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId, SupportedContent body) {
     return PatchMessagingSupportedcontentSupportedContentIdRequest.builder()
             .withSupportedContentId(supportedContentId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -360,7 +355,6 @@ public class MessagingApi {
     }
   }
 
-  
   /**
    * Create a Supported Content profile
    * 
@@ -387,7 +381,7 @@ public class MessagingApi {
   private PostMessagingSupportedcontentRequest createPostMessagingSupportedcontentRequest(SupportedContent body) {
     return PostMessagingSupportedcontentRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -439,5 +433,4 @@ public class MessagingApi {
     }
   }
 
-  
 }

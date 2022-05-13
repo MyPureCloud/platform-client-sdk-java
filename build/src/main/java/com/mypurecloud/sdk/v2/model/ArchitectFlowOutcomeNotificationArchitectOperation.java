@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationErrorDetail;
-import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -142,7 +142,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
   private ActionStatusEnum actionStatus = null;
   private String errorMessage = null;
   private String errorCode = null;
-  private ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams = null;
+  private Object errorMessageParams = null;
   private List<ArchitectFlowOutcomeNotificationErrorDetail> errorDetails = new ArrayList<ArchitectFlowOutcomeNotificationErrorDetail>();
 
   
@@ -163,7 +163,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.id = id;
   }
 
-  
+
   /**
    * Indicates if the operation is complete
    **/
@@ -181,7 +181,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.complete = complete;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowOutcomeNotificationArchitectOperation user(ArchitectFlowOutcomeNotificationUser user) {
@@ -198,7 +198,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowOutcomeNotificationArchitectOperation client(ArchitectFlowOutcomeNotificationClient client) {
@@ -215,7 +215,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.client = client;
   }
 
-  
+
   /**
    * The action being performed
    **/
@@ -233,7 +233,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.actionName = actionName;
   }
 
-  
+
   /**
    * The action status
    **/
@@ -251,7 +251,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.actionStatus = actionStatus;
   }
 
-  
+
   /**
    * The error message, if the action failed
    **/
@@ -269,7 +269,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.errorMessage = errorMessage;
   }
 
-  
+
   /**
    * The error code, if the action failed
    **/
@@ -287,24 +287,25 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.errorCode = errorCode;
   }
 
-  
+
   /**
+   * The error message params, if the action failed
    **/
-  public ArchitectFlowOutcomeNotificationArchitectOperation errorMessageParams(ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams) {
+  public ArchitectFlowOutcomeNotificationArchitectOperation errorMessageParams(Object errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The error message params, if the action failed")
   @JsonProperty("errorMessageParams")
-  public ArchitectFlowOutcomeNotificationErrorMessageParams getErrorMessageParams() {
+  public Object getErrorMessageParams() {
     return errorMessageParams;
   }
-  public void setErrorMessageParams(ArchitectFlowOutcomeNotificationErrorMessageParams errorMessageParams) {
+  public void setErrorMessageParams(Object errorMessageParams) {
     this.errorMessageParams = errorMessageParams;
   }
 
-  
+
   /**
    * The error details, if the action failed
    **/
@@ -322,7 +323,6 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     this.errorDetails = errorDetails;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -333,16 +333,17 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
       return false;
     }
     ArchitectFlowOutcomeNotificationArchitectOperation architectFlowOutcomeNotificationArchitectOperation = (ArchitectFlowOutcomeNotificationArchitectOperation) o;
+
     return Objects.equals(this.id, architectFlowOutcomeNotificationArchitectOperation.id) &&
-        Objects.equals(this.complete, architectFlowOutcomeNotificationArchitectOperation.complete) &&
-        Objects.equals(this.user, architectFlowOutcomeNotificationArchitectOperation.user) &&
-        Objects.equals(this.client, architectFlowOutcomeNotificationArchitectOperation.client) &&
-        Objects.equals(this.actionName, architectFlowOutcomeNotificationArchitectOperation.actionName) &&
-        Objects.equals(this.actionStatus, architectFlowOutcomeNotificationArchitectOperation.actionStatus) &&
-        Objects.equals(this.errorMessage, architectFlowOutcomeNotificationArchitectOperation.errorMessage) &&
-        Objects.equals(this.errorCode, architectFlowOutcomeNotificationArchitectOperation.errorCode) &&
-        Objects.equals(this.errorMessageParams, architectFlowOutcomeNotificationArchitectOperation.errorMessageParams) &&
-        Objects.equals(this.errorDetails, architectFlowOutcomeNotificationArchitectOperation.errorDetails);
+            Objects.equals(this.complete, architectFlowOutcomeNotificationArchitectOperation.complete) &&
+            Objects.equals(this.user, architectFlowOutcomeNotificationArchitectOperation.user) &&
+            Objects.equals(this.client, architectFlowOutcomeNotificationArchitectOperation.client) &&
+            Objects.equals(this.actionName, architectFlowOutcomeNotificationArchitectOperation.actionName) &&
+            Objects.equals(this.actionStatus, architectFlowOutcomeNotificationArchitectOperation.actionStatus) &&
+            Objects.equals(this.errorMessage, architectFlowOutcomeNotificationArchitectOperation.errorMessage) &&
+            Objects.equals(this.errorCode, architectFlowOutcomeNotificationArchitectOperation.errorCode) &&
+            Objects.equals(this.errorMessageParams, architectFlowOutcomeNotificationArchitectOperation.errorMessageParams) &&
+            Objects.equals(this.errorDetails, architectFlowOutcomeNotificationArchitectOperation.errorDetails);
   }
 
   @Override

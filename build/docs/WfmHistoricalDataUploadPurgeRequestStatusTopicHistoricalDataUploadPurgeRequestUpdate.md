@@ -18,10 +18,10 @@ title: WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRe
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INPROGRESS | &quot;InProgress&quot; |
-| SUCCESS | &quot;Success&quot; |
-| FAILED | &quot;Failed&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| SUCCESS | &quot;Success&quot; | 
+| FAILED | &quot;Failed&quot; | 
 {: class="table table-striped"}
 
 

@@ -20,15 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.SipSearchResult;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
-import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.SIPSearchPublicRequest;
+import com.mypurecloud.sdk.v2.model.SignedUrlResponse;
 import com.mypurecloud.sdk.v2.model.SipDownloadResponse;
+import com.mypurecloud.sdk.v2.model.SipSearchResult;
 
 public class GetTelephonySiptracesRequest {
-    
+
 	private Date dateStart;
 	public Date getDateStart() {
 		return this.dateStart;
@@ -42,7 +42,7 @@ public class GetTelephonySiptracesRequest {
 	    this.setDateStart(dateStart);
 	    return this;
 	} 
-	
+
 	private Date dateEnd;
 	public Date getDateEnd() {
 		return this.dateEnd;
@@ -56,7 +56,7 @@ public class GetTelephonySiptracesRequest {
 	    this.setDateEnd(dateEnd);
 	    return this;
 	} 
-	
+
 	private String callId;
 	public String getCallId() {
 		return this.callId;
@@ -70,7 +70,7 @@ public class GetTelephonySiptracesRequest {
 	    this.setCallId(callId);
 	    return this;
 	} 
-	
+
 	private String toUser;
 	public String getToUser() {
 		return this.toUser;
@@ -84,7 +84,7 @@ public class GetTelephonySiptracesRequest {
 	    this.setToUser(toUser);
 	    return this;
 	} 
-	
+
 	private String fromUser;
 	public String getFromUser() {
 		return this.fromUser;
@@ -98,7 +98,7 @@ public class GetTelephonySiptracesRequest {
 	    this.setFromUser(fromUser);
 	    return this;
 	} 
-	
+
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -112,7 +112,7 @@ public class GetTelephonySiptracesRequest {
 	    this.setConversationId(conversationId);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -146,19 +146,25 @@ public class GetTelephonySiptracesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/siptraces")
+
                 .withQueryParameters("callId", "", callId)
         
+
                 .withQueryParameters("toUser", "", toUser)
         
+
                 .withQueryParameters("fromUser", "", fromUser)
         
+
                 .withQueryParameters("conversationId", "", conversationId)
         
+
                 .withQueryParameters("dateStart", "", dateStart)
         
+
                 .withQueryParameters("dateEnd", "", dateEnd)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -169,12 +175,12 @@ public class GetTelephonySiptracesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(Date dateStart, Date dateEnd) {
 	    return new Builder()
 	            .withRequiredParams(dateStart, dateEnd);
 	}
-	
+
 
 	public static class Builder {
 		private final GetTelephonySiptracesRequest request;
@@ -183,46 +189,46 @@ public class GetTelephonySiptracesRequest {
 			request = new GetTelephonySiptracesRequest();
 		}
 
-		
+
 		public Builder withDateStart(Date dateStart) {
 			request.setDateStart(dateStart);
 			return this;
 		}
-		
+
 		public Builder withDateEnd(Date dateEnd) {
 			request.setDateEnd(dateEnd);
 			return this;
 		}
-		
+
 		public Builder withCallId(String callId) {
 			request.setCallId(callId);
 			return this;
 		}
-		
+
 		public Builder withToUser(String toUser) {
 			request.setToUser(toUser);
 			return this;
 		}
-		
+
 		public Builder withFromUser(String fromUser) {
 			request.setFromUser(fromUser);
 			return this;
 		}
-		
+
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(Date dateStart, Date dateEnd) {
 			request.setDateStart(dateStart);
-						request.setDateEnd(dateEnd);
-			
+			request.setDateEnd(dateEnd);
+
 			return this;
 		}
-		
+
 
 		public GetTelephonySiptracesRequest build() {
             

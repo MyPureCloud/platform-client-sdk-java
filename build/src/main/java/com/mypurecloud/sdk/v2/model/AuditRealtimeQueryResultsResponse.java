@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuditLogMessage;
@@ -46,7 +47,7 @@ public class AuditRealtimeQueryResultsResponse  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public AuditRealtimeQueryResultsResponse pageSize(Integer pageSize) {
@@ -63,7 +64,7 @@ public class AuditRealtimeQueryResultsResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public AuditRealtimeQueryResultsResponse pageNumber(Integer pageNumber) {
@@ -80,7 +81,7 @@ public class AuditRealtimeQueryResultsResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public AuditRealtimeQueryResultsResponse total(Long total) {
@@ -97,7 +98,7 @@ public class AuditRealtimeQueryResultsResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public AuditRealtimeQueryResultsResponse pageCount(Integer pageCount) {
@@ -114,7 +115,6 @@ public class AuditRealtimeQueryResultsResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,11 +125,12 @@ public class AuditRealtimeQueryResultsResponse  implements Serializable {
       return false;
     }
     AuditRealtimeQueryResultsResponse auditRealtimeQueryResultsResponse = (AuditRealtimeQueryResultsResponse) o;
+
     return Objects.equals(this.entities, auditRealtimeQueryResultsResponse.entities) &&
-        Objects.equals(this.pageSize, auditRealtimeQueryResultsResponse.pageSize) &&
-        Objects.equals(this.pageNumber, auditRealtimeQueryResultsResponse.pageNumber) &&
-        Objects.equals(this.total, auditRealtimeQueryResultsResponse.total) &&
-        Objects.equals(this.pageCount, auditRealtimeQueryResultsResponse.pageCount);
+            Objects.equals(this.pageSize, auditRealtimeQueryResultsResponse.pageSize) &&
+            Objects.equals(this.pageNumber, auditRealtimeQueryResultsResponse.pageNumber) &&
+            Objects.equals(this.total, auditRealtimeQueryResultsResponse.total) &&
+            Objects.equals(this.pageCount, auditRealtimeQueryResultsResponse.pageCount);
   }
 
   @Override

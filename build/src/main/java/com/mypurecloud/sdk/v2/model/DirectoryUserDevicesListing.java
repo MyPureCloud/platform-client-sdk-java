@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing total(Long total) {
@@ -103,7 +104,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DirectoryUserDevicesListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class DirectoryUserDevicesListing  implements Serializable, PagedResource
       return false;
     }
     DirectoryUserDevicesListing directoryUserDevicesListing = (DirectoryUserDevicesListing) o;
+
     return Objects.equals(this.entities, directoryUserDevicesListing.entities) &&
-        Objects.equals(this.pageSize, directoryUserDevicesListing.pageSize) &&
-        Objects.equals(this.pageNumber, directoryUserDevicesListing.pageNumber) &&
-        Objects.equals(this.total, directoryUserDevicesListing.total) &&
-        Objects.equals(this.lastUri, directoryUserDevicesListing.lastUri) &&
-        Objects.equals(this.firstUri, directoryUserDevicesListing.firstUri) &&
-        Objects.equals(this.selfUri, directoryUserDevicesListing.selfUri) &&
-        Objects.equals(this.previousUri, directoryUserDevicesListing.previousUri) &&
-        Objects.equals(this.nextUri, directoryUserDevicesListing.nextUri) &&
-        Objects.equals(this.pageCount, directoryUserDevicesListing.pageCount);
+            Objects.equals(this.pageSize, directoryUserDevicesListing.pageSize) &&
+            Objects.equals(this.pageNumber, directoryUserDevicesListing.pageNumber) &&
+            Objects.equals(this.total, directoryUserDevicesListing.total) &&
+            Objects.equals(this.lastUri, directoryUserDevicesListing.lastUri) &&
+            Objects.equals(this.firstUri, directoryUserDevicesListing.firstUri) &&
+            Objects.equals(this.selfUri, directoryUserDevicesListing.selfUri) &&
+            Objects.equals(this.previousUri, directoryUserDevicesListing.previousUri) &&
+            Objects.equals(this.nextUri, directoryUserDevicesListing.nextUri) &&
+            Objects.equals(this.pageCount, directoryUserDevicesListing.pageCount);
   }
 
   @Override

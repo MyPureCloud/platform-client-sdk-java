@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class ContactAddress  implements Serializable {
     this.address1 = address1;
   }
 
-  
+
   /**
    **/
   public ContactAddress address2(String address2) {
@@ -61,7 +62,7 @@ public class ContactAddress  implements Serializable {
     this.address2 = address2;
   }
 
-  
+
   /**
    **/
   public ContactAddress city(String city) {
@@ -78,7 +79,7 @@ public class ContactAddress  implements Serializable {
     this.city = city;
   }
 
-  
+
   /**
    **/
   public ContactAddress state(String state) {
@@ -95,7 +96,7 @@ public class ContactAddress  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ContactAddress postalCode(String postalCode) {
@@ -112,7 +113,7 @@ public class ContactAddress  implements Serializable {
     this.postalCode = postalCode;
   }
 
-  
+
   /**
    **/
   public ContactAddress countryCode(String countryCode) {
@@ -129,7 +130,6 @@ public class ContactAddress  implements Serializable {
     this.countryCode = countryCode;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +140,13 @@ public class ContactAddress  implements Serializable {
       return false;
     }
     ContactAddress contactAddress = (ContactAddress) o;
+
     return Objects.equals(this.address1, contactAddress.address1) &&
-        Objects.equals(this.address2, contactAddress.address2) &&
-        Objects.equals(this.city, contactAddress.city) &&
-        Objects.equals(this.state, contactAddress.state) &&
-        Objects.equals(this.postalCode, contactAddress.postalCode) &&
-        Objects.equals(this.countryCode, contactAddress.countryCode);
+            Objects.equals(this.address2, contactAddress.address2) &&
+            Objects.equals(this.city, contactAddress.city) &&
+            Objects.equals(this.state, contactAddress.state) &&
+            Objects.equals(this.postalCode, contactAddress.postalCode) &&
+            Objects.equals(this.countryCode, contactAddress.countryCode);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastImportCompleteTopicUserReference;
@@ -43,7 +44,7 @@ public class WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata
     this.version = version;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata modifiedBy(WfmBuShortTermForecastImportCompleteTopicUserReference modifiedBy) {
@@ -60,7 +61,7 @@ public class WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata dateModified(Date dateModified) {
@@ -77,7 +78,6 @@ public class WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata
     this.dateModified = dateModified;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,9 +88,10 @@ public class WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata
       return false;
     }
     WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata wfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata = (WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata) o;
+
     return Objects.equals(this.version, wfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata.version) &&
-        Objects.equals(this.modifiedBy, wfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata.modifiedBy) &&
-        Objects.equals(this.dateModified, wfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata.dateModified);
+            Objects.equals(this.modifiedBy, wfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata.modifiedBy) &&
+            Objects.equals(this.dateModified, wfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata.dateModified);
   }
 
   @Override

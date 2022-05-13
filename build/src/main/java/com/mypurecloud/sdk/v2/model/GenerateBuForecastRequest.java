@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class GenerateBuForecastRequest  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The number of weeks this forecast covers
    **/
@@ -60,7 +61,7 @@ public class GenerateBuForecastRequest  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    * Whether this forecast can be used for scheduling
    **/
@@ -78,7 +79,6 @@ public class GenerateBuForecastRequest  implements Serializable {
     this.canUseForScheduling = canUseForScheduling;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,9 +89,10 @@ public class GenerateBuForecastRequest  implements Serializable {
       return false;
     }
     GenerateBuForecastRequest generateBuForecastRequest = (GenerateBuForecastRequest) o;
+
     return Objects.equals(this.description, generateBuForecastRequest.description) &&
-        Objects.equals(this.weekCount, generateBuForecastRequest.weekCount) &&
-        Objects.equals(this.canUseForScheduling, generateBuForecastRequest.canUseForScheduling);
+            Objects.equals(this.weekCount, generateBuForecastRequest.weekCount) &&
+            Objects.equals(this.canUseForScheduling, generateBuForecastRequest.canUseForScheduling);
   }
 
   @Override

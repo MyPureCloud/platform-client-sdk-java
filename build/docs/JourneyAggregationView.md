@@ -21,28 +21,28 @@ title: JourneyAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NDISTINCTJOURNEYACTIONS | &quot;nDistinctJourneyActions&quot; |
-| NDISTINCTJOURNEYSESSIONS | &quot;nDistinctJourneySessions&quot; |
-| NJOURNEYACTIONSBLOCKED | &quot;nJourneyActionsBlocked&quot; |
-| NJOURNEYOUTCOMESACHIEVED | &quot;nJourneyOutcomesAchieved&quot; |
-| NJOURNEYOUTCOMESATTRIBUTED | &quot;nJourneyOutcomesAttributed&quot; |
-| NJOURNEYSEGMENTSASSIGNED | &quot;nJourneySegmentsAssigned&quot; |
-| NJOURNEYSESSIONS | &quot;nJourneySessions&quot; |
-| NWEBACTIONSABANDONED | &quot;nWebActionsAbandoned&quot; |
-| NWEBACTIONSACCEPTED | &quot;nWebActionsAccepted&quot; |
-| NWEBACTIONSENGAGED | &quot;nWebActionsEngaged&quot; |
-| NWEBACTIONSERRORED | &quot;nWebActionsErrored&quot; |
-| NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; |
-| NWEBACTIONSIGNORED | &quot;nWebActionsIgnored&quot; |
-| NWEBACTIONSOFFERED | &quot;nWebActionsOffered&quot; |
-| NWEBACTIONSOFFEREDOUTSIDESCHEDULE | &quot;nWebActionsOfferedOutsideSchedule&quot; |
-| NWEBACTIONSQUALIFIED | &quot;nWebActionsQualified&quot; |
-| NWEBACTIONSQUALIFIEDOUTSIDESCHEDULE | &quot;nWebActionsQualifiedOutsideSchedule&quot; |
-| NWEBACTIONSREJECTED | &quot;nWebActionsRejected&quot; |
-| NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; |
-| NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; |
-| OJOURNEYOUTCOMEVALUE | &quot;oJourneyOutcomeValue&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NDISTINCTJOURNEYACTIONS | &quot;nDistinctJourneyActions&quot; | 
+| NDISTINCTJOURNEYSESSIONS | &quot;nDistinctJourneySessions&quot; | 
+| NJOURNEYACTIONSBLOCKED | &quot;nJourneyActionsBlocked&quot; | 
+| NJOURNEYOUTCOMESACHIEVED | &quot;nJourneyOutcomesAchieved&quot; | 
+| NJOURNEYOUTCOMESATTRIBUTED | &quot;nJourneyOutcomesAttributed&quot; | 
+| NJOURNEYSEGMENTSASSIGNED | &quot;nJourneySegmentsAssigned&quot; | 
+| NJOURNEYSESSIONS | &quot;nJourneySessions&quot; | 
+| NWEBACTIONSABANDONED | &quot;nWebActionsAbandoned&quot; | 
+| NWEBACTIONSACCEPTED | &quot;nWebActionsAccepted&quot; | 
+| NWEBACTIONSENGAGED | &quot;nWebActionsEngaged&quot; | 
+| NWEBACTIONSERRORED | &quot;nWebActionsErrored&quot; | 
+| NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; | 
+| NWEBACTIONSIGNORED | &quot;nWebActionsIgnored&quot; | 
+| NWEBACTIONSOFFERED | &quot;nWebActionsOffered&quot; | 
+| NWEBACTIONSOFFEREDOUTSIDESCHEDULE | &quot;nWebActionsOfferedOutsideSchedule&quot; | 
+| NWEBACTIONSQUALIFIED | &quot;nWebActionsQualified&quot; | 
+| NWEBACTIONSQUALIFIEDOUTSIDESCHEDULE | &quot;nWebActionsQualifiedOutsideSchedule&quot; | 
+| NWEBACTIONSREJECTED | &quot;nWebActionsRejected&quot; | 
+| NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; | 
+| NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; | 
+| OJOURNEYOUTCOMEVALUE | &quot;oJourneyOutcomeValue&quot; | 
 {: class="table table-striped"}
 
 
@@ -52,8 +52,8 @@ title: JourneyAggregationView
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| RANGEBOUND | &quot;rangeBound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| RANGEBOUND | &quot;rangeBound&quot; | 
 {: class="table table-striped"}
 
 

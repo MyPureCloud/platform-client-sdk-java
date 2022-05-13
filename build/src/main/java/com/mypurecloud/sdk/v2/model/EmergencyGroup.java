@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class EmergencyGroup  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the entity.
    **/
@@ -116,7 +117,7 @@ public class EmergencyGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -134,7 +135,7 @@ public class EmergencyGroup  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The resource's description.
    **/
@@ -152,7 +153,7 @@ public class EmergencyGroup  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The current version of the resource.
    **/
@@ -170,7 +171,7 @@ public class EmergencyGroup  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -188,7 +189,7 @@ public class EmergencyGroup  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -206,7 +207,7 @@ public class EmergencyGroup  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * The ID of the user that last modified the resource.
    **/
@@ -224,7 +225,7 @@ public class EmergencyGroup  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * The ID of the user that created the resource.
    **/
@@ -242,14 +243,14 @@ public class EmergencyGroup  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   /**
    * The application that last modified the resource.
    **/
@@ -267,7 +268,7 @@ public class EmergencyGroup  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-  
+
   /**
    * The application that created the resource.
    **/
@@ -285,7 +286,7 @@ public class EmergencyGroup  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-  
+
   /**
    * True if an emergency is occurring and the associated emergency call flow(s) should be used.  False otherwise.
    **/
@@ -303,7 +304,7 @@ public class EmergencyGroup  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The emergency call flow(s) to use during an emergency.
    **/
@@ -321,14 +322,13 @@ public class EmergencyGroup  implements Serializable {
     this.emergencyCallFlows = emergencyCallFlows;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -339,21 +339,22 @@ public class EmergencyGroup  implements Serializable {
       return false;
     }
     EmergencyGroup emergencyGroup = (EmergencyGroup) o;
+
     return Objects.equals(this.id, emergencyGroup.id) &&
-        Objects.equals(this.name, emergencyGroup.name) &&
-        Objects.equals(this.division, emergencyGroup.division) &&
-        Objects.equals(this.description, emergencyGroup.description) &&
-        Objects.equals(this.version, emergencyGroup.version) &&
-        Objects.equals(this.dateCreated, emergencyGroup.dateCreated) &&
-        Objects.equals(this.dateModified, emergencyGroup.dateModified) &&
-        Objects.equals(this.modifiedBy, emergencyGroup.modifiedBy) &&
-        Objects.equals(this.createdBy, emergencyGroup.createdBy) &&
-        Objects.equals(this.state, emergencyGroup.state) &&
-        Objects.equals(this.modifiedByApp, emergencyGroup.modifiedByApp) &&
-        Objects.equals(this.createdByApp, emergencyGroup.createdByApp) &&
-        Objects.equals(this.enabled, emergencyGroup.enabled) &&
-        Objects.equals(this.emergencyCallFlows, emergencyGroup.emergencyCallFlows) &&
-        Objects.equals(this.selfUri, emergencyGroup.selfUri);
+            Objects.equals(this.name, emergencyGroup.name) &&
+            Objects.equals(this.division, emergencyGroup.division) &&
+            Objects.equals(this.description, emergencyGroup.description) &&
+            Objects.equals(this.version, emergencyGroup.version) &&
+            Objects.equals(this.dateCreated, emergencyGroup.dateCreated) &&
+            Objects.equals(this.dateModified, emergencyGroup.dateModified) &&
+            Objects.equals(this.modifiedBy, emergencyGroup.modifiedBy) &&
+            Objects.equals(this.createdBy, emergencyGroup.createdBy) &&
+            Objects.equals(this.state, emergencyGroup.state) &&
+            Objects.equals(this.modifiedByApp, emergencyGroup.modifiedByApp) &&
+            Objects.equals(this.createdByApp, emergencyGroup.createdByApp) &&
+            Objects.equals(this.enabled, emergencyGroup.enabled) &&
+            Objects.equals(this.emergencyCallFlows, emergencyGroup.emergencyCallFlows) &&
+            Objects.equals(this.selfUri, emergencyGroup.selfUri);
   }
 
   @Override

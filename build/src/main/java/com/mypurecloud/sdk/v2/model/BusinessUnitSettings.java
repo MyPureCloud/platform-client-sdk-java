@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class BusinessUnitSettings  implements Serializable {
     this.startDayOfWeek = startDayOfWeek;
   }
 
-  
+
   /**
    * The time zone for this business unit, using the Olsen tz database format
    **/
@@ -118,7 +119,7 @@ public class BusinessUnitSettings  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * Short term forecasting settings
    **/
@@ -136,7 +137,7 @@ public class BusinessUnitSettings  implements Serializable {
     this.shortTermForecasting = shortTermForecasting;
   }
 
-  
+
   /**
    * Scheduling settings
    **/
@@ -154,7 +155,7 @@ public class BusinessUnitSettings  implements Serializable {
     this.scheduling = scheduling;
   }
 
-  
+
   /**
    * Version metadata for this business unit
    **/
@@ -172,7 +173,6 @@ public class BusinessUnitSettings  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,11 +183,12 @@ public class BusinessUnitSettings  implements Serializable {
       return false;
     }
     BusinessUnitSettings businessUnitSettings = (BusinessUnitSettings) o;
+
     return Objects.equals(this.startDayOfWeek, businessUnitSettings.startDayOfWeek) &&
-        Objects.equals(this.timeZone, businessUnitSettings.timeZone) &&
-        Objects.equals(this.shortTermForecasting, businessUnitSettings.shortTermForecasting) &&
-        Objects.equals(this.scheduling, businessUnitSettings.scheduling) &&
-        Objects.equals(this.metadata, businessUnitSettings.metadata);
+            Objects.equals(this.timeZone, businessUnitSettings.timeZone) &&
+            Objects.equals(this.shortTermForecasting, businessUnitSettings.shortTermForecasting) &&
+            Objects.equals(this.scheduling, businessUnitSettings.scheduling) &&
+            Objects.equals(this.metadata, businessUnitSettings.metadata);
   }
 
   @Override

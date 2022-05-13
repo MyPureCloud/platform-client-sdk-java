@@ -20,10 +20,10 @@ title: PostTextMessage
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TEXT | &quot;Text&quot; |
-| STRUCTURED | &quot;Structured&quot; |
-| RECEIPT | &quot;Receipt&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TEXT | &quot;Text&quot; | 
+| STRUCTURED | &quot;Structured&quot; | 
+| RECEIPT | &quot;Receipt&quot; | 
 {: class="table table-striped"}
 
 

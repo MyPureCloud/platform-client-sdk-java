@@ -23,10 +23,9 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
-import com.mypurecloud.sdk.v2.model.Empty;
 
 public class PostUploadsPublicassetsImagesRequest {
-    
+
 	private UploadUrlRequest body;
 	public UploadUrlRequest getBody() {
 		return this.body;
@@ -40,7 +39,7 @@ public class PostUploadsPublicassetsImagesRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,8 +69,8 @@ public class PostUploadsPublicassetsImagesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/uploads/publicassets/images")
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -82,12 +81,12 @@ public class PostUploadsPublicassetsImagesRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(UploadUrlRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
-	
+
 
 	public static class Builder {
 		private final PostUploadsPublicassetsImagesRequest request;
@@ -96,20 +95,20 @@ public class PostUploadsPublicassetsImagesRequest {
 			request = new PostUploadsPublicassetsImagesRequest();
 		}
 
-		
+
 		public Builder withBody(UploadUrlRequest body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(UploadUrlRequest body) {
 			request.setBody(body);
-			
+
 			return this;
 		}
-		
+
 
 		public PostUploadsPublicassetsImagesRequest build() {
             

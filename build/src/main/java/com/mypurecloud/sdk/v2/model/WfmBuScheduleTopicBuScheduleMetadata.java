@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicBuManagementUnitScheduleSummary;
@@ -17,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicWfmVersionedEntityMetadata
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -27,6 +29,7 @@ import java.io.Serializable;
 public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
   
   private String id = null;
+  private Date weekDate = null;
   private Integer weekCount = null;
   private String description = null;
   private Boolean published = null;
@@ -52,7 +55,24 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.id = id;
   }
 
+
+  /**
+   **/
+  public WfmBuScheduleTopicBuScheduleMetadata weekDate(Date weekDate) {
+    this.weekDate = weekDate;
+    return this;
+  }
   
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("weekDate")
+  public Date getWeekDate() {
+    return weekDate;
+  }
+  public void setWeekDate(Date weekDate) {
+    this.weekDate = weekDate;
+  }
+
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata weekCount(Integer weekCount) {
@@ -69,7 +89,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata description(String description) {
@@ -86,7 +106,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata published(Boolean published) {
@@ -103,7 +123,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.published = published;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata shortTermForecast(WfmBuScheduleTopicBuShortTermForecastReference shortTermForecast) {
@@ -120,7 +140,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.shortTermForecast = shortTermForecast;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata managementUnits(List<WfmBuScheduleTopicBuManagementUnitScheduleSummary> managementUnits) {
@@ -137,7 +157,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.managementUnits = managementUnits;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata generationResults(WfmBuScheduleTopicBuScheduleGenerationResultSummary generationResults) {
@@ -154,7 +174,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.generationResults = generationResults;
   }
 
-  
+
   /**
    **/
   public WfmBuScheduleTopicBuScheduleMetadata metadata(WfmBuScheduleTopicWfmVersionedEntityMetadata metadata) {
@@ -171,7 +191,6 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,19 +201,21 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
       return false;
     }
     WfmBuScheduleTopicBuScheduleMetadata wfmBuScheduleTopicBuScheduleMetadata = (WfmBuScheduleTopicBuScheduleMetadata) o;
+
     return Objects.equals(this.id, wfmBuScheduleTopicBuScheduleMetadata.id) &&
-        Objects.equals(this.weekCount, wfmBuScheduleTopicBuScheduleMetadata.weekCount) &&
-        Objects.equals(this.description, wfmBuScheduleTopicBuScheduleMetadata.description) &&
-        Objects.equals(this.published, wfmBuScheduleTopicBuScheduleMetadata.published) &&
-        Objects.equals(this.shortTermForecast, wfmBuScheduleTopicBuScheduleMetadata.shortTermForecast) &&
-        Objects.equals(this.managementUnits, wfmBuScheduleTopicBuScheduleMetadata.managementUnits) &&
-        Objects.equals(this.generationResults, wfmBuScheduleTopicBuScheduleMetadata.generationResults) &&
-        Objects.equals(this.metadata, wfmBuScheduleTopicBuScheduleMetadata.metadata);
+            Objects.equals(this.weekDate, wfmBuScheduleTopicBuScheduleMetadata.weekDate) &&
+            Objects.equals(this.weekCount, wfmBuScheduleTopicBuScheduleMetadata.weekCount) &&
+            Objects.equals(this.description, wfmBuScheduleTopicBuScheduleMetadata.description) &&
+            Objects.equals(this.published, wfmBuScheduleTopicBuScheduleMetadata.published) &&
+            Objects.equals(this.shortTermForecast, wfmBuScheduleTopicBuScheduleMetadata.shortTermForecast) &&
+            Objects.equals(this.managementUnits, wfmBuScheduleTopicBuScheduleMetadata.managementUnits) &&
+            Objects.equals(this.generationResults, wfmBuScheduleTopicBuScheduleMetadata.generationResults) &&
+            Objects.equals(this.metadata, wfmBuScheduleTopicBuScheduleMetadata.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekCount, description, published, shortTermForecast, managementUnits, generationResults, metadata);
+    return Objects.hash(id, weekDate, weekCount, description, published, shortTermForecast, managementUnits, generationResults, metadata);
   }
 
   @Override
@@ -203,6 +224,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     sb.append("class WfmBuScheduleTopicBuScheduleMetadata {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");

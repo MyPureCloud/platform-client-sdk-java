@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
@@ -34,7 +35,7 @@ public class CreateIntegrationRequest  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of the integration, used to distinguish this integration from others of the same type.
    **/
@@ -52,7 +53,7 @@ public class CreateIntegrationRequest  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Type of the integration to create.
    **/
@@ -70,14 +71,13 @@ public class CreateIntegrationRequest  implements Serializable {
     this.integrationType = integrationType;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,10 +88,11 @@ public class CreateIntegrationRequest  implements Serializable {
       return false;
     }
     CreateIntegrationRequest createIntegrationRequest = (CreateIntegrationRequest) o;
+
     return Objects.equals(this.id, createIntegrationRequest.id) &&
-        Objects.equals(this.name, createIntegrationRequest.name) &&
-        Objects.equals(this.integrationType, createIntegrationRequest.integrationType) &&
-        Objects.equals(this.selfUri, createIntegrationRequest.selfUri);
+            Objects.equals(this.name, createIntegrationRequest.name) &&
+            Objects.equals(this.integrationType, createIntegrationRequest.integrationType) &&
+            Objects.equals(this.selfUri, createIntegrationRequest.selfUri);
   }
 
   @Override

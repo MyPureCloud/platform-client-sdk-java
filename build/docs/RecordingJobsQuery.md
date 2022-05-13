@@ -22,9 +22,9 @@ title: RecordingJobsQuery
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DELETE | &quot;DELETE&quot; |
-| EXPORT | &quot;EXPORT&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DELETE | &quot;DELETE&quot; | 
+| EXPORT | &quot;EXPORT&quot; | 
 {: class="table table-striped"}
 
 

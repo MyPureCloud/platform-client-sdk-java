@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    * The number of trades in the Matched state for the given week
    **/
@@ -60,7 +61,6 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
     this.count = count;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
       return false;
     }
     WeekShiftTradeMatchesSummaryResponse weekShiftTradeMatchesSummaryResponse = (WeekShiftTradeMatchesSummaryResponse) o;
+
     return Objects.equals(this.weekDate, weekShiftTradeMatchesSummaryResponse.weekDate) &&
-        Objects.equals(this.count, weekShiftTradeMatchesSummaryResponse.count);
+            Objects.equals(this.count, weekShiftTradeMatchesSummaryResponse.count);
   }
 
   @Override

@@ -17,7 +17,7 @@ title: AnalyticsSession
 | **agentAssistantId** | <!----><!---->**String**<!----> | Unique identifier of the active virtual agent assistant |  [optional] |
 | **agentBullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the targeted agent |  [optional] |
 | **agentOwned** | <!----><!---->**Boolean**<!----> | Flag indicating an agent-owned callback |  [optional] |
-| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller&#39;s number) |  [optional] |
+| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller's number) |  [optional] |
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | Callback phone number(s) |  [optional] |
@@ -91,14 +91,14 @@ title: AnalyticsSession
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DELIVERYFAILED | &quot;DeliveryFailed&quot; |
-| DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
-| FAILED | &quot;Failed&quot; |
-| QUEUED | &quot;Queued&quot; |
-| READ | &quot;Read&quot; |
-| RECEIVED | &quot;Received&quot; |
-| SENT | &quot;Sent&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DELIVERYFAILED | &quot;DeliveryFailed&quot; | 
+| DELIVERYSUCCESS | &quot;DeliverySuccess&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| QUEUED | &quot;Queued&quot; | 
+| READ | &quot;Read&quot; | 
+| RECEIVED | &quot;Received&quot; | 
+| SENT | &quot;Sent&quot; | 
 {: class="table table-striped"}
 
 
@@ -108,9 +108,9 @@ title: AnalyticsSession
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 
@@ -120,16 +120,16 @@ title: AnalyticsSession
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CALLBACK | &quot;callback&quot; |
-| CHAT | &quot;chat&quot; |
-| COBROWSE | &quot;cobrowse&quot; |
-| EMAIL | &quot;email&quot; |
-| MESSAGE | &quot;message&quot; |
-| SCREENSHARE | &quot;screenshare&quot; |
-| UNKNOWN | &quot;unknown&quot; |
-| VIDEO | &quot;video&quot; |
-| VOICE | &quot;voice&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CALLBACK | &quot;callback&quot; | 
+| CHAT | &quot;chat&quot; | 
+| COBROWSE | &quot;cobrowse&quot; | 
+| EMAIL | &quot;email&quot; | 
+| MESSAGE | &quot;message&quot; | 
+| SCREENSHARE | &quot;screenshare&quot; | 
+| UNKNOWN | &quot;unknown&quot; | 
+| VIDEO | &quot;video&quot; | 
+| VOICE | &quot;voice&quot; | 
 {: class="table table-striped"}
 
 
@@ -155,14 +155,14 @@ title: AnalyticsSession
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
-| CONDITIONAL | &quot;Conditional&quot; |
-| LAST | &quot;Last&quot; |
-| MANUAL | &quot;Manual&quot; |
-| PREDICTIVE | &quot;Predictive&quot; |
-| PREFERRED | &quot;Preferred&quot; |
-| STANDARD | &quot;Standard&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BULLSEYE | &quot;Bullseye&quot; | 
+| CONDITIONAL | &quot;Conditional&quot; | 
+| LAST | &quot;Last&quot; | 
+| MANUAL | &quot;Manual&quot; | 
+| PREDICTIVE | &quot;Predictive&quot; | 
+| PREFERRED | &quot;Preferred&quot; | 
+| STANDARD | &quot;Standard&quot; | 
 {: class="table table-striped"}
 
 

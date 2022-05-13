@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -205,7 +206,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
@@ -223,7 +224,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    * Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
    **/
@@ -241,7 +242,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     this.groupBy = groupBy;
   }
 
-  
+
   /**
    * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
@@ -259,7 +260,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     this.metrics = metrics;
   }
 
-  
+
   /**
    * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
    **/
@@ -277,7 +278,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     this.alternateTimeDimension = alternateTimeDimension;
   }
 
-  
+
   /**
    * Evaluation context Id
    **/
@@ -295,7 +296,6 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     this.contextId = contextId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -306,12 +306,13 @@ public class EvaluationAggregationQueryMe  implements Serializable {
       return false;
     }
     EvaluationAggregationQueryMe evaluationAggregationQueryMe = (EvaluationAggregationQueryMe) o;
+
     return Objects.equals(this.interval, evaluationAggregationQueryMe.interval) &&
-        Objects.equals(this.timeZone, evaluationAggregationQueryMe.timeZone) &&
-        Objects.equals(this.groupBy, evaluationAggregationQueryMe.groupBy) &&
-        Objects.equals(this.metrics, evaluationAggregationQueryMe.metrics) &&
-        Objects.equals(this.alternateTimeDimension, evaluationAggregationQueryMe.alternateTimeDimension) &&
-        Objects.equals(this.contextId, evaluationAggregationQueryMe.contextId);
+            Objects.equals(this.timeZone, evaluationAggregationQueryMe.timeZone) &&
+            Objects.equals(this.groupBy, evaluationAggregationQueryMe.groupBy) &&
+            Objects.equals(this.metrics, evaluationAggregationQueryMe.metrics) &&
+            Objects.equals(this.alternateTimeDimension, evaluationAggregationQueryMe.alternateTimeDimension) &&
+            Objects.equals(this.contextId, evaluationAggregationQueryMe.contextId);
   }
 
   @Override

@@ -19,8 +19,8 @@ title: AuditQuerySort
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TIMESTAMP | &quot;Timestamp&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TIMESTAMP | &quot;Timestamp&quot; | 
 {: class="table table-striped"}
 
 
@@ -30,9 +30,9 @@ title: AuditQuerySort
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASCENDING | &quot;ascending&quot; |
-| DESCENDING | &quot;descending&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASCENDING | &quot;ascending&quot; | 
+| DESCENDING | &quot;descending&quot; | 
 {: class="table table-striped"}
 
 

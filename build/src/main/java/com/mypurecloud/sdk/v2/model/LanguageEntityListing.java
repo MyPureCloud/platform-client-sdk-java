@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing total(Long total) {
@@ -103,7 +104,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.total = total;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public LanguageEntityListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
       return false;
     }
     LanguageEntityListing languageEntityListing = (LanguageEntityListing) o;
+
     return Objects.equals(this.entities, languageEntityListing.entities) &&
-        Objects.equals(this.pageSize, languageEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, languageEntityListing.pageNumber) &&
-        Objects.equals(this.total, languageEntityListing.total) &&
-        Objects.equals(this.lastUri, languageEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, languageEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, languageEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, languageEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, languageEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, languageEntityListing.pageCount);
+            Objects.equals(this.pageSize, languageEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, languageEntityListing.pageNumber) &&
+            Objects.equals(this.total, languageEntityListing.total) &&
+            Objects.equals(this.lastUri, languageEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, languageEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, languageEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, languageEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, languageEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, languageEntityListing.pageCount);
   }
 
   @Override

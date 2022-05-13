@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -83,7 +84,7 @@ public class RealTimeAdherenceExplanation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The start timestamp of the adherence explanation in ISO-8601 format
    **/
@@ -101,7 +102,7 @@ public class RealTimeAdherenceExplanation  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * The length of the adherence explanation in minutes
    **/
@@ -119,7 +120,7 @@ public class RealTimeAdherenceExplanation  implements Serializable {
     this.lengthMinutes = lengthMinutes;
   }
 
-  
+
   /**
    * The status of the adherence explanation
    **/
@@ -137,14 +138,13 @@ public class RealTimeAdherenceExplanation  implements Serializable {
     this.status = status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,11 +155,12 @@ public class RealTimeAdherenceExplanation  implements Serializable {
       return false;
     }
     RealTimeAdherenceExplanation realTimeAdherenceExplanation = (RealTimeAdherenceExplanation) o;
+
     return Objects.equals(this.id, realTimeAdherenceExplanation.id) &&
-        Objects.equals(this.startDate, realTimeAdherenceExplanation.startDate) &&
-        Objects.equals(this.lengthMinutes, realTimeAdherenceExplanation.lengthMinutes) &&
-        Objects.equals(this.status, realTimeAdherenceExplanation.status) &&
-        Objects.equals(this.selfUri, realTimeAdherenceExplanation.selfUri);
+            Objects.equals(this.startDate, realTimeAdherenceExplanation.startDate) &&
+            Objects.equals(this.lengthMinutes, realTimeAdherenceExplanation.lengthMinutes) &&
+            Objects.equals(this.status, realTimeAdherenceExplanation.status) &&
+            Objects.equals(this.selfUri, realTimeAdherenceExplanation.selfUri);
   }
 
   @Override

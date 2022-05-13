@@ -21,13 +21,13 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersion;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.WebDeployment;
 import com.mypurecloud.sdk.v2.model.WebDeploymentEntityListing;
 
 public class PutWebdeploymentsConfigurationVersionsDraftRequest {
-    
+
 	private String configurationId;
 	public String getConfigurationId() {
 		return this.configurationId;
@@ -41,7 +41,7 @@ public class PutWebdeploymentsConfigurationVersionsDraftRequest {
 	    this.setConfigurationId(configurationId);
 	    return this;
 	} 
-	
+
 	private WebDeploymentConfigurationVersion configurationVersion;
 	public WebDeploymentConfigurationVersion getConfigurationVersion() {
 		return this.configurationVersion;
@@ -55,7 +55,7 @@ public class PutWebdeploymentsConfigurationVersionsDraftRequest {
 	    this.setConfigurationVersion(configurationVersion);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -92,8 +92,8 @@ public class PutWebdeploymentsConfigurationVersionsDraftRequest {
                 .withPathParameter("configurationId", configurationId)
         
                 .withBody(configurationVersion)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -104,12 +104,12 @@ public class PutWebdeploymentsConfigurationVersionsDraftRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String configurationId, WebDeploymentConfigurationVersion configurationVersion) {
 	    return new Builder()
 	            .withRequiredParams(configurationId, configurationVersion);
 	}
-	
+
 
 	public static class Builder {
 		private final PutWebdeploymentsConfigurationVersionsDraftRequest request;
@@ -118,26 +118,26 @@ public class PutWebdeploymentsConfigurationVersionsDraftRequest {
 			request = new PutWebdeploymentsConfigurationVersionsDraftRequest();
 		}
 
-		
+
 		public Builder withConfigurationId(String configurationId) {
 			request.setConfigurationId(configurationId);
 			return this;
 		}
-		
+
 		public Builder withConfigurationVersion(WebDeploymentConfigurationVersion configurationVersion) {
 			request.setConfigurationVersion(configurationVersion);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String configurationId, WebDeploymentConfigurationVersion configurationVersion) {
 			request.setConfigurationId(configurationId);
-						request.setConfigurationVersion(configurationVersion);
-			
+			request.setConfigurationVersion(configurationVersion);
+
 			return this;
 		}
-		
+
 
 		public PutWebdeploymentsConfigurationVersionsDraftRequest build() {
             

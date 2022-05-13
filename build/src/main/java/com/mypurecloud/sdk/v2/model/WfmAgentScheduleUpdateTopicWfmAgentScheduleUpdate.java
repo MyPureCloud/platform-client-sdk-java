@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate  implements Seria
     this.updateType = updateType;
   }
 
-  
+
   /**
    **/
   public WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate shiftStartDates(List<Date> shiftStartDates) {
@@ -109,7 +110,6 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate  implements Seria
     this.shiftStartDates = shiftStartDates;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,8 +120,9 @@ public class WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate  implements Seria
       return false;
     }
     WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate = (WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate) o;
+
     return Objects.equals(this.updateType, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate.updateType) &&
-        Objects.equals(this.shiftStartDates, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate.shiftStartDates);
+            Objects.equals(this.shiftStartDates, wfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate.shiftStartDates);
   }
 
   @Override

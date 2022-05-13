@@ -22,10 +22,10 @@ title: RealTimeAdherenceExplanation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;Pending&quot; |
-| APPROVED | &quot;Approved&quot; |
-| DENIED | &quot;Denied&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| APPROVED | &quot;Approved&quot; | 
+| DENIED | &quot;Denied&quot; | 
 {: class="table table-striped"}
 
 

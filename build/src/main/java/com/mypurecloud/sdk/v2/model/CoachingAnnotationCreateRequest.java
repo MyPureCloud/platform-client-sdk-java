@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class CoachingAnnotationCreateRequest  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Determines the permissions required to view this item.
    **/
@@ -107,7 +108,6 @@ public class CoachingAnnotationCreateRequest  implements Serializable {
     this.accessType = accessType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,8 +118,9 @@ public class CoachingAnnotationCreateRequest  implements Serializable {
       return false;
     }
     CoachingAnnotationCreateRequest coachingAnnotationCreateRequest = (CoachingAnnotationCreateRequest) o;
+
     return Objects.equals(this.text, coachingAnnotationCreateRequest.text) &&
-        Objects.equals(this.accessType, coachingAnnotationCreateRequest.accessType);
+            Objects.equals(this.accessType, coachingAnnotationCreateRequest.accessType);
   }
 
   @Override

@@ -10,11 +10,11 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.UserRecording;
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
-import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
+import com.mypurecloud.sdk.v2.model.UserRecording;
+import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteUserrecordingRequest;
@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class UserRecordingsApi {
   private final ApiClient pcapiClient;
 
@@ -42,7 +41,6 @@ public class UserRecordingsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a user recording.
    * 
@@ -67,7 +65,7 @@ public class UserRecordingsApi {
   private DeleteUserrecordingRequest createDeleteUserrecordingRequest(String recordingId) {
     return DeleteUserrecordingRequest.builder()
             .withRecordingId(recordingId)
-    
+
             .build();
   }
 
@@ -118,7 +116,6 @@ public class UserRecordingsApi {
     }
   }
 
-  
   /**
    * Get a user recording.
    * 
@@ -147,9 +144,9 @@ public class UserRecordingsApi {
   private GetUserrecordingRequest createGetUserrecordingRequest(String recordingId, List<String> expand) {
     return GetUserrecordingRequest.builder()
             .withRecordingId(recordingId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -201,7 +198,6 @@ public class UserRecordingsApi {
     }
   }
 
-  
   /**
    * Download a user recording.
    * 
@@ -230,9 +226,9 @@ public class UserRecordingsApi {
   private GetUserrecordingMediaRequest createGetUserrecordingMediaRequest(String recordingId, String formatId) {
     return GetUserrecordingMediaRequest.builder()
             .withRecordingId(recordingId)
-    
+
             .withFormatId(formatId)
-    
+
             .build();
   }
 
@@ -284,7 +280,6 @@ public class UserRecordingsApi {
     }
   }
 
-  
   /**
    * Get a list of user recordings.
    * 
@@ -315,11 +310,11 @@ public class UserRecordingsApi {
   private GetUserrecordingsRequest createGetUserrecordingsRequest(Integer pageSize, Integer pageNumber, List<String> expand) {
     return GetUserrecordingsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -371,7 +366,6 @@ public class UserRecordingsApi {
     }
   }
 
-  
   /**
    * Get user recording summary
    * 
@@ -446,7 +440,6 @@ public class UserRecordingsApi {
     }
   }
 
-  
   /**
    * Update a user recording.
    * 
@@ -477,11 +470,11 @@ public class UserRecordingsApi {
   private PutUserrecordingRequest createPutUserrecordingRequest(String recordingId, UserRecording body, List<String> expand) {
     return PutUserrecordingRequest.builder()
             .withRecordingId(recordingId)
-    
+
             .withBody(body)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -533,5 +526,4 @@ public class UserRecordingsApi {
     }
   }
 
-  
 }

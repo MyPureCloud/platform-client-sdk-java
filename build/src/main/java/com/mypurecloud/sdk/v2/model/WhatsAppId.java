@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
@@ -43,7 +44,7 @@ public class WhatsAppId  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-  
+
   /**
    * The displayName of this person's account in WhatsApp
    **/
@@ -61,7 +62,6 @@ public class WhatsAppId  implements Serializable {
     this.displayName = displayName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class WhatsAppId  implements Serializable {
       return false;
     }
     WhatsAppId whatsAppId = (WhatsAppId) o;
+
     return Objects.equals(this.phoneNumber, whatsAppId.phoneNumber) &&
-        Objects.equals(this.displayName, whatsAppId.displayName);
+            Objects.equals(this.displayName, whatsAppId.displayName);
   }
 
   @Override

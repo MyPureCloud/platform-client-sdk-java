@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssessmentQuestionGroupScore;
@@ -86,21 +87,21 @@ public class AssessmentScoringSet  implements Serializable {
     return totalScore;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total score for the critical questions")
   @JsonProperty("totalCriticalScore")
   public Float getTotalCriticalScore() {
     return totalCriticalScore;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The total score for the non-critical questions")
   @JsonProperty("totalNonCriticalScore")
   public Float getTotalNonCriticalScore() {
     return totalNonCriticalScore;
   }
 
-  
+
   /**
    * The individual scores for each question group
    **/
@@ -118,14 +119,14 @@ public class AssessmentScoringSet  implements Serializable {
     this.questionGroupScores = questionGroupScores;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If the assessment was not passed, the reasons for failure.")
   @JsonProperty("failureReasons")
   public List<FailureReasonsEnum> getFailureReasons() {
     return failureReasons;
   }
 
-  
+
   /**
    * Comments provided for these answers.
    **/
@@ -143,7 +144,7 @@ public class AssessmentScoringSet  implements Serializable {
     this.comments = comments;
   }
 
-  
+
   /**
    * Comments provided by agent.
    **/
@@ -161,14 +162,13 @@ public class AssessmentScoringSet  implements Serializable {
     this.agentComments = agentComments;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "True if the assessment was passed")
   @JsonProperty("isPassed")
   public Boolean getIsPassed() {
     return isPassed;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,14 +179,15 @@ public class AssessmentScoringSet  implements Serializable {
       return false;
     }
     AssessmentScoringSet assessmentScoringSet = (AssessmentScoringSet) o;
+
     return Objects.equals(this.totalScore, assessmentScoringSet.totalScore) &&
-        Objects.equals(this.totalCriticalScore, assessmentScoringSet.totalCriticalScore) &&
-        Objects.equals(this.totalNonCriticalScore, assessmentScoringSet.totalNonCriticalScore) &&
-        Objects.equals(this.questionGroupScores, assessmentScoringSet.questionGroupScores) &&
-        Objects.equals(this.failureReasons, assessmentScoringSet.failureReasons) &&
-        Objects.equals(this.comments, assessmentScoringSet.comments) &&
-        Objects.equals(this.agentComments, assessmentScoringSet.agentComments) &&
-        Objects.equals(this.isPassed, assessmentScoringSet.isPassed);
+            Objects.equals(this.totalCriticalScore, assessmentScoringSet.totalCriticalScore) &&
+            Objects.equals(this.totalNonCriticalScore, assessmentScoringSet.totalNonCriticalScore) &&
+            Objects.equals(this.questionGroupScores, assessmentScoringSet.questionGroupScores) &&
+            Objects.equals(this.failureReasons, assessmentScoringSet.failureReasons) &&
+            Objects.equals(this.comments, assessmentScoringSet.comments) &&
+            Objects.equals(this.agentComments, assessmentScoringSet.agentComments) &&
+            Objects.equals(this.isPassed, assessmentScoringSet.isPassed);
   }
 
   @Override

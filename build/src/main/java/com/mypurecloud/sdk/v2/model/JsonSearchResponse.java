@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -49,7 +50,7 @@ public class JsonSearchResponse  implements Serializable {
     this.total = total;
   }
 
-  
+
   /**
    * The total number of pages
    **/
@@ -67,7 +68,7 @@ public class JsonSearchResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-  
+
   /**
    * The current page size
    **/
@@ -85,7 +86,7 @@ public class JsonSearchResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    * The current page number
    **/
@@ -103,7 +104,7 @@ public class JsonSearchResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * Resource types the search was performed against
    **/
@@ -121,7 +122,7 @@ public class JsonSearchResponse  implements Serializable {
     this.types = types;
   }
 
-  
+
   /**
    * Search results
    **/
@@ -139,7 +140,7 @@ public class JsonSearchResponse  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    **/
   public JsonSearchResponse aggregations(ArrayNode aggregations) {
@@ -156,7 +157,6 @@ public class JsonSearchResponse  implements Serializable {
     this.aggregations = aggregations;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -167,13 +167,14 @@ public class JsonSearchResponse  implements Serializable {
       return false;
     }
     JsonSearchResponse jsonSearchResponse = (JsonSearchResponse) o;
+
     return Objects.equals(this.total, jsonSearchResponse.total) &&
-        Objects.equals(this.pageCount, jsonSearchResponse.pageCount) &&
-        Objects.equals(this.pageSize, jsonSearchResponse.pageSize) &&
-        Objects.equals(this.pageNumber, jsonSearchResponse.pageNumber) &&
-        Objects.equals(this.types, jsonSearchResponse.types) &&
-        Objects.equals(this.results, jsonSearchResponse.results) &&
-        Objects.equals(this.aggregations, jsonSearchResponse.aggregations);
+            Objects.equals(this.pageCount, jsonSearchResponse.pageCount) &&
+            Objects.equals(this.pageSize, jsonSearchResponse.pageSize) &&
+            Objects.equals(this.pageNumber, jsonSearchResponse.pageNumber) &&
+            Objects.equals(this.types, jsonSearchResponse.types) &&
+            Objects.equals(this.results, jsonSearchResponse.results) &&
+            Objects.equals(this.aggregations, jsonSearchResponse.aggregations);
   }
 
   @Override

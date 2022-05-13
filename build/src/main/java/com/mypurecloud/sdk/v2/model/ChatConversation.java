@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ChatMediaParticipant;
@@ -36,7 +37,7 @@ public class ChatConversation  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ChatConversation name(String name) {
@@ -53,7 +54,7 @@ public class ChatConversation  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The list of participants involved in the conversation.
    **/
@@ -71,7 +72,7 @@ public class ChatConversation  implements Serializable {
     this.participants = participants;
   }
 
-  
+
   /**
    * The list of other media channels involved in the conversation.
    **/
@@ -89,14 +90,13 @@ public class ChatConversation  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,11 +107,12 @@ public class ChatConversation  implements Serializable {
       return false;
     }
     ChatConversation chatConversation = (ChatConversation) o;
+
     return Objects.equals(this.id, chatConversation.id) &&
-        Objects.equals(this.name, chatConversation.name) &&
-        Objects.equals(this.participants, chatConversation.participants) &&
-        Objects.equals(this.otherMediaUris, chatConversation.otherMediaUris) &&
-        Objects.equals(this.selfUri, chatConversation.selfUri);
+            Objects.equals(this.name, chatConversation.name) &&
+            Objects.equals(this.participants, chatConversation.participants) &&
+            Objects.equals(this.otherMediaUris, chatConversation.otherMediaUris) &&
+            Objects.equals(this.selfUri, chatConversation.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -53,7 +54,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing pageSize(Integer pageSize) {
@@ -70,7 +71,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing pageNumber(Integer pageNumber) {
@@ -87,7 +88,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing total(Long total) {
@@ -104,7 +105,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing allDivsPermitted(Boolean allDivsPermitted) {
@@ -121,7 +122,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.allDivsPermitted = allDivsPermitted;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing lastUri(String lastUri) {
@@ -138,7 +139,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing firstUri(String firstUri) {
@@ -155,7 +156,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing selfUri(String selfUri) {
@@ -172,7 +173,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing previousUri(String previousUri) {
@@ -189,7 +190,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing nextUri(String nextUri) {
@@ -206,7 +207,7 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public DivsPermittedEntityListing pageCount(Integer pageCount) {
@@ -223,7 +224,6 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -234,17 +234,18 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
       return false;
     }
     DivsPermittedEntityListing divsPermittedEntityListing = (DivsPermittedEntityListing) o;
+
     return Objects.equals(this.entities, divsPermittedEntityListing.entities) &&
-        Objects.equals(this.pageSize, divsPermittedEntityListing.pageSize) &&
-        Objects.equals(this.pageNumber, divsPermittedEntityListing.pageNumber) &&
-        Objects.equals(this.total, divsPermittedEntityListing.total) &&
-        Objects.equals(this.allDivsPermitted, divsPermittedEntityListing.allDivsPermitted) &&
-        Objects.equals(this.lastUri, divsPermittedEntityListing.lastUri) &&
-        Objects.equals(this.firstUri, divsPermittedEntityListing.firstUri) &&
-        Objects.equals(this.selfUri, divsPermittedEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, divsPermittedEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, divsPermittedEntityListing.nextUri) &&
-        Objects.equals(this.pageCount, divsPermittedEntityListing.pageCount);
+            Objects.equals(this.pageSize, divsPermittedEntityListing.pageSize) &&
+            Objects.equals(this.pageNumber, divsPermittedEntityListing.pageNumber) &&
+            Objects.equals(this.total, divsPermittedEntityListing.total) &&
+            Objects.equals(this.allDivsPermitted, divsPermittedEntityListing.allDivsPermitted) &&
+            Objects.equals(this.lastUri, divsPermittedEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, divsPermittedEntityListing.firstUri) &&
+            Objects.equals(this.selfUri, divsPermittedEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, divsPermittedEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, divsPermittedEntityListing.nextUri) &&
+            Objects.equals(this.pageCount, divsPermittedEntityListing.pageCount);
   }
 
   @Override

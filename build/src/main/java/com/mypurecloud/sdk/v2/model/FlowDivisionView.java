@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -120,7 +121,7 @@ public class FlowDivisionView  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The flow name
    **/
@@ -138,7 +139,7 @@ public class FlowDivisionView  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -156,7 +157,7 @@ public class FlowDivisionView  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    **/
   public FlowDivisionView type(TypeEnum type) {
@@ -173,7 +174,7 @@ public class FlowDivisionView  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * the flow description
    **/
@@ -191,7 +192,7 @@ public class FlowDivisionView  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * json schema describing the inputs for the flow
    **/
@@ -209,7 +210,7 @@ public class FlowDivisionView  implements Serializable {
     this.inputSchema = inputSchema;
   }
 
-  
+
   /**
    * json schema describing the outputs for the flow
    **/
@@ -227,14 +228,14 @@ public class FlowDivisionView  implements Serializable {
     this.outputSchema = outputSchema;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of supported languages for the published version of the flow.")
   @JsonProperty("supportedLanguages")
   public List<SupportedLanguage> getSupportedLanguages() {
     return supportedLanguages;
   }
 
-  
+
   /**
    * published version information if there is a published version
    **/
@@ -252,7 +253,7 @@ public class FlowDivisionView  implements Serializable {
     this.publishedVersion = publishedVersion;
   }
 
-  
+
   /**
    * debug version information if there is a debug version
    **/
@@ -270,14 +271,13 @@ public class FlowDivisionView  implements Serializable {
     this.debugVersion = debugVersion;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -288,17 +288,18 @@ public class FlowDivisionView  implements Serializable {
       return false;
     }
     FlowDivisionView flowDivisionView = (FlowDivisionView) o;
+
     return Objects.equals(this.id, flowDivisionView.id) &&
-        Objects.equals(this.name, flowDivisionView.name) &&
-        Objects.equals(this.division, flowDivisionView.division) &&
-        Objects.equals(this.type, flowDivisionView.type) &&
-        Objects.equals(this.description, flowDivisionView.description) &&
-        Objects.equals(this.inputSchema, flowDivisionView.inputSchema) &&
-        Objects.equals(this.outputSchema, flowDivisionView.outputSchema) &&
-        Objects.equals(this.supportedLanguages, flowDivisionView.supportedLanguages) &&
-        Objects.equals(this.publishedVersion, flowDivisionView.publishedVersion) &&
-        Objects.equals(this.debugVersion, flowDivisionView.debugVersion) &&
-        Objects.equals(this.selfUri, flowDivisionView.selfUri);
+            Objects.equals(this.name, flowDivisionView.name) &&
+            Objects.equals(this.division, flowDivisionView.division) &&
+            Objects.equals(this.type, flowDivisionView.type) &&
+            Objects.equals(this.description, flowDivisionView.description) &&
+            Objects.equals(this.inputSchema, flowDivisionView.inputSchema) &&
+            Objects.equals(this.outputSchema, flowDivisionView.outputSchema) &&
+            Objects.equals(this.supportedLanguages, flowDivisionView.supportedLanguages) &&
+            Objects.equals(this.publishedVersion, flowDivisionView.publishedVersion) &&
+            Objects.equals(this.debugVersion, flowDivisionView.debugVersion) &&
+            Objects.equals(this.selfUri, flowDivisionView.selfUri);
   }
 
   @Override

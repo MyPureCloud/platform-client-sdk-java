@@ -14,6 +14,8 @@ title: V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel
 | **to** | <!----><!---->[**V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient**](V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient.html)<!----> |  |  [optional] |
 | **from** | <!----><!---->[**V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient**](V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient.html)<!----> |  |  [optional] |
 | **time** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dateDeleted** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **metadata** | <!----><!---->[**V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata**](V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
@@ -24,15 +26,15 @@ title: V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TWITTER | &quot;Twitter&quot; |
-| FACEBOOK | &quot;Facebook&quot; |
-| INSTAGRAM | &quot;Instagram&quot; |
-| LINE | &quot;Line&quot; |
-| WHATSAPP | &quot;Whatsapp&quot; |
-| WEBMESSAGING | &quot;WebMessaging&quot; |
-| OPEN | &quot;Open&quot; |
-| SMS | &quot;Sms&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TWITTER | &quot;Twitter&quot; | 
+| FACEBOOK | &quot;Facebook&quot; | 
+| INSTAGRAM | &quot;Instagram&quot; | 
+| LINE | &quot;Line&quot; | 
+| WHATSAPP | &quot;Whatsapp&quot; | 
+| WEBMESSAGING | &quot;WebMessaging&quot; | 
+| OPEN | &quot;Open&quot; | 
+| SMS | &quot;Sms&quot; | 
 {: class="table table-striped"}
 
 

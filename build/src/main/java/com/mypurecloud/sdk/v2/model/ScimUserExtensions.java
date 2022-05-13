@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimGenesysUserExternalId;
@@ -48,7 +49,7 @@ public class ScimUserExtensions  implements Serializable {
     this.routingSkills = routingSkills;
   }
 
-  
+
   /**
    * The list of routing languages assigned to a user. Maximum 50 languages.
    **/
@@ -66,7 +67,7 @@ public class ScimUserExtensions  implements Serializable {
     this.routingLanguages = routingLanguages;
   }
 
-  
+
   /**
    * The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\". ExternalIds are searchable with complex filter query parameter using 'authority' and 'value', e.g., filter=urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq \"matchAuthName\" and value eq \"matchingExternalKeyValue\"].
    **/
@@ -84,7 +85,6 @@ public class ScimUserExtensions  implements Serializable {
     this.externalIds = externalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -95,9 +95,10 @@ public class ScimUserExtensions  implements Serializable {
       return false;
     }
     ScimUserExtensions scimUserExtensions = (ScimUserExtensions) o;
+
     return Objects.equals(this.routingSkills, scimUserExtensions.routingSkills) &&
-        Objects.equals(this.routingLanguages, scimUserExtensions.routingLanguages) &&
-        Objects.equals(this.externalIds, scimUserExtensions.externalIds);
+            Objects.equals(this.routingLanguages, scimUserExtensions.routingLanguages) &&
+            Objects.equals(this.externalIds, scimUserExtensions.externalIds);
   }
 
   @Override

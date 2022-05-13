@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -99,7 +100,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Current version of the location
    **/
@@ -117,7 +118,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * Current activity status of the location.
    **/
@@ -135,7 +136,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * A list of ancestor ids
    **/
@@ -153,7 +154,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.path = path;
   }
 
-  
+
   /**
    * Notes for the location
    **/
@@ -171,7 +172,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * The user id of the location contact
    **/
@@ -189,7 +190,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.contactUser = contactUser;
   }
 
-  
+
   /**
    * Emergency number for the location
    **/
@@ -207,7 +208,7 @@ public class LocationCreateDefinition  implements Serializable {
     this.emergencyNumber = emergencyNumber;
   }
 
-  
+
   /**
    * Address of the location
    **/
@@ -225,7 +226,6 @@ public class LocationCreateDefinition  implements Serializable {
     this.address = address;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,14 +236,15 @@ public class LocationCreateDefinition  implements Serializable {
       return false;
     }
     LocationCreateDefinition locationCreateDefinition = (LocationCreateDefinition) o;
+
     return Objects.equals(this.name, locationCreateDefinition.name) &&
-        Objects.equals(this.version, locationCreateDefinition.version) &&
-        Objects.equals(this.state, locationCreateDefinition.state) &&
-        Objects.equals(this.path, locationCreateDefinition.path) &&
-        Objects.equals(this.notes, locationCreateDefinition.notes) &&
-        Objects.equals(this.contactUser, locationCreateDefinition.contactUser) &&
-        Objects.equals(this.emergencyNumber, locationCreateDefinition.emergencyNumber) &&
-        Objects.equals(this.address, locationCreateDefinition.address);
+            Objects.equals(this.version, locationCreateDefinition.version) &&
+            Objects.equals(this.state, locationCreateDefinition.state) &&
+            Objects.equals(this.path, locationCreateDefinition.path) &&
+            Objects.equals(this.notes, locationCreateDefinition.notes) &&
+            Objects.equals(this.contactUser, locationCreateDefinition.contactUser) &&
+            Objects.equals(this.emergencyNumber, locationCreateDefinition.emergencyNumber) &&
+            Objects.equals(this.address, locationCreateDefinition.address);
   }
 
   @Override

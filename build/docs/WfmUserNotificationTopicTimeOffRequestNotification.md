@@ -23,11 +23,11 @@ title: WfmUserNotificationTopicTimeOffRequestNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| APPROVED | &quot;APPROVED&quot; |
-| DENIED | &quot;DENIED&quot; |
-| CANCELED | &quot;CANCELED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| APPROVED | &quot;APPROVED&quot; | 
+| DENIED | &quot;DENIED&quot; | 
+| CANCELED | &quot;CANCELED&quot; | 
 {: class="table table-striped"}
 
 

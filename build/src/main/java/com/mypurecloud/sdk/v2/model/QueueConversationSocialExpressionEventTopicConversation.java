@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicParticipant;
@@ -47,7 +48,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     this.id = id;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicConversation maxParticipants(Integer maxParticipants) {
@@ -64,7 +65,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     this.maxParticipants = maxParticipants;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicConversation participants(List<QueueConversationSocialExpressionEventTopicParticipant> participants) {
@@ -81,7 +82,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     this.participants = participants;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicConversation recordingState(String recordingState) {
@@ -98,7 +99,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     this.recordingState = recordingState;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicConversation address(String address) {
@@ -115,7 +116,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     this.address = address;
   }
 
-  
+
   /**
    **/
   public QueueConversationSocialExpressionEventTopicConversation externalTag(String externalTag) {
@@ -132,7 +133,6 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     this.externalTag = externalTag;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,12 +143,13 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
       return false;
     }
     QueueConversationSocialExpressionEventTopicConversation queueConversationSocialExpressionEventTopicConversation = (QueueConversationSocialExpressionEventTopicConversation) o;
+
     return Objects.equals(this.id, queueConversationSocialExpressionEventTopicConversation.id) &&
-        Objects.equals(this.maxParticipants, queueConversationSocialExpressionEventTopicConversation.maxParticipants) &&
-        Objects.equals(this.participants, queueConversationSocialExpressionEventTopicConversation.participants) &&
-        Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicConversation.recordingState) &&
-        Objects.equals(this.address, queueConversationSocialExpressionEventTopicConversation.address) &&
-        Objects.equals(this.externalTag, queueConversationSocialExpressionEventTopicConversation.externalTag);
+            Objects.equals(this.maxParticipants, queueConversationSocialExpressionEventTopicConversation.maxParticipants) &&
+            Objects.equals(this.participants, queueConversationSocialExpressionEventTopicConversation.participants) &&
+            Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicConversation.recordingState) &&
+            Objects.equals(this.address, queueConversationSocialExpressionEventTopicConversation.address) &&
+            Objects.equals(this.externalTag, queueConversationSocialExpressionEventTopicConversation.externalTag);
   }
 
   @Override

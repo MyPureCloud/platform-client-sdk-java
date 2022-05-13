@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice downloadUrl(String downloadUrl) {
@@ -111,7 +112,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     this.downloadUrl = downloadUrl;
   }
 
-  
+
   /**
    **/
   public WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice downloadUrls(List<String> downloadUrls) {
@@ -128,7 +129,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     this.downloadUrls = downloadUrls;
   }
 
-  
+
   /**
    **/
   public WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice queryState(QueryStateEnum queryState) {
@@ -145,7 +146,6 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     this.queryState = queryState;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -156,10 +156,11 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
       return false;
     }
     WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice = (WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice) o;
+
     return Objects.equals(this.id, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.id) &&
-        Objects.equals(this.downloadUrl, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.downloadUrl) &&
-        Objects.equals(this.downloadUrls, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.downloadUrls) &&
-        Objects.equals(this.queryState, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.queryState);
+            Objects.equals(this.downloadUrl, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.downloadUrl) &&
+            Objects.equals(this.downloadUrls, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.downloadUrls) &&
+            Objects.equals(this.queryState, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.queryState);
   }
 
   @Override

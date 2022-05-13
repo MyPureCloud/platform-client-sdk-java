@@ -10,25 +10,24 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.TrustRequest;
-import com.mypurecloud.sdk.v2.model.Trustee;
-import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustUser;
-import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustEntityListing;
-import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.ClonedUser;
-import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
-import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
-import com.mypurecloud.sdk.v2.model.TrustCreate;
-import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
-import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
-import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.TrustCreate;
+import com.mypurecloud.sdk.v2.model.TrustEntityListing;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
+import com.mypurecloud.sdk.v2.model.TrustRequest;
+import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
+import com.mypurecloud.sdk.v2.model.TrustUser;
+import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
+import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAuthorization;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
@@ -70,7 +69,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class OrganizationAuthorizationApi {
   private final ApiClient pcapiClient;
 
@@ -82,7 +80,6 @@ public class OrganizationAuthorizationApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete Org Trust
    * 
@@ -107,7 +104,7 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrusteeRequest createDeleteOrgauthorizationTrusteeRequest(String trusteeOrgId) {
     return DeleteOrgauthorizationTrusteeRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .build();
   }
 
@@ -158,7 +155,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Deletes cloned user
    * 
@@ -185,9 +181,9 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrusteeCloneduserRequest createDeleteOrgauthorizationTrusteeCloneduserRequest(String trusteeOrgId, String trusteeUserId) {
     return DeleteOrgauthorizationTrusteeCloneduserRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -238,7 +234,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Delete Trustee User
    * 
@@ -265,9 +260,9 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrusteeUserRequest createDeleteOrgauthorizationTrusteeUserRequest(String trusteeOrgId, String trusteeUserId) {
     return DeleteOrgauthorizationTrusteeUserRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -318,7 +313,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Delete Trustee User Roles
    * 
@@ -345,9 +339,9 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrusteeUserRolesRequest createDeleteOrgauthorizationTrusteeUserRolesRequest(String trusteeOrgId, String trusteeUserId) {
     return DeleteOrgauthorizationTrusteeUserRolesRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -398,7 +392,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Delete Org Trust
    * 
@@ -423,7 +416,7 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrustorRequest createDeleteOrgauthorizationTrustorRequest(String trustorOrgId) {
     return DeleteOrgauthorizationTrustorRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .build();
   }
 
@@ -474,7 +467,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Delete Cloned User
    * 
@@ -501,9 +493,9 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrustorCloneduserRequest createDeleteOrgauthorizationTrustorCloneduserRequest(String trustorOrgId, String trusteeUserId) {
     return DeleteOrgauthorizationTrustorCloneduserRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -554,7 +546,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Delete Trustee User
    * 
@@ -581,9 +572,9 @@ public class OrganizationAuthorizationApi {
   private DeleteOrgauthorizationTrustorUserRequest createDeleteOrgauthorizationTrustorUserRequest(String trustorOrgId, String trusteeUserId) {
     return DeleteOrgauthorizationTrustorUserRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -634,7 +625,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Pairing Info
    * 
@@ -661,7 +651,7 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationPairingRequest createGetOrgauthorizationPairingRequest(String pairingId) {
     return GetOrgauthorizationPairingRequest.builder()
             .withPairingId(pairingId)
-    
+
             .build();
   }
 
@@ -713,7 +703,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Org Trust
    * 
@@ -740,7 +729,7 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrusteeRequest createGetOrgauthorizationTrusteeRequest(String trusteeOrgId) {
     return GetOrgauthorizationTrusteeRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .build();
   }
 
@@ -792,7 +781,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * The list of cloned users from the trustee organization (i.e. users with a native user record).
    * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
@@ -819,7 +807,7 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrusteeClonedusersRequest createGetOrgauthorizationTrusteeClonedusersRequest(String trusteeOrgId) {
     return GetOrgauthorizationTrusteeClonedusersRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .build();
   }
 
@@ -871,7 +859,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Trustee User
    * 
@@ -900,9 +887,9 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrusteeUserRequest createGetOrgauthorizationTrusteeUserRequest(String trusteeOrgId, String trusteeUserId) {
     return GetOrgauthorizationTrusteeUserRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -954,7 +941,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Trustee User Roles
    * 
@@ -983,9 +969,9 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrusteeUserRolesRequest createGetOrgauthorizationTrusteeUserRolesRequest(String trusteeOrgId, String trusteeUserId) {
     return GetOrgauthorizationTrusteeUserRolesRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -1037,7 +1023,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * The list of trustee users for this organization (i.e. users granted access to this organization).
    * 
@@ -1068,11 +1053,11 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrusteeUsersRequest createGetOrgauthorizationTrusteeUsersRequest(String trusteeOrgId, Integer pageSize, Integer pageNumber) {
     return GetOrgauthorizationTrusteeUsersRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1124,7 +1109,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * The list of trustees for this organization (i.e. organizations granted access to this organization).
    * 
@@ -1153,9 +1137,9 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrusteesRequest createGetOrgauthorizationTrusteesRequest(Integer pageSize, Integer pageNumber) {
     return GetOrgauthorizationTrusteesRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1207,7 +1191,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get organization authorization trust with Customer Care, if one exists.
    * 
@@ -1282,7 +1265,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Org Trust
    * 
@@ -1309,7 +1291,7 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrustorRequest createGetOrgauthorizationTrustorRequest(String trustorOrgId) {
     return GetOrgauthorizationTrustorRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .build();
   }
 
@@ -1361,7 +1343,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Cloned User
    * 
@@ -1390,9 +1371,9 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrustorCloneduserRequest createGetOrgauthorizationTrustorCloneduserRequest(String trustorOrgId, String trusteeUserId) {
     return GetOrgauthorizationTrustorCloneduserRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -1444,7 +1425,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * The list of cloned users in the trustor organization (i.e. users with a native user record).
    * 
@@ -1471,7 +1451,7 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrustorClonedusersRequest createGetOrgauthorizationTrustorClonedusersRequest(String trustorOrgId) {
     return GetOrgauthorizationTrustorClonedusersRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .build();
   }
 
@@ -1523,7 +1503,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Trustee User
    * 
@@ -1552,9 +1531,9 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrustorUserRequest createGetOrgauthorizationTrustorUserRequest(String trustorOrgId, String trusteeUserId) {
     return GetOrgauthorizationTrustorUserRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -1606,7 +1585,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * The list of users in the trustor organization (i.e. users granted access).
    * 
@@ -1637,11 +1615,11 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrustorUsersRequest createGetOrgauthorizationTrustorUsersRequest(String trustorOrgId, Integer pageSize, Integer pageNumber) {
     return GetOrgauthorizationTrustorUsersRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1693,7 +1671,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * The list of organizations that have authorized/trusted your organization.
    * 
@@ -1722,9 +1699,9 @@ public class OrganizationAuthorizationApi {
   private GetOrgauthorizationTrustorsRequest createGetOrgauthorizationTrustorsRequest(Integer pageSize, Integer pageNumber) {
     return GetOrgauthorizationTrustorsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .build();
   }
 
@@ -1776,7 +1753,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * A pairing id is created by the trustee and given to the trustor to create a trust.
    * 
@@ -1803,7 +1779,7 @@ public class OrganizationAuthorizationApi {
   private PostOrgauthorizationPairingsRequest createPostOrgauthorizationPairingsRequest(TrustRequestCreate body) {
     return PostOrgauthorizationPairingsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1855,7 +1831,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Add a user to the trust.
    * 
@@ -1884,9 +1859,9 @@ public class OrganizationAuthorizationApi {
   private PostOrgauthorizationTrusteeUsersRequest createPostOrgauthorizationTrusteeUsersRequest(String trusteeOrgId, TrustMemberCreate body) {
     return PostOrgauthorizationTrusteeUsersRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -1938,7 +1913,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Create a new organization authorization trust. This is required to grant other organizations access to your organization.
    * 
@@ -1965,7 +1939,7 @@ public class OrganizationAuthorizationApi {
   private PostOrgauthorizationTrusteesRequest createPostOrgauthorizationTrusteesRequest(TrustCreate body) {
     return PostOrgauthorizationTrusteesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2017,7 +1991,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Org Trustee Audits
    * 
@@ -2026,11 +1999,11 @@ public class OrganizationAuthorizationApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to timestamp)
    * @param sortOrder Sort order (optional, default to descending)
-   * @return AuditQueryResponse
+   * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuditQueryResponse postOrgauthorizationTrusteesAudits(TrusteeAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
+  public Object postOrgauthorizationTrusteesAudits(TrusteeAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     return  postOrgauthorizationTrusteesAudits(createPostOrgauthorizationTrusteesAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder));
   }
 
@@ -2042,25 +2015,25 @@ public class OrganizationAuthorizationApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to timestamp)
    * @param sortOrder Sort order (optional, default to descending)
-   * @return AuditQueryResponse
+   * @return Object
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditQueryResponse> postOrgauthorizationTrusteesAuditsWithHttpInfo(TrusteeAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+  public ApiResponse<Object> postOrgauthorizationTrusteesAuditsWithHttpInfo(TrusteeAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
     return postOrgauthorizationTrusteesAudits(createPostOrgauthorizationTrusteesAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
   }
 
   private PostOrgauthorizationTrusteesAuditsRequest createPostOrgauthorizationTrusteesAuditsRequest(TrusteeAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
     return PostOrgauthorizationTrusteesAuditsRequest.builder()
             .withBody(body)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2068,13 +2041,13 @@ public class OrganizationAuthorizationApi {
    * Get Org Trustee Audits
    * 
    * @param request The request object
-   * @return AuditQueryResponse
+   * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuditQueryResponse postOrgauthorizationTrusteesAudits(PostOrgauthorizationTrusteesAuditsRequest request) throws IOException, ApiException {
+  public Object postOrgauthorizationTrusteesAudits(PostOrgauthorizationTrusteesAuditsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<AuditQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditQueryResponse>() {});
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2090,13 +2063,13 @@ public class OrganizationAuthorizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditQueryResponse> postOrgauthorizationTrusteesAudits(ApiRequest<TrusteeAuditQueryRequest> request) throws IOException {
+  public ApiResponse<Object> postOrgauthorizationTrusteesAudits(ApiRequest<TrusteeAuditQueryRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<AuditQueryResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)exception;
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2107,12 +2080,11 @@ public class OrganizationAuthorizationApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
 
-  
   /**
    * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
    * 
@@ -2141,9 +2113,9 @@ public class OrganizationAuthorizationApi {
   private PostOrgauthorizationTrusteesDefaultRequest createPostOrgauthorizationTrusteesDefaultRequest(Boolean assignDefaultRole, Boolean autoExpire) {
     return PostOrgauthorizationTrusteesDefaultRequest.builder()
             .withAssignDefaultRole(assignDefaultRole)
-    
+
             .withAutoExpire(autoExpire)
-    
+
             .build();
   }
 
@@ -2195,7 +2167,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Get Org Trustor Audits
    * 
@@ -2204,11 +2175,11 @@ public class OrganizationAuthorizationApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to timestamp)
    * @param sortOrder Sort order (optional, default to descending)
-   * @return AuditQueryResponse
+   * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuditQueryResponse postOrgauthorizationTrustorAudits(TrustorAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
+  public Object postOrgauthorizationTrustorAudits(TrustorAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     return  postOrgauthorizationTrustorAudits(createPostOrgauthorizationTrustorAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder));
   }
 
@@ -2220,25 +2191,25 @@ public class OrganizationAuthorizationApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to timestamp)
    * @param sortOrder Sort order (optional, default to descending)
-   * @return AuditQueryResponse
+   * @return Object
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditQueryResponse> postOrgauthorizationTrustorAuditsWithHttpInfo(TrustorAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+  public ApiResponse<Object> postOrgauthorizationTrustorAuditsWithHttpInfo(TrustorAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
     return postOrgauthorizationTrustorAudits(createPostOrgauthorizationTrustorAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
   }
 
   private PostOrgauthorizationTrustorAuditsRequest createPostOrgauthorizationTrustorAuditsRequest(TrustorAuditQueryRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
     return PostOrgauthorizationTrustorAuditsRequest.builder()
             .withBody(body)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortBy(sortBy)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -2246,13 +2217,13 @@ public class OrganizationAuthorizationApi {
    * Get Org Trustor Audits
    * 
    * @param request The request object
-   * @return AuditQueryResponse
+   * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuditQueryResponse postOrgauthorizationTrustorAudits(PostOrgauthorizationTrustorAuditsRequest request) throws IOException, ApiException {
+  public Object postOrgauthorizationTrustorAudits(PostOrgauthorizationTrustorAuditsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<AuditQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditQueryResponse>() {});
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2268,13 +2239,13 @@ public class OrganizationAuthorizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditQueryResponse> postOrgauthorizationTrustorAudits(ApiRequest<TrustorAuditQueryRequest> request) throws IOException {
+  public ApiResponse<Object> postOrgauthorizationTrustorAudits(ApiRequest<TrustorAuditQueryRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<AuditQueryResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)exception;
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2285,12 +2256,11 @@ public class OrganizationAuthorizationApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<AuditQueryResponse> response = (ApiResponse<AuditQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
 
-  
   /**
    * Update Org Trust
    * 
@@ -2319,9 +2289,9 @@ public class OrganizationAuthorizationApi {
   private PutOrgauthorizationTrusteeRequest createPutOrgauthorizationTrusteeRequest(String trusteeOrgId, TrustUpdate body) {
     return PutOrgauthorizationTrusteeRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2373,7 +2343,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Update Trustee User Roles
    * 
@@ -2404,11 +2373,11 @@ public class OrganizationAuthorizationApi {
   private PutOrgauthorizationTrusteeUserRoledivisionsRequest createPutOrgauthorizationTrusteeUserRoledivisionsRequest(String trusteeOrgId, String trusteeUserId, RoleDivisionGrants body) {
     return PutOrgauthorizationTrusteeUserRoledivisionsRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2460,7 +2429,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Update Trustee User Roles
    * 
@@ -2491,11 +2459,11 @@ public class OrganizationAuthorizationApi {
   private PutOrgauthorizationTrusteeUserRolesRequest createPutOrgauthorizationTrusteeUserRolesRequest(String trusteeOrgId, String trusteeUserId, List<String> body) {
     return PutOrgauthorizationTrusteeUserRolesRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2547,7 +2515,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Creates a clone of the trustee user in the trustor org.
    * 
@@ -2576,9 +2543,9 @@ public class OrganizationAuthorizationApi {
   private PutOrgauthorizationTrustorCloneduserRequest createPutOrgauthorizationTrustorCloneduserRequest(String trustorOrgId, String trusteeUserId) {
     return PutOrgauthorizationTrustorCloneduserRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -2630,7 +2597,6 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
   /**
    * Add a Trustee user to the trust.
    * 
@@ -2659,9 +2625,9 @@ public class OrganizationAuthorizationApi {
   private PutOrgauthorizationTrustorUserRequest createPutOrgauthorizationTrustorUserRequest(String trustorOrgId, String trusteeUserId) {
     return PutOrgauthorizationTrustorUserRequest.builder()
             .withTrustorOrgId(trustorOrgId)
-    
+
             .withTrusteeUserId(trusteeUserId)
-    
+
             .build();
   }
 
@@ -2713,5 +2679,4 @@ public class OrganizationAuthorizationApi {
     }
   }
 
-  
 }

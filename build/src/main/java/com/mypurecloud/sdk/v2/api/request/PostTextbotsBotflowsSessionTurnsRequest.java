@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
-import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 
 public class PostTextbotsBotflowsSessionTurnsRequest {
-    
+
 	private String sessionId;
 	public String getSessionId() {
 		return this.sessionId;
@@ -44,7 +44,7 @@ public class PostTextbotsBotflowsSessionTurnsRequest {
 	    this.setSessionId(sessionId);
 	    return this;
 	} 
-	
+
 	private TextBotFlowTurnRequest turnRequest;
 	public TextBotFlowTurnRequest getTurnRequest() {
 		return this.turnRequest;
@@ -58,7 +58,7 @@ public class PostTextbotsBotflowsSessionTurnsRequest {
 	    this.setTurnRequest(turnRequest);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,8 +95,8 @@ public class PostTextbotsBotflowsSessionTurnsRequest {
                 .withPathParameter("sessionId", sessionId)
         
                 .withBody(turnRequest)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -107,12 +107,12 @@ public class PostTextbotsBotflowsSessionTurnsRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String sessionId, TextBotFlowTurnRequest turnRequest) {
 	    return new Builder()
 	            .withRequiredParams(sessionId, turnRequest);
 	}
-	
+
 
 	public static class Builder {
 		private final PostTextbotsBotflowsSessionTurnsRequest request;
@@ -121,26 +121,26 @@ public class PostTextbotsBotflowsSessionTurnsRequest {
 			request = new PostTextbotsBotflowsSessionTurnsRequest();
 		}
 
-		
+
 		public Builder withSessionId(String sessionId) {
 			request.setSessionId(sessionId);
 			return this;
 		}
-		
+
 		public Builder withTurnRequest(TextBotFlowTurnRequest turnRequest) {
 			request.setTurnRequest(turnRequest);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String sessionId, TextBotFlowTurnRequest turnRequest) {
 			request.setSessionId(sessionId);
-						request.setTurnRequest(turnRequest);
-			
+			request.setTurnRequest(turnRequest);
+
 			return this;
 		}
-		
+
 
 		public PostTextbotsBotflowsSessionTurnsRequest build() {
             

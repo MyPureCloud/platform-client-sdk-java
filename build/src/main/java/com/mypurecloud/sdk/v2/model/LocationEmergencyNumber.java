@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class LocationEmergencyNumber  implements Serializable {
     this.e164 = e164;
   }
 
-  
+
   /**
    **/
   public LocationEmergencyNumber number(String number) {
@@ -106,7 +107,7 @@ public class LocationEmergencyNumber  implements Serializable {
     this.number = number;
   }
 
-  
+
   /**
    * The type of emergency number.
    **/
@@ -124,7 +125,6 @@ public class LocationEmergencyNumber  implements Serializable {
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -135,9 +135,10 @@ public class LocationEmergencyNumber  implements Serializable {
       return false;
     }
     LocationEmergencyNumber locationEmergencyNumber = (LocationEmergencyNumber) o;
+
     return Objects.equals(this.e164, locationEmergencyNumber.e164) &&
-        Objects.equals(this.number, locationEmergencyNumber.number) &&
-        Objects.equals(this.type, locationEmergencyNumber.type);
+            Objects.equals(this.number, locationEmergencyNumber.number) &&
+            Objects.equals(this.type, locationEmergencyNumber.type);
   }
 
   @Override

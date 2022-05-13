@@ -12,7 +12,7 @@ title: CallHistoryConversation
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;CallHistoryParticipant&gt;**](CallHistoryParticipant.html)<!----> | The list of participants involved in the conversation. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the call relating to the current user |  [optional] |
-| **wentToVoicemail** | <!----><!---->**Boolean**<!----> | Did the call end in the current user&#39;s voicemail |  [optional] |
+| **wentToVoicemail** | <!----><!---->**Boolean**<!----> | Did the call end in the current user's voicemail |  [optional] |
 | **missedCall** | <!----><!---->**Boolean**<!----> | Did the user not answer this conversation |  [optional] |
 | **startTime** | <!----><!---->[**Date**](Date.html)<!----> | The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **wasConference** | <!----><!---->**Boolean**<!----> | Was this conversation a conference |  [optional] |
@@ -30,9 +30,9 @@ title: CallHistoryConversation
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INBOUND | &quot;inbound&quot; |
-| OUTBOUND | &quot;outbound&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage;
@@ -41,7 +42,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicMessageData  implem
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicMessageData normalizedMessage(V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage normalizedMessage) {
@@ -58,7 +59,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicMessageData  implem
     this.normalizedMessage = normalizedMessage;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,8 +69,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicMessageData  implem
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicMessageData v2ConversationMessageTypingEventForWorkflowTopicMessageData = (V2ConversationMessageTypingEventForWorkflowTopicMessageData) o;
+
     return Objects.equals(this.conversationId, v2ConversationMessageTypingEventForWorkflowTopicMessageData.conversationId) &&
-        Objects.equals(this.normalizedMessage, v2ConversationMessageTypingEventForWorkflowTopicMessageData.normalizedMessage);
+            Objects.equals(this.normalizedMessage, v2ConversationMessageTypingEventForWorkflowTopicMessageData.normalizedMessage);
   }
 
   @Override

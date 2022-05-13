@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AssessmentFormQuestion;
@@ -54,7 +55,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The question group name
    **/
@@ -72,7 +73,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The question group type
    **/
@@ -90,7 +91,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestionGroup defaultAnswersToHighest(Boolean defaultAnswersToHighest) {
@@ -107,7 +108,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.defaultAnswersToHighest = defaultAnswersToHighest;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestionGroup defaultAnswersToNA(Boolean defaultAnswersToNA) {
@@ -124,7 +125,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.defaultAnswersToNA = defaultAnswersToNA;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestionGroup naEnabled(Boolean naEnabled) {
@@ -141,7 +142,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestionGroup weight(Float weight) {
@@ -158,7 +159,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.weight = weight;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestionGroup manualWeight(Boolean manualWeight) {
@@ -175,7 +176,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.manualWeight = manualWeight;
   }
 
-  
+
   /**
    * The list of questions for this question group
    **/
@@ -193,7 +194,7 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.questions = questions;
   }
 
-  
+
   /**
    **/
   public AssessmentFormQuestionGroup visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -210,14 +211,13 @@ public class AssessmentFormQuestionGroup  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -228,17 +228,18 @@ public class AssessmentFormQuestionGroup  implements Serializable {
       return false;
     }
     AssessmentFormQuestionGroup assessmentFormQuestionGroup = (AssessmentFormQuestionGroup) o;
+
     return Objects.equals(this.id, assessmentFormQuestionGroup.id) &&
-        Objects.equals(this.name, assessmentFormQuestionGroup.name) &&
-        Objects.equals(this.type, assessmentFormQuestionGroup.type) &&
-        Objects.equals(this.defaultAnswersToHighest, assessmentFormQuestionGroup.defaultAnswersToHighest) &&
-        Objects.equals(this.defaultAnswersToNA, assessmentFormQuestionGroup.defaultAnswersToNA) &&
-        Objects.equals(this.naEnabled, assessmentFormQuestionGroup.naEnabled) &&
-        Objects.equals(this.weight, assessmentFormQuestionGroup.weight) &&
-        Objects.equals(this.manualWeight, assessmentFormQuestionGroup.manualWeight) &&
-        Objects.equals(this.questions, assessmentFormQuestionGroup.questions) &&
-        Objects.equals(this.visibilityCondition, assessmentFormQuestionGroup.visibilityCondition) &&
-        Objects.equals(this.selfUri, assessmentFormQuestionGroup.selfUri);
+            Objects.equals(this.name, assessmentFormQuestionGroup.name) &&
+            Objects.equals(this.type, assessmentFormQuestionGroup.type) &&
+            Objects.equals(this.defaultAnswersToHighest, assessmentFormQuestionGroup.defaultAnswersToHighest) &&
+            Objects.equals(this.defaultAnswersToNA, assessmentFormQuestionGroup.defaultAnswersToNA) &&
+            Objects.equals(this.naEnabled, assessmentFormQuestionGroup.naEnabled) &&
+            Objects.equals(this.weight, assessmentFormQuestionGroup.weight) &&
+            Objects.equals(this.manualWeight, assessmentFormQuestionGroup.manualWeight) &&
+            Objects.equals(this.questions, assessmentFormQuestionGroup.questions) &&
+            Objects.equals(this.visibilityCondition, assessmentFormQuestionGroup.visibilityCondition) &&
+            Objects.equals(this.selfUri, assessmentFormQuestionGroup.selfUri);
   }
 
   @Override

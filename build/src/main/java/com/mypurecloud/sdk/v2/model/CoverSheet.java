@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class CoverSheet  implements Serializable {
     this.notes = notes;
   }
 
-  
+
   /**
    * Locale, e.g. = en-US
    **/
@@ -59,7 +60,6 @@ public class CoverSheet  implements Serializable {
     this.locale = locale;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class CoverSheet  implements Serializable {
       return false;
     }
     CoverSheet coverSheet = (CoverSheet) o;
+
     return Objects.equals(this.notes, coverSheet.notes) &&
-        Objects.equals(this.locale, coverSheet.locale);
+            Objects.equals(this.locale, coverSheet.locale);
   }
 
   @Override

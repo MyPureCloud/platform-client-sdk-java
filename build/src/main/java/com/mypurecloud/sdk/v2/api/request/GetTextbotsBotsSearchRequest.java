@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
-import com.mypurecloud.sdk.v2.model.PostTextRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 
 public class GetTextbotsBotsSearchRequest {
-    
+
 	private List<String> botType;
 	public List<String> getBotType() {
 		return this.botType;
@@ -46,12 +46,12 @@ public class GetTextbotsBotsSearchRequest {
 	} 
 
 	public enum botTypeValues { 
-		GENESYSBOTCONNECTOR("GenesysBotConnector"), 
-		GENESYSDIALOGENGINE("GenesysDialogEngine"), 
-		AMAZONLEX("AmazonLex"), 
-		GOOGLEDIALOGFLOWES("GoogleDialogFlowES"), 
-		GOOGLEDIALOGFLOWCX("GoogleDialogFlowCX"), 
-		NUANCEDLG("NuanceDlg"), 
+		GENESYSBOTCONNECTOR("GenesysBotConnector"),
+		GENESYSDIALOGENGINE("GenesysDialogEngine"),
+		AMAZONLEX("AmazonLex"),
+		GOOGLEDIALOGFLOWES("GoogleDialogFlowES"),
+		GOOGLEDIALOGFLOWCX("GoogleDialogFlowCX"),
+		NUANCEDLG("NuanceDlg"),
 		GENESYSBOTFLOW("GenesysBotFlow");
 
 		private String value;
@@ -79,7 +79,7 @@ public class GetTextbotsBotsSearchRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private String botName;
 	public String getBotName() {
 		return this.botName;
@@ -93,7 +93,7 @@ public class GetTextbotsBotsSearchRequest {
 	    this.setBotName(botName);
 	    return this;
 	} 
-	
+
 	private List<String> botId;
 	public List<String> getBotId() {
 		return this.botId;
@@ -107,7 +107,7 @@ public class GetTextbotsBotsSearchRequest {
 	    this.setBotId(botId);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -121,7 +121,7 @@ public class GetTextbotsBotsSearchRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,15 +145,19 @@ public class GetTextbotsBotsSearchRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/textbots/bots/search")
+
                 .withQueryParameters("botType", "multi", botType)
         
+
                 .withQueryParameters("botName", "", botName)
         
+
                 .withQueryParameters("botId", "multi", botId)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -164,7 +168,7 @@ public class GetTextbotsBotsSearchRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetTextbotsBotsSearchRequest request;
@@ -173,11 +177,13 @@ public class GetTextbotsBotsSearchRequest {
 			request = new GetTextbotsBotsSearchRequest();
 		}
 
-		
+
 		public Builder withBotType(List<String> botType) {
 			request.setBotType(botType);
 			return this;
 		}
+
+
 
 		public Builder withBotTypeEnumValues(List<botTypeValues> botType) {
 		    List<String> stringList = new ArrayList<>();
@@ -187,24 +193,24 @@ public class GetTextbotsBotsSearchRequest {
 	      request.setBotType(stringList);
 		    return this;
 		}
-		
+
 		public Builder withBotName(String botName) {
 			request.setBotName(botName);
 			return this;
 		}
-		
+
 		public Builder withBotId(List<String> botId) {
 			request.setBotId(botId);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetTextbotsBotsSearchRequest build() {
             

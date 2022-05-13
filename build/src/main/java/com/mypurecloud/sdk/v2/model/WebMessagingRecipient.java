@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecipientAdditionalIdentifier;
@@ -36,28 +37,27 @@ public class WebMessagingRecipient  implements Serializable {
     return firstName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last name of the recipient.")
   @JsonProperty("lastName")
   public String getLastName() {
     return lastName;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")
   @JsonProperty("nickname")
   public String getNickname() {
     return nickname;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of recipient additional identifiers")
   @JsonProperty("additionalIds")
   public List<RecipientAdditionalIdentifier> getAdditionalIds() {
     return additionalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,10 +68,11 @@ public class WebMessagingRecipient  implements Serializable {
       return false;
     }
     WebMessagingRecipient webMessagingRecipient = (WebMessagingRecipient) o;
+
     return Objects.equals(this.firstName, webMessagingRecipient.firstName) &&
-        Objects.equals(this.lastName, webMessagingRecipient.lastName) &&
-        Objects.equals(this.nickname, webMessagingRecipient.nickname) &&
-        Objects.equals(this.additionalIds, webMessagingRecipient.additionalIds);
+            Objects.equals(this.lastName, webMessagingRecipient.lastName) &&
+            Objects.equals(this.nickname, webMessagingRecipient.nickname) &&
+            Objects.equals(this.additionalIds, webMessagingRecipient.additionalIds);
   }
 
   @Override

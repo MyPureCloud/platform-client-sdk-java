@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -98,7 +99,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.nickname = nickname;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient id(String id) {
@@ -115,7 +116,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.id = id;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient idType(IdTypeEnum idType) {
@@ -132,7 +133,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.idType = idType;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient image(String image) {
@@ -149,7 +150,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.image = image;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient firstName(String firstName) {
@@ -166,7 +167,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.firstName = firstName;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient lastName(String lastName) {
@@ -183,7 +184,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.lastName = lastName;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient email(String email) {
@@ -200,7 +201,7 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.email = email;
   }
 
-  
+
   /**
    **/
   public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient additionalIds(List<V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier> additionalIds) {
@@ -217,7 +218,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     this.additionalIds = additionalIds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -228,14 +228,15 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
       return false;
     }
     V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient = (V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient) o;
+
     return Objects.equals(this.nickname, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.nickname) &&
-        Objects.equals(this.id, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.id) &&
-        Objects.equals(this.idType, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.idType) &&
-        Objects.equals(this.image, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.image) &&
-        Objects.equals(this.firstName, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.firstName) &&
-        Objects.equals(this.lastName, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.lastName) &&
-        Objects.equals(this.email, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.email) &&
-        Objects.equals(this.additionalIds, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.additionalIds);
+            Objects.equals(this.id, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.id) &&
+            Objects.equals(this.idType, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.idType) &&
+            Objects.equals(this.image, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.image) &&
+            Objects.equals(this.firstName, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.firstName) &&
+            Objects.equals(this.lastName, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.lastName) &&
+            Objects.equals(this.email, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.email) &&
+            Objects.equals(this.additionalIds, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.additionalIds);
   }
 
   @Override

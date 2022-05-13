@@ -27,12 +27,12 @@ title: OAuthClientRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CODE | &quot;CODE&quot; |
-| TOKEN | &quot;TOKEN&quot; |
-| SAML2_BEARER | &quot;SAML2-BEARER&quot; |
-| PASSWORD | &quot;PASSWORD&quot; |
-| CLIENT_CREDENTIALS | &quot;CLIENT-CREDENTIALS&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CODE | &quot;CODE&quot; | 
+| TOKEN | &quot;TOKEN&quot; | 
+| SAML_2_BEARER | &quot;SAML2-BEARER&quot; | 
+| PASSWORD | &quot;PASSWORD&quot; | 
+| CLIENT_CREDENTIALS | &quot;CLIENT-CREDENTIALS&quot; | 
 {: class="table table-striped"}
 
 
@@ -42,10 +42,10 @@ title: OAuthClientRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| DISABLED | &quot;disabled&quot; |
-| INACTIVE | &quot;inactive&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| DISABLED | &quot;disabled&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
 {: class="table table-striped"}
 
 

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class QueryRequestPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-  
+
   /**
    * The value to filter by
    **/
@@ -108,7 +109,6 @@ public class QueryRequestPredicate  implements Serializable {
     this.value = value;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,8 +119,9 @@ public class QueryRequestPredicate  implements Serializable {
       return false;
     }
     QueryRequestPredicate queryRequestPredicate = (QueryRequestPredicate) o;
+
     return Objects.equals(this.dimension, queryRequestPredicate.dimension) &&
-        Objects.equals(this.value, queryRequestPredicate.value);
+            Objects.equals(this.value, queryRequestPredicate.value);
   }
 
   @Override

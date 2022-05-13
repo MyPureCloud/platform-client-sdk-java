@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentEvaluatorActivity;
@@ -46,7 +47,7 @@ public class AgentActivity  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public AgentActivity name(String name) {
@@ -63,7 +64,7 @@ public class AgentActivity  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public AgentActivity agent(User agent) {
@@ -80,7 +81,7 @@ public class AgentActivity  implements Serializable {
     this.agent = agent;
   }
 
-  
+
   /**
    **/
   public AgentActivity numEvaluations(Integer numEvaluations) {
@@ -97,7 +98,7 @@ public class AgentActivity  implements Serializable {
     this.numEvaluations = numEvaluations;
   }
 
-  
+
   /**
    **/
   public AgentActivity averageEvaluationScore(Integer averageEvaluationScore) {
@@ -114,7 +115,7 @@ public class AgentActivity  implements Serializable {
     this.averageEvaluationScore = averageEvaluationScore;
   }
 
-  
+
   /**
    **/
   public AgentActivity numCriticalEvaluations(Integer numCriticalEvaluations) {
@@ -131,7 +132,7 @@ public class AgentActivity  implements Serializable {
     this.numCriticalEvaluations = numCriticalEvaluations;
   }
 
-  
+
   /**
    **/
   public AgentActivity averageCriticalScore(Float averageCriticalScore) {
@@ -148,7 +149,7 @@ public class AgentActivity  implements Serializable {
     this.averageCriticalScore = averageCriticalScore;
   }
 
-  
+
   /**
    **/
   public AgentActivity highestEvaluationScore(Float highestEvaluationScore) {
@@ -165,7 +166,7 @@ public class AgentActivity  implements Serializable {
     this.highestEvaluationScore = highestEvaluationScore;
   }
 
-  
+
   /**
    **/
   public AgentActivity lowestEvaluationScore(Float lowestEvaluationScore) {
@@ -182,7 +183,7 @@ public class AgentActivity  implements Serializable {
     this.lowestEvaluationScore = lowestEvaluationScore;
   }
 
-  
+
   /**
    **/
   public AgentActivity highestCriticalScore(Float highestCriticalScore) {
@@ -199,7 +200,7 @@ public class AgentActivity  implements Serializable {
     this.highestCriticalScore = highestCriticalScore;
   }
 
-  
+
   /**
    **/
   public AgentActivity lowestCriticalScore(Float lowestCriticalScore) {
@@ -216,7 +217,7 @@ public class AgentActivity  implements Serializable {
     this.lowestCriticalScore = lowestCriticalScore;
   }
 
-  
+
   /**
    **/
   public AgentActivity agentEvaluatorActivityList(List<AgentEvaluatorActivity> agentEvaluatorActivityList) {
@@ -233,7 +234,7 @@ public class AgentActivity  implements Serializable {
     this.agentEvaluatorActivityList = agentEvaluatorActivityList;
   }
 
-  
+
   /**
    **/
   public AgentActivity numEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
@@ -250,14 +251,13 @@ public class AgentActivity  implements Serializable {
     this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -268,20 +268,21 @@ public class AgentActivity  implements Serializable {
       return false;
     }
     AgentActivity agentActivity = (AgentActivity) o;
+
     return Objects.equals(this.id, agentActivity.id) &&
-        Objects.equals(this.name, agentActivity.name) &&
-        Objects.equals(this.agent, agentActivity.agent) &&
-        Objects.equals(this.numEvaluations, agentActivity.numEvaluations) &&
-        Objects.equals(this.averageEvaluationScore, agentActivity.averageEvaluationScore) &&
-        Objects.equals(this.numCriticalEvaluations, agentActivity.numCriticalEvaluations) &&
-        Objects.equals(this.averageCriticalScore, agentActivity.averageCriticalScore) &&
-        Objects.equals(this.highestEvaluationScore, agentActivity.highestEvaluationScore) &&
-        Objects.equals(this.lowestEvaluationScore, agentActivity.lowestEvaluationScore) &&
-        Objects.equals(this.highestCriticalScore, agentActivity.highestCriticalScore) &&
-        Objects.equals(this.lowestCriticalScore, agentActivity.lowestCriticalScore) &&
-        Objects.equals(this.agentEvaluatorActivityList, agentActivity.agentEvaluatorActivityList) &&
-        Objects.equals(this.numEvaluationsWithoutViewPermission, agentActivity.numEvaluationsWithoutViewPermission) &&
-        Objects.equals(this.selfUri, agentActivity.selfUri);
+            Objects.equals(this.name, agentActivity.name) &&
+            Objects.equals(this.agent, agentActivity.agent) &&
+            Objects.equals(this.numEvaluations, agentActivity.numEvaluations) &&
+            Objects.equals(this.averageEvaluationScore, agentActivity.averageEvaluationScore) &&
+            Objects.equals(this.numCriticalEvaluations, agentActivity.numCriticalEvaluations) &&
+            Objects.equals(this.averageCriticalScore, agentActivity.averageCriticalScore) &&
+            Objects.equals(this.highestEvaluationScore, agentActivity.highestEvaluationScore) &&
+            Objects.equals(this.lowestEvaluationScore, agentActivity.lowestEvaluationScore) &&
+            Objects.equals(this.highestCriticalScore, agentActivity.highestCriticalScore) &&
+            Objects.equals(this.lowestCriticalScore, agentActivity.lowestCriticalScore) &&
+            Objects.equals(this.agentEvaluatorActivityList, agentActivity.agentEvaluatorActivityList) &&
+            Objects.equals(this.numEvaluationsWithoutViewPermission, agentActivity.numEvaluationsWithoutViewPermission) &&
+            Objects.equals(this.selfUri, agentActivity.selfUri);
   }
 
   @Override

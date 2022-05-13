@@ -14,8 +14,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteMessagingSupportedcontentSupportedContentIdRequest;
@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class MessagingApiAsync {
   private final ApiClient pcapiClient;
 
@@ -43,7 +42,6 @@ public class MessagingApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a supported content profile
    * 
@@ -119,7 +117,6 @@ public class MessagingApiAsync {
     }
   }
 
-  
   /**
    * Get a list of Supported Content profiles
    * 
@@ -195,7 +192,6 @@ public class MessagingApiAsync {
     }
   }
 
-  
   /**
    * Get a supported content profile
    * 
@@ -271,7 +267,6 @@ public class MessagingApiAsync {
     }
   }
 
-  
   /**
    * Update a supported content profile
    * 
@@ -347,7 +342,6 @@ public class MessagingApiAsync {
     }
   }
 
-  
   /**
    * Create a Supported Content profile
    * 
@@ -423,7 +417,6 @@ public class MessagingApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

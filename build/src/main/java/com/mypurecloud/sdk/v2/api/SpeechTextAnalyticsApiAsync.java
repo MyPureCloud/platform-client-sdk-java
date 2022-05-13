@@ -13,33 +13,33 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
-import com.mypurecloud.sdk.v2.model.TranscriptUrl;
-import com.mypurecloud.sdk.v2.model.Program;
-import com.mypurecloud.sdk.v2.model.ProgramMappings;
-import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
-import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
-import com.mypurecloud.sdk.v2.model.ProgramJob;
-import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
-import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
-import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicJob;
-import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
-import com.mypurecloud.sdk.v2.model.ProgramRequest;
-import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
-import com.mypurecloud.sdk.v2.model.SentimentFeedback;
-import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
-import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
-import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
@@ -83,7 +83,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class SpeechTextAnalyticsApiAsync {
   private final ApiClient pcapiClient;
 
@@ -95,9 +94,8 @@ public class SpeechTextAnalyticsApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
-   * Delete a Speech &amp; Text Analytics program by id
+   * Delete a Speech & Text Analytics program by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -131,7 +129,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics program by id
+   * Delete a Speech & Text Analytics program by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -171,9 +169,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * Delete All Speech & Text Analytics SentimentFeedback
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -207,7 +204,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * Delete All Speech & Text Analytics SentimentFeedback
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -247,9 +244,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * Delete a Speech & Text Analytics SentimentFeedback by Id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -283,7 +279,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * Delete a Speech & Text Analytics SentimentFeedback by Id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -323,9 +319,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Delete a Speech &amp; Text Analytics topic by id
+   * Delete a Speech & Text Analytics topic by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -359,7 +354,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Delete a Speech &amp; Text Analytics topic by id
+   * Delete a Speech & Text Analytics topic by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -399,7 +394,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get Speech and Text Analytics for a specific conversation
    * 
@@ -475,7 +469,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
    * 
@@ -551,9 +544,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics program by id
+   * Get a Speech & Text Analytics program by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -587,7 +579,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics program by id
+   * Get a Speech & Text Analytics program by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -627,9 +619,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -663,7 +654,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * Get Speech & Text Analytics program mappings to queues and flows by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -703,9 +694,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics programs
+   * Get the list of Speech & Text Analytics programs
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -739,7 +729,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs
+   * Get the list of Speech & Text Analytics programs
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -779,9 +769,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics general program job by id
+   * Get a Speech & Text Analytics general program job by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -815,7 +804,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics general program job by id
+   * Get a Speech & Text Analytics general program job by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -855,9 +844,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -891,7 +879,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * Get the list of Speech & Text Analytics programs mappings to queues and flows
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -931,9 +919,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics publish programs job by id
+   * Get a Speech & Text Analytics publish programs job by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -967,7 +954,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish programs job by id
+   * Get a Speech & Text Analytics publish programs job by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1007,9 +994,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * Get the list of Speech & Text Analytics unpublished programs
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1043,7 +1029,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * Get the list of Speech & Text Analytics unpublished programs
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1083,9 +1069,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+   * Get the list of Speech & Text Analytics sentiment supported dialects
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1119,7 +1104,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+   * Get the list of Speech & Text Analytics sentiment supported dialects
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1159,9 +1144,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * Get the list of Speech & Text Analytics SentimentFeedback
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1195,7 +1179,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * Get the list of Speech & Text Analytics SentimentFeedback
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1235,7 +1219,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Get Speech And Text Analytics Settings
    * 
@@ -1311,9 +1294,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics topic by id
+   * Get a Speech & Text Analytics topic by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1347,7 +1329,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics topic by id
+   * Get a Speech & Text Analytics topic by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1387,9 +1369,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the list of Speech &amp; Text Analytics topics
+   * Get the list of Speech & Text Analytics topics
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1423,7 +1404,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the list of Speech &amp; Text Analytics topics
+   * Get the list of Speech & Text Analytics topics
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1463,9 +1444,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get list of supported Speech &amp; Text Analytics topics dialects
+   * Get list of supported Speech & Text Analytics topics dialects
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1499,7 +1479,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get list of supported Speech &amp; Text Analytics topics dialects
+   * Get list of supported Speech & Text Analytics topics dialects
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1539,9 +1519,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * Get the Speech & Text Analytics general topics for a given dialect
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1575,7 +1554,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * Get the Speech & Text Analytics general topics for a given dialect
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1615,9 +1594,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Get a Speech &amp; Text Analytics publish topics job by id
+   * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1651,7 +1629,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Get a Speech &amp; Text Analytics publish topics job by id
+   * Get a Speech & Text Analytics publish topics job by id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1691,7 +1669,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Patch Speech And Text Analytics Settings
    * 
@@ -1767,9 +1744,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics program
+   * Create new Speech & Text Analytics program
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1803,7 +1779,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics program
+   * Create new Speech & Text Analytics program
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1843,9 +1819,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics general program job
+   * Create new Speech & Text Analytics general program job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1879,7 +1854,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics general program job
+   * Create new Speech & Text Analytics general program job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1919,9 +1894,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics publish programs job
+   * Create new Speech & Text Analytics publish programs job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1955,7 +1929,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish programs job
+   * Create new Speech & Text Analytics publish programs job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1995,9 +1969,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * Create a Speech & Text Analytics SentimentFeedback
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2031,7 +2004,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * Create a Speech & Text Analytics SentimentFeedback
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2071,9 +2044,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics topic
+   * Create new Speech & Text Analytics topic
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2107,7 +2079,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics topic
+   * Create new Speech & Text Analytics topic
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2147,9 +2119,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Create new Speech &amp; Text Analytics publish topics job
+   * Create new Speech & Text Analytics publish topics job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2183,7 +2154,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Create new Speech &amp; Text Analytics publish topics job
+   * Create new Speech & Text Analytics publish topics job
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2223,7 +2194,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Search resources.
    * 
@@ -2299,9 +2269,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Update existing Speech &amp; Text Analytics program
+   * Update existing Speech & Text Analytics program
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2335,7 +2304,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics program
+   * Update existing Speech & Text Analytics program
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2375,9 +2344,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2411,7 +2379,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * Set Speech & Text Analytics program mappings to queues and flows
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2451,7 +2419,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
    * Update Speech And Text Analytics Settings
    * 
@@ -2527,9 +2494,8 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
   /**
-   * Update existing Speech &amp; Text Analytics topic
+   * Update existing Speech & Text Analytics topic
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2563,7 +2529,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Update existing Speech &amp; Text Analytics topic
+   * Update existing Speech & Text Analytics topic
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2603,7 +2569,6 @@ public class SpeechTextAnalyticsApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

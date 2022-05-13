@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -52,7 +53,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public NoteListing pageSize(Integer pageSize) {
@@ -69,7 +70,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public NoteListing pageNumber(Integer pageNumber) {
@@ -86,7 +87,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public NoteListing total(Long total) {
@@ -103,7 +104,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.total = total;
   }
 
-  
+
   /**
    **/
   public NoteListing lastUri(String lastUri) {
@@ -120,7 +121,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public NoteListing firstUri(String firstUri) {
@@ -137,7 +138,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public NoteListing selfUri(String selfUri) {
@@ -154,7 +155,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public NoteListing previousUri(String previousUri) {
@@ -171,7 +172,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public NoteListing nextUri(String nextUri) {
@@ -188,7 +189,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public NoteListing pageCount(Integer pageCount) {
@@ -205,7 +206,6 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +216,17 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
       return false;
     }
     NoteListing noteListing = (NoteListing) o;
+
     return Objects.equals(this.entities, noteListing.entities) &&
-        Objects.equals(this.pageSize, noteListing.pageSize) &&
-        Objects.equals(this.pageNumber, noteListing.pageNumber) &&
-        Objects.equals(this.total, noteListing.total) &&
-        Objects.equals(this.lastUri, noteListing.lastUri) &&
-        Objects.equals(this.firstUri, noteListing.firstUri) &&
-        Objects.equals(this.selfUri, noteListing.selfUri) &&
-        Objects.equals(this.previousUri, noteListing.previousUri) &&
-        Objects.equals(this.nextUri, noteListing.nextUri) &&
-        Objects.equals(this.pageCount, noteListing.pageCount);
+            Objects.equals(this.pageSize, noteListing.pageSize) &&
+            Objects.equals(this.pageNumber, noteListing.pageNumber) &&
+            Objects.equals(this.total, noteListing.total) &&
+            Objects.equals(this.lastUri, noteListing.lastUri) &&
+            Objects.equals(this.firstUri, noteListing.firstUri) &&
+            Objects.equals(this.selfUri, noteListing.selfUri) &&
+            Objects.equals(this.previousUri, noteListing.previousUri) &&
+            Objects.equals(this.nextUri, noteListing.nextUri) &&
+            Objects.equals(this.pageCount, noteListing.pageCount);
   }
 
   @Override

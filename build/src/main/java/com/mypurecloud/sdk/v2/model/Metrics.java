@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -103,7 +104,7 @@ public class Metrics  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Metrics name(String name) {
@@ -120,7 +121,7 @@ public class Metrics  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The order of metric within a performance profile
    **/
@@ -138,7 +139,7 @@ public class Metrics  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * The name of associated metric definition
    **/
@@ -156,7 +157,7 @@ public class Metrics  implements Serializable {
     this.metricDefinitionName = metricDefinitionName;
   }
 
-  
+
   /**
    * The id of associated metric definition
    **/
@@ -174,7 +175,7 @@ public class Metrics  implements Serializable {
     this.metricDefinitionId = metricDefinitionId;
   }
 
-  
+
   /**
    * The id of associated external metric definition
    **/
@@ -192,7 +193,7 @@ public class Metrics  implements Serializable {
     this.externalMetricDefinitionId = externalMetricDefinitionId;
   }
 
-  
+
   /**
    * Corresponding unit type for this metric
    **/
@@ -210,7 +211,7 @@ public class Metrics  implements Serializable {
     this.unitType = unitType;
   }
 
-  
+
   /**
    * A flag for whether this metric is enabled for a performance profile
    **/
@@ -228,7 +229,7 @@ public class Metrics  implements Serializable {
     this.enabled = enabled;
   }
 
-  
+
   /**
    * The name of associated objective template
    **/
@@ -246,7 +247,7 @@ public class Metrics  implements Serializable {
     this.templateName = templateName;
   }
 
-  
+
   /**
    * Achievable maximum points for this metric
    **/
@@ -264,7 +265,7 @@ public class Metrics  implements Serializable {
     this.maxPoints = maxPoints;
   }
 
-  
+
   /**
    * Performance profile id of this metric
    **/
@@ -282,56 +283,55 @@ public class Metrics  implements Serializable {
     this.performanceProfileId = performanceProfileId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The linked metric entity reference")
   @JsonProperty("linkedMetric")
   public AddressableEntityRef getLinkedMetric() {
     return linkedMetric;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateUnlinked")
   public LocalDate getDateUnlinked() {
     return dateUnlinked;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The source performance profile when this metric is linked")
   @JsonProperty("sourcePerformanceProfile")
   public PerformanceProfile getSourcePerformanceProfile() {
     return sourcePerformanceProfile;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Unit definition of linked external metric")
   @JsonProperty("unitDefinition")
   public String getUnitDefinition() {
     return unitDefinition;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Precision of linked external metric")
   @JsonProperty("precision")
   public Integer getPrecision() {
     return precision;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -342,24 +342,25 @@ public class Metrics  implements Serializable {
       return false;
     }
     Metrics metrics = (Metrics) o;
+
     return Objects.equals(this.id, metrics.id) &&
-        Objects.equals(this.name, metrics.name) &&
-        Objects.equals(this.order, metrics.order) &&
-        Objects.equals(this.metricDefinitionName, metrics.metricDefinitionName) &&
-        Objects.equals(this.metricDefinitionId, metrics.metricDefinitionId) &&
-        Objects.equals(this.externalMetricDefinitionId, metrics.externalMetricDefinitionId) &&
-        Objects.equals(this.unitType, metrics.unitType) &&
-        Objects.equals(this.enabled, metrics.enabled) &&
-        Objects.equals(this.templateName, metrics.templateName) &&
-        Objects.equals(this.maxPoints, metrics.maxPoints) &&
-        Objects.equals(this.performanceProfileId, metrics.performanceProfileId) &&
-        Objects.equals(this.linkedMetric, metrics.linkedMetric) &&
-        Objects.equals(this.dateCreated, metrics.dateCreated) &&
-        Objects.equals(this.dateUnlinked, metrics.dateUnlinked) &&
-        Objects.equals(this.sourcePerformanceProfile, metrics.sourcePerformanceProfile) &&
-        Objects.equals(this.unitDefinition, metrics.unitDefinition) &&
-        Objects.equals(this.precision, metrics.precision) &&
-        Objects.equals(this.selfUri, metrics.selfUri);
+            Objects.equals(this.name, metrics.name) &&
+            Objects.equals(this.order, metrics.order) &&
+            Objects.equals(this.metricDefinitionName, metrics.metricDefinitionName) &&
+            Objects.equals(this.metricDefinitionId, metrics.metricDefinitionId) &&
+            Objects.equals(this.externalMetricDefinitionId, metrics.externalMetricDefinitionId) &&
+            Objects.equals(this.unitType, metrics.unitType) &&
+            Objects.equals(this.enabled, metrics.enabled) &&
+            Objects.equals(this.templateName, metrics.templateName) &&
+            Objects.equals(this.maxPoints, metrics.maxPoints) &&
+            Objects.equals(this.performanceProfileId, metrics.performanceProfileId) &&
+            Objects.equals(this.linkedMetric, metrics.linkedMetric) &&
+            Objects.equals(this.dateCreated, metrics.dateCreated) &&
+            Objects.equals(this.dateUnlinked, metrics.dateUnlinked) &&
+            Objects.equals(this.sourcePerformanceProfile, metrics.sourcePerformanceProfile) &&
+            Objects.equals(this.unitDefinition, metrics.unitDefinition) &&
+            Objects.equals(this.precision, metrics.precision) &&
+            Objects.equals(this.selfUri, metrics.selfUri);
   }
 
   @Override

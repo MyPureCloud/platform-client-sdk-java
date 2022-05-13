@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -89,7 +90,7 @@ public class AgentTimeOffRequestPatch  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
-  
+
   /**
    * The status of this time off request. Can only be canceled if the requested date has not already passed
    **/
@@ -107,7 +108,7 @@ public class AgentTimeOffRequestPatch  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * Notes about the time off request. Can only be edited while the request is still pending
    **/
@@ -125,7 +126,6 @@ public class AgentTimeOffRequestPatch  implements Serializable {
     this.notes = notes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,9 +136,10 @@ public class AgentTimeOffRequestPatch  implements Serializable {
       return false;
     }
     AgentTimeOffRequestPatch agentTimeOffRequestPatch = (AgentTimeOffRequestPatch) o;
+
     return Objects.equals(this.markedAsRead, agentTimeOffRequestPatch.markedAsRead) &&
-        Objects.equals(this.status, agentTimeOffRequestPatch.status) &&
-        Objects.equals(this.notes, agentTimeOffRequestPatch.notes);
+            Objects.equals(this.status, agentTimeOffRequestPatch.status) &&
+            Objects.equals(this.notes, agentTimeOffRequestPatch.notes);
   }
 
   @Override

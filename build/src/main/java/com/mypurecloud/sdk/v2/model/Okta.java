@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class Okta  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Okta name(String name) {
@@ -58,7 +59,7 @@ public class Okta  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Okta disabled(Boolean disabled) {
@@ -75,7 +76,7 @@ public class Okta  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   /**
    **/
   public Okta issuerURI(String issuerURI) {
@@ -92,7 +93,7 @@ public class Okta  implements Serializable {
     this.issuerURI = issuerURI;
   }
 
-  
+
   /**
    **/
   public Okta ssoTargetURI(String ssoTargetURI) {
@@ -109,7 +110,7 @@ public class Okta  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
-  
+
   /**
    **/
   public Okta sloURI(String sloURI) {
@@ -126,7 +127,7 @@ public class Okta  implements Serializable {
     this.sloURI = sloURI;
   }
 
-  
+
   /**
    **/
   public Okta sloBinding(String sloBinding) {
@@ -143,7 +144,7 @@ public class Okta  implements Serializable {
     this.sloBinding = sloBinding;
   }
 
-  
+
   /**
    **/
   public Okta relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -160,7 +161,7 @@ public class Okta  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-  
+
   /**
    **/
   public Okta certificate(String certificate) {
@@ -177,7 +178,7 @@ public class Okta  implements Serializable {
     this.certificate = certificate;
   }
 
-  
+
   /**
    **/
   public Okta certificates(List<String> certificates) {
@@ -194,14 +195,13 @@ public class Okta  implements Serializable {
     this.certificates = certificates;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -212,17 +212,18 @@ public class Okta  implements Serializable {
       return false;
     }
     Okta okta = (Okta) o;
+
     return Objects.equals(this.id, okta.id) &&
-        Objects.equals(this.name, okta.name) &&
-        Objects.equals(this.disabled, okta.disabled) &&
-        Objects.equals(this.issuerURI, okta.issuerURI) &&
-        Objects.equals(this.ssoTargetURI, okta.ssoTargetURI) &&
-        Objects.equals(this.sloURI, okta.sloURI) &&
-        Objects.equals(this.sloBinding, okta.sloBinding) &&
-        Objects.equals(this.relyingPartyIdentifier, okta.relyingPartyIdentifier) &&
-        Objects.equals(this.certificate, okta.certificate) &&
-        Objects.equals(this.certificates, okta.certificates) &&
-        Objects.equals(this.selfUri, okta.selfUri);
+            Objects.equals(this.name, okta.name) &&
+            Objects.equals(this.disabled, okta.disabled) &&
+            Objects.equals(this.issuerURI, okta.issuerURI) &&
+            Objects.equals(this.ssoTargetURI, okta.ssoTargetURI) &&
+            Objects.equals(this.sloURI, okta.sloURI) &&
+            Objects.equals(this.sloBinding, okta.sloBinding) &&
+            Objects.equals(this.relyingPartyIdentifier, okta.relyingPartyIdentifier) &&
+            Objects.equals(this.certificate, okta.certificate) &&
+            Objects.equals(this.certificates, okta.certificates) &&
+            Objects.equals(this.selfUri, okta.selfUri);
   }
 
   @Override

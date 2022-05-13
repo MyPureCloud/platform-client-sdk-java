@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -85,7 +86,7 @@ public class MessageMediaData  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public MessageMediaData name(String name) {
@@ -102,7 +103,7 @@ public class MessageMediaData  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The location of the media, useful for retrieving it
    **/
@@ -120,7 +121,7 @@ public class MessageMediaData  implements Serializable {
     this.url = url;
   }
 
-  
+
   /**
    * The detected internet media type of the the media object.  If null then the media type should be dictated by the url.
    **/
@@ -138,7 +139,7 @@ public class MessageMediaData  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * The optional content length of the the media object, in bytes.
    **/
@@ -156,7 +157,7 @@ public class MessageMediaData  implements Serializable {
     this.contentLengthBytes = contentLengthBytes;
   }
 
-  
+
   /**
    * The URL returned to upload an attachment
    **/
@@ -174,21 +175,20 @@ public class MessageMediaData  implements Serializable {
     this.uploadUrl = uploadUrl;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,14 +199,15 @@ public class MessageMediaData  implements Serializable {
       return false;
     }
     MessageMediaData messageMediaData = (MessageMediaData) o;
+
     return Objects.equals(this.id, messageMediaData.id) &&
-        Objects.equals(this.name, messageMediaData.name) &&
-        Objects.equals(this.url, messageMediaData.url) &&
-        Objects.equals(this.mediaType, messageMediaData.mediaType) &&
-        Objects.equals(this.contentLengthBytes, messageMediaData.contentLengthBytes) &&
-        Objects.equals(this.uploadUrl, messageMediaData.uploadUrl) &&
-        Objects.equals(this.status, messageMediaData.status) &&
-        Objects.equals(this.selfUri, messageMediaData.selfUri);
+            Objects.equals(this.name, messageMediaData.name) &&
+            Objects.equals(this.url, messageMediaData.url) &&
+            Objects.equals(this.mediaType, messageMediaData.mediaType) &&
+            Objects.equals(this.contentLengthBytes, messageMediaData.contentLengthBytes) &&
+            Objects.equals(this.uploadUrl, messageMediaData.uploadUrl) &&
+            Objects.equals(this.status, messageMediaData.status) &&
+            Objects.equals(this.selfUri, messageMediaData.selfUri);
   }
 
   @Override

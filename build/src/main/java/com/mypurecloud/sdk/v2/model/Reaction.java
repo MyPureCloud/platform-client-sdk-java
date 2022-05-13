@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -92,7 +93,7 @@ public class Reaction  implements Serializable {
     this.data = data;
   }
 
-  
+
   /**
    * Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.
    **/
@@ -110,7 +111,7 @@ public class Reaction  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The reaction to take for a given call analysis result.
    **/
@@ -128,7 +129,6 @@ public class Reaction  implements Serializable {
     this.reactionType = reactionType;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -139,9 +139,10 @@ public class Reaction  implements Serializable {
       return false;
     }
     Reaction reaction = (Reaction) o;
+
     return Objects.equals(this.data, reaction.data) &&
-        Objects.equals(this.name, reaction.name) &&
-        Objects.equals(this.reactionType, reaction.reactionType);
+            Objects.equals(this.name, reaction.name) &&
+            Objects.equals(this.reactionType, reaction.reactionType);
   }
 
   @Override

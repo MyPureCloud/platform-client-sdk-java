@@ -26,12 +26,12 @@ title: FaxSendRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| APPLICATION_PDF | &quot;application/pdf&quot; |
-| IMAGE_TIFF | &quot;image/tiff&quot; |
-| APPLICATION_MSWORD | &quot;application/msword&quot; |
-| APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT | &quot;application/vnd.oasis.opendocument.text&quot; |
-| APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT | &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| APPLICATION_PDF | &quot;application/pdf&quot; | 
+| IMAGE_TIFF | &quot;image/tiff&quot; | 
+| APPLICATION_MSWORD | &quot;application/msword&quot; | 
+| APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT | &quot;application/vnd.oasis.opendocument.text&quot; | 
+| APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT | &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot; | 
 {: class="table table-striped"}
 
 

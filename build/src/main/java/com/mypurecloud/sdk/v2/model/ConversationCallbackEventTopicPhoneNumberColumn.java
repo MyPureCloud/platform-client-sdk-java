@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class ConversationCallbackEventTopicPhoneNumberColumn  implements Seriali
     this.columnName = columnName;
   }
 
-  
+
   /**
    **/
   public ConversationCallbackEventTopicPhoneNumberColumn type(String type) {
@@ -57,7 +58,6 @@ public class ConversationCallbackEventTopicPhoneNumberColumn  implements Seriali
     this.type = type;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class ConversationCallbackEventTopicPhoneNumberColumn  implements Seriali
       return false;
     }
     ConversationCallbackEventTopicPhoneNumberColumn conversationCallbackEventTopicPhoneNumberColumn = (ConversationCallbackEventTopicPhoneNumberColumn) o;
+
     return Objects.equals(this.columnName, conversationCallbackEventTopicPhoneNumberColumn.columnName) &&
-        Objects.equals(this.type, conversationCallbackEventTopicPhoneNumberColumn.type);
+            Objects.equals(this.type, conversationCallbackEventTopicPhoneNumberColumn.type);
   }
 
   @Override

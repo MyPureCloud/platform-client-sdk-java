@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class WebDeploymentConfigurationVersionEntityRef  implements Serializable
     this.id = id;
   }
 
-  
+
   /**
    * The configuration version name
    **/
@@ -61,7 +62,7 @@ public class WebDeploymentConfigurationVersionEntityRef  implements Serializable
     this.name = name;
   }
 
-  
+
   /**
    **/
   public WebDeploymentConfigurationVersionEntityRef selfUri(String selfUri) {
@@ -78,7 +79,7 @@ public class WebDeploymentConfigurationVersionEntityRef  implements Serializable
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    * The version of the configuration
    **/
@@ -96,7 +97,6 @@ public class WebDeploymentConfigurationVersionEntityRef  implements Serializable
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class WebDeploymentConfigurationVersionEntityRef  implements Serializable
       return false;
     }
     WebDeploymentConfigurationVersionEntityRef webDeploymentConfigurationVersionEntityRef = (WebDeploymentConfigurationVersionEntityRef) o;
+
     return Objects.equals(this.id, webDeploymentConfigurationVersionEntityRef.id) &&
-        Objects.equals(this.name, webDeploymentConfigurationVersionEntityRef.name) &&
-        Objects.equals(this.selfUri, webDeploymentConfigurationVersionEntityRef.selfUri) &&
-        Objects.equals(this.version, webDeploymentConfigurationVersionEntityRef.version);
+            Objects.equals(this.name, webDeploymentConfigurationVersionEntityRef.name) &&
+            Objects.equals(this.selfUri, webDeploymentConfigurationVersionEntityRef.selfUri) &&
+            Objects.equals(this.version, webDeploymentConfigurationVersionEntityRef.version);
   }
 
   @Override

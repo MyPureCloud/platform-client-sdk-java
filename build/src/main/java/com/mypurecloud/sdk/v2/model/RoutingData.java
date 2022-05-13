@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScoredAgent;
@@ -49,7 +50,7 @@ public class RoutingData  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The identifier of a language to be considered in routing
    **/
@@ -67,7 +68,7 @@ public class RoutingData  implements Serializable {
     this.languageId = languageId;
   }
 
-  
+
   /**
    * The priority for routing
    **/
@@ -85,7 +86,7 @@ public class RoutingData  implements Serializable {
     this.priority = priority;
   }
 
-  
+
   /**
    * A list of skill identifiers to be considered in routing
    **/
@@ -103,7 +104,7 @@ public class RoutingData  implements Serializable {
     this.skillIds = skillIds;
   }
 
-  
+
   /**
    * A list of agents to be preferred in routing
    **/
@@ -121,7 +122,7 @@ public class RoutingData  implements Serializable {
     this.preferredAgentIds = preferredAgentIds;
   }
 
-  
+
   /**
    * A list of scored agents for routing decisions
    **/
@@ -139,7 +140,7 @@ public class RoutingData  implements Serializable {
     this.scoredAgents = scoredAgents;
   }
 
-  
+
   /**
    * An array of flags indicating how the conversation should be routed
    **/
@@ -157,7 +158,6 @@ public class RoutingData  implements Serializable {
     this.routingFlags = routingFlags;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,13 +168,14 @@ public class RoutingData  implements Serializable {
       return false;
     }
     RoutingData routingData = (RoutingData) o;
+
     return Objects.equals(this.queueId, routingData.queueId) &&
-        Objects.equals(this.languageId, routingData.languageId) &&
-        Objects.equals(this.priority, routingData.priority) &&
-        Objects.equals(this.skillIds, routingData.skillIds) &&
-        Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds) &&
-        Objects.equals(this.scoredAgents, routingData.scoredAgents) &&
-        Objects.equals(this.routingFlags, routingData.routingFlags);
+            Objects.equals(this.languageId, routingData.languageId) &&
+            Objects.equals(this.priority, routingData.priority) &&
+            Objects.equals(this.skillIds, routingData.skillIds) &&
+            Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds) &&
+            Objects.equals(this.scoredAgents, routingData.scoredAgents) &&
+            Objects.equals(this.routingFlags, routingData.routingFlags);
   }
 
   @Override

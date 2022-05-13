@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -297,7 +298,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.id = id;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant name(String name) {
@@ -314,7 +315,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.name = name;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant address(String address) {
@@ -331,7 +332,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.address = address;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant startTime(Date startTime) {
@@ -348,7 +349,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.startTime = startTime;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant connectedTime(Date connectedTime) {
@@ -365,7 +366,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant endTime(Date endTime) {
@@ -382,7 +383,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.endTime = endTime;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant startHoldTime(Date startHoldTime) {
@@ -399,7 +400,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.startHoldTime = startHoldTime;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant purpose(String purpose) {
@@ -416,7 +417,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.purpose = purpose;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant state(StateEnum state) {
@@ -433,7 +434,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.state = state;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant direction(DirectionEnum direction) {
@@ -450,7 +451,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -467,7 +468,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.disconnectType = disconnectType;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant held(Boolean held) {
@@ -484,7 +485,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.held = held;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -501,7 +502,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -518,7 +519,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant user(ConversationSocialExpressionEventTopicUriReference user) {
@@ -535,7 +536,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.user = user;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant queue(ConversationSocialExpressionEventTopicUriReference queue) {
@@ -552,7 +553,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.queue = queue;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant team(ConversationSocialExpressionEventTopicUriReference team) {
@@ -569,7 +570,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.team = team;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant attributes(Map<String, String> attributes) {
@@ -586,7 +587,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant errorInfo(ConversationSocialExpressionEventTopicErrorBody errorInfo) {
@@ -603,7 +604,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.errorInfo = errorInfo;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant script(ConversationSocialExpressionEventTopicUriReference script) {
@@ -620,7 +621,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.script = script;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -637,7 +638,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -654,7 +655,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.wrapupSkipped = wrapupSkipped;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -671,7 +672,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant provider(String provider) {
@@ -688,7 +689,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.provider = provider;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant externalContact(ConversationSocialExpressionEventTopicUriReference externalContact) {
@@ -705,7 +706,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.externalContact = externalContact;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant externalOrganization(ConversationSocialExpressionEventTopicUriReference externalOrganization) {
@@ -722,7 +723,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.externalOrganization = externalOrganization;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant wrapup(ConversationSocialExpressionEventTopicWrapup wrapup) {
@@ -739,7 +740,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant conversationRoutingData(ConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData) {
@@ -756,7 +757,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant peer(String peer) {
@@ -773,7 +774,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.peer = peer;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant screenRecordingState(String screenRecordingState) {
@@ -790,7 +791,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
@@ -807,7 +808,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant journeyContext(ConversationSocialExpressionEventTopicJourneyContext journeyContext) {
@@ -824,7 +825,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.journeyContext = journeyContext;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant startAcwTime(Date startAcwTime) {
@@ -841,7 +842,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant endAcwTime(Date endAcwTime) {
@@ -858,7 +859,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant socialMediaId(String socialMediaId) {
@@ -875,7 +876,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.socialMediaId = socialMediaId;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant socialMediaHub(String socialMediaHub) {
@@ -892,7 +893,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.socialMediaHub = socialMediaHub;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant socialUserName(String socialUserName) {
@@ -909,7 +910,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.socialUserName = socialUserName;
   }
 
-  
+
   /**
    **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant previewText(String previewText) {
@@ -926,7 +927,6 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     this.previewText = previewText;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -937,44 +937,45 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
       return false;
     }
     ConversationSocialExpressionEventTopicSocialMediaParticipant conversationSocialExpressionEventTopicSocialMediaParticipant = (ConversationSocialExpressionEventTopicSocialMediaParticipant) o;
+
     return Objects.equals(this.id, conversationSocialExpressionEventTopicSocialMediaParticipant.id) &&
-        Objects.equals(this.name, conversationSocialExpressionEventTopicSocialMediaParticipant.name) &&
-        Objects.equals(this.address, conversationSocialExpressionEventTopicSocialMediaParticipant.address) &&
-        Objects.equals(this.startTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startTime) &&
-        Objects.equals(this.connectedTime, conversationSocialExpressionEventTopicSocialMediaParticipant.connectedTime) &&
-        Objects.equals(this.endTime, conversationSocialExpressionEventTopicSocialMediaParticipant.endTime) &&
-        Objects.equals(this.startHoldTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startHoldTime) &&
-        Objects.equals(this.purpose, conversationSocialExpressionEventTopicSocialMediaParticipant.purpose) &&
-        Objects.equals(this.state, conversationSocialExpressionEventTopicSocialMediaParticipant.state) &&
-        Objects.equals(this.direction, conversationSocialExpressionEventTopicSocialMediaParticipant.direction) &&
-        Objects.equals(this.disconnectType, conversationSocialExpressionEventTopicSocialMediaParticipant.disconnectType) &&
-        Objects.equals(this.held, conversationSocialExpressionEventTopicSocialMediaParticipant.held) &&
-        Objects.equals(this.wrapupRequired, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupPrompt, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupPrompt) &&
-        Objects.equals(this.user, conversationSocialExpressionEventTopicSocialMediaParticipant.user) &&
-        Objects.equals(this.queue, conversationSocialExpressionEventTopicSocialMediaParticipant.queue) &&
-        Objects.equals(this.team, conversationSocialExpressionEventTopicSocialMediaParticipant.team) &&
-        Objects.equals(this.attributes, conversationSocialExpressionEventTopicSocialMediaParticipant.attributes) &&
-        Objects.equals(this.errorInfo, conversationSocialExpressionEventTopicSocialMediaParticipant.errorInfo) &&
-        Objects.equals(this.script, conversationSocialExpressionEventTopicSocialMediaParticipant.script) &&
-        Objects.equals(this.wrapupTimeoutMs, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapupSkipped, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupSkipped) &&
-        Objects.equals(this.alertingTimeoutMs, conversationSocialExpressionEventTopicSocialMediaParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.provider, conversationSocialExpressionEventTopicSocialMediaParticipant.provider) &&
-        Objects.equals(this.externalContact, conversationSocialExpressionEventTopicSocialMediaParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, conversationSocialExpressionEventTopicSocialMediaParticipant.externalOrganization) &&
-        Objects.equals(this.wrapup, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapup) &&
-        Objects.equals(this.conversationRoutingData, conversationSocialExpressionEventTopicSocialMediaParticipant.conversationRoutingData) &&
-        Objects.equals(this.peer, conversationSocialExpressionEventTopicSocialMediaParticipant.peer) &&
-        Objects.equals(this.screenRecordingState, conversationSocialExpressionEventTopicSocialMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, conversationSocialExpressionEventTopicSocialMediaParticipant.flaggedReason) &&
-        Objects.equals(this.journeyContext, conversationSocialExpressionEventTopicSocialMediaParticipant.journeyContext) &&
-        Objects.equals(this.startAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.endAcwTime) &&
-        Objects.equals(this.socialMediaId, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaId) &&
-        Objects.equals(this.socialMediaHub, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaHub) &&
-        Objects.equals(this.socialUserName, conversationSocialExpressionEventTopicSocialMediaParticipant.socialUserName) &&
-        Objects.equals(this.previewText, conversationSocialExpressionEventTopicSocialMediaParticipant.previewText);
+            Objects.equals(this.name, conversationSocialExpressionEventTopicSocialMediaParticipant.name) &&
+            Objects.equals(this.address, conversationSocialExpressionEventTopicSocialMediaParticipant.address) &&
+            Objects.equals(this.startTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startTime) &&
+            Objects.equals(this.connectedTime, conversationSocialExpressionEventTopicSocialMediaParticipant.connectedTime) &&
+            Objects.equals(this.endTime, conversationSocialExpressionEventTopicSocialMediaParticipant.endTime) &&
+            Objects.equals(this.startHoldTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startHoldTime) &&
+            Objects.equals(this.purpose, conversationSocialExpressionEventTopicSocialMediaParticipant.purpose) &&
+            Objects.equals(this.state, conversationSocialExpressionEventTopicSocialMediaParticipant.state) &&
+            Objects.equals(this.direction, conversationSocialExpressionEventTopicSocialMediaParticipant.direction) &&
+            Objects.equals(this.disconnectType, conversationSocialExpressionEventTopicSocialMediaParticipant.disconnectType) &&
+            Objects.equals(this.held, conversationSocialExpressionEventTopicSocialMediaParticipant.held) &&
+            Objects.equals(this.wrapupRequired, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupPrompt, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupPrompt) &&
+            Objects.equals(this.user, conversationSocialExpressionEventTopicSocialMediaParticipant.user) &&
+            Objects.equals(this.queue, conversationSocialExpressionEventTopicSocialMediaParticipant.queue) &&
+            Objects.equals(this.team, conversationSocialExpressionEventTopicSocialMediaParticipant.team) &&
+            Objects.equals(this.attributes, conversationSocialExpressionEventTopicSocialMediaParticipant.attributes) &&
+            Objects.equals(this.errorInfo, conversationSocialExpressionEventTopicSocialMediaParticipant.errorInfo) &&
+            Objects.equals(this.script, conversationSocialExpressionEventTopicSocialMediaParticipant.script) &&
+            Objects.equals(this.wrapupTimeoutMs, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapupSkipped, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupSkipped) &&
+            Objects.equals(this.alertingTimeoutMs, conversationSocialExpressionEventTopicSocialMediaParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.provider, conversationSocialExpressionEventTopicSocialMediaParticipant.provider) &&
+            Objects.equals(this.externalContact, conversationSocialExpressionEventTopicSocialMediaParticipant.externalContact) &&
+            Objects.equals(this.externalOrganization, conversationSocialExpressionEventTopicSocialMediaParticipant.externalOrganization) &&
+            Objects.equals(this.wrapup, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapup) &&
+            Objects.equals(this.conversationRoutingData, conversationSocialExpressionEventTopicSocialMediaParticipant.conversationRoutingData) &&
+            Objects.equals(this.peer, conversationSocialExpressionEventTopicSocialMediaParticipant.peer) &&
+            Objects.equals(this.screenRecordingState, conversationSocialExpressionEventTopicSocialMediaParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, conversationSocialExpressionEventTopicSocialMediaParticipant.flaggedReason) &&
+            Objects.equals(this.journeyContext, conversationSocialExpressionEventTopicSocialMediaParticipant.journeyContext) &&
+            Objects.equals(this.startAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, conversationSocialExpressionEventTopicSocialMediaParticipant.endAcwTime) &&
+            Objects.equals(this.socialMediaId, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaId) &&
+            Objects.equals(this.socialMediaHub, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaHub) &&
+            Objects.equals(this.socialUserName, conversationSocialExpressionEventTopicSocialMediaParticipant.socialUserName) &&
+            Objects.equals(this.previewText, conversationSocialExpressionEventTopicSocialMediaParticipant.previewText);
   }
 
   @Override

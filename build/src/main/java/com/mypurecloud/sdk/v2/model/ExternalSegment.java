@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class ExternalSegment  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Name for the external segment in the system where it originates from.
    **/
@@ -108,7 +109,7 @@ public class ExternalSegment  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The external system where the segment originates from.
    **/
@@ -126,7 +127,6 @@ public class ExternalSegment  implements Serializable {
     this.source = source;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class ExternalSegment  implements Serializable {
       return false;
     }
     ExternalSegment externalSegment = (ExternalSegment) o;
+
     return Objects.equals(this.id, externalSegment.id) &&
-        Objects.equals(this.name, externalSegment.name) &&
-        Objects.equals(this.source, externalSegment.source);
+            Objects.equals(this.name, externalSegment.name) &&
+            Objects.equals(this.source, externalSegment.source);
   }
 
   @Override

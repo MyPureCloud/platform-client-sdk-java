@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
-    
+
 	private String domainId;
 	public String getDomainId() {
 		return this.domainId;
@@ -57,7 +57,7 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 	    this.setDomainId(domainId);
 	    return this;
 	} 
-	
+
 	private String feedbackId;
 	public String getFeedbackId() {
 		return this.feedbackId;
@@ -71,7 +71,7 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 	    this.setFeedbackId(feedbackId);
 	    return this;
 	} 
-	
+
 	private List<String> fields;
 	public List<String> getFields() {
 		return this.fields;
@@ -87,9 +87,9 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 	} 
 
 	public enum fieldsValues { 
-		VERSION("version"), 
-		DATECREATED("dateCreated"), 
-		TEXT("text"), 
+		VERSION("version"),
+		DATECREATED("dateCreated"),
+		TEXT("text"),
 		INTENTS("intents");
 
 		private String value;
@@ -117,7 +117,7 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -155,9 +155,10 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
         
                 .withPathParameter("feedbackId", feedbackId)
         
+
                 .withQueryParameters("fields", "multi", fields)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -168,12 +169,12 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String domainId, String feedbackId) {
 	    return new Builder()
 	            .withRequiredParams(domainId, feedbackId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguageunderstandingDomainFeedbackFeedbackIdRequest request;
@@ -182,21 +183,23 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 			request = new GetLanguageunderstandingDomainFeedbackFeedbackIdRequest();
 		}
 
-		
+
 		public Builder withDomainId(String domainId) {
 			request.setDomainId(domainId);
 			return this;
 		}
-		
+
 		public Builder withFeedbackId(String feedbackId) {
 			request.setFeedbackId(feedbackId);
 			return this;
 		}
-		
+
 		public Builder withFields(List<String> fields) {
 			request.setFields(fields);
 			return this;
 		}
+
+
 
 		public Builder withFieldsEnumValues(List<fieldsValues> fields) {
 		    List<String> stringList = new ArrayList<>();
@@ -206,16 +209,16 @@ public class GetLanguageunderstandingDomainFeedbackFeedbackIdRequest {
 	      request.setFields(stringList);
 		    return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String domainId, String feedbackId) {
 			request.setDomainId(domainId);
-						request.setFeedbackId(feedbackId);
-			
+			request.setFeedbackId(feedbackId);
+
 			return this;
 		}
-		
+
 
 		public GetLanguageunderstandingDomainFeedbackFeedbackIdRequest build() {
             

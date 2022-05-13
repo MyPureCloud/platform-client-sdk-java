@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AggregationResult;
@@ -45,7 +46,7 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
     this.userDetails = userDetails;
   }
 
-  
+
   /**
    **/
   public AnalyticsUserDetailsQueryResponse aggregations(List<AggregationResult> aggregations) {
@@ -62,7 +63,7 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
     this.aggregations = aggregations;
   }
 
-  
+
   /**
    **/
   public AnalyticsUserDetailsQueryResponse totalHits(Integer totalHits) {
@@ -79,7 +80,6 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
     this.totalHits = totalHits;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -90,9 +90,10 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
       return false;
     }
     AnalyticsUserDetailsQueryResponse analyticsUserDetailsQueryResponse = (AnalyticsUserDetailsQueryResponse) o;
+
     return Objects.equals(this.userDetails, analyticsUserDetailsQueryResponse.userDetails) &&
-        Objects.equals(this.aggregations, analyticsUserDetailsQueryResponse.aggregations) &&
-        Objects.equals(this.totalHits, analyticsUserDetailsQueryResponse.totalHits);
+            Objects.equals(this.aggregations, analyticsUserDetailsQueryResponse.aggregations) &&
+            Objects.equals(this.totalHits, analyticsUserDetailsQueryResponse.totalHits);
   }
 
   @Override

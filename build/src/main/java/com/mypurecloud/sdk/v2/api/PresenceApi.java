@@ -35,7 +35,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class PresenceApi {
   private final ApiClient pcapiClient;
 
@@ -47,7 +46,6 @@ public class PresenceApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete a Presence Definition
    * 
@@ -72,7 +70,7 @@ public class PresenceApi {
   private DeletePresencedefinitionRequest createDeletePresencedefinitionRequest(String presenceId) {
     return DeletePresencedefinitionRequest.builder()
             .withPresenceId(presenceId)
-    
+
             .build();
   }
 
@@ -123,7 +121,6 @@ public class PresenceApi {
     }
   }
 
-  
   /**
    * Get a Presence Definition
    * 
@@ -152,9 +149,9 @@ public class PresenceApi {
   private GetPresencedefinitionRequest createGetPresencedefinitionRequest(String presenceId, String localeCode) {
     return GetPresencedefinitionRequest.builder()
             .withPresenceId(presenceId)
-    
+
             .withLocaleCode(localeCode)
-    
+
             .build();
   }
 
@@ -206,9 +203,8 @@ public class PresenceApi {
     }
   }
 
-  
   /**
-   * Get an Organization&#39;s list of Presence Definitions
+   * Get an Organization's list of Presence Definitions
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -223,7 +219,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get an Organization&#39;s list of Presence Definitions
+   * Get an Organization's list of Presence Definitions
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -239,18 +235,18 @@ public class PresenceApi {
   private GetPresencedefinitionsRequest createGetPresencedefinitionsRequest(Integer pageNumber, Integer pageSize, String deleted, String localeCode) {
     return GetPresencedefinitionsRequest.builder()
             .withPageNumber(pageNumber)
-    
+
             .withPageSize(pageSize)
-    
+
             .withDeleted(deleted)
-    
+
             .withLocaleCode(localeCode)
-    
+
             .build();
   }
 
   /**
-   * Get an Organization&#39;s list of Presence Definitions
+   * Get an Organization's list of Presence Definitions
    * 
    * @param request The request object
    * @return OrganizationPresenceEntityListing
@@ -269,7 +265,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get an Organization&#39;s list of Presence Definitions
+   * Get an Organization's list of Presence Definitions
    * 
    * @param request The request object
    * @return the response
@@ -297,7 +293,6 @@ public class PresenceApi {
     }
   }
 
-  
   /**
    * Get the list of SystemPresences
    * 
@@ -372,10 +367,9 @@ public class PresenceApi {
     }
   }
 
-  
   /**
-   * Get a user&#39;s Presence
-   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+   * Get a user's Presence
+   * Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param userId user Id (required)
    * @param sourceId Presence source ID (required)
    * @return UserPresence
@@ -387,8 +381,8 @@ public class PresenceApi {
   }
 
   /**
-   * Get a user&#39;s Presence
-   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+   * Get a user's Presence
+   * Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param userId user Id (required)
    * @param sourceId Presence source ID (required)
    * @return UserPresence
@@ -401,15 +395,15 @@ public class PresenceApi {
   private GetUserPresenceRequest createGetUserPresenceRequest(String userId, String sourceId) {
     return GetUserPresenceRequest.builder()
             .withUserId(userId)
-    
+
             .withSourceId(sourceId)
-    
+
             .build();
   }
 
   /**
-   * Get a user&#39;s Presence
-   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+   * Get a user's Presence
+   * Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param request The request object
    * @return UserPresence
    * @throws ApiException if the request fails on the server
@@ -427,8 +421,8 @@ public class PresenceApi {
   }
 
   /**
-   * Get a user&#39;s Presence
-   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+   * Get a user's Presence
+   * Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -455,9 +449,8 @@ public class PresenceApi {
     }
   }
 
-  
   /**
-   * Get a user&#39;s Genesys Cloud presence.
+   * Get a user's Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param userId user Id (required)
    * @return UserPresence
@@ -469,7 +462,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get a user&#39;s Genesys Cloud presence.
+   * Get a user's Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param userId user Id (required)
    * @return UserPresence
@@ -482,12 +475,12 @@ public class PresenceApi {
   private GetUserPresencesPurecloudRequest createGetUserPresencesPurecloudRequest(String userId) {
     return GetUserPresencesPurecloudRequest.builder()
             .withUserId(userId)
-    
+
             .build();
   }
 
   /**
-   * Get a user&#39;s Genesys Cloud presence.
+   * Get a user's Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request The request object
    * @return UserPresence
@@ -506,7 +499,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get a user&#39;s Genesys Cloud presence.
+   * Get a user's Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request The request object
    * @return the response
@@ -534,10 +527,9 @@ public class PresenceApi {
     }
   }
 
-  
   /**
-   * Patch a user&#39;s Presence
-   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user's Presence
+   * Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param userId user Id (required)
    * @param sourceId Presence source ID (required)
    * @param body User presence (required)
@@ -550,8 +542,8 @@ public class PresenceApi {
   }
 
   /**
-   * Patch a user&#39;s Presence
-   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user's Presence
+   * Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param userId user Id (required)
    * @param sourceId Presence source ID (required)
    * @param body User presence (required)
@@ -565,17 +557,17 @@ public class PresenceApi {
   private PatchUserPresenceRequest createPatchUserPresenceRequest(String userId, String sourceId, UserPresence body) {
     return PatchUserPresenceRequest.builder()
             .withUserId(userId)
-    
+
             .withSourceId(sourceId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Patch a user&#39;s Presence
-   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user's Presence
+   * Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request The request object
    * @return UserPresence
    * @throws ApiException if the request fails on the server
@@ -593,8 +585,8 @@ public class PresenceApi {
   }
 
   /**
-   * Patch a user&#39;s Presence
-   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user's Presence
+   * Patch a user's presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -621,10 +613,9 @@ public class PresenceApi {
     }
   }
 
-  
   /**
-   * Patch a Genesys Cloud user&#39;s presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a Genesys Cloud user's presence
+   * The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param userId user Id (required)
    * @param body User presence (required)
    * @return UserPresence
@@ -636,8 +627,8 @@ public class PresenceApi {
   }
 
   /**
-   * Patch a Genesys Cloud user&#39;s presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a Genesys Cloud user's presence
+   * The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param userId user Id (required)
    * @param body User presence (required)
    * @return UserPresence
@@ -650,15 +641,15 @@ public class PresenceApi {
   private PatchUserPresencesPurecloudRequest createPatchUserPresencesPurecloudRequest(String userId, UserPresence body) {
     return PatchUserPresencesPurecloudRequest.builder()
             .withUserId(userId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
   /**
-   * Patch a Genesys Cloud user&#39;s presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a Genesys Cloud user's presence
+   * The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request The request object
    * @return UserPresence
    * @throws ApiException if the request fails on the server
@@ -676,8 +667,8 @@ public class PresenceApi {
   }
 
   /**
-   * Patch a Genesys Cloud user&#39;s presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a Genesys Cloud user's presence
+   * The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -704,7 +695,6 @@ public class PresenceApi {
     }
   }
 
-  
   /**
    * Create a Presence Definition
    * 
@@ -731,7 +721,7 @@ public class PresenceApi {
   private PostPresencedefinitionsRequest createPostPresencedefinitionsRequest(OrganizationPresence body) {
     return PostPresencedefinitionsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -783,7 +773,6 @@ public class PresenceApi {
     }
   }
 
-  
   /**
    * Update a Presence Definition
    * 
@@ -812,9 +801,9 @@ public class PresenceApi {
   private PutPresencedefinitionRequest createPutPresencedefinitionRequest(String presenceId, OrganizationPresence body) {
     return PutPresencedefinitionRequest.builder()
             .withPresenceId(presenceId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -866,7 +855,6 @@ public class PresenceApi {
     }
   }
 
-  
   /**
    * Update bulk user Presences
    * 
@@ -893,7 +881,7 @@ public class PresenceApi {
   private PutUsersPresencesBulkRequest createPutUsersPresencesBulkRequest(List<UserPresence> body) {
     return PutUsersPresencesBulkRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -945,5 +933,4 @@ public class PresenceApi {
     }
   }
 
-  
 }

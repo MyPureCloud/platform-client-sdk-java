@@ -19,9 +19,9 @@ title: ResolutionDetailQueryClause
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AND | &quot;and&quot; |
-| OR | &quot;or&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AND | &quot;and&quot; | 
+| OR | &quot;or&quot; | 
 {: class="table table-striped"}
 
 

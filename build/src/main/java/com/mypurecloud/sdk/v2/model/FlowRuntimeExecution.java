@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -110,7 +111,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The flow execution name.
    **/
@@ -128,7 +129,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The Version of the flow definition of the flow execution.
    **/
@@ -146,7 +147,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.flowVersion = flowVersion;
   }
 
-  
+
   /**
    * The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -164,7 +165,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.dateLaunched = dateLaunched;
   }
 
-  
+
   /**
    * The flow's running status, which indicates whether the flow is running normally or completed, etc.
    **/
@@ -182,7 +183,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -200,7 +201,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.dateCompleted = dateCompleted;
   }
 
-  
+
   /**
    * The completion reason set at the flow completion time, if applicable.
    **/
@@ -218,7 +219,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.completionReason = completionReason;
   }
 
-  
+
   /**
    * Additional information if the flow is in error
    **/
@@ -236,7 +237,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.flowErrorInfo = flowErrorInfo;
   }
 
-  
+
   /**
    * List of the flow's output variables, if any. Output variables are only supplied for Completed flows.
    **/
@@ -254,7 +255,7 @@ public class FlowRuntimeExecution  implements Serializable {
     this.outputData = outputData;
   }
 
-  
+
   /**
    * The conversation to which this Flow execution is related
    **/
@@ -272,14 +273,13 @@ public class FlowRuntimeExecution  implements Serializable {
     this.conversation = conversation;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -290,17 +290,18 @@ public class FlowRuntimeExecution  implements Serializable {
       return false;
     }
     FlowRuntimeExecution flowRuntimeExecution = (FlowRuntimeExecution) o;
+
     return Objects.equals(this.id, flowRuntimeExecution.id) &&
-        Objects.equals(this.name, flowRuntimeExecution.name) &&
-        Objects.equals(this.flowVersion, flowRuntimeExecution.flowVersion) &&
-        Objects.equals(this.dateLaunched, flowRuntimeExecution.dateLaunched) &&
-        Objects.equals(this.status, flowRuntimeExecution.status) &&
-        Objects.equals(this.dateCompleted, flowRuntimeExecution.dateCompleted) &&
-        Objects.equals(this.completionReason, flowRuntimeExecution.completionReason) &&
-        Objects.equals(this.flowErrorInfo, flowRuntimeExecution.flowErrorInfo) &&
-        Objects.equals(this.outputData, flowRuntimeExecution.outputData) &&
-        Objects.equals(this.conversation, flowRuntimeExecution.conversation) &&
-        Objects.equals(this.selfUri, flowRuntimeExecution.selfUri);
+            Objects.equals(this.name, flowRuntimeExecution.name) &&
+            Objects.equals(this.flowVersion, flowRuntimeExecution.flowVersion) &&
+            Objects.equals(this.dateLaunched, flowRuntimeExecution.dateLaunched) &&
+            Objects.equals(this.status, flowRuntimeExecution.status) &&
+            Objects.equals(this.dateCompleted, flowRuntimeExecution.dateCompleted) &&
+            Objects.equals(this.completionReason, flowRuntimeExecution.completionReason) &&
+            Objects.equals(this.flowErrorInfo, flowRuntimeExecution.flowErrorInfo) &&
+            Objects.equals(this.outputData, flowRuntimeExecution.outputData) &&
+            Objects.equals(this.conversation, flowRuntimeExecution.conversation) &&
+            Objects.equals(this.selfUri, flowRuntimeExecution.selfUri);
   }
 
   @Override

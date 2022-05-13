@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Facet;
@@ -51,7 +52,7 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.trustorOrganizationId = trustorOrganizationId;
   }
 
-  
+
   /**
    * Limit returned audits to these trustee userIds.
    **/
@@ -69,7 +70,7 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.trusteeUserIds = trusteeUserIds;
   }
 
-  
+
   /**
    * Starting date/time for the audit search. ISO-8601 formatted date-time, UTC.
    **/
@@ -87,7 +88,7 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    * Ending date/time for the audit search. ISO-8601 formatted date-time, UTC.
    **/
@@ -105,7 +106,7 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.endDate = endDate;
   }
 
-  
+
   /**
    * Word or phrase to look for in audit bodies.
    **/
@@ -123,7 +124,7 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-  
+
   /**
    * Facet information to be returned with the query results.
    **/
@@ -141,7 +142,7 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.facets = facets;
   }
 
-  
+
   /**
    * Additional custom filters to be applied to the query.
    **/
@@ -159,7 +160,6 @@ public class TrustorAuditQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,13 +170,14 @@ public class TrustorAuditQueryRequest  implements Serializable {
       return false;
     }
     TrustorAuditQueryRequest trustorAuditQueryRequest = (TrustorAuditQueryRequest) o;
+
     return Objects.equals(this.trustorOrganizationId, trustorAuditQueryRequest.trustorOrganizationId) &&
-        Objects.equals(this.trusteeUserIds, trustorAuditQueryRequest.trusteeUserIds) &&
-        Objects.equals(this.startDate, trustorAuditQueryRequest.startDate) &&
-        Objects.equals(this.endDate, trustorAuditQueryRequest.endDate) &&
-        Objects.equals(this.queryPhrase, trustorAuditQueryRequest.queryPhrase) &&
-        Objects.equals(this.facets, trustorAuditQueryRequest.facets) &&
-        Objects.equals(this.filters, trustorAuditQueryRequest.filters);
+            Objects.equals(this.trusteeUserIds, trustorAuditQueryRequest.trusteeUserIds) &&
+            Objects.equals(this.startDate, trustorAuditQueryRequest.startDate) &&
+            Objects.equals(this.endDate, trustorAuditQueryRequest.endDate) &&
+            Objects.equals(this.queryPhrase, trustorAuditQueryRequest.queryPhrase) &&
+            Objects.equals(this.facets, trustorAuditQueryRequest.facets) &&
+            Objects.equals(this.filters, trustorAuditQueryRequest.filters);
   }
 
   @Override

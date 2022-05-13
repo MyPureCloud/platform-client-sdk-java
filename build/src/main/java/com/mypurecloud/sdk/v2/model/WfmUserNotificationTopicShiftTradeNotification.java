@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification tradeId(String tradeId) {
@@ -117,7 +118,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.tradeId = tradeId;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification oneSided(Boolean oneSided) {
@@ -134,7 +135,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.oneSided = oneSided;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification newState(NewStateEnum newState) {
@@ -151,7 +152,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.newState = newState;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification initiatingUser(WfmUserNotificationTopicUserReference initiatingUser) {
@@ -168,7 +169,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.initiatingUser = initiatingUser;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification initiatingShiftDate(Date initiatingShiftDate) {
@@ -185,7 +186,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.initiatingShiftDate = initiatingShiftDate;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification receivingUser(WfmUserNotificationTopicUserReference receivingUser) {
@@ -202,7 +203,7 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.receivingUser = receivingUser;
   }
 
-  
+
   /**
    **/
   public WfmUserNotificationTopicShiftTradeNotification receivingShiftDate(Date receivingShiftDate) {
@@ -219,7 +220,6 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
     this.receivingShiftDate = receivingShiftDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -230,14 +230,15 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
       return false;
     }
     WfmUserNotificationTopicShiftTradeNotification wfmUserNotificationTopicShiftTradeNotification = (WfmUserNotificationTopicShiftTradeNotification) o;
+
     return Objects.equals(this.weekDate, wfmUserNotificationTopicShiftTradeNotification.weekDate) &&
-        Objects.equals(this.tradeId, wfmUserNotificationTopicShiftTradeNotification.tradeId) &&
-        Objects.equals(this.oneSided, wfmUserNotificationTopicShiftTradeNotification.oneSided) &&
-        Objects.equals(this.newState, wfmUserNotificationTopicShiftTradeNotification.newState) &&
-        Objects.equals(this.initiatingUser, wfmUserNotificationTopicShiftTradeNotification.initiatingUser) &&
-        Objects.equals(this.initiatingShiftDate, wfmUserNotificationTopicShiftTradeNotification.initiatingShiftDate) &&
-        Objects.equals(this.receivingUser, wfmUserNotificationTopicShiftTradeNotification.receivingUser) &&
-        Objects.equals(this.receivingShiftDate, wfmUserNotificationTopicShiftTradeNotification.receivingShiftDate);
+            Objects.equals(this.tradeId, wfmUserNotificationTopicShiftTradeNotification.tradeId) &&
+            Objects.equals(this.oneSided, wfmUserNotificationTopicShiftTradeNotification.oneSided) &&
+            Objects.equals(this.newState, wfmUserNotificationTopicShiftTradeNotification.newState) &&
+            Objects.equals(this.initiatingUser, wfmUserNotificationTopicShiftTradeNotification.initiatingUser) &&
+            Objects.equals(this.initiatingShiftDate, wfmUserNotificationTopicShiftTradeNotification.initiatingShiftDate) &&
+            Objects.equals(this.receivingUser, wfmUserNotificationTopicShiftTradeNotification.receivingUser) &&
+            Objects.equals(this.receivingShiftDate, wfmUserNotificationTopicShiftTradeNotification.receivingShiftDate);
   }
 
   @Override

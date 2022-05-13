@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -40,7 +41,7 @@ public class GroupGreetingEventGreetingAudioFile  implements Serializable {
     this.durationMilliseconds = durationMilliseconds;
   }
 
-  
+
   /**
    **/
   public GroupGreetingEventGreetingAudioFile sizeBytes(Integer sizeBytes) {
@@ -57,7 +58,6 @@ public class GroupGreetingEventGreetingAudioFile  implements Serializable {
     this.sizeBytes = sizeBytes;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,8 +68,9 @@ public class GroupGreetingEventGreetingAudioFile  implements Serializable {
       return false;
     }
     GroupGreetingEventGreetingAudioFile groupGreetingEventGreetingAudioFile = (GroupGreetingEventGreetingAudioFile) o;
+
     return Objects.equals(this.durationMilliseconds, groupGreetingEventGreetingAudioFile.durationMilliseconds) &&
-        Objects.equals(this.sizeBytes, groupGreetingEventGreetingAudioFile.sizeBytes);
+            Objects.equals(this.sizeBytes, groupGreetingEventGreetingAudioFile.sizeBytes);
   }
 
   @Override

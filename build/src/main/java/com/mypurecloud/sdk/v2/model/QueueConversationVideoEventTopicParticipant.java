@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -144,7 +145,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.id = id;
   }
 
-  
+
   /**
    * The timestamp when this participant was connected to the conversation in the provider clock.
    **/
@@ -162,7 +163,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.connectedTime = connectedTime;
   }
 
-  
+
   /**
    * The timestamp when this participant disconnected from the conversation in the provider clock.
    **/
@@ -180,7 +181,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.endTime = endTime;
   }
 
-  
+
   /**
    * If this participant represents a user, then this will be the globally unique identifier for the user.
    **/
@@ -198,7 +199,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.userId = userId;
   }
 
-  
+
   /**
    * If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
    **/
@@ -216,7 +217,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.externalContactId = externalContactId;
   }
 
-  
+
   /**
    * If this participant represents an external org, then this will be the globally unique identifier for the external org.
    **/
@@ -234,7 +235,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.externalOrganizationId = externalOrganizationId;
   }
 
-  
+
   /**
    * A human readable name identifying the participant.
    **/
@@ -252,7 +253,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.name = name;
   }
 
-  
+
   /**
    * If present, the queue id that the communication channel came in on.
    **/
@@ -270,7 +271,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.queueId = queueId;
   }
 
-  
+
   /**
    * If present, the group id that the participant represents.
    **/
@@ -288,7 +289,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.groupId = groupId;
   }
 
-  
+
   /**
    * The team id that this participant is a member of when added to the conversation.
    **/
@@ -306,7 +307,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.teamId = teamId;
   }
 
-  
+
   /**
    * A well known string that specifies the purpose or type of this participant.
    **/
@@ -324,7 +325,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.purpose = purpose;
   }
 
-  
+
   /**
    * If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
    **/
@@ -342,7 +343,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.consultParticipantId = consultParticipantId;
   }
 
-  
+
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -360,7 +361,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.address = address;
   }
 
-  
+
   /**
    * True iff this participant is required to enter wrapup for this conversation.
    **/
@@ -378,7 +379,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.wrapupRequired = wrapupRequired;
   }
 
-  
+
   /**
    * True when a participant is expected to enter a wrapup code once the call connects.
    **/
@@ -396,7 +397,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.wrapupExpected = wrapupExpected;
   }
 
-  
+
   /**
    * This field controls how the UI prompts the agent for a wrapup.
    **/
@@ -414,7 +415,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.wrapupPrompt = wrapupPrompt;
   }
 
-  
+
   /**
    * Specifies how long a timed ACW session will last.
    **/
@@ -432,7 +433,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
@@ -449,7 +450,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.wrapup = wrapup;
   }
 
-  
+
   /**
    * The timestamp when this participant started after-call work.
    **/
@@ -467,7 +468,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.startAcwTime = startAcwTime;
   }
 
-  
+
   /**
    * The timestamp when this participant ended after-call work.
    **/
@@ -485,7 +486,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.endAcwTime = endAcwTime;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant conversationRoutingData(QueueConversationVideoEventTopicConversationRoutingData conversationRoutingData) {
@@ -502,7 +503,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.conversationRoutingData = conversationRoutingData;
   }
 
-  
+
   /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
@@ -520,7 +521,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.alertingTimeoutMs = alertingTimeoutMs;
   }
 
-  
+
   /**
    * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
@@ -538,7 +539,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-  
+
   /**
    * If this participant is a coach, then this will be the id of the participant that is being coached.
    **/
@@ -556,7 +557,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.coachedParticipantId = coachedParticipantId;
   }
 
-  
+
   /**
    * If this participant created a barge in conference, then this will be the id of the participant that is barged in.
    **/
@@ -574,7 +575,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.bargedParticipantId = bargedParticipantId;
   }
 
-  
+
   /**
    * The current screen recording state for this participant.
    **/
@@ -592,7 +593,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.screenRecordingState = screenRecordingState;
   }
 
-  
+
   /**
    * If this participant has flagged the conversation, the reason code given.
    **/
@@ -610,7 +611,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.flaggedReason = flaggedReason;
   }
 
-  
+
   /**
    * Additional participant attributes
    **/
@@ -628,7 +629,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.attributes = attributes;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant calls(List<QueueConversationVideoEventTopicCall> calls) {
@@ -645,7 +646,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.calls = calls;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant callbacks(List<QueueConversationVideoEventTopicCallback> callbacks) {
@@ -662,7 +663,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.callbacks = callbacks;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant chats(List<QueueConversationVideoEventTopicChat> chats) {
@@ -679,7 +680,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.chats = chats;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant cobrowsesessions(List<QueueConversationVideoEventTopicCobrowse> cobrowsesessions) {
@@ -696,7 +697,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.cobrowsesessions = cobrowsesessions;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant emails(List<QueueConversationVideoEventTopicEmail> emails) {
@@ -713,7 +714,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.emails = emails;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant messages(List<QueueConversationVideoEventTopicMessage> messages) {
@@ -730,7 +731,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.messages = messages;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant screenshares(List<QueueConversationVideoEventTopicScreenshare> screenshares) {
@@ -747,7 +748,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.screenshares = screenshares;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant socialExpressions(List<QueueConversationVideoEventTopicSocialExpression> socialExpressions) {
@@ -764,7 +765,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.socialExpressions = socialExpressions;
   }
 
-  
+
   /**
    **/
   public QueueConversationVideoEventTopicParticipant videos(List<QueueConversationVideoEventTopicVideo> videos) {
@@ -781,7 +782,6 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     this.videos = videos;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -792,43 +792,44 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
       return false;
     }
     QueueConversationVideoEventTopicParticipant queueConversationVideoEventTopicParticipant = (QueueConversationVideoEventTopicParticipant) o;
+
     return Objects.equals(this.id, queueConversationVideoEventTopicParticipant.id) &&
-        Objects.equals(this.connectedTime, queueConversationVideoEventTopicParticipant.connectedTime) &&
-        Objects.equals(this.endTime, queueConversationVideoEventTopicParticipant.endTime) &&
-        Objects.equals(this.userId, queueConversationVideoEventTopicParticipant.userId) &&
-        Objects.equals(this.externalContactId, queueConversationVideoEventTopicParticipant.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, queueConversationVideoEventTopicParticipant.externalOrganizationId) &&
-        Objects.equals(this.name, queueConversationVideoEventTopicParticipant.name) &&
-        Objects.equals(this.queueId, queueConversationVideoEventTopicParticipant.queueId) &&
-        Objects.equals(this.groupId, queueConversationVideoEventTopicParticipant.groupId) &&
-        Objects.equals(this.teamId, queueConversationVideoEventTopicParticipant.teamId) &&
-        Objects.equals(this.purpose, queueConversationVideoEventTopicParticipant.purpose) &&
-        Objects.equals(this.consultParticipantId, queueConversationVideoEventTopicParticipant.consultParticipantId) &&
-        Objects.equals(this.address, queueConversationVideoEventTopicParticipant.address) &&
-        Objects.equals(this.wrapupRequired, queueConversationVideoEventTopicParticipant.wrapupRequired) &&
-        Objects.equals(this.wrapupExpected, queueConversationVideoEventTopicParticipant.wrapupExpected) &&
-        Objects.equals(this.wrapupPrompt, queueConversationVideoEventTopicParticipant.wrapupPrompt) &&
-        Objects.equals(this.wrapupTimeoutMs, queueConversationVideoEventTopicParticipant.wrapupTimeoutMs) &&
-        Objects.equals(this.wrapup, queueConversationVideoEventTopicParticipant.wrapup) &&
-        Objects.equals(this.startAcwTime, queueConversationVideoEventTopicParticipant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, queueConversationVideoEventTopicParticipant.endAcwTime) &&
-        Objects.equals(this.conversationRoutingData, queueConversationVideoEventTopicParticipant.conversationRoutingData) &&
-        Objects.equals(this.alertingTimeoutMs, queueConversationVideoEventTopicParticipant.alertingTimeoutMs) &&
-        Objects.equals(this.monitoredParticipantId, queueConversationVideoEventTopicParticipant.monitoredParticipantId) &&
-        Objects.equals(this.coachedParticipantId, queueConversationVideoEventTopicParticipant.coachedParticipantId) &&
-        Objects.equals(this.bargedParticipantId, queueConversationVideoEventTopicParticipant.bargedParticipantId) &&
-        Objects.equals(this.screenRecordingState, queueConversationVideoEventTopicParticipant.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, queueConversationVideoEventTopicParticipant.flaggedReason) &&
-        Objects.equals(this.attributes, queueConversationVideoEventTopicParticipant.attributes) &&
-        Objects.equals(this.calls, queueConversationVideoEventTopicParticipant.calls) &&
-        Objects.equals(this.callbacks, queueConversationVideoEventTopicParticipant.callbacks) &&
-        Objects.equals(this.chats, queueConversationVideoEventTopicParticipant.chats) &&
-        Objects.equals(this.cobrowsesessions, queueConversationVideoEventTopicParticipant.cobrowsesessions) &&
-        Objects.equals(this.emails, queueConversationVideoEventTopicParticipant.emails) &&
-        Objects.equals(this.messages, queueConversationVideoEventTopicParticipant.messages) &&
-        Objects.equals(this.screenshares, queueConversationVideoEventTopicParticipant.screenshares) &&
-        Objects.equals(this.socialExpressions, queueConversationVideoEventTopicParticipant.socialExpressions) &&
-        Objects.equals(this.videos, queueConversationVideoEventTopicParticipant.videos);
+            Objects.equals(this.connectedTime, queueConversationVideoEventTopicParticipant.connectedTime) &&
+            Objects.equals(this.endTime, queueConversationVideoEventTopicParticipant.endTime) &&
+            Objects.equals(this.userId, queueConversationVideoEventTopicParticipant.userId) &&
+            Objects.equals(this.externalContactId, queueConversationVideoEventTopicParticipant.externalContactId) &&
+            Objects.equals(this.externalOrganizationId, queueConversationVideoEventTopicParticipant.externalOrganizationId) &&
+            Objects.equals(this.name, queueConversationVideoEventTopicParticipant.name) &&
+            Objects.equals(this.queueId, queueConversationVideoEventTopicParticipant.queueId) &&
+            Objects.equals(this.groupId, queueConversationVideoEventTopicParticipant.groupId) &&
+            Objects.equals(this.teamId, queueConversationVideoEventTopicParticipant.teamId) &&
+            Objects.equals(this.purpose, queueConversationVideoEventTopicParticipant.purpose) &&
+            Objects.equals(this.consultParticipantId, queueConversationVideoEventTopicParticipant.consultParticipantId) &&
+            Objects.equals(this.address, queueConversationVideoEventTopicParticipant.address) &&
+            Objects.equals(this.wrapupRequired, queueConversationVideoEventTopicParticipant.wrapupRequired) &&
+            Objects.equals(this.wrapupExpected, queueConversationVideoEventTopicParticipant.wrapupExpected) &&
+            Objects.equals(this.wrapupPrompt, queueConversationVideoEventTopicParticipant.wrapupPrompt) &&
+            Objects.equals(this.wrapupTimeoutMs, queueConversationVideoEventTopicParticipant.wrapupTimeoutMs) &&
+            Objects.equals(this.wrapup, queueConversationVideoEventTopicParticipant.wrapup) &&
+            Objects.equals(this.startAcwTime, queueConversationVideoEventTopicParticipant.startAcwTime) &&
+            Objects.equals(this.endAcwTime, queueConversationVideoEventTopicParticipant.endAcwTime) &&
+            Objects.equals(this.conversationRoutingData, queueConversationVideoEventTopicParticipant.conversationRoutingData) &&
+            Objects.equals(this.alertingTimeoutMs, queueConversationVideoEventTopicParticipant.alertingTimeoutMs) &&
+            Objects.equals(this.monitoredParticipantId, queueConversationVideoEventTopicParticipant.monitoredParticipantId) &&
+            Objects.equals(this.coachedParticipantId, queueConversationVideoEventTopicParticipant.coachedParticipantId) &&
+            Objects.equals(this.bargedParticipantId, queueConversationVideoEventTopicParticipant.bargedParticipantId) &&
+            Objects.equals(this.screenRecordingState, queueConversationVideoEventTopicParticipant.screenRecordingState) &&
+            Objects.equals(this.flaggedReason, queueConversationVideoEventTopicParticipant.flaggedReason) &&
+            Objects.equals(this.attributes, queueConversationVideoEventTopicParticipant.attributes) &&
+            Objects.equals(this.calls, queueConversationVideoEventTopicParticipant.calls) &&
+            Objects.equals(this.callbacks, queueConversationVideoEventTopicParticipant.callbacks) &&
+            Objects.equals(this.chats, queueConversationVideoEventTopicParticipant.chats) &&
+            Objects.equals(this.cobrowsesessions, queueConversationVideoEventTopicParticipant.cobrowsesessions) &&
+            Objects.equals(this.emails, queueConversationVideoEventTopicParticipant.emails) &&
+            Objects.equals(this.messages, queueConversationVideoEventTopicParticipant.messages) &&
+            Objects.equals(this.screenshares, queueConversationVideoEventTopicParticipant.screenshares) &&
+            Objects.equals(this.socialExpressions, queueConversationVideoEventTopicParticipant.socialExpressions) &&
+            Objects.equals(this.videos, queueConversationVideoEventTopicParticipant.videos);
   }
 
   @Override

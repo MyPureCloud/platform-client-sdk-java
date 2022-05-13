@@ -28,10 +28,10 @@ title: GroupUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ACTIVE | &quot;active&quot; |
-| INACTIVE | &quot;inactive&quot; |
-| DELETED | &quot;deleted&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACTIVE | &quot;active&quot; | 
+| INACTIVE | &quot;inactive&quot; | 
+| DELETED | &quot;deleted&quot; | 
 {: class="table table-striped"}
 
 
@@ -41,10 +41,10 @@ title: GroupUpdate
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PUBLIC | &quot;public&quot; |
-| OWNERIDS | &quot;ownerIds&quot; |
-| MEMBERS | &quot;members&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLIC | &quot;public&quot; | 
+| OWNERIDS | &quot;ownerIds&quot; | 
+| MEMBERS | &quot;members&quot; | 
 {: class="table table-striped"}
 
 

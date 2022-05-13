@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -44,63 +45,62 @@ public class WorkdayValuesTrend  implements Serializable {
     return dateStartWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The end workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateEndWorkday")
   public LocalDate getDateEndWorkday() {
     return dateEndWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("dateReferenceWorkday")
   public LocalDate getDateReferenceWorkday() {
     return dateReferenceWorkday;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted division for the query")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted user for the query")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The time zone used for aggregating metric values")
   @JsonProperty("timezone")
   public String getTimezone() {
     return timezone;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The metric value trends")
   @JsonProperty("results")
   public List<WorkdayValuesMetricItem> getResults() {
     return results;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
   @JsonProperty("performanceProfile")
   public AddressableEntityRef getPerformanceProfile() {
     return performanceProfile;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The targeted metric for the average points")
   @JsonProperty("metric")
   public AddressableEntityRef getMetric() {
     return metric;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,15 +111,16 @@ public class WorkdayValuesTrend  implements Serializable {
       return false;
     }
     WorkdayValuesTrend workdayValuesTrend = (WorkdayValuesTrend) o;
+
     return Objects.equals(this.dateStartWorkday, workdayValuesTrend.dateStartWorkday) &&
-        Objects.equals(this.dateEndWorkday, workdayValuesTrend.dateEndWorkday) &&
-        Objects.equals(this.dateReferenceWorkday, workdayValuesTrend.dateReferenceWorkday) &&
-        Objects.equals(this.division, workdayValuesTrend.division) &&
-        Objects.equals(this.user, workdayValuesTrend.user) &&
-        Objects.equals(this.timezone, workdayValuesTrend.timezone) &&
-        Objects.equals(this.results, workdayValuesTrend.results) &&
-        Objects.equals(this.performanceProfile, workdayValuesTrend.performanceProfile) &&
-        Objects.equals(this.metric, workdayValuesTrend.metric);
+            Objects.equals(this.dateEndWorkday, workdayValuesTrend.dateEndWorkday) &&
+            Objects.equals(this.dateReferenceWorkday, workdayValuesTrend.dateReferenceWorkday) &&
+            Objects.equals(this.division, workdayValuesTrend.division) &&
+            Objects.equals(this.user, workdayValuesTrend.user) &&
+            Objects.equals(this.timezone, workdayValuesTrend.timezone) &&
+            Objects.equals(this.results, workdayValuesTrend.results) &&
+            Objects.equals(this.performanceProfile, workdayValuesTrend.performanceProfile) &&
+            Objects.equals(this.metric, workdayValuesTrend.metric);
   }
 
   @Override

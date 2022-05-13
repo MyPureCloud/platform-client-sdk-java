@@ -27,10 +27,10 @@ title: SearchRequest
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASC | &quot;ASC&quot; |
-| DESC | &quot;DESC&quot; |
-| SCORE | &quot;SCORE&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASC | &quot;ASC&quot; | 
+| DESC | &quot;DESC&quot; | 
+| SCORE | &quot;SCORE&quot; | 
 {: class="table table-striped"}
 
 

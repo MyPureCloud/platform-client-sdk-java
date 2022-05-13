@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.List;
 
 import java.io.Serializable;
@@ -44,7 +44,7 @@ public class ProcessScheduleUpdateUploadRequest  implements Serializable {
     this.uploadKey = uploadKey;
   }
 
-  
+
   /**
    * The list of teams to which the users being modified belong. Only required if the requesting user has conditional permission to wfm:schedule:edit
    **/
@@ -62,7 +62,7 @@ public class ProcessScheduleUpdateUploadRequest  implements Serializable {
     this.teamIds = teamIds;
   }
 
-  
+
   /**
    * The set of muIds to which agents belong if agents are being newly added to the schedule, if the requesting user has conditional permission to wfm:schedule:edit
    **/
@@ -80,7 +80,6 @@ public class ProcessScheduleUpdateUploadRequest  implements Serializable {
     this.managementUnitIdsForAddedTeamUsers = managementUnitIdsForAddedTeamUsers;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,9 +90,10 @@ public class ProcessScheduleUpdateUploadRequest  implements Serializable {
       return false;
     }
     ProcessScheduleUpdateUploadRequest processScheduleUpdateUploadRequest = (ProcessScheduleUpdateUploadRequest) o;
+
     return Objects.equals(this.uploadKey, processScheduleUpdateUploadRequest.uploadKey) &&
-        Objects.equals(this.teamIds, processScheduleUpdateUploadRequest.teamIds) &&
-        Objects.equals(this.managementUnitIdsForAddedTeamUsers, processScheduleUpdateUploadRequest.managementUnitIdsForAddedTeamUsers);
+            Objects.equals(this.teamIds, processScheduleUpdateUploadRequest.teamIds) &&
+            Objects.equals(this.managementUnitIdsForAddedTeamUsers, processScheduleUpdateUploadRequest.managementUnitIdsForAddedTeamUsers);
   }
 
   @Override

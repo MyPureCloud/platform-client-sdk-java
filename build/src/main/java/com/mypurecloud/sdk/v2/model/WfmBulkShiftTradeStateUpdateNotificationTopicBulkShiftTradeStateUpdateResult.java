@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -151,7 +152,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult state(StateEnum state) {
@@ -168,7 +169,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.state = state;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult reviewedBy(WfmBulkShiftTradeStateUpdateNotificationTopicUserReference reviewedBy) {
@@ -185,7 +186,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.reviewedBy = reviewedBy;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult reviewedDate(Date reviewedDate) {
@@ -202,7 +203,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.reviewedDate = reviewedDate;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult failureReason(FailureReasonEnum failureReason) {
@@ -219,7 +220,7 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.failureReason = failureReason;
   }
 
-  
+
   /**
    **/
   public WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult metadata(WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata metadata) {
@@ -236,7 +237,6 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -247,12 +247,13 @@ public class WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpd
       return false;
     }
     WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult = (WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult) o;
+
     return Objects.equals(this.id, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.id) &&
-        Objects.equals(this.state, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.state) &&
-        Objects.equals(this.reviewedBy, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.reviewedBy) &&
-        Objects.equals(this.reviewedDate, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.reviewedDate) &&
-        Objects.equals(this.failureReason, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.failureReason) &&
-        Objects.equals(this.metadata, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.metadata);
+            Objects.equals(this.state, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.state) &&
+            Objects.equals(this.reviewedBy, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.reviewedBy) &&
+            Objects.equals(this.reviewedDate, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.reviewedDate) &&
+            Objects.equals(this.failureReason, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.failureReason) &&
+            Objects.equals(this.metadata, wfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult.metadata);
   }
 
   @Override

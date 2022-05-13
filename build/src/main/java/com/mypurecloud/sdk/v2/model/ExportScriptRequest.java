@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ExportScriptRequest  implements Serializable {
     this.fileName = fileName;
   }
 
-  
+
   /**
    * The UUID version of the script to be exported.  Defaults to the current editable version.
    **/
@@ -60,7 +61,6 @@ public class ExportScriptRequest  implements Serializable {
     this.versionId = versionId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ExportScriptRequest  implements Serializable {
       return false;
     }
     ExportScriptRequest exportScriptRequest = (ExportScriptRequest) o;
+
     return Objects.equals(this.fileName, exportScriptRequest.fileName) &&
-        Objects.equals(this.versionId, exportScriptRequest.versionId);
+            Objects.equals(this.versionId, exportScriptRequest.versionId);
   }
 
   @Override

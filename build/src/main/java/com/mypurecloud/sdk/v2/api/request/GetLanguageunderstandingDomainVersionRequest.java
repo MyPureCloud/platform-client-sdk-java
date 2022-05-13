@@ -20,30 +20,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.NluDomain;
-import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
-import java.time.LocalDate;
-import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
-import com.mypurecloud.sdk.v2.model.NluDomainVersion;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
-import com.mypurecloud.sdk.v2.model.NluDomainListing;
-import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.Draft;
 import com.mypurecloud.sdk.v2.model.DraftListing;
-import com.mypurecloud.sdk.v2.model.MinerIntent;
-import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
-import com.mypurecloud.sdk.v2.model.MinerListing;
 import com.mypurecloud.sdk.v2.model.DraftRequest;
-import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
-import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
-import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
-import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.Miner;
 import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
+import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
+import com.mypurecloud.sdk.v2.model.NluDomain;
+import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
+import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
+import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
+import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
 
 public class GetLanguageunderstandingDomainVersionRequest {
-    
+
 	private String domainId;
 	public String getDomainId() {
 		return this.domainId;
@@ -57,7 +57,7 @@ public class GetLanguageunderstandingDomainVersionRequest {
 	    this.setDomainId(domainId);
 	    return this;
 	} 
-	
+
 	private String domainVersionId;
 	public String getDomainVersionId() {
 		return this.domainVersionId;
@@ -71,7 +71,7 @@ public class GetLanguageunderstandingDomainVersionRequest {
 	    this.setDomainVersionId(domainVersionId);
 	    return this;
 	} 
-	
+
 	private Boolean includeUtterances;
 	public Boolean getIncludeUtterances() {
 		return this.includeUtterances;
@@ -85,7 +85,7 @@ public class GetLanguageunderstandingDomainVersionRequest {
 	    this.setIncludeUtterances(includeUtterances);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -123,9 +123,10 @@ public class GetLanguageunderstandingDomainVersionRequest {
         
                 .withPathParameter("domainVersionId", domainVersionId)
         
+
                 .withQueryParameters("includeUtterances", "", includeUtterances)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -136,12 +137,12 @@ public class GetLanguageunderstandingDomainVersionRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String domainId, String domainVersionId) {
 	    return new Builder()
 	            .withRequiredParams(domainId, domainVersionId);
 	}
-	
+
 
 	public static class Builder {
 		private final GetLanguageunderstandingDomainVersionRequest request;
@@ -150,31 +151,31 @@ public class GetLanguageunderstandingDomainVersionRequest {
 			request = new GetLanguageunderstandingDomainVersionRequest();
 		}
 
-		
+
 		public Builder withDomainId(String domainId) {
 			request.setDomainId(domainId);
 			return this;
 		}
-		
+
 		public Builder withDomainVersionId(String domainVersionId) {
 			request.setDomainVersionId(domainVersionId);
 			return this;
 		}
-		
+
 		public Builder withIncludeUtterances(Boolean includeUtterances) {
 			request.setIncludeUtterances(includeUtterances);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String domainId, String domainVersionId) {
 			request.setDomainId(domainId);
-						request.setDomainVersionId(domainVersionId);
-			
+			request.setDomainVersionId(domainVersionId);
+
 			return this;
 		}
-		
+
 
 		public GetLanguageunderstandingDomainVersionRequest build() {
             

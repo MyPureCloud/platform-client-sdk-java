@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -150,7 +151,7 @@ public class Response  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Response name(String name) {
@@ -167,7 +168,7 @@ public class Response  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Version number required for updates.
    **/
@@ -185,7 +186,7 @@ public class Response  implements Serializable {
     this.version = version;
   }
 
-  
+
   /**
    * One or more libraries response is associated with.
    **/
@@ -203,7 +204,7 @@ public class Response  implements Serializable {
     this.libraries = libraries;
   }
 
-  
+
   /**
    * One or more texts associated with the response.
    **/
@@ -221,21 +222,21 @@ public class Response  implements Serializable {
     this.texts = texts;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "User that created the response")
   @JsonProperty("createdBy")
   public User getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   /**
    * The interaction type for this response.
    **/
@@ -253,7 +254,7 @@ public class Response  implements Serializable {
     this.interactionType = interactionType;
   }
 
-  
+
   /**
    * Details about any text substitutions used in the texts for this response.
    **/
@@ -271,7 +272,7 @@ public class Response  implements Serializable {
     this.substitutions = substitutions;
   }
 
-  
+
   /**
    * Metadata about the text substitutions in json schema format.
    **/
@@ -289,7 +290,7 @@ public class Response  implements Serializable {
     this.substitutionsSchema = substitutionsSchema;
   }
 
-  
+
   /**
    * The response type represented by the response.
    **/
@@ -307,7 +308,7 @@ public class Response  implements Serializable {
     this.responseType = responseType;
   }
 
-  
+
   /**
    * An optional messaging template definition for responseType.MessagingTemplate.
    **/
@@ -325,7 +326,7 @@ public class Response  implements Serializable {
     this.messagingTemplate = messagingTemplate;
   }
 
-  
+
   /**
    * Assets used in the response
    **/
@@ -343,14 +344,13 @@ public class Response  implements Serializable {
     this.assets = assets;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -361,20 +361,21 @@ public class Response  implements Serializable {
       return false;
     }
     Response response = (Response) o;
+
     return Objects.equals(this.id, response.id) &&
-        Objects.equals(this.name, response.name) &&
-        Objects.equals(this.version, response.version) &&
-        Objects.equals(this.libraries, response.libraries) &&
-        Objects.equals(this.texts, response.texts) &&
-        Objects.equals(this.createdBy, response.createdBy) &&
-        Objects.equals(this.dateCreated, response.dateCreated) &&
-        Objects.equals(this.interactionType, response.interactionType) &&
-        Objects.equals(this.substitutions, response.substitutions) &&
-        Objects.equals(this.substitutionsSchema, response.substitutionsSchema) &&
-        Objects.equals(this.responseType, response.responseType) &&
-        Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
-        Objects.equals(this.assets, response.assets) &&
-        Objects.equals(this.selfUri, response.selfUri);
+            Objects.equals(this.name, response.name) &&
+            Objects.equals(this.version, response.version) &&
+            Objects.equals(this.libraries, response.libraries) &&
+            Objects.equals(this.texts, response.texts) &&
+            Objects.equals(this.createdBy, response.createdBy) &&
+            Objects.equals(this.dateCreated, response.dateCreated) &&
+            Objects.equals(this.interactionType, response.interactionType) &&
+            Objects.equals(this.substitutions, response.substitutions) &&
+            Objects.equals(this.substitutionsSchema, response.substitutionsSchema) &&
+            Objects.equals(this.responseType, response.responseType) &&
+            Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
+            Objects.equals(this.assets, response.assets) &&
+            Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override

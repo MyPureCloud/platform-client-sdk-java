@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
@@ -54,7 +55,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing pageSize(Integer pageSize) {
@@ -71,7 +72,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing pageNumber(Integer pageNumber) {
@@ -88,7 +89,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    * The number of users matching search term
    **/
@@ -106,7 +107,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-  
+
   /**
    * The total number of users
    **/
@@ -124,7 +125,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.unfilteredTotal = unfilteredTotal;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing lastUri(String lastUri) {
@@ -141,7 +142,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing firstUri(String firstUri) {
@@ -158,7 +159,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing selfUri(String selfUri) {
@@ -175,7 +176,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing previousUri(String previousUri) {
@@ -192,7 +193,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing nextUri(String nextUri) {
@@ -209,7 +210,7 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public LearningAssignmentUserListing pageCount(Integer pageCount) {
@@ -226,7 +227,6 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -237,17 +237,18 @@ public class LearningAssignmentUserListing  implements Serializable, PagedResour
       return false;
     }
     LearningAssignmentUserListing learningAssignmentUserListing = (LearningAssignmentUserListing) o;
+
     return Objects.equals(this.entities, learningAssignmentUserListing.entities) &&
-        Objects.equals(this.pageSize, learningAssignmentUserListing.pageSize) &&
-        Objects.equals(this.pageNumber, learningAssignmentUserListing.pageNumber) &&
-        Objects.equals(this.total, learningAssignmentUserListing.total) &&
-        Objects.equals(this.unfilteredTotal, learningAssignmentUserListing.unfilteredTotal) &&
-        Objects.equals(this.lastUri, learningAssignmentUserListing.lastUri) &&
-        Objects.equals(this.firstUri, learningAssignmentUserListing.firstUri) &&
-        Objects.equals(this.selfUri, learningAssignmentUserListing.selfUri) &&
-        Objects.equals(this.previousUri, learningAssignmentUserListing.previousUri) &&
-        Objects.equals(this.nextUri, learningAssignmentUserListing.nextUri) &&
-        Objects.equals(this.pageCount, learningAssignmentUserListing.pageCount);
+            Objects.equals(this.pageSize, learningAssignmentUserListing.pageSize) &&
+            Objects.equals(this.pageNumber, learningAssignmentUserListing.pageNumber) &&
+            Objects.equals(this.total, learningAssignmentUserListing.total) &&
+            Objects.equals(this.unfilteredTotal, learningAssignmentUserListing.unfilteredTotal) &&
+            Objects.equals(this.lastUri, learningAssignmentUserListing.lastUri) &&
+            Objects.equals(this.firstUri, learningAssignmentUserListing.firstUri) &&
+            Objects.equals(this.selfUri, learningAssignmentUserListing.selfUri) &&
+            Objects.equals(this.previousUri, learningAssignmentUserListing.previousUri) &&
+            Objects.equals(this.nextUri, learningAssignmentUserListing.nextUri) &&
+            Objects.equals(this.pageCount, learningAssignmentUserListing.pageCount);
   }
 
   @Override

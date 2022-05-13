@@ -26,16 +26,16 @@ title: HistoricalAdherenceExceptionInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ONQUEUEWORK | &quot;OnQueueWork&quot; |
-| BREAK | &quot;Break&quot; |
-| MEAL | &quot;Meal&quot; |
-| MEETING | &quot;Meeting&quot; |
-| OFFQUEUEWORK | &quot;OffQueueWork&quot; |
-| TIMEOFF | &quot;TimeOff&quot; |
-| TRAINING | &quot;Training&quot; |
-| UNAVAILABLE | &quot;Unavailable&quot; |
-| UNSCHEDULED | &quot;Unscheduled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONQUEUEWORK | &quot;OnQueueWork&quot; | 
+| BREAK | &quot;Break&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| OFFQUEUEWORK | &quot;OffQueueWork&quot; | 
+| TIMEOFF | &quot;TimeOff&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| UNAVAILABLE | &quot;Unavailable&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
 {: class="table table-striped"}
 
 
@@ -45,16 +45,16 @@ title: HistoricalAdherenceExceptionInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ONQUEUEWORK | &quot;OnQueueWork&quot; |
-| BREAK | &quot;Break&quot; |
-| MEAL | &quot;Meal&quot; |
-| MEETING | &quot;Meeting&quot; |
-| OFFQUEUEWORK | &quot;OffQueueWork&quot; |
-| TIMEOFF | &quot;TimeOff&quot; |
-| TRAINING | &quot;Training&quot; |
-| UNAVAILABLE | &quot;Unavailable&quot; |
-| UNSCHEDULED | &quot;Unscheduled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ONQUEUEWORK | &quot;OnQueueWork&quot; | 
+| BREAK | &quot;Break&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| OFFQUEUEWORK | &quot;OffQueueWork&quot; | 
+| TIMEOFF | &quot;TimeOff&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| UNAVAILABLE | &quot;Unavailable&quot; | 
+| UNSCHEDULED | &quot;Unscheduled&quot; | 
 {: class="table table-striped"}
 
 
@@ -64,17 +64,17 @@ title: HistoricalAdherenceExceptionInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| AVAILABLE | &quot;Available&quot; |
-| AWAY | &quot;Away&quot; |
-| BUSY | &quot;Busy&quot; |
-| OFFLINE | &quot;Offline&quot; |
-| IDLE | &quot;Idle&quot; |
-| ONQUEUE | &quot;OnQueue&quot; |
-| MEAL | &quot;Meal&quot; |
-| TRAINING | &quot;Training&quot; |
-| MEETING | &quot;Meeting&quot; |
-| BREAK | &quot;Break&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AVAILABLE | &quot;Available&quot; | 
+| AWAY | &quot;Away&quot; | 
+| BUSY | &quot;Busy&quot; | 
+| OFFLINE | &quot;Offline&quot; | 
+| IDLE | &quot;Idle&quot; | 
+| ONQUEUE | &quot;OnQueue&quot; | 
+| MEAL | &quot;Meal&quot; | 
+| TRAINING | &quot;Training&quot; | 
+| MEETING | &quot;Meeting&quot; | 
+| BREAK | &quot;Break&quot; | 
 {: class="table table-striped"}
 
 
@@ -84,12 +84,12 @@ title: HistoricalAdherenceExceptionInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OFF_QUEUE | &quot;OFF_QUEUE&quot; |
-| IDLE | &quot;IDLE&quot; |
-| INTERACTING | &quot;INTERACTING&quot; |
-| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
-| COMMUNICATING | &quot;COMMUNICATING&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OFF_QUEUE | &quot;OFF_QUEUE&quot; | 
+| IDLE | &quot;IDLE&quot; | 
+| INTERACTING | &quot;INTERACTING&quot; | 
+| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
+| COMMUNICATING | &quot;COMMUNICATING&quot; | 
 {: class="table table-striped"}
 
 
@@ -99,11 +99,11 @@ title: HistoricalAdherenceExceptionInfo
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| POSITIVE | &quot;Positive&quot; |
-| NEGATIVE | &quot;Negative&quot; |
-| NEUTRAL | &quot;Neutral&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| POSITIVE | &quot;Positive&quot; | 
+| NEGATIVE | &quot;Negative&quot; | 
+| NEUTRAL | &quot;Neutral&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

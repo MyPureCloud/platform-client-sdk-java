@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PredictorSchedule;
@@ -48,7 +49,7 @@ public class CreatePredictorRequest  implements Serializable {
     this.queueIds = queueIds;
   }
 
-  
+
   /**
    * The KPI that the predictor attempts to maximize/minimize.
    **/
@@ -66,7 +67,7 @@ public class CreatePredictorRequest  implements Serializable {
     this.kpi = kpi;
   }
 
-  
+
   /**
    * Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.
    **/
@@ -84,7 +85,7 @@ public class CreatePredictorRequest  implements Serializable {
     this.routingTimeoutSeconds = routingTimeoutSeconds;
   }
 
-  
+
   /**
    * The predictor schedule that determines when the predictor is used for routing interactions.
    **/
@@ -102,7 +103,7 @@ public class CreatePredictorRequest  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   /**
    * The predictor balancing configuration to enable workload balancing
    **/
@@ -120,7 +121,6 @@ public class CreatePredictorRequest  implements Serializable {
     this.workloadBalancingConfig = workloadBalancingConfig;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -131,11 +131,12 @@ public class CreatePredictorRequest  implements Serializable {
       return false;
     }
     CreatePredictorRequest createPredictorRequest = (CreatePredictorRequest) o;
+
     return Objects.equals(this.queueIds, createPredictorRequest.queueIds) &&
-        Objects.equals(this.kpi, createPredictorRequest.kpi) &&
-        Objects.equals(this.routingTimeoutSeconds, createPredictorRequest.routingTimeoutSeconds) &&
-        Objects.equals(this.schedule, createPredictorRequest.schedule) &&
-        Objects.equals(this.workloadBalancingConfig, createPredictorRequest.workloadBalancingConfig);
+            Objects.equals(this.kpi, createPredictorRequest.kpi) &&
+            Objects.equals(this.routingTimeoutSeconds, createPredictorRequest.routingTimeoutSeconds) &&
+            Objects.equals(this.schedule, createPredictorRequest.schedule) &&
+            Objects.equals(this.workloadBalancingConfig, createPredictorRequest.workloadBalancingConfig);
   }
 
   @Override

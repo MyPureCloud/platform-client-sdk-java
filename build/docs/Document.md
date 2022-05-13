@@ -48,10 +48,10 @@ title: Document
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DOCUMENT | &quot;DOCUMENT&quot; |
-| FAX | &quot;FAX&quot; |
-| RECORDING | &quot;RECORDING&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DOCUMENT | &quot;DOCUMENT&quot; | 
+| FAX | &quot;FAX&quot; | 
+| RECORDING | &quot;RECORDING&quot; | 
 {: class="table table-striped"}
 
 
@@ -61,9 +61,9 @@ title: Document
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SINGLE_PUT | &quot;SINGLE_PUT&quot; |
-| MULTIPART_POST | &quot;MULTIPART_POST&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| SINGLE_PUT | &quot;SINGLE_PUT&quot; | 
+| MULTIPART_POST | &quot;MULTIPART_POST&quot; | 
 {: class="table table-striped"}
 
 
@@ -73,10 +73,10 @@ title: Document
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;NONE&quot; |
-| LIMITED | &quot;LIMITED&quot; |
-| PUBLIC | &quot;PUBLIC&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NONE | &quot;NONE&quot; | 
+| LIMITED | &quot;LIMITED&quot; | 
+| PUBLIC | &quot;PUBLIC&quot; | 
 {: class="table table-striped"}
 
 

@@ -28,8 +28,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a division.
 
-
-
 Wraps DELETE /api/v2/authorization/divisions/{divisionId}  
 
 Requires ANY permissions: 
@@ -92,8 +90,6 @@ null (empty response body)
 
 Returns an authorization division.
 
-
-
 Wraps GET /api/v2/authorization/divisions/{divisionId}  
 
 Requires NO permissions: 
@@ -138,7 +134,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false] 
+| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -156,7 +152,7 @@ try {
 
 Retrieve a list of all divisions defined for the organization
 
-Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+Request specific divisions by id using a query param \"id\", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 
 Wraps GET /api/v2/authorization/divisions  
 
@@ -188,11 +184,11 @@ ObjectsApi apiInstance = new ObjectsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean objectCount = false; // Boolean | Include the count of objects contained in the division
-List<String> id = Arrays.asList("id_example"); // List<String> | Optionally request specific divisions by their IDs
+List<String> id = Arrays.asList(null); // List<String> | Optionally request specific divisions by their IDs
 String name = "name_example"; // String | Search term to filter by division name
 try {
     AuthzDivisionEntityListing result = apiInstance.getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name);
@@ -292,8 +288,6 @@ This endpoint does not require any parameters.
 
 Returns the maximum allowed number of divisions.
 
-
-
 Wraps GET /api/v2/authorization/divisions/limit  
 
 Requires NO permissions: 
@@ -350,7 +344,7 @@ This endpoint does not require any parameters.
 
 Assign a list of objects to a division
 
-Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\"206ce31f-61ec-40ed-a8b1-be6f06303998\",\"250a754e-f5e4-4f51-800f-a92f09d3bf8c\"]
 
 Wraps POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}  
 
@@ -381,7 +375,7 @@ Configuration.setDefaultApiClient(apiClient);
 ObjectsApi apiInstance = new ObjectsApi();
 String divisionId = "divisionId_example"; // String | Division ID
 String objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
-List<String> body = Arrays.asList(new List<String>()); // List<String> | Object Id List
+List<String> body = Arrays.asList(null); // List<String> | Object Id List
 try {
     apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body);
 } catch (ApiException e) {
@@ -397,7 +391,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
 | **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT 
-| **body** | **List&lt;String&gt;**| Object Id List | 
+| **body** | [**List&lt;String&gt;**](String.html)| Object Id List | 
 {: class="table-striped"}
 
 
@@ -414,8 +408,6 @@ null (empty response body)
 > [AuthzDivision](AuthzDivision.html) postAuthorizationDivisionRestore(divisionId, body)
 
 Recreate a previously deleted division.
-
-
 
 Wraps POST /api/v2/authorization/divisions/{divisionId}/restore  
 
@@ -480,8 +472,6 @@ try {
 
 Create a division.
 
-
-
 Wraps POST /api/v2/authorization/divisions  
 
 Requires ALL permissions: 
@@ -543,8 +533,6 @@ try {
 > [AuthzDivision](AuthzDivision.html) putAuthorizationDivision(divisionId, body)
 
 Update a division.
-
-
 
 Wraps PUT /api/v2/authorization/divisions/{divisionId}  
 

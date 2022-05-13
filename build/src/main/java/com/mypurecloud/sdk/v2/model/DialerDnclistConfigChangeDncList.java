@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -152,7 +153,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.importStatus = importStatus;
   }
 
-  
+
   /**
    * the number of phone numbers in the do not call list
    **/
@@ -170,7 +171,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.size = size;
   }
 
-  
+
   /**
    * the type of dnc list being created, rds (csv file), gryphon, or dnc.com
    **/
@@ -188,7 +189,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.dncSourceType = dncSourceType;
   }
 
-  
+
   /**
    * the loginId if the dncSourceType is dnc.com
    **/
@@ -206,7 +207,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.loginId = loginId;
   }
 
-  
+
   /**
    * the list of dnc.com codes to be treated as DNC
    **/
@@ -224,7 +225,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.dncCodes = dncCodes;
   }
 
-  
+
   /**
    * the license number if the dncSourceType is gryphon
    **/
@@ -242,7 +243,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.licenseId = licenseId;
   }
 
-  
+
   /**
    **/
   public DialerDnclistConfigChangeDncList contactMethod(ContactMethodEnum contactMethod) {
@@ -259,7 +260,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.contactMethod = contactMethod;
   }
 
-  
+
   /**
    **/
   public DialerDnclistConfigChangeDncList division(DialerDnclistConfigChangeUriReference division) {
@@ -276,7 +277,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * The globally unique identifier for the object.
    **/
@@ -294,7 +295,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * The UI-visible name of the object
    **/
@@ -312,7 +313,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Creation time of the entity
    **/
@@ -330,7 +331,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * Last modified time of the entity
    **/
@@ -348,7 +349,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -366,7 +367,6 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     this.version = version;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -377,19 +377,20 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
       return false;
     }
     DialerDnclistConfigChangeDncList dialerDnclistConfigChangeDncList = (DialerDnclistConfigChangeDncList) o;
+
     return Objects.equals(this.importStatus, dialerDnclistConfigChangeDncList.importStatus) &&
-        Objects.equals(this.size, dialerDnclistConfigChangeDncList.size) &&
-        Objects.equals(this.dncSourceType, dialerDnclistConfigChangeDncList.dncSourceType) &&
-        Objects.equals(this.loginId, dialerDnclistConfigChangeDncList.loginId) &&
-        Objects.equals(this.dncCodes, dialerDnclistConfigChangeDncList.dncCodes) &&
-        Objects.equals(this.licenseId, dialerDnclistConfigChangeDncList.licenseId) &&
-        Objects.equals(this.contactMethod, dialerDnclistConfigChangeDncList.contactMethod) &&
-        Objects.equals(this.division, dialerDnclistConfigChangeDncList.division) &&
-        Objects.equals(this.id, dialerDnclistConfigChangeDncList.id) &&
-        Objects.equals(this.name, dialerDnclistConfigChangeDncList.name) &&
-        Objects.equals(this.dateCreated, dialerDnclistConfigChangeDncList.dateCreated) &&
-        Objects.equals(this.dateModified, dialerDnclistConfigChangeDncList.dateModified) &&
-        Objects.equals(this.version, dialerDnclistConfigChangeDncList.version);
+            Objects.equals(this.size, dialerDnclistConfigChangeDncList.size) &&
+            Objects.equals(this.dncSourceType, dialerDnclistConfigChangeDncList.dncSourceType) &&
+            Objects.equals(this.loginId, dialerDnclistConfigChangeDncList.loginId) &&
+            Objects.equals(this.dncCodes, dialerDnclistConfigChangeDncList.dncCodes) &&
+            Objects.equals(this.licenseId, dialerDnclistConfigChangeDncList.licenseId) &&
+            Objects.equals(this.contactMethod, dialerDnclistConfigChangeDncList.contactMethod) &&
+            Objects.equals(this.division, dialerDnclistConfigChangeDncList.division) &&
+            Objects.equals(this.id, dialerDnclistConfigChangeDncList.id) &&
+            Objects.equals(this.name, dialerDnclistConfigChangeDncList.name) &&
+            Objects.equals(this.dateCreated, dialerDnclistConfigChangeDncList.dateCreated) &&
+            Objects.equals(this.dateModified, dialerDnclistConfigChangeDncList.dateModified) &&
+            Objects.equals(this.version, dialerDnclistConfigChangeDncList.version);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class ApiUsageQueryResult  implements Serializable {
     this.results = results;
   }
 
-  
+
   /**
    * Query status
    **/
@@ -111,7 +112,6 @@ public class ApiUsageQueryResult  implements Serializable {
     this.queryStatus = queryStatus;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,8 +122,9 @@ public class ApiUsageQueryResult  implements Serializable {
       return false;
     }
     ApiUsageQueryResult apiUsageQueryResult = (ApiUsageQueryResult) o;
+
     return Objects.equals(this.results, apiUsageQueryResult.results) &&
-        Objects.equals(this.queryStatus, apiUsageQueryResult.queryStatus);
+            Objects.equals(this.queryStatus, apiUsageQueryResult.queryStatus);
   }
 
   @Override

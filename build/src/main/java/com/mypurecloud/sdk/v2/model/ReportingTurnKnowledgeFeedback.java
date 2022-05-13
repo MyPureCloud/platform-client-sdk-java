@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledgeDocument;
@@ -45,7 +46,7 @@ public class ReportingTurnKnowledgeFeedback  implements Serializable {
     this.searchId = searchId;
   }
 
-  
+
   /**
    * The feedback rating for the search (1.0 - 5.0). 1 = Negative, 5 = Positive.
    **/
@@ -63,7 +64,7 @@ public class ReportingTurnKnowledgeFeedback  implements Serializable {
     this.rating = rating;
   }
 
-  
+
   /**
    * The list of search documents that the feedback applies to.
    **/
@@ -81,7 +82,6 @@ public class ReportingTurnKnowledgeFeedback  implements Serializable {
     this.documents = documents;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class ReportingTurnKnowledgeFeedback  implements Serializable {
       return false;
     }
     ReportingTurnKnowledgeFeedback reportingTurnKnowledgeFeedback = (ReportingTurnKnowledgeFeedback) o;
+
     return Objects.equals(this.searchId, reportingTurnKnowledgeFeedback.searchId) &&
-        Objects.equals(this.rating, reportingTurnKnowledgeFeedback.rating) &&
-        Objects.equals(this.documents, reportingTurnKnowledgeFeedback.documents);
+            Objects.equals(this.rating, reportingTurnKnowledgeFeedback.rating) &&
+            Objects.equals(this.documents, reportingTurnKnowledgeFeedback.documents);
   }
 
   @Override

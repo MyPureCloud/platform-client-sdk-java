@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
@@ -46,7 +47,7 @@ public class AgentManagementUnitReference  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    * The management to which the user (agent) belongs
    **/
@@ -64,7 +65,7 @@ public class AgentManagementUnitReference  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-  
+
   /**
    * The business unit to which the user (agent) belongs. Populate with expand=businessUnit
    **/
@@ -82,7 +83,6 @@ public class AgentManagementUnitReference  implements Serializable {
     this.businessUnit = businessUnit;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,9 +93,10 @@ public class AgentManagementUnitReference  implements Serializable {
       return false;
     }
     AgentManagementUnitReference agentManagementUnitReference = (AgentManagementUnitReference) o;
+
     return Objects.equals(this.user, agentManagementUnitReference.user) &&
-        Objects.equals(this.managementUnit, agentManagementUnitReference.managementUnit) &&
-        Objects.equals(this.businessUnit, agentManagementUnitReference.businessUnit);
+            Objects.equals(this.managementUnit, agentManagementUnitReference.managementUnit) &&
+            Objects.equals(this.businessUnit, agentManagementUnitReference.businessUnit);
   }
 
   @Override

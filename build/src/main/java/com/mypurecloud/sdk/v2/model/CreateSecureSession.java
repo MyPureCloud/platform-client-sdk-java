@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +44,7 @@ public class CreateSecureSession  implements Serializable {
     this.sourceParticipantId = sourceParticipantId;
   }
 
-  
+
   /**
    * the flow id to execute in the secure session
    **/
@@ -61,7 +62,7 @@ public class CreateSecureSession  implements Serializable {
     this.flowId = flowId;
   }
 
-  
+
   /**
    * user data for the secure session
    **/
@@ -79,7 +80,7 @@ public class CreateSecureSession  implements Serializable {
     this.userData = userData;
   }
 
-  
+
   /**
    * if true, disconnect the agent after creating the session
    **/
@@ -97,7 +98,6 @@ public class CreateSecureSession  implements Serializable {
     this.disconnect = disconnect;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,10 +108,11 @@ public class CreateSecureSession  implements Serializable {
       return false;
     }
     CreateSecureSession createSecureSession = (CreateSecureSession) o;
+
     return Objects.equals(this.sourceParticipantId, createSecureSession.sourceParticipantId) &&
-        Objects.equals(this.flowId, createSecureSession.flowId) &&
-        Objects.equals(this.userData, createSecureSession.userData) &&
-        Objects.equals(this.disconnect, createSecureSession.disconnect);
+            Objects.equals(this.flowId, createSecureSession.flowId) &&
+            Objects.equals(this.userData, createSecureSession.userData) &&
+            Objects.equals(this.disconnect, createSecureSession.disconnect);
   }
 
   @Override

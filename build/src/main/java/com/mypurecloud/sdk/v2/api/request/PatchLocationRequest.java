@@ -21,15 +21,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
-import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
-import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 
 public class PatchLocationRequest {
-    
+
 	private String locationId;
 	public String getLocationId() {
 		return this.locationId;
@@ -43,7 +43,7 @@ public class PatchLocationRequest {
 	    this.setLocationId(locationId);
 	    return this;
 	} 
-	
+
 	private LocationUpdateDefinition body;
 	public LocationUpdateDefinition getBody() {
 		return this.body;
@@ -57,7 +57,7 @@ public class PatchLocationRequest {
 	    this.setBody(body);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -94,8 +94,8 @@ public class PatchLocationRequest {
                 .withPathParameter("locationId", locationId)
         
                 .withBody(body)
-        
-                .withCustomHeaders(customHeaders)
+
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -106,12 +106,12 @@ public class PatchLocationRequest {
 		return new Builder();
 	}
 
-	
+
 	public static Builder builder(String locationId, LocationUpdateDefinition body) {
 	    return new Builder()
 	            .withRequiredParams(locationId, body);
 	}
-	
+
 
 	public static class Builder {
 		private final PatchLocationRequest request;
@@ -120,26 +120,26 @@ public class PatchLocationRequest {
 			request = new PatchLocationRequest();
 		}
 
-		
+
 		public Builder withLocationId(String locationId) {
 			request.setLocationId(locationId);
 			return this;
 		}
-		
+
 		public Builder withBody(LocationUpdateDefinition body) {
 			request.setBody(body);
 			return this;
 		}
-		
 
-		
+
+
 		public Builder withRequiredParams(String locationId, LocationUpdateDefinition body) {
 			request.setLocationId(locationId);
-						request.setBody(body);
-			
+			request.setBody(body);
+
 			return this;
 		}
-		
+
 
 		public PatchLocationRequest build() {
             

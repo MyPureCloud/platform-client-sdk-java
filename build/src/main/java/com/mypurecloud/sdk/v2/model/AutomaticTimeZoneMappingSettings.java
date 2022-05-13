@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallableWindow;
@@ -44,7 +45,7 @@ public class AutomaticTimeZoneMappingSettings  implements Serializable {
     this.callableWindows = callableWindows;
   }
 
-  
+
   /**
    * The countries that are supported for automatic time zone mapping.
    **/
@@ -62,7 +63,6 @@ public class AutomaticTimeZoneMappingSettings  implements Serializable {
     this.supportedCountries = supportedCountries;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,8 +73,9 @@ public class AutomaticTimeZoneMappingSettings  implements Serializable {
       return false;
     }
     AutomaticTimeZoneMappingSettings automaticTimeZoneMappingSettings = (AutomaticTimeZoneMappingSettings) o;
+
     return Objects.equals(this.callableWindows, automaticTimeZoneMappingSettings.callableWindows) &&
-        Objects.equals(this.supportedCountries, automaticTimeZoneMappingSettings.supportedCountries);
+            Objects.equals(this.supportedCountries, automaticTimeZoneMappingSettings.supportedCountries);
   }
 
   @Override

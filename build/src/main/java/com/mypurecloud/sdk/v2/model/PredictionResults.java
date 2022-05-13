@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -145,7 +146,7 @@ public class PredictionResults  implements Serializable {
     this.intent = intent;
   }
 
-  
+
   /**
    * Indicates the estimated wait time Formula
    **/
@@ -163,7 +164,7 @@ public class PredictionResults  implements Serializable {
     this.formula = formula;
   }
 
-  
+
   /**
    * Estimated wait time in seconds
    **/
@@ -181,7 +182,6 @@ public class PredictionResults  implements Serializable {
     this.estimatedWaitTimeSeconds = estimatedWaitTimeSeconds;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,9 +192,10 @@ public class PredictionResults  implements Serializable {
       return false;
     }
     PredictionResults predictionResults = (PredictionResults) o;
+
     return Objects.equals(this.intent, predictionResults.intent) &&
-        Objects.equals(this.formula, predictionResults.formula) &&
-        Objects.equals(this.estimatedWaitTimeSeconds, predictionResults.estimatedWaitTimeSeconds);
+            Objects.equals(this.formula, predictionResults.formula) &&
+            Objects.equals(this.estimatedWaitTimeSeconds, predictionResults.estimatedWaitTimeSeconds);
   }
 
   @Override

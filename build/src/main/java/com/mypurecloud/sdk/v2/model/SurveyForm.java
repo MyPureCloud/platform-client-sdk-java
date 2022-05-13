@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingSurveyForm;
@@ -45,7 +46,7 @@ public class SurveyForm  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The survey form name
    **/
@@ -63,21 +64,21 @@ public class SurveyForm  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Is this form published")
   @JsonProperty("published")
   public Boolean getPublished() {
     return published;
   }
 
-  
+
   /**
    * Is this form disabled
    **/
@@ -95,14 +96,14 @@ public class SurveyForm  implements Serializable {
     this.disabled = disabled;
   }
 
-  
+
   @ApiModelProperty(example = "null", required = true, value = "Unique Id for all versions of this form")
   @JsonProperty("contextId")
   public String getContextId() {
     return contextId;
   }
 
-  
+
   /**
    * Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW
    **/
@@ -120,7 +121,7 @@ public class SurveyForm  implements Serializable {
     this.language = language;
   }
 
-  
+
   /**
    * Markdown text for the top of the form.
    **/
@@ -138,7 +139,7 @@ public class SurveyForm  implements Serializable {
     this.header = header;
   }
 
-  
+
   /**
    * Markdown text for the bottom of the form.
    **/
@@ -156,7 +157,7 @@ public class SurveyForm  implements Serializable {
     this.footer = footer;
   }
 
-  
+
   /**
    * A list of question groups
    **/
@@ -174,21 +175,20 @@ public class SurveyForm  implements Serializable {
     this.questionGroups = questionGroups;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "List of published version of this form")
   @JsonProperty("publishedVersions")
   public DomainEntityListingSurveyForm getPublishedVersions() {
     return publishedVersions;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,18 +199,19 @@ public class SurveyForm  implements Serializable {
       return false;
     }
     SurveyForm surveyForm = (SurveyForm) o;
+
     return Objects.equals(this.id, surveyForm.id) &&
-        Objects.equals(this.name, surveyForm.name) &&
-        Objects.equals(this.modifiedDate, surveyForm.modifiedDate) &&
-        Objects.equals(this.published, surveyForm.published) &&
-        Objects.equals(this.disabled, surveyForm.disabled) &&
-        Objects.equals(this.contextId, surveyForm.contextId) &&
-        Objects.equals(this.language, surveyForm.language) &&
-        Objects.equals(this.header, surveyForm.header) &&
-        Objects.equals(this.footer, surveyForm.footer) &&
-        Objects.equals(this.questionGroups, surveyForm.questionGroups) &&
-        Objects.equals(this.publishedVersions, surveyForm.publishedVersions) &&
-        Objects.equals(this.selfUri, surveyForm.selfUri);
+            Objects.equals(this.name, surveyForm.name) &&
+            Objects.equals(this.modifiedDate, surveyForm.modifiedDate) &&
+            Objects.equals(this.published, surveyForm.published) &&
+            Objects.equals(this.disabled, surveyForm.disabled) &&
+            Objects.equals(this.contextId, surveyForm.contextId) &&
+            Objects.equals(this.language, surveyForm.language) &&
+            Objects.equals(this.header, surveyForm.header) &&
+            Objects.equals(this.footer, surveyForm.footer) &&
+            Objects.equals(this.questionGroups, surveyForm.questionGroups) &&
+            Objects.equals(this.publishedVersions, surveyForm.publishedVersions) &&
+            Objects.equals(this.selfUri, surveyForm.selfUri);
   }
 
   @Override

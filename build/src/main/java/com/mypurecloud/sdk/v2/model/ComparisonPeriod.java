@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.KpiResult;
@@ -42,70 +43,69 @@ public class ComparisonPeriod  implements Serializable {
     return id;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Key Performance Indicator optimised during the comparison period.")
   @JsonProperty("kpi")
   public String getKpi() {
     return kpi;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Start date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStarted")
   public Date getDateStarted() {
     return dateStarted;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "End date of the comparison period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateEnded")
   public Date getDateEnded() {
     return dateEnded;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)")
   @JsonProperty("kpiTotalOn")
   public Long getKpiTotalOn() {
     return kpiTotalOn;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)")
   @JsonProperty("kpiTotalOff")
   public Long getKpiTotalOff() {
     return kpiTotalOff;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total interactions handled by predictive routing (GPR was on)")
   @JsonProperty("interactionCountOn")
   public Long getInteractionCountOn() {
     return interactionCountOn;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Total interactions not routed by predictive routing (GPR was off)")
   @JsonProperty("interactionCountOff")
   public Long getInteractionCountOff() {
     return interactionCountOff;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "KPI results for each metric")
   @JsonProperty("kpiResults")
   public List<KpiResult> getKpiResults() {
     return kpiResults;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,16 +116,17 @@ public class ComparisonPeriod  implements Serializable {
       return false;
     }
     ComparisonPeriod comparisonPeriod = (ComparisonPeriod) o;
+
     return Objects.equals(this.id, comparisonPeriod.id) &&
-        Objects.equals(this.kpi, comparisonPeriod.kpi) &&
-        Objects.equals(this.dateStarted, comparisonPeriod.dateStarted) &&
-        Objects.equals(this.dateEnded, comparisonPeriod.dateEnded) &&
-        Objects.equals(this.kpiTotalOn, comparisonPeriod.kpiTotalOn) &&
-        Objects.equals(this.kpiTotalOff, comparisonPeriod.kpiTotalOff) &&
-        Objects.equals(this.interactionCountOn, comparisonPeriod.interactionCountOn) &&
-        Objects.equals(this.interactionCountOff, comparisonPeriod.interactionCountOff) &&
-        Objects.equals(this.kpiResults, comparisonPeriod.kpiResults) &&
-        Objects.equals(this.selfUri, comparisonPeriod.selfUri);
+            Objects.equals(this.kpi, comparisonPeriod.kpi) &&
+            Objects.equals(this.dateStarted, comparisonPeriod.dateStarted) &&
+            Objects.equals(this.dateEnded, comparisonPeriod.dateEnded) &&
+            Objects.equals(this.kpiTotalOn, comparisonPeriod.kpiTotalOn) &&
+            Objects.equals(this.kpiTotalOff, comparisonPeriod.kpiTotalOff) &&
+            Objects.equals(this.interactionCountOn, comparisonPeriod.interactionCountOn) &&
+            Objects.equals(this.interactionCountOff, comparisonPeriod.interactionCountOff) &&
+            Objects.equals(this.kpiResults, comparisonPeriod.kpiResults) &&
+            Objects.equals(this.selfUri, comparisonPeriod.selfUri);
   }
 
   @Override

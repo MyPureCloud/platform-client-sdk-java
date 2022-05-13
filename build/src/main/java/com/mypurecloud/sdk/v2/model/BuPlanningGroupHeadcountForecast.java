@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PlanningGroupReference;
@@ -45,7 +46,7 @@ public class BuPlanningGroupHeadcountForecast  implements Serializable {
     this.planningGroup = planningGroup;
   }
 
-  
+
   /**
    * Required headcount per interval, referenced against the reference start date
    **/
@@ -63,7 +64,7 @@ public class BuPlanningGroupHeadcountForecast  implements Serializable {
     this.requiredPerInterval = requiredPerInterval;
   }
 
-  
+
   /**
    * Required headcount per interval without accounting for shrinkage, referenced against the reference start date
    **/
@@ -81,7 +82,6 @@ public class BuPlanningGroupHeadcountForecast  implements Serializable {
     this.requiredWithoutShrinkagePerInterval = requiredWithoutShrinkagePerInterval;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,9 +92,10 @@ public class BuPlanningGroupHeadcountForecast  implements Serializable {
       return false;
     }
     BuPlanningGroupHeadcountForecast buPlanningGroupHeadcountForecast = (BuPlanningGroupHeadcountForecast) o;
+
     return Objects.equals(this.planningGroup, buPlanningGroupHeadcountForecast.planningGroup) &&
-        Objects.equals(this.requiredPerInterval, buPlanningGroupHeadcountForecast.requiredPerInterval) &&
-        Objects.equals(this.requiredWithoutShrinkagePerInterval, buPlanningGroupHeadcountForecast.requiredWithoutShrinkagePerInterval);
+            Objects.equals(this.requiredPerInterval, buPlanningGroupHeadcountForecast.requiredPerInterval) &&
+            Objects.equals(this.requiredWithoutShrinkagePerInterval, buPlanningGroupHeadcountForecast.requiredWithoutShrinkagePerInterval);
   }
 
   @Override

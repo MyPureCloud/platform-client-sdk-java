@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -50,7 +51,7 @@ public class ConversationProperties  implements Serializable {
     this.isWaiting = isWaiting;
   }
 
-  
+
   /**
    * Indicates filtering for active
    **/
@@ -68,7 +69,7 @@ public class ConversationProperties  implements Serializable {
     this.isActive = isActive;
   }
 
-  
+
   /**
    * Indicates filtering for Acd
    **/
@@ -86,7 +87,7 @@ public class ConversationProperties  implements Serializable {
     this.isAcd = isAcd;
   }
 
-  
+
   /**
    * Indicates filtering for Preferred Agent Routing
    **/
@@ -104,7 +105,7 @@ public class ConversationProperties  implements Serializable {
     this.isPreferred = isPreferred;
   }
 
-  
+
   /**
    * Indicates filtering for screenshare
    **/
@@ -122,7 +123,7 @@ public class ConversationProperties  implements Serializable {
     this.isScreenshare = isScreenshare;
   }
 
-  
+
   /**
    * Indicates filtering for Cobrowse
    **/
@@ -140,7 +141,7 @@ public class ConversationProperties  implements Serializable {
     this.isCobrowse = isCobrowse;
   }
 
-  
+
   /**
    * Indicates filtering for Voice mail
    **/
@@ -158,7 +159,7 @@ public class ConversationProperties  implements Serializable {
     this.isVoicemail = isVoicemail;
   }
 
-  
+
   /**
    * Indicates filtering for flagged
    **/
@@ -176,7 +177,7 @@ public class ConversationProperties  implements Serializable {
     this.isFlagged = isFlagged;
   }
 
-  
+
   /**
    * Indicates filtering for monitored
    **/
@@ -194,7 +195,7 @@ public class ConversationProperties  implements Serializable {
     this.isMonitored = isMonitored;
   }
 
-  
+
   /**
    * Indicates filtering for WrapUpNotes
    **/
@@ -212,7 +213,7 @@ public class ConversationProperties  implements Serializable {
     this.filterWrapUpNotes = filterWrapUpNotes;
   }
 
-  
+
   /**
    * Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic
    **/
@@ -230,7 +231,6 @@ public class ConversationProperties  implements Serializable {
     this.matchAll = matchAll;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -241,17 +241,18 @@ public class ConversationProperties  implements Serializable {
       return false;
     }
     ConversationProperties conversationProperties = (ConversationProperties) o;
+
     return Objects.equals(this.isWaiting, conversationProperties.isWaiting) &&
-        Objects.equals(this.isActive, conversationProperties.isActive) &&
-        Objects.equals(this.isAcd, conversationProperties.isAcd) &&
-        Objects.equals(this.isPreferred, conversationProperties.isPreferred) &&
-        Objects.equals(this.isScreenshare, conversationProperties.isScreenshare) &&
-        Objects.equals(this.isCobrowse, conversationProperties.isCobrowse) &&
-        Objects.equals(this.isVoicemail, conversationProperties.isVoicemail) &&
-        Objects.equals(this.isFlagged, conversationProperties.isFlagged) &&
-        Objects.equals(this.isMonitored, conversationProperties.isMonitored) &&
-        Objects.equals(this.filterWrapUpNotes, conversationProperties.filterWrapUpNotes) &&
-        Objects.equals(this.matchAll, conversationProperties.matchAll);
+            Objects.equals(this.isActive, conversationProperties.isActive) &&
+            Objects.equals(this.isAcd, conversationProperties.isAcd) &&
+            Objects.equals(this.isPreferred, conversationProperties.isPreferred) &&
+            Objects.equals(this.isScreenshare, conversationProperties.isScreenshare) &&
+            Objects.equals(this.isCobrowse, conversationProperties.isCobrowse) &&
+            Objects.equals(this.isVoicemail, conversationProperties.isVoicemail) &&
+            Objects.equals(this.isFlagged, conversationProperties.isFlagged) &&
+            Objects.equals(this.isMonitored, conversationProperties.isMonitored) &&
+            Objects.equals(this.filterWrapUpNotes, conversationProperties.filterWrapUpNotes) &&
+            Objects.equals(this.matchAll, conversationProperties.matchAll);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -94,7 +95,7 @@ public class Predictor  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The queue IDs associated with the predictor.
    **/
@@ -112,7 +113,7 @@ public class Predictor  implements Serializable {
     this.queues = queues;
   }
 
-  
+
   /**
    * The KPI that the predictor attempts to maximize/minimize.
    **/
@@ -130,7 +131,7 @@ public class Predictor  implements Serializable {
     this.kpi = kpi;
   }
 
-  
+
   /**
    * Number of seconds allocated to predictive routing before attempting a different routing method. This is a value between 12 and 900 seconds.
    **/
@@ -148,7 +149,7 @@ public class Predictor  implements Serializable {
     this.routingTimeoutSeconds = routingTimeoutSeconds;
   }
 
-  
+
   /**
    * The predictor schedule that determines when the predictor is used for routing interactions.
    **/
@@ -166,28 +167,28 @@ public class Predictor  implements Serializable {
     this.schedule = schedule;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The predictor state.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "DateTime indicating when the predictor was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "DateTime indicating when the predictor was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   /**
    * The predictor balancing configuration to enable workload balancing.
    **/
@@ -205,21 +206,20 @@ public class Predictor  implements Serializable {
     this.workloadBalancingConfig = workloadBalancingConfig;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "Predictor error code - optional details on why the predictor went into error state.")
   @JsonProperty("errorCode")
   public String getErrorCode() {
     return errorCode;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -230,17 +230,18 @@ public class Predictor  implements Serializable {
       return false;
     }
     Predictor predictor = (Predictor) o;
+
     return Objects.equals(this.id, predictor.id) &&
-        Objects.equals(this.queues, predictor.queues) &&
-        Objects.equals(this.kpi, predictor.kpi) &&
-        Objects.equals(this.routingTimeoutSeconds, predictor.routingTimeoutSeconds) &&
-        Objects.equals(this.schedule, predictor.schedule) &&
-        Objects.equals(this.state, predictor.state) &&
-        Objects.equals(this.dateCreated, predictor.dateCreated) &&
-        Objects.equals(this.dateModified, predictor.dateModified) &&
-        Objects.equals(this.workloadBalancingConfig, predictor.workloadBalancingConfig) &&
-        Objects.equals(this.errorCode, predictor.errorCode) &&
-        Objects.equals(this.selfUri, predictor.selfUri);
+            Objects.equals(this.queues, predictor.queues) &&
+            Objects.equals(this.kpi, predictor.kpi) &&
+            Objects.equals(this.routingTimeoutSeconds, predictor.routingTimeoutSeconds) &&
+            Objects.equals(this.schedule, predictor.schedule) &&
+            Objects.equals(this.state, predictor.state) &&
+            Objects.equals(this.dateCreated, predictor.dateCreated) &&
+            Objects.equals(this.dateModified, predictor.dateModified) &&
+            Objects.equals(this.workloadBalancingConfig, predictor.workloadBalancingConfig) &&
+            Objects.equals(this.errorCode, predictor.errorCode) &&
+            Objects.equals(this.selfUri, predictor.selfUri);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -107,7 +108,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.id = id;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast weekDate(String weekDate) {
@@ -124,7 +125,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.weekDate = weekDate;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast creationMethod(CreationMethodEnum creationMethod) {
@@ -141,7 +142,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.creationMethod = creationMethod;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast description(String description) {
@@ -158,7 +159,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.description = description;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast legacy(Boolean legacy) {
@@ -175,7 +176,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.legacy = legacy;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast referenceStartDate(Date referenceStartDate) {
@@ -192,7 +193,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.referenceStartDate = referenceStartDate;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast sourceDays(List<WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer> sourceDays) {
@@ -209,7 +210,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.sourceDays = sourceDays;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast modifications(List<WfmBuShortTermForecastGenerateProgressTopicBuForecastModification> modifications) {
@@ -226,7 +227,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.modifications = modifications;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast timeZone(String timeZone) {
@@ -243,7 +244,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.timeZone = timeZone;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast planningGroupsVersion(Integer planningGroupsVersion) {
@@ -260,7 +261,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.planningGroupsVersion = planningGroupsVersion;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast weekCount(Integer weekCount) {
@@ -277,7 +278,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.weekCount = weekCount;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast metadata(WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata metadata) {
@@ -294,7 +295,7 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.metadata = metadata;
   }
 
-  
+
   /**
    **/
   public WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast canUseForScheduling(Boolean canUseForScheduling) {
@@ -311,7 +312,6 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
     this.canUseForScheduling = canUseForScheduling;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -322,19 +322,20 @@ public class WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast  imp
       return false;
     }
     WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast = (WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast) o;
+
     return Objects.equals(this.id, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.id) &&
-        Objects.equals(this.weekDate, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.weekDate) &&
-        Objects.equals(this.creationMethod, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.creationMethod) &&
-        Objects.equals(this.description, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.description) &&
-        Objects.equals(this.legacy, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.legacy) &&
-        Objects.equals(this.referenceStartDate, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.referenceStartDate) &&
-        Objects.equals(this.sourceDays, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.sourceDays) &&
-        Objects.equals(this.modifications, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.modifications) &&
-        Objects.equals(this.timeZone, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.timeZone) &&
-        Objects.equals(this.planningGroupsVersion, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.planningGroupsVersion) &&
-        Objects.equals(this.weekCount, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.weekCount) &&
-        Objects.equals(this.metadata, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.metadata) &&
-        Objects.equals(this.canUseForScheduling, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.canUseForScheduling);
+            Objects.equals(this.weekDate, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.weekDate) &&
+            Objects.equals(this.creationMethod, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.creationMethod) &&
+            Objects.equals(this.description, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.description) &&
+            Objects.equals(this.legacy, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.legacy) &&
+            Objects.equals(this.referenceStartDate, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.referenceStartDate) &&
+            Objects.equals(this.sourceDays, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.sourceDays) &&
+            Objects.equals(this.modifications, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.modifications) &&
+            Objects.equals(this.timeZone, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.timeZone) &&
+            Objects.equals(this.planningGroupsVersion, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.planningGroupsVersion) &&
+            Objects.equals(this.weekCount, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.weekCount) &&
+            Objects.equals(this.metadata, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.metadata) &&
+            Objects.equals(this.canUseForScheduling, wfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast.canUseForScheduling);
   }
 
   @Override

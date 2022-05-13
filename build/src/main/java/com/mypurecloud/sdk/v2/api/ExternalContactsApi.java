@@ -10,39 +10,38 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.ExternalContact;
-import com.mypurecloud.sdk.v2.model.Note;
-import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
+import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactListing;
-import com.mypurecloud.sdk.v2.model.DataSchema;
-import com.mypurecloud.sdk.v2.model.DataSchemaListing;
-import com.mypurecloud.sdk.v2.model.ExternalOrganization;
-import com.mypurecloud.sdk.v2.model.RelationshipListing;
-import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
-import com.mypurecloud.sdk.v2.model.Relationship;
-import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
 import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
-import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
-import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
-import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
-import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
-import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
-import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
-import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
-import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
-import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
-import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
-import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
-import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
-import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
-import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
-import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
+import com.mypurecloud.sdk.v2.model.Note;
+import com.mypurecloud.sdk.v2.model.NoteListing;
+import com.mypurecloud.sdk.v2.model.Relationship;
+import com.mypurecloud.sdk.v2.model.RelationshipListing;
+import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
@@ -115,7 +114,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ExternalContactsApi {
   private final ApiClient pcapiClient;
 
@@ -127,7 +125,6 @@ public class ExternalContactsApi {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete an external contact
    * 
@@ -154,7 +151,7 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsContactRequest createDeleteExternalcontactsContactRequest(String contactId) {
     return DeleteExternalcontactsContactRequest.builder()
             .withContactId(contactId)
-    
+
             .build();
   }
 
@@ -206,7 +203,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Delete a note for an external contact
    * 
@@ -235,9 +231,9 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsContactNoteRequest createDeleteExternalcontactsContactNoteRequest(String contactId, String noteId) {
     return DeleteExternalcontactsContactNoteRequest.builder()
             .withContactId(contactId)
-    
+
             .withNoteId(noteId)
-    
+
             .build();
   }
 
@@ -289,7 +285,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Delete a schema
    * 
@@ -314,7 +309,7 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsContactsSchemaRequest createDeleteExternalcontactsContactsSchemaRequest(String schemaId) {
     return DeleteExternalcontactsContactsSchemaRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .build();
   }
 
@@ -365,7 +360,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Delete an external organization
    * 
@@ -392,7 +386,7 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsOrganizationRequest createDeleteExternalcontactsOrganizationRequest(String externalOrganizationId) {
     return DeleteExternalcontactsOrganizationRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .build();
   }
 
@@ -444,7 +438,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Delete a note for an external organization
    * 
@@ -473,9 +466,9 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsOrganizationNoteRequest createDeleteExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId) {
     return DeleteExternalcontactsOrganizationNoteRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withNoteId(noteId)
-    
+
             .build();
   }
 
@@ -527,7 +520,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Unlink the Trustor for this External Organization
    * 
@@ -552,7 +544,7 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsOrganizationTrustorRequest createDeleteExternalcontactsOrganizationTrustorRequest(String externalOrganizationId) {
     return DeleteExternalcontactsOrganizationTrustorRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .build();
   }
 
@@ -603,7 +595,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Delete a relationship
    * 
@@ -630,7 +621,7 @@ public class ExternalContactsApi {
   private DeleteExternalcontactsRelationshipRequest createDeleteExternalcontactsRelationshipRequest(String relationshipId) {
     return DeleteExternalcontactsRelationshipRequest.builder()
             .withRelationshipId(relationshipId)
-    
+
             .build();
   }
 
@@ -682,7 +673,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Fetch an external contact
    * 
@@ -711,9 +701,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactRequest createGetExternalcontactsContactRequest(String contactId, List<String> expand) {
     return GetExternalcontactsContactRequest.builder()
             .withContactId(contactId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -765,7 +755,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Fetch a note for an external contact
    * 
@@ -796,11 +785,11 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactNoteRequest createGetExternalcontactsContactNoteRequest(String contactId, String noteId, List<String> expand) {
     return GetExternalcontactsContactNoteRequest.builder()
             .withContactId(contactId)
-    
+
             .withNoteId(noteId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -852,13 +841,12 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * List notes for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -873,8 +861,8 @@ public class ExternalContactsApi {
    * List notes for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -887,15 +875,15 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactNotesRequest createGetExternalcontactsContactNotesRequest(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
     return GetExternalcontactsContactNotesRequest.builder()
             .withContactId(contactId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -947,12 +935,11 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Search for external contacts
    * 
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -967,8 +954,8 @@ public class ExternalContactsApi {
   /**
    * Search for external contacts
    * 
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -982,15 +969,15 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactsRequest createGetExternalcontactsContactsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) {
     return GetExternalcontactsContactsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withQ(q)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1042,7 +1029,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Get a schema
    * 
@@ -1069,7 +1055,7 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactsSchemaRequest createGetExternalcontactsContactsSchemaRequest(String schemaId) {
     return GetExternalcontactsContactsSchemaRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .build();
   }
 
@@ -1121,7 +1107,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Get a specific version of a schema
    * 
@@ -1150,9 +1135,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactsSchemaVersionRequest createGetExternalcontactsContactsSchemaVersionRequest(String schemaId, String versionId) {
     return GetExternalcontactsContactsSchemaVersionRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .withVersionId(versionId)
-    
+
             .build();
   }
 
@@ -1204,9 +1189,8 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
-   * Get all versions of an external contact&#39;s schema
+   * Get all versions of an external contact's schema
    * 
    * @param schemaId Schema ID (required)
    * @return DataSchema
@@ -1218,7 +1202,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get all versions of an external contact&#39;s schema
+   * Get all versions of an external contact's schema
    * 
    * @param schemaId Schema ID (required)
    * @return DataSchema
@@ -1231,12 +1215,12 @@ public class ExternalContactsApi {
   private GetExternalcontactsContactsSchemaVersionsRequest createGetExternalcontactsContactsSchemaVersionsRequest(String schemaId) {
     return GetExternalcontactsContactsSchemaVersionsRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .build();
   }
 
   /**
-   * Get all versions of an external contact&#39;s schema
+   * Get all versions of an external contact's schema
    * 
    * @param request The request object
    * @return DataSchema
@@ -1255,7 +1239,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get all versions of an external contact&#39;s schema
+   * Get all versions of an external contact's schema
    * 
    * @param request The request object
    * @return the response
@@ -1283,7 +1267,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Get a list of schemas.
    * 
@@ -1358,7 +1341,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Fetch an external organization
    * 
@@ -1389,11 +1371,11 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationRequest createGetExternalcontactsOrganizationRequest(String externalOrganizationId, String expand, Boolean includeTrustors) {
     return GetExternalcontactsOrganizationRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withExpand(expand)
-    
+
             .withIncludeTrustors(includeTrustors)
-    
+
             .build();
   }
 
@@ -1445,13 +1427,12 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Search for external contacts in an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -1467,8 +1448,8 @@ public class ExternalContactsApi {
    * Search for external contacts in an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -1482,17 +1463,17 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationContactsRequest createGetExternalcontactsOrganizationContactsRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) {
     return GetExternalcontactsOrganizationContactsRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withQ(q)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1544,7 +1525,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Fetch a note for an external organization
    * 
@@ -1575,11 +1555,11 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationNoteRequest createGetExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId, List<String> expand) {
     return GetExternalcontactsOrganizationNoteRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withNoteId(noteId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1631,13 +1611,12 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * List notes for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -1652,8 +1631,8 @@ public class ExternalContactsApi {
    * List notes for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -1666,15 +1645,15 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationNotesRequest createGetExternalcontactsOrganizationNotesRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
     return GetExternalcontactsOrganizationNotesRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -1726,13 +1705,12 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Fetch a relationship for an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param expand which fields, if any, to expand (optional)
    * @param sortOrder Sort order (optional)
    * @return RelationshipListing
@@ -1747,8 +1725,8 @@ public class ExternalContactsApi {
    * Fetch a relationship for an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param expand which fields, if any, to expand (optional)
    * @param sortOrder Sort order (optional)
    * @return RelationshipListing
@@ -1761,15 +1739,15 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationRelationshipsRequest createGetExternalcontactsOrganizationRelationshipsRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) {
     return GetExternalcontactsOrganizationRelationshipsRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withExpand(expand)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .build();
   }
 
@@ -1821,14 +1799,13 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Search for external organizations
    * 
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q Search query (optional)
-   * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested (optional)
+   * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
@@ -1843,10 +1820,10 @@ public class ExternalContactsApi {
   /**
    * Search for external organizations
    * 
-   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
-   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q Search query (optional)
-   * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested (optional)
+   * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
@@ -1860,19 +1837,19 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) {
     return GetExternalcontactsOrganizationsRequest.builder()
             .withPageSize(pageSize)
-    
+
             .withPageNumber(pageNumber)
-    
+
             .withQ(q)
-    
+
             .withTrustorId(trustorId)
-    
+
             .withSortOrder(sortOrder)
-    
+
             .withExpand(expand)
-    
+
             .withIncludeTrustors(includeTrustors)
-    
+
             .build();
   }
 
@@ -1924,7 +1901,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Get a schema
    * 
@@ -1951,7 +1927,7 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationsSchemaRequest createGetExternalcontactsOrganizationsSchemaRequest(String schemaId) {
     return GetExternalcontactsOrganizationsSchemaRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .build();
   }
 
@@ -2003,7 +1979,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Get a specific version of a schema
    * 
@@ -2032,9 +2007,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationsSchemaVersionRequest createGetExternalcontactsOrganizationsSchemaVersionRequest(String schemaId, String versionId) {
     return GetExternalcontactsOrganizationsSchemaVersionRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .withVersionId(versionId)
-    
+
             .build();
   }
 
@@ -2086,9 +2061,8 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
-   * Get all versions of an external organization&#39;s schema
+   * Get all versions of an external organization's schema
    * 
    * @param schemaId Schema ID (required)
    * @return DataSchema
@@ -2100,7 +2074,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get all versions of an external organization&#39;s schema
+   * Get all versions of an external organization's schema
    * 
    * @param schemaId Schema ID (required)
    * @return DataSchema
@@ -2113,12 +2087,12 @@ public class ExternalContactsApi {
   private GetExternalcontactsOrganizationsSchemaVersionsRequest createGetExternalcontactsOrganizationsSchemaVersionsRequest(String schemaId) {
     return GetExternalcontactsOrganizationsSchemaVersionsRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .build();
   }
 
   /**
-   * Get all versions of an external organization&#39;s schema
+   * Get all versions of an external organization's schema
    * 
    * @param request The request object
    * @return DataSchema
@@ -2137,7 +2111,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Get all versions of an external organization&#39;s schema
+   * Get all versions of an external organization's schema
    * 
    * @param request The request object
    * @return the response
@@ -2165,7 +2139,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Get a list of schemas.
    * 
@@ -2240,7 +2213,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Fetch a relationship
    * 
@@ -2269,9 +2241,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsRelationshipRequest createGetExternalcontactsRelationshipRequest(String relationshipId, String expand) {
     return GetExternalcontactsRelationshipRequest.builder()
             .withRelationshipId(relationshipId)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -2323,7 +2295,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
    * 
@@ -2352,9 +2323,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsReversewhitepageslookupRequest createGetExternalcontactsReversewhitepageslookupRequest(String lookupVal, List<String> expand) {
     return GetExternalcontactsReversewhitepageslookupRequest.builder()
             .withLookupVal(lookupVal)
-    
+
             .withExpand(expand)
-    
+
             .build();
   }
 
@@ -2406,7 +2377,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Scan for external contacts using paging
    * 
@@ -2435,9 +2405,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsScanContactsRequest createGetExternalcontactsScanContactsRequest(Integer limit, String cursor) {
     return GetExternalcontactsScanContactsRequest.builder()
             .withLimit(limit)
-    
+
             .withCursor(cursor)
-    
+
             .build();
   }
 
@@ -2489,7 +2459,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Scan for notes using paging
    * 
@@ -2518,9 +2487,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsScanNotesRequest createGetExternalcontactsScanNotesRequest(Integer limit, String cursor) {
     return GetExternalcontactsScanNotesRequest.builder()
             .withLimit(limit)
-    
+
             .withCursor(cursor)
-    
+
             .build();
   }
 
@@ -2572,7 +2541,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Scan for external organizations using paging
    * 
@@ -2601,9 +2569,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsScanOrganizationsRequest createGetExternalcontactsScanOrganizationsRequest(Integer limit, String cursor) {
     return GetExternalcontactsScanOrganizationsRequest.builder()
             .withLimit(limit)
-    
+
             .withCursor(cursor)
-    
+
             .build();
   }
 
@@ -2655,7 +2623,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Scan for relationships
    * 
@@ -2684,9 +2651,9 @@ public class ExternalContactsApi {
   private GetExternalcontactsScanRelationshipsRequest createGetExternalcontactsScanRelationshipsRequest(Integer limit, String cursor) {
     return GetExternalcontactsScanRelationshipsRequest.builder()
             .withLimit(limit)
-    
+
             .withCursor(cursor)
-    
+
             .build();
   }
 
@@ -2738,7 +2705,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk fetch contacts
    * 
@@ -2765,7 +2731,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkContactsRequest createPostExternalcontactsBulkContactsRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkContactsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2817,7 +2783,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk add contacts
    * 
@@ -2844,7 +2809,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkContactsAddRequest createPostExternalcontactsBulkContactsAddRequest(BulkContactsRequest body) {
     return PostExternalcontactsBulkContactsAddRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2896,7 +2861,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk remove contacts
    * 
@@ -2923,7 +2887,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkContactsRemoveRequest createPostExternalcontactsBulkContactsRemoveRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkContactsRemoveRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -2975,7 +2939,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk update contacts
    * 
@@ -3002,7 +2965,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkContactsUpdateRequest createPostExternalcontactsBulkContactsUpdateRequest(BulkContactsRequest body) {
     return PostExternalcontactsBulkContactsUpdateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3054,7 +3017,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk fetch notes
    * 
@@ -3081,7 +3043,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkNotesRequest createPostExternalcontactsBulkNotesRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkNotesRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3133,7 +3095,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk add notes
    * 
@@ -3160,7 +3121,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkNotesAddRequest createPostExternalcontactsBulkNotesAddRequest(BulkNotesRequest body) {
     return PostExternalcontactsBulkNotesAddRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3212,7 +3173,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk remove notes
    * 
@@ -3239,7 +3199,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkNotesRemoveRequest createPostExternalcontactsBulkNotesRemoveRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkNotesRemoveRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3291,7 +3251,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk update notes
    * 
@@ -3318,7 +3277,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkNotesUpdateRequest createPostExternalcontactsBulkNotesUpdateRequest(BulkNotesRequest body) {
     return PostExternalcontactsBulkNotesUpdateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3370,7 +3329,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk fetch organizations
    * 
@@ -3397,7 +3355,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkOrganizationsRequest createPostExternalcontactsBulkOrganizationsRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkOrganizationsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3449,7 +3407,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk add organizations
    * 
@@ -3476,7 +3433,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkOrganizationsAddRequest createPostExternalcontactsBulkOrganizationsAddRequest(BulkOrganizationsRequest body) {
     return PostExternalcontactsBulkOrganizationsAddRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3528,7 +3485,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk remove organizations
    * 
@@ -3555,7 +3511,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkOrganizationsRemoveRequest createPostExternalcontactsBulkOrganizationsRemoveRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkOrganizationsRemoveRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3607,7 +3563,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk update organizations
    * 
@@ -3634,7 +3589,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkOrganizationsUpdateRequest createPostExternalcontactsBulkOrganizationsUpdateRequest(BulkOrganizationsRequest body) {
     return PostExternalcontactsBulkOrganizationsUpdateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3686,7 +3641,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk fetch relationships
    * 
@@ -3713,7 +3667,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkRelationshipsRequest createPostExternalcontactsBulkRelationshipsRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkRelationshipsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3765,7 +3719,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk add relationships
    * 
@@ -3792,7 +3745,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkRelationshipsAddRequest createPostExternalcontactsBulkRelationshipsAddRequest(BulkRelationshipsRequest body) {
     return PostExternalcontactsBulkRelationshipsAddRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3844,7 +3797,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk remove relationships
    * 
@@ -3871,7 +3823,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkRelationshipsRemoveRequest createPostExternalcontactsBulkRelationshipsRemoveRequest(BulkIdsRequest body) {
     return PostExternalcontactsBulkRelationshipsRemoveRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -3923,7 +3875,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Bulk update relationships
    * 
@@ -3950,7 +3901,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsBulkRelationshipsUpdateRequest createPostExternalcontactsBulkRelationshipsUpdateRequest(BulkRelationshipsRequest body) {
     return PostExternalcontactsBulkRelationshipsUpdateRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4002,7 +3953,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create a note for an external contact
    * 
@@ -4031,9 +3981,9 @@ public class ExternalContactsApi {
   private PostExternalcontactsContactNotesRequest createPostExternalcontactsContactNotesRequest(String contactId, Note body) {
     return PostExternalcontactsContactNotesRequest.builder()
             .withContactId(contactId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4085,7 +4035,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create an external contact
    * 
@@ -4112,7 +4061,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsContactsRequest createPostExternalcontactsContactsRequest(ExternalContact body) {
     return PostExternalcontactsContactsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4164,7 +4113,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create a schema
    * 
@@ -4191,7 +4139,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsContactsSchemasRequest createPostExternalcontactsContactsSchemasRequest(DataSchema body) {
     return PostExternalcontactsContactsSchemasRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4243,7 +4191,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create a note for an external organization
    * 
@@ -4272,9 +4219,9 @@ public class ExternalContactsApi {
   private PostExternalcontactsOrganizationNotesRequest createPostExternalcontactsOrganizationNotesRequest(String externalOrganizationId, Note body) {
     return PostExternalcontactsOrganizationNotesRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4326,7 +4273,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create an external organization
    * 
@@ -4353,7 +4299,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsOrganizationsRequest createPostExternalcontactsOrganizationsRequest(ExternalOrganization body) {
     return PostExternalcontactsOrganizationsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4405,7 +4351,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create a schema
    * 
@@ -4432,7 +4377,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsOrganizationsSchemasRequest createPostExternalcontactsOrganizationsSchemasRequest(DataSchema body) {
     return PostExternalcontactsOrganizationsSchemasRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4484,7 +4429,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Create a relationship
    * 
@@ -4511,7 +4455,7 @@ public class ExternalContactsApi {
   private PostExternalcontactsRelationshipsRequest createPostExternalcontactsRelationshipsRequest(Relationship body) {
     return PostExternalcontactsRelationshipsRequest.builder()
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4563,7 +4507,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update an external contact
    * 
@@ -4592,9 +4535,9 @@ public class ExternalContactsApi {
   private PutExternalcontactsContactRequest createPutExternalcontactsContactRequest(String contactId, ExternalContact body) {
     return PutExternalcontactsContactRequest.builder()
             .withContactId(contactId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4646,7 +4589,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update a note for an external contact
    * 
@@ -4677,11 +4619,11 @@ public class ExternalContactsApi {
   private PutExternalcontactsContactNoteRequest createPutExternalcontactsContactNoteRequest(String contactId, String noteId, Note body) {
     return PutExternalcontactsContactNoteRequest.builder()
             .withContactId(contactId)
-    
+
             .withNoteId(noteId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4733,7 +4675,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update a schema
    * 
@@ -4762,9 +4703,9 @@ public class ExternalContactsApi {
   private PutExternalcontactsContactsSchemaRequest createPutExternalcontactsContactsSchemaRequest(String schemaId, DataSchema body) {
     return PutExternalcontactsContactsSchemaRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4816,36 +4757,35 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Associate/disassociate an external contact with a conversation
    * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
-   * @param body ConversationAssociation (required)
    * @param conversationId Conversation ID (required)
+   * @param body ConversationAssociation (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void putExternalcontactsConversation(ConversationAssociation body, String conversationId) throws IOException, ApiException {
-     putExternalcontactsConversation(createPutExternalcontactsConversationRequest(body, conversationId));
+  public void putExternalcontactsConversation(String conversationId, ConversationAssociation body) throws IOException, ApiException {
+     putExternalcontactsConversation(createPutExternalcontactsConversationRequest(conversationId, body));
   }
 
   /**
    * Associate/disassociate an external contact with a conversation
    * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
-   * @param body ConversationAssociation (required)
    * @param conversationId Conversation ID (required)
+   * @param body ConversationAssociation (required)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(ConversationAssociation body, String conversationId) throws IOException {
-    return putExternalcontactsConversation(createPutExternalcontactsConversationRequest(body, conversationId).withHttpInfo());
+  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws IOException {
+    return putExternalcontactsConversation(createPutExternalcontactsConversationRequest(conversationId, body).withHttpInfo());
   }
 
-  private PutExternalcontactsConversationRequest createPutExternalcontactsConversationRequest(ConversationAssociation body, String conversationId) {
+  private PutExternalcontactsConversationRequest createPutExternalcontactsConversationRequest(String conversationId, ConversationAssociation body) {
     return PutExternalcontactsConversationRequest.builder()
-            .withBody(body)
-    
             .withConversationId(conversationId)
-    
+
+            .withBody(body)
+
             .build();
   }
 
@@ -4896,7 +4836,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update an external organization
    * 
@@ -4925,9 +4864,9 @@ public class ExternalContactsApi {
   private PutExternalcontactsOrganizationRequest createPutExternalcontactsOrganizationRequest(String externalOrganizationId, ExternalOrganization body) {
     return PutExternalcontactsOrganizationRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -4979,7 +4918,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update a note for an external organization
    * 
@@ -5010,11 +4948,11 @@ public class ExternalContactsApi {
   private PutExternalcontactsOrganizationNoteRequest createPutExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId, Note body) {
     return PutExternalcontactsOrganizationNoteRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withNoteId(noteId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5066,7 +5004,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Links a Trustor with an External Organization
    * 
@@ -5095,9 +5032,9 @@ public class ExternalContactsApi {
   private PutExternalcontactsOrganizationTrustorTrustorIdRequest createPutExternalcontactsOrganizationTrustorTrustorIdRequest(String externalOrganizationId, String trustorId) {
     return PutExternalcontactsOrganizationTrustorTrustorIdRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
-    
+
             .withTrustorId(trustorId)
-    
+
             .build();
   }
 
@@ -5149,7 +5086,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update a schema
    * 
@@ -5178,9 +5114,9 @@ public class ExternalContactsApi {
   private PutExternalcontactsOrganizationsSchemaRequest createPutExternalcontactsOrganizationsSchemaRequest(String schemaId, DataSchema body) {
     return PutExternalcontactsOrganizationsSchemaRequest.builder()
             .withSchemaId(schemaId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5232,7 +5168,6 @@ public class ExternalContactsApi {
     }
   }
 
-  
   /**
    * Update a relationship
    * 
@@ -5261,9 +5196,9 @@ public class ExternalContactsApi {
   private PutExternalcontactsRelationshipRequest createPutExternalcontactsRelationshipRequest(String relationshipId, Relationship body) {
     return PutExternalcontactsRelationshipRequest.builder()
             .withRelationshipId(relationshipId)
-    
+
             .withBody(body)
-    
+
             .build();
   }
 
@@ -5315,5 +5250,4 @@ public class ExternalContactsApi {
     }
   }
 
-  
 }

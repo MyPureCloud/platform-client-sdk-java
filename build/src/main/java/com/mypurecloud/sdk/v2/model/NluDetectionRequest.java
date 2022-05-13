@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NluDetectionContext;
@@ -43,7 +44,7 @@ public class NluDetectionRequest  implements Serializable {
     this.input = input;
   }
 
-  
+
   /**
    * The context for the input to NLU detection.
    **/
@@ -61,7 +62,6 @@ public class NluDetectionRequest  implements Serializable {
     this.context = context;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class NluDetectionRequest  implements Serializable {
       return false;
     }
     NluDetectionRequest nluDetectionRequest = (NluDetectionRequest) o;
+
     return Objects.equals(this.input, nluDetectionRequest.input) &&
-        Objects.equals(this.context, nluDetectionRequest.context);
+            Objects.equals(this.context, nluDetectionRequest.context);
   }
 
   @Override

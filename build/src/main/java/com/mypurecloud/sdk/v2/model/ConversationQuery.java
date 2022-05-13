@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -155,7 +156,7 @@ public class ConversationQuery  implements Serializable {
     this.conversationFilters = conversationFilters;
   }
 
-  
+
   /**
    * Filters that target individual segments within a conversation
    **/
@@ -173,7 +174,7 @@ public class ConversationQuery  implements Serializable {
     this.segmentFilters = segmentFilters;
   }
 
-  
+
   /**
    * Filters that target evaluations
    **/
@@ -191,7 +192,7 @@ public class ConversationQuery  implements Serializable {
     this.evaluationFilters = evaluationFilters;
   }
 
-  
+
   /**
    * Filters that target surveys
    **/
@@ -209,7 +210,7 @@ public class ConversationQuery  implements Serializable {
     this.surveyFilters = surveyFilters;
   }
 
-  
+
   /**
    * Filters that target resolutions
    **/
@@ -227,7 +228,7 @@ public class ConversationQuery  implements Serializable {
     this.resolutionFilters = resolutionFilters;
   }
 
-  
+
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
@@ -245,7 +246,7 @@ public class ConversationQuery  implements Serializable {
     this.order = order;
   }
 
-  
+
   /**
    * Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart
    **/
@@ -263,7 +264,7 @@ public class ConversationQuery  implements Serializable {
     this.orderBy = orderBy;
   }
 
-  
+
   /**
    * Specifies the date and time range of data being queried. Results will only include conversations that started on a day touched by the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -281,7 +282,7 @@ public class ConversationQuery  implements Serializable {
     this.interval = interval;
   }
 
-  
+
   /**
    * Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
    **/
@@ -299,7 +300,7 @@ public class ConversationQuery  implements Serializable {
     this.aggregations = aggregations;
   }
 
-  
+
   /**
    * Page size and number to control iterating through large result sets. Default page size is 25
    **/
@@ -317,7 +318,6 @@ public class ConversationQuery  implements Serializable {
     this.paging = paging;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -328,16 +328,17 @@ public class ConversationQuery  implements Serializable {
       return false;
     }
     ConversationQuery conversationQuery = (ConversationQuery) o;
+
     return Objects.equals(this.conversationFilters, conversationQuery.conversationFilters) &&
-        Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
-        Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
-        Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
-        Objects.equals(this.resolutionFilters, conversationQuery.resolutionFilters) &&
-        Objects.equals(this.order, conversationQuery.order) &&
-        Objects.equals(this.orderBy, conversationQuery.orderBy) &&
-        Objects.equals(this.interval, conversationQuery.interval) &&
-        Objects.equals(this.aggregations, conversationQuery.aggregations) &&
-        Objects.equals(this.paging, conversationQuery.paging);
+            Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
+            Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
+            Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
+            Objects.equals(this.resolutionFilters, conversationQuery.resolutionFilters) &&
+            Objects.equals(this.order, conversationQuery.order) &&
+            Objects.equals(this.orderBy, conversationQuery.orderBy) &&
+            Objects.equals(this.interval, conversationQuery.interval) &&
+            Objects.equals(this.aggregations, conversationQuery.aggregations) &&
+            Objects.equals(this.paging, conversationQuery.paging);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContentAttributeFilterItem;
@@ -51,7 +52,7 @@ public class ContentQueryRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest pageNumber(Integer pageNumber) {
@@ -68,7 +69,7 @@ public class ContentQueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest pageSize(Integer pageSize) {
@@ -85,7 +86,7 @@ public class ContentQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest facetNameRequests(List<String> facetNameRequests) {
@@ -102,7 +103,7 @@ public class ContentQueryRequest  implements Serializable {
     this.facetNameRequests = facetNameRequests;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest sort(List<ContentSortItem> sort) {
@@ -119,7 +120,7 @@ public class ContentQueryRequest  implements Serializable {
     this.sort = sort;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest filters(List<ContentFacetFilterItem> filters) {
@@ -136,7 +137,7 @@ public class ContentQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest attributeFilters(List<ContentAttributeFilterItem> attributeFilters) {
@@ -153,7 +154,7 @@ public class ContentQueryRequest  implements Serializable {
     this.attributeFilters = attributeFilters;
   }
 
-  
+
   /**
    **/
   public ContentQueryRequest includeShares(Boolean includeShares) {
@@ -170,7 +171,6 @@ public class ContentQueryRequest  implements Serializable {
     this.includeShares = includeShares;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,14 +181,15 @@ public class ContentQueryRequest  implements Serializable {
       return false;
     }
     ContentQueryRequest contentQueryRequest = (ContentQueryRequest) o;
+
     return Objects.equals(this.queryPhrase, contentQueryRequest.queryPhrase) &&
-        Objects.equals(this.pageNumber, contentQueryRequest.pageNumber) &&
-        Objects.equals(this.pageSize, contentQueryRequest.pageSize) &&
-        Objects.equals(this.facetNameRequests, contentQueryRequest.facetNameRequests) &&
-        Objects.equals(this.sort, contentQueryRequest.sort) &&
-        Objects.equals(this.filters, contentQueryRequest.filters) &&
-        Objects.equals(this.attributeFilters, contentQueryRequest.attributeFilters) &&
-        Objects.equals(this.includeShares, contentQueryRequest.includeShares);
+            Objects.equals(this.pageNumber, contentQueryRequest.pageNumber) &&
+            Objects.equals(this.pageSize, contentQueryRequest.pageSize) &&
+            Objects.equals(this.facetNameRequests, contentQueryRequest.facetNameRequests) &&
+            Objects.equals(this.sort, contentQueryRequest.sort) &&
+            Objects.equals(this.filters, contentQueryRequest.filters) &&
+            Objects.equals(this.attributeFilters, contentQueryRequest.attributeFilters) &&
+            Objects.equals(this.includeShares, contentQueryRequest.includeShares);
   }
 
   @Override

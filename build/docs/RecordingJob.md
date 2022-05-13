@@ -31,13 +31,13 @@ title: RecordingJob
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| FULFILLED | &quot;FULFILLED&quot; |
-| PENDING | &quot;PENDING&quot; |
-| READY | &quot;READY&quot; |
-| PROCESSING | &quot;PROCESSING&quot; |
-| CANCELLED | &quot;CANCELLED&quot; |
-| FAILED | &quot;FAILED&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| FULFILLED | &quot;FULFILLED&quot; | 
+| PENDING | &quot;PENDING&quot; | 
+| READY | &quot;READY&quot; | 
+| PROCESSING | &quot;PROCESSING&quot; | 
+| CANCELLED | &quot;CANCELLED&quot; | 
+| FAILED | &quot;FAILED&quot; | 
 {: class="table table-striped"}
 
 

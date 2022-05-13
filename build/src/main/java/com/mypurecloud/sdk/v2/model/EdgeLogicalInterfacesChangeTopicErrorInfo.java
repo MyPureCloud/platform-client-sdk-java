@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -45,7 +46,7 @@ public class EdgeLogicalInterfacesChangeTopicErrorInfo  implements Serializable 
     this.message = message;
   }
 
-  
+
   /**
    **/
   public EdgeLogicalInterfacesChangeTopicErrorInfo messageWithParams(String messageWithParams) {
@@ -62,7 +63,7 @@ public class EdgeLogicalInterfacesChangeTopicErrorInfo  implements Serializable 
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public EdgeLogicalInterfacesChangeTopicErrorInfo messageParams(Map<String, String> messageParams) {
@@ -79,7 +80,7 @@ public class EdgeLogicalInterfacesChangeTopicErrorInfo  implements Serializable 
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public EdgeLogicalInterfacesChangeTopicErrorInfo code(String code) {
@@ -96,7 +97,6 @@ public class EdgeLogicalInterfacesChangeTopicErrorInfo  implements Serializable 
     this.code = code;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class EdgeLogicalInterfacesChangeTopicErrorInfo  implements Serializable 
       return false;
     }
     EdgeLogicalInterfacesChangeTopicErrorInfo edgeLogicalInterfacesChangeTopicErrorInfo = (EdgeLogicalInterfacesChangeTopicErrorInfo) o;
+
     return Objects.equals(this.message, edgeLogicalInterfacesChangeTopicErrorInfo.message) &&
-        Objects.equals(this.messageWithParams, edgeLogicalInterfacesChangeTopicErrorInfo.messageWithParams) &&
-        Objects.equals(this.messageParams, edgeLogicalInterfacesChangeTopicErrorInfo.messageParams) &&
-        Objects.equals(this.code, edgeLogicalInterfacesChangeTopicErrorInfo.code);
+            Objects.equals(this.messageWithParams, edgeLogicalInterfacesChangeTopicErrorInfo.messageWithParams) &&
+            Objects.equals(this.messageParams, edgeLogicalInterfacesChangeTopicErrorInfo.messageParams) &&
+            Objects.equals(this.code, edgeLogicalInterfacesChangeTopicErrorInfo.code);
   }
 
   @Override

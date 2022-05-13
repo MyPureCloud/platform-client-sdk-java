@@ -57,8 +57,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a document.
 
-
-
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId}  
 
 Requires NO permissions: 
@@ -181,8 +179,6 @@ null (empty response body)
 
 Cancel the command for this status
 
-
-
 Wraps DELETE /api/v2/contentmanagement/status/{statusId}  
 
 Requires NO permissions: 
@@ -241,8 +237,6 @@ null (empty response body)
 > Void deleteContentmanagementWorkspace(workspaceId, moveChildrenToWorkspaceId)
 
 Delete a workspace
-
-
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}  
 
@@ -304,8 +298,6 @@ null (empty response body)
 > Void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 Delete a member from a workspace
-
-
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}  
 
@@ -431,8 +423,6 @@ null (empty response body)
 
 Get a document.
 
-
-
 Wraps GET /api/v2/contentmanagement/documents/{documentId}  
 
 Requires NO permissions: 
@@ -461,7 +451,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     Document result = apiInstance.getContentmanagementDocument(documentId, expand);
     System.out.println(result);
@@ -494,8 +484,6 @@ try {
 > [DocumentAuditEntityListing](DocumentAuditEntityListing.html) getContentmanagementDocumentAudits(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)
 
 Get a list of audits for a document.
-
-
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits  
 
@@ -569,8 +557,6 @@ try {
 
 Download a document.
 
-
-
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content  
 
 Requires NO permissions: 
@@ -617,7 +603,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **disposition** | **String**| Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional]<br />**Values**: attachment, inline 
-| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional] 
+| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional] 
 {: class="table-striped"}
 
 
@@ -634,8 +620,6 @@ try {
 > [DocumentEntityListing](DocumentEntityListing.html) getContentmanagementDocuments(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder)
 
 Get a list of documents.
-
-
 
 Wraps GET /api/v2/contentmanagement/documents  
 
@@ -666,7 +650,7 @@ Configuration.setDefaultApiClient(apiClient);
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
 String name = "name_example"; // String | Name
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "sortBy_example"; // String | name or dateCreated
@@ -709,8 +693,6 @@ try {
 
 Query content
 
-
-
 Wraps GET /api/v2/contentmanagement/query  
 
 Requires NO permissions: 
@@ -743,7 +725,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | name or dateCreated
 String sortOrder = "ascending"; // String | ascending or descending
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     QueryResults result = apiInstance.getContentmanagementQuery(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand);
     System.out.println(result);
@@ -780,8 +762,6 @@ try {
 > [SecurityProfile](SecurityProfile.html) getContentmanagementSecurityprofile(securityProfileId)
 
 Get a Security Profile
-
-
 
 Wraps GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}  
 
@@ -843,8 +823,6 @@ try {
 
 Get a List of Security Profiles
 
-
-
 Wraps GET /api/v2/contentmanagement/securityprofiles  
 
 Requires NO permissions: 
@@ -901,8 +879,6 @@ This endpoint does not require any parameters.
 
 Retrieve details about an existing share.
 
-
-
 Wraps GET /api/v2/contentmanagement/shares/{shareId}  
 
 Requires NO permissions: 
@@ -931,7 +907,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String shareId = "shareId_example"; // String | Share ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     Share result = apiInstance.getContentmanagementShare(shareId, expand);
     System.out.println(result);
@@ -1016,7 +992,7 @@ try {
 | **sharedId** | **String**| Shared ID | 
 | **redirect** | **Boolean**| Turn on or off redirect | [optional] [default to true] 
 | **disposition** | **String**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none 
-| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional] 
+| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional] 
 | **expand** | **String**| Expand some document fields | [optional]<br />**Values**: document.acl 
 {: class="table-striped"}
 
@@ -1065,7 +1041,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String entityId = "entityId_example"; // String | Filters the shares returned to only the entity specified by the value of this parameter.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
@@ -1102,8 +1078,6 @@ try {
 > [CommandStatusEntityListing](CommandStatusEntityListing.html) getContentmanagementStatus(pageSize, pageNumber)
 
 Get a list of statuses for pending operations
-
-
 
 Wraps GET /api/v2/contentmanagement/status  
 
@@ -1167,8 +1141,6 @@ try {
 
 Get a status.
 
-
-
 Wraps GET /api/v2/contentmanagement/status/{statusId}  
 
 Requires NO permissions: 
@@ -1229,8 +1201,6 @@ try {
 
 Get usage details.
 
-
-
 Wraps GET /api/v2/contentmanagement/usage  
 
 Requires NO permissions: 
@@ -1287,8 +1257,6 @@ This endpoint does not require any parameters.
 
 Get a workspace.
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}  
 
 Requires NO permissions: 
@@ -1317,7 +1285,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     Workspace result = apiInstance.getContentmanagementWorkspace(workspaceId, expand);
     System.out.println(result);
@@ -1351,8 +1319,6 @@ try {
 
 Get a list of documents.
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents  
 
 Requires NO permissions: 
@@ -1381,7 +1347,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "sortBy_example"; // String | name or dateCreated
@@ -1423,8 +1389,6 @@ try {
 
 Get a workspace member
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}  
 
 Requires NO permissions: 
@@ -1454,7 +1418,7 @@ Configuration.setDefaultApiClient(apiClient);
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
 String memberId = "memberId_example"; // String | Member ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     WorkspaceMember result = apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, expand);
     System.out.println(result);
@@ -1489,8 +1453,6 @@ try {
 
 Get a list workspace members
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members  
 
 Requires NO permissions: 
@@ -1521,7 +1483,7 @@ ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     WorkspaceMemberEntityListing result = apiInstance.getContentmanagementWorkspaceMembers(workspaceId, pageSize, pageNumber, expand);
     System.out.println(result);
@@ -1557,8 +1519,6 @@ try {
 
 Get a workspace tag
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}  
 
 Requires NO permissions: 
@@ -1588,7 +1548,7 @@ Configuration.setDefaultApiClient(apiClient);
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
 String tagId = "tagId_example"; // String | Tag ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     TagValue result = apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, expand);
     System.out.println(result);
@@ -1623,8 +1583,6 @@ try {
 
 Get a list of workspace tags
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues  
 
 Requires NO permissions: 
@@ -1656,7 +1614,7 @@ String workspaceId = "workspaceId_example"; // String | Workspace ID
 String value = "value_example"; // String | filter the list of tags returned
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     TagValueEntityListing result = apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, value, pageSize, pageNumber, expand);
     System.out.println(result);
@@ -1693,7 +1651,7 @@ try {
 
 Get a list of workspaces.
 
-Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
+Specifying 'content' access will return all workspaces the user has document access to, while 'admin' access will return all group workspaces the user has administrative rights to.
 
 Wraps GET /api/v2/contentmanagement/workspaces  
 
@@ -1724,8 +1682,8 @@ Configuration.setDefaultApiClient(apiClient);
 ContentManagementApi apiInstance = new ContentManagementApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> access = Arrays.asList("access_example"); // List<String> | Requested access level.
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> access = Arrays.asList(null); // List<String> | Requested access level.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     WorkspaceEntityListing result = apiInstance.getContentmanagementWorkspaces(pageSize, pageNumber, access, expand);
     System.out.println(result);
@@ -1760,8 +1718,6 @@ try {
 > [QueryResults](QueryResults.html) postContentmanagementAuditquery(body)
 
 Query audits
-
-
 
 Wraps POST /api/v2/contentmanagement/auditquery  
 
@@ -1822,8 +1778,6 @@ try {
 > [Document](Document.html) postContentmanagementDocument(documentId, body, expand, override)
 
 Update a document.
-
-
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}  
 
@@ -1891,8 +1845,6 @@ try {
 
 Replace the contents of a document.
 
-
-
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content  
 
 Requires NO permissions: 
@@ -1956,8 +1908,6 @@ try {
 > [Document](Document.html) postContentmanagementDocuments(body, copySource, moveSource, override)
 
 Add a document.
-
-
 
 Wraps POST /api/v2/contentmanagement/documents  
 
@@ -2025,8 +1975,6 @@ try {
 
 Query content
 
-
-
 Wraps POST /api/v2/contentmanagement/query  
 
 Requires NO permissions: 
@@ -2089,8 +2037,6 @@ try {
 
 Creates a new share or updates an existing share if the entity has already been shared
 
-
-
 Wraps POST /api/v2/contentmanagement/shares  
 
 Requires NO permissions: 
@@ -2150,8 +2096,6 @@ try {
 > [TagValue](TagValue.html) postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 Create a workspace tag
-
-
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues  
 
@@ -2215,8 +2159,6 @@ try {
 
 Perform a prefix query on tags in the workspace
 
-
-
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query  
 
 Requires NO permissions: 
@@ -2246,7 +2188,7 @@ Configuration.setDefaultApiClient(apiClient);
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
 TagQueryRequest body = new TagQueryRequest(); // TagQueryRequest | query
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 try {
     TagValueEntityListing result = apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, expand);
     System.out.println(result);
@@ -2280,8 +2222,6 @@ try {
 > [Workspace](Workspace.html) postContentmanagementWorkspaces(body)
 
 Create a group workspace
-
-
 
 Wraps POST /api/v2/contentmanagement/workspaces  
 
@@ -2342,8 +2282,6 @@ try {
 > [Workspace](Workspace.html) putContentmanagementWorkspace(workspaceId, body)
 
 Update a workspace
-
-
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}  
 
@@ -2406,8 +2344,6 @@ try {
 > [WorkspaceMember](WorkspaceMember.html) putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 Add a member to a workspace
-
-
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}  
 
@@ -2472,8 +2408,6 @@ try {
 > [TagValue](TagValue.html) putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
 Update a workspace tag. Will update all documents with the new tag value.
-
-
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}  
 

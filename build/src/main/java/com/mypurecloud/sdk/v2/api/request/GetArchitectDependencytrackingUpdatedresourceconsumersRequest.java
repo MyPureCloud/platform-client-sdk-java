@@ -20,59 +20,58 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.Operation;
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
-import com.mypurecloud.sdk.v2.model.DependencyStatus;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableExportJob;
+import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
+import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
+import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Flow;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowMilestone;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowVersion;
+import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
+import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.Prompt;
-import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
+import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ScheduleGroup;
 import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
-import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
-import com.mypurecloud.sdk.v2.model.Flow;
-import com.mypurecloud.sdk.v2.model.FlowVersion;
-import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTable;
-import com.mypurecloud.sdk.v2.model.DataTableExportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportJob;
-import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
-import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
-import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
-import com.mypurecloud.sdk.v2.model.FlowMilestone;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
-import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcome;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
-import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
-import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
-import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
-import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
-    
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -86,7 +85,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    this.setName(name);
 	    return this;
 	} 
-	
+
 	private List<String> objectType;
 	public List<String> getObjectType() {
 		return this.objectType;
@@ -102,67 +101,67 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	} 
 
 	public enum objectTypeValues { 
-		ACDLANGUAGE("ACDLANGUAGE"), 
-		ACDSKILL("ACDSKILL"), 
-		ACDWRAPUPCODE("ACDWRAPUPCODE"), 
-		BOTCONNECTORBOT("BOTCONNECTORBOT"), 
-		BOTCONNECTORINTEGRATION("BOTCONNECTORINTEGRATION"), 
-		BOTFLOW("BOTFLOW"), 
-		BRIDGEACTION("BRIDGEACTION"), 
-		COMMONMODULEFLOW("COMMONMODULEFLOW"), 
-		COMPOSERSCRIPT("COMPOSERSCRIPT"), 
-		CONTACTLIST("CONTACTLIST"), 
-		DATAACTION("DATAACTION"), 
-		DATATABLE("DATATABLE"), 
-		DIALOGENGINEBOT("DIALOGENGINEBOT"), 
-		DIALOGENGINEBOTVERSION("DIALOGENGINEBOTVERSION"), 
-		DIALOGFLOWAGENT("DIALOGFLOWAGENT"), 
-		DIALOGFLOWCXAGENT("DIALOGFLOWCXAGENT"), 
-		DIGITALBOTFLOW("DIGITALBOTFLOW"), 
-		EMAILROUTE("EMAILROUTE"), 
-		EMERGENCYGROUP("EMERGENCYGROUP"), 
-		FLOWACTION("FLOWACTION"), 
-		FLOWDATATYPE("FLOWDATATYPE"), 
-		FLOWMILESTONE("FLOWMILESTONE"), 
-		FLOWOUTCOME("FLOWOUTCOME"), 
-		GROUP("GROUP"), 
-		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
-		INBOUNDCHATFLOW("INBOUNDCHATFLOW"), 
-		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"), 
-		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
-		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
-		INQUEUEEMAILFLOW("INQUEUEEMAILFLOW"), 
-		INQUEUESHORTMESSAGEFLOW("INQUEUESHORTMESSAGEFLOW"), 
-		IVRCONFIGURATION("IVRCONFIGURATION"), 
-		KNOWLEDGEBASE("KNOWLEDGEBASE"), 
-		KNOWLEDGEBASEDOCUMENT("KNOWLEDGEBASEDOCUMENT"), 
-		LANGUAGE("LANGUAGE"), 
-		LEXBOT("LEXBOT"), 
-		LEXBOTALIAS("LEXBOTALIAS"), 
-		LEXV2BOT("LEXV2BOT"), 
-		LEXV2BOTALIAS("LEXV2BOTALIAS"), 
-		NLUDOMAIN("NLUDOMAIN"), 
-		NUANCEMIXBOT("NUANCEMIXBOT"), 
-		NUANCEMIXINTEGRATION("NUANCEMIXINTEGRATION"), 
-		OAUTHCLIENT("OAUTHCLIENT"), 
-		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"), 
-		QUEUE("QUEUE"), 
-		RECORDINGPOLICY("RECORDINGPOLICY"), 
-		RESPONSE("RESPONSE"), 
-		SCHEDULE("SCHEDULE"), 
-		SCHEDULEGROUP("SCHEDULEGROUP"), 
-		SECUREACTION("SECUREACTION"), 
-		SECURECALLFLOW("SECURECALLFLOW"), 
-		SURVEYINVITEFLOW("SURVEYINVITEFLOW"), 
-		SYSTEMPROMPT("SYSTEMPROMPT"), 
-		TTSENGINE("TTSENGINE"), 
-		TTSVOICE("TTSVOICE"), 
-		USER("USER"), 
-		USERPROMPT("USERPROMPT"), 
-		VOICEFLOW("VOICEFLOW"), 
-		VOICEMAILFLOW("VOICEMAILFLOW"), 
-		WIDGET("WIDGET"), 
-		WORKFLOW("WORKFLOW"), 
+		ACDLANGUAGE("ACDLANGUAGE"),
+		ACDSKILL("ACDSKILL"),
+		ACDWRAPUPCODE("ACDWRAPUPCODE"),
+		BOTCONNECTORBOT("BOTCONNECTORBOT"),
+		BOTCONNECTORINTEGRATION("BOTCONNECTORINTEGRATION"),
+		BOTFLOW("BOTFLOW"),
+		BRIDGEACTION("BRIDGEACTION"),
+		COMMONMODULEFLOW("COMMONMODULEFLOW"),
+		COMPOSERSCRIPT("COMPOSERSCRIPT"),
+		CONTACTLIST("CONTACTLIST"),
+		DATAACTION("DATAACTION"),
+		DATATABLE("DATATABLE"),
+		DIALOGENGINEBOT("DIALOGENGINEBOT"),
+		DIALOGENGINEBOTVERSION("DIALOGENGINEBOTVERSION"),
+		DIALOGFLOWAGENT("DIALOGFLOWAGENT"),
+		DIALOGFLOWCXAGENT("DIALOGFLOWCXAGENT"),
+		DIGITALBOTFLOW("DIGITALBOTFLOW"),
+		EMAILROUTE("EMAILROUTE"),
+		EMERGENCYGROUP("EMERGENCYGROUP"),
+		FLOWACTION("FLOWACTION"),
+		FLOWDATATYPE("FLOWDATATYPE"),
+		FLOWMILESTONE("FLOWMILESTONE"),
+		FLOWOUTCOME("FLOWOUTCOME"),
+		GROUP("GROUP"),
+		INBOUNDCALLFLOW("INBOUNDCALLFLOW"),
+		INBOUNDCHATFLOW("INBOUNDCHATFLOW"),
+		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"),
+		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"),
+		INQUEUECALLFLOW("INQUEUECALLFLOW"),
+		INQUEUEEMAILFLOW("INQUEUEEMAILFLOW"),
+		INQUEUESHORTMESSAGEFLOW("INQUEUESHORTMESSAGEFLOW"),
+		IVRCONFIGURATION("IVRCONFIGURATION"),
+		KNOWLEDGEBASE("KNOWLEDGEBASE"),
+		KNOWLEDGEBASEDOCUMENT("KNOWLEDGEBASEDOCUMENT"),
+		LANGUAGE("LANGUAGE"),
+		LEXBOT("LEXBOT"),
+		LEXBOTALIAS("LEXBOTALIAS"),
+		LEXV2BOT("LEXV2BOT"),
+		LEXV2BOTALIAS("LEXV2BOTALIAS"),
+		NLUDOMAIN("NLUDOMAIN"),
+		NUANCEMIXBOT("NUANCEMIXBOT"),
+		NUANCEMIXINTEGRATION("NUANCEMIXINTEGRATION"),
+		OAUTHCLIENT("OAUTHCLIENT"),
+		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"),
+		QUEUE("QUEUE"),
+		RECORDINGPOLICY("RECORDINGPOLICY"),
+		RESPONSE("RESPONSE"),
+		SCHEDULE("SCHEDULE"),
+		SCHEDULEGROUP("SCHEDULEGROUP"),
+		SECUREACTION("SECUREACTION"),
+		SECURECALLFLOW("SECURECALLFLOW"),
+		SURVEYINVITEFLOW("SURVEYINVITEFLOW"),
+		SYSTEMPROMPT("SYSTEMPROMPT"),
+		TTSENGINE("TTSENGINE"),
+		TTSVOICE("TTSVOICE"),
+		USER("USER"),
+		USERPROMPT("USERPROMPT"),
+		VOICEFLOW("VOICEFLOW"),
+		VOICEMAILFLOW("VOICEMAILFLOW"),
+		WIDGET("WIDGET"),
+		WORKFLOW("WORKFLOW"),
 		WORKITEMFLOW("WORKITEMFLOW");
 
 		private String value;
@@ -190,7 +189,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Boolean consumedResources;
 	public Boolean getConsumedResources() {
 		return this.consumedResources;
@@ -204,7 +203,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    this.setConsumedResources(consumedResources);
 	    return this;
 	} 
-	
+
 	private List<String> consumedResourceType;
 	public List<String> getConsumedResourceType() {
 		return this.consumedResourceType;
@@ -220,67 +219,67 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	} 
 
 	public enum consumedResourceTypeValues { 
-		ACDLANGUAGE("ACDLANGUAGE"), 
-		ACDSKILL("ACDSKILL"), 
-		ACDWRAPUPCODE("ACDWRAPUPCODE"), 
-		BOTCONNECTORBOT("BOTCONNECTORBOT"), 
-		BOTCONNECTORINTEGRATION("BOTCONNECTORINTEGRATION"), 
-		BOTFLOW("BOTFLOW"), 
-		BRIDGEACTION("BRIDGEACTION"), 
-		COMMONMODULEFLOW("COMMONMODULEFLOW"), 
-		COMPOSERSCRIPT("COMPOSERSCRIPT"), 
-		CONTACTLIST("CONTACTLIST"), 
-		DATAACTION("DATAACTION"), 
-		DATATABLE("DATATABLE"), 
-		DIALOGENGINEBOT("DIALOGENGINEBOT"), 
-		DIALOGENGINEBOTVERSION("DIALOGENGINEBOTVERSION"), 
-		DIALOGFLOWAGENT("DIALOGFLOWAGENT"), 
-		DIALOGFLOWCXAGENT("DIALOGFLOWCXAGENT"), 
-		DIGITALBOTFLOW("DIGITALBOTFLOW"), 
-		EMAILROUTE("EMAILROUTE"), 
-		EMERGENCYGROUP("EMERGENCYGROUP"), 
-		FLOWACTION("FLOWACTION"), 
-		FLOWDATATYPE("FLOWDATATYPE"), 
-		FLOWMILESTONE("FLOWMILESTONE"), 
-		FLOWOUTCOME("FLOWOUTCOME"), 
-		GROUP("GROUP"), 
-		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
-		INBOUNDCHATFLOW("INBOUNDCHATFLOW"), 
-		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"), 
-		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
-		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
-		INQUEUEEMAILFLOW("INQUEUEEMAILFLOW"), 
-		INQUEUESHORTMESSAGEFLOW("INQUEUESHORTMESSAGEFLOW"), 
-		IVRCONFIGURATION("IVRCONFIGURATION"), 
-		KNOWLEDGEBASE("KNOWLEDGEBASE"), 
-		KNOWLEDGEBASEDOCUMENT("KNOWLEDGEBASEDOCUMENT"), 
-		LANGUAGE("LANGUAGE"), 
-		LEXBOT("LEXBOT"), 
-		LEXBOTALIAS("LEXBOTALIAS"), 
-		LEXV2BOT("LEXV2BOT"), 
-		LEXV2BOTALIAS("LEXV2BOTALIAS"), 
-		NLUDOMAIN("NLUDOMAIN"), 
-		NUANCEMIXBOT("NUANCEMIXBOT"), 
-		NUANCEMIXINTEGRATION("NUANCEMIXINTEGRATION"), 
-		OAUTHCLIENT("OAUTHCLIENT"), 
-		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"), 
-		QUEUE("QUEUE"), 
-		RECORDINGPOLICY("RECORDINGPOLICY"), 
-		RESPONSE("RESPONSE"), 
-		SCHEDULE("SCHEDULE"), 
-		SCHEDULEGROUP("SCHEDULEGROUP"), 
-		SECUREACTION("SECUREACTION"), 
-		SECURECALLFLOW("SECURECALLFLOW"), 
-		SURVEYINVITEFLOW("SURVEYINVITEFLOW"), 
-		SYSTEMPROMPT("SYSTEMPROMPT"), 
-		TTSENGINE("TTSENGINE"), 
-		TTSVOICE("TTSVOICE"), 
-		USER("USER"), 
-		USERPROMPT("USERPROMPT"), 
-		VOICEFLOW("VOICEFLOW"), 
-		VOICEMAILFLOW("VOICEMAILFLOW"), 
-		WIDGET("WIDGET"), 
-		WORKFLOW("WORKFLOW"), 
+		ACDLANGUAGE("ACDLANGUAGE"),
+		ACDSKILL("ACDSKILL"),
+		ACDWRAPUPCODE("ACDWRAPUPCODE"),
+		BOTCONNECTORBOT("BOTCONNECTORBOT"),
+		BOTCONNECTORINTEGRATION("BOTCONNECTORINTEGRATION"),
+		BOTFLOW("BOTFLOW"),
+		BRIDGEACTION("BRIDGEACTION"),
+		COMMONMODULEFLOW("COMMONMODULEFLOW"),
+		COMPOSERSCRIPT("COMPOSERSCRIPT"),
+		CONTACTLIST("CONTACTLIST"),
+		DATAACTION("DATAACTION"),
+		DATATABLE("DATATABLE"),
+		DIALOGENGINEBOT("DIALOGENGINEBOT"),
+		DIALOGENGINEBOTVERSION("DIALOGENGINEBOTVERSION"),
+		DIALOGFLOWAGENT("DIALOGFLOWAGENT"),
+		DIALOGFLOWCXAGENT("DIALOGFLOWCXAGENT"),
+		DIGITALBOTFLOW("DIGITALBOTFLOW"),
+		EMAILROUTE("EMAILROUTE"),
+		EMERGENCYGROUP("EMERGENCYGROUP"),
+		FLOWACTION("FLOWACTION"),
+		FLOWDATATYPE("FLOWDATATYPE"),
+		FLOWMILESTONE("FLOWMILESTONE"),
+		FLOWOUTCOME("FLOWOUTCOME"),
+		GROUP("GROUP"),
+		INBOUNDCALLFLOW("INBOUNDCALLFLOW"),
+		INBOUNDCHATFLOW("INBOUNDCHATFLOW"),
+		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"),
+		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"),
+		INQUEUECALLFLOW("INQUEUECALLFLOW"),
+		INQUEUEEMAILFLOW("INQUEUEEMAILFLOW"),
+		INQUEUESHORTMESSAGEFLOW("INQUEUESHORTMESSAGEFLOW"),
+		IVRCONFIGURATION("IVRCONFIGURATION"),
+		KNOWLEDGEBASE("KNOWLEDGEBASE"),
+		KNOWLEDGEBASEDOCUMENT("KNOWLEDGEBASEDOCUMENT"),
+		LANGUAGE("LANGUAGE"),
+		LEXBOT("LEXBOT"),
+		LEXBOTALIAS("LEXBOTALIAS"),
+		LEXV2BOT("LEXV2BOT"),
+		LEXV2BOTALIAS("LEXV2BOTALIAS"),
+		NLUDOMAIN("NLUDOMAIN"),
+		NUANCEMIXBOT("NUANCEMIXBOT"),
+		NUANCEMIXINTEGRATION("NUANCEMIXINTEGRATION"),
+		OAUTHCLIENT("OAUTHCLIENT"),
+		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"),
+		QUEUE("QUEUE"),
+		RECORDINGPOLICY("RECORDINGPOLICY"),
+		RESPONSE("RESPONSE"),
+		SCHEDULE("SCHEDULE"),
+		SCHEDULEGROUP("SCHEDULEGROUP"),
+		SECUREACTION("SECUREACTION"),
+		SECURECALLFLOW("SECURECALLFLOW"),
+		SURVEYINVITEFLOW("SURVEYINVITEFLOW"),
+		SYSTEMPROMPT("SYSTEMPROMPT"),
+		TTSENGINE("TTSENGINE"),
+		TTSVOICE("TTSVOICE"),
+		USER("USER"),
+		USERPROMPT("USERPROMPT"),
+		VOICEFLOW("VOICEFLOW"),
+		VOICEMAILFLOW("VOICEMAILFLOW"),
+		WIDGET("WIDGET"),
+		WORKFLOW("WORKFLOW"),
 		WORKITEMFLOW("WORKITEMFLOW");
 
 		private String value;
@@ -308,7 +307,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
+
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -322,7 +321,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
-	
+
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -336,7 +335,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
-	
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -360,19 +359,25 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/architect/dependencytracking/updatedresourceconsumers")
+
                 .withQueryParameters("name", "", name)
         
+
                 .withQueryParameters("objectType", "multi", objectType)
         
+
                 .withQueryParameters("consumedResources", "", consumedResources)
         
+
                 .withQueryParameters("consumedResourceType", "multi", consumedResourceType)
         
+
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+
                 .withQueryParameters("pageSize", "", pageSize)
         
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -383,7 +388,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingUpdatedresourceconsumersRequest request;
@@ -392,16 +397,18 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 			request = new GetArchitectDependencytrackingUpdatedresourceconsumersRequest();
 		}
 
-		
+
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
-		
+
 		public Builder withObjectType(List<String> objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
+
+
 
 		public Builder withObjectTypeEnumValues(List<objectTypeValues> objectType) {
 		    List<String> stringList = new ArrayList<>();
@@ -411,16 +418,18 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	      request.setObjectType(stringList);
 		    return this;
 		}
-		
+
 		public Builder withConsumedResources(Boolean consumedResources) {
 			request.setConsumedResources(consumedResources);
 			return this;
 		}
-		
+
 		public Builder withConsumedResourceType(List<String> consumedResourceType) {
 			request.setConsumedResourceType(consumedResourceType);
 			return this;
 		}
+
+
 
 		public Builder withConsumedResourceTypeEnumValues(List<consumedResourceTypeValues> consumedResourceType) {
 		    List<String> stringList = new ArrayList<>();
@@ -430,19 +439,19 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	      request.setConsumedResourceType(stringList);
 		    return this;
 		}
-		
+
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
-		
+
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
-		
 
-		
+
+
 
 		public GetArchitectDependencytrackingUpdatedresourceconsumersRequest build() {
             

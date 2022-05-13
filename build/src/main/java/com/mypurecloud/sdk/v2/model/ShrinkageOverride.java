@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -41,7 +42,7 @@ public class ShrinkageOverride  implements Serializable {
     this.intervalIndex = intervalIndex;
   }
 
-  
+
   /**
    * Shrinkage override percent. Setting a null value will reset the interval to the default
    **/
@@ -59,7 +60,6 @@ public class ShrinkageOverride  implements Serializable {
     this.shrinkagePercent = shrinkagePercent;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,8 +70,9 @@ public class ShrinkageOverride  implements Serializable {
       return false;
     }
     ShrinkageOverride shrinkageOverride = (ShrinkageOverride) o;
+
     return Objects.equals(this.intervalIndex, shrinkageOverride.intervalIndex) &&
-        Objects.equals(this.shrinkagePercent, shrinkageOverride.shrinkagePercent);
+            Objects.equals(this.shrinkagePercent, shrinkageOverride.shrinkagePercent);
   }
 
   @Override

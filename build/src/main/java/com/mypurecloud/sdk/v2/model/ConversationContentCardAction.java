@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -93,7 +94,7 @@ public class ConversationContentCardAction  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The response text from the button click.
    **/
@@ -111,7 +112,7 @@ public class ConversationContentCardAction  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * Text to be returned as the payload from a ButtonResponse when a button is clicked.
    **/
@@ -129,7 +130,7 @@ public class ConversationContentCardAction  implements Serializable {
     this.payload = payload;
   }
 
-  
+
   /**
    * A URL of a web page to direct the user to.
    **/
@@ -147,7 +148,6 @@ public class ConversationContentCardAction  implements Serializable {
     this.url = url;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,10 +158,11 @@ public class ConversationContentCardAction  implements Serializable {
       return false;
     }
     ConversationContentCardAction conversationContentCardAction = (ConversationContentCardAction) o;
+
     return Objects.equals(this.type, conversationContentCardAction.type) &&
-        Objects.equals(this.text, conversationContentCardAction.text) &&
-        Objects.equals(this.payload, conversationContentCardAction.payload) &&
-        Objects.equals(this.url, conversationContentCardAction.url);
+            Objects.equals(this.text, conversationContentCardAction.text) &&
+            Objects.equals(this.payload, conversationContentCardAction.payload) &&
+            Objects.equals(this.url, conversationContentCardAction.url);
   }
 
   @Override

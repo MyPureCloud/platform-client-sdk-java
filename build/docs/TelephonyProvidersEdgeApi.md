@@ -149,8 +149,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a edge.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}  
 
 Requires ANY permissions: 
@@ -210,8 +208,6 @@ null (empty response body)
 > Void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 
 Delete an edge logical interface
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}  
 
@@ -275,8 +271,6 @@ null (empty response body)
 
 Cancels any in-progress update for this edge.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate  
 
 Requires NO permissions: 
@@ -335,8 +329,6 @@ null (empty response body)
 > Void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 Delete a certificate authority.
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}  
 
@@ -398,8 +390,6 @@ null (empty response body)
 
 Delete a DID Pool by ID.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}  
 
 Requires ANY permissions: 
@@ -460,8 +450,6 @@ null (empty response body)
 
 Delete an edge group.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}  
 
 Requires ANY permissions: 
@@ -521,8 +509,6 @@ null (empty response body)
 > Void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 Delete an extension pool by ID
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
 
@@ -646,8 +632,6 @@ null (empty response body)
 
 Delete a Phone by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/phones/{phoneId}  
 
 Requires ANY permissions: 
@@ -707,8 +691,6 @@ null (empty response body)
 > Void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Delete a Phone Base Settings by ID
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}  
 
@@ -770,8 +752,6 @@ null (empty response body)
 
 Delete a Site by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId}  
 
 Requires ANY permissions: 
@@ -831,8 +811,6 @@ null (empty response body)
 > Void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 Delete Outbound Route
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}  
 
@@ -896,8 +874,6 @@ null (empty response body)
 
 Delete a Trunk Base Settings object by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}  
 
 Requires ANY permissions: 
@@ -957,8 +933,6 @@ null (empty response body)
 > [SchemaCategoryEntityListing](SchemaCategoryEntityListing.html) getConfigurationSchemasEdgesVnext(pageSize, pageNumber)
 
 Lists available schema categories (Deprecated)
-
-
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext  
 
@@ -1021,8 +995,6 @@ try {
 > [SchemaReferenceEntityListing](SchemaReferenceEntityListing.html) getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, pageSize, pageNumber)
 
 List schemas of a specific category (Deprecated)
-
-
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}  
 
@@ -1087,8 +1059,6 @@ try {
 > [SchemaReferenceEntityListing](SchemaReferenceEntityListing.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, pageSize, pageNumber)
 
 List schemas of a specific category (Deprecated)
-
-
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}  
 
@@ -1156,8 +1126,6 @@ try {
 
 Get a json schema (Deprecated)
 
-
-
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}  
 
 Requires NO permissions: 
@@ -1221,8 +1189,6 @@ try {
 > [Organization](Organization.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, type)
 
 Get metadata for a schema (Deprecated)
-
-
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}  
 
@@ -1294,8 +1260,6 @@ try {
 
 Get edge.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}  
 
 Requires ANY permissions: 
@@ -1325,7 +1289,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeId = "edgeId_example"; // String | Edge ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
 try {
     Edge result = apiInstance.getTelephonyProvidersEdge(edgeId, expand);
     System.out.println(result);
@@ -1358,8 +1322,6 @@ try {
 > [EdgeNetworkDiagnosticResponse](EdgeNetworkDiagnosticResponse.html) getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
 
 Get networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup  
 
@@ -1422,8 +1384,6 @@ try {
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping  
 
 Requires ANY permissions: 
@@ -1484,8 +1444,6 @@ try {
 > [EdgeNetworkDiagnosticResponse](EdgeNetworkDiagnosticResponse.html) getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
 
 Get networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route  
 
@@ -1548,8 +1506,6 @@ try {
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath  
 
 Requires ANY permissions: 
@@ -1610,8 +1566,6 @@ try {
 > [EdgeLine](EdgeLine.html) getTelephonyProvidersEdgeLine(edgeId, lineId)
 
 Get line
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}  
 
@@ -1675,8 +1629,6 @@ try {
 > [EdgeLineEntityListing](EdgeLineEntityListing.html) getTelephonyProvidersEdgeLines(edgeId, pageSize, pageNumber)
 
 Get the list of lines.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines  
 
@@ -1743,8 +1695,6 @@ try {
 
 Get an edge logical interface
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}  
 
 Requires ANY permissions: 
@@ -1775,7 +1725,7 @@ Configuration.setDefaultApiClient(apiClient);
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeId = "edgeId_example"; // String | Edge ID
 String interfaceId = "interfaceId_example"; // String | Interface ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Field to expand in the response
+List<String> expand = Arrays.asList(null); // List<String> | Field to expand in the response
 try {
     DomainLogicalInterface result = apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, expand);
     System.out.println(result);
@@ -1841,7 +1791,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeId = "edgeId_example"; // String | Edge ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Field to expand in the response
+List<String> expand = Arrays.asList(null); // List<String> | Field to expand in the response
 try {
     LogicalInterfaceEntityListing result = apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, expand);
     System.out.println(result);
@@ -1874,8 +1824,6 @@ try {
 > [EdgeLogsJob](EdgeLogsJob.html) getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 Get an Edge logs job.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}  
 
@@ -1939,8 +1887,6 @@ try {
 > [EdgeMetrics](EdgeMetrics.html) getTelephonyProvidersEdgeMetrics(edgeId)
 
 Get the edge metrics.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/metrics  
 
@@ -2068,8 +2014,6 @@ try {
 
 Retrieve a list of all configured physical interfaces from a specific edge.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces  
 
 Requires ANY permissions: 
@@ -2130,8 +2074,6 @@ try {
 > [VmPairingInfo](VmPairingInfo.html) getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage  
 
@@ -2194,8 +2136,6 @@ try {
 
 Gets software update status information about any edge.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate  
 
 Requires NO permissions: 
@@ -2255,8 +2195,6 @@ try {
 > [DomainEdgeSoftwareVersionDtoEntityListing](DomainEdgeSoftwareVersionDtoEntityListing.html) getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 Gets all the available software versions for this edge.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions  
 
@@ -2393,8 +2331,6 @@ try {
 
 Get the list of edges.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges  
 
 Requires ANY permissions: 
@@ -2468,8 +2404,6 @@ try {
 
 Get the list of available languages.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/availablelanguages  
 
 Requires NO permissions: 
@@ -2525,8 +2459,6 @@ This endpoint does not require any parameters.
 > [CertificateAuthorityEntityListing](CertificateAuthorityEntityListing.html) getTelephonyProvidersEdgesCertificateauthorities()
 
 Get the list of certificate authorities.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/certificateauthorities  
 
@@ -2584,8 +2516,6 @@ This endpoint does not require any parameters.
 > [DomainCertificateAuthority](DomainCertificateAuthority.html) getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 Get a certificate authority.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}  
 
@@ -2648,8 +2578,6 @@ try {
 
 Get a DID by ID.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/dids/{didId}  
 
 Requires ANY permissions: 
@@ -2710,8 +2638,6 @@ try {
 > [DIDPool](DIDPool.html) getTelephonyProvidersEdgesDidpool(didPoolId)
 
 Get a DID Pool by ID.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/didpools/{didPoolId}  
 
@@ -2774,8 +2700,6 @@ try {
 
 Get a listing of DID Pools
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/didpools  
 
 Requires ANY permissions: 
@@ -2807,7 +2731,7 @@ TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "number"; // String | Sort by
-List<String> id = Arrays.asList("id_example"); // List<String> | Filter by a specific list of ID's
+List<String> id = Arrays.asList(null); // List<String> | Filter by a specific list of ID's
 try {
     DIDPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy, id);
     System.out.println(result);
@@ -2843,8 +2767,6 @@ try {
 
 Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/didpools/dids  
 
 Requires ANY permissions: 
@@ -2874,7 +2796,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String type = "type_example"; // String | The type of numbers to return.
-List<String> id = Arrays.asList("id_example"); // List<String> | Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
+List<String> id = Arrays.asList(null); // List<String> | Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
 String numberMatch = "numberMatch_example"; // String | A number to filter the results by.
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
@@ -2916,8 +2838,6 @@ try {
 
 Get a listing of DIDs
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/dids  
 
 Requires ANY permissions: 
@@ -2953,7 +2873,7 @@ String sortOrder = "ASC"; // String | Sort order
 String phoneNumber = "phoneNumber_example"; // String | Filter by phoneNumber
 String ownerId = "ownerId_example"; // String | Filter by the owner of a phone number
 String didPoolId = "didPoolId_example"; // String | Filter by the DID Pool assignment
-List<String> id = Arrays.asList("id_example"); // List<String> | Filter by a specific list of ID's
+List<String> id = Arrays.asList(null); // List<String> | Filter by a specific list of ID's
 try {
     DIDEntityListing result = apiInstance.getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id);
     System.out.println(result);
@@ -2993,8 +2913,6 @@ try {
 
 Get edge group.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}  
 
 Requires ANY permissions: 
@@ -3024,7 +2942,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response
 try {
     EdgeGroup result = apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, expand);
     System.out.println(result);
@@ -3057,8 +2975,6 @@ try {
 > [EdgeTrunkBase](EdgeTrunkBase.html) getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
 
 Gets the edge trunk base associated with the edge group
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}  
 
@@ -3122,8 +3038,6 @@ try {
 > [EdgeGroupEntityListing](EdgeGroupEntityListing.html) getTelephonyProvidersEdgesEdgegroups(pageSize, pageNumber, name, sortBy, managed)
 
 Get the list of edge groups.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/edgegroups  
 
@@ -3252,8 +3166,6 @@ This endpoint does not require any parameters.
 
 List of edges more than 4 edge versions behind the latest software.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/expired  
 
 Requires ANY permissions: 
@@ -3311,8 +3223,6 @@ This endpoint does not require any parameters.
 > [Extension](Extension.html) getTelephonyProvidersEdgesExtension(extensionId)
 
 Get an extension by ID.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/extensions/{extensionId}  
 
@@ -3375,8 +3285,6 @@ try {
 
 Get an extension pool by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
 
 Requires ALL permissions: 
@@ -3437,8 +3345,6 @@ try {
 > [ExtensionPoolEntityListing](ExtensionPoolEntityListing.html) getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number)
 
 Get a listing of extension pools
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools  
 
@@ -3506,8 +3412,6 @@ try {
 > [ExtensionEntityListing](ExtensionEntityListing.html) getTelephonyProvidersEdgesExtensions(pageSize, pageNumber, sortBy, sortOrder, number)
 
 Get a listing of extensions
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/extensions  
 
@@ -3578,8 +3482,6 @@ try {
 
 Get a Line by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/lines/{lineId}  
 
 Requires ANY permissions: 
@@ -3640,8 +3542,6 @@ try {
 > [LineBase](LineBase.html) getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 Get a line base settings object by ID
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}  
 
@@ -3704,8 +3604,6 @@ try {
 
 Get a listing of line base settings objects
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/linebasesettings  
 
 Requires ANY permissions: 
@@ -3738,7 +3636,7 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Value by which to sort
 String sortOrder = "ASC"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
 try {
     LineBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder, expand);
     System.out.println(result);
@@ -3775,8 +3673,6 @@ try {
 
 Get a list of Lines
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/lines  
 
 Requires ANY permissions: 
@@ -3809,7 +3705,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
 String sortBy = "name"; // String | Value by which to sort
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
 try {
     LineEntityListing result = apiInstance.getTelephonyProvidersEdgesLines(pageSize, pageNumber, name, sortBy, expand);
     System.out.println(result);
@@ -3845,8 +3741,6 @@ try {
 > [Line](Line.html) getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/lines/template  
 
@@ -3940,7 +3834,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Field to expand in the response
+List<String> expand = Arrays.asList(null); // List<String> | Field to expand in the response
 try {
     LogicalInterfaceEntityListing result = apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, expand);
     System.out.println(result);
@@ -3973,8 +3867,6 @@ try {
 > [List&lt;EdgeMetrics&gt;](EdgeMetrics.html) getTelephonyProvidersEdgesMetrics(edgeIds)
 
 Get the metrics for a list of edges.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/metrics  
 
@@ -4100,8 +3992,6 @@ try {
 
 Get outbound routes
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes  
 
 Requires ANY permissions: 
@@ -4173,8 +4063,6 @@ try {
 
 Get a Phone by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phones/{phoneId}  
 
 Requires ANY permissions: 
@@ -4235,8 +4123,6 @@ try {
 > [PhoneBase](PhoneBase.html) getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Get a Phone Base Settings object by ID
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}  
 
@@ -4299,8 +4185,6 @@ try {
 
 Get a list of Phone Base Settings objects
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings  
 
 Requires ANY permissions: 
@@ -4333,7 +4217,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Value by which to sort
 String sortOrder = "ASC"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
 String name = "name_example"; // String | Name
 try {
     PhoneBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, expand, name);
@@ -4371,8 +4255,6 @@ try {
 > [PhoneMetaBaseEntityListing](PhoneMetaBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(pageSize, pageNumber)
 
 Get a list of available makes and models to create a new Phone Base Settings
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases  
 
@@ -4437,8 +4319,6 @@ try {
 
 Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/template  
 
 Requires ANY permissions: 
@@ -4500,8 +4380,6 @@ try {
 
 Get a list of Phone Instances
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phones  
 
 Requires ANY permissions: 
@@ -4545,8 +4423,8 @@ String linesName = "linesName_example"; // String | Filter by lines.name
 String name = "name_example"; // String | Name of the Phone to filter by
 String statusOperationalStatus = "statusOperationalStatus_example"; // String | The primary status to filter by
 String secondaryStatusOperationalStatus = "secondaryStatusOperationalStatus_example"; // String | The secondary status to filter by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
-List<String> fields = Arrays.asList("fields_example"); // List<String> | Fields and properties to get, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
+List<String> fields = Arrays.asList(null); // List<String> | Fields and properties to get, comma-separated
 try {
     PhoneEntityListing result = apiInstance.getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, statusOperationalStatus, secondaryStatusOperationalStatus, expand, fields);
     System.out.println(result);
@@ -4594,8 +4472,6 @@ try {
 > [Phone](Phone.html) getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/phones/template  
 
@@ -4721,8 +4597,6 @@ try {
 
 Get a Site by ID.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}  
 
 Requires ANY permissions: 
@@ -4784,8 +4658,6 @@ try {
 > [NumberPlan](NumberPlan.html) getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 Get a Number Plan by ID.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}  
 
@@ -4850,8 +4722,6 @@ try {
 
 Get the list of Number Plans for this Site. Only fetches the first 200 records.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans  
 
 Requires ANY permissions: 
@@ -4912,8 +4782,6 @@ try {
 > List&lt;String&gt; getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, classification)
 
 Get a list of Classifications for this Site
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications  
 
@@ -4978,8 +4846,6 @@ try {
 
 Get an outbound route
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}  
 
 Requires ANY permissions: 
@@ -5042,8 +4908,6 @@ try {
 > [OutboundRouteBaseEntityListing](OutboundRouteBaseEntityListing.html) getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy)
 
 Get outbound routes
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes  
 
@@ -5115,8 +4979,6 @@ try {
 > [SiteEntityListing](SiteEntityListing.html) getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)
 
 Get the list of Sites.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites  
 
@@ -5190,8 +5052,6 @@ try {
 
 Get a list of Edge-compatible time zones
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/timezones  
 
 Requires NO permissions: 
@@ -5254,8 +5114,6 @@ try {
 
 Get a Trunk by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}  
 
 Requires ANY permissions: 
@@ -5316,8 +5174,6 @@ try {
 > [TrunkMetrics](TrunkMetrics.html) getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 
 Get the trunk metrics.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics  
 
@@ -5482,7 +5338,7 @@ String sortOrder = "ASC"; // String | Sort order
 Boolean recordingEnabled = true; // Boolean | Filter trunks by recording enabled
 Boolean ignoreHidden = true; // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
 Boolean managed = true; // Boolean | Filter by managed
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
 String name = "name_example"; // String | Name of the TrunkBase to filter by
 try {
     TrunkBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name);
@@ -5523,8 +5379,6 @@ try {
 > [TrunkMetabaseEntityListing](TrunkMetabaseEntityListing.html) getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(type, pageSize, pageNumber)
 
 Get a list of available makes and models to create a new Trunk Base Settings
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases  
 
@@ -5590,8 +5444,6 @@ try {
 > [TrunkBase](TrunkBase.html) getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/template  
 
@@ -5729,8 +5581,6 @@ try {
 
 Get the metrics for a list of trunks.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/trunks/metrics  
 
 Requires ANY permissions: 
@@ -5791,8 +5641,6 @@ try {
 > [TrunkRecordingEnabledCount](TrunkRecordingEnabledCount.html) getTelephonyProvidersEdgesTrunkswithrecording(trunkType)
 
 Get Counts of trunks that have recording disabled or enabled
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunkswithrecording  
 
@@ -5855,8 +5703,6 @@ try {
 > [EdgeNetworkDiagnostic](EdgeNetworkDiagnostic.html) postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
 
 Nslookup request command to collect networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup  
 
@@ -5921,8 +5767,6 @@ try {
 
 Ping Request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping  
 
 Requires ANY permissions: 
@@ -5986,8 +5830,6 @@ try {
 
 Route request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route  
 
 Requires ANY permissions: 
@@ -6050,8 +5892,6 @@ try {
 > [EdgeNetworkDiagnostic](EdgeNetworkDiagnostic.html) postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
 
 Tracepath request command to collect networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath  
 
@@ -6181,8 +6021,6 @@ try {
 
 Request that the specified fileIds be uploaded from the Edge.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload  
 
 Requires ANY permissions: 
@@ -6247,8 +6085,6 @@ null (empty response body)
 
 Create a job to upload a list of Edge logs.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs  
 
 Requires ANY permissions: 
@@ -6311,8 +6147,6 @@ try {
 > String postTelephonyProvidersEdgeReboot(edgeId, body)
 
 Reboot an Edge
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/reboot  
 
@@ -6377,8 +6211,6 @@ try {
 
 Starts a software update for this edge.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate  
 
 Requires NO permissions: 
@@ -6440,8 +6272,6 @@ try {
 > String postTelephonyProvidersEdgeStatuscode(edgeId, body)
 
 Take an Edge in or out of service
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/statuscode  
 
@@ -6506,8 +6336,6 @@ try {
 
 Unpair an Edge
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/unpair  
 
 Requires ANY permissions: 
@@ -6568,8 +6396,6 @@ try {
 > [Edge](Edge.html) postTelephonyProvidersEdges(body)
 
 Create an edge.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges  
 
@@ -6632,8 +6458,6 @@ try {
 
 Validates a street address
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/addressvalidation  
 
 Requires NO permissions: 
@@ -6693,8 +6517,6 @@ try {
 > [DomainCertificateAuthority](DomainCertificateAuthority.html) postTelephonyProvidersEdgesCertificateauthorities(body)
 
 Create a certificate authority.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/certificateauthorities  
 
@@ -6757,8 +6579,6 @@ try {
 
 Create a new DID pool
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/didpools  
 
 Requires ANY permissions: 
@@ -6820,8 +6640,6 @@ try {
 
 Create an edge group.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/edgegroups  
 
 Requires ANY permissions: 
@@ -6882,8 +6700,6 @@ try {
 > [ExtensionPool](ExtensionPool.html) postTelephonyProvidersEdgesExtensionpools(body)
 
 Create a new extension pool
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/extensionpools  
 
@@ -7009,8 +6825,6 @@ try {
 
 Reboot a Phone
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot  
 
 Requires ANY permissions: 
@@ -7070,8 +6884,6 @@ null (empty response body)
 > [PhoneBase](PhoneBase.html) postTelephonyProvidersEdgesPhonebasesettings(body)
 
 Create a new Phone Base Settings object
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/phonebasesettings  
 
@@ -7134,8 +6946,6 @@ try {
 
 Create a new Phone
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/phones  
 
 Requires ANY permissions: 
@@ -7197,8 +7007,6 @@ try {
 
 Reboot Multiple Phones
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/phones/reboot  
 
 Requires ANY permissions: 
@@ -7258,8 +7066,6 @@ null (empty response body)
 > [OutboundRouteBase](OutboundRouteBase.html) postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 Create outbound route
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes  
 
@@ -7324,8 +7130,6 @@ try {
 
 Triggers the rebalance operation.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance  
 
 Requires ANY permissions: 
@@ -7385,8 +7189,6 @@ null (empty response body)
 > [Site](Site.html) postTelephonyProvidersEdgesSites(body)
 
 Create a Site.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/sites  
 
@@ -7449,8 +7251,6 @@ try {
 
 Create a Trunk Base Settings object
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/trunkbasesettings  
 
 Requires ANY permissions: 
@@ -7511,8 +7311,6 @@ try {
 > [Edge](Edge.html) putTelephonyProvidersEdge(edgeId, body)
 
 Update a edge.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}  
 
@@ -7576,8 +7374,6 @@ try {
 > [EdgeLine](EdgeLine.html) putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
 Update a line.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}  
 
@@ -7644,8 +7440,6 @@ try {
 
 Update an edge logical interface.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}  
 
 Requires ANY permissions: 
@@ -7711,8 +7505,6 @@ try {
 
 Update a certificate authority.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}  
 
 Requires ANY permissions: 
@@ -7775,8 +7567,6 @@ try {
 > [DID](DID.html) putTelephonyProvidersEdgesDid(didId, body)
 
 Update a DID by ID.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/dids/{didId}  
 
@@ -7841,8 +7631,6 @@ try {
 
 Update a DID Pool by ID.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}  
 
 Requires ANY permissions: 
@@ -7906,8 +7694,6 @@ try {
 
 Update an edge group.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}  
 
 Requires ANY permissions: 
@@ -7970,8 +7756,6 @@ try {
 > [EdgeTrunkBase](EdgeTrunkBase.html) putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
 
 Update the edge trunk base associated with the edge group
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}  
 
@@ -8038,8 +7822,6 @@ try {
 
 Update an extension by ID.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/extensions/{extensionId}  
 
 Requires ANY permissions: 
@@ -8102,8 +7884,6 @@ try {
 > [ExtensionPool](ExtensionPool.html) putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 Update an extension pool by ID
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
 
@@ -8233,8 +8013,6 @@ try {
 
 Update a Phone by ID
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/phones/{phoneId}  
 
 Requires ANY permissions: 
@@ -8297,8 +8075,6 @@ try {
 > [PhoneBase](PhoneBase.html) putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 Update a Phone Base Settings by ID
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}  
 
@@ -8363,8 +8139,6 @@ try {
 
 Update a Site by ID.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}  
 
 Requires ANY permissions: 
@@ -8428,8 +8202,6 @@ try {
 
 Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans  
 
 Requires ANY permissions: 
@@ -8492,8 +8264,6 @@ try {
 > [OutboundRouteBase](OutboundRouteBase.html) putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
 
 Update outbound route
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}  
 
@@ -8559,8 +8329,6 @@ try {
 > [TrunkBase](TrunkBase.html) putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
 
 Update a Trunk Base Settings object by ID
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}  
 

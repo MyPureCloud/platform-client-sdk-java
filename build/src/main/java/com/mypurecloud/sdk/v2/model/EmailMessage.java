@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Attachment;
@@ -47,7 +48,7 @@ public class EmailMessage  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public EmailMessage name(String name) {
@@ -64,7 +65,7 @@ public class EmailMessage  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The recipients of the email message.
    **/
@@ -82,7 +83,7 @@ public class EmailMessage  implements Serializable {
     this.to = to;
   }
 
-  
+
   /**
    * The recipients that were copied on the email message.
    **/
@@ -100,7 +101,7 @@ public class EmailMessage  implements Serializable {
     this.cc = cc;
   }
 
-  
+
   /**
    * The recipients that were blind copied on the email message.
    **/
@@ -118,7 +119,7 @@ public class EmailMessage  implements Serializable {
     this.bcc = bcc;
   }
 
-  
+
   /**
    * The sender of the email message.
    **/
@@ -136,7 +137,7 @@ public class EmailMessage  implements Serializable {
     this.from = from;
   }
 
-  
+
   /**
    * The receiver of the reply email message.
    **/
@@ -154,7 +155,7 @@ public class EmailMessage  implements Serializable {
     this.replyTo = replyTo;
   }
 
-  
+
   /**
    * The subject of the email message.
    **/
@@ -172,7 +173,7 @@ public class EmailMessage  implements Serializable {
     this.subject = subject;
   }
 
-  
+
   /**
    * The attachments of the email message.
    **/
@@ -190,7 +191,7 @@ public class EmailMessage  implements Serializable {
     this.attachments = attachments;
   }
 
-  
+
   /**
    * The text body of the email message.
    **/
@@ -208,7 +209,7 @@ public class EmailMessage  implements Serializable {
     this.textBody = textBody;
   }
 
-  
+
   /**
    * The html body of the email message.
    **/
@@ -226,7 +227,7 @@ public class EmailMessage  implements Serializable {
     this.htmlBody = htmlBody;
   }
 
-  
+
   /**
    * The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -244,7 +245,7 @@ public class EmailMessage  implements Serializable {
     this.time = time;
   }
 
-  
+
   /**
    * Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
    **/
@@ -262,14 +263,13 @@ public class EmailMessage  implements Serializable {
     this.historyIncluded = historyIncluded;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -280,20 +280,21 @@ public class EmailMessage  implements Serializable {
       return false;
     }
     EmailMessage emailMessage = (EmailMessage) o;
+
     return Objects.equals(this.id, emailMessage.id) &&
-        Objects.equals(this.name, emailMessage.name) &&
-        Objects.equals(this.to, emailMessage.to) &&
-        Objects.equals(this.cc, emailMessage.cc) &&
-        Objects.equals(this.bcc, emailMessage.bcc) &&
-        Objects.equals(this.from, emailMessage.from) &&
-        Objects.equals(this.replyTo, emailMessage.replyTo) &&
-        Objects.equals(this.subject, emailMessage.subject) &&
-        Objects.equals(this.attachments, emailMessage.attachments) &&
-        Objects.equals(this.textBody, emailMessage.textBody) &&
-        Objects.equals(this.htmlBody, emailMessage.htmlBody) &&
-        Objects.equals(this.time, emailMessage.time) &&
-        Objects.equals(this.historyIncluded, emailMessage.historyIncluded) &&
-        Objects.equals(this.selfUri, emailMessage.selfUri);
+            Objects.equals(this.name, emailMessage.name) &&
+            Objects.equals(this.to, emailMessage.to) &&
+            Objects.equals(this.cc, emailMessage.cc) &&
+            Objects.equals(this.bcc, emailMessage.bcc) &&
+            Objects.equals(this.from, emailMessage.from) &&
+            Objects.equals(this.replyTo, emailMessage.replyTo) &&
+            Objects.equals(this.subject, emailMessage.subject) &&
+            Objects.equals(this.attachments, emailMessage.attachments) &&
+            Objects.equals(this.textBody, emailMessage.textBody) &&
+            Objects.equals(this.htmlBody, emailMessage.htmlBody) &&
+            Objects.equals(this.time, emailMessage.time) &&
+            Objects.equals(this.historyIncluded, emailMessage.historyIncluded) &&
+            Objects.equals(this.selfUri, emailMessage.selfUri);
   }
 
   @Override

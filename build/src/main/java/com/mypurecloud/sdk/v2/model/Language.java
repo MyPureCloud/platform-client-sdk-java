@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -84,7 +85,7 @@ public class Language  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The language name.
    **/
@@ -102,7 +103,7 @@ public class Language  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -120,7 +121,7 @@ public class Language  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    **/
   public Language state(StateEnum state) {
@@ -137,7 +138,7 @@ public class Language  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    **/
   public Language version(String version) {
@@ -154,14 +155,13 @@ public class Language  implements Serializable {
     this.version = version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -172,12 +172,13 @@ public class Language  implements Serializable {
       return false;
     }
     Language language = (Language) o;
+
     return Objects.equals(this.id, language.id) &&
-        Objects.equals(this.name, language.name) &&
-        Objects.equals(this.dateModified, language.dateModified) &&
-        Objects.equals(this.state, language.state) &&
-        Objects.equals(this.version, language.version) &&
-        Objects.equals(this.selfUri, language.selfUri);
+            Objects.equals(this.name, language.name) &&
+            Objects.equals(this.dateModified, language.dateModified) &&
+            Objects.equals(this.state, language.state) &&
+            Objects.equals(this.version, language.version) &&
+            Objects.equals(this.selfUri, language.selfUri);
   }
 
   @Override

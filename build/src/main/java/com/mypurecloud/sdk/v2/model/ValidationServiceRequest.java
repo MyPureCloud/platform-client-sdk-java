@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ValidationServiceRequest  implements Serializable {
     this.dateImportEnded = dateImportEnded;
   }
 
-  
+
   /**
    * S3 key for the uploaded file
    **/
@@ -60,7 +61,6 @@ public class ValidationServiceRequest  implements Serializable {
     this.uploadKey = uploadKey;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,8 +71,9 @@ public class ValidationServiceRequest  implements Serializable {
       return false;
     }
     ValidationServiceRequest validationServiceRequest = (ValidationServiceRequest) o;
+
     return Objects.equals(this.dateImportEnded, validationServiceRequest.dateImportEnded) &&
-        Objects.equals(this.uploadKey, validationServiceRequest.uploadKey);
+            Objects.equals(this.uploadKey, validationServiceRequest.uploadKey);
   }
 
   @Override

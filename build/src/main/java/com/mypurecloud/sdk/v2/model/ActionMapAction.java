@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class ActionMapAction  implements Serializable {
     this.actionTemplate = actionTemplate;
   }
 
-  
+
   /**
    * Media type of action.
    **/
@@ -118,7 +119,7 @@ public class ActionMapAction  implements Serializable {
     this.mediaType = mediaType;
   }
 
-  
+
   /**
    * Architect Flow Id and input contract.
    **/
@@ -136,7 +137,7 @@ public class ActionMapAction  implements Serializable {
     this.architectFlowFields = architectFlowFields;
   }
 
-  
+
   /**
    * Admin-configurable fields of a web messaging offer action.
    **/
@@ -154,7 +155,7 @@ public class ActionMapAction  implements Serializable {
     this.webMessagingOfferFields = webMessagingOfferFields;
   }
 
-  
+
   /**
    * Admin-configurable fields of an open action.
    **/
@@ -172,7 +173,6 @@ public class ActionMapAction  implements Serializable {
     this.openActionFields = openActionFields;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,11 +183,12 @@ public class ActionMapAction  implements Serializable {
       return false;
     }
     ActionMapAction actionMapAction = (ActionMapAction) o;
+
     return Objects.equals(this.actionTemplate, actionMapAction.actionTemplate) &&
-        Objects.equals(this.mediaType, actionMapAction.mediaType) &&
-        Objects.equals(this.architectFlowFields, actionMapAction.architectFlowFields) &&
-        Objects.equals(this.webMessagingOfferFields, actionMapAction.webMessagingOfferFields) &&
-        Objects.equals(this.openActionFields, actionMapAction.openActionFields);
+            Objects.equals(this.mediaType, actionMapAction.mediaType) &&
+            Objects.equals(this.architectFlowFields, actionMapAction.architectFlowFields) &&
+            Objects.equals(this.webMessagingOfferFields, actionMapAction.webMessagingOfferFields) &&
+            Objects.equals(this.openActionFields, actionMapAction.openActionFields);
   }
 
   @Override

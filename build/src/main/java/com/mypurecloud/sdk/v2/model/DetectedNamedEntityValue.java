@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -30,14 +31,13 @@ public class DetectedNamedEntityValue  implements Serializable {
     return raw;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The resolved value of the detected named entity.")
   @JsonProperty("resolved")
   public String getResolved() {
     return resolved;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -48,8 +48,9 @@ public class DetectedNamedEntityValue  implements Serializable {
       return false;
     }
     DetectedNamedEntityValue detectedNamedEntityValue = (DetectedNamedEntityValue) o;
+
     return Objects.equals(this.raw, detectedNamedEntityValue.raw) &&
-        Objects.equals(this.resolved, detectedNamedEntityValue.resolved);
+            Objects.equals(this.resolved, detectedNamedEntityValue.resolved);
   }
 
   @Override

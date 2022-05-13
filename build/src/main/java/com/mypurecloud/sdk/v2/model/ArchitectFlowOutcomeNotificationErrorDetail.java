@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class ArchitectFlowOutcomeNotificationErrorDetail  implements Serializabl
     this.errorCode = errorCode;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowOutcomeNotificationErrorDetail entityId(String entityId) {
@@ -59,7 +60,7 @@ public class ArchitectFlowOutcomeNotificationErrorDetail  implements Serializabl
     this.entityId = entityId;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowOutcomeNotificationErrorDetail entityName(String entityName) {
@@ -76,7 +77,7 @@ public class ArchitectFlowOutcomeNotificationErrorDetail  implements Serializabl
     this.entityName = entityName;
   }
 
-  
+
   /**
    **/
   public ArchitectFlowOutcomeNotificationErrorDetail fieldName(String fieldName) {
@@ -93,7 +94,6 @@ public class ArchitectFlowOutcomeNotificationErrorDetail  implements Serializabl
     this.fieldName = fieldName;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class ArchitectFlowOutcomeNotificationErrorDetail  implements Serializabl
       return false;
     }
     ArchitectFlowOutcomeNotificationErrorDetail architectFlowOutcomeNotificationErrorDetail = (ArchitectFlowOutcomeNotificationErrorDetail) o;
+
     return Objects.equals(this.errorCode, architectFlowOutcomeNotificationErrorDetail.errorCode) &&
-        Objects.equals(this.entityId, architectFlowOutcomeNotificationErrorDetail.entityId) &&
-        Objects.equals(this.entityName, architectFlowOutcomeNotificationErrorDetail.entityName) &&
-        Objects.equals(this.fieldName, architectFlowOutcomeNotificationErrorDetail.fieldName);
+            Objects.equals(this.entityId, architectFlowOutcomeNotificationErrorDetail.entityId) &&
+            Objects.equals(this.entityName, architectFlowOutcomeNotificationErrorDetail.entityName) &&
+            Objects.equals(this.fieldName, architectFlowOutcomeNotificationErrorDetail.fieldName);
   }
 
   @Override

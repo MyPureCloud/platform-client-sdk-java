@@ -13,21 +13,20 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Empty;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
-import com.mypurecloud.sdk.v2.model.GenericSAML;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
+import com.mypurecloud.sdk.v2.model.OAuthProvider;
+import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
 import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersAdfsRequest;
@@ -72,7 +71,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-
 public class IdentityProviderApiAsync {
   private final ApiClient pcapiClient;
 
@@ -84,7 +82,6 @@ public class IdentityProviderApiAsync {
     this.pcapiClient = apiClient;
   }
 
-  
   /**
    * Delete ADFS Identity Provider
    * 
@@ -160,7 +157,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
@@ -236,7 +232,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete Generic SAML Identity Provider
    * 
@@ -312,7 +307,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete G Suite Identity Provider
    * 
@@ -388,7 +382,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete IdentityNow Provider
    * 
@@ -464,7 +457,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete Okta Identity Provider
    * 
@@ -540,7 +532,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete OneLogin Identity Provider
    * 
@@ -616,7 +607,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete Ping Identity Provider
    * 
@@ -692,7 +682,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete PureCloud Identity Provider
    * 
@@ -768,7 +757,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete PureEngage Identity Provider
    * 
@@ -844,7 +832,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Delete Salesforce Identity Provider
    * 
@@ -920,7 +907,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * The list of identity providers
    * 
@@ -996,7 +982,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get ADFS Identity Provider
    * 
@@ -1072,7 +1057,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
@@ -1148,7 +1132,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get Generic SAML Identity Provider
    * 
@@ -1224,7 +1207,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get G Suite Identity Provider
    * 
@@ -1300,7 +1282,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get IdentityNow Provider
    * 
@@ -1376,7 +1357,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get Okta Identity Provider
    * 
@@ -1452,7 +1432,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get OneLogin Identity Provider
    * 
@@ -1528,7 +1507,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get Ping Identity Provider
    * 
@@ -1604,7 +1582,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get PureCloud Identity Provider
    * 
@@ -1680,7 +1657,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get PureEngage Identity Provider
    * 
@@ -1756,7 +1732,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Get Salesforce Identity Provider
    * 
@@ -1832,7 +1807,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create ADFS Identity Provider
    * 
@@ -1908,7 +1882,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
@@ -1984,7 +1957,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create Generic SAML Identity Provider
    * 
@@ -2060,7 +2032,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create G Suite Identity Provider
    * 
@@ -2136,7 +2107,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create IdentityNow Provider
    * 
@@ -2212,7 +2182,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create Okta Identity Provider
    * 
@@ -2288,7 +2257,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create OneLogin Identity Provider
    * 
@@ -2364,7 +2332,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create Ping Identity Provider
    * 
@@ -2440,7 +2407,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create PureCloud Identity Provider
    * 
@@ -2516,7 +2482,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create PureEngage Identity Provider
    * 
@@ -2592,7 +2557,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
   /**
    * Update/Create Salesforce Identity Provider
    * 
@@ -2668,7 +2632,6 @@ public class IdentityProviderApiAsync {
     }
   }
 
-  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

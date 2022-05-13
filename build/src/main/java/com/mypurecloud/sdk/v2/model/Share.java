@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -137,7 +138,7 @@ public class Share  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public Share name(String name) {
@@ -154,7 +155,7 @@ public class Share  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public Share sharedEntityType(SharedEntityTypeEnum sharedEntityType) {
@@ -171,7 +172,7 @@ public class Share  implements Serializable {
     this.sharedEntityType = sharedEntityType;
   }
 
-  
+
   /**
    **/
   public Share sharedEntity(DomainEntityRef sharedEntity) {
@@ -188,7 +189,7 @@ public class Share  implements Serializable {
     this.sharedEntity = sharedEntity;
   }
 
-  
+
   /**
    **/
   public Share memberType(MemberTypeEnum memberType) {
@@ -205,7 +206,7 @@ public class Share  implements Serializable {
     this.memberType = memberType;
   }
 
-  
+
   /**
    **/
   public Share member(DomainEntityRef member) {
@@ -222,7 +223,7 @@ public class Share  implements Serializable {
     this.member = member;
   }
 
-  
+
   /**
    **/
   public Share sharedBy(DomainEntityRef sharedBy) {
@@ -239,7 +240,7 @@ public class Share  implements Serializable {
     this.sharedBy = sharedBy;
   }
 
-  
+
   /**
    **/
   public Share workspace(DomainEntityRef workspace) {
@@ -256,7 +257,7 @@ public class Share  implements Serializable {
     this.workspace = workspace;
   }
 
-  
+
   /**
    **/
   public Share user(User user) {
@@ -273,7 +274,7 @@ public class Share  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public Share group(Group group) {
@@ -290,14 +291,13 @@ public class Share  implements Serializable {
     this.group = group;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -308,17 +308,18 @@ public class Share  implements Serializable {
       return false;
     }
     Share share = (Share) o;
+
     return Objects.equals(this.id, share.id) &&
-        Objects.equals(this.name, share.name) &&
-        Objects.equals(this.sharedEntityType, share.sharedEntityType) &&
-        Objects.equals(this.sharedEntity, share.sharedEntity) &&
-        Objects.equals(this.memberType, share.memberType) &&
-        Objects.equals(this.member, share.member) &&
-        Objects.equals(this.sharedBy, share.sharedBy) &&
-        Objects.equals(this.workspace, share.workspace) &&
-        Objects.equals(this.user, share.user) &&
-        Objects.equals(this.group, share.group) &&
-        Objects.equals(this.selfUri, share.selfUri);
+            Objects.equals(this.name, share.name) &&
+            Objects.equals(this.sharedEntityType, share.sharedEntityType) &&
+            Objects.equals(this.sharedEntity, share.sharedEntity) &&
+            Objects.equals(this.memberType, share.memberType) &&
+            Objects.equals(this.member, share.member) &&
+            Objects.equals(this.sharedBy, share.sharedBy) &&
+            Objects.equals(this.workspace, share.workspace) &&
+            Objects.equals(this.user, share.user) &&
+            Objects.equals(this.group, share.group) &&
+            Objects.equals(this.selfUri, share.selfUri);
   }
 
   @Override

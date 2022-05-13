@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,7 @@ public class PatchCallbackRequest  implements Serializable {
     this.conversationId = conversationId;
   }
 
-  
+
   /**
    * The identifier of the queue to be used for the callback.
    **/
@@ -62,7 +63,7 @@ public class PatchCallbackRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-  
+
   /**
    * The agentId.
    **/
@@ -80,7 +81,7 @@ public class PatchCallbackRequest  implements Serializable {
     this.agentId = agentId;
   }
 
-  
+
   /**
    * The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -89,7 +90,7 @@ public class PatchCallbackRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "2015-01-02T16:59:59.000Z", value = "The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "2015-01-02T16:59:59Z", value = "The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("callbackScheduledTime")
   public Date getCallbackScheduledTime() {
     return callbackScheduledTime;
@@ -98,7 +99,6 @@ public class PatchCallbackRequest  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,10 +109,11 @@ public class PatchCallbackRequest  implements Serializable {
       return false;
     }
     PatchCallbackRequest patchCallbackRequest = (PatchCallbackRequest) o;
+
     return Objects.equals(this.conversationId, patchCallbackRequest.conversationId) &&
-        Objects.equals(this.queueId, patchCallbackRequest.queueId) &&
-        Objects.equals(this.agentId, patchCallbackRequest.agentId) &&
-        Objects.equals(this.callbackScheduledTime, patchCallbackRequest.callbackScheduledTime);
+            Objects.equals(this.queueId, patchCallbackRequest.queueId) &&
+            Objects.equals(this.agentId, patchCallbackRequest.agentId) &&
+            Objects.equals(this.callbackScheduledTime, patchCallbackRequest.callbackScheduledTime);
   }
 
   @Override

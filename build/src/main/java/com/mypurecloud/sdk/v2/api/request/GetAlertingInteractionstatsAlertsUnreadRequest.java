@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
-import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
+import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingInteractionstatsAlertsUnreadRequest {
-    
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -54,7 +54,7 @@ public class GetAlertingInteractionstatsAlertsUnreadRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/alerting/interactionstats/alerts/unread")
-                .withCustomHeaders(customHeaders)
+		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud OAuth")
@@ -65,7 +65,7 @@ public class GetAlertingInteractionstatsAlertsUnreadRequest {
 		return new Builder();
 	}
 
-	
+
 
 	public static class Builder {
 		private final GetAlertingInteractionstatsAlertsUnreadRequest request;
@@ -74,9 +74,9 @@ public class GetAlertingInteractionstatsAlertsUnreadRequest {
 			request = new GetAlertingInteractionstatsAlertsUnreadRequest();
 		}
 
-		
 
-		
+
+
 
 		public GetAlertingInteractionstatsAlertsUnreadRequest build() {
             

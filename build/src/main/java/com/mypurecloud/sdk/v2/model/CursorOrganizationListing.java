@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
@@ -45,7 +46,7 @@ public class CursorOrganizationListing  implements Serializable {
     this.entities = entities;
   }
 
-  
+
   /**
    **/
   public CursorOrganizationListing nextUri(String nextUri) {
@@ -62,7 +63,7 @@ public class CursorOrganizationListing  implements Serializable {
     this.nextUri = nextUri;
   }
 
-  
+
   /**
    **/
   public CursorOrganizationListing selfUri(String selfUri) {
@@ -79,7 +80,7 @@ public class CursorOrganizationListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public CursorOrganizationListing previousUri(String previousUri) {
@@ -96,7 +97,6 @@ public class CursorOrganizationListing  implements Serializable {
     this.previousUri = previousUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,10 +107,11 @@ public class CursorOrganizationListing  implements Serializable {
       return false;
     }
     CursorOrganizationListing cursorOrganizationListing = (CursorOrganizationListing) o;
+
     return Objects.equals(this.entities, cursorOrganizationListing.entities) &&
-        Objects.equals(this.nextUri, cursorOrganizationListing.nextUri) &&
-        Objects.equals(this.selfUri, cursorOrganizationListing.selfUri) &&
-        Objects.equals(this.previousUri, cursorOrganizationListing.previousUri);
+            Objects.equals(this.nextUri, cursorOrganizationListing.nextUri) &&
+            Objects.equals(this.selfUri, cursorOrganizationListing.selfUri) &&
+            Objects.equals(this.previousUri, cursorOrganizationListing.previousUri);
   }
 
   @Override

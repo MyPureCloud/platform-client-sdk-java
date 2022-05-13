@@ -21,11 +21,11 @@ title: ConversationMessageEvent
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COBROWSE | &quot;CoBrowse&quot; |
-| TYPING | &quot;Typing&quot; |
-| PRESENCE | &quot;Presence&quot; |
-| UNKNOWN | &quot;Unknown&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| COBROWSE | &quot;CoBrowse&quot; | 
+| TYPING | &quot;Typing&quot; | 
+| PRESENCE | &quot;Presence&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

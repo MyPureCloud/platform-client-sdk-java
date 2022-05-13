@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.questionId = questionId;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionScore answerId(String answerId) {
@@ -63,7 +64,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.answerId = answerId;
   }
 
-  
+
   /**
    * Unweighted score of the question
    **/
@@ -81,7 +82,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.score = score;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionScore markedNA(Boolean markedNA) {
@@ -98,7 +99,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-  
+
   /**
    * AnswerId found with evaluation assistance conditions
    **/
@@ -116,7 +117,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.assistedAnswerId = assistedAnswerId;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionScore npsScore(Integer npsScore) {
@@ -133,7 +134,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.npsScore = npsScore;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionScore npsTextAnswer(String npsTextAnswer) {
@@ -150,7 +151,7 @@ public class SurveyQuestionScore  implements Serializable {
     this.npsTextAnswer = npsTextAnswer;
   }
 
-  
+
   /**
    **/
   public SurveyQuestionScore freeTextAnswer(String freeTextAnswer) {
@@ -167,7 +168,6 @@ public class SurveyQuestionScore  implements Serializable {
     this.freeTextAnswer = freeTextAnswer;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,14 +178,15 @@ public class SurveyQuestionScore  implements Serializable {
       return false;
     }
     SurveyQuestionScore surveyQuestionScore = (SurveyQuestionScore) o;
+
     return Objects.equals(this.questionId, surveyQuestionScore.questionId) &&
-        Objects.equals(this.answerId, surveyQuestionScore.answerId) &&
-        Objects.equals(this.score, surveyQuestionScore.score) &&
-        Objects.equals(this.markedNA, surveyQuestionScore.markedNA) &&
-        Objects.equals(this.assistedAnswerId, surveyQuestionScore.assistedAnswerId) &&
-        Objects.equals(this.npsScore, surveyQuestionScore.npsScore) &&
-        Objects.equals(this.npsTextAnswer, surveyQuestionScore.npsTextAnswer) &&
-        Objects.equals(this.freeTextAnswer, surveyQuestionScore.freeTextAnswer);
+            Objects.equals(this.answerId, surveyQuestionScore.answerId) &&
+            Objects.equals(this.score, surveyQuestionScore.score) &&
+            Objects.equals(this.markedNA, surveyQuestionScore.markedNA) &&
+            Objects.equals(this.assistedAnswerId, surveyQuestionScore.assistedAnswerId) &&
+            Objects.equals(this.npsScore, surveyQuestionScore.npsScore) &&
+            Objects.equals(this.npsTextAnswer, surveyQuestionScore.npsTextAnswer) &&
+            Objects.equals(this.freeTextAnswer, surveyQuestionScore.freeTextAnswer);
   }
 
   @Override

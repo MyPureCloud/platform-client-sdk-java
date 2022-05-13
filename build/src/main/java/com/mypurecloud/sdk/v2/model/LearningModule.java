@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -154,7 +155,7 @@ public class LearningModule  implements Serializable {
     return id;
   }
 
-  
+
   /**
    * The name of learning module
    **/
@@ -172,84 +173,84 @@ public class LearningModule  implements Serializable {
     this.name = name;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who created learning module")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time learning module was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The user who modified learning module")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The date/time learning module was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The version of published learning module")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The external ID of the learning module")
   @JsonProperty("externalId")
   public String getExternalId() {
     return externalId;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The source of the learning module")
   @JsonProperty("source")
   public SourceEnum getSource() {
     return source;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The rule for learning module; read-only, and only populated when requested via expand param.")
   @JsonProperty("rule")
   public LearningModuleRule getRule() {
     return rule;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If true, learning module is archived")
   @JsonProperty("isArchived")
   public Boolean getIsArchived() {
     return isArchived;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "If true, learning module is published")
   @JsonProperty("isPublished")
   public Boolean getIsPublished() {
     return isPublished;
   }
 
-  
+
   /**
    * The description of learning module
    **/
@@ -267,7 +268,7 @@ public class LearningModule  implements Serializable {
     this.description = description;
   }
 
-  
+
   /**
    * The completion time of learning module in days
    **/
@@ -285,7 +286,7 @@ public class LearningModule  implements Serializable {
     this.completionTimeInDays = completionTimeInDays;
   }
 
-  
+
   /**
    * The type for the learning module
    **/
@@ -303,7 +304,7 @@ public class LearningModule  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * The list of inform steps in a learning module
    **/
@@ -321,7 +322,7 @@ public class LearningModule  implements Serializable {
     this.informSteps = informSteps;
   }
 
-  
+
   /**
    * The assessment form for learning module
    **/
@@ -339,7 +340,7 @@ public class LearningModule  implements Serializable {
     this.assessmentForm = assessmentForm;
   }
 
-  
+
   /**
    * The learning module summary data
    **/
@@ -357,7 +358,7 @@ public class LearningModule  implements Serializable {
     this.summaryData = summaryData;
   }
 
-  
+
   /**
    * The cover art for the learning module
    **/
@@ -375,7 +376,6 @@ public class LearningModule  implements Serializable {
     this.coverArt = coverArt;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -386,26 +386,27 @@ public class LearningModule  implements Serializable {
       return false;
     }
     LearningModule learningModule = (LearningModule) o;
+
     return Objects.equals(this.id, learningModule.id) &&
-        Objects.equals(this.name, learningModule.name) &&
-        Objects.equals(this.createdBy, learningModule.createdBy) &&
-        Objects.equals(this.dateCreated, learningModule.dateCreated) &&
-        Objects.equals(this.modifiedBy, learningModule.modifiedBy) &&
-        Objects.equals(this.dateModified, learningModule.dateModified) &&
-        Objects.equals(this.version, learningModule.version) &&
-        Objects.equals(this.externalId, learningModule.externalId) &&
-        Objects.equals(this.source, learningModule.source) &&
-        Objects.equals(this.rule, learningModule.rule) &&
-        Objects.equals(this.selfUri, learningModule.selfUri) &&
-        Objects.equals(this.isArchived, learningModule.isArchived) &&
-        Objects.equals(this.isPublished, learningModule.isPublished) &&
-        Objects.equals(this.description, learningModule.description) &&
-        Objects.equals(this.completionTimeInDays, learningModule.completionTimeInDays) &&
-        Objects.equals(this.type, learningModule.type) &&
-        Objects.equals(this.informSteps, learningModule.informSteps) &&
-        Objects.equals(this.assessmentForm, learningModule.assessmentForm) &&
-        Objects.equals(this.summaryData, learningModule.summaryData) &&
-        Objects.equals(this.coverArt, learningModule.coverArt);
+            Objects.equals(this.name, learningModule.name) &&
+            Objects.equals(this.createdBy, learningModule.createdBy) &&
+            Objects.equals(this.dateCreated, learningModule.dateCreated) &&
+            Objects.equals(this.modifiedBy, learningModule.modifiedBy) &&
+            Objects.equals(this.dateModified, learningModule.dateModified) &&
+            Objects.equals(this.version, learningModule.version) &&
+            Objects.equals(this.externalId, learningModule.externalId) &&
+            Objects.equals(this.source, learningModule.source) &&
+            Objects.equals(this.rule, learningModule.rule) &&
+            Objects.equals(this.selfUri, learningModule.selfUri) &&
+            Objects.equals(this.isArchived, learningModule.isArchived) &&
+            Objects.equals(this.isPublished, learningModule.isPublished) &&
+            Objects.equals(this.description, learningModule.description) &&
+            Objects.equals(this.completionTimeInDays, learningModule.completionTimeInDays) &&
+            Objects.equals(this.type, learningModule.type) &&
+            Objects.equals(this.informSteps, learningModule.informSteps) &&
+            Objects.equals(this.assessmentForm, learningModule.assessmentForm) &&
+            Objects.equals(this.summaryData, learningModule.summaryData) &&
+            Objects.equals(this.coverArt, learningModule.coverArt);
   }
 
   @Override

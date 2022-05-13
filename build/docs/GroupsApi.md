@@ -33,8 +33,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete group
 
-
-
 Wraps DELETE /api/v2/groups/{groupId}  
 
 Requires ANY permissions: 
@@ -91,11 +89,9 @@ null (empty response body)
 
 
 
-> [Empty](Empty.html) deleteGroupMembers(groupId, ids)
+> Empty deleteGroupMembers(groupId, ids)
 
 Remove members
-
-
 
 Wraps DELETE /api/v2/groups/{groupId}/members  
 
@@ -147,7 +143,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getFieldconfig"></a>
 
@@ -158,8 +154,6 @@ try {
 > [FieldConfig](FieldConfig.html) getFieldconfig(type)
 
 Fetch field config for an entity type
-
-
 
 Wraps GET /api/v2/fieldconfig  
 
@@ -221,8 +215,6 @@ try {
 
 Get group
 
-
-
 Wraps GET /api/v2/groups/{groupId}  
 
 Requires NO permissions: 
@@ -282,8 +274,6 @@ try {
 > [UserEntityListing](UserEntityListing.html) getGroupIndividuals(groupId)
 
 Get all individuals associated with the group
-
-
 
 Wraps GET /api/v2/groups/{groupId}/individuals  
 
@@ -345,8 +335,6 @@ try {
 
 Get group members, includes individuals, owners, and dynamically included people
 
-
-
 Wraps GET /api/v2/groups/{groupId}/members  
 
 Requires NO permissions: 
@@ -378,7 +366,7 @@ String groupId = "groupId_example"; // String | Group ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "ASC"; // String | Ascending or descending sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
 try {
     UserEntityListing result = apiInstance.getGroupMembers(groupId, pageSize, pageNumber, sortOrder, expand);
     System.out.println(result);
@@ -461,7 +449,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| groupId | 
-| **fields** | **String**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional] 
+| **fields** | **String**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type&#x3D;group and using the key for the elements returned by the fieldList | [optional] 
 {: class="table-striped"}
 
 
@@ -478,8 +466,6 @@ try {
 > [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, id, jabberId, sortOrder)
 
 Get a group list
-
-
 
 Wraps GET /api/v2/groups  
 
@@ -510,8 +496,8 @@ Configuration.setDefaultApiClient(apiClient);
 GroupsApi apiInstance = new GroupsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | id
-List<String> jabberId = Arrays.asList("jabberId_example"); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
+List<String> id = Arrays.asList(null); // List<String> | id
+List<String> jabberId = Arrays.asList(null); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 try {
     GroupEntityListing result = apiInstance.getGroups(pageSize, pageNumber, id, jabberId, sortOrder);
@@ -549,8 +535,6 @@ try {
 
 Search groups using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/groups/search  
 
 Requires NO permissions: 
@@ -579,7 +563,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GroupsApi apiInstance = new GroupsApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+List<String> expand = Arrays.asList(null); // List<String> | expand
 try {
     GroupsSearchResponse result = apiInstance.getGroupsSearch(q64, expand);
     System.out.println(result);
@@ -644,7 +628,7 @@ Configuration.setDefaultApiClient(apiClient);
 GroupsApi apiInstance = new GroupsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList(null); // List<String> | id
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 try {
     GroupProfileEntityListing result = apiInstance.getProfilesGroups(pageSize, pageNumber, id, sortOrder);
@@ -677,11 +661,9 @@ try {
 
 
 
-> [Empty](Empty.html) postGroupMembers(groupId, body)
+> Empty postGroupMembers(groupId, body)
 
 Add members
-
-
 
 Wraps POST /api/v2/groups/{groupId}/members  
 
@@ -733,7 +715,7 @@ try {
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="postGroups"></a>
 
@@ -744,8 +726,6 @@ try {
 > [Group](Group.html) postGroups(body)
 
 Create a group
-
-
 
 Wraps POST /api/v2/groups  
 
@@ -808,8 +788,6 @@ try {
 
 Search groups
 
-
-
 Wraps POST /api/v2/groups/search  
 
 Requires NO permissions: 
@@ -869,8 +847,6 @@ try {
 > [Group](Group.html) putGroup(groupId, body)
 
 Update group
-
-
 
 Wraps PUT /api/v2/groups/{groupId}  
 

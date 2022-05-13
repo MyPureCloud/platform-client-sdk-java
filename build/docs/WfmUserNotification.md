@@ -15,7 +15,7 @@ title: WfmUserNotification
 | **shiftTrade** | <!----><!---->[**ShiftTradeNotification**](ShiftTradeNotification.html)<!----> | A shift trade notification.  Only set if type == ShiftTrade |  [optional] |
 | **timeOffRequest** | <!----><!---->[**TimeOffRequestNotification**](TimeOffRequestNotification.html)<!----> | A time off request notification.  Only set if type == TimeOffRequest |  [optional] |
 | **adherenceExplanation** | <!----><!---->[**AdherenceExplanationNotification**](AdherenceExplanationNotification.html)<!----> | An adherence explanation notification.  Only set if type == AdherenceExplanation |  [optional] |
-| **markedAsRead** | <!----><!---->**Boolean**<!----> | Whether this notification has been marked \&quot;read\&quot; |  |
+| **markedAsRead** | <!----><!---->**Boolean**<!----> | Whether this notification has been marked \"read\" |  |
 | **agentNotification** | <!----><!---->**Boolean**<!----> | Whether this notification is for an agent |  [optional] |
 | **otherNotificationIdsInGroup** | <!----><!---->**List&lt;String&gt;**<!----> | Other notification IDs in group.  This field is only populated in real-time notifications |  [optional] |
 {: class="table table-striped"}
@@ -27,10 +27,10 @@ title: WfmUserNotification
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; |
-| SHIFTTRADE | &quot;ShiftTrade&quot; |
-| TIMEOFFREQUEST | &quot;TimeOffRequest&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
+| SHIFTTRADE | &quot;ShiftTrade&quot; | 
+| TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 {: class="table table-striped"}
 
 

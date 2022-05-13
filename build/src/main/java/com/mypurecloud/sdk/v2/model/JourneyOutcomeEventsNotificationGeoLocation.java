@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -49,7 +50,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.country = country;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation countryName(String countryName) {
@@ -66,7 +67,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.countryName = countryName;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation latitude(BigDecimal latitude) {
@@ -83,7 +84,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.latitude = latitude;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation longitude(BigDecimal longitude) {
@@ -100,7 +101,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.longitude = longitude;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation locality(String locality) {
@@ -117,7 +118,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.locality = locality;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation postalCode(String postalCode) {
@@ -134,7 +135,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.postalCode = postalCode;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation region(String region) {
@@ -151,7 +152,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.region = region;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation regionName(String regionName) {
@@ -168,7 +169,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.regionName = regionName;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation timezone(String timezone) {
@@ -185,7 +186,7 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.timezone = timezone;
   }
 
-  
+
   /**
    **/
   public JourneyOutcomeEventsNotificationGeoLocation source(String source) {
@@ -202,7 +203,6 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
     this.source = source;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,16 +213,17 @@ public class JourneyOutcomeEventsNotificationGeoLocation  implements Serializabl
       return false;
     }
     JourneyOutcomeEventsNotificationGeoLocation journeyOutcomeEventsNotificationGeoLocation = (JourneyOutcomeEventsNotificationGeoLocation) o;
+
     return Objects.equals(this.country, journeyOutcomeEventsNotificationGeoLocation.country) &&
-        Objects.equals(this.countryName, journeyOutcomeEventsNotificationGeoLocation.countryName) &&
-        Objects.equals(this.latitude, journeyOutcomeEventsNotificationGeoLocation.latitude) &&
-        Objects.equals(this.longitude, journeyOutcomeEventsNotificationGeoLocation.longitude) &&
-        Objects.equals(this.locality, journeyOutcomeEventsNotificationGeoLocation.locality) &&
-        Objects.equals(this.postalCode, journeyOutcomeEventsNotificationGeoLocation.postalCode) &&
-        Objects.equals(this.region, journeyOutcomeEventsNotificationGeoLocation.region) &&
-        Objects.equals(this.regionName, journeyOutcomeEventsNotificationGeoLocation.regionName) &&
-        Objects.equals(this.timezone, journeyOutcomeEventsNotificationGeoLocation.timezone) &&
-        Objects.equals(this.source, journeyOutcomeEventsNotificationGeoLocation.source);
+            Objects.equals(this.countryName, journeyOutcomeEventsNotificationGeoLocation.countryName) &&
+            Objects.equals(this.latitude, journeyOutcomeEventsNotificationGeoLocation.latitude) &&
+            Objects.equals(this.longitude, journeyOutcomeEventsNotificationGeoLocation.longitude) &&
+            Objects.equals(this.locality, journeyOutcomeEventsNotificationGeoLocation.locality) &&
+            Objects.equals(this.postalCode, journeyOutcomeEventsNotificationGeoLocation.postalCode) &&
+            Objects.equals(this.region, journeyOutcomeEventsNotificationGeoLocation.region) &&
+            Objects.equals(this.regionName, journeyOutcomeEventsNotificationGeoLocation.regionName) &&
+            Objects.equals(this.timezone, journeyOutcomeEventsNotificationGeoLocation.timezone) &&
+            Objects.equals(this.source, journeyOutcomeEventsNotificationGeoLocation.source);
   }
 
   @Override

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -159,7 +160,7 @@ public class EventMessage  implements Serializable {
     this.code = code;
   }
 
-  
+
   /**
    **/
   public EventMessage message(String message) {
@@ -176,7 +177,7 @@ public class EventMessage  implements Serializable {
     this.message = message;
   }
 
-  
+
   /**
    **/
   public EventMessage messageWithParams(String messageWithParams) {
@@ -193,7 +194,7 @@ public class EventMessage  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-  
+
   /**
    **/
   public EventMessage messageParams(Map<String, Object> messageParams) {
@@ -210,7 +211,7 @@ public class EventMessage  implements Serializable {
     this.messageParams = messageParams;
   }
 
-  
+
   /**
    **/
   public EventMessage documentationUri(String documentationUri) {
@@ -227,7 +228,7 @@ public class EventMessage  implements Serializable {
     this.documentationUri = documentationUri;
   }
 
-  
+
   /**
    **/
   public EventMessage resourceURIs(List<String> resourceURIs) {
@@ -244,7 +245,6 @@ public class EventMessage  implements Serializable {
     this.resourceURIs = resourceURIs;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -255,12 +255,13 @@ public class EventMessage  implements Serializable {
       return false;
     }
     EventMessage eventMessage = (EventMessage) o;
+
     return Objects.equals(this.code, eventMessage.code) &&
-        Objects.equals(this.message, eventMessage.message) &&
-        Objects.equals(this.messageWithParams, eventMessage.messageWithParams) &&
-        Objects.equals(this.messageParams, eventMessage.messageParams) &&
-        Objects.equals(this.documentationUri, eventMessage.documentationUri) &&
-        Objects.equals(this.resourceURIs, eventMessage.resourceURIs);
+            Objects.equals(this.message, eventMessage.message) &&
+            Objects.equals(this.messageWithParams, eventMessage.messageWithParams) &&
+            Objects.equals(this.messageParams, eventMessage.messageParams) &&
+            Objects.equals(this.documentationUri, eventMessage.documentationUri) &&
+            Objects.equals(this.resourceURIs, eventMessage.resourceURIs);
   }
 
   @Override

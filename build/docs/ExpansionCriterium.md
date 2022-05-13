@@ -19,8 +19,8 @@ title: ExpansionCriterium
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TIMEOUT_SECONDS | &quot;TIMEOUT_SECONDS&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TIMEOUT_SECONDS | &quot;TIMEOUT_SECONDS&quot; | 
 {: class="table table-striped"}
 
 

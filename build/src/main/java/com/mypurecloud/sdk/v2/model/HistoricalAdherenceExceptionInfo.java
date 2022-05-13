@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -311,7 +312,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.startOffsetSeconds = startOffsetSeconds;
   }
 
-  
+
   /**
    * Exception end offset in seconds relative to query start time
    **/
@@ -329,7 +330,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.endOffsetSeconds = endOffsetSeconds;
   }
 
-  
+
   /**
    * The ID of the scheduled activity code for this user
    **/
@@ -347,7 +348,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.scheduledActivityCodeId = scheduledActivityCodeId;
   }
 
-  
+
   /**
    * Activity for which the user is scheduled
    **/
@@ -365,7 +366,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.scheduledActivityCategory = scheduledActivityCategory;
   }
 
-  
+
   /**
    * Activity for which the user is actually engaged
    **/
@@ -383,7 +384,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.actualActivityCategory = actualActivityCategory;
   }
 
-  
+
   /**
    * Actual underlying system presence value
    **/
@@ -401,7 +402,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-  
+
   /**
    * Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
    **/
@@ -419,7 +420,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-  
+
   /**
    * The impact of the current adherence state for this user
    **/
@@ -437,7 +438,7 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.impact = impact;
   }
 
-  
+
   /**
    * The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
    **/
@@ -455,7 +456,6 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     this.secondaryPresenceLookupId = secondaryPresenceLookupId;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -466,15 +466,16 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
       return false;
     }
     HistoricalAdherenceExceptionInfo historicalAdherenceExceptionInfo = (HistoricalAdherenceExceptionInfo) o;
+
     return Objects.equals(this.startOffsetSeconds, historicalAdherenceExceptionInfo.startOffsetSeconds) &&
-        Objects.equals(this.endOffsetSeconds, historicalAdherenceExceptionInfo.endOffsetSeconds) &&
-        Objects.equals(this.scheduledActivityCodeId, historicalAdherenceExceptionInfo.scheduledActivityCodeId) &&
-        Objects.equals(this.scheduledActivityCategory, historicalAdherenceExceptionInfo.scheduledActivityCategory) &&
-        Objects.equals(this.actualActivityCategory, historicalAdherenceExceptionInfo.actualActivityCategory) &&
-        Objects.equals(this.systemPresence, historicalAdherenceExceptionInfo.systemPresence) &&
-        Objects.equals(this.routingStatus, historicalAdherenceExceptionInfo.routingStatus) &&
-        Objects.equals(this.impact, historicalAdherenceExceptionInfo.impact) &&
-        Objects.equals(this.secondaryPresenceLookupId, historicalAdherenceExceptionInfo.secondaryPresenceLookupId);
+            Objects.equals(this.endOffsetSeconds, historicalAdherenceExceptionInfo.endOffsetSeconds) &&
+            Objects.equals(this.scheduledActivityCodeId, historicalAdherenceExceptionInfo.scheduledActivityCodeId) &&
+            Objects.equals(this.scheduledActivityCategory, historicalAdherenceExceptionInfo.scheduledActivityCategory) &&
+            Objects.equals(this.actualActivityCategory, historicalAdherenceExceptionInfo.actualActivityCategory) &&
+            Objects.equals(this.systemPresence, historicalAdherenceExceptionInfo.systemPresence) &&
+            Objects.equals(this.routingStatus, historicalAdherenceExceptionInfo.routingStatus) &&
+            Objects.equals(this.impact, historicalAdherenceExceptionInfo.impact) &&
+            Objects.equals(this.secondaryPresenceLookupId, historicalAdherenceExceptionInfo.secondaryPresenceLookupId);
   }
 
   @Override

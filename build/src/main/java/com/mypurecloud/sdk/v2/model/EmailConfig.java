@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -48,7 +49,7 @@ public class EmailConfig  implements Serializable {
     this.emailColumns = emailColumns;
   }
 
-  
+
   /**
    * The content template used to formulate the email to send to the contact.
    **/
@@ -66,7 +67,7 @@ public class EmailConfig  implements Serializable {
     this.contentTemplate = contentTemplate;
   }
 
-  
+
   /**
    * The email address that will be used as the sender of the email.
    **/
@@ -84,7 +85,7 @@ public class EmailConfig  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-  
+
   /**
    * The email address from which any reply will be sent.
    **/
@@ -102,7 +103,6 @@ public class EmailConfig  implements Serializable {
     this.replyToAddress = replyToAddress;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,10 +113,11 @@ public class EmailConfig  implements Serializable {
       return false;
     }
     EmailConfig emailConfig = (EmailConfig) o;
+
     return Objects.equals(this.emailColumns, emailConfig.emailColumns) &&
-        Objects.equals(this.contentTemplate, emailConfig.contentTemplate) &&
-        Objects.equals(this.fromAddress, emailConfig.fromAddress) &&
-        Objects.equals(this.replyToAddress, emailConfig.replyToAddress);
+            Objects.equals(this.contentTemplate, emailConfig.contentTemplate) &&
+            Objects.equals(this.fromAddress, emailConfig.fromAddress) &&
+            Objects.equals(this.replyToAddress, emailConfig.replyToAddress);
   }
 
   @Override

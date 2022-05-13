@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OutOfOfficeEventUser;
@@ -45,7 +46,7 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
     this.user = user;
   }
 
-  
+
   /**
    **/
   public OutOfOfficeEventOutOfOffice active(Boolean active) {
@@ -62,7 +63,7 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
     this.active = active;
   }
 
-  
+
   /**
    **/
   public OutOfOfficeEventOutOfOffice indefinite(Boolean indefinite) {
@@ -79,7 +80,7 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
     this.indefinite = indefinite;
   }
 
-  
+
   /**
    **/
   public OutOfOfficeEventOutOfOffice startDate(Date startDate) {
@@ -96,7 +97,7 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
     this.startDate = startDate;
   }
 
-  
+
   /**
    **/
   public OutOfOfficeEventOutOfOffice endDate(Date endDate) {
@@ -113,7 +114,6 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
     this.endDate = endDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,11 +124,12 @@ public class OutOfOfficeEventOutOfOffice  implements Serializable {
       return false;
     }
     OutOfOfficeEventOutOfOffice outOfOfficeEventOutOfOffice = (OutOfOfficeEventOutOfOffice) o;
+
     return Objects.equals(this.user, outOfOfficeEventOutOfOffice.user) &&
-        Objects.equals(this.active, outOfOfficeEventOutOfOffice.active) &&
-        Objects.equals(this.indefinite, outOfOfficeEventOutOfOffice.indefinite) &&
-        Objects.equals(this.startDate, outOfOfficeEventOutOfOffice.startDate) &&
-        Objects.equals(this.endDate, outOfOfficeEventOutOfOffice.endDate);
+            Objects.equals(this.active, outOfOfficeEventOutOfOffice.active) &&
+            Objects.equals(this.indefinite, outOfOfficeEventOutOfOffice.indefinite) &&
+            Objects.equals(this.startDate, outOfOfficeEventOutOfOffice.startDate) &&
+            Objects.equals(this.endDate, outOfOfficeEventOutOfOffice.endDate);
   }
 
   @Override

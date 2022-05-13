@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -90,7 +91,7 @@ public class ScreenRecordingSessionRequest  implements Serializable {
     this.state = state;
   }
 
-  
+
   /**
    * The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -108,7 +109,7 @@ public class ScreenRecordingSessionRequest  implements Serializable {
     this.archiveDate = archiveDate;
   }
 
-  
+
   /**
    * The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -126,7 +127,6 @@ public class ScreenRecordingSessionRequest  implements Serializable {
     this.deleteDate = deleteDate;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,9 +137,10 @@ public class ScreenRecordingSessionRequest  implements Serializable {
       return false;
     }
     ScreenRecordingSessionRequest screenRecordingSessionRequest = (ScreenRecordingSessionRequest) o;
+
     return Objects.equals(this.state, screenRecordingSessionRequest.state) &&
-        Objects.equals(this.archiveDate, screenRecordingSessionRequest.archiveDate) &&
-        Objects.equals(this.deleteDate, screenRecordingSessionRequest.deleteDate);
+            Objects.equals(this.archiveDate, screenRecordingSessionRequest.archiveDate) &&
+            Objects.equals(this.deleteDate, screenRecordingSessionRequest.deleteDate);
   }
 
   @Override

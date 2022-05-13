@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -42,7 +43,7 @@ public class TimeInterval  implements Serializable {
     this.months = months;
   }
 
-  
+
   /**
    **/
   public TimeInterval weeks(Integer weeks) {
@@ -59,7 +60,7 @@ public class TimeInterval  implements Serializable {
     this.weeks = weeks;
   }
 
-  
+
   /**
    **/
   public TimeInterval days(Integer days) {
@@ -76,7 +77,7 @@ public class TimeInterval  implements Serializable {
     this.days = days;
   }
 
-  
+
   /**
    **/
   public TimeInterval hours(Integer hours) {
@@ -93,7 +94,6 @@ public class TimeInterval  implements Serializable {
     this.hours = hours;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,10 +104,11 @@ public class TimeInterval  implements Serializable {
       return false;
     }
     TimeInterval timeInterval = (TimeInterval) o;
+
     return Objects.equals(this.months, timeInterval.months) &&
-        Objects.equals(this.weeks, timeInterval.weeks) &&
-        Objects.equals(this.days, timeInterval.days) &&
-        Objects.equals(this.hours, timeInterval.hours);
+            Objects.equals(this.weeks, timeInterval.weeks) &&
+            Objects.equals(this.days, timeInterval.days) &&
+            Objects.equals(this.hours, timeInterval.hours);
   }
 
   @Override

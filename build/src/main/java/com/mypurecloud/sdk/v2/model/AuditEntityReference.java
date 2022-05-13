@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -100,7 +101,7 @@ public class AuditEntityReference  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    **/
   public AuditEntityReference name(String name) {
@@ -117,7 +118,7 @@ public class AuditEntityReference  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    **/
   public AuditEntityReference selfUri(String selfUri) {
@@ -134,7 +135,7 @@ public class AuditEntityReference  implements Serializable {
     this.selfUri = selfUri;
   }
 
-  
+
   /**
    **/
   public AuditEntityReference type(TypeEnum type) {
@@ -151,7 +152,7 @@ public class AuditEntityReference  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    **/
   public AuditEntityReference action(String action) {
@@ -168,7 +169,6 @@ public class AuditEntityReference  implements Serializable {
     this.action = action;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -179,11 +179,12 @@ public class AuditEntityReference  implements Serializable {
       return false;
     }
     AuditEntityReference auditEntityReference = (AuditEntityReference) o;
+
     return Objects.equals(this.id, auditEntityReference.id) &&
-        Objects.equals(this.name, auditEntityReference.name) &&
-        Objects.equals(this.selfUri, auditEntityReference.selfUri) &&
-        Objects.equals(this.type, auditEntityReference.type) &&
-        Objects.equals(this.action, auditEntityReference.action);
+            Objects.equals(this.name, auditEntityReference.name) &&
+            Objects.equals(this.selfUri, auditEntityReference.selfUri) &&
+            Objects.equals(this.type, auditEntityReference.type) &&
+            Objects.equals(this.action, auditEntityReference.action);
   }
 
   @Override

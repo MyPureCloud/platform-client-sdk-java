@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -45,7 +46,7 @@ public class ResponseAsset  implements Serializable {
     return id;
   }
 
-  
+
   /**
    **/
   public ResponseAsset name(String name) {
@@ -62,7 +63,7 @@ public class ResponseAsset  implements Serializable {
     this.name = name;
   }
 
-  
+
   /**
    * The division to which this entity belongs.
    **/
@@ -80,7 +81,7 @@ public class ResponseAsset  implements Serializable {
     this.division = division;
   }
 
-  
+
   /**
    * response asset size in bytes
    **/
@@ -98,7 +99,7 @@ public class ResponseAsset  implements Serializable {
     this.contentLength = contentLength;
   }
 
-  
+
   /**
    * response asset location.
    **/
@@ -116,7 +117,7 @@ public class ResponseAsset  implements Serializable {
     this.contentLocation = contentLocation;
   }
 
-  
+
   /**
    * MIME type of response asset
    **/
@@ -134,7 +135,7 @@ public class ResponseAsset  implements Serializable {
     this.contentType = contentType;
   }
 
-  
+
   /**
    * Created date of the response asset. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -152,7 +153,7 @@ public class ResponseAsset  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-  
+
   /**
    * User who created the response asset
    **/
@@ -170,7 +171,7 @@ public class ResponseAsset  implements Serializable {
     this.createdBy = createdBy;
   }
 
-  
+
   /**
    * Last modified date of the response asset. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
@@ -188,7 +189,7 @@ public class ResponseAsset  implements Serializable {
     this.dateModified = dateModified;
   }
 
-  
+
   /**
    * User who last modified the response asset
    **/
@@ -206,7 +207,7 @@ public class ResponseAsset  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-  
+
   /**
    * Canned responses actively using this asset
    **/
@@ -224,14 +225,13 @@ public class ResponseAsset  implements Serializable {
     this.responses = responses;
   }
 
-  
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -242,18 +242,19 @@ public class ResponseAsset  implements Serializable {
       return false;
     }
     ResponseAsset responseAsset = (ResponseAsset) o;
+
     return Objects.equals(this.id, responseAsset.id) &&
-        Objects.equals(this.name, responseAsset.name) &&
-        Objects.equals(this.division, responseAsset.division) &&
-        Objects.equals(this.contentLength, responseAsset.contentLength) &&
-        Objects.equals(this.contentLocation, responseAsset.contentLocation) &&
-        Objects.equals(this.contentType, responseAsset.contentType) &&
-        Objects.equals(this.dateCreated, responseAsset.dateCreated) &&
-        Objects.equals(this.createdBy, responseAsset.createdBy) &&
-        Objects.equals(this.dateModified, responseAsset.dateModified) &&
-        Objects.equals(this.modifiedBy, responseAsset.modifiedBy) &&
-        Objects.equals(this.responses, responseAsset.responses) &&
-        Objects.equals(this.selfUri, responseAsset.selfUri);
+            Objects.equals(this.name, responseAsset.name) &&
+            Objects.equals(this.division, responseAsset.division) &&
+            Objects.equals(this.contentLength, responseAsset.contentLength) &&
+            Objects.equals(this.contentLocation, responseAsset.contentLocation) &&
+            Objects.equals(this.contentType, responseAsset.contentType) &&
+            Objects.equals(this.dateCreated, responseAsset.dateCreated) &&
+            Objects.equals(this.createdBy, responseAsset.createdBy) &&
+            Objects.equals(this.dateModified, responseAsset.dateModified) &&
+            Objects.equals(this.modifiedBy, responseAsset.modifiedBy) &&
+            Objects.equals(this.responses, responseAsset.responses) &&
+            Objects.equals(this.selfUri, responseAsset.selfUri);
   }
 
   @Override

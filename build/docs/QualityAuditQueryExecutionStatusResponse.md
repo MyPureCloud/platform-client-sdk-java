@@ -23,12 +23,12 @@ title: QualityAuditQueryExecutionStatusResponse
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;Queued&quot; |
-| RUNNING | &quot;Running&quot; |
-| SUCCEEDED | &quot;Succeeded&quot; |
-| FAILED | &quot;Failed&quot; |
-| CANCELLED | &quot;Cancelled&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| QUEUED | &quot;Queued&quot; | 
+| RUNNING | &quot;Running&quot; | 
+| SUCCEEDED | &quot;Succeeded&quot; | 
+| FAILED | &quot;Failed&quot; | 
+| CANCELLED | &quot;Cancelled&quot; | 
 {: class="table table-striped"}
 
 

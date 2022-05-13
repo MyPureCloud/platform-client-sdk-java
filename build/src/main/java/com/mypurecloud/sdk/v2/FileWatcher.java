@@ -17,7 +17,6 @@ import java.util.Collections;
 import java.util.Arrays;
 import static java.nio.file.StandardWatchEventKinds.*;
 
-
 public class FileWatcher implements Runnable {
     protected List<FileListener> listeners = new ArrayList<>();
     protected static final List<WatchService> watchServices = new ArrayList<>();

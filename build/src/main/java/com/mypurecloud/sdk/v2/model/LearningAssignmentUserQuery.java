@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
@@ -43,7 +44,7 @@ public class LearningAssignmentUserQuery  implements Serializable {
     this.rule = rule;
   }
 
-  
+
   /**
    * The user name to be searched for
    **/
@@ -61,7 +62,6 @@ public class LearningAssignmentUserQuery  implements Serializable {
     this.searchTerm = searchTerm;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,8 +72,9 @@ public class LearningAssignmentUserQuery  implements Serializable {
       return false;
     }
     LearningAssignmentUserQuery learningAssignmentUserQuery = (LearningAssignmentUserQuery) o;
+
     return Objects.equals(this.rule, learningAssignmentUserQuery.rule) &&
-        Objects.equals(this.searchTerm, learningAssignmentUserQuery.searchTerm);
+            Objects.equals(this.searchTerm, learningAssignmentUserQuery.searchTerm);
   }
 
   @Override

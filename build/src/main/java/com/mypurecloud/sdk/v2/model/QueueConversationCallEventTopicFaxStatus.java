@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -46,7 +47,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus expectedPages(Integer expectedPages) {
@@ -63,7 +64,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.expectedPages = expectedPages;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus activePage(Integer activePage) {
@@ -80,7 +81,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.activePage = activePage;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus linesTransmitted(Integer linesTransmitted) {
@@ -97,7 +98,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.linesTransmitted = linesTransmitted;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus bytesTransmitted(Integer bytesTransmitted) {
@@ -114,7 +115,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.bytesTransmitted = bytesTransmitted;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus dataRate(Integer dataRate) {
@@ -131,7 +132,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.dataRate = dataRate;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus pageErrors(Integer pageErrors) {
@@ -148,7 +149,7 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.pageErrors = pageErrors;
   }
 
-  
+
   /**
    **/
   public QueueConversationCallEventTopicFaxStatus lineErrors(Integer lineErrors) {
@@ -165,7 +166,6 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
     this.lineErrors = lineErrors;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,14 +176,15 @@ public class QueueConversationCallEventTopicFaxStatus  implements Serializable {
       return false;
     }
     QueueConversationCallEventTopicFaxStatus queueConversationCallEventTopicFaxStatus = (QueueConversationCallEventTopicFaxStatus) o;
+
     return Objects.equals(this.direction, queueConversationCallEventTopicFaxStatus.direction) &&
-        Objects.equals(this.expectedPages, queueConversationCallEventTopicFaxStatus.expectedPages) &&
-        Objects.equals(this.activePage, queueConversationCallEventTopicFaxStatus.activePage) &&
-        Objects.equals(this.linesTransmitted, queueConversationCallEventTopicFaxStatus.linesTransmitted) &&
-        Objects.equals(this.bytesTransmitted, queueConversationCallEventTopicFaxStatus.bytesTransmitted) &&
-        Objects.equals(this.dataRate, queueConversationCallEventTopicFaxStatus.dataRate) &&
-        Objects.equals(this.pageErrors, queueConversationCallEventTopicFaxStatus.pageErrors) &&
-        Objects.equals(this.lineErrors, queueConversationCallEventTopicFaxStatus.lineErrors);
+            Objects.equals(this.expectedPages, queueConversationCallEventTopicFaxStatus.expectedPages) &&
+            Objects.equals(this.activePage, queueConversationCallEventTopicFaxStatus.activePage) &&
+            Objects.equals(this.linesTransmitted, queueConversationCallEventTopicFaxStatus.linesTransmitted) &&
+            Objects.equals(this.bytesTransmitted, queueConversationCallEventTopicFaxStatus.bytesTransmitted) &&
+            Objects.equals(this.dataRate, queueConversationCallEventTopicFaxStatus.dataRate) &&
+            Objects.equals(this.pageErrors, queueConversationCallEventTopicFaxStatus.pageErrors) &&
+            Objects.equals(this.lineErrors, queueConversationCallEventTopicFaxStatus.lineErrors);
   }
 
   @Override

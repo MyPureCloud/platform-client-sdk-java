@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -203,7 +204,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.id = id;
   }
 
-  
+
   /**
    * Channel-specific information that describes the message and the message channel/provider.
    **/
@@ -221,7 +222,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.channel = channel;
   }
 
-  
+
   /**
    * Message type.
    **/
@@ -239,7 +240,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.type = type;
   }
 
-  
+
   /**
    * Message text.
    **/
@@ -257,7 +258,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.text = text;
   }
 
-  
+
   /**
    * List of content elements.
    **/
@@ -275,7 +276,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.content = content;
   }
 
-  
+
   /**
    * Message receipt status, only used with type Receipt.
    **/
@@ -293,7 +294,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.status = status;
   }
 
-  
+
   /**
    * List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
    **/
@@ -311,7 +312,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.reasons = reasons;
   }
 
-  
+
   /**
    * Indicates if this is the last message receipt for this message, or if another message receipt can be expected.
    **/
@@ -329,7 +330,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.isFinalReceipt = isFinalReceipt;
   }
 
-  
+
   /**
    * The direction of the message.
    **/
@@ -347,7 +348,7 @@ public class OpenNormalizedMessage  implements Serializable {
     this.direction = direction;
   }
 
-  
+
   /**
    * Additional metadata about this message.
    **/
@@ -365,7 +366,6 @@ public class OpenNormalizedMessage  implements Serializable {
     this.metadata = metadata;
   }
 
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -376,16 +376,17 @@ public class OpenNormalizedMessage  implements Serializable {
       return false;
     }
     OpenNormalizedMessage openNormalizedMessage = (OpenNormalizedMessage) o;
+
     return Objects.equals(this.id, openNormalizedMessage.id) &&
-        Objects.equals(this.channel, openNormalizedMessage.channel) &&
-        Objects.equals(this.type, openNormalizedMessage.type) &&
-        Objects.equals(this.text, openNormalizedMessage.text) &&
-        Objects.equals(this.content, openNormalizedMessage.content) &&
-        Objects.equals(this.status, openNormalizedMessage.status) &&
-        Objects.equals(this.reasons, openNormalizedMessage.reasons) &&
-        Objects.equals(this.isFinalReceipt, openNormalizedMessage.isFinalReceipt) &&
-        Objects.equals(this.direction, openNormalizedMessage.direction) &&
-        Objects.equals(this.metadata, openNormalizedMessage.metadata);
+            Objects.equals(this.channel, openNormalizedMessage.channel) &&
+            Objects.equals(this.type, openNormalizedMessage.type) &&
+            Objects.equals(this.text, openNormalizedMessage.text) &&
+            Objects.equals(this.content, openNormalizedMessage.content) &&
+            Objects.equals(this.status, openNormalizedMessage.status) &&
+            Objects.equals(this.reasons, openNormalizedMessage.reasons) &&
+            Objects.equals(this.isFinalReceipt, openNormalizedMessage.isFinalReceipt) &&
+            Objects.equals(this.direction, openNormalizedMessage.direction) &&
+            Objects.equals(this.metadata, openNormalizedMessage.metadata);
   }
 
   @Override

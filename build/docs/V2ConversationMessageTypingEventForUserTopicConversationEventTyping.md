@@ -19,8 +19,8 @@ title: V2ConversationMessageTypingEventForUserTopicConversationEventTyping
 
 | Name | Value |
 | ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ON | &quot;On&quot; |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ON | &quot;On&quot; | 
 {: class="table table-striped"}
 
 
