@@ -72,6 +72,7 @@ public class TranscriptionSettings  implements Serializable {
   }
   private TranscriptionEnum transcription = null;
   private Integer transcriptionConfidenceThreshold = null;
+  private Boolean lowLatencyTranscriptionEnabled = null;
   private Boolean contentSearchEnabled = null;
 
   
@@ -112,6 +113,24 @@ public class TranscriptionSettings  implements Serializable {
 
 
   /**
+   * Boolean flag indicating whether low latency transcription via Notification API is enabled
+   **/
+  public TranscriptionSettings lowLatencyTranscriptionEnabled(Boolean lowLatencyTranscriptionEnabled) {
+    this.lowLatencyTranscriptionEnabled = lowLatencyTranscriptionEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Boolean flag indicating whether low latency transcription via Notification API is enabled")
+  @JsonProperty("lowLatencyTranscriptionEnabled")
+  public Boolean getLowLatencyTranscriptionEnabled() {
+    return lowLatencyTranscriptionEnabled;
+  }
+  public void setLowLatencyTranscriptionEnabled(Boolean lowLatencyTranscriptionEnabled) {
+    this.lowLatencyTranscriptionEnabled = lowLatencyTranscriptionEnabled;
+  }
+
+
+  /**
    * Setting to enable/disable content search
    **/
   public TranscriptionSettings contentSearchEnabled(Boolean contentSearchEnabled) {
@@ -141,12 +160,13 @@ public class TranscriptionSettings  implements Serializable {
 
     return Objects.equals(this.transcription, transcriptionSettings.transcription) &&
             Objects.equals(this.transcriptionConfidenceThreshold, transcriptionSettings.transcriptionConfidenceThreshold) &&
+            Objects.equals(this.lowLatencyTranscriptionEnabled, transcriptionSettings.lowLatencyTranscriptionEnabled) &&
             Objects.equals(this.contentSearchEnabled, transcriptionSettings.contentSearchEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transcription, transcriptionConfidenceThreshold, contentSearchEnabled);
+    return Objects.hash(transcription, transcriptionConfidenceThreshold, lowLatencyTranscriptionEnabled, contentSearchEnabled);
   }
 
   @Override
@@ -156,6 +176,7 @@ public class TranscriptionSettings  implements Serializable {
     
     sb.append("    transcription: ").append(toIndentedString(transcription)).append("\n");
     sb.append("    transcriptionConfidenceThreshold: ").append(toIndentedString(transcriptionConfidenceThreshold)).append("\n");
+    sb.append("    lowLatencyTranscriptionEnabled: ").append(toIndentedString(lowLatencyTranscriptionEnabled)).append("\n");
     sb.append("    contentSearchEnabled: ").append(toIndentedString(contentSearchEnabled)).append("\n");
     sb.append("}");
     return sb.toString();

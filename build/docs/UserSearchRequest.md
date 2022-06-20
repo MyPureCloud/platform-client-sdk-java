@@ -42,7 +42,7 @@ title: UserSearchRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
 | ZOOMPHONE | &quot;ZoomPhone&quot; | 
-| RINGCENTRAL | &quot;RingCentral&quot; | 
+| EIGHTBYEIGHT | &quot;EightByEight&quot; | 
 {: class="table table-striped"}
 
 

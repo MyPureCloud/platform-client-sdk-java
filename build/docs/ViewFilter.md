@@ -151,6 +151,13 @@ title: ViewFilter
 | **conversationInitiators** | <!----><!---->**List&lt;String&gt;**<!----> | The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation |  [optional] |
 | **hasCustomerParticipated** | <!----><!---->**Boolean**<!----> | Indicates if the customer has participated in an initiated conversation |  [optional] |
 | **isAcdInteraction** | <!----><!---->**Boolean**<!----> | Filter to indicate if interaction was ACD or non-ACD |  [optional] |
+| **hasFax** | <!----><!---->**Boolean**<!----> | Filters to indicate if interaction has FAX |  [optional] |
+| **dataActionIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Data Action IDs  |  [optional] |
+| **actionCategoryName** | <!----><!---->**String**<!----> | Action Category Name |  [optional] |
+| **responseStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Response codes for Data Action |  [optional] |
+| **availableDashboard** | [**AvailableDashboardEnum**](#AvailableDashboardEnum)<!----> | Filter to indicate the availability of the dashboard is public or private. |  [optional] |
+| **favouriteDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate whether the dashboard is favorite or unfavorite. |  [optional] |
+| **myDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate the dashboard owned by the user. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -514,6 +521,18 @@ title: ViewFilter
 | READ | &quot;Read&quot; |
 | RECEIVED | &quot;Received&quot; |
 | SENT | &quot;Sent&quot; |
+{: class="table table-striped"}
+
+
+<a name="AvailableDashboardEnum"></a>
+
+## Enum: AvailableDashboardEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PUBLIC | &quot;Public&quot; | 
+| PRIVATE | &quot;Private&quot; | 
 {: class="table table-striped"}
 
 

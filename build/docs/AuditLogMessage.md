@@ -157,6 +157,7 @@ title: AuditLogMessage
 | SOFTDELETE | &quot;SoftDelete&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | RESET | &quot;Reset&quot; | 
+| UNARCHIVE | &quot;Unarchive&quot; | 
 {: class="table table-striped"}
 
 

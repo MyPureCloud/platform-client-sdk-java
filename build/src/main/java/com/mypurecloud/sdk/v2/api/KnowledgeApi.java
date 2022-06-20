@@ -493,7 +493,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param name Filter to return the categories that starts with the given category name. (optional)
    * @return CategoryListing
@@ -511,7 +511,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param name Filter to return the categories that starts with the given category name. (optional)
    * @return CategoryListing
@@ -767,7 +767,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param categories Filter by categories ids, comma separated values expected. (optional)
    * @param title Filter by document title. (optional)
@@ -789,7 +789,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param categories Filter by categories ids, comma separated values expected. (optional)
    * @param title Filter by document title. (optional)
@@ -1057,7 +1057,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param knowledgeDocumentsState Return the training with the specified state of the trained documents. (optional)
    * @return TrainingListing
@@ -1075,7 +1075,7 @@ public class KnowledgeApi {
    * @param languageCode Language code, format: iso2-LOCALE (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param knowledgeDocumentsState Return the training with the specified state of the trained documents. (optional)
    * @return TrainingListing
@@ -1157,7 +1157,7 @@ public class KnowledgeApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param name Filter by Name. (optional)
    * @param coreLanguage Filter by core language. (optional)
@@ -1177,7 +1177,7 @@ public class KnowledgeApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param name Filter by Name. (optional)
    * @param coreLanguage Filter by core language. (optional)

@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationAssociatedValue;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationBrowser;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationDevice;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationGeoLocation;
@@ -38,6 +39,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
   private JourneyOutcomeEventsNotificationGeoLocation geolocation = null;
   private JourneyOutcomeEventsNotificationMktCampaign mktCampaign = null;
   private JourneyOutcomeEventsNotificationReferrer visitReferrer = null;
+  private JourneyOutcomeEventsNotificationAssociatedValue associatedValue = null;
 
   
   /**
@@ -210,6 +212,23 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
   }
 
 
+  /**
+   **/
+  public JourneyOutcomeEventsNotificationOutcomeAchievedMessage associatedValue(JourneyOutcomeEventsNotificationAssociatedValue associatedValue) {
+    this.associatedValue = associatedValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("associatedValue")
+  public JourneyOutcomeEventsNotificationAssociatedValue getAssociatedValue() {
+    return associatedValue;
+  }
+  public void setAssociatedValue(JourneyOutcomeEventsNotificationAssociatedValue associatedValue) {
+    this.associatedValue = associatedValue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -229,12 +248,13 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
             Objects.equals(this.device, journeyOutcomeEventsNotificationOutcomeAchievedMessage.device) &&
             Objects.equals(this.geolocation, journeyOutcomeEventsNotificationOutcomeAchievedMessage.geolocation) &&
             Objects.equals(this.mktCampaign, journeyOutcomeEventsNotificationOutcomeAchievedMessage.mktCampaign) &&
-            Objects.equals(this.visitReferrer, journeyOutcomeEventsNotificationOutcomeAchievedMessage.visitReferrer);
+            Objects.equals(this.visitReferrer, journeyOutcomeEventsNotificationOutcomeAchievedMessage.visitReferrer) &&
+            Objects.equals(this.associatedValue, journeyOutcomeEventsNotificationOutcomeAchievedMessage.associatedValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outcome, browser, visitCreatedDate, ipAddress, ipOrganization, userAgentString, device, geolocation, mktCampaign, visitReferrer);
+    return Objects.hash(outcome, browser, visitCreatedDate, ipAddress, ipOrganization, userAgentString, device, geolocation, mktCampaign, visitReferrer, associatedValue);
   }
 
   @Override
@@ -252,6 +272,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAchievedMessage  implements 
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    mktCampaign: ").append(toIndentedString(mktCampaign)).append("\n");
     sb.append("    visitReferrer: ").append(toIndentedString(visitReferrer)).append("\n");
+    sb.append("    associatedValue: ").append(toIndentedString(associatedValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

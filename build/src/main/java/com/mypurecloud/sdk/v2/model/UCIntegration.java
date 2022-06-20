@@ -52,7 +52,7 @@ public class UCIntegration  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MICROSOFTTEAMS("MicrosoftTeams"),
     ZOOMPHONE("ZoomPhone"),
-    RINGCENTRAL("RingCentral");
+    EIGHTBYEIGHT("EightByEight");
 
     private String value;
 
@@ -82,6 +82,7 @@ public class UCIntegration  implements Serializable {
   private IntegrationPresenceSourceEnum integrationPresenceSource = null;
   private String pbxPermission = null;
   private UCIcon icon = null;
+  private Map<String, UCIcon> badgeIcons = null;
   private Map<String, UCI10n> i10n = null;
   private String selfUri = null;
 
@@ -138,6 +139,13 @@ public class UCIntegration  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", required = true, value = "badgeIcon")
+  @JsonProperty("badgeIcons")
+  public Map<String, UCIcon> getBadgeIcons() {
+    return badgeIcons;
+  }
+
+
   @ApiModelProperty(example = "null", required = true, value = "i10n")
   @JsonProperty("i10n")
   public Map<String, UCI10n> getI10n() {
@@ -168,13 +176,14 @@ public class UCIntegration  implements Serializable {
             Objects.equals(this.integrationPresenceSource, uCIntegration.integrationPresenceSource) &&
             Objects.equals(this.pbxPermission, uCIntegration.pbxPermission) &&
             Objects.equals(this.icon, uCIntegration.icon) &&
+            Objects.equals(this.badgeIcons, uCIntegration.badgeIcons) &&
             Objects.equals(this.i10n, uCIntegration.i10n) &&
             Objects.equals(this.selfUri, uCIntegration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, ucIntegrationKey, integrationPresenceSource, pbxPermission, icon, i10n, selfUri);
+    return Objects.hash(id, name, ucIntegrationKey, integrationPresenceSource, pbxPermission, icon, badgeIcons, i10n, selfUri);
   }
 
   @Override
@@ -188,6 +197,7 @@ public class UCIntegration  implements Serializable {
     sb.append("    integrationPresenceSource: ").append(toIndentedString(integrationPresenceSource)).append("\n");
     sb.append("    pbxPermission: ").append(toIndentedString(pbxPermission)).append("\n");
     sb.append("    icon: ").append(toIndentedString(icon)).append("\n");
+    sb.append("    badgeIcons: ").append(toIndentedString(badgeIcons)).append("\n");
     sb.append("    i10n: ").append(toIndentedString(i10n)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

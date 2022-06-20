@@ -15,7 +15,7 @@ title: ConversationMessageContent
 | **quickReply** | <!----><!---->[**ConversationContentQuickReply**](ConversationContentQuickReply.html)<!----> | Quick reply content. |  [optional] |
 | **template** | <!----><!---->[**ConversationContentNotificationTemplate**](ConversationContentNotificationTemplate.html)<!----> | Template notification content. |  [optional] |
 | **buttonResponse** | <!----><!---->[**ConversationContentButtonResponse**](ConversationContentButtonResponse.html)<!----> | Button response content. |  [optional] |
-| **generic** | <!----><!---->[**ConversationContentGeneric**](ConversationContentGeneric.html)<!----> | Generic Template Object |  [optional] |
+| **generic** | <!----><!---->[**ConversationContentGeneric**](ConversationContentGeneric.html)<!----> | Generic Template Object (Deprecated). |  [optional] |
 | **card** | <!----><!---->[**ConversationContentCard**](ConversationContentCard.html)<!----> | Card (Generic Template) Object |  [optional] |
 | **carousel** | <!----><!---->[**ConversationContentCarousel**](ConversationContentCarousel.html)<!----> | Carousel (Multiple Generic Template) Object |  [optional] |
 {: class="table table-striped"}
@@ -35,8 +35,13 @@ title: ConversationMessageContent
 | NOTIFICATION | &quot;Notification&quot; | 
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
+| LISTTEMPLATE | &quot;ListTemplate&quot; | 
+| POSTBACK | &quot;Postback&quot; | 
+| REACTIONS | &quot;Reactions&quot; | 
+| MENTION | &quot;Mention&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

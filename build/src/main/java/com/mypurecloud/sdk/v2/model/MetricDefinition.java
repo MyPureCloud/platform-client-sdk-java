@@ -85,6 +85,8 @@ public class MetricDefinition  implements Serializable {
   private List<String> divisorMetrics = new ArrayList<String>();
   private DefaultObjective defaultObjective = null;
   private String lockTemplateId = null;
+  private Boolean mediaTypeFilteringAllowed = null;
+  private Boolean queueFilteringAllowed = null;
   private String selfUri = null;
 
   
@@ -220,6 +222,42 @@ public class MetricDefinition  implements Serializable {
   }
 
 
+  /**
+   * Flag to indicate if this metricDefinition allows filter based on media types
+   **/
+  public MetricDefinition mediaTypeFilteringAllowed(Boolean mediaTypeFilteringAllowed) {
+    this.mediaTypeFilteringAllowed = mediaTypeFilteringAllowed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to indicate if this metricDefinition allows filter based on media types")
+  @JsonProperty("mediaTypeFilteringAllowed")
+  public Boolean getMediaTypeFilteringAllowed() {
+    return mediaTypeFilteringAllowed;
+  }
+  public void setMediaTypeFilteringAllowed(Boolean mediaTypeFilteringAllowed) {
+    this.mediaTypeFilteringAllowed = mediaTypeFilteringAllowed;
+  }
+
+
+  /**
+   * Flag to indicate if this metricDefinition allows filter based on queues
+   **/
+  public MetricDefinition queueFilteringAllowed(Boolean queueFilteringAllowed) {
+    this.queueFilteringAllowed = queueFilteringAllowed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to indicate if this metricDefinition allows filter based on queues")
+  @JsonProperty("queueFilteringAllowed")
+  public Boolean getQueueFilteringAllowed() {
+    return queueFilteringAllowed;
+  }
+  public void setQueueFilteringAllowed(Boolean queueFilteringAllowed) {
+    this.queueFilteringAllowed = queueFilteringAllowed;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -245,12 +283,14 @@ public class MetricDefinition  implements Serializable {
             Objects.equals(this.divisorMetrics, metricDefinition.divisorMetrics) &&
             Objects.equals(this.defaultObjective, metricDefinition.defaultObjective) &&
             Objects.equals(this.lockTemplateId, metricDefinition.lockTemplateId) &&
+            Objects.equals(this.mediaTypeFilteringAllowed, metricDefinition.mediaTypeFilteringAllowed) &&
+            Objects.equals(this.queueFilteringAllowed, metricDefinition.queueFilteringAllowed) &&
             Objects.equals(this.selfUri, metricDefinition.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, unitType, shortName, dividendMetrics, divisorMetrics, defaultObjective, lockTemplateId, selfUri);
+    return Objects.hash(id, name, unitType, shortName, dividendMetrics, divisorMetrics, defaultObjective, lockTemplateId, mediaTypeFilteringAllowed, queueFilteringAllowed, selfUri);
   }
 
   @Override
@@ -266,6 +306,8 @@ public class MetricDefinition  implements Serializable {
     sb.append("    divisorMetrics: ").append(toIndentedString(divisorMetrics)).append("\n");
     sb.append("    defaultObjective: ").append(toIndentedString(defaultObjective)).append("\n");
     sb.append("    lockTemplateId: ").append(toIndentedString(lockTemplateId)).append("\n");
+    sb.append("    mediaTypeFilteringAllowed: ").append(toIndentedString(mediaTypeFilteringAllowed)).append("\n");
+    sb.append("    queueFilteringAllowed: ").append(toIndentedString(queueFilteringAllowed)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

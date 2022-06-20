@@ -72,7 +72,18 @@ public class Format  implements Serializable {
     LANGUAGEGENDERCOMMON("LanguageGenderCommon"),
     LANGUAGEGENDERFEMININE("LanguageGenderFeminine"),
     LANGUAGEGENDERMASCULINE("LanguageGenderMasculine"),
-    LANGUAGEGENDERNEUTER("LanguageGenderNeuter");
+    LANGUAGEGENDERNEUTER("LanguageGenderNeuter"),
+    CASEARTICLE("CaseArticle"),
+    CASEACCUSATIVE("CaseAccusative"),
+    CASEDATIVE("CaseDative"),
+    CASEGENITIVE("CaseGenitive"),
+    CASENOMINATIVE("CaseNominative"),
+    QUANTITYPLURAL("QuantityPlural"),
+    QUANTITYSINGULAR("QuantitySingular"),
+    GENDERCOMMON("GenderCommon"),
+    GENDERFEMININE("GenderFeminine"),
+    GENDERMASCULINE("GenderMasculine"),
+    GENDERNEUTER("GenderNeuter");
 
     private String value;
 

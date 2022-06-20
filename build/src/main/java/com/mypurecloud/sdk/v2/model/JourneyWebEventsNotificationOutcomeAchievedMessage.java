@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationAssociatedValue;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationBrowser;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationDevice;
 import com.mypurecloud.sdk.v2.model.JourneyWebEventsNotificationGeoLocation;
@@ -38,6 +39,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
   private JourneyWebEventsNotificationGeoLocation geolocation = null;
   private JourneyWebEventsNotificationMktCampaign mktCampaign = null;
   private JourneyWebEventsNotificationReferrer visitReferrer = null;
+  private JourneyWebEventsNotificationAssociatedValue associatedValue = null;
 
   
   /**
@@ -210,6 +212,23 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
   }
 
 
+  /**
+   **/
+  public JourneyWebEventsNotificationOutcomeAchievedMessage associatedValue(JourneyWebEventsNotificationAssociatedValue associatedValue) {
+    this.associatedValue = associatedValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("associatedValue")
+  public JourneyWebEventsNotificationAssociatedValue getAssociatedValue() {
+    return associatedValue;
+  }
+  public void setAssociatedValue(JourneyWebEventsNotificationAssociatedValue associatedValue) {
+    this.associatedValue = associatedValue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -229,12 +248,13 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
             Objects.equals(this.device, journeyWebEventsNotificationOutcomeAchievedMessage.device) &&
             Objects.equals(this.geolocation, journeyWebEventsNotificationOutcomeAchievedMessage.geolocation) &&
             Objects.equals(this.mktCampaign, journeyWebEventsNotificationOutcomeAchievedMessage.mktCampaign) &&
-            Objects.equals(this.visitReferrer, journeyWebEventsNotificationOutcomeAchievedMessage.visitReferrer);
+            Objects.equals(this.visitReferrer, journeyWebEventsNotificationOutcomeAchievedMessage.visitReferrer) &&
+            Objects.equals(this.associatedValue, journeyWebEventsNotificationOutcomeAchievedMessage.associatedValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outcome, browser, visitCreatedDate, ipAddress, ipOrganization, userAgentString, device, geolocation, mktCampaign, visitReferrer);
+    return Objects.hash(outcome, browser, visitCreatedDate, ipAddress, ipOrganization, userAgentString, device, geolocation, mktCampaign, visitReferrer, associatedValue);
   }
 
   @Override
@@ -252,6 +272,7 @@ public class JourneyWebEventsNotificationOutcomeAchievedMessage  implements Seri
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    mktCampaign: ").append(toIndentedString(mktCampaign)).append("\n");
     sb.append("    visitReferrer: ").append(toIndentedString(visitReferrer)).append("\n");
+    sb.append("    associatedValue: ").append(toIndentedString(associatedValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

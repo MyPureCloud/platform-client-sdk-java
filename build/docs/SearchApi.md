@@ -433,7 +433,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
 | **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
-| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral 
+| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight 
 {: class="table-striped"}
 
 

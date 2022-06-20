@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class MessengerHomeScreen  implements Serializable {
   
   private Boolean enabled = null;
+  private String logoUrl = null;
 
   
   /**
@@ -42,6 +43,24 @@ public class MessengerHomeScreen  implements Serializable {
   }
 
 
+  /**
+   * to capture uploaded company logoUrl
+   **/
+  public MessengerHomeScreen logoUrl(String logoUrl) {
+    this.logoUrl = logoUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "to capture uploaded company logoUrl")
+  @JsonProperty("logoUrl")
+  public String getLogoUrl() {
+    return logoUrl;
+  }
+  public void setLogoUrl(String logoUrl) {
+    this.logoUrl = logoUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +71,13 @@ public class MessengerHomeScreen  implements Serializable {
     }
     MessengerHomeScreen messengerHomeScreen = (MessengerHomeScreen) o;
 
-    return Objects.equals(this.enabled, messengerHomeScreen.enabled);
+    return Objects.equals(this.enabled, messengerHomeScreen.enabled) &&
+            Objects.equals(this.logoUrl, messengerHomeScreen.logoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled);
+    return Objects.hash(enabled, logoUrl);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class MessengerHomeScreen  implements Serializable {
     sb.append("class MessengerHomeScreen {\n");
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

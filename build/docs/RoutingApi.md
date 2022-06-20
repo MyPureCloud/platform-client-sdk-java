@@ -788,7 +788,7 @@ null (empty response body)
 
 
 
-> Void deleteRoutingSmsPhonenumber(addressId, async)
+> Void deleteRoutingSmsPhonenumber(addressId)
 
 Delete a phone number provisioned for SMS.
 
@@ -821,9 +821,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
-Boolean async = false; // Boolean | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number. 
 try {
-    apiInstance.deleteRoutingSmsPhonenumber(addressId, async);
+    apiInstance.deleteRoutingSmsPhonenumber(addressId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingSmsPhonenumber");
     e.printStackTrace();
@@ -836,7 +835,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **String**| Address ID | 
-| **async** | **Boolean**| Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -1247,7 +1245,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 List<String> queueId = Arrays.asList(null); // List<String> | Queue ID(s) to filter assessments by.
 try {
@@ -1266,7 +1264,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **queueId** | [**List&lt;String&gt;**](String.html)| Queue ID(s) to filter assessments by. | [optional] 
 {: class="table-striped"}
@@ -2003,7 +2001,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 List<String> queueId = Arrays.asList(null); // List<String> | Comma-separated list of queue Ids to filter by.
 try {
@@ -2022,7 +2020,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **queueId** | [**List&lt;String&gt;**](String.html)| Comma-separated list of queue Ids to filter by. | [optional] 
 {: class="table-striped"}
@@ -3536,7 +3534,7 @@ try {
 | **countryCode** | [**List&lt;String&gt;**](String.html)| Filter on country code | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Optional field to sort results | [optional]<br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice 
+| **sortBy** | **String**| Optional field to sort results | [optional]<br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice 
 | **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
 | **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &quot;en-US&quot;] 
 {: class="table-striped"}
@@ -5775,7 +5773,7 @@ try {
 
 
 
-> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbers(body, async)
+> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbers(body)
 
 Provision a phone number for SMS
 
@@ -5808,9 +5806,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 SmsPhoneNumberProvision body = new SmsPhoneNumberProvision(); // SmsPhoneNumberProvision | SmsPhoneNumber
-Boolean async = false; // Boolean | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request.
 try {
-    SmsPhoneNumber result = apiInstance.postRoutingSmsPhonenumbers(body, async);
+    SmsPhoneNumber result = apiInstance.postRoutingSmsPhonenumbers(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#postRoutingSmsPhonenumbers");
@@ -5824,7 +5821,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber | 
-| **async** | **Boolean**| Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -6339,7 +6335,7 @@ try {
 
 
 
-> [SmsPhoneNumber](SmsPhoneNumber.html) putRoutingSmsPhonenumber(addressId, body, async)
+> [SmsPhoneNumber](SmsPhoneNumber.html) putRoutingSmsPhonenumber(addressId, body)
 
 Update a phone number provisioned for SMS.
 
@@ -6373,9 +6369,8 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
 SmsPhoneNumber body = new SmsPhoneNumber(); // SmsPhoneNumber | SmsPhoneNumber
-Boolean async = false; // Boolean | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request.
 try {
-    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(addressId, body, async);
+    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(addressId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingSmsPhonenumber");
@@ -6390,7 +6385,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **String**| Address ID | 
 | **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber | 
-| **async** | **Boolean**| Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. | [optional] [default to false] 
 {: class="table-striped"}
 
 

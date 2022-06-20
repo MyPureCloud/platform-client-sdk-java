@@ -56,6 +56,7 @@ title: ReportingTurnAction
 | TRANSFERTASKACTION | &quot;TransferTaskAction&quot; | 
 | DIGITALMENUACTION | &quot;DigitalMenuAction&quot; | 
 | WAITFORINPUTACTION | &quot;WaitForInputAction&quot; | 
+| SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

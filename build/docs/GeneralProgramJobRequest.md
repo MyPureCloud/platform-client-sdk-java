@@ -34,6 +34,8 @@ title: GeneralProgramJobRequest
 | PT_BR | &quot;pt-BR&quot; | 
 | PL_PL | &quot;pl-PL&quot; | 
 | PT_PT | &quot;pt-PT&quot; | 
+| NL_NL | &quot;nl-NL&quot; | 
+| KO_KR | &quot;ko-KR&quot; | 
 {: class="table table-striped"}
 
 

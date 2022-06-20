@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationMessageMetadata;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
 import com.mypurecloud.sdk.v2.model.MessageSticker;
@@ -87,6 +88,7 @@ public class MessageDetails  implements Serializable {
   private Date messageTime = null;
   private List<MessageMedia> media = new ArrayList<MessageMedia>();
   private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
+  private ConversationMessageMetadata messageMetadata = null;
   private ErrorBody errorInfo = null;
 
   
@@ -217,6 +219,24 @@ public class MessageDetails  implements Serializable {
 
 
   /**
+   * Information that describes the content of the message, if any
+   **/
+  public MessageDetails messageMetadata(ConversationMessageMetadata messageMetadata) {
+    this.messageMetadata = messageMetadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information that describes the content of the message, if any")
+  @JsonProperty("messageMetadata")
+  public ConversationMessageMetadata getMessageMetadata() {
+    return messageMetadata;
+  }
+  public void setMessageMetadata(ConversationMessageMetadata messageMetadata) {
+    this.messageMetadata = messageMetadata;
+  }
+
+
+  /**
    * Provider specific error information for a communication.
    **/
   public MessageDetails errorInfo(ErrorBody errorInfo) {
@@ -251,12 +271,13 @@ public class MessageDetails  implements Serializable {
             Objects.equals(this.messageTime, messageDetails.messageTime) &&
             Objects.equals(this.media, messageDetails.media) &&
             Objects.equals(this.stickers, messageDetails.stickers) &&
+            Objects.equals(this.messageMetadata, messageDetails.messageMetadata) &&
             Objects.equals(this.errorInfo, messageDetails.errorInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media, stickers, errorInfo);
+    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media, stickers, messageMetadata, errorInfo);
   }
 
   @Override
@@ -271,6 +292,7 @@ public class MessageDetails  implements Serializable {
     sb.append("    messageTime: ").append(toIndentedString(messageTime)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
+    sb.append("    messageMetadata: ").append(toIndentedString(messageMetadata)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("}");
     return sb.toString();

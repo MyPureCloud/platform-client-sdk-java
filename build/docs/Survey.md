@@ -10,7 +10,7 @@ title: Survey
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **conversation** | <!----><!---->[**Conversation**](Conversation.html)<!----> |  |  [optional] |
+| **conversation** | <!----><!---->[**ConversationReference**](ConversationReference.html)<!----> |  |  [optional] |
 | **surveyForm** | <!----><!---->[**SurveyForm**](SurveyForm.html)<!----> | Survey form used for this survey. |  [optional] |
 | **agent** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |

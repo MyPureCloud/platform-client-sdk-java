@@ -58,6 +58,36 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    return this;
 	} 
 
+	public enum inputValues { 
+		TRUE("true"),
+		FALSE("false");
+
+		private String value;
+
+		inputValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static inputValues fromString(String key) {
+			if (key == null) return null;
+
+			for (inputValues value : inputValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return inputValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private String output;
 	public String getOutput() {
 		return this.output;
@@ -72,6 +102,36 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    return this;
 	} 
 
+	public enum outputValues { 
+		TRUE("true"),
+		FALSE("false");
+
+		private String value;
+
+		outputValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static outputValues fromString(String key) {
+			if (key == null) return null;
+
+			for (outputValues value : outputValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return outputValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private String type;
 	public String getType() {
 		return this.type;
@@ -85,6 +145,37 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    this.setType(type);
 	    return this;
 	} 
+
+	public enum typeValues { 
+		STRING("string"),
+		NUMBER("number"),
+		BOOLEAN("boolean");
+
+		private String value;
+
+		typeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static typeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (typeValues value : typeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return typeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
@@ -178,14 +269,41 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 			return this;
 		}
 
+
+
+		
+		public Builder withInput(inputValues input) {
+		    request.setInput(input.toString());
+
+		    return this;
+		}
+
 		public Builder withOutput(String output) {
 			request.setOutput(output);
 			return this;
 		}
 
+
+
+		
+		public Builder withOutput(outputValues output) {
+		    request.setOutput(output.toString());
+
+		    return this;
+		}
+
 		public Builder withType(String type) {
 			request.setType(type);
 			return this;
+		}
+
+
+
+		
+		public Builder withType(typeValues type) {
+		    request.setType(type.toString());
+
+		    return this;
 		}
 
 		public Builder withScriptDataVersion(String scriptDataVersion) {

@@ -35,6 +35,7 @@ title: Condition
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WRAPUPCONDITION | &quot;wrapupCondition&quot; | 
+| SYSTEMDISPOSITIONCONDITION | &quot;systemDispositionCondition&quot; | 
 | CONTACTATTRIBUTECONDITION | &quot;contactAttributeCondition&quot; | 
 | PHONENUMBERCONDITION | &quot;phoneNumberCondition&quot; | 
 | PHONENUMBERTYPECONDITION | &quot;phoneNumberTypeCondition&quot; | 

@@ -246,7 +246,6 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
 		COACHING("Coaching"),
-		COACHINGDIVISIONED("CoachingDivisioned"),
 		ACTIVITYCODES("ActivityCodes"),
 		AGENTS("Agents"),
 		BUACTIVITYCODES("BuActivityCodes"),

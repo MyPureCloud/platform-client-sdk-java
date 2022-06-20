@@ -10,6 +10,7 @@ title: TranscriptionSettings
 | ------------ | ------------- | ------------- | ------------- |
 | **transcription** | [**TranscriptionEnum**](#TranscriptionEnum)<!----> | Setting to enable/disable transcription capability |  |
 | **transcriptionConfidenceThreshold** | <!----><!---->**Integer**<!----> | Configure confidence threshold. The possible values are from 1 to 100. |  |
+| **lowLatencyTranscriptionEnabled** | <!----><!---->**Boolean**<!----> | Boolean flag indicating whether low latency transcription via Notification API is enabled |  [optional] |
 | **contentSearchEnabled** | <!----><!---->**Boolean**<!----> | Setting to enable/disable content search |  [optional] |
 {: class="table table-striped"}
 

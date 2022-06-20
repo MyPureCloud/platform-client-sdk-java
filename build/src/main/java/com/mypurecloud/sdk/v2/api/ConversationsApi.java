@@ -94,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
+import com.mypurecloud.sdk.v2.model.SetRecordingState;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
 import com.mypurecloud.sdk.v2.model.SupportedContentListing;
@@ -268,10 +269,19 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcon
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsCallRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsCallbackRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsChatRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsCobrowsesessionRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsScreenshareRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsSocialRecordingstateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsVideoRecordingstateRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12910,6 +12920,334 @@ public class ConversationsApi {
   }
 
   /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsCallRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsCallRecordingstate(createPutConversationsCallRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsCallRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsCallRecordingstate(createPutConversationsCallRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsCallRecordingstateRequest createPutConversationsCallRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsCallRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsCallRecordingstate(PutConversationsCallRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsCallRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsCallbackRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsCallbackRecordingstate(createPutConversationsCallbackRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsCallbackRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsCallbackRecordingstate(createPutConversationsCallbackRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsCallbackRecordingstateRequest createPutConversationsCallbackRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsCallbackRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsCallbackRecordingstate(PutConversationsCallbackRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsCallbackRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsChatRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsChatRecordingstate(createPutConversationsChatRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsChatRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsChatRecordingstate(createPutConversationsChatRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsChatRecordingstateRequest createPutConversationsChatRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsChatRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsChatRecordingstate(PutConversationsChatRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsChatRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsCobrowsesessionRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsCobrowsesessionRecordingstate(createPutConversationsCobrowsesessionRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsCobrowsesessionRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsCobrowsesessionRecordingstate(createPutConversationsCobrowsesessionRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsCobrowsesessionRecordingstateRequest createPutConversationsCobrowsesessionRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsCobrowsesessionRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsCobrowsesessionRecordingstate(PutConversationsCobrowsesessionRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsCobrowsesessionRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update conversation draft reply
    * 
    * @param conversationId conversationId (required)
@@ -12987,6 +13325,170 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsEmailRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsEmailRecordingstate(createPutConversationsEmailRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsEmailRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsEmailRecordingstate(createPutConversationsEmailRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsEmailRecordingstateRequest createPutConversationsEmailRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsEmailRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsEmailRecordingstate(PutConversationsEmailRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsEmailRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsMessageRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsMessageRecordingstate(createPutConversationsMessageRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsMessageRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsMessageRecordingstate(createPutConversationsMessageRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsMessageRecordingstateRequest createPutConversationsMessageRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsMessageRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsMessageRecordingstate(PutConversationsMessageRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsMessageRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -13225,6 +13727,252 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ConversationThreadingWindow> response = (ApiResponse<ConversationThreadingWindow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsScreenshareRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsScreenshareRecordingstate(createPutConversationsScreenshareRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsScreenshareRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsScreenshareRecordingstate(createPutConversationsScreenshareRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsScreenshareRecordingstateRequest createPutConversationsScreenshareRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsScreenshareRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsScreenshareRecordingstate(PutConversationsScreenshareRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsScreenshareRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsSocialRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsSocialRecordingstate(createPutConversationsSocialRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsSocialRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsSocialRecordingstate(createPutConversationsSocialRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsSocialRecordingstateRequest createPutConversationsSocialRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsSocialRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsSocialRecordingstate(PutConversationsSocialRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsSocialRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsVideoRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
+    return  putConversationsVideoRecordingstate(createPutConversationsVideoRecordingstateRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param conversationId conversationId (required)
+   * @param body SetRecordingState (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsVideoRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
+    return putConversationsVideoRecordingstate(createPutConversationsVideoRecordingstateRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PutConversationsVideoRecordingstateRequest createPutConversationsVideoRecordingstateRequest(String conversationId, SetRecordingState body) {
+    return PutConversationsVideoRecordingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String putConversationsVideoRecordingstate(PutConversationsVideoRecordingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by setting its recording state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> putConversationsVideoRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -242,7 +242,7 @@ public class GetProfilesUsersRequest {
 	public enum integrationPresenceSourceValues { 
 		MICROSOFTTEAMS("MicrosoftTeams"),
 		ZOOMPHONE("ZoomPhone"),
-		RINGCENTRAL("RingCentral");
+		EIGHTBYEIGHT("EightByEight");
 
 		private String value;
 

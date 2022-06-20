@@ -14,6 +14,7 @@ title: UCIntegration
 | **integrationPresenceSource** | [**IntegrationPresenceSourceEnum**](#IntegrationPresenceSourceEnum)<!----> | integrationPresenceType |  |
 | **pbxPermission** | <!----><!---->**String**<!----> | pbxPermission |  |
 | **icon** | <!----><!---->[**UCIcon**](UCIcon.html)<!----> | icon |  |
+| **badgeIcons** | <!----><!---->[**Map&lt;String, UCIcon&gt;**](UCIcon.html)<!----> | badgeIcon |  |
 | **i10n** | <!----><!---->[**Map&lt;String, UCI10n&gt;**](UCI10n.html)<!----> | i10n |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
@@ -28,7 +29,7 @@ title: UCIntegration
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
 | ZOOMPHONE | &quot;ZoomPhone&quot; | 
-| RINGCENTRAL | &quot;RingCentral&quot; | 
+| EIGHTBYEIGHT | &quot;EightByEight&quot; | 
 {: class="table table-striped"}
 
 

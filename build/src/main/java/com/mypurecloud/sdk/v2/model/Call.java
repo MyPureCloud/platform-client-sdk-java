@@ -274,6 +274,63 @@ public class Call  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
 
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial connection state of this communication.
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    CONVERTING("converting"),
+    UPLOADING("uploading"),
+    TRANSMITTING("transmitting"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
+
   
   /**
    * The connection state of this communication.
@@ -796,6 +853,24 @@ public class Call  implements Serializable {
   }
 
 
+  /**
+   * The initial connection state of this communication.
+   **/
+  public Call initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial connection state of this communication.")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -834,12 +909,13 @@ public class Call  implements Serializable {
             Objects.equals(this.wrapup, call.wrapup) &&
             Objects.equals(this.afterCallWork, call.afterCallWork) &&
             Objects.equals(this.afterCallWorkRequired, call.afterCallWorkRequired) &&
-            Objects.equals(this.agentAssistantId, call.agentAssistantId);
+            Objects.equals(this.agentAssistantId, call.agentAssistantId) &&
+            Objects.equals(this.initialState, call.initialState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, initialState);
   }
 
   @Override
@@ -876,6 +952,7 @@ public class Call  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

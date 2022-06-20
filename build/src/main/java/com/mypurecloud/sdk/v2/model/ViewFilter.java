@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
 import com.mypurecloud.sdk.v2.model.TranscriptTopics;
@@ -1338,6 +1339,60 @@ public class ViewFilter  implements Serializable {
   private List<String> conversationInitiators = new ArrayList<String>();
   private Boolean hasCustomerParticipated = null;
   private Boolean isAcdInteraction = null;
+  private Boolean hasFax = null;
+  private List<String> dataActionIds = new ArrayList<String>();
+  private String actionCategoryName = null;
+  private List<String> responseStatuses = new ArrayList<String>();
+
+  private static class AvailableDashboardEnumDeserializer extends StdDeserializer<AvailableDashboardEnum> {
+    public AvailableDashboardEnumDeserializer() {
+      super(AvailableDashboardEnumDeserializer.class);
+    }
+
+    @Override
+    public AvailableDashboardEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AvailableDashboardEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Filter to indicate the availability of the dashboard is public or private.
+   */
+ @JsonDeserialize(using = AvailableDashboardEnumDeserializer.class)
+  public enum AvailableDashboardEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PUBLIC("Public"),
+    PRIVATE("Private");
+
+    private String value;
+
+    AvailableDashboardEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AvailableDashboardEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AvailableDashboardEnum value : AvailableDashboardEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AvailableDashboardEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AvailableDashboardEnum availableDashboard = null;
+  private Boolean favouriteDashboard = null;
+  private Boolean myDashboard = null;
 
   
   /**
@@ -3914,6 +3969,132 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * Filters to indicate if interaction has FAX
+   **/
+  public ViewFilter hasFax(Boolean hasFax) {
+    this.hasFax = hasFax;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters to indicate if interaction has FAX")
+  @JsonProperty("hasFax")
+  public Boolean getHasFax() {
+    return hasFax;
+  }
+  public void setHasFax(Boolean hasFax) {
+    this.hasFax = hasFax;
+  }
+
+
+  /**
+   * The list of Data Action IDs 
+   **/
+  public ViewFilter dataActionIds(List<String> dataActionIds) {
+    this.dataActionIds = dataActionIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Data Action IDs ")
+  @JsonProperty("dataActionIds")
+  public List<String> getDataActionIds() {
+    return dataActionIds;
+  }
+  public void setDataActionIds(List<String> dataActionIds) {
+    this.dataActionIds = dataActionIds;
+  }
+
+
+  /**
+   * Action Category Name
+   **/
+  public ViewFilter actionCategoryName(String actionCategoryName) {
+    this.actionCategoryName = actionCategoryName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Action Category Name")
+  @JsonProperty("actionCategoryName")
+  public String getActionCategoryName() {
+    return actionCategoryName;
+  }
+  public void setActionCategoryName(String actionCategoryName) {
+    this.actionCategoryName = actionCategoryName;
+  }
+
+
+  /**
+   * The list of Response codes for Data Action
+   **/
+  public ViewFilter responseStatuses(List<String> responseStatuses) {
+    this.responseStatuses = responseStatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Response codes for Data Action")
+  @JsonProperty("responseStatuses")
+  public List<String> getResponseStatuses() {
+    return responseStatuses;
+  }
+  public void setResponseStatuses(List<String> responseStatuses) {
+    this.responseStatuses = responseStatuses;
+  }
+
+
+  /**
+   * Filter to indicate the availability of the dashboard is public or private.
+   **/
+  public ViewFilter availableDashboard(AvailableDashboardEnum availableDashboard) {
+    this.availableDashboard = availableDashboard;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate the availability of the dashboard is public or private.")
+  @JsonProperty("availableDashboard")
+  public AvailableDashboardEnum getAvailableDashboard() {
+    return availableDashboard;
+  }
+  public void setAvailableDashboard(AvailableDashboardEnum availableDashboard) {
+    this.availableDashboard = availableDashboard;
+  }
+
+
+  /**
+   * Filter to indicate whether the dashboard is favorite or unfavorite.
+   **/
+  public ViewFilter favouriteDashboard(Boolean favouriteDashboard) {
+    this.favouriteDashboard = favouriteDashboard;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate whether the dashboard is favorite or unfavorite.")
+  @JsonProperty("favouriteDashboard")
+  public Boolean getFavouriteDashboard() {
+    return favouriteDashboard;
+  }
+  public void setFavouriteDashboard(Boolean favouriteDashboard) {
+    this.favouriteDashboard = favouriteDashboard;
+  }
+
+
+  /**
+   * Filter to indicate the dashboard owned by the user.
+   **/
+  public ViewFilter myDashboard(Boolean myDashboard) {
+    this.myDashboard = myDashboard;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate the dashboard owned by the user.")
+  @JsonProperty("myDashboard")
+  public Boolean getMyDashboard() {
+    return myDashboard;
+  }
+  public void setMyDashboard(Boolean myDashboard) {
+    this.myDashboard = myDashboard;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -4066,12 +4247,19 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.isAssessmentPassed, viewFilter.isAssessmentPassed) &&
             Objects.equals(this.conversationInitiators, viewFilter.conversationInitiators) &&
             Objects.equals(this.hasCustomerParticipated, viewFilter.hasCustomerParticipated) &&
-            Objects.equals(this.isAcdInteraction, viewFilter.isAcdInteraction);
+            Objects.equals(this.isAcdInteraction, viewFilter.isAcdInteraction) &&
+            Objects.equals(this.hasFax, viewFilter.hasFax) &&
+            Objects.equals(this.dataActionIds, viewFilter.dataActionIds) &&
+            Objects.equals(this.actionCategoryName, viewFilter.actionCategoryName) &&
+            Objects.equals(this.responseStatuses, viewFilter.responseStatuses) &&
+            Objects.equals(this.availableDashboard, viewFilter.availableDashboard) &&
+            Objects.equals(this.favouriteDashboard, viewFilter.favouriteDashboard) &&
+            Objects.equals(this.myDashboard, viewFilter.myDashboard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, responseStatuses, availableDashboard, favouriteDashboard, myDashboard);
   }
 
   @Override
@@ -4222,6 +4410,13 @@ public class ViewFilter  implements Serializable {
     sb.append("    conversationInitiators: ").append(toIndentedString(conversationInitiators)).append("\n");
     sb.append("    hasCustomerParticipated: ").append(toIndentedString(hasCustomerParticipated)).append("\n");
     sb.append("    isAcdInteraction: ").append(toIndentedString(isAcdInteraction)).append("\n");
+    sb.append("    hasFax: ").append(toIndentedString(hasFax)).append("\n");
+    sb.append("    dataActionIds: ").append(toIndentedString(dataActionIds)).append("\n");
+    sb.append("    actionCategoryName: ").append(toIndentedString(actionCategoryName)).append("\n");
+    sb.append("    responseStatuses: ").append(toIndentedString(responseStatuses)).append("\n");
+    sb.append("    availableDashboard: ").append(toIndentedString(availableDashboard)).append("\n");
+    sb.append("    favouriteDashboard: ").append(toIndentedString(favouriteDashboard)).append("\n");
+    sb.append("    myDashboard: ").append(toIndentedString(myDashboard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

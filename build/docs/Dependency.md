@@ -50,6 +50,7 @@ title: Dependency
 | FLOWMILESTONE | &quot;FLOWMILESTONE&quot; | 
 | FLOWOUTCOME | &quot;FLOWOUTCOME&quot; | 
 | GROUP | &quot;GROUP&quot; | 
+| IMAGE | &quot;IMAGE&quot; | 
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; | 
 | INBOUNDCHATFLOW | &quot;INBOUNDCHATFLOW&quot; | 
 | INBOUNDEMAILFLOW | &quot;INBOUNDEMAILFLOW&quot; | 

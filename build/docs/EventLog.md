@@ -48,6 +48,7 @@ title: EventLog
 | CAMPAIGN_RULE | &quot;CAMPAIGN_RULE&quot; | 
 | CONTACT | &quot;CONTACT&quot; | 
 | CONTACT_LIST_FILTER | &quot;CONTACT_LIST_FILTER&quot; | 
+| DIGITAL_RULE | &quot;DIGITAL_RULE&quot; | 
 | DNC_LIST | &quot;DNC_LIST&quot; | 
 | ENTITY_LIMIT | &quot;ENTITY_LIMIT&quot; | 
 | IMPORT_ERROR | &quot;IMPORT_ERROR&quot; | 

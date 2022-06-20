@@ -140,14 +140,14 @@ public class WebMessagingContent  implements Serializable {
 
 
   /**
-   * Generic content.
+   * Generic content (Deprecated).
    **/
   public WebMessagingContent generic(WebMessagingGeneric generic) {
     this.generic = generic;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Generic content.")
+  @ApiModelProperty(example = "null", value = "Generic content (Deprecated).")
   @JsonProperty("generic")
   public WebMessagingGeneric getGeneric() {
     return generic;

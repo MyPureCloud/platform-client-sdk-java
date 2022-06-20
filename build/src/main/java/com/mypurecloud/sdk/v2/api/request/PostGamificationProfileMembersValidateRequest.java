@@ -53,17 +53,17 @@ import com.mypurecloud.sdk.v2.model.WorkdayValuesTrend;
 
 public class PostGamificationProfileMembersValidateRequest {
 
-	private String performanceProfileId;
-	public String getPerformanceProfileId() {
-		return this.performanceProfileId;
+	private String profileId;
+	public String getProfileId() {
+		return this.profileId;
 	}
 
-	public void setPerformanceProfileId(String performanceProfileId) {
-		this.performanceProfileId = performanceProfileId;
+	public void setProfileId(String profileId) {
+		this.profileId = profileId;
 	}
 
-	public PostGamificationProfileMembersValidateRequest withPerformanceProfileId(String performanceProfileId) {
-	    this.setPerformanceProfileId(performanceProfileId);
+	public PostGamificationProfileMembersValidateRequest withProfileId(String profileId) {
+	    this.setProfileId(profileId);
 	    return this;
 	} 
 
@@ -102,9 +102,9 @@ public class PostGamificationProfileMembersValidateRequest {
 
     public ApiRequest<ValidateAssignUsers> withHttpInfo() {
         
-        // verify the required parameter 'performanceProfileId' is set
-        if (this.performanceProfileId == null) {
-            throw new IllegalStateException("Missing the required parameter 'performanceProfileId' when building request for PostGamificationProfileMembersValidateRequest.");
+        // verify the required parameter 'profileId' is set
+        if (this.profileId == null) {
+            throw new IllegalStateException("Missing the required parameter 'profileId' when building request for PostGamificationProfileMembersValidateRequest.");
         }
         
         // verify the required parameter 'body' is set
@@ -113,8 +113,8 @@ public class PostGamificationProfileMembersValidateRequest {
         }
         
 
-        return ApiRequestBuilder.create("POST", "/api/v2/gamification/profiles/{performanceProfileId}/members/validate")
-                .withPathParameter("performanceProfileId", performanceProfileId)
+        return ApiRequestBuilder.create("POST", "/api/v2/gamification/profiles/{profileId}/members/validate")
+                .withPathParameter("profileId", profileId)
         
                 .withBody(body)
 
@@ -130,9 +130,9 @@ public class PostGamificationProfileMembersValidateRequest {
 	}
 
 
-	public static Builder builder(String performanceProfileId, ValidateAssignUsers body) {
+	public static Builder builder(String profileId, ValidateAssignUsers body) {
 	    return new Builder()
-	            .withRequiredParams(performanceProfileId, body);
+	            .withRequiredParams(profileId, body);
 	}
 
 
@@ -144,8 +144,8 @@ public class PostGamificationProfileMembersValidateRequest {
 		}
 
 
-		public Builder withPerformanceProfileId(String performanceProfileId) {
-			request.setPerformanceProfileId(performanceProfileId);
+		public Builder withProfileId(String profileId) {
+			request.setProfileId(profileId);
 			return this;
 		}
 
@@ -156,8 +156,8 @@ public class PostGamificationProfileMembersValidateRequest {
 
 
 
-		public Builder withRequiredParams(String performanceProfileId, ValidateAssignUsers body) {
-			request.setPerformanceProfileId(performanceProfileId);
+		public Builder withRequiredParams(String profileId, ValidateAssignUsers body) {
+			request.setProfileId(profileId);
 			request.setBody(body);
 
 			return this;
@@ -166,9 +166,9 @@ public class PostGamificationProfileMembersValidateRequest {
 
 		public PostGamificationProfileMembersValidateRequest build() {
             
-            // verify the required parameter 'performanceProfileId' is set
-            if (request.performanceProfileId == null) {
-                throw new IllegalStateException("Missing the required parameter 'performanceProfileId' when building request for PostGamificationProfileMembersValidateRequest.");
+            // verify the required parameter 'profileId' is set
+            if (request.profileId == null) {
+                throw new IllegalStateException("Missing the required parameter 'profileId' when building request for PostGamificationProfileMembersValidateRequest.");
             }
             
             // verify the required parameter 'body' is set

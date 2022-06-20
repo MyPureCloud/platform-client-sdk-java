@@ -20,9 +20,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Generic content object.
+ * Generic content object (Deprecated).
  */
-@ApiModel(description = "Generic content object.")
+@ApiModel(description = "Generic content object (Deprecated).")
 
 public class ConversationContentGeneric  implements Serializable {
   

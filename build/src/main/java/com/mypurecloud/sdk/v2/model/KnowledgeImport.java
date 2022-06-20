@@ -48,7 +48,8 @@ public class KnowledgeImport  implements Serializable {
   public enum FileTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CSV("Csv"),
-    JSONLINES("JsonLines");
+    JSONLINES("JsonLines"),
+    JSON("Json");
 
     private String value;
 

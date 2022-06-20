@@ -162,10 +162,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationTags**](ConversationsApi.html#putConversationTags) | Update the tags on a conversation. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
+| [**putConversationsCallRecordingstate**](ConversationsApi.html#putConversationsCallRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsCallbackRecordingstate**](ConversationsApi.html#putConversationsCallbackRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsChatRecordingstate**](ConversationsApi.html#putConversationsChatRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsCobrowsesessionRecordingstate**](ConversationsApi.html#putConversationsCobrowsesessionRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
+| [**putConversationsEmailRecordingstate**](ConversationsApi.html#putConversationsEmailRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
 | [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | Set the organization's default supported content profile that may be assigned to an integration when it is created. |
 | [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | Update conversation threading window timeline for each messaging type |
+| [**putConversationsScreenshareRecordingstate**](ConversationsApi.html#putConversationsScreenshareRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsSocialRecordingstate**](ConversationsApi.html#putConversationsSocialRecordingstate) | Update a conversation by setting its recording state |
+| [**putConversationsVideoRecordingstate**](ConversationsApi.html#putConversationsVideoRecordingstate) | Update a conversation by setting its recording state |
 {: class="table-striped"}
 
 <a name="deleteAnalyticsConversationsDetailsJob"></a>
@@ -9864,6 +9873,258 @@ try {
 
 **Empty**
 
+<a name="putConversationsCallRecordingstate"></a>
+
+# **putConversationsCallRecordingstate**
+
+
+
+> String putConversationsCallRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/calls/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsCallRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsCallRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="putConversationsCallbackRecordingstate"></a>
+
+# **putConversationsCallbackRecordingstate**
+
+
+
+> String putConversationsCallbackRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsCallbackRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsCallbackRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="putConversationsChatRecordingstate"></a>
+
+# **putConversationsChatRecordingstate**
+
+
+
+> String putConversationsChatRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/chats/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsChatRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsChatRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="putConversationsCobrowsesessionRecordingstate"></a>
+
+# **putConversationsCobrowsesessionRecordingstate**
+
+
+
+> String putConversationsCobrowsesessionRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsCobrowsesessionRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
 <a name="putConversationsEmailMessagesDraft"></a>
 
 # **putConversationsEmailMessagesDraft**
@@ -9925,6 +10186,132 @@ try {
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="putConversationsEmailRecordingstate"></a>
+
+# **putConversationsEmailRecordingstate**
+
+
+
+> String putConversationsEmailRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/emails/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsEmailRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsEmailRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="putConversationsMessageRecordingstate"></a>
+
+# **putConversationsMessageRecordingstate**
+
+
+
+> String putConversationsMessageRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/messages/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsMessageRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsMessageRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
 
 <a name="putConversationsMessagingIntegrationsLineIntegrationId"></a>
 
@@ -10114,4 +10501,193 @@ try {
 ### Return type
 
 [**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+
+<a name="putConversationsScreenshareRecordingstate"></a>
+
+# **putConversationsScreenshareRecordingstate**
+
+
+
+> String putConversationsScreenshareRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsScreenshareRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsScreenshareRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="putConversationsSocialRecordingstate"></a>
+
+# **putConversationsSocialRecordingstate**
+
+
+
+> String putConversationsSocialRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/socials/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsSocialRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsSocialRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="putConversationsVideoRecordingstate"></a>
+
+# **putConversationsVideoRecordingstate**
+
+
+
+> String putConversationsVideoRecordingstate(conversationId, body)
+
+Update a conversation by setting its recording state
+
+Wraps PUT /api/v2/conversations/videos/{conversationId}/recordingstate  
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+SetRecordingState body = new SetRecordingState(); // SetRecordingState | SetRecordingState
+try {
+    String result = apiInstance.putConversationsVideoRecordingstate(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsVideoRecordingstate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
 

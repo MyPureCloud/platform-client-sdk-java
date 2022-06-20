@@ -1042,30 +1042,26 @@ public class RoutingApi {
    * Delete a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
-   * @param async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional, default to false)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteRoutingSmsPhonenumber(String addressId, Boolean async) throws IOException, ApiException {
-     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId, async));
+  public void deleteRoutingSmsPhonenumber(String addressId) throws IOException, ApiException {
+     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId));
   }
 
   /**
    * Delete a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
-   * @param async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional, default to false)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String addressId, Boolean async) throws IOException {
-    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId, async).withHttpInfo());
+  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String addressId) throws IOException {
+    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId).withHttpInfo());
   }
 
-  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId, Boolean async) {
+  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId) {
     return DeleteRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
-
-            .withAsync(async)
 
             .build();
   }
@@ -1579,7 +1575,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Queue ID(s) to filter assessments by. (optional)
    * @return AssessmentListing
@@ -1595,7 +1591,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Queue ID(s) to filter assessments by. (optional)
    * @return AssessmentListing
@@ -2567,7 +2563,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Comma-separated list of queue Ids to filter by. (optional)
    * @return PredictorListing
@@ -2583,7 +2579,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Comma-separated list of queue Ids to filter by. (optional)
    * @return PredictorListing
@@ -7553,32 +7549,28 @@ public class RoutingApi {
    * Provision a phone number for SMS
    * 
    * @param body SmsPhoneNumber (required)
-   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber postRoutingSmsPhonenumbers(SmsPhoneNumberProvision body, Boolean async) throws IOException, ApiException {
-    return  postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body, async));
+  public SmsPhoneNumber postRoutingSmsPhonenumbers(SmsPhoneNumberProvision body) throws IOException, ApiException {
+    return  postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body));
   }
 
   /**
    * Provision a phone number for SMS
    * 
    * @param body SmsPhoneNumber (required)
-   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersWithHttpInfo(SmsPhoneNumberProvision body, Boolean async) throws IOException {
-    return postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body, async).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersWithHttpInfo(SmsPhoneNumberProvision body) throws IOException {
+    return postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body).withHttpInfo());
   }
 
-  private PostRoutingSmsPhonenumbersRequest createPostRoutingSmsPhonenumbersRequest(SmsPhoneNumberProvision body, Boolean async) {
+  private PostRoutingSmsPhonenumbersRequest createPostRoutingSmsPhonenumbersRequest(SmsPhoneNumberProvision body) {
     return PostRoutingSmsPhonenumbersRequest.builder()
             .withBody(body)
-
-            .withAsync(async)
 
             .build();
   }
@@ -8284,13 +8276,12 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body SmsPhoneNumber (required)
-   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber putRoutingSmsPhonenumber(String addressId, SmsPhoneNumber body, Boolean async) throws IOException, ApiException {
-    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body, async));
+  public SmsPhoneNumber putRoutingSmsPhonenumber(String addressId, SmsPhoneNumber body) throws IOException, ApiException {
+    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body));
   }
 
   /**
@@ -8298,21 +8289,18 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body SmsPhoneNumber (required)
-   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String addressId, SmsPhoneNumber body, Boolean async) throws IOException {
-    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body, async).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String addressId, SmsPhoneNumber body) throws IOException {
+    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body).withHttpInfo());
   }
 
-  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body, Boolean async) {
+  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body) {
     return PutRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
 
             .withBody(body)
-
-            .withAsync(async)
 
             .build();
   }

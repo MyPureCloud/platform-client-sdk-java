@@ -49,7 +49,8 @@ public class DataSchema  implements Serializable {
   public enum AppliesToEnum {
     CONTACT("CONTACT"),
     EXTERNAL_ORGANIZATION("EXTERNAL_ORGANIZATION"),
-    OPEN_ACTION("OPEN_ACTION");
+    OPEN_ACTION("OPEN_ACTION"),
+    WORKITEM("WORKITEM");
 
     private String value;
 

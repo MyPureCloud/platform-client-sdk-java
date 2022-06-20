@@ -54,7 +54,9 @@ public class GeneralProgramJobRequest  implements Serializable {
     DE_DE("de-DE"),
     PT_BR("pt-BR"),
     PL_PL("pl-PL"),
-    PT_PT("pt-PT");
+    PT_PT("pt-PT"),
+    NL_NL("nl-NL"),
+    KO_KR("ko-KR");
 
     private String value;
 

@@ -632,11 +632,11 @@ try {
 
 
 
-> [MemberListing](MemberListing.html) getGamificationProfileMembers(performanceProfileId)
+> [MemberListing](MemberListing.html) getGamificationProfileMembers(profileId)
 
 Members of a given performance profile
 
-Wraps GET /api/v2/gamification/profiles/{performanceProfileId}/members  
+Wraps GET /api/v2/gamification/profiles/{profileId}/members  
 
 Requires ANY permissions: 
 
@@ -664,9 +664,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | Profile Id
 try {
-    MemberListing result = apiInstance.getGamificationProfileMembers(performanceProfileId);
+    MemberListing result = apiInstance.getGamificationProfileMembers(profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationProfileMembers");
@@ -679,7 +679,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| Profile Id | 
 {: class="table-striped"}
 
 
@@ -760,7 +760,7 @@ try {
 
 
 
-> [GetMetricResponse](GetMetricResponse.html) getGamificationProfileMetrics(profileId, expand, workday)
+> [GetMetricResponse](GetMetricResponse.html) getGamificationProfileMetrics(profileId, expand, workday, metricIds)
 
 All gamified metrics for a given performance profile
 
@@ -797,8 +797,9 @@ GamificationApi apiInstance = new GamificationApi();
 String profileId = "profileId_example"; // String | Performance Profile Id
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand.
 LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String metricIds = "metricIds_example"; // String | List of metric ids to filter the response (Optional, comma-separated).
 try {
-    GetMetricResponse result = apiInstance.getGamificationProfileMetrics(profileId, expand, workday);
+    GetMetricResponse result = apiInstance.getGamificationProfileMetrics(profileId, expand, workday, metricIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationProfileMetrics");
@@ -814,6 +815,7 @@ try {
 | **profileId** | **String**| Performance Profile Id | 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: objective 
 | **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+| **metricIds** | **String**| List of metric ids to filter the response (Optional, comma-separated). | [optional] 
 {: class="table-striped"}
 
 
@@ -2527,11 +2529,11 @@ try {
 
 
 
-> [Assignment](Assignment.html) postGamificationProfileMembers(performanceProfileId, body)
+> [Assignment](Assignment.html) postGamificationProfileMembers(profileId, body)
 
 Assign members to a given performance profile
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members  
+Wraps POST /api/v2/gamification/profiles/{profileId}/members  
 
 Requires ANY permissions: 
 
@@ -2559,10 +2561,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | Profile Id
 AssignUsers body = new AssignUsers(); // AssignUsers | assignUsers
 try {
-    Assignment result = apiInstance.postGamificationProfileMembers(performanceProfileId, body);
+    Assignment result = apiInstance.postGamificationProfileMembers(profileId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#postGamificationProfileMembers");
@@ -2575,7 +2577,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| Profile Id | 
 | **body** | [**AssignUsers**](AssignUsers.html)| assignUsers | 
 {: class="table-striped"}
 
@@ -2590,11 +2592,11 @@ try {
 
 
 
-> [AssignmentValidation](AssignmentValidation.html) postGamificationProfileMembersValidate(performanceProfileId, body)
+> [AssignmentValidation](AssignmentValidation.html) postGamificationProfileMembersValidate(profileId, body)
 
 Validate member assignment
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate  
+Wraps POST /api/v2/gamification/profiles/{profileId}/members/validate  
 
 Requires ANY permissions: 
 
@@ -2622,10 +2624,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | Profile Id
 ValidateAssignUsers body = new ValidateAssignUsers(); // ValidateAssignUsers | memberAssignments
 try {
-    AssignmentValidation result = apiInstance.postGamificationProfileMembersValidate(performanceProfileId, body);
+    AssignmentValidation result = apiInstance.postGamificationProfileMembersValidate(profileId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#postGamificationProfileMembersValidate");
@@ -2638,7 +2640,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| Profile Id | 
 | **body** | [**ValidateAssignUsers**](ValidateAssignUsers.html)| memberAssignments | 
 {: class="table-striped"}
 

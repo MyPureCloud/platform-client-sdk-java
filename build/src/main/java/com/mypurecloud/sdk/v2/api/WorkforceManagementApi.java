@@ -7863,8 +7863,8 @@ public class WorkforceManagementApi {
    * Search published schedules
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
@@ -7878,8 +7878,8 @@ public class WorkforceManagementApi {
    * Search published schedules
    * 
    * @param businessUnitId The ID of the business unit (required)
-   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
@@ -8206,8 +8206,8 @@ public class WorkforceManagementApi {
    * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param scheduleId The ID of the schedule (required)
    * @param body body (required)
-   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return BuAsyncAgentSchedulesQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -8223,8 +8223,8 @@ public class WorkforceManagementApi {
    * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param scheduleId The ID of the schedule (required)
    * @param body body (required)
-   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return BuAsyncAgentSchedulesQueryResponse
    * @throws IOException if the request fails to be processed
    */
@@ -9666,8 +9666,8 @@ public class WorkforceManagementApi {
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
@@ -9681,8 +9681,8 @@ public class WorkforceManagementApi {
    * Query published schedules for given given time range for set of users
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
-   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @param body body (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed

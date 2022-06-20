@@ -845,29 +845,29 @@ public class GamificationApi {
   /**
    * Members of a given performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId Profile Id (required)
    * @return MemberListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MemberListing getGamificationProfileMembers(String performanceProfileId) throws IOException, ApiException {
-    return  getGamificationProfileMembers(createGetGamificationProfileMembersRequest(performanceProfileId));
+  public MemberListing getGamificationProfileMembers(String profileId) throws IOException, ApiException {
+    return  getGamificationProfileMembers(createGetGamificationProfileMembersRequest(profileId));
   }
 
   /**
    * Members of a given performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId Profile Id (required)
    * @return MemberListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MemberListing> getGamificationProfileMembersWithHttpInfo(String performanceProfileId) throws IOException {
-    return getGamificationProfileMembers(createGetGamificationProfileMembersRequest(performanceProfileId).withHttpInfo());
+  public ApiResponse<MemberListing> getGamificationProfileMembersWithHttpInfo(String profileId) throws IOException {
+    return getGamificationProfileMembers(createGetGamificationProfileMembersRequest(profileId).withHttpInfo());
   }
 
-  private GetGamificationProfileMembersRequest createGetGamificationProfileMembersRequest(String performanceProfileId) {
+  private GetGamificationProfileMembersRequest createGetGamificationProfileMembersRequest(String profileId) {
     return GetGamificationProfileMembersRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
 
             .build();
   }
@@ -1012,12 +1012,13 @@ public class GamificationApi {
    * @param profileId Performance Profile Id (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param metricIds List of metric ids to filter the response (Optional, comma-separated). (optional)
    * @return GetMetricResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GetMetricResponse getGamificationProfileMetrics(String profileId, List<String> expand, LocalDate workday) throws IOException, ApiException {
-    return  getGamificationProfileMetrics(createGetGamificationProfileMetricsRequest(profileId, expand, workday));
+  public GetMetricResponse getGamificationProfileMetrics(String profileId, List<String> expand, LocalDate workday, String metricIds) throws IOException, ApiException {
+    return  getGamificationProfileMetrics(createGetGamificationProfileMetricsRequest(profileId, expand, workday, metricIds));
   }
 
   /**
@@ -1026,20 +1027,23 @@ public class GamificationApi {
    * @param profileId Performance Profile Id (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @param metricIds List of metric ids to filter the response (Optional, comma-separated). (optional)
    * @return GetMetricResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GetMetricResponse> getGamificationProfileMetricsWithHttpInfo(String profileId, List<String> expand, LocalDate workday) throws IOException {
-    return getGamificationProfileMetrics(createGetGamificationProfileMetricsRequest(profileId, expand, workday).withHttpInfo());
+  public ApiResponse<GetMetricResponse> getGamificationProfileMetricsWithHttpInfo(String profileId, List<String> expand, LocalDate workday, String metricIds) throws IOException {
+    return getGamificationProfileMetrics(createGetGamificationProfileMetricsRequest(profileId, expand, workday, metricIds).withHttpInfo());
   }
 
-  private GetGamificationProfileMetricsRequest createGetGamificationProfileMetricsRequest(String profileId, List<String> expand, LocalDate workday) {
+  private GetGamificationProfileMetricsRequest createGetGamificationProfileMetricsRequest(String profileId, List<String> expand, LocalDate workday, String metricIds) {
     return GetGamificationProfileMetricsRequest.builder()
             .withProfileId(profileId)
 
             .withExpand(expand)
 
             .withWorkday(workday)
+
+            .withMetricIds(metricIds)
 
             .build();
   }
@@ -3309,31 +3313,31 @@ public class GamificationApi {
   /**
    * Assign members to a given performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId Profile Id (required)
    * @param body assignUsers (required)
    * @return Assignment
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Assignment postGamificationProfileMembers(String performanceProfileId, AssignUsers body) throws IOException, ApiException {
-    return  postGamificationProfileMembers(createPostGamificationProfileMembersRequest(performanceProfileId, body));
+  public Assignment postGamificationProfileMembers(String profileId, AssignUsers body) throws IOException, ApiException {
+    return  postGamificationProfileMembers(createPostGamificationProfileMembersRequest(profileId, body));
   }
 
   /**
    * Assign members to a given performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId Profile Id (required)
    * @param body assignUsers (required)
    * @return Assignment
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Assignment> postGamificationProfileMembersWithHttpInfo(String performanceProfileId, AssignUsers body) throws IOException {
-    return postGamificationProfileMembers(createPostGamificationProfileMembersRequest(performanceProfileId, body).withHttpInfo());
+  public ApiResponse<Assignment> postGamificationProfileMembersWithHttpInfo(String profileId, AssignUsers body) throws IOException {
+    return postGamificationProfileMembers(createPostGamificationProfileMembersRequest(profileId, body).withHttpInfo());
   }
 
-  private PostGamificationProfileMembersRequest createPostGamificationProfileMembersRequest(String performanceProfileId, AssignUsers body) {
+  private PostGamificationProfileMembersRequest createPostGamificationProfileMembersRequest(String profileId, AssignUsers body) {
     return PostGamificationProfileMembersRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
 
             .withBody(body)
 
@@ -3391,31 +3395,31 @@ public class GamificationApi {
   /**
    * Validate member assignment
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId Profile Id (required)
    * @param body memberAssignments (required)
    * @return AssignmentValidation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AssignmentValidation postGamificationProfileMembersValidate(String performanceProfileId, ValidateAssignUsers body) throws IOException, ApiException {
-    return  postGamificationProfileMembersValidate(createPostGamificationProfileMembersValidateRequest(performanceProfileId, body));
+  public AssignmentValidation postGamificationProfileMembersValidate(String profileId, ValidateAssignUsers body) throws IOException, ApiException {
+    return  postGamificationProfileMembersValidate(createPostGamificationProfileMembersValidateRequest(profileId, body));
   }
 
   /**
    * Validate member assignment
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId Profile Id (required)
    * @param body memberAssignments (required)
    * @return AssignmentValidation
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AssignmentValidation> postGamificationProfileMembersValidateWithHttpInfo(String performanceProfileId, ValidateAssignUsers body) throws IOException {
-    return postGamificationProfileMembersValidate(createPostGamificationProfileMembersValidateRequest(performanceProfileId, body).withHttpInfo());
+  public ApiResponse<AssignmentValidation> postGamificationProfileMembersValidateWithHttpInfo(String profileId, ValidateAssignUsers body) throws IOException {
+    return postGamificationProfileMembersValidate(createPostGamificationProfileMembersValidateRequest(profileId, body).withHttpInfo());
   }
 
-  private PostGamificationProfileMembersValidateRequest createPostGamificationProfileMembersValidateRequest(String performanceProfileId, ValidateAssignUsers body) {
+  private PostGamificationProfileMembersValidateRequest createPostGamificationProfileMembersValidateRequest(String profileId, ValidateAssignUsers body) {
     return PostGamificationProfileMembersValidateRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
 
             .withBody(body)
 

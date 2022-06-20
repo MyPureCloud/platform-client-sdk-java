@@ -124,6 +124,20 @@ public class GetGamificationProfileMetricsRequest {
 	    return this;
 	} 
 
+	private String metricIds;
+	public String getMetricIds() {
+		return this.metricIds;
+	}
+
+	public void setMetricIds(String metricIds) {
+		this.metricIds = metricIds;
+	}
+
+	public GetGamificationProfileMetricsRequest withMetricIds(String metricIds) {
+	    this.setMetricIds(metricIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -159,6 +173,9 @@ public class GetGamificationProfileMetricsRequest {
         
 
                 .withQueryParameters("workday", "", workday)
+        
+
+                .withQueryParameters("metricIds", "", metricIds)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -209,6 +226,11 @@ public class GetGamificationProfileMetricsRequest {
 
 		public Builder withWorkday(LocalDate workday) {
 			request.setWorkday(workday);
+			return this;
+		}
+
+		public Builder withMetricIds(String metricIds) {
+			request.setMetricIds(metricIds);
 			return this;
 		}
 

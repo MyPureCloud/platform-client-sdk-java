@@ -52,7 +52,7 @@ public class OAuthClientRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CODE("CODE"),
     TOKEN("TOKEN"),
-    SAML_2_BEARER("SAML2-BEARER"),
+    SAML2_BEARER("SAML2-BEARER"),
     PASSWORD("PASSWORD"),
     CLIENT_CREDENTIALS("CLIENT-CREDENTIALS");
 

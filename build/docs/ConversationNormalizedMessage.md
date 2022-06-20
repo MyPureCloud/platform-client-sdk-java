@@ -34,6 +34,7 @@ title: ConversationNormalizedMessage
 | STRUCTURED | &quot;Structured&quot; | 
 | RECEIPT | &quot;Receipt&quot; | 
 | EVENT | &quot;Event&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 

@@ -254,6 +254,8 @@ public class GetRoutingSmsPhonenumbersRequest {
 		PHONENUMBER("phoneNumber"),
 		COUNTRYCODE("countryCode"),
 		COUNTRY("country"),
+		DATECREATED("dateCreated"),
+		DATEMODIFIED("dateModified"),
 		PHONENUMBERSTATUS("phoneNumberStatus"),
 		PHONENUMBERTYPE("phoneNumberType"),
 		PURCHASEDATE("purchaseDate"),

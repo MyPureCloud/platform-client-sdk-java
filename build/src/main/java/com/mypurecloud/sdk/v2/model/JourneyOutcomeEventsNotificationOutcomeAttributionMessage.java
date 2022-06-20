@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationAssociatedValue;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationOutcome;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationOutcomeTouchpoint;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationSegment;
@@ -29,6 +30,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
   private JourneyOutcomeEventsNotificationOutcome outcome = null;
   private List<JourneyOutcomeEventsNotificationOutcomeTouchpoint> outcomeTouchpoints = new ArrayList<JourneyOutcomeEventsNotificationOutcomeTouchpoint>();
   private List<JourneyOutcomeEventsNotificationSegment> segmentAssignments = new ArrayList<JourneyOutcomeEventsNotificationSegment>();
+  private JourneyOutcomeEventsNotificationAssociatedValue associatedValue = null;
 
   
   /**
@@ -82,6 +84,23 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
   }
 
 
+  /**
+   **/
+  public JourneyOutcomeEventsNotificationOutcomeAttributionMessage associatedValue(JourneyOutcomeEventsNotificationAssociatedValue associatedValue) {
+    this.associatedValue = associatedValue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("associatedValue")
+  public JourneyOutcomeEventsNotificationAssociatedValue getAssociatedValue() {
+    return associatedValue;
+  }
+  public void setAssociatedValue(JourneyOutcomeEventsNotificationAssociatedValue associatedValue) {
+    this.associatedValue = associatedValue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -94,12 +113,13 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
 
     return Objects.equals(this.outcome, journeyOutcomeEventsNotificationOutcomeAttributionMessage.outcome) &&
             Objects.equals(this.outcomeTouchpoints, journeyOutcomeEventsNotificationOutcomeAttributionMessage.outcomeTouchpoints) &&
-            Objects.equals(this.segmentAssignments, journeyOutcomeEventsNotificationOutcomeAttributionMessage.segmentAssignments);
+            Objects.equals(this.segmentAssignments, journeyOutcomeEventsNotificationOutcomeAttributionMessage.segmentAssignments) &&
+            Objects.equals(this.associatedValue, journeyOutcomeEventsNotificationOutcomeAttributionMessage.associatedValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outcome, outcomeTouchpoints, segmentAssignments);
+    return Objects.hash(outcome, outcomeTouchpoints, segmentAssignments, associatedValue);
   }
 
   @Override
@@ -110,6 +130,7 @@ public class JourneyOutcomeEventsNotificationOutcomeAttributionMessage  implemen
     sb.append("    outcome: ").append(toIndentedString(outcome)).append("\n");
     sb.append("    outcomeTouchpoints: ").append(toIndentedString(outcomeTouchpoints)).append("\n");
     sb.append("    segmentAssignments: ").append(toIndentedString(segmentAssignments)).append("\n");
+    sb.append("    associatedValue: ").append(toIndentedString(associatedValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

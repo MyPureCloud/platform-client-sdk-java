@@ -217,7 +217,8 @@ public class AuditLogMessage  implements Serializable {
     CANCEL("Cancel"),
     SOFTDELETE("SoftDelete"),
     HARDDELETE("HardDelete"),
-    RESET("Reset");
+    RESET("Reset"),
+    UNARCHIVE("Unarchive");
 
     private String value;
 

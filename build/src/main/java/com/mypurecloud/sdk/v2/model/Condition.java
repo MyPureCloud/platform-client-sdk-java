@@ -47,6 +47,7 @@ public class Condition  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WRAPUPCONDITION("wrapupCondition"),
+    SYSTEMDISPOSITIONCONDITION("systemDispositionCondition"),
     CONTACTATTRIBUTECONDITION("contactAttributeCondition"),
     PHONENUMBERCONDITION("phoneNumberCondition"),
     PHONENUMBERTYPECONDITION("phoneNumberTypeCondition"),

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.SupportCenterCustomMessage;
+import com.mypurecloud.sdk.v2.model.SupportCenterFeedbackSettings;
 import com.mypurecloud.sdk.v2.model.SupportCenterScreen;
 import com.mypurecloud.sdk.v2.model.SupportCenterStyleSetting;
 import io.swagger.annotations.ApiModel;
@@ -83,6 +84,7 @@ public class SupportCenterSettings  implements Serializable {
   private List<SupportCenterScreen> screens = new ArrayList<SupportCenterScreen>();
   private List<AddressableEntityRef> enabledCategories = new ArrayList<AddressableEntityRef>();
   private SupportCenterStyleSetting styleSetting = null;
+  private SupportCenterFeedbackSettings feedback = null;
 
   
   /**
@@ -211,6 +213,24 @@ public class SupportCenterSettings  implements Serializable {
   }
 
 
+  /**
+   * Customer feedback settings
+   **/
+  public SupportCenterSettings feedback(SupportCenterFeedbackSettings feedback) {
+    this.feedback = feedback;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Customer feedback settings")
+  @JsonProperty("feedback")
+  public SupportCenterFeedbackSettings getFeedback() {
+    return feedback;
+  }
+  public void setFeedback(SupportCenterFeedbackSettings feedback) {
+    this.feedback = feedback;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -227,12 +247,13 @@ public class SupportCenterSettings  implements Serializable {
             Objects.equals(this.routerType, supportCenterSettings.routerType) &&
             Objects.equals(this.screens, supportCenterSettings.screens) &&
             Objects.equals(this.enabledCategories, supportCenterSettings.enabledCategories) &&
-            Objects.equals(this.styleSetting, supportCenterSettings.styleSetting);
+            Objects.equals(this.styleSetting, supportCenterSettings.styleSetting) &&
+            Objects.equals(this.feedback, supportCenterSettings.feedback);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, knowledgeBase, customMessages, routerType, screens, enabledCategories, styleSetting);
+    return Objects.hash(enabled, knowledgeBase, customMessages, routerType, screens, enabledCategories, styleSetting, feedback);
   }
 
   @Override
@@ -247,6 +268,7 @@ public class SupportCenterSettings  implements Serializable {
     sb.append("    screens: ").append(toIndentedString(screens)).append("\n");
     sb.append("    enabledCategories: ").append(toIndentedString(enabledCategories)).append("\n");
     sb.append("    styleSetting: ").append(toIndentedString(styleSetting)).append("\n");
+    sb.append("    feedback: ").append(toIndentedString(feedback)).append("\n");
     sb.append("}");
     return sb.toString();
   }

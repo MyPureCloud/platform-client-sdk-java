@@ -58,8 +58,13 @@ public class ConversationMessageContent  implements Serializable {
     NOTIFICATION("Notification"),
     BUTTONRESPONSE("ButtonResponse"),
     GENERICTEMPLATE("GenericTemplate"),
+    LISTTEMPLATE("ListTemplate"),
+    POSTBACK("Postback"),
+    REACTIONS("Reactions"),
+    MENTION("Mention"),
     CARD("Card"),
-    CAROUSEL("Carousel");
+    CAROUSEL("Carousel"),
+    UNKNOWN("Unknown");
 
     private String value;
 
@@ -225,14 +230,14 @@ public class ConversationMessageContent  implements Serializable {
 
 
   /**
-   * Generic Template Object
+   * Generic Template Object (Deprecated).
    **/
   public ConversationMessageContent generic(ConversationContentGeneric generic) {
     this.generic = generic;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Generic Template Object")
+  @ApiModelProperty(example = "null", value = "Generic Template Object (Deprecated).")
   @JsonProperty("generic")
   public ConversationContentGeneric getGeneric() {
     return generic;

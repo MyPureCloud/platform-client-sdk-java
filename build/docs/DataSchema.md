@@ -29,6 +29,7 @@ title: DataSchema
 | CONTACT | &quot;CONTACT&quot; |
 | EXTERNAL_ORGANIZATION | &quot;EXTERNAL_ORGANIZATION&quot; |
 | OPEN_ACTION | &quot;OPEN_ACTION&quot; |
+| WORKITEM | &quot;WORKITEM&quot; |
 {: class="table table-striped"}
 
 

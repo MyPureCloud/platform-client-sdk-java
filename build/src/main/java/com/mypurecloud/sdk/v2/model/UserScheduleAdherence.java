@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.BusinessUnit;
-import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
+import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.QueueReference;
-import com.mypurecloud.sdk.v2.model.Team;
+import com.mypurecloud.sdk.v2.model.TeamReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -33,9 +33,9 @@ public class UserScheduleAdherence  implements Serializable {
   private String id = null;
   private String name = null;
   private UserReference user = null;
-  private BusinessUnit businessUnit = null;
-  private ManagementUnit managementUnit = null;
-  private Team team = null;
+  private BusinessUnitReference businessUnit = null;
+  private ManagementUnitReference managementUnit = null;
+  private TeamReference team = null;
 
   private static class ScheduledActivityCategoryEnumDeserializer extends StdDeserializer<ScheduledActivityCategoryEnum> {
     public ScheduledActivityCategoryEnumDeserializer() {
@@ -398,21 +398,21 @@ public class UserScheduleAdherence  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "The business unit to which this user belongs")
   @JsonProperty("businessUnit")
-  public BusinessUnit getBusinessUnit() {
+  public BusinessUnitReference getBusinessUnit() {
     return businessUnit;
   }
 
 
   @ApiModelProperty(example = "null", value = "The management unit to which this user belongs")
   @JsonProperty("managementUnit")
-  public ManagementUnit getManagementUnit() {
+  public ManagementUnitReference getManagementUnit() {
     return managementUnit;
   }
 
 
   @ApiModelProperty(example = "null", value = "The team to which this user belongs")
   @JsonProperty("team")
-  public Team getTeam() {
+  public TeamReference getTeam() {
     return team;
   }
 

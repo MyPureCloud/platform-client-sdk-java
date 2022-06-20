@@ -102,7 +102,7 @@ public class UserSearchRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MICROSOFTTEAMS("MicrosoftTeams"),
     ZOOMPHONE("ZoomPhone"),
-    RINGCENTRAL("RingCentral");
+    EIGHTBYEIGHT("EightByEight");
 
     private String value;
 

@@ -11,8 +11,11 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.LearningCoverArtThumbnail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -25,6 +28,7 @@ public class LearningModuleCoverArtResponse  implements Serializable {
   private String id = null;
   private String selfUri = null;
   private String url = null;
+  private List<LearningCoverArtThumbnail> thumbnails = new ArrayList<LearningCoverArtThumbnail>();
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -59,6 +63,24 @@ public class LearningModuleCoverArtResponse  implements Serializable {
   }
 
 
+  /**
+   * Thumbnails for the cover art
+   **/
+  public LearningModuleCoverArtResponse thumbnails(List<LearningCoverArtThumbnail> thumbnails) {
+    this.thumbnails = thumbnails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Thumbnails for the cover art")
+  @JsonProperty("thumbnails")
+  public List<LearningCoverArtThumbnail> getThumbnails() {
+    return thumbnails;
+  }
+  public void setThumbnails(List<LearningCoverArtThumbnail> thumbnails) {
+    this.thumbnails = thumbnails;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -71,12 +93,13 @@ public class LearningModuleCoverArtResponse  implements Serializable {
 
     return Objects.equals(this.id, learningModuleCoverArtResponse.id) &&
             Objects.equals(this.selfUri, learningModuleCoverArtResponse.selfUri) &&
-            Objects.equals(this.url, learningModuleCoverArtResponse.url);
+            Objects.equals(this.url, learningModuleCoverArtResponse.url) &&
+            Objects.equals(this.thumbnails, learningModuleCoverArtResponse.thumbnails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri, url);
+    return Objects.hash(id, selfUri, url, thumbnails);
   }
 
   @Override
@@ -87,6 +110,7 @@ public class LearningModuleCoverArtResponse  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
