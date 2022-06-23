@@ -2653,33 +2653,37 @@ public class RoutingApi {
   }
 
   /**
-   * Get a list of Key Performance Indicators available for the predictors.
+   * Get a list of Key Performance Indicators
    * 
+   * @param kpiGroup The Group of Key Performance Indicators to return (optional)
    * @return List<KeyPerformanceIndicator>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicators() throws IOException, ApiException {
-    return  getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest());
+  public List<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicators(String kpiGroup) throws IOException, ApiException {
+    return  getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest(kpiGroup));
   }
 
   /**
-   * Get a list of Key Performance Indicators available for the predictors.
+   * Get a list of Key Performance Indicators
    * 
+   * @param kpiGroup The Group of Key Performance Indicators to return (optional)
    * @return List<KeyPerformanceIndicator>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorsWithHttpInfo() throws IOException {
-    return getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest().withHttpInfo());
+  public ApiResponse<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorsWithHttpInfo(String kpiGroup) throws IOException {
+    return getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest(kpiGroup).withHttpInfo());
   }
 
-  private GetRoutingPredictorsKeyperformanceindicatorsRequest createGetRoutingPredictorsKeyperformanceindicatorsRequest() {
+  private GetRoutingPredictorsKeyperformanceindicatorsRequest createGetRoutingPredictorsKeyperformanceindicatorsRequest(String kpiGroup) {
     return GetRoutingPredictorsKeyperformanceindicatorsRequest.builder()
+            .withKpiGroup(kpiGroup)
+
             .build();
   }
 
   /**
-   * Get a list of Key Performance Indicators available for the predictors.
+   * Get a list of Key Performance Indicators
    * 
    * @param request The request object
    * @return List<KeyPerformanceIndicator>
@@ -2698,7 +2702,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get a list of Key Performance Indicators available for the predictors.
+   * Get a list of Key Performance Indicators
    * 
    * @param request The request object
    * @return the response

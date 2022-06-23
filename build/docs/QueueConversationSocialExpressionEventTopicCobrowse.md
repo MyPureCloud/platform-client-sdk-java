@@ -8,7 +8,8 @@ title: QueueConversationSocialExpressionEventTopicCobrowse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
 | **self** | <!----><!---->[**QueueConversationSocialExpressionEventTopicAddress**](QueueConversationSocialExpressionEventTopicAddress.html)<!----> | Address and name data for a call endpoint. |  [optional] |
@@ -32,6 +33,24 @@ title: QueueConversationSocialExpressionEventTopicCobrowse
 <a name="StateEnum"></a>
 
 ## Enum: StateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| NONE | &quot;none&quot; | 
+{: class="table table-striped"}
+
+
+<a name="InitialStateEnum"></a>
+
+## Enum: InitialStateEnum
 
 | Name | Value |
 | ---- | ----- |

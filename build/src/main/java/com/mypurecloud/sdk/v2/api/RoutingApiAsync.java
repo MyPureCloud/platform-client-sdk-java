@@ -2527,7 +2527,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get a list of Key Performance Indicators available for the predictors.
+   * Get a list of Key Performance Indicators
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2561,7 +2561,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get a list of Key Performance Indicators available for the predictors.
+   * Get a list of Key Performance Indicators
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

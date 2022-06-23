@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentsDomainEntity;
 import com.mypurecloud.sdk.v2.model.LearningModule;
+import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
+import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
@@ -37,15 +39,19 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentResetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkremoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningModuleJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
@@ -648,6 +654,88 @@ public class LearningApi {
   }
 
   /**
+   * Get a specific Learning Module job status
+   * 
+   * @param moduleId The ID of the learning module (required)
+   * @param jobId The ID of the learning module job (required)
+   * @return LearningModuleJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleJobResponse getLearningModuleJob(String moduleId, String jobId) throws IOException, ApiException {
+    return  getLearningModuleJob(createGetLearningModuleJobRequest(moduleId, jobId));
+  }
+
+  /**
+   * Get a specific Learning Module job status
+   * 
+   * @param moduleId The ID of the learning module (required)
+   * @param jobId The ID of the learning module job (required)
+   * @return LearningModuleJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleJobResponse> getLearningModuleJobWithHttpInfo(String moduleId, String jobId) throws IOException {
+    return getLearningModuleJob(createGetLearningModuleJobRequest(moduleId, jobId).withHttpInfo());
+  }
+
+  private GetLearningModuleJobRequest createGetLearningModuleJobRequest(String moduleId, String jobId) {
+    return GetLearningModuleJobRequest.builder()
+            .withModuleId(moduleId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific Learning Module job status
+   * 
+   * @param request The request object
+   * @return LearningModuleJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleJobResponse getLearningModuleJob(GetLearningModuleJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningModuleJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModuleJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific Learning Module job status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleJobResponse> getLearningModuleJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningModuleJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleJobResponse> response = (ApiResponse<LearningModuleJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleJobResponse> response = (ApiResponse<LearningModuleJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a learning module rule
    * 
    * @param moduleId The ID of the learning module (required)
@@ -1082,6 +1170,162 @@ public class LearningApi {
   }
 
   /**
+   * Reassign Learning Assignment
+   * This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+   * @param assignmentId The Learning Assignment ID (required)
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment postLearningAssignmentReassign(String assignmentId) throws IOException, ApiException {
+    return  postLearningAssignmentReassign(createPostLearningAssignmentReassignRequest(assignmentId));
+  }
+
+  /**
+   * Reassign Learning Assignment
+   * This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+   * @param assignmentId The Learning Assignment ID (required)
+   * @return LearningAssignment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> postLearningAssignmentReassignWithHttpInfo(String assignmentId) throws IOException {
+    return postLearningAssignmentReassign(createPostLearningAssignmentReassignRequest(assignmentId).withHttpInfo());
+  }
+
+  private PostLearningAssignmentReassignRequest createPostLearningAssignmentReassignRequest(String assignmentId) {
+    return PostLearningAssignmentReassignRequest.builder()
+            .withAssignmentId(assignmentId)
+
+            .build();
+  }
+
+  /**
+   * Reassign Learning Assignment
+   * This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+   * @param request The request object
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment postLearningAssignmentReassign(PostLearningAssignmentReassignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Reassign Learning Assignment
+   * This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> postLearningAssignmentReassign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Reset Learning Assignment
+   * This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+   * @param assignmentId The Learning Assignment ID (required)
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment postLearningAssignmentReset(String assignmentId) throws IOException, ApiException {
+    return  postLearningAssignmentReset(createPostLearningAssignmentResetRequest(assignmentId));
+  }
+
+  /**
+   * Reset Learning Assignment
+   * This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+   * @param assignmentId The Learning Assignment ID (required)
+   * @return LearningAssignment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> postLearningAssignmentResetWithHttpInfo(String assignmentId) throws IOException {
+    return postLearningAssignmentReset(createPostLearningAssignmentResetRequest(assignmentId).withHttpInfo());
+  }
+
+  private PostLearningAssignmentResetRequest createPostLearningAssignmentResetRequest(String assignmentId) {
+    return PostLearningAssignmentResetRequest.builder()
+            .withAssignmentId(assignmentId)
+
+            .build();
+  }
+
+  /**
+   * Reset Learning Assignment
+   * This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+   * @param request The request object
+   * @return LearningAssignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignment postLearningAssignmentReset(PostLearningAssignmentResetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Reset Learning Assignment
+   * This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignment> postLearningAssignmentReset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create Learning Assignment
    * 
    * @param body The Learning Assignment to be created (optional)
@@ -1389,6 +1633,88 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningAssignmentBulkRemoveResponse> response = (ApiResponse<LearningAssignmentBulkRemoveResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Starts a specified operation on learning module
+   * This will initiate operation specified in the request body for a learning module
+   * @param moduleId The ID of the learning module (required)
+   * @param body The learning module job request (required)
+   * @return LearningModuleJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleJobResponse postLearningModuleJobs(String moduleId, LearningModuleJobRequest body) throws IOException, ApiException {
+    return  postLearningModuleJobs(createPostLearningModuleJobsRequest(moduleId, body));
+  }
+
+  /**
+   * Starts a specified operation on learning module
+   * This will initiate operation specified in the request body for a learning module
+   * @param moduleId The ID of the learning module (required)
+   * @param body The learning module job request (required)
+   * @return LearningModuleJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleJobResponse> postLearningModuleJobsWithHttpInfo(String moduleId, LearningModuleJobRequest body) throws IOException {
+    return postLearningModuleJobs(createPostLearningModuleJobsRequest(moduleId, body).withHttpInfo());
+  }
+
+  private PostLearningModuleJobsRequest createPostLearningModuleJobsRequest(String moduleId, LearningModuleJobRequest body) {
+    return PostLearningModuleJobsRequest.builder()
+            .withModuleId(moduleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Starts a specified operation on learning module
+   * This will initiate operation specified in the request body for a learning module
+   * @param request The request object
+   * @return LearningModuleJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModuleJobResponse postLearningModuleJobs(PostLearningModuleJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningModuleJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModuleJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Starts a specified operation on learning module
+   * This will initiate operation specified in the request body for a learning module
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModuleJobResponse> postLearningModuleJobs(ApiRequest<LearningModuleJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningModuleJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleJobResponse> response = (ApiResponse<LearningModuleJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModuleJobResponse> response = (ApiResponse<LearningModuleJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

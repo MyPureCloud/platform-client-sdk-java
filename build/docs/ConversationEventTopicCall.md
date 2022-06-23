@@ -9,7 +9,8 @@ title: ConversationEventTopicCall
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
 | **recording** | <!----><!---->**Boolean**<!----> | True if this call is being recorded. |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | State of recording on this call. |  [optional] |
 | **muted** | <!----><!---->**Boolean**<!----> | True if this call is muted so that remote participants can't hear any audio from this end. |  [optional] |
@@ -41,6 +42,27 @@ title: ConversationEventTopicCall
 <a name="StateEnum"></a>
 
 ## Enum: StateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALERTING | &quot;alerting&quot; | 
+| DIALING | &quot;dialing&quot; | 
+| CONTACTING | &quot;contacting&quot; | 
+| OFFERING | &quot;offering&quot; | 
+| CONNECTED | &quot;connected&quot; | 
+| DISCONNECTED | &quot;disconnected&quot; | 
+| TERMINATED | &quot;terminated&quot; | 
+| UPLOADING | &quot;uploading&quot; | 
+| CONVERTING | &quot;converting&quot; | 
+| TRANSMITTING | &quot;transmitting&quot; | 
+| NONE | &quot;none&quot; | 
+{: class="table table-striped"}
+
+
+<a name="InitialStateEnum"></a>
+
+## Enum: InitialStateEnum
 
 | Name | Value |
 | ---- | ----- |

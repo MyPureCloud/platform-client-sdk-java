@@ -42,7 +42,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     }
   }
   /**
-   * The connection state of this communication.
+   * Gets or Sets state
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -82,6 +82,60 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets initialState
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private QueueConversationSocialExpressionEventTopicAddress self = null;
   private String id = null;
   private String context = null;
@@ -163,20 +217,36 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
 
   
   /**
-   * The connection state of this communication.
    **/
   public QueueConversationSocialExpressionEventTopicVideo state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicVideo initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -497,6 +567,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     QueueConversationSocialExpressionEventTopicVideo queueConversationSocialExpressionEventTopicVideo = (QueueConversationSocialExpressionEventTopicVideo) o;
 
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicVideo.state) &&
+            Objects.equals(this.initialState, queueConversationSocialExpressionEventTopicVideo.initialState) &&
             Objects.equals(this.self, queueConversationSocialExpressionEventTopicVideo.self) &&
             Objects.equals(this.id, queueConversationSocialExpressionEventTopicVideo.id) &&
             Objects.equals(this.context, queueConversationSocialExpressionEventTopicVideo.context) &&
@@ -518,7 +589,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -527,6 +598,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     sb.append("class QueueConversationSocialExpressionEventTopicVideo {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");

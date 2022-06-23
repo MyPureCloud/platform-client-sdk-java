@@ -13,15 +13,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningAssignments**](LearningApi.html#getLearningAssignments) | List of Learning module Assignments |
 | [**getLearningAssignmentsMe**](LearningApi.html#getLearningAssignmentsMe) | List of Learning Assignments assigned to current user |
 | [**getLearningModule**](LearningApi.html#getLearningModule) | Get a learning module |
+| [**getLearningModuleJob**](LearningApi.html#getLearningModuleJob) | Get a specific Learning Module job status |
 | [**getLearningModuleRule**](LearningApi.html#getLearningModuleRule) | Get a learning module rule |
 | [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | Get specific version of a published module |
 | [**getLearningModules**](LearningApi.html#getLearningModules) | Get all learning modules of an organization |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
 | [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
+| [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | Reassign Learning Assignment |
+| [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | Reset Learning Assignment |
 | [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | Create Learning Assignment |
 | [**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | Retrieve aggregated assignment data |
 | [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | Add multiple learning assignments |
 | [**postLearningAssignmentsBulkremove**](LearningApi.html#postLearningAssignmentsBulkremove) | Remove multiple Learning Assignments |
+| [**postLearningModuleJobs**](LearningApi.html#postLearningModuleJobs) | Starts a specified operation on learning module |
 | [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | Publish a Learning module |
 | [**postLearningModules**](LearningApi.html#postLearningModules) | Create a new learning module |
 | [**postLearningRulesQuery**](LearningApi.html#postLearningRulesQuery) | Get users for learning module rule |
@@ -456,6 +460,69 @@ try {
 
 [**LearningModule**](LearningModule.html)
 
+<a name="getLearningModuleJob"></a>
+
+# **getLearningModuleJob**
+
+
+
+> [LearningModuleJobResponse](LearningModuleJobResponse.html) getLearningModuleJob(moduleId, jobId)
+
+Get a specific Learning Module job status
+
+Wraps GET /api/v2/learning/modules/{moduleId}/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* learning:module:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String moduleId = "moduleId_example"; // String | The ID of the learning module
+String jobId = "jobId_example"; // String | The ID of the learning module job
+try {
+    LearningModuleJobResponse result = apiInstance.getLearningModuleJob(moduleId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#getLearningModuleJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **moduleId** | **String**| The ID of the learning module | 
+| **jobId** | **String**| The ID of the learning module job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+
 <a name="getLearningModuleRule"></a>
 
 # **getLearningModuleRule**
@@ -648,7 +715,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
-| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name 
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, createddate, percentpassed, averagescore 
 | **searchTerm** | **String**| Search Term (searchable by name) | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
 | **isPublished** | **String**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
@@ -783,6 +850,132 @@ try {
 ### Return type
 
 [**AssessmentScoringSet**](AssessmentScoringSet.html)
+
+<a name="postLearningAssignmentReassign"></a>
+
+# **postLearningAssignmentReassign**
+
+
+
+> [LearningAssignment](LearningAssignment.html) postLearningAssignmentReassign(assignmentId)
+
+Reassign Learning Assignment
+
+This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
+
+Wraps POST /api/v2/learning/assignments/{assignmentId}/reassign  
+
+Requires ANY permissions: 
+
+* learning:assignment:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+try {
+    LearningAssignment result = apiInstance.postLearningAssignmentReassign(assignmentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningAssignmentReassign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assignmentId** | **String**| The Learning Assignment ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
+
+<a name="postLearningAssignmentReset"></a>
+
+# **postLearningAssignmentReset**
+
+
+
+> [LearningAssignment](LearningAssignment.html) postLearningAssignmentReset(assignmentId)
+
+Reset Learning Assignment
+
+This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
+
+Wraps POST /api/v2/learning/assignments/{assignmentId}/reset  
+
+Requires ANY permissions: 
+
+* learning:assignment:reset
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+try {
+    LearningAssignment result = apiInstance.postLearningAssignmentReset(assignmentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningAssignmentReset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assignmentId** | **String**| The Learning Assignment ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
 
 <a name="postLearningAssignments"></a>
 
@@ -1027,6 +1220,71 @@ try {
 ### Return type
 
 [**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html)
+
+<a name="postLearningModuleJobs"></a>
+
+# **postLearningModuleJobs**
+
+
+
+> [LearningModuleJobResponse](LearningModuleJobResponse.html) postLearningModuleJobs(moduleId, body)
+
+Starts a specified operation on learning module
+
+This will initiate operation specified in the request body for a learning module
+
+Wraps POST /api/v2/learning/modules/{moduleId}/jobs  
+
+Requires ANY permissions: 
+
+* learning:module:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+String moduleId = "moduleId_example"; // String | The ID of the learning module
+LearningModuleJobRequest body = new LearningModuleJobRequest(); // LearningModuleJobRequest | The learning module job request
+try {
+    LearningModuleJobResponse result = apiInstance.postLearningModuleJobs(moduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningModuleJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **moduleId** | **String**| The ID of the learning module | 
+| **body** | [**LearningModuleJobRequest**](LearningModuleJobRequest.html)| The learning module job request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
 
 <a name="postLearningModulePublish"></a>
 

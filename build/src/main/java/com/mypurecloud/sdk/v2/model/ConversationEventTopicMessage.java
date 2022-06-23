@@ -46,7 +46,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     }
   }
   /**
-   * The connection state of this communication.
+   * Gets or Sets state
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -81,6 +81,55 @@ public class ConversationEventTopicMessage  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets initialState
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private Boolean held = null;
   private ConversationEventTopicErrorDetails errorInfo = null;
   private String provider = null;
@@ -242,20 +291,36 @@ public class ConversationEventTopicMessage  implements Serializable {
 
 
   /**
-   * The connection state of this communication.
    **/
   public ConversationEventTopicMessage state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   **/
+  public ConversationEventTopicMessage initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -649,6 +714,7 @@ public class ConversationEventTopicMessage  implements Serializable {
 
     return Objects.equals(this.id, conversationEventTopicMessage.id) &&
             Objects.equals(this.state, conversationEventTopicMessage.state) &&
+            Objects.equals(this.initialState, conversationEventTopicMessage.initialState) &&
             Objects.equals(this.held, conversationEventTopicMessage.held) &&
             Objects.equals(this.errorInfo, conversationEventTopicMessage.errorInfo) &&
             Objects.equals(this.provider, conversationEventTopicMessage.provider) &&
@@ -674,7 +740,7 @@ public class ConversationEventTopicMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, initialState, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -684,6 +750,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

@@ -15,6 +15,7 @@ title: QueueConversationVideoEventTopicMessageDetails
 | **media** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageMedia&gt;**](QueueConversationVideoEventTopicMessageMedia.html)<!----> | The media (images, files, etc) associated with this message, if any |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationVideoEventTopicErrorDetails**](QueueConversationVideoEventTopicErrorDetails.html)<!----> | Detailed information about an error response. |  [optional] |
 | **stickers** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageSticker&gt;**](QueueConversationVideoEventTopicMessageSticker.html)<!----> | A list of stickers included in the message |  [optional] |
+| **messageMetadata** | <!----><!---->[**QueueConversationVideoEventTopicMessageMetadata**](QueueConversationVideoEventTopicMessageMetadata.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -18,7 +18,9 @@ import com.mypurecloud.sdk.v2.model.WebMessagingEvent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -179,6 +181,7 @@ public class WebMessagingMessage  implements Serializable {
     }
   }
   private OriginatingEntityEnum originatingEntity = null;
+  private Map<String, String> metadata = null;
 
   
   /**
@@ -325,6 +328,24 @@ public class WebMessagingMessage  implements Serializable {
   }
 
 
+  /**
+   * Additional metadata about this message.
+   **/
+  public WebMessagingMessage metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional metadata about this message.")
+  @JsonProperty("metadata")
+  public Map<String, String> getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -342,12 +363,13 @@ public class WebMessagingMessage  implements Serializable {
             Objects.equals(this.content, webMessagingMessage.content) &&
             Objects.equals(this.events, webMessagingMessage.events) &&
             Objects.equals(this.direction, webMessagingMessage.direction) &&
-            Objects.equals(this.originatingEntity, webMessagingMessage.originatingEntity);
+            Objects.equals(this.originatingEntity, webMessagingMessage.originatingEntity) &&
+            Objects.equals(this.metadata, webMessagingMessage.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, events, direction, originatingEntity);
+    return Objects.hash(id, channel, type, text, content, events, direction, originatingEntity, metadata);
   }
 
   @Override
@@ -363,6 +385,7 @@ public class WebMessagingMessage  implements Serializable {
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    originatingEntity: ").append(toIndentedString(originatingEntity)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

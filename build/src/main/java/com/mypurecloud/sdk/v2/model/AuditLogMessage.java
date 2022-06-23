@@ -272,6 +272,7 @@ public class AuditLogMessage  implements Serializable {
     ACTIONMAP("ActionMap"),
     ACTIONTEMPLATE("ActionTemplate"),
     ACTIVITYCODE("ActivityCode"),
+    ADHERENCEEXPLANATION("AdherenceExplanation"),
     AGENTROUTINGINFO("AgentRoutingInfo"),
     ANALYTICSREPORTINGSETTINGS("AnalyticsReportingSettings"),
     ANNOTATION("Annotation"),

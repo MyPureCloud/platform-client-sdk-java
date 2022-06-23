@@ -86,6 +86,50 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingPredictorsKeyperformanceindicatorsRequest {
 
+	private String kpiGroup;
+	public String getKpiGroup() {
+		return this.kpiGroup;
+	}
+
+	public void setKpiGroup(String kpiGroup) {
+		this.kpiGroup = kpiGroup;
+	}
+
+	public GetRoutingPredictorsKeyperformanceindicatorsRequest withKpiGroup(String kpiGroup) {
+	    this.setKpiGroup(kpiGroup);
+	    return this;
+	} 
+
+	public enum kpiGroupValues { 
+		STANDARD("Standard"),
+		CUSTOM("Custom");
+
+		private String value;
+
+		kpiGroupValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static kpiGroupValues fromString(String key) {
+			if (key == null) return null;
+
+			for (kpiGroupValues value : kpiGroupValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return kpiGroupValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,6 +153,9 @@ public class GetRoutingPredictorsKeyperformanceindicatorsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/predictors/keyperformanceindicators")
+
+                .withQueryParameters("kpiGroup", "", kpiGroup)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -129,6 +176,20 @@ public class GetRoutingPredictorsKeyperformanceindicatorsRequest {
 			request = new GetRoutingPredictorsKeyperformanceindicatorsRequest();
 		}
 
+
+		public Builder withKpiGroup(String kpiGroup) {
+			request.setKpiGroup(kpiGroup);
+			return this;
+		}
+
+
+
+		
+		public Builder withKpiGroup(kpiGroupValues kpiGroup) {
+		    request.setKpiGroup(kpiGroup.toString());
+
+		    return this;
+		}
 
 
 

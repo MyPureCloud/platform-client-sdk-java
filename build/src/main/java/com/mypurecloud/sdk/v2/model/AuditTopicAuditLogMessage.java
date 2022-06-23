@@ -170,7 +170,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ASSIGN("Assign"),
     UNASSIGN("Unassign"),
     RESET("Reset"),
-    REASSIGN("Reassign");
+    REASSIGN("Reassign"),
+    ARCHIVE("Archive"),
+    UNARCHIVE("Unarchive");
 
     private String value;
 

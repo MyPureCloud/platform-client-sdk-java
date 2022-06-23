@@ -75,17 +75,17 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 
 public class GetUserRolesRequest {
 
-	private String userId;
-	public String getUserId() {
-		return this.userId;
+	private String subjectId;
+	public String getSubjectId() {
+		return this.subjectId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setSubjectId(String subjectId) {
+		this.subjectId = subjectId;
 	}
 
-	public GetUserRolesRequest withUserId(String userId) {
-	    this.setUserId(userId);
+	public GetUserRolesRequest withSubjectId(String subjectId) {
+	    this.setSubjectId(subjectId);
 	    return this;
 	} 
 
@@ -110,14 +110,14 @@ public class GetUserRolesRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'userId' is set
-        if (this.userId == null) {
-            throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetUserRolesRequest.");
+        // verify the required parameter 'subjectId' is set
+        if (this.subjectId == null) {
+            throw new IllegalStateException("Missing the required parameter 'subjectId' when building request for GetUserRolesRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/users/{userId}/roles")
-                .withPathParameter("userId", userId)
+        return ApiRequestBuilder.create("GET", "/api/v2/users/{subjectId}/roles")
+                .withPathParameter("subjectId", subjectId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -131,9 +131,9 @@ public class GetUserRolesRequest {
 	}
 
 
-	public static Builder builder(String userId) {
+	public static Builder builder(String subjectId) {
 	    return new Builder()
-	            .withRequiredParams(userId);
+	            .withRequiredParams(subjectId);
 	}
 
 
@@ -145,15 +145,15 @@ public class GetUserRolesRequest {
 		}
 
 
-		public Builder withUserId(String userId) {
-			request.setUserId(userId);
+		public Builder withSubjectId(String subjectId) {
+			request.setSubjectId(subjectId);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String userId) {
-			request.setUserId(userId);
+		public Builder withRequiredParams(String subjectId) {
+			request.setSubjectId(subjectId);
 
 			return this;
 		}
@@ -161,9 +161,9 @@ public class GetUserRolesRequest {
 
 		public GetUserRolesRequest build() {
             
-            // verify the required parameter 'userId' is set
-            if (request.userId == null) {
-                throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetUserRolesRequest.");
+            // verify the required parameter 'subjectId' is set
+            if (request.subjectId == null) {
+                throw new IllegalStateException("Missing the required parameter 'subjectId' when building request for GetUserRolesRequest.");
             }
             
 			return request;

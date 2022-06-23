@@ -26,6 +26,7 @@ title: AuditQueryEntity
 | ACTIONMAP | &quot;ActionMap&quot; | 
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; | 
 | ACTIVITYCODE | &quot;ActivityCode&quot; | 
+| ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
 | AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; | 
 | ANALYTICSREPORTINGSETTINGS | &quot;AnalyticsReportingSettings&quot; | 
 | ANNOTATION | &quot;Annotation&quot; | 

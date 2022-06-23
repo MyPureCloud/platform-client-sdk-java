@@ -109,6 +109,8 @@ title: AuditTopicAuditLogMessage
 | UNASSIGN | &quot;Unassign&quot; | 
 | RESET | &quot;Reset&quot; | 
 | REASSIGN | &quot;Reassign&quot; | 
+| ARCHIVE | &quot;Archive&quot; | 
+| UNARCHIVE | &quot;Unarchive&quot; | 
 {: class="table table-striped"}
 
 

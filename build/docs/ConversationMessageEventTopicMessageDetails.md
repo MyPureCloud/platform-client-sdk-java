@@ -15,6 +15,7 @@ title: ConversationMessageEventTopicMessageDetails
 | **media** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageMedia&gt;**](ConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
 | **stickers** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**ConversationMessageEventTopicErrorDetails**](ConversationMessageEventTopicErrorDetails.html)<!----> |  |  [optional] |
+| **messageMetadata** | <!----><!---->[**ConversationMessageEventTopicMessageMetadata**](ConversationMessageEventTopicMessageMetadata.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

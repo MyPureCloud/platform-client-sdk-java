@@ -315,11 +315,13 @@ This endpoint does not require any parameters.
 
 # **getGamificationMetric**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [Metric](Metric.html) getGamificationMetric(metricId, workday, performanceProfileId)
 
 Gamified metric by id
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 
 Wraps GET /api/v2/gamification/metrics/{metricId}  
 
@@ -502,11 +504,13 @@ This endpoint does not require any parameters.
 
 # **getGamificationMetrics**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [GetMetricsResponse](GetMetricsResponse.html) getGamificationMetrics(performanceProfileId, workday)
 
 All gamified metrics for a given profile
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 
 Wraps GET /api/v2/gamification/metrics  
 
@@ -2344,11 +2348,13 @@ This endpoint does not require any parameters.
 
 # **postGamificationMetrics**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [Metric](Metric.html) postGamificationMetrics(body)
 
 Creates a gamified metric with a given metric definition and metric objective
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 
 Wraps POST /api/v2/gamification/metrics  
 
@@ -2844,11 +2850,13 @@ try {
 
 # **putGamificationMetric**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [Metric](Metric.html) putGamificationMetric(metricId, body, performanceProfileId)
 
 Updates a metric
+
+This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 
 Wraps PUT /api/v2/gamification/metrics/{metricId}  
 

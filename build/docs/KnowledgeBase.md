@@ -39,6 +39,7 @@ title: KnowledgeBase
 | PT_BR | &quot;pt-BR&quot; | 
 | NL_NL | &quot;nl-NL&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
+| FR_CA | &quot;fr-CA&quot; | 
 {: class="table table-striped"}
 
 

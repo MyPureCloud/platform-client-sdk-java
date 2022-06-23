@@ -23,6 +23,7 @@ public class RecordingSettings  implements Serializable {
   
   private Integer maxSimultaneousStreams = null;
   private Integer maxConfigurableScreenRecordingStreams = null;
+  private Boolean regionalRecordingStorageEnabled = null;
 
   
   /**
@@ -61,6 +62,24 @@ public class RecordingSettings  implements Serializable {
   }
 
 
+  /**
+   * Store call recordings in the region where they are intended to be recorded, otherwise in the organization's home region
+   **/
+  public RecordingSettings regionalRecordingStorageEnabled(Boolean regionalRecordingStorageEnabled) {
+    this.regionalRecordingStorageEnabled = regionalRecordingStorageEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Store call recordings in the region where they are intended to be recorded, otherwise in the organization's home region")
+  @JsonProperty("regionalRecordingStorageEnabled")
+  public Boolean getRegionalRecordingStorageEnabled() {
+    return regionalRecordingStorageEnabled;
+  }
+  public void setRegionalRecordingStorageEnabled(Boolean regionalRecordingStorageEnabled) {
+    this.regionalRecordingStorageEnabled = regionalRecordingStorageEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,12 +91,13 @@ public class RecordingSettings  implements Serializable {
     RecordingSettings recordingSettings = (RecordingSettings) o;
 
     return Objects.equals(this.maxSimultaneousStreams, recordingSettings.maxSimultaneousStreams) &&
-            Objects.equals(this.maxConfigurableScreenRecordingStreams, recordingSettings.maxConfigurableScreenRecordingStreams);
+            Objects.equals(this.maxConfigurableScreenRecordingStreams, recordingSettings.maxConfigurableScreenRecordingStreams) &&
+            Objects.equals(this.regionalRecordingStorageEnabled, recordingSettings.regionalRecordingStorageEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams);
+    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled);
   }
 
   @Override
@@ -87,6 +107,7 @@ public class RecordingSettings  implements Serializable {
     
     sb.append("    maxSimultaneousStreams: ").append(toIndentedString(maxSimultaneousStreams)).append("\n");
     sb.append("    maxConfigurableScreenRecordingStreams: ").append(toIndentedString(maxConfigurableScreenRecordingStreams)).append("\n");
+    sb.append("    regionalRecordingStorageEnabled: ").append(toIndentedString(regionalRecordingStorageEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

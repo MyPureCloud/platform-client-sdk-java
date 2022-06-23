@@ -42,7 +42,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     }
   }
   /**
-   * The connection state of this communication.
+   * Gets or Sets state
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -82,6 +82,60 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets initialState
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
     public DisconnectTypeEnumDeserializer() {
@@ -161,20 +215,36 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
-   * The connection state of this communication.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicCobrowse initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -495,6 +565,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     QueueConversationSocialExpressionEventTopicCobrowse queueConversationSocialExpressionEventTopicCobrowse = (QueueConversationSocialExpressionEventTopicCobrowse) o;
 
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicCobrowse.state) &&
+            Objects.equals(this.initialState, queueConversationSocialExpressionEventTopicCobrowse.initialState) &&
             Objects.equals(this.disconnectType, queueConversationSocialExpressionEventTopicCobrowse.disconnectType) &&
             Objects.equals(this.id, queueConversationSocialExpressionEventTopicCobrowse.id) &&
             Objects.equals(this.self, queueConversationSocialExpressionEventTopicCobrowse.self) &&
@@ -516,7 +587,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -525,6 +596,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     sb.append("class QueueConversationSocialExpressionEventTopicCobrowse {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");

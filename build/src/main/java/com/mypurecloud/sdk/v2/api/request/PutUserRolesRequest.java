@@ -75,17 +75,17 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 
 public class PutUserRolesRequest {
 
-	private String userId;
-	public String getUserId() {
-		return this.userId;
+	private String subjectId;
+	public String getSubjectId() {
+		return this.subjectId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setSubjectId(String subjectId) {
+		this.subjectId = subjectId;
 	}
 
-	public PutUserRolesRequest withUserId(String userId) {
-	    this.setUserId(userId);
+	public PutUserRolesRequest withSubjectId(String subjectId) {
+	    this.setSubjectId(subjectId);
 	    return this;
 	} 
 
@@ -124,9 +124,9 @@ public class PutUserRolesRequest {
 
     public ApiRequest<List<String>> withHttpInfo() {
         
-        // verify the required parameter 'userId' is set
-        if (this.userId == null) {
-            throw new IllegalStateException("Missing the required parameter 'userId' when building request for PutUserRolesRequest.");
+        // verify the required parameter 'subjectId' is set
+        if (this.subjectId == null) {
+            throw new IllegalStateException("Missing the required parameter 'subjectId' when building request for PutUserRolesRequest.");
         }
         
         // verify the required parameter 'body' is set
@@ -135,8 +135,8 @@ public class PutUserRolesRequest {
         }
         
 
-        return ApiRequestBuilder.create("PUT", "/api/v2/users/{userId}/roles")
-                .withPathParameter("userId", userId)
+        return ApiRequestBuilder.create("PUT", "/api/v2/users/{subjectId}/roles")
+                .withPathParameter("subjectId", subjectId)
         
                 .withBody(body)
 
@@ -152,9 +152,9 @@ public class PutUserRolesRequest {
 	}
 
 
-	public static Builder builder(String userId, List<String> body) {
+	public static Builder builder(String subjectId, List<String> body) {
 	    return new Builder()
-	            .withRequiredParams(userId, body);
+	            .withRequiredParams(subjectId, body);
 	}
 
 
@@ -166,8 +166,8 @@ public class PutUserRolesRequest {
 		}
 
 
-		public Builder withUserId(String userId) {
-			request.setUserId(userId);
+		public Builder withSubjectId(String subjectId) {
+			request.setSubjectId(subjectId);
 			return this;
 		}
 
@@ -178,8 +178,8 @@ public class PutUserRolesRequest {
 
 
 
-		public Builder withRequiredParams(String userId, List<String> body) {
-			request.setUserId(userId);
+		public Builder withRequiredParams(String subjectId, List<String> body) {
+			request.setSubjectId(subjectId);
 			request.setBody(body);
 
 			return this;
@@ -188,9 +188,9 @@ public class PutUserRolesRequest {
 
 		public PutUserRolesRequest build() {
             
-            // verify the required parameter 'userId' is set
-            if (request.userId == null) {
-                throw new IllegalStateException("Missing the required parameter 'userId' when building request for PutUserRolesRequest.");
+            // verify the required parameter 'subjectId' is set
+            if (request.subjectId == null) {
+                throw new IllegalStateException("Missing the required parameter 'subjectId' when building request for PutUserRolesRequest.");
             }
             
             // verify the required parameter 'body' is set

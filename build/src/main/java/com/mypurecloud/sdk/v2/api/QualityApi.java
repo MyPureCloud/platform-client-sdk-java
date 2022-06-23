@@ -2397,7 +2397,7 @@ public class QualityApi {
   /**
    * Retrieve a list of the latest form versions by context ids
    * 
-   * @param contextId A comma-delimited list of valid survey form context ids (required)
+   * @param contextId A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. (required)
    * @param published If true, the latest published version will be included. If false, only the unpublished version will be included. (optional, default to true)
    * @return List<SurveyForm>
    * @throws ApiException if the request fails on the server
@@ -2410,7 +2410,7 @@ public class QualityApi {
   /**
    * Retrieve a list of the latest form versions by context ids
    * 
-   * @param contextId A comma-delimited list of valid survey form context ids (required)
+   * @param contextId A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. (required)
    * @param published If true, the latest published version will be included. If false, only the unpublished version will be included. (optional, default to true)
    * @return List<SurveyForm>
    * @throws IOException if the request fails to be processed

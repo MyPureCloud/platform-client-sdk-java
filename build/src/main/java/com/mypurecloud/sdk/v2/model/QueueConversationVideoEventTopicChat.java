@@ -40,7 +40,7 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
     }
   }
   /**
-   * The connection state of this communication.
+   * Gets or Sets state
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -80,6 +80,60 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets initialState
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private String id = null;
   private String provider = null;
   private String scriptId = null;
@@ -159,20 +213,36 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
 
   
   /**
-   * The connection state of this communication.
    **/
   public QueueConversationVideoEventTopicChat state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   **/
+  public QueueConversationVideoEventTopicChat initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -456,6 +526,7 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
     QueueConversationVideoEventTopicChat queueConversationVideoEventTopicChat = (QueueConversationVideoEventTopicChat) o;
 
     return Objects.equals(this.state, queueConversationVideoEventTopicChat.state) &&
+            Objects.equals(this.initialState, queueConversationVideoEventTopicChat.initialState) &&
             Objects.equals(this.id, queueConversationVideoEventTopicChat.id) &&
             Objects.equals(this.provider, queueConversationVideoEventTopicChat.provider) &&
             Objects.equals(this.scriptId, queueConversationVideoEventTopicChat.scriptId) &&
@@ -475,7 +546,7 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -484,6 +555,7 @@ public class QueueConversationVideoEventTopicChat  implements Serializable {
     sb.append("class QueueConversationVideoEventTopicChat {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");

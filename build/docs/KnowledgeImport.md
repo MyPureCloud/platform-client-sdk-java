@@ -52,6 +52,8 @@ title: KnowledgeImport
 | COMPLETED | &quot;Completed&quot; | 
 | PARTIALCOMPLETED | &quot;PartialCompleted&quot; | 
 | FAILED | &quot;Failed&quot; | 
+| ABORTREQUESTED | &quot;AbortRequested&quot; | 
+| ABORTED | &quot;Aborted&quot; | 
 {: class="table table-striped"}
 
 
@@ -72,6 +74,7 @@ title: KnowledgeImport
 | PT_BR | &quot;pt-BR&quot; | 
 | NL_NL | &quot;nl-NL&quot; | 
 | IT_IT | &quot;it-IT&quot; | 
+| FR_CA | &quot;fr-CA&quot; | 
 {: class="table table-striped"}
 
 

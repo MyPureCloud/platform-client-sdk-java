@@ -105,7 +105,9 @@ public class KnowledgeImport  implements Serializable {
     INPROGRESS("InProgress"),
     COMPLETED("Completed"),
     PARTIALCOMPLETED("PartialCompleted"),
-    FAILED("Failed");
+    FAILED("Failed"),
+    ABORTREQUESTED("AbortRequested"),
+    ABORTED("Aborted");
 
     private String value;
 
@@ -163,7 +165,8 @@ public class KnowledgeImport  implements Serializable {
     FR_FR("fr-FR"),
     PT_BR("pt-BR"),
     NL_NL("nl-NL"),
-    IT_IT("it-IT");
+    IT_IT("it-IT"),
+    FR_CA("fr-CA");
 
     private String value;
 

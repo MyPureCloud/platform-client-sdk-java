@@ -1798,7 +1798,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
-List<String> contextId = Arrays.asList(null); // List<String> | A comma-delimited list of valid survey form context ids
+List<String> contextId = Arrays.asList(null); // List<String> | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 Boolean published = true; // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
 try {
     List<SurveyForm> result = apiInstance.getQualityFormsSurveysBulkContexts(contextId, published);
@@ -1814,7 +1814,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contextId** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form context ids | 
+| **contextId** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. | 
 | **published** | **Boolean**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] 
 {: class="table-striped"}
 

@@ -94,7 +94,8 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentRequest {
 		FR_FR("fr-FR"),
 		PT_BR("pt-BR"),
 		NL_NL("nl-NL"),
-		IT_IT("it-IT");
+		IT_IT("it-IT"),
+		FR_CA("fr-CA");
 
 		private String value;
 

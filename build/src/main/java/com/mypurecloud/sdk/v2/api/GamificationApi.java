@@ -446,7 +446,7 @@ public class GamificationApi {
 
   /**
    * Gamified metric by id
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param metricId metric Id (required)
    * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
@@ -460,7 +460,7 @@ public class GamificationApi {
 
   /**
    * Gamified metric by id
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param metricId metric Id (required)
    * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
@@ -484,7 +484,7 @@ public class GamificationApi {
 
   /**
    * Gamified metric by id
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request The request object
    * @return Metric
    * @throws ApiException if the request fails on the server
@@ -503,7 +503,7 @@ public class GamificationApi {
 
   /**
    * Gamified metric by id
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -684,7 +684,7 @@ public class GamificationApi {
 
   /**
    * All gamified metrics for a given profile
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return GetMetricsResponse
@@ -697,7 +697,7 @@ public class GamificationApi {
 
   /**
    * All gamified metrics for a given profile
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return GetMetricsResponse
@@ -718,7 +718,7 @@ public class GamificationApi {
 
   /**
    * All gamified metrics for a given profile
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request The request object
    * @return GetMetricsResponse
    * @throws ApiException if the request fails on the server
@@ -737,7 +737,7 @@ public class GamificationApi {
 
   /**
    * All gamified metrics for a given profile
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3078,7 +3078,7 @@ public class GamificationApi {
 
   /**
    * Creates a gamified metric with a given metric definition and metric objective
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param body Metric (required)
    * @return Metric
    * @throws ApiException if the request fails on the server
@@ -3090,7 +3090,7 @@ public class GamificationApi {
 
   /**
    * Creates a gamified metric with a given metric definition and metric objective
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param body Metric (required)
    * @return Metric
    * @throws IOException if the request fails to be processed
@@ -3108,7 +3108,7 @@ public class GamificationApi {
 
   /**
    * Creates a gamified metric with a given metric definition and metric objective
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request The request object
    * @return Metric
    * @throws ApiException if the request fails on the server
@@ -3127,7 +3127,7 @@ public class GamificationApi {
 
   /**
    * Creates a gamified metric with a given metric definition and metric objective
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3726,7 +3726,7 @@ public class GamificationApi {
 
   /**
    * Updates a metric
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param metricId metric Id (required)
    * @param body Metric (required)
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
@@ -3740,7 +3740,7 @@ public class GamificationApi {
 
   /**
    * Updates a metric
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param metricId metric Id (required)
    * @param body Metric (required)
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
@@ -3764,7 +3764,7 @@ public class GamificationApi {
 
   /**
    * Updates a metric
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request The request object
    * @return Metric
    * @throws ApiException if the request fails on the server
@@ -3783,7 +3783,7 @@ public class GamificationApi {
 
   /**
    * Updates a metric
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

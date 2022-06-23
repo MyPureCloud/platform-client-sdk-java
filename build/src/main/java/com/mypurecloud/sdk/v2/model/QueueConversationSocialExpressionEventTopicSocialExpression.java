@@ -39,7 +39,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     }
   }
   /**
-   * The connection state of this communication.
+   * Gets or Sets state
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
@@ -79,6 +79,60 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     }
   }
   private StateEnum state = null;
+
+  private static class InitialStateEnumDeserializer extends StdDeserializer<InitialStateEnum> {
+    public InitialStateEnumDeserializer() {
+      super(InitialStateEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets initialState
+   */
+ @JsonDeserialize(using = InitialStateEnumDeserializer.class)
+  public enum InitialStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
+
+    private String value;
+
+    InitialStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialStateEnum value : InitialStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialStateEnum initialState = null;
   private String id = null;
   private String socialMediaId = null;
   private String socialMediaHub = null;
@@ -160,20 +214,36 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
 
   
   /**
-   * The connection state of this communication.
    **/
   public QueueConversationSocialExpressionEventTopicSocialExpression state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicSocialExpression initialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("initialState")
+  public InitialStateEnum getInitialState() {
+    return initialState;
+  }
+  public void setInitialState(InitialStateEnum initialState) {
+    this.initialState = initialState;
   }
 
 
@@ -494,6 +564,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     QueueConversationSocialExpressionEventTopicSocialExpression queueConversationSocialExpressionEventTopicSocialExpression = (QueueConversationSocialExpressionEventTopicSocialExpression) o;
 
     return Objects.equals(this.state, queueConversationSocialExpressionEventTopicSocialExpression.state) &&
+            Objects.equals(this.initialState, queueConversationSocialExpressionEventTopicSocialExpression.initialState) &&
             Objects.equals(this.id, queueConversationSocialExpressionEventTopicSocialExpression.id) &&
             Objects.equals(this.socialMediaId, queueConversationSocialExpressionEventTopicSocialExpression.socialMediaId) &&
             Objects.equals(this.socialMediaHub, queueConversationSocialExpressionEventTopicSocialExpression.socialMediaHub) &&
@@ -515,7 +586,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, initialState, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -524,6 +595,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     sb.append("class QueueConversationSocialExpressionEventTopicSocialExpression {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    initialState: ").append(toIndentedString(initialState)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    socialMediaId: ").append(toIndentedString(socialMediaId)).append("\n");
     sb.append("    socialMediaHub: ").append(toIndentedString(socialMediaHub)).append("\n");

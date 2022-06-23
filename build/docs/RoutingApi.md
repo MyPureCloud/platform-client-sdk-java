@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | Get recipients |
 | [**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | Retrieve a single predictor. |
 | [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | Retrieve all predictors. |
-| [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators available for the predictors. |
+| [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
 | [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
 | [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
 | [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | Get list of comparison periods |
@@ -2036,9 +2036,9 @@ try {
 
 
 
-> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators()
+> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators(kpiGroup)
 
-Get a list of Key Performance Indicators available for the predictors.
+Get a list of Key Performance Indicators
 
 Wraps GET /api/v2/routing/predictors/keyperformanceindicators  
 
@@ -2068,8 +2068,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
+String kpiGroup = "kpiGroup_example"; // String | The Group of Key Performance Indicators to return
 try {
-    List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators();
+    List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicators");
@@ -2079,8 +2080,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **kpiGroup** | **String**| The Group of Key Performance Indicators to return | [optional]<br />**Values**: Standard, Custom 
+{: class="table-striped"}
 
 
 ### Return type

@@ -15,6 +15,7 @@ title: QueueConversationMessageEventTopicMessageDetails
 | **media** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageMedia&gt;**](QueueConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
 | **stickers** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationMessageEventTopicErrorDetails**](QueueConversationMessageEventTopicErrorDetails.html)<!----> |  |  [optional] |
+| **messageMetadata** | <!----><!---->[**QueueConversationMessageEventTopicMessageMetadata**](QueueConversationMessageEventTopicMessageMetadata.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

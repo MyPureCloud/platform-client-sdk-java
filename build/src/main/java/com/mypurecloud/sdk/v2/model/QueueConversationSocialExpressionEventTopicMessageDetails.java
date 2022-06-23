@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessageMedia;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessageMetadata;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessageSticker;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -87,6 +88,7 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
   private List<QueueConversationSocialExpressionEventTopicMessageMedia> media = new ArrayList<QueueConversationSocialExpressionEventTopicMessageMedia>();
   private QueueConversationSocialExpressionEventTopicErrorDetails errorInfo = null;
   private List<QueueConversationSocialExpressionEventTopicMessageSticker> stickers = new ArrayList<QueueConversationSocialExpressionEventTopicMessageSticker>();
+  private QueueConversationSocialExpressionEventTopicMessageMetadata messageMetadata = null;
 
   
   /**
@@ -215,6 +217,23 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
   }
 
 
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicMessageDetails messageMetadata(QueueConversationSocialExpressionEventTopicMessageMetadata messageMetadata) {
+    this.messageMetadata = messageMetadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messageMetadata")
+  public QueueConversationSocialExpressionEventTopicMessageMetadata getMessageMetadata() {
+    return messageMetadata;
+  }
+  public void setMessageMetadata(QueueConversationSocialExpressionEventTopicMessageMetadata messageMetadata) {
+    this.messageMetadata = messageMetadata;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -231,12 +250,13 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
             Objects.equals(this.messageSegmentCount, queueConversationSocialExpressionEventTopicMessageDetails.messageSegmentCount) &&
             Objects.equals(this.media, queueConversationSocialExpressionEventTopicMessageDetails.media) &&
             Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicMessageDetails.errorInfo) &&
-            Objects.equals(this.stickers, queueConversationSocialExpressionEventTopicMessageDetails.stickers);
+            Objects.equals(this.stickers, queueConversationSocialExpressionEventTopicMessageDetails.stickers) &&
+            Objects.equals(this.messageMetadata, queueConversationSocialExpressionEventTopicMessageDetails.messageMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, errorInfo, stickers);
+    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, errorInfo, stickers, messageMetadata);
   }
 
   @Override
@@ -251,6 +271,7 @@ public class QueueConversationSocialExpressionEventTopicMessageDetails  implemen
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
+    sb.append("    messageMetadata: ").append(toIndentedString(messageMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

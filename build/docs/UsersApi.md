@@ -1914,11 +1914,11 @@ try {
 
 
 
-> [UserAuthorization](UserAuthorization.html) getUserRoles(userId)
+> [UserAuthorization](UserAuthorization.html) getUserRoles(subjectId)
 
 Returns a listing of roles and permissions for a user.
 
-Wraps GET /api/v2/users/{userId}/roles  
+Wraps GET /api/v2/users/{subjectId}/roles  
 
 Requires ANY permissions: 
 
@@ -1946,9 +1946,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
-String userId = "userId_example"; // String | User ID
+String subjectId = "subjectId_example"; // String | User ID
 try {
-    UserAuthorization result = apiInstance.getUserRoles(userId);
+    UserAuthorization result = apiInstance.getUserRoles(subjectId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUserRoles");
@@ -1961,7 +1961,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | 
+| **subjectId** | **String**| User ID | 
 {: class="table-striped"}
 
 
@@ -4677,11 +4677,11 @@ try {
 
 
 
-> [UserAuthorization](UserAuthorization.html) putUserRoles(userId, body)
+> [UserAuthorization](UserAuthorization.html) putUserRoles(subjectId, body)
 
 Sets the user's roles
 
-Wraps PUT /api/v2/users/{userId}/roles  
+Wraps PUT /api/v2/users/{subjectId}/roles  
 
 Requires ANY permissions: 
 
@@ -4709,10 +4709,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
-String userId = "userId_example"; // String | User ID
+String subjectId = "subjectId_example"; // String | User ID
 List<String> body = Arrays.asList(null); // List<String> | List of roles
 try {
-    UserAuthorization result = apiInstance.putUserRoles(userId, body);
+    UserAuthorization result = apiInstance.putUserRoles(subjectId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#putUserRoles");
@@ -4725,7 +4725,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | 
+| **subjectId** | **String**| User ID | 
 | **body** | [**List&lt;String&gt;**](String.html)| List of roles | 
 {: class="table-striped"}
 

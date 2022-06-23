@@ -1876,29 +1876,29 @@ public class AuthorizationApi {
   /**
    * Returns a listing of roles and permissions for a user.
    * 
-   * @param userId User ID (required)
+   * @param subjectId User ID (required)
    * @return UserAuthorization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserAuthorization getUserRoles(String userId) throws IOException, ApiException {
-    return  getUserRoles(createGetUserRolesRequest(userId));
+  public UserAuthorization getUserRoles(String subjectId) throws IOException, ApiException {
+    return  getUserRoles(createGetUserRolesRequest(subjectId));
   }
 
   /**
    * Returns a listing of roles and permissions for a user.
    * 
-   * @param userId User ID (required)
+   * @param subjectId User ID (required)
    * @return UserAuthorization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException {
-    return getUserRoles(createGetUserRolesRequest(userId).withHttpInfo());
+  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String subjectId) throws IOException {
+    return getUserRoles(createGetUserRolesRequest(subjectId).withHttpInfo());
   }
 
-  private GetUserRolesRequest createGetUserRolesRequest(String userId) {
+  private GetUserRolesRequest createGetUserRolesRequest(String subjectId) {
     return GetUserRolesRequest.builder()
-            .withUserId(userId)
+            .withSubjectId(subjectId)
 
             .build();
   }
@@ -3342,31 +3342,31 @@ public class AuthorizationApi {
   /**
    * Sets the user's roles
    * 
-   * @param userId User ID (required)
+   * @param subjectId User ID (required)
    * @param body List of roles (required)
    * @return UserAuthorization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserAuthorization putUserRoles(String userId, List<String> body) throws IOException, ApiException {
-    return  putUserRoles(createPutUserRolesRequest(userId, body));
+  public UserAuthorization putUserRoles(String subjectId, List<String> body) throws IOException, ApiException {
+    return  putUserRoles(createPutUserRolesRequest(subjectId, body));
   }
 
   /**
    * Sets the user's roles
    * 
-   * @param userId User ID (required)
+   * @param subjectId User ID (required)
    * @param body List of roles (required)
    * @return UserAuthorization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException {
-    return putUserRoles(createPutUserRolesRequest(userId, body).withHttpInfo());
+  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String subjectId, List<String> body) throws IOException {
+    return putUserRoles(createPutUserRolesRequest(subjectId, body).withHttpInfo());
   }
 
-  private PutUserRolesRequest createPutUserRolesRequest(String userId, List<String> body) {
+  private PutUserRolesRequest createPutUserRolesRequest(String subjectId, List<String> body) {
     return PutUserRolesRequest.builder()
-            .withUserId(userId)
+            .withSubjectId(subjectId)
 
             .withBody(body)
 

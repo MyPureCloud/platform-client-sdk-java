@@ -414,7 +414,7 @@ public class GamificationApiAsync {
 
   /**
    * Gamified metric by id
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -448,7 +448,7 @@ public class GamificationApiAsync {
 
   /**
    * Gamified metric by id
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -639,7 +639,7 @@ public class GamificationApiAsync {
 
   /**
    * All gamified metrics for a given profile
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -673,7 +673,7 @@ public class GamificationApiAsync {
 
   /**
    * All gamified metrics for a given profile
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2814,7 +2814,7 @@ public class GamificationApiAsync {
 
   /**
    * Creates a gamified metric with a given metric definition and metric objective
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2848,7 +2848,7 @@ public class GamificationApiAsync {
 
   /**
    * Creates a gamified metric with a given metric definition and metric objective
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3414,7 +3414,7 @@ public class GamificationApiAsync {
 
   /**
    * Updates a metric
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3448,7 +3448,7 @@ public class GamificationApiAsync {
 
   /**
    * Updates a metric
-   * 
+   * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

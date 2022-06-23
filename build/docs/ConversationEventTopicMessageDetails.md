@@ -15,6 +15,7 @@ title: ConversationEventTopicMessageDetails
 | **media** | <!----><!---->[**List&lt;ConversationEventTopicMessageMedia&gt;**](ConversationEventTopicMessageMedia.html)<!----> | The media (images, files, etc) associated with this message, if any |  [optional] |
 | **errorInfo** | <!----><!---->[**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails.html)<!----> | Detailed information about an error response. |  [optional] |
 | **stickers** | <!----><!---->[**List&lt;ConversationEventTopicMessageSticker&gt;**](ConversationEventTopicMessageSticker.html)<!----> | A list of stickers included in the message |  [optional] |
+| **messageMetadata** | <!----><!---->[**ConversationEventTopicMessageMetadata**](ConversationEventTopicMessageMetadata.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

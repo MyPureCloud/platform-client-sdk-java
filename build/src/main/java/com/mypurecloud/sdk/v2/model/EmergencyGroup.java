@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.EmergencyCallFlow;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class EmergencyGroup  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
+  private WritableDivision division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -121,17 +121,17 @@ public class EmergencyGroup  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public EmergencyGroup division(Division division) {
+  public EmergencyGroup division(WritableDivision division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public Division getDivision() {
+  public WritableDivision getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
+  public void setDivision(WritableDivision division) {
     this.division = division;
   }
 
